@@ -1,0 +1,79 @@
+#=========================================#
+#   Statsatgouv Get-statistics into K8s   #
+#=========================================#
+# Maintained by: maria.soto@seenovate.com #
+#=========================================#
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels: 
+    app: app-front
+  name: app-deployment
+  namespace: statsatgouv
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app-front
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: app-front
+    spec:
+      containers:
+      - name: app-front-container
+        image: "gitlab.seenovate.com:5050/sig/satg/statsatgouv-app/seenovate-appfront:0.0.1"
+        imagePullPolicy: Always
+        ports:
+        - name: httpfront
+          containerPort: 9080
+        env:        
+        - name: VUE_APP_API_URL
+          valueFrom:
+            configMapKeyRef:
+              key: VUE_APP_API_URL
+              name: app-front-configmap
+        - name: VUE_APP_PREFIX_PATH
+          valueFrom:
+            configMapKeyRef:
+              key: VUE_APP_PREFIX_PATH
+              name: app-front-configmap
+        # - name: TERM
+        #   value: "xterm"
+
+      imagePullSecrets:
+      - name: regcred
+---
+#Internal service
+apiVersion: v1
+kind: Service
+metadata:
+  name: app-front-service
+  namespace: statsatgouv
+spec:
+  selector:
+    app: app-front
+  ports:
+    - protocol: TCP
+      port: 9080
+      targetPort: 9080
+---
+# External service
+# apiVersion: v1
+# kind: Service
+# metadata:
+#   name: app-front-service-external  
+#   namespace: statsatgouv
+# spec:
+#   selector:
+#     app: app-front
+#   type: LoadBalancer
+#   ports:
+#     - protocol: TCP
+#       port: 5000
+#       targetPort: 5000
+#       nodePort: 30004 #between 30000 - 32767
+      

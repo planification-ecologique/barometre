@@ -1,0 +1,29 @@
+#Environement
+env:
+  name: qualif
+
+namespace:
+  name: app-front-qualif
+
+#Service
+service:
+  port: 9080
+  targetPort: 9080
+
+#Deployment
+replicaCount: 1
+
+image:
+  repository: gitlab.seenovate.com:5050/sig/satg/statsatgouv-app/seenovate-appfront-qualif
+  tag: "0.0.2"
+  containerPort: 9080
+
+imagePullSecrets:
+  name: regcred
+
+# Ingress
+ingress:
+  cluster_issuer: letsencrypt-production
+  host: statatgouv-qualif-sig-client.seenovate.com
+  secretName: statatgouv-qualif-sig-client.seenovate.com-cert
+  path: /front

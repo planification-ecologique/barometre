@@ -1,0 +1,29 @@
+#Environement
+env:
+  name: prod
+
+namespace:
+  name: app-front-prod
+
+#Service
+service:
+  port: 9080
+  targetPort: 9080
+
+#Deployment
+replicaCount: 1
+
+image:
+  repository: gitlab.seenovate.com:5050/sig/satg/statsatgouv-app/seenovate-appfront
+  tag: "0.0.1"
+  containerPort: 9080
+
+imagePullSecrets:
+  name: regcred
+
+# Ingress
+ingress:
+  cluster_issuer: letsencrypt-production
+  host: statatgouv-sig-client.seenovate.com
+  secretName: statatgouv-sig-client.seenovate.com-cert
+  path: /front

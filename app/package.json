@@ -1,0 +1,43 @@
+{
+  "name": "statsatgouv",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "build_qualif": "vue-cli-service build --mode qualif"
+  },
+  "dependencies": {
+    "@dsb-norge/vue-keycloak-js": "2.4.0",
+    "@gouvfr/dsfr": "^1.10.2",
+    "axios": "^1.6.2",
+    "chart.js": "^2.9.4",
+    "chartjs-plugin-annotation": "^0.5.7",
+    "chroma-js": "^2.4.2",
+    "core-js": "^3.30.2",
+    "d3-scale": "^4.0.2",
+    "eslint-plugin-vue": "^9.19.2",
+    "mobile-device-detect": "^0.4.3",
+    "patternomaly": "^1.3.2",
+    "sass": "^1.69.5",
+    "sass-loader": "^13.3.2",
+    "vue": "^2.7.14",
+    "vue-custom-element": "^3.3.0",
+    "vue-router": "^3.6.5",
+    "vuex": "^3.6.0"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^5.0.8",
+    "prettier": "3.1.0",
+    "vue-template-compiler": "^2.7.14"
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ]
+}
