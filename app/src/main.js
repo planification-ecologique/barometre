@@ -9,6 +9,8 @@ import ChartVisits from './components/ChartVisits'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import Navigation from './components/Navigation'
+// import Breadcrumb from './components/Breadcrumb.vue'
+
 // import Sites from './views/Sites'
 
 import vueCustomElement from 'vue-custom-element'
@@ -47,6 +49,8 @@ Vue.use(vueCustomElement)
 Vue.customElement('header-dsfr', Header)
 Vue.customElement('footer-dsfr', Footer)
 Vue.customElement('navigation-dsfr', Navigation)
+// Vue.customElement('breadcrumb', Breadcrumb)
+
 
 new Vue({
   router,

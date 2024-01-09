@@ -1,8 +1,11 @@
 <template>
   <div id="projects-overview" class="fr-grid-row fr-pt-3w fr-pb-5w">
-    <!-- Frequentation -->
-    <h1 id="frequentation" class="fr-mb-4w">Fréquentation des sites de l'Etat</h1>
+    <!-- Vue d'ensemble  -->
+    <div>
+      <h1 id="home" class="fr-mb-4w">Vue d'ensemble</h1>
     <p>Le service d'information du gouvernement, placé sous l'autorité du premier ministre, est en charge de la mesure d'audience de tout les sites internet de l'état.</p>
+    </div>
+ 
     <div id="explanation">
       "L'observatoire des sites internet de l'état" à pour objectif de synthétiser l'ensemble des données sur la fréquentation des sites internet de l'état, Il est tenu de renseigner la fréquentation de toute la toile gouvernementale, et de permettre à chacun de se faire une idée de l'implication de l'état dans sa communication numérique. Ces informations sont publiques et sont rendu disponible au grand public.
       <br>

@@ -2,23 +2,48 @@
   <div class="">
     <ul class="fr-sidemenu__list">
       <li class="fr-sidemenu__item">
-        <a href="#frequentation" class="fr-sidemenu__btn">
-          Fréquentation
+        <a href="#home" class="fr-sidemenu__btn">
+          Vue d'ensemble
         </a>
       </li>
       <li class="fr-sidemenu__item fr-sidemenu__item--active">
-        <a href="#access-site" class="fr-sidemenu__btn">
-          Accès aux sites
+        <a href="#" class="fr-sidemenu__btn">
+          Transport
         </a>
       </li>
       <li class="fr-sidemenu__item">
-        <a href="#type-site" class="fr-sidemenu__btn">
-          Type de site
+        <a href="#" class="fr-sidemenu__btn">
+          Energie
         </a>
       </li>
       <li class="fr-sidemenu__item">
-        <a href="#provenance-geographique" class="fr-sidemenu__btn">
-          Provenance géographique
+        <a href="#" class="fr-sidemenu__btn">
+          Batiments
+        </a>
+      </li>
+      <li class="fr-sidemenu__item">
+        <a href="#" class="fr-sidemenu__btn">
+          Industrie
+        </a>
+      </li>
+      <li class="fr-sidemenu__item">
+        <a href="#" class="fr-sidemenu__btn">
+          Economie circulaire
+        </a>
+      </li>
+      <li class="fr-sidemenu__item">
+        <a href="#" class="fr-sidemenu__btn">
+          Eau
+        </a>
+      </li>
+      <li class="fr-sidemenu__item">
+        <a href="#" class="fr-sidemenu__btn">
+          Agriculture et Alimentation
+        </a>
+      </li>
+      <li class="fr-sidemenu__item">
+        <a href="#" class="fr-sidemenu__btn">
+          Ecosystèmes
         </a>
       </li>
     </ul>

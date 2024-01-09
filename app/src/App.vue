@@ -2,7 +2,9 @@
   <div>
     <header-dsfr></header-dsfr>
     <div class="fr-container">
+
       <div id="app">
+        <Breadcrumb />
         <!-- Bloc de navigation -->
         <!-- <div id="nav">
           <router-link :to="{ name: 'visits' }">Visite</router-link> |
@@ -20,6 +22,15 @@
   </div>
 </template>
 
+<script>
+import Breadcrumb from './components/Breadcrumb.vue';
+
+export default {
+    name: 'app',
+    components: { Breadcrumb }
+}
+
+</script>
 <style>
 body {
   background-color: white;
