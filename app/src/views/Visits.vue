@@ -1,12 +1,15 @@
 <template>
   <div class="fr-container">
     <div class="fr-grid-row">
-      <div id="sidenav" class="fr-col-12 fr-col-lg-3 fr-hidden fr-unhidden-lg">
+      <div id="sidenav" class="fr-col-3  ">
         <side-bar v-on:query="refresh"></side-bar>
       </div>      
       <div class="fr-col-12 fr-col-lg-8 fr-col-offset-lg-1">
         <chart-visits :query=myobj v-if="isquery"></chart-visits>
       </div>
+      <!-- <div>
+        <up-footer />
+      </div> -->
     </div>
   </div>
 </template>
@@ -14,13 +17,15 @@
   <script>
   import SideBar from '../components/SideBar.vue'
   import ChartVisits from '../components/ChartVisits.vue'
+// import UpFooter from '../components/UpFooter.vue'
 
   export default {
     name: 'home',
     components: {
-        SideBar,
-        ChartVisits
-    },
+    SideBar,
+    ChartVisits,
+    UpFooter
+},
     data () {
       return{
         isquery: false,

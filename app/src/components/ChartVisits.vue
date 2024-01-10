@@ -3,17 +3,24 @@
     <!-- Vue d'ensemble  -->
     <div>
       <h1 id="home" class="fr-mb-4w">Vue d'ensemble</h1>
-    <p>Le service d'information du gouvernement, placé sous l'autorité du premier ministre, est en charge de la mesure d'audience de tout les sites internet de l'état.</p>
-    </div>
- 
-    <div id="explanation">
-      "L'observatoire des sites internet de l'état" à pour objectif de synthétiser l'ensemble des données sur la fréquentation des sites internet de l'état, Il est tenu de renseigner la fréquentation de toute la toile gouvernementale, et de permettre à chacun de se faire une idée de l'implication de l'état dans sa communication numérique. Ces informations sont publiques et sont rendu disponible au grand public.
+      <span>"19 indicateurs pour observer d'un coup d'oeil les principaux vecteurs de la transition écologique"</span>
       <br>
-      La partie "Fréquentation des sites internet de l'état" concerne uniquement les sites internet tracké par la solution de mesure d'audience Eulerian. Elle donne la fréquentation en terme de visite et pages vues de ces derniers, tout en renseignant le taux de consentement global de la toile gouvernementale.
-      <br><br>
+    </div>
+   
+    <div id="explanation">
+      <!-- "L'observatoire des sites internet de l'état" à pour objectif de synthétiser l'ensemble des données sur la
+      fréquentation des sites internet de l'état, Il est tenu de renseigner la fréquentation de toute la toile
+      gouvernementale, et de permettre à chacun de se faire une idée de l'implication de l'état dans sa communication
+      numérique. Ces informations sont publiques et sont rendu disponible au grand public.
+      <br>
+      La partie "Fréquentation des sites internet de l'état" concerne uniquement les sites internet tracké par la solution
+      de mesure d'audience Eulerian. Elle donne la fréquentation en terme de visite et pages vues de ces derniers, tout en
+      renseignant le taux de consentement global de la toile gouvernementale.
+      <
+      <br><br> -->
     </div>
     <!-- Mobile average chart -->
-    
+
     <LineSeriesChart :serieObj=visiteObj v-if="querySuccess"></LineSeriesChart>
     <br>
     <LineSeriesChart :serieObj=vueObj v-if="querySuccess"></LineSeriesChart>
@@ -26,37 +33,32 @@
       <div class="fr-tabs">
         <ul class="fr-tabs__list" role="tablist" aria-label="Onglets mailles">
           <li role="presentation">
-            <button id="tabpanel-reg" class="fr-tabs__tab fr-icon-checkbox-line fr-tabs__tab--icon-left" tabindex="-1" role="tab" aria-selected="true" aria-controls="tabpanel-reg-panel">Région</button>
+            <button id="tabpanel-reg" class="fr-tabs__tab fr-icon-checkbox-line fr-tabs__tab--icon-left" tabindex="-1"
+              role="tab" aria-selected="true" aria-controls="tabpanel-reg-panel">Région</button>
           </li>
           <li role="presentation">
-            <button id="tabpanel-dep" class="fr-tabs__tab fr-icon-checkbox-line fr-tabs__tab--icon-left" tabindex="0" role="tab" aria-selected="false" aria-controls="tabpanel-dep-panel">Département</button>
+            <button id="tabpanel-dep" class="fr-tabs__tab fr-icon-checkbox-line fr-tabs__tab--icon-left" tabindex="0"
+              role="tab" aria-selected="false" aria-controls="tabpanel-dep-panel">Département</button>
           </li>
           <li role="presentation">
-            <button id="tabpanel-inter" class="fr-tabs__tab fr-icon-checkbox-line fr-tabs__tab--icon-left" tabindex="-1" role="tab" aria-selected="false" aria-controls="tabpanel-inter-panel">International</button>
+            <button id="tabpanel-inter" class="fr-tabs__tab fr-icon-checkbox-line fr-tabs__tab--icon-left" tabindex="-1"
+              role="tab" aria-selected="false" aria-controls="tabpanel-inter-panel">International</button>
           </li>
         </ul>
         <!-- Contenu des onglets -->
-        <div id="tabpanel-dep-panel" class="fr-tabs__panel fr-tabs__panel--selected" role="tabpanel" aria-labelledby="tabpanel-dep" tabindex="0">
-          <MapBox
-            :data="dataDep"
-            geolevel="dep"
-            :valueNat="valueNat"
-          >
+        <div id="tabpanel-dep-panel" class="fr-tabs__panel fr-tabs__panel--selected" role="tabpanel"
+          aria-labelledby="tabpanel-dep" tabindex="0">
+          <MapBox :data="dataDep" geolevel="dep" :valueNat="valueNat">
           </MapBox>
         </div>
         <div id="tabpanel-reg-panel" class="fr-tabs__panel" role="tabpanel" aria-labelledby="tabpanel-reg" tabindex="0">
-          <MapBox
-            :data="dataReg"
-            geolevel="reg"
-            :valueNat="valueNat"
-          >
+          <MapBox :data="dataReg" geolevel="reg" :valueNat="valueNat">
           </MapBox>
         </div>
-        <div id="tabpanel-inter-panel" class="fr-tabs__panel" role="tabpanel" aria-labelledby="tabpanel-inter" tabindex="0">
+        <div id="tabpanel-inter-panel" class="fr-tabs__panel" role="tabpanel" aria-labelledby="tabpanel-inter"
+          tabindex="0">
           <!-- Contenu -->
-          <MapWorldChart
-            :dataCountry= dataCountry
-          ></MapWorldChart>
+          <MapWorldChart :dataCountry=dataCountry></MapWorldChart>
         </div>
       </div>
       <section class="fr-accordion">
@@ -99,8 +101,8 @@ export default {
     PieBox,
     BarSeriesChart,
     MapWorldChart
-},
-  data () {
+  },
+  data() {
     return {
       //series
       querySuccess: false,
@@ -124,11 +126,11 @@ export default {
       charging: true
     }
   },
-  props:{
+  props: {
     query: Object
   },
   methods: {
-    maps (params) {
+    maps(params) {
       const urlApi = process.env.VUE_APP_API_URL + '/requests/visits_regions_departements'
       axios
         .post(urlApi, params)
@@ -147,7 +149,7 @@ export default {
           }
         })
     },
-    graphics (params) {
+    graphics(params) {
       const urlApi = process.env.VUE_APP_API_URL + '/requests/query_visite'
       axios
         .post(urlApi, params)
@@ -168,7 +170,7 @@ export default {
           }
         })
     },
-    graphics_barChart (params) {
+    graphics_barChart(params) {
       const urlApi = process.env.VUE_APP_API_URL + '/requests/visits_ministere'
       axios
         .post(urlApi, params)
@@ -183,7 +185,7 @@ export default {
           }
         })
     },
-    pie_chart_data (params) {
+    pie_chart_data(params) {
       const urlApi = process.env.VUE_APP_API_URL + '/requests/visits_device'
       axios
         .post(urlApi, params)
@@ -206,7 +208,7 @@ export default {
       this.graphics_barChart(this.query)
     }
   },
-  mounted () {
+  mounted() {
     this.maps(this.query)
     this.graphics(this.query)
     this.pie_chart_data(this.query)
@@ -220,6 +222,7 @@ export default {
     box-shadow: 0 1px 0 0 var(--border-default-grey);
   }
 }
+
 #explanation {
   font-size: small;
 }

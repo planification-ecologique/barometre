@@ -1,5 +1,5 @@
 <template>
-  <div class="">
+  <div class="fr-col-3">
     <ul class="fr-sidemenu__list">
       <li class="fr-sidemenu__item">
         <a href="#home" class="fr-sidemenu__btn">
