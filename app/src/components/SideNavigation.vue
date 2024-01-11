@@ -1,5 +1,4 @@
 <template>
- 
   <nav class="fr-sidemenu fr-col-3" role="navigation" aria-labelledby="fr-sidemenu-title">
     <div class="fr-sidemenu__inner"> <button class="fr-sidemenu__btn" aria-controls="fr-sidemenu-wrapper"
         aria-expanded="false"> Dans cette rubrique </button>
@@ -50,7 +49,14 @@
 
           <li class="fr-sidemenu__item"> <a class="fr-sidemenu__link" href="#" target="_self">Energie</a> </li>
           <li class="fr-sidemenu__item"> <a class="fr-sidemenu__link" href="#" target="_self">Industrie</a> </li>
-          <li class="fr-sidemenu__item"> <a class="fr-sidemenu__link" href="#" target="_self">Agriculture</a> </li>
+
+          <li class="fr-sidemenu__item ">
+            <a class="fr-sidemenu__link" href="#" target="_self">
+              Agriculture
+
+            </a>
+          </li>
+
           <li class="fr-sidemenu__item"> <a class="fr-sidemenu__link" href="#" target="_self">Eau</a> </li>
           <li class="fr-sidemenu__item"> <a class="fr-sidemenu__link" href="#" target="_self">Ecosystèmes</a> </li>
           <li class="fr-sidemenu__item"> <a class="fr-sidemenu__link" href="#" target="_self">Economie circulaire</a>
@@ -69,4 +75,8 @@ export default {
   name: 'SideNavigation',
 }
 </script>
+
+<style>
+
+</style>
   

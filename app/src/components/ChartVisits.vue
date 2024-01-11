@@ -21,11 +21,6 @@
     </div>
     <!-- Mobile average chart -->
 
-    <LineSeriesChart :serieObj=visiteObj v-if="querySuccess"></LineSeriesChart>
-    <br>
-    <LineSeriesChart :serieObj=vueObj v-if="querySuccess"></LineSeriesChart>
-    <br>
-    <LineSeriesChart :serieObj=durationObj v-if="querySuccess"></LineSeriesChart>
     <!-- Cartographie -->
     <div v-if="queryMapSucces">
       <h1 id="provenance-geographique" class="fr-mt-4w">Provenance géographique</h1>
@@ -77,7 +72,6 @@
     <br>
     <!-- Accès aux sites Pie-charts -->
     <h1 id="access-site" class="fr-mt-4w" v-if=queryPiechartSuccess>Accès aux sites</h1>
-    <PieBox :serieObj=deviceObj v-if=queryPiechartSuccess></PieBox>
     <!-- Type de site -->
     <h1 id="type-site" class="fr-mt-4w" v-if="queryBarChartSuccess">Type de site</h1>
     <BarSeriesChart :serieObj=ministereObj v-if="queryBarChartSuccess"></BarSeriesChart>
@@ -88,17 +82,14 @@
 import axios from 'axios'
 import MapBox from './MapBox.vue'
 // import MobileSeriesChart from './MobileSeriesChart.vue'
-import LineSeriesChart from './LineSeriesChart.vue'
 import MapWorldChart from './MapWorldChart.vue'
-import PieBox from './PieBox.vue'
 import BarSeriesChart from './BarSeriesChart.vue'
 
 export default {
   name: 'ChartVisits',
   components: {
     MapBox,
-    LineSeriesChart,
-    PieBox,
+
     BarSeriesChart,
     MapWorldChart
   },

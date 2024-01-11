@@ -10,32 +10,31 @@
                     <li> <a class="fr-breadcrumb__link" aria-current="page">Tableau de bord</a> </li>
                 </ol>
             </div>
-
-            
         </section> -->
-    <div class="fr-container ">
-        <div class="fr-my-5w">
-            <section class="fr-grid-row ">
-                <div class="fr-collapse" id="breadcrumb-contents" data-fr-js-collapse="true"
-                    data-fr-js-breadcrumb-actionee="true">
-                    <ol class="fr-breadcrumb__list">
-                        <li>
-                            <a class="fr-breadcrumb__link" href="/" target="_self" data-concat-module="acces"
-                                id="breadcrumb__link-accueil" data-fr-js-breadcrumb-link-actionee="true">Accueil</a>
-                        </li>
-                        <li>
-                            <a class="fr-breadcrumb__link" aria-current="page" id="fr-breadcrumb__link-current-page">Tableau
-                                de bord</a>
-                        </li>
-                    </ol>
-                    <div>
-                        <h1>Tableau de bord de la planification écologique</h1>
-                        <p>Indicateurs et objectif pour la transition écologique</p>
+        <div class="fr-container fr-mb-2w">
+            <div class=" ">
+                <section class="fr-grid-row ">
+                    <div class="fr-collapse" id="breadcrumb-contents" data-fr-js-collapse="true"
+                        data-fr-js-breadcrumb-actionee="true">
+                        <ol class="fr-breadcrumb__list">
+                            <li>
+                                <a class="fr-breadcrumb__link" href="/" target="_self" data-concat-module="acces"
+                                    id="breadcrumb__link-accueil" data-fr-js-breadcrumb-link-actionee="true">Accueil</a>
+                            </li>
+                            <li>
+                                <a class="fr-breadcrumb__link" aria-current="page"
+                                    id="fr-breadcrumb__link-current-page">Tableau
+                                    de bord</a>
+                            </li>
+                        </ol>
+                        <div>
+                            <h1>Tableau de bord de la planification écologique</h1>
+                            <p>Indicateurs et objectif pour la transition écologique</p>
+                        </div>
                     </div>
-                </div>
-            </section>
+                </section>
+            </div>
         </div>
-    </div>
     </nav>
 </template>
   
@@ -64,10 +63,13 @@ export default {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+    margin-top: auto;
 }
 
-.fr-my-5w{
+.fr-my-5w {
     display: flex;
     justify-content: left;
-}</style>
+    margin-bottom: 10px;
+}
+</style>
   
