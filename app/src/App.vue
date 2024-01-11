@@ -1,14 +1,14 @@
 <template>
   <div>
     <header-dsfr></header-dsfr>
-
-    <div class="fr-container">
-
-
-      <div id="app">
-        <div class="fr-my-5w ">
+    <div class="fr-my-5w">
           <Breadcrumb />
         </div>
+    <div class="fr-container">
+
+     
+      <div id="app">
+       
 
         <!-- Bloc de navigation -->
         <!-- <div id="nav">
@@ -20,7 +20,9 @@
         </div> -->
 
         <br>
-        <SideBar />
+        <!-- <SideBar /> -->
+        <SideNavigation />
+
         <router-view />
 
       </div>
@@ -38,11 +40,12 @@
 <script>
 import Breadcrumb from './components/Breadcrumb.vue';
 import SideBar from './components/SideBar.vue';
+import SideNavigation from './components/SideNavigation.vue';
 import UpFooter from './components/UpFooter.vue';
 
 export default {
   name: 'app',
-  components: { Breadcrumb, UpFooter, SideBar }
+  components: { Breadcrumb, UpFooter, SideBar, SideNavigation }
 }
 
 </script>
@@ -50,5 +53,4 @@ export default {
 body {
   background-color: white;
 }
-
 </style>

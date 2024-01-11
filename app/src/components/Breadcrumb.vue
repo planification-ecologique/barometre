@@ -13,8 +13,9 @@
 
             
         </section> -->
+    <div class="fr-container ">
         <div class="fr-my-5w">
-            <section class="fr-my-5w">
+            <section class="fr-grid-row ">
                 <div class="fr-collapse" id="breadcrumb-contents" data-fr-js-collapse="true"
                     data-fr-js-breadcrumb-actionee="true">
                     <ol class="fr-breadcrumb__list">
@@ -34,6 +35,7 @@
                 </div>
             </section>
         </div>
+    </div>
     </nav>
 </template>
   
@@ -57,5 +59,15 @@ export default {
 
 }
 </script>
-<style scoped></style>
+<style scoped>
+.fr-grid-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.fr-my-5w{
+    display: flex;
+    justify-content: left;
+}</style>
   
