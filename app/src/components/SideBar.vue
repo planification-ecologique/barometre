@@ -1,7 +1,7 @@
 <template>
-  <nav class="fr-sidemenu fr-sidemenu--sticky-full-height fr-pr-0" role="navigation" aria-labelledby="fr-sidemenu-title">
+  <nav class="fr-sidemenu fr-sidemenu--sticky-full-height " role="navigation" aria-labelledby="fr-sidemenu-title">
     <div class="fr-sidemenu__inner">
-     <div id="scrollable" class="fr-pl-1v fr-ml-n1v fr-pr-2w fr-mr-n2w">
+     <div id="" class="">
         <!-- <p class="fr-sidemenu__title fr-mb-3w fr-h6 fr-hidden fr-unhidden-lg" id="fr-sidemenu-title">
           Affiner la recherche</p>
         <button id="resetFilters" class="fr-btn fr-btn--sm fr-icon-close-circle-line fr-btn--icon-right fr-btn--tertiary fr-mb-3w fr-mt-0"
@@ -96,8 +96,9 @@
             </div>
           </div>
         </section> -->
-      </div>
       <SideNavigation/>
+
+      </div>
     </div>
   </nav>
 </template>

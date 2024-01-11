@@ -1,10 +1,15 @@
 <template>
   <div>
     <header-dsfr></header-dsfr>
+
     <div class="fr-container">
 
+
       <div id="app">
-        <Breadcrumb />
+        <div class="fr-my-5w ">
+          <Breadcrumb />
+        </div>
+
         <!-- Bloc de navigation -->
         <!-- <div id="nav">
           <router-link :to="{ name: 'visits' }">Visite</router-link> |
@@ -21,7 +26,7 @@
       </div>
 
     </div>
-    <div class="fr-my-5w " >
+    <div class="fr-my-5w ">
       <UpFooter />
 
     </div>
@@ -36,8 +41,8 @@ import SideBar from './components/SideBar.vue';
 import UpFooter from './components/UpFooter.vue';
 
 export default {
-    name: 'app',
-    components: { Breadcrumb, UpFooter, SideBar }
+  name: 'app',
+  components: { Breadcrumb, UpFooter, SideBar }
 }
 
 </script>
@@ -45,7 +50,5 @@ export default {
 body {
   background-color: white;
 }
-.fr-my-5w{
-  background-color: grey;
-}
+
 </style>
