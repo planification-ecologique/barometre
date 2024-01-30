@@ -16,10 +16,11 @@
                         </div>
                         <div class="fr-header__service"> <a href="/"
                                 title="Accueil - [À MODIFIER - Nom du site / service] - Nom de l’entité (ministère, secrétariat d‘état, gouvernement)">
-                                <p class="fr-header__service-title"> Observatoire des priorités du gouvernement</p>
+                                <p class="fr-header__service-title"> Baromètre de la planification écologique</p>
                             </a>
                         </div>
                     </div>
+
                     <div class="fr-header__tools">
                         <div class="fr-header__search fr-modal" id="modal-541">
                             <div class="fr-container fr-container-lg--fluid">
@@ -56,6 +57,12 @@ export default {
     margin-right: auto;
     padding-left: 1rem;
     padding-right: 1rem;
+}
+
+
+.logo-france-nation-verte{
+    height: 60px;
+    width: 80px;
 }
 
 </style>
