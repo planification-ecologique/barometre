@@ -13,7 +13,7 @@ const router = new Router({
       name: 'sites',
       component: () => import(/* webpackChunkName: "sites" */ './views/Sites.vue'),
       meta: {
-        requiresAuth: true
+        requiresAuth: false
       }
     },
     {
@@ -21,7 +21,7 @@ const router = new Router({
       name: 'visits',
       component: () => import(/* webpackChunkName: "visits" */ './views/Visits.vue'),
       meta: {
-         requiresAuth: true
+         requiresAuth: false
       },
     },
     {
@@ -29,7 +29,7 @@ const router = new Router({
       name: 'home',
       component: () => import(/* webpackChunkName: "visits" */ './views/Visits.vue'),
       meta: {
-         requiresAuth: true
+         requiresAuth: false
       },
     }
   ]
@@ -39,22 +39,22 @@ function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms))
 }
 
-router.beforeEach(async (to, from, next) => {
-  if (to.matched.some(record => record.meta.requiresAuth)) {
-    // We wait for Keycloak init, then we can call all methods safely
-    while (router.app.$keycloak.createLoginUrl === null) {      
-      await sleep(100)
-    }
-    if (router.app.$keycloak.authenticated) {
-      next()
-    } else {
-      const loginUrl = router.app.$keycloak.createLoginUrl()
-      console.log('loginUrl ' + loginUrl)  
-      window.location.replace(loginUrl)
-    }
-  } else {
-    next()
-  }
-})
+// router.beforeEach(async (to, from, next) => {
+//   if (to.matched.some(record => record.meta.requiresAuth)) {
+//     // We wait for Keycloak init, then we can call all methods safely
+//     while (router.app.$keycloak.createLoginUrl === null) {      
+//       await sleep(100)
+//     }
+//     if (router.app.$keycloak.authenticated) {
+//       next()
+//     } else {
+//       const loginUrl = router.app.$keycloak.createLoginUrl()
+//       console.log('loginUrl ' + loginUrl)  
+//       window.location.replace(loginUrl)
+//     }
+//   } else {
+//     next()
+//   }
+// })
 
 export default router
