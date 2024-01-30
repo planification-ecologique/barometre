@@ -4,10 +4,16 @@
   <nav class="fr-nav" id="header-navigation" role="navigation" aria-label="Menu principal">
       <ul class="fr-nav__list">
         <li class="fr-nav__item" @click=router_to_visits()>
+            <a class="fr-nav__link" style="color: rgb(59, 58, 58);" target="_self" :aria-current=currentVisits>Accueil </a>
+        </li>
+        <li class="fr-nav__item" @click=router_to_visits()>
             <a class="fr-nav__link" style="color: rgb(59, 58, 58);" target="_self" :aria-current=currentVisits>Tableau de bord </a>
         </li>
         <li class="fr-nav__item" @click=router_to_sites()>
-            <a class="fr-nav__link" style="color: rgb(59, 58, 58);" target="_self" :aria-current=currentSites>Thématiques</a>
+            <a class="fr-nav__link" style="color: rgb(59, 58, 58);" target="_self" :aria-current=currentSites>Tag</a>
+        </li>
+        <li class="fr-nav__item" @click=router_to_visits()>
+            <a class="fr-nav__link" style="color: rgb(59, 58, 58);" target="_self" :aria-current=currentVisits>Lexique </a>
         </li>
       </ul>
   </nav>
