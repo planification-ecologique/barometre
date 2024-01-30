@@ -1,15 +1,15 @@
 <template>
-  <nav class="fr-sidemenu fr-sidemenu--sticky-full-height fr-pr-0" role="navigation" aria-labelledby="fr-sidemenu-title">
+  <nav class="fr-sidemenu fr-sidemenu--sticky-full-height " role="navigation" aria-labelledby="fr-sidemenu-title">
     <div class="fr-sidemenu__inner">
-      <div id="scrollable" class="fr-pl-1v fr-ml-n1v fr-pr-2w fr-mr-n2w">
-        <p class="fr-sidemenu__title fr-mb-3w fr-h6 fr-hidden fr-unhidden-lg" id="fr-sidemenu-title">
+     <div id="" class="">
+        <!-- <p class="fr-sidemenu__title fr-mb-3w fr-h6 fr-hidden fr-unhidden-lg" id="fr-sidemenu-title">
           Affiner la recherche</p>
         <button id="resetFilters" class="fr-btn fr-btn--sm fr-icon-close-circle-line fr-btn--icon-right fr-btn--tertiary fr-mb-3w fr-mt-0"
           v-if="displayButton" @click="resetFilter()">
           Réinitialiser
-        </button>
+        </button> -->
         <!-- Period study -->
-        <section class="fr-accordion">
+        <!-- <section class="fr-accordion">
           <h3 class="fr-accordion__title">
             <button class="fr-accordion__btn subtitled fr-text-action-high--blue-france" aria-expanded="false"
               aria-controls="accordion-periode">Période
@@ -39,13 +39,13 @@
               <br>
             </div>
           </div>
-        </section>
+        </section> -->
         <!-- Dropdown Minister -->
-        <section class="fr-accordion">
+        <!-- <section class="fr-accordion">
           <h3 class="fr-accordion__title">
             <button class="fr-accordion__btn subtitled fr-text-action-high--blue-france" aria-expanded="false"
               aria-controls="accordion-theme">Ministère
-              <!-- <span v-if="displayTextThem" class="fr-mt-1v">1 sélectionnée</span> -->
+              <span v-if="displayTextThem" class="fr-mt-1v">1 sélectionnée</span>
             </button>
           </h3>
           <div class="fr-collapse fr-pt-0" id="accordion-theme">
@@ -58,9 +58,9 @@
               </select>
             </div>
           </div>
-        </section>
+        </section> -->
         <!-- Dropdown Type of site -->
-        <section class="fr-accordion" v-if="listTypesite.length != 0">
+        <!-- <section class="fr-accordion" v-if="listTypesite.length != 0">
           <h3 class="fr-accordion__title">
             <button class="fr-accordion__btn subtitled fr-text-action-high--blue-france" aria-expanded="false"
               aria-controls="accordion-typesite">Type de site
@@ -76,13 +76,13 @@
               </select>
             </div>
           </div>
-        </section>
+        </section> -->
         <!-- Dropdown Site -->
-        <section class="fr-accordion" v-if="listSite.length != 0">
+        <!-- <section class="fr-accordion" v-if="listSite.length != 0">
           <h3 class="fr-accordion__title">
             <button class="fr-accordion__btn subtitled fr-text-action-high--blue-france" aria-expanded="false"
               aria-controls="accordion-site">Site
-              <!-- <span v-if="displayTextSite" class="fr-mt-1v">1 sélectionnée</span> -->
+              <span v-if="displayTextSite" class="fr-mt-1v">1 sélectionnée</span>
             </button>
           </h3>
           <div class="fr-collapse fr-pt-0" id="accordion-site">
@@ -95,9 +95,10 @@
               </select>
             </div>
           </div>
-        </section>
-      </div>
+        </section> -->
       <SideNavigation/>
+
+      </div>
     </div>
   </nav>
 </template>
