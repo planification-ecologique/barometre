@@ -1,50 +1,42 @@
 <template>
     <header role="banner" class="fr-header">
         <div class="fr-header__body">
-            <div class="fr-container">
+            <div class="header-container">
                 <div class="fr-header__body-row">
                     <div class="fr-header__brand fr-enlarge-link">
                         <div class="fr-header__brand-top">
                             <div class="fr-header__logo">
-                                <p class="fr-logo"> République Française </p>
+                                <p class="fr-logo"> GOUVERNEMENT</p>
                             </div>
-                            <div class="fr-header__navbar"> <button class="fr-btn--menu fr-btn" data-fr-opened="false"
-                                    aria-controls="modal-499" aria-haspopup="menu" id="button-500" title="Menu"> Menu
-                                </button> </div>
+                            <div class="fr-header__navbar"> <button class="fr-btn--search fr-btn" data-fr-opened="false"
+                                    aria-controls="modal-541" id="button-542" title="Rechercher"> Rechercher </button>
+                                <button class="fr-btn--menu fr-btn" data-fr-opened="false" aria-controls="modal-543"
+                                    aria-haspopup="menu" id="button-544" title="Menu"> Menu </button>
+                            </div>
                         </div>
                         <div class="fr-header__service"> <a href="/"
                                 title="Accueil - [À MODIFIER - Nom du site / service] - Nom de l’entité (ministère, secrétariat d‘état, gouvernement)">
-                                <p class="fr-header__service-title"> Planification écologique </p>
+                                <p class="fr-header__service-title"> Observatoire des priorités du gouvernement</p>
                             </a>
-                            <p class="fr-header__service-tagline">Planifier et accélérer la transition écologique</p>
                         </div>
                     </div>
                     <div class="fr-header__tools">
-                        <div class="fr-header__tools-links">
-                            <ul class="fr-btns-group">
-                                <li>
-                                    <button class="fr-btn fr-icon-theme-fill" aria-controls="fr-theme-modal"
-                                        data-fr-opened="false">Paramètres d'affichage</button>
-                                </li>
-                            </ul>
+                        <div class="fr-header__search fr-modal" id="modal-541">
+                            <div class="fr-container fr-container-lg--fluid">
+                                 <button class="fr-btn--close fr-btn"
+                                    aria-controls="modal-541" title="Fermer"> Fermer </button>
+
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="fr-header__menu fr-modal" id="modal-499" aria-labelledby="button-500">
-            <div class="fr-container"> <button class="fr-btn--close fr-btn" aria-controls="modal-499" title="Fermer"> Fermer
-                </button>
-                <div class="fr-header__menu-links"> </div>
-            </div>
-        </div>
-        <div class=" fr-container">
+        <div class=" fr-container--fluid">
             <navigation-dsfr></navigation-dsfr>
         </div>
     </header>
 </template>
-
-
 
 <script>
 export default {
@@ -54,6 +46,18 @@ export default {
 
 <style>
 .fr-header__body {
+    width: 100%;
     border-bottom: 1px solid rgba(207, 207, 223, 0.534);
 }
+
+.header-container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
 </style>
+
+
