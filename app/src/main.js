@@ -12,6 +12,10 @@ import Navigation from './components/Navigation'
 // import Breadcrumb from './components/Breadcrumb.vue'
 
 // import Sites from './views/Sites'
+import CardImgBox from './components/CardImgBox'
+import UpFooter from './components/UpFooter'
+
+
 
 import vueCustomElement from 'vue-custom-element'
 
@@ -49,8 +53,8 @@ Vue.use(vueCustomElement)
 Vue.customElement('header-dsfr', Header)
 Vue.customElement('footer-dsfr', Footer)
 Vue.customElement('navigation-dsfr', Navigation)
-// Vue.customElement('breadcrumb', Breadcrumb)
-
+Vue.customElement('card-img-box', CardImgBox)
+Vue.customElement('up-footer', UpFooter)
 
 new Vue({
   router,
