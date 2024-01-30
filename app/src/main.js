@@ -28,19 +28,19 @@ require('../node_modules/@gouvfr/dsfr/dist/dsfr.module.min.js')
 
 Vue.config.productionTip = false
 
-Vue.use(VueKeyCloak, {
-  config: {
-    realm: 'DEV',
-    url: process.env.VUE_APP_KEYCLOAK_URL,
-    clientId: 'statsAtGouv'
-  },
-  init: {
-    // Use 'login-required' to always require authentication
-    // If using 'login-required', there is no need for the router guards in router.js
-    onLoad: 'check-sso',
-    silentCheckSsoRedirectUri: window.location.origin + process.env.VUE_APP_PREFIX_PATH + '/silent-check-sso.html'
-  }
-})
+// Vue.use(VueKeyCloak, {
+//   config: {
+//     realm: 'DEV',
+//     url: process.env.VUE_APP_KEYCLOAK_URL,
+//     clientId: 'statsAtGouv'
+//   },
+//   init: {
+//     // Use 'login-required' to always require authentication
+//     // If using 'login-required', there is no need for the router guards in router.js
+//     onLoad: 'check-sso',
+//     silentCheckSsoRedirectUri: window.location.origin + process.env.VUE_APP_PREFIX_PATH + '/silent-check-sso.html'
+//   }
+// })
 
 Vue.use(vueCustomElement)
 
