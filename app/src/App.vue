@@ -1,7 +1,7 @@
 <template>
   <div>
     <header-dsfr></header-dsfr>
-    <div class="fr-container--fluid">
+    <div class="fr-container">
       <div id="app">
         <!-- Bloc de navigation -->
         <!-- <div id="nav">
@@ -11,6 +11,7 @@
           <br>
           <button @click="$keycloak.logoutFn" v-if="$keycloak.authenticated">Log out</button>
         </div> -->
+        <br>
         <router-view />
       </div>
 
