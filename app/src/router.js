@@ -39,7 +39,32 @@ const router = new Router({
       meta: {
          requiresAuth: false
       },
-    }
+    },
+    {
+      path: '/dashboard',
+      name: 'dashboard',
+      component: () => import(/* webpackChunkName: "visits" */ './views/DashbordPage.vue'),
+      meta: {
+         requiresAuth: false
+      },
+    },
+    {
+      path: '/tags',
+      name: 'tags',
+      component: () => import(/* webpackChunkName: "visits" */ './views/TagsPage.vue'),
+      meta: {
+         requiresAuth: false
+      },
+    },
+    {
+      path: '/lexique',
+      name: 'lexique',
+      component: () => import(/* webpackChunkName: "visits" */ './views/LexiquePage.vue'),
+      meta: {
+         requiresAuth: false
+      },
+    },
+    
   ]
 })
 
