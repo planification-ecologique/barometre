@@ -49,6 +49,70 @@ const router = new Router({
       },
     },
     {
+      path: '/dashboard',
+      name: 'dashboard',
+      component: () => import(/* webpackChunkName: "visits" */ './views/DashbordPage.vue'),
+      meta: {
+         requiresAuth: false
+      },
+    },    {
+      path: '/transport',
+      name: 'transport',
+      component: () => import(/* webpackChunkName: "visits" */ './views/DashbordPage.vue'),
+      meta: {
+         requiresAuth: false
+      },
+    },    {
+      path: '/energie',
+      name: 'energie',
+      component: () => import(/* webpackChunkName: "visits" */ './views/DashbordPage.vue'),
+      meta: {
+         requiresAuth: false
+      },
+    },    {
+      path: '/batiments',
+      name: 'batiments',
+      component: () => import(/* webpackChunkName: "visits" */ './views/DashbordPage.vue'),
+      meta: {
+         requiresAuth: false
+      },
+    },    {
+      path: '/industrie',
+      name: 'industrie',
+      component: () => import(/* webpackChunkName: "visits" */ './views/DashbordPage.vue'),
+      meta: {
+         requiresAuth: false
+      },
+    },    {
+      path: '/economie-circulaire',
+      name: 'economie-circulaire',
+      component: () => import(/* webpackChunkName: "visits" */ './views/DashbordPage.vue'),
+      meta: {
+         requiresAuth: false
+      },
+    },    {
+      path: '/eau',
+      name: 'eau',
+      component: () => import(/* webpackChunkName: "visits" */ './views/DashbordPage.vue'),
+      meta: {
+         requiresAuth: false
+      },
+    },    {
+      path: '/agriculture-alimentation',
+      name: 'agriculture-alimentation',
+      component: () => import(/* webpackChunkName: "visits" */ './views/DashbordPage.vue'),
+      meta: {
+         requiresAuth: false
+      },
+    },    {
+      path: '/ecosystemes',
+      name: 'ecosystemes',
+      component: () => import(/* webpackChunkName: "visits" */ './views/DashbordPage.vue'),
+      meta: {
+         requiresAuth: false
+      },
+    },
+    {
       path: '/tags',
       name: 'tags',
       component: () => import(/* webpackChunkName: "visits" */ './views/TagsPage.vue'),
