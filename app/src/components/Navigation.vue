@@ -3,11 +3,11 @@
   <div class="cursor_pointer">
     <nav class="fr-nav" id="header-navigation" role="navigation" aria-label="Menu principal">
       <ul class="fr-nav__list fr-ml-1w">
-        <li class="fr-nav__item" @click="router_to_visits()">
-          <a class="fr-nav__link" style="color: rgb(59, 58, 58);" target="_self" :aria-current="currentVisits">Accueil </a>
+        <li class="fr-nav__item" @click="router_to_accueil()">
+          <a class="fr-nav__link" style="color: rgb(59, 58, 58);" target="_self" :aria-current="currentAccueil">{{ accueil.label }} </a>
         </li>
-        <li class="fr-nav__item" data-fr-js-navigation-item="true">
-          <button class="fr-nav__btn" aria-expanded="false" aria-controls="menu-776" :aria-current="tablebord_selected">Tableaux de bord</button>
+        <li class="fr-nav__item"  data-fr-js-navigation-item="true" @click="router_to_dashboard()">
+          <button class="fr-nav__btn" aria-expanded="false" aria-controls="menu-776"  :aria-current="tablebord_selected">Tableaux de bord</button>
           <div class="fr-collapse fr-menu" id="menu-776">
             <ul class="fr-menu__list">
               <li v-for="option in menuOptions" :key="option.value">
@@ -16,11 +16,11 @@
             </ul>
           </div>
         </li>
-        <li class="fr-nav__item" @click="router_to_sites()">
-          <a class="fr-nav__link" style="color: rgb(59, 58, 58);" target="_self" :aria-current="currentSites">Tag</a>
+        <li class="fr-nav__item" @click="router_to_tags()">
+          <a class="fr-nav__link" style="color: rgb(59, 58, 58);" target="_self" :aria-current="currentTags">{{ tags.label }}</a>
         </li>
-        <li class="fr-nav__item" @click="router_to_visits()">
-          <a class="fr-nav__link" style="color: rgb(59, 58, 58);" target="_self" :aria-current="currentVisits">Lexique </a>
+        <li class="fr-nav__item" @click="router_to_lexique()">
+          <a class="fr-nav__link" style="color: rgb(59, 58, 58);" target="_self" :aria-current="currentLexique">{{ lexique.label }} </a>
         </li>
       </ul>
     </nav>
@@ -33,8 +33,11 @@ export default {
   name: 'navigation-dsfr',
   data() {
     return {
-      currentSites: false,
+      currentDashboard: false,
+      currentTags: false,
+      currentLexique: false,
       currentVisits: false,
+      currentAccueil:false,
       myrouter: router,
       menuOptions: [],
       accueil: Object,
@@ -54,7 +57,7 @@ export default {
         { value: 'economie-circuelaire', label: 'Economie circulaire', selected: false },
         { value: 'eau', label: 'Eau', selected: false },
         { value: 'agriculture-alimentation', label: 'Agriculture et Alimentation', selected: false },
-        { value: 'ecosytemes', label: 'Ecosystèmes', selected: false }
+        { value: 'ecosystemes', label: 'Ecosystèmes', selected: false }
       ]
       this.accueil = { value: 'accueil', label: 'Accueil', selected: false }
       this.tags = { value: 'tags', label: 'Tags', selected: false }
@@ -86,22 +89,37 @@ export default {
       page = page.split('#')[0]
       return page
     },
-    router_to_visits() {
-      this.myrouter.push({ name: 'visits' })
-      this.currentSites = false
+    router_to_accueil() {
+      this.myrouter.push({ name: 'accueil' })
+      this.currentAccueil = false
       this.currentVisits = true
-      if (this.get_name_page() == "visites") {
+      if (this.get_name_page() == "accueil") {
         window.location.reload();
       }
     },
-    router_to_sites() {
-      this.myrouter.push({ name: 'sites' })
-      this.currentSites = true
+    router_to_dashboard() {
+      this.myrouter.push({ name: 'dashboard' })
+      this.currentDashboard = true
       this.currentVisits = false
+    },
+    router_to_tags() {
+      this.myrouter.push({ name: 'tags' })
+      this.currentTags = true
+      this.currentVisits = false
+    },
+    router_to_lexique() {
+      this.myrouter.push({ name: 'lexique' })
+      this.currentLexique = false
+      this.currentVisits = true
+      // if (this.get_name_page() == "visites") {
+      //   window.location.reload();
+      // }
     },
   },
   mounted() {
-    this.get_name_page() == "sites" ? this.currentSites = true : this.currentVisits = true
+    this.get_menu_options()
+      var current_page = this.get_name_page()
+      this.set_selected_page(current_page)
   }
 }
 </script>

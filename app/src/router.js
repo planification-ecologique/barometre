@@ -1,152 +1,165 @@
-import Vue from 'vue'
-import Router from 'vue-router'
+import Vue from "vue";
+import Router from "vue-router";
 
-
-Vue.use(Router)
+Vue.use(Router);
 
 const router = new Router({
-  mode: 'history',
+  mode: "history",
   base: process.env.VUE_APP_PREFIX_PATH,
   routes: [
-    {      
-      path: '/sites',
-      name: 'sites',
-      component: () => import(/* webpackChunkName: "sites" */ './views/Sites.vue'),
-      meta: {
-        requiresAuth: false
-      }
-    },
     {
-      path: '/visites',
-      name: 'visits',
-      component: () => import(/* webpackChunkName: "visits" */ './views/Visits.vue'),
+      path: "/sites",
+      name: "sites",
+      component: () =>
+        import(/* webpackChunkName: "sites" */ "./views/Sites.vue"),
       meta: {
-         requiresAuth: false
+        requiresAuth: false,
       },
     },
     {
-      path: '/',
-      name: 'home',
-      component: () => import(/* webpackChunkName: "visits" */ './views/Visits.vue'),
+      path: "/visites",
+      name: "visits",
+      component: () =>
+        import(/* webpackChunkName: "visits" */ "./views/Visits.vue"),
       meta: {
-         requiresAuth: false
+        requiresAuth: false,
       },
     },
     {
-      path: '/accueil',
-      name: 'accueil',
-      component: () => import(/* webpackChunkName: "visits" */ './views/AccueilPage.vue'),
+      path: "/",
+      name: "home",
+      component: () =>
+        import(/* webpackChunkName: "visits" */ "./views/Visits.vue"),
       meta: {
-         requiresAuth: false
+        requiresAuth: false,
       },
     },
     {
-      path: '/dashboard',
-      name: 'dashboard',
-      component: () => import(/* webpackChunkName: "visits" */ './views/DashbordPage.vue'),
+      path: "/accueil",
+      name: "accueil",
+      component: () =>
+        import(/* webpackChunkName: "visits" */ "./views/AccueilPage.vue"),
       meta: {
-         requiresAuth: false
+        requiresAuth: false,
       },
     },
     {
-      path: '/dashboard',
-      name: 'dashboard',
-      component: () => import(/* webpackChunkName: "visits" */ './views/DashbordPage.vue'),
+      path: "/dashboard",
+      name: "dashboard",
+      component: () =>
+        import(/* webpackChunkName: "visits" */ "./views/DashbordPage.vue"),
       meta: {
-         requiresAuth: false
-      },
-    },    {
-      path: '/transport',
-      name: 'transport',
-      component: () => import(/* webpackChunkName: "visits" */ './views/DashbordPage.vue'),
-      meta: {
-         requiresAuth: false
-      },
-    },    {
-      path: '/energie',
-      name: 'energie',
-      component: () => import(/* webpackChunkName: "visits" */ './views/DashbordPage.vue'),
-      meta: {
-         requiresAuth: false
-      },
-    },    {
-      path: '/batiments',
-      name: 'batiments',
-      component: () => import(/* webpackChunkName: "visits" */ './views/DashbordPage.vue'),
-      meta: {
-         requiresAuth: false
-      },
-    },    {
-      path: '/industrie',
-      name: 'industrie',
-      component: () => import(/* webpackChunkName: "visits" */ './views/DashbordPage.vue'),
-      meta: {
-         requiresAuth: false
-      },
-    },    {
-      path: '/economie-circulaire',
-      name: 'economie-circulaire',
-      component: () => import(/* webpackChunkName: "visits" */ './views/DashbordPage.vue'),
-      meta: {
-         requiresAuth: false
-      },
-    },    {
-      path: '/eau',
-      name: 'eau',
-      component: () => import(/* webpackChunkName: "visits" */ './views/DashbordPage.vue'),
-      meta: {
-         requiresAuth: false
-      },
-    },    {
-      path: '/agriculture-alimentation',
-      name: 'agriculture-alimentation',
-      component: () => import(/* webpackChunkName: "visits" */ './views/DashbordPage.vue'),
-      meta: {
-         requiresAuth: false
-      },
-    },    {
-      path: '/ecosystemes',
-      name: 'ecosystemes',
-      component: () => import(/* webpackChunkName: "visits" */ './views/DashbordPage.vue'),
-      meta: {
-         requiresAuth: false
+        requiresAuth: false,
       },
     },
     {
-      path: '/tags',
-      name: 'tags',
-      component: () => import(/* webpackChunkName: "visits" */ './views/TagsPage.vue'),
+      path: "/transport",
+      name: "transport",
+      component: () =>
+        import(/* webpackChunkName: "visits" */ "./views/TransportPage.vue"),
       meta: {
-         requiresAuth: false
+        requiresAuth: false,
+      },
+    },
+    // {
+    //   path: "/energie",
+    //   name: "energie",
+    //   component: () =>
+    //     import(/* webpackChunkName: "visits" */ "./views/EnergiePage.vue"),
+    //   meta: {
+    //     requiresAuth: false,
+    //   },
+    // },
+    // {
+    //   path: "/batiments",
+    //   name: "batiments",
+    //   component: () =>
+    //     import(/* webpackChunkName: "visits" */ "./views/BatimentsPage.vue"),
+    //   meta: {
+    //     requiresAuth: false,
+    //   },
+    // },
+    // {
+    //   path: "/industrie",
+    //   name: "industrie",
+    //   component: () =>
+    //     import(/* webpackChunkName: "visits" */ "./views/IndustriePage.vue"),
+    //   meta: {
+    //     requiresAuth: false,
+    //   },
+    // },
+    // {
+    //   path: "/economie-circulaire",
+    //   name: "economie-circulaire",
+    //   component: () =>
+    //     import(/* webpackChunkName: "visits" */ "./views/EconomiePage.vue"),
+    //   meta: {
+    //     requiresAuth: false,
+    //   },
+    // },
+    // {
+    //   path: "/eau",
+    //   name: "eau",
+    //   component: () =>
+    //     import(/* webpackChunkName: "visits" */ "./views/EauPage.vue"),
+    //   meta: {
+    //     requiresAuth: false,
+    //   },
+    // },
+    // {
+    //   path: "/agriculture-alimentation",
+    //   name: "agriculture-alimentation",
+    //   component: () =>
+    //     import(/* webpackChunkName: "visits" */ "./views/AgriPage.vue"),
+    //   meta: {
+    //     requiresAuth: false,
+    //   },
+    // },
+    // {
+    //   path: "/ecosystemes",
+    //   name: "ecosystemes",
+    //   component: () =>
+    //     import(/* webpackChunkName: "visits" */ "./views/EcosystemessPage.vue"),
+    //   meta: {
+    //     requiresAuth: false,
+    //   },
+    // },
+    {
+      path: "/tags",
+      name: "tags",
+      component: () =>
+        import(/* webpackChunkName: "visits" */ "./views/TagsPage.vue"),
+      meta: {
+        requiresAuth: false,
       },
     },
     {
-      path: '/lexique',
-      name: 'lexique',
-      component: () => import(/* webpackChunkName: "visits" */ './views/LexiquePage.vue'),
+      path: "/lexique",
+      name: "lexique",
+      component: () =>
+        import(/* webpackChunkName: "visits" */ "./views/LexiquePage.vue"),
       meta: {
-         requiresAuth: false
+        requiresAuth: false,
       },
     },
-    
-  ]
-})
+  ],
+});
 
 function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms))
+  return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
 // router.beforeEach(async (to, from, next) => {
 //   if (to.matched.some(record => record.meta.requiresAuth)) {
 //     // We wait for Keycloak init, then we can call all methods safely
-//     while (router.app.$keycloak.createLoginUrl === null) {      
+//     while (router.app.$keycloak.createLoginUrl === null) {
 //       await sleep(100)
 //     }
 //     if (router.app.$keycloak.authenticated) {
 //       next()
 //     } else {
 //       const loginUrl = router.app.$keycloak.createLoginUrl()
-//       console.log('loginUrl ' + loginUrl)  
+//       console.log('loginUrl ' + loginUrl)
 //       window.location.replace(loginUrl)
 //     }
 //   } else {
@@ -154,4 +167,4 @@ function sleep(ms) {
 //   }
 // })
 
-export default router
+export default router;
