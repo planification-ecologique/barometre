@@ -1,7 +1,7 @@
 <template>
     <header role="banner" class="fr-header">
       <div class="fr-header__body">
-        <div class="header-container">
+        <div class="fr-container">
           <div class="fr-header__body-row">
             <div class="fr-header__brand fr-enlarge-link">
               <div class="fr-header__brand-top">
@@ -35,7 +35,7 @@
           </div>
         </div>
       </div>
-      <div class=" fr-container--fluid">
+      <div class="fr-container">
         <navigation-dsfr></navigation-dsfr>
       </div>
     </header>

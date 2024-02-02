@@ -9,6 +9,8 @@ import ChartVisits from './components/ChartVisits'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import Navigation from './components/Navigation'
+import Tags from './components/Tags'
+import GraphBox from './components/GraphBox'
 // import Breadcrumb from './components/Breadcrumb.vue'
 
 // import Sites from './views/Sites'
@@ -55,6 +57,8 @@ Vue.customElement('footer-dsfr', Footer)
 Vue.customElement('navigation-dsfr', Navigation)
 Vue.customElement('card-img-box', CardImgBox)
 Vue.customElement('up-footer', UpFooter)
+Vue.customElement('tags-dsfr', Tags)
+Vue.customElement('graph-box', GraphBox)
 
 new Vue({
   router,

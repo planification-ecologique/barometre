@@ -21,8 +21,8 @@
       </div>
     </div>   
     <div class="fr-grid-row">
-      <div class="fr-col">
-        <up-footer></up-footer>
+      <div class="fr-col fr-py-md-5w fr-px-29v fr-background-color">
+        <up-footer :footerObject=footerData></up-footer>
       </div>
     </div>   
   
@@ -54,6 +54,9 @@ export default {
     return {
       querySuccess: true,
 
+      footerData: {
+        bgColor: "#F5F5FE",
+      },
       cardIntro: {
         title: "Introduction",
         description : "Le prototype béta du tableau de bord ci-dessous présente des indicateurs de la planification écologique pour 9 volets différents (Transverse, Transports, Bâtiments, Energie, Industrie, Agriculture-alimentation, Eau, Ecosystèmes, Economie circulaire), relatifs en particulier au plan de décarbonation 2030 illustré par les leviers ci-dessous, qui ont vocation à être enrichis dans une version plus aboutie de l’outil numérique de visualisation qui sera publiée en milieu d’année 2024.",
@@ -101,6 +104,10 @@ Dans ce contexte, il sera important de distinguer chacun des territoires ultrama
 .flex-container {
   max-width: none;
   overflow: hidden;
+}
+
+.fr-background-color {
+  background-color: #F5F5FE;
 }
 
 

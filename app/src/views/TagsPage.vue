@@ -1,63 +1,73 @@
 <template>
-  <div class="fr-container--fluid">
-   <h1>Tags Page</h1>   
-  
+  <div class="fr-container fr-container-page">
+    <div class="fr-grid-row">
+      <div class="fr-col-12">
+        <h1 class="fr-title">Tag</h1>
+        <h4 class="fr-subtitle">Atténuation</h4>
+        <tags-dsfr v-on:tags=set_tags class="fr-tags"></tags-dsfr>
+      </div>
+    </div>
+    <div class="fr-grid-row fr-grid-row--gutters fr-py-md-3w">
+      <div class="fr-col-12 fr-col-sm-6 fr-col-md-6 fr-col-xl-6">
+        <graph-box :dataObj=BoxDataA> </graph-box>
+      </div>
+      <div class="fr-col-12 fr-col-sm-6 fr-col-md-6 fr-col-xl-6">
+        <graph-box :dataObj=BoxDataB> </graph-box>
+      </div>
+    </div>
+    <div class="fr-grid-row fr-grid-row--gutters fr-mb-1w">
+      <div class="fr-col-12">
+        <graph-box :dataObj=BoxDataC> </graph-box>
+      </div>
+    </div>
+    <div class="fr-grid-row">
+      <div class="fr-col-12">
+        <up-footer></up-footer>
+      </div>
+    </div>  
   </div>
 </template>
 
 <script>
 
 import axios from 'axios'
-import CardImgBox from '../components/CardImgBox.vue'
 import UpFooter from '../components/UpFooter.vue'
-
-/* Import des images */
-import ChartBarImg from '../components/components_sgv/ChartBarImg.vue'
-import GoalImg from '../components/components_sgv/GoalImg.vue'
-import TrajectoireImg from '../components/components_sgv/TrajectoireImg.vue'
+import Tags from '../components/Tags.vue'
+import GraphBox from '../components/GraphBox.vue'
 
 export default {
   name: 'Secret',
   components: {
-    CardImgBox,
     UpFooter,
-    ChartBarImg,
-    GoalImg,
-    TrajectoireImg
+    Tags,
+    GraphBox
 
-},
+  },
   data() {
     return {
       querySuccess: true,
 
-      cardIntro: {
-        title: "Introduction",
-        description : "Le prototype béta du tableau de bord ci-dessous présente des indicateurs de la planification écologique pour 9 volets différents (Transverse, Transports, Bâtiments, Energie, Industrie, Agriculture-alimentation, Eau, Ecosystèmes, Economie circulaire), relatifs en particulier au plan de décarbonation 2030 illustré par les leviers ci-dessous, qui ont vocation à être enrichis dans une version plus aboutie de l’outil numérique de visualisation qui sera publiée en milieu d’année 2024.",
-        databtn: true,
-        bgcolor: "#F5F5FE",
-        image: ChartBarImg
+      BoxDataA: {
+          title: 'Voyages covoiturés via plateformes',
+          update_date: '23/01/2024',
+          description: "Description",
+          source: "Talkwalker",
+          trendValue: -1
       },
-      cardObjectif: {
-        title: "Objectif",
-        description : "Ces indicateurs n’ont ainsi pas vocation à représenter une vision exhaustive de la planification écologique, mais à illustrer chacun des leviers d’action sur lesquels repose le plan. Ils seront complétés, dans le courant de l’année, par des indicateurs plus complets, y compris pour couvrir les autres enjeux de la planification écologique (adaptation, territorialisation, etc.)",
-        databtn: false,
-        image: GoalImg
+      BoxDataB: {
+          title: 'Nombre d’infrastructures de covoiturage',
+          update_date: '23/01/2024',
+          description: "Description",
+          source: "Talkwalker",
+          trendValue: -1
       },
-      cardTrajectoire: {
-        title: "Trajectoire",
-        description : "Les trajectoires affichées pour l’avenir reposent parfois sur des objectifs officiels, parfois sur des hypothèses techniques de travail dans le cadre des travaux actuels de la SNBC ; elles pourront donc évoluer le cas échéant. Enfin, un grand nombre de ces indicateurs ne concerne que l’Hexagone ; faute notamment de données.",
-        databtn: false,
-        bgcolor: "#F5F5FE",
-        image: TrajectoireImg
+      BoxDataC: {
+          title: 'Taux de remplissage des véhicules',
+          update_date: '23/01/2024',
+          description: "Description",
+          source: "Talkwalker",
+          trendValue: -1
       },
-      cardEvolution: {
-        title: "Évolution",
-        description : `Un travail spécifique sera mené dans le cours de l’année pour bâtir les indicateurs adéquats correspondant aux spécificités ultra-marines ou se mettre en position de les construire à l’avenir.
-
-Dans ce contexte, il sera important de distinguer chacun des territoires ultramarins et de les placer dans leur contexte singulier, par rapport aux autres territoires d’outre-mer, mais aussi en comparaison avec l’Hexagone et dans le contexte de leur bassin géographique.`,
-        databtn: false,
-        image: GoalImg
-      }
     }
   },
   computed: {
@@ -75,9 +85,29 @@ Dans ce contexte, il sera important de distinguer chacun des territoires ultrama
 <style>
 
 .flex-container {
-  max-width: none;
-  overflow: hidden;
+  padding-top: 1.5rem;
+
+  padding-bottom: 2.5rem;
 }
+.fr-container-page {
+    background-color: #F6F6F6;
+    padding-top: 1.5rem;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+
+}
+
+.fr-title {
+  margin-bottom: 0.625rem;
+}
+
+.fr-subtitle {
+  font-weight: 400;
+}
+
+/* .fr-tags {
+  margin-bottom: 1rem;
+} */
 
 
 </style>
