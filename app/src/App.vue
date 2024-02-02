@@ -2,7 +2,7 @@
 <template>
   <div>
     <header-dsfr></header-dsfr>
-    <div class="fr-container--fluid">
+    <div class="fr-container">
       <div id="app">
         <!-- Bloc de navigation -->
         <!-- <div id="nav">

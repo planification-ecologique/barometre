@@ -1,5 +1,5 @@
 <template>
-        <div class="fr-container-sm flex-container add-padding">
+        <div class="fr-container-fluid">
             <!-- <div class="fr-grid-row"> -->
             <div class="fr-grid-row fr-grid-row--gutters fr-mb-1w">
                 <div class="fr-col-12 fr-col-lg-3">
@@ -245,7 +245,7 @@ export default {
     padding-left: 7rem !important;
     padding-right: 7rem !important;
     padding-top: 3rem !important;
-    background-color: #F5F5FE;
+    /* background-color: #F5F5FE; */
 }
 
 

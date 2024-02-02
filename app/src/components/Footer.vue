@@ -1,6 +1,6 @@
 <template>
     <footer class="fr-footer" role="contentinfo" id="footer">
-        <div class="footer-container">
+        <div class="fr-container">
             <div class="fr-footer__body">
                 <div class="fr-footer__brand fr-enlarge-link">
                     <a href="/" title="Retour à l’accueil du site - Nom de l’entité (ministère, secrétariat d‘état, gouvernement)">

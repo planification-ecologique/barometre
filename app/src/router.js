@@ -53,6 +53,15 @@ const router = new Router({
       },
     },
     {
+      path: "/tags",
+      name: "tags",
+      component: () =>
+        import(/* webpackChunkName: "visits" */ "./views/TagsPage.vue"),
+      meta: {
+        requiresAuth: false,
+      },
+    },
+    {
       path: "/transport",
       name: "transport",
       component: () =>
