@@ -27,98 +27,98 @@
                     <tr>
                         <td>Texte par défaut</td>
                         <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
-molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum ... ... </td>
+molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum</td>
                     </tr>
                     <tr>
                         <td>Texte par défaut</td>
                         <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
-molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum ...</td>
+molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum</td>
                      
                     </tr>
 
                     <tr>
                         <td>Texte par défaut</td>
                         <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
-molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum ...</td>
+molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum</td>
                       
                     </tr>
                     <tr>
                         <td>Texte par défaut</td>
                         <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
-molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum ...</td>
+molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum</td>
                       
                     </tr>
                     <tr>
                         <td>Texte par défaut</td>
                         <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
-molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum ......</td>
+molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum</td>
                      
                     </tr>
                     <tr>
                         <td>Texte par défaut</td>
                         <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
-molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum ...</td>
+molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum</td>
                     
                     </tr>
                          <tr>
                         <td>Texte par défaut</td>
                         <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
-molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum ...</td>
+molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum</td>
                     </tr>
                     <tr>
                         <td>Texte par défaut</td>
                         <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
-molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum ...</td>
+molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum</td>
                      
                     </tr>
 
                     <tr>
                         <td>Texte par défaut</td>
                         <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
-molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum ...</td>
+molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum</td>
                       
                     </tr>
                     <tr>
                         <td>Texte par défaut</td>
                         <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
-molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum ...</td>
+molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum</td>
                       
                     </tr>
                     <tr>
                         <td>Texte par défaut</td>
                         <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
-molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum ...</td>
+molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum</td>
                      
                     </tr>
                     <tr>
                         <td>Texte par défaut</td>
                         <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
-molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum ...</td>
+molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum</td>
                     
                     </tr>
                     
                     <tr>
                         <td>Texte par défaut</td>
                         <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
-molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum ...</td>
+molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum</td>
                       
                     </tr>
                     <tr>
                         <td>Texte par défaut</td>
                         <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
-molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum ...</td>
+molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum</td>
                       
                     </tr>
                     <tr>
                         <td>Texte par défaut</td>
                         <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
-molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum ...</td>
+molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum</td>
                      
                     </tr>
                     <tr>
                         <td>Texte par défaut</td>
                         <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
-molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum ...</td>
+molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum</td>
                     
                     </tr>
                 </tbody>

@@ -1,8 +1,8 @@
 <template>
-        <div class=" ">
-            <div class="fr-grid-row">
-                <!-- <div class="fr-grid-row fr-mb-1w"> -->
-                <div class="">
+        <div class="fr-container-fluid">
+            <!-- <div class="fr-grid-row"> -->
+            <div class="fr-grid-row fr-grid-row--gutters fr-mb-1w">
+                <div class="fr-col-12 fr-col-lg-3">
                     <div class="fr-card fr-enlarge-link fr-card--sm fr-card--shadow"
                         id="commitment-/politiques-prioritaires/planifier-et-accelerer-la-transition-ecologique"
                         data-fr-js-card-actionee="true">
@@ -53,7 +53,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="">
+                <div class="fr-col-12 fr-col-lg-3">
                     <div class="fr-card fr-enlarge-link fr-card--sm fr-card--shadow"
                         id="commitment-/politiques-prioritaires/planifier-et-accelerer-la-transition-ecologique"
                         data-fr-js-card-actionee="true">
@@ -100,7 +100,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="">
+                <div class="fr-col-12 fr-col-lg-3">
                     <div class="fr-card fr-enlarge-link fr-card--sm fr-card--shadow"
                         id="commitment-/politiques-prioritaires/batir-de-nouveaux-progres-et-refonder-nos-services-publics"
                         data-fr-js-card-actionee="true">
@@ -154,7 +154,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="">
+                <div class="fr-col-12 fr-col-lg-3">
                     <div class="fr-card fr-enlarge-link fr-card--sm fr-card--shadow"
                         id="commitment-/politiques-prioritaires/renforcer-l-ordre-republicain-et-encourager-l-engagement"
                         data-fr-js-card-actionee="true">
@@ -208,8 +208,7 @@
                         </div>
                     </div>
                 </div>
-            <!-- </div> -->
-        </div>
+            </div>
         </div>
 </template>
 
@@ -237,27 +236,17 @@ export default {
 </script>
 <style>
 
-/* .flex-container {
+.flex-container {
   max-width: none;
   overflow: hidden;
-} */
+}
 
-/* .add-padding {
+.add-padding {
     padding-left: 7rem !important;
     padding-right: 7rem !important;
     padding-top: 3rem !important;
-    background-color: #F5F5FE;
-} */
-
-.fr-card{
-    width: 215px;
-    height: 250px;
-    border: 1px;
+    /* background-color: #F5F5FE; */
 }
-/* 
-.fr-container{
-     width: 950px;
-    height: 334.72px;
-    gap: 24px;
-} */
+
+
 </style>
