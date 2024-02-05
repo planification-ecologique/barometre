@@ -1,5 +1,3 @@
-
-
 <template>
     <div class="fr-card fr-card--no-icon fr-card--shadow adjust-height">
         <div class="titleBox">
@@ -120,6 +118,7 @@ export default {
 .adjust-height {
     height: fit-content;
     height: 100% !important;
+    z-index: inherit;
 }   
     
 .cardReference {

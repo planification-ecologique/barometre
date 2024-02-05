@@ -1,105 +1,6 @@
 <template>
-  <nav class="fr-sidemenu fr-sidemenu--sticky-full-height " role="navigation" aria-labelledby="fr-sidemenu-title">
-    <div class="fr-sidemenu__inner">
-     <div id="" class="">
-        <!-- <p class="fr-sidemenu__title fr-mb-3w fr-h6 fr-hidden fr-unhidden-lg" id="fr-sidemenu-title">
-          Affiner la recherche</p>
-        <button id="resetFilters" class="fr-btn fr-btn--sm fr-icon-close-circle-line fr-btn--icon-right fr-btn--tertiary fr-mb-3w fr-mt-0"
-          v-if="displayButton" @click="resetFilter()">
-          Réinitialiser
-        </button> -->
-        <!-- Period study -->
-        <!-- <section class="fr-accordion">
-          <h3 class="fr-accordion__title">
-            <button class="fr-accordion__btn subtitled fr-text-action-high--blue-france" aria-expanded="false"
-              aria-controls="accordion-periode">Période
-            </button>
-          </h3>
-          <div class="fr-collapse fr-pt-0" id="accordion-periode">
-            <div class="fr-input-group">
-              <label class="fr-label" for="text-input-date">
-                Filtrer par période:<br>
-                Du
-              </label>
-              <input class="fr-input" aria-describedby="text-input-date-messages" id="input-start" type="date"
-                name="input-start" :value="selectedStart" @change="changeStart($event)" min="2023-10-01"
-                :max="date_delta(1)">
-              <div class="fr-messages-group" id="text-input-date-messages" aria-live="assertive">
-              </div>
-            </div>
-            <div class="fr-input-group">
-              <label class="fr-label" for="text-input-date">
-                Au
-              </label>
-              <input class="fr-input" aria-describedby="text-input-date-messages" id="input-end" type="date"
-                name='input-end' v-model="selectedEnd" @change="changeEnd($event)" min="2023-10-01"
-                :max="date_delta(1)">
-              <div class="fr-messages-group" id="text-input-date-messages-second" aria-live="assertive">
-              </div>
-              <br>
-            </div>
-          </div>
-        </section> -->
-        <!-- Dropdown Minister -->
-        <!-- <section class="fr-accordion">
-          <h3 class="fr-accordion__title">
-            <button class="fr-accordion__btn subtitled fr-text-action-high--blue-france" aria-expanded="false"
-              aria-controls="accordion-theme">Ministère
-              <span v-if="displayTextThem" class="fr-mt-1v">1 sélectionnée</span>
-            </button>
-          </h3>
-          <div class="fr-collapse fr-pt-0" id="accordion-theme">
-            <div class="fr-select-group fr-pt-3v fr-pb-3w">
-              <label class="fr-label" for="select-theme">Ministère du tutelle</label>
-              <select class="fr-select" id="select-them" name="select-them" v-model="selectedMinister"
-                @change="changeMinister($event)">
-                <option value="undefined" selected disabled hidden>Sélectionner un ministère</option>
-                <option v-for="t in listMinister" :value="t['value']" :key="t['value']">{{ t['label'] }}</option>
-              </select>
-            </div>
-          </div>
-        </section> -->
-        <!-- Dropdown Type of site -->
-        <!-- <section class="fr-accordion" v-if="listTypesite.length != 0">
-          <h3 class="fr-accordion__title">
-            <button class="fr-accordion__btn subtitled fr-text-action-high--blue-france" aria-expanded="false"
-              aria-controls="accordion-typesite">Type de site
-            </button>
-          </h3>
-          <div class="fr-collapse fr-pt-0" id="accordion-typesite">
-            <div class="fr-select-group fr-pt-3v fr-pb-3w">
-              <label class="fr-label" for="select-typesite">Type de site </label>
-              <select class="fr-select" id="select-typesite" name="select-typesite" v-model="selectedTypesite"
-                @change="changeTypeSite($event)">
-                <option value="undefined" selected disabled hidden>Tous les sites</option>
-                <option v-for="t in listTypesite" :value="t['value']" :key="t['value']">{{ t['label'] }}</option>
-              </select>
-            </div>
-          </div>
-        </section> -->
-        <!-- Dropdown Site -->
-        <!-- <section class="fr-accordion" v-if="listSite.length != 0">
-          <h3 class="fr-accordion__title">
-            <button class="fr-accordion__btn subtitled fr-text-action-high--blue-france" aria-expanded="false"
-              aria-controls="accordion-site">Site
-              <span v-if="displayTextSite" class="fr-mt-1v">1 sélectionnée</span>
-            </button>
-          </h3>
-          <div class="fr-collapse fr-pt-0" id="accordion-site">
-            <div class="fr-select-group fr-pt-3v fr-pb-3w">
-              <label class="fr-label" for="select-site">Recherche un site</label>
-              <select class="fr-select" id="select-site" name="select-site" v-model="selectedSite"
-                @change="changeSite($event)">
-                <option value="undefined" selected disabled hidden>Sélectionner un site</option>
-                <option v-for="t in listSite" :value="t['value']" :key="t['value']">{{ t['label'] }}</option>
-              </select>
-            </div>
-          </div>
-        </section> -->
+  <nav class="fr-sidemenu fr-sidemenu--sticky-full-height fr-sidemenu__padding" role="navigation" aria-labelledby="fr-sidemenu-title">
       <SideNavigation/>
-
-      </div>
-    </div>
   </nav>
 </template>
 
@@ -359,4 +260,7 @@ $top: 2.25rem;
   }
 }
 
+.fr-sidemenu__padding {
+  padding-right: 0rem !important;
+}
 </style>

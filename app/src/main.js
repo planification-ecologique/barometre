@@ -58,6 +58,7 @@ Vue.customElement('card-img-box', CardImgBox)
 Vue.customElement('up-footer', UpFooter)
 Vue.customElement('tags-dsfr', Tags)
 Vue.customElement('graph-box', GraphBox)
+Vue.customElement('side-bar', SideBar)
 
 new Vue({
   router,

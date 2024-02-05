@@ -85,7 +85,12 @@ Dans ce contexte, il sera important de distinguer chacun des territoires ultrama
         image: GoalImg
       }
     }
-  }
+  },
+  computed: {
+  },
+  methods: {
+
+  },
 }
 </script>
   
