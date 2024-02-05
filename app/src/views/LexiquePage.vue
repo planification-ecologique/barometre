@@ -1,73 +1,61 @@
 <template>
   <div class="fr-container--fluid">
-   <div></div>
-        <h1>Lexique</h1>
-
-        <div class="table">
-        <table-component  :dataObj=tabData1></table-component>
-
-        </div>
-
+    <div class="fr-p-1w">
+      <div class="">
+        <h1 class="">Lexique</h1>
       </div>
-  <!-- </div> -->
+
+      <div class="">
+        <table-component :dataObj="tabData1"></table-component>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
-
-import axios from 'axios'
-import CardImgBox from '../components/CardImgBox.vue'
-import UpFooter from '../components/UpFooter.vue'
+import axios from "axios";
+import CardImgBox from "../components/CardImgBox.vue";
+import UpFooter from "../components/UpFooter.vue";
 
 /* Import des images */
-import ChartBarImg from '../components/components_sgv/ChartBarImg.vue'
-import GoalImg from '../components/components_sgv/GoalImg.vue'
-import TrajectoireImg from '../components/components_sgv/TrajectoireImg.vue'
-import TableComponent from '../components/TableComponent.vue'
-
+import ChartBarImg from "../components/components_sgv/ChartBarImg.vue";
+import GoalImg from "../components/components_sgv/GoalImg.vue";
+import TrajectoireImg from "../components/components_sgv/TrajectoireImg.vue";
+import TableComponent from "../components/TableComponent.vue";
 
 export default {
-  name: 'Secret',
+  name: "Secret",
   components: {
     CardImgBox,
     UpFooter,
     ChartBarImg,
     GoalImg,
-    TrajectoireImg, 
-    TableComponent
-
-},
+    TrajectoireImg,
+    TableComponent,
+  },
   data() {
     return {
       querySuccess: true,
       objectWaffle: Object,
       tabData1: {
-        title: 'Lexique',
-        update_date: '17/01/2024',
+        title: "Lexique",
+        update_date: "17/01/2024",
         description: "Description",
         // source: "Talkwalker",
-        trendValue: -1
+        trendValue: -1,
       },
-    }
+    };
   },
-  computed: {
-  },
-  methods: {
-
-  },
+  computed: {},
+  methods: {},
   mounted() {
-    this.setDimension()
-    this.graphics()
-  }
-}
+    this.setDimension();
+    this.graphics();
+  },
+};
 </script>
-  
-<style>
 
-fr-container--fluid{
-    /* display: flex; */
-    justify-content: center;
-    margin: 20vh;
-}
+<style>
 .flex-container {
   max-width: none;
   overflow: hidden;
