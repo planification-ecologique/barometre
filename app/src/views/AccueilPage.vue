@@ -31,7 +31,6 @@
 
 <script>
 
-import axios from 'axios'
 import CardImgBox from '../components/CardImgBox.vue'
 import UpFooter from '../components/UpFooter.vue'
 
@@ -92,10 +91,6 @@ Dans ce contexte, il sera important de distinguer chacun des territoires ultrama
   methods: {
 
   },
-  mounted() {
-    this.setDimension()
-    this.graphics()
-  }
 }
 </script>
   

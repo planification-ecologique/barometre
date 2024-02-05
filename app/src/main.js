@@ -5,7 +5,6 @@ import router from './router'
 
 // Add component otherwise you get an error object string
 import SideBar from './components/SideBar'
-import ChartVisits from './components/ChartVisits'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import Navigation from './components/Navigation'
@@ -36,19 +35,19 @@ require('../node_modules/@gouvfr/dsfr/dist/dsfr.module.min.js')
 
 Vue.config.productionTip = false
 
-// Vue.use(VueKeyCloak, {
-//   config: {
-//     realm: 'DEV',
-//     url: process.env.VUE_APP_KEYCLOAK_URL,
-//     clientId: 'statsAtGouv'
-//   },
-//   init: {
-//     // Use 'login-required' to always require authentication
-//     // If using 'login-required', there is no need for the router guards in router.js
-//     onLoad: 'check-sso',
-//     silentCheckSsoRedirectUri: window.location.origin + process.env.VUE_APP_PREFIX_PATH + '/silent-check-sso.html'
-//   }
-// })
+Vue.use(VueKeyCloak, {
+  config: {
+    realm: process.env.VUE_APP_KEYCLOAK_REALM,
+    url: process.env.VUE_APP_KEYCLOAK_URL,
+    clientId: process.env.VUE_APP_KEYCLOAK_CLIENT
+  },
+  init: {
+    // Use 'login-required' to always require authentication
+    // If using 'login-required', there is no need for the router guards in router.js
+    onLoad: 'check-sso',
+    silentCheckSsoRedirectUri: window.location.origin + process.env.VUE_APP_PREFIX_PATH + '/silent-check-sso.html'
+  }
+})
 
 Vue.use(vueCustomElement)
 
@@ -59,6 +58,7 @@ Vue.customElement('card-img-box', CardImgBox)
 Vue.customElement('up-footer', UpFooter)
 Vue.customElement('tags-dsfr', Tags)
 Vue.customElement('graph-box', GraphBox)
+Vue.customElement('side-bar', SideBar)
 
 new Vue({
   router,

@@ -8,66 +8,49 @@ const router = new Router({
   base: process.env.VUE_APP_PREFIX_PATH,
   routes: [
     {
-      path: "/sites",
-      name: "sites",
-      component: () =>
-        import(/* webpackChunkName: "sites" */ "./views/Sites.vue"),
-      meta: {
-        requiresAuth: false,
-      },
-    },
-    {
-      path: "/visites",
-      name: "visits",
-      component: () =>
-        import(/* webpackChunkName: "visits" */ "./views/Visits.vue"),
-      meta: {
-        requiresAuth: false,
-      },
-    },
-    {
       path: "/",
       name: "home",
       component: () =>
-        import(/* webpackChunkName: "visits" */ "./views/Visits.vue"),
+        import(/* webpackChunkName: "home" */ "./views/HomePage.vue"),
       meta: {
-        requiresAuth: false,
+        requiresAuth: true,
       },
+      redirect: '/accueil'
     },
     {
       path: "/accueil",
       name: "accueil",
       component: () =>
-        import(/* webpackChunkName: "visits" */ "./views/AccueilPage.vue"),
+        import(/* webpackChunkName: "accueil" */ "./views/AccueilPage.vue"),
       meta: {
-        requiresAuth: false,
+        requiresAuth: true,
       },
     },
     {
       path: "/dashboard",
       name: "dashboard",
       component: () =>
-        import(/* webpackChunkName: "visits" */ "./views/DashbordPage.vue"),
+        import(/* webpackChunkName: "visits" */ "./views/DashboardPage.vue"),
       meta: {
-        requiresAuth: false,
+        requiresAuth: true,
       },
     },
     {
       path: "/tags",
       name: "tags",
       component: () =>
-        import(/* webpackChunkName: "visits" */ "./views/TagsPage.vue"),
+        import(/* webpackChunkName: "tags" */ "./views/TagsPage.vue"),
       meta: {
-        requiresAuth: false,
+        requiresAuth: true,
       },
     },
     {
       path: "/transport",
       name: "transport",
       component: () =>
-        import(/* webpackChunkName: "visits" */ "./views/TransportPage.vue"),
+        import(/* webpackChunkName: "transport" */ "./views/TransportPage.vue"),
       meta: {
-        requiresAuth: false,
+        requiresAuth: true,
       },
     },
     // {
@@ -76,7 +59,7 @@ const router = new Router({
     //   component: () =>
     //     import(/* webpackChunkName: "visits" */ "./views/EnergiePage.vue"),
     //   meta: {
-    //     requiresAuth: false,
+    //     requiresAuth: true,
     //   },
     // },
     // {
@@ -85,7 +68,7 @@ const router = new Router({
     //   component: () =>
     //     import(/* webpackChunkName: "visits" */ "./views/BatimentsPage.vue"),
     //   meta: {
-    //     requiresAuth: false,
+    //     requiresAuth: true,
     //   },
     // },
     // {
@@ -94,7 +77,7 @@ const router = new Router({
     //   component: () =>
     //     import(/* webpackChunkName: "visits" */ "./views/IndustriePage.vue"),
     //   meta: {
-    //     requiresAuth: false,
+    //     requiresAuth: true,
     //   },
     // },
     // {
@@ -103,7 +86,7 @@ const router = new Router({
     //   component: () =>
     //     import(/* webpackChunkName: "visits" */ "./views/EconomiePage.vue"),
     //   meta: {
-    //     requiresAuth: false,
+    //     requiresAuth: true,
     //   },
     // },
     // {
@@ -112,7 +95,7 @@ const router = new Router({
     //   component: () =>
     //     import(/* webpackChunkName: "visits" */ "./views/EauPage.vue"),
     //   meta: {
-    //     requiresAuth: false,
+    //     requiresAuth: true,
     //   },
     // },
     // {
@@ -121,7 +104,7 @@ const router = new Router({
     //   component: () =>
     //     import(/* webpackChunkName: "visits" */ "./views/AgriPage.vue"),
     //   meta: {
-    //     requiresAuth: false,
+    //     requiresAuth: true,
     //   },
     // },
     // {
@@ -130,7 +113,7 @@ const router = new Router({
     //   component: () =>
     //     import(/* webpackChunkName: "visits" */ "./views/EcosystemessPage.vue"),
     //   meta: {
-    //     requiresAuth: false,
+    //     requiresAuth: true,
     //   },
     // },
     {
@@ -139,7 +122,7 @@ const router = new Router({
       component: () =>
         import(/* webpackChunkName: "visits" */ "./views/TagsPage.vue"),
       meta: {
-        requiresAuth: false,
+        requiresAuth: true,
       },
     },
     {
@@ -148,7 +131,7 @@ const router = new Router({
       component: () =>
         import(/* webpackChunkName: "visits" */ "./views/LexiquePage.vue"),
       meta: {
-        requiresAuth: false,
+        requiresAuth: true,
       },
     },
   ],
@@ -158,22 +141,22 @@ function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-// router.beforeEach(async (to, from, next) => {
-//   if (to.matched.some(record => record.meta.requiresAuth)) {
-//     // We wait for Keycloak init, then we can call all methods safely
-//     while (router.app.$keycloak.createLoginUrl === null) {
-//       await sleep(100)
-//     }
-//     if (router.app.$keycloak.authenticated) {
-//       next()
-//     } else {
-//       const loginUrl = router.app.$keycloak.createLoginUrl()
-//       console.log('loginUrl ' + loginUrl)
-//       window.location.replace(loginUrl)
-//     }
-//   } else {
-//     next()
-//   }
-// })
+router.beforeEach(async (to, from, next) => {
+  if (to.matched.some(record => record.meta.requiresAuth)) {
+    // We wait for Keycloak init, then we can call all methods safely
+    while (router.app.$keycloak.createLoginUrl === null) {
+      await sleep(100)
+    }
+    if (router.app.$keycloak.authenticated) {
+      next()
+    } else {
+      const loginUrl = router.app.$keycloak.createLoginUrl()
+      console.log('loginUrl ' + loginUrl)
+      window.location.replace(loginUrl)
+    }
+  } else {
+    next()
+  }
+})
 
 export default router;

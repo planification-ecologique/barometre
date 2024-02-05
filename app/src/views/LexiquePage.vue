@@ -48,10 +48,6 @@ export default {
   },
   computed: {},
   methods: {},
-  mounted() {
-    this.setDimension();
-    this.graphics();
-  },
 };
 </script>
 
