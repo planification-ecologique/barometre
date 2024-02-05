@@ -45,13 +45,7 @@ export default {
         trendValue: -1,
       },
     };
-  },
-  computed: {},
-  methods: {},
-  mounted() {
-    this.setDimension();
-    this.graphics();
-  },
+  }
 };
 </script>
 
