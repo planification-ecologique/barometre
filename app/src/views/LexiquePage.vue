@@ -45,7 +45,9 @@ export default {
         trendValue: -1,
       },
     };
-  }
+  },
+  computed: {},
+  methods: {},
 };
 </script>
 
