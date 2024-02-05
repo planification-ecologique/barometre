@@ -1,0 +1,22 @@
+////
+/// Core Module : Collapse
+/// @group core
+////
+
+@use 'module/selector';
+
+#{selector.ns(collapse)} {
+  @include collapse;
+}
+
+#{selector.ns(collapse)}:not(#{selector.ns-attr(method)}) {
+  @include collapse-margin-top;
+}
+
+#{selector.ns(collapse)}#{selector.ns-attr(method, width)} {
+  @include collapse-width();
+}
+
+#{selector.ns(collapse)}#{selector.ns-attr(method, height)} {
+  @include collapse-height();
+}

@@ -1,5 +1,5 @@
 <template>
-  <div class="fr-container--fluid">
+  <div class="fr-container">
    <h1>Transport Page</h1>   
   
   </div>

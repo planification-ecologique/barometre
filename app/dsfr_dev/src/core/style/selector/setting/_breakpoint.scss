@@ -1,0 +1,8 @@
+////
+/// Core Setting : Selector Breakpoint
+/// @group core
+////
+
+@use 'module/media-query/variable/breakpoints';
+
+$breakpoints: breakpoints.$values !default;

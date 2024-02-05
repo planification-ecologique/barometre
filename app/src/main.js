@@ -23,16 +23,34 @@ import vueCustomElement from 'vue-custom-element'
 
 
 // if (process.env.NODE_ENV === 'development') {
-require('../node_modules/@gouvfr/dsfr/dist/legacy/legacy.nomodule.min.js')
-require('../node_modules/@gouvfr/dsfr/dist/core/core.module.min.js')
-require('../node_modules/@gouvfr/dsfr/dist/core/core.nomodule.min.js')
-require('../node_modules/@gouvfr/dsfr/dist/scheme/scheme.module.min.js')
+  // JS Module
+// require('../node_modules/@gouvfr/dsfr/dist/legacy/legacy.nomodule.min.js')
+// require('../node_modules/@gouvfr/dsfr/dist/core/core.module.min.js')
+// require('../node_modules/@gouvfr/dsfr/dist/core/core.nomodule.min.js')
+// require('../node_modules/@gouvfr/dsfr/dist/scheme/scheme.module.min.js')
 
-require('../node_modules/@gouvfr/dsfr/dist/dsfr.main.css')
-require('../node_modules/@gouvfr/dsfr/dist/utility/utility.main.css')
-require('../node_modules/@gouvfr/dsfr/dist/dsfr.css')
-require('../node_modules/@gouvfr/dsfr/dist/utility/icons/icons-system/icons-system.min.css')
-require('../node_modules/@gouvfr/dsfr/dist/dsfr.module.min.js')
+// require('../node_modules/@gouvfr/dsfr/dist/dsfr.main.css')
+// require('../node_modules/@gouvfr/dsfr/dist/utility/utility.main.css')
+// require('../node_modules/@gouvfr/dsfr/dist/dsfr.css')
+// require('../node_modules/@gouvfr/dsfr/dist/utility/icons/icons-system/icons-system.min.css')
+// require('../node_modules/@gouvfr/dsfr/dist/dsfr.module.min.js')
+
+//JS Module
+
+// require('../dsfr_dev/dist/dsfr.module.js')a
+// require('../dsfr_dev/dist/dsfr.nomodule.js')
+require('../dsfr_dev/dist/legacy/legacy.nomodule.min.js')
+require('../dsfr_dev/dist/core/core.module.min.js')
+require('../dsfr_dev/dist/core/core.nomodule.min.js')
+require('../dsfr_dev/dist/scheme/scheme.module.min.js')
+
+// CSS
+require('../dsfr_dev/dist/dsfr.css')
+require('../dsfr_dev/dist/dsfr.main.css')
+require('../dsfr_dev/dist/utility/utility.main.css')
+require('../dsfr_dev/dist/utility/icons/icons-system/icons-system.min.css')
+require('../dsfr_dev/dist/dsfr.module.min.js')
+
 
 Vue.config.productionTip = false
 

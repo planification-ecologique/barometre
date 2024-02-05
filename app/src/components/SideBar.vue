@@ -1,5 +1,5 @@
 <template>
-  <nav class="fr-sidemenu fr-sidemenu--sticky-full-height " role="navigation" aria-labelledby="fr-sidemenu-title">
+  <nav class="fr-sidemenu fr-sidemenu--sticky-full-height fr-col- " role="navigation" aria-labelledby="fr-sidemenu-title">
     <div class="fr-sidemenu__inner">
      <div id="" class="">
         <!-- <p class="fr-sidemenu__title fr-mb-3w fr-h6 fr-hidden fr-unhidden-lg" id="fr-sidemenu-title">
@@ -96,7 +96,7 @@
             </div>
           </div>
         </section> -->
-      <SideNavigation/>
+      <!-- <SideNavigation/> -->
 
       </div>
     </div>
