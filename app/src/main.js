@@ -15,6 +15,7 @@ import GraphBox from './components/GraphBox'
 // import Sites from './views/Sites'
 import CardImgBox from './components/CardImgBox'
 import UpFooter from './components/UpFooter'
+import AdaptiveDashboard from './components/AdaptiveDashboard'
 
 
 
@@ -59,6 +60,7 @@ Vue.customElement('up-footer', UpFooter)
 Vue.customElement('tags-dsfr', Tags)
 Vue.customElement('graph-box', GraphBox)
 Vue.customElement('side-bar', SideBar)
+Vue.customElement('adaptive-dashboard', AdaptiveDashboard)
 
 new Vue({
   router,

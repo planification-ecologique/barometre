@@ -12,19 +12,7 @@
               <h4 class="fr-subtitle">Atténuation</h4>
             </div>
           </div>
-          <div class="fr-grid-row fr-grid-row--gutters fr-py-md-3w">
-            <div class="fr-col-12 fr-col-sm-6 fr-col-md-6 fr-col-xl-6">
-              <graph-box :dataObj=BoxDataA :color=colors> </graph-box>
-            </div>
-            <div class="fr-col-12 fr-col-sm-6 fr-col-md-6 fr-col-xl-6">
-              <graph-box :dataObj=BoxDataA :color=colors> </graph-box>
-            </div>
-          </div>
-          <div class="fr-grid-row fr-grid-row--gutters fr-mb-1w">
-            <div class="fr-col-12">
-              <graph-box :dataObj=BoxDataA :color=colors> </graph-box>
-            </div>
-          </div>
+          <adaptive-dashboard :inputData="inputGraph" :color="colors" />
           <div class="fr-grid-row">
             <div class="fr-col-12">
                   <h2 class="fr-footer__body fr-btns-group--between">Les axes pour transformer la société
@@ -47,23 +35,21 @@ import axios from 'axios'
 import SideBar from '../components/SideBar.vue'
 import UpFooter from '../components/UpFooter.vue'
 import GraphBox from '../components/GraphBox.vue'
+import AdaptiveDashboard from '../components/AdaptiveDashboard.vue'
 
 
 export default {
-  name: 'Secret',
+  name: 'DashboardPage',
   components: {
     SideBar,
     UpFooter,
-    GraphBox
+    GraphBox,
+    AdaptiveDashboard
 
 
 },
   data() {
-    return {
-      querySuccess: true,
-
-      colors:  ['beige-gris-galet','brown-caramel','green-bourgeon','green-menthe'],
-      BoxDataA: {
+    let BoxDataA= {
           title: 'Voyages covoiturés via plateformes',
           update_date: '23/01/2024',
           description: "Description",
@@ -86,7 +72,17 @@ export default {
           },
           horizontal: false,
           stacked: true
-      },
+      }
+      // Avec les données de l'API on peut faire une boucle pour remplir inputGraph
+
+
+    return {
+      querySuccess: true,
+      inputGraph: new Array(7).fill(BoxDataA),
+      colors:  ['beige-gris-galet','brown-caramel','green-bourgeon','green-menthe'],
+      
+      
+      
     }
   },
   computed: {
