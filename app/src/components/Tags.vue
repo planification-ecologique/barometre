@@ -1,9 +1,8 @@
 <template>
     <div class="fr-tags-group">
-        <button v-for="tag in tags" class="fr-tag" :aria-pressed="tag['selected']" :value="tag['value']"  v-on:click=selectTag($event,tag)> {{ tag['label'] }}</button>
+        <button v-for="tag in tags" class="fr-tag" :aria-pressed="tag['selected']" :value="tag['value']" :key="tag['id']" v-on:click="selectTag($event, tag)"> {{ tag['label'] }}</button>
     </div>
 </template>
-
 
 <script>
 export default {
