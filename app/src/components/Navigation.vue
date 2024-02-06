@@ -28,6 +28,11 @@ export default {
         { value: 'tags', label: 'Tags', selected: false },
         { value: 'lexique', label: 'Lexique', selected: false }
       ]
+      var current_page = this.get_name_page()      
+      if (current_page == '') {
+        current_page = 'accueil'
+      }
+      this.set_selected_page(current_page)
     },
     router_to_pages(option) {
       var name_page = this.get_name_page()
@@ -50,8 +55,6 @@ export default {
   },
   mounted() {
     this.get_menu_options()
-    var current_page = this.get_name_page()
-    this.set_selected_page(current_page)
   }
 }
 </script>

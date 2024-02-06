@@ -2,16 +2,14 @@
   <div class="fr-container">
     <div class="fr-grid-row">
       <div id="sidebar" class="fr-col-3">
-        <nav class="fr-sidemenu fr-sidemenu--sticky-full-height fr-sidemenu__padding" role="navigation" aria-labelledby="fr-sidemenu-title">
-      <SideNavigation/>
-  </nav>
+        <SideNavigation @selectionChanged="updateSelection"></SideNavigation>
       </div>
       <div class="fr-col">
         <div class="fr-container fr-container-page">
           <div class="fr-grid-row">
             <div class="fr-col-12">
-              <h1 class="fr-title">Vue d'ensemble</h1>
-              <h4 class="fr-subtitle">Atténuation</h4>
+              <h1 class="fr-title">{{ selectedValueForH1 }}</h1>
+              <h4 class="fr-subtitle">{{ selectedValueForH2 }}</h4>
             </div>
           </div>
           <adaptive-dashboard :inputData="inputGraph" :color="colors" />
@@ -77,6 +75,8 @@ export default {
 
 
     return {
+      selectedValueForH1: 'Vue d\'ensemble',
+      selectedValueForH2: 'Atténuation',
       querySuccess: true,
       inputGraph: new Array(7).fill(BoxDataA),
       colors:  ['beige-gris-galet','brown-caramel','green-bourgeon','green-menthe']
@@ -85,7 +85,11 @@ export default {
   computed: {
   },
   methods: {
-
+    updateSelection(selectedValue) {
+      // Mettre à jour les données en fonction de la sélection de la barre latérale
+      this.selectedValueForH1 = selectedValue[0]; // ou effectuez toute logique nécessaire
+      this.selectedValueForH2 = selectedValue[1]; // ou effectuez toute logique nécessaire
+    }
   },
 }
 </script>
