@@ -18,12 +18,10 @@ export default {
     components: {
         GraphBox
     },
-
-
     data() {
         return {
             widgetId: '',
-            
+            colors:  ['beige-gris-galet','brown-caramel','green-bourgeon','green-menthe']
         }
     },
     computed: {
@@ -56,23 +54,7 @@ export default {
             type: Array,
             required: true
         }
-
-
-    },
-    methods: {
-
-    },
-    mounted() {
-        // this.setWidgetId()
-    },
-    watch: {
-
-    },
+    }
 }
 </script>
-    
-<style scoped>
 
-
-
-</style>
