@@ -4,7 +4,6 @@ import VueKeyCloak from '@dsb-norge/vue-keycloak-js'
 import router from './router'
 
 // Add component otherwise you get an error object string
-import SideBar from './components/SideBar'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import Navigation from './components/Navigation'
@@ -12,7 +11,6 @@ import Tags from './components/Tags'
 import GraphBox from './components/GraphBox'
 // import Breadcrumb from './components/Breadcrumb.vue'
 
-// import Sites from './views/Sites'
 import CardImgBox from './components/CardImgBox'
 import UpFooter from './components/UpFooter'
 import AdaptiveDashboard from './components/AdaptiveDashboard'

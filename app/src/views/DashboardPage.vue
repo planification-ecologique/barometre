@@ -2,7 +2,9 @@
   <div class="fr-container">
     <div class="fr-grid-row">
       <div id="sidebar" class="fr-col-3">
-        <side-bar></side-bar>
+        <nav class="fr-sidemenu fr-sidemenu--sticky-full-height fr-sidemenu__padding" role="navigation" aria-labelledby="fr-sidemenu-title">
+      <SideNavigation/>
+  </nav>
       </div>
       <div class="fr-col">
         <div class="fr-container fr-container-page">
@@ -32,22 +34,20 @@
 <script>
 
 import axios from 'axios'
-import SideBar from '../components/SideBar.vue'
 import UpFooter from '../components/UpFooter.vue'
 import GraphBox from '../components/GraphBox.vue'
 import AdaptiveDashboard from '../components/AdaptiveDashboard.vue'
+import SideNavigation from '../components/SideNavigation.vue'
 
 
 export default {
   name: 'DashboardPage',
   components: {
-    SideBar,
     UpFooter,
     GraphBox,
-    AdaptiveDashboard
-
-
-},
+    AdaptiveDashboard,
+    SideNavigation
+  },
   data() {
     let BoxDataA= {
           title: 'Voyages covoiturés via plateformes',
@@ -79,10 +79,7 @@ export default {
     return {
       querySuccess: true,
       inputGraph: new Array(7).fill(BoxDataA),
-      colors:  ['beige-gris-galet','brown-caramel','green-bourgeon','green-menthe'],
-      
-      
-      
+      colors:  ['beige-gris-galet','brown-caramel','green-bourgeon','green-menthe']
     }
   },
   computed: {
@@ -93,13 +90,11 @@ export default {
 }
 </script>
   
-<style scoped>
-
+<style scoped lang="scss">
 .flex-container {
   max-width: none;
   overflow: hidden;
 }
-
 .fr-container-page {
     background-color: #F6F6F6;
     padding-top: 1.5rem;
@@ -107,13 +102,40 @@ export default {
     padding-right: 2.5rem;
 
 }
-
 .fr-title {
   margin-bottom: 0.625rem;
 }
-
 .fr-subtitle {
   font-weight: 400;
+}
+$top: 2.25rem;
+@media (max-width: 62em) {
+  .fr-sidemenu {
+    left: 0;
+    margin: 0;
+    position: fixed;
+    top: $top;
+    width: 100%;
+    z-index: 5000;
+
+    &.displayed {
+      display: flex !important;
+    }
+
+    &::before {
+      content: "";
+      background-color: rgba(22, 22, 22, 0.64);
+      height: 100%;
+      left: 0;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: -1;
+    }
+  }
+}
+.fr-sidemenu__padding {
+  padding-right: 0rem !important;
 }
 
 </style>
