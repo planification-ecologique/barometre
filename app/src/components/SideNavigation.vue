@@ -14,7 +14,6 @@
               class="fr-sidemenu__link"
               @click="emitSelection(['Vue d\'ensemble', 'Atténuation'])"
               target="_self"
-              aria-current="page"
               >Vue d'ensemble</a>
           </li>          
         <li class="fr-sidemenu__item"> <button class="fr-sidemenu__btn" aria-expanded="false"

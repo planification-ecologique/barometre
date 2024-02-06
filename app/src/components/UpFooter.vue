@@ -9,7 +9,7 @@
                         <div class="fr-card__body">
                             <div class="fr-card__content">
                                 <h3 class="fr-card__title fr-text-title--blue-france">
-                                    <a href="/politiques-prioritaires/planifier-et-accelerer-la-transition-ecologique"
+                                    <a href="https://www.gouvernement.fr/politiques-prioritaires/atteindre-le-plein-emploi-et-reindustrialiser-la-france"
                                         target="_self">
                                         Plein emploi et réindustrialisation
                                     </a>
@@ -60,7 +60,7 @@
                         <div class="fr-card__body">
                             <div class="fr-card__content">
                                 <h3 class="fr-card__title fr-text-title--blue-france">
-                                    <a href="/politiques-prioritaires/planifier-et-accelerer-la-transition-ecologique"
+                                    <a href="https://www.gouvernement.fr/politiques-prioritaires/planifier-et-accelerer-la-transition-ecologique"
                                         target="_self">
                                         Transition écologique
                                     </a>
@@ -107,7 +107,7 @@
                         <div class="fr-card__body">
                             <div class="fr-card__content">
                                 <h3 class="fr-card__title fr-text-title--blue-france">
-                                    <a href="/politiques-prioritaires/batir-de-nouveaux-progres-et-refonder-nos-services-publics"
+                                    <a href="https://www.gouvernement.fr/politiques-prioritaires/batir-de-nouveaux-progres-et-refonder-nos-services-publics"
                                         target="_self">
                                         Progrès et services publics
                                     </a>
@@ -161,7 +161,7 @@
                         <div class="fr-card__body">
                             <div class="fr-card__content">
                                 <h3 class="fr-card__title fr-text-title--blue-france">
-                                    <a href="/politiques-prioritaires/renforcer-l-ordre-republicain-et-encourager-l-engagement"
+                                    <a href="https://www.gouvernement.fr/politiques-prioritaires/renforcer-l-ordre-republicain-et-encourager-l-engagement"
                                         target="_self">
                                         Ordre républicain
                                     </a>
