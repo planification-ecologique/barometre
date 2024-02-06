@@ -301,7 +301,7 @@
             backgroundColor: self.colorParse[j],
             hoverBorderColor: self.colorHover[j],
             hoverBackgroundColor: self.colorHover[j],
-            barThickness: self.barsize !== undefined ? self.barsize : self.stacked ? 32 : self.horizontal ? 8 : 24
+            barThickness: 'flex'
           })
         })
       },
