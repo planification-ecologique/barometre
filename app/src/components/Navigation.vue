@@ -1,65 +1,72 @@
-<template>
-  <!-- Liens directs uniquement -->
+<template>  
   <div class="cursor_pointer">
-  <nav class="fr-nav" id="header-navigation" role="navigation" aria-label="Menu principal">
-      <ul class="fr-nav__list">
-        <li class="fr-nav__item" @click=router_to_visits()>
-            <a class="fr-nav__link" style="color: rgb(59, 58, 58);" target="_self" :aria-current=currentVisits>Fréquentation des sites internet de l'état</a>
-        </li>
-        <li class="fr-nav__item" @click=router_to_sites()>
-            <a class="fr-nav__link" style="color: rgb(59, 58, 58);" target="_self" :aria-current=currentSites>Cartographie des sites internet de l'état</a>
+    <nav class="fr-nav" id="header-navigation" role="navigation" aria-label="Menu principal">
+      <ul class="fr-nav__list fr-ml-1w">
+        <li v-for="option in menuOptions" :key="option.value">
+          <a class="fr-nav__link" @click="router_to_pages(option)" target="_self" :aria-current="option.selected" style="color: rgb(59, 58, 58);">{{ option.label }}</a>
         </li>
       </ul>
-  </nav>
+    </nav>
   </div>
 </template>
 
-<script> 
-  import router from '../router'
-  export default {
-    name: 'navigation-dsfr',
-    data () {
-      return {
-        currentSites: false,
-        currentVisits: false,
-        myrouter: router
-      }
-    },
-    methods: {
-      router_to_visits () {
-        this.myrouter.push({ name: 'visits' })
-        this.currentSites= false
-        this.currentVisits= true
-        if (this.get_name_page() == "visites"){
-          window.location.reload();
-        }
-      },
-      router_to_sites () {
-        this.myrouter.push({ name: 'sites' })
-        this.currentSites= true
-        this.currentVisits= false
-      },
-      get_name_page(){
-        let location = window.location.href
-        var page = location.split('/')
-        page = page[page.length-1]
-        return page
-      }
-    },
-    mounted () {
-      this.get_name_page() == "sites" ? this.currentSites= true : this.currentVisits= true
+<script>
+import router from '../router'
+export default {
+  name: 'navigation-dsfr',
+  data() {
+    return {
+      myrouter: router,
+      menuOptions: []
     }
+  },
+  methods: {
+    get_menu_options() {
+      this.menuOptions = [
+        { value: 'accueil', label: 'Accueil', selected: false },
+        { value: 'dashboard', label: 'Tableaux de bord', selected: false },
+        { value: 'tags', label: 'Tags', selected: false },
+        { value: 'lexique', label: 'Lexique', selected: false }
+      ]
+    },
+    router_to_pages(option) {
+      var name_page = this.get_name_page()
+      if (option.value != name_page) {
+        this.myrouter.push({ name: option.value })
+        this.set_selected_page(option.value)
+      }
+    },
+    set_selected_page(page_name) {
+      this.menuOptions.forEach(function(element){element.selected = false}) 
+      this.menuOptions.filter((element) => element.value === page_name)[0].selected = true
+    },
+    get_name_page() {
+      let location = window.location.href
+      var page = location.split('/')
+      page = page[page.length - 1]
+      page = page.split('#')[0]
+      return page
+    }
+  },
+  mounted() {
+    this.get_menu_options()
+    var current_page = this.get_name_page()
+    this.set_selected_page(current_page)
   }
-  
-
+}
 </script>
 
 <style>
 
 a:hover:not([href]) {
-  cursor : pointer;/*default;*/
+  cursor: pointer;
+  /*default;*/
 }
 .cursor_pointer {
-  cursor : pointer;
+  cursor: pointer;
 }
+.fr-nav__list {
+  padding-left: 20px;
+}
+
 </style>

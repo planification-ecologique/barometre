@@ -301,7 +301,7 @@
             backgroundColor: self.colorParse[j],
             hoverBorderColor: self.colorHover[j],
             hoverBackgroundColor: self.colorHover[j],
-            barThickness: self.barsize !== undefined ? self.barsize : self.stacked ? 32 : self.horizontal ? 8 : 24
+            barThickness: 'flex'
           })
         })
       },
@@ -313,6 +313,7 @@
         this.getData()
         const self = this
         const ctx = document.getElementById(self.chartId).getContext('2d')
+        barPercentage: 0.8,
         this.chart = new Chart(ctx, {
           type: self.typeGraph,
           data: {
@@ -409,7 +410,8 @@
                   zeroLineColor: '#DDDDDD',
                   drawOnChartArea: false,
                   color: '#DDDDDD',
-                  lineWidth: 1
+                  lineWidth: 1,
+                  barPercentage: 0.8
                 },
                 ticks: {
                   callback: function (value) {
