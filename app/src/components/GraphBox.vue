@@ -10,15 +10,15 @@
             </h6>
             <p class="fr-text--xs cardDescription">{{ dataObj.description }}</p>
 
-            <div class="cardObjectif">
-                <p class="fr-text--xs fr-text--bold"> Objectif 2030</p>
-                <p class="fr-badge fr-badge-sm fr-badge--green-emeraude fr-badge--no-icon">{{ dataObj.serie_values.y[3][dataObj.serie_values.y[3].length - 1] }}</p>
-                <p class="fr-text--xs fr-text--regular">  {{ dataObj.unit }}</p>
-            </div>
+            <p class="fr-text--xs fr-text--regular">  {{ dataObj.unit }}</p>
         </div>
 
         <div class="cardReference">
             <p class="fr-text--xs fr-text-mention--grey textReference">Mis à jour : {{ dataObj.update_date }}</p>
+            <div class="fr-text--xs fr-text--bold cardObjectif"> 
+                Objectif 2030
+                <p class="fr-badge fr-badge-sm fr-badge--green-emeraude fr-badge--no-icon">{{ dataObj.serie_values.y[3][dataObj.serie_values.y[3].length - 1] }}</p>
+            </div>
         </div>
         <div class="cardData">
             <!-- Placeholder pour le graphique -->
@@ -31,10 +31,8 @@
                 :stacked=dataObj.stacked
                 :color= JSON.stringify(color) 
                 :aspectratio = 2
-                :barsize = 25
-                
                 >
-            </bar-chart>
+            </bar-chart>            
         </div>
         <div class="cardReference">
             <p class="fr-text--xs fr-text-mention--grey textReference">Source : {{ dataObj.source }}</p>
@@ -76,7 +74,6 @@ export default {
     data() {
         return {
             widgetId: '',
-            colors: []
         }
     },
     props: {
@@ -88,39 +85,16 @@ export default {
             type: [],
             default: undefined
             }
-
-
-    },
-    methods: {
-        // setWidgetId() {
-        //     this.widgetId = this.serieObj.serie_name
-        // },
-        getWordStyle(word) {
-            return {
-                fontSize: `${word.value * 5}px`,
-                color: word.color || defaultColor,
-            };
-        },
-    },
-    mounted() {
-        // this.setWidgetId()
-    },
-    watch: {
-        serieObj: function () {
-            this.setWidgetId()
-        }
-    },
+    }
 }
 </script>
     
 <style scoped>
-
 .adjust-height {
     height: fit-content;
     height: 100% !important;
     z-index: inherit;
 }   
-    
 .cardReference {
     padding: 0.5rem 1rem;
     border-bottom: 1px solid #DDDDDD;
@@ -128,13 +102,11 @@ export default {
     display: flex;
     justify-content: space-between;
 }
-
 .align-tag {
     vertical-align: middle !important;
     margin-bottom: 0rem !important;
 
 }
-
 .titleBox {
     padding: 0.5rem 1rem;
     margin-top: 0.5rem;
@@ -146,7 +118,6 @@ export default {
     font-weight: bolder;
     margin-bottom: 0.5rem;
 }
-
 .cardData{
     padding-top: 1.5rem;
     padding-left: 0.75rem;
@@ -154,27 +125,20 @@ export default {
     max-width: 100%;
     /* max-height: 700px !important;
     overflow: auto; */
-
-
-
 }
-
 .cardFooter {
     padding: 0.5rem 1rem;
 }
-
 .cardFooter > .cardFooter-button {
     display: flex;
     justify-content: flex-end;
     column-gap: 0.5rem;
 }
-
 .cardFooter > .cardFooter-tags {
     display: flex;
     justify-content: flex-start;
     column-gap: 1em;
 }
-
 p.cardDescription {
     font-size: 0.75rem;
     line-height: 1.25rem;
@@ -183,29 +147,17 @@ p.cardDescription {
     text-justify: inter-word;
     margin-bottom: 1rem;
 }
-
 .cardObjectif {
     display: flex;
     justify-content: flex-start;
     font-size: 0.75rem !important;
     align-items: center;
     column-gap: 0.5rem;
-
-}
-
-.cardObjectif > p {
     margin-bottom: 0rem !important;
 }
-
 p.textReference {
     margin-bottom: 0rem;
     font-weight: 400;
-
-}
-
-.inline {
-    display: flex;
-    align-items: center;
 }
 </style>
       
