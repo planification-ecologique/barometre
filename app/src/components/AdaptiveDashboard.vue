@@ -1,5 +1,7 @@
 <template>
     <div>
+            <segmented-controls></segmented-controls>
+
         <div v-for="(row, index) in grid" :key="index" class="fr-grid-row fr-grid-row fr-grid-row--gutters fr-mb-1w">
             <div v-for="(item, columnIndex) in row" :key="columnIndex" class="fr-col">
                 <graph-box :dataObj=item :color=colors> </graph-box>

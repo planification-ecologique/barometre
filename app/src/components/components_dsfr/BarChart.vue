@@ -12,10 +12,12 @@
           </div>
           <canvas :id="chartId"></canvas>
           <div v-for="(item, index) in nameParse" :key="item" class="flex fr-mt-3v fr-mb-1v" :style="{'margin-left': isSmall ? '0px' : style}">
-            <span class="legende_dot" v-bind:style="{'background-color': colorParse[index]}"></span>
-            <p class='fr-text--sm fr-text--bold fr-ml-1w fr-mb-0'>
-              {{capitalize(nameParse[index])}}
-            </p>
+         <div class="flex-container">
+    <span class="legende_dot" v-bind:style="{'background-color': colorParse[index]}"></span>
+    <p class='fr-text--sm fr-text--bold fr-ml-1w fr-mb-0'>
+        {{capitalize(nameParse[index])}}
+    </p>
+</div>
           </div>
           <div v-for="(item2, index2) in hlineNameParse" :key="item2" class="flex fr-mt-3v" :style="{'margin-left': isSmall ? '0px' : style}">
             <span class="legende_dash_line1" v-bind:style="{'background-color': hlineColorParse[index2]}"></span>
@@ -28,7 +30,7 @@
             <p class="fr-text--sm fr-text--bold fr-ml-1w fr-mb-0">{{ capitalize(vlineNameParse[index3]) }}</p>
           </div>
           <div v-if="date!==undefined" class="flex fr-mt-1w" :style="{'margin-left': isSmall ? '0px' : style}">
-            <!-- <p class="fr-text--xs">Mise à jour : {{date}}</p> -->
+            <p class="fr-text--xs">Mise à jour : {{date}}</p>
           </div>
         </div>
       </div>
@@ -633,6 +635,10 @@
   }
   </script>
   <style scoped lang="scss">
+    .flex-container {
+    display: flex; /* Utilise Flexbox pour aligner les éléments horizontalement */
+    align-items: center; /* Alignement vertical des éléments au centre */
+}
   .widget_container {
     .ml-lg {
       margin-left: 0;
@@ -645,7 +651,7 @@
     .r_col {
       align-self: center;
       .flex {
-        display: flex;
+        display: inline-block;
         .legende_dot {
           min-width: 0.8rem;
           width: 0.8rem;

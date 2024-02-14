@@ -1,6 +1,9 @@
 <template>
     <div class="fr-card fr-card--no-icon fr-card--shadow adjust-height">
+
         <div class="titleBox">
+            <segmented-controls></segmented-controls>
+
             <h6 class="cardTitle">{{ dataObj.title }}
                 <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M21.3333 9.99951H22.6666V13.9995H21.3333V11.3328H18.6666V9.99951H21.3333ZM10.6666 9.99951H13.3333V11.3328H10.6666V13.9995H9.33325V9.99951H10.6666ZM21.3333 20.6662V17.9995H22.6666V21.9995H18.6666V20.6662H21.3333ZM10.6666 20.6662H13.3333V21.9995H9.33325V17.9995H10.6666V20.6662Z" fill="#00008F"/>
@@ -95,11 +98,14 @@
 <script>
 
 import BarChart from './components_dsfr/BarChart.vue'
+import SegmentedControls from './SegmentedControls.vue'
+
 
 export default {
     name: 'ChartBox',
     components: {
-        BarChart
+        BarChart,
+        SegmentedControls
     },
     data() {
         return {
@@ -133,6 +139,10 @@ export default {
 </script>
     
 <style scoped>
+.fr-tags-group{
+    display: inline-block;
+
+}
 .adjust-height {
     height: fit-content;
     height: 100% !important;
