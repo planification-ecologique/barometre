@@ -38,18 +38,18 @@
             <p class="fr-text--xs fr-text-mention--grey textReference">Source : {{ dataObj.source }}</p>
         </div>
           <div class="cardReference">
-            <p class="fr-text--xs fr-text-mention--grey textReference">Périmètre : {{ dataObj.perimeter }}</p>
+            <p class="fr-text--xs fr-text-mention--grey textReference">Périmètre : {{ dataObj.perimeter}}</p>
         </div>
         <div class="cardFooter fr-grid-row fr-grid-row--middle">
             <div class="">
-                <ul class="fr-tags-group">
+                <!-- <ul class="fr-tags-group">
                     <li>
                         <p class="fr-tag fr-tag--sm align-tag">Atténuation</p>
                     </li>
                     <li>
                         <p class="fr-tag fr-tag--sm align-tag">Biodiversité</p>
                     </li>
-                </ul>
+                </ul> -->
             </div>
             <div class="cardFooter-button fr-col-3">
                 <svg width="34" height="32" viewBox="0 0 34 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -62,7 +62,7 @@
                 </svg>
             </div>
         </div>
-         <section class="fr-accordion">
+         <!-- <section class="fr-accordion">
       <h3 class="fr-accordion__title">
         <button class="fr-accordion__btn fr-text-action-high--blue-france fr-px-4w" aria-expanded="false"
           :aria-controls="'accordion' + widgetId">En savoir plus sur l'indicateur</button>
@@ -70,7 +70,25 @@
       <div class="fr-collapse fr-px-4w" :id="'accordion' + widgetId">
         <p class="fr-text--sm fr-mb-0">{{ dataObj.savoirPlus }}</p>
       </div>
-    </section>
+    </section> -->
+    <section class="fr-accordion">
+    <h3 class="fr-accordion__title">
+        <button class="fr-accordion__btn" aria-expanded="false" aria-controls="accordion-106">En savoir plus</button>
+    </h3>
+    <div class="fr-collapse" id="accordion-106">
+        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <!-- données de test -->
+ <ul class="fr-tags-group">
+                    <li>
+                        <p class="fr-tag fr-tag--sm align-tag">Atténuation</p>
+                    </li>
+                    <li>
+                        <p class="fr-tag fr-tag--sm align-tag">Biodiversité</p>
+                    </li>
+                </ul>
+    </div>
+    
+</section>
     </div>
 </template>
     
@@ -85,7 +103,7 @@ export default {
     },
     data() {
         return {
-            widgetId: '',
+            // widgetId: '',
         }
     },
     props: {
@@ -97,7 +115,20 @@ export default {
             type: [],
             default: undefined
             }
-    }
+    },
+//      methods: {    
+//     setWidgetId () {
+//       this.widgetId = this.dataObj.
+//     }
+//   },
+//   mounted () {    
+//     this.setWidgetId()    
+//   },
+//   watch: {
+//     dataObj: function () {
+//       this.setWidgetId()
+//     }
+//   }, 
 }
 </script>
     
