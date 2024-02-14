@@ -37,6 +37,9 @@
         <div class="cardReference">
             <p class="fr-text--xs fr-text-mention--grey textReference">Source : {{ dataObj.source }}</p>
         </div>
+          <div class="cardReference">
+            <p class="fr-text--xs fr-text-mention--grey textReference">Périmètre : {{ dataObj.perimeter }}</p>
+        </div>
         <div class="cardFooter fr-grid-row fr-grid-row--middle">
             <div class="">
                 <ul class="fr-tags-group">
@@ -59,6 +62,15 @@
                 </svg>
             </div>
         </div>
+         <section class="fr-accordion">
+      <h3 class="fr-accordion__title">
+        <button class="fr-accordion__btn fr-text-action-high--blue-france fr-px-4w" aria-expanded="false"
+          :aria-controls="'accordion' + widgetId">En savoir plus sur l'indicateur</button>
+      </h3>
+      <div class="fr-collapse fr-px-4w" :id="'accordion' + widgetId">
+        <p class="fr-text--sm fr-mb-0">{{ dataObj.savoirPlus }}</p>
+      </div>
+    </section>
     </div>
 </template>
     
