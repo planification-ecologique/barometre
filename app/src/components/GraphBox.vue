@@ -76,19 +76,20 @@
     </section> -->
     <section class="fr-accordion">
     <h3 class="fr-accordion__title">
-        <button class="fr-accordion__btn" aria-expanded="false" aria-controls="accordion-106">En savoir plus</button>
+        <button class="fr-accordion__btn" aria-expanded="false" aria-controls="accordion-106">En savoir plus sur l'indicateur</button>
     </h3>
     <div class="fr-collapse" id="accordion-106">
         <p> Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
         <!-- données de test -->
- <ul class="fr-tags-group">
+ <!-- <ul class="fr-tags-group">
                     <li>
                         <p class="fr-tag fr-tag--sm align-tag">Atténuation</p>
                     </li>
                     <li>
                         <p class="fr-tag fr-tag--sm align-tag">Biodiversité</p>
                     </li>
-                </ul>
+                </ul> -->
+                <Tags @tags="handleTags"></Tags>
     </div>
     
 </section>
@@ -99,13 +100,15 @@
 
 import BarChart from './components_dsfr/BarChart.vue'
 import SegmentedControls from './SegmentedControls.vue'
+import Tags from './Tags.vue'
 
 
 export default {
     name: 'ChartBox',
     components: {
         BarChart,
-        SegmentedControls
+        SegmentedControls,
+        Tags
     },
     data() {
         return {
@@ -122,6 +125,12 @@ export default {
             default: undefined
             }
     },
+     methods: {
+    handleTags(selectedTags) {
+      console.log('Tags sélectionnés :', selectedTags)
+       this.selectedTags = selectedTags;
+    }
+  }
 //      methods: {    
 //     setWidgetId () {
 //       this.widgetId = this.dataObj.
