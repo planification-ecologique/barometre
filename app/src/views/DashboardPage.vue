@@ -31,7 +31,7 @@
 
 <script>
 
-import axios from 'axios'
+import { api } from '@/services/api.js'
 import UpFooter from '../components/UpFooter.vue'
 import GraphBox from '../components/GraphBox.vue'
 import AdaptiveDashboard from '../components/AdaptiveDashboard.vue'
@@ -89,8 +89,34 @@ export default {
       // Mettre à jour les données en fonction de la sélection de la barre latérale
       this.selectedValueForH1 = selectedValue[0]; // ou effectuez toute logique nécessaire
       this.selectedValueForH2 = selectedValue[1]; // ou effectuez toute logique nécessaire
-    }
-  },
+    },
+    async test_api(){
+      var query = {
+        "filter_by": [
+          {      
+            "field": "label_theme",
+            "values": ["Transverse","Bâtiments"]    
+          },
+        {      
+            "field": "label_tags",
+            "values": ["atténuation","santé"]
+          }
+        ],
+        "time_period": {
+          "date_start": "2019-01-01",
+          "date_end": "2020-01-01"
+        }
+      }
+      const response = await api('/requests/get_indicators', { 
+        method: 'POST',
+        body: JSON.stringify(query)
+      })
+      // console.log( "my res" +JSON.stringify(response))    
+   }
+  }, 
+  mounted () {
+    this.test_api()
+  }
 }
 </script>
   
