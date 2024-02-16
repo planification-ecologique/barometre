@@ -2,7 +2,6 @@
     <div class="fr-card fr-card--no-icon fr-card--shadow adjust-height">
 
         <div class="titleBox">
-            <segmented-controls></segmented-controls>
 
             <h6 class="cardTitle">{{ dataObj.title }}
                 <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -14,6 +13,8 @@
             <p class="fr-text--xs cardDescription">{{ dataObj.description }}</p>
 
             <p class="fr-text--xs fr-text--regular">  {{ dataObj.unit }}</p>
+            <segmented-controls></segmented-controls>
+
         </div>
 
         <div class="cardReference">
@@ -37,22 +38,13 @@
                 >
             </bar-chart>            
         </div>
-        <div class="cardReference">
+        <div class="beneathGraph">
             <p class="fr-text--xs fr-text-mention--grey textReference">Source : {{ dataObj.source }}</p>
-        </div>
-          <div class="cardReference">
             <p class="fr-text--xs fr-text-mention--grey textReference">Périmètre : {{ dataObj.perimeter}}</p>
         </div>
+         
         <div class="cardFooter fr-grid-row fr-grid-row--middle">
             <div class="">
-                <!-- <ul class="fr-tags-group">
-                    <li>
-                        <p class="fr-tag fr-tag--sm align-tag">Atténuation</p>
-                    </li>
-                    <li>
-                        <p class="fr-tag fr-tag--sm align-tag">Biodiversité</p>
-                    </li>
-                </ul> -->
             </div>
             <div class="cardFooter-button fr-col-3">
                 <svg width="34" height="32" viewBox="0 0 34 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -65,31 +57,18 @@
                 </svg>
             </div>
         </div>
-         <!-- <section class="fr-accordion">
-      <h3 class="fr-accordion__title">
-        <button class="fr-accordion__btn fr-text-action-high--blue-france fr-px-4w" aria-expanded="false"
-          :aria-controls="'accordion' + widgetId">En savoir plus sur l'indicateur</button>
-      </h3>
-      <div class="fr-collapse fr-px-4w" :id="'accordion' + widgetId">
-        <p class="fr-text--sm fr-mb-0">{{ dataObj.savoirPlus }}</p>
-      </div>
-    </section> -->
+         
     <section class="fr-accordion">
     <h3 class="fr-accordion__title">
-        <button class="fr-accordion__btn" aria-expanded="false" aria-controls="accordion-106">En savoir plus sur l'indicateur</button>
+        <button class="fr-accordion__btn" aria-expanded="false" :aria-controls="idAccordion">En savoir plus sur l'indicateur</button>
     </h3>
-    <div class="fr-collapse" id="accordion-106">
+    <div class="fr-collapse" :id="idAccordion">
         <p> Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-        <!-- données de test -->
- <!-- <ul class="fr-tags-group">
-                    <li>
-                        <p class="fr-tag fr-tag--sm align-tag">Atténuation</p>
-                    </li>
-                    <li>
-                        <p class="fr-tag fr-tag--sm align-tag">Biodiversité</p>
-                    </li>
-                </ul> -->
-                <Tags @tags="handleTags"></Tags>
+        
+
+                <div class="">
+        <Tags @tags="handleTags"></Tags>
+    </div>
     </div>
     
 </section>
@@ -120,6 +99,10 @@ export default {
             type: Object,
             required: true
         },
+        idAccordion:{
+            type: String,
+            required: true
+        },
         color: {
             type: [],
             default: undefined
@@ -148,13 +131,21 @@ export default {
 </script>
     
 <style scoped>
+.beneathGraph{
+        padding: 0.5rem 1rem;
+    border-bottom: 1px solid #DDDDDD;
+    border-top: 1px solid #DDDDDD;
+    display: block;
+    justify-content: space-between;
+}
 .fr-tags-group{
-    display: inline-block;
+    display: flex;
+    justify-content: flex-start !important
 
 }
 .adjust-height {
-    height: fit-content;
-    height: 100% !important;
+    height: auto !important;
+    /* height: 100% !important; */
     z-index: inherit;
 }   
 .cardReference {
