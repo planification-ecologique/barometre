@@ -3,27 +3,35 @@
 
         <div v-for="(row, index) in grid" :key="index" class="fr-grid-row fr-grid-row fr-grid-row--gutters fr-mb-1w">
             <div v-for="(item, columnIndex) in row" :key="columnIndex" class="fr-col">
-                <graph-box :dataObj=item :idAccordion="'accordion-'+ index+columnIndex " :color=colors> </graph-box>
+            <segmented-controls @chart-selected="handleChartSelected"></segmented-controls>
+
+               <graph-box :dataObj="item" :idAccordion="'accordion-'+ index+columnIndex" :color="colors" :displayChart="displayChart"></graph-box>
              
             </div>
-        </div>
+            <div>
+
+            </div>
+    </div>
     </div>
 </template>
     
 <script>
 
 import GraphBox from '../components/GraphBox.vue'
+import SegmentedControls from './SegmentedControls.vue'
 
 
 export default {
     name: 'AdaptiveDashboard',
     components: {
-        GraphBox
+        GraphBox,
+        SegmentedControls
     },
     data() {
         return {
             widgetId: '',
-            colors:  ['beige-gris-galet','brown-caramel','green-bourgeon','green-menthe']
+            colors:  ['beige-gris-galet','brown-caramel','green-bourgeon','green-menthe'],
+             displayChart: true 
         }
     },
     computed: {
@@ -56,7 +64,12 @@ export default {
             type: Array,
             required: true
         }
-    }
+    },
+    methods: {
+  handleChartSelected(type) {
+    this.displayChart = (type === 'graphique');
+  }
+}
 }
 </script>
 
