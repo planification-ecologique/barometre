@@ -3,7 +3,7 @@
 
         <div v-for="(row, index) in grid" :key="index" class="fr-grid-row fr-grid-row fr-grid-row--gutters fr-mb-1w">
             <div v-for="(item, columnIndex) in row" :key="columnIndex" class="fr-col">
-            <segmented-controls @chart-selected="handleChartSelected"></segmented-controls>
+            <!-- <segmented-controls @chart-selected="handleChartSelected"></segmented-controls> -->
 
                <graph-box :dataObj="item" :idAccordion="'accordion-'+ index+columnIndex" :color="colors" :displayChart="displayChart"></graph-box>
              
