@@ -1,10 +1,13 @@
 <template>
-    <div>
+    <div v-if="hasData">
         <div v-for="(row, index) in grid" :key="index" class="fr-grid-row fr-grid-row fr-grid-row--gutters fr-mb-1w">
             <div v-for="(item, columnIndex) in row" :key="columnIndex" class="fr-col">
-                <graph-box :dataObj=item :color=colors> </graph-box>
+                <graph-box :dataObj=item :color=colors :name=axesNames> </graph-box>
             </div>
         </div>
+    </div>
+    <div v-else>
+        <p>PAs de données en cours...</p>
     </div>
 </template>
     
@@ -21,10 +24,16 @@ export default {
     data() {
         return {
             widgetId: '',
-            colors:  ['beige-gris-galet','brown-caramel','green-bourgeon','green-menthe']
+            colors:  ['beige-gris-galet','brown-caramel','green-bourgeon','green-menthe'],
+            axesNames: ['Historique', 'Année en cours', 'Projection', 'Cible'],
         }
     },
     computed: {
+
+        hasData() {
+            return this.inputData && this.inputData.length > 0;
+        },
+
         grid() {
             const numRows = Math.ceil(this.inputData.length / 2);
             const numCols = 2;
