@@ -26,7 +26,7 @@
             <p class="fr-text--sm fr-text--bold fr-ml-1w fr-mb-0">{{ capitalize(vlineNameParse[index2]) }}</p>
           </div>
           <div v-if="date!==undefined" class="flex fr-mt-1w" :style="{'margin-left': isSmall ? '0px' : style}">
-            <!-- <p class="fr-text--xs">Mise à jour : {{date}}</p> -->
+            <p class="fr-text--xs">Mise à jour : {{date}}</p>
           </div>
         </div>
       </div>
