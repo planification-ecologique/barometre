@@ -1,41 +1,40 @@
 <template>
     <div class="fr-card fr-card--no-icon fr-card--shadow adjust-height">
         <div class="titleBox">
-            <h6 class="cardTitle">{{ dataObj.title }}
+            <h6 class="cardTitle">{{ dataObj.label_indic }}
                 <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M21.3333 9.99951H22.6666V13.9995H21.3333V11.3328H18.6666V9.99951H21.3333ZM10.6666 9.99951H13.3333V11.3328H10.6666V13.9995H9.33325V9.99951H10.6666ZM21.3333 20.6662V17.9995H22.6666V21.9995H18.6666V20.6662H21.3333ZM10.6666 20.6662H13.3333V21.9995H9.33325V17.9995H10.6666V20.6662Z" fill="#00008F"/>
                     <rect x="0.5" y="0.499512" width="31" height="31" stroke="#DDDDDD"/>
                 </svg>
     
             </h6>
-            <p class="fr-text--xs cardDescription">{{ dataObj.description }}</p>
+            <p class="fr-text--xs cardDescription">{{ dataObj.label_description }}</p>
 
-            <p class="fr-text--xs fr-text--regular">  {{ dataObj.unit }}</p>
+            <p class="fr-text--xs fr-text--regular">  {{ dataObj.label_unit }}</p>
         </div>
 
         <div class="cardReference">
-            <p class="fr-text--xs fr-text-mention--grey textReference">Mis à jour : {{ dataObj.update_date }}</p>
+            <p class="fr-text--xs fr-text-mention--grey textReference">Mis à jour : 05/02/2024</p>
             <div class="fr-text--xs fr-text--bold cardObjectif"> 
                 Objectif 2030
-                <p class="fr-badge fr-badge-sm fr-badge--green-emeraude fr-badge--no-icon">{{ dataObj.serie_values.y[3][dataObj.serie_values.y[3].length - 1] }}</p>
+                <p class="fr-badge fr-badge-sm fr-badge--green-emeraude fr-badge--no-icon">{{ dataObj.values.y[3][dataObj.values.y[3].length - 1] }}</p>
             </div>
         </div>
         <div class="cardData">
             <!-- Placeholder pour le graphique -->
             <bar-chart
-                :x=JSON.stringify(dataObj.serie_values.x)
-                :y=JSON.stringify(dataObj.serie_values.y)
-                :xparse=JSON.stringify(dataObj.serie_values.xparse)
-                :name=JSON.stringify(dataObj.serie_values.name)
-                :horizontal=dataObj.horizontal
-                :stacked=dataObj.stacked
+                :x=JSON.stringify(dataObj.values.x)
+                :y=JSON.stringify(dataObj.values.y)
+                :name=JSON.stringify(name)
+                :horizontal=false
+                :stacked=true
                 :color= JSON.stringify(color) 
                 :aspectratio = 2
                 >
             </bar-chart>            
         </div>
         <div class="cardReference">
-            <p class="fr-text--xs fr-text-mention--grey textReference">Source : {{ dataObj.source }}</p>
+            <p class="fr-text--xs fr-text-mention--grey textReference">Source : {{ dataObj.label_sources }}</p>
         </div>
         <div class="cardFooter fr-grid-row fr-grid-row--middle">
             <div class="cardFooter-tags fr-col-6">
@@ -84,7 +83,11 @@ export default {
         color: {
             type: [],
             default: undefined
-            }
+        },
+        name: {
+            type: [],
+            default: undefined
+        }
     }
 }
 </script>
