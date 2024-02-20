@@ -1,30 +1,36 @@
 <template>
+<<<<<<< app/src/components/AdaptiveDashboard.vue
     <div v-if="hasData">
         <div v-for="(row, index) in grid" :key="index" class="fr-grid-row fr-grid-row fr-grid-row--gutters fr-mb-1w">
             <div v-for="(item, columnIndex) in row" :key="columnIndex" class="fr-col">
-                <graph-box :dataObj=item :color=colors :name=axesNames> </graph-box>
+            <!-- <segmented-controls @chart-selected="handleChartSelected"></segmented-controls> -->
+
+               <graph-box :dataObj="item" :idAccordion="'accordion-'+ index+columnIndex" :color="colors" :displayChart="displayChart" :name=axesNames></graph-box>
             </div>
         </div>
     </div>
     <div v-else>
-        <p>PAs de données en cours...</p>
+        <p>Pas de données en cours...</p>
     </div>
 </template>
     
 <script>
 
 import GraphBox from '../components/GraphBox.vue'
+import SegmentedControls from './SegmentedControls.vue'
 
 
 export default {
     name: 'AdaptiveDashboard',
     components: {
-        GraphBox
+        GraphBox,
+        SegmentedControls
     },
     data() {
         return {
             widgetId: '',
             colors:  ['beige-gris-galet','brown-caramel','green-bourgeon','green-menthe'],
+            displayChart: true 
             axesNames: ['Historique', 'Année en cours', 'Projection', 'Cible'],
         }
     },
@@ -63,7 +69,12 @@ export default {
             type: Array,
             required: true
         }
-    }
+    },
+    methods: {
+  handleChartSelected(type) {
+    this.displayChart = (type === 'graphique');
+  }
+}
 }
 </script>
 
