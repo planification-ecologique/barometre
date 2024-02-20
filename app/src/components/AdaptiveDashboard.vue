@@ -1,5 +1,4 @@
 <template>
-<<<<<<< app/src/components/AdaptiveDashboard.vue
     <div v-if="hasData">
         <div v-for="(row, index) in grid" :key="index" class="fr-grid-row fr-grid-row fr-grid-row--gutters fr-mb-1w">
             <div v-for="(item, columnIndex) in row" :key="columnIndex" class="fr-col">
@@ -30,7 +29,7 @@ export default {
         return {
             widgetId: '',
             colors:  ['beige-gris-galet','brown-caramel','green-bourgeon','green-menthe'],
-            displayChart: true 
+            displayChart: true,
             axesNames: ['Historique', 'Année en cours', 'Projection', 'Cible'],
         }
     },
