@@ -1,17 +1,16 @@
 <template>
-    <div>
-
+<<<<<<< app/src/components/AdaptiveDashboard.vue
+    <div v-if="hasData">
         <div v-for="(row, index) in grid" :key="index" class="fr-grid-row fr-grid-row fr-grid-row--gutters fr-mb-1w">
             <div v-for="(item, columnIndex) in row" :key="columnIndex" class="fr-col">
             <!-- <segmented-controls @chart-selected="handleChartSelected"></segmented-controls> -->
 
-               <graph-box :dataObj="item" :idAccordion="'accordion-'+ index+columnIndex" :color="colors" :displayChart="displayChart"></graph-box>
-             
+               <graph-box :dataObj="item" :idAccordion="'accordion-'+ index+columnIndex" :color="colors" :displayChart="displayChart" :name=axesNames></graph-box>
             </div>
-            <div>
-
-            </div>
+        </div>
     </div>
+    <div v-else>
+        <p>Pas de données en cours...</p>
     </div>
 </template>
     
@@ -31,10 +30,16 @@ export default {
         return {
             widgetId: '',
             colors:  ['beige-gris-galet','brown-caramel','green-bourgeon','green-menthe'],
-             displayChart: true 
+            displayChart: true 
+            axesNames: ['Historique', 'Année en cours', 'Projection', 'Cible'],
         }
     },
     computed: {
+
+        hasData() {
+            return this.inputData && this.inputData.length > 0;
+        },
+
         grid() {
             const numRows = Math.ceil(this.inputData.length / 2);
             const numCols = 2;

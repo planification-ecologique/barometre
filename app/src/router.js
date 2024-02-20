@@ -65,6 +65,7 @@ router.beforeEach(async (to, from, next) => {
     // We wait for Keycloak init, then we can call all methods safely
     while (router.app.$keycloak.createLoginUrl === null) {
       await sleep(100)
+      localStorage.setItem("vue-token", JSON.stringify(router.app.$keycloak.token));
     }
     if (router.app.$keycloak.authenticated) {
       next()
