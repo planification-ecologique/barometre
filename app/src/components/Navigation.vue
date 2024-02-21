@@ -1,11 +1,12 @@
 <template>  
   <div class="cursor_pointer">
     <nav class="fr-nav" id="header-navigation" role="navigation" aria-label="Menu principal">
-      <ul class="fr-nav__list fr-ml-1w">
-        <li v-for="option in menuOptions" :key="option.value">
+          <ul class="fr-nav__list">
+        <li class="breadcrumb" v-for="option in menuOptions" :key="option.value">
           <a class="fr-nav__link" @click="router_to_pages(option)" target="_self" :aria-current="option.selected" style="color: rgb(59, 58, 58);">{{ option.label }}</a>
         </li>
       </ul>
+    
     </nav>
   </div>
 </template>
@@ -70,6 +71,9 @@ a:hover:not([href]) {
 }
 .fr-nav__list {
   padding-left: 20px;
+  /* margin-left: 10px; */
 }
-
+.breadcrumb{
+  margin-left: 17px;
+}
 </style>
