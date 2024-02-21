@@ -258,7 +258,7 @@ p.textReference {
   justify-content: flex-start;
 }
 .segmentedControls{
- margin-left:0;
+ color: red;
 }
 .label_unit{
   margin-left: 16px;

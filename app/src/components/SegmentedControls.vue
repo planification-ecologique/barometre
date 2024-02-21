@@ -77,6 +77,6 @@ export default {
    
 } 
 .fr-label{
-  color: #000091;
+ color: red;
 }
 </style>
