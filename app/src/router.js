@@ -53,6 +53,15 @@ const router = new Router({
         requiresAuth: true,
       },
     },
+    {
+      path: "/mentions-legales",
+      name: "mentions légales",
+      component: () =>
+        import(/* webpackChunkName: "visits" */ "./views/MentionsLegalesPage.vue"),
+      meta: {
+        requiresAuth: true,
+      },
+    },
   ],
 });
 
