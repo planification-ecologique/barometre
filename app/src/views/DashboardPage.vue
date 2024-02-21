@@ -227,11 +227,11 @@ export default {
       var query = {
         "filter_by": [
           {      
-            "field": "label_theme",
+            "field": "id_theme",
             "values":  [this.selectedValueForH1]   
           },
         {      
-            "field": "label_levier",
+            "field": "id_levier",
             "values": [this.selectedValueForH2]
           }
         ],
