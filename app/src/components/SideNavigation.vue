@@ -21,12 +21,12 @@
             <div class="fr-collapse" id="fr-sidemenu-item-3">
 
               <ul class="fr-sidemenu__list">
-                <li class="fr-sidemenu__item"> <a class="fr-sidemenu__link" @click="emitSelection(['Transverse','Emissions'])"  target="_self">Emissions</a> </li>
-                <li class="fr-sidemenu__item"> <a class="fr-sidemenu__link" @click="emitSelection(['Transverse','Empreinte'])"  target="_self">Empreinte</a> </li>
+                <li class="fr-sidemenu__item" v-for="option in menuOptions"> <a class="fr-sidemenu__link" @click="emitSelection(['Transverse',option.value])"  target="_self">{{ option.label }}</a> </li>
+                <!-- <li class="fr-sidemenu__item"> <a class="fr-sidemenu__link" @click="emitSelection(['Transverse','Empreinte'])"  target="_self">Empreinte</a> </li>
                 <li class="fr-sidemenu__item"> <a class="fr-sidemenu__link" @click="emitSelection(['Transverse','Biodiversité'])"  target="_self">Biodiversité</a> </li>
                 <li class="fr-sidemenu__item"> <a class="fr-sidemenu__link" @click="emitSelection(['Transverse','Pollution'])"  target="_self">Pollution</a> </li>
                 <li class="fr-sidemenu__item"> <a class="fr-sidemenu__link" @click="emitSelection(['Transverse','Energie'])"  target="_self">Energie</a> </li>
-                <li class="fr-sidemenu__item"> <a class="fr-sidemenu__link" @click="emitSelection(['Transverse','Autre'])"  target="_self">Autre</a> </li>
+                <li class="fr-sidemenu__item"> <a class="fr-sidemenu__link" @click="emitSelection(['Transverse','Autre'])"  target="_self">Autre</a> </li> -->
               </ul>
             </div>
           </li>
@@ -187,11 +187,30 @@
 
 export default {
   name: 'SideNavigation',
+  data() {
+    return {
+      menuOptions: []
+    }
+
+  },
   methods: {
+    get_menu_options() {
+      this.menuOptions = [
+        { value: 'Emissions / Puits', label: 'Emissions', selected: false },
+        { value: 'Empreinte', label: 'Empreinte', selected: false },
+        { value: 'Biodiversité', label: 'Biodiversité', selected: false },
+        { value: 'Pollution', label: 'Pollution', selected: false },
+        { value: 'Energie', label: 'Energie', selected: false },
+        { value: 'Autre', label: 'Autre', selected: false }
+      ]
+    },
     emitSelection(selectedValue) {
       // Émettre un événement personnalisé avec l'information de sélection
       this.$emit('selectionChanged', selectedValue);
     }
+  },
+  mounted() {
+    this.get_menu_options()
   }
 }
 </script>
