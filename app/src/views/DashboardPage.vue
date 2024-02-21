@@ -1,11 +1,11 @@
 <template>
-  <div class="fr-container">
+  <div class="fr-container--fluid">
     <div class="fr-grid-row">
       <div id="sidebar" class="fr-col-3">
         <SideNavigation @selectionChanged="updateSelection"></SideNavigation>
       </div>
       <div class="fr-col">
-        <div class="fr-container fr-container-page">
+        <div class="fr-container--fluid fr-container-page">
           <div class="fr-grid-row">
             <div class="fr-col-12">
               <h1 class="fr-title">{{ selectedValueForH1 }}</h1>
@@ -306,6 +306,7 @@ export default {
     padding-top: 1.5rem;
     padding-left: 2.5rem;
     padding-right: 2.5rem;
+    width: 100%;
 
 }
 .fr-title {

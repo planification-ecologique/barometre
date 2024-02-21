@@ -1,5 +1,5 @@
 <template>
-  <div class="fr-container fr-container-page">
+  <div class="fr-container--fluid fr-container-page">
     <div class="fr-grid-row">
       <div class="fr-col-12">
         <h1 class="fr-title">Tag</h1>
