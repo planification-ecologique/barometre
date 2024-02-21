@@ -8,8 +8,8 @@
         <div class="fr-container--fluid fr-container-page">
           <div class="fr-grid-row">
             <div class="fr-col-12">
-              <h1 class="fr-title">{{ selectedValueForH1 }}</h1>
-              <h4 class="fr-subtitle">{{ selectedValueForH2 }}</h4>
+              <h1 class="fr-title">{{ selectedValueForH1[1] }}</h1>
+              <h4 class="fr-subtitle">{{ selectedValueForH2[1] }}</h4>
             </div>
           </div>
           <div v-if="results_API.length > 0">
@@ -83,8 +83,8 @@ export default {
 
 
     return {
-      selectedValueForH1: 'transverse',
-      selectedValueForH2: 'emissions--puits',
+      selectedValueForH1: ['tranverse', 'Transverse'],
+      selectedValueForH2: ['emissions--puits', 'Emissions / Puits'],
       querySuccess: true,
       inputGraph: new Array(7).fill(BoxDataA),
       colors:  ['beige-gris-galet','brown-caramel','green-bourgeon','green-menthe'],
@@ -227,12 +227,12 @@ export default {
       var query = {
         "filter_by": [
           {      
-            "field": "label_theme",
-            "values":  [this.selectedValueForH1]   
+            "field": "id_theme",
+            "values":  [this.selectedValueForH1[0]]   
           },
         {      
-            "field": "label_levier",
-            "values": [this.selectedValueForH2]
+            "field": "id_levier",
+            "values": [this.selectedValueForH2[0]]
           }
         ],
         "time_period": {
