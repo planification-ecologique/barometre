@@ -215,8 +215,7 @@ export default {
   padding-left: 0.75rem;
   padding-right: 1.5rem;
   max-width: 100%;
-  /* max-height: 700px !important;
-  overflow: auto; */
+
 }
 .cardFooter {
   padding: 0.5rem 1rem;
