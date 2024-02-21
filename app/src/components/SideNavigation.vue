@@ -21,7 +21,10 @@
             <div class="fr-collapse" id="fr-sidemenu-item-3">
 
               <ul class="fr-sidemenu__list">
-                <li class="fr-sidemenu__item" v-for="option in menuOptions"> <a class="fr-sidemenu__link" @click="emitSelection(['Transverse',option.value])"  target="_self">{{ option.label }}</a> </li>
+                <li class="fr-sidemenu__item" v-for="(option, index) in menuOptions" :key="index">
+    <a class="fr-sidemenu__link" @click="emitSelection(['Transverse', option.value])" target="_self">{{ option.label }}</a>
+</li>
+
                 <!-- <li class="fr-sidemenu__item"> <a class="fr-sidemenu__link" @click="emitSelection(['Transverse','Empreinte'])"  target="_self">Empreinte</a> </li>
                 <li class="fr-sidemenu__item"> <a class="fr-sidemenu__link" @click="emitSelection(['Transverse','Biodiversité'])"  target="_self">Biodiversité</a> </li>
                 <li class="fr-sidemenu__item"> <a class="fr-sidemenu__link" @click="emitSelection(['Transverse','Pollution'])"  target="_self">Pollution</a> </li>
