@@ -63,16 +63,25 @@
           <p class="fr-text--xs fr-text-mention--grey textReference">Mis à jour : {{ dataObj.update_date }}</p>
           <div class="fr-text--xs fr-text--bold cardObjectif"> 
             Objectif 2030
-            <p class="fr-badge fr-badge-sm fr-badge--green-emeraude fr-badge--no-icon">{{ dataObj.serie_values.y[3][dataObj.serie_values.y[3].length - 1] }}</p>
+            <p class="fr-badge fr-badge-sm fr-badge--green-emeraude fr-badge--no-icon">{{ dataObj.values.y[3][dataObj.values.y[3].length - 1] }}</p>
           </div>
         </div>
-        <div class="cardData">
-          <bar-chart v-if="displayChart" :x="JSON.stringify(dataObj.serie_values.x)" :y="JSON.stringify(dataObj.serie_values.y)" :xparse="JSON.stringify(dataObj.serie_values.xparse)" :name="JSON.stringify(dataObj.serie_values.name)" :horizontal="dataObj.horizontal" :stacked="dataObj.stacked" :color="JSON.stringify(color)" :aspectratio="2"></bar-chart>  
-          <table-component v-else :dataObj="tableData"></table-component>        
+        <div class="cardData">          
+          <!-- <bar-chart v-if="displayChart"
+                :x=JSON.stringify(dataObj.values.x)
+                :y=JSON.stringify(dataObj.values.y)
+                :name=JSON.stringify(name)
+                :horizontal=false
+                :stacked=true
+                :color= JSON.stringify(color) 
+                :aspectratio = 2
+                >
+            </bar-chart>
+          <table-component v-else :dataObj="tableData"></table-component>         -->
         </div>
         <div class="beneathGraph">
-          <p class="fr-text--xs fr-text-mention--grey textReference">Source : {{ dataObj.source }}</p>
-          <p class="fr-text--xs fr-text-mention--grey textReference">Périmètre : {{ dataObj.perimeter}}</p>
+          <p class="fr-text--xs fr-text-mention--grey textReference">Source : {{ dataObj.label_sources }}</p>
+          <p class="fr-text--xs fr-text-mention--grey textReference">Périmètre : {{ dataObj.label_perimetre}}</p>
         </div>
         <section class="fr-accordion">
           <h3 class="fr-accordion__title">
@@ -133,11 +142,12 @@ export default {
       name: {
           type: [],
           default: undefined}
-        },
-        data() {
+  },
+  data() {
       return {
           // widgetId: '',
           tableData: [],
+          displayChart: false,
           localDisplayChart: this.displayChart // Utilisation d'une variable locale
       }
   },
@@ -161,7 +171,10 @@ export default {
     displayChart(newVal) {
       this.localDisplayChart = newVal; // Mettre à jour la propriété de données locale lorsque la prop change
     }
-  }
+  },
+  // mounted(){
+  //   console.log(JSON.stringify(this.dataObj.values.y))
+  // }
 }
 </script>
 

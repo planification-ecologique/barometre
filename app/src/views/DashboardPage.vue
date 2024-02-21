@@ -41,11 +41,13 @@ import UpFooter from '../components/UpFooter.vue'
 import GraphBox from '../components/GraphBox.vue'
 import AdaptiveDashboard from '../components/AdaptiveDashboard.vue'
 import SideNavigation from '../components/SideNavigation.vue'
+import BarChart from '../components/components_dsfr/BarChart.vue'
 
 
 export default {
   name: 'DashboardPage',
   components: {
+    BarChart,
     UpFooter,
     GraphBox,
     AdaptiveDashboard,
@@ -71,9 +73,6 @@ export default {
             [0, 0, 0, 0, 0, 0, 0, 14, 11, 8, 7, 6, 5, 0],
             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3]
           ],
-          xTab: ["2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026", "2027", "2028", "2029", "2030"], 
-          yTab:[20, 18, 15, 13, 12, 16, 0, 0, 0, 0, 0, 0, 0, 0],
-      
           name: ['Historique', 'Année en cours', 'Projection', 'Cible']
           },
           horizontal: false,
@@ -85,7 +84,7 @@ export default {
 
     return {
       selectedValueForH1: 'Transverse',
-      selectedValueForH2: 'Emissions',
+      selectedValueForH2: 'Emissions / Puits',
       querySuccess: true,
       inputGraph: new Array(7).fill(BoxDataA),
       colors:  ['beige-gris-galet','brown-caramel','green-bourgeon','green-menthe'],
@@ -178,8 +177,11 @@ export default {
 
     formatDataGraph(x, y) {
 
+      // console.log(x)
+      // console.log(y)
       var sortedData = this.sortXData(x, y);
       var filteredData = this.removeUndefinedData(sortedData.x, sortedData.y);
+      console.log(filteredData)
 
 
       // Création des catégories d'axes pour le graphique
@@ -194,6 +196,7 @@ export default {
       // const index = x.indexOf(this.currentYear);
       // console.log('filteredData', filteredData.x_data.indexOf(this.currentYear))
       const index = filteredData.x_data.indexOf(this.currentYear);
+      console.log('index ' + index)
 
       if (index === -1) {
         console.error("L'année en cours n'est pas dans la liste des années");
@@ -238,7 +241,7 @@ export default {
         }
       }
 
-      console.log("query", query);
+      // console.log("query", query);
 
       // Appel à l'API
       try {
@@ -252,21 +255,21 @@ export default {
         }
 
         // Récupération des données
-        let results = response;
+        let results = response;        
         
         
         // replace  x y for each resuls.data.results  
-        results.data.results.forEach((item, index) => {
-          item.values.xtab = item.values.x;
-          item.values.ytab = item.values.y;
-          // Transformation des données pour le graphique
-          let transformedData = this.formatDataGraph(item.values.x, item.values.y);
-          item.values.x = transformedData.x;
-          item.values.y = transformedData.y;
-        });
+        // results.data.results.forEach((item, index) => {
+        //   item.values.xtab = item.values.x;
+        //   item.values.ytab = item.values.y;
+        //   // Transformation des données pour le graphique
+        //   let transformedData = this.formatDataGraph(item.values.x, item.values.y);
+        //   item.values.x = transformedData.x;
+        //   item.values.y = transformedData.y;
+        // });
 
         this.results_API = results.data.results;
-        // console.log("results_API", this.results_API);
+        // console.log("results_API--------", JSON.stringify(this.results_API));
 
         
       } catch (error) {
