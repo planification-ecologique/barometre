@@ -270,7 +270,6 @@ export default {
 
         this.results_API = results.data.results;
         console.log("results_API--------", JSON.stringify(this.results_API));
-
         
       } catch (error) {
         console.error("Erreur dans le chargement des données : ", error);
