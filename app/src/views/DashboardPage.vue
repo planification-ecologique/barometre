@@ -83,8 +83,8 @@ export default {
 
 
     return {
-      selectedValueForH1: 'Transverse',
-      selectedValueForH2: 'Emissions / Puits',
+      selectedValueForH1: 'transverse',
+      selectedValueForH2: 'emissions--puits',
       querySuccess: true,
       inputGraph: new Array(7).fill(BoxDataA),
       colors:  ['beige-gris-galet','brown-caramel','green-bourgeon','green-menthe'],
@@ -269,7 +269,7 @@ export default {
         // });
 
         this.results_API = results.data.results;
-        // console.log("results_API--------", JSON.stringify(this.results_API));
+        console.log("results_API--------", JSON.stringify(this.results_API));
 
         
       } catch (error) {
