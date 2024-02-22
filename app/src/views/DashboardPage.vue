@@ -83,7 +83,7 @@ export default {
 
 
     return {
-      selectedValueForH1: ['tranverse', 'Transverse'],
+      selectedValueForH1: ['transverse', 'Transverse'],
       selectedValueForH2: ['emissions--puits', 'Emissions / Puits'],
       querySuccess: true,
       inputGraph: new Array(7).fill(BoxDataA),
@@ -149,72 +149,6 @@ export default {
       }
 
     },
-  //   async test_api(){
-  //     var query = {
-  //       "filter_by": [
-  //         {      
-  //           "field": "label_theme",
-  //           "values": ["Transverse","Bâtiments"]    
-  //         },
-  //       {      
-  //           "field": "label_tags",
-  //           "values": ["atténuation","santé"]
-  //         }
-  //       ],
-  //       "time_period": {
-  //         "date_start": "2015-01-01",
-  //         "date_end": "2031-01-01"
-  //       }
-  //     }
-  //     const response = await api('/requests/get_indicators', { 
-  //       method: 'POST',
-  //       body: JSON.stringify(query)
-  //     })
-  //     console.log( "my res" +JSON.stringify(response))    
-  // },
-
-
-
-    formatDataGraph(x, y) {
-
-      // console.log(x)
-      // console.log(y)
-      var sortedData = this.sortXData(x, y);
-      var filteredData = this.removeUndefinedData(sortedData.x, sortedData.y);
-      console.log(filteredData)
-
-
-      // Création des catégories d'axes pour le graphique
-      const categories = ['Historique', 'Année en cours', 'Projection', 'Cible'];
-      // Dédoublonnage en 4 listes d'année
-      const formattedX = Array.from({ length: categories.length }, () => [...filteredData.x_data]);
-      // Création des listes de valeurs pour chaque catégorie d'axe, initialisées à 0
-      const formattedY = Array.from({ length: categories.length }, () => Array(filteredData.x_data.length).fill(0));
-
-      // Récupération de l'index de l'année en cours
-
-      // const index = x.indexOf(this.currentYear);
-      // console.log('filteredData', filteredData.x_data.indexOf(this.currentYear))
-      const index = filteredData.x_data.indexOf(this.currentYear);
-      console.log('index ' + index)
-
-      if (index === -1) {
-        console.error("L'année en cours n'est pas dans la liste des années");
-        index = 2;
-        return;
-      }
-      
-      
-      
-      // Formatage des données pour le graphique en fonction de l'année en cours
-      formattedY[0].splice(0, filteredData.y_data.slice(0, index).length, ...filteredData.y_data.slice(0, index)); // Historique, 0 à index
-      formattedY[1].splice(index, filteredData.y_data.slice(index, index+1).length, ...filteredData.y_data.slice(index, index+1)); // Année en cours, index à index+1
-      formattedY[2].splice(index + 1, filteredData.y_data.slice(index + 1, filteredData.y_data.length-1).length, ...filteredData.y_data.slice(index + 1, filteredData.y_data.length - 1)); // Projection, index+1 à fin-1
-      formattedY[3].splice(filteredData.y_data.length-1, 1, ...filteredData.y_data.slice(filteredData.y_data.length-1, filteredData.y_data.length)); // Cible, fin-1 à fin
-
-      return { x: formattedX, y: formattedY };
-    },
-
     async fetchData() {
 
       // Remplissage des filtres
@@ -256,20 +190,9 @@ export default {
 
         // Récupération des données
         let results = response;        
-        
-        
-        // replace  x y for each resuls.data.results  
-        // results.data.results.forEach((item, index) => {
-        //   item.values.xtab = item.values.x;
-        //   item.values.ytab = item.values.y;
-        //   // Transformation des données pour le graphique
-        //   let transformedData = this.formatDataGraph(item.values.x, item.values.y);
-        //   item.values.x = transformedData.x;
-        //   item.values.y = transformedData.y;
-        // });
 
         this.results_API = results.data.results;
-        console.log("results_API--------", JSON.stringify(this.results_API));
+        // console.log("results_API--------", JSON.stringify(this.results_API));
         
       } catch (error) {
         console.error("Erreur dans le chargement des données : ", error);
@@ -289,8 +212,7 @@ export default {
 
   },
   mounted() {
-    this.fetchData();
-    // this.test_api();
+    this.fetchData();    
   }
 }
 </script>
