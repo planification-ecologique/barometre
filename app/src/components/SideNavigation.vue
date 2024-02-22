@@ -5,11 +5,6 @@
       <div class="fr-collapse" id="fr-sidemenu-wrapper">
         <!-- <div class="fr-sidemenu__title" id="fr-sidemenu-title">Introduction</div> -->
         <ul class="fr-sidemenu__list">
-          
-          <li class="fr-sidemenu__item fr-sidemenu__item--active">
-            <a class="fr-sidemenu__link" @click="emitSelection([['vue-d-ensemble','Vue d\'ensemble'], ['subtitle','8 indicateurs pour observer d\'un coup d\'œil les principaux vecteurs de la transition écologique.']])" target="_self">Vue
-              d'ensemble</a>
-          </li>
           <li class="fr-sidemenu__item" v-for="(theme, index) in menuOptions" :key="index">
             <button class="fr-sidemenu__btn" aria-expanded="false" :aria-controls="'fr-sidemenu-item-'+theme.id_theme"> {{ theme.label_theme }} </button> 
             <div class="fr-collapse" :id="'fr-sidemenu-item-'+theme.id_theme">
