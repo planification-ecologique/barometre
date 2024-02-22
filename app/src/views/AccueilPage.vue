@@ -86,7 +86,6 @@ export default {
         databtn: false,
         bgcolor: "#F5F5FE",
         databtn1: true,
-
         // image: TrajectoireImg
       },
       cardEvolution: {
@@ -94,16 +93,12 @@ export default {
         description : `Il importe de souligner également que les trajectoires affichées pour l’avenir reposent parfois sur des objectifs officiels, mais parfois aussi, et même souvent, sur des hypothèses techniques de travail à date ; elles pourront donc évoluer le cas échéant et n'engagement pas en tant que telles la responsabilité ni du SGPE ni a fortiori du gouvernement. Pour autant, les trajectoires présentées cherchent à donner une vision cohérente des grandes stratégies nationales existantes (ex. Stratégie nationale pour la biodiversité) ou en cours de finalisation (ex. Stratégie nationale bas carbone).`,
         databtn: false,
         databtn1: true
-
-        // image: GoalImg
       },
         cardPerimetre: {
         title: "Périmètre géographique",
         description : `Par ailleurs, un grand nombre de ces indicateurs ne concernent que l’Hexagone, faute notamment de données disponibles. Un travail spécifique sera mené au cours de l’année pour bâtir les indicateurs adéquats correspondant aux spécificités ultra-marines. Dans ce contexte, il sera important de distinguer chacun des territoires ultramarins et de les placer dans leur contexte singulier, par rapport aux autres territoires d’outre-mer, mais aussi en comparaison avec l’Hexagone et dans le contexte de leur bassin géographique.`,
         databtn: false,
         databtn1: true,
-
-        // image: GoalImg
         bgcolor: "#F5F5FE",
 
       },
@@ -112,8 +107,6 @@ export default {
         description : `Plus généralement, si les données affichées à ce jour se cantonnent au niveau national, l'ambition est de permettre, dans les versions futures du Tableau de bord, l'accès à des données désagrégées aux différents niveaux territoriaux. Toutes les données correspondantes seront mises en libre accès pour les utilisateurs.`,
         databtn: false,
         databtn1: true
-
-        // image: GoalImg
       },
     }
   },
