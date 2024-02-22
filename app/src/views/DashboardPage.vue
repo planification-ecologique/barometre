@@ -228,19 +228,11 @@ export default {
         "filter_by": [
           {      
             "field": "id_theme",
-<<<<<<< HEAD
-            "values":  [this.selectedValueForH1]   
-          },
-        {      
-            "field": "id_levier",
-            "values": [this.selectedValueForH2]
-=======
             "values":  [this.selectedValueForH1[0]]   
           },
         {      
             "field": "id_levier",
             "values": [this.selectedValueForH2[0]]
->>>>>>> 384186e645c5ddcb88d5e8a9076c7cfe6d58f733
           }
         ],
         "time_period": {
