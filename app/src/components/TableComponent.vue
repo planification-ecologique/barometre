@@ -1,7 +1,6 @@
 <template>
     <div class="fr-table fr-table--layout-fixed fr-tab-data">
-        <table>
-            <!-- <caption>Résumé du tableau (accessibilité)</caption> -->
+        <table>            
             <thead>
                 <tr>
                     <th scope="col">Année</th>
@@ -23,11 +22,6 @@ export default {
     name: 'TableComponent',
     components: {
     },
-    data() {
-        return {
-            widgetId: '',
-        }
-    },
     props: {
         annee: {
             type: [],
@@ -39,8 +33,7 @@ export default {
             required: true,
             default: ['Non défini']
         }
-    },
-
+    }
 }
 </script>
 
