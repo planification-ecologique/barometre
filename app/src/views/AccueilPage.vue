@@ -136,5 +136,10 @@ export default {
   background-color: #F5F5FE;
 }
 
+ .fr-card:hover .fr-card__image,
+  .fr-card:hover .fr-card__content {
+    box-shadow: none; /* Supprime l'ombre au survol */
+    transform: none; /* Supprime toute transformation au survol */
+  }
 
 </style>
