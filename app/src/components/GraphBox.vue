@@ -19,7 +19,7 @@
             <bar-chart 
                   :x=JSON.stringify(dataObj.values.x)
                   :y=JSON.stringify(dataObj.values.y)
-                  :name=JSON.stringify(name)
+                  :name=JSON.stringify(dataObj.values.legend)
                   :horizontal=false
                   :stacked=true
                   :color= JSON.stringify(color) 
@@ -39,8 +39,7 @@
           </h3>
           <div class="fr-collapse accordion-box" :id="idAccordion" :class="{ 'fr-collapse--expanded': isAccordionOpen }">
             <p class="fr-text--xs cardDescription">{{ dataObj.label_description }}</p>
-
-            <!-- <p> Lorem ipsum dolor sit amet consectetur adipisicing elit.</p> -->
+           
             <div v-if="dataObj.label_tags">
               <tags-card :tagsIndicateurs="dataObj.label_tags"></tags-card>
             </div>
@@ -89,53 +88,27 @@ export default {
       idAccordion: {
         type: String,
         required: true
-      },
-      color: {
-          type: [],
-          default: undefined
-      },
-      name: {
-          type: [],
-          default: undefined}
+      }
   },
   data() {
-      return {
-          // widgetId: '',
+      return {          
           displayChart: false,
-          localDisplayChart: this.displayChart,// Utilisation d'une variable locale
-          isAccordionOpen: true 
+          isAccordionOpen: true,
+          color:  ['beige-gris-galet','brown-caramel','green-bourgeon','green-menthe']
       }
   },
   methods: {
-    // toggleChart(type) {
-    //   if (type === 'graphique') {
-    //     this.$emit('update:displayChart', true);
-    //   } else if (type === 'table') {
-    //     this.$emit('update:displayChart', false);
-    //   }
-    // },
       handleChartSelected(type) {
-    this.displayChart = (type === 'graphique');
-  }
-  }, 
-  watch: {
-    displayChart(newVal) {
-      this.localDisplayChart = newVal; // Mettre à jour la propriété de données locale lorsque la prop change
+      this.displayChart = (type === 'graphique');
     }
-  },
-  // mounted(){
-  //   console.log(JSON.stringify(this.dataObj.values.y))
-  // }
+  }
 }
 </script>
 
 <style scoped>
-
 .fr-unit {
   margin-bottom: 0rem !important;
-
 }
-
 .accordion-box {
   padding-bottom: 1rem !important;
 }
@@ -157,11 +130,6 @@ export default {
   display: flex;
   justify-content: space-between;
 }
-.align-tag {
-  vertical-align: middle !important;
-  margin-bottom: 0rem !important;
-
-}
 .titleBox {
   padding: 0.5rem 1rem;
   margin-top: 0.5rem;
@@ -178,7 +146,6 @@ export default {
   padding-left: 0.75rem;
   padding-right: 1.5rem;
   max-width: 100%;
-
 }
 .cardFooter {
   padding: 0.5rem 1rem;
@@ -215,9 +182,4 @@ p.textReference {
   margin-bottom: 0rem;
   font-weight: 400;
 }
-.fr-tags-group {
-  display: flex;
-  justify-content: flex-start;
-}
-
 </style>

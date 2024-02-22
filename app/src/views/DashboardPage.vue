@@ -69,7 +69,6 @@ export default {
         
       } catch (error) {
         console.error("Erreur dans le chargement des données : ", error);
-        this.isapiloading = false;
       }
     }
   }
