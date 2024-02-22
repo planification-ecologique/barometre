@@ -1,15 +1,11 @@
 <template>
-  <nav class="fr-sidemenu fr-sidemenu--sticky-full-height fr-sidemenu__padding" role="navigation"
-    aria-labelledby="fr-sidemenu-title">
+  <nav class="fr-sidemenu fr-sidemenu--sticky-full-height fr-sidemenu__padding" role="navigation" aria-labelledby="fr-sidemenu-title">
     <div class="fr-sidemenu__inner">
-      <button class="fr-sidemenu__btn" aria-controls="fr-sidemenu-wrapper" aria-expanded="false"> Dans cette rubrique
-      </button>
+      <button class="fr-sidemenu__btn" aria-controls="fr-sidemenu-wrapper" aria-expanded="false"> Dans cette rubrique </button>
       <div class="fr-collapse" id="fr-sidemenu-wrapper">
         <!-- <div class="fr-sidemenu__title" id="fr-sidemenu-title">Introduction</div> -->
-
         <ul class="fr-sidemenu__list">
           
-
           <li class="fr-sidemenu__item fr-sidemenu__item--active">
             <a class="fr-sidemenu__link" @click="emitSelection([['vue-d-ensemble','Vue d\'ensemble'], ['subtitle','8 indicateurs pour observer d\'un coup d\'œil les principaux vecteurs de la transition écologique.']])" target="_self">Vue
               d'ensemble</a>
@@ -24,7 +20,6 @@
               </ul>
             </div>
           </li>
-
         </ul>
       </div>
     </div>
