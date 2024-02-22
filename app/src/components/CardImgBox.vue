@@ -4,8 +4,8 @@
             <div class="fr-card__content card--content">
                 <h2 class="view-data">
                     <a href="#">{{ cardObject.title }}</a>
-                    <a class="fr-link fr-icon-arrow-right-line fr-link--icon-right" v-if="cardObject.databtn1">Consulter toutes les données</a>
                 </h2>
+
                 <div class="fr-card__start">
                     <p class="fr-text--lg fr-text--black">
                         {{ cardObject.description }}
@@ -22,13 +22,17 @@
 <script>
 
 import ChartBarImg from './components_sgv/ChartBarImg'
+import FranceImg from './components_sgv/FranceImg.vue'
 
 export default {
     name: 'CardImgBox',
     components: {
-        ChartBarImg
+        ChartBarImg,
+        FranceImg
+
     },
-    props: {
+ 
+          props: {
         cardObject: {
             type: Object,
             required: true
@@ -38,6 +42,7 @@ export default {
 </script>
 
 <style scoped>
+
 .fr-card:hover {
     box-shadow: none !important; 
     transform: none !important; 
