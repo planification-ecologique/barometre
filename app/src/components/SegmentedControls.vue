@@ -76,7 +76,5 @@ export default {
     cursor: pointer; 
    
 } 
-.fr-label{
- color: red;
-}
+
 </style>

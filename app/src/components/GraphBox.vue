@@ -80,9 +80,9 @@
         </div>
         <section class="fr-accordion">
           <h3 class="fr-accordion__title">
-            <button class="fr-accordion__btn" aria-expanded="false" :aria-controls="idAccordion">En savoir plus sur l'indicateur</button>
+            <button class="fr-accordion__btn" :aria-expanded="isAccordionOpen ? 'true' : 'false'" :aria-controls="idAccordion">En savoir plus sur l'indicateur</button>
           </h3>
-          <div class="fr-collapse" :id="idAccordion">
+          <div class="fr-collapse" :id="idAccordion" :class="{ 'fr-collapse--expanded': isAccordionOpen }">
             <p class="fr-text--xs cardDescription">{{ dataObj.label_description }}</p>
 
             <!-- <p> Lorem ipsum dolor sit amet consectetur adipisicing elit.</p> -->
@@ -145,7 +145,8 @@ export default {
           // widgetId: '',
           tableData: {},
           displayChart: false,
-          localDisplayChart: this.displayChart // Utilisation d'une variable locale
+          localDisplayChart: this.displayChart,// Utilisation d'une variable locale
+          isAccordionOpen: true 
       }
   },
   methods: {
