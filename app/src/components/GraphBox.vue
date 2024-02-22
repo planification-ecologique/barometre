@@ -143,7 +143,7 @@ export default {
   data() {
       return {
           // widgetId: '',
-          tableData: [],
+          tableData: {},
           displayChart: false,
           localDisplayChart: this.displayChart,// Utilisation d'une variable locale
           isAccordionOpen: true 

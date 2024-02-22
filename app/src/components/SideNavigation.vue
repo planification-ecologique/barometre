@@ -41,72 +41,27 @@ export default {
     return {
       menuOptions: []
     }
-
   },
   methods: {
-    // get_menu_options() {
-    //   this.menuOptions = [
-    //     { value: 'Emissions / Puits', label: 'Emissions', selected: false },
-    //     { value: 'Empreinte', label: 'Empreinte', selected: false },
-    //     { value: 'Biodiversité', label: 'Biodiversité', selected: false },
-    //     { value: 'Pollution', label: 'Pollution', selected: false },
-    //     { value: 'Energie', label: 'Energie', selected: false },
-    //     { value: 'Autre', label: 'Autre', selected: false }
-    //   ]
-    // },
     async fetch_menu_options() {
       try {
-        const response = await api('/requests/get_themes_levier',
-        {
-          method: 'GET',
-        });
+        const response = await api('/requests/get_themes_levier', { method: 'GET'});
         if (!response) {
           throw new Error('Erreur lors de la récupération des thèmes et leviers');
         }
 
         let result = response.data.results
-
-        console.log(result)
-
         this.menuOptions = result
       } catch (error) {
         console.error("Erreur dans le chargement de la navigation : ", error);
       }
-    },
-    get_menu_options() {
-
-
-
-      this.menuOptions = [
-        {
-          id_theme: 'tranverse', label_theme: 'Transverse', levier: [
-            { id_levier: 'emissions--puits', label_levier: 'Emissions', selected: false },
-            { id_levier: 'empreinte', label_levier: 'Empreinte', selected: false },
-            { id_levier: 'biodiversite', label_levier: 'Biodiversité', selected: false },
-            { id_levier: 'pollution', label_levier: 'Pollution', selected: false },
-            { id_levier: 'energie', label_levier: 'Energie', selected: false },
-            { id_levier: 'autre', lalabel_levierbel: 'Autre', selected: false }
-          ]
-        },
-        {
-          id_theme: 'transport', label_theme: 'Transport', levier: [
-            { id_levier: 'emissions--puits', label_levier: 'Emissions', selected: false },
-            { id_levier: 'empreinte', label_levier: 'Empreinte', selected: false },
-            { id_levier: 'biodiversite', label_levier: 'Biodiversité', selected: false },
-            { id_levier: 'pollution', label_levier: 'Pollution', selected: false },
-            { id_levier: 'energie', label_levier: 'Energie', selected: false },
-            { id_levier: 'autre', label_levier: 'Autre', selected: false }
-          ]
-        }
-      ]
     },
     emitSelection(selectedValue) {
       // Émettre un événement personnalisé avec l'information de sélection
       this.$emit('selectionChanged', selectedValue);
     }
   },
-  mounted() {
-    // this.get_menu_options()
+  mounted() {    
     this.fetch_menu_options()
   }
 }
