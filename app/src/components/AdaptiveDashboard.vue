@@ -9,7 +9,7 @@
         <div v-if="hasData">
             <div v-for="(row, index) in grid" :key="index" class="fr-grid-row fr-grid-row fr-grid-row--gutters fr-mb-1w">
                 <div v-for="(item, columnIndex) in row" :key="columnIndex" class="fr-col">
-                <graph-box :dataObj="item" :idAccordion="'accordion-'+ index+columnIndex" :color="colors" :displayChart="displayChart" :name=axesNames></graph-box>
+                <graph-box :dataObj="item" :idAccordion="'accordion-'+ index+columnIndex"></graph-box>
                 </div>
             </div>
         </div>
@@ -26,14 +26,6 @@ export default {
     name: 'AdaptiveDashboard',
     components: {
         GraphBox
-    },
-    data() {
-        return {
-            widgetId: '',
-            colors:  ['beige-gris-galet','brown-caramel','green-bourgeon','green-menthe'],
-            displayChart: true,
-            axesNames: ['Historique', 'Année en cours', 'Projection', 'Cible'],
-        }
     },
     props: {
         inputData: {
@@ -77,14 +69,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-    .fr-container-page {
-        background-color: #F6F6F6;
-        padding-top: 1.5rem;
-        padding-left: 2.5rem;
-        padding-right: 2.5rem;
-        width: 100%;
-
-    }
     .fr-title {
     margin-bottom: 0.625rem;
     }
