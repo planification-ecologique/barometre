@@ -12,7 +12,7 @@
               <h4 class="fr-subtitle">{{ selectedValueForH2[1] }}</h4>
             </div>
           </div>
-          <div v-if="results_API.length > 0">
+          <div v-if="(results_API.length > 0) && !isapiloading">
             <adaptive-dashboard :inputData="results_API" :color="colors"/>
           </div>
           <div v-else>
@@ -83,6 +83,7 @@ export default {
 
 
     return {
+      isapiloading: true,
       selectedValueForH1: ['transverse', 'Transverse'],
       selectedValueForH2: ['emissions--puits', 'Emissions / Puits'],
       querySuccess: true,
@@ -157,7 +158,7 @@ export default {
 
       // console.log("selectedValueForH1", this.selectedValueForH1)
       // console.log("selectedValueForH2", this.selectedValueForH2)
-
+      this.isapiloading = true;
       var query = {
         "filter_by": [
           {      
@@ -193,9 +194,10 @@ export default {
 
         this.results_API = results.data.results;
         // console.log("results_API--------", JSON.stringify(this.results_API));
-        
+        this.isapiloading = false;
       } catch (error) {
         console.error("Erreur dans le chargement des données : ", error);
+        this.isapiloading = false;
       }
 
     },

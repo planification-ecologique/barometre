@@ -2,12 +2,6 @@
     <div class="fr-card fr-card--no-icon fr-card--shadow adjust-height">
         <div class="titleBox">
             <h2 class="cardTitle">{{ dataObj.label_indic }}
-
-              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M21.3333 9.99951H22.6666V13.9995H21.3333V11.3328H18.6666V9.99951H21.3333ZM10.6666 9.99951H13.3333V11.3328H10.6666V13.9995H9.33325V9.99951H10.6666ZM21.3333 20.6662V17.9995H22.6666V21.9995H18.6666V20.6662H21.3333ZM10.6666 20.6662H13.3333V21.9995H9.33325V17.9995H10.6666V20.6662Z" fill="#00008F" aria-label="Agrandir le graphique"/>
-    <rect x="0.5" y="0.499512" width="31" height="31" stroke="#DDDDDD" aria-label="Agrandir le graphique"/>
-</svg>
-
             </h2>
             <p class="fr-text--xs fr-text--regular fr-unit"> L'unité est :  {{ dataObj.label_unit }}</p>
         </div>
@@ -16,7 +10,7 @@
             <!-- <p class="fr-text--xs fr-text-mention--grey textReference">Mis à jour : 05/02/2024</p> -->
             <segmented-controls v-on:chart-selected="handleChartSelected" :idcontrol="idAccordion+'1'"></segmented-controls>
             <div class="fr-text--xs fr-text--bold cardObjectif"> 
-                Objectif 2030
+                Objectif
                 <p class="fr-badge fr-badge-sm fr-badge--green-emeraude fr-badge--no-icon">{{ dataObj.values.y[3][dataObj.values.y[3].length - 1] }}</p>
             </div>
         </div>
@@ -47,8 +41,11 @@
             <p class="fr-text--xs cardDescription">{{ dataObj.label_description }}</p>
 
             <!-- <p> Lorem ipsum dolor sit amet consectetur adipisicing elit.</p> -->
-            <div class="">
-              <Tags @tags="handleTags"></Tags>
+            <div v-if="dataObj.label_tags">
+              <tags-card :tagsIndicateurs="dataObj.label_tags"></tags-card>
+            </div>
+            <div v-else>
+              Pas de tags
             </div>
           </div>
         </section>
@@ -73,7 +70,7 @@
 <script>
 import BarChart from './components_dsfr/BarChart.vue'
 import SegmentedControls from './SegmentedControls.vue'
-import Tags from './Tags.vue'
+import tagsCard from './TagsCard.vue'
 import TableComponent from './TableComponent.vue'
 
 export default {
@@ -81,7 +78,7 @@ export default {
   components: {
       BarChart,
       SegmentedControls,
-      Tags,
+      tagsCard,
       TableComponent
   },
   props: {
@@ -110,10 +107,6 @@ export default {
       }
   },
   methods: {
-    handleTags(selectedTags) {
-      console.log('Tags sélectionnés :', selectedTags);
-      this.selectedTags = selectedTags;
-    },
     // toggleChart(type) {
     //   if (type === 'graphique') {
     //     this.$emit('update:displayChart', true);
