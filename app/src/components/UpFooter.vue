@@ -9,9 +9,9 @@
                         <div class="fr-card__body">
                             <div class="fr-card__content">
                                 <h3 class="fr-card__title fr-text-title--blue-france">
-                                    <a href="https://www.gouvernement.fr/politiques-prioritaires/atteindre-le-plein-emploi-et-reindustrialiser-la-france"
+                                    <a href="https://www.gouvernement.fr/france-nation-verte"
                                         target="_self">
-                                        Plein emploi et réindustrialisation
+                                        France Nation Verte
                                     </a>
                                 </h3>
                                 <!-- <div class="fr-card__start">

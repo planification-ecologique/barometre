@@ -8,71 +8,31 @@
                     <rect x="0.5" y="0.499512" width="31" height="31" stroke="#DDDDDD"/>
                 </svg>
             </h2>
-            <div class="segmentedControls">
-            <segmented-controls v-on:chart-selected="handleChartSelected"></segmented-controls>
-            <br>
-            </div>
-
+            <p class="fr-text--xs fr-text--regular fr-unit"> L'unité est :  {{ dataObj.label_unit }}</p>
         </div>
-        <div class="label_unit">
-            <p class="fr-text--xs fr-text--regular"> L'unité est :  {{ dataObj.label_unit }}</p>
-
-        </div>
-
-
+        
         <div class="cardReference">
-            <p class="fr-text--xs fr-text-mention--grey textReference">Mis à jour : 05/02/2024</p>
+            <!-- <p class="fr-text--xs fr-text-mention--grey textReference">Mis à jour : 05/02/2024</p> -->
+            <segmented-controls v-on:chart-selected="handleChartSelected" :idcontrol="idAccordion+'1'"></segmented-controls>
             <div class="fr-text--xs fr-text--bold cardObjectif"> 
                 Objectif 2030
                 <p class="fr-badge fr-badge-sm fr-badge--green-emeraude fr-badge--no-icon">{{ dataObj.values.y[3][dataObj.values.y[3].length - 1] }}</p>
             </div>
         </div>
-        <!-- <div class="cardData"> -->
-            <!-- Placeholder pour le graphique -->
-            <!-- <bar-chart
-                :x=JSON.stringify(dataObj.values.x)
-                :y=JSON.stringify(dataObj.values.y)
-                :name=JSON.stringify(name)
-                :horizontal=false
-                :stacked=true
-                :color= JSON.stringify(color) 
-                :aspectratio = 2
-                >
-            </bar-chart>             -->
-        <!-- </div> -->
-     
-        <!-- <div class="cardFooter fr-grid-row fr-grid-row--middle"> -->
-            <!-- <div class="cardFooter-tags fr-col-6">
-                <ul class="fr-tags-group">
-                    <li>
-                        <p class="fr-tag fr-tag--sm align-tag">Atténuation</p>
-                    </li>
-                    <li>
-                        <p class="fr-tag fr-tag--sm align-tag">Biodiversité</p>
-                    </li>
-                </ul>
-            </div> -->
-         
-        <!-- </div> -->
-        <!-- <div class="cardReference">
-          <p class="fr-text--xs fr-text-mention--grey textReference">Mis à jour : {{ dataObj.update_date }}</p>
-          <div class="fr-text--xs fr-text--bold cardObjectif"> 
-            Objectif 2030
-            <p class="fr-badge fr-badge-sm fr-badge--green-emeraude fr-badge--no-icon">{{ dataObj.values.y[3][dataObj.values.y[3].length - 1] }}</p>
+        <div> 
+          <div class="cardData" v-if="displayChart">         
+            <bar-chart 
+                  :x=JSON.stringify(dataObj.values.x)
+                  :y=JSON.stringify(dataObj.values.y)
+                  :name=JSON.stringify(name)
+                  :horizontal=false
+                  :stacked=true
+                  :color= JSON.stringify(color) 
+                  :aspectratio = 2
+                  >
+              </bar-chart>
           </div>
-        </div> -->
-        <div class="cardData">          
-          <bar-chart v-if="displayChart"
-                :x=JSON.stringify(dataObj.values.x)
-                :y=JSON.stringify(dataObj.values.y)
-                :name=JSON.stringify(name)
-                :horizontal=false
-                :stacked=true
-                :color= JSON.stringify(color) 
-                :aspectratio = 2
-                >
-            </bar-chart>
-          <table-component v-else :dataObj="tableData"></table-component>        
+          <table-component v-else :annee="dataObj.values.x[0]" :valeur="dataObj.values.ytab"></table-component>        
         </div>
         <div class="beneathGraph">
           <p class="fr-text--xs fr-text-mention--grey textReference">Source : {{ dataObj.label_sources }}</p>
@@ -80,9 +40,9 @@
         </div>
         <section class="fr-accordion">
           <h3 class="fr-accordion__title">
-            <button class="fr-accordion__btn" aria-expanded="false" :aria-controls="idAccordion">En savoir plus sur l'indicateur</button>
+            <button class="fr-accordion__btn" :aria-expanded="isAccordionOpen ? 'true' : 'false'" :aria-controls="idAccordion">Description de l'indicateur</button>
           </h3>
-          <div class="fr-collapse" :id="idAccordion">
+          <div class="fr-collapse accordion-box" :id="idAccordion" :class="{ 'fr-collapse--expanded': isAccordionOpen }">
             <p class="fr-text--xs cardDescription">{{ dataObj.label_description }}</p>
 
             <!-- <p> Lorem ipsum dolor sit amet consectetur adipisicing elit.</p> -->
@@ -143,9 +103,9 @@ export default {
   data() {
       return {
           // widgetId: '',
-          tableData: [],
           displayChart: false,
-          localDisplayChart: this.displayChart // Utilisation d'une variable locale
+          localDisplayChart: this.displayChart,// Utilisation d'une variable locale
+          isAccordionOpen: true 
       }
   },
   methods: {
@@ -176,6 +136,15 @@ export default {
 </script>
 
 <style scoped>
+
+.fr-unit {
+  margin-bottom: 0rem !important;
+
+}
+
+.accordion-box {
+  padding-bottom: 1rem !important;
+}
 .adjust-height {
   height: auto !important;
   z-index: inherit;
@@ -215,8 +184,7 @@ export default {
   padding-left: 0.75rem;
   padding-right: 1.5rem;
   max-width: 100%;
-  /* max-height: 700px !important;
-  overflow: auto; */
+
 }
 .cardFooter {
   padding: 0.5rem 1rem;
@@ -257,11 +225,5 @@ p.textReference {
   display: flex;
   justify-content: flex-start;
 }
-.segmentedControls{
- color: red;
-}
-.label_unit{
-  margin-left: 16px;
-  margin-top: 10px;
-}
+
 </style>

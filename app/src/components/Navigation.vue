@@ -25,9 +25,9 @@ export default {
     get_menu_options() {
       this.menuOptions = [
         { value: 'accueil', label: 'Accueil', selected: false },
-        { value: 'dashboard', label: 'Tableaux de bord', selected: false },
+        { value: 'dashboard', label: 'Tableau de bord', selected: false },
         { value: 'tags', label: 'Tags', selected: false },
-        { value: 'lexique', label: 'Lexique', selected: false }
+        // { value: 'lexique', label: 'Lexique', selected: false }
       ]
       var current_page = this.get_name_page()      
       if (current_page == '') {

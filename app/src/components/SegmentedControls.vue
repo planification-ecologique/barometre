@@ -1,40 +1,26 @@
 <template>
-  <!-- <fieldset class="fr-segmented fr-segmented--sm">
-    <div class="fr-segmented__elements">
-      <div class="fr-segmented__element">
-        <input value="Graphique" type="button" id="segmented-2218-1" name="segmented-2218" @click="emitChartSelected('graphique')">
-      </div>
-      <div class="fr-segmented__element">
-        <input value="Table" type="button" id="segmented-2218-2" name="segmented-2219" @click="emitChartSelected('table')">
-      </div>
-    </div>
-  </fieldset> -->
-
-  <fieldset class="fr-segmented fr-segmented--no-legend">
+  <fieldset class="fr-segmented fr-segmented--no-legend fr-segmented--sm">
     <!-- <legend class="fr-segmented__legend">Légende</legend> -->
     <div class="fr-segmented__elements">
       <div class="fr-segmented__element">
         <input
           value="1"
-          type="button"
-          id="segmented-2230-1"
+          type="radio"
+          :id="idcontrol+'-1'"
           name="segmented-2230"
-          @click="emitChartSelected('graphique')"
-          :checked="defaultChart === 'graphique'"
-          
+          @click="emitChartSelected('graphique')"          
         />
-        <label class="fr-label" for="segmented-2230-1"> Graphique </label>
+        <label class="fr-label" :for="idcontrol+'-1'"> Graphique </label>
       </div>
       <div class="fr-segmented__element">
         <input
           value="2"
-          checked
-          type="button"
-          id="segmented-2230-2"
+          type="radio"
+          :id="idcontrol+'-2'"
           name="segmented-2230"
           @click="emitChartSelected('table')"
         />
-        <label class="fr-label" for="segmented-2230-2"> Table </label>
+        <label class="fr-label" :for="idcontrol+'-2'"> Table </label>
       </div>
   
     </div>
@@ -45,8 +31,16 @@
 export default {
   data() {
     return {
-      defaultChart: 'graphique' // Set the default chart type here
+      defaultChart: 'graphique', // Set the default chart type here
+      // valueGraph: true,
+      // valueTable: false,
     };
+  },
+  props: {
+    idcontrol: {
+      type: String,
+      required: true,
+    },
   },
   mounted() {
     // Emit the default chart type when the component is mounted
@@ -54,6 +48,15 @@ export default {
   },
   methods: {
     emitChartSelected(type) {
+      
+      // if (type === 'graphique') {
+      //   this.valueGraph = true;
+      //   this.valueTable = false;
+      // } else {
+      //   this.valueGraph = false;
+      //   this.valueTable = true;
+      // }
+
       this.$emit("chart-selected", type);
     },
   },
@@ -76,7 +79,5 @@ export default {
     cursor: pointer; 
    
 } 
-.fr-label{
- color: red;
-}
+
 </style>
