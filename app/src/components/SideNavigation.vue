@@ -1,9 +1,8 @@
 <template>
-  <nav class="fr-sidemenu fr-sidemenu--sticky-full-height fr-sidemenu__padding" role="navigation" aria-labelledby="fr-sidemenu-title">
+  <nav role="navigation" class="fr-sidemenu fr-sidemenu--sticky fr-sidemenu__padding"  aria-labelledby="fr-sidemenu-title">
     <div class="fr-sidemenu__inner">
-      <button class="fr-sidemenu__btn" aria-controls="fr-sidemenu-wrapper" aria-expanded="false"> Dans cette rubrique </button>
+      <button class="fr-sidemenu__btn" aria-controls="fr-sidemenu-wrapper" aria-expanded="false">Filtre sur les indicateurs</button>
       <div class="fr-collapse" id="fr-sidemenu-wrapper">
-        <!-- <div class="fr-sidemenu__title" id="fr-sidemenu-title">Introduction</div> -->
         <ul class="fr-sidemenu__list">
           <li class="fr-sidemenu__item" v-for="(theme, index) in menuOptions" :key="index">
             <button class="fr-sidemenu__btn" aria-expanded="false" :aria-controls="'fr-sidemenu-item-'+theme.id_theme"> {{ theme.label_theme }} </button> 
@@ -57,7 +56,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 a:hover:not([href]) {
   cursor: pointer;
   background-color: #f6f6f6;
