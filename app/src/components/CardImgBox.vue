@@ -3,14 +3,14 @@
         <div class="fr-card__body card-margin">
             <div class="fr-card__content card--content">
                 <h2 class="view-data">
-                    <a href="#">{{ cardObject.title }}</a>
+                    <a href="/dashboard">{{ cardObject.title }}</a>
                 </h2>
 
                 <div class="fr-card__start">
                     <p class="fr-text--lg fr-text--black">
                         {{ cardObject.description }}
                     </p>
-                    <button class="fr-btn" v-if="cardObject.databtn">Consulter toutes les données</button>
+                    <button class="fr-btn"  v-if="cardObject.databtn">Consulter toutes les données</button>
                 </div>
             </div>
         </div>
