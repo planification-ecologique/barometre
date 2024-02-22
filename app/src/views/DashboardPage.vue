@@ -1,8 +1,8 @@
 <template>
-  <div class="fr-container--fluid">
+  <div class="fr-container--fluid reset-overflow">
     <div class="fr-grid-row">
       <div id="sidebar" class="fr-col-3">
-        <SideNavigation @selectionChanged="updateSelection"></SideNavigation>
+        <side-navigation @selectionChanged="updateSelection"></side-navigation>
       </div>
       <div class="fr-col">
         <div class="fr-container--fluid fr-container-page">
@@ -218,6 +218,10 @@ export default {
 </script>
   
 <style scoped lang="scss">
+
+.reset-overflow {
+  overflow: visible !important;
+}
 .flex-container {
   max-width: none;
   overflow: hidden;
