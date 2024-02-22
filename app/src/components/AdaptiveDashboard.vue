@@ -1,23 +1,21 @@
 <template>
-    <div class="fr-col">
-        <div class="fr-container--fluid fr-container-page">
-          <div class="fr-grid-row">
+    <div>
+        <div class="fr-grid-row">
             <div class="fr-col-12">
-              <h1 class="fr-title">{{ this.params.label_theme }}</h1>
-              <h4 class="fr-subtitle">{{ this.params.label_levier }}</h4>
-            </div>
-          </div>
-            <div v-if="hasData">
-                <div v-for="(row, index) in grid" :key="index" class="fr-grid-row fr-grid-row fr-grid-row--gutters fr-mb-1w">
-                    <div v-for="(item, columnIndex) in row" :key="columnIndex" class="fr-col">
-                    <graph-box :dataObj="item" :idAccordion="'accordion-'+ index+columnIndex" :color="colors" :displayChart="displayChart" :name=axesNames></graph-box>
-                    </div>
-                </div>
-            </div>
-            <div v-else>
-                <p>Pas de données en cours...</p>
+                <h1 class="fr-title">{{ this.params.label_theme }}</h1>
+                <h4 class="fr-subtitle">{{ this.params.label_levier }}</h4>
             </div>
         </div>
+        <div v-if="hasData">
+            <div v-for="(row, index) in grid" :key="index" class="fr-grid-row fr-grid-row fr-grid-row--gutters fr-mb-1w">
+                <div v-for="(item, columnIndex) in row" :key="columnIndex" class="fr-col">
+                <graph-box :dataObj="item" :idAccordion="'accordion-'+ index+columnIndex" :color="colors" :displayChart="displayChart" :name=axesNames></graph-box>
+                </div>
+            </div>
+        </div>
+        <div v-else>
+            <p>Pas de données en cours...</p>
+        </div>        
     </div>
 </template>
     
