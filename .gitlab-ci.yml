@@ -6,7 +6,7 @@ stages:
   # - build_frontend
   # - build_nginx
   - extract_var_helm
-  # - build_helm  
+  - build_helm  
   # - deploy
 
 variables:
@@ -50,27 +50,27 @@ Extract-Data:
   stage: extract_var_helm
   image: python
   script:
-    - python3 ./devTools/get_variables.py -d app-front-chart -e qualif
+    - python3 ./devTools/get_variables.py -d app-front-chart -e $CI_COMMIT_REF_NAME
     - cat build.env
   artifacts:
     reports:
       dotenv: build.env
 
 # This Stage will create a package from Helm Chart that can push on package registry.
-# Publish-Helm-Package:
-#   stage: build_helm
-#   image: 
-#     name: alpine/helm:latest
-#     entrypoint: ['']
-#   script:
-#     - echo "Build Started"
-#     - echo ${CI_PROJECT_ID}
-#     - echo $CI_API_V4_URL
-#     - echo $PACKAGE_NAME
-#     - echo $PACKAGE_VERSION
-#     - helm package $CI_PROJECT_DIR/$PACKAGE_NAME
-#     - 'curl --request POST --user gitlab-ci-token:$CI_REGISTRY_PASSWORD --form "chart=@${PACKAGE_VERSION}" "${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/helm/api/stable/charts"'
-#     - echo "Chart Package Published to Gitlab package registry"
+Publish-Helm-Package:
+  stage: build_helm
+  image: 
+    name: alpine/helm:latest
+    entrypoint: ['']
+  script:
+    - echo "Build Started"
+    - echo ${CI_PROJECT_ID}
+    - echo $CI_API_V4_URL
+    - echo $PACKAGE_NAME
+    - echo $PACKAGE_VERSION
+    - helm package $CI_PROJECT_DIR/$PACKAGE_NAME
+    - 'curl --request POST --user gitlab-ci-token:$CI_REGISTRY_PASSWORD --form "chart=@${PACKAGE_VERSION}" "${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/helm/api/stable/charts"'
+    - echo "Chart Package Published to Gitlab package registry"
 
 # # This Stage will Deploy Helm Chart to K8S Cluster
 # Deploy-Helm-Chart:
