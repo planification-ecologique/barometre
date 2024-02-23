@@ -45,6 +45,15 @@ const router = new Router({
       },
     },
     {
+      path: "/mentions-legales",
+      name: "mentions-legales",
+      component: () =>
+        import(/* webpackChunkName: "tags" */ "./views/MentionsLegalesPage.vue"),
+      meta: {
+        requiresAuth: true,
+      },
+    },
+    {
       path: "/donnees-personnelles",
       name: "donnees-personnelles",
       component: () =>
@@ -52,7 +61,8 @@ const router = new Router({
       meta: {
         requiresAuth: true,
       },
-    }
+    },
+    
     // {
     //   path: "/lexique",
     //   name: "lexique",
