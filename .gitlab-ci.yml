@@ -86,8 +86,8 @@ Deploy-Helm-Chart:
     - helm repo update 
     - helm repo list
     - helm list -n $NAMESPACE
-    - helm install --dry-run ${HELM_NAME} login-project/${PACKAGE_NAME} --values  login-project/${PACKAGE_NAME}/values_qualif.yaml --namespace $NAMESPACE
-    - helm upgrade --install ${HELM_NAME} login-project/${PACKAGE_NAME} --values  app-front-chart/values_$CI_COMMIT_REF_NAME.yaml --namespace $NAMESPACE
+    - helm install --dry-run ${HELM_NAME} login-project/${PACKAGE_NAME} --values  ${PACKAGE_NAME}/values_$CI_COMMIT_REF_NAME.yaml --namespace $NAMESPACE
+    - helm upgrade --install ${HELM_NAME} login-project/${PACKAGE_NAME} --values  ${PACKAGE_NAME}/values_$CI_COMMIT_REF_NAME.yaml --namespace $NAMESPACE
     - kubectl get pods -n $NAMESPACE
     - kubectl get svc -n $NAMESPACE
 
