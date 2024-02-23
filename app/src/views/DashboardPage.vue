@@ -6,7 +6,12 @@
       </div>
       <div class="fr-col">
         <div class="fr-container--fluid fr-container-page">
-          <adaptive-dashboard :params=myobj :inputData=results_API v-if="isquery"/>
+          <div v-if="!isapiloading">
+            <adaptive-dashboard :params=myobj :inputData=results_API />
+          </div>
+          <div v-else>
+            <p>Chargement des indicateurs...</p>
+          </div>
           <div class="fr-grid-row">
             <div class="fr-col-12">
                   <h2 class="fr-footer__body fr-btns-group--between">Les axes pour transformer la société
@@ -37,7 +42,7 @@ export default {
   },
   data() {
     return {
-      isquery: false,
+      isapiloading: true,
       myobj: {},
       results_API: [],
     }
@@ -50,6 +55,7 @@ export default {
       }
     },
     async fetchData(query) {
+      this.isapiloading = true
       // Appel à l'API
       try {
         const response = await api('/requests/get_indicators', {
@@ -65,7 +71,7 @@ export default {
         let results = response;
         this.results_API = results.data.results;
         // console.log("results_API--------", JSON.stringify(this.results_API));
-        this.isquery = true
+        this.isapiloading = false;
         
       } catch (error) {
         console.error("Erreur dans le chargement des données : ", error);
