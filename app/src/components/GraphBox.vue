@@ -39,7 +39,6 @@
           </h3>
           <div class="fr-collapse accordion-box" :id="idAccordion" :class="{ 'fr-collapse--expanded': isAccordionOpen }">
             <p class="fr-text--xs cardDescription">{{ dataObj.label_description }}</p>
-           
             <div v-if="dataObj.label_tags">
               <tags-card :tagsIndicateurs="dataObj.label_tags"></tags-card>
             </div>
@@ -48,7 +47,7 @@
             </div>
           </div>
         </section>
-        <div class="cardFooter fr-grid-row fr-grid-row--middle">
+        <!-- <div class="cardFooter fr-grid-row fr-grid-row--middle">
           <div class=""></div>
           <div class="cardFooter-button fr-col-3">
             <svg width="34" height="32" viewBox="0 0 34 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -61,7 +60,7 @@
               <rect x="0.5" y="0.499512" width="31" height="31" stroke="#DDDDDD"/>
             </svg>
           </div>
-        </div>
+        </div> -->
     </div>
 
 </template>
