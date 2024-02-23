@@ -83,11 +83,11 @@ Deploy-Helm-Chart:
     - kubectl config get-contexts
     - kubectl config use-context $KUBE_CONTEXT
     - helm repo add --username $CI_REGISTRY_USER --password $CI_REGISTRY_PASSWORD login-project "${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/helm/stable"
-    # - helm repo update 
+    - helm repo update 
     - helm repo list
     - helm list -n $NAMESPACE
-    - echo $HELM_NAME
-    # - helm upgrade --dry-run ${HELM_NAME} login-project/${PACKAGE_NAME} --values  job-feed-chart/values_qualif.yaml --namespace $NAMESPACE
+    - helm upgrade --dry-run ${HELM_NAME} login-project/${PACKAGE_NAME} --values  job-feed-chart/values_qualif.yaml --namespace $NAMESPACE
+    - helm upgrade --install ${HELM_NAME} login-project/${PACKAGE_NAME} --values  job-feed-chart/values_qualif.yaml --namespace $NAMESPACE
     - kubectl get pods -n $NAMESPACE
     - kubectl get svc -n $NAMESPACE
 
