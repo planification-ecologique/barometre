@@ -35,9 +35,12 @@ build_nginx:
   script:
     - ls -l
     - pwd
-    # - cd ./app/
-    - tar zxvf  ./app/dist.tar.gz -C ./app/
-    - ls ./app
+    - cd ./app/
+    - ls -l
+    - tar zxvf  dist.tar.gz
+    - cd ..
+    - pwd
+    - ls -l
     - docker build --no-cache --pull -t $IMAGE_NAME .
     # - docker build ./ --tag $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA --tag $CI_REGISTRY_IMAGE:$TAG_IMAGE_FRONTEND -f ./Dockerfile
     # - docker push $CI_REGISTRY_IMAGE:$TAG_IMAGE_FRONTEND
