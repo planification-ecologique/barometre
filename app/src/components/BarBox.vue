@@ -50,7 +50,6 @@
                 <rect x="0.5" y="0.499512" width="31" height="31" stroke="#DDDDDD"/>
             </svg>
     </div> -->
-
 </div>
 </template>
 
