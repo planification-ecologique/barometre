@@ -17,13 +17,12 @@ build_frontend:
   image: node:20.11-bullseye-slim
   script:
     - cd app && npm install
-    - pwd
-    - npm run build_qualif
+    - npm run build_$CI_COMMIT_REF_NAME
     - tar czvf dist.tar.gz dist/
     - pwd
   artifacts:
     paths: 
-      - /build/dist.tar.gz
+      - /builds/sgpe/sgpe/sgpe-app/app/dist.tar.gz
     expose_as: 'vuejs dashboard dist'
     expire_in: 2 hrs
 
