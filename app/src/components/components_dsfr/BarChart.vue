@@ -591,12 +591,12 @@
   
         this.loadColors()
         if (theme === 'light') {
-        this.colorParse = ['#FF5733', '#33FF57', '#3366FF']; // Rouge, vert, bleu
-        this.colorHover = ['#FF8C66', '#66FF8C', '#8C99FF']; // Couleurs de survol correspondantes
-    } else {
-        this.colorParse = ['#FF5733', '#33FF57', '#3366FF']; // Rouge, vert, bleu
-        this.colorHover = ['#FF8C66', '#66FF8C', '#8C99FF']; // Couleurs de survol correspondantes
-    }
+          this.colorPrecisionBar = 'blue-ecume'
+          this.colorBox = '#eeeeee'
+        } else {
+          this.colorPrecisionBar = '#FFFFFF'
+          this.colorBox = '#2f2f2f'
+        }
         for (let i = 0; i < this.yparse.length; i++) {
           this.chart.data.datasets[i].borderColor = this.colorParse[i]
           this.chart.data.datasets[i].backgroundColor = this.colorParse[i]
