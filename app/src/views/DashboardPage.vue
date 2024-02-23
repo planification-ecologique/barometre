@@ -13,13 +13,21 @@
             <p>Chargement des indicateurs...</p>
           </div>
           <div class="fr-grid-row">
+                 <a class="fr-link" href="https://www.gouvernement.fr/france-nation-verte"
+                                        target="_self">
+                                        France Nation Verte
+                                    </a>
+                                    <br>
+          </div>
+          <br>
+          <!-- <div class="fr-grid-row">
             <div class="fr-col-12">
                   <h2 class="fr-footer__body fr-btns-group--between">Les axes pour transformer la société
                     <a class="fr-link fr-icon-arrow-right-line fr-link--icon-right" href="#">Suivre les réformes</a>
                   </h2>
               <up-footer></up-footer>
             </div>
-          </div>  
+          </div>   -->
         </div>
       </div>
     </div>
