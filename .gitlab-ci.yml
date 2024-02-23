@@ -5,12 +5,18 @@ docker-build-dev:
     - docker:dind
   before_script:
     - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
+  variables:
+    TAG_NUMBER: "0.0.1"
+    IMAGE_TAG_NAME: "barometre-sgpe-{$CI_COMMIT_REF_NAME}:{$TAG_NUMBER}"
+
   script:
+    - echo $IMAGE_TAG_NAME
     - tag=":$CI_COMMIT_BRANCH"
-    - docker build --no-cache --pull -t "$CI_REGISTRY_IMAGE${tag}" .
-    - docker push "$CI_REGISTRY_IMAGE${tag}"
+    - echo $CI_REGISTRY_IMAGE${tag}"
+    # - docker build --no-cache --pull -t "$CI_REGISTRY_IMAGE${tag}" .
+    # - docker push "$CI_REGISTRY_IMAGE${tag}"
   rules:
-    - if: $CI_COMMIT_REF_NAME == 'main'
+    - if: $CI_COMMIT_REF_NAME == 'qualif'
 # docker-build-prod:
 #   image: docker:latest
 #   stage: build
