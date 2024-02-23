@@ -1,24 +1,46 @@
-docker-build-dev:
-  image: docker:latest
-  stage: build
-  services:
-    - docker:dind
-  before_script:
-    - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
-  variables:
+workflow:
+  rules:
+    - if: $CI_COMMIT_REF_NAME == 'qualif'
+
+stages:
+  - build_frontend
+  - build_nginx
+  # - deploy
+
+variables:
     TAG_NUMBER: "0.0.1"
     IMAGE_TAG_NAME: "barometre-sgpe-$CI_COMMIT_REF_NAME:$TAG_NUMBER"
     IMAGE_NAME: "$CI_REGISTRY_IMAGE/$IMAGE_TAG_NAME"
+
+build_frontend:
+  stage: build_frontend
+  image: node:20.11-bullseye-slim
   script:
-    - echo $IMAGE_TAG_NAME
-    - echo $IMAGE_NAME
-    # - tag=":$CI_COMMIT_BRANCH"
-    # - echo "$CI_REGISTRY_IMAGE${tag}"
+    - cd app && npm install    
+    - npm run build_qualif
+    - tar czvf dist.tar.gz dist/
+  artifacts:
+    paths: 
+      - /build/dist.tar.gz
+    expose_as: 'vuejs dashboard dist'
+    expire_in: 2 hrs
+
+build_nginx:
+  stage: build_nginx
+  before_script:
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+  script:
+    - ls -l
+    - pwd
+    # - cd ./app/
+    - tar zxvf dist.tar.gz -C ./app/
+    - ls ./app
     - docker build --no-cache --pull -t $IMAGE_NAME .
+    # - docker build ./ --tag $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA --tag $CI_REGISTRY_IMAGE:$TAG_IMAGE_FRONTEND -f ./Dockerfile
+    # - docker push $CI_REGISTRY_IMAGE:$TAG_IMAGE_FRONTEND
     - docker push $IMAGE_NAME
-  rules:
-    - if: $CI_COMMIT_REF_NAME == 'qualif'
-# docker-build-prod:
+
+# docker-build-dev:
 #   image: docker:latest
 #   stage: build
 #   services:
@@ -26,8 +48,12 @@ docker-build-dev:
 #   before_script:
 #     - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
 #   script:
-#     - tag=":latest"
-#     - docker build --no-cache --pull -t "$CI_REGISTRY_IMAGE${tag}" .
-#     - docker push "$CI_REGISTRY_IMAGE${tag}"
+#     - echo $IMAGE_TAG_NAME
+#     - echo $IMAGE_NAME
+#     # - tag=":$CI_COMMIT_BRANCH"
+#     # - echo "$CI_REGISTRY_IMAGE${tag}"
+#     - docker build --no-cache --pull -t $IMAGE_NAME .
+#     - docker push $IMAGE_NAME
 #   rules:
-#     - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
+#     - if: $CI_COMMIT_REF_NAME == 'qualif'
+
