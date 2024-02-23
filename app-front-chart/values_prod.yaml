@@ -14,7 +14,7 @@ service:
 replicaCount: 1
 
 image:
-  repository: gitlab.seenovate.com:5050/sig/satg/statsatgouv-app/seenovate-appfront-main
+  repository: gitlab.seenovate.com:5050/sig/satg/statsatgouv-app/seenovate-appfront
   tag: "0.0.2"
   containerPort: 9080
 
