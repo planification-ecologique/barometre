@@ -3,7 +3,7 @@ workflow:
     - if: $CI_COMMIT_REF_NAME == 'qualif'
 
 stages:
-  - build_frontend
+  # - build_frontend
   - build_nginx
   # - deploy
 
@@ -12,22 +12,24 @@ variables:
     IMAGE_TAG_NAME: "barometre-sgpe-$CI_COMMIT_REF_NAME:$TAG_NUMBER"
     IMAGE_NAME: "$CI_REGISTRY_IMAGE/$IMAGE_TAG_NAME"
 
-build_frontend:
-  stage: build_frontend
-  image: node:20.11-bullseye-slim
-  script:
-    - cd app && npm install
-    - npm run build_$CI_COMMIT_REF_NAME
-    - tar czvf dist.tar.gz dist/
-    - pwd
-  artifacts:
-    paths: 
-      - /builds/sgpe/sgpe/sgpe-app/app/dist.tar.gz
-    expose_as: 'vuejs dashboard dist'
-    expire_in: 2 hrs
+# build_frontend:
+#   stage: build_frontend
+#   image: node:20.11-bullseye-slim
+#   script:
+#     - cd app && npm install
+#     - npm run build_$CI_COMMIT_REF_NAME
+#     - tar czvf dist.tar.gz dist/
+#     - pwd
+#   artifacts:
+#     paths: 
+#       - /builds/sgpe/sgpe/sgpe-app/app/dist.tar.gz
+#     expose_as: 'vuejs dashboard dist'
+#     expire_in: 2 hrs
 
 build_nginx:
   stage: build_nginx
+  services:
+    - docker:dind
   before_script:
     - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
   script:
