@@ -1,8 +1,8 @@
 workflow:
   rules:
-    - if: $CI_COMMIT_MESSAGE =~ /-deploy$/
+    - if: '$CI_COMMIT_MESSAGE =~ /^.*-deploy$/'
       when: always
-
+#  && ($CI_COMMIT_REF_NAME == "qualif" || $CI_COMMIT_REF_NAME == "prod")'
 stages:
   # - build_frontend
   # - build_nginx
