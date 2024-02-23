@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "@dsb-norge/vue-keycloak-js": "2.4.0",
-    "@gouvfr/dsfr": "^1.10.2",
+    "@gouvfr/dsfr": "^1.11.1",
     "axios": "^1.6.2",
     "chart.js": "^2.9.4",
     "chartjs-plugin-annotation": "^0.5.7",

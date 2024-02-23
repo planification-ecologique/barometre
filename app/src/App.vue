@@ -2,7 +2,7 @@
 <template>
   <div>
     <header-dsfr></header-dsfr>
-    <div class="fr-container">
+    <div class="fr-container--fluid reset-overflow">
       <div id="app">
         <!-- Bloc de navigation -->
         <!-- <div id="nav">
@@ -30,21 +30,9 @@
 
 </script>
 
-<style>
+<style scoped>
 
-.container{
-  background-color: #f6f6f6;
-}
-
-.fr-container{
-  width: 100%;
-}
-body{
-  background-color: white;
-}
-
-.flex-container {
-  max-width: none;
-  overflow: hidden;
+.reset-overflow {
+  overflow: visible !important;
 }
 </style>

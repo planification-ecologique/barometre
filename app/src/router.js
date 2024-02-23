@@ -10,8 +10,8 @@ const router = new Router({
     {
       path: "/",
       name: "home",
-      component: () =>
-        import(/* webpackChunkName: "home" */ "./views/HomePage.vue"),
+      // component: () =>
+      //   import(/* webpackChunkName: "home" */ "./views/HomePage.vue"),
       meta: {
         requiresAuth: true,
       },
@@ -43,16 +43,25 @@ const router = new Router({
       meta: {
         requiresAuth: true,
       },
-    },
-    {
-      path: "/lexique",
-      name: "lexique",
-      component: () =>
-        import(/* webpackChunkName: "visits" */ "./views/LexiquePage.vue"),
-      meta: {
-        requiresAuth: true,
-      },
-    },
+    }
+    // {
+    //   path: "/lexique",
+    //   name: "lexique",
+    //   component: () =>
+    //     import(/* webpackChunkName: "visits" */ "./views/LexiquePage.vue"),
+    //   meta: {
+    //     requiresAuth: true,
+    //   },
+    // },
+    // {
+    //   path: "/mentions-legales",
+    //   name: "mentions légales",
+    //   component: () =>
+    //     import(/* webpackChunkName: "visits" */ "./views/MentionsLegalesPage.vue"),
+    //   meta: {
+    //     requiresAuth: true,
+    //   },
+    // },
   ],
 });
 

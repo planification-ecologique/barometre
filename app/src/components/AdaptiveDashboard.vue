@@ -1,30 +1,48 @@
 <template>
     <div>
-        <div v-for="(row, index) in grid" :key="index" class="fr-grid-row fr-grid-row fr-grid-row--gutters fr-mb-1w">
-            <div v-for="(item, columnIndex) in row" :key="columnIndex" class="fr-col">
-                <graph-box :dataObj=item :color=colors> </graph-box>
+        <div class="fr-grid-row">
+            <div class="fr-col-12">
+                <h1 class="fr-title">{{ this.params.label_theme }}</h1>
+                <h4 class="fr-subtitle">{{ this.params.label_levier }}</h4>
             </div>
         </div>
+        <div v-if="hasData">
+            <div v-for="(row, index) in grid" :key="index" class="fr-grid-row fr-grid-row fr-grid-row--gutters fr-mb-1w">
+                <div v-for="(item, columnIndex) in row" :key="columnIndex" class="fr-col">
+                <graph-box :dataObj="item" :idAccordion="'accordion-'+ index+columnIndex"></graph-box>
+                </div>
+            </div>
+        </div>
+        <div v-else>
+            <p>Pas de données en cours...</p>
+        </div>        
     </div>
 </template>
     
 <script>
-
 import GraphBox from '../components/GraphBox.vue'
-
 
 export default {
     name: 'AdaptiveDashboard',
     components: {
         GraphBox
     },
-    data() {
-        return {
-            widgetId: '',
-            colors:  ['beige-gris-galet','brown-caramel','green-bourgeon','green-menthe']
+    props: {
+        inputData: {
+            type: Array,
+            required: true
+        },
+        params: {
+            type: Object,
+            rerquired: true
         }
     },
     computed: {
+
+        hasData() {
+            return this.inputData && this.inputData.length > 0;
+        },
+
         grid() {
             const numRows = Math.ceil(this.inputData.length / 2);
             const numCols = 2;
@@ -44,17 +62,18 @@ export default {
             if (lastRowNumCols === 1) {
                 grid[numRows - 1] = lastRow.slice(0, -1); // Remove the last element
             }
-
             return grid;
-
-        }
-    },
-    props: {
-        inputData: {
-            type: Array,
-            required: true
         }
     }
 }
 </script>
+
+<style scoped lang="scss">
+    .fr-title {
+    margin-bottom: 0.625rem;
+    }
+    .fr-subtitle {
+    font-weight: 400;
+    }
+</style>
 

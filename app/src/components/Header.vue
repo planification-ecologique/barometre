@@ -1,7 +1,7 @@
   <template>
     <header role="banner" class="fr-header">
       <div class="fr-header__body">
-        <div class="fr-container">
+        <div class="header-container">
           <div class="fr-header__body-row">
             <div class="fr-header__brand fr-enlarge-link">
               <div class="fr-header__brand-top">
@@ -41,7 +41,7 @@
           </div>
         </div>
       </div>
-      <div class="fr-container">
+      <div class="fr-container--fluid">
         <navigation-dsfr></navigation-dsfr>
       </div>
     </header>
@@ -75,6 +75,13 @@
   .logo {
     order: 3; /* Réorganiser l'ordre d'affichage, le logo sera affiché en dernier */
   }
-  
+  .header-container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
   </style>
   
