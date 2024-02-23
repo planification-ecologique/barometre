@@ -2,15 +2,14 @@
     <div class="fr-card fr-card--lg fr-enlarge-link fr-card--horizontal card--hpadding" :style="{backgroundColor: cardObject.bgcolor}">
         <div class="fr-card__body card-margin">
             <div class="fr-card__content card--content">
-                <h2 class="view-data">
-                    <a href="/dashboard">{{ cardObject.title }}</a>
+                <h2 class="view-data"> {{ cardObject.title }}
                 </h2>
 
                 <div class="fr-card__start">
                     <p class="fr-text--lg fr-text--black">
                         {{ cardObject.description }}
                     </p>
-                    <button class="fr-btn"  v-if="cardObject.databtn">Consulter toutes les données</button>
+                    <button class="fr-btn" @click="router_to_dashboard()"  v-if="cardObject.databtn">Consulter toutes les données</button>
                 </div>
             </div>
         </div>
@@ -21,6 +20,7 @@
     
 <script>
 
+import router from '../router'
 import ChartBarImg from './components_sgv/ChartBarImg'
 import FranceImg from './components_sgv/FranceImg.vue'
 
@@ -29,13 +29,21 @@ export default {
     components: {
         ChartBarImg,
         FranceImg
-
     },
- 
-          props: {
+    data() {
+        return {
+            myrouter: router
+        }
+    },
+    props: {
         cardObject: {
             type: Object,
             required: true
+        }
+    },
+    methods: {
+        router_to_dashboard () {
+            this.myrouter.push({ name:'dashboard' })
         }
     }
 }
