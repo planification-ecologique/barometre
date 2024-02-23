@@ -85,7 +85,7 @@ export default {
         // image: FranceImg
       },
       cardObjectif: {
-        title: "Objectif des incidateurs",
+        title: "Objectif des indicateurs",
         description : "Ces indicateurs visent à représenter l'évolution des dernières années et à partager les perspectives concernant les grands leviers d'action de la planification écologique, afin d'éclairer tous les acteurs concernés et contribuer à la discussion collective sur les chemins de transition appropriés pour le pays.",
         databtn: false,
         databtn1: true,
@@ -101,7 +101,7 @@ export default {
       },
       cardEvolution: {
         title: "Trajectoires futures",
-        description : `Il importe de souligner également que les trajectoires affichées pour l’avenir reposent parfois sur des objectifs officiels, mais parfois aussi, et même souvent, sur des hypothèses techniques de travail à date ; elles pourront donc évoluer le cas échéant et n'engagement pas en tant que telles la responsabilité ni du SGPE ni a fortiori du gouvernement. Pour autant, les trajectoires présentées cherchent à donner une vision cohérente des grandes stratégies nationales existantes (ex. Stratégie nationale pour la biodiversité) ou en cours de finalisation (ex. Stratégie nationale bas carbone).`,
+        description : `Il importe de souligner également que les trajectoires affichées pour l’avenir reposent parfois sur des objectifs officiels, mais parfois aussi, et même souvent, sur des hypothèses techniques de travail à date ; elles pourront donc évoluer le cas échéant et n'engagement pas en tant que tel la responsabilité ni du SGPE ni a fortiori du gouvernement. Pour autant, les trajectoires présentées cherchent à donner une vision cohérente des grandes stratégies nationales existantes (ex. Stratégie nationale pour la biodiversité) ou en cours de finalisation (ex. Stratégie nationale bas carbone).`,
         databtn: false,
         databtn1: true,
 
