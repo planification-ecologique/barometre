@@ -16,9 +16,11 @@ build_frontend:
   stage: build_frontend
   image: node:20.11-bullseye-slim
   script:
-    - cd app && npm install    
+    - cd app && npm install
+    - pwd
     - npm run build_qualif
     - tar czvf dist.tar.gz dist/
+    - pwd
   artifacts:
     paths: 
       - /build/dist.tar.gz
