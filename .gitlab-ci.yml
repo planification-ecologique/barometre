@@ -1,6 +1,7 @@
 workflow:
   rules:
     - if: '$CI_COMMIT_MESSAGE =~ /-deploy$/ && ($CI_COMMIT_REF_NAME == "qualif" || $CI_COMMIT_REF_NAME == "prod")'
+      when: always
 
 stages:
   # - build_frontend
