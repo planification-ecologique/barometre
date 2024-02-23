@@ -3,13 +3,13 @@ workflow:
     - if: '$CI_COMMIT_REF_NAME == "qualif" || $CI_COMMIT_REF_NAME == "prod"'
       when: always
       # '$CI_COMMIT_MESSAGE =~ /^.*-deploy$/'
-#  && ($CI_COMMIT_REF_NAME == "qualif" || $CI_COMMIT_REF_NAME == "prod")'
+
 stages:
-  # - build_frontend
-  # - build_nginx
+  - build_frontend
+  - build_nginx
   - extract_var_helm
-  # - build_helm  
-  # - deploy
+  # - build_helm
+  - deploy
 
 variables:
     TAG_NUMBER: "0.0.1"
@@ -18,33 +18,33 @@ variables:
     KUBE_CONTEXT: sgpe/sgpe/k8s-connection:k8s-connection
 
 # IMAGE ---
-# build_frontend:
-#   stage: build_frontend
-#   image: node:20.11-bullseye-slim
-#   script:
-#     - cd app && npm install
-#     - npm run build_$CI_COMMIT_REF_NAME
-#     - tar czvf dist.tar.gz dist/
-#     - pwd
-#     - ls -l
-#   artifacts:
-#     paths: 
-#       - /builds/sgpe/sgpe/sgpe-app/app/dist.tar.gz
-#     expose_as: 'vuejs dashboard dist'
-#     expire_in: 2 hrs
+build_frontend:
+  stage: build_frontend
+  image: node:20.11-bullseye-slim
+  script:
+    - cd app && npm install
+    - npm run build_$CI_COMMIT_REF_NAME
+    - tar czvf dist.tar.gz dist/
+    - pwd
+    - ls -l
+  artifacts:
+    paths: 
+      - /builds/sgpe/sgpe/sgpe-app/app/dist.tar.gz
+    expose_as: 'vuejs dashboard dist'
+    expire_in: 2 hrs
 
-# build_nginx:
-#   stage: build_nginx
-#   services:
-#     - docker:dind
-#   before_script:
-#     - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
-#   script:
-#     - cd ./app/
-#     - tar zxvf  dist.tar.gz
-#     - cd ..
-#     - docker build --no-cache --pull -t $IMAGE_NAME .
-#     - docker push $IMAGE_NAME
+build_nginx:
+  stage: build_nginx
+  services:
+    - docker:dind
+  before_script:
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+  script:
+    - cd ./app/
+    - tar zxvf  dist.tar.gz
+    - cd ..
+    - docker build --no-cache --pull -t $IMAGE_NAME .
+    - docker push $IMAGE_NAME
 
 # DEPLOY ---
 # This Stage extract the name and version package from Helm Chart..
@@ -75,22 +75,22 @@ Extract-Data:
 #     - echo "Chart Package Published to Gitlab package registry"
 
 # This Stage will Deploy Helm Chart to K8S Cluster
-# Deploy-Helm-Chart:
-#   stage: deploy
-#   image: 
-#     name: dtzar/helm-kubectl
-#     entrypoint: ['']
-#   script:
-#     - echo "Deployment Started"
-#     - kubectl config get-contexts
-#     - kubectl config use-context $KUBE_CONTEXT
-#     - helm repo add --username $CI_REGISTRY_USER --password $CI_REGISTRY_PASSWORD login-project "${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/helm/stable"
-#     - helm repo update 
-#     - helm repo list
-#     - helm list -n $NAMESPACE
-#     - helm install --dry-run ${HELM_NAME} login-project/${PACKAGE_NAME} --values  ${PACKAGE_NAME}/values_$CI_COMMIT_REF_NAME.yaml --namespace $NAMESPACE
-#     - helm upgrade --install ${HELM_NAME} login-project/${PACKAGE_NAME} --values  ${PACKAGE_NAME}/values_$CI_COMMIT_REF_NAME.yaml --namespace $NAMESPACE
-#     - kubectl get pods -n $NAMESPACE
-#     - kubectl get svc -n $NAMESPACE
+Deploy-Helm-Chart:
+  stage: deploy
+  image: 
+    name: dtzar/helm-kubectl
+    entrypoint: ['']
+  script:
+    - echo "Deployment Started"
+    - kubectl config get-contexts
+    - kubectl config use-context $KUBE_CONTEXT
+    - helm repo add --username $CI_REGISTRY_USER --password $CI_REGISTRY_PASSWORD login-project "${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/helm/stable"
+    - helm repo update 
+    - helm repo list
+    - helm list -n $NAMESPACE
+    - helm install --dry-run ${HELM_NAME} login-project/${PACKAGE_NAME} --values  ${PACKAGE_NAME}/values_$CI_COMMIT_REF_NAME.yaml --namespace $NAMESPACE
+    - helm upgrade --install ${HELM_NAME} login-project/${PACKAGE_NAME} --values  ${PACKAGE_NAME}/values_$CI_COMMIT_REF_NAME.yaml --namespace $NAMESPACE
+    - kubectl get pods -n $NAMESPACE
+    - kubectl get svc -n $NAMESPACE
 
 
