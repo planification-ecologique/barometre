@@ -1,13 +1,14 @@
 workflow:
   rules:
-    - if: $CI_COMMIT_REF_NAME == 'qualif'
+    # - if: $CI_COMMIT_REF_NAME == 'qualif'
+    - if: $CI_COMMIT_MESSAGE =~ /-deploy$/
 
 stages:
   # - build_frontend
   # - build_nginx
   - extract_var_helm
   # - build_helm  
-  - deploy
+  # - deploy
 
 variables:
     TAG_NUMBER: "0.0.1"
@@ -73,22 +74,22 @@ Extract-Data:
 #     - echo "Chart Package Published to Gitlab package registry"
 
 # This Stage will Deploy Helm Chart to K8S Cluster
-Deploy-Helm-Chart:
-  stage: deploy
-  image: 
-    name: dtzar/helm-kubectl
-    entrypoint: ['']
-  script:
-    - echo "Deployment Started"
-    - kubectl config get-contexts
-    - kubectl config use-context $KUBE_CONTEXT
-    - helm repo add --username $CI_REGISTRY_USER --password $CI_REGISTRY_PASSWORD login-project "${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/helm/stable"
-    - helm repo update 
-    - helm repo list
-    - helm list -n $NAMESPACE
-    - helm install --dry-run ${HELM_NAME} login-project/${PACKAGE_NAME} --values  ${PACKAGE_NAME}/values_$CI_COMMIT_REF_NAME.yaml --namespace $NAMESPACE
-    - helm upgrade --install ${HELM_NAME} login-project/${PACKAGE_NAME} --values  ${PACKAGE_NAME}/values_$CI_COMMIT_REF_NAME.yaml --namespace $NAMESPACE
-    - kubectl get pods -n $NAMESPACE
-    - kubectl get svc -n $NAMESPACE
+# Deploy-Helm-Chart:
+#   stage: deploy
+#   image: 
+#     name: dtzar/helm-kubectl
+#     entrypoint: ['']
+#   script:
+#     - echo "Deployment Started"
+#     - kubectl config get-contexts
+#     - kubectl config use-context $KUBE_CONTEXT
+#     - helm repo add --username $CI_REGISTRY_USER --password $CI_REGISTRY_PASSWORD login-project "${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/helm/stable"
+#     - helm repo update 
+#     - helm repo list
+#     - helm list -n $NAMESPACE
+#     - helm install --dry-run ${HELM_NAME} login-project/${PACKAGE_NAME} --values  ${PACKAGE_NAME}/values_$CI_COMMIT_REF_NAME.yaml --namespace $NAMESPACE
+#     - helm upgrade --install ${HELM_NAME} login-project/${PACKAGE_NAME} --values  ${PACKAGE_NAME}/values_$CI_COMMIT_REF_NAME.yaml --namespace $NAMESPACE
+#     - kubectl get pods -n $NAMESPACE
+#     - kubectl get svc -n $NAMESPACE
 
 
