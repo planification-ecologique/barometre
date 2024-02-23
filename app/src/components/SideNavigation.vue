@@ -9,7 +9,7 @@
             <div class="fr-collapse" :id="'fr-sidemenu-item-'+theme.id_theme">
               <ul class="fr-sidemenu__list">
                 <li class="fr-sidemenu__item" v-for="(levier, index) in theme.levier" :key="index">
-                  <a class="fr-sidemenu__link" @click="emitSelection([[theme.id_theme, theme.label_theme], [levier.id_levier, levier.label_levier]])" target="_self"> {{ levier.label_levier }} </a>
+                  <a class="fr-sidemenu__link" @click="set_query(theme.label_theme, theme.id_theme, levier)" target="_self"> {{ levier.label_levier }} </a>
                 </li>
               </ul>
             </div>
@@ -41,13 +41,32 @@ export default {
 
         let result = response.data.results
         this.menuOptions = result
+        this.set_query(this.menuOptions[0].label_theme, this.menuOptions[0].id_theme, this.menuOptions[0].levier[0] )
       } catch (error) {
         console.error("Erreur dans le chargement de la navigation : ", error);
       }
     },
-    emitSelection(selectedValue) {
-      // Émettre un événement personnalisé avec l'information de sélection
-      this.$emit('selectionChanged', selectedValue);
+    set_query (label_theme, id_theme, levier) {
+      // console.log(JSON.stringify(levier))
+      var params = {
+        "label_theme": label_theme,
+        "label_levier": levier.label_levier, 
+        "query" : {
+          "filter_by": [
+            { "field": "id_theme",
+              "values": [id_theme],
+            },
+            { "field": "id_levier",
+              "values": [levier.id_levier]
+            }
+          ],
+          "time_period": {
+            "date_start": "2015-01-01",
+            "date_end": "2031-01-01"
+          }
+        }
+      }      
+      this.$emit('params', params)
     }
   },
   mounted() {    
