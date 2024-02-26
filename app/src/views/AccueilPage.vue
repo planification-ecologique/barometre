@@ -31,14 +31,14 @@
       </div>
     </div> 
     <div class="fr-grid-row">
-      <div class="fr-col fr-py-md-5w fr-px-29v fr-background-color">
+      <!-- <div class="fr-col fr-py-md-5w fr-px-29v fr-background-color"> -->
         <!-- <up-footer :footerObject=footerData></up-footer> -->
-         <a class="fr-link" href="https://www.gouvernement.fr/france-nation-verte"
-                                        target="_self">
+         <!-- <a class="fr-link" href="https://www.gouvernement.fr/france-nation-verte"
+                                        target="_blank">
                                         France Nation Verte
-                                    </a>
+                                    </a> -->
                                     <br>
-      </div>
+      <!-- </div> -->
     </div>   
   <div class="fr-grid-row">
                 
