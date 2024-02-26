@@ -10,7 +10,8 @@
                   ministre</p>
                 </div>
                   <div class="fr-header__operator">
-                            <a href="https://www.gouvernement.fr/dossier-de-presse/france-nation-verte" title="Accueil - France Nation Verte - République Française">
+                            <a href="https://www.gouvernement.fr/france-nation-verte"
+                                         title="Accueil - France Nation Verte - République Française">
                                 <img class="fr-responsive-img" style="width:5rem;" src="../images/Logo-France-Nation-Verte_medium.png" alt="[À MODIFIER - texte alternatif de l’image]" />
                                 <!-- L’alternative de l’image (attribut alt) doit impérativement être renseignée et reprendre le texte visible dans l’image -->
                             </a>
