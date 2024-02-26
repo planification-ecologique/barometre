@@ -3,10 +3,15 @@
     <div class="fr-grid-row">
       <div id="sidebar" class="fr-col-3">
         <!-- Intégration du composant de tags -->
-        <tagsCard :tagsIndicateurs="tagsIndicateurs" @tags="updateSelection" class="fr-tags"></tagsCard>
+        <!-- <tagsCard :tagsIndicateurs="tagsIndicateurs" @tags="updateSelection" class="fr-tags"></tagsCard> -->
+ 
       </div>
       <div class="fr-col">
         <div class="fr-container--fluid fr-container-page">
+                 <div>
+        <Tags />
+<h1>aaaaa</h1>
+        </div>
           <div v-if="!isapiloading">
             <adaptive-dashboard :params="myobj" :inputData="results_API" />
           </div>
@@ -32,6 +37,7 @@ import UpFooter from '../components/UpFooter.vue'
 import AdaptiveDashboard from '../components/AdaptiveDashboard.vue'
 import SideNavigation from '../components/SideNavigation.vue'
 import TagsCard from '../components/TagsCard.vue';
+import Tags from '../components/Tags.vue'
 
 export default {
   name: 'TagsPage',
@@ -39,7 +45,8 @@ export default {
     UpFooter,
     AdaptiveDashboard,
     SideNavigation,
-    TagsCard
+    TagsCard,
+    Tags
   },
   data() {
     return {
@@ -54,6 +61,7 @@ export default {
       // Construire la requête en fonction des tags sélectionnés
       const query = {
         // Construction de la requête en fonction des tags sélectionnés
+        // this.selectedTag
       };
       this.fetchData(query);
     },
