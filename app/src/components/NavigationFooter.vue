@@ -31,7 +31,10 @@ export default {
     get_menu_options() {
       this.menuOptions = [
         { value: "donnees-personnelles", label: "Données personnelles", selected: false },
-        { value: "mentions-legales", label: "Mentions", selected: false },
+        { value: "mentions-legales", label: "Mentions légales", selected: false },
+        { value: "gestion-des-cookies", label: "Gestion des cookies", selected: false },
+        { value: "plan-du-site", label: "Plan du site", selected: false },
+        { value: "Accessibilite", label: "Accessibilité : non/partiellement/totalement conforme", selected: false },
       ];
       var current_page = this.get_name_page();
       if (current_page == "") {
