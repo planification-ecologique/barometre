@@ -43,7 +43,26 @@ const router = new Router({
       meta: {
         requiresAuth: true,
       },
-    }
+    },
+    {
+      path: "/mentions-legales",
+      name: "mentions-legales",
+      component: () =>
+        import(/* webpackChunkName: "tags" */ "./views/MentionsLegalesPage.vue"),
+      meta: {
+        requiresAuth: true,
+      },
+    },
+    {
+      path: "/donnees-personnelles",
+      name: "donnees-personnelles",
+      component: () =>
+        import(/* webpackChunkName: "tags" */ "./views/PersonalDataPage.vue"),
+      meta: {
+        requiresAuth: true,
+      },
+    },
+    
     // {
     //   path: "/lexique",
     //   name: "lexique",

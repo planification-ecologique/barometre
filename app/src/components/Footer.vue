@@ -35,12 +35,13 @@
                     <li class="fr-footer__bottom-item">
                         <a class="fr-footer__bottom-link" href="#">Accessibilité : non/partiellement/totalement conforme</a>
                     </li>
-                    <li class="fr-footer__bottom-item">
+                    <!-- <li class="fr-footer__bottom-item">
                         <a class="fr-footer__bottom-link" href="#">Mentions légales</a>
                     </li>
                     <li class="fr-footer__bottom-item">
                         <a class="fr-footer__bottom-link" href="#">Données personnelles</a>
-                    </li>
+                    </li> -->
+                    <navigation-footer></navigation-footer>
                     <li class="fr-footer__bottom-item">
                         <a class="fr-footer__bottom-link" href="#">Gestion des cookies</a>
                     </li>
@@ -56,10 +57,13 @@
     </template>
     
     <script>
+        
+import NavigationFooter from './NavigationFooter.vue'
     
     export default {
       name: 'footer_dsfr',
       components: {
+        NavigationFooter
       },
       data () {
         return {

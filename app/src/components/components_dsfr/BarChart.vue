@@ -591,7 +591,7 @@
   
         this.loadColors()
         if (theme === 'light') {
-          this.colorPrecisionBar = '#161616'
+          this.colorPrecisionBar = 'blue-ecume'
           this.colorBox = '#eeeeee'
         } else {
           this.colorPrecisionBar = '#FFFFFF'
