@@ -12,13 +12,13 @@
           <div v-else>
             <p>Chargement des indicateurs...</p>
           </div>
-          <div class="fr-grid-row">
+          <!-- <div class="fr-grid-row">
                  <a class="fr-link" href="https://www.gouvernement.fr/france-nation-verte"
                                         target="_self">
                                         France Nation Verte
                                     </a>
                                     <br>
-          </div>
+          </div> -->
           <br>
           <!-- <div class="fr-grid-row">
             <div class="fr-col-12">
