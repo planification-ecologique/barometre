@@ -1,0 +1,36 @@
+#=========================================#
+#   Barometre SGPE deployment             #
+#=========================================#
+# Maintained by: maria.soto@seenovate.com #
+#=========================================#
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels: 
+    app: app-front
+  name: {{ .Release.Name }}-deployment
+  namespace: {{ .Values.namespace.name }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: app-front
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      annotations:
+        rollme: {{ randAlphaNum 5 | quote }}
+      labels:
+        app: app-front
+    spec:
+      containers:
+      - name: app-front-container
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        imagePullPolicy: Always
+        ports:
+        - name: httpfront
+          containerPort: 9080
+      imagePullSecrets:
+      - name: {{ .Values.imagePullSecrets.name}}

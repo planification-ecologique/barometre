@@ -9,7 +9,7 @@
                     <p class="fr-text--lg fr-text--black">
                         {{ cardObject.description }}
                     </p>
-                    <button class="fr-btn" @click="router_to_dashboard()"  v-if="cardObject.databtn">Consulter toutes les données</button>
+                    <button class="fr-btn" v-if="cardObject.databtn"><a :href=dashboard_link></a>Consulter toutes les données</button>
                 </div>
             </div>
         </div>
@@ -20,7 +20,6 @@
     
 <script>
 
-import router from '../router'
 import ChartBarImg from './components_sgv/ChartBarImg'
 import FranceImg from './components_sgv/FranceImg.vue'
 
@@ -32,7 +31,7 @@ export default {
     },
     data() {
         return {
-            myrouter: router
+            dashboard_link: "/dashboard"            
         }
     },
     props: {
@@ -42,9 +41,15 @@ export default {
         }
     },
     methods: {
-        router_to_dashboard () {
-            this.myrouter.push({ name:'dashboard' })
+        set_link () {
+            let base = process.env.VUE_APP_PREFIX_PATH
+            if (base) {
+                this.dashboard_link = base +"/dashboard"
+            }
         }
+    },
+    mounted(){
+        this.set_link()
     }
 }
 </script>

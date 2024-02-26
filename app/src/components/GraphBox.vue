@@ -39,7 +39,6 @@
           </h3>
           <div class="fr-collapse accordion-box" :id="idAccordion" :class="{ 'fr-collapse--expanded': isAccordionOpen }">
             <p class="fr-text--xs cardDescription">{{ dataObj.label_description }}</p>
-           
             <div v-if="dataObj.label_tags">
               <tags-card :tagsIndicateurs="dataObj.label_tags"></tags-card>
             </div>
@@ -48,7 +47,7 @@
             </div>
           </div>
         </section>
-        <div class="cardFooter fr-grid-row fr-grid-row--middle">
+        <!-- <div class="cardFooter fr-grid-row fr-grid-row--middle">
           <div class=""></div>
           <!-- <div class="cardFooter-button fr-col-3">
             <svg width="34" height="32" viewBox="0 0 34 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -60,8 +59,8 @@
               <path fill-rule="evenodd" clip-rule="evenodd" d="M10 20.6662H22V21.9995H10V20.6662ZM16.6667 16.7808L20.714 12.7328L21.6567 13.6755L16 19.3328L10.3433 13.6762L11.286 12.7328L15.3333 16.7795V9.33282H16.6667V16.7808Z" fill="#000091"/>
               <rect x="0.5" y="0.499512" width="31" height="31" stroke="#DDDDDD"/>
             </svg>
-          </div> -->
-        </div>
+          </div>
+        </div> -->
     </div>
 
 </template>

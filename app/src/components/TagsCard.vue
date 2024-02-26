@@ -1,7 +1,8 @@
 <template>
-   <ul class="fr-tags-group">
+    <ul class="fr-tags-group">
+        <!-- <button v-for="tag in tags" class="fr-tag" :aria-pressed="tag['selected']" :value="tag['value']" :key="tag['id']" v-on:click="selectTag($event, tag)"> {{ tag['label'] }}</button> -->
         <li v-for="tag in tags" :key="tag.value">
-            <p class="fr-tag fr-tag--sm">{{ tag.label }}</p>
+            <p class="fr-tag fr-tag--sm">{{ tag['label'] }}</p>
         </li>
     </ul>
 </template>
