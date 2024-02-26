@@ -1,0 +1,9 @@
+apiVersion: v2
+name: app-front-chart
+description: First app-front helm chart
+type: application
+version: 0.1.0
+appVersion: "0.0.1"
+maintainers:
+- email: maria.soto@seenovate.com
+  name: mariasoto
