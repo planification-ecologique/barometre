@@ -13,12 +13,12 @@
           <div v-else>
             <p>Chargement des indicateurs...</p>
           </div>
-          <div class="fr-grid-row">
+          <!-- <div class="fr-grid-row">
             <a class="fr-link" href="https://www.gouvernement.fr/france-nation-verte" target="_self">
               France Nation Verte
             </a>
             <br>
-          </div>
+          </div> -->
           <br>
         </div>
       </div>
@@ -31,15 +31,15 @@ import { api } from '@/services/api.js'
 import UpFooter from '../components/UpFooter.vue'
 import AdaptiveDashboard from '../components/AdaptiveDashboard.vue'
 import SideNavigation from '../components/SideNavigation.vue'
-import TagsCard from '../components/TagsCard.vue'; // Import du composant de tagsCard
+import TagsCard from '../components/TagsCard.vue';
 
 export default {
-  name: 'DashboardPage',
+  name: 'TagsPage',
   components: {
     UpFooter,
     AdaptiveDashboard,
     SideNavigation,
-    TagsCard // Ajout du composant de tagsCard dans la section components
+    TagsCard
   },
   data() {
     return {
