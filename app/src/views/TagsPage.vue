@@ -1,30 +1,20 @@
 <template>
   <div class="fr-container--fluid ">
     <div class="fr-grid-row">
-      <div id="sidebar" class="fr-col-3">
-        <!-- Intégration du composant de tags -->
-        <!-- <tagsCard :tagsIndicateurs="tagsIndicateurs" @tags="updateSelection" class="fr-tags"></tagsCard> -->
- 
-      </div>
       <div class="fr-col">
         <div class="fr-container--fluid fr-container-page">
-                 <div>
-        <Tags />
-<h1>aaaaa</h1>
-        </div>
-          <div v-if="!isapiloading">
-            <adaptive-dashboard :params="myobj" :inputData="results_API" />
+          <div>
+            <Tags @tags-selected="updateSelection"></Tags>
+          </div>
+          <br>
+
+          <div v-if="isapiloading === false">
+            <h4 class="fr-subtitle">{{ this.results_API.length }} indicateurs trouvés</h4>
+            <AdaptiveDashboard :dashboardPage="false" :inputData="results_API" />
           </div>
           <div v-else>
             <p>Chargement des indicateurs...</p>
           </div>
-          <!-- <div class="fr-grid-row">
-            <a class="fr-link" href="https://www.gouvernement.fr/france-nation-verte" target="_self">
-              France Nation Verte
-            </a>
-            <br>
-          </div> -->
-          <br>
         </div>
       </div>
     </div>
@@ -32,42 +22,46 @@
 </template>
 
 <script>
-import { api } from '@/services/api.js'
-import UpFooter from '../components/UpFooter.vue'
-import AdaptiveDashboard from '../components/AdaptiveDashboard.vue'
-import SideNavigation from '../components/SideNavigation.vue'
-import TagsCard from '../components/TagsCard.vue';
 import Tags from '../components/Tags.vue'
+import AdaptiveDashboard from '../components/AdaptiveDashboard.vue'
+import { api } from '@/services/api.js'
 
 export default {
   name: 'TagsPage',
   components: {
-    UpFooter,
-    AdaptiveDashboard,
-    SideNavigation,
-    TagsCard,
-    Tags
+    Tags,
+    AdaptiveDashboard
   },
   data() {
     return {
       isapiloading: true,
-      myobj: {},
       results_API: [],
-      tagsIndicateurs: "attenuation,biodiversite,ressouces,adaptation,sante", // Tags disponibles
+      selectedTags: ["atténuation"]
     }
   },
   methods: {
-    updateSelection(selectedTags) {
-      // Construire la requête en fonction des tags sélectionnés
-      const query = {
-        // Construction de la requête en fonction des tags sélectionnés
-        // this.selectedTag
-      };
-      this.fetchData(query);
-    },
-    async fetchData(query) {
+    updateSelection(selectedTag) {
       this.isapiloading = true;
-      // Appel à l'API
+      // Build query based on selected tags and fetch data
+      this.fetchData(selectedTag);
+    },
+
+
+
+    async fetchData(ls_tags) {
+      var query = {
+        "filter_by": [
+          {
+            "field": "label_tags",
+            "values": ls_tags
+          }
+        ],
+        "time_period": {
+          "date_start": "2015-01-01",
+          "date_end": "2031-01-01"
+        }
+      }
+      // Call API
       try {
         const response = await api('/requests/get_indicators', {
           method: 'POST',
@@ -78,7 +72,7 @@ export default {
           throw new Error("Erreur lors de l'appel à l'API");
         }
 
-        // Récupération des données
+        // Retrieve data
         let results = response;
         this.results_API = results.data.results;
         this.isapiloading = false;
@@ -86,6 +80,9 @@ export default {
         console.error("Erreur dans le chargement des données : ", error);
       }
     }
+  },
+  mounted() {
+    this.fetchData(this.selectedTags);
   }
 }
 </script>
@@ -98,4 +95,8 @@ export default {
     padding-right: 2.5rem;
     width: 100%;
   }
+
+  .fr-subtitle {
+    font-weight: 400;
+    }
 </style>
