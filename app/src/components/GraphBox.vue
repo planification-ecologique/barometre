@@ -1,5 +1,5 @@
 <template>
-    <div class="fr-card fr-card--no-icon fr-card--shadow adjust-height">
+    <div class="fr-card fr-card--no-icon fr-card--shadow adjust-height" v-if="dataObj">
         <div class="titleBox">
             <h2 class="cardTitle">{{ dataObj.label_indic }}
             </h2>
@@ -7,15 +7,14 @@
         </div>
         
         <div class="cardReference">
-            <!-- <p class="fr-text--xs fr-text-mention--grey textReference">Mis à jour : 05/02/2024</p> -->
-            <segmented-controls v-on:chart-selected="handleChartSelected" :idcontrol="idAccordion+'1'"></segmented-controls>
+            <segmented-controls @chart-selected="handleChartSelected" :idcontrol="idAccordion+'1'"></segmented-controls>
             <div class="fr-text--xs fr-text--bold cardObjectif"> 
                 Objectif
                 <p class="fr-badge fr-badge-sm fr-badge--green-emeraude fr-badge--no-icon">{{ dataObj.values.y[3][dataObj.values.y[3].length - 1] }}</p>
             </div>
         </div>
-        <div> 
-          <div class="cardData" v-if="displayChart">         
+        <div v-if="dataObj.values"> 
+          <div class="cardData" v-if="this.displayChart">         
             <bar-chart 
                   :x=JSON.stringify(dataObj.values.x)
                   :y=JSON.stringify(dataObj.values.y)
@@ -27,7 +26,9 @@
                   >
               </bar-chart>
           </div>
-          <table-component v-else :annee="dataObj.values.x[0]" :valeur="dataObj.values.ytab"></table-component>        
+          <div v-else>  
+            <table-component  :annee="dataObj.values.x[0]" :valeur="dataObj.values.ytab"></table-component>        
+          </div>
         </div>
         <div class="beneathGraph">
           <p class="fr-text--xs fr-text-mention--grey textReference">Source : {{ dataObj.label_sources }}</p>
@@ -73,7 +74,7 @@ export default {
       idAccordion: {
         type: String,
         required: true
-      }
+      },
   },
   data() {
       return {          
@@ -84,7 +85,7 @@ export default {
   },
   methods: {
       handleChartSelected(type) {
-      this.displayChart = (type === 'graphique');
+        this.displayChart = (type === 'graphique') ? true : false;
     }
   }
 }

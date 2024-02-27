@@ -612,8 +612,8 @@
       }
     },
     created () {
-      this.chartId = 'myChart' + Math.floor(Math.random() * (1000))
-      this.widgetId = 'widget' + Math.floor(Math.random() * (1000))
+      this.chartId = 'myChart' + Math.floor(Math.random() * (10000000))
+      this.widgetId = 'widget' + Math.floor(Math.random() * (10000000))
     },
     mounted () {
       document.getElementById(this.widgetId).offsetWidth > 486 ? this.display = 'big' : this.display = 'small'
