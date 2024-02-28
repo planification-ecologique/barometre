@@ -3,14 +3,14 @@
         <div class="footer-container">
             <div class="fr-footer__body">
                 <div class="fr-footer__brand fr-enlarge-link">
-                    <a href="/" title="Retour à l’accueil du site - Nom de l’entité (ministère, secrétariat d‘état, gouvernement)">
+                    <a href="https://www.gouvernement.fr/" target="_blank"   title="Retour à l’accueil du site - Nom de l’entité (ministère, secrétariat d‘état, gouvernement)">
                         <p class="fr-logo">
                             GOUVERNEMENT
                         </p>
                     </a>
                 </div>
                 <div class="fr-footer__content">
-                    <p class="fr-footer__content-desc">Ce site est géré par le Service d’information du Gouvernement (SIG).</p>
+                    <p class="fr-footer__content-desc">Ce site est géré par le Secrétariat Général de la Planification Ecologique (SGPE).</p>
                     <ul class="fr-footer__content-list">
                         <li class="fr-footer__content-item">
                             <a class="fr-footer__content-link" target="_blank" rel="noopener external" title="[À MODIFIER - Intitulé] - nouvelle fenêtre" href="https://legifrance.gouv.fr">legifrance.gouv.fr</a>
@@ -58,6 +58,7 @@ import NavigationFooter from './NavigationFooter.vue'
     }
     </script>
     <style >
+        
 .footer-container {
     width: 100%;
     margin-left: auto;
