@@ -62,6 +62,15 @@ const router = new Router({
         requiresAuth: true,
       },
     },
+    {
+      path: "/error-404",
+      name: "error 404",
+      component: () =>
+        import(/* webpackChunkName: "tags" */ "./views/Error404Page.vue"),
+      meta: {
+        requiresAuth: true,
+      },
+    },
     
     // {
     //   path: "/lexique",

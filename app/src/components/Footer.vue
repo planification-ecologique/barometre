@@ -58,6 +58,7 @@ import NavigationFooter from './NavigationFooter.vue'
     }
     </script>
     <style >
+        
 .footer-container {
     width: 100%;
     margin-left: auto;
