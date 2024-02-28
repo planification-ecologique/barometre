@@ -1,5 +1,5 @@
 <template>
-<div class="fr-container--fluid">
+<div class="fr-container--fluid fr-m-2w">
     <div class="titre-zone field">
       <div class="titre-zone-separateur haut"></div>
       <h1 class="titre-texte">Données personnelles et cookies</h1>
