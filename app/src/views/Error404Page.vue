@@ -20,15 +20,7 @@ Dans ce cas, pour continuer votre visite vous pouvez consulter notre page d’ac
 
       </div>
       <div class="fr-col-12 fr-col-md-3 fr-col-offset-md-1 fr-px-6w fr-px-md-0">
-        <svg xmlns="http://www.w3.org/2000/svg" class="fr-responsive-img fr-artwork" aria-hidden="true" width="160" height="200" viewBox="0 0 160 200" data-fr-js-ratio="true">
-  <use class="fr-artwork-motif" href="https://harkis.gouv.fr/profiles/custom/design_system_profile/themes/design_system/css/artwork/background/ovoid.svg#artwork-motif"></use>
-  <use class="fr-artwork-background" href="https://harkis.gouv.fr/profiles/custom/design_system_profile/themes/design_system/css/artwork/background/ovoid.svg#artwork-background"></use>
-  <g transform="translate(40, 60)">
-    <use class="fr-artwork-decorative" href="https://harkis.gouv.fr/profiles/custom/design_system_profile/themes/design_system/css/artwork/pictograms/system/technical-error.svg#artwork-decorative"></use>
-    <use class="fr-artwork-minor" href="https://harkis.gouv.fr/profiles/custom/design_system_profile/themes/design_system/css/artwork/pictograms/system/technical-error.svg#artwork-minor"></use>
-    <use class="fr-artwork-major" href="https://harkis.gouv.fr/profiles/custom/design_system_profile/themes/design_system/css/artwork/pictograms/system/technical-error.svg#artwork-major"></use>
-  </g>
-</svg>
+      <h1>D-Block</h1>
       </div>
     </div>
 
@@ -68,7 +60,7 @@ export default {
 
 <style scoped lang="scss">
   .fr-container-page {
-    background-color: #F6F6F6;
+    background-color: white;
     padding-top: 1.5rem;
     padding-left: 2.5rem;
     padding-right: 2.5rem;
