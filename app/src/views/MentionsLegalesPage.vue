@@ -20,12 +20,6 @@
 
 <p>Eulerian Technologies</p>
 
-<h2>Crédits photographiques</h2>
-
-<p>Les photos présentes sur ce site proviennent de sources différentes, mentionnées au cas par cas sur le crédit de chaque photo.<br>
-Par défaut, elles proviennent du pôle de production photographique des services du Premier ministre.<br>
-<a href="/credits-photographiques" data-smarttag-click="{&quot;name&quot;: &quot;/credits-photographiques&quot;, &quot;type&quot;: &quot;navigation&quot;,&quot;chapter1&quot;:&quot;mentions_legales&quot;}">En savoir plus sur les crédits photos</a></p>
-
 <h2>Conception et gestion du site</h2>
 
 <p>Le suivi éditorial et graphique du site est assuré par le département Rédaction du Service d’information du Gouvernement.<br>

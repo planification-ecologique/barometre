@@ -11,8 +11,8 @@
             class="fr-grid-row fr-grid-row--gutters fr-grid-row--middle fr-my-7w fr-mb-md-10w"
           >
             <div class="fr-col-12 fr-col-offset-md-1 fr-col-md-6 fr-py-0">
-              <h1>Page non trouvée</h1>
-              <p class="fr-text--sm fr-mb-3w">Erreur 404</p>
+              <h1>Erreur interne du serveur</h1>
+              <p class="fr-text--sm fr-mb-3w">Erreur 500</p>
               <p class="fr-text--lg">
                 La page que vous cherchez est introuvable. Excusez-nous pour la
                 gêne occasionnée.
@@ -52,6 +52,7 @@
 
 <script>
 import { api } from "@/services/api.js";
+
 import TechnicalErrorImg from "../components/components_sgv/TechnicalErrorImg.vue";
 
 export default {
