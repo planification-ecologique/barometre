@@ -20,9 +20,15 @@ export default {
             required: true,
         }
     },
+
     methods: {
+        get_uniqueTags () {
+            return this.tagsIndicateurs.split(',').filter((value, index, self) => {
+                return self.indexOf(value) === index
+            })
+        },
         get_tags () {
-            const distinctTags = [...new Set(this.tagsIndicateurs.split(','))] // remove duplicates
+            const distinctTags = this.get_uniqueTags() // remove duplicates
             try {
                 this.tags = distinctTags.map(item => {
                     return {
