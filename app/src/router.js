@@ -62,6 +62,44 @@ const router = new Router({
         requiresAuth: true,
       },
     },
+    {
+      path: "/error-404",
+      name: "error 404",
+      component: () =>
+        import(/* webpackChunkName: "tags" */ "./views/Error404Page.vue"),
+      meta: {
+        requiresAuth: true,
+      },
+    },
+    {
+      path: "/error-500",
+      name: "error 500",
+      component: () =>
+        import(/* webpackChunkName: "tags" */ "./views/Error500Page.vue"),
+      meta: {
+        requiresAuth: true,
+      },
+    },
+    {
+      path: "/error-403",
+      name: "error 403",
+      component: () =>
+        import(/* webpackChunkName: "tags" */ "./views/Error403Page.vue"),
+      meta: {
+        requiresAuth: true,
+      },
+    },
+    {
+      path: "/error-400",
+      name: "error 400",
+      component: () =>
+        import(/* webpackChunkName: "tags" */ "./views/Error400Page.vue"),
+      meta: {
+        requiresAuth: true,
+      },
+    },
+    
+    
     
     // {
     //   path: "/lexique",

@@ -12,19 +12,13 @@
     <div class="field-items ">
                 <div class="field-item even first last"><h2>Directeur de la publication</h2>
 
-<p>Michael Nathan, directeur du Service d’information du Gouvernement<br>
+<p>M. Antoine Pellion, Secrétaire Général ; M. Frédéric Glanois ; Secrétaire Général Adjoint ; Mme Mounia Mostefaoui - Directrice de Pogramme Mesures et Indicateurs<br>
 <a href="/sites/default/files/contenu/piece-jointe/2021/07/organigramme_sig_-_cts.pdf" target="_blank" title="Organigramme du SIG - nouvelle fenêtre" data-smarttag-click="{&quot;name&quot;: &quot;/sites/default/files/contenu/piece-jointe/2021/07/organigramme_sig_-_cts.pdf&quot;, &quot;type&quot;: &quot;download&quot;,&quot;chapter1&quot;:&quot;mentions_legales&quot;}">Organigramme du SIG</a><br>
 &nbsp;</p>
 
 <h2>Gestionnaire des statistiques</h2>
 
 <p>Eulerian Technologies</p>
-
-<h2>Crédits photographiques</h2>
-
-<p>Les photos présentes sur ce site proviennent de sources différentes, mentionnées au cas par cas sur le crédit de chaque photo.<br>
-Par défaut, elles proviennent du pôle de production photographique des services du Premier ministre.<br>
-<a href="/credits-photographiques" data-smarttag-click="{&quot;name&quot;: &quot;/credits-photographiques&quot;, &quot;type&quot;: &quot;navigation&quot;,&quot;chapter1&quot;:&quot;mentions_legales&quot;}">En savoir plus sur les crédits photos</a></p>
 
 <h2>Conception et gestion du site</h2>
 
