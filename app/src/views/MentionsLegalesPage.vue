@@ -12,7 +12,7 @@
     <div class="field-items ">
                 <div class="field-item even first last"><h2>Directeur de la publication</h2>
 
-<p>Michael Nathan, directeur du Service d’information du Gouvernement<br>
+<p>M. Antoine Pellion, Secrétaire Général ; M. Frédéric Glanois ; Secrétaire Général Adjoint ; Mme Mounia Mostefaoui - Directrice de Pogramme Mesures et Indicateurs<br>
 <a href="/sites/default/files/contenu/piece-jointe/2021/07/organigramme_sig_-_cts.pdf" target="_blank" title="Organigramme du SIG - nouvelle fenêtre" data-smarttag-click="{&quot;name&quot;: &quot;/sites/default/files/contenu/piece-jointe/2021/07/organigramme_sig_-_cts.pdf&quot;, &quot;type&quot;: &quot;download&quot;,&quot;chapter1&quot;:&quot;mentions_legales&quot;}">Organigramme du SIG</a><br>
 &nbsp;</p>
 
