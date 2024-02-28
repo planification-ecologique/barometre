@@ -44,7 +44,7 @@
             </div>
             <div class="fr-header__service">
               <a
-                href="/"
+                href="/accueil"
                 title="Accueil - Baromètre de la planification écologique"
               >
                 <p class="fr-header__service-title">
