@@ -188,7 +188,10 @@
         this.listColors = this.getAllColors()
         this.xparse = JSON.parse(this.x)
         this.yparse = JSON.parse(this.y)
-  
+        const nonzeroIndices = this.yparse.findIndex(arr => arr.some(val => val !== 0));
+        const filteredXparse = this.xparse.map(arr => arr.slice(0, nonzeroIndices + 1));
+        console.log(filteredXparse);
+        console.log(this.xparse)
         let tmpNameParse = []
         if (this.name !== undefined) {
           tmpNameParse = JSON.parse(self.name)
@@ -514,7 +517,8 @@
                   const nodeName = self.$el.querySelector('.tooltip_dot').attributes[0].nodeName
                   divValue.innerHTML = ''
                   bodyLines[0].forEach(function (line, i) {
-                    if (line !== undefined) {
+                    console.log(line)
+                    if (line !== undefined && line !== "NaN" && line !== "0") {
                       divValue.innerHTML += '<span ' + nodeName + '= "" class="tooltip_dot" style = "background-color:' + color[i] + '"></span>' + ' ' + line + '<br>'
                     }
                   })
