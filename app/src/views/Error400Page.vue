@@ -18,7 +18,7 @@
               <p class="fr-text--sm">
                 Si vous avez tapé l’adresse web dans le navigateur, vérifiez
                 qu’elle est correcte. La page n’est peut-être plus
-                disponible.<br />
+                disponible.
                 Dans ce cas, pour continuer votre visite vous pouvez consulter
                 notre page d’accueil. Sinon contactez-nous pour que l’on puisse
                 vous rediriger vers la bonne information.
