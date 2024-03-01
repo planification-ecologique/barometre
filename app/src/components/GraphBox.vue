@@ -9,7 +9,8 @@
         <div class="cardReference">
             <segmented-controls @chart-selected="handleChartSelected" :idcontrol="idAccordion+'1'"></segmented-controls>
             <div class="fr-text--xs fr-text--bold cardObjectif" v-if="cible">
-                Cible
+                <p class="fr-text--xs fr-text--bold unit-short" v-if="dataObj.label_unit_short.length != ''"> Cible en {{ dataObj.label_unit_short }}</p>
+                <p class="fr-text--xs fr-text--bold unit-short" v-else> Cible</p>
                 <p class="fr-badge fr-badge-sm fr-badge--green-emeraude fr-badge--no-icon"> {{ cible}} </p>
             </div>
         </div>
@@ -159,6 +160,10 @@ p.cardDescription {
   text-align: justify;
   text-justify: inter-word;
   margin-bottom: 1rem;
+}
+
+.unit-short {
+  margin-bottom: 0rem !important;
 }
 .cardObjectif {
   display: flex;
