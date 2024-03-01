@@ -1,102 +1,139 @@
 <template>
-  <div class="fr-container--fluid ">
+  <div class="fr-container--fluid fr-container-page">
     <div class="fr-grid-row">
-      <div class="fr-col">
-        <div class="fr-container--fluid fr-container-page">
-          <div>
-            <Tags @tags-selected="updateSelection"></Tags>
-          </div>
-          <br>
-
-          <div v-if="isapiloading === false">
-            <h4 class="fr-subtitle">{{ this.results_API.length }} indicateurs trouvés</h4>
-            <AdaptiveDashboard :dashboardPage="false" :inputData="results_API" />
-          </div>
-          <div v-else>
-            <p>Chargement des indicateurs...</p>
-          </div>
-        </div>
+      <div class="fr-col-12">
+        <h1 class="fr-title">Tag</h1>
+        <h4 class="fr-subtitle">Atténuation</h4>
+        <tags-dsfr v-on:tags=set_tags class="fr-tags"></tags-dsfr>
       </div>
     </div>
+    <div class="fr-grid-row fr-grid-row--gutters fr-py-md-3w">
+      <div class="fr-col-12 fr-col-sm-6 fr-col-md-6 fr-col-xl-6">
+        <graph-box :dataObj=BoxDataA :color=colors> </graph-box>
+      </div>
+      <div class="fr-col-12 fr-col-sm-6 fr-col-md-6 fr-col-xl-6">
+        <graph-box :dataObj=BoxDataA :color=colors> </graph-box>
+      </div>
+    </div>
+    <div class="fr-grid-row fr-grid-row--gutters fr-mb-1w">
+      <div class="fr-col-12">
+        <graph-box :dataObj=BoxDataA :color=colors> </graph-box>
+      </div>
+    </div>
+    <div class="fr-grid-row">
+      <div class="fr-col-12">
+            <h2 class="fr-footer__body fr-btns-group--between">Les axes pour transformer la société
+              <a class="fr-link fr-icon-arrow-right-line fr-link--icon-right" href="#">Suivre les réformes</a>
+            </h2>
+        <up-footer></up-footer>
+      </div>
+    </div>  
   </div>
 </template>
 
 <script>
+
+import axios from 'axios'
+import UpFooter from '../components/UpFooter.vue'
 import Tags from '../components/Tags.vue'
-import AdaptiveDashboard from '../components/AdaptiveDashboard.vue'
-import { api } from '@/services/api.js'
+import GraphBox from '../components/GraphBox.vue'
 
 export default {
-  name: 'TagsPage',
+  name: 'Secret',
   components: {
+    UpFooter,
     Tags,
-    AdaptiveDashboard
+    GraphBox
+
   },
   data() {
     return {
-      isapiloading: true,
-      results_API: [],
-      selectedTags: ["atténuation"]
+      querySuccess: true,
+      sujets: 'sujets',
+      colors:  ['beige-gris-galet','brown-caramel','green-bourgeon','green-menthe'],
+      BoxDataA: {
+          title: 'Voyages covoiturés via plateformes',
+          update_date: '23/01/2024',
+          description: "Description",
+          source: "Talkwalker",
+          trendValue: -1,
+          unit: "Millions de tonnes en équivalent CO2",
+          serie_values: {
+          // x: [["2017", "2018", "2019"], ["2017", "2018", "2019"], ["2017", "2018", "2019"]],
+          // x: [["2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026", "2027", "2028", "2029", "2030"], 
+          //   ["2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026", "2027", "2028", "2029", "2030"], 
+          //   ["2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026", "2027", "2028", "2029", "2030"],
+          //   ["2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026", "2027", "2028", "2029", "2030"]],
+          // y: [
+          //   [20, 18, 15, 13, 12, 16, 0, 0, 0, 0, 0, 0, 0, 0],
+          //   [0, 0, 0, 0, 0, 0, 15, 0, 0, 0, 0, 0, 0, 0],
+          //   [0, 0, 0, 0, 0, 0, 0, 14, 11, 8, 7, 6, 5, 0],
+          //   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3]
+          // ],
+          name: ['Historique', 'Année en cours', 'Projection', 'Cible']
+          },
+          horizontal: false,
+          stacked: true
+      },
+      BoxDataB: {
+          title: 'Nombre d’infrastructures de covoiturage',
+          update_date: '23/01/2024',
+          description: "Description",
+          source: "Talkwalker",
+          trendValue: -1
+      },
+      BoxDataC: {
+          title: 'Taux de remplissage des véhicules',
+          update_date: '23/01/2024',
+          description: "Description",
+          source: "Talkwalker",
+          trendValue: -1
+      },
     }
+  },
+  computed: {
   },
   methods: {
-    updateSelection(selectedTag) {
-      this.isapiloading = true;
-      // Build query based on selected tags and fetch data
-      this.fetchData(selectedTag);
+    set_tags (tags) {
+      this.displayLinkconsulter = (tags.length > 1 || tags.length == 0) ? false : true
     },
 
+    router_to_pages (pagename) {
+        this.myrouter.push({ name: pagename })
+    },
 
+    // Range function for BoxDataA
 
-    async fetchData(ls_tags) {
-      var query = {
-        "filter_by": [
-          {
-            "field": "label_tags",
-            "values": ls_tags
-          }
-        ],
-        "time_period": {
-          "date_start": "2015-01-01",
-          "date_end": "2031-01-01"
-        }
-      }
-      // Call API
-      try {
-        const response = await api('/requests/get_indicators', {
-          method: 'POST',
-          body: JSON.stringify(query)
-        });
-
-        if (!response) {
-          throw new Error("Erreur lors de l'appel à l'API");
-        }
-
-        // Retrieve data
-        let results = response;
-        this.results_API = results.data.results;
-        this.isapiloading = false;
-      } catch (error) {
-        console.error("Erreur dans le chargement des données : ", error);
-      }
-    }
   },
-  mounted() {
-    this.fetchData(this.selectedTags);
-  }
 }
 </script>
+  
+<style scoped>
 
-<style scoped lang="scss">
-  .fr-container-page {
+.flex-container {
+  padding-top: 1.5rem;
+
+  padding-bottom: 2.5rem;
+}
+.fr-container-page {
     background-color: #F6F6F6;
     padding-top: 1.5rem;
     padding-left: 2.5rem;
     padding-right: 2.5rem;
-    width: 100%;
-  }
 
-  .fr-subtitle {
-    font-weight: 400;
-    }
+}
+
+.fr-title {
+  margin-bottom: 0.625rem;
+}
+
+.fr-subtitle {
+  font-weight: 400;
+}
+
+/* .fr-tags {
+  margin-bottom: 1rem;
+} */
+
+
 </style>

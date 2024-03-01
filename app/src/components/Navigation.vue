@@ -26,7 +26,7 @@ export default {
       this.menuOptions = [
         { value: 'accueil', label: 'Accueil', selected: false },
         { value: 'dashboard', label: 'Tableau de bord', selected: false },
-        { value: 'tags', label: 'Tags', selected: false },
+        { value: 'tags', label: 'Tags', selected: false }
       ]
       var current_page = this.get_name_page()      
       if (current_page == '') {
