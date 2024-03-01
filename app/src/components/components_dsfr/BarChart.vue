@@ -188,8 +188,7 @@
         this.listColors = this.getAllColors()
         this.xparse = JSON.parse(this.x)
         this.yparse = JSON.parse(this.y)
-        const nonzeroIndices = this.yparse.findIndex(arr => arr.some(val => val !== 0));
-        const filteredXparse = this.xparse.map(arr => arr.slice(0, nonzeroIndices + 1));
+  
         let tmpNameParse = []
         if (this.name !== undefined) {
           tmpNameParse = JSON.parse(self.name)
@@ -515,7 +514,7 @@
                   const nodeName = self.$el.querySelector('.tooltip_dot').attributes[0].nodeName
                   divValue.innerHTML = ''
                   bodyLines[0].forEach(function (line, i) {
-                    if (line !== undefined && line !== "NaN" && line !== "0") {
+                    if (line !== undefined) {
                       divValue.innerHTML += '<span ' + nodeName + '= "" class="tooltip_dot" style = "background-color:' + color[i] + '"></span>' + ' ' + line + '<br>'
                     }
                   })
@@ -592,7 +591,7 @@
   
         this.loadColors()
         if (theme === 'light') {
-          this.colorPrecisionBar = 'blue-ecume'
+          this.colorPrecisionBar = '#161616'
           this.colorBox = '#eeeeee'
         } else {
           this.colorPrecisionBar = '#FFFFFF'
@@ -613,8 +612,8 @@
       }
     },
     created () {
-      this.chartId = 'myChart' + Math.floor(Math.random() * (10000000))
-      this.widgetId = 'widget' + Math.floor(Math.random() * (10000000))
+      this.chartId = 'myChart' + Math.floor(Math.random() * (1000))
+      this.widgetId = 'widget' + Math.floor(Math.random() * (1000))
     },
     mounted () {
       document.getElementById(this.widgetId).offsetWidth > 486 ? this.display = 'big' : this.display = 'small'

@@ -43,73 +43,7 @@ const router = new Router({
       meta: {
         requiresAuth: true,
       },
-    },
-    {
-      path: "/mentions-legales",
-      name: "mentions-legales",
-      component: () =>
-        import(/* webpackChunkName: "tags" */ "./views/MentionsLegalesPage.vue"),
-      meta: {
-        requiresAuth: true,
-      },
-    },
-    {
-      path: "/donnees-personnelles",
-      name: "donnees-personnelles",
-      component: () =>
-        import(/* webpackChunkName: "tags" */ "./views/PersonalDataPage.vue"),
-      meta: {
-        requiresAuth: true,
-      },
-    },
-    {
-      path: "/plan-du-site",
-      name: "Plan-du-site",
-      component: () =>
-        import(/* webpackChunkName: "tags" */ "./views/PlanDuSitePage.vue"),
-      meta: {
-        requiresAuth: true,
-      },
-    },
-    {
-      path: "/error-404",
-      name: "error 404",
-      component: () =>
-        import(/* webpackChunkName: "tags" */ "./views/Error404Page.vue"),
-      meta: {
-        requiresAuth: true,
-      },
-    },
-    {
-      path: "/error-500",
-      name: "error 500",
-      component: () =>
-        import(/* webpackChunkName: "tags" */ "./views/Error500Page.vue"),
-      meta: {
-        requiresAuth: true,
-      },
-    },
-    {
-      path: "/error-403",
-      name: "error 403",
-      component: () =>
-        import(/* webpackChunkName: "tags" */ "./views/Error403Page.vue"),
-      meta: {
-        requiresAuth: true,
-      },
-    },
-    {
-      path: "/error-400",
-      name: "error 400",
-      component: () =>
-        import(/* webpackChunkName: "tags" */ "./views/Error400Page.vue"),
-      meta: {
-        requiresAuth: true,
-      },
-    },
-    
-    
-    
+    }
     // {
     //   path: "/lexique",
     //   name: "lexique",
