@@ -8,9 +8,9 @@
         
         <div class="cardReference">
             <segmented-controls @chart-selected="handleChartSelected" :idcontrol="idAccordion+'1'"></segmented-controls>
-            <div class="fr-text--xs fr-text--bold cardObjectif"> 
+            <div class="fr-text--xs fr-text--bold cardObjectif" v-if="cible">
                 Cible
-                <p class="fr-badge fr-badge-sm fr-badge--green-emeraude fr-badge--no-icon">{{ dataObj.values.y[3][dataObj.values.y[3].length - 1] }}</p>
+                <p class="fr-badge fr-badge-sm fr-badge--green-emeraude fr-badge--no-icon"> {{ cible}} </p>
             </div>
         </div>
         <div v-if="dataObj.values"> 
@@ -74,19 +74,24 @@ export default {
       idAccordion: {
         type: String,
         required: true
-      },
+      }
   },
   data() {
       return {          
           displayChart: false,
           isAccordionOpen: true,
-          color:  ['brown-cafe-creme','pink-tuile','green-emeraude','blue-ecume']
+          color:  ['brown-cafe-creme','pink-tuile','green-emeraude','blue-ecume'],          
+          cible: undefined
       }
   },
   methods: {
       handleChartSelected(type) {
         this.displayChart = (type === 'graphique') ? true : false;
     }
+  },
+  mounted () {    
+    let index = this.dataObj.values.legend.indexOf("Cible");
+    index != -1 ? this.cible = this.dataObj.values.y[index][this.dataObj.values.y[index].length - 1] : this.cible = undefined    
   }
 }
 </script>
