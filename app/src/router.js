@@ -63,6 +63,15 @@ const router = new Router({
       },
     },
     {
+      path: "/plan-du-site",
+      name: "Plan-du-site",
+      component: () =>
+        import(/* webpackChunkName: "tags" */ "./views/PlanDuSitePage.vue"),
+      meta: {
+        requiresAuth: true,
+      },
+    },
+    {
       path: "/error-404",
       name: "error 404",
       component: () =>
