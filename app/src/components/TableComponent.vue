@@ -9,8 +9,8 @@
             </thead>
             <tbody>
                 <tr v-for="(index) in annee.length" :key="index">
-                    <td>{{ annee[index] }}</td>
-                    <td>{{ valeur[index] }}</td>
+                    <td>{{ annee[index-1] }}</td>
+                    <td>{{ valeur[index-1] }}</td>
                 </tr>
             </tbody>
         </table>
