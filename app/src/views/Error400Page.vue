@@ -3,10 +3,7 @@
     <div class="fr-grid-row">
       <div class="fr-col">
         <div class="fr-container--fluid fr-container-page">
-          <!-- <div> <h1>
-            Styles P 
-          </h1>
-          </div> -->
+          
           <div
             class="fr-grid-row fr-grid-row--gutters fr-grid-row--middle fr-my-7w fr-mb-md-10w"
           >
