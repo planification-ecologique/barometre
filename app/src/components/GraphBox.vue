@@ -1,21 +1,20 @@
 <template>
-    <div class="fr-card fr-card--no-icon fr-card--shadow adjust-height">
+    <div class="fr-card fr-card--no-icon fr-card--shadow adjust-height" v-if="dataObj">
         <div class="titleBox">
             <h2 class="cardTitle">{{ dataObj.label_indic }}
             </h2>
-            <p class="fr-text--xs fr-text--regular fr-unit"> L'unité est :  {{ dataObj.label_unit }}</p>
+            <p class="fr-text--xs fr-text--regular fr-unit"> L'unité est en {{ dataObj.label_unit }}</p>
         </div>
         
         <div class="cardReference">
-            <!-- <p class="fr-text--xs fr-text-mention--grey textReference">Mis à jour : 05/02/2024</p> -->
-            <segmented-controls v-on:chart-selected="handleChartSelected" :idcontrol="idAccordion+'1'"></segmented-controls>
-            <div class="fr-text--xs fr-text--bold cardObjectif"> 
-                Objectif
-                <p class="fr-badge fr-badge-sm fr-badge--green-emeraude fr-badge--no-icon">{{ dataObj.values.y[3][dataObj.values.y[3].length - 1] }}</p>
+            <segmented-controls @chart-selected="handleChartSelected" :idcontrol="idAccordion+'1'"></segmented-controls>
+            <div class="fr-text--xs fr-text--bold cardObjectif" v-if="cible">
+                Cible
+                <p class="fr-badge fr-badge-sm fr-badge--green-emeraude fr-badge--no-icon"> {{ cible}} </p>
             </div>
         </div>
-        <div> 
-          <div class="cardData" v-if="displayChart">         
+        <div v-if="dataObj.values"> 
+          <div class="cardData" v-if="this.displayChart">         
             <bar-chart 
                   :x=JSON.stringify(dataObj.values.x)
                   :y=JSON.stringify(dataObj.values.y)
@@ -27,7 +26,9 @@
                   >
               </bar-chart>
           </div>
-          <table-component v-else :annee="dataObj.values.x[0]" :valeur="dataObj.values.ytab"></table-component>        
+          <div v-else>  
+            <table-component  :annee="dataObj.values.x[0]" :valeur="dataObj.values.ytab"></table-component>        
+          </div>
         </div>
         <div class="beneathGraph">
           <p class="fr-text--xs fr-text-mention--grey textReference">Source : {{ dataObj.label_sources }}</p>
@@ -47,20 +48,6 @@
             </div>
           </div>
         </section>
-        <!-- <div class="cardFooter fr-grid-row fr-grid-row--middle">
-          <div class=""></div>
-          <div class="cardFooter-button fr-col-3">
-            <svg width="34" height="32" viewBox="0 0 34 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M8 6.99951H10V8.99951H8V6.99951ZM12 6.99951H14V8.99951H12V6.99951ZM16 6.99951H18V8.99951H16V6.99951ZM20 6.99951H22V8.99951H20V6.99951ZM24 6.99951H26V8.99951H24V6.99951ZM24 10.9995H26V12.9995H24V10.9995ZM8 22.9995H10V24.9995H8V22.9995ZM8 18.9995H10V20.9995H8V18.9995ZM8 14.9995H10V16.9995H8V14.9995ZM8 10.9995H10V12.9995H8V10.9995ZM15.6667 14.9995L16.7031 13.4448C16.8886 13.1666 17.2008 12.9995 17.5352 12.9995H20.4648C20.7992 12.9995 21.1114 13.1666 21.2969 13.4448L22.3333 14.9995H25C25.5523 14.9995 26 15.4472 26 15.9995V23.9995C26 24.5518 25.5523 24.9995 25 24.9995H13C12.4477 24.9995 12 24.5518 12 23.9995V15.9995C12 15.4472 12.4477 14.9995 13 14.9995H15.6667ZM19 21.9995C20.1046 21.9995 21 21.1041 21 19.9995C21 18.8949 20.1046 17.9995 19 17.9995C17.8954 17.9995 17 18.8949 17 19.9995C17 21.1041 17.8954 21.9995 19 21.9995Z" fill="#00008F"/>
-              <rect x="0.5" y="0.999512" width="33" height="30" stroke="#DDDDDD"/>
-            </svg>
-
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd" clip-rule="evenodd" d="M10 20.6662H22V21.9995H10V20.6662ZM16.6667 16.7808L20.714 12.7328L21.6567 13.6755L16 19.3328L10.3433 13.6762L11.286 12.7328L15.3333 16.7795V9.33282H16.6667V16.7808Z" fill="#000091"/>
-              <rect x="0.5" y="0.499512" width="31" height="31" stroke="#DDDDDD"/>
-            </svg>
-          </div>
-        </div> -->
     </div>
 
 </template>
@@ -93,13 +80,18 @@ export default {
       return {          
           displayChart: false,
           isAccordionOpen: true,
-          color:  ['beige-gris-galet','brown-caramel','green-bourgeon','green-menthe']
+          color:  ['brown-cafe-creme','pink-tuile','green-emeraude','blue-ecume'],          
+          cible: undefined
       }
   },
   methods: {
       handleChartSelected(type) {
-      this.displayChart = (type === 'graphique');
+        this.displayChart = (type === 'graphique') ? true : false;
     }
+  },
+  mounted () {    
+    let index = this.dataObj.values.legend.indexOf("Cible");
+    index != -1 ? this.cible = this.dataObj.values.y[index][this.dataObj.values.y[index].length - 1] : this.cible = undefined    
   }
 }
 </script>

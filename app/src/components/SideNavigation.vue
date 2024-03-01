@@ -1,9 +1,9 @@
 <template>
   <nav role="navigation" class="fr-sidemenu fr-sidemenu--sticky fr-sidemenu__padding"  aria-labelledby="fr-sidemenu-title">
-    <div class="fr-sidemenu__inner">
-      <button class="fr-sidemenu__btn" aria-controls="fr-sidemenu-wrapper" aria-expanded="false">Filtre sur les indicateurs</button>
+    <div class="">
+      <button class="fr-sidemenu__btn " aria-controls="fr-sidemenu-wrapper" aria-expanded="false">Filtre sur les indicateurs</button>
       <div class="fr-collapse" id="fr-sidemenu-wrapper">
-        <ul class="fr-sidemenu__list">
+        <ul class="">
           <li class="fr-sidemenu__item" v-for="(theme, index) in menuOptions" :key="index">
             <button class="fr-sidemenu__btn" aria-expanded="false" :aria-controls="'fr-sidemenu-item-'+theme.id_theme"> {{ theme.label_theme }} </button> 
             <div class="fr-collapse" :id="'fr-sidemenu-item-'+theme.id_theme">

@@ -1,7 +1,7 @@
 <template>
-  <div class="fr-container--fluid reset-overflow">
+  <div class="fr-container--fluid ">
     <div class="fr-grid-row">
-      <div id="sidebar" class="fr-col-3">
+      <div id="sidebar" class="fr-col-3 fr-col-sm-3 fr-col-lg-3">
         <side-navigation v-on:params="updateSelection"/>
       </div>
       <div class="fr-col">
@@ -12,22 +12,9 @@
           <div v-else>
             <p>Chargement des indicateurs...</p>
           </div>
-          <div class="fr-grid-row">
-                 <a class="fr-link" href="https://www.gouvernement.fr/france-nation-verte"
-                                        target="_self">
-                                        France Nation Verte
-                                    </a>
-                                    <br>
-          </div>
+     
           <br>
-          <!-- <div class="fr-grid-row">
-            <div class="fr-col-12">
-                  <h2 class="fr-footer__body fr-btns-group--between">Les axes pour transformer la société
-                    <a class="fr-link fr-icon-arrow-right-line fr-link--icon-right" href="#">Suivre les réformes</a>
-                  </h2>
-              <up-footer></up-footer>
-            </div>
-          </div>   -->
+  
         </div>
       </div>
     </div>
