@@ -47,7 +47,7 @@
             </div>
             <div class="fr-header__service">
               <a
-                href="/"
+                :href=accueil_link
                 title="Accueil - Baromètre de la planification écologique"
               >
                 <p class="fr-header__service-title">
@@ -123,6 +123,22 @@
 <script>
 export default {
   name: "header_dsfr",
+  data() {
+        return {
+            accueil_link: "/accueil"            
+        }
+    },
+   methods: {
+        set_link () {
+            let base = process.env.VUE_APP_PREFIX_PATH
+            if (base) {
+                this.accueil_link = base +"/accueil"
+            }
+        }
+    },
+    mounted(){
+        this.set_link()
+    }
 };
 </script>
 

@@ -3,13 +3,13 @@
         <div class="titleBox">
             <h2 class="cardTitle">{{ dataObj.label_indic }}
             </h2>
-            <p class="fr-text--xs fr-text--regular fr-unit"> L'unité est :  {{ dataObj.label_unit }}</p>
+            <p class="fr-text--xs fr-text--regular fr-unit"> L'unité est en {{ dataObj.label_unit }}</p>
         </div>
         
         <div class="cardReference">
             <segmented-controls @chart-selected="handleChartSelected" :idcontrol="idAccordion+'1'"></segmented-controls>
             <div class="fr-text--xs fr-text--bold cardObjectif"> 
-                Objectif
+                Cible
                 <p class="fr-badge fr-badge-sm fr-badge--green-emeraude fr-badge--no-icon">{{ dataObj.values.y[3][dataObj.values.y[3].length - 1] }}</p>
             </div>
         </div>
