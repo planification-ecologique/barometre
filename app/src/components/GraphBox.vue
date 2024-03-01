@@ -21,7 +21,7 @@
                   :name=JSON.stringify(dataObj.values.legend)
                   :horizontal=false
                   :stacked=true
-                  :color= JSON.stringify(color) 
+                  :color= JSON.stringify(dataObj.values.colors) 
                   :aspectratio = 2
                   >
               </bar-chart>
@@ -80,7 +80,6 @@ export default {
       return {          
           displayChart: false,
           isAccordionOpen: true,
-          color:  ['brown-cafe-creme','pink-tuile','green-emeraude','blue-ecume'],          
           cible: undefined
       }
   },
