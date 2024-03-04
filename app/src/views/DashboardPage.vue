@@ -12,9 +12,6 @@
           <div v-else>
             <p>Chargement des indicateurs...</p>
           </div>
-     
-          <br>
-  
         </div>
       </div>
     </div>
