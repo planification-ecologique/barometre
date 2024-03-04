@@ -64,9 +64,18 @@ const router = new Router({
     },
     {
       path: "/plan-du-site",
-      name: "Plan-du-site",
+      name: "plan-du-site",
       component: () =>
         import(/* webpackChunkName: "tags" */ "./views/PlanDuSitePage.vue"),
+      meta: {
+        requiresAuth: true,
+      },
+    },
+    {
+      path: "/gestion-des-cookies",
+      name: "gestion-des-cookies",
+      component: () =>
+        import(/* webpackChunkName: "tags" */ "./views/CookiesPage.vue"),
       meta: {
         requiresAuth: true,
       },
