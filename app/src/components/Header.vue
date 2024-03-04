@@ -107,7 +107,7 @@
         </div>
       </div>
     </div>
-  <div class="fr-container--fluid" v-if="showNavigation">
+  <div class="fr-container--fluid desktop-navigation" v-if="showNavigation">
       <navigation-dsfr></navigation-dsfr>
     </div>
   </header>
@@ -141,6 +141,11 @@ export default {
 </script>
 
 <style>
+
+
+.desktop-navigation {
+  display: block; 
+}
 
 .fr-header__body {
   width: 100%;
