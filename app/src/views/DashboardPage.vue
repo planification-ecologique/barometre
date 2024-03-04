@@ -1,7 +1,7 @@
 <template>
   <div class="fr-container--fluid ">
     <div class="fr-grid-row">
-      <div id="sidebar" class="fr-col-3 fr-col-sm-3 fr-col-lg-3">
+      <div id="sidebar" class="fr-col- fr-col-sm-3 fr-col-lg-3">
         <side-navigation v-on:params="updateSelection"/>
       </div>
       <div class="fr-col">
@@ -12,9 +12,6 @@
           <div v-else>
             <p>Chargement des indicateurs...</p>
           </div>
-     
-          <br>
-  
         </div>
       </div>
     </div>
