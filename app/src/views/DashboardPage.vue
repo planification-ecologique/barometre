@@ -1,8 +1,8 @@
 <template>
   <div class="fr-container--fluid ">
     <div class="fr-grid-row">
-      <div id="sidebar" class="fr-col- fr-col-sm-3 fr-col-lg-3">
-        <side-navigation v-on:params="updateSelection"/>
+      <div id="sidebar" class="fr-col-3 fr-col-sm-3 fr-col-lg-3">
+        <side-navigation v-on:params="updateSelection" :initParams="sidenav_initParams"/>
       </div>
       <div class="fr-col">
         <div class="fr-container--fluid fr-container-page">
@@ -24,6 +24,7 @@ import { api } from '@/services/api.js'
 import UpFooter from '../components/UpFooter.vue'
 import AdaptiveDashboard from '../components/AdaptiveDashboard.vue'
 import SideNavigation from '../components/SideNavigation.vue'
+import router from '../router.js'
 
 export default {
   name: 'DashboardPage',
@@ -37,12 +38,56 @@ export default {
       isapiloading: true,
       myobj: {},
       results_API: [],
+      sidenav_initParams: {}
     }
   },
+  created() {
+    // Initialisation de la requête selon les paramètres de l'URL
+    if (this.$route.params.theme == undefined || this.$route.params.levier == undefined) {
+      this.$router.push({ name: 'dashboard', params: { theme: 'transverse', levier: 'emissions--puits' } })
+    } 
+
+    var query_init = this.set_query_init(this.$route.params.theme, this.$route.params.levier)
+    this.myobj = query_init
+    this.fetchData(query_init.query)
+
+    var initLoadingParams = {
+      "id_theme": this.$route.params.theme,
+      "id_levier": this.$route.params.levier,
+    }
+    this.sidenav_initParams = initLoadingParams
+
+  },
   methods: {
+    set_query_init (id_theme, id_levier) {
+      // console.log(JSON.stringify(levier))
+      var params = {
+        "query" : {
+          "filter_by": [
+            { "field": "id_theme",
+              "values": [id_theme],
+            },
+            { "field": "id_levier",
+              "values": [id_levier]
+            }
+          ],
+          "time_period": {
+            "date_start": "2015-01-01",
+            "date_end": "2031-01-01"
+          }
+        }
+      } 
+      return params
+    },
     updateSelection(selectedValue) {
       if(selectedValue != undefined) {
         this.myobj = selectedValue
+        // Navigation vers la page de dashboard et affichage dans l'URL
+        try {
+          this.$router.push({ name: 'dashboard', params: { theme: selectedValue.query.filter_by[0].values[0], levier: selectedValue.query.filter_by[1].values[0] } })
+        } catch (error) {
+          console.error("Erreur dans le chargement de la navigation : ", error);
+        }
         this.fetchData(selectedValue.query)
       }
     },
