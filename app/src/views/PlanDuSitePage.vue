@@ -7,12 +7,12 @@
           <ul>
             <li><a href="/" class="router-link-active">Accueil</a></li>
             <li>
-              <a href="/utilisation-et-organisation" class="" target="_self"
+              <a href="" class="" target="_self"
                 >Tableau de bord</a
               >
             
             <li>
-              <a href="/elements-d-interface" class="" target="_self"
+              <a href="" class="" target="_self"
                 >Tags</a
               >
              
