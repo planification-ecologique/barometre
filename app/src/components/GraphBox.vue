@@ -37,10 +37,10 @@
         </div>
         <section class="fr-accordion">
           <h3 class="fr-accordion__title">
-            <button class="fr-accordion__btn" :aria-expanded="isAccordionOpen ? 'true' : 'false'" :aria-controls="idAccordion">Description de l'indicateur</button>
+            <button class="fr-accordion__btn " :aria-expanded="isAccordionOpen ? 'true' : 'false'" :aria-controls="idAccordion">Description de l'indicateur</button>
           </h3>
           <div class="fr-collapse accordion-box" :id="idAccordion" :class="{ 'fr-collapse--expanded': isAccordionOpen }">
-            <p class="fr-text--xs cardDescription">{{ dataObj.label_description }}</p>
+            <p class="fr-text--xs cardDescription fr-ml-1w fr-mr-1w">{{ dataObj.label_description }}</p>
             <div v-if="dataObj.label_tags">
               <tags-card :tagsIndicateurs="dataObj.label_tags"></tags-card>
             </div>
