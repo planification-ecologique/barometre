@@ -27,7 +27,7 @@ const router = new Router({
       },
     },
     {
-      path: "/dashboard",
+      path: "/dashboard/:theme/:levier",
       name: "dashboard",
       component: () =>
         import(/* webpackChunkName: "visits" */ "./views/DashboardPage.vue"),

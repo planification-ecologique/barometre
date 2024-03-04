@@ -37,7 +37,11 @@ export default {
     router_to_pages(option) {
       var name_page = this.get_name_page()
       if (option.value != name_page) {
-        this.myrouter.push({ name: option.value })
+        if (option.value == 'dashboard') {
+          this.myrouter.push({ name: option.value, params: { theme: 'transverse', levier: 'emissions--puits' } })
+        } else {
+          this.myrouter.push({ name: option.value })
+        }
         this.set_selected_page(option.value)
       }
     },
@@ -48,8 +52,15 @@ export default {
     get_name_page() {
       let location = window.location.href
       var page = location.split('/')
-      page = page[page.length - 1]
-      page = page.split('#')[0]
+
+      // si dashbord est dans l'url
+      if (page.includes('dashboard')) {
+        page = 'dashboard'
+      } else {
+        page = page[page.length - 1]
+        page = page.split('#')[0]
+      }
+
       return page
     }
   },
