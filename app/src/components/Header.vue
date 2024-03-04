@@ -119,7 +119,7 @@ export default {
   data() {
         return {
             accueil_link: "/accueil",
-            showNavigation: false
+            showNavigation: true
         }
     },
    methods: {
@@ -131,7 +131,7 @@ export default {
             }
         },
             toggleNavigation() {
-      this.showNavigation = !this.showNavigation; // Toggle navigation visibility
+      this.showNavigation = !this.showNavigation; 
     }
     },
     mounted(){
@@ -141,6 +141,7 @@ export default {
 </script>
 
 <style>
+
 .fr-header__body {
   width: 100%;
   border-bottom: 1px solid rgba(207, 207, 223, 0.534);
