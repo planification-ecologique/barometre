@@ -24,25 +24,18 @@
                 <!-- L’alternative de l’image (attribut alt) doit impérativement être renseignée et reprendre le texte visible dans l’image -->
               </div>
               <div class="fr-header__navbar">
+        
                 <button
-                  class="fr-btn--search fr-btn"
-                  data-fr-opened="false"
-                  aria-controls="modal-541"
-                  id="button-542"
-                  title="Rechercher"
-                >
-                  Rechercher
-                </button>
-                <button
-                  class="fr-btn--menu fr-btn"
-                  data-fr-opened="false"
-                  aria-controls="modal-543"
-                  aria-haspopup="menu"
-                  id="button-544"
-                  title="Menu"
-                >
-                  Menu
-                </button>
+        class="fr-btn--menu fr-btn"
+        data-fr-opened="false"
+        aria-controls="modal-543"
+        aria-haspopup="menu"
+        id="button-544"
+        title="Menu"
+        @click="toggleNavigation"
+      >
+        Menu
+      </button>
               </div>
             </div>
             <div class="fr-header__service">
@@ -114,7 +107,7 @@
         </div>
       </div>
     </div>
-    <div class="fr-container--fluid">
+  <div class="fr-container--fluid" v-if="showNavigation">
       <navigation-dsfr></navigation-dsfr>
     </div>
   </header>
@@ -125,7 +118,8 @@ export default {
   name: "header_dsfr",
   data() {
         return {
-            accueil_link: "/accueil"            
+            accueil_link: "/accueil",
+            showNavigation: false
         }
     },
    methods: {
@@ -133,8 +127,12 @@ export default {
             let base = process.env.VUE_APP_PREFIX_PATH
             if (base) {
                 this.accueil_link = base +"/accueil"
+                
             }
-        }
+        },
+            toggleNavigation() {
+      this.showNavigation = !this.showNavigation; // Toggle navigation visibility
+    }
     },
     mounted(){
         this.set_link()
