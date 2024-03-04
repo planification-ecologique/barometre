@@ -31,20 +31,8 @@
             </button>
             <div class="fr-collapse" :id="'fr-sidemenu-item-' + theme.id_theme">
               <ul class="fr-sidemenu__list">
-                <li
-                  class="fr-sidemenu__item"
-                  v-for="(levier, index) in theme.levier"
-                  :key="index"
-                >
-                  <a
-                    class="fr-sidemenu__link"
-                    @click="
-                      set_query(theme.label_theme, theme.id_theme, levier)
-                    "
-                    target="_self"
-                  >
-                    {{ levier.label_levier }}
-                  </a>
+                <li class="fr-sidemenu__item" v-for="(levier, index) in theme.levier" :key="index">
+                  <a class="fr-sidemenu__link" @click="set_query(theme.label_theme, theme.id_theme, levier)" target="_self" :id="'fr-sidemenu__link-'+theme.id_theme+levier.id_levier"> {{ levier.label_levier }} </a>
                 </li>
               </ul>
             </div>
@@ -62,10 +50,13 @@ export default {
   name: "SideNavigation",
   data() {
     return {
-      menuOptions: [],
-      activeTabIndex: 0,
-      selectedSubmenuIndex: null
-    };
+      menuOptions: []
+    }
+  },
+  props: {
+    initParams: {
+      type: Object,
+    }
   },
   methods: {
     async fetch_menu_options() {
@@ -79,13 +70,22 @@ export default {
           );
         }
 
-        let result = response.data.results;
-        this.menuOptions = result;
-        this.set_query(
-          this.menuOptions[0].label_theme,
-          this.menuOptions[0].id_theme,
-          this.menuOptions[0].levier[0]
-        );
+        let result = response.data.results
+        this.menuOptions = result
+
+        try {
+          // find selected theme and levier on menuOptions
+        var defaultMenu = this.initParams
+        defaultMenu.label_theme = this.menuOptions.find(theme => theme.id_theme === defaultMenu.id_theme).label_theme
+        defaultMenu.levier = this.menuOptions.find(theme => theme.id_theme === defaultMenu.id_theme).levier.find(levier => levier.id_levier === defaultMenu.id_levier)
+
+        this.set_query(defaultMenu.label_theme, defaultMenu.id_theme, defaultMenu.levier)
+
+        } catch (error) {
+          console.error("Erreur dans le chargement de la navigation : ", error);
+        }
+        
+        
       } catch (error) {
         console.error("Erreur dans le chargement de la navigation : ", error);
       }
@@ -99,6 +99,16 @@ export default {
     },
     set_query(label_theme, id_theme, levier) {
       // console.log(JSON.stringify(levier))
+      const menuSelected = document.getElementById('fr-sidemenu__link-'+id_theme+levier.id_levier)
+
+      if (menuSelected) {
+        const menuSelecteds = document.querySelectorAll('.fr-sidemenu__link')
+        menuSelecteds.forEach((menu) => {
+          menu.ariaCurrent = false
+        })
+        menuSelected.attributes['aria-current'].value = 'page'
+      }
+
       var params = {
         label_theme: label_theme,
         label_levier: levier.label_levier,
@@ -107,19 +117,14 @@ export default {
             { field: "id_theme", values: [id_theme] },
             { field: "id_levier", values: [levier.id_levier] },
           ],
-          time_period: {
-            date_start: "2015-01-01",
-            date_end: "2031-01-01",
-          },
-        },
-      };
-      this.$emit("params", params);
+          "time_period": {
+            "date_start": "2015-01-01",
+            "date_end": "2031-01-01"
+          }
+        }
+      }      
+      this.$emit('params', params)
     },
-      closeSubmenu(index) {
-      if (this.selectedSubmenuIndex !== null && this.selectedSubmenuIndex !== index) {
-        this.selectedSubmenuIndex = null;
-      }
-    }
   },
   mounted() {
     this.fetch_menu_options();
