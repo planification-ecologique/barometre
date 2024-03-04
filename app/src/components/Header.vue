@@ -24,15 +24,7 @@
                 <!-- L’alternative de l’image (attribut alt) doit impérativement être renseignée et reprendre le texte visible dans l’image -->
               </div>
               <div class="fr-header__navbar">
-                <button
-                  class="fr-btn--search fr-btn"
-                  data-fr-opened="false"
-                  aria-controls="modal-541"
-                  id="button-542"
-                  title="Rechercher"
-                >
-                  Rechercher
-                </button>
+        
                 <button
                   class="fr-btn--menu fr-btn"
                   data-fr-opened="false"
