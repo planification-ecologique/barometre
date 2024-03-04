@@ -23,6 +23,9 @@
               <!---->
             </li>
             <li><a href="/mentions-legales" class="">Mentions légales</a></li>
+            <li><a href="/donnees-personnelles" class="" > Données personnelles </a></li>
+            <li><a href="/gestion-des-cookies" class="">Gestion des cookies</a></li>
+
           </ul>
         </section>
       </div>
