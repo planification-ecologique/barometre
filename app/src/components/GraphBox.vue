@@ -9,7 +9,7 @@
         <div class="cardReference">
             <segmented-controls @chart-selected="handleChartSelected" :idcontrol="idAccordion+'1'"></segmented-controls>
             <div class="fr-text--xs fr-text--bold cardObjectif" v-if="cible">
-                <p class="fr-text--xs fr-text--bold unit-short" v-if="dataObj.label_unit_short.length != ''"> Cible en {{ dataObj.label_unit_short }}</p>
+                <p class="fr-text--xs fr-text--bold unit-short fr-ml-1w" v-if="dataObj.label_unit_short.length != ''"> Cible en {{ dataObj.label_unit_short }}</p>
                 <p class="fr-text--xs fr-text--bold unit-short" v-else> Cible</p>
                 <p class="fr-badge fr-badge-sm fr-badge--green-emeraude fr-badge--no-icon"> {{ cible}} </p>
             </div>
@@ -41,7 +41,7 @@
           </h3>
           <div class="fr-collapse accordion-box" :id="idAccordion" :class="{ 'fr-collapse--expanded': isAccordionOpen }">
             <p class="fr-text--xs cardDescription fr-ml-1w fr-mr-1w">{{ dataObj.label_description }}</p>
-            <div v-if="dataObj.label_tags">
+            <div class="fr-ml-1w" v-if="dataObj.label_tags">
               <tags-card :tagsIndicateurs="dataObj.label_tags"></tags-card>
             </div>
             <div v-else>
