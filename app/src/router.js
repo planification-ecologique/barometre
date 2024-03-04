@@ -64,7 +64,7 @@ const router = new Router({
     },
     {
       path: "/plan-du-site",
-      name: "Plan du site",
+      name: "plan-du-site",
       component: () =>
         import(/* webpackChunkName: "tags" */ "./views/PlanDuSitePage.vue"),
       meta: {
@@ -73,7 +73,7 @@ const router = new Router({
     },
     {
       path: "/gestion-des-cookies",
-      name: "Gestion-des-cookies",
+      name: "gestion-des-cookies",
       component: () =>
         import(/* webpackChunkName: "tags" */ "./views/CookiesPage.vue"),
       meta: {
