@@ -1,5 +1,5 @@
 <template>
-    <div class="fr-table fr-table--layout-fixed fr-tab-data fr-ml-1w fr-mr-3w">
+    <div class="fr-table fr-table--layout-fixed fr-tab-data fr-ml-1w fr-mr-1w fr-mt-1w fr-mb-2w">
         <table class="">            
             <thead>
                 <tr>
