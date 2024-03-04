@@ -1,6 +1,6 @@
 <template>
-    <div class="fr-table fr-table--layout-fixed fr-tab-data">
-        <table>            
+    <div class="fr-table fr-table--layout-fixed fr-tab-data fr-ml-1w fr-mr-3w">
+        <table class="">            
             <thead>
                 <tr>
                     <th scope="col">Année</th>
