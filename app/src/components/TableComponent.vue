@@ -1,6 +1,6 @@
 <template>
-    <div class="fr-table fr-table--layout-fixed fr-tab-data">
-        <table>            
+    <div class="fr-table fr-table--layout-fixed fr-tab-data fr-ml-1w fr-mr-1w fr-mt-1w fr-mb-2w">
+        <table class="">            
             <thead>
                 <tr>
                     <th scope="col">Année</th>
@@ -9,8 +9,8 @@
             </thead>
             <tbody>
                 <tr v-for="(index) in annee.length" :key="index">
-                    <td>{{ annee[index] }}</td>
-                    <td>{{ valeur[index] }}</td>
+                    <td>{{ annee[index-1] }}</td>
+                    <td>{{ valeur[index-1] }}</td>
                 </tr>
             </tbody>
         </table>
@@ -44,5 +44,9 @@ export default {
     height: fit-content !important;
     max-height: 40vh;
     overflow-y: scroll;
+}
+
+.fr-tab-data tbody tr:hover {
+    box-shadow: 0 16px 16px rgba(18, 14, 153, 0.6); /* Augmentez l'intensité de l'ombre */
 }
 </style>

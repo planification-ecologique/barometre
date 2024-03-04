@@ -45,10 +45,14 @@ export default {
           label: "Gestion des cookies",
           selected: false,
         },
-        { value: "plan-du-site", label: "Plan du site", selected: false },
-        {
+          {
           value: "Accessibilite",
           label: "Accessibilité : non/partiellement/totalement conforme",
+          selected: false,
+        },
+        {
+          value: "plan-du-site",
+          label: "Plan du site",
           selected: false,
         },
       ];

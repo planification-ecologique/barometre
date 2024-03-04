@@ -26,15 +26,16 @@
               <div class="fr-header__navbar">
         
                 <button
-                  class="fr-btn--menu fr-btn"
-                  data-fr-opened="false"
-                  aria-controls="modal-543"
-                  aria-haspopup="menu"
-                  id="button-544"
-                  title="Menu"
-                >
-                  Menu
-                </button>
+        class="fr-btn--menu fr-btn"
+        data-fr-opened="false"
+        aria-controls="modal-543"
+        aria-haspopup="menu"
+        id="button-544"
+        title="Menu"
+        @click="toggleNavigation"
+      >
+        Menu
+      </button>
               </div>
             </div>
             <div class="fr-header__service">
@@ -106,7 +107,7 @@
         </div>
       </div>
     </div>
-    <div class="fr-container--fluid">
+  <div class="fr-container--fluid desktop-navigation" v-if="showNavigation">
       <navigation-dsfr></navigation-dsfr>
     </div>
   </header>
@@ -117,7 +118,8 @@ export default {
   name: "header_dsfr",
   data() {
         return {
-            accueil_link: "/accueil"            
+            accueil_link: "/accueil",
+            showNavigation: true
         }
     },
    methods: {
@@ -125,8 +127,12 @@ export default {
             let base = process.env.VUE_APP_PREFIX_PATH
             if (base) {
                 this.accueil_link = base +"/accueil"
+                
             }
-        }
+        },
+            toggleNavigation() {
+      this.showNavigation = !this.showNavigation; 
+    }
     },
     mounted(){
         this.set_link()
@@ -135,6 +141,12 @@ export default {
 </script>
 
 <style>
+
+
+.desktop-navigation {
+  display: block; 
+}
+
 .fr-header__body {
   width: 100%;
   border-bottom: 1px solid rgba(207, 207, 223, 0.534);

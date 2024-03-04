@@ -9,7 +9,8 @@
         <div class="cardReference">
             <segmented-controls @chart-selected="handleChartSelected" :idcontrol="idAccordion+'1'"></segmented-controls>
             <div class="fr-text--xs fr-text--bold cardObjectif" v-if="cible">
-                Cible
+                <p class="fr-text--xs fr-text--bold unit-short fr-ml-1w" v-if="dataObj.label_unit_short.length != ''"> Cible en {{ dataObj.label_unit_short }}</p>
+                <p class="fr-text--xs fr-text--bold unit-short" v-else> Cible</p>
                 <p class="fr-badge fr-badge-sm fr-badge--green-emeraude fr-badge--no-icon"> {{ cible}} </p>
             </div>
         </div>
@@ -36,11 +37,11 @@
         </div>
         <section class="fr-accordion">
           <h3 class="fr-accordion__title">
-            <button class="fr-accordion__btn" :aria-expanded="isAccordionOpen ? 'true' : 'false'" :aria-controls="idAccordion">Description de l'indicateur</button>
+            <button class="fr-accordion__btn " :aria-expanded="isAccordionOpen ? 'true' : 'false'" :aria-controls="idAccordion">Description de l'indicateur</button>
           </h3>
           <div class="fr-collapse accordion-box" :id="idAccordion" :class="{ 'fr-collapse--expanded': isAccordionOpen }">
-            <p class="fr-text--xs cardDescription">{{ dataObj.label_description }}</p>
-            <div v-if="dataObj.label_tags">
+            <p class="fr-text--xs cardDescription fr-ml-1w fr-mr-1w">{{ dataObj.label_description }}</p>
+            <div class="fr-ml-1w" v-if="dataObj.label_tags">
               <tags-card :tagsIndicateurs="dataObj.label_tags"></tags-card>
             </div>
             <div v-else>
@@ -159,6 +160,10 @@ p.cardDescription {
   text-align: justify;
   text-justify: inter-word;
   margin-bottom: 1rem;
+}
+
+.unit-short {
+  margin-bottom: 0rem !important;
 }
 .cardObjectif {
   display: flex;
