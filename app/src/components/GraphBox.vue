@@ -11,7 +11,7 @@
             <div class="fr-text--xs fr-text--bold cardObjectif" v-if="cible">
                 <p class="fr-text--xs fr-text--bold unit-short fr-ml-1w" v-if="dataObj.label_unit_short.length != ''"> Cible en {{ dataObj.label_unit_short }}</p>
                 <p class="fr-text--xs fr-text--bold unit-short" v-else> Cible</p>
-                <p class="fr-badge fr-badge-sm fr-badge--green-emeraude fr-badge--no-icon"> {{ cible}} </p>
+                <p class="fr-badge fr-badge-sm fr-badge--green-emeraude fr-badge--no-icon fr-pr-1w"> {{ cible}} </p>
             </div>
         </div>
         <div v-if="dataObj.values"> 
