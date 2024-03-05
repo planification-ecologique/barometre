@@ -17,6 +17,7 @@ const router = new Router({
       },
       redirect: '/accueil'
     },
+    
     {
       path: "/accueil",
       name: "accueil",
@@ -114,6 +115,15 @@ const router = new Router({
         import(/* webpackChunkName: "tags" */ "./views/Error400Page.vue"),
       meta: {
         requiresAuth: true,
+      },
+    },
+    {
+      path: "*",
+      name: "error404",
+      component: () =>
+        import(/* webpackChunkName: "error404" */ "./views/Error404Page.vue"),
+      meta: {
+        requiresAuth: true, // ou false selon vos besoins
       },
     },
     
