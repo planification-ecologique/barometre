@@ -3,7 +3,6 @@
     <div class="fr-grid-row">
       <div class="fr-col-12 fr-col-md-8">
         <h1>Gestion des cookies</h1>
-       
       </div>
     </div>
   </main>
