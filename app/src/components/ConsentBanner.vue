@@ -1,11 +1,11 @@
 <template>
-      <dialog
+  <dialog
+  v-if="modalVisible"
     id="fr-consent-modal"
     aria-labelledby="fr-consent-modal-title"
     class="fr-modal fr-modal--opened"
     data-fr-js-modal="true"
     aria-modal="true"
-    open="true"
   >
     <div class="fr-container fr-container--fluid fr-container-md">
       <div class="fr-grid-row fr-grid-row--center">
@@ -16,13 +16,14 @@
             style="--modal-max-height: 812px"
           >
             <div class="fr-modal__header">
-              <button
-                aria-controls="fr-consent-modal"
-                class="fr-btn fr-btn--close"
-                data-fr-js-modal-button="true"
-              >
-                Fermer
-              </button>
+          <button
+      aria-controls="fr-consent-modal"
+      class="fr-btn fr-btn--close"
+      data-fr-js-modal-button="true"
+      @click="closeDialog"
+    >
+      Fermer
+    </button>
             </div>
             <div class="fr-modal__content">
               <h1 id="fr-consent-modal-title" class="fr-modal__title">
@@ -33,7 +34,7 @@
                   <fieldset class="fr-fieldset fr-fieldset--inline">
                     <legend class="fr-consent-service__title">
                       Préférences pour tous les services. <br /><a
-                        href="/mentions-legales"
+                        href="/donnees-personnelles"
                         aria-controls="fr-consent-modal"
                         class=""
                         data-fr-js-modal-button="true"
@@ -49,6 +50,7 @@
                           title="Tout accepter"
                           class="fr-btn"
                           data-fr-js-button-actionee="true"
+                          @click="acceptAll"
                         >
                           Tout accepter
                         </button>
@@ -57,6 +59,7 @@
                           title="Tout refuser"
                           class="fr-btn fr-btn--secondary"
                           data-fr-js-button-actionee="true"
+                          @click="rejectAll"
                         >
                           Tout refuser
                         </button>
@@ -117,6 +120,7 @@
                           type="radio"
                           id="consent-finality-vimeo-accept"
                           name="consent-finality-vimeo"
+                          @change="updateConsent('vimeo', true)"
                         />
                         <label
                           for="consent-finality-vimeo-accept"
@@ -130,6 +134,7 @@
                           id="consent-finality-vimeo-refuse"
                           name="consent-finality-vimeo"
                           checked=""
+                          @change="updateConsent('vimeo', false)"
                         />
                         <label
                           for="consent-finality-vimeo-refuse"
@@ -160,6 +165,7 @@
                           type="radio"
                           id="consent-finality-youtube-accept"
                           name="consent-finality-youtube"
+                          @change="updateConsent('youtube', true)"
                         />
                         <label
                           for="consent-finality-youtube-accept"
@@ -173,6 +179,7 @@
                           id="consent-finality-youtube-refuse"
                           name="consent-finality-youtube"
                           checked=""
+                          @change="updateConsent('youtube', false)"
                         />
                         <label
                           for="consent-finality-youtube-refuse"
@@ -200,6 +207,7 @@
                       class="fr-btn"
                       data-fr-js-modal-button="true"
                       data-fr-js-button-actionee="true"
+                      @click="confirmChoices"
                     >
                       Confirmer mes choix
                     </button>
@@ -215,24 +223,31 @@
 </template>
 
 <script>
-
 export default {
-  name: 'GraphBox',
-  components: {
-  },
-  props: {
-  },
+  name: "ConsentBanner",
   data() {
-      return {          
-      }
+   return {
+    modalVisible: true,
+      consentData: {
+        vimeo: false,
+        youtube: false,
+      },
+
+    };
   },
+ 
   methods: {
+ closeDialog() {
+      this.modalVisible = false; 
+    },
+     confirmChoices() {
+ this.modalVisible = false;
+ this.$router.push('/accueil');
+    },
+    
   },
-  mounted () {    
-  }
-}
+};
 </script>
 
 <style>
-
 </style>
