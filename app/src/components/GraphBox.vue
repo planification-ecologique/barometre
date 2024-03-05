@@ -15,8 +15,9 @@
             </div>
         </div>
         <div v-if="dataObj.values"> 
-          <div class="cardData" v-if="this.displayChart">         
-            <bar-chart 
+          <div class="cardData" v-if="this.displayChart">
+            <div v-if="dataObj.label_sous_groupe == ''">
+            <bar-chart
                   :x=JSON.stringify(dataObj.values.x)
                   :y=JSON.stringify(dataObj.values.y)
                   :name=JSON.stringify(dataObj.values.legend)
@@ -26,9 +27,25 @@
                   :aspectratio = 2
                   >
               </bar-chart>
+            </div>
+            <div v-else>
+              <bar-chart
+                  :x=JSON.stringify(dataObj.date)
+                  :y=JSON.stringify(dataObj.values)
+                  :aspectratio = 2
+                  :stacked=true
+                  :name=JSON.stringify(dataObj.label_sous_groupe)
+                  >
+              </bar-chart>
+            </div>
           </div>
           <div v-else>  
-            <table-component  :annee="dataObj.values.x[0]" :valeur="dataObj.values.ytab"></table-component>        
+            <div v-if="dataObj.label_sous_groupe == ''">
+              <table-component  :annee="dataObj.values.x[0]" :valeur="dataObj.values.ytab"></table-component>        
+            </div>
+            <div v-else>
+              <TableComponentVariant :annee="dataObj.date[0]" :valeurCol="dataObj.label_sous_groupe" :valeurValue="dataObj.values"></TableComponentVariant>
+            </div>
           </div>
         </div>
         <div class="beneathGraph">
@@ -55,9 +72,11 @@
 
 <script>
 import BarChart from './components_dsfr/BarChart.vue'
+import MultiLineChart from './components_dsfr/MultiLineChart.vue'
 import SegmentedControls from './SegmentedControls.vue'
 import tagsCard from './TagsCard.vue'
 import TableComponent from './TableComponent.vue'
+import TableComponentVariant from './TableComponentVariant.vue'
 
 export default {
   name: 'GraphBox',
@@ -65,7 +84,9 @@ export default {
       BarChart,
       SegmentedControls,
       tagsCard,
-      TableComponent
+      TableComponent,
+      TableComponentVariant,
+      MultiLineChart
   },
   props: {
       dataObj:{
@@ -89,9 +110,27 @@ export default {
         this.displayChart = (type === 'graphique') ? true : false;
     }
   },
-  mounted () {    
-    let index = this.dataObj.values.legend.indexOf("Cible");
-    index != -1 ? this.cible = this.dataObj.values.y[index][this.dataObj.values.y[index].length - 1] : this.cible = undefined    
+  mounted () {
+    console.log(this.dataObj)
+
+    try {
+      if (this.dataObj.label_sous_groupe == undefined || this.dataObj.label_sous_groupe =="") {
+        let index = this.dataObj.values.legend.indexOf("Cible");
+        index != -1 ? this.cible = this.dataObj.values.y[index][this.dataObj.values.y[index].length - 1] : this.cible = undefined
+      } else {
+          this.cible = undefined
+
+        // let sum = 0
+        // this.dataObj.values[this.dataObj.values.length - 1].forEach( value => {
+        // sum += value
+        // })
+        // this.cible = sum
+      }
+    } catch (error) {
+      console.log("Erreur dans la cible",error)
+    }
+    
+        
   }
 }
 </script>
