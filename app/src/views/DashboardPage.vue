@@ -1,7 +1,7 @@
 <template>
   <div class="fr-container--fluid ">
     <div class="fr-grid-row">
-      <div id="sidebar" class="fr-col-3 fr-col-sm-3 fr-col-lg-3">
+      <div id="sidebar" class="col-12 col-sm-6 fr-ml-2w">
         <side-navigation v-on:params="updateSelection" :initParams="sidenav_initParams"/>
       </div>
       <div class="fr-col">
