@@ -54,10 +54,10 @@
         </div>
         <section class="fr-accordion">
           <h3 class="fr-accordion__title">
-            <button class="fr-accordion__btn fr-text-s " :aria-expanded="isAccordionOpen ? 'true' : 'false'" :aria-controls="idAccordion">Description de l'indicateur</button>
+            <button class="fr-accordion__btn fr-text--xs " :aria-expanded="isAccordionOpen ? 'true' : 'false'" :aria-controls="idAccordion">Description de l'indicateur</button>
           </h3>
           <div class="fr-collapse accordion-box" :id="idAccordion" :class="{ 'fr-collapse--expanded': isAccordionOpen }">
-            <p class="fr-text--xs cardDescription fr-ml-1w fr-mr-1w">{{ dataObj.label_description }}</p>
+            <p class="fr-text--s cardDescription fr-ml-1w fr-mr-1w fontSizeDescription">{{ dataObj.label_description }}</p>
             <div class="fr-ml-1w" v-if="dataObj.label_tags">
               <tags-card :tagsIndicateurs="dataObj.label_tags"></tags-card>
             </div>
@@ -136,6 +136,9 @@ export default {
 </script>
 
 <style scoped>
+.fontSizeDescription{
+  font-size: 12px;
+}
 .fr-unit {
   margin-bottom: 0rem !important;
 }
@@ -193,12 +196,13 @@ export default {
   column-gap: 1em;
 }
 p.cardDescription {
-  font-size: 0.75rem;
+  font-size: 1rem;
   line-height: 1.25rem;
   font-weight: 400;
   text-align: justify;
   text-justify: inter-word;
   margin-bottom: 1rem;
+ color: black;
 }
 
 .unit-short {
