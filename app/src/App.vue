@@ -12,6 +12,7 @@
           <br>
           <button @click="$keycloak.logoutFn" v-if="$keycloak.authenticated">Log out</button>
         </div> -->
+        <consent-banner></consent-banner>
         <router-view />
       </div>
       
@@ -27,6 +28,18 @@
 
 <script>
 
+import ConsentBanner from "./components/ConsentBanner.vue";
+export default{
+  name:'App',
+  components : {
+    ConsentBanner
+  },
+  data (){
+    return {
+
+    }
+  }
+}
 
 </script>
 

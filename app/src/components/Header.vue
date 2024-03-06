@@ -3,14 +3,18 @@
     <div class="fr-header__body">
       <div class="header-container">
         <div class="fr-header__body-row">
-          <div class="fr-header__brand fr-enlarge-link">
+          <div class="fr-header__brand ">
             <div class="fr-header__brand-top">
+              <a href="https://gouvernement.fr/le-premier-ministre" target="_self">
               <div class="fr-header__logo">
-                <p class="fr-logo">
-                  Premier <br />
-                  ministre
+           <p class="fr-logo">
+                  
+                    Premier <br />
+                    ministre
                 </p>
               </div>
+                  </a>
+
               <div class="fr-header__operator">
                 <a href="https://www.gouvernement.fr/france-nation-verte" target="_self">
                 <img

@@ -1,7 +1,7 @@
 <template>
   <div class="fr-container fr-container--fluid">
     <!-- Utilisation du composant modal -->
-    <ConsentBanner />
+    <!-- <ConsentBanner /> -->
   </div>
 </template>
 
