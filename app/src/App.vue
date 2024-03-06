@@ -12,7 +12,7 @@
           <br>
           <button @click="$keycloak.logoutFn" v-if="$keycloak.authenticated">Log out</button>
         </div> -->
-        <consent-banner></consent-banner>
+        <!-- <consent-banner></consent-banner> -->
         <router-view />
       </div>
       
