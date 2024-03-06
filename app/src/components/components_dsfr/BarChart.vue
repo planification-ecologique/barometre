@@ -638,7 +638,7 @@
   <style scoped lang="scss">
     .flex-container {
     display: flex; /* Utilise Flexbox pour aligner les éléments horizontalement */
-    align-items: center; /* Alignement vertical des éléments au centre */
+    align-items: left; /* Alignement vertical des éléments au centre */
 }
   .widget_container {
     .ml-lg {
@@ -660,7 +660,7 @@
           min-width: 0.8rem;
           background-color: #000091;
           display: inline-block;
-          margin-top: 0.25rem;
+          margin-top: 0.3rem;
           margin-left: 0;
         }
         .legende_dash_line1{
