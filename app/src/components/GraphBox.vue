@@ -3,7 +3,7 @@
         <div class="titleBox">
             <h2 class="cardTitle">{{ dataObj.label_indic }}
             </h2>
-            <p class="fr-text--xs fr-text--regular fr-unit"> L'unité : {{ dataObj.label_unit }}</p>
+            <p class="fr-text--xs fr-text--regular fr-unit"> Unité : {{ dataObj.label_unit }}</p>
         </div>
         
         <div class="cardReference">
