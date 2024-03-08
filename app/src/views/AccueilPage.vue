@@ -47,6 +47,7 @@ import FranceImg from '../components/components_sgv/FranceImg.vue'
 import DocumentDownloadImg from '../components/components_sgv/DocumentDownloadImg.vue'
 import EnvironnementImg from '../components/components_sgv/EnvironnementImg.vue'
 import DataVisualization from '../components/components_sgv/DataVisualization.vue'
+import LimitesImg from '../components/components_sgv/LimitesImg.vue'
 
 export default {
   name: 'Secret',
@@ -59,7 +60,9 @@ export default {
     FranceImg,
     DocumentDownloadImg,
     EnvironnementImg,
-    DataVisualization
+    DataVisualization,
+    LimitesImg,
+    TrajectoireImg
 
 },
   data() {
@@ -93,12 +96,14 @@ export default {
         databtn: false,
         bgcolor: "#F5F5FE",
         databtn1: true,
+        image: LimitesImg,
       },
       cardEvolution: {
         title: "Trajectoires futures",
         description : `Il importe de souligner également que les trajectoires affichées pour l’avenir reposent parfois sur des objectifs officiels, mais parfois aussi, et même souvent, sur des hypothèses techniques de travail à date ; elles pourront donc évoluer le cas échéant et n'engagement pas en tant que tel la responsabilité ni du SGPE ni a fortiori du gouvernement. Pour autant, les trajectoires présentées cherchent à donner une vision cohérente des grandes stratégies nationales existantes (ex. Stratégie nationale pour la biodiversité) ou en cours de finalisation (ex. Stratégie nationale bas carbone).`,
         databtn: false,
         databtn1: true,
+        image: TrajectoireImg,
 
       },
         cardPerimetre: {
