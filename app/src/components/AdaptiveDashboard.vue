@@ -1,12 +1,22 @@
 <template>
     <div>
         <div class="fr-grid-row" v-if="dashboardPage">
-            <!-- <div class="fr-col-1">
-                <img :src="'/img/' + this.params.label_theme  + '.png'" alt="Image" style="pointer-events: auto; opacity: 1; width: 92.7859px; height: 92.7859px; vertical-align: top; transform: scale(1, 1)">
-            </div> -->
-            <div class="fr-col-12">
-                <h1 class="fr-title">{{ this.params.label_theme }}</h1>
-                <h4 class="fr-subtitle">{{ this.params.label_levier }}</h4>
+            <div class="fr-col-12" style="display: flex; align-items: center">
+                <div>
+                    <EnvironnementImg height = "100px" width = "100px" v-if="this.params.label_theme === 'Transverse'"></EnvironnementImg>
+                    <BatimentImg height = "100px" width = "100px" v-if="this.params.label_theme === 'Bâtiments'"></BatimentImg>
+                    <TransportImg height = "100px" width = "100px" v-if="this.params.label_theme === 'Transports'"></TransportImg>
+                    <AgricultureImg height = "120px" width = "100px" v-if="this.params.label_theme === 'Agriculture-Alimentation'"></AgricultureImg>
+                    <EcosystemeImg height = "120px" width = "100px" v-if="this.params.label_theme === 'Ecosystèmes'"></EcosystemeImg>
+                    <EauImg height = "120px" width = "100px" v-if="this.params.label_theme === 'Eau'"></EauImg>
+                    <IndustrieImg height = "120px" width = "100px" v-if="this.params.label_theme === 'Industrie'"></IndustrieImg>
+                    <EconomieImg height = "120px" width = "100px" v-if="this.params.label_theme === 'Economie circulaire'"></EconomieImg>
+                    <EnergieImg height = "120px" width = "100px" v-if="this.params.label_theme === 'Energie'"></EnergieImg>
+                </div>
+                <div>
+                    <h1 class="fr-title">{{ this.params.label_theme }}</h1>
+                    <h4 class="fr-subtitle">{{ this.params.label_levier }}</h4>
+                </div>
             </div>
         </div>
         <div v-if="gridFormat.length > 0">
@@ -15,8 +25,7 @@
                     <div v-if="!item">
                     </div>
                     <div v-else>
-                        <graph-box :dataObj="item" :idAccordion="'accordion-'+ index+columnIndex"></graph-box> 
-                        
+                        <graph-box :dataObj="item" :idAccordion="'accordion-'+ index+columnIndex"></graph-box>     
                     </div>
                 </div>
             </div>
@@ -29,15 +38,35 @@
     
 <script>
 import GraphBox from '../components/GraphBox.vue'
-
+import EnvironnementImg from '../components/components_sgv/EnvironnementImg.vue'
+import FranceImg from '../components/components_sgv/FranceImg.vue'
+import BatimentImg from '../components/components_sgv/BatimentImg.vue'
+import TransportImg from '../components/components_sgv/TransportImg.vue'
+import AgricultureImg from '../components/components_sgv/AgricultureImg.vue'
+import EcosystemeImg from '../components/components_sgv/EcosystemeImg.vue'
+import EauImg from '../components/components_sgv/EauImg.vue'
+import IndustrieImg from '../components/components_sgv/IndustrieImg.vue'
+import EconomieImg from '../components/components_sgv/EconomieImg.vue'
+import EnergieImg from '../components/components_sgv/EnergieImg.vue'
 export default {
     name: 'AdaptiveDashboard',
     components: {
-        GraphBox
+        GraphBox,
+        EnvironnementImg,
+        FranceImg,
+        BatimentImg,
+        TransportImg,
+        AgricultureImg,
+        EcosystemeImg,
+        EauImg,
+        IndustrieImg,
+        EconomieImg,
+        EnergieImg
     },
     data() {
         return {
-            gridFormat: []
+            gridFormat: [],
+            link:  `../images/${this.params.label_theme}.png `
         }
     },
     props: {
@@ -94,6 +123,10 @@ export default {
     }
     .fr-subtitle {
     font-weight: 400;
+    }
+    .img{
+        width:5%;
+        height: 5%;
     }
 </style>
 
