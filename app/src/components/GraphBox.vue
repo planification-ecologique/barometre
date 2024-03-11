@@ -61,9 +61,6 @@
             <div class="fr-ml-1w" v-if="dataObj.label_tags">
               <tags-card :tagsIndicateurs="dataObj.label_tags"></tags-card>
             </div>
-            <div v-else>
-              Pas de tags
-            </div>
           </div>
         </section>
     </div>
@@ -114,6 +111,7 @@ export default {
     console.log(this.dataObj)
 
     try {
+      // Si le sous groupe n'est pas défini, on affiche la cible
       if (this.dataObj.label_sous_groupe == undefined || this.dataObj.label_sous_groupe =="") {
         let index = this.dataObj.values.legend.indexOf("Cible");
         index != -1 ? this.cible = this.dataObj.values.y[index][this.dataObj.values.y[index].length - 1] : this.cible = undefined
