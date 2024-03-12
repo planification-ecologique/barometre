@@ -1,6 +1,6 @@
 <template>
   <dialog
-  v-if="modalVisible"
+    v-if="modalVisible"
     id="fr-consent-modal"
     aria-labelledby="fr-consent-modal-title"
     class="fr-modal fr-modal--opened"
@@ -16,14 +16,14 @@
             style="--modal-max-height: 812px"
           >
             <div class="fr-modal__header">
-          <button
-      aria-controls="fr-consent-modal"
-      class="fr-btn fr-btn--close"
-      data-fr-js-modal-button="true"
-      @click="closeDialog"
-    >
-      Fermer
-    </button>
+              <button
+                aria-controls="fr-consent-modal"
+                class="fr-btn fr-btn--close"
+                data-fr-js-modal-button="true"
+                @click="closeDialog"
+              >
+                Fermer
+              </button>
             </div>
             <div class="fr-modal__content">
               <h1 id="fr-consent-modal-title" class="fr-modal__title">
@@ -226,28 +226,25 @@
 export default {
   name: "ConsentBanner",
   data() {
-   return {
-    modalVisible: true,
+    return {
+      modalVisible: true,
       consentData: {
         vimeo: false,
         youtube: false,
       },
-
     };
   },
- 
+
   methods: {
- closeDialog() {
-      this.modalVisible = false; 
+    closeDialog() {
+      this.modalVisible = false;
     },
-     confirmChoices() {
- this.modalVisible = false;
- this.$router.push('/accueil');
+    confirmChoices() {
+      this.modalVisible = false;
+      this.$router.push("/accueil");
     },
-    
   },
 };
 </script>
 
-<style>
-</style>
+<style></style>
