@@ -1,7 +1,8 @@
 
 
 <template>
-    <div class="fr-card__img">
+    <div class="fr-card__img">*
+      
       <svg
         :width="width"
         :height="height"

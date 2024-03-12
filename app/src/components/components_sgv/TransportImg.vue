@@ -2,6 +2,8 @@
 
 <template>
     <div class="fr-card__img">
+       <a href="/accueil" target="_self">
+
       <svg
         :width="width"
         :height="height"
@@ -24,7 +26,7 @@
 
 
       </svg>
-  
+       </a>
       <!-- L’alternative de l’image (attribut alt) doit toujours être présente, sa valeur peut-être vide (image n’apportant pas de sens supplémentaire au contexte) ou non (porteuse de texte ou apportant du sens) selon votre contexte -->
     </div>
   </template>

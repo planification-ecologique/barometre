@@ -2,6 +2,8 @@
 
 <template>
     <div class="fr-card__img">
+       <a href="/accueil" target="_self">
+
       <svg
         :width="width"
         :height="height"
@@ -21,7 +23,7 @@
 <path d="M67.7071 67.7071C67.3166 68.0976 66.6834 68.0976 66.2929 67.7071C65.9024 67.3166 65.9024 66.6834 66.2929 66.2929C66.6834 65.9024 67.3166 65.9024 67.7071 66.2929C68.0976 66.6834 68.0976 67.3166 67.7071 67.7071Z" fill="#000091"/>
 
       </svg>
-  
+       </a>
       <!-- L’alternative de l’image (attribut alt) doit toujours être présente, sa valeur peut-être vide (image n’apportant pas de sens supplémentaire au contexte) ou non (porteuse de texte ou apportant du sens) selon votre contexte -->
     </div>
   </template>
