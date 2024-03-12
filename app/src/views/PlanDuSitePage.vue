@@ -7,12 +7,12 @@
           <ul>
             <li><a href="/" class="router-link-active">Accueil</a></li>
             <li>
-              <a href="" class="" target="_self"
+              <a href="/dashboard/transverse/emissions--puits" class="" target="_self"
                 >Tableau de bord</a
               >
             
             <li>
-              <a href="" class="" target="_self"
+              <a href="/tags" class="" target="_self"
                 >Tags</a
               >
              
@@ -23,7 +23,7 @@
               <!---->
             </li>
             <li><a href="/mentions-legales" class="">Mentions légales</a></li>
-            <li><a href="/donnees-personnelles" class="" > Données personnelles </a></li>
+            <li><a href="/donnees-personnelles" class="" >Données personnelles </a></li>
             <li><a href="/gestion-des-cookies" class="">Gestion des cookies</a></li>
 
           </ul>
