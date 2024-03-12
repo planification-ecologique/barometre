@@ -8,6 +8,9 @@
                 <p class="fr-badge fr-badge-sm fr-badge--green-emeraude fr-badge--no-icon fr-pr-1w"> {{ cible}} </p>
                 <p class="fr-text--xs fr-text--regular fr-unit">{{ dataObj.label_unit }}</p>
             </div>
+            <div v-else>
+              <p class="fr-text--xs fr-text--regular fr-unit">Unité : {{ dataObj.label_unit }}</p>
+            </div>
         </div>
         
         <div class="cardReference">
