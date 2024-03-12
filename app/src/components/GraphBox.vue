@@ -3,16 +3,18 @@
         <div class="titleBox">
             <h2 class="cardTitle">{{ dataObj.label_indic }}
             </h2>
-            <p class="fr-text--xs fr-text--regular fr-unit"> Unité : {{ dataObj.label_unit }}</p>
+            <div class="fr-text--xs fr-text--bold cardObjectif" v-if="cible">
+                <p class="fr-text--xs fr-text--regular fr-unit"> Cible :</p>
+                <p class="fr-badge fr-badge-sm fr-badge--green-emeraude fr-badge--no-icon fr-pr-1w"> {{ cible}} </p>
+                <p class="fr-text--xs fr-text--regular fr-unit">{{ dataObj.label_unit }}</p>
+            </div>
+            <div v-else>
+              <p class="fr-text--xs fr-text--regular fr-unit">Unité : {{ dataObj.label_unit }}</p>
+            </div>
         </div>
         
         <div class="cardReference">
             <segmented-controls @chart-selected="handleChartSelected" :idcontrol="idAccordion+'1'"></segmented-controls>
-            <div class="fr-text--xs fr-text--bold cardObjectif" v-if="cible">
-                <p class="fr-text--xs fr-text--bold unit-short fr-ml-1w" v-if="dataObj.label_unit_short.length != ''"> Cible en {{ dataObj.label_unit_short }}</p>
-                <p class="fr-text--xs fr-text--bold unit-short" v-else> Cible</p>
-                <p class="fr-badge fr-badge-sm fr-badge--green-emeraude fr-badge--no-icon fr-pr-1w"> {{ cible}} </p>
-            </div>
         </div>
         <div v-if="dataObj.values"> 
           <div class="cardData" v-if="this.displayChart">
@@ -60,9 +62,6 @@
             <p class="fr-text--s cardDescription fr-ml-1w fr-mr-1w fontSizeDescription">{{ dataObj.label_description }}</p>
             <div class="fr-ml-1w" v-if="dataObj.label_tags">
               <tags-card :tagsIndicateurs="dataObj.label_tags"></tags-card>
-            </div>
-            <div v-else>
-              Pas de tags
             </div>
           </div>
         </section>

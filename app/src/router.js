@@ -46,6 +46,15 @@ const router = new Router({
       },
     },
     {
+      path: "/dashboard/transverse/emissions--puits",
+      name: "transverse",
+      component: () =>
+       import(/* webpackChunkName: "visits" */ "./views/DashboardPage.vue"),
+      meta: {
+        requiresAuth: true,
+      },
+    },
+    {
       path: "/mentions-legales",
       name: "mentions-legales",
       component: () =>
