@@ -135,10 +135,6 @@ const router = new Router({
         requiresAuth: true, // ou false selon vos besoins
       },
     },
-    
-    
-    
-    
     // {
     //   path: "/lexique",
     //   name: "lexique",
