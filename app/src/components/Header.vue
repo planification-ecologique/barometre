@@ -5,7 +5,7 @@
         <div class="fr-header__body-row">
           <div class="fr-header__brand ">
             <div class="fr-header__brand-top">
-              <a href="https://gouvernement.fr/le-premier-ministre" target="_self">
+              <a href="/accueil" target="_self">
               <div class="fr-header__logo">
            <p class="fr-logo">
                   
@@ -16,7 +16,7 @@
                   </a>
 
               <div class="fr-header__operator">
-                <a href="https://www.gouvernement.fr/france-nation-verte" target="_self">
+                <a href="/accueil" target="_self">
                 <img
                   class="fr-responsive-img"
                   style="width: 6rem"
