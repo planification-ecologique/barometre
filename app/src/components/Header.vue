@@ -5,7 +5,7 @@
         <div class="fr-header__body-row">
           <div class="fr-header__brand ">
             <div class="fr-header__brand-top">
-              <a href="/accueil" target="_self">
+              <a href="/" target="_self">
               <div class="fr-header__logo">
            <p class="fr-logo">
                   
@@ -16,7 +16,7 @@
                   </a>
 
               <div class="fr-header__operator">
-                <a href="/accueil" target="_self">
+                <a href="/" target="_self">
                 <img
                   class="fr-responsive-img"
                   style="width: 6rem"
