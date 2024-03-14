@@ -5,7 +5,8 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "build_qualif": "vue-cli-service build --mode qualif"
+    "build_qualif": "vue-cli-service build --mode qualif",
+    "watch": "vue-cli-service build --watch"
   },
   "dependencies": {
     "@dsb-norge/vue-keycloak-js": "2.4.0",
