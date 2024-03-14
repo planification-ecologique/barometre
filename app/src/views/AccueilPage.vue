@@ -3,7 +3,7 @@
     <div>
       TEST  ---
     <!-- The current route is accessible as $route in the template -->
-    User {{ $route.params.id }}
+    User {{ $route.query.id }}
     </div>
 
     <div class="fr-grid-row">
@@ -138,7 +138,7 @@ export default {
   methods: {
    },
   mounted(){
-    console.log("MY router"+ this.$route.params.id)
+    console.log("MY router"+ this.$route.query.id)
 
   }
 }
