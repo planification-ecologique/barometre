@@ -17,23 +17,14 @@ import AdaptiveDashboard from './components/AdaptiveDashboard'
 import SideNavigation from './components/SideNavigation'
 import tagsCard from './components/TagsCard'
 
-
-
 import vueCustomElement from 'vue-custom-element'
-
 
 // if (process.env.NODE_ENV === 'development') {
 require('../node_modules/@gouvfr/dsfr/dist/legacy/legacy.nomodule.min.js')
-require('../node_modules/@gouvfr/dsfr/dist/core/core.module.min.js')
-require('../node_modules/@gouvfr/dsfr/dist/core/core.nomodule.min.js')
-require('../node_modules/@gouvfr/dsfr/dist/scheme/scheme.module.min.js')
-
 require('../node_modules/@gouvfr/dsfr/dist/dsfr.main.css')
 require('../node_modules/@gouvfr/dsfr/dist/utility/utility.main.css')
 require('../node_modules/@gouvfr/dsfr/dist/dsfr.css')
 require('../node_modules/@gouvfr/dsfr/dist/utility/icons/icons-system/icons-system.min.css')
-require('../node_modules/@gouvfr/dsfr/dist/dsfr.module.min.js')
-
 
 //Tarteaucitron 
 require('./tarteaucitron/tarteaucitron.js')
@@ -42,9 +33,15 @@ require('./tarteaucitron/css/dsfr-theme-tac.css')
 import config_file from './services/tarteaucitron_config.js'
 tarteaucitronForceLanguage = 'fr';
 tarteaucitron.init(config_file);
-(tarteaucitron.job = tarteaucitron.job || []).push('youtube');
-// tarteaucitron.user.eulerianHost = 'yeiv.audience.communication.gouv.fr';            
-// (tarteaucitron.job = tarteaucitron.job || []).push('eulerian-analytics');
+tarteaucitron.user.eulerianHost = process.env.VUE_APP_TRACKING; //'lskh.barometre-sgpe-qualif.seenovate.com';
+
+
+//DSFR Analytics
+import analytics_config_file from './services/dsfr_analytics_config.js'
+window.dsfr = analytics_config_file
+require('../node_modules/@gouvfr/dsfr/dist/dsfr.module.min.js')
+require('../node_modules/@gouvfr/dsfr/dist/scheme/scheme.module.min.js')
+require('../node_modules/@gouvfr/dsfr/dist/analytics/analytics.module.js')
 
 Vue.config.productionTip = false
 

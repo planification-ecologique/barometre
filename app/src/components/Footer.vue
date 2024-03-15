@@ -3,7 +3,7 @@
         <div class="footer-container">
             <div class="fr-footer__body">
                 <div class="fr-footer__brand fr-enlarge-link">
-                    <a href="https://www.gouvernement.fr/" target="_blank"   title="Retour à l’accueil du site - Nom de l’entité (ministère, secrétariat d‘état, gouvernement)">
+                    <a href="https://www.gouvernement.fr/" target="_blank" id="logo-footer-href" title="Retour à l’accueil du site - Nom de l’entité (ministère, secrétariat d‘état, gouvernement)">
                         <p class="fr-logo">
                             GOUVERNEMENT
                         </p>
@@ -13,23 +13,24 @@
                     <p class="fr-footer__content-desc">Ce site est géré par le Secrétariat Général de la Planification Ecologique (SGPE).</p>
                     <ul class="fr-footer__content-list">
                         <li class="fr-footer__content-item">
-                            <a class="fr-footer__content-link" target="_blank" rel="noopener external" title="[À MODIFIER - Intitulé] - nouvelle fenêtre" href="https://legifrance.gouv.fr">legifrance.gouv.fr</a>
+                            <a class="fr-footer__content-link" id="link-legifrance" target="_blank" rel="noopener external" title="[À MODIFIER - Intitulé] - nouvelle fenêtre" href="https://legifrance.gouv.fr">legifrance.gouv.fr</a>
                         </li>
                         <li class="fr-footer__content-item">
-                            <a class="fr-footer__content-link" target="_blank" rel="noopener external" title="[À MODIFIER - Intitulé] - nouvelle fenêtre" href="https://gouvernement.fr">gouvernement.fr</a>
+                            <a class="fr-footer__content-link" id="link-gouvernemment" target="_blank" rel="noopener external" title="[À MODIFIER - Intitulé] - nouvelle fenêtre" href="https://gouvernement.fr">gouvernement.fr</a>
                         </li>
                         <li class="fr-footer__content-item">
-                            <a class="fr-footer__content-link" target="_blank" rel="noopener external" title="[À MODIFIER - Intitulé] - nouvelle fenêtre" href="https://service-public.fr">service-public.fr</a>
+                            <a class="fr-footer__content-link" id="link-service-public" target="_blank" rel="noopener external" title="[À MODIFIER - Intitulé] - nouvelle fenêtre" href="https://service-public.fr">service-public.fr</a>
                         </li>
                         <li class="fr-footer__content-item">
-                            <a class="fr-footer__content-link" target="_blank" rel="noopener external" title="[À MODIFIER - Intitulé] - nouvelle fenêtre" href="https://data.gouv.fr">data.gouv.fr</a>
+                            <a class="fr-footer__content-link" id="link-data-gouv" target="_blank" rel="noopener external" title="[À MODIFIER - Intitulé] - nouvelle fenêtre" href="https://data.gouv.fr">data.gouv.fr</a>
                         </li>
                     </ul>
                 </div>
             </div>
                 <navigation-footer></navigation-footer>
                 <div class="fr-footer__bottom-copy">
-                  <p>Sauf mention explicite de propriété intellectuelle détenue par des tiers, les contenus de ce site sont proposés sous <a href="https://github.com/etalab/licence-ouverte/blob/master/LO.md" target="_blank" rel="noopener external" title="[À MODIFIER - Intitulé] - nouvelle fenêtre">licence etalab-2.0</a>
+                  <p>Sauf mention explicite de propriété intellectuelle détenue par des tiers, les contenus de ce site sont proposés sous
+                    <a href="https://github.com/etalab/licence-ouverte/blob/master/LO.md" id="link-license" target="_blank" rel="noopener external" title="[À MODIFIER - Intitulé] - nouvelle fenêtre">licence etalab-2.0</a>
                   </p>
                 </div>
                 </div>

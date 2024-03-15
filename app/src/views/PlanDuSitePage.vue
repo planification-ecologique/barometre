@@ -5,21 +5,21 @@
         <h1>Plan du site</h1>
         <section class="fr-py-6v">
           <ul>
-            <li><a href="/" class="router-link-active">Accueil</a></li>
             <li>
-              <a href="/dashboard/transverse/emissions--puits" class="" target="_self"
-                >Tableau de bord</a
+              <a href="/" id="link-accueil" class="router-link-active" target="_self">Accueil</a></li>
+            <li>
+              <a href="/dashboard/transverse/emissions--puits" id='link-dashboard' class="" target="_self">Tableau de bord</a
               >
-            
+            </li>
             <li>
-              <a href="/tags" class="" target="_self"
+              <a href="/tags" class="" target="_self" id="link-tags"
                 >Tags</a
               >
              
             </li>
             
             <li>
-              <a href="/accessibilite" class="" target="_self">Accessibilité</a>
+              <a href="/accessibilite" class="" target="_self" id="link-accessibilite">Accessibilité</a>
               <!---->
             </li>
             <li><a href="/mentions-legales" class="">Mentions légales</a></li>

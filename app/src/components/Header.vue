@@ -85,6 +85,7 @@
                   target="_blank"
                   title="France Nation Verte"
                   class="fr-btn"
+                  id="header-title"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

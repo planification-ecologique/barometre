@@ -38,6 +38,7 @@
 
 import CardImgBox from '../components/CardImgBox.vue'
 import UpFooter from '../components/UpFooter.vue'
+import { dsfrAnalytics } from '../services/dsfr_analytics' 
 
 /* Import des images */
 import ChartBarImg from '../components/components_sgv/ChartBarImg.vue'
@@ -126,6 +127,14 @@ export default {
 
       },
     }
+  },
+  mounted () {
+    dsfrAnalytics({
+        path: '/accueil',
+        title: 'Toutes les données des sites en .gouv.fr en un coup d’œiluentation des sites internet de l’État',
+        name: 'Accueil',
+        theme: 'Accueil'
+    })
   }
 }
 </script>
