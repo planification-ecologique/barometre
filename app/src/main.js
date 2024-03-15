@@ -22,6 +22,7 @@ import vueCustomElement from 'vue-custom-element'
 
 // if (process.env.NODE_ENV === 'development') {
 require('../node_modules/@gouvfr/dsfr/dist/legacy/legacy.nomodule.min.js')
+require('../node_modules/@gouvfr/dsfr/dist/core/core.module.min.js')
 require('../node_modules/@gouvfr/dsfr/dist/dsfr.main.css')
 require('../node_modules/@gouvfr/dsfr/dist/utility/utility.main.css')
 require('../node_modules/@gouvfr/dsfr/dist/dsfr.css')
