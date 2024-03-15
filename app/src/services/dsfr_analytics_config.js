@@ -1,0 +1,73 @@
+const analytics_config_file =  {
+    // verbose : true,
+    analytics: {
+        cmp: {
+            id: 'tarteaucitron'                    
+        },
+        domain: 'lskh.barometre-sgpe-qualif.seenovate.com',
+        collection: 'load',
+        isActionEnabled: true,
+        page: {
+            path: '', // path for page tracking
+            referrer: '', // referrer for virtual pages (not for real page, eulerian automatically collects document.referrer)
+            id: '', // unique page id (string)
+            title: '', // page title for virtual pages
+            name: '', // equivalent to title if not defined
+            author: '', // page author name
+            date: get_data (),//'03/13/2024', // page creation date
+            labels: ['audience-communication', '', '', '', ''],
+            tags: [], // no tags limit
+            template: 'audience-communication', // page template
+            group: 'audience-communication', // page group. if not defined, fallback to template value
+            segment: '', // site segment. if not defined, fallback to template value
+            subtemplate: '', // page subtemplate
+            theme: '', // page theme
+            subtheme: '', // page subtheme
+            related: '', // related page id
+            depth: 1, // page depth
+            isError: false, // is this an error page (404, 500, 503...)
+            current: 0, // In case of pagination, current page number
+            total: 0, // In case of pagination, total pages number
+            filters: [] // array of filters that were applied on the page (strings)
+        },
+        user: {
+            connect: {
+                uid: '', // user id - required when connected
+                email: '', // encoded user email - required when connected
+                isNew: true, // user just registered
+            },
+            profile: 'visitor', // user profile
+            language: 'fr',
+            type: 'pro'
+        },
+        site: {
+            entity: 'SPM || SIG',
+            environment: 'preprod',                    
+            language: 'fr', // language of the website (ISO 639-1). default to html lang
+            target: '', // site target
+            type: '', // site type
+            // region: '', // region of the website (ISO 3166-2:FR)
+            // department: '', // department of the website (ISO 3166-2:FR)
+            version: '', // version of the website
+        },
+        search: {
+            engine: '',
+            results: '',
+            terms: '',
+            category: '',
+            theme: '',
+            type: '',
+            method: ''
+        },
+        opt:{
+            enable: true
+        }
+    }
+  }
+export default analytics_config_file
+
+export function get_data () {    
+    var newdate = new Date()
+    newdate.setDate( (new Date()).getDate() )    
+    return newdate.toISOString().split('T')[0]    
+}
