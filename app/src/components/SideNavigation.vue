@@ -50,36 +50,23 @@ export default {
         let result = response.data.results
         this.menuOptions = result
 
-        try {
-          // find selected theme and levier on menuOptions
-        var defaultMenu = this.initParams
-        defaultMenu.label_theme = this.menuOptions.find(theme => theme.id_theme === defaultMenu.id_theme).label_theme
-        defaultMenu.levier = this.menuOptions.find(theme => theme.id_theme === defaultMenu.id_theme).levier.find(levier => levier.id_levier === defaultMenu.id_levier)
-
-        this.set_query(defaultMenu.label_theme, defaultMenu.id_theme, defaultMenu.levier)
-        this.expanded_theme(defaultMenu.id_theme)
-        
-
-        } catch (error) {
-          console.error("Erreur dans le chargement de la navigation : ", error);
+        if (this.initParams.id_theme != undefined) {
+          this.initParams.label_theme = this.menuOptions.find(theme => theme.id_theme === this.initParams.id_theme).label_theme
+          this.initParams.levier = this.menuOptions.find(theme => theme.id_theme === this.initParams.id_theme).levier.find(levier => levier.id_levier === this.initParams.id_levier)
+        }else{
+          this.initParams.label_theme = this.menuOptions[0].label_theme
+          this.initParams.id_theme = this.menuOptions[0].id_theme
+          this.initParams.levier = this.menuOptions[0].levier[0]
         }
         
-        
+        this.set_query(this.initParams.label_theme, this.initParams.id_theme, this.initParams.levier)
+        this.expanded_theme(this.initParams.id_theme)
+
       } catch (error) {
         console.error("Erreur dans le chargement de la navigation : ", error);
       }
     },
     set_query (label_theme, id_theme, levier) {
-      // console.log(JSON.stringify(levier))
-      // const menuSelected = document.getElementById('fr-sidemenu__link-'+id_theme+levier.id_levier)
-
-      // if (menuSelected) {
-      //   const menuSelecteds = document.querySelectorAll('.fr-sidemenu__link')
-      //   menuSelecteds.forEach((menu) => {
-      //     menu.ariaCurrent = false
-      //   })
-      //   menuSelected.attributes['aria-current'].value = 'page'
-      // }
 
       var params = {
         "label_theme": label_theme,
@@ -103,10 +90,10 @@ export default {
       this.$emit('params', params)
     },
     set_selected_theme(selected_id_theme, selected_id_levier) {
-      // clean preselected values      
+      // clean preselected values
       if (this.pre_selected_theme != undefined){
         this.set_state_selected(this.pre_selected_theme, this.pre_selected_levier, false)  
-      }      
+      }
       this.pre_selected_theme = selected_id_theme
       this.pre_selected_levier = selected_id_levier
       
@@ -117,13 +104,13 @@ export default {
       selected_element.selected = state
       selected_element.levier.filter((element) => element.id_levier === levier)[0].selected = state
     },
-    expanded_theme(selected_id_theme) {      
+    expanded_theme(selected_id_theme) {
       this.menuOptions.forEach(function(element){element.expanded = false})
-      var selected_element = this.menuOptions.filter((element) => element.id_theme === selected_id_theme)[0]      
+      var selected_element = this.menuOptions.filter((element) => element.id_theme === selected_id_theme)[0]
       selected_element.expanded = true
     }
   },
-  mounted() {    
+  mounted() {
     this.fetch_menu_options()
   }
 }
