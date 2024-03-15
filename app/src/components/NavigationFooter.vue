@@ -1,6 +1,7 @@
 <template>
   <div class="cursor_pointer">
-    <li
+    <ul>
+        <li
       class="fr-footer__bottom-item"
       v-for="option in menuOptions"
       :key="option.value"
@@ -14,6 +15,8 @@
         >{{ option.label }}</a
       >
     </li>
+    </ul>
+  
   </div>
 </template>
 

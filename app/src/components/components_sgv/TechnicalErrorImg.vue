@@ -1,7 +1,7 @@
 
 <template>    
     <div class="fr-card__img">
-       <svg width="70%" height="70%" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+       <svg width="70%" height="70%" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
 
 	<g class="fr-artwork-decorative" id="artwork-decorative">
     <path d="M69,12c0,0.55139-0.44861,1-1,1s-1-0.44861-1-1s0.44861-1,1-1S69,11.44861,69,12z M41,74

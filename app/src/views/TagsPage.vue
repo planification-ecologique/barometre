@@ -9,7 +9,7 @@
           <br>
 
           <div v-if="isapiloading === false">
-            <h4 class="fr-subtitle">{{ this.results_API.length }} indicateurs trouvés</h4>
+            <h1 class="fr-subtitle">{{ this.results_API.length }} indicateurs trouvés</h1>
             <AdaptiveDashboard :dashboardPage="false" :inputData="results_API" />
           </div>
           <div v-else>
@@ -34,6 +34,8 @@ export default {
   },
   data() {
     return {
+pageTitle: "Baromètre SGPE - Tags",
+
       isapiloading: true,
       results_API: [],
       selectedTags: ["atténuation"]

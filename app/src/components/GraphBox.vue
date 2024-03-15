@@ -3,6 +3,7 @@
         <div class="titleBox">
             <h2 class="cardTitle">{{ dataObj.label_indic }}
             </h2>
+            <!-- <TableComponent :captionTitle="dataObj.label_indic" /> -->
             <div class="fr-text--xs fr-text--bold cardObjectif" v-if="cible">
                 <p class="fr-text--xs fr-text--regular fr-unit"> Cible :</p>
                 <p class="fr-badge fr-badge-sm fr-badge--green-emeraude fr-badge--no-icon fr-pr-1w"> {{ cible}} </p>
@@ -43,7 +44,7 @@
           </div>
           <div v-else>  
             <div v-if="dataObj.label_sous_groupe == ''">
-              <table-component  :annee="dataObj.values.x[0]" :valeur="dataObj.values.ytab"></table-component>        
+              <table-component :captionTitle="dataObj.label_indic" :annee="dataObj.values.x[0]" :valeur="dataObj.values.ytab"></table-component>        
             </div>
             <div v-else>
               <TableComponentVariant :annee="dataObj.date[0]" :valeurCol="dataObj.label_sous_groupe" :valeurValue="dataObj.values"></TableComponentVariant>
@@ -95,7 +96,8 @@ export default {
       idAccordion: {
         type: String,
         required: true
-      }
+      },
+
   },
   data() {
       return {          

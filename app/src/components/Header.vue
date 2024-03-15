@@ -21,7 +21,7 @@
                   class="fr-responsive-img"
                   style="width: 6rem"
                   src="../images/Logo-France-Nation-Verte_medium.png"
-                  alt="logo france nation verte"
+                  alt="france nation verte"
                   
                 />
                 </a>
@@ -30,11 +30,12 @@
               <div class="fr-header__navbar">
         
                 <button
+
         class="fr-btn--menu fr-btn"
         data-fr-opened="false"
         aria-controls="modal-543"
-        aria-haspopup="menu"
-        id="button-544"
+        :aria-expanded="showNavigation.toString()"
+        id=”modal-543” 
         title="Menu"
         @click="toggleNavigation"
       >

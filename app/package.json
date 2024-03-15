@@ -24,6 +24,7 @@
     "sass-loader": "^13.3.2",
     "vue": "^2.7.14",
     "vue-custom-element": "^3.3.0",
+    "vue-meta": "^2.4.0",
     "vue-router": "^3.6.5",
     "vuex": "^3.6.0"
   },
