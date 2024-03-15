@@ -14,6 +14,8 @@ const router = new Router({
       //   import(/* webpackChunkName: "home" */ "./views/HomePage.vue"),
       meta: {
         requiresAuth: true,
+        title: "Baromètre SGPE - Accueil"
+
       },
       redirect: '/accueil'
     },
@@ -25,6 +27,7 @@ const router = new Router({
         import(/* webpackChunkName: "accueil" */ "./views/AccueilPage.vue"),
       meta: {
         requiresAuth: true,
+        title: "Baromètre SGPE - Accueil"
       },
     },
     {
@@ -34,6 +37,8 @@ const router = new Router({
         import(/* webpackChunkName: "visits" */ "./views/DashboardPage.vue"),
       meta: {
         requiresAuth: true,
+        title: "Baromètre SGPE - Tableaux de bord"
+
       },
     },
     {
@@ -43,6 +48,8 @@ const router = new Router({
         import(/* webpackChunkName: "tags" */ "./views/TagsPage.vue"),
       meta: {
         requiresAuth: true,
+        title: "Baromètre SGPE - Tags"
+
       },
     },
     {
@@ -175,6 +182,8 @@ router.beforeEach(async (to, from, next) => {
       window.location.replace(loginUrl)
     }
   } else {
+    const defaultTitle = "Baromètre SGPE"; // Titre par défaut si aucun n'est spécifié
+    document.title = to.meta.title ? `${to.meta.title} - ${defaultTitle}` : defaultTitle;
     next()
   }
 })

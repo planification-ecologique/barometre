@@ -1,6 +1,7 @@
 <template>
   <div class="cursor_pointer">
-    <li
+    <ul>
+        <li
       class="fr-footer__bottom-item"
       v-for="option in menuOptions"
       :key="option.value"
@@ -18,7 +19,7 @@
     <li class="fr-footer__bottom-item">
       <a id="fr-link-cookies" class="fr-footer__bottom-link" href="#" onclick="tarteaucitron.userInterface.openPanel();">Gestion des cookies</a>                    
     </li>
-
+    </ul>
   </div>
 </template>
 

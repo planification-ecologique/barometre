@@ -1,6 +1,6 @@
 <template>    
     <div class="fr-card__img">
-        <svg width="475" height="402" viewBox="0 0 475 402" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg width="475" height="402" viewBox="0 0 475 402" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <g clip-path="url(#clip0_1183_207460)" filter="url(#filter0_d_1183_207460)">
             <rect width="236.534" height="234.498" transform="translate(8.94922 63.4175) rotate(-15)" fill="white"/>
             <rect x="17.5879" y="68.4048" width="34.7922" height="14.2379" transform="rotate(-15 17.5879 68.4048)" fill="#D9D9D9"/>

@@ -51,7 +51,7 @@ import DataVisualization from '../components/components_sgv/DataVisualization.vu
 import LimitesImg from '../components/components_sgv/LimitesImg.vue'
 
 export default {
-  name: 'Secret',
+  name: 'Accueil',
   components: {
     CardImgBox,
     UpFooter,
@@ -69,6 +69,7 @@ export default {
   data() {
     return {
       querySuccess: true,
+      
 
       footerData: {
         bgColor: "#F5F5FE",
@@ -135,6 +136,15 @@ export default {
         name: 'Accueil',
         theme: 'Accueil'
     })
+  },
+  metaInfo() {
+    return {
+      // title: 'Baromètre SGPE - Accueil' // Définissez le titre spécifique à cette vue
+    };
+  },
+   
+  mounted(){
+    console.log("MY router"+ this.$route.query.id)
   }
 }
 </script>

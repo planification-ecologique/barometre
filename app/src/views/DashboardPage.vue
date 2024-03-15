@@ -35,6 +35,8 @@ export default {
   },
   data() {
     return {
+pageTitle: "Baromètre SGPE - Tableaux de bord",
+
       isapiloading: true,
       myobj: {},
       results_API: [],

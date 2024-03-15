@@ -1,6 +1,7 @@
 <template>
     <div class="fr-table fr-table--layout-fixed fr-tab-data fr-ml-1w fr-mr-1w fr-mt-1w fr-mb-2w">
-        <table class="">            
+        <table class="">          
+            <caption class="sr-only">{{ captionTitle }} </caption> <!-- Ajout de la classe sr-only -->
             <thead>
                 <tr>
                     <th scope="col">Année</th>
@@ -20,9 +21,12 @@
 <script>
 export default {
     name: 'TableComponent',
-    components: {
-    },
     props: {
+        captionTitle: {
+            type: String,
+            required: true,
+            default: ''
+        },
         annee: {
             type: [],
             required: true,
@@ -48,5 +52,17 @@ export default {
 
 .fr-tab-data tbody tr:hover {
     box-shadow: 0 16px 16px rgba(18, 14, 153, 0.6); /* Augmentez l'intensité de l'ombre */
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 </style>
