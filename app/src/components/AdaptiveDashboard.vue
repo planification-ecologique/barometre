@@ -15,7 +15,6 @@
           <EnergieImg height="120px" width="100px" v-if="params.label_theme === 'Energie'"></EnergieImg>
         </div>
         <div>
-            <!-- <TableComponent :titre="params.label_theme" /> -->
           <h1 class="fr-title" :aria-label="params.label_theme">{{ params.label_theme }}</h1>
           <h4 class="fr-subtitle">{{ params.label_levier }}</h4>
         </div>

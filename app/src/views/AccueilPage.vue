@@ -130,7 +130,7 @@ export default {
   },
   metaInfo() {
     return {
-      title: 'Baromètre SGPE - Accueil' // Définissez le titre spécifique à cette vue
+      // title: 'Baromètre SGPE - Accueil' // Définissez le titre spécifique à cette vue
     };
   },
    
