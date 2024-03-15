@@ -24,7 +24,7 @@ import { api } from '@/services/api.js'
 import UpFooter from '../components/UpFooter.vue'
 import AdaptiveDashboard from '../components/AdaptiveDashboard.vue'
 import SideNavigation from '../components/SideNavigation.vue'
-import router from '../router.js'
+
 
 export default {
   name: 'DashboardPage',
@@ -45,55 +45,34 @@ pageTitle: "Baromètre SGPE - Tableaux de bord",
   },
   created() {
     // Initialisation de la requête selon les paramètres de l'URL
-    if (this.$route.params.theme == undefined || this.$route.params.levier == undefined) {
-      this.$router.push({ name: 'dashboard', params: { theme: 'transverse', levier: 'emissions--puits' } })
-    } 
-
-    var query_init = this.set_query_init(this.$route.params.theme, this.$route.params.levier)
-    this.myobj = query_init
-    this.fetchData(query_init.query)
-
-    var initLoadingParams = {
-      "id_theme": this.$route.params.theme,
-      "id_levier": this.$route.params.levier,
+    if (this.$route.query.theme !== undefined || this.$route.query.levier !== undefined) {
+      this.sidenav_initParams.id_theme = this.$route.query.theme
+      this.sidenav_initParams.id_levier =  this.$route.query.levier
     }
-    this.sidenav_initParams = initLoadingParams
-
   },
   methods: {
-    set_query_init (id_theme, id_levier) {
-      // console.log(JSON.stringify(levier))
-      var params = {
-        "query" : {
-          "filter_by": [
-            { "field": "id_theme",
-              "values": [id_theme],
-            },
-            { "field": "id_levier",
-              "values": [id_levier]
-            }
-          ],
-          "time_period": {
-            "date_start": "2015-01-01",
-            "date_end": "2031-01-01"
-          }
-        }
-      } 
-      return params
-    },
     updateSelection(selectedValue) {
+      
       if(selectedValue != undefined) {
         this.myobj = selectedValue
+        this.fetchData(selectedValue.query)
+
         // Navigation vers la page de dashboard et affichage dans l'URL
         try {
-          this.$router.push({ name: 'dashboard', params: { theme: selectedValue.query.filter_by[0].values[0], levier: selectedValue.query.filter_by[1].values[0] } })
+          var new_theme = selectedValue.query.filter_by[0].values[0]
+          var new_levier = selectedValue.query.filter_by[1].values[0]
+          
+          if (new_theme !== this.$route.query.theme || new_levier !== this.$route.query.levier){
+            this.$router.push({ name: 'dashboard', query: { theme: new_theme, levier: new_levier } })
+          }
         } catch (error) {
           console.error("Erreur dans le chargement de la navigation : ", error);
         }
-        this.fetchData(selectedValue.query)
+       
       }
     },
     async fetchData(query) {
+      
       this.isapiloading = true
       // Appel à l'API
       try {

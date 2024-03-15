@@ -28,7 +28,7 @@ export default {
         { value: 'dashboard', label: 'Tableau de bord', selected: false },
         { value: 'tags', label: 'Tags', selected: false },
       ]
-      var current_page = this.get_name_page()      
+      var current_page = this.get_name_page()
       if (current_page == '') {
         current_page = 'accueil'
       }
@@ -58,6 +58,7 @@ export default {
         page = 'dashboard'
       } else {
         page = page[page.length - 1]
+        page = page.split('?')[0]
         page = page.split('#')[0]
       }
 

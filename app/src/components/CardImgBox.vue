@@ -31,7 +31,7 @@ export default {
     },
     data() {
         return {
-            dashboard_link: "/dashboard/transverse/emissions--puits"            
+            dashboard_link: "/dashboard"
         }
     },
     props: {

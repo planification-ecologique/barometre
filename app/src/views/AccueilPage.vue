@@ -1,11 +1,5 @@
 <template>
   <div class="fr-container--fluid">
-    <div>
-      TEST  ---
-    <!-- The current route is accessible as $route in the template -->
-    User {{ $route.query.id }}
-    </div>
-
     <div class="fr-grid-row">
       <div class="fr-col">
         <card-img-box :cardObject=cardIntro></card-img-box>

@@ -100,7 +100,7 @@ export default {
 
   },
   data() {
-      return {          
+      return {
           displayChart: false,
           isAccordionOpen: true,
           cible: undefined
@@ -112,7 +112,7 @@ export default {
     }
   },
   mounted () {
-    console.log(this.dataObj)
+    // console.log(this.dataObj)
 
     try {
       if (this.dataObj.label_sous_groupe == undefined || this.dataObj.label_sous_groupe =="") {
