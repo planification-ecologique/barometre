@@ -9,7 +9,7 @@
             <div class="fr-collapse" :id="'fr-sidemenu-item-'+theme.id_theme" v-if=theme.expanded>
               <ul class="fr-sidemenu__list">
                 <li class="fr-sidemenu__item" v-for="(levier, index) in theme.levier" :key="index">
-                  <a class="fr-sidemenu__link" @click="set_query(theme.label_theme, theme.id_theme, levier)" target="_self" :id="'fr-sidemenu__link-'+theme.id_theme+levier.id_levier" :aria-current="levier.selected"> {{ levier.label_levier }} </a>
+                  <a class="fr-sidemenu__link" @click="set_query(theme.label_theme, theme.id_theme, levier)" target="_self" :id="'fr-sidemenu__link-'+theme.id_theme+levier.id_levier" :aria-current="levier.selected" tabindex="0"> {{ levier.label_levier }} </a>
                 </li>
               </ul>
             </div>
@@ -19,7 +19,6 @@
     </div>
   </nav>
 </template>
-
 <script>
 
 import { api } from '@/services/api.js'
