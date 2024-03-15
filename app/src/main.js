@@ -34,6 +34,18 @@ require('../node_modules/@gouvfr/dsfr/dist/dsfr.css')
 require('../node_modules/@gouvfr/dsfr/dist/utility/icons/icons-system/icons-system.min.css')
 require('../node_modules/@gouvfr/dsfr/dist/dsfr.module.min.js')
 
+
+//Tarteaucitron 
+require('./tarteaucitron/tarteaucitron.js')
+require('./tarteaucitron/tarteaucitron.services.js')
+require('./tarteaucitron/css/dsfr-theme-tac.css')
+import config_file from './services/tarteaucitron_config.js'
+tarteaucitronForceLanguage = 'fr';
+tarteaucitron.init(config_file);
+(tarteaucitron.job = tarteaucitron.job || []).push('youtube');
+// tarteaucitron.user.eulerianHost = 'yeiv.audience.communication.gouv.fr';            
+// (tarteaucitron.job = tarteaucitron.job || []).push('eulerian-analytics');
+
 Vue.config.productionTip = false
 
 Vue.use(VueKeyCloak, {

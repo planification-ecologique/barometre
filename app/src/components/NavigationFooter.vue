@@ -14,6 +14,11 @@
         >{{ option.label }}</a
       >
     </li>
+
+    <li class="fr-footer__bottom-item">
+      <a id="fr-link-cookies" class="fr-footer__bottom-link" href="#" onclick="tarteaucitron.userInterface.openPanel();">Gestion des cookies</a>                    
+    </li>
+
   </div>
 </template>
 
@@ -40,11 +45,11 @@ export default {
           label: "Mentions légales",
           selected: false,
         },
-        {
-          value: "gestion-des-cookies",
-          label: "Gestion des cookies",
-          selected: false,
-        },
+        // {
+        //   value: "gestion-des-cookies",
+        //   label: "Gestion des cookies",
+        //   selected: false,
+        // },
           {
           value: "Accessibilite",
           label: "Accessibilité : non/partiellement/totalement conforme",
