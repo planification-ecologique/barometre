@@ -2,7 +2,7 @@
   <div class="fr-container--fluid ">
     <div class="fr-grid-row">
       <div id="sidebar" class="col-12 col-sm-6 fr-ml-2w">
-        <side-navigation v-on:params="updateSelection" :initParams="sidenav_initParams"/>
+        <side-navigation class="sidenavPosition" v-on:params="updateSelection" :initParams="sidenav_initParams"/>
       </div>
       <div class="fr-col">
         <div class="fr-container--fluid fr-container-page">
@@ -99,10 +99,22 @@ pageTitle: "Baromètre SGPE - Tableaux de bord",
 }
 </script>
 <style scoped lang="scss">
+
+// #sidebar{
+//  position: fixed;
+//   height: calc(100vh - 5rem); /* Ajustez la hauteur de la sidebar pour qu'elle remplisse l'espace restant */
+//   overflow-y: auto;}
+
+.sidenavPosition{
+  position: fixed;
+  padding-top: 11rem;
+  z-index: 1000;
+}
+
   .fr-container-page {
       background-color: #F6F6F6;
       padding-top: 1.5rem;
-      padding-left: 2.5rem;
+      padding-left: 23.5rem;
       padding-right: 2.5rem;
       width: 100%;
 }
