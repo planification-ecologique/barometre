@@ -1,9 +1,7 @@
 import Vue from "vue";
 import Router from "vue-router";
-import VueMeta from 'vue-meta'
 
 Vue.use(Router);
-Vue.use(VueMeta)
 const GeneralTitle = "Baromètre de la planification écologique"
 
 const router = new Router({
