@@ -44,7 +44,7 @@ export default {
         set_link () {
             let base = process.env.VUE_APP_PREFIX_PATH
             if (base) {
-                this.dashboard_link = base +"/dashboard/transverse/emissions--puits"
+                this.dashboard_link = base +"/dashboard"
             }
         }
     },

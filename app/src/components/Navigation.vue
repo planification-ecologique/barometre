@@ -32,7 +32,11 @@ export default {
       if (current_page == '') {
         current_page = 'accueil'
       }
-      this.set_selected_page(current_page)
+      var pages = [];      
+      for (var index in this.menuOptions) pages.push(this.menuOptions[index].value)
+        
+      if (current_page in pages) this.set_selected_page(current_page)
+      
     },
     router_to_pages(option) {
       var name_page = this.get_name_page()

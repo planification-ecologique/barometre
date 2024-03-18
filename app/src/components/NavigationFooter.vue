@@ -8,10 +8,8 @@
     >
       <a
         class="fr-footer__bottom-link"
-        @click="router_to_pages(option)"
+        :href="option.link"
         target="_self"
-        :aria-current="option.selected"
-        style="color: rgb(59, 58, 58)"
         >{{ option.label }}</a
       >
     </li>
@@ -24,76 +22,44 @@
 </template>
 
 <script>
-import router from "../router";
+
 export default {
   name: "navigation-dsfr",
   data() {
     return {
-      myrouter: router,
       menuOptions: [],
     };
   },
   methods: {
     get_menu_options() {
+      let base = process.env.VUE_APP_PREFIX_PATH
       this.menuOptions = [
         {
-          value: "donnees-personnelles",
+          value: "/donnees-personnelles",
           label: "Données personnelles",
+          link: base + "/donnees-personnelles",
           selected: false,
+        },
+        {
+          value: "Accessibilite",
+          label: "Accessibilité : non/partiellement/totalement conforme",
+          selected: false,
+          link: base + "#"
         },
         {
           value: "mentions-legales",
           label: "Mentions légales",
-          selected: false,
-        },
-        // {
-        //   value: "gestion-des-cookies",
-        //   label: "Gestion des cookies",
-        //   selected: false,
-        // },
-          {
-          value: "Accessibilite",
-          label: "Accessibilité : non/partiellement/totalement conforme",
+          link: base + "/mentions-legales",
           selected: false,
         },
         {
           value: "plan-du-site",
           label: "Plan du site",
           selected: false,
+          link: base + "/plan-du-site"
         },
       ];
-      var current_page = this.get_name_page();
-      if (current_page == "") {
-        current_page = "accueil";
-      }
-      this.set_selected_page(current_page);
-    },
-    router_to_pages(option) {
-      var name_page = this.get_name_page();
-      if (option.value != name_page) {
-        this.myrouter.push({ name: option.value });
-        this.set_selected_page(option.value);
-      }
-    },
-    set_selected_page(page_name) {
-      this.menuOptions.forEach(function (element) {
-        element.selected = false;
-      });
-
-      const selectedOption = this.menuOptions.find(
-        (option) => option.value === page_name
-      );
-      if (selectedOption) {
-        selectedOption.selected = true;
-      }
-    },
-    get_name_page() {
-      let location = window.location.href;
-      var page = location.split("/");
-      page = page[page.length - 1];
-      page = page.split("#")[0];
-      return page;
-    },
+    }
   },
   mounted() {
     this.get_menu_options();
