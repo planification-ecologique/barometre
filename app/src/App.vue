@@ -33,11 +33,12 @@ export default{
   components : {
     ConsentBanner
   },
-  data (){
-    return {
 
-    }
-  }
+  watch: {
+		'$route' (to, from) {
+			document.title = to.meta.title || "Baromètre SGPE"
+		}
+	}
 }
 
 </script>

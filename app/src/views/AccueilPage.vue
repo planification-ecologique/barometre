@@ -69,7 +69,6 @@ export default {
   data() {
     return {
       querySuccess: true,
-      
 
       footerData: {
         bgColor: "#F5F5FE",
@@ -136,15 +135,6 @@ export default {
         name: 'Accueil',
         theme: 'Accueil'
     })
-  },
-  metaInfo() {
-    return {
-      // title: 'Baromètre SGPE - Accueil' // Définissez le titre spécifique à cette vue
-    };
-  },
-   
-  mounted(){
-    console.log("MY router"+ this.$route.query.id)
   }
 }
 </script>

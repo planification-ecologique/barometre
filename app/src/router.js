@@ -1,7 +1,10 @@
 import Vue from "vue";
 import Router from "vue-router";
+import VueMeta from 'vue-meta'
 
 Vue.use(Router);
+Vue.use(VueMeta)
+const GeneralTitle = "Baromètre SGPE"
 
 const router = new Router({
   mode: "history",
@@ -14,7 +17,7 @@ const router = new Router({
       //   import(/* webpackChunkName: "home" */ "./views/HomePage.vue"),
       meta: {
         requiresAuth: true,
-        title: "Baromètre SGPE - Accueil"
+        title: GeneralTitle + " - Accueil"
 
       },
       redirect: '/accueil'
@@ -27,7 +30,7 @@ const router = new Router({
         import(/* webpackChunkName: "accueil" */ "./views/AccueilPage.vue"),
       meta: {
         requiresAuth: true,
-        title: "Baromètre SGPE - Accueil"
+        title:  GeneralTitle + " - Accueil"
       },
     },
     {
@@ -37,7 +40,7 @@ const router = new Router({
         import(/* webpackChunkName: "visits" */ "./views/DashboardPage.vue"),
       meta: {
         requiresAuth: true,
-        title: "Baromètre SGPE - Tableaux de bord"
+        title:  GeneralTitle + " - Tableaux de bord"
 
       },
     },
@@ -48,7 +51,7 @@ const router = new Router({
         import(/* webpackChunkName: "tags" */ "./views/TagsPage.vue"),
       meta: {
         requiresAuth: true,
-        title: "Baromètre SGPE - Tags"
+        title:  GeneralTitle + " - Tags"
 
       },
     },
@@ -68,6 +71,7 @@ const router = new Router({
         import(/* webpackChunkName: "tags" */ "./views/MentionsLegalesPage.vue"),
       meta: {
         requiresAuth: true,
+        title: GeneralTitle + " - Mentions Legales"
       },
     },
     {
@@ -77,6 +81,7 @@ const router = new Router({
         import(/* webpackChunkName: "tags" */ "./views/PersonalDataPage.vue"),
       meta: {
         requiresAuth: true,
+        title: GeneralTitle + " - Données Personnelles"
       },
     },
     {
@@ -86,6 +91,7 @@ const router = new Router({
         import(/* webpackChunkName: "tags" */ "./views/PlanDuSitePage.vue"),
       meta: {
         requiresAuth: true,
+        title: GeneralTitle + " - Plan du Site"
       },
     },
     {
@@ -181,10 +187,6 @@ router.beforeEach(async (to, from, next) => {
       console.log('loginUrl ' + loginUrl)
       window.location.replace(loginUrl)
     }
-  } else {
-    const defaultTitle = "Baromètre SGPE"; // Titre par défaut si aucun n'est spécifié
-    document.title = to.meta.title ? `${to.meta.title} - ${defaultTitle}` : defaultTitle;
-    next()
   }
 })
 
