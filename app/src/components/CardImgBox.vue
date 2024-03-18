@@ -48,8 +48,7 @@ export default {
                 this.dashboard_link = base +"/dashboard"
             }
         },
-        onEnter(){
-            console.log( "BIEN SURE")
+        onEnter(){            
             this.myrouter.push({ name: "dashboard" })
         }
     },
