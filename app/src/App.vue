@@ -36,7 +36,7 @@ export default{
 
   watch: {
 		'$route' (to, from) {
-			document.title = to.meta.title || "Baromètre SGPE"
+			document.title = to.meta.title || "Baromètre de la planification écologique"
 		}
 	}
 }

@@ -4,7 +4,7 @@ import VueMeta from 'vue-meta'
 
 Vue.use(Router);
 Vue.use(VueMeta)
-const GeneralTitle = "Baromètre SGPE"
+const GeneralTitle = "Baromètre de la planification écologique"
 
 const router = new Router({
   mode: "history",
