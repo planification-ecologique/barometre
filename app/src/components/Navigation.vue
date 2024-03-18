@@ -3,7 +3,8 @@
     <nav class="fr-nav" id="header-navigation" role="navigation" aria-label="Menu principal">
       <ul class="fr-nav__list">
         <li class="breadcrumb" v-for="option in menuOptions" :key="option.value">
-          <a class="fr-nav__link" @click="router_to_pages(option)" target="_self" :aria-current="option.selected" :tabindex="0" style="color: rgb(59, 58, 58);">{{ option.label }}</a>
+          <a class="fr-nav__link" target="_self" :href="option.link" :aria-current="option.selected">{{ option.label }}</a>
+          <!-- <a class="fr-nav__link" @click="router_to_pages(option)" target="_self"  :aria-current="option.selected" :tabindex="0" style="color: rgb(59, 58, 58);">{{ option.label }}</a> -->
         </li>
       </ul>
     </nav>
@@ -23,10 +24,11 @@ export default {
   },
   methods: {
     get_menu_options() {
+      let base = process.env.VUE_APP_PREFIX_PATH
       this.menuOptions = [
-        { value: 'accueil', label: 'Accueil', selected: false },
-        { value: 'dashboard', label: 'Tableau de bord', selected: false },
-        { value: 'tags', label: 'Tags', selected: false },
+        { value: 'accueil', label: 'Accueil', selected: false, link: base + "/accueil", },
+        { value: 'dashboard', label: 'Tableau de bord', selected: false, link: base + "/dashboard", },
+        { value: 'tags', label: 'Tags', selected: false, link: base + "/tags", },
       ]
       var current_page = this.get_name_page()
       if (current_page == '') {
@@ -34,20 +36,16 @@ export default {
       }
       var pages = [];      
       for (var index in this.menuOptions) pages.push(this.menuOptions[index].value)
-        
-      if (current_page in pages) this.set_selected_page(current_page)
+      
+      if (pages.includes(current_page)) this.set_selected_page(current_page)
       
     },
     router_to_pages(option) {
       var name_page = this.get_name_page()
       if (option.value != name_page) {
-        if (option.value == 'dashboard') {
-          this.myrouter.push({ name: option.value, params: { theme: 'transverse', levier: 'emissions--puits' } })
-        } else {
           this.myrouter.push({ name: option.value })
         }
         this.set_selected_page(option.value)
-      }
     },
     set_selected_page(page_name) {
       this.menuOptions.forEach(function(element){element.selected = false}) 

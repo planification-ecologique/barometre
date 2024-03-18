@@ -9,7 +9,7 @@
                     <p class="fr-text--lg fr-text--black">
                         {{ cardObject.description }}
                     </p>
-                    <button class="fr-btn" v-if="cardObject.databtn"><a :href=dashboard_link></a>Consulter toutes les données</button>
+                    <button class="fr-btn fr-enlarge-link" v-if="cardObject.databtn" v-on:keyup.enter="onEnter()"><a :href=dashboard_link></a>Consulter toutes les données</button>
                 </div>
             </div>
         </div>
@@ -22,7 +22,7 @@
 
 import ChartBarImg from './components_sgv/ChartBarImg'
 import FranceImg from './components_sgv/FranceImg.vue'
-
+import router from '../router'
 export default {
     name: 'CardImgBox',
     components: {
@@ -31,7 +31,8 @@ export default {
     },
     data() {
         return {
-            dashboard_link: "/dashboard"
+            dashboard_link: "/dashboard",
+            myrouter: router
         }
     },
     props: {
@@ -46,6 +47,10 @@ export default {
             if (base) {
                 this.dashboard_link = base +"/dashboard"
             }
+        },
+        onEnter(){
+            console.log( "BIEN SURE")
+            this.myrouter.push({ name: "dashboard" })
         }
     },
     mounted(){
