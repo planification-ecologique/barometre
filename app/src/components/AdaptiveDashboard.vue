@@ -1,8 +1,8 @@
 <!-- adaptiveDashboard.vue -->
 <template>
-  <div>
-    <div class="fr-grid-row" v-if="dashboardPage">
-      <div class="fr-col-12" style="display: flex; align-items: center">
+  <div id="fr-container">
+    <div class="fr-grid-row fr-grid-row--center" v-if="dashboardPage">
+      <div class="fr-col-12" style="">
         <div>
           <EnvironnementImg height="100px" width="100px" v-if="params.label_theme === 'Transverse'"></EnvironnementImg>
           <BatimentImg height="100px" width="100px" v-if="params.label_theme === 'Bâtiments'"></BatimentImg>
