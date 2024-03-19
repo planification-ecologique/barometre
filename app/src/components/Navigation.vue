@@ -87,4 +87,13 @@ a:hover:not([href]) {
 .breadcrumb{
   margin-left: 17px;
 }
+
+@media (max-width: 767px) { /* Utiliser le style uniquement pour les écrans de taille inférieure à 768px (téléphones mobiles) */
+  .fr-nav {
+    position: fixed; /* Rendre le menu fixe sur les écrans mobiles */
+    top: 3; /* Positionner le menu en haut de la fenêtre */
+    width: 100%; /* Utiliser toute la largeur de l'écran */
+    z-index: 1000; /* Assurer que le menu soit au-dessus du contenu */
+  }
+}
 </style>

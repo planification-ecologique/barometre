@@ -1,7 +1,7 @@
 <template>
   <div>
     <header-dsfr class="header-position"></header-dsfr>
-    <div class="fr-container--fluid ">
+    <div class="fr-container--fluid " style="margin-top: 6rem;">
       <main class="main-content"> 
         <div id="app">
           <!-- Bloc de navigation -->
@@ -52,10 +52,11 @@ export default{
 }
 
 .main-content {
-  margin-top: 11rem
+  margin-top: 6rem; /* Ajustez la marge supérieure pour compenser la hauteur du header */
 }
 
 .reset-overflow {
   overflow: visible !important;
 }
+
 </style>

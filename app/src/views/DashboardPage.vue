@@ -107,15 +107,27 @@ pageTitle: "Baromètre SGPE - Tableaux de bord",
 
 .sidenavPosition{
   position: fixed;
-  padding-top: 11rem;
   z-index: 1000;
 }
 
-  .fr-container-page {
-      background-color: #F6F6F6;
-      padding-top: 1.5rem;
-      padding-left: 23.5rem;
-      padding-right: 2.5rem;
-      width: 100%;
+
+.fr-container-page {
+  background-color: #F6F6F6;
+  width: 100%;
 }
+@media (max-width: 767px) { 
+  .sidenavPosition {
+    position: relative;
+     margin-top: 7.25rem
+  }
+}
+@media (min-width: 768px) { 
+  .fr-container-page {
+    padding-left: 23.5rem;
+    padding-right: 2.5rem;
+  }
+
+  
+}
+
 </style>
