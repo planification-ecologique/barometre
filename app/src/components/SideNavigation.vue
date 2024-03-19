@@ -125,9 +125,10 @@ a:hover:not([href]) {
   margin-bottom: 0.123rem !important;
 }
 
-/* nav{
-  display: block;
-} */
+nav {
+  position: sticky;
+  top: 0;
+}
 
 .fr-sidemenu {
     --ul-type: none;
@@ -144,7 +145,7 @@ a:hover:not([href]) {
     box-shadow: inset 0 -1px 0 0 var(--border-default-grey), inset 0 1px 0 0 var(--border-default-grey);
     margin-left: -1rem;
     margin-right: -1rem;
-    position: relative;
+    position: sticky !important;
 }
 
 /* .sidenavPosition {
