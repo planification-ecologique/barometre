@@ -3,7 +3,7 @@
     <div class="fr-grid-row fr-grid-row--left">
       <div
         
-        class="fr-col-3 fr-col-lg-1 fr-unhidden-lg sideNavPosition"
+        class="fr-col-3 fr-col-lg-1 fr-unhidden-lg "
       >
         <side-navigation
           class="sidenavPosition"
@@ -132,40 +132,12 @@ export default {
 };
 </script>
 <style scoped lang="scss">
-.sidebar {
-  position: fixed !important;
-  z-index: 1000 !important;
-}
 
-.fixed {
-  position: fixed !important;
+.sidenavPosition{
+  margin-left: 0.75rem;
 }
-
 .fr-container-page {
   background-color: #f6f6f6;
-  padding-left: 2.5rem;
-  // width: 100%;
 }
 
-.sidenavPosition {
-  // display: block;
-  position: sticky !important;
-  z-index: 0;
-  top: 0;
-bottom:0;
-}
-.sideNavPosition{
-  margin-left: 1rem;
-  width: 5rem
-}
-
-
-//   .fr-container-page {
-//       background-color: #F6F6F6;
-//       padding-top: 1.5rem;
-//       padding-left: 2.5rem;
-//       padding-right: 2.5rem;
-//       width: 100%;
-// }
 </style>
-git 

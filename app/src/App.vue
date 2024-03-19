@@ -20,7 +20,7 @@
     </div>
 
     <!-- <upfooter></upfooter> -->
-    <footer-dsfr></footer-dsfr>
+    <footer-dsfr class="footer-position"></footer-dsfr>
   </div>
     <!-- <upfooter></upfooter> -->
 </template>
@@ -51,6 +51,7 @@ export default{
   width: 100%;
   z-index: 1000; 
 }
+
 #app{
   margin-top:11rem;
 }
