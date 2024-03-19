@@ -1,5 +1,4 @@
 import Vue from 'vue'
-import VueMeta from 'vue-meta'
 import App from './App.vue'
 import VueKeyCloak from '@dsb-norge/vue-keycloak-js'
 import router from './router'
@@ -61,9 +60,6 @@ Vue.use(VueKeyCloak, {
   }
 })
 
-
-
-Vue.use(VueMeta)
 
 
 Vue.use(vueCustomElement)

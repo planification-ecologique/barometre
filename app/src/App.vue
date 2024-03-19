@@ -33,11 +33,12 @@ export default{
   components : {
     ConsentBanner
   },
-  data (){
-    return {
 
-    }
-  }
+  watch: {
+		'$route' (to, from) {
+			document.title = to.meta.title || "Baromètre de la planification écologique"
+		}
+	}
 }
 
 </script>
