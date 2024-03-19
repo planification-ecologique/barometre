@@ -1,6 +1,6 @@
 <template>
-  <nav role="navigation" class="fr-sidemenu fr-sidemenu--sticky fr-sidemenu__padding" aria-label="Navigation des volets">
-    <div class="fr-sidemenu__inner">
+  <nav role="navigation" class="fr-sidemenu fr-sidemenu--sticky-full-height " aria-label="Navigation des volets">
+    <div class="fr-sidemenu__inner sidenavPosition">
       <button class="fr-sidemenu__btn" aria-controls="fr-sidemenu-wrapper" aria-expanded="false">Filtre sur les indicateurs</button>
       <div class="fr-collapse" id="fr-sidemenu-wrapper">
         <ul class="fr-sidemenu__list">
@@ -119,5 +119,13 @@ export default {
 a:hover:not([href]) {
   cursor: pointer;
   background-color: #f6f6f6;
+}
+
+
+.sidenavPosition {
+ display: grid;
+  position: sticky !important;
+  z-index: 0;
+  
 }
 </style>

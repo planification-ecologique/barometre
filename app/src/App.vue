@@ -1,6 +1,6 @@
 <template>
   <div>
-    <header-dsfr></header-dsfr>
+    <header-dsfr class="header-position"></header-dsfr>
     <div class="fr-container--fluid ">
       <main> 
         <div id="app">
@@ -44,7 +44,20 @@ export default{
 
 <style scoped>
 
-.reset-overflow {
-  overflow: visible !important;
+.header-position {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000; 
 }
+#app{
+  margin-top:11rem;
+}
+
+@media (max-width: 767px) {
+  #app {
+    margin-top: 18rem;
+  }
+}
+
 </style>

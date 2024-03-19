@@ -86,5 +86,20 @@ a:hover:not([href]) {
 }
 .breadcrumb{
   margin-left: 17px;
+} 
+
+.header-navigation{
+  position: fixed !important;
+}
+
+/* Appliquer une position fixe à la navigation sur les appareils mobiles */
+@media (max-width: 767px) {
+  .fr-nav {
+    position: fixed !important;
+    top: 3;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+  }
 }
 </style>

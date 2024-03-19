@@ -148,6 +148,13 @@ export default {
 
 <style>
 
+@media (max-width: 767px) {
+  .fr-header {
+    position: relative;
+    width: 100%;
+    /* z-index: 1000; */
+  }
+}
 
 .desktop-navigation {
   display: block; 
