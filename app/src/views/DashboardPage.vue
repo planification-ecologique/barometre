@@ -159,10 +159,6 @@ bottom:0;
   width: 5rem
 }
 
-// .fr-container-page {
-//
-//   width: 100%;
-// }
 
 //   .fr-container-page {
 //       background-color: #F6F6F6;
@@ -172,3 +168,4 @@ bottom:0;
 //       width: 100%;
 // }
 </style>
+git 
