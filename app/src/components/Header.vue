@@ -165,14 +165,6 @@ export default {
   border-bottom: 1px solid rgba(207, 207, 223, 0.534);
 }
 
-.header-container {
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
-
 .fr-header__brand {
   display: flex;
   justify-content: space-between;

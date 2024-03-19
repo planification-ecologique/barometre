@@ -1,8 +1,8 @@
 <template>
   <div>
-    <header-dsfr class=".header-position"></header-dsfr>
+    <header-dsfr class="header-position"></header-dsfr>
     <div class="fr-container--fluid ">
-      <main> 
+      <main class="main-content"> 
         <div id="app">
           <!-- Bloc de navigation -->
           <!-- <div id="nav">
@@ -20,7 +20,7 @@
     </div>
 
     <!-- <upfooter></upfooter> -->
-    <footer-dsfr class="footer-position"></footer-dsfr>
+    <footer-dsfr></footer-dsfr>
   </div>
     <!-- <upfooter></upfooter> -->
 </template>
@@ -33,12 +33,11 @@ export default{
   components : {
     ConsentBanner
   },
+  data (){
+    return {
 
-  watch: {
-		'$route' (to, from) {
-			document.title = to.meta.title || "Baromètre de la planification écologique"
-		}
-	}
+    }
+  }
 }
 
 </script>
@@ -52,16 +51,11 @@ export default{
   z-index: 1000; 
 }
 
-
-#app{
-  margin-top:11rem;
+.main-content {
+  margin-top: 11rem
 }
 
-
-@media (max-width: 767px) {
-  #app {
-    margin-top: 18rem;
-  }
+.reset-overflow {
+  overflow: visible !important;
 }
-
 </style>

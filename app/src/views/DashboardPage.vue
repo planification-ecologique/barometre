@@ -6,19 +6,19 @@
         class="fr-col-3 fr-col-lg-1 fr-unhidden-lg "
       >
         <side-navigation
-          class="sidenavPosition"
+          class="sidenavPosition fr-ml-3w"
           v-on:params="updateSelection"
           :initParams="sidenav_initParams"
         />
       </div>
       <div
         class="fr-col"
-        :style="{ marginLeft: isSidebarFixed ? sidebarWidth + 'px' : '0' }"
+     
       >
         <div class="fr-grid-row fr-grid-row--left fr-container-page">
           <div v-if="!isapiloading">
             <adaptive-dashboard
-              class="fr-col-12 fr-col-lg-10 fr-col-offset-lg-1"
+              class="fr-col-12 fr-col-lg-10 fr-col-offset-lg-1 fr-ml-4w"
               :params="myobj"
               :inputData="results_API"
             />
@@ -133,11 +133,12 @@ export default {
 </script>
 <style scoped lang="scss">
 
-.sidenavPosition{
-  margin-left: 0.75rem;
-}
+// .sidenavPosition{
+//   margin-left: 0.75rem;
+// }
 .fr-container-page {
   background-color: #f6f6f6;
+  margin-left: 3rem;
 }
 
 </style>

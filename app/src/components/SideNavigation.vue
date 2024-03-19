@@ -1,6 +1,6 @@
 <template>
   <nav role="navigation" class="fr-sidemenu fr-sidemenu--sticky fr-mb-0-5v " aria-label="Navigation des volets">
-    <div class="fr-sidemenu__inner sidenavPosition">
+    <div class="fr-sidemenu__inner fr-mr-3w sidenavPosition">
       <button class="fr-sidemenu__btn" aria-controls="fr-sidemenu-wrapper" aria-expanded="false">Filtre sur les indicateurs</button>
       <div class="fr-collapse" id="fr-sidemenu-wrapper">
         <ul class="fr-sidemenu__list">
@@ -125,9 +125,9 @@ a:hover:not([href]) {
   margin-bottom: 0.123rem !important;
 }
 
-nav{
+/* nav{
   display: block;
-}
+} */
 
 .fr-sidemenu {
     --ul-type: none;
