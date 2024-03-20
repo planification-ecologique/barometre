@@ -1,20 +1,14 @@
 <template>
   <div class="fr-container--fluid">
     <div class="fr-grid-row fr-grid-row--left">
-      <div
-        
-        class="fr-col-3 fr-col-lg-1 fr-unhidden-lg "
-      >
+      <div class="fr-col-3 fr-col-lg-1 fr-unhidden-lg">
         <side-navigation
           class="sidenavPosition fr-ml-3w"
           v-on:params="updateSelection"
           :initParams="sidenav_initParams"
         />
       </div>
-      <div
-        class="fr-col"
-     
-      >
+      <div class="fr-col">
         <div class="fr-grid-row fr-grid-row--left fr-container-page">
           <div v-if="!isapiloading">
             <adaptive-dashboard
@@ -23,7 +17,7 @@
               :inputData="results_API"
             />
           </div>
-          <div v-else>
+          <div class="fr-ml-3w fr-mt-w" v-else>
             <p>Chargement des indicateurs...</p>
           </div>
         </div>
@@ -57,15 +51,6 @@ export default {
     };
   },
   methods: {
-    // handleScroll() {
-    //   const sidebar = document.getElementById('sidebar');
-    //   const sidebarOffset = sidebar.offsetTop;
-    //   if (window.pageYOffset > sidebarOffset) {
-    //     this.isSidebarFixed = true;
-    //   } else {
-    //     this.isSidebarFixed = false;
-    //   }
-    // },
     updateSelection(selectedValue) {
       if (selectedValue != undefined) {
         this.myobj = selectedValue;
@@ -106,18 +91,11 @@ export default {
         // Récupération des données
         let results = response;
         this.results_API = results.data.results;
-        // console.log("results_API--------", JSON.stringify(this.results_API));
         this.isapiloading = false;
       } catch (error) {
         console.error("Erreur dans le chargement des données : ", error);
       }
     },
-  },
-  mounted() {
-    window.addEventListener("scroll", this.handleScroll);
-  },
-  beforeDestroy() {
-    window.removeEventListener("scroll", this.handleScroll);
   },
   created() {
     // Initialisation de la requête selon les paramètres de l'URL
@@ -131,14 +109,20 @@ export default {
   },
 };
 </script>
-<style scoped lang="scss">
 
-// .sidenavPosition{
-//   margin-left: 0.75rem;
-// }
+<style scoped lang="scss">
 .fr-container-page {
   background-color: #f6f6f6;
   margin-left: 3rem;
 }
 
+@media only screen and (max-width: 768px) {
+  .fr-container-page {
+    margin-left: 0; // Réinitialiser la marge à zéro pour les appareils mobiles
+  }
+
+  .fr-ml-3w, .fr-ml-4w {
+    margin-left: 0; // Réinitialiser les marges spécifiques pour les appareils mobiles
+  }
+}
 </style>

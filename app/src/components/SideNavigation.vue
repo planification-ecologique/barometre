@@ -1,6 +1,6 @@
 <template>
   <nav role="navigation" class="fr-sidemenu fr-sidemenu--sticky fr-mb-0-5v " aria-label="Navigation des volets">
-    <div class="fr-sidemenu__inner fr-mr-3w sidenavPosition">
+    <div class="fr-sidemenu__inner">
       <button class="fr-sidemenu__btn" aria-controls="fr-sidemenu-wrapper" aria-expanded="false">Filtre sur les indicateurs</button>
       <div class="fr-collapse" id="fr-sidemenu-wrapper">
         <ul class="fr-sidemenu__list">
@@ -125,10 +125,10 @@ a:hover:not([href]) {
   margin-bottom: 0.123rem !important;
 }
 
-nav {
+/* nav {
   position: sticky;
   top: 0;
-}
+} */
 
 .fr-sidemenu {
     --ul-type: none;
@@ -145,8 +145,26 @@ nav {
     box-shadow: inset 0 -1px 0 0 var(--border-default-grey), inset 0 1px 0 0 var(--border-default-grey);
     margin-left: -1rem;
     margin-right: -1rem;
-    position: sticky !important;
+    /* position: sticky !important; */
 }
+
+@media (min-width: 48em){
+  .fr-sidemenu--sticky-full-height .fr-sidemenu__inner {
+    height: 100%;
+    overflow: auto;
+    /* padding-top: 0.5rem; */
+}
+
+}
+
+/* @media (min-width: 48em){
+  .fr-sidemenu__inner {
+    box-shadow: inset -1px 0 0 0 #ddd;
+    box-shadow: inset -1px 0 0 0 var(--border-default-grey);
+    padding: 0 1.5rem 0 0;
+}
+} */
+
 
 /* .sidenavPosition {
  display: grid;
