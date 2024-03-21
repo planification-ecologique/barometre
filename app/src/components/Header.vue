@@ -148,13 +148,6 @@ export default {
 
 <style>
 
-@media (max-width: 767px) {
-  .fr-header {
-    position: relative;
-    width: 100%;
-    /* z-index: 1000; */
-  }
-}
 
 .desktop-navigation {
   display: block; 
@@ -163,6 +156,14 @@ export default {
 .fr-header__body {
   width: 100%;
   border-bottom: 1px solid rgba(207, 207, 223, 0.534);
+}
+
+.header-container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .fr-header__brand {

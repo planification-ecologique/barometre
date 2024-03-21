@@ -1,5 +1,5 @@
 <template>
-  <nav role="navigation" class="fr-sidemenu fr-sidemenu--sticky fr-mb-0-5v " aria-label="Navigation des volets">
+  <nav role="navigation" class="fr-sidemenu fr-sidemenu--sticky fr-sidemenu__padding" aria-label="Navigation des volets">
     <div class="fr-sidemenu__inner">
       <button class="fr-sidemenu__btn" aria-controls="fr-sidemenu-wrapper" aria-expanded="false">Filtre sur les indicateurs</button>
       <div class="fr-collapse" id="fr-sidemenu-wrapper">
@@ -119,61 +119,5 @@ export default {
 a:hover:not([href]) {
   cursor: pointer;
   background-color: #f6f6f6;
-}
-
-.fr-mb-0-5v{
-  margin-bottom: 0.123rem !important;
-}
-
-/* nav {
-  position: sticky;
-  top: 0;
-} */
-
-.fr-sidemenu {
-    --ul-type: none;
-    --ol-type: none;
-    --ul-start: 0;
-    --ol-start: 0;
-    --xl-block: 0;
-    --li-bottom: 0;
-    --ol-content: none;
-    --underline-img: none;
-    --text-spacing: 0;
-    --title-spacing: 0;
-    box-shadow: inset 0 -1px 0 0 #ddd, inset 0 1px 0 0 #ddd;
-    box-shadow: inset 0 -1px 0 0 var(--border-default-grey), inset 0 1px 0 0 var(--border-default-grey);
-    margin-left: -1rem;
-    margin-right: -1rem;
-    /* position: sticky !important; */
-}
-
-@media (min-width: 48em){
-  .fr-sidemenu--sticky-full-height .fr-sidemenu__inner {
-    height: 100%;
-    overflow: auto;
-    /* padding-top: 0.5rem; */
-}
-
-}
-
-/* @media (min-width: 48em){
-  .fr-sidemenu__inner {
-    box-shadow: inset -1px 0 0 0 #ddd;
-    box-shadow: inset -1px 0 0 0 var(--border-default-grey);
-    padding: 0 1.5rem 0 0;
-}
-} */
-
-
-/* .sidenavPosition {
- display: grid;
-  position: sticky !important;
-  top: 0;
-  
-} */
-
-.fr-col-12{
-  width: 100%;
 }
 </style>

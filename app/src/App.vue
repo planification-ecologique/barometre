@@ -1,8 +1,8 @@
 <template>
   <div>
-    <header-dsfr class="header-position"></header-dsfr>
+    <header-dsfr></header-dsfr>
     <div class="fr-container--fluid ">
-      <main class="main-content"> 
+      <main> 
         <div id="app">
           <!-- Bloc de navigation -->
           <!-- <div id="nav">
@@ -33,27 +33,17 @@ export default{
   components : {
     ConsentBanner
   },
-  data (){
-    return {
 
-    }
-  }
+  watch: {
+		'$route' (to, from) {
+			document.title = to.meta.title || "Baromètre de la planification écologique"
+		}
+	}
 }
 
 </script>
 
 <style scoped>
-
-.header-position {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000; 
-}
-
-.main-content {
-  margin-top: 11rem
-}
 
 .reset-overflow {
   overflow: visible !important;
