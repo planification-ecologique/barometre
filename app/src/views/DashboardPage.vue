@@ -35,7 +35,6 @@ export default {
   },
   data() {
     return {
-
       isapiloading: true,
       myobj: {},
       results_API: [],

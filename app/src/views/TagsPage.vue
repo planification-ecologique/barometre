@@ -8,14 +8,20 @@
           </div>
           <br>
 
-          <div v-if="isapiloading === false">
-            <h1 class="fr-subtitle">{{ this.results_API.length }} indicateurs trouvés</h1>
-            <AdaptiveDashboard :dashboardPage="false" :inputData="results_API" />
+          <div v-if="results_page.length>0">
+            <h1 class="fr-subtitle">{{ this.results_API.length }} indicateurs trouvés </h1>
+            <AdaptiveDashboard :dashboardPage="false" :inputData="results_page"
+              :params='{ label_theme: "Non disponible" }' />
           </div>
           <div v-else>
             <p>Chargement des indicateurs...</p>
           </div>
         </div>
+      </div>
+    </div>
+    <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center" v-if="isapiloading === false">
+      <div class="fr-col-8">
+        <Pagination :nbPages=nb_pages @selectedPage="handleSelectedPage"></Pagination>
       </div>
     </div>
   </div>
@@ -24,21 +30,24 @@
 <script>
 import Tags from '../components/Tags.vue'
 import AdaptiveDashboard from '../components/AdaptiveDashboard.vue'
+import Pagination from '../components/components_dsfr/Pagination.vue'
 import { api } from '@/services/api.js'
 
 export default {
   name: 'TagsPage',
   components: {
     Tags,
-    AdaptiveDashboard
+    AdaptiveDashboard,
+    Pagination
   },
   data() {
     return {
-pageTitle: "Baromètre SGPE - Tags",
-
       isapiloading: true,
       results_API: [],
-      selectedTags: ["atténuation"]
+      selectedTags: ["atténuation"],
+      results_page: [],
+      nb_pages: 0,
+      nb_graphs_pages: 6
     }
   },
   methods: {
@@ -47,9 +56,11 @@ pageTitle: "Baromètre SGPE - Tags",
       // Build query based on selected tags and fetch data
       this.fetchData(selectedTag);
     },
-
-
-
+    handleSelectedPage(page) {
+      var start = (page - 1) * this.nb_graphs_pages
+      var end = page * this.nb_graphs_pages      
+      this.results_page = this.results_API.slice(start, end)
+    },
     async fetchData(ls_tags) {
       var query = {
         "filter_by": [
@@ -76,11 +87,17 @@ pageTitle: "Baromètre SGPE - Tags",
 
         // Retrieve data
         let results = response;
-        this.results_API = results.data.results;
+        this.results_API = results.data.results
+        this.set_pages()
         this.isapiloading = false;
+
       } catch (error) {
         console.error("Erreur dans le chargement des données : ", error);
       }
+    },
+
+    set_pages(){
+      this.nb_pages = Math.ceil(this.results_API.length / this.nb_graphs_pages)
     }
   },
   mounted() {
@@ -90,15 +107,15 @@ pageTitle: "Baromètre SGPE - Tags",
 </script>
 
 <style scoped lang="scss">
-  .fr-container-page {
-    background-color: #F6F6F6;
-    padding-top: 1.5rem;
-    padding-left: 2.5rem;
-    padding-right: 2.5rem;
-    width: 100%;
-  }
+.fr-container-page {
+  background-color: #F6F6F6;
+  padding-top: 1.5rem;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+  width: 100%;
+}
 
-  .fr-subtitle {
-    font-weight: 400;
-    }
+.fr-subtitle {
+  font-weight: 400;
+}
 </style>
