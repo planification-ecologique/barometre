@@ -42,7 +42,7 @@
 import NavigationFooter from './NavigationFooter.vue'
     
     export default {
-      name: 'footer_dsfr',
+      name: 'FooterDsfr',
       components: {
         NavigationFooter
       },

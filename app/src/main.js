@@ -4,20 +4,7 @@ import VueKeyCloak from '@dsb-norge/vue-keycloak-js'
 import router from './router'
 
 // Add component otherwise you get an error object string
-import Header from './components/Header'
-import Footer from './components/Footer'
-import Navigation from './components/Navigation'
-import Tags from './components/Tags'
-import GraphBox from './components/GraphBox'
-// import Breadcrumb from './components/Breadcrumb.vue'
 
-import CardImgBox from './components/CardImgBox'
-import UpFooter from './components/UpFooter'
-import AdaptiveDashboard from './components/AdaptiveDashboard'
-import SideNavigation from './components/SideNavigation'
-import tagsCard from './components/TagsCard'
-
-import vueCustomElement from 'vue-custom-element'
 
 // if (process.env.NODE_ENV === 'development') {
 require('../node_modules/@gouvfr/dsfr/dist/legacy/legacy.nomodule.min.js')
@@ -59,22 +46,6 @@ Vue.use(VueKeyCloak, {
     silentCheckSsoRedirectUri: window.location.origin + process.env.VUE_APP_PREFIX_PATH + '/silent-check-sso.html'
   }
 })
-
-
-
-Vue.use(vueCustomElement)
-
-Vue.customElement('header-dsfr', Header)
-Vue.customElement('footer-dsfr', Footer)
-Vue.customElement('navigation-dsfr', Navigation)
-Vue.customElement('card-img-box', CardImgBox)
-Vue.customElement('up-footer', UpFooter)
-Vue.customElement('graph-box', GraphBox)
-Vue.customElement('adaptive-dashboard', AdaptiveDashboard)
-Vue.customElement('side-navigation', SideNavigation)
-Vue.customElement('tags-dsfr', Tags)
-Vue.customElement('tags-card', tagsCard)
-
 
 new Vue({
   router,

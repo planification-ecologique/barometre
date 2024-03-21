@@ -15,7 +15,7 @@
 <script>
 import router from '../router'
 export default {
-  name: 'navigation-dsfr',
+  name: 'NavigationDsfr',
   data() {
     return {
       myrouter: router,

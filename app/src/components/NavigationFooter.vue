@@ -1,11 +1,6 @@
 <template>
-  <div class="cursor_pointer">
-    <ul>
-        <li
-      class="fr-footer__bottom-item"
-      v-for="option in menuOptions"
-      :key="option.value"
-    >
+  <ul>
+    <li class="fr-footer__bottom-item" v-for="option in menuOptions">
       <a
         class="fr-footer__bottom-link"
         :href="option.link"
@@ -13,12 +8,15 @@
         >{{ option.label }}</a
       >
     </li>
-
     <li class="fr-footer__bottom-item">
-      <a id="fr-link-cookies" class="fr-footer__bottom-link" href="#" onclick="tarteaucitron.userInterface.openPanel();">Gestion des cookies</a>                    
+      <a
+        id="fr-link-cookies"
+        class="fr-footer__bottom-link" 
+        href="#" 
+        onclick="tarteaucitron.userInterface.openPanel();"
+        >Gestion des cookies</a>                    
     </li>
-    </ul>
-  </div>
+  </ul>  
 </template>
 
 <script>
@@ -34,30 +32,22 @@ export default {
     get_menu_options() {
       let base = process.env.VUE_APP_PREFIX_PATH
       this.menuOptions = [
-        {
-          value: "/donnees-personnelles",
+        {         
           label: "Données personnelles",
-          link: base + "/donnees-personnelles",
-          selected: false,
+          link: base + "/donnees-personnelles",          
         },
-        {
-          value: "Accessibilite",
-          label: "Accessibilité : non/partiellement/totalement conforme",
-          selected: false,
+        {         
+          label: "Accessibilité : non/partiellement/totalement conforme",          
           link: base + "#"
         },
-        {
-          value: "mentions-legales",
+        {         
           label: "Mentions légales",
-          link: base + "/mentions-legales",
-          selected: false,
+          link: base + "/mentions-legales",          
         },
-        {
-          value: "plan-du-site",
-          label: "Plan du site",
-          selected: false,
+        {          
+          label: "Plan du site",          
           link: base + "/plan-du-site"
-        },
+        }
       ];
     }
   },
@@ -66,20 +56,3 @@ export default {
   },
 };
 </script>
-
-<style>
-a:hover:not([href]) {
-  cursor: pointer;
-  /*default;*/
-}
-.cursor_pointer {
-  cursor: pointer;
-}
-.fr-nav__list {
-  padding-left: 20px;
-  /* margin-left: 10px; */
-}
-.breadcrumb {
-  margin-left: 17px;
-}
-</style>

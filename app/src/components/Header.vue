@@ -120,8 +120,12 @@
 </template>
 
 <script>
+import NavigationDsfr from "./Navigation.vue";
 export default {
-  name: "header_dsfr",
+  name: "HeaderDsfr",  
+  components: {
+    NavigationDsfr
+  },
   data() {
         return {
             accueil_link: "/accueil",

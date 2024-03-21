@@ -35,7 +35,7 @@ const router = new Router({
       path: "/dashboard",
       name: "dashboard",
       component: () =>
-        import(/* webpackChunkName: "visits" */ "./views/DashboardPage.vue"),
+        import(/* webpackChunkName: "dashboard" */ "./views/DashboardPage.vue"),
       meta: {
         requiresAuth: true,
         title:  GeneralTitle + " - Tableaux de bord"
@@ -51,15 +51,6 @@ const router = new Router({
         requiresAuth: true,
         title:  GeneralTitle + " - Tags"
 
-      },
-    },
-    {
-      path: "/dashboard/transverse/emissions--puits",
-      name: "transverse",
-      component: () =>
-       import(/* webpackChunkName: "visits" */ "./views/DashboardPage.vue"),
-      meta: {
-        requiresAuth: true,
       },
     },
     {
@@ -145,26 +136,8 @@ const router = new Router({
       meta: {
         requiresAuth: true, // ou false selon vos besoins
       },
-    },
-    // {
-    //   path: "/lexique",
-    //   name: "lexique",
-    //   component: () =>
-    //     import(/* webpackChunkName: "visits" */ "./views/LexiquePage.vue"),
-    //   meta: {
-    //     requiresAuth: true,
-    //   },
-    // },
-    // {
-    //   path: "/mentions-legales",
-    //   name: "mentions légales",
-    //   component: () =>
-    //     import(/* webpackChunkName: "visits" */ "./views/MentionsLegalesPage.vue"),
-    //   meta: {
-    //     requiresAuth: true,
-    //   },
-    // },
-  ],
+    }
+  ]  
 });
 
 function sleep(ms) {
