@@ -1,36 +1,35 @@
 <template>
-  <div>    
-    <div class="fr-container--fluid ">
-      <main> 
-        <div id="app">
-          <header-dsfr/>
+  <div>
+    <div class="fr-container--fluid">
+      <div id="app">
+        <header-dsfr />
+        <main>
           <router-view />
-          <footer-dsfr/>
-        </div>
-      </main> 
+        </main>
+        <footer-dsfr />
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-
 import ConsentBanner from "./components/ConsentBanner.vue";
 import HeaderDsfr from "./components/Header.vue";
-import FooterDsfr from "./components/Footer.vue"
+import FooterDsfr from "./components/Footer.vue";
 
-export default{
-  name:'App',
-  components : {
+export default {
+  name: "App",
+  components: {
     ConsentBanner,
     HeaderDsfr,
-    FooterDsfr
+    FooterDsfr,
   },
 
   watch: {
-		'$route' (to, from) {
-			document.title = to.meta.title || "Baromètre de la planification écologique"
-		}
-	}
-}
-
+    $route(to, from) {
+      document.title =
+        to.meta.title || "Baromètre de la planification écologique";
+    },
+  },
+};
 </script>
