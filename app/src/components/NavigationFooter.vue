@@ -1,5 +1,5 @@
 <template>
-  <ul>
+  <ul class="fr-footer__bottom-list">
     <li class="fr-footer__bottom-item" v-for="option in menuOptions">
       <a
         class="fr-footer__bottom-link"

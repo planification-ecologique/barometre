@@ -30,14 +30,16 @@
       </div>
     </div>
     <div
-      class="fr-grid-row fr-grid-row--gutters fr-grid-row--center"
+      class="fr-grid-row fr-grid-row--gutters fr-grid-row--center fr-mt-3w fr-mb-1w"
       v-if="isapiloading === false"
     >
-      <div class="fr-col-8">
-        <Pagination
-          :nbPages="nb_pages"
-          @selectedPage="handleSelectedPage"
-        ></Pagination>
+      <div>
+        <div class="fr-col">
+          <Pagination
+            :nbPages="nb_pages"
+            @selectedPage="handleSelectedPage"
+          ></Pagination>
+        </div>
       </div>
     </div>
   </div>

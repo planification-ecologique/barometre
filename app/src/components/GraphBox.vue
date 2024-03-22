@@ -86,6 +86,7 @@
           class="fr-accordion__btn fr-text--xs"
           :aria-expanded="isAccordionOpen ? 'true' : 'false'"
           :aria-controls="idAccordion"
+          title="Description de l'indicateur"
         >
           Description de l'indicateur
         </button>
