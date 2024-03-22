@@ -65,18 +65,8 @@
               </div>
             </div>
           </div>
-          <div class="fr-header__tools-links" data-fr-js-header-links="true">
-            <ul class="fr-btns-group">
-              <!-- THEME DEBUG -->
-              <!-- THEME HOOK: 'paragraph' -->
-              <!-- FILE NAME SUGGESTIONS:
-   * paragraph--ds-lien-avec-icone--default.html.twig
-   x paragraph--ds-lien-avec-icone.html.twig
-   * paragraph--default.html.twig
-   * paragraph.html.twig
--->
-              <!-- BEGIN OUTPUT from 'profiles/custom/design_system_profile/themes/design_system/templates/paragraph/paragraph--ds-lien-avec-icone.html.twig' -->
-
+          <div class="fr-header__tools">
+            <ul>
               <li>
                 <a
                   href="https://www.gouvernement.fr/france-nation-verte"
@@ -84,6 +74,7 @@
                   title="France Nation Verte"
                   class="fr-btn"
                   id="header-title"
+                  style="background-color:white; color:#000091;"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -103,9 +94,7 @@
                   France Nation Verte
                 </a>
               </li>
-
-              <!-- END OUTPUT from 'profiles/custom/design_system_profile/themes/design_system/templates/paragraph/paragraph--ds-lien-avec-icone.html.twig' -->
-            </ul>
+           </ul>
           </div>
         </div>
       </div>
@@ -121,12 +110,12 @@ import NavigationDsfr from "./Navigation.vue";
 export default {
   name: "HeaderDsfr",
   components: {
-    NavigationDsfr,
+    NavigationDsfr
   },
   data() {
     return {
       accueil_link: "/accueil",
-      showNavigation: true,
+      showNavigation: true
     };
   },
   methods: {
@@ -138,15 +127,17 @@ export default {
     },
     toggleNavigation() {
       this.showNavigation = !this.showNavigation;
+    }
     },
-  },
-  mounted() {
-    this.set_link();
-  },
+    mounted(){
+        this.set_link()
+    }
 };
 </script>
 
 <style>
+
+
 .desktop-navigation {
   display: block;
 }
