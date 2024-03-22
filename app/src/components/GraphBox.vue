@@ -1,125 +1,170 @@
 <template>
-    <div class="fr-card fr-card--no-icon fr-card--shadow adjust-height" v-if="dataObj">
-        <div class="titleBox">
-            <h2 class="cardTitle">{{ dataObj.label_indic }}
-            </h2>
-            <!-- <TableComponent :captionTitle="dataObj.label_indic" /> -->
-            <div class="fr-text--xs fr-text--bold cardObjectif" v-if="cible">
-                <p class="fr-text--xs fr-text--regular fr-unit"> Cible :</p>
-                <p class="fr-badge fr-badge-sm fr-badge--green-emeraude fr-badge--no-icon fr-pr-1w"> {{ cible}} </p>
-                <p class="fr-text--xs fr-text--regular fr-unit">{{ dataObj.label_unit }}</p>
-            </div>
-            <div v-else>
-              <p class="fr-text--xs fr-text--regular fr-unit">Unité : {{ dataObj.label_unit }}</p>
-            </div>
-        </div>
-        
-        <div class="cardReference">
-            <segmented-controls @chart-selected="handleChartSelected" :idcontrol="idAccordion+'1'"></segmented-controls>
-        </div>
-        <div v-if="dataObj.values"> 
-          <div class="cardData" v-if="this.displayChart">
-            <div v-if="dataObj.label_sous_groupe == ''">
-            <bar-chart
-                  :x=JSON.stringify(dataObj.values.x)
-                  :y=JSON.stringify(dataObj.values.y)
-                  :name=JSON.stringify(dataObj.values.legend)
-                  :horizontal=false
-                  :stacked=true
-                  :color= JSON.stringify(dataObj.values.colors) 
-                  :aspectratio = 2
-                  >
-              </bar-chart>
-            </div>
-            <div v-else>
-              <bar-chart
-                  :x=JSON.stringify(dataObj.date)
-                  :y=JSON.stringify(dataObj.values)
-                  :aspectratio = 2
-                  :stacked=true
-                  :name=JSON.stringify(dataObj.label_sous_groupe)
-                  >
-              </bar-chart>
-            </div>
-          </div>
-          <div v-else>  
-            <div v-if="dataObj.label_sous_groupe == ''">
-              <table-component :captionTitle="dataObj.label_indic" :annee="dataObj.values.x[0]" :valeur="dataObj.values.ytab"></table-component>        
-            </div>
-            <div v-else>
-              <TableComponentVariant :annee="dataObj.date[0]" :valeurCol="dataObj.label_sous_groupe" :valeurValue="dataObj.values"></TableComponentVariant>
-            </div>
-          </div>
-        </div>
-        <div class="beneathGraph">
-          <p class="fr-text--xs fr-text-mention--grey textReference">Source : {{ dataObj.label_sources }}</p>
-          <p class="fr-text--xs fr-text-mention--grey textReference">Périmètre : {{ dataObj.label_perimetre}}</p>
-        </div>
-        <section class="fr-accordion">
-          <h3 class="fr-accordion__title">
-            <button class="fr-accordion__btn fr-text--xs " :aria-expanded="isAccordionOpen ? 'true' : 'false'" :aria-controls="idAccordion">Description de l'indicateur</button>
-          </h3>
-          <div class="fr-collapse accordion-box" :id="idAccordion" :class="{ 'fr-collapse--expanded': isAccordionOpen }">
-            <p class="fr-text--s cardDescription fr-ml-1w fr-mr-1w fontSizeDescription">{{ dataObj.label_description }}</p>
-            <div class="fr-ml-1w" v-if="dataObj.label_tags">
-              <tags-card :tagsIndicateurs="dataObj.label_tags"></tags-card>
-            </div>
-          </div>
-        </section>
+  <div
+    class="fr-card fr-card--no-icon fr-card--shadow adjust-height"
+    v-if="dataObj"
+  >
+    <div class="titleBox">
+      <h2 class="cardTitle">{{ dataObj.label_indic }}</h2>
+      <!-- <TableComponent :captionTitle="dataObj.label_indic" /> -->
+      <div class="fr-text--xs fr-text--bold cardObjectif" v-if="cible">
+        <p class="fr-text--xs fr-text--regular fr-unit">Cible :</p>
+        <p
+          class="fr-badge fr-badge-sm fr-badge--green-emeraude fr-badge--no-icon fr-pr-1w"
+        >
+          {{ cible }}
+        </p>
+        <p class="fr-text--xs fr-text--regular fr-unit">
+          {{ dataObj.label_unit }}
+        </p>
+      </div>
+      <div v-else>
+        <p class="fr-text--xs fr-text--regular fr-unit">
+          Unité : {{ dataObj.label_unit }}
+        </p>
+      </div>
     </div>
 
+    <div class="cardReference">
+      <segmented-controls
+        @chart-selected="handleChartSelected"
+        :idcontrol="idAccordion + '1'"
+      ></segmented-controls>
+    </div>
+    <div v-if="dataObj.values">
+      <div class="cardData" v-if="this.displayChart">
+        <div v-if="dataObj.label_sous_groupe == ''">
+          <bar-chart
+            :x="JSON.stringify(dataObj.values.x)"
+            :y="JSON.stringify(dataObj.values.y)"
+            :name="JSON.stringify(dataObj.values.legend)"
+            :horizontal="false"
+            :stacked="true"
+            :color="JSON.stringify(dataObj.values.colors)"
+            :aspectratio="2"
+          >
+          </bar-chart>
+        </div>
+        <div v-else>
+          <bar-chart
+            :x="JSON.stringify(dataObj.date)"
+            :y="JSON.stringify(dataObj.values)"
+            :aspectratio="2"
+            :stacked="true"
+            :name="JSON.stringify(dataObj.label_sous_groupe)"
+          >
+          </bar-chart>
+        </div>
+      </div>
+      <div v-else>
+        <div v-if="dataObj.label_sous_groupe == ''">
+          <table-component
+            :captionTitle="dataObj.label_indic"
+            :annee="dataObj.values.x[0]"
+            :valeur="dataObj.values.ytab"
+          ></table-component>
+        </div>
+        <div v-else>
+          <TableComponentVariant
+            :annee="dataObj.date[0]"
+            :valeurCol="dataObj.label_sous_groupe"
+            :valeurValue="dataObj.values"
+          ></TableComponentVariant>
+        </div>
+      </div>
+    </div>
+    <div class="beneathGraph">
+      <p class="fr-text--xs fr-text-mention--grey textReference">
+        Source : {{ dataObj.label_sources }}
+      </p>
+      <p class="fr-text--xs fr-text-mention--grey textReference">
+        Périmètre : {{ dataObj.label_perimetre }}
+      </p>
+    </div>
+    <div class="fr-accordion">
+      <h3 class="fr-accordion__title">
+        <button
+          class="fr-accordion__btn fr-text--xs"
+          :aria-expanded="isAccordionOpen ? 'true' : 'false'"
+          :aria-controls="idAccordion"
+        >
+          Description de l'indicateur
+        </button>
+      </h3>
+      <div
+        class="fr-collapse accordion-box"
+        :id="idAccordion"
+        :class="{ 'fr-collapse--expanded': isAccordionOpen }"
+      >
+        <p
+          class="fr-text--s cardDescription fr-ml-1w fr-mr-1w fontSizeDescription"
+        >
+          {{ dataObj.label_description }}
+        </p>
+        <div class="fr-ml-1w" v-if="dataObj.label_tags">
+          <tags-card :tagsIndicateurs="dataObj.label_tags"></tags-card>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
-import BarChart from './components_dsfr/BarChart.vue'
-import MultiLineChart from './components_dsfr/MultiLineChart.vue'
-import SegmentedControls from './SegmentedControls.vue'
-import tagsCard from './TagsCard.vue'
-import TableComponent from './TableComponent.vue'
-import TableComponentVariant from './TableComponentVariant.vue'
+import BarChart from "./components_dsfr/BarChart.vue";
+import MultiLineChart from "./components_dsfr/MultiLineChart.vue";
+import SegmentedControls from "./SegmentedControls.vue";
+import tagsCard from "./TagsCard.vue";
+import TableComponent from "./TableComponent.vue";
+import TableComponentVariant from "./TableComponentVariant.vue";
 
 export default {
-  name: 'GraphBox',
+  name: "GraphBox",
   components: {
-      BarChart,
-      SegmentedControls,
-      tagsCard,
-      TableComponent,
-      TableComponentVariant,
-      MultiLineChart
+    BarChart,
+    SegmentedControls,
+    tagsCard,
+    TableComponent,
+    TableComponentVariant,
+    MultiLineChart,
   },
   props: {
-      dataObj:{
-          type: Object,
-          required: true
-      },
-      idAccordion: {
-        type: String,
-        required: true
-      },
-
+    dataObj: {
+      type: Object,
+      required: true,
+    },
+    idAccordion: {
+      type: String,
+      required: true,
+    },
   },
   data() {
-      return {
-          displayChart: false,
-          isAccordionOpen: true,
-          cible: undefined
-      }
+    return {
+      displayChart: false,
+      isAccordionOpen: true,
+      cible: undefined,
+    };
   },
   methods: {
-      handleChartSelected(type) {
-        this.displayChart = (type === 'graphique') ? true : false;
-    }
+    handleChartSelected(type) {
+      this.displayChart = type === "graphique" ? true : false;
+    },
   },
-  mounted () {
+  mounted() {
     // console.log(this.dataObj)
 
     try {
-      if (this.dataObj.label_sous_groupe == undefined || this.dataObj.label_sous_groupe =="") {
+      if (
+        this.dataObj.label_sous_groupe == undefined ||
+        this.dataObj.label_sous_groupe == ""
+      ) {
         let index = this.dataObj.values.legend.indexOf("Cible");
-        index != -1 ? this.cible = this.dataObj.values.y[index][this.dataObj.values.y[index].length - 1] : this.cible = undefined
+        index != -1
+          ? (this.cible =
+              this.dataObj.values.y[index][
+                this.dataObj.values.y[index].length - 1
+              ])
+          : (this.cible = undefined);
       } else {
-          this.cible = undefined
+        this.cible = undefined;
 
         // let sum = 0
         // this.dataObj.values[this.dataObj.values.length - 1].forEach( value => {
@@ -128,16 +173,14 @@ export default {
         // this.cible = sum
       }
     } catch (error) {
-      console.log("Erreur dans la cible",error)
+      console.log("Erreur dans la cible", error);
     }
-    
-        
-  }
-}
+  },
+};
 </script>
 
 <style scoped>
-.fontSizeDescription{
+.fontSizeDescription {
   font-size: 12px;
 }
 .fr-unit {
@@ -149,18 +192,18 @@ export default {
 .adjust-height {
   height: auto !important;
   z-index: inherit;
-}   
+}
 .beneathGraph {
   padding: 0.5rem 1rem;
-  border-bottom: 1px solid #DDDDDD;
-  border-top: 1px solid #DDDDDD;
+  border-bottom: 1px solid #dddddd;
+  border-top: 1px solid #dddddd;
   display: block;
   justify-content: space-between;
 }
 .cardReference {
   padding: 0.5rem 1rem;
-  border-bottom: 1px solid #DDDDDD;
-  border-top: 1px solid #DDDDDD;
+  border-bottom: 1px solid #dddddd;
+  border-top: 1px solid #dddddd;
   display: flex;
   justify-content: space-between;
 }
@@ -203,7 +246,7 @@ p.cardDescription {
   text-align: justify;
   text-justify: inter-word;
   margin-bottom: 1rem;
- color: black;
+  color: black;
 }
 
 .unit-short {

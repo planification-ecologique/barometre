@@ -3,49 +3,46 @@
     <div class="fr-header__body">
       <div class="header-container">
         <div class="fr-header__body-row">
-          <div class="fr-header__brand ">
+          <div class="fr-header__brand">
             <div class="fr-header__brand-top">
-              <a href="/" target="_self">
-              <div class="fr-header__logo">
-           <p class="fr-logo">
-                  
+              <a href="/" target="_self" title="Premier Ministre">
+                <div class="fr-header__logo">
+                  <p class="fr-logo">
                     Premier <br />
                     ministre
-                </p>
-              </div>
-                  </a>
+                  </p>
+                </div>
+              </a>
 
               <div class="fr-header__operator">
                 <a href="/" target="_self">
-                <img
-                  class="fr-responsive-img"
-                  style="width: 6rem"
-                  src="../images/Logo-France-Nation-Verte_medium.png"
-                  alt="france nation verte"
-                  
-                />
+                  <img
+                    class="fr-responsive-img"
+                    style="width: 6rem"
+                    src="../images/Logo-France-Nation-Verte_medium.png"
+                    alt="france nation verte"
+                    title="France Nation Verte"
+                  />
                 </a>
                 <!-- L’alternative de l’image (attribut alt) doit impérativement être renseignée et reprendre le texte visible dans l’image -->
               </div>
               <div class="fr-header__navbar">
-        
                 <button
-
-        class="fr-btn--menu fr-btn"
-        data-fr-opened="false"
-        aria-controls="modal-543"
-        :aria-expanded="showNavigation.toString()"
-        id=”modal-543” 
-        title="Menu"
-        @click="toggleNavigation"
-      >
-        Menu
-      </button>
+                  class="fr-btn--menu fr-btn"
+                  data-fr-opened="false"
+                  aria-controls="modal-543"
+                  :aria-expanded="showNavigation.toString()"
+                  id="”modal-543”"
+                  title="Menu"
+                  @click="toggleNavigation"
+                >
+                  Menu
+                </button>
               </div>
             </div>
             <div class="fr-header__service">
               <a
-                :href=accueil_link
+                :href="accueil_link"
                 title="Accueil - Baromètre de la planification écologique"
               >
                 <p class="fr-header__service-title">
@@ -54,7 +51,7 @@
               </a>
             </div>
           </div>
-   
+
           <div class="fr-header__tools">
             <div class="fr-header__search fr-modal" id="modal-541">
               <div class="fr-container fr-container-lg--fluid">
@@ -113,7 +110,7 @@
         </div>
       </div>
     </div>
-  <div class="fr-container--fluid desktop-navigation" v-if="showNavigation">
+    <div class="fr-container--fluid desktop-navigation" v-if="showNavigation">
       <navigation-dsfr></navigation-dsfr>
     </div>
   </header>
@@ -122,39 +119,36 @@
 <script>
 import NavigationDsfr from "./Navigation.vue";
 export default {
-  name: "HeaderDsfr",  
+  name: "HeaderDsfr",
   components: {
-    NavigationDsfr
+    NavigationDsfr,
   },
   data() {
-        return {
-            accueil_link: "/accueil",
-            showNavigation: true
-        }
+    return {
+      accueil_link: "/accueil",
+      showNavigation: true,
+    };
+  },
+  methods: {
+    set_link() {
+      let base = process.env.VUE_APP_PREFIX_PATH;
+      if (base) {
+        this.accueil_link = base + "/accueil";
+      }
     },
-   methods: {
-        set_link () {
-            let base = process.env.VUE_APP_PREFIX_PATH
-            if (base) {
-                this.accueil_link = base +"/accueil"
-                
-            }
-        },
-            toggleNavigation() {
-      this.showNavigation = !this.showNavigation; 
-    }
+    toggleNavigation() {
+      this.showNavigation = !this.showNavigation;
     },
-    mounted(){
-        this.set_link()
-    }
+  },
+  mounted() {
+    this.set_link();
+  },
 };
 </script>
 
 <style>
-
-
 .desktop-navigation {
-  display: block; 
+  display: block;
 }
 
 .fr-header__body {
