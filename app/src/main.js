@@ -21,6 +21,7 @@ require('../public/tarteaucitron/css/dsfr-theme-tac.css')
 import config_file from './services/tarteaucitron_config.js'
 tarteaucitronForceLanguage = 'fr';
 tarteaucitron.init(config_file);
+// (tarteaucitron.job = tarteaucitron.job || []).push('youtube');
 tarteaucitron.user.eulerianHost = process.env.VUE_APP_TRACKING;
 
 

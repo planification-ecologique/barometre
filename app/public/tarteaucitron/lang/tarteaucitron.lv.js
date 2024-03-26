@@ -1,4 +1,5 @@
 /*global tarteaucitron */
+/* min ready */
 tarteaucitron.lang = {
     "middleBarHead": "☝ 🍪",
     "adblock": "Szia! Ez a webhely átlátható, és lehetővé teszi a kívánt harmadik fél szolgáltatásainak kiválasztását",
@@ -36,11 +37,16 @@ tarteaucitron.lang = {
     "title": "Süti preferenciák",
     "cookieDetail": "Süti adatok a következőhöz:",
     "ourSite": "weboldalunkon",
+    "modalWindow": "(modal window)",
     "newWindow": "(új ablak)",
     "allowAll": "Elfogadom az öszeset",
     "denyAll": "Elutasítom",
+
+    "icon": "Cookies",
     
     "fallback": "letiltott.",
+    "allowed": "atļauts",
+    "disallowed": "nav atļauts",
 
     "ads": {
         "title": "Reklámhálózat",
@@ -74,7 +80,15 @@ tarteaucitron.lang = {
         "title": "Más",
         "details": "Szolgáltatások webtartalom megjelenítésére."
     },
+
+    "google": {
+        "title": "Konkrēta piekrišana Google pakalpojumiem",
+        "details": "Google var izmantot jūsu datus auditorijas mērījumiem, reklāmas veiktspējas novērtēšanai vai personalizētu reklāmu piedāvāšanai."
+    },
     
     "mandatoryTitle": "Kötelező sütik",
-    "mandatoryText": "A webhely tartalmának megjelenítéséhez és a felhasználói bejelentkezéshez sütiket használunk amiket nem lehet kikapcsolni."
+    "mandatoryText": "A webhely tartalmának megjelenítéséhez és a felhasználói bejelentkezéshez sütiket használunk amiket nem lehet kikapcsolni.",
+
+    "save": "Saglabāt",
+    "ourpartners": "Mūsu partneri"
 };

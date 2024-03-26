@@ -1,4 +1,6 @@
 /*global tarteaucitron */
+/* min ready */
+const link_privacy="https://barometre-sgpe-qualif.seenovate.com/donnees-personnelles"
 tarteaucitron.lang = {
 
     "middleBarHead": "☝ 🍪",
@@ -9,13 +11,10 @@ tarteaucitron.lang = {
     "alertBigScroll": "En continuant de défiler,",
     "alertBigClick": "En poursuivant votre navigation,",
     "alertBig": "vous acceptez l'utilisation de services tiers pouvant installer des cookies",
-
-     "alertBigPrivacy" : "<h5>À propos des cookies sur <a href=''#''>gouvernement.fr</a></h5>" +
-        "Nos site et <a href=\"#consentement\">nos partenaires</a> utilisons des cookies déposés sur votre terminal avec votre consentement que vous pouvez retirer à tout moment.\n" +
-        "Certains cookies sont dits fonctionnels et sont strictement necessaires à la bonne fourniture du service. Ils peuvent comprendrent des traceurs de mesure d’audience motorant le bon fonctionnement technique du site.\n" +
-        "Des cookies dits ‘non fonctionnels’ peuvent être déposés, permettant de personnaliser des contenus selon votre navigation, d’afficher de la publicité personnalisée ou non, géolocalisée ou non en se basant sur votre profil et/ou historique de navigation. ",
-
-    "alertSmall": "<b>Gestion des services</b>",
+    
+    "alertBigPrivacy": "<h5>À propos des cookies sur Barometre-sgpe.fr</h5>" +
+    "Bienvenue ! Nous utilisons des cookies pour améliorer votre expérience et les services disponibles sur ce site. Pour en savoir plus, visitez la page <a href="+link_privacy+"> Données personnelles et cookies</a>. Vous pouvez, à tout moment, avoir le contrôle sur les cookies que vous souhaitez activer.",
+    "alertSmall": "Gestion des services",
     "acceptAll": "Tout accepter",
     "personalize": "Personnaliser",
     "close": "Fermer",
@@ -41,11 +40,16 @@ tarteaucitron.lang = {
     "title": "Panneau de gestion des cookies",
     "cookieDetail": "Détail des cookies",
     "ourSite": "sur notre site",
+    "modalWindow": "(fenêtre modale)",
     "newWindow": "(nouvelle fenêtre)",
     "allowAll": "Tout accepter",
     "denyAll": "Tout refuser",
+
+    "icon": "Cookies",
     
     "fallback": "est désactivé.",
+    "allowed": "autorisé",
+    "disallowed": "interdit",
 
     "ads": {
         "title": "Régies publicitaires",
@@ -79,7 +83,15 @@ tarteaucitron.lang = {
         "title": "Autre",
         "details": "Services visant à afficher du contenu web."
     },
+
+    "google": {
+        "title": "Consentement spécifique aux services Google",
+        "details": "Google peut utiliser vos données pour la mesure d'audience, la performance publicitaire ou pour vous proposer des annonces personnalisées."
+    },
     
     "mandatoryTitle": "Cookies obligatoires",
-    "mandatoryText": "Ce site utilise des cookies nécessaires à son bon fonctionnement qui ne peuvent pas être désactivés."
+    "mandatoryText": "Ce site utilise des cookies nécessaires à son bon fonctionnement. Ils ne peuvent pas être désactivés.",
+
+    "save": "Enregistrer",
+    "ourpartners": "Nos partenaires"
 };
