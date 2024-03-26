@@ -12,9 +12,10 @@
 </template>
 
 <script>
-import { api } from "@/services/api.js";
+
 import ErrorPage from '../components/ErrorPage.vue'
 import TechnicalErrorImg from "../components/components_sgv/TechnicalErrorImg.vue";
+import dsfrAnalytics from "../services/dsfr_analytics"
 
 export default {
   name: "Error404Page",
@@ -39,8 +40,17 @@ export default {
       }
     };
   },
-  methods: {},
-  mounted() {},
+  mounted(){
+    dsfrAnalytics({
+      path: "/error-404",
+      name: "error-404",
+      segment: "erreur",
+      labels: ['erreur', 'erreur', '', '', ''],
+      template: "erreur",
+      group: "erreur",
+      isError: true
+    })
+  }
 };
 </script>
 

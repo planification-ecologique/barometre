@@ -187,6 +187,19 @@ Pour écrire au Premier ministre <a href="https://www.gouvernement.fr/contact/pr
 </template>
 
 <script>
-export default {};
+import dsfrAnalytics from "../services/dsfr_analytics"
+export default {
+  name: "MentionsLegalesPage",
+  mounted(){
+    dsfrAnalytics({
+      path: "/mentions-legales",
+      name: "mentions-legales",
+      segment: "contenu_statique",
+      labels: ['contenu_statique', 'contenu_statique', '', '', ''],
+      template: "contenu_statique",
+      group: "contenu_statique"
+    })
+  }
+}
 </script>
 <style></style>

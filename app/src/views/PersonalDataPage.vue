@@ -682,6 +682,8 @@
 </template>
 <script>
 import PersonalData from "../components/PersonalData.vue";
+import dsfrAnalytics from "../services/dsfr_analytics"
+
 export default {
   name: "PersonalDataPage",
   components: {
@@ -715,6 +717,15 @@ export default {
   },
   mounted () {
     this.set_message_boutton()
+    
+    dsfrAnalytics({
+      path: "/donnees-personnelles",
+      name: "/donnees-personnelles",
+      segment: "contenu_statique",
+      labels: ['contenu_statique', 'contenu_statique', '', '', ''],
+      template: "contenu_statique",
+      group: "contenu_statique"
+    })
   }
 };
 </script>

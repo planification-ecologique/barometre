@@ -50,6 +50,7 @@ import Tags from "../components/Tags.vue";
 import AdaptiveDashboard from "../components/AdaptiveDashboard.vue";
 import Pagination from "../components/components_dsfr/Pagination.vue";
 import { api } from "@/services/api.js";
+import dsfrAnalytics from "../services/dsfr_analytics"
 
 export default {
   name: "TagsPage",
@@ -119,7 +120,16 @@ export default {
   },
   mounted() {
     this.fetchData(this.selectedTags);
-  },
+    
+    dsfrAnalytics({
+      path: "/tags",
+      name: "tags",
+      segment: "tags",
+      labels: ['contenu_liste', 'tags', '', '', ''],
+      template: "contenu_liste",
+      group: "tags"
+    })  
+  }
 };
 </script>
 

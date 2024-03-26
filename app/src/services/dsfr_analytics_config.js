@@ -12,14 +12,14 @@ const analytics_config_file =  {
             referrer: '', // referrer for virtual pages (not for real page, eulerian automatically collects document.referrer)
             id: '', // unique page id (string)
             title: '', // page title for virtual pages
-            name: '', // equivalent to title if not defined
+            name: 'accueil', // equivalent to title if not defined
             author: '', // page author name
             date: get_data (),//'03/13/2024', // page creation date
-            labels: ['audience-communication', '', '', '', ''],
+            labels: ['accueil', 'accueil', '', '', ''],
             tags: [], // no tags limit
-            template: 'audience-communication', // page template
-            group: 'audience-communication', // page group. if not defined, fallback to template value
-            segment: '', // site segment. if not defined, fallback to template value
+            template: 'accueil', // page template
+            group: 'accueil', // page group. if not defined, fallback to template value
+            segment: 'accueil', // site segment. if not defined, fallback to template value
             subtemplate: '', // page subtemplate
             theme: '', // page theme
             subtheme: '', // page subtheme
@@ -41,11 +41,11 @@ const analytics_config_file =  {
             type: 'pro'
         },
         site: {
-            entity: 'SPM || SIG',
+            entity: 'Premier Ministre',
             environment: 'preprod',                    
             language: 'fr', // language of the website (ISO 639-1). default to html lang
-            target: '', // site target
-            type: '', // site type
+            target: 'information', // site target
+            type: 'standard', // site type
             // region: '', // region of the website (ISO 3166-2:FR)
             // department: '', // department of the website (ISO 3166-2:FR)
             version: '', // version of the website

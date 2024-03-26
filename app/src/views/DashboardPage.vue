@@ -30,6 +30,7 @@ import { api } from "@/services/api.js";
 import UpFooter from "../components/UpFooter.vue";
 import AdaptiveDashboard from "../components/AdaptiveDashboard.vue";
 import SideNavigation from "../components/SideNavigation.vue";
+import dsfrAnalytics from "../services/dsfr_analytics"
 
 export default {
   name: "DashboardPage",
@@ -104,6 +105,16 @@ export default {
       }
     },
   },
+  mounted(){
+    dsfrAnalytics({
+      path: "/dashboard",
+      name: "dashboard",
+      segment: "tableau_de_bord",
+      labels: ['contenu_liste', 'tableau_de_bord', '', '', ''],
+      template: "contenu_liste",
+      group: "tableau_de_bord"
+    })
+  }
 };
 </script>
 <style scoped lang="scss">

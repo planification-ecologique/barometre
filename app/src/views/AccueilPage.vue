@@ -63,6 +63,7 @@ import DocumentDownloadImg from "../components/components_sgv/DocumentDownloadIm
 import EnvironnementImg from "../components/components_sgv/EnvironnementImg.vue";
 import DataVisualization from "../components/components_sgv/DataVisualization.vue";
 import LimitesImg from "../components/components_sgv/LimitesImg.vue";
+import dsfrAnalytics from "../services/dsfr_analytics"
 
 export default {
   name: "Accueil",
@@ -137,6 +138,16 @@ export default {
         image: EnvironnementImg,
       },
     };
+  },
+  mounted(){  
+    dsfrAnalytics({
+      path: "/accueil",
+      name: "accueil",
+      segment: "accueil",
+      labels: ['accueil', 'accueil', '', '', ''],
+      template: "accueil",
+      group: "accueil"
+    })
   }
 };
 </script>
