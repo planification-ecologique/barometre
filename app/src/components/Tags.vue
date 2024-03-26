@@ -5,7 +5,7 @@
       class="fr-tag"
       :aria-pressed="tag.selected"
       :value="tag.value"
-      :key="tag.id"
+      :id="'tag-'+tag.value"
       v-on:click="selectTag(tag.value, tag)"
       :title="tag.label"
     >

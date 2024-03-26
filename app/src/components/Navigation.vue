@@ -3,7 +3,7 @@
     <nav class="fr-nav" id="header-navigation" role="navigation" aria-label="Menu principal">
       <ul class="fr-nav__list">
         <li class="breadcrumb" v-for="option in menuOptions" :key="option.value">
-          <a class="fr-nav__link" target="_self" :href="option.link" :aria-current="option.selected">{{ option.label }}</a>
+          <a class="fr-nav__link" target="_self" :href="option.link" :aria-current="option.selected" :id="'navigation'+option.value">{{ option.label }}</a>
           <!-- <a class="fr-nav__link" @click="router_to_pages(option)" target="_self"  :aria-current="option.selected" :tabindex="0" style="color: rgb(59, 58, 58);">{{ option.label }}</a> -->
         </li>
       </ul>

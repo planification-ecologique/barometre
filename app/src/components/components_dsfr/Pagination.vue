@@ -8,6 +8,7 @@
           href="#"
           @click="firstPage()"
           title="Pemière page"
+          id="first-page"
         >
           Première page
         </a>
@@ -19,6 +20,7 @@
           href="#"
           @click="prevPage()"
           title="Page précédente"
+          id="previous-page"
         >
           Page précédente
         </a>
@@ -31,6 +33,7 @@
           @click="changePage(page.id)"
           href="#"
           :title="'Page ' + page.label"
+          :id="'page'+page.id"
         >
           {{ page.label }}
         </a>
@@ -42,6 +45,7 @@
           href="#"
           @click="nextPage()"
           title="Page suivante"
+          id="next-page"
         >
           Page suivante
         </a>
@@ -53,6 +57,7 @@
           href="#"
           @click="lastPage()"
           title="Dernière page"
+          id="last-page"
         >
           Dernière page
         </a>

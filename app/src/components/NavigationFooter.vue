@@ -6,6 +6,7 @@
         :href="option.link"
         target="_self"
         :title="option.label"
+        :id="option.id"
         >{{ option.label }}</a
       >
     </li>
@@ -37,18 +38,22 @@ export default {
         {
           label: "Données personnelles",
           link: base + "/donnees-personnelles",
+          id:"footer-donnees-personnelles"
         },
         {
           label: "Accessibilité : non/partiellement/totalement conforme",
           link: base + "#",
+          id:"footer-accessibilite"
         },
         {
           label: "Mentions légales",
           link: base + "/mentions-legales",
+          id: "footer-mentions-legales"
         },
         {
           label: "Plan du site",
           link: base + "/plan-du-site",
+          id: "footer-plan-du-site"
         },
       ];
     },
