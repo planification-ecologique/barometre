@@ -2,7 +2,7 @@ const base = process.env.VUE_APP_PREFIX_PATH
 const config_file = {
     /* General */
     "groupServices" : false,
-    "privacyUrl": base+"/mentions-legales",                /* Privacy policy url . Si vide, le lien Politique de confidencialité du bandeau ne s'affiche pas*/
+    "privacyUrl": base+"/donnees-personnelles",                /* Privacy policy url . Si vide, le lien Politique de confidencialité du bandeau ne s'affiche pas*/
     "hashtag": "#consentement",      /* La gestionnaire de consentement s'ouvre avec ce hashtag lorsqu'il est placé dans l'url */
     "cookieName": "tarteaucitron",   /* L'identifiant du cookie déposé sur le poste utilisateur */
     "bodyPosition": "top",           /* Position à laquelle le gestionnaire - niveau 2 -  est inséré dans la page (top ou bottom). Pour que les technologies d'assistance puisse y acceder rapidement à la navigation, 'top' est la valeur privilégiée. */
