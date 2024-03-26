@@ -65,7 +65,8 @@
               </div>
             </div>
           </div>
-          <div class="fr-header__tools">
+          <!-- <div class="fr-header__tools-links"> -->
+          <div class="fr-header__tools"></div>
             <ul>
               <li>
                 <a
