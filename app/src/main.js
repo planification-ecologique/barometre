@@ -15,13 +15,13 @@ require('../node_modules/@gouvfr/dsfr/dist/dsfr.css')
 require('../node_modules/@gouvfr/dsfr/dist/utility/icons/icons-system/icons-system.min.css')
 
 //Tarteaucitron 
-require('./tarteaucitron/tarteaucitron.js')
-require('./tarteaucitron/tarteaucitron.services.js')
-require('./tarteaucitron/css/dsfr-theme-tac.css')
+require('../public/tarteaucitron/tarteaucitron.js')
+require('../public/tarteaucitron/tarteaucitron.services.js')
+require('../public/tarteaucitron/css/dsfr-theme-tac.css')
 import config_file from './services/tarteaucitron_config.js'
 tarteaucitronForceLanguage = 'fr';
 tarteaucitron.init(config_file);
-tarteaucitron.user.eulerianHost = process.env.VUE_APP_TRACKING; //'lskh.barometre-sgpe-qualif.seenovate.com';
+tarteaucitron.user.eulerianHost = process.env.VUE_APP_TRACKING;
 
 
 //DSFR Analytics
