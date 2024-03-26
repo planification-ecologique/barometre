@@ -1,9 +1,9 @@
 import analytics_config_file from '../services/dsfr_analytics_config.js'
 export function dsfrAnalytics (params = {}) {
-    try { console.log(JSON.stringify(params))
-        window.dsfr.analytics.page.path = params.path        
+    try {
+        window.dsfr.analytics.page.path = params.path  
         window.dsfr.analytics.page.name = params.name
-        window.dsfr.analytics.page.segment = params.segment        
+        window.dsfr.analytics.page.segment = params.segment
         window.dsfr.analytics.page.template = params.template
         window.dsfr.analytics.page.group = params.group
         if ("isError" in params){
