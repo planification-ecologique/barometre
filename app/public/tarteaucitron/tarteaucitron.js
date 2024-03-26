@@ -465,7 +465,7 @@ var tarteaucitron = {
                 });
 
                 // Step 3: prepare the html
-                html += '<div role="heading" aria-level="1" id="tac_title" class="tac_visually-hidden">' + tarteaucitron.lang.title + '</div>';
+                // html += '<div role="heading" aria-level="1" id="tac_title" class="tac_visually-hidden">' + tarteaucitron.lang.title + '</div>';
                 html += '<div id="tarteaucitronPremium"></div>';
                 if (tarteaucitron.reloadThePage) {
                     html += '<button type="button" id="tarteaucitronBack" aria-label="' + tarteaucitron.lang.close + ' (' + tarteaucitron.lang.reload + ')" title="' + tarteaucitron.lang.close + ' (' + tarteaucitron.lang.reload + ')"></button>';
@@ -718,6 +718,7 @@ var tarteaucitron = {
                         //end ie compatibility
 
                         if (typeof(window.dispatchEvent) === 'function') {window.dispatchEvent(tacRootAvailableEvent);}
+                        if (tarteaucitron.job === undefined){ tarteaucitron.job=['eulerian']}
 
                         if (tarteaucitron.job !== undefined) {
                             tarteaucitron.job = tarteaucitron.cleanArray(tarteaucitron.job);
@@ -1253,9 +1254,13 @@ var tarteaucitron = {
                     if (status == true) {
                         itemStatusElem.innerHTML = tarteaucitron.lang.allowed;
                         tarteaucitron.sendEvent(key + '_allowed');
+                        window.dsfr.analytics.opt.enable();
+                        console.log("Allowed All")
                     } else {
                         itemStatusElem.innerHTML = tarteaucitron.lang.disallowed;
                         tarteaucitron.sendEvent(key + '_disallowed');
+                        window.dsfr.analytics.opt.disable();
+                        console.log("Disable All")
                     }
                 }
             }
@@ -1301,9 +1306,13 @@ var tarteaucitron = {
             if (status == true) {
                 itemStatusElem.innerHTML = tarteaucitron.lang.allowed;
                 tarteaucitron.sendEvent(key + '_allowed');
+                window.dsfr.analytics.opt.enable();
+                console.log("Allowed Eulerian")
             } else {
                 itemStatusElem.innerHTML = tarteaucitron.lang.disallowed;
                 tarteaucitron.sendEvent(key + '_disallowed');
+                window.dsfr.analytics.opt.disable();
+                console.log("Disable Eulerian")
             }
         },
         "color": function (key, status) {
