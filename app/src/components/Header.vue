@@ -66,7 +66,7 @@
             </div>
           </div>
           <!-- <div class="fr-header__tools-links"> -->
-          <div class="fr-header__tools"></div>
+          <div class="fr-header__tools">
             <ul>
               <li>
                 <a
