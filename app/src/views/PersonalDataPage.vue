@@ -151,13 +151,13 @@
 
           <p class="rtecenter">
             <a
-              class="rf-btn"
+              class="fr-btn"
               href="javascript:void(0)"
               id="eulerian-optout"
               style="text-decoration: none"
+              @click="eulerian_button_status()"
               data-smarttag-click='{"name": "javascriptvoid(0)", "type": "navigation","chapter1":"donnees_personnelles_et_cookies"}'
-              >Désactiver les cookies de la mesure d'audience strictement
-              nécessaire</a
+              >{{ message_button }}</a
             >
           </p>
 
@@ -690,6 +690,7 @@ export default {
   data() {
     return {
       querySuccess: true,
+      message_button: ""
       //   cardIntro: {
       //     title: "Dave East",
       //     description:
@@ -697,8 +698,24 @@ export default {
       //   },
     };
   },
-
-  methods: {},
+  methods: {
+    eulerian_button_status() {
+      // _EA_toggle();
+      window.dsfr.analytics.opt.toggle()
+      this.set_message_boutton()
+    },
+    set_message_boutton () {
+      if ( _EA_disabled() ) {
+        this.message_button = "Activer les cookies de la mesure d'audience strictement nécessaire";
+      }
+      else {
+        this.message_button="Désactiver les cookies de la mesure d'audience strictement nécessaire";
+      } 
+    }
+  },
+  mounted () {
+    this.set_message_boutton()
+  }
 };
 </script>
 <style>
