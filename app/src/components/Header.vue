@@ -72,7 +72,7 @@
                 <a
                   href="https://www.gouvernement.fr/france-nation-verte"
                   target="_blank"
-                  title="France Nation Verte"
+                  title="France Nation Verte - Nouvelle fenêtre"
                   class="fr-btn"
                   id="header-title"
                   style="background-color:white; color:#000091;"

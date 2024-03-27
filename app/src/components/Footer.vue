@@ -7,7 +7,7 @@
             href="https://www.gouvernement.fr/"
             target="_blank"
             id="fr-footer-logo-footer-href"
-            title="Retour à l’accueil du site - Nom de l’entité (ministère, secrétariat d‘état, gouvernement)"
+            title="gouvernement.fr - Nouvelle fenêtre"
           >
             <p class="fr-logo">GOUVERNEMENT</p>
           </a>
@@ -24,7 +24,7 @@
                 :id="'fr-footer-link-'+ option.value"
                 target="_blank"
                 rel="noopener external"
-                :title=option.label 
+                :title="option.label + ' - Nouvelle fenêtre'"
                 :href=option.link
                 >{{ option.label }}</a
               >
@@ -65,7 +65,7 @@
               id="link-license"
               target="_blank"
               rel="noopener external"
-              title="licence etalab-2.0"
+              title="licence etalab-2.0 - Nouvelle fenêtre"
               >licence etalab-2.0</a
             >
           </p>
