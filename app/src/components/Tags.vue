@@ -1,11 +1,12 @@
 <template>
   <div class="fr-tags-group">
     <button
+      type="submit"
       v-for="tag in tags"
       class="fr-tag"
       :aria-pressed="tag.selected"
       :value="tag.value"
-      :id="'tag-'+tag.value"
+      :id="'fr-button-tag-' + tag.value"
       v-on:click="selectTag(tag.value, tag)"
       :title="tag.label"
     >
@@ -47,14 +48,35 @@ export default {
     },
     get_tags() {
       this.tags = [
-        { value: "atténuation", label: "Atténuation", selected: true },
+        {
+          value: "atténuation",
+          label: "Atténuation",
+          selected: true
+        },
         // {value:'emissions', label:'Emissions', selected:false},
-        { value: "biodiversité", label: "Biodiversité", selected: false },
-        { value: "ressources", label: "Ressources", selected: false },
-        { value: "adaptation", label: "Adaptation", selected: false },
-        { value: "santé", label: "Santé", selected: false },
+        {
+          value: "biodiversité",
+          label: "Biodiversité",
+          selected: false
+        },
+        {
+          value: "ressources",
+          label: "Ressources",
+          selected: false
+        },
+        {
+          name: "adaptation",
+          value: "adaptation",
+          label: "Adaptation",
+          selected: false
+        },
+        {          
+          value: "santé",
+          label: "Santé",
+          selected: false
+        }
       ];
-    },
+    }
   },
   mounted() {
     this.get_tags();

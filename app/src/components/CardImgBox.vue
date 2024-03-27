@@ -12,6 +12,7 @@
             {{ cardObject.description }}
           </p>
           <button
+            id="fr-button-link-dashboard"
             class="fr-btn fr-enlarge-link"
             v-if="cardObject.databtn"
             v-on:keyup.enter="onEnter()"

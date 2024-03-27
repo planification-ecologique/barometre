@@ -3,7 +3,7 @@
     <div class="fr-container--fluid">
       <div id="app">
         <header-dsfr />
-        <main>
+        <main id="content">
           <router-view />
         </main>
         <footer-dsfr />

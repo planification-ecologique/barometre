@@ -3,24 +3,24 @@
     <ul class="fr-pagination__list">
       <li>
         <a
+          id="fr-pagination-link-first"
           class="fr-pagination__link fr-pagination__link--first"
           role="link"
           href="#"
           @click="firstPage()"
           title="Pemière page"
-          id="first-page"
         >
           Première page
         </a>
       </li>
       <li>
         <a
+          id="fr-pagination-link-prev"
           class="fr-pagination__link fr-pagination__link--prev fr-pagination__link--lg-label"
           role="link"
           href="#"
           @click="prevPage()"
           title="Page précédente"
-          id="previous-page"
         >
           Page précédente
         </a>
@@ -33,7 +33,7 @@
           @click="changePage(page.id)"
           href="#"
           :title="'Page ' + page.label"
-          :id="'page'+page.id"
+          :id="'fr-pagination-link'+page.id"
         >
           {{ page.label }}
         </a>
@@ -41,11 +41,11 @@
 
       <li>
         <a
+          id="fr-pagination-link-next"
           class="fr-pagination__link fr-pagination__link--next fr-pagination__link--lg-label"
           href="#"
           @click="nextPage()"
           title="Page suivante"
-          id="next-page"
         >
           Page suivante
         </a>
@@ -53,11 +53,11 @@
 
       <li>
         <a
+          id="fr-pagination-link-last"
           class="fr-pagination__link fr-pagination__link--last"
           href="#"
           @click="lastPage()"
           title="Dernière page"
-          id="last-page"
         >
           Dernière page
         </a>
