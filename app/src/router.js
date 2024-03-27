@@ -33,7 +33,7 @@ const router = new Router({
       meta: {
         requiresAuth: authenticated_required,
         title:  GeneralTitle + " - Accueil"
-      },
+      }
     },
     {
       path: "/dashboard",
@@ -44,7 +44,7 @@ const router = new Router({
         requiresAuth: authenticated_required,
         title:  GeneralTitle + " - Tableaux de bord"
 
-      },
+      }
     },
     {
       path: "/tags",
@@ -55,7 +55,7 @@ const router = new Router({
         requiresAuth: authenticated_required,
         title:  GeneralTitle + " - Tags"
 
-      },
+      }
     },
     {
       path: "/mentions-legales",
@@ -65,7 +65,7 @@ const router = new Router({
       meta: {
         requiresAuth: authenticated_required,
         title: GeneralTitle + " - Mentions Legales"
-      },
+      }
     },
     {
       path: "/donnees-personnelles",
@@ -75,7 +75,7 @@ const router = new Router({
       meta: {
         requiresAuth: authenticated_required,
         title: GeneralTitle + " - Données Personnelles"
-      },
+      }
     },
     {
       path: "/plan-du-site",
@@ -83,9 +83,19 @@ const router = new Router({
       component: () =>
         import(/* webpackChunkName: "tags" */ "./views/PlanDuSitePage.vue"),
       meta: {
-        requiresAuth: false,
+        requiresAuth: authenticated_required,
         title: GeneralTitle + " - Plan du Site"
-      },
+      }
+    },
+    {
+      path: "/accessibilite",
+      name: "accessibilite",
+      component: () =>
+        import(/* webpackChunkName: "accessibilite" */ "./views/AccueilPage.vue"),
+      meta: {
+        requiresAuth: authenticated_required,
+        title: GeneralTitle + " - Accessibilité"
+      }
     },
     {
       path: "/gestion-des-cookies",
@@ -93,8 +103,8 @@ const router = new Router({
       component: () =>
         import(/* webpackChunkName: "tags" */ "./views/CookiesPage.vue"),
       meta: {
-        requiresAuth: false
-      },
+        requiresAuth: authenticated_required
+      }
     },
     {
       path: "/error-404",
@@ -103,7 +113,7 @@ const router = new Router({
         import(/* webpackChunkName: "tags" */ "./views/Error404Page.vue"),
       meta: {
         requiresAuth: authenticated_required,
-      },
+      }
     },
     {
       path: "/error-500",
@@ -112,7 +122,7 @@ const router = new Router({
         import(/* webpackChunkName: "tags" */ "./views/Error500Page.vue"),
       meta: {
         requiresAuth: authenticated_required,
-      },
+      }
     },
     {
       path: "/error-403",
@@ -121,7 +131,7 @@ const router = new Router({
         import(/* webpackChunkName: "tags" */ "./views/Error403Page.vue"),
       meta: {
         requiresAuth: authenticated_required,
-      },
+      }
     },
     {
       path: "/error-400",
@@ -130,7 +140,7 @@ const router = new Router({
         import(/* webpackChunkName: "tags" */ "./views/Error400Page.vue"),
       meta: {
         requiresAuth: authenticated_required,
-      },
+      }
     },
     {
       path: "*",
@@ -139,9 +149,14 @@ const router = new Router({
         import(/* webpackChunkName: "error404" */ "./views/Error404Page.vue"),
       meta: {
         requiresAuth: authenticated_required, // ou false selon vos besoins
-      },
+      }
     }
-  ]  
+  ],
+  
+  scrollBehavior(to, from, savePosition) {
+    return { x: 0, y: 0 };
+  }
+  
 });
 
 function sleep(ms) {
