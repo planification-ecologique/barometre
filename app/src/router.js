@@ -2,6 +2,10 @@ import Vue from "vue";
 import Router from "vue-router";
 
 Vue.use(Router);
+
+var authenticated_required = false;
+process.env.VUE_APP_KEYCLOAK_AVAILABLE === "true" ? (authenticated_required = true) : (authenticated_required = false);
+
 const GeneralTitle = "Baromètre de la planification écologique"
 
 const router = new Router({
@@ -14,7 +18,7 @@ const router = new Router({
       // component: () =>
       //   import(/* webpackChunkName: "home" */ "./views/HomePage.vue"),
       meta: {
-        requiresAuth: true,
+        requiresAuth: authenticated_required,
         title: GeneralTitle + " - Accueil"
 
       },
@@ -27,7 +31,7 @@ const router = new Router({
       component: () =>
         import(/* webpackChunkName: "accueil" */ "./views/AccueilPage.vue"),
       meta: {
-        requiresAuth: true,
+        requiresAuth: authenticated_required,
         title:  GeneralTitle + " - Accueil"
       },
     },
@@ -37,7 +41,7 @@ const router = new Router({
       component: () =>
         import(/* webpackChunkName: "dashboard" */ "./views/DashboardPage.vue"),
       meta: {
-        requiresAuth: true,
+        requiresAuth: authenticated_required,
         title:  GeneralTitle + " - Tableaux de bord"
 
       },
@@ -48,7 +52,7 @@ const router = new Router({
       component: () =>
         import(/* webpackChunkName: "tags" */ "./views/TagsPage.vue"),
       meta: {
-        requiresAuth: true,
+        requiresAuth: authenticated_required,
         title:  GeneralTitle + " - Tags"
 
       },
@@ -59,7 +63,7 @@ const router = new Router({
       component: () =>
         import(/* webpackChunkName: "tags" */ "./views/MentionsLegalesPage.vue"),
       meta: {
-        requiresAuth: true,
+        requiresAuth: authenticated_required,
         title: GeneralTitle + " - Mentions Legales"
       },
     },
@@ -69,7 +73,7 @@ const router = new Router({
       component: () =>
         import(/* webpackChunkName: "tags" */ "./views/PersonalDataPage.vue"),
       meta: {
-        requiresAuth: true,
+        requiresAuth: authenticated_required,
         title: GeneralTitle + " - Données Personnelles"
       },
     },
@@ -79,7 +83,7 @@ const router = new Router({
       component: () =>
         import(/* webpackChunkName: "tags" */ "./views/PlanDuSitePage.vue"),
       meta: {
-        requiresAuth: true,
+        requiresAuth: false,
         title: GeneralTitle + " - Plan du Site"
       },
     },
@@ -89,7 +93,7 @@ const router = new Router({
       component: () =>
         import(/* webpackChunkName: "tags" */ "./views/CookiesPage.vue"),
       meta: {
-        requiresAuth: true,
+        requiresAuth: false
       },
     },
     {
@@ -98,7 +102,7 @@ const router = new Router({
       component: () =>
         import(/* webpackChunkName: "tags" */ "./views/Error404Page.vue"),
       meta: {
-        requiresAuth: true,
+        requiresAuth: authenticated_required,
       },
     },
     {
@@ -107,7 +111,7 @@ const router = new Router({
       component: () =>
         import(/* webpackChunkName: "tags" */ "./views/Error500Page.vue"),
       meta: {
-        requiresAuth: true,
+        requiresAuth: authenticated_required,
       },
     },
     {
@@ -116,7 +120,7 @@ const router = new Router({
       component: () =>
         import(/* webpackChunkName: "tags" */ "./views/Error403Page.vue"),
       meta: {
-        requiresAuth: true,
+        requiresAuth: authenticated_required,
       },
     },
     {
@@ -125,7 +129,7 @@ const router = new Router({
       component: () =>
         import(/* webpackChunkName: "tags" */ "./views/Error400Page.vue"),
       meta: {
-        requiresAuth: true,
+        requiresAuth: authenticated_required,
       },
     },
     {
@@ -134,7 +138,7 @@ const router = new Router({
       component: () =>
         import(/* webpackChunkName: "error404" */ "./views/Error404Page.vue"),
       meta: {
-        requiresAuth: true, // ou false selon vos besoins
+        requiresAuth: authenticated_required, // ou false selon vos besoins
       },
     }
   ]  
@@ -158,6 +162,9 @@ router.beforeEach(async (to, from, next) => {
       console.log('loginUrl ' + loginUrl)
       window.location.replace(loginUrl)
     }
+  }
+  else {
+    next();
   }
 })
 

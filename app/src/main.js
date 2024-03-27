@@ -34,19 +34,21 @@ require('../node_modules/@gouvfr/dsfr/dist/analytics/analytics.module.js')
 
 Vue.config.productionTip = false
 
-Vue.use(VueKeyCloak, {
-  config: {
-    realm: process.env.VUE_APP_KEYCLOAK_REALM,
-    url: process.env.VUE_APP_KEYCLOAK_URL,
-    clientId: process.env.VUE_APP_KEYCLOAK_CLIENT
-  },
-  init: {
-    // Use 'login-required' to always require authentication
-    // If using 'login-required', there is no need for the router guards in router.js
-    onLoad: 'check-sso',
-    silentCheckSsoRedirectUri: window.location.origin + process.env.VUE_APP_PREFIX_PATH + '/silent-check-sso.html'
-  }
-})
+if (process.env.VUE_APP_KEYCLOAK_AVAILABLE === 'true') {
+  Vue.use(VueKeyCloak, {
+    config: {
+      realm: process.env.VUE_APP_KEYCLOAK_REALM,
+      url: process.env.VUE_APP_KEYCLOAK_URL,
+      clientId: process.env.VUE_APP_KEYCLOAK_CLIENT
+    },
+    init: {
+      // Use 'login-required' to always require authentication
+      // If using 'login-required', there is no need for the router guards in router.js
+      onLoad: 'check-sso',
+      silentCheckSsoRedirectUri: window.location.origin + process.env.VUE_APP_PREFIX_PATH + '/silent-check-sso.html'
+    }
+  })
+}
 
 new Vue({
   router,
