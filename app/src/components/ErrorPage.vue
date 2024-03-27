@@ -43,7 +43,7 @@
 </template>
 
 <script>
-import { api } from "@/services/api.js";
+
 import TechnicalErrorImg from "../components/components_sgv/TechnicalErrorImg.vue";
 
 export default {

@@ -12,7 +12,6 @@
 </template>
 
 <script>
-import { api } from "@/services/api.js";
 import ErrorPage from '../components/ErrorPage.vue'
 import TechnicalErrorImg from "../components/components_sgv/TechnicalErrorImg.vue";
 
