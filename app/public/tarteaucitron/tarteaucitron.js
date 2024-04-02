@@ -1254,12 +1254,18 @@ var tarteaucitron = {
                     if (status == true) {
                         itemStatusElem.innerHTML = tarteaucitron.lang.allowed;
                         tarteaucitron.sendEvent(key + '_allowed');
-                        window.dsfr.analytics.opt.enable();
+                        // window.dsfr.analytics.opt.enable();
+                        console.log("_EA_disabled()" +_EA_disabled())                        
+                        _EA_toggle()
+                        console.log("_EA_disabled()" +_EA_disabled())
                         console.log("Allowed All")
                     } else {
                         itemStatusElem.innerHTML = tarteaucitron.lang.disallowed;
                         tarteaucitron.sendEvent(key + '_disallowed');
-                        window.dsfr.analytics.opt.disable();
+                        // window.dsfr.analytics.opt.disable();
+                        console.log("_EA_disabled()" +_EA_disabled())
+                        _EA_toggle()
+                        console.log("_EA_disabled()" +_EA_disabled())
                         console.log("Disable All")
                     }
                 }
@@ -1306,12 +1312,14 @@ var tarteaucitron = {
             if (status == true) {
                 itemStatusElem.innerHTML = tarteaucitron.lang.allowed;
                 tarteaucitron.sendEvent(key + '_allowed');
-                window.dsfr.analytics.opt.enable();
+                // window.dsfr.analytics.opt.enable();
+                _EA_toggle()
                 console.log("Allowed Eulerian")
             } else {
                 itemStatusElem.innerHTML = tarteaucitron.lang.disallowed;
                 tarteaucitron.sendEvent(key + '_disallowed');
-                window.dsfr.analytics.opt.disable();
+                // window.dsfr.analytics.opt.disable();
+                _EA_toggle()
                 console.log("Disable Eulerian")
             }
         },

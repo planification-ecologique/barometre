@@ -47,7 +47,7 @@ export const convertIntToHumanTable = function (int) {
     return parseFloat(res).toFixed(2).toLocaleString('fr-FR')
   }
 }
-console.log(isNaN(parseInt('nnn')))
+// console.log(isNaN(parseInt('nnn')))
 
 export const convertDateToHuman = function (string) {
   const date = new Date(string)
