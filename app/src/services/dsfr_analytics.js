@@ -1,19 +1,41 @@
-import analytics_config_file from '../services/dsfr_analytics_config.js'
+// import analytics_config_file from '../services/dsfr_analytics_config.js'
 export function dsfrAnalytics (params = {}) {
+
     try {
-        window.dsfr.analytics.page.path = params.path  
-        window.dsfr.analytics.page.name = params.name
-        window.dsfr.analytics.page.segment = params.segment
-        window.dsfr.analytics.page.template = params.template
-        window.dsfr.analytics.page.group = params.group
-        if ("isError" in params){
-            window.dsfr.analytics.page.isError = params.isError
+        if(_EA_disabled() != 1){
+                       
+            window.EA_datalayer = [];            
+            // Informations de page :
+            window.EA_datalayer.push('page_path', params.path);
+            window.EA_datalayer.push('page_name', params.name);
+            window.EA_datalayer.push('page_segment', params.segment);
+            window.EA_datalayer.push('page_template', params.template);
+            window.EA_datalayer.push('page_group', params.group);
+            window.EA_datalayer.push('page_labels', params.labels);
+            window.EA_datalayer.push('page_date', get_data());
+
+            // Informations de site :
+            window.EA_datalayer.push('site_entity', 'Premier Ministre');
+            window.EA_datalayer.push('site_environment', 'prod');
+            window.EA_datalayer.push('site_target', 'information');
+            window.EA_datalayer.push('site_type', 'standard');
+
+            if ("isError" in params){
+                window.EA_datalayer.push('page_isError', params.isError);
+            }
+
+            // Envoi des données :
+            window.EA_push(window.EA_datalayer); 
         }
-        
-        analytics_config_file.analytics.page.labels = params.labels
-        window.dsfr = analytics_config_file
+
     } catch (error) {
         console.error('Error: ', error)
     }
 }
 export default dsfrAnalytics
+
+export function get_data () {    
+    var newdate = new Date()
+    newdate.setDate( (new Date()).getDate() )    
+    return newdate.toISOString().split('T')[0]    
+}

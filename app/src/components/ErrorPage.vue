@@ -20,12 +20,13 @@
               </p>
 
               <p>
-                <a class="fr-btn url-alias-convert" href="/">Page d'accueil</a
+                <a class="fr-btn url-alias-convert" href="/" id="error_page-button-page_accueil">Page d'accueil</a
                 >&nbsp;
                 <a
                   class="fr-btn fr-btn--secondary url-alias-convert"
                   href="/contact"
                   title="ouvrir Contactez-nous"
+                  id="error_page_button-contactez-nous"
                   >Contactez-nous</a
                 >
               </p>
