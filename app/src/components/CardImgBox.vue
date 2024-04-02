@@ -31,6 +31,7 @@
 import ChartBarImg from "./components_sgv/ChartBarImg";
 import FranceImg from "./components_sgv/FranceImg.vue";
 import router from "../router";
+let base = process.env.VUE_APP_PREFIX_PATH;
 export default {
   name: "CardImgBox",
   components: {
@@ -39,7 +40,7 @@ export default {
   },
   data() {
     return {
-      dashboard_link: "/dashboard",
+      dashboard_link: base + "/dashboard?theme=default&levier=default",
       myrouter: router,
     };
   },
@@ -50,19 +51,10 @@ export default {
     },
   },
   methods: {
-    set_link() {
-      let base = process.env.VUE_APP_PREFIX_PATH;
-      if (base) {
-        this.dashboard_link = base + "/dashboard";
-      }
-    },
     onEnter() {
-      this.myrouter.push({ name: "dashboard" });
-    },
-  },
-  mounted() {
-    this.set_link();
-  },
+      this.myrouter.push({ name: "dashboard", query: { theme: "default", levier: "default" } });
+    }
+  }
 };
 </script>
 

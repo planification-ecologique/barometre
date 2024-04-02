@@ -1,60 +1,33 @@
 <template>
-  <nav
-    role="navigation"
-    class="fr-sidemenu fr-sidemenu--sticky fr-sidemenu__padding"
-    aria-label="Navigation des volets"
-  >
+  <nav role="navigation" class="fr-sidemenu fr-sidemenu fr-sidemenu__padding"
+    aria-label="Navigation des volets">
     <div class="fr-sidemenu__inner">
-      <button
-        class="fr-sidemenu__btn"
-        aria-controls="fr-sidemenu-wrapper"
-        aria-expanded="false"
-      >
+      <button class="fr-sidemenu__btn" aria-controls="fr-sidemenu-wrapper" aria-expanded="false">
         Filtre sur les indicateurs
       </button>
       <div class="fr-collapse" id="fr-sidemenu-wrapper">
         <ul class="fr-sidemenu__list">
-          <li
-            class="fr-sidemenu__item"
-            v-for="(theme, index) in menuOptions"
-            :key="index"
-          >
-            <button
-              class="fr-sidemenu__btn"
+          <li class="fr-sidemenu__item" v-for="(theme, index) in menuOptions" :key="index">
+            <button class="fr-sidemenu__btn"
               :title="theme.label_theme"
-              :aria-expanded="theme.expanded"
+              aria-expanded="false"
               :aria-controls="'fr-sidemenu-item-' + theme.id_theme"
               :aria-current="theme.selected"
               @click="expanded_theme(theme.id_theme)"
             >
               {{ theme.label_theme }}
             </button>
-            <div
-              class="fr-collapse"
-              :id="'fr-sidemenu-item-' + theme.id_theme"
-              v-if="theme.expanded"
-            >
+            <div class="fr-collapse" :id="'fr-sidemenu-item-' + theme.id_theme">
               <ul class="fr-sidemenu__list">
-                <li
-                  class="fr-sidemenu__item"
-                  v-for="(levier, index) in theme.levier"
-                  :key="index"
-                >
-                  <a
-                    class="fr-sidemenu__link"
+                <li class="fr-sidemenu__item" v-for="(levier, index) in theme.levier" :key="index">
+                  <a class="fr-sidemenu__link" 
                     :title="levier.label_levier"
-                    @click="
-                      set_query(theme.label_theme, theme.id_theme, levier)
-                    "
+                    @click="set_query(theme.label_theme, theme.id_theme, levier)"
                     target="_self"
-                    :id="
-                      'fr-sidemenu__link-' + theme.id_theme + levier.id_levier
-                    "
+                    :id="'fr-sidemenu__link-' + theme.id_theme + levier.id_levier"
                     :aria-current="levier.selected"
                     tabindex="0"
-                    v-on:keyup.enter="
-                      set_query(theme.label_theme, theme.id_theme, levier)
-                    "
+                    v-on:keyup.enter="set_query(theme.label_theme, theme.id_theme, levier)"
                   >
                     {{ levier.label_levier }}
                   </a>
@@ -101,18 +74,23 @@ export default {
         this.menuOptions = result;
 
         if (this.initParams.id_theme != undefined) {
-          this.initParams.label_theme = this.menuOptions.find(
-            (theme) => theme.id_theme === this.initParams.id_theme
-          ).label_theme;
-          this.initParams.levier = this.menuOptions
-            .find((theme) => theme.id_theme === this.initParams.id_theme)
-            .levier.find(
-              (levier) => levier.id_levier === this.initParams.id_levier
-            );
+          if(this.initParams.id_theme == "default"){
+            this.initParams.label_theme = this.menuOptions[0].label_theme;
+            this.initParams.id_theme = this.menuOptions[0].id_theme;
+            this.initParams.levier = this.menuOptions[0].levier[0];
+          }
+          else{
+            this.initParams.label_theme = this.menuOptions.find(
+              (theme) => theme.id_theme === this.initParams.id_theme
+            ).label_theme;
+            this.initParams.levier = this.menuOptions
+              .find((theme) => theme.id_theme === this.initParams.id_theme)
+              .levier.find(
+                (levier) => levier.id_levier === this.initParams.id_levier
+              );
+          }
         } else {
-          this.initParams.label_theme = this.menuOptions[0].label_theme;
-          this.initParams.id_theme = this.menuOptions[0].id_theme;
-          this.initParams.levier = this.menuOptions[0].levier[0];
+          console.error("Invalid query parameters")
         }
 
         this.set_query(

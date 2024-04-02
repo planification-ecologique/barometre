@@ -38,6 +38,7 @@ const router = new Router({
     {
       path: "/dashboard",
       name: "dashboard",
+      props: route => ({query: route.query.theme}, {query: route.query.levier}),
       component: () =>
         import(/* webpackChunkName: "dashboard" */ "./views/DashboardPage.vue"),
       meta: {
@@ -158,6 +159,7 @@ const router = new Router({
   }
   
 });
+
 
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));

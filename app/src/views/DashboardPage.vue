@@ -65,13 +65,10 @@ export default {
           var new_theme = selectedValue.query.filter_by[0].values[0];
           var new_levier = selectedValue.query.filter_by[1].values[0];
 
-          if (
-            new_theme !== this.$route.query.theme ||
-            new_levier !== this.$route.query.levier
-          ) {
-            this.$router.push({
-              name: "dashboard",
-              query: { theme: new_theme, levier: new_levier },
+          if (new_theme !== this.$route.query.theme || new_levier !== this.$route.query.levier) {
+            this.$router.push(
+              {name: "dashboard",
+               query: { theme: new_theme, levier: new_levier }
             });
           }
         } catch (error) {

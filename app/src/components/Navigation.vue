@@ -26,9 +26,9 @@ export default {
     get_menu_options() {
       let base = process.env.VUE_APP_PREFIX_PATH
       this.menuOptions = [
-        { value: 'accueil', label: 'Accueil', selected: false, link: base + "/accueil", },
-        { value: 'dashboard', label: 'Tableau de bord', selected: false, link: base + "/dashboard", },
-        { value: 'tags', label: 'Tags', selected: false, link: base + "/tags", },
+        { value: 'accueil', label: 'Accueil', selected: false, link: base + "/accueil" },
+        { value: 'dashboard', label: 'Tableau de bord', selected: false, link: base + "/dashboard?theme=default&levier=default" },
+        { value: 'tags', label: 'Tags', selected: false, link: base + "/tags" }
       ]
       var current_page = this.get_name_page()
       if (current_page == '') {
