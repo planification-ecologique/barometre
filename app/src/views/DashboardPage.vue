@@ -49,10 +49,7 @@ export default {
   },
   created() {
     // Initialisation de la requête selon les paramètres de l'URL
-    if (
-      this.$route.query.theme !== undefined ||
-      this.$route.query.levier !== undefined
-    ) {
+    if ( this.$route.query.theme !== undefined || this.$route.query.levier !== undefined) {
       this.sidenav_initParams.id_theme = this.$route.query.theme;
       this.sidenav_initParams.id_levier = this.$route.query.levier;
     }

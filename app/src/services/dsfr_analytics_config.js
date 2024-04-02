@@ -5,8 +5,9 @@ const analytics_config_file =  {
             id: 'tarteaucitron'                    
         },
         domain: 'lskh.barometre-sgpe-qualif.seenovate.com',
-        collection: 'load',
+        collection: 'manual',
         isActionEnabled: true,
+        isDebugging: true,
         page: {
             path: '', // path for page tracking
             referrer: '', // referrer for virtual pages (not for real page, eulerian automatically collects document.referrer)
