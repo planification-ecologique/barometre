@@ -8,15 +8,15 @@ export function dsfrAnalytics (params = {}) {
             // Informations de page :
             window.EA_datalayer.push('page_path', params.path);
             window.EA_datalayer.push('page_name', params.name);
-            window.EA_datalayer.push('page_segment', params.segment);
+            window.EA_datalayer.push('site-segment', params.segment);
             window.EA_datalayer.push('page_template', params.template);
-            window.EA_datalayer.push('page_group', params.group);
-            window.EA_datalayer.push('page_labels', params.labels);
+            window.EA_datalayer.push('pagegroup', params.group);
+            window.EA_datalayer.push('pagelabel', params.labels);
             window.EA_datalayer.push('page_date', get_data());
 
             // Informations de site :
             window.EA_datalayer.push('site_entity', 'Premier Ministre');
-            window.EA_datalayer.push('site_environment', 'prod');
+            window.EA_datalayer.push('site_environment', 'dev');
             window.EA_datalayer.push('site_target', 'information');
             window.EA_datalayer.push('site_type', 'standard');
 
