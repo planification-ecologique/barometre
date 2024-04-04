@@ -16,7 +16,7 @@ export function dsfrAnalytics (params = {}) {
 
             // Informations de site :
             window.EA_datalayer.push('site_entity', 'Premier Ministre');
-            window.EA_datalayer.push('site_environment', 'dev');
+            window.EA_datalayer.push('site_environment', process.env.VUE_APP_ENV);
             window.EA_datalayer.push('site_target', 'information');
             window.EA_datalayer.push('site_type', 'standard');
 

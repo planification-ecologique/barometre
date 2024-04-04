@@ -4,7 +4,10 @@ export async function api (url, params = {}) {
     
     try {
         //Get_token
-        var mytoken = localStorage.getItem("vue-token").replaceAll('"','')
+        var mytoken = ''
+        if (process.env.VUE_APP_KEYCLOAK_AVAILABLE === "true")
+            mytoken = localStorage.getItem("vue-token").replaceAll('"','')
+        
     } catch (error) {
         console.error('Error getting token: ', error)
     }
