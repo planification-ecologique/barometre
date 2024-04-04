@@ -3,12 +3,8 @@
     <div class="fr-container--fluid fr-ml-2w">
       <div class="fr-footer__body">
         <div class="fr-footer__brand fr-enlarge-link">
-          <a
-            href="https://www.gouvernement.fr/"
-            target="_blank"
-            id="fr-footer-logo-footer-href"
-            title="gouvernement.fr - Nouvelle fenêtre"
-          >
+          <a href="https://www.gouvernement.fr/" target="_blank" id="fr-footer-logo-footer-href"
+            title="gouvernement.fr - nouvelle fenêtre">
             <p class="fr-logo">GOUVERNEMENT</p>
           </a>
         </div>
@@ -19,15 +15,9 @@
           </p>
           <ul class="fr-footer__content-list">
             <li class="fr-footer__content-item" v-for="option in menuLinks">
-              <a
-                class="fr-footer__content-link"
-                :id="'fr-footer-link-'+ option.value"
-                target="_blank"
-                rel="noopener external"
-                :title="option.label + ' - Nouvelle fenêtre'"
-                :href=option.link
-                >{{ option.label }}</a
-              >
+              <a class="fr-footer__content-link" :id="'fr-footer-link-' + option.value" target="_blank"
+                rel="noopener external" :title="option.label + ' - nouvelle fenêtre'" :href=option.link>{{ option.label
+                }}</a>
             </li>
           </ul>
         </div>
@@ -35,39 +25,22 @@
       <div class="fr-footer__bottom">
         <ul class="fr-footer__bottom-list">
           <li class="fr-footer__bottom-item" v-for="option in menuOptions">
-            <router-link
-              class="fr-footer__bottom-link"
-              target="_self"
-              :id="'fr-footer-link-'+ option.router_name"
-              :to="{ name: option.router_name }"
-              :title=option.label
-              > {{ option.label }}
+            <router-link class="fr-footer__bottom-link" target="_self" :id="'fr-footer-link-' + option.router_name"
+              :to="{ name: option.router_name }" :title=option.label> {{ option.label }}
             </router-link>
           </li>
 
           <li class="fr-footer__bottom-item">
-            <a
-              id="fr-footer-link-cookies"
-              class="fr-footer__bottom-link"
-              href="#"
-              onclick="tarteaucitron.userInterface.openPanel();"
-              title="Gestion des cookies"
-              >Gestion des cookies</a
-            >
+            <a id="fr-footer-link-cookies" class="fr-footer__bottom-link" href="#"
+              onclick="tarteaucitron.userInterface.openPanel();" title="Gestion des cookies">Gestion des cookies</a>
           </li>
         </ul>
         <div class="fr-footer__bottom-copy">
           <p>
             Sauf mention explicite de propriété intellectuelle détenue par des
             tiers, les contenus de ce site sont proposés sous
-            <a
-              href="https://github.com/etalab/licence-ouverte/blob/master/LO.md"
-              id="link-license"
-              target="_blank"
-              rel="noopener external"
-              title="licence etalab-2.0 - Nouvelle fenêtre"
-              >licence etalab-2.0</a
-            >
+            <a href="https://github.com/etalab/licence-ouverte/blob/master/LO.md" id="link-license" target="_blank"
+              rel="noopener external" title="licence etalab-2.0 - nouvelle fenêtre">licence etalab-2.0</a>
           </p>
         </div>
       </div>
@@ -96,7 +69,7 @@ export default {
         {
           label: "Données personnelles",
           router_name: "donnees-personnelles"
-        }       
+        }
       ],
       menuLinks: [
         {
