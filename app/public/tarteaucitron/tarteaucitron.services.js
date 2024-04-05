@@ -790,22 +790,22 @@ tarteaucitron.services.collectchat = {
 tarteaucitron.services.eulerian = {
     "key": "eulerian",
     "type": "analytic",
-    "name": "Eulerian",
-    "uri": "https://www.eulerian.com/rgpd",
+    "name": "Eulerian Analytics",
     "needConsent": true,
-    "cookies": [],
+    "cookies": ["etuix"],
+    "uri" : "https://eulerian.com/vie-privee",
     "js": function () {
         "use strict";
-
-        if (tarteaucitron.user.eulerianHost === undefined) {
-            return;
-        }
-
-        (function(e,a){var i=e.length,y=5381,k='script',s=window,v=document,o=v.createElement(k);for(;i;){i-=1;y=(y*33)^e.charCodeAt(i)}y='_EA_'+(y>>>=0);(function(e,a,s,y){s[a]=s[a]||function(){(s[y]=s[y]||[]).push(arguments);s[y].eah=e;};}(e,a,s,y));i=new Date/1E7|0;o.ea=y;y=i%26;o.async=1;o.src='//'+e+'/'+String.fromCharCode(97+y,122-y,65+y)+(i%1E3)+'.js?2';s=v.getElementsByTagName(k)[0];s.parentNode.insertBefore(o,s);})
-        (tarteaucitron.user.eulerianHost,'EA_push');
-        EA_push();
-    }
+        (function(x,w){ if (!x._ld){ x._ld = 1;
+          let ff = function() { if(x._f){x._f('tac',tarteaucitron,1)} };
+          w.__eaGenericCmpApi = function(f) { x._f = f; ff(); };
+          w.addEventListener("tac.close_alert", ff);
+          w.addEventListener("tac.close_panel", ff);
+         }})(this,window);
+    },
+    "fallback": function () { this.js(); }
 };
+// (tarteaucitron.job = tarteaucitron.job || []).push('eulerian');
 
 // posthog
 tarteaucitron.services.posthog = {
