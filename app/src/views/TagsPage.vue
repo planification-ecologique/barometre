@@ -41,7 +41,7 @@
           ></Pagination>
         </div>
       </div>
-    </div>  
+    </div>
   </div>
 </template>
 
@@ -55,7 +55,6 @@ import dsfrAnalytics from "../services/dsfr_analytics"
 export default {
   name: "TagsPage",
   components: {
-    UpFooter,
     Tags,
     AdaptiveDashboard,
     Pagination,

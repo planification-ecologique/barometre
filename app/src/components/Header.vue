@@ -19,6 +19,7 @@
                   <img class="fr-responsive-img" style="width: 6rem" src="../images/Logo-France-Nation-Verte_medium.png"
                     alt="france nation verte" title="France Nation Verte" />
                 </a>
+                <!-- L’alternative de l’image (attribut alt) doit impérativement être renseignée et reprendre le texte visible dans l’image -->
               </div>
               <div class="fr-header__navbar">
                 <button class="fr-btn--menu fr-btn" data-fr-opened="false" aria-controls="modal-543"
@@ -141,6 +142,4 @@ export default {
   padding-left: 1rem;
   padding-right: 1rem;
 }
-
-  </style>
-  
+</style>

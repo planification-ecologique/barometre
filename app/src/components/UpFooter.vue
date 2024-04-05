@@ -8,12 +8,12 @@
                         data-fr-js-card-actionee="true">
                         <div class="fr-card__body">
                             <div class="fr-card__content">
-                                <h3 class="fr-card__title fr-text-title--blue-france">
+                                <!-- <h3 class="fr-card__title fr-text-title--blue-france">
                                     <a href="https://www.gouvernement.fr/france-nation-verte"
                                         target="_self">
                                         France Nation Verte
                                     </a>
-                                </h3>
+                                </h3> -->
                                 <!-- <div class="fr-card__start">
                                     <p class="fr-card__detail">Axe</p>
                                 </div> -->

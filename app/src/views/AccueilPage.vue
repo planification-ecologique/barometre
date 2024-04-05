@@ -92,7 +92,7 @@ export default {
         description:
           "Cette version 1 numérique du tableau de bord succède à l’infogram (V0) et présente des indicateurs de la planification écologique répartis entre 9 volets (Transverse, Transports, Bâtiments, Energie, Industrie, Agriculture-alimentation, Eau, Ecosystèmes, Economie circulaire).",
         databtn: true,
-        btnUrl:"https://www.google.fr/",
+        // btnUrl:"https://www.google.fr/",
         // databtn1: true,
         bgcolor: "#F5F5FE",
         image: DocumentDownloadImg,
