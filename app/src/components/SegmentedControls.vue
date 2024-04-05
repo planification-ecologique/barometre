@@ -5,22 +5,26 @@
         <input
           value="1"
           type="radio"
-          :id="idcontrol+'-1'"
-          :name= "idcontrol + 'segmented-2230'"
+          :id="idcontrol + '-1'"
+          :name="idcontrol + 'segmented-2230'"
           @click="emitChartSelected('graphique')"
           checked
         />
-        <label class="fr-label" :for="idcontrol+'-1'"> Graphique </label>
+        <label class="fr-label" :for="idcontrol + '-1'" title="Graphique">
+          Graphique
+        </label>
       </div>
       <div class="fr-segmented__element">
         <input
           value="2"
           type="radio"
-          :id="idcontrol+'-2'"
-          :name= "idcontrol + 'segmented-2230'"
+          :id="idcontrol + '-2'"
+          :name="idcontrol + 'segmented-2230'"
           @click="emitChartSelected('table')"
         />
-        <label class="fr-label" :for="idcontrol+'-2'"> Table </label>
+        <label class="fr-label" :for="idcontrol + '-2'" title="Table">
+          Table
+        </label>
       </div>
     </div>
   </fieldset>
@@ -30,7 +34,7 @@
 export default {
   data() {
     return {
-      defaultChart: 'graphique', // Set the default chart type here
+      defaultChart: "graphique", // Set the default chart type here
     };
   },
   props: {

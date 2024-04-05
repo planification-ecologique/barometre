@@ -1,38 +1,36 @@
-
 <template>
   <div>
-    <header-dsfr></header-dsfr>
-    <div class="fr-container--fluid reset-overflow">
+    <div class="fr-container--fluid">
       <div id="app">
-        <!-- Bloc de navigation -->
-        <!-- <div id="nav">
-          <router-link :to="{ name: 'visits' }">Visite</router-link> |
-          <router-link :to="{ name: 'sites' }">Sites</router-link>
-          <br>
-          <br>
-          <button @click="$keycloak.logoutFn" v-if="$keycloak.authenticated">Log out</button>
-        </div> -->
-        <router-view />
+        <SkipLinksDsfr></SkipLinksDsfr>
+        <header-dsfr />
+        <main id="content">
+          <router-view />
+        </main>
+        <footer-dsfr />
       </div>
-      
-
     </div>
-
-    <!-- <upfooter></upfooter> -->
-    <footer-dsfr></footer-dsfr>
   </div>
-    <!-- <upfooter></upfooter> -->
-    
 </template>
 
 <script>
 
+import HeaderDsfr from "./components/Header.vue";
+import FooterDsfr from "./components/Footer.vue";
+import SkipLinksDsfr from "./components/components_dsfr/SkipLinks.vue";
 
+export default {
+  name: "App",
+  components: {
+    HeaderDsfr,
+    FooterDsfr,
+    SkipLinksDsfr
+  },
+
+  watch: {
+    $route(to, from) {
+      document.title = to.meta.title || "Baromètre de la planification écologique";
+    }
+  }
+};
 </script>
-
-<style scoped>
-
-.reset-overflow {
-  overflow: visible !important;
-}
-</style>

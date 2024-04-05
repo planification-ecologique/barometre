@@ -14,8 +14,8 @@ service:
 replicaCount: 1
 
 image:
-  repository: gitlab.seenovate.com:5050/sig/satg/statsatgouv-app/seenovate-appfront
-  tag: "0.0.2"
+  repository: gitlab.seenovate.com:5050/sgpe/sgpe/sgpe-app/barometre-sgpe
+  tag: "0.0.1"
   containerPort: 9080
 
 imagePullSecrets:
@@ -24,6 +24,6 @@ imagePullSecrets:
 # Ingress
 ingress:
   cluster_issuer: letsencrypt-production
-  host: statatgouv-sig-client.seenovate.com
-  secretName: statatgouv-sig-client.seenovate.com-cert
-  path: /front
+  host: barometre-sgpe.seenovate.com
+  secretName: barometre-sgpe.seenovate.com-tls
+  path: /

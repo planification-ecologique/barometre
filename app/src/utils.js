@@ -47,7 +47,7 @@ export const convertIntToHumanTable = function (int) {
     return parseFloat(res).toFixed(2).toLocaleString('fr-FR')
   }
 }
-console.log(isNaN(parseInt('nnn')))
+// console.log(isNaN(parseInt('nnn')))
 
 export const convertDateToHuman = function (string) {
   const date = new Date(string)
@@ -882,7 +882,28 @@ const reg = [
 ]
 
 export const getHexaFromName = function (colorName, options = undefined) {
-  return window.dsfr.colors.getColor('artwork', 'major', colorName, options)
+  // return window.dsfr.colors.getColor('artwork', 'major', colorName, options)
+  const colors_dsfr = {
+    'blue-ecume': {default:"#2f4077", hover: "#4e68bb" },
+    'green-bourgeon': {default:"#447049", hover: "#639f6a" },
+    'purple-glycine': {default:"#6e445a", hover: "#a66989" },
+    'pink-macaron': {default:"#8d533e", hover: "#ca795c" },
+    'yellow-tournesol': {default:"#716043", hover: "#a28a62" },
+    'orange-terre-battue': {default:"#755348", hover: "#ab7b6b" },
+    'brown-cafe-creme': {default:"#685c48", hover: "#97866a" },
+    'beige-gris-galet': {default:"#6a6156", hover: "#988b7c" },
+    'green-emeraude': {default:"#297254", hover: "#3ea47a" }
+  }
+
+  if( !(colorName in colors_dsfr)){
+    console.error(colorName + "color is not present in colors list")
+  }
+  var type_color = 'default'
+  if (options != undefined && 'hover' in options) {
+    type_color = 'hover'
+  }
+    
+  return colors_dsfr[colorName][type_color]
 }
 
 const patternDraw = [

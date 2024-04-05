@@ -26,4 +26,4 @@ ingress:
   cluster_issuer: letsencrypt-production
   host: barometre-sgpe-qualif.seenovate.com
   secretName: barometre-sgpe-qualif.seenovate.com-tls
-  path: /front
+  path: /

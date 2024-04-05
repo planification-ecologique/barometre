@@ -20,7 +20,7 @@ variables:
 # IMAGE ---
 build_frontend:
   stage: build_frontend
-  image: node:20.11-bullseye-slim
+  image: node:21.7-bullseye-slim
   script:
     - cd app && npm install
     - npm run build_$CI_COMMIT_REF_NAME
