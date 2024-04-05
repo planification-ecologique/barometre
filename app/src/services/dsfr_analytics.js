@@ -6,7 +6,7 @@ export function dsfrAnalytics (params = {}) {
                        
             window.EA_datalayer = [];            
             // Informations de page :
-            window.EA_datalayer.push('page_path', params.path);
+            window.EA_datalayer.push('path', params.path);
             window.EA_datalayer.push('page_name', params.name);
             window.EA_datalayer.push('site-segment', params.segment);
             window.EA_datalayer.push('page_template', params.template);
@@ -21,7 +21,7 @@ export function dsfrAnalytics (params = {}) {
             window.EA_datalayer.push('site_type', 'standard');
 
             if ("isError" in params){
-                window.EA_datalayer.push('page_isError', params.isError);
+                window.EA_datalayer.push('error', params.isError);
             }
 
             // Envoi des données :

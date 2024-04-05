@@ -4,7 +4,7 @@ const analytics_config_file =  {
         cmp: {
             id: 'tarteaucitron'                    
         },
-        domain: 'lskh.barometre-sgpe-qualif.seenovate.com',
+        domain: process.env.VUE_APP_TRACKING,
         collection: 'manual',
         isActionEnabled: true,
         isDebugging: true,
