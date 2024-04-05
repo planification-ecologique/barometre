@@ -61,8 +61,8 @@ npm run build_qualif
     - Qualif environnement:
     ```
     helm install --dry-run app-front app-front-chart  --values  app-front-chart/values_qualif.yaml --namespace app-front-qualif
-    ```  
-4. Intall get-statistics-chart.
+    ```
+4. Intall app-front-chart.
     - Production environnement:
     ```
     helm install app-front app-front-chart  --values  app-front-chart/values_prod.yaml --namespace app-front-prod

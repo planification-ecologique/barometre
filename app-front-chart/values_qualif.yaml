@@ -23,7 +23,17 @@ imagePullSecrets:
 
 # Ingress
 ingress:
+  auto_signed_cert: true
   cluster_issuer: letsencrypt-production
-  host: barometre-sgpe-qualif.seenovate.com
-  secretName: barometre-sgpe-qualif.seenovate.com-tls
   path: /
+  hosts:
+    - barometre-sgpe-qualif.seenovate.com
+  tls:
+   - secretName: barometre-sgpe-qualif.seenovate.com-tls
+     hosts:
+      - barometre-sgpe-qualif.seenovate.com
+
+# Certificate
+secret:
+    crt_client:
+      create: false # passer à true uniquement en production si besoin de recréer
