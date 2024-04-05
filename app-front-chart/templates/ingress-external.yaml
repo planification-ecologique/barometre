@@ -1,25 +1,24 @@
 #=====================================================#
-# Barometre SGPE : Ingress                            #
+# Barometre SGPE : Ingress-External (client-cert)     #
 #=====================================================#
-{{- $ingressName := ( "ingress" ) }}
-{{- $ingress := index .Values $ingressName }}
-{{- if $ingress }}
+{{- $ingressName := ( "ingressexternal" ) }}
+{{- $ingressexternal := index .Values $ingressName }}
+{{- if $ingressexternal }}
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name:  {{ $.Release.Name }}-ingress
+  name: {{ $.Release.Name }}-ingressexternal
   namespace: {{ .Values.namespace.name }}
   labels:
-    name: {{ $.Release.Name }}-ingress
+    name: {{ $.Release.Name }}-ingressexternal
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
     nginx.ingress.kubernetes.io/ssl-redirect: "true"
-    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
-    cert-manager.io/cluster-issuer: {{ .Values.ingress.cluster_issuer }}
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true" 
 spec:
-  {{- if $ingress.tls }}
+  {{- if $ingressexternal.tls }}
   tls:
-  {{- range $ingress.tls }}
+  {{- range $ingressexternal.tls }}
   - hosts:
     {{- range .hosts }}
     - {{ . }}
@@ -29,12 +28,12 @@ spec:
   {{- end }}
   ingressClassName: nginx
   rules:
-  {{- range $ingress.hosts }}
+  {{- range $ingressexternal.hosts }}
   - host: {{ . }}
     http:
       paths:
       - pathType: Prefix
-        path: {{ $ingress.path }}
+        path: {{ $ingressexternal.path }}
         backend:
           service:
             name: {{ $.Release.Name }}-service
