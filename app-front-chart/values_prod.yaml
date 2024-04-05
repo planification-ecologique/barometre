@@ -23,7 +23,27 @@ imagePullSecrets:
 
 # Ingress
 ingress:
+  auto_signed_cert: false  
   cluster_issuer: letsencrypt-production
-  host: barometre-sgpe.seenovate.com
-  secretName: barometre-sgpe.seenovate.com-tls
+
   path: /
+  hosts:
+    - barometre-sgpe.seenovate.com
+    - planification-ecologique.gouv.fr
+    - www.planification-ecologique.gouv.fr
+  tls:
+   - secretName: barometre-sgpe.seenovate.com-tls
+     hosts:
+      - barometre-sgpe.seenovate.com
+   - secretName: planification-ecologique.gouv.fr-cert
+     hosts:
+      - planification-ecologique.gouv.fr
+   - secretName: planification-ecologique.gouv.fr-cert
+     hosts:
+      - www.planification-ecologique.gouv.fr
+# Certificate
+secret:
+    crt_client:
+      create: false # passer à true uniquement si besoin de recréer
+      crt: Remplir avec Psono/SGPE/SGPE Production/Certificats/planification-ecologique.gouv.fr.crt en base64
+      key: Remplir avec Psono/SGPE/SGPE Production/Certificats/planification-ecologique.gouv.fr.key en base64

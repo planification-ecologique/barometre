@@ -1,33 +1,46 @@
 #=====================================================#
 # Barometre SGPE : Ingress                            #
 #=====================================================#
-
+{{- $ingressName := ( "ingress" ) }}
+{{- $ingress := index .Values $ingressName }}
+{{- if $ingress }}
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name:  {{ .Release.Name }}-ingress
+  name:  {{ $.Release.Name }}-ingress
   namespace: {{ .Values.namespace.name }}
   labels:
-    name: app-front-ingress
+    name: {{ $.Release.Name }}-ingress
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
     nginx.ingress.kubernetes.io/ssl-redirect: "true"
     nginx.ingress.kubernetes.io/force-ssl-redirect: "true" 
+    {{- if $ingress.auto_signed_cert }}
     cert-manager.io/cluster-issuer: {{ .Values.ingress.cluster_issuer }}
+    {{ end }}
 spec:
+  {{- if $ingress.tls }}
+  tls:
+  {{- range $ingress.tls }}
+  - hosts:
+    {{- range .hosts }}
+    - {{ . }}
+    {{- end }}  
+    secretName: {{ .secretName }}
+  {{- end }}
+  {{- end }}
   ingressClassName: nginx
   rules:
-  - host: {{ .Values.ingress.host }}
+  {{- range $ingress.hosts }}
+  - host: {{ . }}
     http:
       paths:
       - pathType: Prefix
-        path: {{ .Values.ingress.path }}
+        path: {{ $ingress.path }}
         backend:
-          service: 
-            name: {{ .Release.Name }}-service
-            port: 
-              number: {{ .Values.service.port }}
-  tls:
-  - hosts:    
-    - {{ .Values.ingress.host }}
-    secretName: {{ .Values.ingress.secretName }}
+          service:
+            name: {{ $.Release.Name }}-service
+            port:
+              number: {{ $.Values.service.port }}
+  {{- end }}
+{{- end }}
