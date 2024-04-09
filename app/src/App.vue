@@ -4,7 +4,7 @@
       <div id="app">
         <SkipLinksDsfr></SkipLinksDsfr>
         <header-dsfr />
-        <main id="content">
+        <main id="content" role="main">
           <router-view />
         </main>
         <footer-dsfr />

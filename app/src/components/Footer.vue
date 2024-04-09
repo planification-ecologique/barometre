@@ -59,7 +59,7 @@ export default {
           router_name: "plan-du-site",
         },
         {
-          label: "Accessibilité : non/partiellement/totalement conforme",
+          label: "Accessibilité : totalement conforme",
           router_name: "accessibilite"
         },
         {
