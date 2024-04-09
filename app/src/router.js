@@ -92,7 +92,7 @@ const router = new Router({
       path: "/accessibilite",
       name: "accessibilite",
       component: () =>
-        import(/* webpackChunkName: "accessibilite" */ "./views/AccueilPage.vue"),
+        import(/* webpackChunkName: "accessibilite" */ "./views/AccessibilityPage.vue"),
       meta: {
         requiresAuth: authenticated_required,
         title: GeneralTitle + " - Accessibilité"
