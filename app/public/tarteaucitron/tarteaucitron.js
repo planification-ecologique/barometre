@@ -1316,15 +1316,24 @@ var tarteaucitron = {
             if (status == true) {
                 itemStatusElem.innerHTML = tarteaucitron.lang.allowed;
                 tarteaucitron.sendEvent(key + '_allowed');
-                // window.dsfr.analytics.opt.enable();
-                _EA_toggle()
-                console.log("Allowed Eulerian")
+
+                console.log("_EA_disabled() " +_EA_disabled())
+                if (_EA_disabled() == 1) {
+                    _EA_toggle()
+                    console.log("_EA_disabled() " +_EA_disabled())
+                    console.log("Allowed Eulerian")
+                }
+
             } else {
                 itemStatusElem.innerHTML = tarteaucitron.lang.disallowed;
                 tarteaucitron.sendEvent(key + '_disallowed');
-                // window.dsfr.analytics.opt.disable();
-                _EA_toggle()
-                console.log("Disable Eulerian")
+                
+                console.log("_EA_disabled() " +_EA_disabled())                        
+                if (_EA_disabled() != 1) {
+                    _EA_toggle()
+                    console.log("_EA_disabled() " +_EA_disabled())
+                    console.log("Disable Eulerian")
+                }
             }
         },
         "color": function (key, status) {
