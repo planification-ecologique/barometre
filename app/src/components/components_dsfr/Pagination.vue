@@ -26,7 +26,7 @@
         </a>
       </li>
 
-      <li v-for="page in pages">
+      <li v-for="page in pages" :key="page.id">
         <a
           class="fr-pagination__link fr-displayed-lg"
           :aria-current="page.selected"
