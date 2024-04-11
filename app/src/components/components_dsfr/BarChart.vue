@@ -76,8 +76,7 @@
         colorPrecisionBar: '#161616',
         colorBox: '#2f2f2f',
         colorHover: [],
-        isSmall: false,
-        barsize: undefined 
+        isSmall: false
       }
     },
     props: {
@@ -447,7 +446,7 @@
                 ticks: {
                   suggestedMin: 0,
                   padding: 8,
-                  // suggestedMax: self.ymax,
+                  suggestedMax: self.ymax,
                   autoSkip: true,
                   maxTicksLimit: 5,
                   callback: function (value, index, values) {
