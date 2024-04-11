@@ -312,7 +312,7 @@
             backgroundColor: self.colorParse[j],
             hoverBorderColor: self.colorHover[j],
             hoverBackgroundColor: self.colorHover[j],
-            barThickness: 'flex'
+            // barThickness: 'flex'
           })
         })
       },
@@ -447,7 +447,7 @@
                 ticks: {
                   suggestedMin: 0,
                   padding: 8,
-                  suggestedMax: self.ymax,
+                  // suggestedMax: self.ymax,
                   autoSkip: true,
                   maxTicksLimit: 5,
                   callback: function (value, index, values) {
