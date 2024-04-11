@@ -36,6 +36,7 @@
       </div>
     </div>
   </template>
+
   <script>
   import { Chart } from 'chart.js'
   import { mixin } from '@/utils.js'
@@ -142,6 +143,12 @@
       formatdate: {
         type: Boolean,
         default: false
+      }
+    },
+    watch: {
+      y: function () {
+        this.resetData()
+        this.createChart()
       }
     },
     computed: {
@@ -304,7 +311,7 @@
             backgroundColor: self.colorParse[j],
             hoverBorderColor: self.colorHover[j],
             hoverBackgroundColor: self.colorHover[j],
-            barThickness: 'flex'
+            // barThickness: 'flex'
           })
         })
       },
@@ -323,6 +330,7 @@
             labels: self.labels,
             datasets: self.datasets
           },
+          
           plugins: [{
             afterDatasetDraw: function (chart, args, options) {
               if (self.vlineParse !== undefined) {
