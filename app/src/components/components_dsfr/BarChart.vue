@@ -36,6 +36,7 @@
       </div>
     </div>
   </template>
+
   <script>
   import { Chart } from 'chart.js'
   import { mixin } from '@/utils.js'
@@ -75,7 +76,8 @@
         colorPrecisionBar: '#161616',
         colorBox: '#2f2f2f',
         colorHover: [],
-        isSmall: false
+        isSmall: false,
+        barsize: undefined 
       }
     },
     props: {
@@ -323,6 +325,7 @@
             labels: self.labels,
             datasets: self.datasets
           },
+          
           plugins: [{
             afterDatasetDraw: function (chart, args, options) {
               if (self.vlineParse !== undefined) {
