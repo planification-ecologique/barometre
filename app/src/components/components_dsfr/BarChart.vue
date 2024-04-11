@@ -144,6 +144,12 @@
         default: false
       }
     },
+    watch: {
+      y: function () {
+        this.resetData()
+        this.createChart()
+      }
+    },
     computed: {
       style () {
         return this.legendLeftMargin + 'px'
