@@ -20,7 +20,11 @@ export default {
             required: true,
         }
     },
-
+    watch: {
+        tagsIndicateurs: function () {
+            this.get_tags();
+        }
+    },
     methods: {
         get_uniqueTags () {
             return this.tagsIndicateurs.split(',').filter((value, index, self) => {
@@ -42,7 +46,6 @@ export default {
         },
     },
     mounted () {
-        // this.get_tags()
         this.get_tags()
     }
 }
