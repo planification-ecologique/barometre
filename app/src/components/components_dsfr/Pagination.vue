@@ -8,7 +8,7 @@
           role="link"
           href="#"
           @click="firstPage()"
-          title="Pemière page"
+          title="Première page"
         >
           Première page
         </a>
