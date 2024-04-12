@@ -5,4 +5,4 @@ deploy:
   script:
     - kubectl config get-contexts
     - kubectl config use-context sgpe/sgpe/k8s-connection:k8s-connection-prod
-    - kubectl get pods
+    - kubectl get svc
