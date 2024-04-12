@@ -1,8 +1,97 @@
-deploy:
-  image:
-    name: bitnami/kubectl:latest
+workflow:
+  rules:
+    - if: '$CI_COMMIT_REF_NAME == "qualif" || $CI_COMMIT_REF_NAME == "prod"'
+      when: always
+      # '$CI_COMMIT_MESSAGE =~ /^.*-deploy$/'
+
+stages:
+  - build_frontend
+  - build_nginx
+  - extract_var_helm
+  # - build_helm
+  - deploy
+
+variables:
+    TAG_NUMBER: "0.0.1"
+    IMAGE_TAG_NAME: "barometre-sgpe-$CI_COMMIT_REF_NAME:$TAG_NUMBER"
+    IMAGE_NAME: "$CI_REGISTRY_IMAGE/$IMAGE_TAG_NAME"
+    # kubectl config use-context sgpe/sgpe/k8s-connection:k8s-connection-prod
+    KUBE_CONTEXT: sgpe/sgpe/k8s-connection:k8s-connection-$CI_COMMIT_REF_NAME
+
+# IMAGE ---
+build_frontend:
+  stage: build_frontend
+  image: node:21.7-bullseye-slim
+  script:
+    - cd app && npm install
+    - npm run build_$CI_COMMIT_REF_NAME
+    - tar czvf dist.tar.gz dist/
+    - pwd
+    - ls -l
+  artifacts:
+    paths: 
+      - /builds/sgpe/sgpe/sgpe-app/app/dist.tar.gz
+    expose_as: 'vuejs dashboard dist'
+    expire_in: 2 hrs
+
+build_nginx:
+  stage: build_nginx
+  services:
+    - docker:dind
+  before_script:
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+  script:
+    - cd ./app/
+    - tar zxvf  dist.tar.gz
+    - cd ..
+    - docker build --no-cache --pull -t $IMAGE_NAME .
+    - docker push $IMAGE_NAME
+
+# DEPLOY ---
+# This Stage extract the name and version package from Helm Chart..
+Extract-Data:
+  stage: extract_var_helm
+  image: python
+  script:
+    - python3 ./devTools/get_variables.py -d app-front-chart -e $CI_COMMIT_REF_NAME
+    - cat build.env
+  artifacts:
+    reports:
+      dotenv: build.env
+
+# This Stage will create a package from Helm Chart that can push on package registry.
+# Publish-Helm-Package:
+#   stage: build_helm
+#   image: 
+#     name: alpine/helm:latest
+#     entrypoint: ['']
+#   script:
+#     - echo "Build Started"
+#     - echo ${CI_PROJECT_ID}
+#     - echo $CI_API_V4_URL
+#     - echo $PACKAGE_NAME
+#     - echo $PACKAGE_VERSION
+#     - helm package $CI_PROJECT_DIR/$PACKAGE_NAME
+#     - 'curl --request POST --user gitlab-ci-token:$CI_REGISTRY_PASSWORD --form "chart=@${PACKAGE_VERSION}" "${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/helm/api/stable/charts"'
+#     - echo "Chart Package Published to Gitlab package registry"
+
+# This Stage will Deploy Helm Chart to K8S Cluster
+Deploy-Helm-Chart:
+  stage: deploy
+  image: 
+    name: dtzar/helm-kubectl
     entrypoint: ['']
   script:
+    - echo "Deployment Started"
     - kubectl config get-contexts
-    - kubectl config use-context sgpe/sgpe/k8s-connection:k8s-connection-prod
-    - kubectl get svc
+    - kubectl config use-context $KUBE_CONTEXT
+    - helm repo add --username $CI_REGISTRY_USER --password $CI_REGISTRY_PASSWORD login-project "${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/helm/stable"
+    - helm repo update 
+    - helm repo list
+    - helm list -n $NAMESPACE
+    - helm install --dry-run ${HELM_NAME} login-project/${PACKAGE_NAME} --values  ${PACKAGE_NAME}/values_$CI_COMMIT_REF_NAME.yaml --namespace $NAMESPACE
+    - helm upgrade --install ${HELM_NAME} login-project/${PACKAGE_NAME} --values  ${PACKAGE_NAME}/values_$CI_COMMIT_REF_NAME.yaml --namespace $NAMESPACE
+    - kubectl get pods -n $NAMESPACE
+    - kubectl get svc -n $NAMESPACE
+
+
