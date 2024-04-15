@@ -92,7 +92,9 @@
             pour
             être orienté vers une alternative accessible ou obtenir le contenu sous une autre forme.</p>
         <ul>
-            <li>Envoyer un message&nbsp;: <a href="mailto:sgpe@pm.gouv.fr">cliquez sur le lien</a></li>
+            <li>Envoyer un message&nbsp;: <a
+                    href="mailto:sec.planification-ecologique@pm.gouv.fr">sec.planification-ecologique@pm.gouv.fr</a>
+            </li>
             <li>Contacter sur notre adresse postale&nbsp;:</li>
         </ul>
         <p>Secrétariat général à la planification écologique (SGPE)</p>
