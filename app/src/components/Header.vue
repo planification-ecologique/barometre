@@ -47,7 +47,7 @@
             </div>
           </div>
           <!-- <div class="fr-header__tools-links"> -->
-          <div class="fr-header__tools">
+          <div class="france-nation-verte-logo fr-header__tools">
             <ul>
               <li>
                 <a href="https://www.gouvernement.fr/france-nation-verte" target="_blank"
@@ -135,11 +135,9 @@ export default {
   margin-right: 10px;
 }
 
-.header-container {
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 1rem;
-  padding-right: 1rem;
+.france-nation-verte-logo {
+  @media (max-width:768px) {
+    display: none;
+  }
 }
 </style>
