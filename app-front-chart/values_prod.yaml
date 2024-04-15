@@ -34,12 +34,15 @@ ingress:
 
 ingressexternal:
   path: /
-  hosts:
-    - planification-ecologique.gouv.fr
+  hosts:    
+    - barometre.planification-ecologique.gouv.fr
+    - www.barometre.planification-ecologique.gouv.fr
   tls:
    - secretName: planification-ecologique.gouv.fr-cert
-     hosts:
-      - planification-ecologique.gouv.fr
+     hosts:      
+      - barometre.planification-ecologique.gouv.fr
+      - www.barometre.planification-ecologique.gouv.fr
+
 # Certificate
 secret:
     crt_client:
