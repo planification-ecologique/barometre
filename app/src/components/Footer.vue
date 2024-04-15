@@ -3,8 +3,8 @@
     <div class="fr-container--fluid fr-ml-2w">
       <div class="fr-footer__body">
         <div class="fr-footer__brand fr-enlarge-link">
-          <a href="https://www.gouvernement.fr/" target="_blank" id="fr-footer-logo-footer-href"
-            title="gouvernement.fr - nouvelle fenêtre">
+          <a href="https://www.info.gouv.fr/" target="_blank" id="fr-footer-logo-footer-href"
+            title="info.gouv.fr - nouvelle fenêtre">
             <p class="fr-logo">GOUVERNEMENT</p>
           </a>
         </div>
@@ -78,9 +78,9 @@ export default {
           value: "legifrance"
         },
         {
-          link: "https://gouvernement.fr",
-          label: "gouvernement.fr",
-          value: "gouvernemment"
+          link: "https://www.info.gouv.fr/",
+          label: "info.gouv.fr",
+          value: "info-gouvernemment"
         },
         {
           link: "https://service-public.fr",
