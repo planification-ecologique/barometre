@@ -20,14 +20,10 @@
                     <h3>Directeur de la publication</h3>
 
                     <p>
-                      M. Antoine Pellion, Secrétaire Général ; M. Frédéric
-                      Glanois ; Secrétaire Général Adjoint ; Mme Mounia Mostefaoui
-                      - Directrice de Pogramme Mesures et Indicateurs<br />
-                      <a href="/sites/default/files/contenu/piece-jointe/2021/07/organigramme_sig_-_cts.pdf"
-                        target="_blank" title="Organigramme du SIG - nouvelle fenêtre"
-                        data-smarttag-click='{"name": "/sites/default/files/contenu/piece-jointe/2021/07/organigramme_sig_-_cts.pdf", "type": "download","chapter1":"mentions_legales"}'>Organigramme
-                        du SIG</a><br />
-                      &nbsp;
+                      M. Antoine Pellion, Secrétaire Général ; <br /> M. Frédéric
+                      Glanois, Secrétaire Général Adjoint ; <br /> Mme Mounia Mostefaoui, Directrice de Programme
+                      Mesures
+                      et Indicateurs
                     </p>
 
                     <h2>Développement, intégration, hébergement et diffusion</h2>
@@ -45,18 +41,8 @@
 
                     <p>
                       Le suivi éditorial et graphique du site est assuré par le
-                      département Rédaction du Service d’information du
-                      Gouvernement.<br />
-                      La conception technique du site et son ergonomie sont
-                      assurés par le département Écosystème Numérique du Service
-                      d’information du Gouvernement.
+                      Secrétariat général à la planification écologique.
                     </p>
-                    <!-- <div>
-  <h2>Hébergement</h2>
-
-<p>Worldline</p>
-
-</div> -->
 
                     <h2>Réutilisation des contenus et liens</h2>
 
@@ -93,12 +79,12 @@
                       atteinte à la sensibilité du plus grand nombre
                     </p>
 
-                    <h2>Liens hypertextes proposés par Gouvernement.fr</h2>
+                    <h2>Liens hypertextes proposés par Barometre.planification-ecologique.gouv.fr</h2>
 
                     <p>
                       De nombreux liens vers d’autres sites, privés ou officiels,
                       français ou étrangers, sont proposés. Leur présence ne
-                      saurait engager le Service d’information du Gouvernement
+                      saurait engager le Secrétariat général à la planification écologique
                       quant à leur contenu et ne vise qu’à permettre à
                       l’internaute de trouver plus facilement d’autres ressources
                       documentaires sur le sujet consulté.
@@ -112,14 +98,14 @@
                       transcription des textes officiels, à la vérification des
                       contenus et des informations, les éléments mis en ligne ne
                       sauraient, de quelque manière que ce soit, prétendre à
-                      l’exactitude et engager la responsabilité du Premier
-                      ministre et du Service d’information du Gouvernement.<br />
+                      l’exactitude et engager la responsabilité du Secrétariat général à la planification
+                      écologique.<br />
                       <br />
                       Les informations et/ou documents disponibles sur ce site
                       sont susceptibles d’être modifiés à tout moment, et peuvent
                       faire l’objet de mises à jour.<br />
                       <br />
-                      Le Service d’information du Gouvernement ne pourra en aucun
+                      Le Secrétariat général à la planification écologique ne pourra en aucun
                       cas être tenu responsable de tout dommage de quelque nature
                       qu’il soit résultant de l’interprétation ou de l’utilisation
                       des informations et/ou documents disponibles sur ce site.
@@ -127,23 +113,19 @@
 
                     <h2>Nous contacter</h2>
                     <p>
-                      Pour toutes remarques concernant le site, vous pouvez
-                      utiliser notre formulaire de contact ( créer un lien comme
-                      dans le modèle ci-après : Contact | budget.gouv.fr)
+                      Pour toutes remarques concernant le site, contacter le Secrétariat général à la planification
+                      écologique :
+                    </p>
+                    <p>
+                      Mme Mounia Mostefaoui, Directrice de Programme Mesures et Indicateurs :
+                      mounia.mostefaoui@pm.gouv.fr
                     </p>
 
-                    <!-- <div>
-  <h2>Écrire au webmestre</h2>
-
-<p>Il est possible de <a href="mailto:redaction@pm.gouv.fr" data-smarttag-click="{&quot;name&quot;: &quot;mailtoredaction@pm.gouv.fr&quot;, &quot;type&quot;: &quot;navigation&quot;,&quot;chapter1&quot;:&quot;mentions_legales&quot;}">transmettre des observations ou des suggestions au webmestre du site</a>. Il s’efforcera d’en tenir compte. Il ne saurait pour autant répondre à des demandes particulières ou dépassant le cadre strict de la gestion administrative ou technique du site.<br>
-<br>
-Pour écrire au Premier ministre <a href="https://www.gouvernement.fr/contact/premiere-ministre" data-smarttag-click="{&quot;name&quot;: &quot;https//www.gouvernement.fr/contact/premiere-ministre&quot;, &quot;type&quot;: &quot;navigation&quot;,&quot;chapter1&quot;:&quot;mentions_legales&quot;}">cliquez sur ce lien</a></p>
-</div> -->
 
                     <h2>Accessibilité</h2>
 
                     <p>
-                      Le site du gouvernement est développé selon les
+                      Le site du baromètre de la planification écologique est développé selon les
                       recommandations du Référentiel général d’accessibilité des
                       administrations (RGAA) et les normes W3C. Vous pouvez
                       retrouver la déclaration de conformité au RGAA sur l'<a
@@ -151,18 +133,23 @@ Pour écrire au Premier ministre <a href="https://www.gouvernement.fr/contact/pr
                         data-smarttag-click='{"name": "https//www.gouvernement.fr/accessibilite", "type": "navigation","chapter1":"mentions_legales"}'>espace
                         accessibilité du site</a>. Nous nous sommes engagés à améliorer en permanence
                       l’accessibilité de nos contenus pour que l’accès à
-                      l’information de
-                      <a href="http://www.gouvernement.fr"
-                        data-smarttag-click='{"name": "http//www.gouvernement.fr", "type": "navigation","chapter1":"mentions_legales"}'>Gouvernement.fr</a>
-                      soit facilité.
+                      l’information du baromètre soit facilité.
                     </p>
 
                     <p>
                       Pour toute question relative aux présentes informations,
-                      vous pouvez nous écrire à l’adresse suivante :<br />
-                      Service d’information du Gouvernement<br />
-                      Services du Premier ministre<br />
-                      TSA 80724 – 75334 Paris Cedex 07
+                      vous pouvez nous écrire à l’adresse suivante : </p>
+                    <p>
+                      Secrétariat général à la planification écologique (SGPE)
+                    </p>
+                    <p>
+                      Services du Premier ministre
+                    </p>
+                    <p>
+                      19 rue de Constantine
+                    </p>
+                    <p>
+                      75007 Paris
                     </p>
                   </div>
                 </div>
