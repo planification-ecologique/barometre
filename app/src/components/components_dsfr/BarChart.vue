@@ -77,7 +77,7 @@
         colorBox: '#2f2f2f',
         colorHover: [],
         isSmall: false,
-        barsize: undefined 
+        // barsize: undefined 
       }
     },
     props: {
