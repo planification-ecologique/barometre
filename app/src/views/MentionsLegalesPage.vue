@@ -21,7 +21,7 @@
 
                     <p>
                       M. Antoine Pellion, Secrétaire Général ; <br /> M. Frédéric
-                      Glanois, Secrétaire Général Adjoint ; <br /> Mme Mounia Mostefaoui, Directrice de Pogramme
+                      Glanois, Secrétaire Général Adjoint ; <br /> Mme Mounia Mostefaoui, Directrice de Programme
                       Mesures
                       et Indicateurs
                     </p>
