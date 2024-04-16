@@ -15,9 +15,9 @@
               </a>
 
               <div class="fr-header__operator">
-                <a href="/" target="_self">
+                <a href="https://www.info.gouv.fr/france-nation-verte" target="_self">
                   <img class="fr-responsive-img" style="width: 6rem" src="../images/Logo-France-Nation-Verte_medium.png"
-                    alt="france nation verte" title="France Nation Verte" />
+                    alt="Site de France nation verte" title="France Nation Verte" />
                 </a>
                 <!-- L’alternative de l’image (attribut alt) doit impérativement être renseignée et reprendre le texte visible dans l’image -->
               </div>
@@ -47,10 +47,10 @@
             </div>
           </div>
           <!-- <div class="fr-header__tools-links"> -->
-          <div class="fr-header__tools">
+          <div class="france-nation-verte-logo fr-header__tools">
             <ul>
               <li>
-                <a href="https://www.gouvernement.fr/france-nation-verte" target="_blank"
+                <a href="https://www.info.gouv.fr/france-nation-verte" target="_blank"
                   title="France Nation Verte - nouvelle fenêtre" class="fr-btn" id="header-title"
                   style="background-color:white; color:#000091;">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16px" height="16px"
@@ -135,11 +135,9 @@ export default {
   margin-right: 10px;
 }
 
-.header-container {
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 1rem;
-  padding-right: 1rem;
+.france-nation-verte-logo {
+  @media (max-width:768px) {
+    display: none;
+  }
 }
 </style>

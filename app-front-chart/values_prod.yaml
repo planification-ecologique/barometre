@@ -14,7 +14,7 @@ service:
 replicaCount: 1
 
 image:
-  repository: gitlab.seenovate.com:5050/sgpe/sgpe/sgpe-app/barometre-sgpe
+  repository: gitlab.seenovate.com:5050/sgpe/sgpe/sgpe-app/barometre-sgpe-prod
   tag: "0.0.1"
   containerPort: 9080
 
@@ -34,12 +34,15 @@ ingress:
 
 ingressexternal:
   path: /
-  hosts:
-    - planification-ecologique.gouv.fr
+  hosts:    
+    - barometre.planification-ecologique.gouv.fr
+    - www.barometre.planification-ecologique.gouv.fr
   tls:
    - secretName: planification-ecologique.gouv.fr-cert
-     hosts:
-      - planification-ecologique.gouv.fr
+     hosts:      
+      - barometre.planification-ecologique.gouv.fr
+      - www.barometre.planification-ecologique.gouv.fr
+
 # Certificate
 secret:
     crt_client:

@@ -15,7 +15,7 @@ variables:
     TAG_NUMBER: "0.0.1"
     IMAGE_TAG_NAME: "barometre-sgpe-$CI_COMMIT_REF_NAME:$TAG_NUMBER"
     IMAGE_NAME: "$CI_REGISTRY_IMAGE/$IMAGE_TAG_NAME"
-    KUBE_CONTEXT: sgpe/sgpe/k8s-connection:k8s-connection
+    KUBE_CONTEXT: sgpe/sgpe/k8s-connection:k8s-connection-$CI_COMMIT_REF_NAME
 
 # IMAGE ---
 build_frontend:

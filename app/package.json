@@ -6,6 +6,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "build_qualif": "vue-cli-service build --mode qualif",
+    "build_prod": "vue-cli-service build",
     "watch": "vue-cli-service build --watch"
   },
   "dependencies": {

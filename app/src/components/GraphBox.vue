@@ -144,39 +144,45 @@ export default {
       cible: undefined,
     };
   },
+  watch: {
+    dataObj: function (){
+      this.set_goal();
+    }
+  },
   methods: {
     handleChartSelected(type) {
       this.displayChart = type === "graphique" ? true : false;
     },
-  },
-  mounted() {
-    // console.log(this.dataObj)
+    set_goal () {
+      try {
+        if (
+          this.dataObj.label_sous_groupe == undefined ||
+          this.dataObj.label_sous_groupe == ""
+        ) {
+          let index = this.dataObj.values.legend.indexOf("Cible");
+          index != -1
+            ? (this.cible =
+                this.dataObj.values.y[index][
+                  this.dataObj.values.y[index].length - 1
+                ])
+            : (this.cible = undefined);
+        } else {
+          this.cible = undefined;
 
-    try {
-      if (
-        this.dataObj.label_sous_groupe == undefined ||
-        this.dataObj.label_sous_groupe == ""
-      ) {
-        let index = this.dataObj.values.legend.indexOf("Cible");
-        index != -1
-          ? (this.cible =
-              this.dataObj.values.y[index][
-                this.dataObj.values.y[index].length - 1
-              ])
-          : (this.cible = undefined);
-      } else {
-        this.cible = undefined;
-
-        // let sum = 0
-        // this.dataObj.values[this.dataObj.values.length - 1].forEach( value => {
-        // sum += value
-        // })
-        // this.cible = sum
+          // let sum = 0
+          // this.dataObj.values[this.dataObj.values.length - 1].forEach( value => {
+          // sum += value
+          // })
+          // this.cible = sum
+        }
+      } catch (error) {
+        console.log("Erreur dans la cible", error);
       }
-    } catch (error) {
-      console.log("Erreur dans la cible", error);
     }
   },
+  mounted() {    
+    this.set_goal();
+  }
 };
 </script>
 
