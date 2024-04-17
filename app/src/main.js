@@ -2,11 +2,9 @@ import Vue from 'vue'
 import App from './App.vue'
 import VueKeyCloak from '@dsb-norge/vue-keycloak-js'
 import router from './router'
+import config_file from './services/tarteaucitron_config.js'
+import analytics_config_file from './services/dsfr_analytics_config.js'
 
-// Add component otherwise you get an error object string
-
-
-// if (process.env.NODE_ENV === 'development') {
 require('../node_modules/@gouvfr/dsfr/dist/legacy/legacy.nomodule.min.js')
 require('../node_modules/@gouvfr/dsfr/dist/core/core.module.min.js')
 require('../node_modules/@gouvfr/dsfr/dist/dsfr.main.css')
@@ -18,19 +16,29 @@ require('../node_modules/@gouvfr/dsfr/dist/utility/icons/icons-system/icons-syst
 require('../public/tarteaucitron/tarteaucitron.js')
 require('../public/tarteaucitron/tarteaucitron.services.js')
 require('../public/tarteaucitron/css/dsfr-theme-tac.css')
-import config_file from './services/tarteaucitron_config.js'
-tarteaucitronForceLanguage = 'fr';
-tarteaucitron.init(config_file);
-// (tarteaucitron.job = tarteaucitron.job || []).push('youtube');
-tarteaucitron.user.eulerianHost = process.env.VUE_APP_TRACKING;
 
 
 //DSFR Analytics
-import analytics_config_file from './services/dsfr_analytics_config.js'
-window.dsfr = analytics_config_file
+//verify if cookies are  blocked
+if (typeof Storage !== "undefined") {
+  try {
+      localStorage.setItem("tarteaucitron", "available");
+      tarteaucitronForceLanguage = 'fr';
+      tarteaucitron.init(config_file);
+      (tarteaucitron.job = tarteaucitron.job || []).push('youtube');
+      tarteaucitron.user.eulerianHost = process.env.VUE_APP_TRACKING;
+      console.log("Cookies are not blocked");
+      window.dsfr = analytics_config_file;
+  } catch (err) {
+      console.warn("Cookies failed to be set; Blocked!");
+  }
+}
+
 require('../node_modules/@gouvfr/dsfr/dist/dsfr.module.min.js')
 require('../node_modules/@gouvfr/dsfr/dist/scheme/scheme.module.min.js')
 require('../node_modules/@gouvfr/dsfr/dist/analytics/analytics.module.js')
+
+
 
 Vue.config.productionTip = false
 

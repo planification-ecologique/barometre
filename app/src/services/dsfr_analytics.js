@@ -2,34 +2,40 @@
 export function dsfrAnalytics (params = {}) {
 
     try {
-        if(_EA_disabled() != 1){
-                       
-            window.EA_datalayer = [];            
-            // Informations de page :
-            window.EA_datalayer.push('path', params.path);
-            window.EA_datalayer.push('page_name', params.name);
-            window.EA_datalayer.push('site-segment', params.segment);
-            window.EA_datalayer.push('page_template', params.template);
-            window.EA_datalayer.push('pagegroup', params.group);
-            window.EA_datalayer.push('pagelabel', params.labels);
-            window.EA_datalayer.push('page_date', get_data());
+        localStorage.setItem("dsfr_analytics", "available");
+        try {
+            if(_EA_disabled() != 1){
+                        
+                window.EA_datalayer = [];            
+                // Informations de page :
+                window.EA_datalayer.push('path', params.path);
+                window.EA_datalayer.push('page_name', params.name);
+                window.EA_datalayer.push('site-segment', params.segment);
+                window.EA_datalayer.push('page_template', params.template);
+                window.EA_datalayer.push('pagegroup', params.group);
+                window.EA_datalayer.push('pagelabel', params.labels);
+                window.EA_datalayer.push('page_date', get_data());
 
-            // Informations de site :
-            window.EA_datalayer.push('site_entity', 'Premier Ministre');
-            window.EA_datalayer.push('site_environment', process.env.VUE_APP_ENV);
-            window.EA_datalayer.push('site_target', 'information');
-            window.EA_datalayer.push('site_type', 'standard');
+                // Informations de site :
+                window.EA_datalayer.push('site_entity', 'Premier Ministre');
+                window.EA_datalayer.push('site_environment', process.env.VUE_APP_ENV);
+                window.EA_datalayer.push('site_target', 'information');
+                window.EA_datalayer.push('site_type', 'standard');
 
-            if ("isError" in params){
-                window.EA_datalayer.push('error', params.isError);
+                if ("isError" in params){
+                    window.EA_datalayer.push('error', params.isError);
+                }
+
+                // Envoi des données :
+                window.EA_push(window.EA_datalayer); 
             }
 
-            // Envoi des données :
-            window.EA_push(window.EA_datalayer); 
+        } catch (error) {
+            console.error('Error: ', error)
         }
-
-    } catch (error) {
-        console.error('Error: ', error)
+    }
+    catch (err) {
+        console.warn("Dsfr analytics failed to be set; Cookies Blocked!");
     }
 }
 export default dsfrAnalytics
