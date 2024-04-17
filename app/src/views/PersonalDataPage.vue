@@ -242,16 +242,26 @@ export default {
   },
   methods: {
     eulerian_button_status() {
-      // _EA_toggle();
-      window.dsfr.analytics.opt.toggle()
-      this.set_message_boutton()
+      try {
+        localStorage.getItem("tarteaucitron");
+        // _EA_toggle();
+        window.dsfr.analytics.opt.toggle()
+        this.set_message_boutton()
+      } catch (err) {
+        console.warn("Cookies failed to be set; Blocked!");
+      }
     },
     set_message_boutton() {
-      if (_EA_disabled()) {
-        this.message_button = "Activer les cookies de la mesure d'audience strictement nécessaire";
-      }
-      else {
-        this.message_button = "Désactiver les cookies de la mesure d'audience strictement nécessaire";
+      try {
+        localStorage.getItem("tarteaucitron");
+        if (_EA_disabled()) {
+          this.message_button = "Activer les cookies de la mesure d'audience strictement nécessaire";
+        }
+        else {
+          this.message_button = "Désactiver les cookies de la mesure d'audience strictement nécessaire";
+        }
+      } catch (err) {
+        this.message_button = "Votre navigateur empêche d’enregistrer et de lire les cookies."
       }
     }
   },

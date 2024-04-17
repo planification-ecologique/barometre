@@ -31,8 +31,14 @@
           </li>
 
           <li class="fr-footer__bottom-item">
-            <a id="fr-footer-link-cookies" class="fr-footer__bottom-link" href="#"
-              onclick="tarteaucitron.userInterface.openPanel();" title="Gestion des cookies">Gestion des cookies</a>
+            <a v-if="!cookiesBlocked" id="fr-footer-link-cookies" class="fr-footer__bottom-link" href="#"
+              onclick="tarteaucitron.userInterface.openPanel();" title="Gestion des cookies">
+              Gestion des cookies
+            </a>
+            <a v-else id="fr-blocked-cookies" class="fr-footer__bottom-link"
+               title="Cookies bloqués">
+              Cookies bloqués
+            </a>
           </li>
         </ul>
         <div class="fr-footer__bottom-copy">
@@ -53,6 +59,7 @@ export default {
   name: "FooterDsfr",
   data() {
     return {
+      cookiesBlocked : false,
       menuOptions: [
         {
           label: "Plan du site",
@@ -94,6 +101,19 @@ export default {
         }
       ]
     }
+  },
+  methods:{
+    blocked_cookies(){
+      try {
+        localStorage.getItem("tarteaucitron");
+        this.cookiesBlocked = false;
+      } catch (err) {
+        this.cookiesBlocked = true;
+      }
+    }
+  },
+  mounted(){
+    this.blocked_cookies()
   }
 }
 </script>
