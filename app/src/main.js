@@ -25,7 +25,7 @@ if (typeof Storage !== "undefined") {
       localStorage.setItem("tarteaucitron", "available");
       tarteaucitronForceLanguage = 'fr';
       tarteaucitron.init(config_file);
-      (tarteaucitron.job = tarteaucitron.job || []).push('youtube');
+      // (tarteaucitron.job = tarteaucitron.job || []).push('youtube');
       tarteaucitron.user.eulerianHost = process.env.VUE_APP_TRACKING;
       console.log("Cookies are not blocked");
       window.dsfr = analytics_config_file;
