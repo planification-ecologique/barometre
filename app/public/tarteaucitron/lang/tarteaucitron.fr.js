@@ -1,6 +1,6 @@
 /*global tarteaucitron */
 /* min ready */
-const link_privacy="https://barometre-sgpe-qualif.seenovate.com/donnees-personnelles"
+const link_privacy="/donnees-personnelles"
 tarteaucitron.lang = {
 
     "middleBarHead": "☝ 🍪",
