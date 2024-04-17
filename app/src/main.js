@@ -12,22 +12,20 @@ require('../node_modules/@gouvfr/dsfr/dist/utility/utility.main.css')
 require('../node_modules/@gouvfr/dsfr/dist/dsfr.css')
 require('../node_modules/@gouvfr/dsfr/dist/utility/icons/icons-system/icons-system.min.css')
 
-//Tarteaucitron 
-require('../public/tarteaucitron/tarteaucitron.js')
-require('../public/tarteaucitron/tarteaucitron.services.js')
-require('../public/tarteaucitron/css/dsfr-theme-tac.css')
-
-
 //DSFR Analytics
 //verify if cookies are  blocked
 if (typeof Storage !== "undefined") {
   try {
       localStorage.setItem("tarteaucitron", "available");
+      //Tarteaucitron 
+      require('../public/tarteaucitron/tarteaucitron.js')
+      require('../public/tarteaucitron/tarteaucitron.services.js')
+      require('../public/tarteaucitron/css/dsfr-theme-tac.css')
       tarteaucitronForceLanguage = 'fr';
       tarteaucitron.init(config_file);
       // (tarteaucitron.job = tarteaucitron.job || []).push('youtube');
       tarteaucitron.user.eulerianHost = process.env.VUE_APP_TRACKING;
-      console.log("Cookies are not blocked");
+      console.log("Cookies are available");
       window.dsfr = analytics_config_file;
   } catch (err) {
       console.warn("Cookies failed to be set; Blocked!");
