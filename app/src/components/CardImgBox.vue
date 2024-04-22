@@ -100,8 +100,6 @@ export default {
   justify-content: space-between;
 }
 .fr-btn-text{
-  /* display: inline-block; */
   text-align: center;
-  width: 100%;
 }
 </style>

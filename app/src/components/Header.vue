@@ -156,12 +156,10 @@ export default {
     display: none;
   }
 }
-/* Masquer le bouton par défaut (pour les écrans plus larges) */
 .mobile-display-button {
   display: none !important;
 }
 
-/* Afficher le bouton pour les écrans de moins de 768 pixels */
 @media (max-width: 768px) {
   .mobile-display-button {
     display: block !important;
