@@ -138,26 +138,29 @@ export default {
   },
   methods: {
     grid(ls_indicateurs) {
-      const numRows = Math.ceil(ls_indicateurs.length / 2) || 1;
-      const numCols = 2;
+  const totalIndicators = ls_indicateurs.length;
+  const numRows = Math.ceil(totalIndicators / 2) || 1;
+  const numCols = 2;
+  let grid;
 
-      const grid = Array.from({ length: numRows }, () =>
-        Array(numCols).fill(null)
-      );
+  
+  if (totalIndicators % 2 === 1) {
+    const lastRowNumCols = 1;
+    const lastRow = Array(lastRowNumCols).fill(null);
+    grid = Array.from({ length: numRows - 1 }, () => Array(numCols).fill(null));
+    grid.push(lastRow);
+  } else {
+    grid = Array.from({ length: numRows }, () => Array(numCols).fill(null));
+  }
 
-      ls_indicateurs.forEach((item, index) => {
-        const row = Math.floor(index / numCols);
-        const col = index % numCols;
-        grid[row][col] = item;
-      });
+  ls_indicateurs.forEach((item, index) => {
+    const row = Math.floor(index / numCols);
+    const col = index % numCols;
+    grid[row][col] = item;
+  });
 
-      if (ls_indicateurs.length % 2 === 1) {
-        const lastRowIndex = numRows - 1;
-        grid[lastRowIndex][numCols - 1] = null;
-      }
-
-      return grid;
-    },
+  return grid;
+},
   },
   watch: {
     inputData: {
