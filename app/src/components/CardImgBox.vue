@@ -49,15 +49,13 @@ export default {
 </script>
 
 <style scoped>
-/* Styles pour les écrans mobiles */
 @media (max-width: 768px) {
   .fr-btn {
-    width: 100%; /* Utilise toute la largeur disponible */
-    padding: 10px 20px; /* Ajoute un peu de padding pour une meilleure ergonomie */
-    font-size: 1rem; /* Réduire légèrement la taille de la police pour un meilleur ajustement */
+    width: 100%;
+    padding: 10px 20px;
+    font-size: 1rem; 
   }
 }
-/* Styles pour les écrans plus larges */
 .fr-card:hover {
   box-shadow: none !important;
   transform: none !important;
