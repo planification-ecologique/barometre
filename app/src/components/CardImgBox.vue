@@ -2,7 +2,7 @@
   <div class="fr-card fr-card--lg fr-card--horizontal card--hpadding" :style="{ backgroundColor: cardObject.bgcolor }">
     <div class="fr-card__body card-margin">
       <div class="fr-card__content card--content">
-        <h2 class="view-data">{{ cardObject.title }}</h2>
+        <h1 class="view-data">{{ cardObject.title }}</h1>
 
         <div class="fr-card__start">
           <p class="fr-text--lg fr-text--black">

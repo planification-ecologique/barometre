@@ -1,5 +1,8 @@
 const base = process.env.VUE_APP_PREFIX_PATH
 const config_file = {
+    
+
+
     /* General */
     "groupServices" : false,
     "privacyUrl": base+"/donnees-personnelles",                /* Privacy policy url . Si vide, le lien Politique de confidencialité du bandeau ne s'affiche pas*/

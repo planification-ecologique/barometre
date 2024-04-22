@@ -64,6 +64,8 @@ import EnvironnementImg from "../components/components_sgv/EnvironnementImg.vue"
 import DataVisualization from "../components/components_sgv/DataVisualization.vue";
 import LimitesImg from "../components/components_sgv/LimitesImg.vue";
 import dsfrAnalytics from "../services/dsfr_analytics"
+// import {dsfrAnalytics} from "../services/dsfr_analytics"
+
 
 export default {
   name: "Accueil",
