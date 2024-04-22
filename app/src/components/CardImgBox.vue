@@ -1,14 +1,14 @@
 <template>
   <div class="fr-card fr-card--lg fr-card--horizontal card--hpadding" :style="{ backgroundColor: cardObject.bgcolor }">
     <div class="fr-card__body card-margin">
-      <div class="fr-card__content card--content">
+      <div class="fr-card__content ">
         <h1 class="view-data">{{ cardObject.title }}</h1>
 
         <div class="fr-card__start">
           <p class="fr-text--lg fr-text--black">
             {{ cardObject.description }}
           </p>
-          <a id="fr-button-link-dashboard" class="fr-btn" v-if="cardObject.databtn" :href="dashboard_link"
+          <a id="fr-button-link-dashboard" class="fr-btn fr-btn-text" v-if="cardObject.databtn" :href="dashboard_link"
             title="Consulter toutes les données">Consulter toutes les données</a>
         </div>
       </div>
@@ -49,6 +49,13 @@ export default {
 </script>
 
 <style scoped>
+@media (max-width: 768px) {
+  .fr-btn {
+    width: 100%;
+    padding: 10px 20px;
+    font-size: 1rem; 
+  }
+}
 .fr-card:hover {
   box-shadow: none !important;
   transform: none !important;
@@ -89,5 +96,8 @@ export default {
 .view-data {
   display: flex;
   justify-content: space-between;
+}
+.fr-btn-text{
+  text-align: center;
 }
 </style>
