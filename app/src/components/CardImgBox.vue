@@ -8,7 +8,7 @@
           <p class="fr-text--lg fr-text--black">
             {{ cardObject.description }}
           </p>
-          <a id="fr-button-link-dashboard" class="fr-btn" v-if="cardObject.databtn" :href="dashboard_link"
+          <a id="fr-button-link-dashboard" class="fr-btn fr-btn-text" v-if="cardObject.databtn" :href="dashboard_link"
             title="Consulter toutes les données">Consulter toutes les données</a>
         </div>
       </div>
@@ -49,6 +49,15 @@ export default {
 </script>
 
 <style scoped>
+/* Styles pour les écrans mobiles */
+@media (max-width: 768px) {
+  .fr-btn {
+    width: 100%; /* Utilise toute la largeur disponible */
+    padding: 10px 20px; /* Ajoute un peu de padding pour une meilleure ergonomie */
+    font-size: 1rem; /* Réduire légèrement la taille de la police pour un meilleur ajustement */
+  }
+}
+/* Styles pour les écrans plus larges */
 .fr-card:hover {
   box-shadow: none !important;
   transform: none !important;
@@ -89,5 +98,10 @@ export default {
 .view-data {
   display: flex;
   justify-content: space-between;
+}
+.fr-btn-text{
+  /* display: inline-block; */
+  text-align: center;
+  width: 100%;
 }
 </style>

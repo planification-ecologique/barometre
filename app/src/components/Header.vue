@@ -53,14 +53,14 @@
                 <a href="https://www.info.gouv.fr/france-nation-verte" target="_blank"
                   title="France Nation Verte - nouvelle fenêtre" class="fr-btn" id="header-title"
                   style="background-color:white; color:#000091;">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16px" height="16px"
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="2 0 24 24" width="16px" height="16px"
                     aria-hidden="true" focusable="false" class="">
                     <path fill="none" d="M0 0H24V24H0z"></path>
                     <path
                       d="M21 3v2c0 9.627-5.373 14-12 14H5.243C5.08 19.912 5 20.907 5 22H3c0-1.363.116-2.6.346-3.732C3.116 16.974 3 15.218 3 13 3 7.477 7.477 3 13 3c2 0 4 1 8 0zm-8 2c-4.418 0-8 3.582-8 8 0 .362.003.711.01 1.046 1.254-1.978 3.091-3.541 5.494-4.914l.992 1.736C8.641 12.5 6.747 14.354 5.776 17H9c6.015 0 9.871-3.973 9.997-11.612-1.372.133-2.647.048-4.22-.188C13.627 5.027 13.401 5 13 5z"
                       style="fill: var(--text-action-high-green-archipel)"></path>
                   </svg>
-                  France Nation Verte
+                  Découvrir France Nation Verte
                 </a>
               </li>
             </ul>
@@ -69,6 +69,14 @@
       </div>
     </div>
     <div class="fr-container--fluid desktop-navigation" v-if="showNavigation">
+      <ul class="fr-btns-group mobile-display-button">
+  <li>
+    <a class="fr-btn fr-btn--icon-left" href="https://www.info.gouv.fr/france-nation-verte" target="_blank" aria-controls="fr-theme-modal" data-fr-opened="false" id="header-button-theme-mobile" title="Découvrir France Nation verte" data-fr-js-modal-button="true" data-fr-js-button-actionee="true" data-fr-js-header-menu-button-actionee="true">
+      Découvrir France Nation verte
+    </a>
+  </li>
+</ul>
+
       <navigation-dsfr></navigation-dsfr>
     </div>
   </header>
@@ -84,7 +92,7 @@ export default {
   data() {
     return {
       accueil_link: "/accueil",
-      showNavigation: true
+      showNavigation: false
     };
   },
   methods: {
@@ -96,10 +104,18 @@ export default {
     },
     toggleNavigation() {
       this.showNavigation = !this.showNavigation;
+    },  
+    checkForMobile() {
+      this.showNavigation = window.innerWidth > 768;  
     }
   },
   mounted() {
     this.set_link()
+    this.checkForMobile();  
+    window.addEventListener('resize', this.checkForMobile);  
+  },
+  beforeDestroy() {
+    window.removeEventListener('resize', this.checkForMobile); 
   }
 };
 </script>
@@ -139,5 +155,18 @@ export default {
   @media (max-width:768px) {
     display: none;
   }
+}
+/* Masquer le bouton par défaut (pour les écrans plus larges) */
+.mobile-display-button {
+  display: none !important;
+}
+
+/* Afficher le bouton pour les écrans de moins de 768 pixels */
+@media (max-width: 768px) {
+  .mobile-display-button {
+    display: block !important;
+    
+  }
+
 }
 </style>
