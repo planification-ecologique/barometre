@@ -6,6 +6,7 @@
           <side-navigation
             v-on:params="updateSelection"
             :initParams="sidenav_initParams"
+            :expanded="isSideNavExpanded"
           />
         </div>
       </aside>
@@ -45,6 +46,7 @@ export default {
       myobj: {},
       results_API: [],
       sidenav_initParams: {},
+      isSideNavExpanded: false, 
     };
   },
   created() {
@@ -107,8 +109,19 @@ export default {
       labels: ['contenu_liste', 'tableau_de_bord', '', '', ''],
       template: "contenu_liste",
       group: "tableau_de_bord"
-    })
-  }
+    });
+    this.checkScreenSize(); // Appel à la méthode pour définir l'état initial de la side navigation
+    window.addEventListener('resize', this.checkScreenSize); // Ajout de l'écouteur d'événement
+  },
+  beforeDestroy() {
+    window.removeEventListener('resize', this.checkScreenSize); // Suppression de l'écouteur d'événement lors de la destruction du composant
+  },
+  methods: {
+    checkScreenSize() {
+      // Vérifier la taille de l'écran pour déterminer si la side navigation doit être fermée par défaut sur les écrans de tablette
+      this.isSideNavExpanded = window.innerWidth >= 768 ? true : false;
+    },
+  },
 };
 </script>
 <style scoped lang="scss">

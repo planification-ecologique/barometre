@@ -1,7 +1,7 @@
 <template>
   <div class="fr-card fr-card--lg fr-card--horizontal card--hpadding" :style="{ backgroundColor: cardObject.bgcolor }">
     <div class="fr-card__body card-margin">
-      <div class="fr-card__content card--content">
+      <div class="fr-card__content ">
         <h1 class="view-data">{{ cardObject.title }}</h1>
 
         <div class="fr-card__start">
