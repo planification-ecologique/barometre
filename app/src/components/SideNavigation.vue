@@ -1,5 +1,5 @@
 <template>
-  <nav role="navigation" class="fr-sidemenu fr-sidemenu fr-sidemenu__padding"
+  <nav role="navigation" class="fr-sidemenu fr-sidemenu__padding"
     aria-label="Navigation des volets">
     <div class="fr-sidemenu__inner">
       <button class="fr-sidemenu__btn" aria-controls="fr-sidemenu-wrapper" aria-expanded="false">
@@ -26,6 +26,7 @@
                     target="_self"
                     :id="'fr-sidemenu__link-' + theme.id_theme + levier.id_levier"
                     :aria-current="levier.selected"
+                    aria-expanded="false"
                     tabindex="0"
                     v-on:keyup.enter="set_query(theme.label_theme, theme.id_theme, levier)"
                   >
