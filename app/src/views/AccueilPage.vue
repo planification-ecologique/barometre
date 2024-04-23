@@ -64,6 +64,8 @@ import EnvironnementImg from "../components/components_sgv/EnvironnementImg.vue"
 import DataVisualization from "../components/components_sgv/DataVisualization.vue";
 import LimitesImg from "../components/components_sgv/LimitesImg.vue";
 import dsfrAnalytics from "../services/dsfr_analytics"
+// import {dsfrAnalytics} from "../services/dsfr_analytics"
+
 
 export default {
   name: "Accueil",
@@ -153,6 +155,17 @@ export default {
 </script>
 
 <style>
+/* Styles pour les écrans mobiles */
+@media (max-width: 768px) {
+  .fr-grid-row {
+    margin-left: -5rem;
+    margin-right: -5rem; 
+  }
+  .fr-col {
+    padding-left: 0.5rem; 
+    padding-right: 0.5rem; 
+  }
+}
 .flex-container {
   max-width: none;
   overflow: hidden;
@@ -164,7 +177,7 @@ export default {
 
 .fr-card:hover .fr-card__image,
 .fr-card:hover .fr-card__content {
-  box-shadow: none; /* Supprime l'ombre au survol */
-  transform: none; /* Supprime toute transformation au survol */
+  box-shadow: none; 
+  transform: none; 
 }
 </style>

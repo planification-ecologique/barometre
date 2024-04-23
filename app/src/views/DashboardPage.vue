@@ -1,8 +1,8 @@
 <template>
   <div class="fr-container--fluid">
     <div class="fr-grid-row">
-      <aside>
-        <div id="sidebar" class="col-12 col-sm-6 fr-ml-2w">
+      <aside class="fr-col-12 fr-col-sm-12 fr-col-lg-4 fr-mb-sm-5w">
+        <div id="sidebar" class="fr-ml-2w">
           <side-navigation
             v-on:params="updateSelection"
             :initParams="sidenav_initParams"

@@ -68,7 +68,7 @@
         <div
           v-for="(item, columnIndex) in row"
           :key="columnIndex"
-          class="fr-col"
+          class="fr-col-md-6 fr-col-lg-6 fr-col-xl-6 fr-col-12"
         >
           <article>
             <div v-if="!item"></div>
