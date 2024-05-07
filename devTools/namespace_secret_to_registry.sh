@@ -14,7 +14,7 @@ then
 fi
 
 CONTAINER_REGISTRY=gitlab.seenovate.com:5050
-USER_NAME=@maria.soto
+USER_NAME=sgpe-group
 PASSWORD=
 EMAIL=maria.soto@seenovate.com
 
