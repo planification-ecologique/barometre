@@ -111,7 +111,7 @@ export default {
       cardTrajectoire: {
         title: "Limites et prochaines étapes",
         description:
-          "Ils ne prétendent pas à une vision exhaustive, l'outil ayant vocation à être enrichi au fur et à mesure de l'avancée des travaux et en fonction des retours des utilisateurs. En particulier, une version élargie sera élaborée d'ici l'été 2024, notamment pour inclure les enjeux relatifs à l'adaptation aux conséquences du changement climatique. Le travail est également en cours afin de prolonger les trajectoires au-delà de 2030. A ce prototype devrait succéder, dans les prochaines semaines, une version web aux fonctionnalités plus développées.",
+          "Ils ne prétendent pas à une vision exhaustive, l'outil ayant vocation à être enrichi au fur et à mesure de l'avancée des travaux et en fonction des retours des utilisateurs. En particulier, une version élargie sera élaborée courant 2024, notamment pour inclure les enjeux relatifs à l'adaptation aux conséquences du changement climatique. Le travail est également en cours afin de prolonger les trajectoires au-delà de 2030.",
         databtn: false,
         bgcolor: "#F5F5FE",
         databtn1: true,
