@@ -25,15 +25,19 @@
                     </ul>
 
                     <h2>Développement, intégration, hébergement et diffusion</h2>
-                      <p class="company-text">Seenovate</p>
-                      <p class="company-text">13 Rue Auber</p>
-                      <p class="company-text">75009 Paris</p>
+                      <p><b>Commissariat Général au Développement Durable</b></p>
+                      <p class="company-text">Ecolab</p>
+                      <p class="company-text">Tour Séquoia</p>
+                      <p class="company-text">1 place Carpeaux</p>
+                      <p class="company-text">92800 Puteaux</p>
+                      <p class="company-text">Tél : <a href="tel:0140812122">01 40 81 21 22</a></p>
                       <p></p>
 
                     <h2>Hébergement et développement</h2>
-                      <p class="company-text">Seenovate</p>
-                      <p class="company-text">13 Rue Auber</p>
-                      <p class="company-text">75009 Paris</p>
+                      <p>L'hébergement du portail est assuré par la société Scaleway</p>
+                      <p class="company-text">Société Scaleway</p>
+                      <p class="company-text">8 rue de la Ville - l'Evêque</p>
+                      <p class="company-text">75008 Paris</p>
                       <p></p>
 
 
