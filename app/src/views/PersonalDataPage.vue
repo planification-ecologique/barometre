@@ -181,18 +181,11 @@
           <p>
             <strong>Contacter le référent RGPD par courrier postal </strong>:
           </p>
-          <p>
-            Secrétariat général à la planification écologique (SGPE)
-          </p>
-          <p>
-            Services du Premier ministre
-          </p>
-          <p>
-            19 rue de Constantine
-          </p>
-          <p>
-            75007 Paris
-          </p>
+          <p class="company-text">Secrétariat général à la planification écologique (SGPE)</p>
+          <p class="company-text">Services du Premier ministre</p>
+          <p class="company-text">19 rue de Constantine</p>
+          <p class="company-text">75007 Paris</p>
+          <p></p>
 
 
           <p>
@@ -208,14 +201,14 @@
 
           <p>
             <strong>Contacter le délégué à la protection des données par courrier
-              postal</strong>
-            :<br />
-            Secrétariat général du Gouvernement<br />
-            À l’attention du délégué à la protection des données (DPD)<br />
-            56 rue de Varenne<br />
-            75007 Paris
+              postal</strong>:
           </p>
 
+          <p class="company-text">Secrétariat général du Gouvernement</p>
+          <p class="company-text">À l’attention du délégué à la protection des données (DPD)</p>
+          <p class="company-text">56 rue de Varenne</p>
+          <p class="company-text">75007 Paris</p>
+          <p></p>
           <p>
             <br />
             En cas de difficulté non résolue en lien avec l’utilisation de vos
@@ -227,6 +220,17 @@
 
   </div>
 </template>
+
+<style>
+
+/* Styles l'adresse de la société */
+.company-text {
+  font-style: italic;
+  margin-bottom: 0;  
+}
+
+</style>
+
 <script>
 import dsfrAnalytics from "../services/dsfr_analytics"
 
