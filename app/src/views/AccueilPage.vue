@@ -16,13 +16,13 @@
       </div>
     </section>
 
-    <section>
+    <!-- <section>
       <div class="fr-grid-row">
         <div class="fr-col">
           <card-img-box :cardObject="cardTrajectoire"></card-img-box>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <section>
       <div class="fr-grid-row">
@@ -102,31 +102,34 @@ export default {
       },
       cardObjectif: {
         title: "Objectif des indicateurs",
-        description:
-          "Ces indicateurs visent à représenter l'évolution des dernières années et à partager les perspectives concernant les grands leviers d'action de la planification écologique, afin d'éclairer tous les acteurs concernés et contribuer à la discussion collective sur les chemins de transition appropriés pour le pays.",
+        description: 
+          `Ces indicateurs visent à représenter l'évolution des dernières années et à partager les perspectives concernant les grands leviers d'action de la planification écologique, afin d'éclairer tous les acteurs concernés et contribuer à la discussion collective sur les chemins de transition appropriés pour le pays. \n
+          Ils ne prétendent pas à une vision exhaustive, l'outil ayant vocation à être enrichi au fur et à mesure de l'avancée des travaux et en fonction des retours des utilisateurs.`,
+
         databtn: false,
         databtn1: true,
         image: DataVisualization,
       },
-      cardTrajectoire: {
-        title: "Limites et prochaines étapes",
-        description:
-          "Ils ne prétendent pas à une vision exhaustive, l'outil ayant vocation à être enrichi au fur et à mesure de l'avancée des travaux et en fonction des retours des utilisateurs. En particulier, une version élargie sera élaborée courant 2024, notamment pour inclure les enjeux relatifs à l'adaptation aux conséquences du changement climatique. Le travail est également en cours afin de prolonger les trajectoires au-delà de 2030.",
-        databtn: false,
-        bgcolor: "#F5F5FE",
-        databtn1: true,
-        image: LimitesImg,
-      },
+      // cardTrajectoire: {
+      //   title: "Limites et prochaines étapes",
+      //   description:
+      //     "Ils ne prétendent pas à une vision exhaustive, l'outil ayant vocation à être enrichi au fur et à mesure de l'avancée des travaux et en fonction des retours des utilisateurs. En particulier, une version élargie sera élaborée courant 2024, notamment pour inclure les enjeux relatifs à l'adaptation aux conséquences du changement climatique. Le travail est également en cours afin de prolonger les trajectoires au-delà de 2030.",
+      //   databtn: false,
+      //   bgcolor: "#F5F5FE",
+      //   databtn1: true,
+      //   image: LimitesImg,
+      // },
       cardEvolution: {
         title: "Trajectoires futures",
-        description: `Il importe de souligner également que les trajectoires affichées pour l’avenir reposent parfois sur des objectifs officiels, mais parfois aussi, et même souvent, sur des hypothèses techniques de travail à date ; elles pourront donc évoluer le cas échéant et n'engagement pas en tant que tel la responsabilité ni du SGPE ni a fortiori du gouvernement. Pour autant, les trajectoires présentées cherchent à donner une vision cohérente des grandes stratégies nationales existantes (ex. Stratégie nationale pour la biodiversité) ou en cours de finalisation (ex. Stratégie nationale bas carbone).`,
+        description: `Il importe de souligner également que les trajectoires affichées pour l’avenir reposent parfois sur des objectifs officiels, mais parfois aussi, et même souvent, sur des hypothèses techniques de travail à date ; elles pourront donc évoluer le cas échéant et n'engagement pas en tant que tel la responsabilité ni du SGPE ni a fortiori du gouvernement.\n 
+        Pour autant, les trajectoires présentées cherchent à donner une vision cohérente des grandes stratégies nationales existantes (ex. Stratégie nationale pour la biodiversité) ou en cours de finalisation (ex. Stratégie nationale bas carbone).`,
         databtn: false,
         databtn1: true,
         image: TrajectoireImg,
       },
       cardPerimetre: {
         title: "Périmètre géographique",
-        description: `Par ailleurs, un grand nombre de ces indicateurs ne concernent que l’Hexagone, faute notamment de données disponibles. Un travail spécifique sera mené au cours de l’année pour bâtir les indicateurs adéquats correspondant aux spécificités ultra-marines. Dans ce contexte, il sera important de distinguer chacun des territoires ultramarins et de les placer dans leur contexte singulier, par rapport aux autres territoires d’outre-mer, mais aussi en comparaison avec l’Hexagone et dans le contexte de leur bassin géographique.`,
+        description: `Par ailleurs, un grand nombre de ces indicateurs ne concernent que l’Hexagone, faute notamment de données disponibles. Les indicateurs seront enrichis avec les données relatives aux territoires ultramarins en fonction de leur disponibilité future. `,
         databtn: false,
         databtn1: true,
         bgcolor: "#F5F5FE",
@@ -134,7 +137,7 @@ export default {
       },
       cardAmbition: {
         title: "Ambition",
-        description: `Plus généralement, si les données affichées à ce jour se cantonnent au niveau national, l'ambition est de permettre, dans les versions futures du Tableau de bord, l'accès à des données désagrégées aux différents niveaux territoriaux. Toutes les données correspondantes seront mises en libre accès pour les utilisateurs.`,
+        description: `Dans le cadre du suivi des COP régionales, un travail d’identification d’indicateurs physiques de résultat par leviers territorialisés de la planification écologique (1 à 2 indicateurs par leviers) est mené sur le dernier trimestre 2024. Ce travail servira de base à la construction des tableaux de bord régionaux de suivi des COP.`,
         databtn: false,
         databtn1: true,
         image: EnvironnementImg,
