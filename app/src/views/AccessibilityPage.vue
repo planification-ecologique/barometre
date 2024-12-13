@@ -97,10 +97,11 @@
             </li>
             <li>Contacter sur notre adresse postale&nbsp;:</li>
         </ul>
-        <p>Secrétariat général à la planification écologique (SGPE)</p>
-        <p>Services du Premier ministre</p>
-        <p>19 rue de Constantine</p>
-        <p>75007 Paris</p>
+        <p class="company-text">Secrétariat général à la planification écologique (SGPE)</p>
+        <p class="company-text">Services du Premier ministre</p>
+        <p class="company-text">19 rue de Constantine</p>
+        <p class="company-text">75007 Paris</p>
+        <p></p>
 
         <h2>Voies de recours</h2>
         <p>Si vous constatez un défaut d’accessibilité vous empêchant d’accéder à un contenu ou une fonctionnalité du
@@ -127,6 +128,19 @@
         </ul>
     </div>
 </template>
+
+<style>
+
+/* Styles l'adresse de la société */
+.company-text {
+  font-style: italic;
+  margin-bottom: 0;  
+}
+
+</style>
+
+
+
 <script>
 export default {
     name: "AccessibilityPage"
