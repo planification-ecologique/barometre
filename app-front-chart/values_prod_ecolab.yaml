@@ -14,7 +14,7 @@ service:
 replicaCount: 1
 
 image:
-  repository: gitlab.seenovate.com:5050/sgpe/sgpe/sgpe-app/barometre-sgpe-prod-ecolab
+  repository: registry.gitlab-forge.din.developpement-durable.gouv.fr/cgdd/sri/ecolab/indicateurs-territoriaux/tableau-de-bord-de-la-planification-ecologique-sgpe/sgpe-app/barometre-sgpe-prod
   tag: "0.0.1"
   containerPort: 9080
 
@@ -28,7 +28,7 @@ ingressexternal:
     - barometre.planification-ecologique.gouv.fr
     - www.barometre.planification-ecologique.gouv.fr
   tls:
-   - secretName: barometre.planification-ecologique.gouv.fr-cert
+   - secretName: planification-ecologique.gouv.fr-cert
      hosts:
       - barometre.planification-ecologique.gouv.fr
       - www.barometre.planification-ecologique.gouv.fr
