@@ -1,8 +1,11 @@
 workflow:
   rules:
-    - if: '$CI_COMMIT_REF_NAME == "qualif" || $CI_COMMIT_REF_NAME == "prod"'
-      when: always
-      # '$CI_COMMIT_MESSAGE =~ /^.*-deploy$/'
+    - if: '$CI_COMMIT_REF_NAME == "qualif"'
+      variables:
+        ENV_CONTEXT: "$CI_COMMIT_REF_NAME"
+    - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
+      variables:
+        ENV_CONTEXT: "prod"
 
 stages:
   - build_frontend
@@ -13,9 +16,9 @@ stages:
 
 variables:
     TAG_NUMBER: "0.0.1"
-    IMAGE_TAG_NAME: "barometre-sgpe-$CI_COMMIT_REF_NAME:$TAG_NUMBER"
+    IMAGE_TAG_NAME: "barometre-sgpe-$ENV_CONTEXT:$TAG_NUMBER"
     IMAGE_NAME: "$CI_REGISTRY_IMAGE/$IMAGE_TAG_NAME"
-    KUBE_CONTEXT: sgpe/sgpe/k8s-connection:k8s-connection-$CI_COMMIT_REF_NAME
+    KUBE_CONTEXT: sgpe/sgpe/k8s-connection:k8s-connection-$ENV_CONTEXT
 
 # IMAGE ---
 build_frontend:
@@ -23,7 +26,7 @@ build_frontend:
   image: node:21.7-bullseye-slim
   script:
     - cd app && npm install
-    - npm run build_$CI_COMMIT_REF_NAME
+    - npm run build_$ENV_CONTEXT
     - tar czvf dist.tar.gz dist/
     - pwd
     - ls -l
@@ -52,7 +55,7 @@ Extract-Data:
   stage: extract_var_helm
   image: python
   script:
-    - python3 ./devTools/get_variables.py -d app-front-chart -e $CI_COMMIT_REF_NAME
+    - python3 ./devTools/get_variables.py -d app-front-chart -e $ENV_CONTEXT
     - cat build.env
   artifacts:
     reports:
@@ -88,8 +91,8 @@ Deploy-Helm-Chart:
     - helm repo update 
     - helm repo list
     - helm list -n $NAMESPACE
-    - helm install --dry-run ${HELM_NAME} login-project/${PACKAGE_NAME} --values  ${PACKAGE_NAME}/values_$CI_COMMIT_REF_NAME.yaml --namespace $NAMESPACE
-    - helm upgrade --install ${HELM_NAME} login-project/${PACKAGE_NAME} --values  ${PACKAGE_NAME}/values_$CI_COMMIT_REF_NAME.yaml --namespace $NAMESPACE
+    - helm install --dry-run ${HELM_NAME} login-project/${PACKAGE_NAME} --values  ${PACKAGE_NAME}/values_$ENV_CONTEXT.yaml --namespace $NAMESPACE
+    - helm upgrade --install ${HELM_NAME} login-project/${PACKAGE_NAME} --values  ${PACKAGE_NAME}/values_$ENV_CONTEXT.yaml --namespace $NAMESPACE
     - kubectl get pods -n $NAMESPACE
     - kubectl get svc -n $NAMESPACE
 
