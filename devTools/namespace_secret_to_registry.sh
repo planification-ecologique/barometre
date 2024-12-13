@@ -13,15 +13,15 @@ then
     exit 0
 fi
 
-CONTAINER_REGISTRY=gitlab.seenovate.com:5050
+CONTAINER_REGISTRY=registry.gitlab-forge.din.developpement-durable.gouv.fr
 USER_NAME=sgpe-group
 PASSWORD=
-EMAIL=maria.soto@seenovate.com
+EMAIL=nicolas.arias@developpement-durable.gouv.fr
 
 deploy_production () {
     #1. Create namespace statsatgouv
     NAMESPACE='app-front-prod'
-    kubectl create namespace $NAMESPACE
+#     kubectl create namespace $NAMESPACE
 
     #2. Create secret to pull images
     kubectl create secret docker-registry regcred --docker-server=$CONTAINER_REGISTRY --docker-username=$USER_NAME --docker-password=$PASSWORD --docker-email=$EMAIL -n $NAMESPACE
