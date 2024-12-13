@@ -39,6 +39,8 @@ export default {
     AdaptiveDashboard,
     SideNavigation,
   },
+
+  // Initialisation des données
   data() {
     return {
       isapiloading: true,
@@ -55,6 +57,7 @@ export default {
     }
   },
   methods: {
+    // Mise à jour de la sélection dans le menu
     updateSelection(selectedValue) {
       if (selectedValue != undefined) {
         this.myobj = selectedValue;
@@ -76,6 +79,7 @@ export default {
         }
       }
     },
+    // Récupération des données de l'API
     async fetchData(query) {
       this.isapiloading = true;
       // Appel à l'API
