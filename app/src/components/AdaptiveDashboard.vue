@@ -1,8 +1,10 @@
 <!-- adaptiveDashboard.vue -->
+<!-- This component is used to display the dashboard of the application. It is used in the DashboardPage.vue component. -->
 <template>
   <div>
     <div class="fr-grid-row" v-if="dashboardPage">
       <article class="fr-col-12" style="display: flex; align-items: center">
+        <!-- Affichage de l'image en fonction du thème -->
         <div>
           <EnvironnementImg
             height="100px"
@@ -50,7 +52,7 @@
             v-if="params.label_theme === 'Energie'"
           ></EnergieImg>
         </div>
-
+        <!-- Titre : thème et Sous-titre : levier -->
         <div>
           <h1 class="fr-title" :aria-label="params.label_theme">
             {{ params.label_theme }}
@@ -59,17 +61,21 @@
         </div>
       </article>
     </div>
+    <!-- Affichage en tableau des indicateurs -->
     <div v-if="gridFormat.length > 0">
+      <!-- Itération sur chaque ligne pour ajouter le/les indicateurs -->
       <div
         v-for="(row, index) in gridFormat"
         :key="index"
         class="fr-grid-row fr-grid-row--gutters fr-mb-1w"
       >
+        <!-- Itération sur chaque colonne pour ajouter le/les indicateurs -->
         <div
           v-for="(item, columnIndex) in row"
           :key="columnIndex"
           class="fr-col-md-6 fr-col-lg-6 fr-col-xl-6 fr-col-12"
         >
+          <!-- Affichage de l'indicateur -->
           <article>
             <div v-if="!item"></div>
             <div v-else>
@@ -83,6 +89,7 @@
         </div>
       </div>
     </div>
+    <!-- Affichage si pas de données -> taille du tableau égale à 0 -->
     <div v-else>
       <p>Pas de données en cours...</p>
     </div>
@@ -137,6 +144,7 @@ export default {
     },
   },
   methods: {
+    // Fonction pour formater les indicateurs en grille
     grid(ls_indicateurs) {
       const numRows = Math.ceil(ls_indicateurs.length / 2) || 1;
       const numCols = 2;
@@ -160,6 +168,7 @@ export default {
     },
   },
   watch: {
+    // Watcher pour mettre à jour la grille d'indicateurs
     inputData: {
       handler(API_data) {
         this.gridFormat = this.grid(API_data);

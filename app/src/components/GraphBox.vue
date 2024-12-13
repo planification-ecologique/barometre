@@ -1,3 +1,5 @@
+<!-- Composant graphique principale dans chaque indicateur -->
+
 <template>
   <div
     class="fr-card fr-card--no-icon fr-card--shadow adjust-height"
@@ -25,6 +27,7 @@
     </div>
 
     <div class="cardReference">
+      <!-- Sélection du type de graphique (Graphique ou Tableau) -->
       <segmented-controls
         @chart-selected="handleChartSelected"
         :idcontrol="idAccordion + '1'"
@@ -32,7 +35,9 @@
     </div>
     <div v-if="dataObj.values">
       <div class="cardData" v-if="this.displayChart">
+        <!-- Affichage du graphique -->
         <div v-if="dataObj.label_sous_groupe == ''">
+          <!-- Composant Histogramme sans sous-groupe / DSFR -->
           <bar-chart
             :x="JSON.stringify(dataObj.values.x)"
             :y="JSON.stringify(dataObj.values.y)"
@@ -45,6 +50,7 @@
           </bar-chart>
         </div>
         <div v-else>
+          <!-- Composant Histogramme avec sous-groupe / DSFR -->
           <bar-chart
             :x="JSON.stringify(dataObj.date)"
             :y="JSON.stringify(dataObj.values)"
@@ -55,8 +61,10 @@
           </bar-chart>
         </div>
       </div>
+      <!-- Affichage du tableau -->
       <div v-else>
         <div v-if="dataObj.label_sous_groupe == ''">
+          <!-- Tableau sans sous-groupe -->
           <table-component
             :captionTitle="dataObj.label_indic"
             :annee="dataObj.values.x[0]"
@@ -64,6 +72,7 @@
           ></table-component>
         </div>
         <div v-else>
+          <!-- Tableau avec sous-groupe -->
           <TableComponentVariant
             :annee="dataObj.date[0]"
             :valeurCol="dataObj.label_sous_groupe"
@@ -72,6 +81,7 @@
         </div>
       </div>
     </div>
+    <!-- Affichage des informations complémentaires sous le graphique -->
     <div class="beneathGraph">
       <p class="fr-text--xs fr-text-mention--grey textReference">
         Source : {{ dataObj.label_sources }}
@@ -80,6 +90,7 @@
         Périmètre : {{ dataObj.label_perimetre }}
       </p>
     </div>
+    <!-- Gestion du dropdown description -->
     <div class="fr-accordion">
       <h3 class="fr-accordion__title">
         <button
@@ -150,6 +161,7 @@ export default {
     }
   },
   methods: {
+    // Fonction pour afficher le graphique ou le tableau
     handleChartSelected(type) {
       this.displayChart = type === "graphique" ? true : false;
     },
