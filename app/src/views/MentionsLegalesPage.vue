@@ -7,35 +7,38 @@
             <div class="content">
               <br>
               <div class="titre-zone field">
-                <h2 class="titre-texte">Mentions légales</h2>
+                <h1 class="titre-texte fr-col-12 fr-col-lg-7">Mentions légales</h1>
                 <div class="titre-zone-separateur"></div>
               </div>
               <!-- /.titre-zone.field -->
               <div class="field field-separateur">
                 <div class="entete-separateur">&nbsp;</div>
               </div>
-              <div class="field field-name-field-texte field-type-text-long field-label-hidden prose">
+              <div class="field field-name-field-texte field-type-text-long field-label-hidden prose fr-col-12 fr-col-md-8">
                 <div class="field-items">
                   <div class="field-item even first last">
-                    <h3>Directeur de la publication</h3>
+                    <h2>Directeur de la publication</h2>
 
-                    <p>
-                      M. Antoine Pellion, Secrétaire Général ; <br /> M. Frédéric
-                      Glanois, Secrétaire Général Adjoint ; <br /> Mme Mounia Mostefaoui, Directrice de Programme
-                      Mesures
-                      et Indicateurs
-                    </p>
+                    <ul>
+                      <li>Antoine Pellion, Secrétaire général à la planification écologique</li>
+                      <li>Frédérik Jobert, Secrétaire général adjoint à la planification écologique</li>
+                    </ul>
 
                     <h2>Développement, intégration, hébergement et diffusion</h2>
-                    <p>Seenovate</p>
-                    <p>13 Rue Auber, 75009 Paris</p>
+                      <p class="company-text">Seenovate</p>
+                      <p class="company-text">13 Rue Auber</p>
+                      <p class="company-text">75009 Paris</p>
+                      <p></p>
+
                     <h2>Hébergement et développement</h2>
-                    <p>Seenovate</p>
-                    <p>13 Rue Auber, 75009 Paris</p>
+                      <p class="company-text">Seenovate</p>
+                      <p class="company-text">13 Rue Auber</p>
+                      <p class="company-text">75009 Paris</p>
+                      <p></p>
+
 
                     <h2>Gestionnaire des statistiques</h2>
-
-                    <p>Eulerian Technologies</p>
+                      <p>Eulerian Technologies</p>
 
                     <h2>Conception et gestion du site</h2>
 
@@ -116,10 +119,9 @@
                       Pour toutes remarques concernant le site, contacter le Secrétariat général à la planification
                       écologique :
                     </p>
-                    <p>
-                      Mme Mounia Mostefaoui, Directrice de Programme Mesures et Indicateurs :
-                      mounia.mostefaoui@pm.gouv.fr
-                    </p>
+                    <ul>
+                      <li>Secrétariat général à la planification écologique : <a href= "mailto:sec.planification-ecologique@pm.gouv.fr">sec.planification-ecologique@pm.gouv.fr</a></li>
+                    </ul>
 
 
                     <h2>Accessibilité</h2>
@@ -139,18 +141,12 @@
                     <p>
                       Pour toute question relative aux présentes informations,
                       vous pouvez nous écrire à l’adresse suivante : </p>
-                    <p>
-                      Secrétariat général à la planification écologique (SGPE)
-                    </p>
-                    <p>
-                      Services du Premier ministre
-                    </p>
-                    <p>
-                      19 rue de Constantine
-                    </p>
-                    <p>
-                      75007 Paris
-                    </p>
+
+                    <p class="company-text">Secrétariat général à la planification écologique (SGPE)</p>
+                    <p class="company-text">Services du Premier ministre</p>
+                    <p class="company-text">19 rue de Constantine</p>
+                    <p class="company-text">75007 Paris</p>
+                    <p></p>
                   </div>
                 </div>
               </div>
@@ -161,6 +157,18 @@
     </div>
   </div>
 </template>
+
+<style>
+
+/* Styles l'adresse de la société */
+.company-text {
+  font-style: italic;
+  margin-bottom: 0;  
+}
+
+
+
+</style>
 
 <script>
 import dsfrAnalytics from "../services/dsfr_analytics"
