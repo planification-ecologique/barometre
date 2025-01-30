@@ -1,0 +1,34 @@
+.custom-footer-body {
+    flex-wrap: nowrap !important;
+    align-items: flex-start !important;
+}
+
+.custom-footer-body-logos {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    row-gap: 32px;
+}
+
+.custom-footer-body-logos > .fr-footer__brand > .fr-logo {
+    font-size: 1.1rem;
+}
+
+.custom-footer-content {
+    max-width: 34rem !important;
+}
+
+#ecolab-logo {
+    width: 300px;
+}
+
+@media (max-width: 600px) {
+    .custom-footer-body {
+        flex-direction: column-reverse !important;
+        row-gap: 64px;
+    }
+
+    #ecolab-logo {
+        width: 250px;
+    }
+}

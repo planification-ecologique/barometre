@@ -1,17 +1,24 @@
 <template>
   <footer class="fr-footer" role="contentinfo" id="footer">
     <div class="fr-container--fluid fr-ml-2w">
-      <div class="fr-footer__body">
-        <div class="fr-footer__brand fr-enlarge-link">
-          <a href="https://www.info.gouv.fr/" target="_blank" id="fr-footer-logo-footer-href"
-            title="info.gouv.fr - nouvelle fenêtre">
-            <p class="fr-logo">GOUVERNEMENT</p>
-          </a>
+      <div class="fr-footer__body custom-footer-body">
+        <div class="custom-footer-body-logos">
+          <div class="fr-footer__brand">
+              <p class="fr-logo">République<br/>française</p>
+          </div>
+          <div class="fr-footer__brand">
+              <p class="fr-logo">Premier<br/>Ministre</p>
+          </div>
+          <div class="fr-footer__brand">
+            <p class="fr-logo">Ministères<br/>Aménagement<br/>du territoire<br/>transition<br/>écologique</p>
+          </div>
+          <div class="fr-footer__brand">
+            <img id="ecolab-logo" src="../images/ecolab-logo.webp" alt="Logo de l'ecolab" title="logo ecolab"/>
+          </div>
         </div>
-        <div class="fr-footer__content">
+        <div class="fr-footer__content custom-footer-content">
           <p class="fr-footer__content-desc">
-            Ce site est géré par le Secrétariat Général de la Planification
-            Ecologique (SGPE).
+            Ce site est géré par le Secrétariat Général de la Planification Ecologique (SGPE) et le Commissariat Général au Développement Durable (CGDD)
           </p>
           <ul class="fr-footer__content-list">
             <li class="fr-footer__content-item" v-for="option in menuLinks">
@@ -98,6 +105,11 @@ export default {
           link: "https://data.gouv.fr",
           label: "data.gouv.fr",
           value: "data-gouv"
+        },
+        {
+          link: "https://ecologie.data.gouv.fr",
+          label: "ecologie.data.gouv.fr ",
+          value: "ecologie-data-gouv"
         }
       ]
     }

@@ -4,6 +4,7 @@ import VueKeyCloak from '@dsb-norge/vue-keycloak-js'
 import router from './router'
 import config_file from './services/tarteaucitron_config.js'
 import analytics_config_file from './services/dsfr_analytics_config.js'
+import './css/website.css';
 
 require('../node_modules/@gouvfr/dsfr/dist/legacy/legacy.nomodule.min.js')
 require('../node_modules/@gouvfr/dsfr/dist/core/core.module.min.js')
