@@ -4,9 +4,6 @@
       <div class="fr-footer__body custom-footer-body">
         <div class="custom-footer-body-logos">
           <div class="fr-footer__brand">
-              <p class="fr-logo">République<br/>française</p>
-          </div>
-          <div class="fr-footer__brand">
               <p class="fr-logo">Premier<br/>Ministre</p>
           </div>
           <div class="fr-footer__brand">
