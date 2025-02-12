@@ -35,7 +35,7 @@
 3. Inspect the values for production or qualif in app-front-chart.
     - Production environnement:
     ```
-    helm install --dry-run app-front app-front-chart  --values  app-front-chart/values_prod_ecolab.yaml --namespace app-front-prod
+    helm upgrade --install --dry-run app-front app-front-chart  --values  app-front-chart/values_prod_ecolab.yaml --namespace app-front-prod
     ```   
     - Qualif environnement:
     ```

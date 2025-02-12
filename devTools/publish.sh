@@ -8,7 +8,7 @@ docker login $GIT_HOST
 #Build image
 CONTAINER_REGISTRY=cgdd/sri/ecolab/indicateurs-territoriaux/tableau-de-bord-de-la-planification-ecologique-sgpe/sgpe-app 
 BRANCH_GIT=$(git symbolic-ref --short HEAD)
-TAG_NUMBER="0.0.2"
+TAG_NUMBER="0.0.3"
 IMAGE_TAG_NAME=barometre-sgpe
 
 echo $BRANCH_GIT
