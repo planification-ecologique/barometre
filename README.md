@@ -48,7 +48,7 @@
     ```   
     - Qualif environnement:
     ```
-    helm install app-front app-front-chart  --values  app-front-chart/values_qualif.yaml --namespace app-front-qualif
+    helm upgrade --install app-front app-front-chart  --values  app-front-chart/values_qualif.yaml --namespace app-front-qualif
     ```
 5. Verify the installation by : 
     - helm list  --namespace app-front-prod / qualif

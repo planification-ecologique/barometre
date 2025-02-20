@@ -14,26 +14,28 @@ service:
 replicaCount: 1
 
 image:
-  repository: gitlab.seenovate.com:5050/sgpe/sgpe/sgpe-app/barometre-sgpe-qualif
-  tag: "0.0.1"
+  repository: registry.gitlab-forge.din.developpement-durable.gouv.fr/cgdd/sri/ecolab/indicateurs-territoriaux/tableau-de-bord-de-la-planification-ecologique-sgpe/sgpe-app/barometre-sgpe-qualif
+  tag: "0.0.3"
   containerPort: 9080
 
 imagePullSecrets:
   name: regcred
 
 # Ingress
-ingress:
-  auto_signed_cert: true
-  cluster_issuer: letsencrypt-production
+ingressexternal:
   path: /
   hosts:
-    - barometre-sgpe-qualif.seenovate.com
+    - qualif-barometre.planification-ecologique.gouv.fr
+    - www.qualif-barometre.planification-ecologique.gouv.fr
   tls:
-   - secretName: barometre-sgpe-qualif.seenovate.com-tls
+   - secretName: planification-ecologique.gouv.fr-cert
      hosts:
-      - barometre-sgpe-qualif.seenovate.com
+      - qualif-barometre.planification-ecologique.gouv.fr
+      - www.qualif-barometre.planification-ecologique.gouv.fr
 
 # Certificate
 secret:
-    crt_client:
-      create: false # passer à true uniquement en production si besoin de recréer
+  crt_client:
+    create: false # passer à true uniquement si besoin de recréer
+    crt: Remplir avec planification-ecologique.gouv.fr.crt en base64
+    key: Remplir avec planification-ecologique.gouv.fr.key en base64
