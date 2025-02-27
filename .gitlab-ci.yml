@@ -37,7 +37,7 @@ build_frontend:
     expose_as: 'vuejs dashboard dist'
     expire_in: 2 hrs
   rules:
-    changes:
+    - changes:
       - app/**/*
 
 build_nginx:
@@ -86,7 +86,7 @@ Publish-Helm-Package:
     - 'curl --request POST --user gitlab-ci-token:$CI_REGISTRY_PASSWORD --form "chart=@${PACKAGE_VERSION}" "${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/helm/api/stable/charts"'
     - echo "Chart Package Published to Gitlab package registry"
   rules:
-    changes:
+    - changes:
       - app-front-chart/**/*
 
 # This Stage will Deploy Helm Chart to K8S Cluster
