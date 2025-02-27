@@ -32,7 +32,7 @@ build_frontend:
     - ls -l
   artifacts:
     paths: 
-      - /builds/sgpe/sgpe/sgpe-app/app/dist.tar.gz
+      - /builds/cgdd/sri/ecolab/indicateurs-territoriaux/tableau-de-bord-de-la-planification-ecologique-sgpe/sgpe-app/app/dist.tar.gz
     expose_as: 'vuejs dashboard dist'
     expire_in: 2 hrs
 
