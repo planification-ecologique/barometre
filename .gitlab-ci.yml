@@ -37,7 +37,7 @@ build_frontend:
     expire_in: 2 hrs
 
 build_nginx:
-  stage: build
+  stage: build_nginx
   image:
     name: gcr.io/kaniko-project/executor:debug
     entrypoint: [ "" ]
