@@ -29,7 +29,7 @@ export default {
       this.menuOptions = [
         { value: 'accueil', label: 'Accueil', selected: false, link: base + "/accueil" },
         { value: 'dashboard', label: 'Tableau de bord', selected: false, link: base + "/dashboard?theme=default&levier=default" },
-        { value: 'tags', label: 'Tags', selected: false, link: base + "/tags" }
+        { value: 'tags', label: 'Recherche', selected: false, link: base + "/tags" }
       ]
       var current_page = this.get_name_page()
       if (current_page == '') {

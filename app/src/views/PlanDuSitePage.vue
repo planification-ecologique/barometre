@@ -13,7 +13,7 @@
             </li>
             <li>
               <a href="/tags" class="" target="_self" id="link-tags"
-                >Tags</a
+                >Recherche</a
               >
              
             </li>
