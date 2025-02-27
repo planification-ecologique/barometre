@@ -16,6 +16,8 @@
 </template>
 
 <script>
+import { api } from "@/services/api.js";
+
 export default {
   name: "Tags",
   data() {
@@ -46,40 +48,71 @@ export default {
       var selected_tags = this.changerGuillemets(this.get_selected_tags());
       this.$emit("tags-selected", selected_tags);
     },
-    get_tags() {
-      this.tags = [
-        {
-          value: "atténuation",
-          label: "Atténuation",
-          selected: true
+    // Récupération des tags uniques via l'API
+    async fetch_unique_tags() {
+          // Appel à l'API
+          try {
+            const response = await api("/crud/get_all_unique_tags", {
+              method: "GET",
+            });
+
+            if (!response) {
+              throw new Error("Erreur lors de la récupération des tags.");
+            }
+
+            // Récupération des données
+            let results = response.data.results;
+
+            // Formatage pour les composants tags
+            this.tags = results.map((item) => {
+              return {
+                value: item,
+                label: item[0].toUpperCase() + item.slice(1),
+                selected: false,
+              };
+            });
+            
+            // console.log("results_API--------", JSON.stringify(this.results_API));
+          } catch (error) {
+            console.error("Erreur dans le chargement des tags : ", error);
+          }
         },
-        // {value:'emissions', label:'Emissions', selected:false},
-        {
-          value: "biodiversité",
-          label: "Biodiversité",
-          selected: false
-        },
-        {
-          value: "ressources",
-          label: "Ressources",
-          selected: false
-        },
-        {
-          name: "adaptation",
-          value: "adaptation",
-          label: "Adaptation",
-          selected: false
-        },
-        {          
-          value: "santé",
-          label: "Santé",
-          selected: false
-        }
-      ];
-    }
+
+    // get_tags() {
+    //   this.tags = [
+    //     {
+    //       value: "atténuation",
+    //       label: "Atténuation",
+    //       selected: false
+    //     },
+    //     // {value:'emissions', label:'Emissions', selected:false},
+    //     {
+    //       value: "biodiversité",
+    //       label: "Biodiversité",
+    //       selected: false
+    //     },
+    //     {
+    //       value: "ressources",
+    //       label: "Ressources",
+    //       selected: false
+    //     },
+    //     {
+    //       name: "adaptation",
+    //       value: "adaptation",
+    //       label: "Adaptation",
+    //       selected: false
+    //     },
+    //     {          
+    //       value: "santé",
+    //       label: "Santé",
+    //       selected: false
+    //     }
+    //   ];
+    // }
   },
   mounted() {
-    this.get_tags();
+    // this.get_tags();
+    this.fetch_unique_tags();
   },
 };
 </script>

@@ -10,6 +10,8 @@
           </p>
           <a id="fr-button-link-dashboard" class="fr-btn fr-btn-text" v-if="cardObject.databtn" :href="dashboard_link"
             title="Consulter toutes les données">Consulter toutes les données</a>
+          <a id="fr-button-link-dashboard" class="fr-btn fr-btn-text" v-if="cardObject.datasource" :href="datasource_link" target="_blank"
+            title="Consulter toutes les données">Consulter les données sources</a>
         </div>
       </div>
     </div>
@@ -31,6 +33,7 @@ export default {
   data() {
     return {
       dashboard_link: base + "/dashboard?theme=default&levier=default",
+      datasource_link: "https://www.data.gouv.fr/fr/datasets/indicateurs-regionaux-de-planification-ecologique/",
       myrouter: router,
     };
   },

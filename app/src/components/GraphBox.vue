@@ -36,7 +36,7 @@
     <div v-if="dataObj.values">
       <div class="cardData" v-if="this.displayChart">
         <!-- Affichage du graphique -->
-        <div v-if="dataObj.label_sous_groupe == ''">
+        <div v-if="dataObj.type_de_graphique == 'Barres simple'">
           <!-- Composant Histogramme sans sous-groupe / DSFR -->
           <bar-chart
             :x="JSON.stringify(dataObj.values.x)"
@@ -49,7 +49,7 @@
           >
           </bar-chart>
         </div>
-        <div v-else>
+        <div v-else-if="dataObj.type_de_graphique == 'Barres empilées'">
           <!-- Composant Histogramme avec sous-groupe / DSFR -->
           <bar-chart
             :x="JSON.stringify(dataObj.date)"
@@ -59,7 +59,28 @@
             :name="JSON.stringify(dataObj.label_sous_groupe)"
           >
           </bar-chart>
+          <!-- <multi-line-chart
+            :x="JSON.stringify(dataObj.date)"
+            :y="JSON.stringify(dataObj.values)"
+            :aspectratio="2"
+            :name="JSON.stringify(dataObj.label_sous_groupe)"
+            :isSmall="true"
+          >
+          </multi-line-chart> -->
+
         </div>
+        <div v-else-if="dataObj.type_de_graphique == 'Courbes indépendantes'">
+          <!-- Composant Ligne / DSFR -->
+          <multi-line-chart
+            :x="JSON.stringify(dataObj.date)"
+            :y="JSON.stringify(dataObj.values)"
+            :aspectratio="2"
+            :name="JSON.stringify(dataObj.label_sous_groupe)"
+            :isSmall="true"
+          >
+          </multi-line-chart>
+        </div>
+
       </div>
       <!-- Affichage du tableau -->
       <div v-else>
@@ -69,6 +90,7 @@
             :captionTitle="dataObj.label_indic"
             :annee="dataObj.values.x[0]"
             :valeur="dataObj.values.ytab"
+            :type_mesure="dataObj.label_value"
           ></table-component>
         </div>
         <div v-else>
@@ -82,13 +104,34 @@
       </div>
     </div>
     <!-- Affichage des informations complémentaires sous le graphique -->
-    <div class="beneathGraph">
-      <p class="fr-text--xs fr-text-mention--grey textReference">
-        Source : {{ dataObj.label_sources }}
-      </p>
-      <p class="fr-text--xs fr-text-mention--grey textReference">
-        Périmètre : {{ dataObj.label_perimetre }}
-      </p>
+    <div class="beneathGraph fr-grid-row">
+
+      <!-- Split la carte en deux colonnes"> -->
+      <div class="fr-col-md-6 fr-col-lg-6 fr-col-xl-6 fr-col-12">
+        <div v-if="dataObj.lien_donnees_source">
+          <p class="fr-text--xs fr-text-mention--grey textReference">
+          Source : <a :href="dataObj.lien_donnees_source" target="_blank" rel="noopener external">{{ dataObj.label_sources }}</a>
+          </p>
+        </div>
+        <div v-else-if="dataObj.lien_site_source">
+          <p class="fr-text--xs fr-text-mention--grey textReference">
+          Source : <a :href="dataObj.lien_site_source" target="_blank" rel="noopener external">{{ dataObj.label_sources }}</a>
+          </p>
+        </div>
+        <div v-else>
+          <p class="fr-text--xs fr-text-mention--grey textReference">
+          Source : {{ dataObj.label_sources }}
+          </p>
+        </div>
+        <p class="fr-text--xs fr-text-mention--grey textReference">
+          Périmètre : {{ dataObj.label_perimetre }}
+        </p>
+      </div>
+      <div class="fr-col-md-6 fr-col-lg-6 fr-col-xl-6 fr-col-12">
+        <a class="fr-link fr-link--download fr-link--download-text" id="link-3352" :href="downloadUrl" :download="getFilename()">
+          Télécharger les données <span class="fr-link__detail">CSV – 1 ko</span>
+        </a>
+      </div>
     </div>
     <!-- Gestion du dropdown description -->
     <div class="fr-accordion">
@@ -111,7 +154,13 @@
           class="fr-text--s cardDescription fr-ml-1w fr-mr-1w fontSizeDescription"
         >
           {{ dataObj.label_description }}
+
+          <br v-if="dataObj.label_description != ''"/>
+          <br v-if="dataObj.label_description != ''"/>
+          <i>Dernière mise à jour de l’indicateur : {{ dataObj.date_maj }}</i>
         </p>
+
+        
         <div class="fr-ml-1w" v-if="dataObj.label_tags">
           <tags-card :tagsIndicateurs="dataObj.label_tags"></tags-card>
         </div>
@@ -123,6 +172,7 @@
 <script>
 import BarChart from "./components_dsfr/BarChart.vue";
 import MultiLineChart from "./components_dsfr/MultiLineChart.vue";
+import LineChart from "./components_dsfr/LineChart.vue";
 import SegmentedControls from "./SegmentedControls.vue";
 import tagsCard from "./TagsCard.vue";
 import TableComponent from "./TableComponent.vue";
@@ -137,6 +187,7 @@ export default {
     TableComponent,
     TableComponentVariant,
     MultiLineChart,
+    LineChart,
   },
   props: {
     dataObj: {
@@ -158,15 +209,80 @@ export default {
   watch: {
     dataObj: function (){
       this.set_goal();
+      
     }
   },
+  computed: {
+    downloadUrl() {
+      let csvContent = '';
+      
+      try {
+        // Ajout BOM pour UTF-8
+        csvContent = '\uFEFF';
+        
+        if (this.dataObj.label_sous_groupe === "") {
+          // Pour les données sans sous-groupe
+          const headers = ['Année', 'Valeur', 'Type'];
+          csvContent = headers.join(';') + '\n';
+
+          if (this.dataObj.values.x && this.dataObj.values.ytab) {
+            for (let i = 0; i < this.dataObj.values.x[0].length; i++) {
+              let row = [this.dataObj.values.x[0][i]];
+              
+              // for (let j = 0; j < this.dataObj.values.ytab.length; j++) {
+              row.push(this.dataObj.values.ytab[i] + ' ' + this.dataObj.label_unit);
+
+              row.push(this.dataObj.label_value[i]);
+              // }
+              
+              csvContent += row.join(';') + '\n';
+            }
+          }
+        } else {
+          // Pour les données avec sous-groupe
+          const headers = ['Année', ...this.dataObj.label_sous_groupe];
+          csvContent += headers.join(';') + '\n';
+          
+          // Ajout des données
+          if (this.dataObj.date && this.dataObj.values) {
+            for (let i = 0; i < this.dataObj.date[0].length; i++) {
+              let row = [this.dataObj.date[0][i]];
+              
+              for (let j = 0; j < this.dataObj.values.length; j++) {
+                row.push(this.dataObj.values[j][i]);
+              }
+              
+              csvContent += row.join(';') + '\n';
+            }
+          }
+        }
+        
+        // Créer l'URL data avec encodage UTF-8
+        return 'data:text/csv;charset=utf-8,' + encodeURIComponent(csvContent);
+      } catch (error) {
+        console.error("Erreur lors de la création de l'URL de téléchargement:", error);
+        return '#';
+      }
+    }
+  },
+
   methods: {
     // Fonction pour afficher le graphique ou le tableau
     handleChartSelected(type) {
       this.displayChart = type === "graphique" ? true : false;
     },
+    getFilename() {
+      return `${this.dataObj.label_indic.replace(/[^\w\s]/gi, '')}_data.csv`;
+    },
+
     set_goal () {
       try {
+        // Formatage de la date de mise à jour
+        // à l'origine : "2024-08-02 3:19pm" / "2024-08-01 9:37am"
+        // replace the date with the new format
+
+        this.dataObj.date_maj = this.dataObj.date_maj.split(" ")[0];
+        // Calcul de la cible
         if (
           this.dataObj.label_sous_groupe == undefined ||
           this.dataObj.label_sous_groupe == ""
@@ -190,7 +306,7 @@ export default {
       } catch (error) {
         console.log("Erreur dans la cible", error);
       }
-    }
+    },
   },
   mounted() {    
     this.set_goal();
@@ -216,8 +332,8 @@ export default {
   padding: 0.5rem 1rem;
   border-bottom: 1px solid #dddddd;
   border-top: 1px solid #dddddd;
-  display: block;
-  justify-content: space-between;
+  /* display: block; */
+  justify-content: space-around;
 }
 .cardReference {
   padding: 0.5rem 1rem;
@@ -283,4 +399,10 @@ p.textReference {
   margin-bottom: 0rem;
   font-weight: 400;
 }
+
+.fr-link--download-text {
+  font-size: small !important;
+  /* align-items: flex-end !important; */
+}
+
 </style>
