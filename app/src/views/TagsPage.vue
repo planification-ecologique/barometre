@@ -171,16 +171,19 @@ export default {
         ];
 
       if (theme_levier_filter.length > 0) {
-        ls_filters.extend(theme_levier_filter);
-      };
-      
+        var filter_query = ls_filters.concat(theme_levier_filter);
+      } else {
+        var filter_query = ls_filters;
+      }
+
       var query = {
-        filter_by: ls_filters,
+        filter_by: filter_query,
         time_period: {
           date_start: "2015-01-01",
           date_end: "2031-01-01",
         },
       };
+
       // Call API
       try {
         const response = await api("/requests/get_indicators", {
@@ -236,25 +239,30 @@ export default {
       this.isLoading = false;
     },
     onSelectionChange() {
+
+      this.isapiloading = true;
+
       if (!this.selectedValue) return
       
-      const [themeId, levierId] = this.selectedValue.split(':')
+      let theme_levier_filter = [];
       
       // If a theme is selected (no levier), emit only theme
       if (this.selectedValue.startsWith('theme:')) {
-        this.$emit('selection-changed', {
-          type: 'theme',
-          themeId: themeId.replace('theme:', '')
-        })
+
+        let themeId_query = this.selectedValue.replace('theme:', '')
+        theme_levier_filter.push({ field: 'id_theme', values: [themeId_query] });
+
       } 
+      else if (this.selectedValue === '') {
+        this.fetchData(this.selectedTags)
+      }
       // If a levier is selected, emit both theme and levier
       else {
-        this.$emit('selection-changed', {
-          type: 'levier',
-          themeId,
-          levierId
-        })
+        let [themeId, levierId] = this.selectedValue.split(':')
+        theme_levier_filter.push({ field: 'id_theme', values: [themeId] });
+        theme_levier_filter.push({ field: 'id_levier', values: [levierId] });
       }
+      this.fetchData(this.selectedTags, theme_levier_filter);
     }
   },
   mounted() {
