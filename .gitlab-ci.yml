@@ -15,9 +15,10 @@ stages:
   - deploy
 
 variables:
-    TAG_NUMBER: "0.0.1"
-    IMAGE_TAG_NAME: "barometre-sgpe-$ENV_CONTEXT:$TAG_NUMBER"
-    IMAGE_NAME: "$CI_REGISTRY_IMAGE/$IMAGE_TAG_NAME"
+    IMAGE_TAG_NAME_LATEST: "barometre-sgpe-$ENV_CONTEXT:latest"
+    IMAGE_TAG_NAME_COMMIT_SHA: "barometre-sgpe-$ENV_CONTEXT:$CI_COMMIT_SHORT_SHA"
+    IMAGE_NAME: "$CI_REGISTRY_IMAGE/$IMAGE_TAG_NAME_COMMIT_SHA"
+    IMAGE_NAME_LATEST: "$CI_REGISTRY_IMAGE/$IMAGE_TAG_NAME_LATEST"
     KUBE_CONTEXT: cgdd/sri/ecolab/indicateurs-territoriaux/tableau-de-bord-de-la-planification-ecologique-sgpe/k8s-connection:k8s-connection-$ENV_CONTEXT
 
 # IMAGE ---
@@ -35,6 +36,9 @@ build_frontend:
       - /builds/cgdd/sri/ecolab/indicateurs-territoriaux/tableau-de-bord-de-la-planification-ecologique-sgpe/sgpe-app/app/dist.tar.gz
     expose_as: 'vuejs dashboard dist'
     expire_in: 2 hrs
+  rules:
+    changes:
+      - app/**/*
 
 build_nginx:
   stage: build_nginx
@@ -51,6 +55,7 @@ build_nginx:
     - |
       /kaniko/executor --context $CI_PROJECT_DIR \
         --destination $IMAGE_NAME \
+        --destination $IMAGE_NAME_LATEST \
         --dockerfile $CI_PROJECT_DIR/Dockerfile
 
 # DEPLOY ---
@@ -80,6 +85,9 @@ Publish-Helm-Package:
     - helm package $CI_PROJECT_DIR/$PACKAGE_NAME
     - 'curl --request POST --user gitlab-ci-token:$CI_REGISTRY_PASSWORD --form "chart=@${PACKAGE_VERSION}" "${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/helm/api/stable/charts"'
     - echo "Chart Package Published to Gitlab package registry"
+  rules:
+    changes:
+      - app-front-chart/**/*
 
 # This Stage will Deploy Helm Chart to K8S Cluster
 Deploy-Helm-Chart:
