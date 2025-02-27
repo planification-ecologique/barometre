@@ -57,6 +57,9 @@ build_nginx:
         --destination $IMAGE_NAME \
         --destination $IMAGE_NAME_LATEST \
         --dockerfile $CI_PROJECT_DIR/Dockerfile
+  rules:
+    - changes:
+      - app/**/*
 
 # DEPLOY ---
 # This Stage extract the name and version package from Helm Chart..
