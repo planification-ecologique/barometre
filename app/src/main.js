@@ -6,7 +6,7 @@ import config_file from './services/tarteaucitron_config.js'
 import analytics_config_file from './services/dsfr_analytics_config.js'
 import './css/website.css'
 
-// DSFR requirements
+// DSFR core and legacy assets
 require('../node_modules/@gouvfr/dsfr/dist/legacy/legacy.nomodule.min.js')
 require('../node_modules/@gouvfr/dsfr/dist/core/core.module.min.js')
 require('../node_modules/@gouvfr/dsfr/dist/dsfr.main.css')
@@ -19,23 +19,31 @@ require('../node_modules/@gouvfr/dsfr/dist/analytics/analytics.module.js')
 
 Vue.config.productionTip = false
 
-// Tarteaucitron config
-if (typeof Storage !== "undefined") {
+// Tarteaucitron configuration
+if (typeof Storage !== 'undefined') {
   try {
-    localStorage.setItem("tarteaucitron", "available");
+    localStorage.setItem('tarteaucitron', 'available')
     require('../public/tarteaucitron/tarteaucitron.js')
     require('../public/tarteaucitron/tarteaucitron.services.js')
     require('../public/tarteaucitron/css/dsfr-theme-tac.css')
-    tarteaucitronForceLanguage = 'fr';
-    tarteaucitron.init(config_file);
-    tarteaucitron.user.eulerianHost = process.env.VUE_APP_TRACKING;
-    window.dsfr = analytics_config_file;
+    tarteaucitronForceLanguage = 'fr'
+    tarteaucitron.init(config_file)
+    tarteaucitron.user.eulerianHost = process.env.VUE_APP_TRACKING
+    window.dsfr = analytics_config_file
   } catch (err) {
-    console.warn("Cookies failed to be set; Blocked!");
+    console.warn('Cookies failed to be set; blocked by the browser')
   }
 }
 
-// Delayed mount only after Keycloak is ready
+// Function to mount Vue app
+function mountApp () {
+  new Vue({
+    router,
+    render: h => h(App)
+  }).$mount('#app')
+}
+
+// Initialize Keycloak if enabled
 if (process.env.VUE_APP_KEYCLOAK_AVAILABLE === 'true') {
   Vue.use(VueKeyCloak, {
     config: {
@@ -44,25 +52,34 @@ if (process.env.VUE_APP_KEYCLOAK_AVAILABLE === 'true') {
       clientId: process.env.VUE_APP_KEYCLOAK_CLIENT
     },
     init: {
-      onLoad: 'check-sso',
+      onLoad: 'check-sso',      // or 'login-required'
       useNonce: false,
       silentCheckSsoRedirectUri: window.location.origin + process.env.VUE_APP_PREFIX_PATH + '/silent-check-sso.html'
     },
-    onReady: (keycloak) => {
+    onReady: keycloak => {
+      // Store initial token
+      localStorage.setItem('vue-token', JSON.stringify(keycloak.token))
+
+      // Optionally refresh token periodically
+      setInterval(() => {
+        keycloak.updateToken(60).then(refreshed => {
+          if (refreshed) {
+            localStorage.setItem('vue-token', JSON.stringify(keycloak.token))
+          }
+        }).catch(() => {
+          console.warn('Failed to refresh token')
+        })
+      }, 60000)
+
+      // Redirect to login if not yet authenticated
       if (!keycloak.authenticated) {
-        keycloak.login();
+        keycloak.login()
       } else {
-        new Vue({
-          router,
-          render: h => h(App)
-        }).$mount('#app');
+        mountApp()
       }
     }
-  });
+  })
 } else {
-  // Mount app without Keycloak
-  new Vue({
-    router,
-    render: h => h(App)
-  }).$mount('#app');
+  // No Keycloak: just mount
+  mountApp()
 }
