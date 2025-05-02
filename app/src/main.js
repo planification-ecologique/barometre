@@ -52,7 +52,7 @@ if (process.env.VUE_APP_KEYCLOAK_AVAILABLE === 'true') {
       // Use 'login-required' to always require authentication
       // If using 'login-required', there is no need for the router guards in router.js
       onLoad: 'login-required',
-      pkceMethod: 'S256',
+      // pkceMethod: 'S256',
       useNonce: false, // ensure compatibility because Vue 2 is no longer supporter by @dsb-norge/vue-keycloak-js https://github.com/dsb-norge/vue-keycloak-js/issues/188
       // silentCheckSsoRedirectUri: window.location.origin + process.env.VUE_APP_PREFIX_PATH + '/silent-check-sso.html'
     }
