@@ -19,7 +19,7 @@
             </button>
             <div class="fr-collapse" :id="'fr-sidemenu-item-' + theme.id_theme">
               <ul class="fr-sidemenu__list">
-                <li class="fr-sidemenu__item" v-for="(levier, index) in theme.levier" :key="index">
+                <li class="fr-sidemenu__item" v-for="(levier, index) in theme.leviers" :key="index">
                   <a class="fr-sidemenu__link" 
                     :title="levier.label_levier"
                     @click="set_query(theme.label_theme, theme.id_theme, levier)"
@@ -42,7 +42,8 @@
   </nav>
 </template>
 <script>
-import { api } from "@/services/api.js";
+
+import { getThemesLevier } from "@/services/csvDataService.js";
 
 export default {
   name: "SideNavigation",
@@ -58,42 +59,67 @@ export default {
     initParams: {
       type: Object,
     },
+    useStaging: {
+      type: Boolean,
+      default: false
+    }
   },
   methods: {
     async fetch_menu_options() {
       try {
-        const response = await api("/requests/get_themes_levier", {
-          method: "GET",
-        });
-        if (!response) {
+        // Get themes and leviers from CSV data service
+        const response = await getThemesLevier(this.useStaging ? 'staging' : 'production');
+        if (!response || !response.data || !response.data.themes) {
           throw new Error(
             "Erreur lors de la récupération des thèmes et leviers"
           );
         }
 
-        let result = response.data.results;
+        let result = response.data.themes;
+        
+        // Filter out themes with no leviers to avoid errors
+        result = result.filter(theme => theme.leviers && theme.leviers.length > 0);
+        
+        // If no valid themes, show error and return
+        if (!result.length) {
+          console.error("No valid themes with leviers found");
+          return;
+        }
+        
         this.menuOptions = result;
 
-        if (this.initParams.id_theme != undefined) {
-          if(this.initParams.id_theme == "default"){
-            this.initParams.label_theme = this.menuOptions[0].label_theme;
-            this.initParams.id_theme = this.menuOptions[0].id_theme;
-            this.initParams.levier = this.menuOptions[0].levier[0];
-          }
-          else{
-            this.initParams.label_theme = this.menuOptions.find(
-              (theme) => theme.id_theme === this.initParams.id_theme
-            ).label_theme;
-            this.initParams.levier = this.menuOptions
-              .find((theme) => theme.id_theme === this.initParams.id_theme)
-              .levier.find(
-                (levier) => levier.id_levier === this.initParams.id_levier
-              );
-          }
-        } else {
-          console.error("Invalid query parameters")
-        }
+        // Default values - always initialize with first theme/levier
+        let defaultTheme = this.menuOptions[0];
+        let defaultLevier = defaultTheme.leviers[0];
 
+        // Check if specific theme/levier are requested
+        if (this.initParams && this.initParams.id_theme && this.initParams.id_theme !== "default") {
+          // Try to find the requested theme
+          const requestedTheme = this.menuOptions.find(theme => theme.id_theme === this.initParams.id_theme);
+          
+          if (requestedTheme) {
+            defaultTheme = requestedTheme;
+            
+            // If a specific levier is requested
+            if (this.initParams.id_levier) {
+              const requestedLevier = requestedTheme.leviers.find(
+                levier => levier.id_levier === this.initParams.id_levier
+              );
+              
+              if (requestedLevier) {
+                defaultLevier = requestedLevier;
+              }
+            }
+          }
+        }
+        
+        // Set the theme and levier (either default or requested)
+        this.initParams = this.initParams || {};
+        this.initParams.label_theme = defaultTheme.label_theme;
+        this.initParams.id_theme = defaultTheme.id_theme;
+        this.initParams.levier = defaultLevier;
+        
+        // Initialize the dashboard
         this.set_query(
           this.initParams.label_theme,
           this.initParams.id_theme,
@@ -141,7 +167,7 @@ export default {
         (element) => element.id_theme === theme
       )[0];
       selected_element.selected = state;
-      selected_element.levier.filter(
+      selected_element.leviers.filter(
         (element) => element.id_levier === levier
       )[0].selected = state;
     },

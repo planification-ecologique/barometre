@@ -36,7 +36,7 @@
     <div v-if="dataObj.values">
       <div class="cardData" v-if="this.displayChart">
         <!-- Affichage du graphique -->
-        <div v-if="dataObj.type_de_graphique == 'Barres simple'">
+        <div v-if="getChartType === 'Barres simple'">
           <!-- Composant Histogramme sans sous-groupe / DSFR -->
           <bar-chart
             :x="JSON.stringify(dataObj.values.x)"
@@ -49,7 +49,7 @@
           >
           </bar-chart>
         </div>
-        <div v-else-if="dataObj.type_de_graphique == 'Barres empilées'">
+        <div v-else-if="getChartType === 'Barres empilées'">
           <!-- Composant Histogramme avec sous-groupe / DSFR -->
           <bar-chart
             :x="JSON.stringify(dataObj.date)"
@@ -59,17 +59,8 @@
             :name="JSON.stringify(dataObj.label_sous_groupe)"
           >
           </bar-chart>
-          <!-- <multi-line-chart
-            :x="JSON.stringify(dataObj.date)"
-            :y="JSON.stringify(dataObj.values)"
-            :aspectratio="2"
-            :name="JSON.stringify(dataObj.label_sous_groupe)"
-            :isSmall="true"
-          >
-          </multi-line-chart> -->
-
         </div>
-        <div v-else-if="dataObj.type_de_graphique == 'Courbes indépendantes'">
+        <div v-else-if="getChartType === 'Courbes indépendantes'">
           <!-- Composant Ligne / DSFR -->
           <multi-line-chart
             :x="JSON.stringify(dataObj.date)"
@@ -80,7 +71,6 @@
           >
           </multi-line-chart>
         </div>
-
       </div>
       <!-- Affichage du tableau -->
       <div v-else>
@@ -157,7 +147,7 @@
 
           <br v-if="dataObj.label_description != ''"/>
           <br v-if="dataObj.label_description != ''"/>
-          <i>Dernière mise à jour de l’indicateur : {{ dataObj.date_maj }}</i>
+          <i>Dernière mise à jour de l'indicateur : {{ dataObj.date_maj }}</i>
         </p>
 
         
@@ -220,20 +210,18 @@ export default {
         // Ajout BOM pour UTF-8
         csvContent = '\uFEFF';
         
-        if (this.dataObj.label_sous_groupe === "") {
+        if (!Array.isArray(this.dataObj.label_sous_groupe)) {
           // Pour les données sans sous-groupe
           const headers = ['Année', 'Valeur', 'Type'];
           csvContent = headers.join(';') + '\n';
 
           if (this.dataObj.values.x && this.dataObj.values.ytab) {
-            for (let i = 0; i < this.dataObj.values.x[0].length; i++) {
-              let row = [this.dataObj.values.x[0][i]];
+            for (let i = 0; i < this.dataObj.values.x.length; i++) {
+              let row = [Array.isArray(this.dataObj.values.x) ? this.dataObj.values.x[i] : this.dataObj.values.x];
               
-              // for (let j = 0; j < this.dataObj.values.ytab.length; j++) {
               row.push(this.dataObj.values.ytab[i] + ' ' + this.dataObj.label_unit);
 
-              row.push(this.dataObj.label_value[i]);
-              // }
+              row.push(this.dataObj.label_value ? this.dataObj.label_value[i] || '' : '');
               
               csvContent += row.join(';') + '\n';
             }
@@ -263,6 +251,30 @@ export default {
         console.error("Erreur lors de la création de l'URL de téléchargement:", error);
         return '#';
       }
+    },
+    getChartType() {
+      try {
+        // Check if type_de_graphique is explicitly set
+        if (this.dataObj.type_de_graphique) {
+          return this.dataObj.type_de_graphique;
+        }
+        
+        // Determine chart type based on data structure
+        const hasSousGroupe = this.dataObj.label_sous_groupe && 
+                             (this.dataObj.label_sous_groupe.length > 0 || 
+                              (Array.isArray(this.dataObj.label_sous_groupe) && this.dataObj.label_sous_groupe.length > 0));
+        
+        if (hasSousGroupe) {
+          // If we have sub-groups, use Courbes indépendantes
+          return 'Courbes indépendantes';
+        } else {
+          // Default to simple bar chart
+          return 'Barres simple';
+        }
+      } catch (error) {
+        console.error("Erreur dans la détermination du type de graphique:", error);
+        return 'Barres simple'; // Default fallback
+      }
     }
   },
 
@@ -280,8 +292,12 @@ export default {
         // Formatage de la date de mise à jour
         // à l'origine : "2024-08-02 3:19pm" / "2024-08-01 9:37am"
         // replace the date with the new format
-
-        this.dataObj.date_maj = this.dataObj.date_maj.split(" ")[0];
+        if (this.dataObj.date_maj) {
+          this.dataObj.date_maj = this.dataObj.date_maj.split(" ")[0];
+        } else {
+          this.dataObj.date_maj = "Date non disponible";
+        }
+        
         // Calcul de la cible
         if (
           this.dataObj.label_sous_groupe == undefined ||
@@ -296,12 +312,6 @@ export default {
             : (this.cible = undefined);
         } else {
           this.cible = undefined;
-
-          // let sum = 0
-          // this.dataObj.values[this.dataObj.values.length - 1].forEach( value => {
-          // sum += value
-          // })
-          // this.cible = sum
         }
       } catch (error) {
         console.log("Erreur dans la cible", error);

@@ -12,7 +12,7 @@
               >
             </li>
             <li>
-              <a href="/tags" class="" target="_self" id="link-tags"
+              <a href="/search" class="" target="_self" id="link-search"
                 >Recherche</a
               >
              

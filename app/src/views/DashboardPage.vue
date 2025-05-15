@@ -1,11 +1,12 @@
 <template>
   <div class="fr-container--fluid">
     <div class="fr-grid-row">
-      <aside class="fr-col-12 fr-col-sm-12 fr-col-lg-4 fr-mb-sm-5w">
+      <aside class="fr-col-12 fr-col-sm-12 fr-col-lg-3 fr-mb-sm-5w">
         <div id="sidebar" class="fr-ml-2w">
           <side-navigation
             v-on:params="updateSelection"
             :initParams="sidenav_initParams"
+            :useStaging="useStaging"
           />
         </div>
       </aside>
@@ -26,7 +27,8 @@
 </template>
 
 <script>
-import { api } from "@/services/api.js";
+// Import CSV data service instead of API
+import { getIndicators } from "@/services/csvDataService.js";
 import UpFooter from "../components/UpFooter.vue";
 import AdaptiveDashboard from "../components/AdaptiveDashboard.vue";
 import SideNavigation from "../components/SideNavigation.vue";
@@ -34,6 +36,16 @@ import dsfrAnalytics from "../services/dsfr_analytics"
 
 export default {
   name: "DashboardPage",
+  props: {
+    query: {
+      type: String,
+      default: null
+    },
+    useStaging: {
+      type: Boolean,
+      default: false
+    }
+  },
   components: {
     UpFooter,
     AdaptiveDashboard,
@@ -69,9 +81,12 @@ export default {
           var new_levier = selectedValue.query.filter_by[1].values[0];
 
           if (new_theme !== this.$route.query.theme || new_levier !== this.$route.query.levier) {
-            this.$router.push(
-              {name: "dashboard",
-               query: { theme: new_theme, levier: new_levier }
+            // Determine which route name to use based on whether we're in staging
+            const routeName = this.useStaging ? "staging-dashboard" : "dashboard";
+            
+            this.$router.push({
+              name: routeName,
+              query: { theme: new_theme, levier: new_levier }
             });
           }
         } catch (error) {
@@ -82,24 +97,14 @@ export default {
     // Récupération des données de l'API
     async fetchData(query) {
       this.isapiloading = true;
-      // Appel à l'API
+      // Use CSV data service instead of API
       try {
-        const response = await api("/requests/get_indicators", {
-          method: "POST",
-          body: JSON.stringify(query),
-        });
-
-        if (!response) {
-          throw new Error("Erreur lors de l'appel à l'API");
-        }
-
-        // Récupération des données
-        let results = response;
-        this.results_API = results.data.results;
-        // console.log("results_API--------", JSON.stringify(this.results_API));
+        const response = await getIndicators(query, this.useStaging ? 'staging' : 'production');
+        // Set results directly from CSV data service
+        this.results_API = response.results;
         this.isapiloading = false;
       } catch (error) {
-        console.error("Erreur dans le chargement des données : ", error);
+        console.error("Erreur dans le chargement des données CSV : ", error);
       }
     },
   },

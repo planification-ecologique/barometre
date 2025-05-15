@@ -30,19 +30,18 @@ export default {
             default: ''
         },
         annee: {
-            type: [],
+            type: Array,
             required: true,
-            default: ['2017']
+            default: () => ['2017']
         },
         valeur: {
-            type: [],
+            type: Array,
             required: true,
-            default: ['Non défini']
+            default: () => ['Non défini']
         },
         type_mesure: {
-            type: [],
-            required: true,
-            default: []
+            type: Array,
+            default: () => []
         }
     }
 }

@@ -123,7 +123,6 @@
     },
     watch:{
       y: function () {
-        // console.log("props " + this.y[0] )
         this.resetData()
         this.createChart()
       }

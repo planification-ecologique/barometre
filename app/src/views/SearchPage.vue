@@ -17,7 +17,7 @@
           <br/>
           <section>
             <div>
-              <Tags @tags-selected="updateTagSelection"></Tags>
+              <Tags @tags-selected="updateTagSelection" :useStaging="useStaging"></Tags>
             </div>
           </section>
           <br/>
@@ -99,11 +99,17 @@
 import Tags from "../components/Tags.vue";
 import AdaptiveDashboard from "../components/AdaptiveDashboard.vue";
 import Pagination from "../components/components_dsfr/Pagination.vue";
-import { api } from "@/services/api.js";
+import { getIndicators, getThemesLevier } from "@/services/csvDataService.js";
 import dsfrAnalytics from "../services/dsfr_analytics"
 
 export default {
-  name: "TagsPage",
+  name: "SearchPage",
+  props: {
+    useStaging: {
+      type: Boolean,
+      default: false
+    }
+  },
   components: {
     Tags,
     AdaptiveDashboard,
@@ -131,19 +137,6 @@ export default {
       this.fetchData(selectedTag);
 
     },
-    // handleSearchClick() {
-    //   this.isapiloading = true;
-    //   if (this.searchQuery != '') {
-    //       this.results_filtered = this.results_API.filter((item) => {
-    //         return item.label_indic.toLowerCase().includes(this.searchQuery.toLowerCase());
-    //       });
-    //     } else {
-    //       this.results_filtered = this.results_API;
-    //     }
-    //   this.n_results = this.results_filtered.length;
-    //   this.set_pages();
-    //   this.isapiloading = false;
-    // },
     handleSearchClick() {
       this.isapiloading = true;
       this.fetchData(this.selectedTags);
@@ -184,31 +177,16 @@ export default {
         },
       };
 
-      // Call API
+      // Use CSV data service instead of API
       try {
-        const response = await api("/requests/get_indicators", {
-          method: "POST",
-          body: JSON.stringify(query),
-        });
+        const results = await getIndicators(query, this.useStaging ? 'staging' : 'production');
 
-        if (!response) {
-          throw new Error("Erreur lors de l'appel à l'API");
+        if (!results) {
+          throw new Error("Erreur lors de la récupération des données");
         }
 
-        // Retrieve data
-        let results = response;
-        this.results_API = results.data.results;
-
-        // // Filter by search query
-        // if (this.searchQuery != '') {
-        //   this.results_filtered = this.results_API.filter((item) => {
-        //     return item.label_indic.toLowerCase().includes(this.searchQuery.toLowerCase());
-        //   });
-        // } else {
-        //   this.results_filtered = this.results_API;
-        // }
-
-
+        // Set the data
+        this.results_API = results.results;
         this.set_pages();
         this.isapiloading = false;
       } catch (error) {
@@ -221,22 +199,23 @@ export default {
     },
 
     async fetchThemesAndLeviers() {
-      this.isLoading = true
+      this.isLoading = true;
       
-      // Call API
-      const response = await api("/requests/get_themes_levier", {
-        method: "GET",
-      });
+      try {
+        // Use CSV data service instead of API
+        const response = await getThemesLevier(this.useStaging ? 'staging' : 'production');
 
-      if (!response) {
-        throw new Error("Erreur lors de l'appel à l'API");
+        if (!response) {
+          throw new Error("Erreur lors de la récupération des thèmes et leviers");
+        }
+
+        // Retrieve data - note the slightly different structure compared to API
+        this.themes = response.data.themes;
+        this.isLoading = false;
+      } catch (error) {
+        console.error("Erreur dans le chargement des thèmes et leviers : ", error);
+        this.isLoading = false;
       }
-
-      // Retrieve data
-      let results = response;
-
-      this.themes = results.data.results;
-      this.isLoading = false;
     },
     onSelectionChange() {
 
@@ -269,12 +248,12 @@ export default {
     this.fetchData(this.selectedTags);
     
     dsfrAnalytics({
-      path: "/tags",
-      name: "tags",
-      segment: "tags",
-      labels: ['contenu_liste', 'tags', '', '', ''],
+      path: "/search",
+      name: "search",
+      segment: "search",
+      labels: ['contenu_liste', 'search', '', '', ''],
       template: "contenu_liste",
-      group: "tags"
+      group: "search"
     })  
   },
   created() {
