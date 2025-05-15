@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import App from './App.vue'
-import VueKeyCloak from '@dsb-norge/vue-keycloak-js'
 import router from './router'
 import config_file from './services/tarteaucitron_config.js'
 import analytics_config_file from './services/dsfr_analytics_config.js'
@@ -43,43 +42,5 @@ function mountApp () {
   }).$mount('#app')
 }
 
-// Initialize Keycloak if enabled
-if (process.env.VUE_APP_KEYCLOAK_AVAILABLE === 'true') {
-  Vue.use(VueKeyCloak, {
-    config: {
-      realm: process.env.VUE_APP_KEYCLOAK_REALM,
-      url: process.env.VUE_APP_KEYCLOAK_URL,
-      clientId: process.env.VUE_APP_KEYCLOAK_CLIENT
-    },
-    init: {
-      onLoad: 'check-sso',      // or 'login-required'
-      useNonce: false,
-      silentCheckSsoRedirectUri: window.location.origin + process.env.VUE_APP_PREFIX_PATH + '/silent-check-sso.html'
-    },
-    onReady: keycloak => {
-      // Store initial token
-      localStorage.setItem('vue-token', JSON.stringify(keycloak.token))
+mountApp()
 
-      // Optionally refresh token periodically
-      setInterval(() => {
-        keycloak.updateToken(60).then(refreshed => {
-          if (refreshed) {
-            localStorage.setItem('vue-token', JSON.stringify(keycloak.token))
-          }
-        }).catch(() => {
-          console.warn('Failed to refresh token')
-        })
-      }, 60000)
-
-      // Redirect to login if not yet authenticated
-      if (!keycloak.authenticated) {
-        keycloak.login()
-      } else {
-        mountApp()
-      }
-    }
-  })
-} else {
-  // No Keycloak: just mount
-  mountApp()
-}

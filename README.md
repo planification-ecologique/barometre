@@ -8,7 +8,7 @@
    ```
    cd app 
    ```
-2. Install depensencies
+2. Install dependencies
    ```
    npm install 
    ```
@@ -66,8 +66,41 @@ To create distribution used to create docker images use commands:
    ```
     npm run build_qualif
    ```
+
 ## Docker
-There is also un Docker and docker compose:
+There is also a Docker and docker compose:
 ```
 docker compose up --build
 ```
+
+## Surge Deployment
+
+To deploy the application easily using surge:
+
+```
+npm run deploy
+```
+
+## Staging Environment
+
+The application supports a staging environment for testing data changes without affecting the production environment.
+
+### Accessing Staging
+You can access the staging environment at the following URLs:
+- `/staging/dashboard` - View the dashboard with staging data
+- `/staging/tags` - Use the tag search with staging data
+
+### Test using Staging
+
+The staging environment uses a different Grist document for data. When making changes that might affect data display, test them in the staging environment first. When accessing the staging environment, a red banner will appear at the top of the page with options to:
+
+1. Navigate between staging pages
+2. Verify your changes work as expected
+3. Exit the staging environment
+
+### Production Data Source
+
+Production data is sourced from:
+`https://grist.numerique.gouv.fr/o/ecolabservicesdonnees/api/docs/49SPrgL9jgVv3JgMaVHCc8/download/csv`
+
+A sample data file is also available in the repo : `grist_indicateurs_mai_2025.csv`.

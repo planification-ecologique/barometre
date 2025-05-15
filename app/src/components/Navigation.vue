@@ -28,8 +28,8 @@ export default {
       let base = process.env.VUE_APP_PREFIX_PATH
       this.menuOptions = [
         { value: 'accueil', label: 'Accueil', selected: false, link: base + "/accueil" },
-        { value: 'dashboard', label: 'Tableau de bord', selected: false, link: base + "/dashboard?theme=default&levier=default" },
-        { value: 'tags', label: 'Recherche', selected: false, link: base + "/tags" }
+        { value: 'dashboard', label: 'Tableau de bord', selected: false, link: base + "/dashboard" },
+        { value: 'search', label: 'Recherche', selected: false, link: base + "/search" }
       ]
       var current_page = this.get_name_page()
       if (current_page == '') {

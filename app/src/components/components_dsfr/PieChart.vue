@@ -88,10 +88,6 @@
         type: Boolean,
         default: false
       },
-      // pattern: {
-      //   type: Boolean,
-      //   default: false
-      // },
       date: {
         type: String,
         default: undefined
