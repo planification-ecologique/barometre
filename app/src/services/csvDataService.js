@@ -149,6 +149,23 @@ export function transformCSVData(csvData, query) {
           const tags = item['Tags objectifs environnementaux'].split(',').map(tag => tag.trim().toLowerCase());
           return filter.values.some(filterTag => tags.includes(filterTag.toLowerCase()));
         });
+      } else if (filter.field === 'search' && filter.values.length && filter.values[0]) {
+        const searchTerm = filter.values[0].toLowerCase().trim();
+        if (searchTerm) {
+          filteredData = filteredData.filter(item => {
+            // Search in title (Indicateur)
+            const titleMatch = item.Indicateur && item.Indicateur.toLowerCase().includes(searchTerm);
+            
+            // Search in description
+            const descMatch = item.Description && item.Description.toLowerCase().includes(searchTerm);
+            
+            // Search in tags - directly check if tags contain the search term
+            const tagMatch = item['Tags objectifs environnementaux'] && 
+              item['Tags objectifs environnementaux'].toLowerCase().includes(searchTerm);
+            
+            return titleMatch || descMatch || tagMatch;
+          });
+        }
       }
     }
   }
