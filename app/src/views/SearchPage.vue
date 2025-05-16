@@ -8,7 +8,15 @@
               <label class="fr-label" for="search-784-input">
                   Recherche
               </label>
-              <input v-model="searchQuery" class="fr-input" placeholder="Rechercher" type="search" id="search-784-input" name="search-784-input">
+              <input 
+                v-model="searchQuery" 
+                class="fr-input" 
+                placeholder="Rechercher un indicateur" 
+                type="search" 
+                id="search-784-input" 
+                name="search-784-input"
+                @keyup.enter="handleSearchClick"
+              >
               <button class="fr-btn" title="Rechercher" @click="handleSearchClick">
                   Rechercher
               </button>
@@ -25,11 +33,14 @@
             <div v-if="results_page.length > 0">
               <h1 class="fr-subtitle">
                 {{ this.results_API.length }} indicateurs trouvés
+                <span v-if="appliedSearchQuery" class="search-query-display">
+                  pour "<strong>{{ appliedSearchQuery }}</strong>"
+                </span>
               </h1>
               <section class="fr-col-md-6 fr-col-lg-6 fr-col-xl-6 fr-col-12">
                 <div class="fr-select-group">
                   <label class="fr-label" for="theme-levier-select">
-                    Sélection du thème et du levier
+                    Sélection du thème
                   </label>
                   <select 
                     class="fr-select" 
@@ -127,6 +138,7 @@ export default {
       results_page: [],
       nb_pages: 0,
       nb_graphs_pages: 6,
+      appliedSearchQuery: '',
     };
   },
   methods: {
@@ -135,7 +147,6 @@ export default {
       this.selectedTags = selectedTag;
       // Build query based on selected tags and fetch data
       this.fetchData(selectedTag);
-
     },
     handleSearchClick() {
       this.isapiloading = true;
@@ -159,7 +170,7 @@ export default {
           },
           {
             field: "search",
-            values: [this.searchQuery],
+            values: [this.searchQuery.trim()],
           }
         ];
 
@@ -189,6 +200,14 @@ export default {
         this.results_API = results.results;
         this.set_pages();
         this.isapiloading = false;
+        
+        // Update the applied search query only when search is performed
+        if (this.searchQuery.trim()) {
+          this.appliedSearchQuery = this.searchQuery.trim();
+        } else {
+          // Clear the applied search query if the search input is empty
+          this.appliedSearchQuery = '';
+        }
       } catch (error) {
         console.error("Erreur dans le chargement des données : ", error);
       }
@@ -273,5 +292,15 @@ export default {
 
 .fr-subtitle {
   font-weight: 400;
+}
+
+.search-query-display {
+  font-size: 1rem;
+  color: var(--text-default-grey);
+  font-style: italic;
+  
+  strong {
+    color: var(--text-action-high-blue-france);
+  }
 }
 </style>
