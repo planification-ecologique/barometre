@@ -2,66 +2,54 @@
   <div>
     <div class="fr-container--fluid">
       <div id="app">
-        <StagingBanner />
-        <SkipLinksDsfr></SkipLinksDsfr>
-        <header-dsfr />
+        <StagingBanner v-if="!$route.meta.hideHeader" />
+        <SkipLinksDsfr v-if="!$route.meta.hideHeader"></SkipLinksDsfr>
+        <header-dsfr v-if="!$route.meta.hideHeader" />
         <main id="content" role="main">
           <router-view />
         </main>
-        <footer-dsfr />
+        <footer-dsfr v-if="!$route.meta.hideFooter" />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-
 import HeaderDsfr from "./components/Header.vue";
 import FooterDsfr from "./components/Footer.vue";
-import SkipLinksDsfr from "./components/components_dsfr/SkipLinks.vue";
 import StagingBanner from "./components/StagingBanner.vue";
+import SkipLinksDsfr from "./components/components_dsfr/SkipLinks.vue";
 
 export default {
   name: "App",
   components: {
     HeaderDsfr,
     FooterDsfr,
-    SkipLinksDsfr,
-    StagingBanner
+    StagingBanner,
+    SkipLinksDsfr
   },
-
   watch: {
-    $route(to, from) {
-      document.title = to.meta.title || "Baromètre de la planification écologique";
-      
-      // Add or remove noindex meta tag based on route meta
+    $route(to) {
       this.updateNoIndexMetaTag(to.meta.noindex);
     }
   },
-  
   methods: {
-    updateNoIndexMetaTag(addNoIndex) {
-      // Remove existing noindex meta tag if present
-      const existingMeta = document.querySelector('meta[name="robots"]');
-      if (existingMeta) {
-        existingMeta.remove();
-      }
-      
-      // Add noindex meta tag if this is a staging route
-      if (addNoIndex) {
-        const noIndexMeta = document.createElement('meta');
-        noIndexMeta.setAttribute('name', 'robots');
-        noIndexMeta.setAttribute('content', 'noindex, nofollow');
-        document.head.appendChild(noIndexMeta);
+    updateNoIndexMetaTag(noindex) {
+      const metaTag = document.querySelector('meta[name="robots"]');
+      if (noindex) {
+        if (!metaTag) {
+          const meta = document.createElement('meta');
+          meta.name = 'robots';
+          meta.content = 'noindex';
+          document.head.appendChild(meta);
+        }
+      } else if (metaTag) {
+        metaTag.remove();
       }
     }
   },
-  
-  created() {
-    // Set initial noindex status based on initial route
-    this.$nextTick(() => {
-      this.updateNoIndexMetaTag(this.$route.meta.noindex);
-    });
+  mounted() {
+    this.updateNoIndexMetaTag(this.$route.meta.noindex);
   }
 };
 </script>
@@ -74,5 +62,13 @@ body {
 /* Add styling for when in staging mode */
 body.has-staging-banner {
   padding-top: 80px;
+}
+
+#app {
+  font-family: 'Marianne', Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
 }
 </style>

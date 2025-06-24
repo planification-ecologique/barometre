@@ -18,8 +18,8 @@ require('../node_modules/@gouvfr/dsfr/dist/analytics/analytics.module.js')
 
 Vue.config.productionTip = false
 
-// Tarteaucitron configuration
-if (typeof Storage !== 'undefined') {
+// Tarteaucitron configuration except for chart-iframe route
+if (typeof Storage !== 'undefined' && !window.location.pathname.includes('chart-iframe')) {
   try {
     localStorage.setItem('tarteaucitron', 'available')
     require('../public/tarteaucitron/tarteaucitron.js')

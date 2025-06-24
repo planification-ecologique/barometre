@@ -83,6 +83,7 @@
                 :dataObj="item"
                 :idAccordion="'accordion-' + index + columnIndex"
                 :titre="item.label_indic"
+                :key="item.label_indic + '-' + index + columnIndex"
               ></graph-box>
             </div>
           </article>

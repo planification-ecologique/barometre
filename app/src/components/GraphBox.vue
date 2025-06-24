@@ -95,22 +95,33 @@
     </div>
     <!-- Affichage des informations complémentaires sous le graphique -->
     <div class="beneathGraph fr-grid-row">
-
       <!-- Split la carte en deux colonnes"> -->
       <div class="fr-col-md-6 fr-col-lg-6 fr-col-xl-6 fr-col-12">
         <div v-if="dataObj.lien_donnees_source">
           <p class="fr-text--xs fr-text-mention--grey textReference">
-          Source : <a :href="dataObj.lien_donnees_source" target="_blank" rel="noopener external">{{ dataObj.label_sources }}</a>
+            Source :
+            <a
+              :href="dataObj.lien_donnees_source"
+              target="_blank"
+              rel="noopener external"
+              >{{ dataObj.label_sources }}</a
+            >
           </p>
         </div>
         <div v-else-if="dataObj.lien_site_source">
           <p class="fr-text--xs fr-text-mention--grey textReference">
-          Source : <a :href="dataObj.lien_site_source" target="_blank" rel="noopener external">{{ dataObj.label_sources }}</a>
+            Source :
+            <a
+              :href="dataObj.lien_site_source"
+              target="_blank"
+              rel="noopener external"
+              >{{ dataObj.label_sources }}</a
+            >
           </p>
         </div>
         <div v-else>
           <p class="fr-text--xs fr-text-mention--grey textReference">
-          Source : {{ dataObj.label_sources }}
+            Source : {{ dataObj.label_sources }}
           </p>
         </div>
         <p class="fr-text--xs fr-text-mention--grey textReference">
@@ -118,8 +129,14 @@
         </p>
       </div>
       <div class="fr-col-md-6 fr-col-lg-6 fr-col-xl-6 fr-col-12">
-        <a class="fr-link fr-link--download fr-link--download-text" id="link-3352" :href="downloadUrl" :download="getFilename()">
-          Télécharger les données <span class="fr-link__detail">CSV – 1 ko</span>
+        <a
+          class="fr-link fr-link--download fr-link--download-text"
+          id="link-3352"
+          :href="downloadUrl"
+          :download="getFilename()"
+        >
+          Télécharger les données
+          <span class="fr-link__detail">CSV – 1 ko</span>
         </a>
       </div>
     </div>
@@ -145,12 +162,11 @@
         >
           {{ dataObj.label_description }}
 
-          <br v-if="dataObj.label_description != ''"/>
-          <br v-if="dataObj.label_description != ''"/>
+          <br v-if="dataObj.label_description != ''" />
+          <br v-if="dataObj.label_description != ''" />
           <i>Dernière mise à jour de l'indicateur : {{ dataObj.date_maj }}</i>
         </p>
 
-        
         <div class="fr-ml-1w" v-if="dataObj.label_tags">
           <tags-card :tagsIndicateurs="dataObj.label_tags"></tags-card>
         </div>
@@ -188,6 +204,10 @@ export default {
       type: String,
       required: true,
     },
+    isIframe: {
+      type: Boolean,
+      default: false
+    }
   },
   data() {
     return {
@@ -197,59 +217,77 @@ export default {
     };
   },
   watch: {
-    dataObj: function (){
+    dataObj: function () {
       this.set_goal();
-      
-    }
+    },
   },
   computed: {
     downloadUrl() {
-      let csvContent = '';
-      
+      let csvContent = "";
+
       try {
         // Ajout BOM pour UTF-8
-        csvContent = '\uFEFF';
-        
+        csvContent = "\uFEFF";
+
+        console.log(this.dataObj.label_tags);
+
         if (!Array.isArray(this.dataObj.label_sous_groupe)) {
           // Pour les données sans sous-groupe
-          const headers = ['Année', 'Valeur', 'Type'];
-          csvContent = headers.join(';') + '\n';
+          const headers = [
+            "Année",
+            `Valeur - ${this.dataObj.label_unit}`,
+            "Type",
+          ];
+          csvContent = headers.join(";") + "\n";
 
-          if (this.dataObj.values.x && this.dataObj.values.ytab) {
-            for (let i = 0; i < this.dataObj.values.x.length; i++) {
-              let row = [Array.isArray(this.dataObj.values.x) ? this.dataObj.values.x[i] : this.dataObj.values.x];
-              
-              row.push(this.dataObj.values.ytab[i] + ' ' + this.dataObj.label_unit);
+          const xValues = this.dataObj.values.x[0];
+          if (xValues && this.dataObj.values.ytab) {
+            for (let i = 0; i < xValues.length; i++) {
+              let row = [xValues[i]];
 
-              row.push(this.dataObj.label_value ? this.dataObj.label_value[i] || '' : '');
-              
-              csvContent += row.join(';') + '\n';
+              row.push(this.dataObj.values.ytab[i]);
+
+              row.push(
+                this.dataObj.label_value
+                  ? this.dataObj.label_value[i] || ""
+                  : ""
+              );
+
+              csvContent += row.join(";") + "\n";
             }
           }
         } else {
           // Pour les données avec sous-groupe
-          const headers = ['Année', ...this.dataObj.label_sous_groupe];
-          csvContent += headers.join(';') + '\n';
-          
+          const headers = [
+            "Année",
+            ...this.dataObj.label_sous_groupe.map(
+              (groupe) => `${groupe} - ${this.dataObj.label_unit}`
+            ),
+          ];
+          csvContent += headers.join(";") + "\n";
+
           // Ajout des données
           if (this.dataObj.date && this.dataObj.values) {
             for (let i = 0; i < this.dataObj.date[0].length; i++) {
               let row = [this.dataObj.date[0][i]];
-              
+
               for (let j = 0; j < this.dataObj.values.length; j++) {
                 row.push(this.dataObj.values[j][i]);
               }
-              
-              csvContent += row.join(';') + '\n';
+
+              csvContent += row.join(";") + "\n";
             }
           }
         }
-        
+
         // Créer l'URL data avec encodage UTF-8
-        return 'data:text/csv;charset=utf-8,' + encodeURIComponent(csvContent);
+        return "data:text/csv;charset=utf-8," + encodeURIComponent(csvContent);
       } catch (error) {
-        console.error("Erreur lors de la création de l'URL de téléchargement:", error);
-        return '#';
+        console.error(
+          "Erreur lors de la création de l'URL de téléchargement:",
+          error
+        );
+        return "#";
       }
     },
     getChartType() {
@@ -257,25 +295,18 @@ export default {
         // Check if type_de_graphique is explicitly set
         if (this.dataObj.type_de_graphique) {
           return this.dataObj.type_de_graphique;
-        }
-        
-        // Determine chart type based on data structure
-        const hasSousGroupe = this.dataObj.label_sous_groupe && 
-                             (this.dataObj.label_sous_groupe.length > 0 || 
-                              (Array.isArray(this.dataObj.label_sous_groupe) && this.dataObj.label_sous_groupe.length > 0));
-        
-        if (hasSousGroupe) {
-          // If we have sub-groups, use Courbes indépendantes
-          return 'Courbes indépendantes';
         } else {
           // Default to simple bar chart
-          return 'Barres simple';
+          return "Barres simple";
         }
       } catch (error) {
-        console.error("Erreur dans la détermination du type de graphique:", error);
-        return 'Barres simple'; // Default fallback
+        console.error(
+          "Erreur dans la détermination du type de graphique:",
+          error
+        );
+        return "Barres simple"; // Default fallback
       }
-    }
+    },
   },
 
   methods: {
@@ -284,10 +315,10 @@ export default {
       this.displayChart = type === "graphique" ? true : false;
     },
     getFilename() {
-      return `${this.dataObj.label_indic.replace(/[^\w\s]/gi, '')}_data.csv`;
+      return `${this.dataObj.label_indic.replace(/[^\w\s]/gi, "")}_data.csv`;
     },
 
-    set_goal () {
+    set_goal() {
       try {
         // Formatage de la date de mise à jour
         // à l'origine : "2024-08-02 3:19pm" / "2024-08-01 9:37am"
@@ -297,7 +328,7 @@ export default {
         } else {
           this.dataObj.date_maj = "Date non disponible";
         }
-        
+
         // Calcul de la cible
         if (
           this.dataObj.label_sous_groupe == undefined ||
@@ -318,9 +349,13 @@ export default {
       }
     },
   },
-  mounted() {    
+  mounted() {
     this.set_goal();
-  }
+    // Set accordion to closed by default in iframe mode
+    if (this.isIframe) {
+      this.isAccordionOpen = false;
+    }
+  },
 };
 </script>
 
@@ -363,6 +398,14 @@ export default {
   font-weight: bolder;
   margin-bottom: 0.5rem;
 }
+/* Mobile-specific adjustments */
+@media (max-width: 768px) {
+  .cardTitle {
+    font-size: 1.5rem;
+    line-height: 1.1;
+  }
+}
+
 .cardData {
   padding-top: 1.5rem;
   padding-left: 0.75rem;
@@ -409,10 +452,28 @@ p.textReference {
   margin-bottom: 0rem;
   font-weight: 400;
 }
-
 .fr-link--download-text {
   font-size: small !important;
   /* align-items: flex-end !important; */
 }
+.fr-collapse {
+  height: 0rem !important;
+}
+/* Add iframe-specific styles */
+:deep(.fr-card) {
+  padding: v-bind('isIframe ? "0" : "1rem"') !important;
+}
+:deep(.cardData) {
+  padding: v-bind('isIframe ? "0" : "1.5rem 0.75rem 0 1.5rem"') !important;
+}
 
+/* Accordion collapse height fix */
+:deep(.fr-collapse:not(.fr-collapse--expanded)) {
+  padding: 0 !important;
+}
+
+:deep(.fr-collapse.fr-collapse--expanded) {
+  height: auto !important;
+  overflow: visible !important;
+}
 </style>

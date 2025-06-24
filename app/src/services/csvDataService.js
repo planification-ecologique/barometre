@@ -262,8 +262,8 @@ function determineChartType(item) {
   // If it has sub-groups, use stacked bar chart or multi-line chart
   if (item['Sous-niveau (graphique)']) {
     // You can add logic here to determine between 'Barres empilées' and 'Courbes indépendantes'
-    // For now, default to 'Courbes indépendantes' for sub-grouped data
-    return 'Courbes indépendantes';
+    // For now, default to 'Barres empilées' for sub-grouped data
+    return 'Barres empilées';
   }
   
   // Default to simple bar chart for single-series data

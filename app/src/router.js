@@ -126,6 +126,28 @@ const routes = [
     }
   },
   {
+    path: "/chart-iframe",
+    name: "chart-iframe",
+    component: () =>
+      import(/* webpackChunkName: "chart-iframe" */ './views/ChartIframeView.vue'),
+    meta: {
+      title: GeneralTitle + " - Chart",
+      noindex: true,
+      hideHeader: true,
+      hideFooter: true
+    }
+  },
+  {
+    path: "/chart-selector",
+    name: "chart-selector",
+    component: () =>
+      import(/* webpackChunkName: "chart-selector" */ "./components/GraphBoxSelector.vue"),
+    meta: {
+      title: GeneralTitle + " - Sélection d'indicateur",
+      noindex: true
+    }
+  },
+  {
     path: "*",
     name: "error404",
     component: () =>

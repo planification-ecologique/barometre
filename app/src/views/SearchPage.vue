@@ -16,6 +16,7 @@
                 id="search-784-input" 
                 name="search-784-input"
                 @keyup.enter="handleSearchClick"
+                @search="handleSearchInput"
               >
               <button class="fr-btn" title="Rechercher" @click="handleSearchClick">
                   Rechercher
@@ -152,15 +153,19 @@ export default {
       this.isapiloading = true;
       this.fetchData(this.selectedTags);
     },
-
-
+    handleSearchInput(event) {
+      // The search event fires when the clear button (X) is clicked
+      // or when pressing Enter with an empty search field
+      if (this.searchQuery === '') {
+        this.isapiloading = true;
+        this.fetchData(this.selectedTags);
+      }
+    },
     handleSelectedPage(page) {
       var start = (page - 1) * this.nb_graphs_pages;
       var end = page * this.nb_graphs_pages;
       this.results_page = this.results_API.slice(start, end);
     },
-
-
     async fetchData(ls_tags, theme_levier_filter = []) {
       
       let ls_filters = [
@@ -212,11 +217,9 @@ export default {
         console.error("Erreur dans le chargement des données : ", error);
       }
     },
-
     set_pages() {
       this.nb_pages = Math.ceil(this.results_API.length / this.nb_graphs_pages);
     },
-
     async fetchThemesAndLeviers() {
       this.isLoading = true;
       
@@ -237,7 +240,6 @@ export default {
       }
     },
     onSelectionChange() {
-
       this.isapiloading = true;
 
       if (!this.selectedValue) return
@@ -246,10 +248,8 @@ export default {
       
       // If a theme is selected (no levier), emit only theme
       if (this.selectedValue.startsWith('theme:')) {
-
         let themeId_query = this.selectedValue.replace('theme:', '')
         theme_levier_filter.push({ field: 'id_theme', values: [themeId_query] });
-
       } 
       else if (this.selectedValue === '') {
         this.fetchData(this.selectedTags)
