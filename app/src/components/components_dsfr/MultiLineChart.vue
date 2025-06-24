@@ -11,22 +11,29 @@
           </div>
         </div>
         <canvas :id="chartId"></canvas>
-        <div v-for="(item, index) in nameParse" :key="item" class="flex fr-mt-3v fr-mb-1v" :style="{'margin-left': isSmall ? '0px' : style}">
-          <span class="legende_dot" v-bind:style="{'background-color': colorParse[index], 'opacity': opacity[index]}" @click = "ChangeShowLine(index)"></span>
-          <p class='fr-text--sm fr-text--bold fr-ml-1w fr-mb-0' :style="{'opacity': opacity[index]}" @click = "ChangeShowLine(index)">
-            {{capitalize(nameParse[index])}}
-          </p>
+        
+        <!-- Legend row -->
+        <div class="fr-mt-3v legend-row" :style="{'margin-left': isSmall ? '0px' : style}">
+          <div v-for="(item, index) in nameParse" :key="item" class="flex legend-item" @click="ChangeShowLine(index)">
+            <span class="legende_dot" v-bind:style="{'background-color': colorParse[index], 'opacity': opacity[index]}"></span>
+            <p class='fr-text--sm fr-text--bold fr-ml-1w fr-mb-0' :style="{'opacity': opacity[index]}">
+              {{capitalize(nameParse[index])}}
+            </p>
+          </div>
+          
+          <div v-for="(item2, index2) in hlineNameParse" :key="item2" class="flex legend-item">
+            <span class="legende_dash_line1" v-bind:style="{'background-color': hlineColorParse[index2]}"></span>
+            <span class="legende_dash_line2" v-bind:style="{'background-color': hlineColorParse[index2]}"></span>
+            <p class="fr-text--sm fr-text--bold fr-ml-1w fr-mb-0">{{ capitalize(hlineNameParse[index2]) }}</p>
+          </div>
+          
+          <div v-for="(item3, index3) in vlineNameParse" :key="item3" class="flex legend-item">
+            <span class="legende_dash_line1" v-bind:style="{'background-color': vlineColorParse[index3]}"></span>
+            <span class="legende_dash_line2" v-bind:style="{'background-color': vlineColorParse[index3]}"></span>
+            <p class="fr-text--sm fr-text--bold fr-ml-1w fr-mb-0">{{ capitalize(vlineNameParse[index3]) }}</p>
+          </div>
         </div>
-        <div v-for="(item2, index2) in hlineNameParse" :key="item2" class="flex fr-mt-3v" :style="{'margin-left': isSmall ? '0px' : style}">
-          <span class="legende_dash_line1" v-bind:style="{'background-color': hlineColorParse[index2]}"></span>
-          <span class="legende_dash_line2" v-bind:style="{'background-color': hlineColorParse[index2]}"></span>
-          <p class="fr-text--sm fr-text--bold fr-ml-1w fr-mb-0">{{ capitalize(hlineNameParse[index2]) }}</p>
-        </div>
-        <div v-for="(item3, index3) in vlineNameParse" :key="item3" class="flex fr-mt-3v fr-mb-1v" :style="{'margin-left': isSmall ? '0px' : style}">
-          <span class="legende_dash_line1" v-bind:style="{'background-color': vlineColorParse[index3]}"></span>
-          <span class="legende_dash_line2" v-bind:style="{'background-color': vlineColorParse[index3]}"></span>
-          <p class="fr-text--sm fr-text--bold fr-ml-1w fr-mb-0">{{ capitalize(vlineNameParse[index3]) }}</p>
-        </div>
+        
         <div v-if="date!==undefined" class="flex fr-mt-1w" :style="{'margin-left': isSmall ? '0px' : style}">
           <p class="fr-text--xs">Mise à jour : {{date}}</p>
         </div>
@@ -261,14 +268,15 @@ export default {
           fill: false,
           borderColor: self.colorParse[j],
           type: 'line',
-          pointRadius: 8,
-          pointStyle: 'rect',
-          pointBackgroundColor: 'rgba(0, 0, 0, 0)',
-          pointBorderColor: 'rgba(0, 0, 0, 0)',
+          pointRadius: 4,
+          pointStyle: 'circle',
+          pointBackgroundColor: self.colorParse[j],
+          pointBorderColor: self.colorParse[j],
           pointHoverBackgroundColor: self.colorHover[j],
           pointHoverBorderColor: self.colorHover[j],
           pointHoverRadius: 6,
-          borderWidth: 2
+          borderWidth: 3,
+          lineTension: 0.2
         })
       })
     },
@@ -374,6 +382,9 @@ export default {
                 lineWidth: 1
               },
               ticks: {
+                display: true,
+                fontColor: '#161616',
+                fontSize: 12,
                 callback: function (value) {
                   if (self.formatdate) {
                     return value.toString().substring(5, 7) + '/' + value.toString().substring(0, 4)
@@ -392,10 +403,13 @@ export default {
                 lineWidth: 1
               },
               ticks: {
-                padding: 4,
+                padding: 8,
                 autoSkip: true,
                 maxTicksLimit: 5,
+                suggestedMin: 0,
                 suggestedMax: self.ymax,
+                fontColor: '#161616',
+                fontSize: 12,
                 callback: function (value, index, values) {
                   if (value >= 1000000000 || value <= -1000000000) {
                     return value / 1e9 + 'B'
@@ -656,7 +670,20 @@ export default {
         margin-left: 0.1rem;
       }
     }
+    
+    .legend-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1.5rem;
+      
+      .legend-item {
+        margin-bottom: 0.25rem;
+        cursor: pointer;
+      }
+    }
   }
+  
   .chart canvas {
     max-width: 100%;
   }

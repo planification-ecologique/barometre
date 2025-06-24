@@ -26,10 +26,13 @@ export default {
   methods: {
     get_menu_options() {
       let base = process.env.VUE_APP_PREFIX_PATH
+      const isStaging = window.location.pathname.includes('/staging')
+      const stagingPrefix = isStaging ? '/staging' : ''
+      
       this.menuOptions = [
         { value: 'accueil', label: 'Accueil', selected: false, link: base + "/accueil" },
-        { value: 'dashboard', label: 'Tableau de bord', selected: false, link: base + "/dashboard" },
-        { value: 'search', label: 'Recherche', selected: false, link: base + "/search" }
+        { value: 'dashboard', label: 'Tableau de bord', selected: false, link: base + stagingPrefix + "/dashboard" },
+        { value: 'search', label: 'Recherche', selected: false, link: base + stagingPrefix + "/search" }
       ]
       var current_page = this.get_name_page()
       if (current_page == '') {
@@ -39,7 +42,6 @@ export default {
       for (var index in this.menuOptions) pages.push(this.menuOptions[index].value)
 
       if (pages.includes(current_page)) this.set_selected_page(current_page)
-
     },
     router_to_pages(option) {
       var name_page = this.get_name_page()
