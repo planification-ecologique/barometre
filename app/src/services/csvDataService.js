@@ -3,9 +3,9 @@ import unitDict from '@/utils/unit_dict.json';
 
 // Data source constants
 export const GRIST_URLS = {
-  production: 'https://grist.numerique.gouv.fr/o/ecolabservicesdonnees/api/docs/49SPrgL9jgVv3JgMaVHCc8/download/csv?viewSection=562&tableId=Indicateurs_tableau_v1_prod',
-  staging: 'https://grist.numerique.gouv.fr/o/ecolabservicesdonnees/api/docs/49SPrgL9jgVv3JgMaVHCc8/download/csv?viewSection=699&tableId=Indicateurs_tableau_v1_staging',
-  stagingEditPage: 'https://grist.numerique.gouv.fr/o/ecolabservicesdonnees/49SPrgL9jgVv/Referentiel-dindicateurs/p/206'
+  production: 'https://grist.numerique.gouv.fr/o/planification-ecologique/api/docs/jGd2ge4dy2ZMaRpdgbPLnd/download/csv?viewSection=4&tableId=Tdb_planif_prod',
+  staging: 'https://grist.numerique.gouv.fr/o/planification-ecologique/api/docs/jGd2ge4dy2ZMaRpdgbPLnd/download/csv?viewSection=4&tableId=Tdb_planif_staging',
+  stagingEditPage: 'https://grist.numerique.gouv.fr/o/planification-ecologique/jGd2ge4dy2ZM/Tableau-de-Bord/p/2'
 };
 
 /**
