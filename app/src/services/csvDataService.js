@@ -3,8 +3,8 @@ import unitDict from '@/utils/unit_dict.json';
 
 // Data source constants
 export const GRIST_URLS = {
-  production: 'https://grist.numerique.gouv.fr/o/planification-ecologique/api/docs/jGd2ge4dy2ZMaRpdgbPLnd/download/csv?viewSection=4&tableId=Tdb_planif_prod',
-  staging: 'https://grist.numerique.gouv.fr/o/planification-ecologique/api/docs/jGd2ge4dy2ZMaRpdgbPLnd/download/csv?viewSection=4&tableId=Tdb_planif_staging',
+  production: 'https://grist.numerique.gouv.fr/o/planification-ecologique/api/docs/jGd2ge4dy2ZMaRpdgbPLnd/download/csv?tableId=Tdb_planif_prod',
+  staging: 'https://grist.numerique.gouv.fr/o/planification-ecologique/api/docs/jGd2ge4dy2ZMaRpdgbPLnd/download/csv?tableId=Tdb_planif_staging',
   stagingEditPage: 'https://grist.numerique.gouv.fr/o/planification-ecologique/jGd2ge4dy2ZM/Tableau-de-Bord/p/2'
 };
 
