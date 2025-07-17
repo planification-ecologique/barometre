@@ -5,13 +5,13 @@
       <router-link to="/staging/dashboard" class="staging-link">Tableau de bord</router-link>
       <router-link to="/staging/search" class="staging-link">Recherche</router-link>
       <a :href="gristDocUrl" target="_blank" class="staging-link">Grist Data</a>
-      <router-link :to="exitPath" class="exit-link">Quitter Staging</router-link>
+      <a href="#" class="exit-link" @click.prevent="handleExitStaging" style="cursor: pointer;">Quitter Staging</a>
     </div>
   </div>
 </template>
 
 <script>
-import { GRIST_URLS } from '@/services/csvDataService';
+import { GRIST_URLS, clearCSVCache } from '@/services/csvDataService';
 
 export default {
   name: 'StagingBanner',
@@ -27,6 +27,15 @@ export default {
     gristDocUrl() {
       return GRIST_URLS.stagingEditPage;
     }
+  },
+  methods: {
+    handleExitStaging() {
+      clearCSVCache();
+      this.$router.push(this.exitPath).then(() => {
+        // Force a page reload to ensure fresh data is loaded
+        window.location.reload();
+      });
+    },
   },
   watch: {
     isStaging: {
