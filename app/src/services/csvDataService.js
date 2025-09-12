@@ -232,7 +232,6 @@ export function transformCSVData(csvData, query) {
       date_maj: item['Dernière mise à jour'],
       label_sous_groupe: item['Sous-niveau (graphique)'] || '',
       label_value: statuses,
-      // Add type_de_graphique based on the Type de graphique column or determine automatically
       type_de_graphique: chartType,
       values: {
         x: [years],
