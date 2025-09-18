@@ -16,8 +16,17 @@
 </template>
 
 <script>
+
+import { getAllUniqueTags } from "@/services/csvDataService.js";
+
 export default {
   name: "Tags",
+  props: {
+    useStaging: {
+      type: Boolean,
+      default: false
+    }
+  },
   data() {
     return {
       tags: [],
@@ -46,40 +55,33 @@ export default {
       var selected_tags = this.changerGuillemets(this.get_selected_tags());
       this.$emit("tags-selected", selected_tags);
     },
-    get_tags() {
-      this.tags = [
-        {
-          value: "atténuation",
-          label: "Atténuation",
-          selected: true
-        },
-        // {value:'emissions', label:'Emissions', selected:false},
-        {
-          value: "biodiversité",
-          label: "Biodiversité",
-          selected: false
-        },
-        {
-          value: "ressources",
-          label: "Ressources",
-          selected: false
-        },
-        {
-          name: "adaptation",
-          value: "adaptation",
-          label: "Adaptation",
-          selected: false
-        },
-        {          
-          value: "santé",
-          label: "Santé",
-          selected: false
+    // Récupération des tags uniques via CSV data service
+    async fetch_unique_tags() {
+      try {
+        const response = await getAllUniqueTags(this.useStaging ? 'staging' : 'production');
+
+        if (!response) {
+          throw new Error("Erreur lors de la récupération des tags.");
         }
-      ];
+
+        // Récupération des données
+        let results = response.data.results;
+
+        // Formatage pour les composants tags
+        this.tags = results.map((item) => {
+          return {
+            value: item,
+            label: item[0].toUpperCase() + item.slice(1),
+            selected: false,
+          };
+        });
+      } catch (error) {
+        console.error("Erreur dans le chargement des tags : ", error);
+      }
     }
   },
   mounted() {
-    this.get_tags();
+    this.fetch_unique_tags();
   },
 };
 </script>

@@ -27,7 +27,9 @@ export function dsfrAnalytics (params = {}) {
                 }
 
                 // Envoi des données :
-                window.EA_push(window.EA_datalayer); 
+                if (typeof window.EA_push === "function") {
+                    window.EA_push(window.EA_datalayer);
+                }
             }
 
         } catch (error) {

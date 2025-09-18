@@ -33,6 +33,7 @@ export default {
         },
         get_tags () {
             const distinctTags = this.get_uniqueTags() // remove duplicates
+
             try {
                 this.tags = distinctTags.map(item => {
                     return {

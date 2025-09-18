@@ -20,8 +20,7 @@
                     <h2>Directeur de la publication</h2>
 
                     <ul>
-                      <li>Antoine Pellion, Secrétaire général à la planification écologique</li>
-                      <li>Frédérik Jobert, Secrétaire général adjoint à la planification écologique</li>
+                      <li>Augustin Augier, Secrétaire général à la planification écologique</li>
                     </ul>
 
                     <h2>Développement, intégration, hébergement et diffusion</h2>

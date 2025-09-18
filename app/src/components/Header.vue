@@ -18,11 +18,11 @@
                   <img class="fr-responsive-img" style="width: 6rem" src="../images/Logo-France-Nation-Verte_medium.png"
                     alt="Site de France nation verte" title="France Nation Verte" />
                 </a>
-                <!-- L’alternative de l’image (attribut alt) doit impérativement être renseignée et reprendre le texte visible dans l’image -->
+                <!-- L'alternative de l'image (attribut alt) doit impérativement être renseignée et reprendre le texte visible dans l'image -->
               </div>
               <div class="fr-header__navbar">
                 <button class="fr-btn--menu fr-btn" data-fr-opened="false" aria-controls="modal-543"
-                  :aria-expanded="showNavigation.toString()" id="”modal-543”" title="Menu" @click="toggleNavigation">
+                  :aria-expanded="showNavigation.toString()" id="modal-543" title="Menu" @click="toggleNavigation">
                   Menu
                 </button>
               </div>
