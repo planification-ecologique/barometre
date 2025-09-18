@@ -1,7 +1,7 @@
 <template>
-  <nav role="navigation" class="fr-pagination" aria-label="Pagination">
+  <nav v-if="nbPages > 1" role="navigation" class="fr-pagination" aria-label="Pagination">
     <ul class="fr-pagination__list">
-      <li>
+      <li v-if="nbPages > 5">
         <a
           id="fr-pagination-link-first"
           class="fr-pagination__link fr-pagination__link--first"
@@ -13,7 +13,7 @@
           Première page
         </a>
       </li>
-      <li>
+      <li v-if="nbPages > 5">
         <a
           id="fr-pagination-link-prev"
           class="fr-pagination__link fr-pagination__link--prev fr-pagination__link--lg-label"
@@ -39,7 +39,7 @@
         </a>
       </li>
 
-      <li>
+      <li v-if="nbPages > 5">
         <a
           id="fr-pagination-link-next"
           class="fr-pagination__link fr-pagination__link--next fr-pagination__link--lg-label"
@@ -51,7 +51,7 @@
         </a>
       </li>
 
-      <li>
+      <li v-if="nbPages > 5">
         <a
           id="fr-pagination-link-last"
           class="fr-pagination__link fr-pagination__link--last"
@@ -92,7 +92,7 @@ export default {
         Math.min(select - this.bound, this.nbPages - this.length_pages),
         1
       );
-      var end = Math.max(
+      var end = Math.min(
         Math.min(select + this.bound, this.nbPages),
         this.length_pages
       );

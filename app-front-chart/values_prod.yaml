@@ -15,7 +15,7 @@ replicaCount: 1
 
 image:
   repository: registry.gitlab-forge.din.developpement-durable.gouv.fr/cgdd/sri/ecolab/indicateurs-territoriaux/tableau-de-bord-de-la-planification-ecologique-sgpe/sgpe-app/barometre-sgpe-prod
-  tag: "0.0.3"
+  tag: "latest"
   containerPort: 9080
 
 imagePullSecrets:

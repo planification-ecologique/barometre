@@ -6,12 +6,14 @@
                 <tr>
                     <th scope="col">Année</th>
                     <th scope="col">Valeur</th>
+                    <th v-if="type_mesure.length > 0" scope="col">Type de mesure</th> 
                 </tr>
             </thead>
             <tbody>
                 <tr v-for="(index) in annee.length" :key="index">
                     <td>{{ annee[index-1] }}</td>
                     <td>{{ valeur[index-1] }}</td>
+                    <td v-if="type_mesure.length > 0">{{ type_mesure[index-1] }}</td> 
                 </tr>
             </tbody>
         </table>
@@ -28,14 +30,18 @@ export default {
             default: ''
         },
         annee: {
-            type: [],
+            type: Array,
             required: true,
-            default: ['2017']
+            default: () => ['2017']
         },
         valeur: {
-            type: [],
+            type: Array,
             required: true,
-            default: ['Non défini']
+            default: () => ['Non défini']
+        },
+        type_mesure: {
+            type: Array,
+            default: () => []
         }
     }
 }

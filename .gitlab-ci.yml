@@ -11,14 +11,15 @@ stages:
   - build_frontend
   - build_nginx
   - extract_var_helm
-  # - build_helm
+  - build_helm
   - deploy
 
 variables:
-    TAG_NUMBER: "0.0.1"
-    IMAGE_TAG_NAME: "barometre-sgpe-$ENV_CONTEXT:$TAG_NUMBER"
-    IMAGE_NAME: "$CI_REGISTRY_IMAGE/$IMAGE_TAG_NAME"
-    KUBE_CONTEXT: sgpe/sgpe/k8s-connection:k8s-connection-$ENV_CONTEXT
+    IMAGE_TAG_NAME_LATEST: "barometre-sgpe-$ENV_CONTEXT:latest"
+    IMAGE_TAG_NAME_COMMIT_SHA: "barometre-sgpe-$ENV_CONTEXT:$CI_COMMIT_SHORT_SHA"
+    IMAGE_NAME: "$CI_REGISTRY_IMAGE/$IMAGE_TAG_NAME_COMMIT_SHA"
+    IMAGE_NAME_LATEST: "$CI_REGISTRY_IMAGE/$IMAGE_TAG_NAME_LATEST"
+    KUBE_CONTEXT: cgdd/sri/ecolab/indicateurs-territoriaux/tableau-de-bord-de-la-planification-ecologique-sgpe/k8s-connection:k8s-connection-$ENV_CONTEXT
 
 # IMAGE ---
 build_frontend:
@@ -32,22 +33,33 @@ build_frontend:
     - ls -l
   artifacts:
     paths: 
-      - /builds/sgpe/sgpe/sgpe-app/app/dist.tar.gz
+      - /builds/cgdd/sri/ecolab/indicateurs-territoriaux/tableau-de-bord-de-la-planification-ecologique-sgpe/sgpe-app/app/dist.tar.gz
     expose_as: 'vuejs dashboard dist'
     expire_in: 2 hrs
+  rules:
+    - changes:
+      - app/**/*
 
 build_nginx:
   stage: build_nginx
-  services:
-    - docker:dind
+  image:
+    name: gcr.io/kaniko-project/executor:debug
+    entrypoint: [ "" ]
   before_script:
-    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
-  script:
+    - echo $CI_REGISTRY_USER
+    - echo $CI_REGISTRY_IMAGE
     - cd ./app/
     - tar zxvf  dist.tar.gz
     - cd ..
-    - docker build --no-cache --pull -t $IMAGE_NAME .
-    - docker push $IMAGE_NAME
+  script:
+    - |
+      /kaniko/executor --context $CI_PROJECT_DIR \
+        --destination $IMAGE_NAME \
+        --destination $IMAGE_NAME_LATEST \
+        --dockerfile $CI_PROJECT_DIR/Dockerfile
+  rules:
+    - changes:
+      - app/**/*
 
 # DEPLOY ---
 # This Stage extract the name and version package from Helm Chart..
@@ -62,20 +74,23 @@ Extract-Data:
       dotenv: build.env
 
 # This Stage will create a package from Helm Chart that can push on package registry.
-# Publish-Helm-Package:
-#   stage: build_helm
-#   image: 
-#     name: alpine/helm:latest
-#     entrypoint: ['']
-#   script:
-#     - echo "Build Started"
-#     - echo ${CI_PROJECT_ID}
-#     - echo $CI_API_V4_URL
-#     - echo $PACKAGE_NAME
-#     - echo $PACKAGE_VERSION
-#     - helm package $CI_PROJECT_DIR/$PACKAGE_NAME
-#     - 'curl --request POST --user gitlab-ci-token:$CI_REGISTRY_PASSWORD --form "chart=@${PACKAGE_VERSION}" "${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/helm/api/stable/charts"'
-#     - echo "Chart Package Published to Gitlab package registry"
+Publish-Helm-Package:
+  stage: build_helm
+  image: 
+    name: alpine/helm:latest
+    entrypoint: ['']
+  script:
+    - echo "Build Started"
+    - echo ${CI_PROJECT_ID}
+    - echo $CI_API_V4_URL
+    - echo $PACKAGE_NAME
+    - echo $PACKAGE_VERSION
+    - helm package $CI_PROJECT_DIR/$PACKAGE_NAME
+    - 'curl --request POST --user gitlab-ci-token:$CI_REGISTRY_PASSWORD --form "chart=@${PACKAGE_VERSION}" "${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/helm/api/stable/charts"'
+    - echo "Chart Package Published to Gitlab package registry"
+  rules:
+    - changes:
+      - app-front-chart/**/*
 
 # This Stage will Deploy Helm Chart to K8S Cluster
 Deploy-Helm-Chart:

@@ -12,8 +12,8 @@
               >
             </li>
             <li>
-              <a href="/tags" class="" target="_self" id="link-tags"
-                >Tags</a
+              <a href="/search" class="" target="_self" id="link-search"
+                >Recherche</a
               >
              
             </li>

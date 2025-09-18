@@ -14,7 +14,7 @@
           <BatimentImg
             height="100px"
             width="100px"
-            v-if="params.label_theme === 'Bâtiments'"
+            v-if="params.label_theme === 'Bâtiment'"
           ></BatimentImg>
           <TransportImg
             height="100px"
@@ -24,7 +24,7 @@
           <AgricultureImg
             height="120px"
             width="100px"
-            v-if="params.label_theme === 'Agriculture-Alimentation'"
+            v-if="params.label_theme === 'Agriculture - Alimentation'"
           ></AgricultureImg>
           <EcosystemeImg
             height="120px"
@@ -44,7 +44,7 @@
           <EconomieImg
             height="120px"
             width="100px"
-            v-if="params.label_theme === 'Economie circulaire'"
+            v-if="params.label_theme === 'Economie Circulaire'"
           ></EconomieImg>
           <EnergieImg
             height="120px"
@@ -83,6 +83,7 @@
                 :dataObj="item"
                 :idAccordion="'accordion-' + index + columnIndex"
                 :titre="item.label_indic"
+                :key="item.label_indic + '-' + index + columnIndex"
               ></graph-box>
             </div>
           </article>

@@ -47,6 +47,13 @@
         </div>
       </div>
     </section>
+    <section>
+      <div class="fr-grid-row">
+        <div class="fr-col">
+          <card-img-box :cardObject="cardData"></card-img-box>
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 
@@ -65,6 +72,7 @@ import DataVisualization from "../components/components_sgv/DataVisualization.vu
 import LimitesImg from "../components/components_sgv/LimitesImg.vue";
 import dsfrAnalytics from "../services/dsfr_analytics"
 // import {dsfrAnalytics} from "../services/dsfr_analytics"
+import DocumentImg from "../components/components_sgv/DocumentImg.vue";
 
 
 export default {
@@ -81,6 +89,7 @@ export default {
     DataVisualization,
     LimitesImg,
     TrajectoireImg,
+    DocumentImg
   },
   data() {
     return {
@@ -119,6 +128,17 @@ export default {
       //   databtn1: true,
       //   image: LimitesImg,
       // },
+      cardData: {
+        title: "Données et sources des indicateurs",
+        description:
+          "Les données utilisées pour ces indicateurs sont issues de sources diverses, notamment des bases de données publiques, des rapports officiels, des études scientifiques, des enquêtes, etc. Les sources directes sont indiquées pour chaque indicateur. Celles-ci sont mises à jour régulièrement, en fonction de leur disponibilité. \n \n Vous pouvez accéder aux données brutes en cliquant sur le bouton ci-dessous.",
+        databtn: false,
+        databtn1: false,
+        datasource: true,
+        image: DocumentImg, 
+
+      },
+
       cardEvolution: {
         title: "Trajectoires futures",
         description: `Il importe de souligner également que les trajectoires affichées pour l’avenir reposent parfois sur des objectifs officiels, mais parfois aussi, et même souvent, sur des hypothèses techniques de travail à date ; elles pourront donc évoluer le cas échéant et n'engagement pas en tant que tel la responsabilité ni du SGPE ni a fortiori du gouvernement.\n 
