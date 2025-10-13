@@ -73,6 +73,7 @@ export default {
       tmpHlineColorParse: [],
       hlineNameParse: [],
       ymax: 0,
+      pointOpacityParse: [],
       colorPrecisionBar: '#161616',
       colorHover: [],
       isSmall: false
@@ -130,7 +131,11 @@ export default {
     formatdate: {
       type: Boolean,
       default: false
-    }
+      },
+      pointopacity: {
+        type: String,
+        default: undefined
+      }
   },
   computed: {
     style () {
@@ -170,6 +175,11 @@ export default {
       this.listColors = this.getAllColors()
       this.xparse = JSON.parse(this.x)
       this.yparse = JSON.parse(this.y)
+      if (this.pointopacity !== undefined) {
+        try { this.pointOpacityParse = JSON.parse(this.pointopacity) } catch (e) { this.pointOpacityParse = [] }
+      } else {
+        this.pointOpacityParse = []
+      }
 
       let tmpNameParse = []
       if (this.name !== undefined) {
@@ -263,15 +273,26 @@ export default {
 
       // Tracé de la courbe
       data.forEach(function (dj, j) {
+        const colorPerPoint = dj.map(function (_, i) {
+          let alpha = self.getExtrapolationAlpha()
+          if (Array.isArray(self.pointOpacityParse)) {
+            if (Array.isArray(self.pointOpacityParse[0])) {
+              alpha = (self.pointOpacityParse[j] && self.pointOpacityParse[j][i] !== undefined) ? self.pointOpacityParse[j][i] : self.getExtrapolationAlpha()
+            } else {
+              alpha = (self.pointOpacityParse[i] !== undefined) ? self.pointOpacityParse[i] : self.getExtrapolationAlpha()
+            }
+          }
+          return self.hexToRgba(self.colorParse[j], alpha)
+        })
         self.datasets.push({
           data: dj,
           fill: false,
-          borderColor: self.colorParse[j],
+          borderColor: colorPerPoint,
           type: 'line',
           pointRadius: 4,
           pointStyle: 'circle',
-          pointBackgroundColor: self.colorParse[j],
-          pointBorderColor: self.colorParse[j],
+          pointBackgroundColor: colorPerPoint,
+          pointBorderColor: colorPerPoint,
           pointHoverBackgroundColor: self.colorHover[j],
           pointHoverBorderColor: self.colorHover[j],
           pointHoverRadius: 6,
@@ -597,8 +618,24 @@ export default {
         this.colorPrecisionBar = '#FFFFFF'
       }
       for (let i = 0; i < this.yparse.length; i++) {
-        this.chart.data.datasets[i].borderColor = this.colorParse[i]
-        this.chart.data.datasets[i].backgroundColor = this.colorParse[i]
+        const dataForDataset = this.chart.data.datasets[i].data || []
+        const extrapolationAlpha = this.getExtrapolationAlpha()
+        const colorPerPoint = dataForDataset.map((_, idx) => {
+          let alpha = extrapolationAlpha
+          if (Array.isArray(this.pointOpacityParse)) {
+            if (Array.isArray(this.pointOpacityParse[0])) {
+              alpha = (this.pointOpacityParse[i] && this.pointOpacityParse[i][idx] !== undefined) ? this.pointOpacityParse[i][idx] : extrapolationAlpha
+            } else {
+              alpha = (this.pointOpacityParse[idx] !== undefined) ? this.pointOpacityParse[idx] : extrapolationAlpha
+            }
+          }
+        
+          return this.hexToRgba(this.colorParse[i], alpha)
+        })
+        this.chart.data.datasets[i].borderColor = colorPerPoint
+        this.chart.data.datasets[i].backgroundColor = colorPerPoint
+        this.chart.data.datasets[i].pointBackgroundColor = colorPerPoint
+        this.chart.data.datasets[i].pointBorderColor = colorPerPoint
         this.chart.data.datasets[i].pointHoverBackgroundColor = this.colorHover[i]
         this.chart.data.datasets[i].pointHoverBorderColor = this.colorHover[i]
       }
