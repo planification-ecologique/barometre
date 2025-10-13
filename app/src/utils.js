@@ -1132,6 +1132,19 @@ export const getHexaFromToken = function (token, theme) {
   return allToken[token][theme]
 }
 
+export const EXTRAPOLATION_ALPHA = 0.6
+
+export const hexToRgba = function (hex, alpha) {
+  if (!hex || typeof hex !== 'string' || hex[0] !== '#') return hex
+  const h = hex.replace('#', '')
+  const full = h.length === 3 ? h.split('').map(c => c + c).join('') : h
+  const bigint = parseInt(full, 16)
+  const r = (bigint >> 16) & 255
+  const g = (bigint >> 8) & 255
+  const b = bigint & 255
+  return `rgba(${r}, ${g}, ${b}, ${alpha})`
+}
+
 export const mixin = {
   methods: {
     capitalize,
@@ -1150,6 +1163,8 @@ export const mixin = {
     getAllPattern,
     getClassMap,
     getAllReg,
-    getHexaFromToken
+    getHexaFromToken,
+    hexToRgba,
+    getExtrapolationAlpha () { return EXTRAPOLATION_ALPHA }
   }
 }
