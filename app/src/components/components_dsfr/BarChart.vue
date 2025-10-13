@@ -70,6 +70,7 @@
         hlineColorParse: [],
         tmpHlineColorParse: [],
         hlineNameParse: [],
+        pointOpacityParse: [],
         typeGraph: '',
         ymax: 0,
         annotations: [],
@@ -143,6 +144,10 @@
       formatdate: {
         type: Boolean,
         default: false
+      },
+      pointopacity: {
+        type: String,
+        default: undefined
       }
     },
     watch: {
@@ -195,6 +200,11 @@
         this.listColors = this.getAllColors()
         this.xparse = JSON.parse(this.x)
         this.yparse = JSON.parse(this.y)
+        if (this.pointopacity !== undefined) {
+          try { this.pointOpacityParse = JSON.parse(this.pointopacity) } catch (e) { this.pointOpacityParse = [] }
+        } else {
+          this.pointOpacityParse = []
+        }
         const nonzeroIndices = this.yparse.findIndex(arr => arr.some(val => val !== 0));
         const filteredXparse = this.xparse.map(arr => arr.slice(0, nonzeroIndices + 1));
         let tmpNameParse = []
@@ -305,10 +315,21 @@
   
         // Tracé de la courbe
         data.forEach(function (dj, j) {
+          const colors = dj.map(function (_, i) {
+            let alpha = self.getExtrapolationAlpha()
+            if (Array.isArray(self.pointOpacityParse)) {
+              if (Array.isArray(self.pointOpacityParse[0])) {
+                alpha = (self.pointOpacityParse[j] && self.pointOpacityParse[j][i] !== undefined) ? self.pointOpacityParse[j][i] : self.getExtrapolationAlpha()
+              } else {
+                alpha = (self.pointOpacityParse[i] !== undefined) ? self.pointOpacityParse[i] : self.getExtrapolationAlpha()
+              }
+            }
+            return self.hexToRgba(self.colorParse[j], alpha)
+          })
           self.datasets.push({
             data: dj,
-            borderColor: self.colorParse[j],
-            backgroundColor: self.colorParse[j],
+            borderColor: colors,
+            backgroundColor: colors,
             hoverBorderColor: self.colorHover[j],
             hoverBackgroundColor: self.colorHover[j],
             // barThickness: 'flex'
@@ -607,8 +628,21 @@
           this.colorBox = '#2f2f2f'
         }
         for (let i = 0; i < this.yparse.length; i++) {
-          this.chart.data.datasets[i].borderColor = this.colorParse[i]
-          this.chart.data.datasets[i].backgroundColor = this.colorParse[i]
+          const dataForDataset = this.chart.data.datasets[i].data || []
+          const extrapolationAlpha = this.getExtrapolationAlpha()
+          const colors = dataForDataset.map((_, idx) => {
+            let alpha = extrapolationAlpha
+            if (Array.isArray(this.pointOpacityParse)) {
+              if (Array.isArray(this.pointOpacityParse[0])) {
+                alpha = (this.pointOpacityParse[i] && this.pointOpacityParse[i][idx] !== undefined) ? this.pointOpacityParse[i][idx] : extrapolationAlpha
+              } else {
+                alpha = (this.pointOpacityParse[idx] !== undefined) ? this.pointOpacityParse[idx] : extrapolationAlpha
+              }
+            }
+            return this.hexToRgba(this.colorParse[i], alpha)
+          })
+          this.chart.data.datasets[i].borderColor = colors
+          this.chart.data.datasets[i].backgroundColor = colors
           this.chart.data.datasets[i].hoverBorderColor = this.colorHover[i]
           this.chart.data.datasets[i].hoverBackgroundColor = this.colorHover[i]
         }

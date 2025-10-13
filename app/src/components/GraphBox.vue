@@ -46,6 +46,7 @@
             :stacked="true"
             :color="JSON.stringify(dataObj.values.colors)"
             :aspectratio="2"
+            :pointopacity="pointOpacityJson"
           >
           </bar-chart>
         </div>
@@ -57,6 +58,7 @@
             :aspectratio="2"
             :stacked="true"
             :name="JSON.stringify(dataObj.label_sous_groupe)"
+            :pointopacity="pointOpacityJson"
           >
           </bar-chart>
         </div>
@@ -68,6 +70,7 @@
             :aspectratio="2"
             :name="JSON.stringify(dataObj.label_sous_groupe)"
             :isSmall="true"
+            :pointopacity="pointOpacityJson"
           >
           </multi-line-chart>
         </div>
@@ -159,8 +162,8 @@
       >
         <p
           class="fr-text--s cardDescription fr-ml-1w fr-mr-1w fontSizeDescription"
+          v-html="dataObj.label_description"
         >
-          {{ dataObj.label_description }}
 
           <br v-if="dataObj.label_description != ''" />
           <br v-if="dataObj.label_description != ''" />
@@ -228,8 +231,6 @@ export default {
       try {
         // Ajout BOM pour UTF-8
         csvContent = "\uFEFF";
-
-        console.log(this.dataObj.label_tags);
 
         if (!Array.isArray(this.dataObj.label_sous_groupe)) {
           // Pour les données sans sous-groupe
@@ -307,6 +308,25 @@ export default {
         return "Barres simple"; // Default fallback
       }
     },
+    pointOpacityJson() {
+      try {
+        // Build per-point opacity from label_value
+        // If label_value is array per point: map to 1 for 'mesuré', else 0.6
+        const lv = this.dataObj && this.dataObj.label_value
+        const values = this.dataObj && this.dataObj.values
+        if (!values) return undefined
+        const length = Array.isArray(values?.x) ? (values.x[0]?.length || 0) : (values?.[0]?.length || 0)
+        if (Array.isArray(lv)) {
+          const arr = lv.map(v => (String(v).toLowerCase() === 'mesuré' ? 1 : 0.6))
+          return JSON.stringify(arr)
+        }
+        // Else single scalar -> same opacity for all points
+        const alpha = String(lv || '').toLowerCase() === 'mesuré' ? 1 : 0.6
+        return JSON.stringify(Array(length).fill(alpha))
+      } catch (e) {
+        return undefined
+      }
+    }
   },
 
   methods: {
