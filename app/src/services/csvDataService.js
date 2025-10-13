@@ -216,6 +216,11 @@ export function transformCSVData(csvData, query) {
     // Determine chart type
     const chartType = item['Type de graphique'] || determineChartType(item);
 
+    // augment description if item.MAJ_cible is in ["Cible en cours d'ajustement - SNBC", "Cible en cours d'ajustement - autre"]
+    if (item['MAJ cible'] && ["Cible en cours d'ajustement - SNBC", "Cible en cours d'ajustement - autre"].includes(item['MAJ cible'])) {
+      item.Description += "</br>" + "NB : Des travaux sont en cours et pourraient légèrement modifier la cible dans les mois qui viennent (ex : SNBC 3)";
+    }
+
     return {
       label_indic: item.Indicateur,
       id_indic: item.ID,
@@ -434,7 +439,7 @@ function getSeries(list_y, list_x, statuses, targetYear, targetValue) {
     });
     if (projection.some(v => v !== 0)) {
       seriesData.push(projection);
-      legend.push('Projection');
+      legend.push('Extrapolation');
       colors.push('green-emeraude');
     }
   }
