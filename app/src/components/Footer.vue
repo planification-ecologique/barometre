@@ -66,6 +66,10 @@ export default {
       cookiesBlocked : false,
       menuOptions: [
         {
+          label: "À propos",
+          router_name: "a-propos",
+        },
+        {
           label: "Plan du site",
           router_name: "plan-du-site",
         },

@@ -6,7 +6,7 @@
         <section class="fr-py-6v">
           <ul>
             <li>
-              <a href="/" id="link-accueil" class="router-link-active" target="_self">Accueil</a></li>
+              <a href="/a-propos" id="link-a-propos" class="router-link-active" target="_self">À propos</a></li>
             <li>
               <a href="/dashboard/transverse/emissions--puits" id='link-dashboard' class="" target="_self">Tableau de bord</a
               >
