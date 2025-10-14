@@ -10,19 +10,19 @@ const routes = [
     path: "/",
     name: "home",
     meta: {
-      title: GeneralTitle + " - Accueil"
+      title: GeneralTitle + " - Tableaux de bord"
 
     },
-    redirect: '/accueil'
+    redirect: '/dashboard'
   },
   
   {
-    path: "/accueil",
-    name: "accueil",
+    path: "/a-propos",
+    name: "a-propos",
     component: () =>
-      import(/* webpackChunkName: "accueil" */ "./views/AccueilPage.vue"),
+      import(/* webpackChunkName: "a-propos" */ "./views/AboutPage.vue"),
     meta: {
-      title:  GeneralTitle + " - Accueil"
+      title:  GeneralTitle + " - À propos"
     }
   },
   {
@@ -166,7 +166,7 @@ if (process.env.VUE_APP_ENV !== 'prod') {
       component: () =>
         import(/* webpackChunkName: "dashboard" */ "./views/DashboardPage.vue"),
       meta: {
-        title: "STAGING - " + GeneralTitle + " - Tableaux de bord",
+        title: GeneralTitle + " - Tableaux de bord",
         isStaging: true,
         noindex: true,
         excludeFromSitemap: true
@@ -179,7 +179,7 @@ if (process.env.VUE_APP_ENV !== 'prod') {
       component: () =>
         import(/* webpackChunkName: "search" */ "./views/SearchPage.vue"),
       meta: {
-        title: "STAGING - " + GeneralTitle + " - Recherche",
+        title: GeneralTitle + " - Recherche",
         isStaging: true,
         noindex: true,
         excludeFromSitemap: true
