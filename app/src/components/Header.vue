@@ -28,7 +28,7 @@
               </div>
             </div>
             <div class="fr-header__service">
-              <a :href="accueil_link" title="Accueil - Baromètre de la planification écologique">
+              <a :href="accueil_link" title="Tableau de bord - Baromètre de la planification écologique">
                 <p class="fr-header__service-title">
                   Baromètre de la planification écologique
                 </p>
@@ -90,7 +90,7 @@ export default {
   },
   data() {
     return {
-      accueil_link: "/accueil",
+      accueil_link: "/dashboard",
       showNavigation: false
     };
   },
@@ -98,7 +98,7 @@ export default {
     set_link() {
       let base = process.env.VUE_APP_PREFIX_PATH;
       if (base) {
-        this.accueil_link = base + "/accueil";
+        this.accueil_link = base + "/dashboard";
       }
     },
     toggleNavigation() {

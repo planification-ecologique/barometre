@@ -30,13 +30,14 @@ export default {
       const stagingPrefix = isStaging ? '/staging' : ''
       
       this.menuOptions = [
-        { value: 'accueil', label: 'Accueil', selected: false, link: base + "/accueil" },
         { value: 'dashboard', label: 'Tableau de bord', selected: false, link: base + stagingPrefix + "/dashboard" },
-        { value: 'search', label: 'Recherche', selected: false, link: base + stagingPrefix + "/search" }
+        { value: 'search', label: 'Recherche', selected: false, link: base + stagingPrefix + "/search" },
+        { value: 'a-propos', label: 'À propos', selected: false, link: base + "/a-propos" },
+
       ]
       var current_page = this.get_name_page()
       if (current_page == '') {
-        current_page = 'accueil'
+        current_page = 'dashboard'
       }
       var pages = [];
       for (var index in this.menuOptions) pages.push(this.menuOptions[index].value)
