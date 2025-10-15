@@ -225,6 +225,18 @@ router.beforeEach(async (to, from, next) => {
   if (isStagingRoute(to)) {
     document.title = "STAGING - " + (to.meta.title || GeneralTitle);
   }
+  // Toggle header/footer visibility via body classes (prevents component remounts)
+  const body = document.body;
+  if (to.meta.hideHeader) {
+    body.classList.add('hide-header');
+  } else {
+    body.classList.remove('hide-header');
+  }
+  if (to.meta.hideFooter) {
+    body.classList.add('hide-footer');
+  } else {
+    body.classList.remove('hide-footer');
+  }
   next();
 });
 

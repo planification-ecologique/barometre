@@ -7,28 +7,44 @@
             <div class="fr-header__brand-top">
               <a href="/" target="_self" title="Premier Ministre">
                 <div class="fr-header__logo">
-                  <p class="fr-logo">
-                    Gouvernement
-                  </p>
+                  <p class="fr-logo">Gouvernement</p>
                 </div>
               </a>
 
               <div class="fr-header__operator">
-                <a href="https://www.info.gouv.fr/france-nation-verte" target="_self">
-                  <img class="fr-responsive-img" style="width: 6rem" src="../images/Logo-France-Nation-Verte_medium.png"
-                    alt="Site de France nation verte" title="France Nation Verte" />
+                <a
+                  href="https://www.info.gouv.fr/france-nation-verte"
+                  target="_self"
+                >
+                  <img
+                    class="fr-responsive-img"
+                    style="width: 6rem"
+                    src="../images/Logo-France-Nation-Verte_medium.png"
+                    alt="Site de France nation verte"
+                    title="France Nation Verte"
+                  />
                 </a>
                 <!-- L'alternative de l'image (attribut alt) doit impérativement être renseignée et reprendre le texte visible dans l'image -->
               </div>
               <div class="fr-header__navbar">
-                <button class="fr-btn--menu fr-btn" data-fr-opened="false" aria-controls="modal-543"
-                  :aria-expanded="showNavigation.toString()" id="modal-543" title="Menu" @click="toggleNavigation">
+                <button
+                  class="fr-btn--menu fr-btn"
+                  data-fr-opened="false"
+                  aria-controls="modal-543"
+                  :aria-expanded="showNavigation.toString()"
+                  id="modal-543"
+                  title="Menu"
+                  @click="toggleNavigation"
+                >
                   Menu
                 </button>
               </div>
             </div>
             <div class="fr-header__service">
-              <a :href="accueil_link" title="Tableau de bord - Baromètre de la planification écologique">
+              <a
+                :href="accueil_link"
+                title="Tableau de bord - Baromètre de la planification écologique"
+              >
                 <p class="fr-header__service-title">
                   Baromètre de la planification écologique
                 </p>
@@ -39,7 +55,11 @@
           <div class="fr-header__tools">
             <div class="fr-header__search fr-modal" id="modal-541">
               <div class="fr-container fr-container-lg--fluid">
-                <button class="fr-btn--close fr-btn" aria-controls="modal-541" title="Fermer">
+                <button
+                  class="fr-btn--close fr-btn"
+                  aria-controls="modal-541"
+                  title="Fermer"
+                >
                   Fermer
                 </button>
               </div>
@@ -49,15 +69,28 @@
           <div class="france-nation-verte-logo fr-header__tools">
             <ul>
               <li>
-                <a href="https://www.info.gouv.fr/france-nation-verte" target="_blank"
-                  title="France Nation Verte - nouvelle fenêtre" class="fr-btn" id="header-title"
-                  style="background-color:white; color:#000091;">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="2 0 24 24" width="18px" height="18px"
-                    aria-hidden="true" focusable="false" class="leaf-logo">
+                <a
+                  href="https://www.info.gouv.fr/france-nation-verte"
+                  target="_blank"
+                  title="France Nation Verte - nouvelle fenêtre"
+                  class="fr-btn"
+                  id="header-title"
+                  style="background-color: white; color: #000091"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="2 0 24 24"
+                    width="18px"
+                    height="18px"
+                    aria-hidden="true"
+                    focusable="false"
+                    class="leaf-logo"
+                  >
                     <path fill="none" d="M0 0H24V24H0z"></path>
                     <path
                       d="M21 3v2c0 9.627-5.373 14-12 14H5.243C5.08 19.912 5 20.907 5 22H3c0-1.363.116-2.6.346-3.732C3.116 16.974 3 15.218 3 13 3 7.477 7.477 3 13 3c2 0 4 1 8 0zm-8 2c-4.418 0-8 3.582-8 8 0 .362.003.711.01 1.046 1.254-1.978 3.091-3.541 5.494-4.914l.992 1.736C8.641 12.5 6.747 14.354 5.776 17H9c6.015 0 9.871-3.973 9.997-11.612-1.372.133-2.647.048-4.22-.188C13.627 5.027 13.401 5 13 5z"
-                      style="fill: var(--text-action-high-green-archipel)"></path>
+                      style="fill: var(--text-action-high-green-archipel)"
+                    ></path>
                   </svg>
                   Découvrir la planification écologique
                 </a>
@@ -69,12 +102,23 @@
     </div>
     <div class="fr-container--fluid desktop-navigation" v-if="showNavigation">
       <ul class="fr-btns-group mobile-display-button">
-  <li>
-    <a class="fr-btn fr-btn--icon-left" href="https://www.info.gouv.fr/france-nation-verte" target="_blank" aria-controls="fr-theme-modal" data-fr-opened="false" id="header-button-theme-mobile" title="Découvrir la planification écologique" data-fr-js-modal-button="true" data-fr-js-button-actionee="true" data-fr-js-header-menu-button-actionee="true">
-      Découvrir la planification écologique
-    </a>
-  </li>
-</ul>
+        <li>
+          <a
+            class="fr-btn fr-btn--icon-left"
+            href="https://www.info.gouv.fr/france-nation-verte"
+            target="_blank"
+            aria-controls="fr-theme-modal"
+            data-fr-opened="false"
+            id="header-button-theme-mobile"
+            title="Découvrir la planification écologique"
+            data-fr-js-modal-button="true"
+            data-fr-js-button-actionee="true"
+            data-fr-js-header-menu-button-actionee="true"
+          >
+            Découvrir la planification écologique
+          </a>
+        </li>
+      </ul>
 
       <navigation-dsfr></navigation-dsfr>
     </div>
@@ -86,12 +130,12 @@ import NavigationDsfr from "./Navigation.vue";
 export default {
   name: "HeaderDsfr",
   components: {
-    NavigationDsfr
+    NavigationDsfr,
   },
   data() {
     return {
       accueil_link: "/dashboard",
-      showNavigation: false
+      showNavigation: false,
     };
   },
   methods: {
@@ -103,19 +147,19 @@ export default {
     },
     toggleNavigation() {
       this.showNavigation = !this.showNavigation;
-    },  
+    },
     checkForMobile() {
-      this.showNavigation = window.innerWidth > 768;  
-    }
+      this.showNavigation = window.innerWidth > 768;
+    },
   },
   mounted() {
-    this.set_link()
-    this.checkForMobile();  
-    window.addEventListener('resize', this.checkForMobile);  
+    this.set_link();
+    this.checkForMobile();
+    window.addEventListener("resize", this.checkForMobile);
   },
   beforeDestroy() {
-    window.removeEventListener('resize', this.checkForMobile); 
-  }
+    window.removeEventListener("resize", this.checkForMobile);
+  },
 };
 </script>
 
@@ -155,7 +199,7 @@ export default {
 }
 
 .france-nation-verte-logo {
-  @media (max-width:768px) {
+  @media (max-width: 768px) {
     display: none;
   }
 }
@@ -166,8 +210,6 @@ export default {
 @media (max-width: 768px) {
   .mobile-display-button {
     display: block !important;
-    
   }
-
 }
 </style>

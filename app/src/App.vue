@@ -2,13 +2,13 @@
   <div>
     <div class="fr-container--fluid">
       <div id="app">
-        <StagingBanner v-if="!$route.meta.hideHeader" />
-        <SkipLinksDsfr v-if="!$route.meta.hideHeader"></SkipLinksDsfr>
-        <header-dsfr v-if="!$route.meta.hideHeader" />
+        <StagingBanner />
+        <SkipLinksDsfr></SkipLinksDsfr>
+        <header-dsfr />
         <main id="content" role="main">
           <router-view />
         </main>
-        <footer-dsfr v-if="!$route.meta.hideFooter" />
+        <footer-dsfr />
       </div>
     </div>
   </div>
@@ -63,5 +63,9 @@ body {
 body.has-staging-banner {
   padding-top: 80px;
 }
+
+/* Hide header/footer via body classes to avoid remount flicker */
+body.hide-header header[role="banner"] { display: none; }
+body.hide-footer footer[role="contentinfo"] { display: none; }
 
 </style>
