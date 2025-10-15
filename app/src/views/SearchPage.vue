@@ -31,7 +31,10 @@
           </section>
           <br/>
           <section>
-            <div v-if="results_page.length > 0">
+            <div v-if="isapiloading">
+              <p>Chargement des indicateurs...</p>
+            </div>
+            <div v-else-if="results_page.length > 0">
               <h1 class="fr-subtitle">
                 {{ this.results_API.length }} indicateurs trouvés
                 <span v-if="appliedSearchQuery" class="search-query-display">
@@ -81,11 +84,8 @@
                 :params="{ label_theme: 'Non disponible' }"
               />
             </div>
-            <div v-else-if="results_API.length === 0">
-              <p>Aucun indicateur trouvé</p>
-            </div>
             <div v-else>
-              <p>Chargement des indicateurs...</p>
+              <p>Aucun indicateur trouvé</p>
             </div>
           </section>
         </div>

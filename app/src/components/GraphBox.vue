@@ -161,12 +161,11 @@
         :class="{ 'fr-collapse--expanded': isAccordionOpen }"
       >
         <p
+          v-if="dataObj.label_description && dataObj.label_description !== ''"
           class="fr-text--s cardDescription fr-ml-1w fr-mr-1w fontSizeDescription"
           v-html="dataObj.label_description"
-        >
-
-          <br v-if="dataObj.label_description != ''" />
-          <br v-if="dataObj.label_description != ''" />
+        ></p>
+        <p class="fr-text--xs cardDescription fr-ml-1w fr-mr-1w fontSizeDescription">
           <i>Dernière mise à jour de l'indicateur : {{ dataObj.date_maj }}</i>
         </p>
 

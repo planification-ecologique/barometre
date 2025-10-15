@@ -215,16 +215,22 @@ export function transformCSVData(csvData, query) {
 
     // Determine chart type
     const chartType = item['Type de graphique'] || determineChartType(item);
-
-    // augment description if item.MAJ_cible is in ["Cible en cours d'ajustement - SNBC", "Cible en cours d'ajustement - autre"]
-    if (item['MAJ cible'] && ["Cible en cours d'ajustement - SNBC", "Cible en cours d'ajustement - autre"].includes(item['MAJ cible'])) {
-      item.Description += "</br>" + "NB : Des travaux sont en cours et pourraient légèrement modifier la cible dans les mois qui viennent (ex : SNBC 3)";
+    
+    // Add a NB for targets being adjusted.
+    let nbNote = ''
+    if (
+      item['MAJ cible'] && [
+        "Cible en cours d'ajustement - SNBC",
+        "Cible en cours d'ajustement - autre"
+      ].includes(item['MAJ cible'])
+    ) {
+      nbNote = "</br>NB : Des travaux sont en cours et pourraient légèrement modifier la cible dans les mois qui viennent (ex : SNBC 3)";
     }
 
     return {
       label_indic: item.Indicateur,
       id_indic: item.ID,
-      label_description: item.Description,
+      label_description: (item.Description || '').toString() + nbNote,
       label_unit: formattedUnitLong,
       label_unit_short: formattedUnitShort,
       label_tags: item['Tags objectifs environnementaux'],
