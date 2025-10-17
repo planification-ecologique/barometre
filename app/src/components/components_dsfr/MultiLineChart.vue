@@ -287,7 +287,8 @@ export default {
         self.datasets.push({
           data: dj,
           fill: false,
-          borderColor: colorPerPoint,
+          // Make the default line fully transparent; we'll custom-draw per-segment below
+          borderColor: 'rgba(0,0,0,0)',
           type: 'line',
           pointRadius: 4,
           pointStyle: 'circle',
@@ -349,6 +350,58 @@ export default {
                 ctx.stroke()
               })
             }
+          }
+        },
+        {
+          // Custom per-segment line drawing with opacity of the second point
+          afterDatasetDraw: function (chart, args, options) {
+            const dsIndex = args.index
+            if (!self.showLine[dsIndex]) return
+            const meta = chart.getDatasetMeta(dsIndex)
+            const points = meta.data || []
+            if (!points || points.length < 2) return
+
+            const ctx = chart.ctx
+            ctx.save()
+            ctx.lineWidth = (chart.config.data.datasets[dsIndex].borderWidth) || 3
+            ctx.lineJoin = 'round'
+            ctx.lineCap = 'round'
+
+            for (let i = 1; i < points.length; i++) {
+              const p0 = points[i - 1]._view
+              const p1 = points[i]._view
+              if (!p0 || !p1) continue
+
+              // Determine alpha from the second point
+              let alpha = self.getExtrapolationAlpha()
+              try {
+                if (Array.isArray(self.pointOpacityParse)) {
+                  if (Array.isArray(self.pointOpacityParse[0])) {
+                    alpha = (self.pointOpacityParse[dsIndex] && self.pointOpacityParse[dsIndex][i] !== undefined)
+                      ? self.pointOpacityParse[dsIndex][i]
+                      : self.getExtrapolationAlpha()
+                  } else {
+                    alpha = (self.pointOpacityParse[i] !== undefined) ? self.pointOpacityParse[i] : self.getExtrapolationAlpha()
+                  }
+                }
+              } catch (e) {
+                alpha = self.getExtrapolationAlpha()
+              }
+
+              const stroke = self.hexToRgba(self.colorParse[dsIndex], alpha)
+              ctx.strokeStyle = stroke
+              // Dashed for non-fully-opaque (projection/target), solid for measured
+              if (Number(alpha) < 1) {
+                ctx.setLineDash([6, 4])
+              } else {
+                ctx.setLineDash([])
+              }
+              ctx.beginPath()
+              ctx.moveTo(p0.x, p0.y)
+              ctx.lineTo(p1.x, p1.y)
+              ctx.stroke()
+            }
+            ctx.restore()
           }
         },
         {
@@ -632,8 +685,8 @@ export default {
         
           return this.hexToRgba(this.colorParse[i], alpha)
         })
-        this.chart.data.datasets[i].borderColor = colorPerPoint
-        this.chart.data.datasets[i].backgroundColor = colorPerPoint
+        // Keep the dataset stroke invisible; custom plugin draws per-segment lines
+        this.chart.data.datasets[i].borderColor = 'rgba(0,0,0,0)'
         this.chart.data.datasets[i].pointBackgroundColor = colorPerPoint
         this.chart.data.datasets[i].pointBorderColor = colorPerPoint
         this.chart.data.datasets[i].pointHoverBackgroundColor = this.colorHover[i]
