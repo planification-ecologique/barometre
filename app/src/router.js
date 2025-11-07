@@ -15,6 +15,11 @@ const routes = [
     },
     redirect: '/dashboard'
   },
+  {
+    path: "/accueil",
+    name: "accueil",
+    redirect: '/dashboard'
+  },
   
   {
     path: "/a-propos",
