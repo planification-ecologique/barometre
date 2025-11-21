@@ -136,37 +136,16 @@ export function setStagingDocId(docId) {
 export function transformCSVData(csvData, query) {
   let filteredData = csvData;
   
-  // Apply theme and levier filters if provided
+  // Apply structural filters early (theme and levier) - these filter at the item level
+  // Search and tag filters will be applied after grouping to ensure complete charts
   if (query.filter_by) {
     for (const filter of query.filter_by) {
       if (filter.field === 'id_theme' && filter.values.length) {
         filteredData = filteredData.filter(item => item.Indicateurs_Onglet === filter.values[0]);
       } else if (filter.field === 'id_levier' && filter.values.length) {
         filteredData = filteredData.filter(item => item['Indicateurs_Sous-onglet'] === filter.values[0]);
-      } else if (filter.field === 'label_tags' && filter.values.length) {
-        filteredData = filteredData.filter(item => {
-          if (!item['Tags objectifs environnementaux']) return false;
-          const tags = item['Tags objectifs environnementaux'].split(',').map(tag => tag.trim().toLowerCase());
-          return filter.values.some(filterTag => tags.includes(filterTag.toLowerCase()));
-        });
-      } else if (filter.field === 'search' && filter.values.length && filter.values[0]) {
-        const searchTerm = filter.values[0].toLowerCase().trim();
-        if (searchTerm) {
-          filteredData = filteredData.filter(item => {
-            // Search in title (Indicateur)
-            const titleMatch = item.Indicateur && item.Indicateur.toLowerCase().includes(searchTerm);
-            
-            // Search in description
-            const descMatch = item.Description && item.Description.toLowerCase().includes(searchTerm);
-            
-            // Search in tags - directly check if tags contain the search term
-            const tagMatch = item['Tags objectifs environnementaux'] && 
-              item['Tags objectifs environnementaux'].toLowerCase().includes(searchTerm);
-            
-            return titleMatch || descMatch || tagMatch;
-          });
-        }
       }
+      // Note: label_tags and search filters are applied after grouping (see below)
     }
   }
 
@@ -255,7 +234,44 @@ export function transformCSVData(csvData, query) {
   });
 
   // Group indicators by their label and process sub-groups
-  const groupedResults = groupByIndicator(results);
+  let groupedResults = groupByIndicator(results);
+
+  // Apply search and tag filters after grouping to ensure complete charts
+  // This ensures that if any sub-group matches, the entire grouped indicator is included
+  if (query.filter_by) {
+    for (const filter of query.filter_by) {
+      if (filter.field === 'label_tags' && filter.values.length) {
+        groupedResults = groupedResults.filter(item => {
+          if (!item.label_tags) return false;
+          const tags = item.label_tags.split(',').map(tag => tag.trim().toLowerCase());
+          return filter.values.some(filterTag => tags.includes(filterTag.toLowerCase()));
+        });
+      } else if (filter.field === 'search' && filter.values.length && filter.values[0]) {
+        const searchTerm = filter.values[0].toLowerCase().trim();
+        if (searchTerm) {
+          groupedResults = groupedResults.filter(item => {
+            // Search in title (label_indic)
+            const titleMatch = item.label_indic && item.label_indic.toLowerCase().includes(searchTerm);
+            
+            // Search in description
+            const descMatch = item.label_description && item.label_description.toLowerCase().includes(searchTerm);
+            
+            // Search in tags
+            const tagMatch = item.label_tags && 
+              item.label_tags.toLowerCase().includes(searchTerm);
+            
+            // Search in sub-group labels (for grouped indicators)
+            const subGroupMatch = Array.isArray(item.label_sous_groupe) && 
+              item.label_sous_groupe.some(subGroup => 
+                subGroup && subGroup.toLowerCase().includes(searchTerm)
+              );
+            
+            return titleMatch || descMatch || tagMatch || subGroupMatch;
+          });
+        }
+      }
+    }
+  }
 
   return {
     length: groupedResults.length,
@@ -334,6 +350,23 @@ function groupByIndicator(results) {
       if ((!groupedItem.label_perimetre || groupedItem.label_perimetre.trim() === '') && 
           item.label_perimetre && item.label_perimetre.trim() !== '') {
         groupedItem.label_perimetre = item.label_perimetre;
+      }
+      
+      // Merge tags from all sub-groups to ensure complete tag coverage
+      if (item.label_tags) {
+        const existingTags = groupedItem.label_tags ? 
+          groupedItem.label_tags.split(',').map(tag => tag.trim().toLowerCase()) : [];
+        const newTags = item.label_tags.split(',').map(tag => tag.trim().toLowerCase());
+        
+        // Combine tags and remove duplicates
+        const allTags = [...existingTags];
+        newTags.forEach(tag => {
+          if (tag && !allTags.includes(tag)) {
+            allTags.push(tag);
+          }
+        });
+        
+        groupedItem.label_tags = allTags.join(', ');
       }
       
       // Merge arrays without duplicates using a more compatible approach
