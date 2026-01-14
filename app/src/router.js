@@ -13,12 +13,12 @@ const routes = [
       title: GeneralTitle + " - Tableaux de bord"
 
     },
-    redirect: '/dashboard'
+    redirect: '/dashboard?sector=Général'
   },
   {
     path: "/accueil",
     name: "accueil",
-    redirect: '/dashboard'
+    redirect: '/dashboard?sector=Général'
   },
   
   {

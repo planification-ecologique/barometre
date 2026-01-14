@@ -7,6 +7,7 @@
             v-on:params="updateSelection"
             :initParams="sidenav_initParams"
             :useStaging="useStaging"
+            :sector="currentSector"
           />
         </div>
       </aside>
@@ -14,7 +15,26 @@
         <div>
           <div class="fr-container--fluid fr-container-page">
             <div v-if="!isapiloading">
-              <adaptive-dashboard :params="myobj" :inputData="results_API" />
+              <!-- Synthesis view -->
+              <synthesis-view 
+                v-if="myobj.view === 'synthesis'"
+                :params="myobj" 
+                :inputData="results_API"
+                :useStaging="useStaging"
+              />
+              <!-- Chantier detail view -->
+              <chantier-detail
+                v-else-if="myobj.view === 'chantier'"
+                :params="myobj"
+                :chantierData="results_API"
+                :useStaging="useStaging"
+              />
+              <!-- Fallback to adaptive dashboard -->
+              <adaptive-dashboard 
+                v-else
+                :params="myobj" 
+                :inputData="results_API"
+              />
             </div>
             <div v-else>
               <p>Chargement des indicateurs...</p>
@@ -32,6 +52,8 @@ import { getIndicators } from "@/services/csvDataService.js";
 import UpFooter from "../components/UpFooter.vue";
 import AdaptiveDashboard from "../components/AdaptiveDashboard.vue";
 import SideNavigation from "../components/SideNavigation.vue";
+import ChantierDetail from "../components/ChantierDetail.vue";
+import SynthesisView from "../components/SynthesisView.vue";
 import dsfrAnalytics from "../services/dsfr_analytics"
 
 export default {
@@ -50,6 +72,8 @@ export default {
     UpFooter,
     AdaptiveDashboard,
     SideNavigation,
+    ChantierDetail,
+    SynthesisView,
   },
 
   // Initialisation des données
@@ -59,13 +83,31 @@ export default {
       myobj: {},
       results_API: [],
       sidenav_initParams: {},
+      currentSector: 'Général',
     };
   },
   created() {
+    // Get sector from URL query parameter
+    this.currentSector = this.$route.query.sector || 'Général';
+    
     // Initialisation de la requête selon les paramètres de l'URL
-    if ( this.$route.query.theme !== undefined || this.$route.query.levier !== undefined) {
+    if (this.$route.query.view) {
+      this.sidenav_initParams.view = this.$route.query.view;
+    }
+    if (this.$route.query.chantier_id) {
+      this.sidenav_initParams.chantier_id = this.$route.query.chantier_id;
+    }
+    // Legacy support
+    if (this.$route.query.theme !== undefined || this.$route.query.levier !== undefined) {
       this.sidenav_initParams.id_theme = this.$route.query.theme;
       this.sidenav_initParams.id_levier = this.$route.query.levier;
+    }
+  },
+  watch: {
+    '$route.query.sector'(newSector) {
+      if (newSector) {
+        this.currentSector = newSector;
+      }
     }
   },
   methods: {
@@ -77,16 +119,24 @@ export default {
 
         // Navigation vers la page de dashboard et affichage dans l'URL
         try {
-          var new_theme = selectedValue.query.filter_by[0].values[0];
-          var new_levier = selectedValue.query.filter_by[1].values[0];
-
-          if (new_theme !== this.$route.query.theme || new_levier !== this.$route.query.levier) {
-            // Determine which route name to use based on whether we're in staging
-            const routeName = this.useStaging ? "staging-dashboard" : "dashboard";
-            
+          const routeName = this.useStaging ? "staging-dashboard" : "dashboard";
+          const query = {};
+          
+          if (selectedValue.view === 'synthesis') {
+            query.view = 'synthesis';
+          } else if (selectedValue.view === 'chantier' && selectedValue.chantier_id) {
+            query.view = 'chantier';
+            query.chantier_id = selectedValue.chantier_id;
+          }
+          
+          // Only update route if query params changed
+          const currentView = this.$route.query.view;
+          const currentChantierId = this.$route.query.chantier_id;
+          
+          if (query.view !== currentView || query.chantier_id !== currentChantierId) {
             this.$router.push({
               name: routeName,
-              query: { theme: new_theme, levier: new_levier }
+              query: query
             });
           }
         } catch (error) {

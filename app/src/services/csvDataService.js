@@ -136,7 +136,7 @@ export function setStagingDocId(docId) {
 export function transformCSVData(csvData, query) {
   let filteredData = csvData;
   
-  // Apply structural filters early (theme and levier) - these filter at the item level
+  // Apply structural filters early (theme, levier, grist_ids) - these filter at the item level
   // Search and tag filters will be applied after grouping to ensure complete charts
   if (query.filter_by) {
     for (const filter of query.filter_by) {
@@ -144,6 +144,13 @@ export function transformCSVData(csvData, query) {
         filteredData = filteredData.filter(item => item.Indicateurs_Onglet === filter.values[0]);
       } else if (filter.field === 'id_levier' && filter.values.length) {
         filteredData = filteredData.filter(item => item['Indicateurs_Sous-onglet'] === filter.values[0]);
+      } else if (filter.field === 'grist_ids' && filter.values.length) {
+        // Filter by Grist indicator IDs (for engagements, chantiers, leviers)
+        const gristIds = Array.isArray(filter.values) ? filter.values : [filter.values];
+        filteredData = filteredData.filter(item => {
+          const itemId = item.ID;
+          return gristIds.some(gristId => itemId === gristId);
+        });
       }
       // Note: label_tags and search filters are applied after grouping (see below)
     }

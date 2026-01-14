@@ -4,60 +4,66 @@
   <div>
     <div class="fr-grid-row" v-if="dashboardPage">
       <article class="fr-col-12" style="display: flex; align-items: center">
-        <!-- Affichage de l'image en fonction du thème -->
-        <div>
+        <!-- Affichage de l'image en fonction du thème ou secteur -->
+        <div class="sector-logo-container">
           <EnvironnementImg
             height="100px"
             width="100px"
-            v-if="params.label_theme === 'Transverse'"
+            v-if="params.label_theme === 'Transverse' || params.sector === 'Transverse'"
           ></EnvironnementImg>
           <BatimentImg
             height="100px"
             width="100px"
-            v-if="params.label_theme === 'Bâtiment'"
+            v-if="params.label_theme === 'Bâtiment' || params.sector === 'Bâtiment'"
           ></BatimentImg>
           <TransportImg
             height="100px"
             width="100px"
-            v-if="params.label_theme === 'Transports'"
+            v-if="params.label_theme === 'Transports' || params.sector === 'Transports'"
           ></TransportImg>
           <AgricultureImg
             height="120px"
             width="100px"
-            v-if="params.label_theme === 'Agriculture - Alimentation'"
+            v-if="params.label_theme === 'Agriculture - Alimentation' || params.sector === 'Agriculture - Alimentation'"
           ></AgricultureImg>
           <EcosystemeImg
             height="120px"
             width="100px"
-            v-if="params.label_theme === 'Ecosystèmes'"
+            v-if="params.label_theme === 'Ecosystèmes' || params.sector === 'Ecosystèmes'"
           ></EcosystemeImg>
           <EauImg
             height="120px"
             width="100px"
-            v-if="params.label_theme === 'Eau'"
+            v-if="params.label_theme === 'Eau' || params.sector === 'Eau'"
           ></EauImg>
           <IndustrieImg
             height="120px"
             width="100px"
-            v-if="params.label_theme === 'Industrie'"
+            v-if="params.label_theme === 'Industrie' || params.sector === 'Industrie'"
           ></IndustrieImg>
           <EconomieImg
             height="120px"
             width="100px"
-            v-if="params.label_theme === 'Economie Circulaire'"
+            v-if="params.label_theme === 'Economie Circulaire' || params.sector === 'Economie Circulaire'"
           ></EconomieImg>
           <EnergieImg
             height="120px"
             width="100px"
-            v-if="params.label_theme === 'Energie'"
+            v-if="params.label_theme === 'Energie' || params.sector === 'Energie' || params.sector === 'Énergie'"
           ></EnergieImg>
+          <!-- Général/Transverse uses EnvironnementImg -->
+          <EnvironnementImg
+            height="100px"
+            width="100px"
+            v-if="params.sector === 'Général'"
+          ></EnvironnementImg>
         </div>
         <!-- Titre : thème et Sous-titre : levier -->
         <div>
-          <h1 class="fr-title" :aria-label="params.label_theme">
-            {{ params.label_theme }}
+          <h1 class="fr-title" :aria-label="params.label || params.label_theme || params.sector">
+            {{ params.label || params.label_theme || params.sector }}
           </h1>
-          <h4 class="fr-subtitle">{{ params.label_levier }}</h4>
+          <h4 class="fr-subtitle" v-if="params.label_levier">{{ params.label_levier }}</h4>
         </div>
       </article>
     </div>
@@ -181,6 +187,11 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.sector-logo-container {
+  margin-right: 1.5rem;
+  flex-shrink: 0;
+}
+
 .fr-title {
   margin-bottom: 0.625rem;
 }

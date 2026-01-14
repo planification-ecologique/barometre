@@ -127,6 +127,8 @@
 
 <script>
 import NavigationDsfr from "./Navigation.vue";
+import planifecoMapping from "@/utils/planifeco_mapping.js";
+
 export default {
   name: "HeaderDsfr",
   components: {
@@ -134,15 +136,21 @@ export default {
   },
   data() {
     return {
-      accueil_link: "/dashboard",
+      accueil_link: "/dashboard?sector=Général",
       showNavigation: false,
     };
   },
   methods: {
     set_link() {
       let base = process.env.VUE_APP_PREFIX_PATH;
+      // Get first sector from mapping
+      const mapping = planifecoMapping.planifecoMapping || planifecoMapping;
+      const sectors = mapping.sectors || ['Général'];
+      const firstSector = sectors[0] || 'Général';
       if (base) {
-        this.accueil_link = base + "/dashboard";
+        this.accueil_link = base + `/dashboard?sector=${encodeURIComponent(firstSector)}`;
+      } else {
+        this.accueil_link = `/dashboard?sector=${encodeURIComponent(firstSector)}`;
       }
     },
     toggleNavigation() {
