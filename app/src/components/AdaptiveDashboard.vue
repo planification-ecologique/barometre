@@ -6,63 +6,26 @@
       <article class="fr-col-12" style="display: flex; align-items: center">
         <!-- Affichage de l'image en fonction du thème ou secteur -->
         <div class="sector-logo-container">
-          <EnvironnementImg
+          <!-- Use SectorIcon if sector is available, otherwise fallback to legacy theme-based logic -->
+          <SectorIcon
+            v-if="params.sector"
+            :sector="params.sector"
             height="100px"
             width="100px"
-            v-if="params.label_theme === 'Transverse' || params.sector === 'Transverse'"
-          ></EnvironnementImg>
-          <BatimentImg
-            height="100px"
-            width="100px"
-            v-if="params.label_theme === 'Bâtiment' || params.sector === 'Bâtiment'"
-          ></BatimentImg>
-          <TransportImg
-            height="100px"
-            width="100px"
-            v-if="params.label_theme === 'Transports' || params.sector === 'Transports'"
-          ></TransportImg>
-          <AgricultureImg
-            height="120px"
-            width="100px"
-            v-if="params.label_theme === 'Agriculture - Alimentation' || params.sector === 'Agriculture - Alimentation'"
-          ></AgricultureImg>
-          <EcosystemeImg
-            height="120px"
-            width="100px"
-            v-if="params.label_theme === 'Ecosystèmes' || params.sector === 'Ecosystèmes'"
-          ></EcosystemeImg>
-          <EauImg
-            height="120px"
-            width="100px"
-            v-if="params.label_theme === 'Eau' || params.sector === 'Eau'"
-          ></EauImg>
-          <IndustrieImg
-            height="120px"
-            width="100px"
-            v-if="params.label_theme === 'Industrie' || params.sector === 'Industrie'"
-          ></IndustrieImg>
-          <EconomieImg
-            height="120px"
-            width="100px"
-            v-if="params.label_theme === 'Economie Circulaire' || params.sector === 'Economie Circulaire'"
-          ></EconomieImg>
-          <EnergieImg
-            height="120px"
-            width="100px"
-            v-if="params.label_theme === 'Energie' || params.sector === 'Energie' || params.sector === 'Énergie'"
-          ></EnergieImg>
-          <!-- Général/Transverse uses EnvironnementImg -->
-          <EnvironnementImg
-            height="100px"
-            width="100px"
-            v-if="params.sector === 'Général'"
-          ></EnvironnementImg>
-          <!-- Terres & forêts uses EcosystemeImg -->
-          <EcosystemeImg
-            height="120px"
-            width="100px"
-            v-if="params.sector === 'Terres & forêts'"
-          ></EcosystemeImg>
+          />
+          <!-- Legacy theme-based icons for backward compatibility -->
+          <template v-else>
+            <EnvironnementImg
+              height="100px"
+              width="100px"
+              v-if="params.label_theme === 'Transverse'"
+            ></EnvironnementImg>
+            <EauImg
+              height="120px"
+              width="100px"
+              v-if="params.label_theme === 'Eau'"
+            ></EauImg>
+          </template>
         </div>
         <!-- Titre : thème et Sous-titre : levier -->
         <div>
@@ -111,31 +74,19 @@
 
 <script>
 import GraphBox from "../components/GraphBox.vue";
+import SectorIcon from "./SectorIcon.vue";
 import EnvironnementImg from "../components/components_sgv/EnvironnementImg.vue";
 import FranceImg from "../components/components_sgv/FranceImg.vue";
-import BatimentImg from "../components/components_sgv/BatimentImg.vue";
-import TransportImg from "../components/components_sgv/TransportImg.vue";
-import AgricultureImg from "../components/components_sgv/AgricultureImg.vue";
-import EcosystemeImg from "../components/components_sgv/EcosystemeImg.vue";
 import EauImg from "../components/components_sgv/EauImg.vue";
-import IndustrieImg from "../components/components_sgv/IndustrieImg.vue";
-import EconomieImg from "../components/components_sgv/EconomieImg.vue";
-import EnergieImg from "../components/components_sgv/EnergieImg.vue";
 
 export default {
   name: "AdaptiveDashboard",
   components: {
     GraphBox,
+    SectorIcon,
     EnvironnementImg,
     FranceImg,
-    BatimentImg,
-    TransportImg,
-    AgricultureImg,
-    EcosystemeImg,
     EauImg,
-    IndustrieImg,
-    EconomieImg,
-    EnergieImg,
   },
   data() {
     return {

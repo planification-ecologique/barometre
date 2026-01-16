@@ -4,21 +4,33 @@
       <label class="fr-label" for="sector-select">
         Secteur
       </label>
-      <select
-        id="sector-select"
-        class="fr-select"
-        :value="currentSector"
-        @change="handleSectorChange"
-        aria-label="Sélectionner un secteur"
-      >
-        <option
-          v-for="sector in sectors"
-          :key="sector"
-          :value="sector"
+      <div class="sector-select-wrapper">
+        <!-- Sector icon -->
+        <div class="sector-icon-wrapper" v-if="currentSectorIcon">
+          <component
+            :is="currentSectorIcon"
+            :width="iconSize"
+            :height="iconSize"
+            class="sector-icon"
+          />
+        </div>
+        <select
+          id="sector-select"
+          class="fr-select"
+          :class="{ 'with-icon': currentSectorIcon }"
+          :value="currentSector"
+          @change="handleSectorChange"
+          aria-label="Sélectionner un secteur"
         >
-          {{ sector }}
-        </option>
-      </select>
+          <option
+            v-for="sector in sectors"
+            :key="sector"
+            :value="sector"
+          >
+            {{ sector }}
+          </option>
+        </select>
+      </div>
     </div>
   </div>
 </template>
@@ -26,6 +38,7 @@
 <script>
 import router from '../router'
 import planifecoMapping from '@/utils/planifeco_mapping.js'
+import { getSectorIcon } from '@/utils/sectorIcons.js'
 
 export default {
   name: 'SectorSelector',
@@ -37,7 +50,13 @@ export default {
   },
   data() {
     return {
-      sectors: []
+      sectors: [],
+      iconSize: '32px'
+    }
+  },
+  computed: {
+    currentSectorIcon() {
+      return getSectorIcon(this.currentSector)
     }
   },
   mounted() {
@@ -128,6 +147,7 @@ export default {
 
 <style scoped>
 .sector-selector-container {
+  display: none; /* Hidden by default (desktop) */
   padding: 1rem;
   background-color: var(--background-default-grey, #f6f6f6);
   border-bottom: 1px solid var(--border-default-grey, #e5e5e5);
@@ -149,14 +169,37 @@ export default {
   color: var(--text-title-grey, #161616);
 }
 
-.fr-select {
+.sector-select-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
   width: 100%;
+}
+
+.sector-icon-wrapper {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sector-icon {
+  display: block;
+}
+
+.fr-select {
+  flex: 1;
   max-width: 400px;
 }
 
-/* Mobile optimizations */
-@media (max-width: 768px) {
+.fr-select.with-icon {
+  flex: 1;
+}
+
+/* Mobile and Medium (tablet): show sector selector */
+@media (max-width: 991px) {
   .sector-selector-container {
+    display: block; /* Show on mobile and tablet */
     padding: 0.75rem 1rem;
   }
   
@@ -165,15 +208,20 @@ export default {
     margin-bottom: 0.375rem;
   }
   
+  .sector-icon-wrapper {
+    display: none; /* Hide icon on mobile/tablet to save space */
+  }
+  
   .fr-select {
     font-size: 1rem;
     padding: 0.75rem;
     max-width: 100%;
+    flex: 1;
   }
 }
 
-/* Desktop: make it more compact */
-@media (min-width: 769px) {
+/* Medium (tablet) specific adjustments */
+@media (min-width: 769px) and (max-width: 991px) {
   .sector-selector-container {
     padding: 0.75rem 1.5rem;
   }
@@ -190,8 +238,15 @@ export default {
   }
   
   .fr-select {
-    flex: 0 0 auto;
     min-width: 250px;
+    max-width: 400px;
+  }
+}
+
+/* Desktop: hide sector selector (use Navigation.vue tabs instead) */
+@media (min-width: 992px) {
+  .sector-selector-container {
+    display: none; /* Hidden on desktop */
   }
 }
 </style>

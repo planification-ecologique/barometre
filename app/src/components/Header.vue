@@ -35,6 +35,7 @@
                   id="modal-543"
                   title="Menu"
                   @click="toggleNavigation"
+                  :class="{ 'desktop-hidden': isDesktop }"
                 >
                   Menu
                 </button>
@@ -138,6 +139,7 @@ export default {
     return {
       accueil_link: "/dashboard?sector=Général",
       showNavigation: false,
+      isDesktop: false,
     };
   },
   methods: {
@@ -154,15 +156,29 @@ export default {
       }
     },
     toggleNavigation() {
+      // On desktop, don't toggle - menu is always visible
+      if (window.innerWidth > 991) {
+        return;
+      }
+      // On mobile/tablet, toggle menu
       this.showNavigation = !this.showNavigation;
     },
     checkForMobile() {
-      this.showNavigation = window.innerWidth > 768;
+      const width = window.innerWidth;
+      this.isDesktop = width > 991;
+      
+      // On desktop (> 991px), always show navigation
+      if (this.isDesktop) {
+        this.showNavigation = true;
+      } else {
+        // On mobile/tablet, keep current state (don't auto-open)
+        // Only close if user manually closed it
+      }
     },
   },
   mounted() {
     this.set_link();
-    this.checkForMobile();
+    this.checkForMobile(); // Set initial state based on screen size
     window.addEventListener("resize", this.checkForMobile);
   },
   beforeDestroy() {
@@ -211,13 +227,35 @@ export default {
     display: none;
   }
 }
+
 .mobile-display-button {
   display: none !important;
 }
 
-@media (max-width: 768px) {
+/* Hide menu button on desktop */
+.desktop-hidden {
+  display: none !important;
+}
+
+/* Desktop: always show navigation */
+@media (min-width: 992px) {
+  .desktop-navigation {
+    display: block !important;
+  }
+  
+  .fr-header__navbar {
+    display: none; /* Hide menu button on desktop */
+  }
+}
+
+/* Show mobile button on mobile and medium (tablet) */
+@media (max-width: 991px) {
   .mobile-display-button {
     display: block !important;
+  }
+  
+  .desktop-navigation {
+    display: block; /* Show navigation when toggled on mobile/tablet */
   }
 }
 </style>
