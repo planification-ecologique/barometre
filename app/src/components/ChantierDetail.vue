@@ -39,6 +39,11 @@
             width="100px"
             v-if="params.sector === 'Déchets' || params.sector === 'Economie Circulaire'"
           ></EconomieImg>
+          <EcosystemeImg
+            height="120px"
+            width="100px"
+            v-if="params.sector === 'Terres & forêts'"
+          ></EcosystemeImg>
         </div>
         <div>
           <h1 class="fr-title" :aria-label="params.chantier_name">
@@ -70,28 +75,31 @@
     </div>
     
     <!-- Leviers charts below -->
-    <div v-if="leviersData.length > 0" class="fr-mt-5w">
-      <h2 class="fr-h3">Indicateurs des leviers</h2>
-      <div class="fr-grid-row fr-grid-row--gutters">
-        <div
-          v-for="(item, index) in leviersData"
-          :key="index"
-          class="fr-col-md-6 fr-col-lg-6 fr-col-xl-6 fr-col-12"
-        >
-          <article>
-            <graph-box
-              :dataObj="item"
-              :idAccordion="'levier-accordion-' + index"
-              :titre="item.label_indic"
-              :key="item.label_indic + '-' + index"
-            ></graph-box>
-          </article>
+    <div v-if="leviersByLevier.length > 0" class="fr-mt-5w">
+      <h2 class="fr-h3">Leviers</h2>
+      <div v-for="(levierGroup, index) in leviersByLevier" :key="index" class="fr-mb-5w">
+        <h3 class="fr-h4 levier-title">{{ levierGroup.name }}</h3>
+        <div class="fr-grid-row fr-grid-row--gutters">
+          <div
+            v-for="(item, itemIndex) in levierGroup.indicators"
+            :key="itemIndex"
+            class="fr-col-md-6 fr-col-lg-6 fr-col-xl-6 fr-col-12"
+          >
+            <article>
+              <graph-box
+                :dataObj="item"
+                :idAccordion="'levier-accordion-' + index + '-' + itemIndex"
+                :titre="item.label_indic"
+                :key="item.label_indic + '-' + index + '-' + itemIndex"
+              ></graph-box>
+            </article>
+          </div>
         </div>
       </div>
     </div>
     
     <!-- No data message -->
-    <div v-if="chantierCharts.length === 0 && leviersData.length === 0">
+    <div v-if="chantierCharts.length === 0 && leviersByLevier.length === 0">
       <p>Pas de données disponibles pour ce chantier.</p>
     </div>
   </div>
@@ -106,6 +114,7 @@ import IndustrieImg from "./components_sgv/IndustrieImg.vue";
 import EnergieImg from "./components_sgv/EnergieImg.vue";
 import EconomieImg from "./components_sgv/EconomieImg.vue";
 import EnvironnementImg from "./components_sgv/EnvironnementImg.vue";
+import EcosystemeImg from "./components_sgv/EcosystemeImg.vue";
 import { getIndicators } from "@/services/csvDataService.js";
 import planifecoMapping from "@/utils/planifeco_mapping.js";
 
@@ -120,6 +129,7 @@ export default {
     EnergieImg,
     EconomieImg,
     EnvironnementImg,
+    EcosystemeImg,
   },
   props: {
     params: {
@@ -139,6 +149,7 @@ export default {
     return {
       chantierCharts: [],
       leviersData: [],
+      leviersByLevier: [],
       isLoadingLeviers: false,
     };
   },
@@ -152,6 +163,12 @@ export default {
     params: {
       handler() {
         this.loadLeviersData();
+      },
+      immediate: true,
+    },
+    leviersData: {
+      handler() {
+        this.groupLeviersByName();
       },
       immediate: true,
     },
@@ -177,8 +194,13 @@ export default {
         this.params.leviers.forEach(levierId => {
           if (mapping.leviers[levierId] && mapping.leviers[levierId].grist_ids) {
             levierIds.push(...mapping.leviers[levierId].grist_ids);
+            console.log(`Levier ${levierId}: ${mapping.leviers[levierId].name}, grist_ids:`, mapping.leviers[levierId].grist_ids);
+          } else {
+            console.warn(`Levier ${levierId} non trouvé dans le mapping ou sans grist_ids`);
           }
         });
+        
+        console.log(`Total leviers à charger: ${this.params.leviers.length}, Total grist_ids: ${levierIds.length}`);
         
         if (levierIds.length > 0) {
           const query = {
@@ -193,14 +215,57 @@ export default {
           
           const response = await getIndicators(query, this.useStaging ? 'staging' : 'production');
           this.leviersData = response.results || [];
+          console.log(`Indicateurs chargés depuis CSV: ${this.leviersData.length}`);
+          this.groupLeviersByName();
         } else {
           this.leviersData = [];
+          this.leviersByLevier = [];
         }
       } catch (error) {
         console.error("Erreur dans le chargement des données des leviers : ", error);
         this.leviersData = [];
+        this.leviersByLevier = [];
       } finally {
         this.isLoadingLeviers = false;
+      }
+    },
+    groupLeviersByName() {
+      try {
+        const mapping = planifecoMapping;
+        if (!mapping || !mapping.leviers) {
+          this.leviersByLevier = [];
+          return;
+        }
+        
+        // Group indicators by levier name
+        const levierGroups = {};
+        
+        this.params.leviers.forEach(levierId => {
+          const levier = mapping.leviers[levierId];
+          if (levier && levier.grist_ids) {
+            const levierName = levier.name || levier.short_name || `Levier ${levierId}`;
+            
+            if (!levierGroups[levierName]) {
+              levierGroups[levierName] = {
+                name: levierName,
+                indicators: []
+              };
+            }
+            
+            // Find matching indicators
+            levier.grist_ids.forEach(gristId => {
+              const indicator = this.leviersData.find(item => item.id_indic === gristId);
+              if (indicator && !levierGroups[levierName].indicators.find(e => e.id_indic === indicator.id_indic)) {
+                levierGroups[levierName].indicators.push(indicator);
+              }
+            });
+          }
+        });
+        
+        this.leviersByLevier = Object.values(levierGroups);
+      } catch (error) {
+        console.error("Error grouping leviers by name:", error);
+        this.leviersByLevier = [];
       }
     },
   },
@@ -220,5 +285,16 @@ export default {
 .fr-h3 {
   margin-top: 2rem;
   margin-bottom: 1rem;
+}
+
+.fr-h4 {
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.levier-title {
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e5e5e5;
 }
 </style>

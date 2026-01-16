@@ -57,6 +57,12 @@
             width="100px"
             v-if="params.sector === 'Général'"
           ></EnvironnementImg>
+          <!-- Terres & forêts uses EcosystemeImg -->
+          <EcosystemeImg
+            height="120px"
+            width="100px"
+            v-if="params.sector === 'Terres & forêts'"
+          ></EcosystemeImg>
         </div>
         <!-- Titre : thème et Sous-titre : levier -->
         <div>

@@ -39,6 +39,11 @@
             width="100px"
             v-if="sector === 'Déchets' || sector === 'Economie Circulaire'"
           ></EconomieImg>
+          <EcosystemeImg
+            height="120px"
+            width="100px"
+            v-if="sector === 'Terres & forêts'"
+          ></EcosystemeImg>
         </div>
         <div>
           <h1 class="fr-title" :aria-label="sector">
@@ -117,6 +122,7 @@ import IndustrieImg from "./components_sgv/IndustrieImg.vue";
 import EnergieImg from "./components_sgv/EnergieImg.vue";
 import EconomieImg from "./components_sgv/EconomieImg.vue";
 import EnvironnementImg from "./components_sgv/EnvironnementImg.vue";
+import EcosystemeImg from "./components_sgv/EcosystemeImg.vue";
 import { getIndicators } from "@/services/csvDataService.js";
 import planifecoMapping from "@/utils/planifeco_mapping.js";
 
@@ -131,6 +137,7 @@ export default {
     EnergieImg,
     EconomieImg,
     EnvironnementImg,
+    EcosystemeImg,
   },
   props: {
     params: {

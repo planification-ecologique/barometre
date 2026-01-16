@@ -144,13 +144,18 @@ export function transformCSVData(csvData, query) {
         filteredData = filteredData.filter(item => item.Indicateurs_Onglet === filter.values[0]);
       } else if (filter.field === 'id_levier' && filter.values.length) {
         filteredData = filteredData.filter(item => item['Indicateurs_Sous-onglet'] === filter.values[0]);
-      } else if (filter.field === 'grist_ids' && filter.values.length) {
+      } else if (filter.field === 'grist_ids') {
         // Filter by Grist indicator IDs (for engagements, chantiers, leviers)
-        const gristIds = Array.isArray(filter.values) ? filter.values : [filter.values];
-        filteredData = filteredData.filter(item => {
-          const itemId = item.ID;
-          return gristIds.some(gristId => itemId === gristId);
-        });
+        // If values is empty, return empty array (no matches)
+        if (!filter.values || filter.values.length === 0) {
+          filteredData = [];
+        } else {
+          const gristIds = Array.isArray(filter.values) ? filter.values : [filter.values];
+          filteredData = filteredData.filter(item => {
+            const itemId = item.ID;
+            return gristIds.some(gristId => itemId === gristId);
+          });
+        }
       }
       // Note: label_tags and search filters are applied after grouping (see below)
     }
