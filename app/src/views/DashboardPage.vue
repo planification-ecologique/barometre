@@ -23,6 +23,18 @@
                 v-if="myobj.view === 'about'"
                 :params="myobj"
               />
+              <!-- Engagements Table view -->
+              <engagements-table-view 
+                v-else-if="myobj.view === 'engagements-table'"
+                :params="myobj" 
+                :inputData="results_API"
+              />
+              <!-- Chantiers Table view -->
+              <chantiers-table-view 
+                v-else-if="myobj.view === 'chantiers-table'"
+                :params="myobj" 
+                :inputData="results_API"
+              />
               <!-- General Engagements view -->
               <general-engagements-view 
                 v-else-if="myobj.view === 'general-engagements'"
@@ -88,6 +100,8 @@ import GeneralChantiersView from "../components/GeneralChantiersView.vue";
 import SectorialEngagementsView from "../components/SectorialEngagementsView.vue";
 import SectorSelector from "../components/SectorSelector.vue";
 import AboutView from "../components/AboutView.vue";
+import EngagementsTableView from "../components/EngagementsTableView.vue";
+import ChantiersTableView from "../components/ChantiersTableView.vue";
 import dsfrAnalytics from "../services/dsfr_analytics"
 
 export default {
@@ -113,6 +127,8 @@ export default {
     SectorialEngagementsView,
     SectorSelector,
     AboutView,
+    EngagementsTableView,
+    ChantiersTableView,
   },
 
   // Initialisation des données
@@ -140,6 +156,12 @@ export default {
     }
     if (this.$route.query.chantier_id) {
       this.sidenav_initParams.chantier_id = this.$route.query.chantier_id;
+    }
+    if (this.$route.query.axe) {
+      this.sidenav_initParams.axe = this.$route.query.axe;
+    }
+    if (this.$route.query.sectorFilter) {
+      this.sidenav_initParams.sectorFilter = this.$route.query.sectorFilter;
     }
     // Legacy support
     if (this.$route.query.theme !== undefined || this.$route.query.levier !== undefined) {
@@ -228,8 +250,14 @@ export default {
           // Set view and related params
           if (selectedValue.view === 'general-engagements') {
             query.view = 'general-engagements';
+            if (selectedValue.axe) {
+              query.axe = selectedValue.axe;
+            }
           } else if (selectedValue.view === 'general-chantiers') {
             query.view = 'general-chantiers';
+            if (selectedValue.sectorFilter) {
+              query.sectorFilter = selectedValue.sectorFilter;
+            }
           } else if (selectedValue.view === 'sectorial-engagements') {
             query.view = 'sectorial-engagements';
           } else if (selectedValue.view === 'chantier' && selectedValue.chantier_id) {
@@ -239,14 +267,20 @@ export default {
             query.view = 'synthesis';
           } else if (selectedValue.view === 'about') {
             query.view = 'about';
+          } else if (selectedValue.view === 'engagements-table') {
+            query.view = 'engagements-table';
+          } else if (selectedValue.view === 'chantiers-table') {
+            query.view = 'chantiers-table';
           }
           
           // Only update route if query params changed
           const currentView = this.$route.query.view;
           const currentChantierId = this.$route.query.chantier_id;
           const currentSector = this.$route.query.sector;
+          const currentAxe = this.$route.query.axe;
+          const currentSectorFilter = this.$route.query.sectorFilter;
           
-          if (query.view !== currentView || query.chantier_id !== currentChantierId || query.sector !== currentSector) {
+          if (query.view !== currentView || query.chantier_id !== currentChantierId || query.sector !== currentSector || query.axe !== currentAxe || query.sectorFilter !== currentSectorFilter) {
             this.$router.push({
               name: routeName,
               query: query

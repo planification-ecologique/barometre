@@ -11,14 +11,14 @@
         </div>
         <div>
           <h1 class="fr-title">Synthèse</h1>
-          <h2 class="fr-subtitle">Indicateurs d'impact</h2>
+          <h2 class="fr-subtitle">{{ params.axe || 'Indicateurs d\'impact' }}</h2>
         </div>
       </article>
     </div>
     
     <!-- Engagements grouped by taxonomy axis -->
-    <div v-for="(engagements, axe) in engagementsByAxe" :key="axe" class="fr-mt-5w">
-      <div class="section-header">
+    <div v-for="(engagements, axe) in filteredEngagementsByAxe" :key="axe" class="fr-mt-5w">
+      <div class="section-header" v-if="!params.axe">
         <h2 class="fr-h3">{{ axe }}</h2>
       </div>
       <div class="fr-grid-row fr-grid-row--gutters fr-mb-5w">
@@ -40,7 +40,7 @@
     </div>
     
     <!-- No data message -->
-    <div v-if="Object.keys(engagementsByAxe).length === 0" class="fr-mt-5w">
+    <div v-if="Object.keys(filteredEngagementsByAxe).length === 0" class="fr-mt-5w">
       <p>Pas de données disponibles pour les engagements.</p>
     </div>
   </div>
@@ -76,6 +76,23 @@ export default {
     return {
       engagementsByAxe: {},
     };
+  },
+  computed: {
+    filteredEngagementsByAxe() {
+      // Filter by selected axe if specified, and remove empty sections
+      const result = {};
+      Object.entries(this.engagementsByAxe).forEach(([axe, engagements]) => {
+        // If an axe is selected in params, only show that axe
+        if (this.params.axe && axe !== this.params.axe) {
+          return;
+        }
+        // Only include sections that have engagements
+        if (engagements && engagements.length > 0) {
+          result[axe] = engagements;
+        }
+      });
+      return result;
+    },
   },
   watch: {
     inputData: {

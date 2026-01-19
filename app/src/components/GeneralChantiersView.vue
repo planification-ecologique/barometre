@@ -11,14 +11,14 @@
         </div>
         <div>
           <h1 class="fr-title">Synthèse</h1>
-          <h2 class="fr-subtitle">Chantiers</h2>
+          <h2 class="fr-subtitle">{{ params.sectorFilter || 'Chantiers' }}</h2>
         </div>
       </article>
     </div>
     
     <!-- Chantiers grouped by sector -->
-    <div v-for="(chantiers, sector) in chantiersBySector" :key="sector" class="fr-mt-5w">
-      <div class="section-header">
+    <div v-for="(chantiers, sector) in filteredChantiersBySector" :key="sector" class="fr-mt-5w">
+      <div class="section-header" v-if="!params.sectorFilter">
         <h2 class="fr-h3">{{ sector }}</h2>
       </div>
       
@@ -48,7 +48,7 @@
     </div>
     
     <!-- No data message -->
-    <div v-if="Object.keys(chantiersBySector).length === 0" class="fr-mt-5w">
+    <div v-if="Object.keys(filteredChantiersBySector).length === 0" class="fr-mt-5w">
       <p>Pas de données disponibles pour les chantiers.</p>
     </div>
   </div>
@@ -83,6 +83,23 @@ export default {
     return {
       chantiersBySector: {},
     };
+  },
+  computed: {
+    filteredChantiersBySector() {
+      // Filter by selected sector if specified, and remove empty sections
+      const result = {};
+      Object.entries(this.chantiersBySector).forEach(([sector, chantiers]) => {
+        // If a sectorFilter is selected in params, only show that sector
+        if (this.params.sectorFilter && sector !== this.params.sectorFilter) {
+          return;
+        }
+        // Only include sections that have chantiers
+        if (chantiers && chantiers.length > 0) {
+          result[sector] = chantiers;
+        }
+      });
+      return result;
+    },
   },
   watch: {
     inputData: {
