@@ -17,10 +17,15 @@
       <section class="fr-col">
         <div>
           <div class="fr-container--fluid fr-container-page">
-            <div v-if="!isapiloading">
+            <div v-if="!isapiloading || myobj.view === 'about'">
+              <!-- About view -->
+              <about-view 
+                v-if="myobj.view === 'about'"
+                :params="myobj"
+              />
               <!-- General Engagements view -->
               <general-engagements-view 
-                v-if="myobj.view === 'general-engagements'"
+                v-else-if="myobj.view === 'general-engagements'"
                 :params="myobj" 
                 :inputData="results_API"
                 :useStaging="useStaging"
@@ -82,6 +87,7 @@ import GeneralEngagementsView from "../components/GeneralEngagementsView.vue";
 import GeneralChantiersView from "../components/GeneralChantiersView.vue";
 import SectorialEngagementsView from "../components/SectorialEngagementsView.vue";
 import SectorSelector from "../components/SectorSelector.vue";
+import AboutView from "../components/AboutView.vue";
 import dsfrAnalytics from "../services/dsfr_analytics"
 
 export default {
@@ -106,6 +112,7 @@ export default {
     GeneralChantiersView,
     SectorialEngagementsView,
     SectorSelector,
+    AboutView,
   },
 
   // Initialisation des données
@@ -115,12 +122,12 @@ export default {
       myobj: {},
       results_API: [],
       sidenav_initParams: {},
-      currentSector: 'Général',
+      currentSector: 'Synthèse',
     };
   },
   created() {
     // Get sector from URL query parameter
-    this.currentSector = this.$route.query.sector || 'Général';
+    this.currentSector = this.$route.query.sector || 'Synthèse';
     
     // Initialize sidenav_initParams with sector
     this.sidenav_initParams = {
@@ -152,13 +159,13 @@ export default {
           const currentView = this.$route.query.view
           const currentChantierId = this.$route.query.chantier_id
           
-          if (newSector === 'Général') {
-            // For Général, only preserve general-engagements and general-chantiers
-            if (currentView === 'general-engagements' || currentView === 'general-chantiers') {
+          if (newSector === 'Synthèse') {
+            // For Synthèse, preserve about, general-engagements and general-chantiers
+            if (currentView === 'about' || currentView === 'general-engagements' || currentView === 'general-chantiers') {
               this.sidenav_initParams.view = currentView
             } else {
-              // Default to general-engagements
-              this.sidenav_initParams.view = 'general-engagements'
+              // Default to about
+              this.sidenav_initParams.view = 'about'
               delete this.sidenav_initParams.chantier_id
             }
           } else {
@@ -204,7 +211,12 @@ export default {
     updateSelection(selectedValue) {
       if (selectedValue != undefined) {
         this.myobj = selectedValue;
-        this.fetchData(selectedValue.query);
+        // Only fetch data if not the about view
+        if (selectedValue.view !== 'about' && selectedValue.query) {
+          this.fetchData(selectedValue.query);
+        } else if (selectedValue.view === 'about') {
+          this.isapiloading = false;
+        }
 
         // Navigation vers la page de dashboard et affichage dans l'URL
         try {
@@ -225,6 +237,8 @@ export default {
             query.chantier_id = selectedValue.chantier_id;
           } else if (selectedValue.view === 'synthesis') {
             query.view = 'synthesis';
+          } else if (selectedValue.view === 'about') {
+            query.view = 'about';
           }
           
           // Only update route if query params changed

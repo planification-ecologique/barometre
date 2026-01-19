@@ -137,7 +137,7 @@ export default {
   },
   data() {
     return {
-      accueil_link: "/dashboard?sector=Général",
+      accueil_link: "/dashboard?sector=Synthèse",
       showNavigation: false,
       isDesktop: false,
     };
@@ -147,8 +147,8 @@ export default {
       let base = process.env.VUE_APP_PREFIX_PATH;
       // Get first sector from mapping
       const mapping = planifecoMapping.planifecoMapping || planifecoMapping;
-      const sectors = mapping.sectors || ['Général'];
-      const firstSector = sectors[0] || 'Général';
+      const sectors = mapping.sectors || ['Synthèse'];
+      const firstSector = sectors[0] || 'Synthèse';
       if (base) {
         this.accueil_link = base + `/dashboard?sector=${encodeURIComponent(firstSector)}`;
       } else {

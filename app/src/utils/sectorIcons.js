@@ -14,7 +14,7 @@ import EcosystemeImg from '@/components/components_sgv/EcosystemeImg.vue'
  * Maps sector names to their corresponding icon components
  */
 export const sectorIconMap = {
-  'Général': EnvironnementImg,
+  'Synthèse': EnvironnementImg,
   'Transports': TransportImg,
   'Agriculture / alimentation': AgricultureImg,
   'Industrie': IndustrieImg,

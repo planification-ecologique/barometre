@@ -10,8 +10,8 @@
           ></EnvironnementImg>
         </div>
         <div>
-          <h1 class="fr-title">Général</h1>
-          <h2 class="fr-subtitle">Nos Engagements</h2>
+          <h1 class="fr-title">Synthèse</h1>
+          <h2 class="fr-subtitle">Indicateurs d'impact</h2>
         </div>
       </article>
     </div>
@@ -103,9 +103,9 @@ export default {
         // Group engagements by taxonomy axis
         const axeGroups = {};
         
-        // Get all Général engagements with their axes
+        // Get all Synthèse engagements with their axes
         Object.values(mapping.engagements)
-          .filter(eng => eng.sector === 'Général')
+          .filter(eng => eng.sector === 'Synthèse')
           .forEach(eng => {
             const axe = eng.taxonomy_axe || 'Autre';
             if (!axeGroups[axe]) {

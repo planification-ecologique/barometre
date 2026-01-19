@@ -45,7 +45,7 @@ export default {
   props: {
     currentSector: {
       type: String,
-      default: 'Général'
+      default: 'Synthèse'
     }
   },
   data() {
@@ -66,10 +66,10 @@ export default {
     loadSectors() {
       try {
         const mapping = planifecoMapping.planifecoMapping || planifecoMapping
-        this.sectors = mapping.sectors || ['Général']
+        this.sectors = mapping.sectors || ['Synthèse']
       } catch (error) {
         console.error('Error loading sectors:', error)
-        this.sectors = ['Général']
+        this.sectors = ['Synthèse']
       }
     },
     handleSectorChange(event) {
@@ -85,8 +85,8 @@ export default {
         
         // Always set a default view based on the selected sector
         // This ensures we don't end up without a view
-        if (selectedSector === 'Général') {
-          // For Général, preserve general-engagements or general-chantiers if valid
+        if (selectedSector === 'Synthèse') {
+          // For Synthèse, preserve general-engagements or general-chantiers if valid
           if (currentQuery.view === 'general-engagements' || currentQuery.view === 'general-chantiers') {
             newQuery.view = currentQuery.view
           } else {

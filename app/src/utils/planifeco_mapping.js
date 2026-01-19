@@ -4,7 +4,7 @@
 
 export const planifecoMapping = {
   "sectors": [
-    "Général",
+    "Synthèse",
     "Transports",
     "Agriculture / alimentation",
     "Industrie",
@@ -18,7 +18,7 @@ export const planifecoMapping = {
       "id": "eng_Général_0_0",
       "name": "Émissions territoriales",
       "theme": "Émissions territoriales",
-      "sector": "Général",
+      "sector": "Synthèse",
       "taxonomy_axe": "Atténuation climat",
       "grist_ids": [
         "b411c553-b48f-42dc-a993-c7dc5775d684"
@@ -90,7 +90,7 @@ export const planifecoMapping = {
       "id": "eng_Général_1_7",
       "name": "Empreinte carbone",
       "theme": "Empreinte carbone",
-      "sector": "Général",
+      "sector": "Synthèse",
       "taxonomy_axe": "Atténuation climat",
       "grist_ids": [
         "6db624da-3e96-4c37-9958-4b3971083847",
@@ -112,7 +112,7 @@ export const planifecoMapping = {
       "id": "eng_Général_2_9",
       "name": "Souveraineté énergétique",
       "theme": "Souveraineté énergétique",
-      "sector": "Général",
+      "sector": "Synthèse",
       "taxonomy_axe": "Atténuation climat",
       "grist_ids": [
         "16aa3f71-b128-4ed6-82d0-49bd6d3e0784"
@@ -167,7 +167,7 @@ export const planifecoMapping = {
       "id": "eng_Général_6_14",
       "name": "Matières premières",
       "theme": "Matières premières",
-      "sector": "Général",
+      "sector": "Synthèse",
       "taxonomy_axe": "Economie circulaire",
       "grist_ids": [
         "d02a5b5d-33ff-484e-abbd-a85e8cf2f353"
@@ -177,7 +177,7 @@ export const planifecoMapping = {
       "id": "eng_Général_7_15",
       "name": "Quantité de déchets",
       "theme": "Quantité de déchets",
-      "sector": "Général",
+      "sector": "Synthèse",
       "taxonomy_axe": "Economie circulaire",
       "grist_ids": [
         "5ed623e3-c8bc-4139-8996-8b83b09fdf21"
@@ -187,7 +187,7 @@ export const planifecoMapping = {
       "id": "eng_Général_9_16",
       "name": "Polluants atmosphériques",
       "theme": "Polluants atmosphériques",
-      "sector": "Général",
+      "sector": "Synthèse",
       "taxonomy_axe": "Pollution",
       "grist_ids": [
         "93843661-0511-4e40-a837-810ba4cc4be3",
@@ -256,7 +256,7 @@ export const planifecoMapping = {
       "id": "eng_Général_10_22",
       "name": "Etat général de la biodiversité",
       "theme": "Etat général de la biodiversité",
-      "sector": "Général",
+      "sector": "Synthèse",
       "taxonomy_axe": "Biodiversité",
       "grist_ids": [
         "f06b6e72-7d4d-4643-a6c3-e8976a37f9cb",
@@ -515,7 +515,7 @@ export const planifecoMapping = {
     "ed45b9af-de33-c915-f8d2-1d81da63fcc4": {
       "id": "ed45b9af-de33-c915-f8d2-1d81da63fcc4",
       "name": "Développer des pratiques alimentaires saines et durables",
-      "sector": "Général",
+      "sector": "Synthèse",
       "grist_ids": [],
       "leviers": [
         "cda4d7ec-914d-4d99-ab2e-c2f925f645fd",
@@ -1013,7 +1013,7 @@ export const planifecoMapping = {
       "id": "2148391c-8964-4a87-a189-e9ce50cb3cbc",
       "name": "Valorisation énergétique déchets",
       "short_name": "Valo. déchets",
-      "sector": "Général",
+      "sector": "Synthèse",
       "chantier_id": "fc3757f6-d93b-b69e-67ce-513e05416e8c",
       "grist_ids": [
         "2148391c-8964-4a87-a189-e9ce50cb3cbc"
@@ -1093,7 +1093,7 @@ export const planifecoMapping = {
       "id": "cda4d7ec-914d-4d99-ab2e-c2f925f645fd",
       "name": "Restauration collective",
       "short_name": "Restauration co.",
-      "sector": "Général",
+      "sector": "Synthèse",
       "chantier_id": "ed45b9af-de33-c915-f8d2-1d81da63fcc4",
       "grist_ids": [
         "cda4d7ec-914d-4d99-ab2e-c2f925f645fd"
@@ -1103,7 +1103,7 @@ export const planifecoMapping = {
       "id": "528d013f-8937-4b45-8e17-28a49be411c4",
       "name": "Restauration collective",
       "short_name": "Restauration co.",
-      "sector": "Général",
+      "sector": "Synthèse",
       "chantier_id": "ed45b9af-de33-c915-f8d2-1d81da63fcc4",
       "grist_ids": [
         "528d013f-8937-4b45-8e17-28a49be411c4"
@@ -1113,7 +1113,7 @@ export const planifecoMapping = {
       "id": "49b2802e-9462-4804-a84c-6ec768e923df",
       "name": "Evolution du régime alimentaire (viande, saisonnalité, etc.)",
       "short_name": "Evolution du régime alimentaire (viande, saisonnalité, etc.)",
-      "sector": "Général",
+      "sector": "Synthèse",
       "chantier_id": "ed45b9af-de33-c915-f8d2-1d81da63fcc4",
       "grist_ids": [
         "49b2802e-9462-4804-a84c-6ec768e923df"
@@ -1123,7 +1123,7 @@ export const planifecoMapping = {
       "id": "47ba3011-8639-4cab-bd3b-3cb851543bd1",
       "name": "Evolution du régime alimentaire (viande, saisonnalité, etc.)",
       "short_name": "Evolution du régime alimentaire (viande, saisonnalité, etc.)",
-      "sector": "Général",
+      "sector": "Synthèse",
       "chantier_id": "ed45b9af-de33-c915-f8d2-1d81da63fcc4",
       "grist_ids": [
         "47ba3011-8639-4cab-bd3b-3cb851543bd1"
@@ -1233,7 +1233,7 @@ export const planifecoMapping = {
       "id": "3f00d81c-ea49-4cfb-8ca4-f19322c678f4",
       "name": "Efficacité services de l’eau",
       "short_name": "Réseau eau",
-      "sector": "Général",
+      "sector": "Synthèse",
       "chantier_id": "5a3fe6af-67c5-4221-a67e-59eb028c9ab3",
       "grist_ids": [
         "3f00d81c-ea49-4cfb-8ca4-f19322c678f4"
@@ -1243,7 +1243,7 @@ export const planifecoMapping = {
       "id": "2350377b-c3cf-43e7-8d7b-a3735e09da5d",
       "name": "Efficacité services de l’eau",
       "short_name": "Réseau eau",
-      "sector": "Général",
+      "sector": "Synthèse",
       "chantier_id": "5a3fe6af-67c5-4221-a67e-59eb028c9ab3",
       "grist_ids": [
         "2350377b-c3cf-43e7-8d7b-a3735e09da5d"
@@ -1263,7 +1263,7 @@ export const planifecoMapping = {
       "id": "c69af914-ddf5-482c-86af-f9a0023eba77",
       "name": "Réduction de la vacance",
       "short_name": "Réduction de la vacance",
-      "sector": "Général",
+      "sector": "Synthèse",
       "chantier_id": "57c1b234-be1c-46bb-9b9a-a24432b72ded",
       "grist_ids": [
         "c69af914-ddf5-482c-86af-f9a0023eba77"
@@ -1273,7 +1273,7 @@ export const planifecoMapping = {
       "id": "eb08e12d-59ee-41f3-991d-07cdcaf587e6",
       "name": "Pollution lumineuse",
       "short_name": "Pol. lumineuse",
-      "sector": "Général",
+      "sector": "Synthèse",
       "chantier_id": "41c8fd53-8a6e-d3b5-b2bb-07acf64312d9",
       "grist_ids": [
         "eb08e12d-59ee-41f3-991d-07cdcaf587e6"

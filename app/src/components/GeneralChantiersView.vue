@@ -10,8 +10,8 @@
           ></EnvironnementImg>
         </div>
         <div>
-          <h1 class="fr-title">Général</h1>
-          <h2 class="fr-subtitle">Nos Chantiers</h2>
+          <h1 class="fr-title">Synthèse</h1>
+          <h2 class="fr-subtitle">Chantiers</h2>
         </div>
       </article>
     </div>
@@ -128,8 +128,8 @@ export default {
         
         Object.values(mapping.chantiers).forEach(chantier => {
           const sector = chantier.sector || 'Autre';
-          // Skip "Général" sector chantiers - they shouldn't appear in "Nos Chantiers"
-          if (sector === 'Général') {
+          // Skip "Synthèse" sector chantiers - they shouldn't appear in "Chantiers"
+          if (sector === 'Synthèse') {
             return;
           }
           

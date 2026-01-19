@@ -7,46 +7,58 @@
       </button>
       <div class="fr-collapse" id="fr-sidemenu-wrapper">
         <ul class="fr-sidemenu__list">
-          <!-- Général sector: Nos Engagements and Nos Chantiers -->
-          <template v-if="sector === 'Général'">
+          <!-- Synthèse sector: À propos, Indicateurs d'impact and Chantiers -->
+          <template v-if="sector === 'Synthèse'">
             <li class="fr-sidemenu__item">
               <a class="fr-sidemenu__link" 
-                title="Nos Engagements"
+                title="À propos"
+                @click="set_about"
+                target="_self"
+                :aria-current="currentView === 'about'"
+                tabindex="0"
+                v-on:keyup.enter="set_about"
+              >
+                À propos
+              </a>
+            </li>
+            <li class="fr-sidemenu__item">
+              <a class="fr-sidemenu__link" 
+                title="Indicateurs d'impact"
                 @click="set_general_engagements"
                 target="_self"
                 :aria-current="currentView === 'general-engagements'"
                 tabindex="0"
                 v-on:keyup.enter="set_general_engagements"
               >
-                Nos Engagements
+                Indicateurs d'impact
               </a>
             </li>
             <li class="fr-sidemenu__item">
               <a class="fr-sidemenu__link" 
-                title="Nos Chantiers"
+                title="Chantiers"
                 @click="set_general_chantiers"
                 target="_self"
                 :aria-current="currentView === 'general-chantiers'"
                 tabindex="0"
                 v-on:keyup.enter="set_general_chantiers"
               >
-                Nos Chantiers
+                Chantiers
               </a>
             </li>
           </template>
           
-          <!-- Sectoriel: Nos Engagements and Chantiers menu -->
+          <!-- Sectoriel: Indicateurs d'impact and Chantiers menu -->
           <template v-else>
             <li class="fr-sidemenu__item">
                   <a class="fr-sidemenu__link" 
-                title="Nos Engagements"
+                title="Indicateurs d'impact"
                 @click="set_sectorial_engagements"
                     target="_self"
                 :aria-current="currentView === 'sectorial-engagements'"
                     tabindex="0"
                 v-on:keyup.enter="set_sectorial_engagements"
                   >
-                Nos Engagements
+                Indicateurs d'impact
                   </a>
                 </li>
             <!-- Chantiers menu -->
@@ -90,7 +102,7 @@ export default {
     },
     sector: {
       type: String,
-      default: 'Général'
+      default: 'Synthèse'
     }
   },
   methods: {
@@ -117,8 +129,15 @@ export default {
         // Initialize with view from initParams, or default view based on sector
         if (!this.initParams || !this.initParams.view) {
           // No view specified - use default for sector
-          if (this.sector === 'Général') {
-            this.set_general_engagements();
+          if (this.sector === 'Synthèse') {
+            this.set_about();
+          } else {
+            this.set_sectorial_engagements();
+          }
+        } else if (this.initParams.view === 'about') {
+          // Only valid for Synthèse sector
+          if (this.sector === 'Synthèse') {
+            this.set_about();
           } else {
             this.set_sectorial_engagements();
           }
@@ -130,40 +149,40 @@ export default {
             this.set_chantier(chantier);
           } else {
             // Chantier doesn't exist in this sector - use default view
-            if (this.sector === 'Général') {
-              this.set_general_engagements();
+            if (this.sector === 'Synthèse') {
+              this.set_about();
             } else {
               this.set_sectorial_engagements();
             }
           }
         } else if (this.initParams.view === 'general-engagements') {
-          // Only valid for Général sector
-          if (this.sector === 'Général') {
+          // Only valid for Synthèse sector
+          if (this.sector === 'Synthèse') {
             this.set_general_engagements();
           } else {
             // Invalid view for this sector - use default
             this.set_sectorial_engagements();
           }
         } else if (this.initParams.view === 'general-chantiers') {
-          // Only valid for Général sector
-          if (this.sector === 'Général') {
+          // Only valid for Synthèse sector
+          if (this.sector === 'Synthèse') {
             this.set_general_chantiers();
           } else {
             // Invalid view for this sector - use default
             this.set_sectorial_engagements();
           }
         } else if (this.initParams.view === 'sectorial-engagements') {
-          // Valid for all sectors except Général
-          if (this.sector === 'Général') {
-            // Invalid view for Général - use default
-            this.set_general_engagements();
+          // Valid for all sectors except Synthèse
+          if (this.sector === 'Synthèse') {
+            // Invalid view for Synthèse - use default
+            this.set_about();
           } else {
             this.set_sectorial_engagements();
           }
         } else {
           // Unknown view - use default
-          if (this.sector === 'Général') {
-            this.set_general_engagements();
+          if (this.sector === 'Synthèse') {
+            this.set_about();
           } else {
             this.set_sectorial_engagements();
           }
@@ -172,6 +191,17 @@ export default {
         console.error("Error loading chantiers:", error);
         this.chantiers = [];
       }
+    },
+    set_about() {
+      this.currentView = 'about';
+      this.currentChantierId = null;
+      
+      const params = {
+        view: 'about',
+        label: 'À propos',
+        sector: 'Synthèse',
+      };
+      this.$emit("params", params);
     },
     set_general_engagements() {
       this.currentView = 'general-engagements';
@@ -184,11 +214,11 @@ export default {
           return;
         }
         
-        // Get all engagement grist IDs for Général sector
+        // Get all engagement grist IDs for Synthèse sector
         const engagementIds = [];
         if (mapping.engagements) {
           Object.values(mapping.engagements)
-            .filter(eng => eng.sector === 'Général')
+            .filter(eng => eng.sector === 'Synthèse')
             .forEach(eng => {
               if (eng.grist_ids) {
                 engagementIds.push(...eng.grist_ids);
@@ -198,8 +228,8 @@ export default {
       
         const params = {
           view: 'general-engagements',
-          label: 'Nos Engagements',
-          sector: 'Général',
+          label: 'Indicateurs d\'impact',
+          sector: 'Synthèse',
           query: {
             filter_by: [
               { field: "grist_ids", values: engagementIds },
@@ -238,8 +268,8 @@ export default {
       
         const params = {
           view: 'general-chantiers',
-          label: 'Nos Chantiers',
-          sector: 'Général',
+          label: 'Chantiers',
+          sector: 'Synthèse',
           query: {
             filter_by: [
               { field: "grist_ids", values: chantierIds },
@@ -280,7 +310,7 @@ export default {
       
         const params = {
           view: 'sectorial-engagements',
-          label: 'Nos Engagements',
+          label: 'Indicateurs d\'impact',
           sector: this.sector,
           query: {
             filter_by: [
@@ -324,7 +354,7 @@ export default {
   mounted() {
     // Ensure sector is set before loading
     if (!this.sector) {
-      this.sector = 'Général';
+      this.sector = 'Synthèse';
     }
     this.loadChantiers();
   },

@@ -60,8 +60,7 @@ export default {
       
       // Add other menu items
       this.menuOptions.push(
-        { value: 'search', label: 'Recherche', selected: false, link: base + stagingPrefix + "/search" },
-        { value: 'a-propos', label: 'À propos', selected: false, link: base + "/a-propos" }
+        { value: 'search', label: 'Recherche', selected: false, link: base + stagingPrefix + "/search" }
       )
       
       var current_page = this.get_name_page()

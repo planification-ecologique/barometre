@@ -108,7 +108,7 @@ export default {
     return {
       engagementsData: [],
       chantiersData: [],
-      sector: 'Général',
+      sector: 'Synthèse',
     };
   },
   watch: {

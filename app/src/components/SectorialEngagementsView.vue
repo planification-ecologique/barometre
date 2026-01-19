@@ -12,7 +12,7 @@
         </div>
         <div>
           <h1 class="fr-title">{{ sector }}</h1>
-          <h2 class="fr-subtitle">Nos Engagements</h2>
+          <h2 class="fr-subtitle">Indicateurs d'impact</h2>
         </div>
       </article>
     </div>
@@ -71,7 +71,7 @@ export default {
   data() {
     return {
       engagementsData: [],
-      sector: 'Général',
+      sector: 'Synthèse',
     };
   },
   watch: {
