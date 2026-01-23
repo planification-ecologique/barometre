@@ -18,54 +18,40 @@
       </article>
     </div>
     
-    <!-- Chantier charts at the top -->
-    <div v-if="chantierCharts.length > 0" class="fr-mb-5w">
-      <h2 class="fr-h3">Indicateurs du chantier</h2>
+    <!-- Leviers grouped and sorted -->
+    <div v-for="(levierGroup, index) in displayLeviers" :key="index" class="fr-mt-5w">
+      <!-- Show title only if it's not "Indicateur de chantier" (which is displayed differently) -->
+      <h2 v-if="levierGroup.name !== 'Indicateur de chantier'" class="fr-h3 levier-title">
+        {{ levierGroup.name }}
+      </h2>
+      <h2 v-else class="fr-h3">Indicateur du chantier</h2>
+      
       <div class="fr-grid-row fr-grid-row--gutters">
         <div
-          v-for="(item, index) in chantierCharts"
-          :key="index"
+          v-for="(item, itemIndex) in levierGroup.chartData"
+          :key="itemIndex"
           class="fr-col-md-6 fr-col-lg-6 fr-col-xl-6 fr-col-12"
         >
           <article>
             <graph-box
               :dataObj="item"
-              :idAccordion="'chantier-accordion-' + index"
+              :idAccordion="'levier-accordion-' + index + '-' + itemIndex"
               :titre="item.label_indic"
-              :key="item.label_indic + '-' + index"
+              :key="item.label_indic + '-' + index + '-' + itemIndex"
             ></graph-box>
           </article>
         </div>
       </div>
     </div>
     
-    <!-- Leviers charts below -->
-    <div v-if="leviersByLevier.length > 0" class="fr-mt-5w">
-      <h2 class="fr-h3">Leviers</h2>
-      <div v-for="(levierGroup, index) in leviersByLevier" :key="index" class="fr-mb-5w">
-        <h3 class="fr-h4 levier-title">{{ levierGroup.name }}</h3>
-        <div class="fr-grid-row fr-grid-row--gutters">
-          <div
-            v-for="(item, itemIndex) in levierGroup.indicators"
-            :key="itemIndex"
-            class="fr-col-md-6 fr-col-lg-6 fr-col-xl-6 fr-col-12"
-          >
-            <article>
-              <graph-box
-                :dataObj="item"
-                :idAccordion="'levier-accordion-' + index + '-' + itemIndex"
-                :titre="item.label_indic"
-                :key="item.label_indic + '-' + index + '-' + itemIndex"
-              ></graph-box>
-            </article>
-          </div>
-        </div>
-      </div>
+    <!-- No data message -->
+    <div v-if="displayLeviers.length === 0 && !isLoading">
+      <p>Pas de données disponibles pour ce chantier.</p>
     </div>
     
-    <!-- No data message -->
-    <div v-if="chantierCharts.length === 0 && leviersByLevier.length === 0">
-      <p>Pas de données disponibles pour ce chantier.</p>
+    <!-- Loading message -->
+    <div v-if="isLoading">
+      <p>Chargement des indicateurs...</p>
     </div>
   </div>
 </template>
@@ -74,7 +60,6 @@
 import GraphBox from "./GraphBox.vue";
 import SectorIcon from "./SectorIcon.vue";
 import { getIndicators } from "@/services/csvDataService.js";
-import planifecoMapping from "@/utils/planifeco_mapping.js";
 
 export default {
   name: "ChantierDetail",
@@ -98,126 +83,95 @@ export default {
   },
   data() {
     return {
-      chantierCharts: [],
-      leviersData: [],
-      leviersByLevier: [],
-      isLoadingLeviers: false,
+      allIndicatorsData: [],
+      displayLeviers: [],
+      isLoading: false,
     };
   },
   watch: {
-    chantierData: {
-      handler(newData) {
-        this.updateChantierCharts(newData);
-      },
-      immediate: true,
-    },
     params: {
       handler() {
-        this.loadLeviersData();
+        this.loadAllData();
       },
       immediate: true,
-    },
-    leviersData: {
-      handler() {
-        this.groupLeviersByName();
-      },
-      immediate: true,
+      deep: true,
     },
   },
   methods: {
-    updateChantierCharts(data) {
-      // Filter to show only chantier-level indicators
-      this.chantierCharts = data || [];
-    },
-    async loadLeviersData() {
-      if (!this.params.leviers || this.params.leviers.length === 0) {
-        this.leviersData = [];
+    async loadAllData() {
+      // Get all grist IDs from the chantier
+      const allGristIds = this.params.grist_ids || [];
+      
+      if (allGristIds.length === 0) {
+        this.displayLeviers = [];
         return;
       }
       
-      this.isLoadingLeviers = true;
+      this.isLoading = true;
       
       try {
-        const mapping = planifecoMapping;
-        const levierIds = [];
+        // Fetch all indicators for this chantier
+        const query = {
+          filter_by: [
+            { field: "grist_ids", values: allGristIds },
+          ],
+          time_period: {
+            date_start: "2015-01-01",
+            date_end: "2031-01-01",
+          },
+        };
         
-        // Get grist IDs for all leviers
-        this.params.leviers.forEach(levierId => {
-          if (mapping.leviers[levierId] && mapping.leviers[levierId].grist_ids) {
-            levierIds.push(...mapping.leviers[levierId].grist_ids);
-            console.log(`Levier ${levierId}: ${mapping.leviers[levierId].name}, grist_ids:`, mapping.leviers[levierId].grist_ids);
-          } else {
-            console.warn(`Levier ${levierId} non trouvé dans le mapping ou sans grist_ids`);
-          }
-        });
+        const response = await getIndicators(query, this.useStaging ? 'staging' : 'production');
+        this.allIndicatorsData = response.results || [];
         
-        console.log(`Total leviers à charger: ${this.params.leviers.length}, Total grist_ids: ${levierIds.length}`);
-        
-        if (levierIds.length > 0) {
-          const query = {
-            filter_by: [
-              { field: "grist_ids", values: levierIds },
-            ],
-            time_period: {
-              date_start: "2015-01-01",
-              date_end: "2031-01-01",
-            },
-          };
-          
-          const response = await getIndicators(query, this.useStaging ? 'staging' : 'production');
-          this.leviersData = response.results || [];
-          console.log(`Indicateurs chargés depuis CSV: ${this.leviersData.length}`);
-          this.groupLeviersByName();
-        } else {
-          this.leviersData = [];
-          this.leviersByLevier = [];
-        }
+        // Group indicators by levier using the sortedLeviers from params
+        this.groupIndicatorsByLevier();
       } catch (error) {
-        console.error("Erreur dans le chargement des données des leviers : ", error);
-        this.leviersData = [];
-        this.leviersByLevier = [];
+        console.error("Error loading chantier data:", error);
+        this.displayLeviers = [];
       } finally {
-        this.isLoadingLeviers = false;
+        this.isLoading = false;
       }
     },
-    groupLeviersByName() {
-      try {
-        const mapping = planifecoMapping;
-        if (!mapping || !mapping.leviers) {
-          this.leviersByLevier = [];
-          return;
+    groupIndicatorsByLevier() {
+      const sortedLeviers = this.params.sortedLeviers || [];
+      
+      if (sortedLeviers.length === 0) {
+        // Fallback: just display all indicators without grouping
+        if (this.allIndicatorsData.length > 0) {
+          this.displayLeviers = [{
+            name: 'Indicateurs',
+            chartData: this.allIndicatorsData
+          }];
+        } else {
+          this.displayLeviers = [];
         }
-        
-        // Group indicators by levier name
-        const levierGroups = {};
-        
-        this.params.leviers.forEach(levierId => {
-          const levier = mapping.leviers[levierId];
-          if (levier && levier.grist_ids) {
-            const levierName = levier.name || levier.short_name || `Levier ${levierId}`;
-            
-            if (!levierGroups[levierName]) {
-              levierGroups[levierName] = {
-                name: levierName,
-                indicators: []
-              };
-            }
-            
-            // Find matching indicators
-            levier.grist_ids.forEach(gristId => {
-              const indicator = this.leviersData.find(item => item.id_indic === gristId);
-              if (indicator && !levierGroups[levierName].indicators.find(e => e.id_indic === indicator.id_indic)) {
-                levierGroups[levierName].indicators.push(indicator);
-              }
-            });
-          }
-        });
-        
-        this.leviersByLevier = Object.values(levierGroups);
-      } catch (error) {
-        console.error("Error grouping leviers by name:", error);
-        this.leviersByLevier = [];
+        return;
       }
+      
+      // Build display groups from sortedLeviers
+      const result = [];
+      
+      sortedLeviers.forEach(levierGroup => {
+        // Get the grist IDs for this levier group
+        const gristIds = levierGroup.indicators.map(item => item.gristId).filter(id => id);
+        
+        // Find matching chart data
+        const chartData = this.allIndicatorsData.filter(indicator => 
+          gristIds.includes(indicator.id_indic)
+        );
+        
+        // Only add group if it has data
+        if (chartData.length > 0) {
+          result.push({
+            name: levierGroup.name,
+            sortOrder: levierGroup.sortOrder,
+            chartData: chartData
+          });
+        }
+      });
+      
+      this.displayLeviers = result;
     },
   },
 };
@@ -236,12 +190,6 @@ export default {
 .fr-h3 {
   margin-top: 2rem;
   margin-bottom: 1rem;
-}
-
-.fr-h4 {
-  margin-top: 1.5rem;
-  margin-bottom: 1rem;
-  font-weight: 600;
 }
 
 .levier-title {

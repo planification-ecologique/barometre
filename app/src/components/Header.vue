@@ -128,7 +128,6 @@
 
 <script>
 import NavigationDsfr from "./Navigation.vue";
-import planifecoMapping from "@/utils/planifeco_mapping.js";
 
 export default {
   name: "HeaderDsfr",
@@ -145,10 +144,8 @@ export default {
   methods: {
     set_link() {
       let base = process.env.VUE_APP_PREFIX_PATH;
-      // Get first sector from mapping
-      const mapping = planifecoMapping.planifecoMapping || planifecoMapping;
-      const sectors = mapping.sectors || ['Synthèse'];
-      const firstSector = sectors[0] || 'Synthèse';
+      // Synthèse is always the default/home sector
+      const firstSector = 'Synthèse';
       if (base) {
         this.accueil_link = base + `/dashboard?sector=${encodeURIComponent(firstSector)}`;
       } else {

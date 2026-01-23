@@ -44,7 +44,6 @@
 
 <script>
 import EnvironnementImg from "./components_sgv/EnvironnementImg.vue";
-import planifecoMapping from "@/utils/planifeco_mapping.js";
 
 export default {
   name: "ChantiersTableView",
@@ -84,32 +83,24 @@ export default {
   methods: {
     buildTableData(data) {
       try {
-        const mapping = planifecoMapping;
-        if (!mapping || !mapping.chantiers) {
-          return;
-        }
-        
         const rows = [];
+        const seenIndicators = new Set();
         
-        // Get all chantiers (excluding Synthèse sector)
-        Object.values(mapping.chantiers)
-          .filter(chantier => chantier.sector !== 'Synthèse')
-          .forEach(chantier => {
-            // Find matching indicators in data
-            if (chantier.grist_ids && chantier.grist_ids.length > 0) {
-              chantier.grist_ids.forEach(gristId => {
-                const indicator = data.find(item => item.id_indic === gristId);
-                if (indicator) {
-                  rows.push({
-                    chantier: chantier.name || '-',
-                    indicateur: indicator.label_indic || '-',
-                    cible2030: this.formatValue(indicator.objectif_valeur_cible, indicator.unite),
-                    derniereValeur: this.formatLastValue(indicator),
-                  });
-                }
-              });
-            }
+        // Build table directly from data - use chantier_ou_impact as the "chantier" name
+        data.forEach(indicator => {
+          // Avoid duplicates (from multi-line charts)
+          if (seenIndicators.has(indicator.label_indic)) {
+            return;
+          }
+          seenIndicators.add(indicator.label_indic);
+          
+          rows.push({
+            chantier: indicator.chantier_ou_impact || '-',
+            indicateur: indicator.label_indic || '-',
+            cible2030: this.formatValue(indicator.objectif_valeur_cible, indicator.unite),
+            derniereValeur: this.formatLastValue(indicator),
           });
+        });
         
         this.tableData = rows;
       } catch (error) {

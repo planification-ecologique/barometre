@@ -24,31 +24,39 @@
 
 <script>
 import router from '../router'
-import planifecoMapping from '@/utils/planifeco_mapping.js'
+import { getNavigationStructure } from '@/services/csvDataService.js'
 
 export default {
   name: 'NavigationDsfr',
   data() {
     return {
       myrouter: router,
-      menuOptions: []
+      menuOptions: [],
+      sectors: ['Synthèse'] // Default, will be loaded from Grist data
     }
   },
   methods: {
-    get_menu_options() {
+    async get_menu_options() {
       let base = process.env.VUE_APP_PREFIX_PATH
       const isStaging = window.location.pathname.includes('/staging')
       const stagingPrefix = isStaging ? '/staging' : ''
       
-      // Get sectors from mapping
-      const mapping = planifecoMapping.planifecoMapping || planifecoMapping
-      const sectors = mapping.sectors || ['Transports']
+      // Load sectors from Grist data
+      try {
+        const response = await getNavigationStructure('production')
+        if (response.status === 'success' && response.data.sectorNames) {
+          this.sectors = response.data.sectorNames
+        }
+      } catch (error) {
+        console.error('Error loading sectors:', error)
+        // Keep default sectors
+      }
       
       // Build menu options with sectors
       this.menuOptions = []
       
       // Add sector tabs
-      sectors.forEach(sector => {
+      this.sectors.forEach(sector => {
         const sectorValue = sector.toLowerCase().replace(/\s+/g, '-').replace(/[àâä]/g, 'a').replace(/[éèêë]/g, 'e').replace(/[îï]/g, 'i').replace(/[ôö]/g, 'o').replace(/[ùûü]/g, 'u')
         this.menuOptions.push({
           value: `sector-${sectorValue}`,

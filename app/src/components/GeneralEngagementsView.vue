@@ -49,8 +49,6 @@
 <script>
 import GraphBox from "./GraphBox.vue";
 import EnvironnementImg from "./components_sgv/EnvironnementImg.vue";
-import { getIndicators } from "@/services/csvDataService.js";
-import planifecoMapping from "@/utils/planifeco_mapping.js";
 
 export default {
   name: "GeneralEngagementsView",
@@ -110,34 +108,28 @@ export default {
     }
   },
   methods: {
-    async groupEngagementsByAxe(data) {
+    groupEngagementsByAxe(data) {
       try {
-        const mapping = planifecoMapping;
-        if (!mapping || !mapping.engagements) {
-          return;
-        }
-        
-        // Group engagements by taxonomy axis
+        // Group engagements by taxonomy axis using chantier_ou_impact field
+        // The chantier_ou_impact field contains the taxonomy axe (e.g., "Atténuation climat")
         const axeGroups = {};
+        const seenIndicators = new Set();
         
-        // Get all Synthèse engagements with their axes
-        Object.values(mapping.engagements)
-          .filter(eng => eng.sector === 'Synthèse')
-          .forEach(eng => {
-            const axe = eng.taxonomy_axe || 'Autre';
-            if (!axeGroups[axe]) {
-              axeGroups[axe] = [];
-            }
-            // Find matching indicators in data
-            if (eng.grist_ids) {
-              eng.grist_ids.forEach(gristId => {
-                const indicator = data.find(item => item.id_indic === gristId);
-                if (indicator && !axeGroups[axe].find(e => e.id_indic === indicator.id_indic)) {
-                  axeGroups[axe].push(indicator);
-                }
-              });
-            }
-          });
+        data.forEach(indicator => {
+          // The chantier_ou_impact field holds the taxonomy_axe for impact indicators
+          const axe = indicator.chantier_ou_impact || 'Autre';
+          
+          // Avoid duplicates (from multi-line charts)
+          if (seenIndicators.has(indicator.label_indic)) {
+            return;
+          }
+          seenIndicators.add(indicator.label_indic);
+          
+          if (!axeGroups[axe]) {
+            axeGroups[axe] = [];
+          }
+          axeGroups[axe].push(indicator);
+        });
         
         this.engagementsByAxe = axeGroups;
       } catch (error) {

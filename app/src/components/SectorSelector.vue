@@ -37,7 +37,7 @@
 
 <script>
 import router from '../router'
-import planifecoMapping from '@/utils/planifeco_mapping.js'
+import { getNavigationStructure } from '@/services/csvDataService.js'
 import { getSectorIcon } from '@/utils/sectorIcons.js'
 
 export default {
@@ -50,7 +50,7 @@ export default {
   },
   data() {
     return {
-      sectors: [],
+      sectors: ['Synthèse'], // Default, will be loaded from Grist data
       iconSize: '32px'
     }
   },
@@ -63,13 +63,16 @@ export default {
     this.loadSectors()
   },
   methods: {
-    loadSectors() {
+    async loadSectors() {
       try {
-        const mapping = planifecoMapping.planifecoMapping || planifecoMapping
-        this.sectors = mapping.sectors || ['Synthèse']
+        // Load sectors from Grist data via navigation structure
+        const response = await getNavigationStructure('production')
+        if (response.status === 'success' && response.data.sectorNames) {
+          this.sectors = response.data.sectorNames
+        }
       } catch (error) {
         console.error('Error loading sectors:', error)
-        this.sectors = ['Synthèse']
+        // Keep default sectors
       }
     },
     handleSectorChange(event) {

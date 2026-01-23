@@ -44,7 +44,6 @@
 
 <script>
 import EnvironnementImg from "./components_sgv/EnvironnementImg.vue";
-import planifecoMapping from "@/utils/planifeco_mapping.js";
 
 export default {
   name: "EngagementsTableView",
@@ -84,32 +83,24 @@ export default {
   methods: {
     buildTableData(data) {
       try {
-        const mapping = planifecoMapping;
-        if (!mapping || !mapping.engagements) {
-          return;
-        }
-        
         const rows = [];
+        const seenIndicators = new Set();
         
-        // Get all Synthèse engagements
-        Object.values(mapping.engagements)
-          .filter(eng => eng.sector === 'Synthèse')
-          .forEach(eng => {
-            // Find matching indicators in data
-            if (eng.grist_ids) {
-              eng.grist_ids.forEach(gristId => {
-                const indicator = data.find(item => item.id_indic === gristId);
-                if (indicator) {
-                  rows.push({
-                    engagement: eng.name || eng.theme || '-',
-                    indicateur: indicator.label_indic || '-',
-                    cible2030: this.formatValue(indicator.objectif_valeur_cible, indicator.unite),
-                    derniereValeur: this.formatLastValue(indicator),
-                  });
-                }
-              });
-            }
+        // Build table directly from data - use chantier_ou_impact as the "engagement" name
+        data.forEach(indicator => {
+          // Avoid duplicates (from multi-line charts)
+          if (seenIndicators.has(indicator.label_indic)) {
+            return;
+          }
+          seenIndicators.add(indicator.label_indic);
+          
+          rows.push({
+            engagement: indicator.chantier_ou_impact || '-',
+            indicateur: indicator.label_indic || '-',
+            cible2030: this.formatValue(indicator.objectif_valeur_cible, indicator.unite),
+            derniereValeur: this.formatLastValue(indicator),
           });
+        });
         
         this.tableData = rows;
       } catch (error) {

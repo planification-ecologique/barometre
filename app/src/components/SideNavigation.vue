@@ -138,7 +138,7 @@
   </nav>
 </template>
 <script>
-import planifecoMapping from "@/utils/planifeco_mapping.js";
+import { getNavigationStructure } from "@/services/csvDataService.js";
 
 export default {
   name: "SideNavigation",
@@ -153,6 +153,8 @@ export default {
       chantierSectors: [],
       expandedIndicateurs: false,
       expandedChantiers: false,
+      navigationData: null,  // Store the full navigation structure
+      isLoading: true,
     };
   },
   props: {
@@ -169,31 +171,45 @@ export default {
     }
   },
   methods: {
-    loadChantiers() {
-      // Load chantiers from mapping
+    async loadChantiers() {
+      // Load navigation structure from Grist data
       try {
-        const mapping = planifecoMapping;
-        if (!mapping || !mapping.chantiers) {
-          console.warn("Planifeco mapping not available");
-          this.chantiers = [];
-          return;
+        this.isLoading = true;
+        const environment = this.useStaging ? 'staging' : 'production';
+        const response = await getNavigationStructure(environment);
+        
+        if (response.status === 'success') {
+          this.navigationData = response.data;
+          
+          // Get data for current sector
+          const sectorData = response.data.sectors.find(s => s.name === this.sector);
+          
+          if (sectorData) {
+            // Build chantiers list from the navigation data
+            this.chantiers = Object.entries(sectorData.chantiers)
+              .map(([name, chantierData]) => ({
+                id: name.toLowerCase().replace(/[^a-z0-9]/g, '-'),
+                name: name,
+                sortedLeviers: chantierData.sortedLeviers || [],
+                // Collect all grist IDs from all leviers
+                grist_ids: Object.values(chantierData.leviers)
+                  .flat()
+                  .map(item => item.gristId)
+                  .filter(id => id)
+              }))
+              .sort((a, b) => a.name.localeCompare(b.name));
+            
+            // For Synthèse sector, load taxonomy axes and chantier sectors from navigation data
+            if (this.sector === 'Synthèse') {
+              this.loadTaxonomyAxes();
+              this.loadChantierSectors();
+            }
+          } else {
+            this.chantiers = [];
+          }
         }
         
-        // Filter chantiers by sector
-        this.chantiers = Object.values(mapping.chantiers)
-          .filter(chantier => chantier.sector === this.sector)
-          .map((chantier, index) => ({
-            id: chantier.id,
-            name: chantier.name || `Chantier ${index + 1}`,
-            grist_ids: chantier.grist_ids || [],
-            leviers: chantier.leviers || []
-          }));
-        
-        // For Synthèse sector, load taxonomy axes and chantier sectors
-        if (this.sector === 'Synthèse') {
-          this.loadTaxonomyAxes();
-          this.loadChantierSectors();
-        }
+        this.isLoading = false;
         
         // Initialize with view from initParams, or default view based on sector
         if (!this.initParams || !this.initParams.view) {
@@ -283,20 +299,16 @@ export default {
     },
     loadTaxonomyAxes() {
       try {
-        const mapping = planifecoMapping;
-        if (!mapping || !mapping.engagements) return;
+        if (!this.navigationData) return;
         
-        // Get unique taxonomy axes from Synthèse engagements
-        const axesSet = new Set();
-        Object.values(mapping.engagements)
-          .filter(eng => eng.sector === 'Synthèse')
-          .forEach(eng => {
-            if (eng.taxonomy_axe) {
-              axesSet.add(eng.taxonomy_axe);
-            }
-          });
+        // Get the Synthèse sector data
+        const syntheseSector = this.navigationData.sectors.find(s => s.name === 'Synthèse');
+        if (!syntheseSector || !syntheseSector.indicateursImpact) return;
         
-        this.taxonomyAxes = Array.from(axesSet);
+        // Get unique taxonomy axes from indicateursImpact (which are grouped by axe)
+        this.taxonomyAxes = Object.keys(syntheseSector.indicateursImpact)
+          .filter(axe => axe && axe !== 'Autre')
+          .sort();
       } catch (error) {
         console.error("Error loading taxonomy axes:", error);
         this.taxonomyAxes = [];
@@ -304,21 +316,15 @@ export default {
     },
     loadChantierSectors() {
       try {
-        const mapping = planifecoMapping;
-        if (!mapping || !mapping.chantiers || !mapping.sectors) return;
+        if (!this.navigationData) return;
         
-        // Get sectors that have chantiers (excluding Synthèse)
-        const sectorsWithChantiers = new Set();
-        Object.values(mapping.chantiers).forEach(chantier => {
-          if (chantier.sector && chantier.sector !== 'Synthèse') {
-            sectorsWithChantiers.add(chantier.sector);
-          }
-        });
+        // Get sectors that have chantiers (excluding Synthèse), sorted alphabetically
+        const sectorsWithChantiers = this.navigationData.sectors
+          .filter(s => s.name !== 'Synthèse' && Object.keys(s.chantiers).length > 0)
+          .map(s => s.name)
+          .sort((a, b) => a.localeCompare(b, 'fr'));
         
-        // Preserve order from mapping.sectors
-        this.chantierSectors = mapping.sectors.filter(s => 
-          s !== 'Synthèse' && sectorsWithChantiers.has(s)
-        );
+        this.chantierSectors = sectorsWithChantiers;
       } catch (error) {
         console.error("Error loading chantier sectors:", error);
         this.chantierSectors = [];
@@ -350,22 +356,19 @@ export default {
       this.currentSectorFilter = null;
       
       try {
-        const mapping = planifecoMapping;
-        if (!mapping) {
-          console.warn("Planifeco mapping not available");
-          return;
-        }
-        
-        // Get all engagement grist IDs for Synthèse sector
+        // Get all impact indicator grist IDs for Synthèse sector from navigation data
         const engagementIds = [];
-        if (mapping.engagements) {
-          Object.values(mapping.engagements)
-            .filter(eng => eng.sector === 'Synthèse')
-            .forEach(eng => {
-              if (eng.grist_ids) {
-                engagementIds.push(...eng.grist_ids);
-              }
+        if (this.navigationData) {
+          const syntheseSector = this.navigationData.sectors.find(s => s.name === 'Synthèse');
+          if (syntheseSector && syntheseSector.indicateursImpact) {
+            Object.values(syntheseSector.indicateursImpact).forEach(indicators => {
+              indicators.forEach(item => {
+                if (item.gristId) {
+                  engagementIds.push(item.gristId);
+                }
+              });
             });
+          }
         }
       
         const params = {
@@ -394,21 +397,21 @@ export default {
       this.currentSectorFilter = null;
       
       try {
-        const mapping = planifecoMapping;
-        if (!mapping) {
-          console.warn("Planifeco mapping not available");
-          return;
-        }
-        
-        // Get all chantier grist IDs
+        // Get only "Indicateur de chantier" grist IDs (excluding Synthèse sector)
         const chantierIds = [];
-        if (mapping.chantiers) {
-          Object.values(mapping.chantiers)
-            .filter(chantier => chantier.sector !== 'Synthèse')
-            .forEach(chantier => {
-              if (chantier.grist_ids) {
-                chantierIds.push(...chantier.grist_ids);
-              }
+        if (this.navigationData) {
+          this.navigationData.sectors
+            .filter(s => s.name !== 'Synthèse')
+            .forEach(sector => {
+              Object.values(sector.chantiers).forEach(chantier => {
+                // Only get "Indicateur de chantier" leviers
+                const chantierLevelIndicators = chantier.leviers['Indicateur de chantier'] || [];
+                chantierLevelIndicators.forEach(item => {
+                  if (item.gristId) {
+                    chantierIds.push(item.gristId);
+                  }
+                });
+              });
             });
         }
       
@@ -438,22 +441,26 @@ export default {
       this.currentSectorFilter = null;
       
       try {
-        const mapping = planifecoMapping;
-        if (!mapping) {
-          console.warn("Planifeco mapping not available");
-          return;
-        }
-        
-        // Get engagement grist IDs for Synthèse sector, optionally filtered by axe
+        // Get impact indicator grist IDs for Synthèse sector, optionally filtered by axe
         const engagementIds = [];
-        if (mapping.engagements) {
-          Object.values(mapping.engagements)
-            .filter(eng => eng.sector === 'Synthèse' && (!axe || eng.taxonomy_axe === axe))
-            .forEach(eng => {
-              if (eng.grist_ids) {
-                engagementIds.push(...eng.grist_ids);
-              }
-            });
+        if (this.navigationData) {
+          const syntheseSector = this.navigationData.sectors.find(s => s.name === 'Synthèse');
+          if (syntheseSector && syntheseSector.indicateursImpact) {
+            if (axe) {
+              // Filter by specific axe
+              const axeIndicators = syntheseSector.indicateursImpact[axe] || [];
+              axeIndicators.forEach(item => {
+                if (item.gristId) engagementIds.push(item.gristId);
+              });
+            } else {
+              // Get all impact indicators
+              Object.values(syntheseSector.indicateursImpact).forEach(indicators => {
+                indicators.forEach(item => {
+                  if (item.gristId) engagementIds.push(item.gristId);
+                });
+              });
+            }
+          }
         }
       
         const params = {
@@ -483,22 +490,22 @@ export default {
       this.currentSectorFilter = sectorFilter;
       
       try {
-        const mapping = planifecoMapping;
-        if (!mapping) {
-          console.warn("Planifeco mapping not available");
-          return;
-        }
-        
-        // Get chantier grist IDs, optionally filtered by sector
+        // Get only "Indicateur de chantier" grist IDs, optionally filtered by sector
         const chantierIds = [];
-        if (mapping.chantiers) {
-          Object.values(mapping.chantiers)
-            .filter(chantier => !sectorFilter || chantier.sector === sectorFilter)
-            .forEach(chantier => {
-              if (chantier.grist_ids) {
-                chantierIds.push(...chantier.grist_ids);
-              }
+        if (this.navigationData) {
+          const sectorsToInclude = sectorFilter 
+            ? this.navigationData.sectors.filter(s => s.name === sectorFilter)
+            : this.navigationData.sectors.filter(s => s.name !== 'Synthèse');
+          
+          sectorsToInclude.forEach(sector => {
+            Object.values(sector.chantiers).forEach(chantier => {
+              // Only get "Indicateur de chantier" leviers
+              const chantierLevelIndicators = chantier.leviers['Indicateur de chantier'] || [];
+              chantierLevelIndicators.forEach(item => {
+                if (item.gristId) chantierIds.push(item.gristId);
+              });
             });
+          });
         }
       
         const params = {
@@ -526,22 +533,17 @@ export default {
       this.currentChantierId = null;
       
       try {
-        const mapping = planifecoMapping;
-        if (!mapping) {
-          console.warn("Planifeco mapping not available");
-          return;
-        }
-        
-        // Get all engagement grist IDs for current sector
+        // Get all impact indicator grist IDs for current sector
         const engagementIds = [];
-        if (mapping.engagements) {
-          Object.values(mapping.engagements)
-            .filter(eng => eng.sector === this.sector)
-            .forEach(eng => {
-              if (eng.grist_ids) {
-                engagementIds.push(...eng.grist_ids);
-              }
+        if (this.navigationData) {
+          const sectorData = this.navigationData.sectors.find(s => s.name === this.sector);
+          if (sectorData && sectorData.indicateursImpact) {
+            Object.values(sectorData.indicateursImpact).forEach(indicators => {
+              indicators.forEach(item => {
+                if (item.gristId) engagementIds.push(item.gristId);
+              });
             });
+          }
         }
       
         const params = {
@@ -567,22 +569,26 @@ export default {
       this.currentView = 'chantier';
       this.currentChantierId = chantier.id;
       
+      const gristIds = chantier.grist_ids || [];
+      
       const params = {
         view: 'chantier',
         chantier_id: chantier.id,
         chantier_name: chantier.name,
         label: chantier.name,
-        sector: this.sector, // Ensure sector is passed
+        sector: this.sector,
+        grist_ids: gristIds, // Pass grist_ids directly for ChantierDetail
         query: {
           filter_by: [
-            { field: "grist_ids", values: chantier.grist_ids || [] },
+            { field: "grist_ids", values: gristIds },
           ],
           time_period: {
             date_start: "2015-01-01",
             date_end: "2031-01-01",
           },
         },
-        leviers: chantier.leviers || []
+        // Pass sorted leviers from navigation data
+        sortedLeviers: chantier.sortedLeviers || []
       };
       this.$emit("params", params);
     },

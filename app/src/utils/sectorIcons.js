@@ -9,6 +9,7 @@ import BatimentImg from '@/components/components_sgv/BatimentImg.vue'
 import EnergieImg from '@/components/components_sgv/EnergieImg.vue'
 import EconomieImg from '@/components/components_sgv/EconomieImg.vue'
 import EcosystemeImg from '@/components/components_sgv/EcosystemeImg.vue'
+// import TransverseImg from '@/components/components_sgv/TransverseImg.vue'
 
 /**
  * Maps sector names to their corresponding icon components
@@ -16,12 +17,13 @@ import EcosystemeImg from '@/components/components_sgv/EcosystemeImg.vue'
 export const sectorIconMap = {
   'Synthèse': EnvironnementImg,
   'Transports': TransportImg,
-  'Agriculture / alimentation': AgricultureImg,
+  'Agriculture et alimentation': AgricultureImg,
   'Industrie': IndustrieImg,
   'Bâtiments et urbanisme': BatimentImg,
   "Production d'énergie": EnergieImg,
   'Consommations et déchets': EconomieImg,
   'Terres et forêts': EcosystemeImg,
+  'Transverse': EcosystemeImg,
 }
 
 /**

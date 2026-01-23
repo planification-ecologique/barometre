@@ -128,6 +128,40 @@ export function setStagingDocId(docId) {
 }
 
 /**
+ * Internal function to parse the "Chantier ou Impact" column
+ * @param {String} value - The raw column value
+ * @returns {Object} - { sector, chantierOuImpact }
+ */
+function parseChantierOuImpactInternal(value) {
+  if (!value || value === 'nan') {
+    return { sector: null, chantierOuImpact: null };
+  }
+  
+  // Remove all types of whitespace (newlines, tabs, spaces) from start and end
+  // Also remove any quotes that might be in the value
+  let normalized = value.replace(/^[\s"']+|[\s"']+$/g, '');
+  
+  // Handle multiline format (e.g., "Synthèse / \nAtténuation climat")
+  // Replace newlines and surrounding whitespace with a single space
+  normalized = normalized.replace(/[\r\n]+/g, ' ');
+  // Replace any combination of whitespace and slashes with " / "
+  normalized = normalized.replace(/\s*\/\s*/g, ' / ');
+  // Replace multiple spaces with single space
+  normalized = normalized.replace(/\s+/g, ' ').trim();
+  
+  const parts = normalized.split(' / ');
+  
+  if (parts.length >= 2) {
+    return {
+      sector: parts[0].trim(),
+      chantierOuImpact: parts.slice(1).join(' / ').trim()
+    };
+  }
+  
+  return { sector: parts[0].trim(), chantierOuImpact: null };
+}
+
+/**
  * Transforms CSV data to match the API response format
  * @param {Array} csvData - Raw CSV data
  * @param {Object} query - Query parameters (similar to API request)
@@ -151,9 +185,33 @@ export function transformCSVData(csvData, query) {
           filteredData = [];
         } else {
           const gristIds = Array.isArray(filter.values) ? filter.values : [filter.values];
-          filteredData = filteredData.filter(item => {
+          
+          // First, find all matching rows by ID
+          const matchedRows = filteredData.filter(item => {
             const itemId = item.ID;
             return gristIds.some(gristId => itemId === gristId);
+          });
+          
+          // Then, get all indicator names from matched rows (to handle multi-line charts)
+          const matchedIndicatorNames = new Set(matchedRows.map(item => item.Indicateur).filter(name => name));
+          
+          // Finally, include ALL rows that either match by ID OR share the same indicator name
+          // This ensures multi-line charts (with sub-groups) get all their data
+          filteredData = filteredData.filter(item => {
+            const itemId = item.ID;
+            const indicatorName = item.Indicateur;
+            
+            // Include if ID matches directly
+            if (gristIds.some(gristId => itemId === gristId)) {
+              return true;
+            }
+            
+            // Include if indicator name matches a selected indicator (for multi-line charts)
+            if (indicatorName && matchedIndicatorNames.has(indicatorName)) {
+              return true;
+            }
+            
+            return false;
           });
         }
       }
@@ -218,6 +276,10 @@ export function transformCSVData(csvData, query) {
       nbNote = "</br>NB : Des travaux sont en cours et pourraient légèrement modifier la cible dans les mois qui viennent (ex : SNBC 3)";
     }
 
+    // Parse the "Chantier ou Impact" column
+    const chantierOuImpactRaw = item['Chantier ou Impact'] || '';
+    const parsedChantierOuImpact = parseChantierOuImpactInternal(chantierOuImpactRaw);
+    
     return {
       label_indic: item.Indicateur,
       id_indic: item.ID,
@@ -235,6 +297,10 @@ export function transformCSVData(csvData, query) {
       label_sous_groupe: item['Sous-niveau (graphique)'] || '',
       label_value: statuses,
       type_de_graphique: chartType,
+      // Add new fields from Grist
+      levier: item['Levier'] || '',
+      chantier_ou_impact: parsedChantierOuImpact.chantierOuImpact || '',
+      sector: parsedChantierOuImpact.sector || '',
       values: {
         x: [years],
         y: y,
@@ -651,4 +717,196 @@ export async function getAllUniqueTags(environment = 'production') {
     console.error('Error getting unique tags from CSV:', error);
     throw error;
   }
-} 
+}
+
+/**
+ * Parse the "Chantier ou Impact" column to extract sector and chantier/impact
+ * Format: "Sector / Chantier ou Impact" or "\nSector / \nChantier ou Impact"
+ * @param {String} value - The raw column value
+ * @returns {Object} - { sector, chantierOuImpact }
+ */
+function parseChantierOuImpact(value) {
+  return parseChantierOuImpactInternal(value);
+}
+
+/**
+ * Get the sort order for Levier types
+ * @param {String} levier - The levier value
+ * @returns {Number} - Sort order (lower = first)
+ */
+function getLevierSortOrder(levier) {
+  if (!levier || levier === 'nan') return 999;
+  if (levier === "Indicateur d'impact") return 0;
+  if (levier === "Indicateur de chantier") return 1;
+  if (levier === "Autres indicateurs") return 998;
+  return 500; // Named leviers in the middle
+}
+
+/**
+ * Build the navigation structure dynamically from Grist data
+ * @param {String} environment - Environment to use (production or staging)
+ * @returns {Promise} - Promise resolving to navigation structure
+ */
+export async function getNavigationStructure(environment = 'production') {
+  try {
+    const csvData = await fetchCSVData(environment);
+    
+    // Filter out items marked for deletion
+    const filteredData = csvData.filter(item => item['A supprimer de la V1'] !== 'true');
+    
+    // Build the structure
+    const sectors = {};
+    
+    filteredData.forEach(item => {
+      const chantierOuImpactRaw = item['Chantier ou Impact'] || '';
+      const levier = item['Levier'] || '';
+      const gristId = item['ID'] || '';
+      
+      const { sector, chantierOuImpact } = parseChantierOuImpact(chantierOuImpactRaw);
+      
+      if (!sector) return;
+      
+      // Initialize sector if not exists
+      if (!sectors[sector]) {
+        sectors[sector] = {
+          name: sector,
+          indicateursImpact: {},  // Grouped by taxonomy_axe (for Indicateur d'impact)
+          chantiers: {}          // Grouped by chantier name
+        };
+      }
+      
+      // Determine if this is an impact indicator or a chantier/levier
+      if (levier === "Indicateur d'impact") {
+        // Group by chantierOuImpact (which is the taxonomy_axe like "Atténuation climat")
+        const axe = chantierOuImpact || 'Autre';
+        if (!sectors[sector].indicateursImpact[axe]) {
+          sectors[sector].indicateursImpact[axe] = [];
+        }
+        sectors[sector].indicateursImpact[axe].push({
+          gristId,
+          levier,
+          indicator: item
+        });
+      } else {
+        // This is a chantier or levier indicator
+        const chantierName = chantierOuImpact || 'Autres';
+        if (!sectors[sector].chantiers[chantierName]) {
+          sectors[sector].chantiers[chantierName] = {
+            name: chantierName,
+            leviers: {}
+          };
+        }
+        
+        // Group by levier within the chantier
+        const levierName = levier || 'Autres indicateurs';
+        if (!sectors[sector].chantiers[chantierName].leviers[levierName]) {
+          sectors[sector].chantiers[chantierName].leviers[levierName] = [];
+        }
+        sectors[sector].chantiers[chantierName].leviers[levierName].push({
+          gristId,
+          levier: levierName,
+          indicator: item
+        });
+      }
+    });
+    
+    // Sort leviers within each chantier
+    Object.values(sectors).forEach(sector => {
+      Object.values(sector.chantiers).forEach(chantier => {
+        // Convert leviers object to sorted array
+        const sortedLeviers = Object.entries(chantier.leviers)
+          .map(([name, indicators]) => ({ name, indicators, sortOrder: getLevierSortOrder(name) }))
+          .sort((a, b) => {
+            if (a.sortOrder !== b.sortOrder) return a.sortOrder - b.sortOrder;
+            return a.name.localeCompare(b.name); // Alphabetical for same order
+          });
+        chantier.sortedLeviers = sortedLeviers;
+      });
+    });
+    
+    // Sort sectors alphabetically, with "Synthèse" always first (it's the overview section)
+    const sortedSectors = Object.values(sectors)
+      .sort((a, b) => {
+        // Synthèse always comes first
+        if (a.name === 'Synthèse') return -1;
+        if (b.name === 'Synthèse') return 1;
+        // All other sectors sorted alphabetically
+        return a.name.localeCompare(b.name, 'fr');
+      });
+    
+    return {
+      status: 'success',
+      data: {
+        sectors: sortedSectors,
+        sectorNames: sortedSectors.map(s => s.name)
+      }
+    };
+  } catch (error) {
+    console.error('Error building navigation structure from CSV:', error);
+    throw error;
+  }
+}
+
+/**
+ * Get indicators filtered by sector and optionally by chantier/levier
+ * @param {Object} options - Filter options
+ * @param {String} environment - Environment to use
+ * @returns {Promise} - Promise resolving to filtered indicators
+ */
+export async function getIndicatorsByStructure(options, environment = 'production') {
+  const { sector, chantierOuImpact, levier, viewType } = options;
+  
+  try {
+    const csvData = await fetchCSVData(environment);
+    
+    // Filter out items marked for deletion
+    let filteredData = csvData.filter(item => item['A supprimer de la V1'] !== 'true');
+    
+    // Filter by sector
+    if (sector) {
+      filteredData = filteredData.filter(item => {
+        const parsed = parseChantierOuImpact(item['Chantier ou Impact']);
+        return parsed.sector === sector;
+      });
+    }
+    
+    // Filter by viewType (impact vs chantier)
+    if (viewType === 'impact') {
+      filteredData = filteredData.filter(item => item['Levier'] === "Indicateur d'impact");
+    } else if (viewType === 'chantier') {
+      filteredData = filteredData.filter(item => item['Levier'] !== "Indicateur d'impact");
+    }
+    
+    // Filter by chantierOuImpact (axe or chantier name)
+    if (chantierOuImpact) {
+      filteredData = filteredData.filter(item => {
+        const parsed = parseChantierOuImpact(item['Chantier ou Impact']);
+        return parsed.chantierOuImpact === chantierOuImpact;
+      });
+    }
+    
+    // Filter by specific levier
+    if (levier) {
+      filteredData = filteredData.filter(item => item['Levier'] === levier);
+    }
+    
+    // Get grist IDs
+    const gristIds = filteredData.map(item => item['ID']).filter(id => id);
+    
+    // Use the standard query method
+    const query = {
+      filter_by: [
+        { field: 'grist_ids', values: gristIds }
+      ],
+      time_period: {
+        date_start: '2015-01-01',
+        date_end: '2031-01-01'
+      }
+    };
+    
+    return await getIndicators(query, environment);
+  } catch (error) {
+    console.error('Error getting indicators by structure:', error);
+    throw error;
+  }
+}

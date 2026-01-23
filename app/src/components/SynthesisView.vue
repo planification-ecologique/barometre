@@ -81,8 +81,6 @@
 <script>
 import GraphBox from "./GraphBox.vue";
 import SectorIcon from "./SectorIcon.vue";
-import { getIndicators } from "@/services/csvDataService.js";
-import planifecoMapping from "@/utils/planifeco_mapping.js";
 
 export default {
   name: "SynthesisView",
@@ -123,95 +121,49 @@ export default {
         if (newParams && newParams.sector) {
           this.sector = newParams.sector;
         }
-        this.loadEngagementsAndChantiers();
       },
       immediate: true,
     },
   },
   methods: {
-    async loadEngagementsAndChantiers() {
-      if (!this.params || !this.params.sector) {
+    separateEngagementsAndChantiers(data) {
+      if (!data || data.length === 0) {
+        this.engagementsData = [];
+        this.chantiersData = [];
         return;
       }
       
-      this.sector = this.params.sector;
+      // Separate indicators into engagements (Indicateur d'impact) and chantiers
+      // based on the levier field from the Grist data
+      const engagements = [];
+      const chantiers = [];
+      const seenEngagements = new Set();
+      const seenChantiers = new Set();
       
-      try {
-        const mapping = planifecoMapping;
-        if (!mapping) {
-          return;
-        }
-        
-        // Get engagement IDs for current sector
-        const engagementIds = [];
-        if (mapping.engagements) {
-          Object.values(mapping.engagements)
-            .filter(eng => eng.sector === this.sector)
-            .forEach(eng => {
-              if (eng.grist_ids) {
-                engagementIds.push(...eng.grist_ids);
-              }
-            });
-        }
-        
-        // Get chantier IDs for current sector
-        const chantierIds = [];
-        if (mapping.chantiers) {
-          Object.values(mapping.chantiers)
-            .filter(chantier => chantier.sector === this.sector)
-            .forEach(chantier => {
-              if (chantier.grist_ids) {
-                chantierIds.push(...chantier.grist_ids);
-              }
-            });
-        }
-        
-        // Load engagements data
-        if (engagementIds.length > 0) {
-          const engagementQuery = {
-            filter_by: [
-              { field: "grist_ids", values: engagementIds },
-            ],
-            time_period: {
-              date_start: "2015-01-01",
-              date_end: "2031-01-01",
-            },
-          };
-          const engagementResponse = await getIndicators(engagementQuery, this.useStaging ? 'staging' : 'production');
-          this.engagementsData = engagementResponse.results || [];
+      data.forEach(indicator => {
+        // Impact indicators have levier === "Indicateur d'impact"
+        if (indicator.levier === "Indicateur d'impact") {
+          if (!seenEngagements.has(indicator.label_indic)) {
+            seenEngagements.add(indicator.label_indic);
+            engagements.push(indicator);
+          }
         } else {
-          this.engagementsData = [];
+          // Everything else is a chantier indicator
+          if (!seenChantiers.has(indicator.label_indic)) {
+            seenChantiers.add(indicator.label_indic);
+            chantiers.push(indicator);
+          }
         }
-        
-        // Load chantiers data
-        if (chantierIds.length > 0) {
-          const chantierQuery = {
-            filter_by: [
-              { field: "grist_ids", values: chantierIds },
-            ],
-            time_period: {
-              date_start: "2015-01-01",
-              date_end: "2031-01-01",
-            },
-          };
-          const chantierResponse = await getIndicators(chantierQuery, this.useStaging ? 'staging' : 'production');
-          this.chantiersData = chantierResponse.results || [];
-        } else {
-          this.chantiersData = [];
-        }
-      } catch (error) {
-        console.error("Erreur dans le chargement des données de synthèse : ", error);
-        this.engagementsData = [];
-        this.chantiersData = [];
-      }
-    },
-    separateEngagementsAndChantiers(data) {
-      // This method can be used if we want to separate from already loaded data
-      // For now, we load them separately
+      });
+      
+      this.engagementsData = engagements;
+      this.chantiersData = chantiers;
     },
   },
   mounted() {
-    this.loadEngagementsAndChantiers();
+    if (this.inputData && this.inputData.length > 0) {
+      this.separateEngagementsAndChantiers(this.inputData);
+    }
   },
 };
 </script>
