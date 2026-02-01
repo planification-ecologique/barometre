@@ -29,6 +29,11 @@
             <span class="legende_dash_line2" v-bind:style="{'background-color': vlineColorParse[index3]}"></span>
             <p class="fr-text--sm fr-text--bold fr-ml-1w fr-mb-0">{{ capitalize(vlineNameParse[index3]) }}</p>
           </div>
+          <div v-if="trendLineParse.length > 0" class="flex fr-mt-3v fr-mb-1v" :style="{'margin-left': isSmall ? '0px' : style}">
+            <span class="legende_dash_line1" v-bind:style="{'background-color': trendLineColor}"></span>
+            <span class="legende_dash_line2" v-bind:style="{'background-color': trendLineColor}"></span>
+            <p class="fr-text--sm fr-text--bold fr-ml-1w fr-mb-0">Tendance (3 ans)</p>
+          </div>
           <div v-if="date!==undefined" class="flex fr-mt-1w" :style="{'margin-left': isSmall ? '0px' : style}">
             <p class="fr-text--xs">Mise à jour : {{date}}</p>
           </div>
@@ -77,7 +82,9 @@
         colorPrecisionBar: '#161616',
         colorBox: '#2f2f2f',
         colorHover: [],
-        isSmall: false
+        isSmall: false,
+        trendLineParse: [],
+        trendLineColor: '#6a6156'
       }
     },
     props: {
@@ -148,10 +155,18 @@
       pointopacity: {
         type: String,
         default: undefined
+      },
+      trendline: {
+        type: String,
+        default: undefined
       }
     },
     watch: {
       y: function () {
+        this.resetData()
+        this.createChart()
+      },
+      trendline: function () {
         this.resetData()
         this.createChart()
       }
@@ -188,6 +203,7 @@
         this.colorPrecisionBar = '#161616'
         this.colorBox = '#2f2f2f'
         this.colorHover = []
+        this.trendLineParse = []
       },
       getData () {
         const self = this
@@ -266,11 +282,25 @@
   
         // Formatage des données
         let data = []
-  
+
         // Cas ou x est non numérique
         data = self.yparse
         self.labels = self.xparse[0]
         self.xAxisType = 'category'
+
+        // Trend line (linear regression on last 3 years of measured data)
+        if (this.trendline !== undefined) {
+          try {
+            self.trendLineParse = JSON.parse(this.trendline)
+            if (!Array.isArray(self.trendLineParse) || self.trendLineParse.length !== self.labels.length) {
+              self.trendLineParse = []
+            }
+          } catch (e) {
+            self.trendLineParse = []
+          }
+        } else {
+          self.trendLineParse = []
+        }
   
         // Set ymax
         if (!this.horizontal) {
@@ -377,7 +407,7 @@
                   const xAxis = chart.scales['x-axis-0']
                   const yAxis = chart.scales['y-axis-0']
                   const y = yAxis.getPixelForValue(line)
-  
+
                   ctx.beginPath()
                   ctx.moveTo(xAxis.left, y)
                   ctx.strokeStyle = self.hlineColorParse[j]
@@ -386,6 +416,23 @@
                   ctx.lineTo(xAxis.right, y)
                   ctx.stroke()
                 })
+              }
+              // Trend line (vertical bar chart only)
+              if (!self.horizontal && self.trendLineParse.length > 0) {
+                const ctx = chart.ctx
+                const xAxis = chart.scales['x-axis-0']
+                const yAxis = chart.scales['y-axis-0']
+                ctx.beginPath()
+                for (let i = 0; i < self.trendLineParse.length; i++) {
+                  const x = xAxis.getPixelForValue(self.labels[i])
+                  const y = yAxis.getPixelForValue(self.trendLineParse[i])
+                  if (i === 0) ctx.moveTo(x, y)
+                  else ctx.lineTo(x, y)
+                }
+                ctx.strokeStyle = self.trendLineColor
+                ctx.lineWidth = 2
+                ctx.setLineDash([6, 4])
+                ctx.stroke()
               }
             }
           },
@@ -610,6 +657,9 @@
             this.hlineColorParse.push(this.getHexaFromName('beige-gris-galet'))
           }
         }
+        if (this.trendLineParse.length > 0) {
+          this.trendLineColor = this.getHexaFromName('beige-gris-galet')
+        }
       },
       changeColors (theme) {
         Chart.defaults.global.defaultFontColor = this.getHexaFromToken('text-mention-grey', theme)
@@ -650,6 +700,9 @@
           const key = box[0]
           this.chart.annotation.elements[key].options.backgroundColor = this.colorBox
           this.chart.annotation.elements[key].options.borderColor = this.colorBox
+        }
+        if (this.trendLineParse.length > 0) {
+          this.trendLineColor = this.getHexaFromName('beige-gris-galet')
         }
         this.chart.update(0)
       }

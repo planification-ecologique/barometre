@@ -47,6 +47,7 @@
             :color="JSON.stringify(dataObj.values.colors)"
             :aspectratio="2"
             :pointopacity="pointOpacityJson"
+            :trendline="dataObj.values.trendLine ? JSON.stringify(dataObj.values.trendLine) : undefined"
           >
           </bar-chart>
         </div>
