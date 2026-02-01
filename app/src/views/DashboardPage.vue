@@ -328,6 +328,7 @@ export default {
 .fr-container-page {
   background-color: #f6f6f6;
   padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
   padding-left: 2.5rem;
   padding-right: 2.5rem;
   width: 100%;
