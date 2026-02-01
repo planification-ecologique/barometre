@@ -8,7 +8,10 @@
     "build_qualif": "vue-cli-service build --mode qualif",
     "build_prod": "vue-cli-service build",
     "watch": "vue-cli-service build --watch",
-    "deploy": "npm run build_qualif && cd dist && cp index.html 200.html && cd .. && surge ./dist -d barometre-sgpe.surge.sh"
+    "deploy": "npm run build_qualif && cd dist && cp index.html 200.html && cd .. && surge ./dist -d barometre-sgpe.surge.sh",
+    "build:firebase": "npm run build_prod && cd dist && cp index.html 200.html && cd ..",
+    "deploy:firebase": "npm run build:firebase && firebase deploy --only hosting",
+    "deploy:firebase:prod": "npm run build:firebase && firebase deploy --only hosting --project barometre-sgpe"
   },
   "dependencies": {
     "@gouvfr/dsfr": "^1.11.2",
