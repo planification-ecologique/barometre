@@ -2,7 +2,7 @@
   <div class="sector-selector-container">
     <div class="fr-select-group">
       <label class="fr-label" for="sector-select">
-        Secteur
+        Navigation
       </label>
       <div class="sector-select-wrapper">
         <!-- Sector icon -->
@@ -18,17 +18,46 @@
           id="sector-select"
           class="fr-select"
           :class="{ 'with-icon': currentSectorIcon }"
-          :value="currentSector"
-          @change="handleSectorChange"
-          aria-label="Sélectionner un secteur"
+          :value="currentValue"
+          @change="handleChange"
+          aria-label="Sélectionner une page"
         >
-          <option
-            v-for="sector in sectors"
-            :key="sector"
-            :value="sector"
-          >
-            {{ sector }}
-          </option>
+          <!-- Sectors -->
+          <optgroup label="Secteurs">
+            <option
+              v-for="sector in sectors"
+              :key="sector"
+              :value="'sector:' + sector"
+            >
+              {{ sector }}
+            </option>
+          </optgroup>
+          
+          <!-- Synthèse sub-navigation (only shown when on Synthèse) -->
+          <optgroup v-if="activeSector === 'Synthèse'" label="Navigation Synthèse">
+            <option value="view:about">À propos</option>
+            <option value="view:engagements-table">Indicateurs d'impact - Tableau</option>
+            <option v-for="axe in taxonomyAxes" :key="'axe-' + axe" :value="'axe:' + axe">
+              Indicateurs d'impact - {{ axe }}
+            </option>
+            <option value="view:chantiers-table">Chantiers - Tableau</option>
+            <option v-for="sectorName in chantierSectors" :key="'chantier-' + sectorName" :value="'chantierSector:' + sectorName">
+              Chantiers - {{ sectorName }}
+            </option>
+          </optgroup>
+          
+          <!-- Sectorial sub-navigation (only shown when on a non-Synthèse sector) -->
+          <optgroup v-if="activeSector && activeSector !== 'Synthèse'" :label="'Navigation ' + activeSector">
+            <option value="view:sectorial-engagements">Indicateurs d'impact</option>
+            <option v-for="chantier in chantiers" :key="'chantier-' + chantier.id" :value="'chantier:' + chantier.id">
+              {{ chantier.name }}
+            </option>
+          </optgroup>
+          
+          <!-- Other pages -->
+          <optgroup label="Autres">
+            <option value="page:search">Recherche</option>
+          </optgroup>
         </select>
       </div>
     </div>
@@ -51,97 +80,173 @@ export default {
   data() {
     return {
       sectors: ['Synthèse'], // Default, will be loaded from Grist data
-      iconSize: '32px'
+      iconSize: '32px',
+      navigationData: null,
+      taxonomyAxes: [],
+      chantierSectors: [],
+      chantiers: []
     }
   },
   computed: {
     currentSectorIcon() {
-      return getSectorIcon(this.currentSector)
+      return getSectorIcon(this.activeSector)
+    },
+    // Use route-based sector to ensure consistency with currentValue
+    activeSector() {
+      return this.$route?.query?.sector || this.currentSector || 'Synthèse'
+    },
+    currentValue() {
+      // Determine current value based on route
+      const query = this.$route?.query || {}
+      const path = this.$route?.path || ''
+      
+      if (path.includes('search')) {
+        return 'page:search'
+      }
+      
+      const view = query.view
+      const sector = query.sector || 'Synthèse'
+      
+      if (view === 'about') {
+        return 'view:about'
+      } else if (view === 'engagements-table') {
+        return 'view:engagements-table'
+      } else if (view === 'chantiers-table') {
+        return 'view:chantiers-table'
+      } else if (view === 'general-engagements' && query.axe) {
+        return 'axe:' + query.axe
+      } else if (view === 'general-chantiers' && query.sectorFilter) {
+        return 'chantierSector:' + query.sectorFilter
+      } else if (view === 'chantier' && query.chantier_id) {
+        return 'chantier:' + query.chantier_id
+      } else if (view === 'sectorial-engagements') {
+        return 'view:sectorial-engagements'
+      }
+      
+      // Default to sector
+      return 'sector:' + sector
     }
   },
   mounted() {
-    this.loadSectors()
-  },
-  methods: {
-    async loadSectors() {
-      try {
-        // Load sectors from Grist data via navigation structure
-        const response = await getNavigationStructure('production')
-        if (response.status === 'success' && response.data.sectorNames) {
-          this.sectors = response.data.sectorNames
-        }
-      } catch (error) {
-        console.error('Error loading sectors:', error)
-        // Keep default sectors
-      }
-    },
-    handleSectorChange(event) {
-      const selectedSector = event.target.value
-      if (selectedSector !== this.currentSector) {
-        const routeName = window.location.pathname.includes('/staging') ? 'staging-dashboard' : 'dashboard'
-        
-        // Preserve current view and other query params when changing sector
-        const currentQuery = this.$route.query || {}
-        const newQuery = {
-          sector: selectedSector
-        }
-        
-        // Always set a default view based on the selected sector
-        // This ensures we don't end up without a view
-        if (selectedSector === 'Synthèse') {
-          // For Synthèse, preserve general-engagements or general-chantiers if valid
-          if (currentQuery.view === 'general-engagements' || currentQuery.view === 'general-chantiers') {
-            newQuery.view = currentQuery.view
-          } else {
-            // Default to general-engagements
-            newQuery.view = 'general-engagements'
-          }
-        } else {
-          // For other sectors, preserve sectorial-engagements or chantier if valid
-          if (currentQuery.view === 'sectorial-engagements') {
-            newQuery.view = 'sectorial-engagements'
-          } else if (currentQuery.view === 'chantier' && currentQuery.chantier_id) {
-            // Preserve chantier view - SideNavigation will check if chantier exists in new sector
-            newQuery.view = 'chantier'
-            newQuery.chantier_id = currentQuery.chantier_id
-          } else {
-            // Default to sectorial-engagements
-            newQuery.view = 'sectorial-engagements'
-          }
-        }
-        
-        router.push({
-          name: routeName,
-          query: newQuery
-        }).catch(err => {
-          if (err.name !== 'NavigationDuplicated') {
-            console.error('Navigation error:', err)
-          }
-        })
-      }
-    }
+    this.loadNavigation()
   },
   watch: {
-    '$route.query.sector'(newSector) {
-      // Update select value when route changes
-      if (newSector && this.$el) {
-        this.$nextTick(() => {
-          const select = this.$el.querySelector('#sector-select')
-          if (select && select.value !== newSector) {
-            select.value = newSector
-          }
-        })
+    // Watch the computed activeSector which reads from route
+    activeSector: {
+      handler() {
+        this.loadSectorNavigation()
+      },
+      immediate: true // Run immediately to load correct sector on mount
+    }
+  },
+  methods: {
+    async loadNavigation() {
+      try {
+        // Load navigation structure from Grist data
+        const response = await getNavigationStructure('production')
+        if (response.status === 'success') {
+          this.navigationData = response.data
+          this.sectors = response.data.sectorNames || ['Synthèse']
+          this.loadSectorNavigation()
+        }
+      } catch (error) {
+        console.error('Error loading navigation:', error)
       }
     },
-    currentSector(newSector) {
-      // Update select value when prop changes
-      if (newSector && this.$el) {
-        this.$nextTick(() => {
-          const select = this.$el.querySelector('#sector-select')
-          if (select && select.value !== newSector) {
-            select.value = newSector
-          }
+    loadSectorNavigation() {
+      if (!this.navigationData) return
+      
+      const sector = this.activeSector
+      const sectorData = this.navigationData.sectors.find(s => s.name === sector)
+      
+      if (sector === 'Synthèse') {
+        // Load taxonomy axes
+        const syntheseSector = this.navigationData.sectors.find(s => s.name === 'Synthèse')
+        if (syntheseSector && syntheseSector.indicateursImpact) {
+          this.taxonomyAxes = Object.keys(syntheseSector.indicateursImpact)
+            .filter(axe => axe && axe !== 'Autre')
+            .sort()
+        }
+        
+        // Load chantier sectors
+        this.chantierSectors = this.navigationData.sectors
+          .filter(s => s.name !== 'Synthèse' && Object.keys(s.chantiers).length > 0)
+          .map(s => s.name)
+          .sort((a, b) => a.localeCompare(b, 'fr'))
+        
+        this.chantiers = []
+      } else if (sectorData) {
+        // Load chantiers for current sector
+        this.chantiers = Object.entries(sectorData.chantiers)
+          .map(([name, chantierData]) => ({
+            id: name.toLowerCase().replace(/[^a-z0-9]/g, '-'),
+            name: name
+          }))
+          .sort((a, b) => a.name.localeCompare(b.name))
+        
+        this.taxonomyAxes = []
+        this.chantierSectors = []
+      }
+    },
+    handleChange(event) {
+      const value = event.target.value
+      const [type, ...rest] = value.split(':')
+      const param = rest.join(':') // Rejoin in case value contains colons
+      
+      const isStaging = window.location.pathname.includes('/staging')
+      const routeName = isStaging ? 'staging-dashboard' : 'dashboard'
+      const searchRouteName = isStaging ? 'staging-search' : 'search'
+      
+      if (type === 'sector') {
+        // Navigate to sector
+        const query = { sector: param }
+        if (param === 'Synthèse') {
+          query.view = 'about'
+        } else {
+          query.view = 'sectorial-engagements'
+        }
+        router.push({ name: routeName, query }).catch(err => {
+          if (err.name !== 'NavigationDuplicated') console.error('Navigation error:', err)
         })
+      } else if (type === 'view') {
+        // Navigate to specific view
+        router.push({
+          name: routeName,
+          query: { sector: this.currentSector, view: param }
+        }).catch(err => {
+          if (err.name !== 'NavigationDuplicated') console.error('Navigation error:', err)
+        })
+      } else if (type === 'axe') {
+        // Navigate to specific taxonomy axe
+        router.push({
+          name: routeName,
+          query: { sector: 'Synthèse', view: 'general-engagements', axe: param }
+        }).catch(err => {
+          if (err.name !== 'NavigationDuplicated') console.error('Navigation error:', err)
+        })
+      } else if (type === 'chantierSector') {
+        // Navigate to chantiers for a specific sector
+        router.push({
+          name: routeName,
+          query: { sector: 'Synthèse', view: 'general-chantiers', sectorFilter: param }
+        }).catch(err => {
+          if (err.name !== 'NavigationDuplicated') console.error('Navigation error:', err)
+        })
+      } else if (type === 'chantier') {
+        // Navigate to specific chantier
+        router.push({
+          name: routeName,
+          query: { sector: this.currentSector, view: 'chantier', chantier_id: param }
+        }).catch(err => {
+          if (err.name !== 'NavigationDuplicated') console.error('Navigation error:', err)
+        })
+      } else if (type === 'page') {
+        // Navigate to other pages
+        if (param === 'search') {
+          router.push({ name: searchRouteName }).catch(err => {
+            if (err.name !== 'NavigationDuplicated') console.error('Navigation error:', err)
+          })
+        }
       }
     }
   }
@@ -192,11 +297,24 @@ export default {
 
 .fr-select {
   flex: 1;
-  max-width: 400px;
+  max-width: 100%;
+  font-size: 1rem;
+  padding: 0.75rem;
 }
 
 .fr-select.with-icon {
   flex: 1;
+}
+
+/* Optgroup styling */
+.fr-select optgroup {
+  font-weight: 600;
+  color: var(--text-title-grey, #161616);
+}
+
+.fr-select option {
+  font-weight: 400;
+  padding: 0.5rem;
 }
 
 /* Mobile and Medium (tablet): show sector selector */
@@ -242,7 +360,7 @@ export default {
   
   .fr-select {
     min-width: 250px;
-    max-width: 400px;
+    max-width: 100%;
   }
 }
 

@@ -32,3 +32,10 @@
         width: 250px;
     }
 }
+
+/* Mobile navigation: hide sidebar, use dropdown instead */
+@media (max-width: 991px) {
+    .sidebar-container {
+        display: none !important;
+    }
+}

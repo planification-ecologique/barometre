@@ -621,10 +621,18 @@ export default {
       immediate: false,
     },
     initParams: {
-      handler(newParams) {
-        // When initParams change (e.g., view or chantier_id), reload to apply them
+      handler(newParams, oldParams) {
+        // When initParams change (e.g., view, chantier_id, axe, sectorFilter), apply them
         if (newParams && newParams.sector === this.sector) {
-          this.loadChantiers()
+          // Check if a meaningful change occurred (not just sector)
+          const viewChanged = newParams.view !== (oldParams?.view);
+          const chantierChanged = newParams.chantier_id !== (oldParams?.chantier_id);
+          const axeChanged = newParams.axe !== (oldParams?.axe);
+          const sectorFilterChanged = newParams.sectorFilter !== (oldParams?.sectorFilter);
+          
+          if (viewChanged || chantierChanged || axeChanged || sectorFilterChanged) {
+            this.loadChantiers()
+          }
         }
       },
       deep: true,
@@ -698,31 +706,10 @@ a:hover:not([href]) {
   padding: 0.5rem 1rem;
 }
 
-/* Mobile optimizations for side navigation */
-@media (max-width: 768px) {
+/* Mobile: hide side navigation (use dropdown selector instead) */
+@media (max-width: 991px) {
   .fr-sidemenu {
-    margin-bottom: 1rem;
-  }
-  
-  .fr-sidemenu__btn {
-    width: 100%;
-    font-weight: 600;
-    background-color: var(--background-action-low-blue-france, #e3e3fd);
-    border: 1px solid var(--border-action-low-blue-france, #cacafb);
-  }
-  
-  .fr-sidemenu__btn:hover {
-    background-color: var(--background-action-low-blue-france-hover, #d1d1fc);
-  }
-  
-  .fr-sidemenu__link {
-    padding: 0.75rem 1rem;
-    font-size: 0.9375rem;
-  }
-  
-  .fr-sidemenu__link[aria-current="page"] {
-    background-color: var(--background-action-low-blue-france, #e3e3fd);
-    font-weight: 600;
+    display: none;
   }
 }
 

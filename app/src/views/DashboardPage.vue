@@ -4,7 +4,7 @@
     <sector-selector :currentSector="currentSector" />
     
     <div class="fr-grid-row">
-      <aside class="fr-col-12 fr-col-sm-12 fr-col-lg-3 fr-mb-sm-5w">
+      <aside class="fr-col-12 fr-col-sm-12 fr-col-lg-3 fr-mb-sm-5w sidebar-container">
         <div id="sidebar" class="fr-ml-2w">
           <side-navigation
             v-on:params="updateSelection"
@@ -173,58 +173,65 @@ export default {
     '$route.query.sector'(newSector, oldSector) {
       if (newSector && newSector !== oldSector) {
         this.currentSector = newSector;
-        // Update sidenav_initParams when sector changes, preserving view if valid
-        if (this.sidenav_initParams) {
-          this.sidenav_initParams.sector = newSector;
-          
-          // Preserve view if it's valid for the new sector
-          const currentView = this.$route.query.view
-          const currentChantierId = this.$route.query.chantier_id
-          
-          if (newSector === 'Synthèse') {
-            // For Synthèse, preserve about, general-engagements and general-chantiers
-            if (currentView === 'about' || currentView === 'general-engagements' || currentView === 'general-chantiers') {
-              this.sidenav_initParams.view = currentView
-            } else {
-              // Default to about
-              this.sidenav_initParams.view = 'about'
-              delete this.sidenav_initParams.chantier_id
-            }
+        
+        // Create a new object for proper Vue reactivity
+        const currentView = this.$route.query.view
+        const currentChantierId = this.$route.query.chantier_id
+        
+        const newParams = { sector: newSector };
+        
+        if (newSector === 'Synthèse') {
+          // For Synthèse, preserve about, general-engagements and general-chantiers
+          if (currentView === 'about' || currentView === 'general-engagements' || currentView === 'general-chantiers') {
+            newParams.view = currentView
+            if (this.$route.query.axe) newParams.axe = this.$route.query.axe
+            if (this.$route.query.sectorFilter) newParams.sectorFilter = this.$route.query.sectorFilter
           } else {
-            // For other sectors, preserve sectorial-engagements or chantier
-            if (currentView === 'sectorial-engagements') {
-              this.sidenav_initParams.view = 'sectorial-engagements'
-              delete this.sidenav_initParams.chantier_id
-            } else if (currentView === 'chantier' && currentChantierId) {
-              // Preserve chantier_id - SideNavigation will check if it exists in new sector
-              this.sidenav_initParams.view = 'chantier'
-              this.sidenav_initParams.chantier_id = currentChantierId
-            } else {
-              // Default to sectorial-engagements
-              this.sidenav_initParams.view = 'sectorial-engagements'
-              delete this.sidenav_initParams.chantier_id
-            }
+            // Default to about
+            newParams.view = 'about'
+          }
+        } else {
+          // For other sectors, preserve sectorial-engagements or chantier
+          if (currentView === 'sectorial-engagements') {
+            newParams.view = 'sectorial-engagements'
+          } else if (currentView === 'chantier' && currentChantierId) {
+            newParams.view = 'chantier'
+            newParams.chantier_id = currentChantierId
+          } else {
+            // Default to sectorial-engagements
+            newParams.view = 'sectorial-engagements'
           }
         }
+        
+        this.sidenav_initParams = newParams;
       }
     },
     '$route.query'(newQuery) {
       // Update sector when query changes
       if (newQuery.sector) {
         this.currentSector = newQuery.sector;
-        if (this.sidenav_initParams) {
-          this.sidenav_initParams.sector = newQuery.sector;
-          
-          // Update view and chantier_id if present
-          if (newQuery.view) {
-            this.sidenav_initParams.view = newQuery.view
-          }
-          if (newQuery.chantier_id) {
-            this.sidenav_initParams.chantier_id = newQuery.chantier_id
-          } else {
-            delete this.sidenav_initParams.chantier_id
-          }
+        
+        // Create a new object to ensure Vue reactivity detects the change
+        const newParams = {
+          sector: newQuery.sector
+        };
+        
+        // Add view and related params if present
+        if (newQuery.view) {
+          newParams.view = newQuery.view
         }
+        if (newQuery.chantier_id) {
+          newParams.chantier_id = newQuery.chantier_id
+        }
+        if (newQuery.axe) {
+          newParams.axe = newQuery.axe
+        }
+        if (newQuery.sectorFilter) {
+          newParams.sectorFilter = newQuery.sectorFilter
+        }
+        
+        // Replace the entire object to trigger Vue reactivity
+        this.sidenav_initParams = newParams;
       }
     }
   },
@@ -327,15 +334,18 @@ export default {
 }
 
 /* Mobile optimizations */
-@media (max-width: 768px) {
+@media (max-width: 991px) {
   .fr-container-page {
     padding-left: 1rem;
     padding-right: 1rem;
     padding-top: 1rem;
   }
-  
+}
+
+@media (min-width: 992px) {
   #sidebar {
-    margin-left: 0 !important;
+    margin-left: 0.5rem;
   }
 }
 </style>
+
