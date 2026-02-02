@@ -28,7 +28,7 @@
               <button 
                 class="fr-sidemenu__btn"
                 :aria-expanded="expandedIndicateurs"
-                :aria-current="currentView === 'general-engagements'"
+                :aria-current="currentView === 'general-engagements' || currentView === 'engagements-table'"
                 @click="toggleIndicateurs"
               >
                 Indicateurs d'impact
@@ -68,7 +68,7 @@
               <button 
                 class="fr-sidemenu__btn"
                 :aria-expanded="expandedChantiers"
-                :aria-current="currentView === 'general-chantiers'"
+                :aria-current="currentView === 'general-chantiers' || currentView === 'chantiers-table'"
                 @click="toggleChantiers"
               >
                 Chantiers Sectoriels
@@ -120,7 +120,12 @@
                 </li>
             <!-- Chantiers Sectoriels: title + always-open indented sub-list -->
             <li class="fr-sidemenu__item">
-              <span class="fr-sidemenu__link sidemenu-section-title" aria-hidden="true">Chantiers Sectoriels</span>
+              <span
+                class="fr-sidemenu__link sidemenu-section-title"
+                :aria-current="currentView === 'chantier' ? 'page' : null"
+              >
+                Chantiers Sectoriels
+              </span>
               <div class="fr-collapse fr-collapse--expanded">
                 <ul class="fr-sidemenu__list">
                   <li class="fr-sidemenu__item" v-for="(chantier, index) in chantiers" :key="index">
@@ -657,12 +662,7 @@ a:hover:not([href]) {
 
 /* Section title in sector menu: label only, no link styling */
 .sidemenu-section-title {
-  display: block;
-  padding: 0.75rem 1rem;
-  font-weight: 700;
   cursor: default;
-  color: inherit;
-  text-decoration: none;
 }
 .sidemenu-section-title:hover {
   background-color: transparent;
