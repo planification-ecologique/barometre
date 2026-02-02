@@ -306,7 +306,11 @@ export function transformCSVData(csvData, query) {
         y: y,
         ytab: values,
         legend: legend,
-        colors: colors
+        colors: colors,
+        trendLine: statuses.some(s => {
+          const t = (s || '').toString().toLowerCase();
+          return t === 'projection' || t === 'cible';
+        }) ? computeTrendLine(years, values, statuses) : null
       }
     };
   });
@@ -355,6 +359,59 @@ export function transformCSVData(csvData, query) {
     length: groupedResults.length,
     results: groupedResults
   };
+}
+
+/**
+ * Linear regression of (x[], y[]) using least squares.
+ * @param {Array<number>} xVals - X values
+ * @param {Array<number>} yVals - Y values
+ * @returns {{ slope: number, intercept: number }|null} - Slope and intercept, or null if insufficient data
+ */
+function linearRegression(xVals, yVals) {
+  const n = xVals.length;
+  if (n < 2) return null;
+  let sumX = 0, sumY = 0, sumXY = 0, sumX2 = 0;
+  for (let i = 0; i < n; i++) {
+    sumX += xVals[i];
+    sumY += yVals[i];
+    sumXY += xVals[i] * yVals[i];
+    sumX2 += xVals[i] * xVals[i];
+  }
+  const slope = (n * sumXY - sumX * sumY) / (n * sumX2 - sumX * sumX);
+  const intercept = (sumY - slope * sumX) / n;
+  return { slope, intercept };
+}
+
+/**
+ * Computes a trend line based on the last N years of measured data.
+ * @param {Array<string>} years - Year labels (e.g. ['2017','2018',...])
+ * @param {Array<number>} ytab - Value for each year (same order as years)
+ * @param {Array<string>} statuses - Status per year ('mesuré', 'projection', 'cible')
+ * @param {number} numYears - Number of measured years to use (default 3)
+ * @returns {Array<number>|null} - Trend y value for each year index, or null if insufficient measured data
+ */
+export function computeTrendLine(years, ytab, statuses, numYears = 3) {
+  if (!years?.length || !ytab?.length || years.length !== ytab.length) return null;
+  const measured = [];
+  for (let i = 0; i < years.length; i++) {
+    const s = (statuses[i] || '').toString().toLowerCase();
+    if (s === 'mesuré') {
+      const y = parseFloat(ytab[i]);
+      if (!isNaN(y)) measured.push({ year: parseInt(years[i], 10), value: y, index: i });
+    }
+  }
+  if (measured.length < 2) return null;
+  const lastN = measured.slice(-numYears);
+  const xVals = lastN.map(p => p.year);
+  const yVals = lastN.map(p => p.value);
+  const reg = linearRegression(xVals, yVals);
+  if (!reg) return null;
+  const result = [];
+  const yearNumbers = years.map(y => parseInt(y, 10));
+  for (let i = 0; i < years.length; i++) {
+    result.push(reg.slope * yearNumbers[i] + reg.intercept);
+  }
+  return result;
 }
 
 /**
