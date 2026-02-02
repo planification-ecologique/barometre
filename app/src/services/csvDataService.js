@@ -402,6 +402,7 @@ export function computeTrendLine(years, ytab, statuses, numYears = 3) {
   }
   if (measured.length < 2) return null;
   const lastN = measured.slice(-numYears);
+  const firstIndex = lastN[0].index;
   const xVals = lastN.map(p => p.year);
   const yVals = lastN.map(p => p.value);
   const reg = linearRegression(xVals, yVals);
@@ -409,7 +410,12 @@ export function computeTrendLine(years, ytab, statuses, numYears = 3) {
   const result = [];
   const yearNumbers = years.map(y => parseInt(y, 10));
   for (let i = 0; i < years.length; i++) {
-    result.push(reg.slope * yearNumbers[i] + reg.intercept);
+    if (i < firstIndex) {
+      // Before the first year used for regression: no trend value
+      result.push(null);
+    } else {
+      result.push(reg.slope * yearNumbers[i] + reg.intercept);
+    }
   }
   return result;
 }
