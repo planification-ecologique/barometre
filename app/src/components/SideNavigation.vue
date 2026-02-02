@@ -118,19 +118,26 @@
                 Indicateurs d'impact
                   </a>
                 </li>
-            <!-- Chantiers menu -->
-            <li class="fr-sidemenu__item" v-for="(chantier, index) in chantiers" :key="index">
-              <a class="fr-sidemenu__link" 
-                :title="chantier.name"
-                @click="set_chantier(chantier)"
-                target="_self"
-                :aria-current="currentView === 'chantier' && currentChantierId === chantier.id"
-                tabindex="0"
-                v-on:keyup.enter="set_chantier(chantier)"
-              >
-                {{ chantier.name }}
-              </a>
-          </li>
+            <!-- Chantiers Sectoriels: title + always-open indented sub-list -->
+            <li class="fr-sidemenu__item">
+              <span class="fr-sidemenu__link sidemenu-section-title" aria-hidden="true">Chantiers Sectoriels</span>
+              <div class="fr-collapse fr-collapse--expanded">
+                <ul class="fr-sidemenu__list">
+                  <li class="fr-sidemenu__item" v-for="(chantier, index) in chantiers" :key="index">
+                    <a class="fr-sidemenu__link" 
+                      :title="chantier.name"
+                      @click="set_chantier(chantier)"
+                      target="_self"
+                      :aria-current="currentView === 'chantier' && currentChantierId === chantier.id"
+                      tabindex="0"
+                      v-on:keyup.enter="set_chantier(chantier)"
+                    >
+                      {{ chantier.name }}
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </li>
           </template>
         </ul>
       </div>
@@ -646,6 +653,19 @@ export default {
 a:hover:not([href]) {
   cursor: pointer;
   background-color: #f6f6f6;
+}
+
+/* Section title in sector menu: label only, no link styling */
+.sidemenu-section-title {
+  display: block;
+  padding: 0.75rem 1rem;
+  font-weight: 700;
+  cursor: default;
+  color: inherit;
+  text-decoration: none;
+}
+.sidemenu-section-title:hover {
+  background-color: transparent;
 }
 
 /* Submenu styles */
