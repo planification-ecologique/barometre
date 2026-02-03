@@ -1,34 +1,29 @@
-// Utility to map sector names to their corresponding icon components
-// This ensures consistency across all components
+// Utility to map sector names (from CSV: Synthèse, Se nourrir, Se loger, etc.) to their icon components
 
 import EnvironnementImg from '@/components/components_sgv/EnvironnementImg.vue'
 import TransportImg from '@/components/components_sgv/TransportImg.vue'
 import AgricultureImg from '@/components/components_sgv/AgricultureImg.vue'
 import IndustrieImg from '@/components/components_sgv/IndustrieImg.vue'
 import BatimentImg from '@/components/components_sgv/BatimentImg.vue'
-import EnergieImg from '@/components/components_sgv/EnergieImg.vue'
 import EconomieImg from '@/components/components_sgv/EconomieImg.vue'
 import EcosystemeImg from '@/components/components_sgv/EcosystemeImg.vue'
-// import TransverseImg from '@/components/components_sgv/TransverseImg.vue'
 
 /**
- * Maps sector names to their corresponding icon components
+ * Maps sector names (from CSV) to their corresponding icon components
  */
 export const sectorIconMap = {
   'Synthèse': EnvironnementImg,
-  'Transports': TransportImg,
-  'Agriculture et alimentation': AgricultureImg,
-  'Industrie': IndustrieImg,
-  'Bâtiments et urbanisme': BatimentImg,
-  "Production d'énergie": EnergieImg,
-  'Consommations et déchets': EconomieImg,
-  'Terres et forêts': EcosystemeImg,
-  'Transverse': EcosystemeImg,
+  'Se nourrir': AgricultureImg,
+  'Se loger': BatimentImg,
+  'Consommer': EconomieImg,
+  'Produire': IndustrieImg,
+  'Préserver': EcosystemeImg,
+  'Se déplacer': TransportImg,
 }
 
 /**
  * Get the icon component for a given sector name
- * @param {string} sectorName - The name of the sector
+ * @param {string} sectorName - The name of the sector (from CSV)
  * @returns {Object|null} The Vue component for the icon, or null if not found
  */
 export function getSectorIcon(sectorName) {

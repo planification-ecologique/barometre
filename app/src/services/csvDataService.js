@@ -3,7 +3,6 @@ import unitDict from '@/utils/unit_dict.json';
 
 // Data source constants
 export const GRIST_URLS = {
-  production: 'https://grist.numerique.gouv.fr/o/planification-ecologique/api/docs/jGd2ge4dy2ZMaRpdgbPLnd/download/csv?tableId=Tdb_planif_prod',
   staging: 'https://grist.numerique.gouv.fr/o/planification-ecologique/api/docs/jGd2ge4dy2ZMaRpdgbPLnd/download/csv?tableId=Tdb_planif_staging',
   stagingEditPage: 'https://grist.numerique.gouv.fr/o/planification-ecologique/jGd2ge4dy2ZM/Tableau-de-Bord/p/2'
 };
@@ -50,6 +49,9 @@ function formatScientificNotation(unit) {
 // Cache variable to store parsed CSV data
 let csvDataCache = null;
 let fetchPromise = null;
+
+/** When false, extrapolation (projection) series is excluded from chart data. */
+export const SHOW_EXTRAPOLATION = false;
 
 /**
  * Fetches and parses the CSV data
@@ -250,7 +252,16 @@ export function transformCSVData(csvData, query) {
 
     // Target year
     const targetYear = '2030';
-    const targetValue = item[`Objectifs ${targetYear}`] || '';
+    let targetValue = item[targetYear] || '';
+    const targetValueNumeric = parseFloat(parseFloat((targetValue || '').toString().replace(',', '.')).toFixed(2));
+    const targetValueIsNumeric = !isNaN(targetValueNumeric);
+    // Ensure 2030 is in the chart when we have a target (so target segment can be drawn)
+    if ((targetValue || item[targetYear]) && !years.includes(targetYear)) {
+      years.push(targetYear);
+      const val2030 = targetValueIsNumeric ? targetValueNumeric : parseFloat(parseFloat((item[targetYear] || '').toString().replace(',', '.')).toFixed(2));
+      values.push(!isNaN(val2030) ? val2030 : 0);
+      statuses.push('cible');
+    }
 
     // Determine series for chart display
     const { y, legend, colors } = getSeries(values, years, statuses, targetYear, targetValue);
@@ -279,6 +290,41 @@ export function transformCSVData(csvData, query) {
     // Parse the "Chantier ou Impact" column
     const chantierOuImpactRaw = item['Chantier ou Impact'] || '';
     const parsedChantierOuImpact = parseChantierOuImpactInternal(chantierOuImpactRaw);
+
+    // Segment from last measured year to 2030 target (for blue trajectory line)
+    let targetSegment = null;
+    let lastMeasuredIndex = -1;
+    for (let i = 0; i < statuses.length; i++) {
+      if ((statuses[i] || '').toString().toLowerCase() === 'mesuré') lastMeasuredIndex = i;
+    }
+    if (lastMeasuredIndex >= 0 && (targetValue || years.includes(targetYear))) {
+      const idx2030 = years.indexOf(targetYear);
+      // 2030 value is valid only if not empty and not NA (so we only consider has2030 when we have a real value)
+      const raw2030 = (targetValue != null && String(targetValue).trim() !== '') ? targetValue : (item[targetYear] ?? '');
+      const is2030ValueValid = raw2030 !== '' && ['na', 'nan'].indexOf(String(raw2030).toLowerCase().trim()) === -1 && !isNaN(Number(String(raw2030).replace(',', '.')));
+      const has2030 = years.includes(targetYear) && is2030ValueValid;
+      // Use numeric "Objectifs 2030" when valid; else use the value already in data for 2030 (e.g. from CSV year column or label like "SNBC 3 (provisoire)")
+      const endVal = targetValueIsNumeric ? targetValueNumeric : (has2030 && idx2030 >= 0 && values[idx2030] != null ? Number(values[idx2030]) : null);
+      if (endVal != null && !isNaN(endVal) && has2030) {
+        targetSegment = {
+          startYear: years[lastMeasuredIndex],
+          startValue: values[lastMeasuredIndex],
+          endYear: targetYear,
+          endValue: endVal
+        };
+      }
+      // DEBUG target line
+      console.log('[targetSegment]', item.Indicateur, {
+        lastMeasuredIndex,
+        lastMeasuredYear: lastMeasuredIndex >= 0 ? years[lastMeasuredIndex] : null,
+        lastMeasuredValue: lastMeasuredIndex >= 0 ? values[lastMeasuredIndex] : null,
+        targetValue,
+        endVal,
+        has2030,
+        years: years.slice(-5),
+        targetSegment: targetSegment != null
+      });
+    }
     
     return {
       label_indic: item.Indicateur,
@@ -310,7 +356,8 @@ export function transformCSVData(csvData, query) {
         trendLine: statuses.some(s => {
           const t = (s || '').toString().toLowerCase();
           return t === 'projection' || t === 'cible';
-        }) ? computeTrendLine(years, values, statuses) : null
+        }) ? computeTrendLine(years, values, statuses) : null,
+        targetSegment
       }
     };
   });
@@ -606,8 +653,8 @@ function getSeries(list_y, list_x, statuses, targetYear, targetValue) {
     }
   }
   
-  // Projection series
-  const hasProjection = Object.keys(projectionData).length > 0;
+  // Projection series (extrapolation) – controlled by SHOW_EXTRAPOLATION
+  const hasProjection = SHOW_EXTRAPOLATION && Object.keys(projectionData).length > 0;
   if (hasProjection) {
     const projection = allYears.map(year => projectionData[year] || 0);
     // Zero out years where we have historical or target data
@@ -624,29 +671,12 @@ function getSeries(list_y, list_x, statuses, targetYear, targetValue) {
     }
   }
   
-  // Target series
-  const hasTarget = Object.keys(targetData).length > 0;
-  if (hasTarget) {
-    const target = allYears.map(year => targetData[year] || 0);
-    // Zero out years where we have historical or projection data
-    target.forEach((val, idx) => {
-      const year = allYears[idx];
-      if (historicalData[year] || projectionData[year]) {
-        target[idx] = 0;
-      }
-    });
-    if (target.some(v => v !== 0)) {
-      seriesData.push(target);
-      legend.push('Cible');
-      colors.push('blue-ecume');
-    }
-  } else if (targetValue) {
-    // If no target in the years but we have a target value
-    // Format the target value with scientific notation if needed
-    const targetVal = parseFloat(getScientificNotation(targetValue));
-    
-    // Create target series with zero for all years except target year
-    const target = allYears.map(year => (year === targetYear ? targetVal : 0));
+  // Target series: only 2030 target
+  const targetValFor2030 = targetData[targetYear] != null
+    ? targetData[targetYear]
+    : (targetValue ? parseFloat(getScientificNotation(targetValue)) : null);
+  if (targetValFor2030 != null && !isNaN(targetValFor2030)) {
+    const target = allYears.map(year => (year === targetYear ? targetValFor2030 : 0));
     seriesData.push(target);
     legend.push('Cible');
     colors.push('blue-ecume');
@@ -793,14 +823,26 @@ function parseChantierOuImpact(value) {
 }
 
 /**
- * Get the sort order for Levier types
+ * Whether the levier is an impact indicator (shown in "Indicateurs d'impact" section, not in chantiers).
+ * Includes "Indicateur d'impact" (grouped by axe) and "Indicateur d'impact - autres" (grouped by chantier, no submenu).
  * @param {String} levier - The levier value
- * @returns {Number} - Sort order (lower = first)
+ * @returns {Boolean}
+ */
+function isImpactIndicator(levier) {
+  return levier === "Indicateur d'impact" || levier === "Indicateur d'impact - autres";
+}
+
+/**
+ * Get the sort order for Levier types (lower = first).
+ * "Indicateur d'impact - autres" appears below the others under each chantier.
+ * @param {String} levier - The levier value
+ * @returns {Number} - Sort order
  */
 function getLevierSortOrder(levier) {
   if (!levier || levier === 'nan') return 999;
   if (levier === "Indicateur d'impact") return 0;
   if (levier === "Indicateur de chantier") return 1;
+  if (levier === "Indicateur d'impact - autres") return 997; // Below others under chantier
   if (levier === "Autres indicateurs") return 998;
   return 500; // Named leviers in the middle
 }
@@ -834,18 +876,30 @@ export async function getNavigationStructure(environment = 'production') {
         sectors[sector] = {
           name: sector,
           indicateursImpact: {},  // Grouped by taxonomy_axe (for Indicateur d'impact)
+          indicateursImpactAutresByChantier: {},  // Grouped by chantier name (for Indicateur d'impact - autres, no submenu)
           chantiers: {}          // Grouped by chantier name
         };
       }
       
       // Determine if this is an impact indicator or a chantier/levier
       if (levier === "Indicateur d'impact") {
-        // Group by chantierOuImpact (which is the taxonomy_axe like "Atténuation climat")
+        // Group by chantierOuImpact (taxonomy_axe like "Atténuation climat")
         const axe = chantierOuImpact || 'Autre';
         if (!sectors[sector].indicateursImpact[axe]) {
           sectors[sector].indicateursImpact[axe] = [];
         }
         sectors[sector].indicateursImpact[axe].push({
+          gristId,
+          levier,
+          indicator: item
+        });
+      } else if (levier === "Indicateur d'impact - autres") {
+        // Group by chantier name; displayed on Indicateurs d'impact page under chantier title, no submenu
+        const chantierName = chantierOuImpact || 'Autres';
+        if (!sectors[sector].indicateursImpactAutresByChantier[chantierName]) {
+          sectors[sector].indicateursImpactAutresByChantier[chantierName] = [];
+        }
+        sectors[sector].indicateursImpactAutresByChantier[chantierName].push({
           gristId,
           levier,
           indicator: item
@@ -935,9 +989,9 @@ export async function getIndicatorsByStructure(options, environment = 'productio
     
     // Filter by viewType (impact vs chantier)
     if (viewType === 'impact') {
-      filteredData = filteredData.filter(item => item['Levier'] === "Indicateur d'impact");
+      filteredData = filteredData.filter(item => isImpactIndicator(item['Levier']));
     } else if (viewType === 'chantier') {
-      filteredData = filteredData.filter(item => item['Levier'] !== "Indicateur d'impact");
+      filteredData = filteredData.filter(item => !isImpactIndicator(item['Levier']));
     }
     
     // Filter by chantierOuImpact (axe or chantier name)

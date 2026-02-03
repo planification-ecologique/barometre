@@ -71,7 +71,7 @@
                 :aria-current="currentView === 'general-chantiers' || currentView === 'chantiers-table'"
                 @click="toggleChantiers"
               >
-                Chantiers Sectoriels
+                Chantiers sectoriels
               </button>
               <div class="fr-collapse" :class="{ 'fr-collapse--expanded': expandedChantiers }">
                 <ul class="fr-sidemenu__list">
@@ -124,7 +124,7 @@
                 class="fr-sidemenu__link sidemenu-section-title"
                 :aria-current="currentView === 'chantier' ? 'page' : null"
               >
-                Chantiers Sectoriels
+                Chantiers sectoriels
               </span>
               <div class="fr-collapse fr-collapse--expanded">
                 <ul class="fr-sidemenu__list">
@@ -368,18 +368,25 @@ export default {
       this.currentSectorFilter = null;
       
       try {
-        // Get all impact indicator grist IDs for Synthèse sector from navigation data
+        // Get all impact indicator grist IDs for Synthèse sector (indicateursImpact + indicateursImpactAutresByChantier)
         const engagementIds = [];
         if (this.navigationData) {
           const syntheseSector = this.navigationData.sectors.find(s => s.name === 'Synthèse');
-          if (syntheseSector && syntheseSector.indicateursImpact) {
-            Object.values(syntheseSector.indicateursImpact).forEach(indicators => {
-              indicators.forEach(item => {
-                if (item.gristId) {
-                  engagementIds.push(item.gristId);
-                }
+          if (syntheseSector) {
+            if (syntheseSector.indicateursImpact) {
+              Object.values(syntheseSector.indicateursImpact).forEach(indicators => {
+                indicators.forEach(item => {
+                  if (item.gristId) engagementIds.push(item.gristId);
+                });
               });
-            });
+            }
+            if (syntheseSector.indicateursImpactAutresByChantier) {
+              Object.values(syntheseSector.indicateursImpactAutresByChantier).forEach(indicators => {
+                indicators.forEach(item => {
+                  if (item.gristId) engagementIds.push(item.gristId);
+                });
+              });
+            }
           }
         }
       
@@ -453,24 +460,33 @@ export default {
       this.currentSectorFilter = null;
       
       try {
-        // Get impact indicator grist IDs for Synthèse sector, optionally filtered by axe
+        // Get impact indicator grist IDs for Synthèse sector, optionally filtered by axe (no submenu for "Indicateur d'impact - autres")
         const engagementIds = [];
         if (this.navigationData) {
           const syntheseSector = this.navigationData.sectors.find(s => s.name === 'Synthèse');
-          if (syntheseSector && syntheseSector.indicateursImpact) {
+          if (syntheseSector) {
             if (axe) {
-              // Filter by specific axe
-              const axeIndicators = syntheseSector.indicateursImpact[axe] || [];
+              // Filter by specific axe (axes only; "Indicateur d'impact - autres" has no submenu)
+              const axeIndicators = syntheseSector.indicateursImpact?.[axe] || [];
               axeIndicators.forEach(item => {
                 if (item.gristId) engagementIds.push(item.gristId);
               });
             } else {
-              // Get all impact indicators
-              Object.values(syntheseSector.indicateursImpact).forEach(indicators => {
-                indicators.forEach(item => {
-                  if (item.gristId) engagementIds.push(item.gristId);
+              // Get all impact indicators (axes + indicateursImpactAutresByChantier)
+              if (syntheseSector.indicateursImpact) {
+                Object.values(syntheseSector.indicateursImpact).forEach(indicators => {
+                  indicators.forEach(item => {
+                    if (item.gristId) engagementIds.push(item.gristId);
+                  });
                 });
-              });
+              }
+              if (syntheseSector.indicateursImpactAutresByChantier) {
+                Object.values(syntheseSector.indicateursImpactAutresByChantier).forEach(indicators => {
+                  indicators.forEach(item => {
+                    if (item.gristId) engagementIds.push(item.gristId);
+                  });
+                });
+              }
             }
           }
         }
@@ -545,16 +561,25 @@ export default {
       this.currentChantierId = null;
       
       try {
-        // Get all impact indicator grist IDs for current sector
+        // Get all impact indicator grist IDs for current sector (indicateursImpact + indicateursImpactAutresByChantier)
         const engagementIds = [];
         if (this.navigationData) {
           const sectorData = this.navigationData.sectors.find(s => s.name === this.sector);
-          if (sectorData && sectorData.indicateursImpact) {
-            Object.values(sectorData.indicateursImpact).forEach(indicators => {
-              indicators.forEach(item => {
-                if (item.gristId) engagementIds.push(item.gristId);
+          if (sectorData) {
+            if (sectorData.indicateursImpact) {
+              Object.values(sectorData.indicateursImpact).forEach(indicators => {
+                indicators.forEach(item => {
+                  if (item.gristId) engagementIds.push(item.gristId);
+                });
               });
-            });
+            }
+            if (sectorData.indicateursImpactAutresByChantier) {
+              Object.values(sectorData.indicateursImpactAutresByChantier).forEach(indicators => {
+                indicators.forEach(item => {
+                  if (item.gristId) engagementIds.push(item.gristId);
+                });
+              });
+            }
           }
         }
       

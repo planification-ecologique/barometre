@@ -81,7 +81,6 @@
 <script>
 import GraphBox from "./GraphBox.vue";
 import SectorIcon from "./SectorIcon.vue";
-
 export default {
   name: "SynthesisView",
   components: {
@@ -133,22 +132,21 @@ export default {
         return;
       }
       
-      // Separate indicators into engagements (Indicateur d'impact) and chantiers
-      // based on the levier field from the Grist data
+      // Separate indicators into engagements (Indicateurs d'impact) and chantiers
+      // "Indicateur d'impact" and "Indicateur d'impact - autres" go in Indicateurs d'impact
       const engagements = [];
       const chantiers = [];
       const seenEngagements = new Set();
       const seenChantiers = new Set();
+      const impactLeviers = ["Indicateur d'impact", "Indicateur d'impact - autres"];
       
       data.forEach(indicator => {
-        // Impact indicators have levier === "Indicateur d'impact"
-        if (indicator.levier === "Indicateur d'impact") {
+        if (impactLeviers.includes(indicator.levier)) {
           if (!seenEngagements.has(indicator.label_indic)) {
             seenEngagements.add(indicator.label_indic);
             engagements.push(indicator);
           }
         } else {
-          // Everything else is a chantier indicator
           if (!seenChantiers.has(indicator.label_indic)) {
             seenChantiers.add(indicator.label_indic);
             chantiers.push(indicator);

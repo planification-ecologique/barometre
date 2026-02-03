@@ -16,23 +16,46 @@
       </article>
     </div>
     
-    <!-- Engagements grouped by taxonomy axis -->
-    <div v-for="(engagements, axe) in filteredEngagementsByAxe" :key="axe" class="fr-mt-5w">
+    <!-- Engagements grouped by taxonomy axis (sorted alphabetically, above "others") -->
+    <div v-for="entry in sortedAxesEntries" :key="'axe-' + entry.axe" class="fr-mt-5w">
       <div class="section-header" v-if="!params.axe">
-        <h2 class="fr-h3">{{ axe }}</h2>
+        <h2 class="fr-h3">{{ entry.axe }}</h2>
       </div>
       <div class="fr-grid-row fr-grid-row--gutters fr-mb-5w">
         <div
-          v-for="(item, index) in engagements"
+          v-for="(item, index) in entry.engagements"
           :key="index"
           class="fr-col-md-6 fr-col-lg-6 fr-col-xl-6 fr-col-12"
         >
           <article>
             <graph-box
               :dataObj="item"
-              :idAccordion="'engagement-accordion-' + axe + '-' + index"
+              :idAccordion="'engagement-accordion-' + entry.axe + '-' + index"
               :titre="item.label_indic"
-              :key="item.label_indic + '-' + axe + '-' + index"
+              :key="item.label_indic + '-' + entry.axe + '-' + index"
+            ></graph-box>
+          </article>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Indicateur d'impact - autres: under chantier name (no submenu), sorted alphabetically, below normal indicators -->
+    <div v-for="entry in sortedChantierAutresEntries" :key="'chantier-' + entry.chantierName" class="fr-mt-5w">
+      <div class="section-header">
+        <h2 class="fr-h3">{{ entry.chantierName }} - autres</h2>
+      </div>
+      <div class="fr-grid-row fr-grid-row--gutters fr-mb-5w">
+        <div
+          v-for="(item, index) in entry.engagements"
+          :key="index"
+          class="fr-col-md-6 fr-col-lg-6 fr-col-xl-6 fr-col-12"
+        >
+          <article>
+            <graph-box
+              :dataObj="item"
+              :idAccordion="'engagement-accordion-autres-' + entry.chantierName + '-' + index"
+              :titre="item.label_indic"
+              :key="item.label_indic + '-' + entry.chantierName + '-' + index"
             ></graph-box>
           </article>
         </div>
@@ -40,7 +63,7 @@
     </div>
     
     <!-- No data message -->
-    <div v-if="Object.keys(filteredEngagementsByAxe).length === 0" class="fr-mt-5w">
+    <div v-if="sortedAxesEntries.length === 0 && sortedChantierAutresEntries.length === 0" class="fr-mt-5w">
       <p>Pas de données disponibles pour les engagements.</p>
     </div>
   </div>
@@ -73,23 +96,38 @@ export default {
   data() {
     return {
       engagementsByAxe: {},
+      engagementsByChantierAutres: {},  // "Indicateur d'impact - autres" grouped by chantier name
     };
   },
   computed: {
     filteredEngagementsByAxe() {
-      // Filter by selected axe if specified, and remove empty sections
       const result = {};
       Object.entries(this.engagementsByAxe).forEach(([axe, engagements]) => {
-        // If an axe is selected in params, only show that axe
-        if (this.params.axe && axe !== this.params.axe) {
-          return;
-        }
-        // Only include sections that have engagements
-        if (engagements && engagements.length > 0) {
-          result[axe] = engagements;
-        }
+        if (this.params.axe && axe !== this.params.axe) return;
+        if (engagements && engagements.length > 0) result[axe] = engagements;
       });
       return result;
+    },
+    // "Indicateur d'impact - autres" by chantier; only shown when no axe filter (no submenu)
+    filteredEngagementsByChantierAutres() {
+      if (this.params.axe) return {};
+      const result = {};
+      Object.entries(this.engagementsByChantierAutres).forEach(([chantierName, engagements]) => {
+        if (engagements && engagements.length > 0) result[chantierName] = engagements;
+      });
+      return result;
+    },
+    // Axes sorted alphabetically (normal indicators, shown first)
+    sortedAxesEntries() {
+      return Object.entries(this.filteredEngagementsByAxe)
+        .map(([axe, engagements]) => ({ axe, engagements }))
+        .sort((a, b) => a.axe.localeCompare(b.axe, 'fr'));
+    },
+    // Chantier "autres" sections sorted alphabetically (shown below normal indicators)
+    sortedChantierAutresEntries() {
+      return Object.entries(this.filteredEngagementsByChantierAutres)
+        .map(([chantierName, engagements]) => ({ chantierName, engagements }))
+        .sort((a, b) => a.chantierName.localeCompare(b.chantierName, 'fr'));
     },
   },
   watch: {
@@ -110,31 +148,38 @@ export default {
   methods: {
     groupEngagementsByAxe(data) {
       try {
-        // Group engagements by taxonomy axis using chantier_ou_impact field
-        // The chantier_ou_impact field contains the taxonomy axe (e.g., "Atténuation climat")
         const axeGroups = {};
-        const seenIndicators = new Set();
+        const chantierAutresGroups = {};
+        const seenByAxe = new Set();
+        const seenByChantierAutres = new Set();
         
         data.forEach(indicator => {
-          // The chantier_ou_impact field holds the taxonomy_axe for impact indicators
-          const axe = indicator.chantier_ou_impact || 'Autre';
+          const levier = indicator.levier || '';
+          const chantierOuImpact = indicator.chantier_ou_impact || 'Autre';
           
-          // Avoid duplicates (from multi-line charts)
-          if (seenIndicators.has(indicator.label_indic)) {
-            return;
+          if (levier === "Indicateur d'impact - autres") {
+            // Group by chantier name (chantier_ou_impact); displayed under chantier title, no submenu
+            if (!seenByChantierAutres.has(indicator.label_indic)) {
+              seenByChantierAutres.add(indicator.label_indic);
+              if (!chantierAutresGroups[chantierOuImpact]) chantierAutresGroups[chantierOuImpact] = [];
+              chantierAutresGroups[chantierOuImpact].push(indicator);
+            }
+          } else {
+            // "Indicateur d'impact": group by taxonomy axe (chantier_ou_impact)
+            if (!seenByAxe.has(indicator.label_indic)) {
+              seenByAxe.add(indicator.label_indic);
+              if (!axeGroups[chantierOuImpact]) axeGroups[chantierOuImpact] = [];
+              axeGroups[chantierOuImpact].push(indicator);
+            }
           }
-          seenIndicators.add(indicator.label_indic);
-          
-          if (!axeGroups[axe]) {
-            axeGroups[axe] = [];
-          }
-          axeGroups[axe].push(indicator);
         });
         
         this.engagementsByAxe = axeGroups;
+        this.engagementsByChantierAutres = chantierAutresGroups;
       } catch (error) {
         console.error("Error grouping engagements by axe:", error);
         this.engagementsByAxe = {};
+        this.engagementsByChantierAutres = {};
       }
     },
   },

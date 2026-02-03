@@ -48,6 +48,7 @@
             :aspectratio="2"
             :pointopacity="pointOpacityJson"
             :trendline="dataObj.values.trendLine ? JSON.stringify(dataObj.values.trendLine) : undefined"
+            :target-segment="dataObj.values.targetSegment ? JSON.stringify(dataObj.values.targetSegment) : undefined"
           >
           </bar-chart>
         </div>

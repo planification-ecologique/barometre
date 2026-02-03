@@ -29,8 +29,8 @@
         </div>
         <!-- Titre : thème et Sous-titre : levier -->
         <div>
-          <h1 class="fr-title" :aria-label="params.label || params.label_theme || params.sector">
-            {{ params.label || params.label_theme || params.sector }}
+          <h1 class="fr-title" :aria-label="pageTitle">
+            {{ pageTitle }}
           </h1>
           <h4 class="fr-subtitle" v-if="params.label_levier">{{ params.label_levier }}</h4>
         </div>
@@ -78,7 +78,6 @@ import SectorIcon from "./SectorIcon.vue";
 import EnvironnementImg from "../components/components_sgv/EnvironnementImg.vue";
 import FranceImg from "../components/components_sgv/FranceImg.vue";
 import EauImg from "../components/components_sgv/EauImg.vue";
-
 export default {
   name: "AdaptiveDashboard",
   components: {
@@ -87,6 +86,12 @@ export default {
     EnvironnementImg,
     FranceImg,
     EauImg,
+  },
+  computed: {
+    pageTitle() {
+      const p = this.params || {};
+      return p.label || p.label_theme || p.sector || '';
+    },
   },
   data() {
     return {

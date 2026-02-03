@@ -20,7 +20,7 @@
       <table>
         <thead>
           <tr>
-            <th scope="col">Engagement</th>
+            <th scope="col">Axe de la taxonomie verte</th>
             <th scope="col">Indicateur</th>
             <th scope="col">Cible 2030</th>
             <th scope="col">Dernière valeur</th>

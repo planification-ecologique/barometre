@@ -84,7 +84,9 @@
         colorHover: [],
         isSmall: false,
         trendLineParse: [],
-        trendLineColor: '#6a6156'
+        trendLineColor: '#6a6156',
+        targetSegmentParse: null,
+        targetSegmentColor: '#000091'
       }
     },
     props: {
@@ -159,6 +161,15 @@
       trendline: {
         type: String,
         default: undefined
+      },
+      targetSegment: {
+        type: String,
+        default: undefined
+      },
+      // Vue may pass kebab-case as this exact key in $props
+      'target-segment': {
+        type: String,
+        default: undefined
       }
     },
     watch: {
@@ -167,6 +178,14 @@
         this.createChart()
       },
       trendline: function () {
+        this.resetData()
+        this.createChart()
+      },
+      targetSegment: function () {
+        this.resetData()
+        this.createChart()
+      },
+      'target-segment': function () {
         this.resetData()
         this.createChart()
       }
@@ -204,6 +223,7 @@
         this.colorBox = '#2f2f2f'
         this.colorHover = []
         this.trendLineParse = []
+        this.targetSegmentParse = null
       },
       getData () {
         const self = this
@@ -300,6 +320,38 @@
           }
         } else {
           self.trendLineParse = []
+        }
+        // Target segment (last measured → 2030) – read prop (Vue may pass as targetSegment or target-segment)
+        const rawTargetSegment = this.targetSegment ?? this['target-segment'] ?? (this.$props && (this.$props.targetSegment ?? this.$props['target-segment']))
+        if (rawTargetSegment !== undefined && rawTargetSegment !== null && rawTargetSegment !== '') {
+          try {
+            const seg = JSON.parse(rawTargetSegment)
+            if (seg && seg.startYear != null && seg.endYear != null) {
+              const startVal = Number(seg.startValue)
+              const endVal = Number(seg.endValue)
+              if (!isNaN(startVal) && !isNaN(endVal)) {
+                self.targetSegmentParse = {
+                  startYear: String(seg.startYear),
+                  startValue: startVal,
+                  endYear: String(seg.endYear),
+                  endValue: endVal
+                }
+                console.log('[BarChart targetSegment] getData parsed', self.targetSegmentParse)
+              } else {
+                self.targetSegmentParse = null
+                console.log('[BarChart targetSegment] getData invalid numbers', { startVal, endVal, seg })
+              }
+            } else {
+              self.targetSegmentParse = null
+              console.log('[BarChart targetSegment] getData missing seg fields', seg)
+            }
+          } catch (e) {
+            self.targetSegmentParse = null
+            console.log('[BarChart targetSegment] getData parse error', e.message, rawTargetSegment?.substring?.(0, 80))
+          }
+        } else {
+          self.targetSegmentParse = null
+          console.log('[BarChart targetSegment] getData no prop', { targetSegment: this.targetSegment, targetsegment: this.targetsegment })
         }
   
         // Set ymax
@@ -417,27 +469,58 @@
                   ctx.stroke()
                 })
               }
-              // Trend line (vertical bar chart only)
+            }
+          },
+          {
+            afterDraw: function (chart, args, options) {
+              // Trend line (vertical bar chart only) – draw on top of bars
               if (!self.horizontal && self.trendLineParse.length > 0) {
                 const ctx = chart.ctx
                 const xAxis = chart.scales['x-axis-0']
                 const yAxis = chart.scales['y-axis-0']
+                ctx.save()
                 ctx.beginPath()
+                let first = true
                 for (let i = 0; i < self.trendLineParse.length; i++) {
+                  if (self.trendLineParse[i] == null) continue
                   const x = xAxis.getPixelForValue(self.labels[i])
                   const y = yAxis.getPixelForValue(self.trendLineParse[i])
-                  if (i === 0) ctx.moveTo(x, y)
-                  else ctx.lineTo(x, y)
+                  if (first) { ctx.moveTo(x, y); first = false } else ctx.lineTo(x, y)
                 }
                 ctx.strokeStyle = self.trendLineColor
                 ctx.lineWidth = 2
                 ctx.setLineDash([6, 4])
                 ctx.stroke()
+                ctx.restore()
               }
-            }
-          },
-          {
-            afterDraw: function (chart, args, options) {
+              // Target segment: blue line from last measured year to 2030 target – draw on top of bars
+              if (!self.horizontal && self.targetSegmentParse) {
+                const ctx = chart.ctx
+                const xAxis = chart.scales['x-axis-0']
+                const yAxis = chart.scales['y-axis-0']
+                const seg = self.targetSegmentParse
+                const x1 = xAxis.getPixelForValue(seg.startYear)
+                const y1 = yAxis.getPixelForValue(seg.startValue)
+                const x2 = xAxis.getPixelForValue(seg.endYear)
+                const y2 = yAxis.getPixelForValue(seg.endValue)
+                console.log('[BarChart targetSegment] afterDraw', {
+                  seg,
+                  x1, y1, x2, y2,
+                  yAxisMin: yAxis.top, yAxisMax: yAxis.bottom,
+                  xAxisMin: xAxis.left, xAxisMax: xAxis.right
+                })
+                ctx.save()
+                ctx.beginPath()
+                ctx.moveTo(x1, y1)
+                ctx.lineTo(x2, y2)
+                ctx.strokeStyle = self.targetSegmentColor
+                ctx.lineWidth = 2
+                ctx.setLineDash([6, 4])
+                ctx.stroke()
+                ctx.restore()
+              } else if (!self.horizontal) {
+                console.log('[BarChart targetSegment] afterDraw skip', { horizontal: self.horizontal, hasParse: !!self.targetSegmentParse })
+              }
               if (chart.tooltip._active !== undefined) {
                 if (chart.tooltip._active.length !== 0) {
                   const x = chart.tooltip._active[0]._model.x
@@ -660,6 +743,9 @@
         if (this.trendLineParse.length > 0) {
           this.trendLineColor = this.getHexaFromName('beige-gris-galet')
         }
+        if (this.targetSegmentParse) {
+          this.targetSegmentColor = this.getHexaFromName('blue-ecume')
+        }
       },
       changeColors (theme) {
         Chart.defaults.global.defaultFontColor = this.getHexaFromToken('text-mention-grey', theme)
@@ -704,6 +790,9 @@
         if (this.trendLineParse.length > 0) {
           this.trendLineColor = this.getHexaFromName('beige-gris-galet')
         }
+        if (this.targetSegmentParse) {
+          this.targetSegmentColor = this.getHexaFromName('blue-ecume')
+        }
         this.chart.update(0)
       }
     },
@@ -747,7 +836,10 @@
     .r_col {
       align-self: center;
       .flex {
-        display: inline-block;
+        display: inline-flex;
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: nowrap;
         .legende_dot {
           min-width: 0.8rem;
           width: 0.8rem;
