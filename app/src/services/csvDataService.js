@@ -326,6 +326,26 @@ export function transformCSVData(csvData, query) {
       });
     }
     
+    // Dernière valeur: last "mesuré" (measured) data point with a valid value
+    let valeur_actuelle = null;
+    let date_valeur_actuelle = null;
+    for (let i = values.length - 1; i >= 0; i--) {
+      const status = (statuses[i] || '').toString().toLowerCase();
+      if (status === 'mesuré') {
+        const v = values[i];
+        if (v != null && !isNaN(v)) {
+          valeur_actuelle = v;
+          date_valeur_actuelle = years[i] || null;
+          break;
+        }
+      }
+    }
+    // Cible 2030: value at 2030 when valid
+    const idx2030ForCible = years.indexOf(targetYear);
+    const objectif_valeur_cible = (idx2030ForCible >= 0 && values[idx2030ForCible] != null && !isNaN(values[idx2030ForCible]))
+      ? values[idx2030ForCible]
+      : null;
+
     return {
       label_indic: item.Indicateur,
       id_indic: item.ID,
@@ -343,6 +363,11 @@ export function transformCSVData(csvData, query) {
       label_sous_groupe: item['Sous-niveau (graphique)'] || '',
       label_value: statuses,
       type_de_graphique: chartType,
+      // For synthesis tables (EngagementsTableView, ChantiersTableView)
+      objectif_valeur_cible,
+      valeur_actuelle,
+      date_valeur_actuelle,
+      unite: formattedUnitLong,
       // Add new fields from Grist
       levier: item['Levier'] || '',
       chantier_ou_impact: parsedChantierOuImpact.chantierOuImpact || '',

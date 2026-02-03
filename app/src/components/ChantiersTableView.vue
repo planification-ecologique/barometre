@@ -22,16 +22,16 @@
           <tr>
             <th scope="col">Chantier</th>
             <th scope="col">Indicateur</th>
-            <th scope="col">Cible 2030</th>
             <th scope="col">Dernière valeur</th>
+            <th scope="col">Cible 2030</th>
           </tr>
         </thead>
         <tbody>
           <tr v-for="(row, index) in tableData" :key="index">
             <td>{{ row.chantier }}</td>
             <td>{{ row.indicateur }}</td>
-            <td>{{ row.cible2030 }}</td>
             <td>{{ row.derniereValeur }}</td>
+            <td>{{ row.cible2030 }}</td>
           </tr>
           <tr v-if="tableData.length === 0">
             <td colspan="4" class="no-data">Chargement des données...</td>
