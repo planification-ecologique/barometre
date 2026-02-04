@@ -46,6 +46,31 @@ function formatScientificNotation(unit) {
     .replace(/SO2/g, 'SO₂');
 }
 
+/**
+ * Parse IRPE_ids or "ID Indicateur hub Ecolab" column to array of indicator ids for Écolab API.
+ * @param {string} raw - Raw value (e.g. "949", "949, 254", or "id_949")
+ * @returns {string[]} - Non-empty id strings (e.g. ["949", "254"])
+ */
+function parseIrpeIds(raw, valid) {
+  // If the IRPE is not provided, return an empty array
+  if (raw == null || String(raw).trim() === '' || String(raw).toLowerCase() === 'nan') {
+    return [];
+  }
+  // If the IRPE is not marked valid, return an empty array
+  if (
+    valid == null || String(valid).trim() === '' ||
+    String(valid).toLowerCase() === 'nan' ||
+    String(valid).toLowerCase() !== 'true'
+  ) {
+    return [];
+  }
+  const ids = String(raw)
+    .split(/[,;]/)
+    .map(s => s.replace(/^id_/i, '').trim())
+    .filter(Boolean);
+  return ids;
+}
+
 // Cache variable to store parsed CSV data
 let csvDataCache = null;
 let fetchPromise = null;
@@ -313,17 +338,6 @@ export function transformCSVData(csvData, query) {
           endValue: endVal
         };
       }
-      // DEBUG target line
-      console.log('[targetSegment]', item.Indicateur, {
-        lastMeasuredIndex,
-        lastMeasuredYear: lastMeasuredIndex >= 0 ? years[lastMeasuredIndex] : null,
-        lastMeasuredValue: lastMeasuredIndex >= 0 ? values[lastMeasuredIndex] : null,
-        targetValue,
-        endVal,
-        has2030,
-        years: years.slice(-5),
-        targetSegment: targetSegment != null
-      });
     }
     
     // Dernière valeur: last "mesuré" (measured) data point with a valid value
@@ -345,7 +359,6 @@ export function transformCSVData(csvData, query) {
     const objectif_valeur_cible = (idx2030ForCible >= 0 && values[idx2030ForCible] != null && !isNaN(values[idx2030ForCible]))
       ? values[idx2030ForCible]
       : null;
-
     return {
       label_indic: item.Indicateur,
       id_indic: item.ID,
@@ -372,6 +385,8 @@ export function transformCSVData(csvData, query) {
       levier: item['Levier'] || '',
       chantier_ou_impact: parsedChantierOuImpact.chantierOuImpact || '',
       sector: parsedChantierOuImpact.sector || '',
+      // IRPE / Écolab: indicator ids for regional data (column IRPE_ids or ID Indicateur hub Ecolab)
+      irpe_ids: parseIrpeIds(item['IRPE ids'], item['IRPE valide']),
       values: {
         x: [years],
         y: y,

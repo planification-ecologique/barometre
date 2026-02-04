@@ -6,9 +6,50 @@
     v-if="dataObj"
   >
     <div class="titleBox">
-      <h2 class="cardTitle">{{ dataObj.label_indic }}</h2>
+      <div class="fr-grid-row fr-grid-row--middle">
+        <h2 class="cardTitle fr-col">{{ displayData.label_indic }}</h2>
+      </div>
+      <!-- Région : dropdown (données Écolab) -->
+      <div v-if="hasRegionalData" class="fr-select-group fr-mt-1w">
+        <select
+          id="graph-region-select"
+          class="fr-select fr-select--sm"
+          :disabled="regionsList.length === 0 && !regionsError"
+          v-model="selectedRegionCode"
+          @change="onRegionChange"
+        >
+          <option value="">National</option>
+          <option
+            v-for="r in regionsList"
+            :key="r.geocode_region"
+            :value="r.geocode_region"
+          >
+            {{ r.libelle_region }}
+          </option>
+        </select>
+        <p v-if="regionsError" class="fr-error-text fr-mt-1v">{{ regionsError }}</p>
+        <p v-if="selectedRegionCode && regionalLoading" class="fr-text--sm fr-text--alt fr-mt-1v">Chargement des données...</p>
+        <p v-else-if="selectedRegionCode && regionalError" class="fr-error-text fr-mt-1v">{{ regionalError }}</p>
+      </div>
+      <div v-if="hasRegionalData && regionExtraOptions.length > 0" class="fr-select-group fr-mt-1w">
+        <label class="fr-label" for="graph-extra-select">{{ extraDimensionLabel }}</label>
+        <select
+          id="graph-extra-select"
+          class="fr-select fr-select--sm"
+          v-model="selectedExtraValue"
+          @change="onExtraDimensionChange"
+        >
+          <option
+            v-for="opt in regionExtraOptions"
+            :key="opt.value"
+            :value="opt.value"
+          >
+            {{ opt.label }}
+          </option>
+        </select>
+      </div>
       <!-- <TableComponent :captionTitle="dataObj.label_indic" /> -->
-      <div class="fr-text--xs fr-text--bold cardObjectif" v-if="cible">
+      <div class="fr-text--xs fr-text--bold cardObjectif" v-if="cible && !selectedRegionCode">
         <p class="fr-text--xs fr-text--regular fr-unit">Cible :</p>
         <p
           class="fr-badge fr-badge-sm fr-badge--green-emeraude fr-badge--no-icon fr-pr-1w"
@@ -16,12 +57,12 @@
           {{ cible }}
         </p>
         <p class="fr-text--xs fr-text--regular fr-unit">
-          {{ dataObj.label_unit }}
+          {{ displayData.label_unit }}
         </p>
       </div>
       <div v-else>
         <p class="fr-text--xs fr-text--regular fr-unit">
-          Unité : {{ dataObj.label_unit }}
+          Unité : {{ displayData.label_unit }}
         </p>
       </div>
     </div>
@@ -33,44 +74,44 @@
         :idcontrol="idAccordion + '1'"
       ></segmented-controls>
     </div>
-    <div v-if="dataObj.values">
+    <div v-if="displayData && (displayData.values || displayData.date)">
       <div class="cardData" v-if="this.displayChart">
         <!-- Affichage du graphique -->
-        <div v-if="getChartType === 'Barres simple'">
+        <div v-if="effectiveChartType === 'Barres simple'">
           <!-- Composant Histogramme sans sous-groupe / DSFR -->
           <bar-chart
-            :x="JSON.stringify(dataObj.values.x)"
-            :y="JSON.stringify(dataObj.values.y)"
-            :name="JSON.stringify(dataObj.values.legend)"
+            :x="JSON.stringify(chartValues.x)"
+            :y="JSON.stringify(chartValues.y)"
+            :name="JSON.stringify(chartValues.legend)"
             :horizontal="false"
             :stacked="true"
-            :color="JSON.stringify(dataObj.values.colors)"
+            :color="JSON.stringify(chartValues.colors || defaultBarColors)"
             :aspectratio="2"
-            :pointopacity="pointOpacityJson"
-            :trendline="dataObj.values.trendLine ? JSON.stringify(dataObj.values.trendLine) : undefined"
-            :target-segment="dataObj.values.targetSegment ? JSON.stringify(dataObj.values.targetSegment) : undefined"
+            :pointopacity="regionalPointOpacity"
+            :trendline="chartValues.trendLine ? JSON.stringify(chartValues.trendLine) : undefined"
+            :target-segment="chartValues.targetSegment ? JSON.stringify(chartValues.targetSegment) : undefined"
           >
           </bar-chart>
         </div>
-        <div v-else-if="getChartType === 'Barres empilées'">
-          <!-- Composant Histogramme avec sous-groupe / DSFR -->
+        <div v-else-if="effectiveChartType === 'Barres empilées' && !selectedRegionCode">
+          <!-- Composant Histogramme avec sous-groupe / DSFR (national only) -->
           <bar-chart
-            :x="JSON.stringify(dataObj.date)"
-            :y="JSON.stringify(dataObj.values)"
+            :x="JSON.stringify(displayData.date)"
+            :y="JSON.stringify(displayData.values)"
             :aspectratio="2"
             :stacked="true"
-            :name="JSON.stringify(dataObj.label_sous_groupe)"
+            :name="JSON.stringify(displayData.label_sous_groupe)"
             :pointopacity="pointOpacityJson"
           >
           </bar-chart>
         </div>
-        <div v-else-if="getChartType === 'Courbes indépendantes'">
-          <!-- Composant Ligne / DSFR -->
+        <div v-else-if="effectiveChartType === 'Courbes indépendantes' && !selectedRegionCode">
+          <!-- Composant Ligne / DSFR (national only) -->
           <multi-line-chart
-            :x="JSON.stringify(dataObj.date)"
-            :y="JSON.stringify(dataObj.values)"
+            :x="JSON.stringify(displayData.date)"
+            :y="JSON.stringify(displayData.values)"
             :aspectratio="2"
-            :name="JSON.stringify(dataObj.label_sous_groupe)"
+            :name="JSON.stringify(displayData.label_sous_groupe)"
             :isSmall="true"
             :pointopacity="pointOpacityJson"
           >
@@ -79,21 +120,21 @@
       </div>
       <!-- Affichage du tableau -->
       <div v-else>
-        <div v-if="dataObj.label_sous_groupe == ''">
-          <!-- Tableau sans sous-groupe -->
+        <div v-if="displayData.label_sous_groupe == '' || selectedRegionCode">
+          <!-- Tableau sans sous-groupe (ou données régionales) -->
           <table-component
-            :captionTitle="dataObj.label_indic"
-            :annee="dataObj.values.x[0]"
-            :valeur="dataObj.values.ytab"
-            :type_mesure="dataObj.label_value"
+            :captionTitle="displayData.label_indic"
+            :annee="tableAnnee"
+            :valeur="tableValeur"
+            :type_mesure="displayData.label_value || 'Mesuré'"
           ></table-component>
         </div>
         <div v-else>
           <!-- Tableau avec sous-groupe -->
           <TableComponentVariant
-            :annee="dataObj.date[0]"
-            :valeurCol="dataObj.label_sous_groupe"
-            :valeurValue="dataObj.values"
+            :annee="displayData.date[0]"
+            :valeurCol="displayData.label_sous_groupe"
+            :valeurValue="displayData.values"
           ></TableComponentVariant>
         </div>
       </div>
@@ -176,6 +217,7 @@
         </div>
       </div>
     </div>
+
   </div>
 </template>
 
@@ -187,6 +229,11 @@ import SegmentedControls from "./SegmentedControls.vue";
 import tagsCard from "./TagsCard.vue";
 import TableComponent from "./TableComponent.vue";
 import TableComponentVariant from "./TableComponentVariant.vue";
+import { loadAllRegionsDataForIndicator } from "@/services/ecolabApiService.js";
+import {
+  extractRegionsAndExtra,
+  buildRegionalSeries,
+} from "@/services/ecolabRegionHelpers.js";
 
 export default {
   name: "GraphBox",
@@ -218,43 +265,129 @@ export default {
       displayChart: false,
       isAccordionOpen: true,
       cible: undefined,
+      regionsList: [],
+      selectedRegionCode: "",
+      regionalChartData: null,
+      regionalLoading: false,
+      regionalError: null,
+      regionsError: null,
+      regionAllData: null,
+      regionExtraDimension: null,
+      regionExtraOptions: [],
+      selectedExtraValue: "",
     };
   },
   watch: {
     dataObj: function () {
       this.set_goal();
+      this.selectedRegionCode = "";
+      this.regionalChartData = null;
+      this.regionalError = null;
+      this.regionAllData = null;
+      this.regionExtraDimension = null;
+      this.regionExtraOptions = [];
+      this.selectedExtraValue = "";
+      if (this.hasRegionalData) this.loadRegions();
     },
   },
   computed: {
+    hasRegionalData() {
+      const ids = this.dataObj?.irpe_ids;
+      return Array.isArray(ids) && ids.length > 0 && ids.some(id => id && String(id).trim() !== '');
+    },
+    regionalIndicatorId() {
+      const ids = this.dataObj?.irpe_ids;
+      if (!Array.isArray(ids) || ids.length === 0) return '';
+      return String(ids[0]).trim();
+    },
+    /** Data to display: national (dataObj) or overridden by regional API data */
+    displayData() {
+      if (this.selectedRegionCode && this.regionalChartData) {
+        const v = this.regionalChartData;
+        const metaUnit = this.regionAllData?.measureMeta?.unite || this.dataObj.label_unit;
+        const metaLabel =
+          this.regionAllData?.measureMeta?.libelle_indicateur || this.dataObj.label_indic;
+        return {
+          ...this.dataObj,
+          values: {
+            x: [v.x],
+            y: v.y,
+            legend: v.legend,
+            ytab: (v.y && v.y[0]) ? v.y[0] : [],
+          },
+          label_unit: metaUnit,
+          label_indic: metaLabel,
+          label_sous_groupe: "",
+        };
+      }
+      return this.dataObj;
+    },
+    /** Values object for the chart (bar simple: x, y, legend; regional overrides). BarChart expects x[0] = array of labels. */
+    chartValues() {
+      if (this.selectedRegionCode && this.regionalChartData) {
+        const v = this.regionalChartData;
+        return {
+          x: [v.x],
+          y: v.y,
+          legend: v.legend,
+          colors: ['brown-cafe-creme']
+        };
+      }
+      return this.displayData.values || null;
+    },
+    effectiveChartType() {
+      if (this.selectedRegionCode && this.regionalChartData) return "Barres simple";
+      return this.getChartType;
+    },
+    tableAnnee() {
+      const v = this.displayData.values;
+      if (!v) return [];
+      return (v.x && v.x[0]) ? v.x[0] : (v.x || []);
+    },
+    tableValeur() {
+      const v = this.displayData.values;
+      if (!v) return [];
+      return v.ytab || (v.y && v.y[0]) || [];
+    },
+    defaultBarColors() {
+      return this.chartValues?.legend?.map(() => "#000091") || [];
+    },
+    regionalPointOpacity() {
+      if (this.selectedRegionCode && this.regionalChartData) {
+        const len = this.regionalChartData.y?.[0]?.length || 0;
+        return JSON.stringify(Array(len).fill(1));
+      }
+      return this.pointOpacityJson;
+    },
+    extraDimensionLabel() {
+      if (!this.regionExtraDimension) return "Dimension";
+      const short = this.regionExtraDimension.split(".").pop() || "";
+      const lower = short.toLowerCase();
+      if (lower.includes("energie")) return "Énergie";
+      return short.charAt(0).toUpperCase() + short.slice(1);
+    },
     downloadUrl() {
       let csvContent = "";
+      const d = this.displayData;
 
       try {
-        // Ajout BOM pour UTF-8
         csvContent = "\uFEFF";
 
-        if (!Array.isArray(this.dataObj.label_sous_groupe)) {
-          // Pour les données sans sous-groupe
+        if (!Array.isArray(d.label_sous_groupe) || d.label_sous_groupe === "") {
           const headers = [
             "Année",
-            `Valeur - ${this.dataObj.label_unit}`,
+            `Valeur - ${d.label_unit}`,
             "Type",
           ];
           csvContent = headers.join(";") + "\n";
 
-          const xValues = this.dataObj.values.x[0];
-          if (xValues && this.dataObj.values.ytab) {
+          const xValues = (d.values && d.values.x) ? (d.values.x[0] || d.values.x) : [];
+          const ytab = (d.values && (d.values.ytab || (d.values.y && d.values.y[0]))) || [];
+          if (xValues.length && ytab.length) {
             for (let i = 0; i < xValues.length; i++) {
               let row = [xValues[i]];
-
-              row.push(this.dataObj.values.ytab[i]);
-
-              row.push(
-                this.dataObj.label_value
-                  ? this.dataObj.label_value[i] || ""
-                  : ""
-              );
-
+              row.push(ytab[i]);
+              row.push(d.label_value ? (d.label_value[i] || "Mesuré") : "Mesuré");
               csvContent += row.join(";") + "\n";
             }
           }
@@ -262,27 +395,23 @@ export default {
           // Pour les données avec sous-groupe
           const headers = [
             "Année",
-            ...this.dataObj.label_sous_groupe.map(
-              (groupe) => `${groupe} - ${this.dataObj.label_unit}`
+            ...d.label_sous_groupe.map(
+              (groupe) => `${groupe} - ${d.label_unit}`
             ),
           ];
           csvContent += headers.join(";") + "\n";
 
-          // Ajout des données
-          if (this.dataObj.date && this.dataObj.values) {
-            for (let i = 0; i < this.dataObj.date[0].length; i++) {
-              let row = [this.dataObj.date[0][i]];
-
-              for (let j = 0; j < this.dataObj.values.length; j++) {
-                row.push(this.dataObj.values[j][i]);
+          if (d.date && d.values) {
+            for (let i = 0; i < d.date[0].length; i++) {
+              let row = [d.date[0][i]];
+              for (let j = 0; j < d.values.length; j++) {
+                row.push(d.values[j][i]);
               }
-
               csvContent += row.join(";") + "\n";
             }
           }
         }
 
-        // Créer l'URL data avec encodage UTF-8
         return "data:text/csv;charset=utf-8," + encodeURIComponent(csvContent);
       } catch (error) {
         console.error(
@@ -331,6 +460,66 @@ export default {
   },
 
   methods: {
+    async loadRegions() {
+      if (!this.hasRegionalData || !this.regionalIndicatorId) return;
+      this.regionsError = null;
+      this.regionAllData = null;
+      this.regionExtraDimension = null;
+      this.regionExtraOptions = [];
+      this.selectedExtraValue = "";
+      try {
+        const result = await loadAllRegionsDataForIndicator(
+          this.regionalIndicatorId
+        );
+        this.regionAllData = result;
+
+        const {
+          regionsList,
+          extraDimension,
+          extraOptions,
+          defaultExtraValue,
+        } = extractRegionsAndExtra(result);
+
+        this.regionsList = regionsList;
+        this.regionExtraDimension = extraDimension;
+        this.regionExtraOptions = extraOptions;
+        this.selectedExtraValue = defaultExtraValue;
+      } catch (e) {
+        this.regionsError = e.message || "Impossible de charger la liste des régions.";
+        this.regionsList = [];
+        this.regionAllData = null;
+        this.regionExtraDimension = null;
+        this.regionExtraOptions = [];
+        this.selectedExtraValue = "";
+      }
+    },
+    onRegionChange() {
+      this.regionalError = null;
+      this.regionalChartData = null;
+      if (!this.selectedRegionCode) return;
+      if (!this.regionAllData) return;
+      this.regionalLoading = true;
+      try {
+        this.updateRegionalChartData();
+      } catch (e) {
+        this.regionalError = e.message || "Impossible de charger les données régionales.";
+      } finally {
+        this.regionalLoading = false;
+      }
+    },
+    onExtraDimensionChange() {
+      if (!this.selectedRegionCode || !this.regionAllData) return;
+      this.updateRegionalChartData();
+    },
+    updateRegionalChartData() {
+      if (!this.regionAllData || !this.selectedRegionCode) return;
+      const series = buildRegionalSeries(
+        this.regionAllData,
+        this.selectedRegionCode,
+        this.selectedExtraValue
+      );
+      this.regionalChartData = series;
+    },
     // Fonction pour afficher le graphique ou le tableau
     handleChartSelected(type) {
       this.displayChart = type === "graphique" ? true : false;
@@ -372,6 +561,7 @@ export default {
   },
   mounted() {
     this.set_goal();
+    if (this.hasRegionalData) this.loadRegions();
     // Set accordion to closed by default in iframe mode
     if (this.isIframe) {
       this.isAccordionOpen = false;

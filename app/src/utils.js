@@ -893,14 +893,20 @@ export const getHexaFromName = function (colorName, options = undefined) {
     'green-emeraude': {default:"#297254", hover: "#3ea47a" }
   }
 
-  if( !(colorName in colors_dsfr)){
-    console.error(colorName + "color is not present in colors list")
-  }
   var type_color = 'default'
   if (options != undefined && 'hover' in options) {
     type_color = 'hover'
   }
-    
+
+  if (!(colorName in colors_dsfr)) {
+    console.warn(colorName + " is not in DSFR colors list; using as-is or fallback.")
+    // Already a hex value (e.g. from regional chart) or unknown name: return as-is or default
+    if (typeof colorName === 'string' && /^#[0-9a-fA-F]{3,8}$/.test(colorName)) {
+      return colorName
+    }
+    return type_color === 'hover' ? '#4e68bb' : '#2f4077'
+  }
+
   return colors_dsfr[colorName][type_color]
 }
 
