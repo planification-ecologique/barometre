@@ -26,7 +26,10 @@
       </h2>
       <h2 v-else class="fr-h3">Indicateur du chantier</h2>
       
-      <div class="fr-grid-row fr-grid-row--gutters">
+      <div
+        v-if="levierGroup.chartData && levierGroup.chartData.length > 0"
+        class="fr-grid-row fr-grid-row--gutters"
+      >
         <div
           v-for="(item, itemIndex) in levierGroup.chartData"
           :key="itemIndex"
@@ -42,10 +45,18 @@
           </article>
         </div>
       </div>
+      <div
+        v-else
+        class="fr-mb-2w"
+      >
+        <p class="fr-text--sm fr-text--alt">
+          Aucun indicateur n'est encore défini pour ce levier.
+        </p>
+      </div>
     </div>
     
     <!-- No data message -->
-    <div v-if="displayLeviers.length === 0 && !isLoading">
+    <div v-if="hasNoLeviers && !isLoading">
       <p>Pas de données disponibles pour ce chantier.</p>
     </div>
     
@@ -87,6 +98,12 @@ export default {
       displayLeviers: [],
       isLoading: false,
     };
+  },
+  computed: {
+    hasNoLeviers() {
+      // True when we have no levier definition at all for this chantier
+      return !this.displayLeviers || this.displayLeviers.length === 0;
+    },
   },
   watch: {
     params: {
@@ -136,41 +153,35 @@ export default {
     groupIndicatorsByLevier() {
       const sortedLeviers = this.params.sortedLeviers || [];
       
-      if (sortedLeviers.length === 0) {
-        // Fallback: just display all indicators without grouping
-        if (this.allIndicatorsData.length > 0) {
-          this.displayLeviers = [{
-            name: 'Indicateurs',
-            chartData: this.allIndicatorsData
-          }];
-        } else {
-          this.displayLeviers = [];
-        }
-        return;
-      }
-      
-      // Build display groups from sortedLeviers
       const result = [];
-      
-      sortedLeviers.forEach(levierGroup => {
-        // Get the grist IDs for this levier group
-        const gristIds = levierGroup.indicators.map(item => item.gristId).filter(id => id);
-        
-        // Find matching chart data
-        const chartData = this.allIndicatorsData.filter(indicator => 
-          gristIds.includes(indicator.id_indic)
-        );
-        
-        // Only add group if it has data
-        if (chartData.length > 0) {
+
+      // When we have a levier structure, always create a group per levier,
+      // even if no indicator currently exists for it.
+      if (sortedLeviers.length > 0) {
+        sortedLeviers.forEach(levierGroup => {
+          const gristIds = (levierGroup.indicators || [])
+            .map(item => item.gristId)
+            .filter(id => id);
+
+          const chartData = this.allIndicatorsData.filter(indicator =>
+            gristIds.includes(indicator.id_indic)
+          );
+
           result.push({
             name: levierGroup.name,
             sortOrder: levierGroup.sortOrder,
-            chartData: chartData
+            chartData,
           });
-        }
-      });
-      
+        });
+      } else if (this.allIndicatorsData.length > 0) {
+        // Fallback: no explicit levier structure, keep previous behaviour
+        result.push({
+          name: "Indicateurs",
+          sortOrder: 0,
+          chartData: this.allIndicatorsData,
+        });
+      }
+
       this.displayLeviers = result;
     },
   },

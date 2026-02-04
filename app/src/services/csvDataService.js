@@ -7,6 +7,11 @@ export const GRIST_URLS = {
   stagingEditPage: 'https://grist.numerique.gouv.fr/o/planification-ecologique/jGd2ge4dy2ZM/Tableau-de-Bord/p/2'
 };
 
+// Separate table listing all leviers, including those without indicators.
+// Source: https://grist.numerique.gouv.fr/o/planification-ecologique/api/docs/jGd2ge4dy2ZMaRpdgbPLnd/download/csv?viewSection=20&tableId=Liste_leviers
+export const GRIST_LEVIERS_URL =
+  'https://grist.numerique.gouv.fr/o/planification-ecologique/api/docs/jGd2ge4dy2ZMaRpdgbPLnd/download/csv?viewSection=20&tableId=Liste_leviers';
+
 /**
  * Formats a number for display using scientific notation when needed
  * @param {Number} value - The number to format
@@ -75,6 +80,10 @@ function parseIrpeIds(raw, valid) {
 let csvDataCache = null;
 let fetchPromise = null;
 
+// Cache for the separate leviers list (Liste_leviers)
+let levierListCache = null;
+let levierFetchPromise = null;
+
 /** When false, extrapolation (projection) series is excluded from chart data. */
 export const SHOW_EXTRAPOLATION = false;
 
@@ -140,6 +149,50 @@ export async function fetchCSVData(environment = 'production') {
 export function clearCSVCache() {
   csvDataCache = null;
   fetchPromise = null;
+}
+
+/**
+ * Fetch and parse the Grist "Liste_leviers" table listing all leviers,
+ * including those that do not yet have indicators.
+ * @returns {Promise<Array>} - Parsed CSV rows
+ */
+export async function fetchLevierList() {
+  // If we already have cached data, return it
+  if (levierListCache) {
+    return levierListCache;
+  }
+
+  // If we're already fetching, return the existing promise
+  if (levierFetchPromise) {
+    return levierFetchPromise;
+  }
+
+  try {
+    const response = await fetch(GRIST_LEVIERS_URL);
+    const csvText = await response.text();
+
+    levierFetchPromise = new Promise((resolve, reject) => {
+      Papa.parse(csvText, {
+        header: true,
+        skipEmptyLines: true,
+        complete: (results) => {
+          levierListCache = results.data;
+          levierFetchPromise = null;
+          resolve(levierListCache);
+        },
+        error: (error) => {
+          levierFetchPromise = null;
+          reject(error);
+        }
+      });
+    });
+
+    return levierFetchPromise;
+  } catch (error) {
+    levierFetchPromise = null;
+    console.error('Error fetching leviers list from Grist:', error);
+    throw error;
+  }
 }
 
 /**
@@ -894,7 +947,11 @@ function getLevierSortOrder(levier) {
  */
 export async function getNavigationStructure(environment = 'production') {
   try {
-    const csvData = await fetchCSVData(environment);
+    // Load indicators and full leviers list in parallel
+    const [csvData, levierList] = await Promise.all([
+      fetchCSVData(environment),
+      fetchLevierList()
+    ]);
     
     // Filter out items marked for deletion
     const filteredData = csvData.filter(item => item['A supprimer de la V1'] !== 'true');
@@ -966,6 +1023,47 @@ export async function getNavigationStructure(environment = 'production') {
         });
       }
     });
+    
+    // Enrich the structure with all chantiers & leviers from the dedicated
+    // "Liste_leviers" table, so that leviers without indicators still appear.
+    if (Array.isArray(levierList)) {
+      levierList.forEach(row => {
+        const associated = row['Chantier associé'] || '';
+        const rawLevierName = row['clean/strip'] || row['Levier'] || '';
+
+        // Skip rows without a chantier association or levier label
+        if (!associated || !rawLevierName) return;
+
+        const { sector, chantierOuImpact } = parseChantierOuImpact(associated);
+        if (!sector || !chantierOuImpact) return;
+
+        // Ensure sector exists
+        if (!sectors[sector]) {
+          sectors[sector] = {
+            name: sector,
+            indicateursImpact: {},
+            indicateursImpactAutresByChantier: {},
+            chantiers: {}
+          };
+        }
+
+        // Ensure chantier exists within sector
+        if (!sectors[sector].chantiers[chantierOuImpact]) {
+          sectors[sector].chantiers[chantierOuImpact] = {
+            name: chantierOuImpact,
+            leviers: {}
+          };
+        }
+
+        const levierName = rawLevierName;
+        const chantierObj = sectors[sector].chantiers[chantierOuImpact];
+
+        // Ensure levier exists, even if it has no indicators yet
+        if (!chantierObj.leviers[levierName]) {
+          chantierObj.leviers[levierName] = [];
+        }
+      });
+    }
     
     // Sort leviers within each chantier
     Object.values(sectors).forEach(sector => {
