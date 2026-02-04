@@ -116,18 +116,19 @@ export default {
   },
   methods: {
     async loadAllData() {
-      // Get all grist IDs from the chantier
       const allGristIds = this.params.grist_ids || [];
-      
+
+      // Chantier sans aucun indicateur : on affiche quand même la liste des leviers
+      // (issue de Liste_leviers) avec le message "Aucun indicateur n'est encore défini"
       if (allGristIds.length === 0) {
-        this.displayLeviers = [];
+        this.allIndicatorsData = [];
+        this.groupIndicatorsByLevier();
         return;
       }
-      
+
       this.isLoading = true;
-      
+
       try {
-        // Fetch all indicators for this chantier
         const query = {
           filter_by: [
             { field: "grist_ids", values: allGristIds },
@@ -137,11 +138,10 @@ export default {
             date_end: "2031-01-01",
           },
         };
-        
+
         const response = await getIndicators(query, this.useStaging ? 'staging' : 'production');
         this.allIndicatorsData = response.results || [];
-        
-        // Group indicators by levier using the sortedLeviers from params
+
         this.groupIndicatorsByLevier();
       } catch (error) {
         console.error("Error loading chantier data:", error);
