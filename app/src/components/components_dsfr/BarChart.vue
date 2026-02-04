@@ -336,22 +336,17 @@
                   endYear: String(seg.endYear),
                   endValue: endVal
                 }
-                console.log('[BarChart targetSegment] getData parsed', self.targetSegmentParse)
               } else {
                 self.targetSegmentParse = null
-                console.log('[BarChart targetSegment] getData invalid numbers', { startVal, endVal, seg })
               }
             } else {
               self.targetSegmentParse = null
-              console.log('[BarChart targetSegment] getData missing seg fields', seg)
             }
           } catch (e) {
             self.targetSegmentParse = null
-            console.log('[BarChart targetSegment] getData parse error', e.message, rawTargetSegment?.substring?.(0, 80))
           }
         } else {
           self.targetSegmentParse = null
-          console.log('[BarChart targetSegment] getData no prop', { targetSegment: this.targetSegment, targetsegment: this.targetsegment })
         }
   
         // Set ymax
@@ -503,12 +498,6 @@
                 const y1 = yAxis.getPixelForValue(seg.startValue)
                 const x2 = xAxis.getPixelForValue(seg.endYear)
                 const y2 = yAxis.getPixelForValue(seg.endValue)
-                console.log('[BarChart targetSegment] afterDraw', {
-                  seg,
-                  x1, y1, x2, y2,
-                  yAxisMin: yAxis.top, yAxisMax: yAxis.bottom,
-                  xAxisMin: xAxis.left, xAxisMax: xAxis.right
-                })
                 ctx.save()
                 ctx.beginPath()
                 ctx.moveTo(x1, y1)
@@ -518,8 +507,6 @@
                 ctx.setLineDash([6, 4])
                 ctx.stroke()
                 ctx.restore()
-              } else if (!self.horizontal) {
-                console.log('[BarChart targetSegment] afterDraw skip', { horizontal: self.horizontal, hasParse: !!self.targetSegmentParse })
               }
               if (chart.tooltip._active !== undefined) {
                 if (chart.tooltip._active.length !== 0) {
