@@ -1002,7 +1002,7 @@ function parseLevierList(value) {
 }
 
 // Known taxonomy axes used for impact indicators
-const IMPACT_AXES = [
+export const IMPACT_AXES = [
   'Atténuation climat',
   'Adaptation climat',
   'Biodiversité',
@@ -1012,7 +1012,7 @@ const IMPACT_AXES = [
   'Eau',
 ];
 
-function isImpactAxe(name) {
+export function isImpactAxe(name) {
   if (!name) return false;
   const cleaned = String(name).trim();
   return IMPACT_AXES.includes(cleaned);

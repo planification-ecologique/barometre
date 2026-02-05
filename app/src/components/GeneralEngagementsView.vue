@@ -21,20 +21,45 @@
       <div class="section-header" v-if="!params.axe">
         <h2 class="fr-h3">{{ entry.axe }}</h2>
       </div>
-      <div class="fr-grid-row fr-grid-row--gutters fr-mb-5w">
+      
+      <!-- "Indicateur d'impact" indicators first -->
+      <div v-if="entry.impactIndicators && entry.impactIndicators.length > 0" class="fr-grid-row fr-grid-row--gutters fr-mb-5w">
         <div
-          v-for="(item, index) in entry.engagements"
-          :key="index"
+          v-for="(item, index) in entry.impactIndicators"
+          :key="'impact-' + index"
           class="fr-col-md-6 fr-col-lg-6 fr-col-xl-6 fr-col-12"
         >
           <article>
             <graph-box
               :dataObj="item"
-              :idAccordion="'engagement-accordion-' + entry.axe + '-' + index"
+              :idAccordion="'engagement-accordion-' + entry.axe + '-impact-' + index"
               :titre="item.label_indic"
-              :key="item.label_indic + '-' + entry.axe + '-' + index"
+              :key="item.label_indic + '-' + entry.axe + '-impact-' + index"
             ></graph-box>
           </article>
+        </div>
+      </div>
+      
+      <!-- Separator: "Autres indicateurs" -->
+      <div v-if="entry.autresIndicators && entry.autresIndicators.length > 0" class="fr-mt-5w">
+        <div class="section-header">
+          <h3 class="fr-h4">Autres indicateurs</h3>
+        </div>
+        <div class="fr-grid-row fr-grid-row--gutters fr-mb-5w">
+          <div
+            v-for="(item, index) in entry.autresIndicators"
+            :key="'autres-' + index"
+            class="fr-col-md-6 fr-col-lg-6 fr-col-xl-6 fr-col-12"
+          >
+            <article>
+              <graph-box
+                :dataObj="item"
+                :idAccordion="'engagement-accordion-' + entry.axe + '-autres-' + index"
+                :titre="item.label_indic"
+                :key="item.label_indic + '-' + entry.axe + '-autres-' + index"
+              ></graph-box>
+            </article>
+          </div>
         </div>
       </div>
     </div>
@@ -122,9 +147,33 @@ export default {
       return result;
     },
     // Axes sorted alphabetically (normal indicators, shown first)
+    // Split each axe's engagements into "Indicateur d'impact" and "Autres indicateurs"
     sortedAxesEntries() {
       return Object.entries(this.filteredEngagementsByAxe)
-        .map(([axe, engagements]) => ({ axe, engagements }))
+        .map(([axe, engagements]) => {
+          const impactIndicators = [];
+          const autresIndicators = [];
+          
+          engagements.forEach(item => {
+            const levier = (item.levier || '').toString();
+            // Check if this is "Autres indicateurs" (but not "Indicateur d'impact - autres")
+            // "Autres indicateurs" should appear in the "Autres indicateurs" section
+            if (levier.includes("Autres indicateurs") && !levier.includes("Indicateur d'impact - autres")) {
+              autresIndicators.push(item);
+            } else {
+              // "Indicateur d'impact" (and anything else) goes in the main section
+              impactIndicators.push(item);
+            }
+          });
+          
+          return {
+            axe,
+            impactIndicators,
+            autresIndicators,
+            engagements // Keep for backward compatibility if needed
+          };
+        })
+        .filter(entry => entry.impactIndicators.length > 0 || entry.autresIndicators.length > 0)
         .sort((a, b) => a.axe.localeCompare(b.axe, 'fr'));
     },
     // Chantier "autres" sections sorted alphabetically (shown below normal indicators)
@@ -166,7 +215,9 @@ export default {
           axes.forEach(chantierOuImpact => {
             const axeName = chantierOuImpact || 'Autre';
 
-            if (levier === "Indicateur d'impact - autres") {
+            // "Indicateur d'impact - autres" can appear in a composite levier string,
+            // so we check using includes instead of strict equality.
+            if (levier && levier.includes("Indicateur d'impact - autres")) {
               // Group by chantier name (chantier_ou_impact); displayed under chantier title, no submenu
               const key = `${axeName}:::${indicator.label_indic}`;
               if (!seenByChantierAutres.has(key)) {
@@ -175,7 +226,8 @@ export default {
                 chantierAutresGroups[axeName].push(indicator);
               }
             } else {
-              // "Indicateur d'impact": group by taxonomy axe (chantier_ou_impact)
+              // Group by taxonomy axe (chantier_ou_impact)
+              // This includes both "Indicateur d'impact" and "Autres indicateurs"
               const key = `${axeName}:::${indicator.label_indic}`;
               if (!seenByAxe.has(key)) {
                 seenByAxe.add(key);
@@ -220,5 +272,12 @@ export default {
 .fr-h3 {
   margin-top: 0;
   margin-bottom: 0.5rem;
+}
+
+.fr-h4 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+  font-weight: 600;
 }
 </style>

@@ -184,10 +184,6 @@
       targetSegment: function () {
         this.resetData()
         this.createChart()
-      },
-      'target-segment': function () {
-        this.resetData()
-        this.createChart()
       }
     },
     computed: {

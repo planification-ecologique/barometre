@@ -147,7 +147,9 @@ export default {
         data.forEach(indicator => {
           const levier = indicator.levier || '';
           const chantierOuImpact = indicator.chantier_ou_impact || 'Autre';
-          if (levier === "Indicateur d'impact - autres") {
+          // "Indicateur d'impact - autres" can appear in a composite levier string,
+          // so we check using includes instead of strict equality.
+          if (levier && levier.includes("Indicateur d'impact - autres")) {
             if (!seenByChantierAutres.has(indicator.label_indic)) {
               seenByChantierAutres.add(indicator.label_indic);
               if (!chantierAutresGroups[chantierOuImpact]) chantierAutresGroups[chantierOuImpact] = [];

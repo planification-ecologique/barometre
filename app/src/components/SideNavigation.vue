@@ -150,24 +150,7 @@
   </nav>
 </template>
 <script>
-import { getNavigationStructure } from "@/services/csvDataService.js";
-
-// Axes d'impact qui ne doivent pas apparaître comme chantiers sectoriels
-const IMPACT_AXES = [
-  "Atténuation climat",
-  "Adaptation climat",
-  "Biodiversité",
-  "Pollution",
-  "Economie Circulaire",
-  "Économie Circulaire",
-  "Eau",
-];
-
-function isImpactAxe(name) {
-  if (!name) return false;
-  const cleaned = String(name).trim();
-  return IMPACT_AXES.includes(cleaned);
-}
+import { getNavigationStructure, IMPACT_AXES, isImpactAxe } from "@/services/csvDataService.js";
 
 export default {
   name: "SideNavigation",
@@ -489,6 +472,7 @@ export default {
       try {
         // Get impact indicator grist IDs for Synthèse sector, optionally filtered by axe (no submenu for "Indicateur d'impact - autres")
         const engagementIds = [];
+        
         if (this.navigationData) {
           const syntheseSector = this.navigationData.sectors.find(s => s.name === 'Synthèse');
           if (syntheseSector) {
@@ -498,6 +482,14 @@ export default {
               axeIndicators.forEach(item => {
                 if (item.gristId) engagementIds.push(item.gristId);
               });
+              
+              // Also include "Autres indicateurs" from chantiers when chantier name matches the axe
+              if (syntheseSector.chantiers && syntheseSector.chantiers[axe]) {
+                const autresIndicateurs = syntheseSector.chantiers[axe].leviers?.["Autres indicateurs"] || [];
+                autresIndicateurs.forEach(item => {
+                  if (item.gristId) engagementIds.push(item.gristId);
+                });
+              }
             } else {
               // Get all impact indicators (axes + indicateursImpactAutresByChantier)
               if (syntheseSector.indicateursImpact) {
@@ -512,6 +504,17 @@ export default {
                   indicators.forEach(item => {
                     if (item.gristId) engagementIds.push(item.gristId);
                   });
+                });
+              }
+              
+              // Also include "Autres indicateurs" from chantiers when chantier name is a taxonomy axe
+              if (syntheseSector.chantiers) {
+                Object.entries(syntheseSector.chantiers).forEach(([chantierName, chantier]) => {
+                  if (IMPACT_AXES.includes(chantierName) && chantier.leviers?.["Autres indicateurs"]) {
+                    chantier.leviers["Autres indicateurs"].forEach(item => {
+                      if (item.gristId) engagementIds.push(item.gristId);
+                    });
+                  }
                 });
               }
             }
