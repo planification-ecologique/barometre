@@ -1030,16 +1030,6 @@ function isImpactIndicator(levier) {
 }
 
 /**
- * Whether the levier (possibly list) contains "Indicateur de chantier".
- * @param {String|Array} levier - The levier value
- * @returns {Boolean}
- */
-function isChantierIndicator(levier) {
-  const list = Array.isArray(levier) ? levier : parseLevierList(levier);
-  return list.some(v => v === "Indicateur de chantier");
-}
-
-/**
  * Get the sort order for Levier types (lower = first).
  * "Indicateur d'impact - autres" appears below the others under each chantier.
  * @param {String} levier - The levier value
