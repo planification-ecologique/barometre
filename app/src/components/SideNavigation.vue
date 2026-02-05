@@ -126,7 +126,7 @@
               >
                 Chantiers sectoriels
               </span>
-              <div class="fr-collapse fr-collapse--expanded">
+              <div class="fr-collapse fr-collapse--expanded sidemenu-chantiers-expanded">
                 <ul class="fr-sidemenu__list">
                   <li class="fr-sidemenu__item" v-for="(chantier, index) in chantiers" :key="index">
                     <a class="fr-sidemenu__link" 
@@ -151,6 +151,23 @@
 </template>
 <script>
 import { getNavigationStructure } from "@/services/csvDataService.js";
+
+// Axes d'impact qui ne doivent pas apparaître comme chantiers sectoriels
+const IMPACT_AXES = [
+  "Atténuation climat",
+  "Adaptation climat",
+  "Biodiversité",
+  "Pollution",
+  "Economie Circulaire",
+  "Économie Circulaire",
+  "Eau",
+];
+
+function isImpactAxe(name) {
+  if (!name) return false;
+  const cleaned = String(name).trim();
+  return IMPACT_AXES.includes(cleaned);
+}
 
 export default {
   name: "SideNavigation",
@@ -207,6 +224,8 @@ export default {
           if (sectorData) {
             // Build chantiers list from the navigation data
             this.chantiers = Object.entries(sectorData.chantiers)
+              // Exclude impact axes from sectorial "Chantiers sectoriels" navigation
+              .filter(([name]) => !isImpactAxe(name))
               .map(([name, chantierData]) => ({
                 id: name.toLowerCase().replace(/[^a-z0-9]/g, '-'),
                 name: name,
@@ -746,6 +765,11 @@ a:hover:not([href]) {
 
 .fr-sidemenu__item > .fr-collapse.fr-collapse--expanded {
   max-height: 500px;
+}
+
+/* Sector view: chantiers list is always expanded and must not be cut off */
+.fr-sidemenu__item > .fr-collapse.sidemenu-chantiers-expanded.fr-collapse--expanded {
+  max-height: none;
 }
 
 .fr-sidemenu__item > .fr-collapse > .fr-sidemenu__list {

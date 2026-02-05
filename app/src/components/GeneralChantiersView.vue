@@ -137,6 +137,7 @@ export default {
         // Group indicators by sector, then by chantier_ou_impact
         // Include all indicators rattachés à un chantier (pas seulement "Indicateur de chantier")
         const sectorGroups = {};
+        const seenKeys = new Set();
         
         data.forEach(indicator => {
           // Support multiple sectors / chantiers per indicator when provided
@@ -160,6 +161,14 @@ export default {
 
             chantiers.forEach(chantierName => {
               const name = chantierName || 'Autres';
+
+              // Avoid displaying the same indicator twice in the same chantier of a sector
+              const uniqueId = indicator.id_indic || indicator.label_indic || '';
+              const key = `${sector}:::${name}:::${uniqueId}`;
+              if (seenKeys.has(key)) {
+                return;
+              }
+              seenKeys.add(key);
 
               // Initialize chantier within sector
               if (!sectorGroups[sector][name]) {
