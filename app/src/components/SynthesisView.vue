@@ -18,7 +18,6 @@
         </div>
       </article>
     </div>
-    
     <!-- Engagements section -->
     <div v-if="engagementsData.length > 0" class="fr-mt-5w">
       <div class="section-header">

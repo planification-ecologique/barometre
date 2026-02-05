@@ -208,37 +208,75 @@ export function setStagingDocId(docId) {
 }
 
 /**
- * Internal function to parse the "Chantier ou Impact" column
+ * Parse the "Chantier ou Impact" column into a list of { sector, chantierOuImpact } pairs.
+ * The Grist column can now contain multiple values (one per line, optionally separated by ";").
+ * @param {String} value - The raw column value
+ * @returns {Array<{ sector: string|null, chantierOuImpact: string|null }>}
+ */
+function parseChantierOuImpactList(value) {
+  if (!value || value === 'nan') {
+    return [];
+  }
+  // Split into entries:
+  // - primarily on new lines (multi-select from Grist)
+  // - accept ";" as a secondary separator if present
+  // - and split on ", " only when the remainder clearly starts a new
+  //   "sector / chantier" pair (we detect a "/" later in the remainder),
+  //   to avoid splitting inside labels such as "(pollution lumineuse, EEEE)".
+  const rawEntries = value
+    .split(/[\r\n]+/) // first, split on real line breaks
+    .flatMap(entry => entry.split(';')) // then on ';' inside each line
+    .flatMap(entry => entry.split(/,\s+(?=[^/]+\/)/)) // then on ", " only if a "/" follows somewhere
+    .map(entry => entry.trim())
+    .filter(Boolean);
+
+  const results = [];
+
+  const cleanPart = (str) => {
+    if (!str) return '';
+    // Remove surrounding quotes and extra spaces
+    let cleaned = str.replace(/^[\s"']+|[\s"']+$/g, '').trim();
+    // Handle values like ""Texte"" coming from CSV escaping
+    cleaned = cleaned.replace(/^"(.*)"$/, '$1').replace(/^'(.*)'$/, '$1').trim();
+    return cleaned;
+  };
+
+  rawEntries.forEach(entry => {
+    // Normalize slashes and whitespace inside each entry
+    let line = entry.replace(/\s*\/\s*/g, ' / ');
+    line = line.replace(/\s+/g, ' ').trim();
+    if (!line) return;
+
+    const parts = line.split(' / ');
+
+    if (parts.length >= 2) {
+      results.push({
+        sector: cleanPart(parts[0]),
+        chantierOuImpact: cleanPart(parts.slice(1).join(' / '))
+      });
+    } else {
+      results.push({
+        sector: cleanPart(parts[0]),
+        chantierOuImpact: null
+      });
+    }
+  });
+
+  return results;
+}
+
+/**
+ * Internal helper to get a single { sector, chantierOuImpact } pair
+ * from the "Chantier ou Impact" column (uses the first entry when multiple exist).
  * @param {String} value - The raw column value
  * @returns {Object} - { sector, chantierOuImpact }
  */
 function parseChantierOuImpactInternal(value) {
-  if (!value || value === 'nan') {
+  const list = parseChantierOuImpactList(value);
+  if (!list || list.length === 0) {
     return { sector: null, chantierOuImpact: null };
   }
-  
-  // Remove all types of whitespace (newlines, tabs, spaces) from start and end
-  // Also remove any quotes that might be in the value
-  let normalized = value.replace(/^[\s"']+|[\s"']+$/g, '');
-  
-  // Handle multiline format (e.g., "Synthèse / \nAtténuation climat")
-  // Replace newlines and surrounding whitespace with a single space
-  normalized = normalized.replace(/[\r\n]+/g, ' ');
-  // Replace any combination of whitespace and slashes with " / "
-  normalized = normalized.replace(/\s*\/\s*/g, ' / ');
-  // Replace multiple spaces with single space
-  normalized = normalized.replace(/\s+/g, ' ').trim();
-  
-  const parts = normalized.split(' / ');
-  
-  if (parts.length >= 2) {
-    return {
-      sector: parts[0].trim(),
-      chantierOuImpact: parts.slice(1).join(' / ').trim()
-    };
-  }
-  
-  return { sector: parts[0].trim(), chantierOuImpact: null };
+  return list[0];
 }
 
 /**
@@ -367,7 +405,8 @@ export function transformCSVData(csvData, query) {
 
     // Parse the "Chantier ou Impact" column
     const chantierOuImpactRaw = item['Chantier ou Impact'] || '';
-    const parsedChantierOuImpact = parseChantierOuImpactInternal(chantierOuImpactRaw);
+    const chantierOuImpactList = parseChantierOuImpactList(chantierOuImpactRaw);
+    const parsedChantierOuImpact = chantierOuImpactList[0] || { sector: null, chantierOuImpact: null };
 
     // Segment from last measured year to 2030 target (for blue trajectory line)
     let targetSegment = null;
@@ -436,8 +475,17 @@ export function transformCSVData(csvData, query) {
       unite: formattedUnitLong,
       // Add new fields from Grist
       levier: item['Levier'] || '',
+      // Primary sector / chantier (backward compatible with existing components)
       chantier_ou_impact: parsedChantierOuImpact.chantierOuImpact || '',
       sector: parsedChantierOuImpact.sector || '',
+      // Full lists so that indicators attached to several chantiers / axes
+      // can be displayed in all relevant places.
+      chantier_ou_impact_list: chantierOuImpactList
+        .map(entry => entry.chantierOuImpact)
+        .filter(Boolean),
+      sector_list: chantierOuImpactList
+        .map(entry => entry.sector)
+        .filter(Boolean),
       // IRPE / Écolab: indicator ids for regional data (column IRPE_ids or ID Indicateur hub Ecolab)
       irpe_ids: parseIrpeIds(item['IRPE ids'], item['IRPE valide']),
       values: {
@@ -916,13 +964,79 @@ function parseChantierOuImpact(value) {
 }
 
 /**
+ * Parse the "Levier" column which is a list field.
+ * We avoid naïvely splitting on all commas to not break labels that contain commas.
+ * Instead, we detect known levier labels inside the string.
+ * @param {String} value - Raw levier value
+ * @returns {string[]} - List of levier labels
+ */
+function parseLevierList(value) {
+  if (value == null) return [];
+  let s = String(value).trim();
+  if (!s || s.toLowerCase() === 'nan') return [];
+
+  // Clean surrounding quotes if the whole field is quoted
+  s = s.replace(/^[\s"']+|[\s"']+$/g, '').trim();
+
+  const knownLeviers = [
+    "Indicateur d'impact",
+    "Indicateur de chantier",
+    "Indicateur d'impact - autres",
+    "Autres indicateurs",
+  ];
+
+  const result = [];
+
+  knownLeviers.forEach(label => {
+    if (s.includes(label)) {
+      result.push(label);
+    }
+  });
+
+  // If none of the known labels matched, keep the raw string as a single entry
+  if (result.length === 0 && s) {
+    result.push(s);
+  }
+
+  return result;
+}
+
+// Known taxonomy axes used for impact indicators
+const IMPACT_AXES = [
+  'Atténuation climat',
+  'Adaptation climat',
+  'Biodiversité',
+  'Pollution',
+  'Economie Circulaire',
+  'Économie Circulaire',
+  'Eau',
+];
+
+function isImpactAxe(name) {
+  if (!name) return false;
+  const cleaned = String(name).trim();
+  return IMPACT_AXES.includes(cleaned);
+}
+
+/**
  * Whether the levier is an impact indicator (shown in "Indicateurs d'impact" section, not in chantiers).
  * Includes "Indicateur d'impact" (grouped by axe) and "Indicateur d'impact - autres" (grouped by chantier, no submenu).
  * @param {String} levier - The levier value
  * @returns {Boolean}
  */
 function isImpactIndicator(levier) {
-  return levier === "Indicateur d'impact" || levier === "Indicateur d'impact - autres";
+  const list = Array.isArray(levier) ? levier : parseLevierList(levier);
+  return list.some(v => v === "Indicateur d'impact" || v === "Indicateur d'impact - autres");
+}
+
+/**
+ * Whether the levier (possibly list) contains "Indicateur de chantier".
+ * @param {String|Array} levier - The levier value
+ * @returns {Boolean}
+ */
+function isChantierIndicator(levier) {
+  const list = Array.isArray(levier) ? levier : parseLevierList(levier);
+  return list.some(v => v === "Indicateur de chantier");
 }
 
 /**
@@ -961,67 +1075,104 @@ export async function getNavigationStructure(environment = 'production') {
     
     filteredData.forEach(item => {
       const chantierOuImpactRaw = item['Chantier ou Impact'] || '';
-      const levier = item['Levier'] || '';
+      const levierRaw = item['Levier'] || '';
       const gristId = item['ID'] || '';
       
-      const { sector, chantierOuImpact } = parseChantierOuImpact(chantierOuImpactRaw);
+      // Allow multiple sector / chantier associations for a single indicator
+      const associations = parseChantierOuImpactList(chantierOuImpactRaw);
+      const effectiveAssociations = associations.length
+        ? associations
+        : [parseChantierOuImpactInternal(chantierOuImpactRaw)];
+
+      // Allow multiple leviers for a single indicator using known labels
+      const levierList = parseLevierList(levierRaw);
+      const effectiveLeviers = levierList.length ? levierList : [levierRaw || ''];
       
-      if (!sector) return;
-      
-      // Initialize sector if not exists
-      if (!sectors[sector]) {
-        sectors[sector] = {
-          name: sector,
-          indicateursImpact: {},  // Grouped by taxonomy_axe (for Indicateur d'impact)
-          indicateursImpactAutresByChantier: {},  // Grouped by chantier name (for Indicateur d'impact - autres, no submenu)
-          chantiers: {}          // Grouped by chantier name
-        };
-      }
-      
-      // Determine if this is an impact indicator or a chantier/levier
-      if (levier === "Indicateur d'impact") {
-        // Group by chantierOuImpact (taxonomy_axe like "Atténuation climat")
-        const axe = chantierOuImpact || 'Autre';
-        if (!sectors[sector].indicateursImpact[axe]) {
-          sectors[sector].indicateursImpact[axe] = [];
-        }
-        sectors[sector].indicateursImpact[axe].push({
-          gristId,
-          levier,
-          indicator: item
-        });
-      } else if (levier === "Indicateur d'impact - autres") {
-        // Group by chantier name; displayed on Indicateurs d'impact page under chantier title, no submenu
-        const chantierName = chantierOuImpact || 'Autres';
-        if (!sectors[sector].indicateursImpactAutresByChantier[chantierName]) {
-          sectors[sector].indicateursImpactAutresByChantier[chantierName] = [];
-        }
-        sectors[sector].indicateursImpactAutresByChantier[chantierName].push({
-          gristId,
-          levier,
-          indicator: item
-        });
-      } else {
-        // This is a chantier or levier indicator
-        const chantierName = chantierOuImpact || 'Autres';
-        if (!sectors[sector].chantiers[chantierName]) {
-          sectors[sector].chantiers[chantierName] = {
-            name: chantierName,
-            leviers: {}
+      effectiveAssociations.forEach(({ sector, chantierOuImpact }) => {
+        if (!sector) return;
+        
+        // Initialize sector if not exists
+        if (!sectors[sector]) {
+          sectors[sector] = {
+            name: sector,
+            indicateursImpact: {},  // Grouped by taxonomy_axe (for Indicateur d'impact)
+            indicateursImpactAutresByChantier: {},  // Grouped by chantier name (for Indicateur d'impact - autres, no submenu)
+            chantiers: {}          // Grouped by chantier name
           };
         }
         
-        // Group by levier within the chantier
-        const levierName = levier || 'Autres indicateurs';
-        if (!sectors[sector].chantiers[chantierName].leviers[levierName]) {
-          sectors[sector].chantiers[chantierName].leviers[levierName] = [];
-        }
-        sectors[sector].chantiers[chantierName].leviers[levierName].push({
-          gristId,
-          levier: levierName,
-          indicator: item
+        // Determine if this is an impact indicator or a chantier/levier for each levier label
+        effectiveLeviers.forEach(levierName => {
+          const cleanLevier = (levierName || '').trim();
+          if (!cleanLevier) return;
+
+          if (cleanLevier === "Indicateur d'impact") {
+            // Group by chantierOuImpact (taxonomy_axe like "Atténuation climat")
+            const axe = chantierOuImpact || 'Autre';
+            if (!sectors[sector].indicateursImpact[axe]) {
+              sectors[sector].indicateursImpact[axe] = [];
+            }
+            sectors[sector].indicateursImpact[axe].push({
+              gristId,
+              levier: cleanLevier,
+              indicator: item
+            });
+
+            // When an indicator d'impact is also associated to a non-axis
+            // chantier (e.g. "Développer des pratiques alimentaires saines et durables"),
+            // expose it as an "Indicateur de chantier" for that chantier.
+            if (!isImpactAxe(chantierOuImpact)) {
+              const chantierName = chantierOuImpact || 'Autres';
+              if (!sectors[sector].chantiers[chantierName]) {
+                sectors[sector].chantiers[chantierName] = {
+                  name: chantierName,
+                  leviers: {}
+                };
+              }
+              const levierKey = "Indicateur de chantier";
+              if (!sectors[sector].chantiers[chantierName].leviers[levierKey]) {
+                sectors[sector].chantiers[chantierName].leviers[levierKey] = [];
+              }
+              sectors[sector].chantiers[chantierName].leviers[levierKey].push({
+                gristId,
+                levier: levierKey,
+                indicator: item
+              });
+            }
+          } else if (cleanLevier === "Indicateur d'impact - autres") {
+            // Group by chantier name; displayed on Indicateurs d'impact page under chantier title, no submenu
+            const chantierName = chantierOuImpact || 'Autres';
+            if (!sectors[sector].indicateursImpactAutresByChantier[chantierName]) {
+              sectors[sector].indicateursImpactAutresByChantier[chantierName] = [];
+            }
+            sectors[sector].indicateursImpactAutresByChantier[chantierName].push({
+              gristId,
+              levier: cleanLevier,
+              indicator: item
+            });
+          } else {
+            // This is a chantier or levier indicator
+            const chantierName = chantierOuImpact || 'Autres';
+            if (!sectors[sector].chantiers[chantierName]) {
+              sectors[sector].chantiers[chantierName] = {
+                name: chantierName,
+                leviers: {}
+              };
+            }
+            
+            // Group by levier within the chantier
+            const levierKey = cleanLevier || 'Autres indicateurs';
+            if (!sectors[sector].chantiers[chantierName].leviers[levierKey]) {
+              sectors[sector].chantiers[chantierName].leviers[levierKey] = [];
+            }
+            sectors[sector].chantiers[chantierName].leviers[levierKey].push({
+              gristId,
+              levier: levierKey,
+              indicator: item
+            });
+          }
         });
-      }
+      });
     });
     
     // Enrich the structure with all chantiers & leviers from the dedicated
@@ -1098,70 +1249,6 @@ export async function getNavigationStructure(environment = 'production') {
     };
   } catch (error) {
     console.error('Error building navigation structure from CSV:', error);
-    throw error;
-  }
-}
-
-/**
- * Get indicators filtered by sector and optionally by chantier/levier
- * @param {Object} options - Filter options
- * @param {String} environment - Environment to use
- * @returns {Promise} - Promise resolving to filtered indicators
- */
-export async function getIndicatorsByStructure(options, environment = 'production') {
-  const { sector, chantierOuImpact, levier, viewType } = options;
-  
-  try {
-    const csvData = await fetchCSVData(environment);
-    
-    // Filter out items marked for deletion
-    let filteredData = csvData.filter(item => item['A supprimer de la V1'] !== 'true');
-    
-    // Filter by sector
-    if (sector) {
-      filteredData = filteredData.filter(item => {
-        const parsed = parseChantierOuImpact(item['Chantier ou Impact']);
-        return parsed.sector === sector;
-      });
-    }
-    
-    // Filter by viewType (impact vs chantier)
-    if (viewType === 'impact') {
-      filteredData = filteredData.filter(item => isImpactIndicator(item['Levier']));
-    } else if (viewType === 'chantier') {
-      filteredData = filteredData.filter(item => !isImpactIndicator(item['Levier']));
-    }
-    
-    // Filter by chantierOuImpact (axe or chantier name)
-    if (chantierOuImpact) {
-      filteredData = filteredData.filter(item => {
-        const parsed = parseChantierOuImpact(item['Chantier ou Impact']);
-        return parsed.chantierOuImpact === chantierOuImpact;
-      });
-    }
-    
-    // Filter by specific levier
-    if (levier) {
-      filteredData = filteredData.filter(item => item['Levier'] === levier);
-    }
-    
-    // Get grist IDs
-    const gristIds = filteredData.map(item => item['ID']).filter(id => id);
-    
-    // Use the standard query method
-    const query = {
-      filter_by: [
-        { field: 'grist_ids', values: gristIds }
-      ],
-      time_period: {
-        date_start: '2015-01-01',
-        date_end: '2031-01-01'
-      }
-    };
-    
-    return await getIndicators(query, environment);
-  } catch (error) {
-    console.error('Error getting indicators by structure:', error);
     throw error;
   }
 }

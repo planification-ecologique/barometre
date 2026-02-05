@@ -135,40 +135,43 @@ export default {
     groupChantiersBySector(data) {
       try {
         // Group indicators by sector, then by chantier_ou_impact
-        // Only include "Indicateur de chantier" indicators
+        // Include all indicators rattachés à un chantier (pas seulement "Indicateur de chantier")
         const sectorGroups = {};
         
         data.forEach(indicator => {
-          // Use the sector and chantier_ou_impact fields from the transformed data
-          const sector = indicator.sector || 'Autre';
-          const chantierName = indicator.chantier_ou_impact || 'Autres';
-          const levier = indicator.levier || '';
-          
-          // Skip "Synthèse" sector
-          if (sector === 'Synthèse') {
-            return;
-          }
-          
-          // Only include "Indicateur de chantier" indicators
-          if (levier !== "Indicateur de chantier") {
-            return;
-          }
-          
-          // Initialize sector group
-          if (!sectorGroups[sector]) {
-            sectorGroups[sector] = {};
-          }
-          
-          // Initialize chantier within sector
-          if (!sectorGroups[sector][chantierName]) {
-            sectorGroups[sector][chantierName] = {
-              name: chantierName,
-              indicators: []
-            };
-          }
-          
-          // Add indicator to chantier
-          sectorGroups[sector][chantierName].indicators.push(indicator);
+          // Support multiple sectors / chantiers per indicator when provided
+          const sectors = Array.isArray(indicator.sector_list) && indicator.sector_list.length
+            ? indicator.sector_list
+            : [indicator.sector || 'Autre'];
+          const chantiers = Array.isArray(indicator.chantier_ou_impact_list) && indicator.chantier_ou_impact_list.length
+            ? indicator.chantier_ou_impact_list
+            : [indicator.chantier_ou_impact || 'Autres'];
+
+          sectors.forEach(sector => {
+            // Skip "Synthèse" sector
+            if (sector === 'Synthèse') {
+              return;
+            }
+
+            // Initialize sector group
+            if (!sectorGroups[sector]) {
+              sectorGroups[sector] = {};
+            }
+
+            chantiers.forEach(chantierName => {
+              const name = chantierName || 'Autres';
+
+              // Initialize chantier within sector
+              if (!sectorGroups[sector][name]) {
+                sectorGroups[sector][name] = {
+                  name,
+                  indicators: []
+                };
+              }
+
+              sectorGroups[sector][name].indicators.push(indicator);
+            });
+          });
         });
         
         // Convert to sorted arrays for display

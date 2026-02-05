@@ -64,7 +64,11 @@
     
     <!-- No data message -->
     <div v-if="sortedAxesEntries.length === 0 && sortedChantierAutresEntries.length === 0" class="fr-mt-5w">
-      <p>Pas de données disponibles pour les engagements.</p>
+      <p v-if="params.axe === 'Adaptation climat'">
+        Bien que la France soit dotée d’un plan national d’adaptation au changement climatique, les méthodologies de mesure du niveau de résilience restent à définir.
+        Nous disposons à ce stade de peu d’indicateurs permettant de piloter nos efforts d’adaptation, puisque les données quantifiables concernent davantage les dommages qui seraient engendrés par une adaptation tardive voire inexistante au changement climatique.
+      </p>
+      <p v-else>Pas de données disponibles pour les engagements.</p>
     </div>
   </div>
 </template>
@@ -155,23 +159,31 @@ export default {
         
         data.forEach(indicator => {
           const levier = indicator.levier || '';
-          const chantierOuImpact = indicator.chantier_ou_impact || 'Autre';
+          const axes = Array.isArray(indicator.chantier_ou_impact_list) && indicator.chantier_ou_impact_list.length
+            ? indicator.chantier_ou_impact_list
+            : [indicator.chantier_ou_impact || 'Autre'];
           
-          if (levier === "Indicateur d'impact - autres") {
-            // Group by chantier name (chantier_ou_impact); displayed under chantier title, no submenu
-            if (!seenByChantierAutres.has(indicator.label_indic)) {
-              seenByChantierAutres.add(indicator.label_indic);
-              if (!chantierAutresGroups[chantierOuImpact]) chantierAutresGroups[chantierOuImpact] = [];
-              chantierAutresGroups[chantierOuImpact].push(indicator);
+          axes.forEach(chantierOuImpact => {
+            const axeName = chantierOuImpact || 'Autre';
+
+            if (levier === "Indicateur d'impact - autres") {
+              // Group by chantier name (chantier_ou_impact); displayed under chantier title, no submenu
+              const key = `${axeName}:::${indicator.label_indic}`;
+              if (!seenByChantierAutres.has(key)) {
+                seenByChantierAutres.add(key);
+                if (!chantierAutresGroups[axeName]) chantierAutresGroups[axeName] = [];
+                chantierAutresGroups[axeName].push(indicator);
+              }
+            } else {
+              // "Indicateur d'impact": group by taxonomy axe (chantier_ou_impact)
+              const key = `${axeName}:::${indicator.label_indic}`;
+              if (!seenByAxe.has(key)) {
+                seenByAxe.add(key);
+                if (!axeGroups[axeName]) axeGroups[axeName] = [];
+                axeGroups[axeName].push(indicator);
+              }
             }
-          } else {
-            // "Indicateur d'impact": group by taxonomy axe (chantier_ou_impact)
-            if (!seenByAxe.has(indicator.label_indic)) {
-              seenByAxe.add(indicator.label_indic);
-              if (!axeGroups[chantierOuImpact]) axeGroups[chantierOuImpact] = [];
-              axeGroups[chantierOuImpact].push(indicator);
-            }
-          }
+          });
         });
         
         this.engagementsByAxe = axeGroups;

@@ -47,7 +47,7 @@
                       Tableau de synthèse
                     </a>
                   </li>
-                  <li class="fr-sidemenu__item" v-for="axe in taxonomyAxes" :key="axe">
+                  <li class="fr-sidemenu__item" v-for="axe in displayedTaxonomyAxes" :key="axe">
                     <a class="fr-sidemenu__link" 
                       :title="axe"
                       @click="set_general_engagements(axe)"
@@ -168,6 +168,14 @@ export default {
       navigationData: null,  // Store the full navigation structure
       isLoading: true,
     };
+  },
+  computed: {
+    displayedTaxonomyAxes() {
+      const axes = Array.isArray(this.taxonomyAxes) ? [...this.taxonomyAxes] : [];
+      const adaptationLabel = 'Adaptation climat';
+      const otherAxes = axes.filter(a => a !== adaptationLabel);
+      return [adaptationLabel, ...otherAxes];
+    },
   },
   props: {
     initParams: {

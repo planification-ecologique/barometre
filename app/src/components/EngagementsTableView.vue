@@ -84,21 +84,28 @@ export default {
     buildTableData(data) {
       try {
         const rows = [];
-        const seenIndicators = new Set();
+        const seenRows = new Set();
         
         // Build table directly from data - use chantier_ou_impact as the "engagement" name
         data.forEach(indicator => {
-          // Avoid duplicates (from multi-line charts)
-          if (seenIndicators.has(indicator.label_indic)) {
-            return;
-          }
-          seenIndicators.add(indicator.label_indic);
-          
-          rows.push({
-            engagement: indicator.chantier_ou_impact || '-',
-            indicateur: indicator.label_indic || '-',
-            cible2030: this.formatValue(indicator.objectif_valeur_cible, indicator.unite),
-            derniereValeur: this.formatLastValue(indicator),
+          const engagements = Array.isArray(indicator.chantier_ou_impact_list) && indicator.chantier_ou_impact_list.length
+            ? indicator.chantier_ou_impact_list
+            : [indicator.chantier_ou_impact || '-'];
+
+          engagements.forEach(engagementName => {
+            const key = `${engagementName || '-'}:::${indicator.label_indic || '-'}`;
+            // Avoid duplicates (from multi-line charts or repeated mappings)
+            if (seenRows.has(key)) {
+              return;
+            }
+            seenRows.add(key);
+
+            rows.push({
+              engagement: engagementName || '-',
+              indicateur: indicator.label_indic || '-',
+              cible2030: this.formatValue(indicator.objectif_valeur_cible, indicator.unite),
+              derniereValeur: this.formatLastValue(indicator),
+            });
           });
         });
         
