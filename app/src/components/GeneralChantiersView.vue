@@ -69,6 +69,7 @@
 import GraphBox from "./GraphBox.vue";
 import EnvironnementImg from "./components_sgv/EnvironnementImg.vue";
 import SectorIcon from "./SectorIcon.vue";
+import { isImpactAxe } from "@/services/csvDataService.js";
 
 export default {
   name: "GeneralChantiersView",
@@ -161,6 +162,11 @@ export default {
 
             chantiers.forEach(chantierName => {
               const name = chantierName || 'Autres';
+
+              // Filter out indicators where chantierOuImpact is an impact (from IMPACT_AXES)
+              if (isImpactAxe(name)) {
+                return;
+              }
 
               // Avoid displaying the same indicator twice in the same chantier of a sector
               const uniqueId = indicator.id_indic || indicator.label_indic || '';
