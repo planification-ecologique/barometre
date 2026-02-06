@@ -44,6 +44,7 @@
 
 <script>
 import EnvironnementImg from "./components_sgv/EnvironnementImg.vue";
+import { isImpactAxe } from "@/services/csvDataService.js";
 
 export default {
   name: "ChantiersTableView",
@@ -93,6 +94,11 @@ export default {
             : [indicator.chantier_ou_impact || '-'];
 
           chantiers.forEach(chantierName => {
+            // Filter out entries where chantierOuImpact is an impact axe (IMPACT_AXES)
+            if (isImpactAxe(chantierName)) {
+              return;
+            }
+
             const key = `${chantierName || '-'}:::${indicator.label_indic || '-'}`;
             // Avoid duplicates (from multi-line charts or repeated mappings)
             if (seenRows.has(key)) {

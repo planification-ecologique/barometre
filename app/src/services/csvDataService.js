@@ -1007,8 +1007,8 @@ export const IMPACT_AXES = [
   'Adaptation climat',
   'Biodiversité',
   'Pollution',
-  'Economie Circulaire',
-  'Économie Circulaire',
+  'Economie circulaire',
+  'Économie circulaire',
   'Eau',
 ];
 

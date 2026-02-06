@@ -99,6 +99,7 @@ export default {
 .view-data {
   display: flex;
   justify-content: space-between;
+  font-size: 1.5rem;
 }
 .fr-btn-text{
   text-align: center;

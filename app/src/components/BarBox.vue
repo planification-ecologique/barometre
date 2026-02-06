@@ -133,6 +133,7 @@ watch: {
     align-items: center;
     font-weight: bolder;
     margin-bottom: 0.5rem;
+    font-size: 1.1rem;
 }
 
 .cardLegend {

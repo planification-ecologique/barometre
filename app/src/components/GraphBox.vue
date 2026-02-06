@@ -263,7 +263,7 @@ export default {
   data() {
     return {
       displayChart: false,
-      isAccordionOpen: true,
+      isAccordionOpen: false,
       cible: undefined,
       regionsList: [],
       selectedRegionCode: "",
@@ -608,11 +608,12 @@ export default {
   align-items: center;
   font-weight: bolder;
   margin-bottom: 0.5rem;
+  font-size: 1.25rem;
 }
 /* Mobile-specific adjustments */
 @media (max-width: 768px) {
   .cardTitle {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     line-height: 1.1;
   }
 }
