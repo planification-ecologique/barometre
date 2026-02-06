@@ -201,9 +201,9 @@
           class="fr-accordion__btn fr-text--xs"
           :aria-expanded="isAccordionOpen ? 'true' : 'false'"
           :aria-controls="idAccordion"
-          title="Description de l'indicateur"
+          title="Commentaires sur l'indicateur"
         >
-          Description de l'indicateur
+          Commentaires sur l'indicateur
         </button>
       </h3>
       <div
