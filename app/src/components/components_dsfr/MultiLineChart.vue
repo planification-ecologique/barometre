@@ -290,6 +290,9 @@ export default {
           // Make the default line fully transparent; we'll custom-draw per-segment below
           borderColor: 'rgba(0,0,0,0)',
           type: 'line',
+          // Allow the visual line to be continuous across null points;
+          // the actual segment rendering is handled in afterDatasetDraw.
+          spanGaps: true,
           pointRadius: 4,
           pointStyle: 'circle',
           pointBackgroundColor: colorPerPoint,
@@ -353,7 +356,10 @@ export default {
           }
         },
         {
-          // Custom per-segment line drawing with opacity of the second point
+          // Custom per-segment line drawing that:
+          // - skips null / missing points
+          // - connects the last valid point to the next valid one (even if there are gaps in between)
+          // - uses the opacity of the destination point to style the segment
           afterDatasetDraw: function (chart, args, options) {
             const dsIndex = args.index
             if (!self.showLine[dsIndex]) return
@@ -367,39 +373,47 @@ export default {
             ctx.lineJoin = 'round'
             ctx.lineCap = 'round'
 
-            for (let i = 1; i < points.length; i++) {
-              const p0 = points[i - 1]._view
-              const p1 = points[i]._view
-              if (!p0 || !p1) continue
+            let lastValid = null
+            for (let i = 0; i < points.length; i++) {
+              const view = points[i] && points[i]._view
+              if (!view || view.y === null || Number.isNaN(view.y)) {
+                // Missing point: break the segment, wait for the next valid one
+                continue
+              }
 
-              // Determine alpha from the second point
-              let alpha = self.getExtrapolationAlpha()
-              try {
-                if (Array.isArray(self.pointOpacityParse)) {
-                  if (Array.isArray(self.pointOpacityParse[0])) {
-                    alpha = (self.pointOpacityParse[dsIndex] && self.pointOpacityParse[dsIndex][i] !== undefined)
-                      ? self.pointOpacityParse[dsIndex][i]
-                      : self.getExtrapolationAlpha()
-                  } else {
-                    alpha = (self.pointOpacityParse[i] !== undefined) ? self.pointOpacityParse[i] : self.getExtrapolationAlpha()
+              if (lastValid) {
+                // Determine alpha from the current point index i
+                let alpha = self.getExtrapolationAlpha()
+                try {
+                  if (Array.isArray(self.pointOpacityParse)) {
+                    if (Array.isArray(self.pointOpacityParse[0])) {
+                      alpha = (self.pointOpacityParse[dsIndex] && self.pointOpacityParse[dsIndex][i] !== undefined)
+                        ? self.pointOpacityParse[dsIndex][i]
+                        : self.getExtrapolationAlpha()
+                    } else {
+                      alpha = (self.pointOpacityParse[i] !== undefined) ? self.pointOpacityParse[i] : self.getExtrapolationAlpha()
+                    }
                   }
+                } catch (e) {
+                  alpha = self.getExtrapolationAlpha()
                 }
-              } catch (e) {
-                alpha = self.getExtrapolationAlpha()
+
+                const stroke = self.hexToRgba(self.colorParse[dsIndex], alpha)
+                ctx.strokeStyle = stroke
+                // Dashed for non-fully-opaque (projection/target), solid for measured
+                if (Number(alpha) < 1) {
+                  ctx.setLineDash([6, 4])
+                } else {
+                  ctx.setLineDash([])
+                }
+                ctx.beginPath()
+                ctx.moveTo(lastValid.x, lastValid.y)
+                ctx.lineTo(view.x, view.y)
+                ctx.stroke()
               }
 
-              const stroke = self.hexToRgba(self.colorParse[dsIndex], alpha)
-              ctx.strokeStyle = stroke
-              // Dashed for non-fully-opaque (projection/target), solid for measured
-              if (Number(alpha) < 1) {
-                ctx.setLineDash([6, 4])
-              } else {
-                ctx.setLineDash([])
-              }
-              ctx.beginPath()
-              ctx.moveTo(p0.x, p0.y)
-              ctx.lineTo(p1.x, p1.y)
-              ctx.stroke()
+              // Update last valid point
+              lastValid = view
             }
             ctx.restore()
           }
@@ -425,7 +439,9 @@ export default {
                 ctx.restore()
 
                 self.yparse.forEach(function (yj, j) {
-                  y = yAxis.getPixelForValue(yj[index])
+                  const v = yj[index]
+                  if (v === null || v === undefined || Number.isNaN(v)) return
+                  y = yAxis.getPixelForValue(v)
                   ctx.save()
                   ctx.beginPath()
                   ctx.moveTo(xAxis.left, y)
@@ -515,12 +531,14 @@ export default {
                     if (self.xAxisType === 'linear') {
                       const index = self.xparse[i].indexOf(tooltipItems.xLabel)
                       if (index !== -1) {
-                        label.push(self.yparse[i][index])
+                        const v = self.yparse[i][index]
+                        label.push((v === null || v === undefined || Number.isNaN(v)) ? undefined : v)
                       } else {
                         label.push(undefined)
                       }
                     } else {
-                      label.push(set.data[tooltipItems.index])
+                      const v = set.data[tooltipItems.index]
+                      label.push((v === null || v === undefined || Number.isNaN(v)) ? undefined : v)
                     }
                   }
                 })
@@ -575,7 +593,7 @@ export default {
                 const nodeName = self.$el.querySelector('.tooltip_dot').attributes[0].nodeName
                 divValue.innerHTML = ''
                 bodyLines[0].forEach(function (line, i) {
-                  if (line !== undefined) {
+                  if (line !== undefined && line !== null && !Number.isNaN(line)) {
                     divValue.innerHTML += '<span ' + nodeName + '= "" class="tooltip_dot" style = "background-color:' + color[i] + '"></span>' + ' ' + line + '<br>'
                   }
                 })

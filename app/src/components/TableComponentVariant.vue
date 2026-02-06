@@ -25,13 +25,13 @@
                 </tr>
             </thead>
             <tbody>
-                <tr v-for="(index) in annee.length" :key="index">
-                    <td>{{ annee[index-1] }}</td>
+                <tr v-for="(row, index) in filteredRows" :key="index">
+                    <td>{{ row.year }}</td>
                     <td
-                      v-for="(col, indexValue) in sortedColumns"
+                      v-for="(value, indexValue) in row.values"
                       :key="indexValue"
                     >
-                      {{ col.values[index-1] }}
+                      {{ value }}
                     </td>
                 </tr>
             </tbody>
@@ -80,6 +80,40 @@ export default {
                 const lb = (b.label || '').toString()
                 return la.localeCompare(lb, 'fr', { sensitivity: 'base' })
             })
+        },
+        /**
+         * Lignes filtrées : on enlève les années pour lesquelles
+         * toutes les colonnes sont vides / null / NaN.
+         */
+        filteredRows () {
+            if (!Array.isArray(this.annee) || this.annee.length === 0) {
+                return []
+            }
+            const cols = this.sortedColumns
+            const rowCount = this.annee.length
+            const rows = []
+
+            for (let i = 0; i < rowCount; i++) {
+                const year = this.annee[i]
+                const rowValues = cols.map(col => (Array.isArray(col.values) ? col.values[i] : undefined))
+
+                // Teste si au moins une valeur est réellement renseignée
+                const hasAnyValue = rowValues.some(v => {
+                    if (v === null || v === undefined) return false
+                    if (typeof v === 'number') return !isNaN(v)
+                    const s = String(v).trim()
+                    if (s === '' || s.toLowerCase() === 'null' || s.toLowerCase() === 'nan') return false
+                    return true
+                })
+
+                if (hasAnyValue) {
+                    rows.push({
+                        year,
+                        values: rowValues
+                    })
+                }
+            }
+            return rows
         }
     }
 }

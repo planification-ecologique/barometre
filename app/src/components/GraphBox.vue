@@ -445,6 +445,17 @@ export default {
         const lv = this.dataObj && this.dataObj.label_value
         const values = this.dataObj && this.dataObj.values
         if (!values) return undefined
+
+        // Multi-series case (grouped indicator: values is an array of arrays)
+        // -> make all visible points fully opaque (1) to avoid mismatches
+        // between sorted years and legacy label_value arrays.
+        if (Array.isArray(values) && Array.isArray(values[0])) {
+          const perSeries = values.map(series =>
+            Array.isArray(series) ? series.map(() => 1) : []
+          )
+          return JSON.stringify(perSeries)
+        }
+
         const length = Array.isArray(values?.x) ? (values.x[0]?.length || 0) : (values?.[0]?.length || 0)
         if (Array.isArray(lv)) {
           const arr = lv.map(v => (String(v).toLowerCase() === 'mesuré' ? 1 : 0.6))
