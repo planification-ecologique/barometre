@@ -86,7 +86,7 @@ export default {
         const rows = [];
         const seenRows = new Set();
         
-        // Build table directly from data - use chantier_ou_impact as the "engagement" name
+        // Build table directement depuis les données - utiliser chantier_ou_impact comme nom d'engagement
         data.forEach(indicator => {
           const engagements = Array.isArray(indicator.chantier_ou_impact_list) && indicator.chantier_ou_impact_list.length
             ? indicator.chantier_ou_impact_list
@@ -108,7 +108,15 @@ export default {
             });
           });
         });
-        
+
+        // Tri des lignes du tableau de synthèse des impacts :
+        // 1) par axe (engagement), 2) puis par indicateur, ordre alphabétique.
+        rows.sort((a, b) => {
+          const e = (a.engagement || '').localeCompare(b.engagement || '', 'fr', { sensitivity: 'base' });
+          if (e !== 0) return e;
+          return (a.indicateur || '').localeCompare(b.indicateur || '', 'fr', { sensitivity: 'base' });
+        });
+
         this.tableData = rows;
       } catch (error) {
         console.error("Error building table data:", error);

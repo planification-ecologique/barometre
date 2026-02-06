@@ -5,18 +5,34 @@
             <thead>
                 <tr>
                     <th scope="col">Année</th>
-                    <th class="valueCol"  :aria-describedby="'tooltip-'+index" v-for="(index) in valeurCol.length" :key="index" scope="col">{{ valeurCol[index-1] }}
-                    <span class="fr-tooltip fr-placement" :id="'tooltip-'+index" role="tooltip" aria-hidden="true">{{ valeurCol[index-1] }}</span>
+                    <th
+                      class="valueCol"
+                      v-for="(col, index) in sortedColumns"
+                      :key="index"
+                      :aria-describedby="'tooltip-' + index"
+                      scope="col"
+                    >
+                      {{ col.label }}
+                      <span
+                        class="fr-tooltip fr-placement"
+                        :id="'tooltip-' + index"
+                        role="tooltip"
+                        aria-hidden="true"
+                      >
+                        {{ col.label }}
+                      </span>
                     </th>
                 </tr>
             </thead>
             <tbody>
                 <tr v-for="(index) in annee.length" :key="index">
                     <td>{{ annee[index-1] }}</td>
-                    <td v-for="(indexValue) in valeurCol.length" :key="indexValue">{{ valeurValue[indexValue-1][index-1] }}
+                    <td
+                      v-for="(col, indexValue) in sortedColumns"
+                      :key="indexValue"
+                    >
+                      {{ col.values[index-1] }}
                     </td>
-                    <!-- <td>{{ valeur[index-1] }}</td> -->
-                    
                 </tr>
             </tbody>
         </table>
@@ -43,6 +59,27 @@ export default {
             type: [],
             required: true,
             default: ['Non défini']
+        }
+    },
+    computed: {
+        /**
+         * Colonnes triées alphabétiquement de gauche à droite
+         * en gardant l'alignement des valeurs par colonne.
+         */
+        sortedColumns () {
+            // Sécurise les cas où les props ne sont pas encore correctement peuplées
+            if (!Array.isArray(this.valeurCol) || !Array.isArray(this.valeurValue)) {
+                return []
+            }
+            const pairs = this.valeurCol.map((label, idx) => ({
+                label: label,
+                values: Array.isArray(this.valeurValue[idx]) ? this.valeurValue[idx] : []
+            }))
+            return pairs.sort((a, b) => {
+                const la = (a.label || '').toString()
+                const lb = (b.label || '').toString()
+                return la.localeCompare(lb, 'fr', { sensitivity: 'base' })
+            })
         }
     }
 }

@@ -89,6 +89,9 @@ export default {
         
         // Build table directly from data - use chantier_ou_impact as the "chantier" name
         data.forEach(indicator => {
+          const sectors = Array.isArray(indicator.sector_list) && indicator.sector_list.length
+            ? indicator.sector_list
+            : [indicator.sector || '-'];
           const chantiers = Array.isArray(indicator.chantier_ou_impact_list) && indicator.chantier_ou_impact_list.length
             ? indicator.chantier_ou_impact_list
             : [indicator.chantier_ou_impact || '-'];
@@ -99,22 +102,40 @@ export default {
               return;
             }
 
-            const key = `${chantierName || '-'}:::${indicator.label_indic || '-'}`;
-            // Avoid duplicates (from multi-line charts or repeated mappings)
-            if (seenRows.has(key)) {
+            // Ne pas afficher de ligne "sans chantier" dans le tableau de synthèse des secteurs
+            if (!chantierName || chantierName === '-') {
               return;
             }
-            seenRows.add(key);
 
-            rows.push({
-              chantier: chantierName || '-',
-              indicateur: indicator.label_indic || '-',
-              cible2030: this.formatValue(indicator.objectif_valeur_cible, indicator.unite),
-              derniereValeur: this.formatLastValue(indicator),
+            sectors.forEach(sectorName => {
+              const key = `${sectorName || '-'}:::${chantierName || '-'}:::${indicator.label_indic || '-'}`;
+              // Avoid duplicates (from multi-line charts or repeated mappings)
+              if (seenRows.has(key)) {
+                return;
+              }
+              seenRows.add(key);
+
+              rows.push({
+                // Le secteur n'est pas affiché mais sert à l'ordre de tri
+                sector: sectorName || '-',
+                chantier: chantierName || '-',
+                indicateur: indicator.label_indic || '-',
+                cible2030: this.formatValue(indicator.objectif_valeur_cible, indicator.unite),
+                derniereValeur: this.formatLastValue(indicator),
+              });
             });
           });
         });
-        
+
+        // Tri : d'abord par secteur (même s'il n'est pas visible), puis par chantier, puis par indicateur
+        rows.sort((a, b) => {
+          const s = (a.sector || '').localeCompare(b.sector || '', 'fr', { sensitivity: 'base' });
+          if (s !== 0) return s;
+          const c = (a.chantier || '').localeCompare(b.chantier || '', 'fr', { sensitivity: 'base' });
+          if (c !== 0) return c;
+          return (a.indicateur || '').localeCompare(b.indicateur || '', 'fr', { sensitivity: 'base' });
+        });
+
         this.tableData = rows;
       } catch (error) {
         console.error("Error building table data:", error);
