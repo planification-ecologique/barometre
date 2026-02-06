@@ -350,19 +350,58 @@ export function transformCSVData(csvData, query) {
     const values = [];
     const statuses = []; // mesuré, projection, cible
     
+    // First collect years that have a meaningful value for this indicator,
+    // to detect the active span. We only discard points that are:
+    // value === 0 AND label is empty (used as "no data" markers).
+    const presentYears = [];
     for (let i = 2017; i <= 2030; i++) {
       const yearStr = i.toString();
-      if (item[yearStr] && item[yearStr] !== '') {
+      const labelKey = `label_${yearStr}`;
+      const rawVal = item[yearStr];
+      const hasValue = rawVal !== undefined && rawVal !== null && rawVal !== '';
+      const hasLabel = item[labelKey] && item[labelKey] !== '';
+      const numVal = hasValue ? Number(String(rawVal).replace(',', '.')) : NaN;
+      // Keep the year if we have a non-zero numeric value, or any label.
+      if (
+        hasValue &&
+        !isNaN(numVal) &&
+        !(numVal === 0 && !hasLabel)
+      ) {
+        presentYears.push(yearStr);
+      }
+    }
+
+    if (presentYears.length > 0) {
+      const minYear = parseInt(presentYears[0], 10);
+      const maxYear = parseInt(presentYears[presentYears.length - 1], 10);
+
+      // Now build a continuous year axis from minYear to maxYear,
+      // filling missing years with null values and empty statuses.
+      for (let y = minYear; y <= maxYear; y++) {
+        const yearStr = y.toString();
         years.push(yearStr);
-        
-        // Parse floating point values correctly
-        // Replace commas with periods if needed (for French decimal format)
-        const normalizedValue = item[yearStr].toString().replace(',', '.');
-        // Parse and then limit to exactly two decimal places
-        values.push(parseFloat(parseFloat(normalizedValue).toFixed(2)));
-        
+
         const labelKey = `label_${yearStr}`;
-        statuses.push(item[labelKey] || '');
+        const rawVal = item[yearStr];
+        const hasValue = rawVal !== undefined && rawVal !== null && rawVal !== '';
+        const hasLabel = item[labelKey] && item[labelKey] !== '';
+        const numVal = hasValue ? Number(String(rawVal).replace(',', '.')) : NaN;
+
+        // Discard only values that are 0 AND have no label; keep all others.
+        // If the label is empty but the value is non-zero, treat it as "mesuré".
+        if (
+          hasValue &&
+          !isNaN(numVal) &&
+          !(numVal === 0 && !hasLabel)
+        ) {
+          values.push(parseFloat(parseFloat(numVal).toFixed(2)));
+          const rawLabel = item[labelKey] || '';
+          const effectiveLabel = rawLabel !== '' ? rawLabel : 'mesuré';
+          statuses.push(effectiveLabel);
+        } else {
+          values.push(null);
+          statuses.push('');
+        }
       }
     }
 
@@ -626,7 +665,10 @@ function determineChartType(item) {
 }
 
 /**
- * Group indicators by their label and process sub-groups
+ * Group indicators by their label and process sub-groups.
+ * Ensures that:
+ * - Years are sorted numerically
+ * - All sub-series are aligned on the same year axis
  * @param {Array} results - Processed indicator results
  * @returns {Array} - Grouped results
  */
@@ -644,17 +686,67 @@ function groupByIndicator(results) {
     
     if (!indicatorMap.has(key)) {
       // Initialize with first sub-group item
-      const baseItem = {...item};
+      const baseItem = { ...item };
       baseItem.label_sous_groupe = [item.label_sous_groupe];
-      // Make sure date is a nested array format expected by the chart component
-      baseItem.date = item.values.x;
-      baseItem.values = [item.values.ytab];
+
+      // Build a sorted year axis and align values to it
+      const rawDates = Array.isArray(item.values.x[0]) ? item.values.x[0] : item.values.x;
+      const valueMap = {};
+      rawDates.forEach((year, idx) => {
+        valueMap[year] = item.values.ytab[idx];
+      });
+      const sortedDates = [...rawDates].sort((a, b) => parseInt(a, 10) - parseInt(b, 10));
+      const alignedValues = sortedDates.map(year =>
+        Object.prototype.hasOwnProperty.call(valueMap, year) ? valueMap[year] : null
+      );
+
+      // Format expected by the chart & table components
+      baseItem.date = [sortedDates];
+      baseItem.values = [alignedValues];
       indicatorMap.set(key, baseItem);
     } else {
       // Add to existing grouped item
       const groupedItem = indicatorMap.get(key);
       groupedItem.label_sous_groupe.push(item.label_sous_groupe);
-      groupedItem.values.push(item.values.ytab);
+
+      // Current common axis
+      const existingDates = Array.isArray(groupedItem.date?.[0])
+        ? groupedItem.date[0].slice()
+        : [];
+
+      // Dates for the new sub-group
+      const newDates = Array.isArray(item.values.x[0]) ? item.values.x[0] : item.values.x;
+
+      // Build merged, unique, numerically sorted axis
+      const mergedDates = Array.from(
+        new Set([...(existingDates || []), ...(newDates || [])])
+      ).sort((a, b) => parseInt(a, 10) - parseInt(b, 10));
+
+      // Realign all existing series to mergedDates
+      if (groupedItem.values && Array.isArray(groupedItem.values)) {
+        groupedItem.values = groupedItem.values.map(seriesValues => {
+          const seriesMap = {};
+          (existingDates || []).forEach((year, idx) => {
+            seriesMap[year] = seriesValues[idx];
+          });
+          return mergedDates.map(year =>
+            Object.prototype.hasOwnProperty.call(seriesMap, year) ? seriesMap[year] : null
+          );
+        });
+      }
+
+      // Build aligned series for the new sub-group
+      const newSeriesMap = {};
+      (newDates || []).forEach((year, idx) => {
+        newSeriesMap[year] = item.values.ytab[idx];
+      });
+      const newAlignedSeries = mergedDates.map(year =>
+        Object.prototype.hasOwnProperty.call(newSeriesMap, year) ? newSeriesMap[year] : null
+      );
+      groupedItem.values.push(newAlignedSeries);
+
+      // Update the common axis
+      groupedItem.date = [mergedDates];
 
       // Preserve description if the current one is empty but this item has it
       if ((!groupedItem.label_description || groupedItem.label_description.trim() === '') && 
@@ -698,18 +790,8 @@ function groupByIndicator(results) {
         groupedItem.label_tags = allTags.join(', ');
       }
       
-      // Merge arrays without duplicates using a more compatible approach
-      const existingDates = groupedItem.date[0];
-      // Safely access the new dates - handle different possible structures
-      const newDates = Array.isArray(item.values.x[0]) ? item.values.x[0] : item.values.x;
-      
-      const mergedDates = [...existingDates];
-      newDates.forEach(date => {
-        if (!mergedDates.includes(date)) {
-          mergedDates.push(date);
-        }
-      });
-      groupedItem.date = [mergedDates];
+      // Note: `groupedItem.date` and `groupedItem.values` are already
+      // kept aligned and sorted above.
     }
   });
   
@@ -738,14 +820,25 @@ function getSeries(list_y, list_x, statuses, targetYear, targetValue) {
   let projectionData = {};
   let targetData = {};
   
-  // Assign each value to appropriate category based on status label
+  // Assign each value to appropriate category based on status label.
+  // We keep the full year axis (list_x) but skip null / invalid values,
+  // so gaps appear visually without producing NaNs in the datasets.
   list_y.forEach((value, index) => {
     const year = list_x[index];
-    const status = statuses[index].toLowerCase();
-    
-    // Format the value with scientific notation if needed
+    const rawStatus = statuses[index] || '';
+    const status = rawStatus.toString().toLowerCase();
+
+    // Ignore missing / invalid numeric values, but keep the year in the axis
+    if (value === null || value === undefined || value === '' || isNaN(Number(String(value)))) {
+      return;
+    }
+
+    // Format the value with scientific notation when needed
     const formattedValue = parseFloat(getScientificNotation(value));
-    
+    if (formattedValue === null || isNaN(formattedValue)) {
+      return;
+    }
+
     // Categorize data points
     if (status === 'mesuré') {
       historicalData[year] = formattedValue;
@@ -756,7 +849,7 @@ function getSeries(list_y, list_x, statuses, targetYear, targetValue) {
     } else {
       // Default categorization by year
       const currentYear = new Date().getFullYear();
-      if (parseInt(year) <= currentYear) {
+      if (parseInt(year, 10) <= currentYear) {
         historicalData[year] = formattedValue;
       } else if (year === targetYear) {
         targetData[year] = formattedValue;
