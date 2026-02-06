@@ -193,7 +193,9 @@
     },
     methods: {
       resetData () {
-        this.chart.destroy()
+        if (this.chart && typeof this.chart.destroy === 'function') {
+          this.chart.destroy()
+        }
         this.legendLeftMargin = 100
         this.display = ''
         this.datasets = []
@@ -237,8 +239,6 @@
         } else {
           this.pointOpacityParse = []
         }
-        const nonzeroIndices = this.yparse.findIndex(arr => arr.some(val => val !== 0));
-        const filteredXparse = this.xparse.map(arr => arr.slice(0, nonzeroIndices + 1));
         let tmpNameParse = []
         if (this.name !== undefined) {
           tmpNameParse = JSON.parse(self.name)
@@ -658,7 +658,14 @@
                   divValue.innerHTML = ''
                   bodyLines[0].forEach(function (line, i) {
                     if (line !== undefined && line !== "NaN" && line !== "0") {
-                      divValue.innerHTML += '<span ' + nodeName + '= "" class="tooltip_dot" style = "background-color:' + color[i] + '"></span>' + ' ' + line + '<br>'
+                      const seriesLabel = (self.nameParse && self.nameParse[i]) ? self.capitalize(self.nameParse[i]) : ''
+                      const labelText = seriesLabel ? seriesLabel : ''
+                      // Order: color dot – value – label
+                      divValue.innerHTML +=
+                        '<span ' + nodeName + '= "" class="tooltip_dot" style="background-color:' + color[i] + '"></span>' +
+                        ' ' + line +
+                        (labelText ? ' – ' + labelText : '') +
+                        '<br>'
                     }
                   })
                 }
@@ -857,7 +864,7 @@
     }
     .linechart_tooltip {
       opacity: 0;
-      width: 11.25rem;
+      width: 14rem;
       height: auto;
       background-color: white;
       position: fixed;

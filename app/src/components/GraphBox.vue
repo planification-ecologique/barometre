@@ -105,11 +105,19 @@
           >
           </bar-chart>
         </div>
-        <div v-else-if="effectiveChartType === 'Courbes indépendantes' && !selectedRegionCode">
+        <div
+          v-else-if="
+            effectiveChartType === 'Courbes indépendantes' &&
+            !selectedRegionCode &&
+            displayData &&
+            displayData.date &&
+            displayData.values
+          "
+        >
           <!-- Composant Ligne / DSFR (national only) -->
           <multi-line-chart
-            :x="JSON.stringify(displayData.date)"
-            :y="JSON.stringify(displayData.values)"
+            :x="JSON.stringify(displayData.date || [])"
+            :y="JSON.stringify(displayData.values || [])"
             :aspectratio="2"
             :name="JSON.stringify(displayData.label_sous_groupe)"
             :isSmall="true"
