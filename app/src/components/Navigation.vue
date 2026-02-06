@@ -13,6 +13,12 @@
             :title="option.label"
             @click.prevent="handleNavigation(option)"
           >
+            <span 
+              v-if="option.value === 'search'" 
+              class="fr-icon-search-line" 
+              aria-hidden="true"
+              style="margin-right: 0.25rem;"
+            ></span>
             {{ option.label }}
           </a>
         </li>
