@@ -594,7 +594,14 @@ export default {
                 divValue.innerHTML = ''
                 bodyLines[0].forEach(function (line, i) {
                   if (line !== undefined && line !== null && !Number.isNaN(line)) {
-                    divValue.innerHTML += '<span ' + nodeName + '= "" class="tooltip_dot" style = "background-color:' + color[i] + '"></span>' + ' ' + line + '<br>'
+                    const seriesLabel = (self.nameParse && self.nameParse[i]) ? self.capitalize(self.nameParse[i]) : ''
+                    const labelText = seriesLabel ? seriesLabel : ''
+                    // Order: color dot – value – label
+                    divValue.innerHTML +=
+                      '<span ' + nodeName + '= "" class="tooltip_dot" style="background-color:' + color[i] + '"></span>' +
+                      ' ' + line +
+                      (labelText ? ' – ' + labelText : '') +
+                      '<br>'
                   }
                 })
               }
@@ -797,7 +804,7 @@ export default {
   }
   .linechart_tooltip {
     opacity: 0;
-    width: 11.25rem;
+    width: 14rem;
     height: auto;
     background-color: white;
     position: fixed;

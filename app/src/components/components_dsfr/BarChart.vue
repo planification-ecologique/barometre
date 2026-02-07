@@ -656,17 +656,22 @@
   
                   const nodeName = self.$el.querySelector('.tooltip_dot').attributes[0].nodeName
                   divValue.innerHTML = ''
+                  const items = []
                   bodyLines[0].forEach(function (line, i) {
                     if (line !== undefined && line !== "NaN" && line !== "0") {
                       const seriesLabel = (self.nameParse && self.nameParse[i]) ? self.capitalize(self.nameParse[i]) : ''
-                      const labelText = seriesLabel ? seriesLabel : ''
-                      // Order: color dot – value – label
-                      divValue.innerHTML +=
-                        '<span ' + nodeName + '= "" class="tooltip_dot" style="background-color:' + color[i] + '"></span>' +
-                        ' ' + line +
-                        (labelText ? ' – ' + labelText : '') +
-                        '<br>'
+                      items.push({ line, color: color[i], label: seriesLabel })
                     }
+                  })
+                  if (self.stacked && items.length > 1) {
+                    items.reverse()
+                  }
+                  items.forEach(function (item) {
+                    divValue.innerHTML +=
+                      '<span ' + nodeName + '= "" class="tooltip_dot" style="background-color:' + item.color + '"></span>' +
+                      ' ' + item.line +
+                      (item.label ? ' – ' + item.label : '') +
+                      '<br>'
                   })
                 }
   

@@ -423,7 +423,10 @@
                   divDate.innerHTML = titleLines[0]
                   const divValue = self.$el.querySelector('.tooltip_value')
                   const nodeName = self.$el.querySelector('.tooltip_dot').attributes[0].nodeName
-                  divValue.innerHTML = '<span ' + nodeName + '= "" class="tooltip_dot" style = "background-color:' + self.colorParse + '"></span>' + ' ' + bodyLines + '<br>'
+                  const seriesLabel = (self.name && self.name !== '') ? self.name : ''
+                  const value = Array.isArray(bodyLines) ? bodyLines.join(', ') : bodyLines
+                  // Order: color dot – value – label
+                  divValue.innerHTML = '<span ' + nodeName + '= "" class="tooltip_dot" style="background-color:' + self.colorParse + '"></span>' + ' ' + value + (seriesLabel ? ' – ' + seriesLabel : '') + '<br>'
                 }
                 const {
                   offsetLeft: positionX,
@@ -568,7 +571,7 @@
     }
     .linechart_tooltip {
       opacity: 0;
-      width: 11.25rem;
+      width: 14rem;
       height: auto;
       background-color: white;
       position: fixed;

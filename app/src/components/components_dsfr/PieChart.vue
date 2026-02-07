@@ -227,9 +227,11 @@
   
                   const color = tooltipModel.labelTextColors[0]
                   const divValue = self.$el.querySelector('.tooltip_value')
-  
+
                   const nodeName = self.$el.querySelector('.tooltip_dot').attributes[0].nodeName
-                  divValue.innerHTML = '<span ' + nodeName + '= "" class="tooltip_dot" style = "background-color:' + color + '"></span>' + ' ' + bodyLines[0]
+                  const segmentLabel = (titleLines && (titleLines[0] !== undefined ? titleLines[0] : titleLines)) || ''
+                  // Order: color dot – value – label
+                  divValue.innerHTML = '<span ' + nodeName + '= "" class="tooltip_dot" style="background-color:' + color + '"></span>' + ' ' + bodyLines[0] + (segmentLabel ? ' – ' + segmentLabel : '')
                 }
   
                 const {
@@ -365,7 +367,7 @@
     }
     .linechart_tooltip {
       opacity: 0;
-      width: 11.25rem;
+      width: 14rem;
       height: auto;
       background-color: white;
       position: fixed;
