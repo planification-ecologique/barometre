@@ -1,16 +1,14 @@
-import Papa from 'papaparse';
 import unitDict from '@/utils/unit_dict.json';
+import {
+  fetchIndicatorsData,
+  fetchLeviersData,
+  setStagingDocId as setStagingDocIdInFetcher,
+  GRIST_URLS,
+  GRIST_LEVIERS_URL
+} from './gristDataFetcher';
 
-// Data source constants
-export const GRIST_URLS = {
-  staging: 'https://grist.numerique.gouv.fr/o/planification-ecologique/api/docs/jGd2ge4dy2ZMaRpdgbPLnd/download/csv?tableId=Tdb_planif_staging',
-  stagingEditPage: 'https://grist.numerique.gouv.fr/o/planification-ecologique/jGd2ge4dy2ZM/Tableau-de-Bord/p/2'
-};
-
-// Separate table listing all leviers, including those without indicators.
-// Source: https://grist.numerique.gouv.fr/o/planification-ecologique/api/docs/jGd2ge4dy2ZMaRpdgbPLnd/download/csv?viewSection=20&tableId=Liste_leviers
-export const GRIST_LEVIERS_URL =
-  'https://grist.numerique.gouv.fr/o/planification-ecologique/api/docs/jGd2ge4dy2ZMaRpdgbPLnd/download/csv?viewSection=20&tableId=Liste_leviers';
+// Re-export URL constants for backward compatibility
+export { GRIST_URLS, GRIST_LEVIERS_URL };
 
 /**
  * Formats a number for display using scientific notation when needed
@@ -88,7 +86,9 @@ let levierFetchPromise = null;
 export const SHOW_EXTRAPOLATION = false;
 
 /**
- * Fetches and parses the CSV data
+ * Fetches parsed CSV data from Grist
+ * Uses gristDataFetcher for downloading and parsing
+ * @param {string} environment - Environment to use (production or staging)
  * @returns {Promise} - Promise resolving to parsed CSV data
  */
 export async function fetchCSVData(environment = 'production') {
@@ -102,47 +102,23 @@ export async function fetchCSVData(environment = 'production') {
     return fetchPromise;
   }
   
-  // Otherwise start a new fetch
-  try {
-    const gristCsvUrl = GRIST_URLS[environment] || GRIST_URLS.production;    
-    // Create and store the fetch promise
-    fetchPromise = (async () => {
-      try {
-        const response = await fetch(gristCsvUrl);
-        const csvText = await response.text();
-        
-        return new Promise((resolve, reject) => {
-          Papa.parse(csvText, {
-            header: true,
-            skipEmptyLines: true,
-            complete: (results) => {
-              // Cache the results
-              csvDataCache = results.data;
-              // Clear the fetch promise
-              fetchPromise = null;
-              resolve(results.data);
-            },
-            error: (error) => {
-              // Clear the fetch promise on error
-              fetchPromise = null;
-              reject(error);
-            }
-          });
-        });
-      } catch (error) {
-        // Clear the fetch promise on error
-        fetchPromise = null;
-        throw error;
-      }
-    })();
-    
-    return fetchPromise;
-  } catch (error) {
-    console.error('Error fetching CSV data:', error);
-    // Clear the fetch promise on error
-    fetchPromise = null;
-    throw error;
-  }
+  // Fetch parsed data using the fetcher service
+  fetchPromise = (async () => {
+    try {
+      const parsedData = await fetchIndicatorsData(environment);
+      
+      // Cache the results
+      csvDataCache = parsedData;
+      fetchPromise = null;
+      return parsedData;
+    } catch (error) {
+      // Clear the fetch promise on error
+      fetchPromise = null;
+      throw error;
+    }
+  })();
+  
+  return fetchPromise;
 }
 
 // Function to clear the cache (useful for testing or forcing a refresh)
@@ -152,8 +128,8 @@ export function clearCSVCache() {
 }
 
 /**
- * Fetch and parse the Grist "Liste_leviers" table listing all leviers,
- * including those that do not yet have indicators.
+ * Fetch parsed leviers list from Grist
+ * Uses gristDataFetcher for downloading and parsing
  * @returns {Promise<Array>} - Parsed CSV rows
  */
 export async function fetchLevierList() {
@@ -167,32 +143,23 @@ export async function fetchLevierList() {
     return levierFetchPromise;
   }
 
-  try {
-    const response = await fetch(GRIST_LEVIERS_URL);
-    const csvText = await response.text();
+  // Fetch parsed data using the fetcher service
+  levierFetchPromise = (async () => {
+    try {
+      const parsedData = await fetchLeviersData();
+      
+      // Cache the results
+      levierListCache = parsedData;
+      levierFetchPromise = null;
+      return parsedData;
+    } catch (error) {
+      // Clear the fetch promise on error
+      levierFetchPromise = null;
+      throw error;
+    }
+  })();
 
-    levierFetchPromise = new Promise((resolve, reject) => {
-      Papa.parse(csvText, {
-        header: true,
-        skipEmptyLines: true,
-        complete: (results) => {
-          levierListCache = results.data;
-          levierFetchPromise = null;
-          resolve(levierListCache);
-        },
-        error: (error) => {
-          levierFetchPromise = null;
-          reject(error);
-        }
-      });
-    });
-
-    return levierFetchPromise;
-  } catch (error) {
-    levierFetchPromise = null;
-    console.error('Error fetching leviers list from Grist:', error);
-    throw error;
-  }
+  return levierFetchPromise;
 }
 
 /**
@@ -200,11 +167,9 @@ export async function fetchLevierList() {
  * @param {String} docId - The new staging document ID
  */
 export function setStagingDocId(docId) {
-  if (docId) {
-    GRIST_URLS.staging = `https://grist.numerique.gouv.fr/o/ecolabservicesdonnees/api/docs/${docId}/download/csv?viewSection=562&tableId=Indicateurs_tableau_v1`;
-    // Clear cache to ensure using new URL
-    clearCSVCache();
-  }
+  setStagingDocIdInFetcher(docId);
+  // Clear cache to ensure using new URL
+  clearCSVCache();
 }
 
 /**

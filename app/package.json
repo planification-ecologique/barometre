@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "download-grist-csvs": "node scripts/download-grist-csvs.js",
+    "prebuild": "npm run download-grist-csvs",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "build_qualif": "vue-cli-service build --mode qualif",
