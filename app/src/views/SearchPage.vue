@@ -43,37 +43,24 @@
               </h1>
               <section class="fr-col-md-6 fr-col-lg-6 fr-col-xl-6 fr-col-12">
                 <div class="fr-select-group">
-                  <label class="fr-label" for="theme-levier-select">
-                    Sélection du thème
+                  <label class="fr-label" for="sector-select">
+                    Sélection du secteur
                   </label>
                   <select 
                     class="fr-select" 
-                    id="theme-levier-select" 
-                    name="theme-levier-select"
+                    id="sector-select" 
+                    name="sector-select"
                     v-model="selectedValue"
                     @change="onSelectionChange"
                   >
                     <option value="" selected>Sélectionner une option</option>
-                    
-                    <template v-for="theme in themes">
-                      <!-- Theme as option group label -->
-                      <option 
-                        :value="'theme:' + theme.id_theme"
-                        :style="{ fontWeight: 'bold' }"
-                      >
-                        {{ theme.label_theme }}
-                      </option>
-                      
-                      <!-- Levier options under each theme -->
-                      <option 
-                        v-for="levier in theme.levier" 
-                        :key="theme.id_theme + '-' + levier.id_levier" 
-                        :value="theme.id_theme + ':' + levier.id_levier"
-                        :style="{ paddingLeft: '20px' }"
-                      >
-                        — {{ levier.label_levier }}
-                      </option>
-                    </template>
+                    <option
+                      v-for="sector in sectors"
+                      :key="sector"
+                      :value="sector"
+                    >
+                      {{ sector }}
+                    </option>
                   </select>
                 </div>
               </section>
@@ -81,7 +68,7 @@
               <AdaptiveDashboard
                 :dashboardPage="false"
                 :inputData="results_page"
-                :params="{ label_theme: 'Non disponible' }"
+                :params="{ sector: selectedValue || 'Non disponible', label_theme: 'Non disponible' }"
               />
             </div>
             <div v-else>
@@ -111,7 +98,7 @@
 import Tags from "../components/Tags.vue";
 import AdaptiveDashboard from "../components/AdaptiveDashboard.vue";
 import Pagination from "../components/components_dsfr/Pagination.vue";
-import { getIndicators, getThemesLevier } from "@/services/csvDataService.js";
+import { getIndicators, getNavigationStructure } from "@/services/csvDataService.js";
 import dsfrAnalytics from "../services/dsfr_analytics"
 
 export default {
@@ -132,7 +119,7 @@ export default {
     return {
       isapiloading: true,
       searchQuery: '',
-      themes: [],
+      sectors: [],
       selectedValue: '',
       results_API: [],
       selectedTags: [],
@@ -220,47 +207,29 @@ export default {
     set_pages() {
       this.nb_pages = Math.ceil(this.results_API.length / this.nb_graphs_pages);
     },
-    async fetchThemesAndLeviers() {
-      this.isLoading = true;
-      
+    async fetchSectors() {
       try {
-        // Use CSV data service instead of API
-        const response = await getThemesLevier(this.useStaging ? 'staging' : 'production');
+        const response = await getNavigationStructure(this.useStaging ? 'staging' : 'production');
 
-        if (!response) {
-          throw new Error("Erreur lors de la récupération des thèmes et leviers");
+        if (!response || response.status !== 'success') {
+          throw new Error("Erreur lors de la récupération des secteurs");
         }
 
-        // Retrieve data - note the slightly different structure compared to API
-        this.themes = response.data.themes;
-        this.isLoading = false;
+        this.sectors = response.data.sectorNames || [];
       } catch (error) {
-        console.error("Erreur dans le chargement des thèmes et leviers : ", error);
-        this.isLoading = false;
+        console.error("Erreur dans le chargement des secteurs : ", error);
       }
     },
     onSelectionChange() {
       this.isapiloading = true;
 
-      if (!this.selectedValue) return
-      
-      let theme_levier_filter = [];
-      
-      // If a theme is selected (no levier), emit only theme
-      if (this.selectedValue.startsWith('theme:')) {
-        let themeId_query = this.selectedValue.replace('theme:', '')
-        theme_levier_filter.push({ field: 'id_theme', values: [themeId_query] });
-      } 
-      else if (this.selectedValue === '') {
-        this.fetchData(this.selectedTags)
+      if (!this.selectedValue) {
+        this.fetchData(this.selectedTags);
+        return;
       }
-      // If a levier is selected, emit both theme and levier
-      else {
-        let [themeId, levierId] = this.selectedValue.split(':')
-        theme_levier_filter.push({ field: 'id_theme', values: [themeId] });
-        theme_levier_filter.push({ field: 'id_levier', values: [levierId] });
-      }
-      this.fetchData(this.selectedTags, theme_levier_filter);
+      
+      const sectorFilter = [{ field: 'sector', values: [this.selectedValue] }];
+      this.fetchData(this.selectedTags, sectorFilter);
     }
   },
   mounted() {
@@ -276,7 +245,7 @@ export default {
     })  
   },
   created() {
-    this.fetchThemesAndLeviers()
+    this.fetchSectors();
   },
 };
 </script>

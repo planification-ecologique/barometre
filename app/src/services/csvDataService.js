@@ -261,6 +261,13 @@ export function transformCSVData(csvData, query) {
         filteredData = filteredData.filter(item => item.Indicateurs_Onglet === filter.values[0]);
       } else if (filter.field === 'id_levier' && filter.values.length) {
         filteredData = filteredData.filter(item => item['Indicateurs_Sous-onglet'] === filter.values[0]);
+      } else if (filter.field === 'sector' && filter.values.length) {
+        const targetSector = filter.values[0];
+        filteredData = filteredData.filter(item => {
+          const associations = parseChantierOuImpactList(item['Chantier ou Impact'] || '');
+          if (!associations || associations.length === 0) return false;
+          return associations.some(p => p.sector === targetSector);
+        });
       } else if (filter.field === 'grist_ids') {
         // Filter by Grist indicator IDs (for engagements, chantiers, leviers)
         // If values is empty, return empty array (no matches)
