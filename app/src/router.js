@@ -28,15 +28,6 @@ const routes = [
   },
   
   {
-    path: "/a-propos",
-    name: "a-propos",
-    component: () =>
-      import(/* webpackChunkName: "a-propos" */ "./views/AboutPage.vue"),
-    meta: {
-      title:  GeneralTitle + " - À propos"
-    }
-  },
-  {
     path: "/dashboard",
     name: "dashboard",
     props: route => ({query: route.query.theme}, {query: route.query.levier}),

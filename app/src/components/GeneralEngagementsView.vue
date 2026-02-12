@@ -90,8 +90,9 @@
     <!-- No data message -->
     <div v-if="sortedAxesEntries.length === 0 && sortedChantierAutresEntries.length === 0" class="fr-mt-5w">
       <p v-if="params.axe === 'Adaptation climat'">
-        Bien que la France soit dotée d’un plan national d’adaptation au changement climatique, les méthodologies de mesure du niveau de résilience restent à définir.
-        Nous disposons à ce stade de peu d’indicateurs permettant de piloter nos efforts d’adaptation, puisque les données quantifiables concernent davantage les dommages qui seraient engendrés par une adaptation tardive voire inexistante au changement climatique.
+        Bien que la France soit dotée d’un Plan national d’adaptation au changement climatique (
+        <a href="https://www.ecologie.gouv.fr/sites/default/files/documents/PNACC3.pdf" target="_blank" rel="noopener noreferrer">PNACC3</a>,
+        publié en mars 2025), les méthodes d’évaluation quantitative qui en découlent font défaut, d’où l’absence d’indicateurs dans ce baromètre à date. Cela tient tant à la difficulté d’élaborer des projections des conséquences du changement climatique qu’au caractère systémique des politiques d’adaptation, celles-ci portant sur des enjeux physiques et organisationnels. A ce stade, le pilotage de la politique d’adaptation repose essentiellement sur l’observation de l’évolution de la sinistralité et des moyens déployés en matière de prévention.
       </p>
       <p v-else>Pas de données disponibles pour les engagements.</p>
     </div>

@@ -29,8 +29,8 @@
       <div class="fr-footer__bottom">
         <ul class="fr-footer__bottom-list">
           <li class="fr-footer__bottom-item" v-for="option in menuOptions">
-            <router-link class="fr-footer__bottom-link" target="_self" :id="'fr-footer-link-' + option.router_name"
-              :to="{ name: option.router_name }" :title=option.label> {{ option.label }}
+            <router-link class="fr-footer__bottom-link" target="_self" :id="'fr-footer-link-' + option.value"
+              :to="option.to" :title=option.label> {{ option.label }}
             </router-link>
           </li>
 
@@ -67,23 +67,28 @@ export default {
       menuOptions: [
         {
           label: "À propos",
-          router_name: "a-propos",
+          value: "about",
+          to: { name: "dashboard", query: { sector: "Synthèse", view: "about" } },
         },
         {
           label: "Plan du site",
-          router_name: "plan-du-site",
+          value: "plan-du-site",
+          to: { name: "plan-du-site" },
         },
         {
           label: "Accessibilité : totalement conforme",
-          router_name: "accessibilite"
+          value: "accessibilite",
+          to: { name: "accessibilite" }
         },
         {
           label: "Mentions légales",
-          router_name: "mentions-legales"
+          value: "mentions-legales",
+          to: { name: "mentions-legales" }
         },
         {
           label: "Données personnelles",
-          router_name: "donnees-personnelles"
+          value: "donnees-personnelles",
+          to: { name: "donnees-personnelles" }
         }
       ],
       menuLinks: [
