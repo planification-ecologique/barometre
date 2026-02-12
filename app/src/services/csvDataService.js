@@ -308,6 +308,38 @@ export function transformCSVData(csvData, query) {
   // Sort by order
   filteredData.sort((a, b) => parseInt(a.Ordre) - parseInt(b.Ordre));
 
+  const validateTransformedIndicatorShape = (indicator) => {
+    try {
+      const type = indicator.type_de_graphique || 'Barres simple';
+      const title = indicator.label_indic || 'Indicateur inconnu';
+      const id = indicator.id_indic || 'n/a';
+
+      if (type === 'Barres simple') {
+        const values = indicator.values;
+        const ok = values && Array.isArray(values.x) && Array.isArray(values.y);
+        if (!ok) {
+          console.error(
+            `[CSV transform] Invalid shape for "Barres simple" on "${title}" (id: ${id}). Expected values.x[] and values.y[].`,
+            { indicator }
+          );
+        }
+        return;
+      }
+
+      if (type === 'Barres empilées' || type === 'Courbes indépendantes') {
+        const ok = Array.isArray(indicator.date) && Array.isArray(indicator.values);
+        if (!ok) {
+          console.error(
+            `[CSV transform] Invalid shape for "${type}" on "${title}" (id: ${id}). Expected date[] and values[].`,
+            { indicator }
+          );
+        }
+      }
+    } catch (e) {
+      console.error('[CSV transform] Error while validating indicator shape.', e);
+    }
+  };
+
   // Transform to API response format
   const results = filteredData.map(item => {
     // Extract years and values
@@ -395,6 +427,10 @@ export function transformCSVData(csvData, query) {
 
     // Determine chart type
     const chartType = item['Type de graphique'] || determineChartType(item);
+    // Some rows have a subgroup label while still being "Barres simple".
+    // In that case, keep simple-series shape to avoid grouped-series mismatch in GraphBox.
+    const rawSubGroup = item['Sous-niveau (graphique)'] || '';
+    const normalizedSubGroup = chartType === 'Barres simple' ? '' : rawSubGroup;
     
     // Add a NB for targets being adjusted.
     let nbNote = ''
@@ -455,7 +491,7 @@ export function transformCSVData(csvData, query) {
     const objectif_valeur_cible = (idx2030ForCible >= 0 && values[idx2030ForCible] != null && !isNaN(values[idx2030ForCible]))
       ? values[idx2030ForCible]
       : null;
-    return {
+    const transformed = {
       label_indic: item.Indicateur,
       id_indic: item.ID,
       label_description: (item.Description || '').toString() + nbNote,
@@ -469,7 +505,7 @@ export function transformCSVData(csvData, query) {
       int_ordre: parseInt(item.Ordre) || 0,
       int_annee_cible: 2030,
       date_maj: item['Dernière mise à jour'],
-      label_sous_groupe: item['Sous-niveau (graphique)'] || '',
+      label_sous_groupe: normalizedSubGroup,
       label_value: statuses,
       type_de_graphique: chartType,
       // For synthesis tables (EngagementsTableView, ChantiersTableView)
@@ -505,6 +541,8 @@ export function transformCSVData(csvData, query) {
         targetSegment
       }
     };
+    validateTransformedIndicatorShape(transformed);
+    return transformed;
   });
 
   // Group indicators by their label and process sub-groups

@@ -1,0 +1,145 @@
+Levier,Chantier associé,clean/strip,A
+Indicateur de chantier,,Indicateur de chantier,#TypeError
+Indicateur d'impact,,Indicateur d'impact,#TypeError
+Indicateur d'impact - autres,,Indicateur d'impact - autres,#TypeError
+Autres indicateurs,,Autres indicateurs,#TypeError
+Réduction des besoins de mobilité,Se déplacer / Réduire la dépendance à la voiture,Réduction des besoins de mobilité,#TypeError
+Développement des mobilités douces (vélo et marche),Se déplacer / Réduire la dépendance à la voiture,Développement des mobilités douces (vélo et marche),#TypeError
+Développement des transports en commun,Se déplacer / Réduire la dépendance à la voiture,Développement des transports en commun,#TypeError
+Développement du covoiturage,Se déplacer / Réduire la dépendance à la voiture,Développement du covoiturage,#TypeError
+Electrification des véhicules particuliers,Se déplacer / Verdir les voitures particulières,Electrification des véhicules particuliers,#TypeError
+"Amélioration de l'efficacité environnementale (énergie, polluants) des véhicules particuliers",Se déplacer / Verdir les voitures particulières,"Amélioration de l'efficacité environnementale (énergie, polluants) des véhicules particuliers",#TypeError
+Réduction de l'utilisation des véhicules particuliers les plus polluants,Se déplacer / Verdir les voitures particulières,Réduction de l'utilisation des véhicules particuliers les plus polluants,#TypeError
+Incorporation de carburants durables (véhicules particuliers),Se déplacer / Verdir les voitures particulières,Incorporation de carburants durables (véhicules particuliers),#TypeError
+Maîtrise du trafic aérien,Se déplacer / Verdir le secteur aérien,Maîtrise du trafic aérien,#TypeError
+Amélioration de l'efficacité des aéronefs,Se déplacer / Verdir le secteur aérien,Amélioration de l'efficacité des aéronefs,#TypeError
+Réduction de l'utilisation des groupes auxiliaires de puissance sur les plateformes aéroportuaires,Se déplacer / Verdir le secteur aérien,Réduction de l'utilisation des groupes auxiliaires de puissance sur les plateformes aéroportuaires,#TypeError
+Incorporation de carburants durables (aviation),Se déplacer / Verdir le secteur aérien,Incorporation de carburants durables (aviation),#TypeError
+Maîtrise de la demande de transport de marchandises,Se déplacer / Réduire le trafic de poids lourds pour les marchandises,Maîtrise de la demande de transport de marchandises,#TypeError
+Développement du fret ferroviaire (report modal),Se déplacer / Réduire le trafic de poids lourds pour les marchandises,Développement du fret ferroviaire (report modal),#TypeError
+Développement du fret fluvial (report modal),Se déplacer / Réduire le trafic de poids lourds pour les marchandises,Développement du fret fluvial (report modal),#TypeError
+Optimisation du chargements des poids lourds,Se déplacer / Réduire le trafic de poids lourds pour les marchandises,Optimisation du chargements des poids lourds,#TypeError
+Electrification des véhicules utilitaires légers,Se déplacer / Verdir les utilitaires et poids lourds,Electrification des véhicules utilitaires légers,#TypeError
+Electrification des poids lourds,Se déplacer / Verdir les utilitaires et poids lourds,Electrification des poids lourds,#TypeError
+Amélioration de l'efficacité des véhicules utilitaires légers et des poids lourds neufs,Se déplacer / Verdir les utilitaires et poids lourds,Amélioration de l'efficacité des véhicules utilitaires légers et des poids lourds neufs,#TypeError
+Electrification des transports en commun,Se déplacer / Verdir les utilitaires et poids lourds,Electrification des transports en commun,#TypeError
+Réduction de l'utilisation des poids lourds les plus polluants,Se déplacer / Verdir les utilitaires et poids lourds,Réduction de l'utilisation des poids lourds les plus polluants,#TypeError
+Incorporation de carburants durables (transport routier),Se déplacer / Verdir les utilitaires et poids lourds,Incorporation de carburants durables (transport routier),#TypeError
+Maîtrise de la demande,Se déplacer / Verdir le secteur maritime et fluvial,Maîtrise de la demande,#TypeError
+Amélioration de l'efficacité énergétique des navires,Se déplacer / Verdir le secteur maritime et fluvial,Amélioration de l'efficacité énergétique des navires,#TypeError
+Développer l'électrification des quais et des navires,Se déplacer / Verdir le secteur maritime et fluvial,Développer l'électrification des quais et des navires,#TypeError
+Réduction des rejets de polluants des navires,Se déplacer / Verdir le secteur maritime et fluvial,Réduction des rejets de polluants des navires,#TypeError
+"Evolution des carburants maritimes (intensité carbone, polluants)",Se déplacer / Verdir le secteur maritime et fluvial,"Evolution des carburants maritimes (intensité carbone, polluants)",#TypeError
+Sobriété énergétique du résidentiel,Se loger / Accélérer la rénovation énergétique de l'habitat particulier et collectif,Sobriété énergétique du résidentiel,#TypeError
+Sortie des chaudières au fioul (résidentiel),Se loger / Accélérer la rénovation énergétique de l'habitat particulier et collectif,Sortie des chaudières au fioul (résidentiel),#TypeError
+Réduction de la part de chaudières au gaz (résidentiel),Se loger / Accélérer la rénovation énergétique de l'habitat particulier et collectif,Réduction de la part de chaudières au gaz (résidentiel),#TypeError
+"Amélioration de la performance (consommation d'énergie, polluants) des systèmes de chauffage",Se loger / Accélérer la rénovation énergétique de l'habitat particulier et collectif,"Amélioration de la performance (consommation d'énergie, polluants) des systèmes de chauffage",#TypeError
+Eradication des passoires thermiques,Se loger / Accélérer la rénovation énergétique de l'habitat particulier et collectif,Eradication des passoires thermiques,#TypeError
+Sobriété et efficacité énergétique dans le tertiaire,Se loger / Rénover le parc tertiaire et verdir son exploitation,Sobriété et efficacité énergétique dans le tertiaire,#TypeError
+Sortie des chaudières au fioul (tertiaire),Se loger / Rénover le parc tertiaire et verdir son exploitation,Sortie des chaudières au fioul (tertiaire),#TypeError
+Sortie progressive des chaudières au gaz (tertiaire),Se loger / Rénover le parc tertiaire et verdir son exploitation,Sortie progressive des chaudières au gaz (tertiaire),#TypeError
+Développement de l'usage de matériaux biosourcés dans la construction et rénovation,Se loger / Généraliser les pratiques durables de construction et rénovation,Développement de l'usage de matériaux biosourcés dans la construction et rénovation,#TypeError
+Végétalisation et accueil des espèces dans le bâti,Se loger / Généraliser les pratiques durables de construction et rénovation,Végétalisation et accueil des espèces dans le bâti,#TypeError
+Intégration systématique du confort d’été dans la rénovation et la construction des bâtiments,Se loger / Généraliser les pratiques durables de construction et rénovation,Intégration systématique du confort d’été dans la rénovation et la construction des bâtiments,#TypeError
+Intégration de matériaux recyclés dans la construction,Se loger / Généraliser les pratiques durables de construction et rénovation,Intégration de matériaux recyclés dans la construction,#TypeError
+Réduction des volumes et valorisation des déchets de la construction,Se loger / Généraliser les pratiques durables de construction et rénovation,Réduction des volumes et valorisation des déchets de la construction,#TypeError
+Développement de la production d'électricité renouvelable,Produire / Accroitre notre production d'électricité décarbonée,Développement de la production d'électricité renouvelable,#TypeError
+Restauration des capacités de production nucléaire,Produire / Accroitre notre production d'électricité décarbonée,Restauration des capacités de production nucléaire,#TypeError
+Développement des réseaux de chaleur urbains,Produire / Développer les réseaux de chaleur et de froid renouvelables,Développement des réseaux de chaleur urbains,#TypeError
+Décarbonation de la production de chaleur,Produire / Développer les réseaux de chaleur et de froid renouvelables,Décarbonation de la production de chaleur,#TypeError
+Développement des réseaux de froid,Produire / Développer les réseaux de chaleur et de froid renouvelables,Développement des réseaux de froid,#TypeError
+Développement des puits technologiques dans l'énergie,Produire / Développer les réseaux de chaleur et de froid renouvelables,Développement des puits technologiques dans l'énergie,#TypeError
+Développement de la production de biogaz et orientation vers les usages prioritaires,Produire / Mobiliser la biomasse pour répondre aux besoins énergétiques non électrifiables,Développement de la production de biogaz et orientation vers les usages prioritaires,#TypeError
+Développement de la production de biocarburant et orientation vers les usages prioritaires,Produire / Mobiliser la biomasse pour répondre aux besoins énergétiques non électrifiables,Développement de la production de biocarburant et orientation vers les usages prioritaires,#TypeError
+Développement de la production de biomasse solide à vocation énergétique de qualité et orientation vers les usages prioritaires,Produire / Mobiliser la biomasse pour répondre aux besoins énergétiques non électrifiables,Développement de la production de biomasse solide à vocation énergétique de qualité et orientation vers les usages prioritaires,#TypeError
+Réduction de l'utilisation matière des produits pétroliers,Produire / Réduire la consommation de matière de l'industrie,Réduction de l'utilisation matière des produits pétroliers,#TypeError
+Incorporation de matières recyclées,Produire / Réduire la consommation de matière de l'industrie,Incorporation de matières recyclées,#TypeError
+Amélioration de l'efficacité énergétique industrielle (dont récupération de chaleur),Produire / Réduire l'usage d'énergie fossile de l'industrie,Amélioration de l'efficacité énergétique industrielle (dont récupération de chaleur),#TypeError
+Electrification des sources d'énergie,Produire / Réduire l'usage d'énergie fossile de l'industrie,Electrification des sources d'énergie,#TypeError
+Utilisation de la biomasse et des combustibles solides de récupération comme source d'énergie industrielle,Produire / Réduire l'usage d'énergie fossile de l'industrie,Utilisation de la biomasse et des combustibles solides de récupération comme source d'énergie industrielle,#TypeError
+Captage de CO2 à la sortie des procédés industriels émetteurs,Produire / Décarboner les procédés industriels les plus émissifs,Captage de CO2 à la sortie des procédés industriels émetteurs,#TypeError
+Réduction des émissions du raffinage,Produire / Décarboner les procédés industriels les plus émissifs,Réduction des émissions du raffinage,#TypeError
+Modification des procédés de fabrication,Produire / Décarboner les procédés industriels les plus émissifs,Modification des procédés de fabrication,#TypeError
+Abattement des gaz fluorés (tous secteurs),Produire / Réduire les fuites de gaz à effet de serre et polluants,Abattement des gaz fluorés (tous secteurs),#TypeError
+Réduction des émissions industrielles de protoxyde d'azote et de polluants atmosphériques,Produire / Réduire les fuites de gaz à effet de serre et polluants,Réduction des émissions industrielles de protoxyde d'azote et de polluants atmosphériques,#TypeError
+Réduction des fuites de gaz dans les réseaux urbains,Produire / Réduire les fuites de gaz à effet de serre et polluants,Réduction des fuites de gaz dans les réseaux urbains,#TypeError
+Sortie du plastique jetable,Consommer / Développer la consommation responsable,Sortie du plastique jetable,#TypeError
+Développement de la mutualisation et de l'économie de la fonctionnalité,Consommer / Développer la consommation responsable,Développement de la mutualisation et de l'économie de la fonctionnalité,#TypeError
+Développement de la consommation en vrac,Consommer / Développer la consommation responsable,Développement de la consommation en vrac,#TypeError
+"Augmentation de la durée de vie des équipements (lutte contre l'obsolesence, réparabilité)",Consommer / Développer la consommation responsable,"Augmentation de la durée de vie des équipements (lutte contre l'obsolesence, réparabilité)",#TypeError
+Développement de la réparation,Consommer / Développer la consommation responsable,Développement de la réparation,#TypeError
+Développement du réemploi et de la réutilisation,Consommer / Développer la consommation responsable,Développement du réemploi et de la réutilisation,#TypeError
+Amélioration de la collecte et du tri des déchets,Consommer / Réduire l'impact environnemental des déchets produits,Amélioration de la collecte et du tri des déchets,#TypeError
+Développement de la valorisation matière des déchets,Consommer / Réduire l'impact environnemental des déchets produits,Développement de la valorisation matière des déchets,#TypeError
+Captage du méthane dans les installations de stockage de déchets non dangereux (ISDND),Consommer / Réduire l'impact environnemental des déchets produits,Captage du méthane dans les installations de stockage de déchets non dangereux (ISDND),#TypeError
+Développement de la valorisation énergétique des déchets,Consommer / Réduire l'impact environnemental des déchets produits,Développement de la valorisation énergétique des déchets,#TypeError
+Développement des CSR,Consommer / Réduire l'impact environnemental des déchets produits,Développement des CSR,#TypeError
+Maîtrise des risques de relargage de plastique,Consommer / Réduire l'impact environnemental des déchets produits,Maîtrise des risques de relargage de plastique,#TypeError
+Développement des légumineuses,Se nourrir / Réduire la dépendance aux intrants des cultures,Développement des légumineuses,#TypeError
+Développement des cultures intérmédiaires,Se nourrir / Réduire la dépendance aux intrants des cultures,Développement des cultures intérmédiaires,#TypeError
+Optimisation de la gestion de l'azote,Se nourrir / Réduire la dépendance aux intrants des cultures,Optimisation de la gestion de l'azote,#TypeError
+Réduction de l'usage des produits phytosanitaires,Se nourrir / Réduire la dépendance aux intrants des cultures,Réduction de l'usage des produits phytosanitaires,#TypeError
+Développement des systèmes agroécologiques,Se nourrir / Réduire la dépendance aux intrants des cultures,Développement des systèmes agroécologiques,#TypeError
+Amélioration de l'autonomie protéique des cheptels,Se nourrir / Développer des pratiques d'élevage durable,Amélioration de l'autonomie protéique des cheptels,#TypeError
+Valorisation des effluents d'élevage,Se nourrir / Développer des pratiques d'élevage durable,Valorisation des effluents d'élevage,#TypeError
+Réduction complémentaire des émissions liées à la fermentation entérique,Se nourrir / Développer des pratiques d'élevage durable,Réduction complémentaire des émissions liées à la fermentation entérique,#TypeError
+Optimisation de la gestion des troupeaux,Se nourrir / Développer des pratiques d'élevage durable,Optimisation de la gestion des troupeaux,#TypeError
+Décarbonation des sources d'énergie,Se nourrir / Décarboner les bâtiments et machines agricoles,Décarbonation des sources d'énergie,#TypeError
+Efficacité énergétique des bâtiments et machines agricoles,Se nourrir / Décarboner les bâtiments et machines agricoles,Efficacité énergétique des bâtiments et machines agricoles,#TypeError
+"Développement des pratiques stockantes (cultures intermédiaires, agriculture de conservation des sols)",Se nourrir / Développer les services environnementaux rendus par le secteur agricole,"Développement des pratiques stockantes (cultures intermédiaires, agriculture de conservation des sols)",#TypeError
+Augmentation du paturage,Se nourrir / Développer les services environnementaux rendus par le secteur agricole,Augmentation du paturage,#TypeError
+Développement de l'agroforesterie intraparcellaire,Se nourrir / Développer les services environnementaux rendus par le secteur agricole,Développement de l'agroforesterie intraparcellaire,#TypeError
+Développement des haies,Se nourrir / Développer les services environnementaux rendus par le secteur agricole,Développement des haies,#TypeError
+Gestion des écoulements dans les sols agricoles,Se nourrir / Développer des filières agricoles résilientes aux mutations climatiques,Gestion des écoulements dans les sols agricoles,#TypeError
+Adaptation des filières agricoles,Se nourrir / Développer des filières agricoles résilientes aux mutations climatiques,Adaptation des filières agricoles,#TypeError
+Développement de la pêche durable,Se nourrir / Développer des filières aquacole et halieutique durables,Développement de la pêche durable,#TypeError
+Développement de l'aquaculture durable,Se nourrir / Développer des filières aquacole et halieutique durables,Développement de l'aquaculture durable,#TypeError
+Restauration collective,Se nourrir / Développer des pratiques alimentaires saines et durables,Restauration collective,#TypeError
+"Evolution du régime alimentaire (viande, saisonnalité, etc.)",Se nourrir / Développer des pratiques alimentaires saines et durables,"Evolution du régime alimentaire (viande, saisonnalité, etc.)",#TypeError
+Consommation de produits issus de l'agriculture biologique,Se nourrir / Développer des pratiques alimentaires saines et durables,Consommation de produits issus de l'agriculture biologique,#TypeError
+Réduction du gaspillage alimentaire,Se nourrir / Développer des pratiques alimentaires saines et durables,Réduction du gaspillage alimentaire,#TypeError
+Gestion durable des forêts,Préserver / Redonner à la forêt sa capacité de stockage de carbone,Gestion durable des forêts,#TypeError
+Accroissement des surfaces forestières,Préserver / Redonner à la forêt sa capacité de stockage de carbone,Accroissement des surfaces forestières,#TypeError
+Développement de la production de bois énergie,Préserver / Redonner à la forêt sa capacité de stockage de carbone,Développement de la production de bois énergie,#TypeError
+Développement des produits bois,Préserver / Redonner à la forêt sa capacité de stockage de carbone,Développement des produits bois,#TypeError
+Plan eau pour 55 sites industriels,Préserver / Réduire les prélèvements d'eau douce,Plan eau pour 55 sites industriels,#TypeError
+Maîtrise des besoins d'irrigation,Préserver / Réduire les prélèvements d'eau douce,Maîtrise des besoins d'irrigation,#TypeError
+Déploiement des solutions d'économie d'eau dans le résidentiel et le tertiaire,Préserver / Réduire les prélèvements d'eau douce,Déploiement des solutions d'économie d'eau dans le résidentiel et le tertiaire,#TypeError
+Protection des zones de captage d’eau,Préserver / Sécuriser l'alimentation en eau potable,Protection des zones de captage d’eau,#TypeError
+Réduction des pertes d'eau du réseau de distribution d'eau potable,Préserver / Sécuriser l'alimentation en eau potable,Réduction des pertes d'eau du réseau de distribution d'eau potable,#TypeError
+Mobilisation des ressources dans les ouvrages existants,Préserver / Mieux mobiliser la ressource en eau pour tous les usages,Mobilisation des ressources dans les ouvrages existants,#TypeError
+Développement d'ouvrages de stockage dans le respect des équilibres des usages et des écosystèmes,Préserver / Mieux mobiliser la ressource en eau pour tous les usages,Développement d'ouvrages de stockage dans le respect des équilibres des usages et des écosystèmes,#TypeError
+Valorisation des eaux non conventionnelles,Préserver / Mieux mobiliser la ressource en eau pour tous les usages,Valorisation des eaux non conventionnelles,#TypeError
+Mobiliser les surfaces déjà artificialisées,Préserver / Lutter contre l'artificialisation nette des sols,Mobiliser les surfaces déjà artificialisées,#TypeError
+Réduire la vacance,Préserver / Lutter contre l'artificialisation nette des sols,Réduire la vacance,#TypeError
+Limiter l'artificialisation de la construction neuve,Préserver / Lutter contre l'artificialisation nette des sols,Limiter l'artificialisation de la construction neuve,#TypeError
+"Désartificialisation, désimperméabilisation des sols artificialisés et amélioration de l'infiltration de l'eau dans les sols",Préserver / Lutter contre l'artificialisation nette des sols,"Désartificialisation, désimperméabilisation des sols artificialisés et amélioration de l'infiltration de l'eau dans les sols",#TypeError
+Développer un réseau d'aires protégées cohérent et résilient aux changements globaux,Préserver / Développer et gérer les aires protégées,Développer un réseau d'aires protégées cohérent et résilient aux changements globaux,#TypeError
+Développer un réseau de zones de protection forte qui intègre la diversité des milieux prioritaires et leurs fonctionnalités,Préserver / Développer et gérer les aires protégées,Développer un réseau de zones de protection forte qui intègre la diversité des milieux prioritaires et leurs fonctionnalités,#TypeError
+"Améliorer l'efficacité de la gestion des aires protégées, accompagner des activités durables dans les aires protégées et faire des aires protégées intégrées dans les territoires",Préserver / Développer et gérer les aires protégées,"Améliorer l'efficacité de la gestion des aires protégées, accompagner des activités durables dans les aires protégées et faire des aires protégées intégrées dans les territoires",#TypeError
+Résorption des points noirs prioritaires de continuité écologique terrestre,Préserver / Restaurer les écosystèmes dégradés,Résorption des points noirs prioritaires de continuité écologique terrestre,#TypeError
+Réduire les obstacles à l'écoulement,Préserver / Restaurer les écosystèmes dégradés,Réduire les obstacles à l'écoulement,#TypeError
+Restaurer les zones humides (dont tourbières),Préserver / Restaurer les écosystèmes dégradés,Restaurer les zones humides (dont tourbières),#TypeError
+Restaurer les habitats d'intérêt communautaire,Préserver / Restaurer les écosystèmes dégradés,Restaurer les habitats d'intérêt communautaire,#TypeError
+Rétablir/recréer la surface des habitats d'intérêt communauraire pour atteindre la surface de référence favorable,Préserver / Restaurer les écosystèmes dégradés,Rétablir/recréer la surface des habitats d'intérêt communauraire pour atteindre la surface de référence favorable,#TypeError
+Protection des espèces menacées,Préserver / Restaurer les écosystèmes dégradés,Protection des espèces menacées,#TypeError
+Limiter l'introduction et lutter contre les espèces exotiques envahissantes,"Préserver / Réduire les autres pressions sur la biodiversité (pollution lumineuse, EEE)",Limiter l'introduction et lutter contre les espèces exotiques envahissantes,#TypeError
+Lutte contre la pollution lumineuse,"Préserver / Réduire les autres pressions sur la biodiversité (pollution lumineuse, EEE)",Lutte contre la pollution lumineuse,#TypeError
+Prévention des éboulements et glissement de terrain,Se loger / Généraliser la prévention des risques naturels dus au changement climatique,Prévention des éboulements et glissement de terrain,#TypeError
+"Prévention des inondations par débordement de cours d'eau, notamment via restauration des milieux aquatiques",Se loger / Généraliser la prévention des risques naturels dus au changement climatique,"Prévention des inondations par débordement de cours d'eau, notamment via restauration des milieux aquatiques",#TypeError
+Prévention des inondations par ruissellement,Se loger / Généraliser la prévention des risques naturels dus au changement climatique,Prévention des inondations par ruissellement,#TypeError
+Renaturation des villes et réduction de l'effet d'îlot de chaleur urbain,Se loger / Généraliser la prévention des risques naturels dus au changement climatique,Renaturation des villes et réduction de l'effet d'îlot de chaleur urbain,#TypeError
+Protection et mise à l'abri des personnes vulnérables,Se loger / Généraliser la prévention des risques naturels dus au changement climatique,Protection et mise à l'abri des personnes vulnérables,#TypeError
+Prévention des dégâts causés par le retrait-gonflement des argiles,Se loger / Adapter l'aménagement du territoire aux conséquences structurelles du changement climatique,Prévention des dégâts causés par le retrait-gonflement des argiles,#TypeError
+Intégration de l’élévation du niveau des mers dans l’aménagement du littoral,Se loger / Adapter l'aménagement du territoire aux conséquences structurelles du changement climatique,Intégration de l’élévation du niveau des mers dans l’aménagement du littoral,#TypeError
+Conditionnement du développement urbain et économique à la ressource en eau,Se loger / Adapter l'aménagement du territoire aux conséquences structurelles du changement climatique,Conditionnement du développement urbain et économique à la ressource en eau,#TypeError
+Renforcement de la résilience des services de santé,Produire / Sécuriser la continuité des services essentiels,Renforcement de la résilience des services de santé,#TypeError
+Préparation des services de secours,Produire / Sécuriser la continuité des services essentiels,Préparation des services de secours,#TypeError
+Résilience des services de communication,Produire / Sécuriser la continuité des services essentiels,Résilience des services de communication,#TypeError
+Réduction de la vulnérabilité des infrastructures et services de transport,Produire / Sécuriser la continuité des services essentiels,Réduction de la vulnérabilité des infrastructures et services de transport,#TypeError
+Confort thermique des transports collectifs et des mobilités actives,Produire / Sécuriser la continuité des services essentiels,Confort thermique des transports collectifs et des mobilités actives,#TypeError
+Réduction de la vulnérabilité du système énergétique au changement climatique,Produire / Sécuriser la continuité des services essentiels,Réduction de la vulnérabilité du système énergétique au changement climatique,#TypeError
+Evolution de l’offre touristique de montagne,Produire / Anticiper les impacts socio-économiques chroniques du changement climatique,Evolution de l’offre touristique de montagne,#TypeError
+Evolution de l’offre touristique littorale,Produire / Anticiper les impacts socio-économiques chroniques du changement climatique,Evolution de l’offre touristique littorale,#TypeError
+Continuité des activités économiques,Produire / Anticiper les impacts socio-économiques chroniques du changement climatique,Continuité des activités économiques,#TypeError
+Préservation des sites culturels et patrimoniaux,Produire / Anticiper les impacts socio-économiques chroniques du changement climatique,Préservation des sites culturels et patrimoniaux,#TypeError

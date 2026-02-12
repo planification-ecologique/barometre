@@ -4,13 +4,13 @@
   "private": true,
   "scripts": {
     "download-grist-csvs": "node scripts/download-grist-csvs.js",
-    "prebuild": "npm run download-grist-csvs",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "build_qualif": "vue-cli-service build --mode qualif",
     "build_prod": "vue-cli-service build",
     "watch": "vue-cli-service build --watch",
     "deploy": "npm run build_qualif && cd dist && cp index.html 200.html && cd .. && surge ./dist -d barometre-sgpe.surge.sh",
+    "prebuild:firebase": "npm run download-grist-csvs",
     "build:firebase": "npm run build_prod && cd dist && cp index.html 200.html && cd ..",
     "deploy:firebase": "npm run build:firebase && firebase deploy --only hosting",
     "deploy:firebase:prod": "npm run build:firebase && firebase deploy --only hosting --project barometre-sgpe"
