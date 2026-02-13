@@ -54,6 +54,26 @@ function formatScientificNotation(unit) {
  * @param {string} raw - Raw value (e.g. "949", "949, 254", or "id_949")
  * @returns {string[]} - Non-empty id strings (e.g. ["949", "254"])
  */
+/**
+ * Normalizes raw label/status to internal status for logic (mesuré, projection, cible).
+ * Display: year for measured, "cible" for targets.
+ * Legacy format: label columns with "mesuré", "projection", "cible" still supported.
+ * @param {string} rawLabel - Raw label from CSV or status display
+ * @param {string} yearStr - Year string for fallback
+ * @returns {'mesuré'|'projection'|'cible'}
+ */
+function normalizeStatusForLogic(rawLabel, yearStr) {
+  if (!rawLabel || String(rawLabel).trim() === '') {
+    return yearStr === '2030' ? 'cible' : 'mesuré';
+  }
+  const s = String(rawLabel).trim();
+  const lower = s.toLowerCase();
+  if (/^cible_\d{4}$/.test(lower) || lower === 'cible') return 'cible';
+  if (/^\d{4}$/.test(lower) || lower === 'mesuré') return 'mesuré';
+  if (lower === 'projection') return 'projection';
+  return 'mesuré';
+}
+
 function parseIrpeIds(raw, valid) {
   // If the IRPE is not provided, return an empty array
   if (raw == null || String(raw).trim() === '' || String(raw).toLowerCase() === 'nan') {
@@ -349,76 +369,78 @@ export function transformCSVData(csvData, query) {
 
   // Transform to API response format
   const results = filteredData.map(item => {
-    // Extract years and values
-    const years = [];
-    const values = [];
-    const statuses = []; // mesuré, projection, cible
-    
-    // First collect years that have a meaningful value for this indicator,
-    // to detect the active span. We only discard points that are:
-    // value === 0 AND label is empty (used as "no data" markers).
-    const presentYears = [];
+    // Extract years and values from columns.
+    // New format: year columns (2017, 2018...) = measured, cible_XXXX columns = targets.
+    // Legacy: label_YYYY columns can override status.
+    const dataPoints = new Map(); // yearStr -> { value, statusDisplay }
+
+    const parseVal = (raw) => {
+      if (raw === undefined || raw === null || raw === '') return null;
+      const s = String(raw).trim();
+      if (!s || ['na', 'nan'].includes(s.toLowerCase())) return null;
+      const num = Number(s.replace(',', '.'));
+      return isNaN(num) ? null : parseFloat(parseFloat(num).toFixed(2));
+    };
+
+    const isValidValue = (numVal, hasLabel) => !(numVal === 0 && !hasLabel);
+
+    // 1. Year columns (2017, 2018, ...) = measured data (no label column in new format)
     for (let i = 2017; i <= 2030; i++) {
       const yearStr = i.toString();
-      const labelKey = `label_${yearStr}`;
       const rawVal = item[yearStr];
-      const hasValue = rawVal !== undefined && rawVal !== null && rawVal !== '';
-      const hasLabel = item[labelKey] && item[labelKey] !== '';
-      const numVal = hasValue ? Number(String(rawVal).replace(',', '.')) : NaN;
-      // Keep the year if we have a non-zero numeric value, or any label.
-      if (
-        hasValue &&
-        !isNaN(numVal) &&
-        !(numVal === 0 && !hasLabel)
-      ) {
-        presentYears.push(yearStr);
+      const labelKey = `label_${yearStr}`;
+      const hasLabel = item[labelKey] && String(item[labelKey]).trim() !== '';
+      const numVal = parseVal(rawVal);
+      if (numVal !== null && isValidValue(numVal, hasLabel)) {
+        const rawLabel = item[labelKey] || '';
+        const statusDisplay = rawLabel.trim() !== '' ? rawLabel : yearStr;
+        dataPoints.set(yearStr, { value: numVal, statusDisplay });
       }
     }
 
-    if (presentYears.length > 0) {
-      const minYear = parseInt(presentYears[0], 10);
-      const maxYear = parseInt(presentYears[presentYears.length - 1], 10);
-
-      // Now build a continuous year axis from minYear to maxYear,
-      // filling missing years with null values and empty statuses.
-      for (let y = minYear; y <= maxYear; y++) {
-        const yearStr = y.toString();
-        years.push(yearStr);
-
-        const labelKey = `label_${yearStr}`;
-        const rawVal = item[yearStr];
-        const hasValue = rawVal !== undefined && rawVal !== null && rawVal !== '';
-        const hasLabel = item[labelKey] && item[labelKey] !== '';
-        const numVal = hasValue ? Number(String(rawVal).replace(',', '.')) : NaN;
-
-        // Discard only values that are 0 AND have no label; keep all others.
-        // If the label is empty but the value is non-zero, treat it as "mesuré".
-        if (
-          hasValue &&
-          !isNaN(numVal) &&
-          !(numVal === 0 && !hasLabel)
-        ) {
-          values.push(parseFloat(parseFloat(numVal).toFixed(2)));
-          const rawLabel = item[labelKey] || '';
-          const effectiveLabel = rawLabel !== '' ? rawLabel : 'mesuré';
-          statuses.push(effectiveLabel);
-        } else {
-          values.push(null);
-          statuses.push('');
+    // 2. cible_XXXX columns (cible_2030, cible_2028, etc.) = target data
+    Object.keys(item).forEach((key) => {
+      const m = key.match(/^cible_(\d{4})$/i);
+      if (m) {
+        const yearStr = m[1];
+        const numVal = parseVal(item[key]);
+        if (numVal !== null) {
+          dataPoints.set(yearStr, { value: numVal, statusDisplay: 'cible' });
         }
       }
+    });
+
+    // Build sorted year axis and align values/statuses
+    const allYears = Array.from(dataPoints.keys()).map((y) => parseInt(y, 10)).sort((a, b) => a - b);
+    const minYear = allYears.length > 0 ? allYears[0] : 2017;
+    const maxYear = allYears.length > 0 ? allYears[allYears.length - 1] : 2030;
+
+    const years = [];
+    const values = [];
+    const statuses = [];
+
+    for (let y = minYear; y <= maxYear; y++) {
+      const yearStr = y.toString();
+      years.push(yearStr);
+      const pt = dataPoints.get(yearStr);
+      if (pt) {
+        values.push(pt.value);
+        statuses.push(pt.statusDisplay);
+      } else {
+        values.push(null);
+        statuses.push('');
+      }
     }
 
-    // Target year
     const targetYear = '2030';
-    let targetValue = item[targetYear] || '';
-    const targetValueNumeric = parseFloat(parseFloat((targetValue || '').toString().replace(',', '.')).toFixed(2));
-    const targetValueIsNumeric = !isNaN(targetValueNumeric);
+    const targetValue = item[targetYear] || item['cible_2030'] || '';
+    const targetValueNumeric = parseVal(targetValue);
+    const targetValueIsNumeric = targetValueNumeric !== null;
+
     // Ensure 2030 is in the chart when we have a target (so target segment can be drawn)
-    if ((targetValue || item[targetYear]) && !years.includes(targetYear)) {
+    if (targetValueNumeric !== null && !years.includes(targetYear)) {
       years.push(targetYear);
-      const val2030 = targetValueIsNumeric ? targetValueNumeric : parseFloat(parseFloat((item[targetYear] || '').toString().replace(',', '.')).toFixed(2));
-      values.push(!isNaN(val2030) ? val2030 : 0);
+      values.push(targetValueNumeric);
       statuses.push('cible');
     }
 
@@ -459,7 +481,10 @@ export function transformCSVData(csvData, query) {
     let targetSegment = null;
     let lastMeasuredIndex = -1;
     for (let i = 0; i < statuses.length; i++) {
-      if ((statuses[i] || '').toString().toLowerCase() === 'mesuré') lastMeasuredIndex = i;
+      const v = values[i];
+      if (normalizeStatusForLogic(statuses[i] || '', years[i]) === 'mesuré' && v != null && !isNaN(v)) {
+        lastMeasuredIndex = i;
+      }
     }
     if (lastMeasuredIndex >= 0 && (targetValue || years.includes(targetYear))) {
       const idx2030 = years.indexOf(targetYear);
@@ -483,7 +508,7 @@ export function transformCSVData(csvData, query) {
     let valeur_actuelle = null;
     let date_valeur_actuelle = null;
     for (let i = values.length - 1; i >= 0; i--) {
-      const status = (statuses[i] || '').toString().toLowerCase();
+      const status = normalizeStatusForLogic(statuses[i] || '', years[i]);
       if (status === 'mesuré') {
         const v = values[i];
         if (v != null && !isNaN(v)) {
@@ -541,8 +566,8 @@ export function transformCSVData(csvData, query) {
         ytab: values,
         legend: legend,
         colors: colors,
-        trendLine: statuses.some(s => {
-          const t = (s || '').toString().toLowerCase();
+        trendLine: statuses.some((s, idx) => {
+          const t = normalizeStatusForLogic(s || '', years[idx]);
           return t === 'projection' || t === 'cible';
         }) ? computeTrendLine(years, values, statuses) : null,
         targetSegment
@@ -631,7 +656,7 @@ export function computeTrendLine(years, ytab, statuses, numYears = 3) {
   if (!years?.length || !ytab?.length || years.length !== ytab.length) return null;
   const measured = [];
   for (let i = 0; i < years.length; i++) {
-    const s = (statuses[i] || '').toString().toLowerCase();
+    const s = normalizeStatusForLogic(statuses[i] || '', years[i]);
     if (s === 'mesuré') {
       const y = parseFloat(ytab[i]);
       if (!isNaN(y)) measured.push({ year: parseInt(years[i], 10), value: y, index: i });
@@ -831,12 +856,11 @@ function getSeries(list_y, list_x, statuses, targetYear, targetValue) {
   let targetData = {};
   
   // Assign each value to appropriate category based on status label.
-  // We keep the full year axis (list_x) but skip null / invalid values,
-  // so gaps appear visually without producing NaNs in the datasets.
+  // New format: year = mesuré, Cible_XXXX = cible. Use normalizeStatusForLogic.
   list_y.forEach((value, index) => {
     const year = list_x[index];
     const rawStatus = statuses[index] || '';
-    const status = rawStatus.toString().toLowerCase();
+    const status = normalizeStatusForLogic(rawStatus, year);
 
     // Ignore missing / invalid numeric values, but keep the year in the axis
     if (value === null || value === undefined || value === '' || isNaN(Number(String(value)))) {
@@ -915,15 +939,18 @@ function getSeries(list_y, list_x, statuses, targetYear, targetValue) {
     }
   }
   
-  // Target series: only 2030 target
-  const targetValFor2030 = targetData[targetYear] != null
-    ? targetData[targetYear]
-    : (targetValue ? parseFloat(getScientificNotation(targetValue)) : null);
-  if (targetValFor2030 != null && !isNaN(targetValFor2030)) {
-    const target = allYears.map(year => (year === targetYear ? targetValFor2030 : 0));
-    seriesData.push(target);
-    legend.push('Cible');
-    colors.push('blue-ecume');
+  // Target series: all target years (cible_2030, cible_2028, etc.)
+  const hasTarget = Object.keys(targetData).length > 0;
+  if (hasTarget) {
+    const target = allYears.map(year => {
+      const val = targetData[year];
+      return (val != null && !isNaN(val)) ? parseFloat(getScientificNotation(val)) : 0;
+    });
+    if (target.some(v => v !== 0)) {
+      seriesData.push(target);
+      legend.push('Cible');
+      colors.push('blue-ecume');
+    }
   }
   
   return { y: seriesData, legend, colors };

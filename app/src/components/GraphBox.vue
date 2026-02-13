@@ -465,12 +465,17 @@ export default {
         }
 
         const length = Array.isArray(values?.x) ? (values.x[0]?.length || 0) : (values?.[0]?.length || 0)
+        // Measured = year (e.g. "2017") or "mesuré"; target = "cible" (0.6)
+        const isMeasured = (v) => {
+          const s = String(v || '').toLowerCase();
+          return s === 'mesuré' || /^\d{4}$/.test(s);
+        };
         if (Array.isArray(lv)) {
-          const arr = lv.map(v => (String(v).toLowerCase() === 'mesuré' ? 1 : 0.6))
+          const arr = lv.map(v => (isMeasured(v) ? 1 : 0.6))
           return JSON.stringify(arr)
         }
         // Else single scalar -> same opacity for all points
-        const alpha = String(lv || '').toLowerCase() === 'mesuré' ? 1 : 0.6
+        const alpha = isMeasured(lv) ? 1 : 0.6
         return JSON.stringify(Array(length).fill(alpha))
       } catch (e) {
         return undefined
