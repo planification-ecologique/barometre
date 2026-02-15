@@ -134,7 +134,7 @@
             :captionTitle="displayData.label_indic"
             :annee="tableAnnee"
             :valeur="tableValeur"
-            :type_mesure="displayData.label_value || 'Mesuré'"
+            :type_mesure="displayData.label_value || []"
           ></table-component>
         </div>
         <div v-else>

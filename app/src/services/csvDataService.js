@@ -74,6 +74,18 @@ function normalizeStatusForLogic(rawLabel, yearStr) {
   return 'mesuré';
 }
 
+/**
+ * Normalizes raw status to display label for table/CSV: "mesuré", "projection", "cible".
+ * Replaces raw year strings (e.g. "2020") with proper labels.
+ */
+function normalizeStatusForDisplay(rawLabel, yearStr) {
+  const logic = normalizeStatusForLogic(rawLabel, yearStr);
+  if (logic === 'cible') return 'cible';
+  if (logic === 'projection') return 'projection';
+  const currentYear = new Date().getFullYear();
+  return parseInt(yearStr, 10) <= currentYear ? 'mesuré' : 'projection';
+}
+
 function parseIrpeIds(raw, valid) {
   // If the IRPE is not provided, return an empty array
   if (raw == null || String(raw).trim() === '' || String(raw).toLowerCase() === 'nan') {
@@ -425,7 +437,7 @@ export function transformCSVData(csvData, query) {
       const pt = dataPoints.get(yearStr);
       if (pt) {
         values.push(pt.value);
-        statuses.push(pt.statusDisplay);
+        statuses.push(normalizeStatusForDisplay(pt.statusDisplay, yearStr));
       } else {
         values.push(null);
         statuses.push('');
