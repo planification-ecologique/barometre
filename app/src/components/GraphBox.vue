@@ -89,7 +89,7 @@
             :aspectratio="2"
             :pointopacity="regionalPointOpacity"
             :trendline="chartValues.trendLine ? JSON.stringify(chartValues.trendLine) : undefined"
-            :target-segment="chartValues.targetSegment ? JSON.stringify(chartValues.targetSegment) : undefined"
+            :target-trajectory="chartValues.targetTrajectory ? JSON.stringify(chartValues.targetTrajectory) : undefined"
           >
           </bar-chart>
         </div>
@@ -178,7 +178,7 @@
             Source : {{ dataObj.label_sources }}
           </p>
         </div>
-        <p class="fr-text--xs fr-text-mention--grey textReference">
+        <p v-if="dataObj.label_perimetre" class="fr-text--xs fr-text-mention--grey textReference">
           Périmètre : {{ dataObj.label_perimetre }}
         </p>
       </div>

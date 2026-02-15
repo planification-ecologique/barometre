@@ -34,6 +34,10 @@
             <span class="legende_dash_line2" v-bind:style="{'background-color': trendLineColor}"></span>
             <p class="fr-text--sm fr-text--bold fr-ml-1w fr-mb-0">Tendance (3 ans)</p>
           </div>
+          <div v-if="targetTrajectoryParse || targetSegmentParse" class="flex fr-mt-3v fr-mb-1v" :style="{'margin-left': isSmall ? '0px' : style}">
+            <span class="legende_dot_circle" v-bind:style="{'background-color': targetSegmentColor}"></span>
+            <p class="fr-text--sm fr-text--bold fr-ml-1w fr-mb-0">Cible(s) initiale(s)</p>
+          </div>
           <div v-if="date!==undefined" class="flex fr-mt-1w" :style="{'margin-left': isSmall ? '0px' : style}">
             <p class="fr-text--xs">Mise à jour : {{date}}</p>
           </div>
@@ -86,6 +90,7 @@
         trendLineParse: [],
         trendLineColor: '#6a6156',
         targetSegmentParse: null,
+        targetTrajectoryParse: null,
         targetSegmentColor: '#000091'
       }
     },
@@ -166,8 +171,15 @@
         type: String,
         default: undefined
       },
-      // Vue may pass kebab-case as this exact key in $props
       'target-segment': {
+        type: String,
+        default: undefined
+      },
+      targetTrajectory: {
+        type: String,
+        default: undefined
+      },
+      'target-trajectory': {
         type: String,
         default: undefined
       }
@@ -222,6 +234,7 @@
         this.colorHover = []
         this.trendLineParse = []
         this.targetSegmentParse = null
+        this.targetTrajectoryParse = null
       },
       getData () {
         const self = this
@@ -317,9 +330,21 @@
         } else {
           self.trendLineParse = []
         }
-        // Target segment (last measured → 2030) – read prop (Vue may pass as targetSegment or target-segment)
+        // Target trajectory: line from reference through all targets, with dots at targets
+        const rawTargetTrajectory = this.targetTrajectory ?? this['target-trajectory'] ?? (this.$props && (this.$props.targetTrajectory ?? this.$props['target-trajectory']))
         const rawTargetSegment = this.targetSegment ?? this['target-segment'] ?? (this.$props && (this.$props.targetSegment ?? this.$props['target-segment']))
-        if (rawTargetSegment !== undefined && rawTargetSegment !== null && rawTargetSegment !== '') {
+        self.targetTrajectoryParse = null
+        self.targetSegmentParse = null
+        if (rawTargetTrajectory !== undefined && rawTargetTrajectory !== null && rawTargetTrajectory !== '') {
+          try {
+            const traj = JSON.parse(rawTargetTrajectory)
+            if (traj && Array.isArray(traj.points) && traj.points.length >= 2) {
+              const valid = traj.points.every(p => p.year != null && !isNaN(Number(p.value)))
+              if (valid) self.targetTrajectoryParse = traj
+            }
+          } catch (e) { /* ignore */ }
+        }
+        if (!self.targetTrajectoryParse && rawTargetSegment !== undefined && rawTargetSegment !== null && rawTargetSegment !== '') {
           try {
             const seg = JSON.parse(rawTargetSegment)
             if (seg && seg.startYear != null && seg.endYear != null) {
@@ -332,17 +357,9 @@
                   endYear: String(seg.endYear),
                   endValue: endVal
                 }
-              } else {
-                self.targetSegmentParse = null
               }
-            } else {
-              self.targetSegmentParse = null
             }
-          } catch (e) {
-            self.targetSegmentParse = null
-          }
-        } else {
-          self.targetSegmentParse = null
+          } catch (e) { /* ignore */ }
         }
   
         // Set ymax
@@ -484,25 +501,48 @@
                 ctx.stroke()
                 ctx.restore()
               }
-              // Target segment: blue line from last measured year to 2030 target – draw on top of bars
-              if (!self.horizontal && self.targetSegmentParse) {
+              // Target trajectory: blue line through ref + targets, dots at target points
+              if (!self.horizontal && (self.targetTrajectoryParse || self.targetSegmentParse)) {
                 const ctx = chart.ctx
                 const xAxis = chart.scales['x-axis-0']
                 const yAxis = chart.scales['y-axis-0']
-                const seg = self.targetSegmentParse
-                const x1 = xAxis.getPixelForValue(seg.startYear)
-                const y1 = yAxis.getPixelForValue(seg.startValue)
-                const x2 = xAxis.getPixelForValue(seg.endYear)
-                const y2 = yAxis.getPixelForValue(seg.endValue)
-                ctx.save()
-                ctx.beginPath()
-                ctx.moveTo(x1, y1)
-                ctx.lineTo(x2, y2)
-                ctx.strokeStyle = self.targetSegmentColor
-                ctx.lineWidth = 2
-                ctx.setLineDash([6, 4])
-                ctx.stroke()
-                ctx.restore()
+                let points = []
+                if (self.targetTrajectoryParse) {
+                  points = self.targetTrajectoryParse.points.map(p => ({
+                    x: xAxis.getPixelForValue(p.year),
+                    y: yAxis.getPixelForValue(p.value),
+                    isTarget: p.isTarget
+                  }))
+                } else {
+                  const seg = self.targetSegmentParse
+                  points = [
+                    { x: xAxis.getPixelForValue(seg.startYear), y: yAxis.getPixelForValue(seg.startValue), isTarget: false },
+                    { x: xAxis.getPixelForValue(seg.endYear), y: yAxis.getPixelForValue(seg.endValue), isTarget: true }
+                  ]
+                }
+                if (points.length >= 2) {
+                  ctx.save()
+                  ctx.beginPath()
+                  ctx.moveTo(points[0].x, points[0].y)
+                  for (let i = 1; i < points.length; i++) {
+                    ctx.lineTo(points[i].x, points[i].y)
+                  }
+                  ctx.strokeStyle = self.targetSegmentColor
+                  ctx.lineWidth = 2
+                  ctx.setLineDash([6, 4])
+                  ctx.stroke()
+                  // Simple dots at target points
+                  const dotRadius = 4
+                  points.forEach(p => {
+                    if (p.isTarget) {
+                      ctx.beginPath()
+                      ctx.arc(p.x, p.y, dotRadius, 0, 2 * Math.PI)
+                      ctx.fillStyle = self.targetSegmentColor
+                      ctx.fill()
+                    }
+                  })
+                  ctx.restore()
+                }
               }
               if (chart.tooltip._active !== undefined) {
                 if (chart.tooltip._active.length !== 0) {
@@ -738,7 +778,7 @@
         if (this.trendLineParse.length > 0) {
           this.trendLineColor = this.getHexaFromName('beige-gris-galet')
         }
-        if (this.targetSegmentParse) {
+        if (this.targetSegmentParse || this.targetTrajectoryParse) {
           this.targetSegmentColor = this.getHexaFromName('blue-ecume')
         }
       },
@@ -785,7 +825,7 @@
         if (this.trendLineParse.length > 0) {
           this.trendLineColor = this.getHexaFromName('beige-gris-galet')
         }
-        if (this.targetSegmentParse) {
+        if (this.targetSegmentParse || this.targetTrajectoryParse) {
           this.targetSegmentColor = this.getHexaFromName('blue-ecume')
         }
         this.chart.update(0)
@@ -816,8 +856,8 @@
   </script>
   <style scoped lang="scss">
     .flex-container {
-    display: flex; /* Utilise Flexbox pour aligner les éléments horizontalement */
-    align-items: left; /* Alignement vertical des éléments au centre */
+    display: flex;
+    align-items: center;
 }
   .widget_container {
     .ml-lg {
@@ -842,8 +882,18 @@
           min-width: 0.8rem;
           background-color: #000091;
           display: inline-block;
-          margin-top: 0.3rem;
           margin-left: 0;
+          flex-shrink: 0;
+        }
+        .legende_dot_circle {
+          min-width: 0.8rem;
+          width: 0.8rem;
+          height: 0.8rem;
+          border-radius: 50%;
+          background-color: #000091;
+          display: inline-block;
+          margin-left: 0;
+          flex-shrink: 0;
         }
         .legende_dash_line1{
           min-width: 0.35rem;
@@ -851,7 +901,8 @@
           height: 0.2rem;
           border-radius: 0%;
           display: inline-block;
-          margin-top: 0.6rem;
+          margin-left: 0;
+          flex-shrink: 0;
         }
         .legende_dash_line2{
           min-width: 0.35rem;
@@ -859,8 +910,8 @@
           height: 0.2rem;
           border-radius: 0%;
           display: inline-block;
-          margin-top: 0.6rem;
           margin-left: 0.1rem;
+          flex-shrink: 0;
         }
       }
     }

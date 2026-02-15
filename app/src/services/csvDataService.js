@@ -477,31 +477,47 @@ export function transformCSVData(csvData, query) {
     const chantierOuImpactList = parseChantierOuImpactList(chantierOuImpactRaw);
     const parsedChantierOuImpact = chantierOuImpactList[0] || { sector: null, chantierOuImpact: null };
 
-    // Segment from last measured year to 2030 target (for blue trajectory line)
-    let targetSegment = null;
-    let lastMeasuredIndex = -1;
-    for (let i = 0; i < statuses.length; i++) {
-      const v = values[i];
-      if (normalizeStatusForLogic(statuses[i] || '', years[i]) === 'mesuré' && v != null && !isNaN(v)) {
-        lastMeasuredIndex = i;
+    // Target trajectory: line from reference year through all target years, with dots at targets
+    // Uses "Année de référence de la source" column; falls back to last measured year if absent
+    let targetTrajectory = null;
+    const refYearRaw = item['Année de référence de la source'];
+    const refYearStr = refYearRaw != null ? String(refYearRaw).trim() : '';
+    const refYearParsed = refYearStr && /^\d{4}$/.test(refYearStr) ? refYearStr : null;
+
+    let refYearIdx = -1;
+    if (refYearParsed) {
+      const idx = years.indexOf(refYearParsed);
+      if (idx >= 0 && values[idx] != null && !isNaN(values[idx])) {
+        refYearIdx = idx;
       }
     }
-    if (lastMeasuredIndex >= 0 && (targetValue || years.includes(targetYear))) {
-      const idx2030 = years.indexOf(targetYear);
-      // 2030 value is valid only if not empty and not NA (so we only consider has2030 when we have a real value)
-      const raw2030 = (targetValue != null && String(targetValue).trim() !== '') ? targetValue : (item[targetYear] ?? '');
-      const is2030ValueValid = raw2030 !== '' && ['na', 'nan'].indexOf(String(raw2030).toLowerCase().trim()) === -1 && !isNaN(Number(String(raw2030).replace(',', '.')));
-      const has2030 = years.includes(targetYear) && is2030ValueValid;
-      // Use numeric "Objectifs 2030" when valid; else use the value already in data for 2030 (e.g. from CSV year column or label like "SNBC 3 (provisoire)")
-      const endVal = targetValueIsNumeric ? targetValueNumeric : (has2030 && idx2030 >= 0 && values[idx2030] != null ? Number(values[idx2030]) : null);
-      if (endVal != null && !isNaN(endVal) && has2030) {
-        targetSegment = {
-          startYear: years[lastMeasuredIndex],
-          startValue: values[lastMeasuredIndex],
-          endYear: targetYear,
-          endValue: endVal
-        };
+    if (refYearIdx < 0) {
+      for (let i = 0; i < statuses.length; i++) {
+        const v = values[i];
+        if (normalizeStatusForLogic(statuses[i] || '', years[i]) === 'mesuré' && v != null && !isNaN(v)) {
+          refYearIdx = i;
+        }
       }
+    }
+
+    // All target points (years with status "cible"), sorted by year
+    const targetIndices = [];
+    for (let i = 0; i < statuses.length; i++) {
+      if (normalizeStatusForLogic(statuses[i] || '', years[i]) === 'cible') {
+        const v = values[i];
+        if (v != null && !isNaN(v)) targetIndices.push(i);
+      }
+    }
+    targetIndices.sort((a, b) => parseInt(years[a], 10) - parseInt(years[b], 10));
+
+    if (refYearIdx >= 0 && targetIndices.length > 0 && targetIndices[0] > refYearIdx) {
+      const points = [
+        { year: years[refYearIdx], value: values[refYearIdx], isTarget: false }
+      ];
+      targetIndices.forEach((idx) => {
+        points.push({ year: years[idx], value: values[idx], isTarget: true });
+      });
+      targetTrajectory = { points };
     }
     
     // Dernière valeur: last "mesuré" (measured) data point with a valid value
@@ -570,7 +586,7 @@ export function transformCSVData(csvData, query) {
           const t = normalizeStatusForLogic(s || '', years[idx]);
           return t === 'projection' || t === 'cible';
         }) ? computeTrendLine(years, values, statuses) : null,
-        targetSegment
+        targetTrajectory
       }
     };
     validateTransformedIndicatorShape(transformed);
@@ -939,20 +955,8 @@ function getSeries(list_y, list_x, statuses, targetYear, targetValue) {
     }
   }
   
-  // Target series: all target years (cible_2030, cible_2028, etc.)
-  const hasTarget = Object.keys(targetData).length > 0;
-  if (hasTarget) {
-    const target = allYears.map(year => {
-      const val = targetData[year];
-      return (val != null && !isNaN(val)) ? parseFloat(getScientificNotation(val)) : 0;
-    });
-    if (target.some(v => v !== 0)) {
-      seriesData.push(target);
-      legend.push('Cible');
-      colors.push('blue-ecume');
-    }
-  }
-  
+  // Targets: no bars, shown as line + dots via targetTrajectory (handled separately)
+
   return { y: seriesData, legend, colors };
 }
 
