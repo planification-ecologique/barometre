@@ -335,6 +335,7 @@
         const rawTargetSegment = this.targetSegment ?? this['target-segment'] ?? (this.$props && (this.$props.targetSegment ?? this.$props['target-segment']))
         self.targetTrajectoryParse = null
         self.targetSegmentParse = null
+        self.targetIsTargetByYear = {}
         if (rawTargetTrajectory !== undefined && rawTargetTrajectory !== null && rawTargetTrajectory !== '') {
           try {
             const traj = JSON.parse(rawTargetTrajectory)
@@ -449,15 +450,21 @@
             // barThickness: 'flex'
           })
         })
-        // Add invisible line dataset for target trajectory so target-only years are hoverable
+        // Add line dataset for target trajectory so target-only years are hoverable
         if (!this.horizontal && self.targetTrajectoryParse && self.targetTrajectoryParse.points) {
           const trajByYear = {}
+          const trajIsTargetByYear = {}
           self.targetTrajectoryParse.points.forEach(function (p) {
             trajByYear[String(p.year)] = p.value
+            trajIsTargetByYear[String(p.year)] = !!p.isTarget
           })
           const targetData = self.labels.map(function (label) {
             return trajByYear[String(label)] != null ? trajByYear[String(label)] : null
           })
+          const targetPointRadius = self.labels.map(function (label) {
+            return trajIsTargetByYear[String(label)] ? 4 : 0
+          })
+          self.targetIsTargetByYear = trajIsTargetByYear
           self.datasets.push({
             _targetTrajectory: true,
             type: 'line',
@@ -466,10 +473,11 @@
             backgroundColor: self.targetSegmentColor,
             borderWidth: 2,
             borderDash: [6, 4],
-            pointRadius: 4,
+            pointRadius: targetPointRadius,
             pointBackgroundColor: self.targetSegmentColor,
             pointBorderColor: self.targetSegmentColor,
             fill: false,
+            spanGaps: true,
             order: -1
           })
         }
@@ -738,9 +746,14 @@
                   divValue.innerHTML = ''
                   const items = []
                   bodyLines[0].forEach(function (line, i) {
-                    if (line !== undefined && line !== "NaN" && line !== "0") {
+                    if (line != null && line !== undefined && line !== "NaN" && line !== "null" && line !== "0") {
                       const set = self.datasets[i]
-                      const seriesLabel = set && set._targetTrajectory
+                      const isTargetDataset = set && set._targetTrajectory
+                      const hoveredYear = titleLines[0]
+                      if (isTargetDataset && self.targetIsTargetByYear && !self.targetIsTargetByYear[String(hoveredYear)]) {
+                        return
+                      }
+                      const seriesLabel = isTargetDataset
                         ? 'Cible(s) initiale(s)'
                         : ((self.nameParse && self.nameParse[i]) ? self.capitalize(self.nameParse[i]) : '')
                       items.push({ line, color: (color && color[i]) || self.targetSegmentColor, label: seriesLabel })

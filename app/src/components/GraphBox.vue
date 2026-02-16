@@ -134,7 +134,7 @@
             :captionTitle="displayData.label_indic"
             :annee="tableAnnee"
             :valeur="tableValeur"
-            :type_mesure="displayData.label_value || []"
+            :type_mesure="tableTypeMesure"
           ></table-component>
         </div>
         <div v-else>
@@ -348,14 +348,23 @@ export default {
       return this.getChartType;
     },
     tableAnnee() {
-      const v = this.displayData.values;
+      const d = this.displayData;
+      if (d.tableAnnee && d.tableAnnee.length > 0) return d.tableAnnee;
+      const v = d.values;
       if (!v) return [];
       return (v.x && v.x[0]) ? v.x[0] : (v.x || []);
     },
     tableValeur() {
-      const v = this.displayData.values;
+      const d = this.displayData;
+      if (d.tableValeur && d.tableValeur.length > 0) return d.tableValeur;
+      const v = d.values;
       if (!v) return [];
       return v.ytab || (v.y && v.y[0]) || [];
+    },
+    tableTypeMesure() {
+      const d = this.displayData;
+      if (d.tableTypeMesure && d.tableTypeMesure.length > 0) return d.tableTypeMesure;
+      return d.label_value || [];
     },
     defaultBarColors() {
       return this.chartValues?.legend?.map(() => "#000091") || [];
@@ -389,13 +398,14 @@ export default {
           ];
           csvContent = headers.join(";") + "\n";
 
-          const xValues = (d.values && d.values.x) ? (d.values.x[0] || d.values.x) : [];
-          const ytab = (d.values && (d.values.ytab || (d.values.y && d.values.y[0]))) || [];
+          const xValues = this.tableAnnee;
+          const ytab = this.tableValeur;
+          const typeLabels = this.tableTypeMesure;
           if (xValues.length && ytab.length) {
             for (let i = 0; i < xValues.length; i++) {
               let row = [xValues[i]];
               row.push(ytab[i]);
-              row.push(d.label_value ? (d.label_value[i] || "Mesuré") : "Mesuré");
+              row.push(typeLabels[i] || "Mesuré");
               csvContent += row.join(";") + "\n";
             }
           }

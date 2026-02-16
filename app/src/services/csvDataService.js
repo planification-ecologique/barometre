@@ -410,6 +410,9 @@ export function transformCSVData(csvData, query) {
       }
     }
 
+    // Years with measured data (from year columns) - before cible overwrites
+    const yearsWithMeasured = new Set(dataPoints.keys());
+
     // 2. cible_XXXX columns (cible_2030, cible_2028, etc.) = target data
     // Store targets separately so years with BOTH measured and target show both (bar + line)
     const targetValuesByYear = {};
@@ -566,6 +569,33 @@ export function transformCSVData(csvData, query) {
     const objectif_valeur_cible = (idx2030ForCible >= 0 && values[idx2030ForCible] != null && !isNaN(values[idx2030ForCible]))
       ? values[idx2030ForCible]
       : null;
+
+    // Table rows: allow same year twice when it has both measured and target; skip years with 0/null data
+    const tableAnnee = [];
+    const tableValeur = [];
+    const tableTypeMesure = [];
+    const hasValue = (v) => v != null && !isNaN(v) && v !== 0;
+    for (let i = 0; i < years.length; i++) {
+      const yearStr = years[i];
+      const hasMeasured = yearsWithMeasured.has(yearStr) && hasValue(values[i]);
+      const hasTarget = hasValue(targetValuesByYear[yearStr]);
+      if (hasMeasured) {
+        tableAnnee.push(yearStr);
+        tableValeur.push(values[i]);
+        tableTypeMesure.push(statuses[i] || 'mesuré');
+      }
+      if (hasTarget) {
+        tableAnnee.push(yearStr);
+        tableValeur.push(targetValuesByYear[yearStr]);
+        tableTypeMesure.push('cible');
+      }
+      if (!hasMeasured && !hasTarget && hasValue(values[i])) {
+        tableAnnee.push(yearStr);
+        tableValeur.push(values[i]);
+        tableTypeMesure.push(statuses[i] || 'mesuré');
+      }
+    }
+
     const transformed = {
       label_indic: item.Indicateur,
       id_indic: item.ID,
@@ -603,6 +633,9 @@ export function transformCSVData(csvData, query) {
         .filter(Boolean),
       // IRPE / Écolab: indicator ids for regional data (column IRPE_ids or ID Indicateur hub Ecolab)
       irpe_ids: parseIrpeIds(item['IRPE ids'], item['IRPE valide']),
+      tableAnnee,
+      tableValeur,
+      tableTypeMesure,
       values: {
         x: [years],
         y: y,
