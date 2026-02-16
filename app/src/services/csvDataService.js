@@ -536,8 +536,8 @@ export function transformCSVData(csvData, query) {
     const firstTargetHasMeasured = firstTargetYear != null && yearsWithMeasured.has(firstTargetYear.toString());
     const firstTargetAfterRef = targetYearsSorted.find((y) => y > refYearNum);
 
+    let points = [];
     if (targetYearsSorted.length >= 2) {
-      let points = [];
       if (firstTargetEqualsRef && firstTargetHasMeasured) {
         // When ref year is also the first target and has measured data: start line along target data only
         points = targetYearsSorted
@@ -572,9 +572,27 @@ export function transformCSVData(csvData, query) {
           }))
           .filter((p) => p.value != null && !isNaN(p.value));
       }
-      if (points.length >= 2) {
-        targetTrajectory = { points };
+    } else if (targetYearsSorted.length === 1 && refYearIdx >= 0 && refYearNum != null) {
+      // Single target (e.g. only cible_2030): draw line from reference year to that target
+      const singleTargetYear = targetYearsSorted[0];
+      if (singleTargetYear > refYearNum) {
+        const refYearStr = years[refYearIdx];
+        const refHasTarget = targetValuesByYear[refYearStr] != null && !isNaN(targetValuesByYear[refYearStr]);
+        const targetVal = targetValuesByYear[singleTargetYear.toString()];
+        if (values[refYearIdx] != null && !isNaN(values[refYearIdx]) && targetVal != null && !isNaN(targetVal)) {
+          points = [
+            { year: refYearStr, value: values[refYearIdx], isTarget: refHasTarget },
+            { year: singleTargetYear.toString(), value: targetVal, isTarget: true }
+          ];
+        }
       }
+    } else if (targetYearsSorted.length === 1 && refYearIdx < 0) {
+      // Single target, no ref in chart: just the target point (no line, but we need 2 points for a segment)
+      // Skip - cannot draw a line with one point
+    }
+
+    if (points.length >= 2) {
+      targetTrajectory = { points };
     }
     
     // Dernière valeur: last "mesuré" (measured) data point with a valid value
