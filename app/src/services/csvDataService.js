@@ -388,7 +388,7 @@ export function transformCSVData(csvData, query) {
 
     const parseVal = (raw) => {
       if (raw === undefined || raw === null || raw === '') return null;
-      const s = String(raw).trim();
+      const s = String(raw).trim().replace(/\s/g, '');
       if (!s || ['na', 'nan'].includes(s.toLowerCase())) return null;
       const num = Number(s.replace(',', '.'));
       return isNaN(num) ? null : parseFloat(parseFloat(num).toFixed(2));
@@ -531,20 +531,47 @@ export function transformCSVData(csvData, query) {
       .map((y) => parseInt(y, 10))
       .sort((a, b) => a - b);
     const refYearNum = refYearIdx >= 0 ? parseInt(years[refYearIdx], 10) : null;
+    const firstTargetYear = targetYearsSorted[0];
+    const firstTargetEqualsRef = firstTargetYear != null && firstTargetYear === refYearNum;
+    const firstTargetHasMeasured = firstTargetYear != null && yearsWithMeasured.has(firstTargetYear.toString());
     const firstTargetAfterRef = targetYearsSorted.find((y) => y > refYearNum);
 
-    if (refYearIdx >= 0 && firstTargetAfterRef != null && values[refYearIdx] != null && !isNaN(values[refYearIdx])) {
-      const points = [
-        { year: years[refYearIdx], value: values[refYearIdx], isTarget: false }
-      ];
-      targetYearsSorted.forEach((y) => {
-        if (y > refYearNum) {
-          const val = targetValuesByYear[y.toString()];
-          if (val != null && !isNaN(val)) {
-            points.push({ year: y.toString(), value: val, isTarget: true });
+    if (targetYearsSorted.length >= 2) {
+      let points = [];
+      if (firstTargetEqualsRef && firstTargetHasMeasured) {
+        // When ref year is also the first target and has measured data: start line along target data only
+        points = targetYearsSorted
+          .map((y) => ({
+            year: y.toString(),
+            value: targetValuesByYear[y.toString()],
+            isTarget: true
+          }))
+          .filter((p) => p.value != null && !isNaN(p.value));
+      } else if (refYearIdx >= 0 && firstTargetAfterRef != null && values[refYearIdx] != null && !isNaN(values[refYearIdx])) {
+        // Start from reference year through targets after ref
+        const refYearStr = years[refYearIdx];
+        const refHasTarget = targetValuesByYear[refYearStr] != null && !isNaN(targetValuesByYear[refYearStr]);
+        points = [
+          { year: refYearStr, value: values[refYearIdx], isTarget: refHasTarget }
+        ];
+        targetYearsSorted.forEach((y) => {
+          if (y > refYearNum) {
+            const val = targetValuesByYear[y.toString()];
+            if (val != null && !isNaN(val)) {
+              points.push({ year: y.toString(), value: val, isTarget: true });
+            }
           }
-        }
-      });
+        });
+      } else if (refYearIdx < 0 && targetYearsSorted.length >= 2) {
+        // Ref year not in chart: start from first target
+        points = targetYearsSorted
+          .map((y) => ({
+            year: y.toString(),
+            value: targetValuesByYear[y.toString()],
+            isTarget: true
+          }))
+          .filter((p) => p.value != null && !isNaN(p.value));
+      }
       if (points.length >= 2) {
         targetTrajectory = { points };
       }

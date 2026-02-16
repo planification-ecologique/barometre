@@ -738,12 +738,15 @@
                   const bodyLines = tooltipModel.body.map(getBody)
 
                   const divDate = self.$el.querySelector('.tooltip_header')
-                  divDate.innerHTML = titleLines[0]
+                  if (divDate) divDate.innerHTML = titleLines[0]
 
                   const color = tooltipModel.labelTextColors[0]
                   const divValue = self.$el.querySelector('.tooltip_value')
-
-                  const nodeName = self.$el.querySelector('.tooltip_dot').attributes[0].nodeName
+                  const tooltipDot = self.$el.querySelector('.tooltip_dot')
+                  const nodeName = tooltipDot && tooltipDot.attributes && tooltipDot.attributes[0]
+                    ? tooltipDot.attributes[0].nodeName
+                    : 'style'
+                  if (!divValue) return
                   divValue.innerHTML = ''
                   const items = []
                   bodyLines[0].forEach(function (line, i) {
