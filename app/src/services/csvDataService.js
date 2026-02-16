@@ -411,19 +411,29 @@ export function transformCSVData(csvData, query) {
     }
 
     // 2. cible_XXXX columns (cible_2030, cible_2028, etc.) = target data
+    // Store targets separately so years with BOTH measured and target show both (bar + line)
+    const targetValuesByYear = {};
     Object.keys(item).forEach((key) => {
       const m = key.match(/^cible_(\d{4})$/i);
       if (m) {
         const yearStr = m[1];
         const numVal = parseVal(item[key]);
         if (numVal !== null) {
-          dataPoints.set(yearStr, { value: numVal, statusDisplay: 'cible' });
+          targetValuesByYear[yearStr] = numVal;
+          // Only add to dataPoints when year has no measured data (target-only years)
+          if (!dataPoints.has(yearStr)) {
+            dataPoints.set(yearStr, { value: numVal, statusDisplay: 'cible' });
+          }
         }
       }
     });
 
-    // Build sorted year axis and align values/statuses
-    const allYears = Array.from(dataPoints.keys()).map((y) => parseInt(y, 10)).sort((a, b) => a - b);
+    // Build sorted year axis: union of measured years and target years
+    const allYearNumbers = new Set([
+      ...Array.from(dataPoints.keys()).map((y) => parseInt(y, 10)),
+      ...Object.keys(targetValuesByYear).map((y) => parseInt(y, 10))
+    ]);
+    const allYears = Array.from(allYearNumbers).sort((a, b) => a - b);
     const minYear = allYears.length > 0 ? allYears[0] : 2017;
     const maxYear = allYears.length > 0 ? allYears[allYears.length - 1] : 2030;
 
@@ -512,24 +522,29 @@ export function transformCSVData(csvData, query) {
       }
     }
 
-    // All target points (years with status "cible"), sorted by year
-    const targetIndices = [];
-    for (let i = 0; i < statuses.length; i++) {
-      if (normalizeStatusForLogic(statuses[i] || '', years[i]) === 'cible') {
-        const v = values[i];
-        if (v != null && !isNaN(v)) targetIndices.push(i);
-      }
-    }
-    targetIndices.sort((a, b) => parseInt(years[a], 10) - parseInt(years[b], 10));
+    // Target trajectory: use targetValuesByYear for target points (so years with both
+    // measured + target show bar from measured, line from target)
+    const targetYearsSorted = Object.keys(targetValuesByYear)
+      .map((y) => parseInt(y, 10))
+      .sort((a, b) => a - b);
+    const refYearNum = refYearIdx >= 0 ? parseInt(years[refYearIdx], 10) : null;
+    const firstTargetAfterRef = targetYearsSorted.find((y) => y > refYearNum);
 
-    if (refYearIdx >= 0 && targetIndices.length > 0 && targetIndices[0] > refYearIdx) {
+    if (refYearIdx >= 0 && firstTargetAfterRef != null && values[refYearIdx] != null && !isNaN(values[refYearIdx])) {
       const points = [
         { year: years[refYearIdx], value: values[refYearIdx], isTarget: false }
       ];
-      targetIndices.forEach((idx) => {
-        points.push({ year: years[idx], value: values[idx], isTarget: true });
+      targetYearsSorted.forEach((y) => {
+        if (y > refYearNum) {
+          const val = targetValuesByYear[y.toString()];
+          if (val != null && !isNaN(val)) {
+            points.push({ year: y.toString(), value: val, isTarget: true });
+          }
+        }
       });
-      targetTrajectory = { points };
+      if (points.length >= 2) {
+        targetTrajectory = { points };
+      }
     }
     
     // Dernière valeur: last "mesuré" (measured) data point with a valid value

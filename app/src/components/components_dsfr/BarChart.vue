@@ -362,9 +362,33 @@
           } catch (e) { /* ignore */ }
         }
   
-        // Set ymax
+        // Set ymax: include bar data, target trajectory, and hlines so targets stay visible
         if (!this.horizontal) {
-          self.ymax = Math.max.apply(null, self.hlineParse)
+          let maxVal = 0
+          if (self.yparse && self.yparse.length > 0) {
+            self.yparse.forEach(function (dj) {
+              (dj || []).forEach(function (v) {
+                if (v != null && !isNaN(v) && v > maxVal) maxVal = v
+              })
+            })
+          }
+          if (self.targetTrajectoryParse && self.targetTrajectoryParse.points) {
+            self.targetTrajectoryParse.points.forEach(function (p) {
+              const v = Number(p.value)
+              if (!isNaN(v) && v > maxVal) maxVal = v
+            })
+          }
+          if (self.targetSegmentParse) {
+            const v1 = Number(self.targetSegmentParse.startValue)
+            const v2 = Number(self.targetSegmentParse.endValue)
+            if (!isNaN(v1) && v1 > maxVal) maxVal = v1
+            if (!isNaN(v2) && v2 > maxVal) maxVal = v2
+          }
+          if (self.hlineParse && self.hlineParse.length > 0) {
+            const hMax = Math.max.apply(null, self.hlineParse)
+            if (!isNaN(hMax) && hMax > maxVal) maxVal = hMax
+          }
+          self.ymax = maxVal > 0 ? maxVal * 1.05 : (self.hlineParse?.length ? Math.max.apply(null, self.hlineParse) : 100)
         }
   
         // Annotation
@@ -425,6 +449,30 @@
             // barThickness: 'flex'
           })
         })
+        // Add invisible line dataset for target trajectory so target-only years are hoverable
+        if (!this.horizontal && self.targetTrajectoryParse && self.targetTrajectoryParse.points) {
+          const trajByYear = {}
+          self.targetTrajectoryParse.points.forEach(function (p) {
+            trajByYear[String(p.year)] = p.value
+          })
+          const targetData = self.labels.map(function (label) {
+            return trajByYear[String(label)] != null ? trajByYear[String(label)] : null
+          })
+          self.datasets.push({
+            _targetTrajectory: true,
+            type: 'line',
+            data: targetData,
+            borderColor: self.targetSegmentColor,
+            backgroundColor: self.targetSegmentColor,
+            borderWidth: 2,
+            borderDash: [6, 4],
+            pointRadius: 4,
+            pointBackgroundColor: self.targetSegmentColor,
+            pointBorderColor: self.targetSegmentColor,
+            fill: false,
+            order: -1
+          })
+        }
       },
       createChart () {
         Chart.defaults.global.defaultFontFamily = 'Marianne'
@@ -501,46 +549,29 @@
                 ctx.stroke()
                 ctx.restore()
               }
-              // Target trajectory: blue line through ref + targets, dots at target points
-              if (!self.horizontal && (self.targetTrajectoryParse || self.targetSegmentParse)) {
+              // Target segment (legacy): drawn manually when no targetTrajectory
+              if (!self.horizontal && self.targetSegmentParse && !self.targetTrajectoryParse) {
                 const ctx = chart.ctx
                 const xAxis = chart.scales['x-axis-0']
                 const yAxis = chart.scales['y-axis-0']
-                let points = []
-                if (self.targetTrajectoryParse) {
-                  points = self.targetTrajectoryParse.points.map(p => ({
-                    x: xAxis.getPixelForValue(p.year),
-                    y: yAxis.getPixelForValue(p.value),
-                    isTarget: p.isTarget
-                  }))
-                } else {
-                  const seg = self.targetSegmentParse
-                  points = [
-                    { x: xAxis.getPixelForValue(seg.startYear), y: yAxis.getPixelForValue(seg.startValue), isTarget: false },
-                    { x: xAxis.getPixelForValue(seg.endYear), y: yAxis.getPixelForValue(seg.endValue), isTarget: true }
-                  ]
-                }
+                const seg = self.targetSegmentParse
+                const points = [
+                  { x: xAxis.getPixelForValue(seg.startYear), y: yAxis.getPixelForValue(seg.startValue), isTarget: false },
+                  { x: xAxis.getPixelForValue(seg.endYear), y: yAxis.getPixelForValue(seg.endValue), isTarget: true }
+                ]
                 if (points.length >= 2) {
                   ctx.save()
                   ctx.beginPath()
                   ctx.moveTo(points[0].x, points[0].y)
-                  for (let i = 1; i < points.length; i++) {
-                    ctx.lineTo(points[i].x, points[i].y)
-                  }
+                  ctx.lineTo(points[1].x, points[1].y)
                   ctx.strokeStyle = self.targetSegmentColor
                   ctx.lineWidth = 2
                   ctx.setLineDash([6, 4])
                   ctx.stroke()
-                  // Simple dots at target points
-                  const dotRadius = 4
-                  points.forEach(p => {
-                    if (p.isTarget) {
-                      ctx.beginPath()
-                      ctx.arc(p.x, p.y, dotRadius, 0, 2 * Math.PI)
-                      ctx.fillStyle = self.targetSegmentColor
-                      ctx.fill()
-                    }
-                  })
+                  ctx.beginPath()
+                  ctx.arc(points[1].x, points[1].y, 4, 0, 2 * Math.PI)
+                  ctx.fillStyle = self.targetSegmentColor
+                  ctx.fill()
                   ctx.restore()
                 }
               }
@@ -650,7 +681,12 @@
                 label: function (tooltipItems) {
                   const label = []
                   self.datasets.forEach(function (set, i) {
-                    label.push(self.convertIntToHuman(set.data[tooltipItems.index]))
+                    if (set._targetTrajectory) {
+                      const v = set.data[tooltipItems.index]
+                      label.push(v != null && !isNaN(v) ? self.convertIntToHuman(v) : null)
+                    } else {
+                      label.push(self.convertIntToHuman(set.data[tooltipItems.index]))
+                    }
                   })
                   return label
                 },
@@ -658,7 +694,11 @@
                   return tooltipItems[0].label
                 },
                 labelTextColor: function (tooltipItems) {
-                  return self.colorParse
+                  const colors = (self.colorParse || []).slice()
+                  if (self.datasets.some(function (d) { return d._targetTrajectory })) {
+                    colors.push(self.targetSegmentColor)
+                  }
+                  return colors
                 }
               },
               custom: function (context) {
@@ -687,20 +727,23 @@
                 if (tooltipModel.body) {
                   const titleLines = tooltipModel.title || []
                   const bodyLines = tooltipModel.body.map(getBody)
-  
+
                   const divDate = self.$el.querySelector('.tooltip_header')
                   divDate.innerHTML = titleLines[0]
-  
+
                   const color = tooltipModel.labelTextColors[0]
                   const divValue = self.$el.querySelector('.tooltip_value')
-  
+
                   const nodeName = self.$el.querySelector('.tooltip_dot').attributes[0].nodeName
                   divValue.innerHTML = ''
                   const items = []
                   bodyLines[0].forEach(function (line, i) {
                     if (line !== undefined && line !== "NaN" && line !== "0") {
-                      const seriesLabel = (self.nameParse && self.nameParse[i]) ? self.capitalize(self.nameParse[i]) : ''
-                      items.push({ line, color: color[i], label: seriesLabel })
+                      const set = self.datasets[i]
+                      const seriesLabel = set && set._targetTrajectory
+                        ? 'Cible(s) initiale(s)'
+                        : ((self.nameParse && self.nameParse[i]) ? self.capitalize(self.nameParse[i]) : '')
+                      items.push({ line, color: (color && color[i]) || self.targetSegmentColor, label: seriesLabel })
                     }
                   })
                   if (self.stacked && items.length > 1) {
