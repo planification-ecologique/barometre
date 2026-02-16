@@ -28,6 +28,7 @@
 
       <li v-for="page in pages" :key="page.id">
         <a
+          v-if="page.id !== 0 && page.id !== 9999"
           class="fr-pagination__link fr-displayed-lg"
           :aria-current="page.selected"
           @click="changePage(page.id)"
@@ -37,6 +38,14 @@
         >
           {{ page.label }}
         </a>
+        <span
+          v-else
+          class="fr-pagination__link fr-pagination__link--ellipsis fr-displayed-lg"
+          :id="'fr-pagination-link'+page.id"
+          aria-hidden="true"
+        >
+          {{ page.label }}
+        </span>
       </li>
 
       <li v-if="nbPages > 5">
@@ -92,10 +101,12 @@ export default {
         Math.min(select - this.bound, this.nbPages - this.length_pages),
         1
       );
-      var end = Math.min(
-        Math.min(select + this.bound, this.nbPages),
-        this.length_pages
-      );
+      var end = Math.min(select + this.bound, this.nbPages);
+
+      // Ensure we don't show more than length_pages when near the end
+      if (end - start + 1 > this.length_pages) {
+        start = Math.max(1, end - this.length_pages + 1);
+      }
 
       if (start > 1) {
         this.pages.push({ label: "...", id: 0, selected: false });
@@ -126,7 +137,7 @@ export default {
     },
     prevPage() {
       var nb_item = this.pre_selected - 1;
-      if (nb_item > 1) {
+      if (nb_item >= 1) {
         this.changePage(nb_item);
       }
     },
@@ -148,4 +159,9 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped>
+.fr-pagination__link--ellipsis {
+  cursor: default;
+  pointer-events: none;
+}
+</style>
