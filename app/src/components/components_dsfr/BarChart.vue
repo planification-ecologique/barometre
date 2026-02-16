@@ -473,6 +473,7 @@
             backgroundColor: self.targetSegmentColor,
             borderWidth: 2,
             borderDash: [6, 4],
+            lineTension: 0,
             pointRadius: targetPointRadius,
             pointBackgroundColor: self.targetSegmentColor,
             pointBorderColor: self.targetSegmentColor,
