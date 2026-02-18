@@ -382,8 +382,8 @@ export function transformCSVData(csvData, query) {
   // Transform to API response format
   const results = filteredData.map(item => {
     // Extract years and values from columns.
-    // New format: year columns (2017, 2018...) = measured, cible_XXXX columns = targets.
-    // Legacy: label_YYYY columns can override status.
+    // Year columns (2017, 2018...) = measured; cible_XXXX columns = targets.
+    // Status from projection_YYYY or cible_YYYY (label_YYYY deprecated).
     const dataPoints = new Map(); // yearStr -> { value, statusDisplay }
 
     const parseVal = (raw) => {
@@ -394,18 +394,28 @@ export function transformCSVData(csvData, query) {
       return isNaN(num) ? null : parseFloat(parseFloat(num).toFixed(2));
     };
 
-    const isValidValue = (numVal, hasLabel) => !(numVal === 0 && !hasLabel);
+    const isValidValue = (numVal, hasExplicitMarker) => !(numVal === 0 && !hasExplicitMarker);
 
-    // 1. Year columns (2017, 2018, ...) = measured data (no label column in new format)
+    // Helper: get status from projection_YYYY (label_YYYY deprecated)
+    const getStatusDisplay = (yearStr) => {
+      const raw = item[`label_${yearStr}`] || item[`projection_${yearStr}`] || '';
+      const s = String(raw).trim();
+      return s || yearStr;
+    };
+
+    const hasExplicitMarker = (yearStr) => {
+      const raw = item[`label_${yearStr}`] || item[`projection_${yearStr}`] || '';
+      return raw != null && String(raw).trim() !== '';
+    };
+
+    // 1. Year columns (2017, 2018, ...) = measured data
     for (let i = 2017; i <= 2030; i++) {
       const yearStr = i.toString();
       const rawVal = item[yearStr];
-      const labelKey = `label_${yearStr}`;
-      const hasLabel = item[labelKey] && String(item[labelKey]).trim() !== '';
       const numVal = parseVal(rawVal);
-      if (numVal !== null && isValidValue(numVal, hasLabel)) {
-        const rawLabel = item[labelKey] || '';
-        const statusDisplay = rawLabel.trim() !== '' ? rawLabel : yearStr;
+      const hasMarker = hasExplicitMarker(yearStr) || numVal !== null; // value in year column = explicit
+      if (numVal !== null && isValidValue(numVal, hasMarker)) {
+        const statusDisplay = getStatusDisplay(yearStr);
         dataPoints.set(yearStr, { value: numVal, statusDisplay });
       }
     }
@@ -510,10 +520,12 @@ export function transformCSVData(csvData, query) {
     const refYearParsed = refYearStr && /^\d{4}$/.test(refYearStr) ? refYearStr : null;
 
     let refYearIdx = -1;
+    let refYearValue = null; // Value at ref year for trajectory start (may need fallback)
     if (refYearParsed) {
       const idx = years.indexOf(refYearParsed);
-      if (idx >= 0 && values[idx] != null && !isNaN(values[idx])) {
+      if (idx >= 0) {
         refYearIdx = idx;
+        refYearValue = (values[idx] != null && !isNaN(values[idx])) ? values[idx] : null;
       }
     }
     if (refYearIdx < 0) {
@@ -521,8 +533,21 @@ export function transformCSVData(csvData, query) {
         const v = values[i];
         if (normalizeStatusForLogic(statuses[i] || '', years[i]) === 'mesuré' && v != null && !isNaN(v)) {
           refYearIdx = i;
+          refYearValue = v;
         }
       }
+    }
+    // When ref year is explicitly set but has no value (e.g. 0 filtered),
+    // use last measured value so trajectory respects "Année de référence de la source"
+    if (refYearIdx >= 0 && refYearValue == null) {
+      for (let i = refYearIdx - 1; i >= 0; i--) {
+        const v = values[i];
+        if (normalizeStatusForLogic(statuses[i] || '', years[i]) === 'mesuré' && v != null && !isNaN(v)) {
+          refYearValue = v;
+          break;
+        }
+      }
+      if (refYearValue == null) refYearValue = 0;
     }
 
     // Target trajectory: use targetValuesByYear for target points (so years with both
@@ -547,12 +572,12 @@ export function transformCSVData(csvData, query) {
             isTarget: true
           }))
           .filter((p) => p.value != null && !isNaN(p.value));
-      } else if (refYearIdx >= 0 && firstTargetAfterRef != null && values[refYearIdx] != null && !isNaN(values[refYearIdx])) {
+      } else if (refYearIdx >= 0 && firstTargetAfterRef != null && refYearValue != null && !isNaN(refYearValue)) {
         // Start from reference year through targets after ref
         const refYearStr = years[refYearIdx];
         const refHasTarget = targetValuesByYear[refYearStr] != null && !isNaN(targetValuesByYear[refYearStr]);
         points = [
-          { year: refYearStr, value: values[refYearIdx], isTarget: refHasTarget }
+          { year: refYearStr, value: refYearValue, isTarget: refHasTarget }
         ];
         targetYearsSorted.forEach((y) => {
           if (y > refYearNum) {
@@ -579,9 +604,9 @@ export function transformCSVData(csvData, query) {
         const refYearStr = years[refYearIdx];
         const refHasTarget = targetValuesByYear[refYearStr] != null && !isNaN(targetValuesByYear[refYearStr]);
         const targetVal = targetValuesByYear[singleTargetYear.toString()];
-        if (values[refYearIdx] != null && !isNaN(values[refYearIdx]) && targetVal != null && !isNaN(targetVal)) {
+        if (refYearValue != null && !isNaN(refYearValue) && targetVal != null && !isNaN(targetVal)) {
           points = [
-            { year: refYearStr, value: values[refYearIdx], isTarget: refHasTarget },
+            { year: refYearStr, value: refYearValue, isTarget: refHasTarget },
             { year: singleTargetYear.toString(), value: targetVal, isTarget: true }
           ];
         }
