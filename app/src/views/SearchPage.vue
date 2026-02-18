@@ -9,6 +9,7 @@
                   Recherche
               </label>
               <input 
+                ref="searchInput"
                 v-model="searchQuery" 
                 class="fr-input" 
                 placeholder="Rechercher un indicateur" 
@@ -234,6 +235,9 @@ export default {
   },
   mounted() {
     this.fetchData(this.selectedTags);
+    this.$nextTick(() => {
+      this.$refs.searchInput?.focus();
+    });
     
     dsfrAnalytics({
       path: "/search",
