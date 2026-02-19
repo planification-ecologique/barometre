@@ -158,12 +158,11 @@ export default {
 
 .fr-title {
   margin-bottom: 0.625rem;
-  color: var(--text-title-grey, #161616);
 }
 
 .fr-subtitle {
   font-weight: 400;
-  color: var(--text-default-grey, #3a3a3a);
+  color: #666;
 }
 
 .fr-table {
@@ -184,22 +183,22 @@ export default {
 }
 
 .fr-table th {
-  background-color: var(--background-alt-blue-france, #f5f5fe);
+  background-color: #f5f5fe;
   font-weight: 700;
   white-space: nowrap;
 }
 
 .fr-table tbody tr:nth-child(even) {
-  background-color: var(--background-default-grey, #f6f6f6);
+  background-color: #f6f6f6;
 }
 
 .fr-table tbody tr:hover {
-  background-color: var(--background-contrast-blue-france, #e3e3fd);
+  background-color: #e3e3fd;
 }
 
 .no-data {
   text-align: center;
-  color: var(--text-default-grey, #3a3a3a);
+  color: #666;
   font-style: italic;
 }
 </style>

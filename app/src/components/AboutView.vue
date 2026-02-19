@@ -66,7 +66,6 @@ export default {
 <style scoped>
 .fr-title {
   margin-bottom: 0.625rem;
-  color: var(--text-title-grey, #161616);
 }
 
 .about-content {

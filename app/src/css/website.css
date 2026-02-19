@@ -1,20 +1,3 @@
-/* Mode nuit - le DSFR gère les variables CSS, on s'assure que le body suit */
-[data-fr-theme="dark"] body {
-  background-color: var(--background-default-grey);
-}
-
-/* Lisibilité des pages sectorielles - contraste des titres et du contenu */
-.fr-container-page .fr-title,
-.fr-container-page .fr-h3,
-.fr-container-page .fr-h4 {
-  color: var(--text-title-grey, #161616);
-}
-
-.fr-container-page .fr-subtitle,
-.fr-container-page .section-description {
-  color: var(--text-default-grey, #3a3a3a);
-}
-
 .custom-footer-body {
     flex-wrap: nowrap !important;
     align-items: flex-start !important;

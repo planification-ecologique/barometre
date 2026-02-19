@@ -712,7 +712,7 @@ export default {
 <style scoped>
 a:hover:not([href]) {
   cursor: pointer;
-  background-color: var(--background-default-grey, #f6f6f6);
+  background-color: #f6f6f6;
 }
 
 /* Section title in sector menu: label only, no link styling */
@@ -753,7 +753,7 @@ a:hover:not([href]) {
 }
 
 .fr-sidemenu__item > .fr-sidemenu__btn:hover {
-  background-color: var(--background-default-grey, #f6f6f6);
+  background-color: #f6f6f6;
 }
 
 .fr-sidemenu__item > .fr-sidemenu__btn[aria-current="true"] {

@@ -259,12 +259,11 @@ export default {
 
 .fr-title {
   margin-bottom: 0.625rem;
-  color: var(--text-title-grey, #161616);
 }
 
 .fr-subtitle {
   font-weight: 400;
-  color: var(--text-default-grey, #3a3a3a);
+  color: #666;
 }
 
 .section-header {
@@ -274,7 +273,6 @@ export default {
 .fr-h3 {
   margin-top: 0;
   margin-bottom: 0.5rem;
-  color: var(--text-title-grey, #161616);
 }
 
 .fr-h4 {
