@@ -196,15 +196,17 @@ export default {
 
 .fr-title {
   margin-bottom: 0.625rem;
+  color: var(--text-title-grey, #161616);
 }
 
 .fr-h3 {
   margin-top: 2rem;
   margin-bottom: 1rem;
+  color: var(--text-title-grey, #161616);
 }
 
 .levier-title {
   padding-bottom: 0.5rem;
-  border-bottom: 2px solid #e5e5e5;
+  border-bottom: 2px solid var(--border-default-grey, #e5e5e5);
 }
 </style>

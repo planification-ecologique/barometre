@@ -156,9 +156,12 @@ export default {
 
 .fr-title {
   margin-bottom: 0.625rem;
+  color: var(--text-title-grey, #161616);
 }
+
 .fr-subtitle {
   font-weight: 400;
+  color: var(--text-default-grey, #3a3a3a);
 }
 .img {
   width: 5%;

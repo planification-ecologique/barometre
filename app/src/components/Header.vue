@@ -66,6 +66,7 @@
               </div>
             </div>
           </div>
+
           <!-- <div class="fr-header__tools-links"> -->
           <div class="france-nation-verte-logo fr-header__tools">
             <ul>
@@ -74,9 +75,8 @@
                   href="https://www.info.gouv.fr/france-nation-verte"
                   target="_blank"
                   title="France Nation Verte - nouvelle fenêtre"
-                  class="fr-btn"
+                  class="fr-btn fr-btn--secondary"
                   id="header-title"
-                  style="background-color: white; color: #000091"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -98,23 +98,37 @@
               </li>
             </ul>
           </div>
+          <div class="fr-header__tools theme-toggle-wrapper">
+            <button
+              type="button"
+              class="fr-btn fr-btn--secondary fr-btn--icon-left fr-icon-theme-fill"
+              :title="isDarkMode ? 'Passer en mode clair' : 'Passer en mode nuit'"
+              :aria-label="isDarkMode ? 'Passer en mode clair' : 'Passer en mode nuit'"
+              @click="toggleDarkMode"
+            >
+            </button>
+          </div>
         </div>
       </div>
     </div>
     <div class="fr-container--fluid desktop-navigation" v-if="showNavigation">
       <ul class="fr-btns-group mobile-display-button">
         <li>
+          <button
+            type="button"
+            class="fr-btn fr-btn--secondary fr-btn--icon-left fr-icon-theme-fill"
+            :title="isDarkMode ? 'Passer en mode clair' : 'Passer en mode nuit'"
+            :aria-label="isDarkMode ? 'Passer en mode clair' : 'Passer en mode nuit'"
+            @click="toggleDarkMode"
+          >
+          </button>
+        </li>
+        <li>
           <a
             class="fr-btn fr-btn--icon-left"
             href="https://www.info.gouv.fr/france-nation-verte"
             target="_blank"
-            aria-controls="fr-theme-modal"
-            data-fr-opened="false"
-            id="header-button-theme-mobile"
             title="Découvrir la planification écologique"
-            data-fr-js-modal-button="true"
-            data-fr-js-button-actionee="true"
-            data-fr-js-header-menu-button-actionee="true"
           >
             Découvrir la planification écologique
           </a>
@@ -139,9 +153,41 @@ export default {
       accueil_link: "/dashboard?sector=Synthèse",
       showNavigation: false,
       isDesktop: false,
+      isDarkMode: false,
     };
   },
   methods: {
+    toggleDarkMode() {
+      const scheme = this.isDarkMode ? 'light' : 'dark';
+      const theme = scheme; // 'light' ou 'dark'
+      document.documentElement.setAttribute('data-fr-scheme', scheme);
+      document.documentElement.setAttribute('data-fr-theme', theme);
+      document.documentElement.style.colorScheme = theme === 'dark' ? 'dark' : '';
+      try {
+        localStorage.setItem('scheme', scheme);
+      } catch (e) {
+        console.warn('localStorage unavailable');
+      }
+      this.isDarkMode = !this.isDarkMode;
+      // Notifier les graphiques du changement de thème
+      document.documentElement.dispatchEvent(
+        new CustomEvent('dsfr.theme', { detail: { theme } })
+      );
+    },
+    updateDarkModeState() {
+      const scheme = document.documentElement.getAttribute('data-fr-scheme');
+      const theme = document.documentElement.getAttribute('data-fr-theme');
+      let storedScheme;
+      try {
+        storedScheme = localStorage.getItem('scheme');
+      } catch (e) {
+        storedScheme = null;
+      }
+      this.isDarkMode =
+        scheme === 'dark' ||
+        theme === 'dark' ||
+        storedScheme === 'dark';
+    },
     set_link() {
       let base = process.env.VUE_APP_PREFIX_PATH;
       // Synthèse is always the default/home sector
@@ -177,9 +223,18 @@ export default {
     this.set_link();
     this.checkForMobile(); // Set initial state based on screen size
     window.addEventListener("resize", this.checkForMobile);
+    // État initial du mode nuit (après init DSFR qui peut être asynchrone)
+    this.$nextTick(() => this.updateDarkModeState());
+    setTimeout(() => this.updateDarkModeState(), 100);
+    // Écouter les changements de thème (ex: préférence système)
+    this._schemeHandler = () => this.updateDarkModeState();
+    document.documentElement.addEventListener('dsfr.scheme', this._schemeHandler);
   },
   beforeDestroy() {
     window.removeEventListener("resize", this.checkForMobile);
+    if (this._schemeHandler) {
+      document.documentElement.removeEventListener('dsfr.scheme', this._schemeHandler);
+    }
   },
 };
 </script>
@@ -195,7 +250,7 @@ export default {
 
 .fr-header__body {
   width: 100%;
-  border-bottom: 1px solid rgba(207, 207, 223, 0.534);
+  border-bottom: 1px solid var(--border-default-grey, rgba(207, 207, 223, 0.534));
 }
 
 .header-container {
@@ -217,6 +272,15 @@ export default {
   /* text-decoration: underline; */
   /* line-height: 1.25rem; */
   margin-right: 10px;
+}
+
+.theme-toggle-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.theme-toggle-wrapper .fr-btn {
+  white-space: nowrap;
 }
 
 .france-nation-verte-logo {
