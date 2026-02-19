@@ -537,12 +537,13 @@ export function transformCSVData(csvData, query) {
         }
       }
     }
-    // When ref year is explicitly set but has no value (e.g. 0 filtered),
-    // use last measured value so trajectory respects "Année de référence de la source"
+    // When ref year has no data: use last available year with a measurement as trajectory start
+    // (otherwise the target line starts from nothing, e.g. "Volume de déchets ménagers valorisés matière")
     if (refYearIdx >= 0 && refYearValue == null) {
-      for (let i = refYearIdx - 1; i >= 0; i--) {
+      for (let i = values.length - 1; i >= 0; i--) {
         const v = values[i];
         if (normalizeStatusForLogic(statuses[i] || '', years[i]) === 'mesuré' && v != null && !isNaN(v)) {
+          refYearIdx = i;
           refYearValue = v;
           break;
         }
@@ -640,11 +641,11 @@ export function transformCSVData(csvData, query) {
       ? values[idx2030ForCible]
       : null;
 
-    // Table rows: allow same year twice when it has both measured and target; skip years with 0/null data
+    // Table rows: allow same year twice when it has both measured and target; include 0 as valid data
     const tableAnnee = [];
     const tableValeur = [];
     const tableTypeMesure = [];
-    const hasValue = (v) => v != null && !isNaN(v) && v !== 0;
+    const hasValue = (v) => v != null && !isNaN(v);
     for (let i = 0; i < years.length; i++) {
       const yearStr = years[i];
       const hasMeasured = yearsWithMeasured.has(yearStr) && hasValue(values[i]);
@@ -1049,10 +1050,10 @@ function getSeries(list_y, list_x, statuses, targetYear, targetValue) {
   });
   const allYears = uniqueYears.sort((a, b) => parseInt(a) - parseInt(b));
   
-  // Historical series
+  // Historical series (include 0 values as valid historical data)
   const hasHistorical = Object.keys(historicalData).length > 0;
   if (hasHistorical) {
-    const history = allYears.map(year => historicalData[year] || 0);
+    const history = allYears.map(year => historicalData[year] ?? null);
     // Zero out years where we have projection or target data
     history.forEach((val, idx) => {
       const year = allYears[idx];
@@ -1060,17 +1061,17 @@ function getSeries(list_y, list_x, statuses, targetYear, targetValue) {
         history[idx] = 0;
       }
     });
-    if (history.some(v => v !== 0)) {
-      seriesData.push(history);
-      legend.push('Historique');
-      colors.push('brown-cafe-creme');
-    }
+    // Replace null with 0 for chart display (null = no data for that year)
+    const historyForChart = history.map(v => v == null ? 0 : v);
+    seriesData.push(historyForChart);
+    legend.push('Historique');
+    colors.push('brown-cafe-creme');
   }
   
   // Projection series (extrapolation) – controlled by SHOW_EXTRAPOLATION
   const hasProjection = SHOW_EXTRAPOLATION && Object.keys(projectionData).length > 0;
   if (hasProjection) {
-    const projection = allYears.map(year => projectionData[year] || 0);
+    const projection = allYears.map(year => projectionData[year] ?? null);
     // Zero out years where we have historical or target data
     projection.forEach((val, idx) => {
       const year = allYears[idx];
@@ -1078,11 +1079,10 @@ function getSeries(list_y, list_x, statuses, targetYear, targetValue) {
         projection[idx] = 0;
       }
     });
-    if (projection.some(v => v !== 0)) {
-      seriesData.push(projection);
-      legend.push('Extrapolation');
-      colors.push('green-emeraude');
-    }
+    const projectionForChart = projection.map(v => v == null ? 0 : v);
+    seriesData.push(projectionForChart);
+    legend.push('Extrapolation');
+    colors.push('green-emeraude');
   }
   
   // Targets: no bars, shown as line + dots via targetTrajectory (handled separately)
