@@ -679,6 +679,7 @@ p.cardDescription {
   font-weight: 400;
   text-align: justify;
   text-justify: inter-word;
+  white-space: pre-line;
   margin-bottom: 1rem;
   color: black;
 }

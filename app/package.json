@@ -36,6 +36,7 @@
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^5.0.8",
+    "@vue/cli-service": "^5.0.8",
     "prettier": "3.1.0",
     "vue-template-compiler": "^2.7.14"
   },

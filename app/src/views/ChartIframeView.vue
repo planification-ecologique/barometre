@@ -34,14 +34,23 @@ export default {
         throw new Error('No chart ID provided')
       }
 
+      // Load the chart by underlying Grist row ID so that
+      // any subchart ID for a grouped indicator resolves
+      // to the full multi-series chart.
       const response = await getIndicators({
         time_period: {
           date_start: "2015-01-01",
           date_end: "2031-01-01"
-        }
+        },
+        filter_by: [
+          {
+            field: 'grist_ids',
+            values: [id]
+          }
+        ]
       }, 'staging')
       
-      this.indicator = response.results.find(ind => ind.id_indic === id)
+      this.indicator = response.results[0]
       if (!this.indicator) {
         throw new Error('Chart not found')
       }

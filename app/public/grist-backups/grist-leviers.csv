@@ -3,7 +3,7 @@ Indicateur de chantier,,Indicateur de chantier,#TypeError
 Indicateur d'impact,,Indicateur d'impact,#TypeError
 Indicateur d'impact - autres,,Indicateur d'impact - autres,#TypeError
 Autres indicateurs,,Autres indicateurs,#TypeError
-Réduction des besoins de mobilité,Se déplacer / Réduire la dépendance à la voiture,Réduction des besoins de mobilité,#TypeError
+Réduction des besoins de mobilité terrestre,Se déplacer / Réduire la dépendance à la voiture,Réduction des besoins de mobilité terrestre,#TypeError
 Développement des mobilités douces (vélo et marche),Se déplacer / Réduire la dépendance à la voiture,Développement des mobilités douces (vélo et marche),#TypeError
 Développement des transports en commun,Se déplacer / Réduire la dépendance à la voiture,Développement des transports en commun,#TypeError
 Développement du covoiturage,Se déplacer / Réduire la dépendance à la voiture,Développement du covoiturage,#TypeError
@@ -42,15 +42,16 @@ Développement de l'usage de matériaux biosourcés dans la construction et rén
 Végétalisation et accueil des espèces dans le bâti,Se loger / Généraliser les pratiques durables de construction et rénovation,Végétalisation et accueil des espèces dans le bâti,#TypeError
 Eradication des bouilloires thermiques,Se loger / Généraliser les pratiques durables de construction et rénovation,Eradication des bouilloires thermiques,#TypeError
 Intégration de matériaux recyclés dans la construction,Se loger / Généraliser les pratiques durables de construction et rénovation,Intégration de matériaux recyclés dans la construction,#TypeError
-Réduction des volumes et valorisation des déchets de la construction,,Réduction des volumes et valorisation des déchets de la construction,#TypeError
+Réduction des volumes et valorisation des déchets de la construction,Consommer / Développer la consommation responsable,Réduction des volumes et valorisation des déchets de la construction,#TypeError
 Restauration des capacités de production nucléaire,Produire / Accroitre notre production d'électricité décarbonée,Restauration des capacités de production nucléaire,#TypeError
+Développement de la production d'électricité renouvelable,Produire / Accroitre notre production d'électricité décarbonée,Développement de la production d'électricité renouvelable,#TypeError
 Développement des réseaux de chaleur urbains,Produire / Développer les réseaux de chaleur et de froid renouvelables,Développement des réseaux de chaleur urbains,#TypeError
 Décarbonation de la production de chaleur,Produire / Développer les réseaux de chaleur et de froid renouvelables,Décarbonation de la production de chaleur,#TypeError
 Développement des réseaux de froid,Produire / Développer les réseaux de chaleur et de froid renouvelables,Développement des réseaux de froid,#TypeError
-Développement des puits technologiques dans l'énergie,Produire / Développer les réseaux de chaleur et de froid renouvelables,Développement des puits technologiques dans l'énergie,#TypeError
-Développement de la production de biogaz et orientation vers les usages prioritaires,Produire / Mobiliser la biomasse pour répondre aux besoins énergétiques non électrifiables,Développement de la production de biogaz et orientation vers les usages prioritaires,#TypeError
-Développement de la production de biocarburant et orientation vers les usages prioritaires,Produire / Mobiliser la biomasse pour répondre aux besoins énergétiques non électrifiables,Développement de la production de biocarburant et orientation vers les usages prioritaires,#TypeError
-Développement de la production de biomasse solide à vocation énergétique de qualité et orientation vers les usages prioritaires,Produire / Mobiliser la biomasse pour répondre aux besoins énergétiques non électrifiables,Développement de la production de biomasse solide à vocation énergétique de qualité et orientation vers les usages prioritaires,#TypeError
+Développement des puits technologiques dans l'énergie,Produire / Mobiliser la biomasse pour décarboner les besoins énergétiques non électrifiables,Développement des puits technologiques dans l'énergie,#TypeError
+Développement de la production de biogaz et orientation vers les usages prioritaires,Produire / Mobiliser la biomasse pour décarboner les besoins énergétiques non électrifiables,Développement de la production de biogaz et orientation vers les usages prioritaires,#TypeError
+Développement de la production de biocarburant et orientation vers les usages prioritaires,Produire / Mobiliser la biomasse pour décarboner les besoins énergétiques non électrifiables,Développement de la production de biocarburant et orientation vers les usages prioritaires,#TypeError
+Développement de la production de biomasse solide à vocation énergétique de qualité et orientation vers les usages prioritaires,Produire / Mobiliser la biomasse pour décarboner les besoins énergétiques non électrifiables,Développement de la production de biomasse solide à vocation énergétique de qualité et orientation vers les usages prioritaires,#TypeError
 Réduction de l'utilisation matière des produits pétroliers,Produire / Réduire la consommation de matière de l'industrie,Réduction de l'utilisation matière des produits pétroliers,#TypeError
 Incorporation de matières recyclées,Produire / Réduire la consommation de matière de l'industrie,Incorporation de matières recyclées,#TypeError
 Amélioration de l'efficacité énergétique industrielle (dont récupération de chaleur),Produire / Réduire l'usage d'énergie fossile de l'industrie,Amélioration de l'efficacité énergétique industrielle (dont récupération de chaleur),#TypeError
@@ -60,14 +61,13 @@ Captage de CO2 à la sortie des procédés industriels émetteurs,Produire / Dé
 Réduction des émissions du raffinage,Produire / Décarboner les procédés industriels les plus émissifs,Réduction des émissions du raffinage,#TypeError
 Modification des procédés de fabrication,Produire / Décarboner les procédés industriels les plus émissifs,Modification des procédés de fabrication,#TypeError
 Abattement des gaz fluorés (tous secteurs),Produire / Réduire les fuites de gaz à effet de serre et polluants,Abattement des gaz fluorés (tous secteurs),#TypeError
-Réduction des émissions industrielles de protoxyde d'azote et de polluants atmosphériques,Produire / Réduire les fuites de gaz à effet de serre et polluants,Réduction des émissions industrielles de protoxyde d'azote et de polluants atmosphériques,#TypeError
-Réduction des fuites de gaz dans les réseaux urbains,Produire / Réduire les fuites de gaz à effet de serre et polluants,Réduction des fuites de gaz dans les réseaux urbains,#TypeError
-Sortie du plastique jetable,Consommer / Réduire la production de déchets,Sortie du plastique jetable,#TypeError
-Développement de la mutualisation et de l'économie de la fonctionnalité,Consommer / Réduire la production de déchets,Développement de la mutualisation et de l'économie de la fonctionnalité,#TypeError
-Développement de la consommation en vrac,Consommer / Réduire la production de déchets,Développement de la consommation en vrac,#TypeError
-"Augmentation de la durée de vie des équipements (lutte contre l'obsolesence, réparabilité)",Consommer / Réduire la production de déchets,"Augmentation de la durée de vie des équipements (lutte contre l'obsolesence, réparabilité)",#TypeError
-Développement de la réparation,Consommer / Réduire la production de déchets,Développement de la réparation,#TypeError
-Développement du réemploi et de la réutilisation,Consommer / Réduire la production de déchets,Développement du réemploi et de la réutilisation,#TypeError
+Réduction des émissions industrielles de polluants atmosphériques,Produire / Réduire les fuites de gaz à effet de serre et polluants,Réduction des émissions industrielles de polluants atmosphériques,#TypeError
+Sortie du plastique jetable,Consommer / Développer la consommation responsable,Sortie du plastique jetable,#TypeError
+Développement de la mutualisation et de l'économie de la fonctionnalité,Consommer / Développer la consommation responsable,Développement de la mutualisation et de l'économie de la fonctionnalité,#TypeError
+Développement de la consommation en vrac,Consommer / Développer la consommation responsable,Développement de la consommation en vrac,#TypeError
+"Augmentation de la durée de vie des équipements (lutte contre l'obsolesence, réparabilité)",Consommer / Développer la consommation responsable,"Augmentation de la durée de vie des équipements (lutte contre l'obsolesence, réparabilité)",#TypeError
+Développement de la réparation,Consommer / Développer la consommation responsable,Développement de la réparation,#TypeError
+Développement du réemploi et de la réutilisation,Consommer / Développer la consommation responsable,Développement du réemploi et de la réutilisation,#TypeError
 Amélioration de la collecte et du tri des déchets,Consommer / Réduire l'impact environnemental des déchets produits,Amélioration de la collecte et du tri des déchets,#TypeError
 Développement de la valorisation matière des déchets,Consommer / Réduire l'impact environnemental des déchets produits,Développement de la valorisation matière des déchets,#TypeError
 Captage du méthane dans les installations de stockage de déchets non dangereux (ISDND),Consommer / Réduire l'impact environnemental des déchets produits,Captage du méthane dans les installations de stockage de déchets non dangereux (ISDND),#TypeError
@@ -86,7 +86,7 @@ Optimisation de la gestion des troupeaux,Se nourrir / Développer des pratiques 
 Décarbonation des sources d'énergie ,Se nourrir / Décarboner les bâtiments et machines agricoles,Décarbonation des sources d'énergie,#TypeError
 Efficacité énergétique des bâtiments et machines agricoles,Se nourrir / Décarboner les bâtiments et machines agricoles,Efficacité énergétique des bâtiments et machines agricoles,#TypeError
 "Développement des pratiques stockantes (cultures intermédiaires, agriculture de conservation des sols)",Se nourrir / Développer les services environnementaux rendus par le secteur agricole,"Développement des pratiques stockantes (cultures intermédiaires, agriculture de conservation des sols)",#TypeError
-Augmentation du paturage,Se nourrir / Développer les services environnementaux rendus par le secteur agricole,Augmentation du paturage,#TypeError
+Augmentation du paturage,Se nourrir / Développer des pratiques d'élevage durable,Augmentation du paturage,#TypeError
 Développement de l'agroforesterie intraparcellaire,Se nourrir / Développer les services environnementaux rendus par le secteur agricole,Développement de l'agroforesterie intraparcellaire,#TypeError
 Développement des haies,Se nourrir / Développer les services environnementaux rendus par le secteur agricole,Développement des haies,#TypeError
 Gestion des écoulements dans les sols agricoles,Se nourrir / Développer des filières agricoles résilientes aux mutations climatiques,Gestion des écoulements dans les sols agricoles,#TypeError
