@@ -2,17 +2,24 @@
 
 <template>
   <div
-    class="fr-card fr-card--no-icon fr-card--shadow adjust-height"
+    :class="[
+      'fr-card',
+      'fr-card--no-icon',
+      'fr-card--shadow',
+      'adjust-height',
+      'graph-box-card',
+      { 'graph-box-card--compact': compact }
+    ]"
     v-if="dataObj"
   >
-    <div class="titleBox">
+    <div class="titleBox graph-box-header">
       <div class="fr-grid-row fr-grid-row--middle">
-        <h2 class="cardTitle fr-col">{{ displayData.label_indic }}</h2>
+        <h2 class="cardTitle graph-box-title fr-col">{{ displayData.label_indic }}</h2>
       </div>
       <!-- Région : dropdown (données Écolab) -->
       <div v-if="hasRegionalData" class="fr-select-group fr-mt-1w">
         <select
-          id="graph-region-select"
+          :id="regionSelectId"
           class="fr-select fr-select--sm"
           :disabled="regionsList.length === 0 && !regionsError"
           v-model="selectedRegionCode"
@@ -32,9 +39,9 @@
         <p v-else-if="selectedRegionCode && regionalError" class="fr-error-text fr-mt-1v">{{ regionalError }}</p>
       </div>
       <div v-if="hasRegionalData && regionExtraOptions.length > 0" class="fr-select-group fr-mt-1w">
-        <label class="fr-label" for="graph-extra-select">{{ extraDimensionLabel }}</label>
+        <label class="fr-label" :for="extraSelectId">{{ extraDimensionLabel }}</label>
         <select
-          id="graph-extra-select"
+          :id="extraSelectId"
           class="fr-select fr-select--sm"
           v-model="selectedExtraValue"
           @change="onExtraDimensionChange"
@@ -67,7 +74,7 @@
       </div>
     </div>
 
-    <div class="cardReference">
+    <div class="cardReference graph-box-controls">
       <!-- Sélection du type de graphique (Graphique ou Tableau) -->
       <segmented-controls
         @chart-selected="handleChartSelected"
@@ -75,7 +82,7 @@
       ></segmented-controls>
     </div>
     <div v-if="displayData && (displayData.values || displayData.date)">
-      <div class="cardData" v-if="this.displayChart">
+      <div class="cardData graph-box-data" v-if="this.displayChart">
         <!-- Affichage du graphique -->
         <div v-if="effectiveChartType === 'Barres simple'">
           <!-- Composant Histogramme sans sous-groupe / DSFR -->
@@ -102,6 +109,8 @@
             :stacked="true"
             :name="JSON.stringify(displayData.label_sous_groupe)"
             :pointopacity="pointOpacityJson"
+            :trendline="stackedTrendLine ? JSON.stringify(stackedTrendLine) : undefined"
+            :target-trajectory="stackedTargetTrajectory ? JSON.stringify(stackedTargetTrajectory) : undefined"
           >
           </bar-chart>
         </div>
@@ -148,7 +157,7 @@
       </div>
     </div>
     <!-- Affichage des informations complémentaires sous le graphique -->
-    <div class="beneathGraph fr-grid-row">
+    <div class="beneathGraph graph-box-resources fr-grid-row">
       <!-- Split la carte en deux colonnes"> -->
       <div class="fr-col-md-6 fr-col-lg-6 fr-col-xl-6 fr-col-12">
         <div v-if="dataObj.lien_donnees_source">
@@ -185,7 +194,7 @@
       <div class="fr-col-md-6 fr-col-lg-6 fr-col-xl-6 fr-col-12">
         <a
           class="fr-link fr-link--download fr-link--download-text"
-          id="link-3352"
+          :id="downloadLinkId"
           :href="downloadUrl"
           :download="getFilename()"
         >
@@ -195,7 +204,7 @@
       </div>
     </div>
     <!-- Gestion du dropdown description -->
-    <div class="fr-accordion">
+    <div class="fr-accordion graph-box-comments">
       <h3 class="fr-accordion__title">
         <button
           class="fr-accordion__btn fr-text--xs"
@@ -217,7 +226,7 @@
           v-html="dataObj.label_description"
         ></p>
         <p class="fr-text--xs cardDescription fr-ml-1w fr-mr-1w fontSizeDescription">
-          <i>Dernière mise à jour de l'indicateur : {{ dataObj.date_maj }}</i>
+          <i>Dernière mise à jour de l'indicateur : {{ formattedDateMaj }}</i>
         </p>
 
         <div class="fr-ml-1w" v-if="dataObj.label_tags">
@@ -262,6 +271,10 @@ export default {
     idAccordion: {
       type: String,
       required: true,
+    },
+    compact: {
+      type: Boolean,
+      default: false,
     },
     isIframe: {
       type: Boolean,
@@ -383,6 +396,22 @@ export default {
       if (lower.includes("energie")) return "Énergie";
       return short.charAt(0).toUpperCase() + short.slice(1);
     },
+    regionSelectId() {
+      return `${this.idAccordion}-region-select`;
+    },
+    extraSelectId() {
+      return `${this.idAccordion}-extra-select`;
+    },
+    downloadLinkId() {
+      return `${this.idAccordion}-download`;
+    },
+    formattedDateMaj() {
+      if (this.dataObj.date_maj) {
+        return this.dataObj.date_maj.split(" ")[0];
+      }
+
+      return "Date non disponible";
+    },
     downloadUrl() {
       let csvContent = "";
       const d = this.displayData;
@@ -460,40 +489,172 @@ export default {
       try {
         // Build per-point opacity from label_value
         // If label_value is array per point: map to 1 for 'mesuré', else 0.6
-        const lv = this.dataObj && this.dataObj.label_value
-        const values = this.dataObj && this.dataObj.values
+        const lv = this.displayData && this.displayData.label_value
+        const values = this.displayData && this.displayData.values
         if (!values) return undefined
 
         // Multi-series case (grouped indicator: values is an array of arrays)
-        // -> make all visible points fully opaque (1) to avoid mismatches
-        // between sorted years and legacy label_value arrays.
         if (Array.isArray(values) && Array.isArray(values[0])) {
-          const perSeries = values.map(series =>
-            Array.isArray(series) ? series.map(() => 1) : []
-          )
+          const years = Array.isArray(this.displayData?.date?.[0]) ? this.displayData.date[0] : []
+          const yearCount = years.length
+          const baseOpacity = this.buildOpacityArray(lv, yearCount, years)
+          const perSeries = values.map(series => (
+            Array.isArray(series)
+              ? series.map((_, index) => (baseOpacity[index] !== undefined ? baseOpacity[index] : 1))
+              : []
+          ))
           return JSON.stringify(perSeries)
         }
 
         const length = Array.isArray(values?.x) ? (values.x[0]?.length || 0) : (values?.[0]?.length || 0)
-        // Measured = year (e.g. "2017") or "mesuré"; target = "cible" (0.6)
-        const isMeasured = (v) => {
-          const s = String(v || '').toLowerCase();
-          return s === 'mesuré' || /^\d{4}$/.test(s);
-        };
         if (Array.isArray(lv)) {
-          const arr = lv.map(v => (isMeasured(v) ? 1 : 0.6))
+          const arr = this.buildOpacityArray(lv, length)
           return JSON.stringify(arr)
         }
         // Else single scalar -> same opacity for all points
-        const alpha = isMeasured(lv) ? 1 : 0.6
+        const alpha = this.isMeasuredValue(lv) ? 1 : 0.6
         return JSON.stringify(Array(length).fill(alpha))
       } catch (e) {
         return undefined
       }
+    },
+    stackedTrendLine() {
+      if (this.effectiveChartType !== "Barres empilées" || this.selectedRegionCode) return null;
+      const years = this.getStackedYears();
+      const totals = this.getStackedTotals();
+      const statuses = Array.isArray(this.displayData?.label_value) ? this.displayData.label_value : [];
+      return this.computeTrendSeries(years, totals, statuses);
+    },
+    stackedTargetTrajectory() {
+      if (this.effectiveChartType !== "Barres empilées" || this.selectedRegionCode) return null;
+      const years = this.getStackedYears();
+      const totals = this.getStackedTotals();
+      const statuses = Array.isArray(this.displayData?.label_value) ? this.displayData.label_value : [];
+      return this.computeTargetTrajectory(years, totals, statuses);
     }
   },
 
   methods: {
+    getPointStatus(value, fallbackYear = "") {
+      const normalized = String(value ?? "").trim().toLowerCase();
+      if (/^cible_\d{4}$/.test(normalized) || normalized === "cible") return "cible";
+      if (normalized === "projection") return "projection";
+      if (normalized === "mesuré" || /^\d{4}$/.test(normalized)) return "mesuré";
+      if (normalized !== "") return "mesuré";
+      return String(fallbackYear ?? "").trim() === "2030" ? "cible" : "mesuré";
+    },
+    isMeasuredValue(value, fallbackYear = "") {
+      return this.getPointStatus(value, fallbackYear) === "mesuré";
+    },
+    buildOpacityArray(labelValues, length, years = []) {
+      const opacities = [];
+      for (let index = 0; index < length; index += 1) {
+        opacities.push(this.isMeasuredValue(labelValues?.[index], years[index]) ? 1 : 0.6);
+      }
+      return opacities;
+    },
+    getStackedYears() {
+      return Array.isArray(this.displayData?.date?.[0]) ? this.displayData.date[0] : [];
+    },
+    getStackedTotals() {
+      const years = this.getStackedYears();
+      const series = Array.isArray(this.displayData?.values) ? this.displayData.values : [];
+      return years.map((_, index) => {
+        let total = 0;
+        let hasValue = false;
+        series.forEach((currentSeries) => {
+          const rawValue = currentSeries?.[index];
+          if (rawValue === null || rawValue === undefined || rawValue === "") return;
+          const numericValue = Number(rawValue);
+          if (Number.isNaN(numericValue)) return;
+          hasValue = true;
+          total += numericValue;
+        });
+        return hasValue ? total : null;
+      });
+    },
+    computeLinearRegression(xValues, yValues) {
+      if (!Array.isArray(xValues) || !Array.isArray(yValues) || xValues.length !== yValues.length || xValues.length < 2) {
+        return null;
+      }
+      const n = xValues.length;
+      const sumX = xValues.reduce((sum, value) => sum + value, 0);
+      const sumY = yValues.reduce((sum, value) => sum + value, 0);
+      const sumXY = xValues.reduce((sum, value, index) => sum + value * yValues[index], 0);
+      const sumXX = xValues.reduce((sum, value) => sum + value * value, 0);
+      const denominator = (n * sumXX) - (sumX * sumX);
+      if (denominator === 0) return null;
+      const slope = ((n * sumXY) - (sumX * sumY)) / denominator;
+      const intercept = (sumY - (slope * sumX)) / n;
+      return { slope, intercept };
+    },
+    computeTrendSeries(years, values, statuses, numYears = 3) {
+      if (!Array.isArray(years) || !Array.isArray(values) || years.length !== values.length) return null;
+      const measured = [];
+      for (let index = 0; index < years.length; index += 1) {
+        if (values[index] === null || values[index] === undefined || values[index] === "") continue;
+        const numericValue = Number(values[index]);
+        if (this.isMeasuredValue(statuses[index], years[index]) && !Number.isNaN(numericValue)) {
+          measured.push({
+            index,
+            year: Number(years[index]),
+            value: numericValue,
+          });
+        }
+      }
+      if (measured.length < 2) return null;
+      const lastMeasured = measured.slice(-numYears);
+      const regression = this.computeLinearRegression(
+        lastMeasured.map((point) => point.year),
+        lastMeasured.map((point) => point.value)
+      );
+      if (!regression) return null;
+      const firstIndex = lastMeasured[0].index;
+      return years.map((year, index) => {
+        if (index < firstIndex) return null;
+        const numericYear = Number(year);
+        if (Number.isNaN(numericYear)) return null;
+        return regression.slope * numericYear + regression.intercept;
+      });
+    },
+    computeTargetTrajectory(years, values, statuses) {
+      if (!Array.isArray(years) || !Array.isArray(values) || years.length !== values.length) return null;
+      const explicitReferenceYear = this.displayData?.reference_year_for_target_trajectory;
+      let lastMeasuredPoint = null;
+      let referencePoint = null;
+      const targetPoints = [];
+
+      for (let index = 0; index < years.length; index += 1) {
+        if (values[index] === null || values[index] === undefined || values[index] === "") continue;
+        const numericValue = Number(values[index]);
+        if (Number.isNaN(numericValue)) continue;
+
+        if (this.isMeasuredValue(statuses[index], years[index])) {
+          const measuredPoint = {
+            year: String(years[index]),
+            value: numericValue,
+            isTarget: false,
+          };
+          lastMeasuredPoint = measuredPoint;
+          if (explicitReferenceYear && String(years[index]) === String(explicitReferenceYear)) {
+            referencePoint = measuredPoint;
+          }
+          continue;
+        }
+
+        targetPoints.push({
+          year: String(years[index]),
+          value: numericValue,
+          isTarget: true,
+        });
+      }
+
+      const startPoint = referencePoint || lastMeasuredPoint;
+      if (!startPoint || targetPoints.length === 0) return null;
+      return {
+        points: [startPoint, ...targetPoints],
+      };
+    },
     async loadRegions() {
       if (!this.hasRegionalData || !this.regionalIndicatorId) return;
       this.regionsError = null;
@@ -564,15 +725,6 @@ export default {
 
     set_goal() {
       try {
-        // Formatage de la date de mise à jour
-        // à l'origine : "2024-08-02 3:19pm" / "2024-08-01 9:37am"
-        // replace the date with the new format
-        if (this.dataObj.date_maj) {
-          this.dataObj.date_maj = this.dataObj.date_maj.split(" ")[0];
-        } else {
-          this.dataObj.date_maj = "Date non disponible";
-        }
-
         // Calcul de la cible
         if (
           this.dataObj.label_sous_groupe == undefined ||
@@ -617,6 +769,11 @@ export default {
 .adjust-height {
   height: auto !important;
   z-index: inherit;
+}
+.graph-box-card--compact {
+  border: 1px solid #d6d6d6;
+  box-shadow: 0 8px 24px rgba(0, 0, 145, 0.08);
+  overflow: hidden;
 }
 .beneathGraph {
   padding: 0.5rem 1rem;
@@ -702,6 +859,31 @@ p.textReference {
 .fr-link--download-text {
   font-size: small !important;
   /* align-items: flex-end !important; */
+}
+.graph-box-card--compact .beneathGraph {
+  padding: 0.75rem 1rem;
+}
+.graph-box-card--compact .cardReference {
+  padding: 0.5rem 1rem 0.375rem;
+}
+.graph-box-card--compact .titleBox {
+  padding: 1rem 1rem 0.75rem;
+  margin-top: 0;
+}
+.graph-box-card--compact .cardTitle {
+  margin-bottom: 0.25rem;
+  font-size: 1.125rem;
+  line-height: 1.4;
+}
+.graph-box-card--compact .cardData {
+  padding-top: 1rem;
+  padding-right: 1rem;
+}
+.graph-box-card--compact .cardObjectif {
+  flex-wrap: wrap;
+}
+.graph-box-card--compact .fr-link--download-text {
+  font-size: 0.875rem !important;
 }
 .fr-collapse {
   height: 0rem !important;

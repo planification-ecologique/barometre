@@ -704,6 +704,7 @@ export function transformCSVData(csvData, query) {
         .filter(Boolean),
       // IRPE / Écolab: indicator ids for regional data (column IRPE_ids or ID Indicateur hub Ecolab)
       irpe_ids: parseIrpeIds(item['IRPE ids'], item['IRPE valide']),
+      reference_year_for_target_trajectory: refYearIdx >= 0 ? years[refYearIdx] : null,
       tableAnnee,
       tableValeur,
       tableTypeMesure,
@@ -885,6 +886,7 @@ function groupByIndicator(results) {
       // Format expected by the chart & table components
       baseItem.date = [sortedDates];
       baseItem.values = [alignedValues];
+      baseItem.reference_year_for_target_trajectory = item.reference_year_for_target_trajectory || null;
       indicatorMap.set(key, baseItem);
     } else {
       // Add to existing grouped item
@@ -953,6 +955,17 @@ function groupByIndicator(results) {
       if ((!groupedItem.label_perimetre || groupedItem.label_perimetre.trim() === '') && 
           item.label_perimetre && item.label_perimetre.trim() !== '') {
         groupedItem.label_perimetre = item.label_perimetre;
+      }
+
+      const existingReferenceYear = groupedItem.reference_year_for_target_trajectory;
+      const incomingReferenceYear = item.reference_year_for_target_trajectory;
+      if (!existingReferenceYear && incomingReferenceYear) {
+        groupedItem.reference_year_for_target_trajectory = incomingReferenceYear;
+      } else if (existingReferenceYear && incomingReferenceYear) {
+        groupedItem.reference_year_for_target_trajectory =
+          parseInt(incomingReferenceYear, 10) < parseInt(existingReferenceYear, 10)
+            ? incomingReferenceYear
+            : existingReferenceYear;
       }
       
       // Merge tags from all sub-groups to ensure complete tag coverage
