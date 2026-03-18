@@ -17,10 +17,22 @@
       <section class="fr-col">
         <div>
           <div class="fr-container--fluid fr-container-page">
-            <div v-if="!isapiloading || myobj.view === 'about'">
+            <div v-if="!isapiloading || myobj.view === 'about' || myobj.view === 'chantiers-sectoriels' || myobj.view === 'etat-environnement'">
+              <!-- Chantiers sectoriels synthèse view -->
+              <synthese-sectorielle
+                v-if="myobj.view === 'chantiers-sectoriels'"
+                :params="myobj"
+                :useStaging="useStaging"
+              />
+              <!-- Etat de l'environnement view -->
+              <etat-environnement
+                v-else-if="myobj.view === 'etat-environnement'"
+                :params="myobj"
+                :useStaging="useStaging"
+              />
               <!-- About view -->
-              <about-view 
-                v-if="myobj.view === 'about'"
+              <about-view
+                v-else-if="myobj.view === 'about'"
                 :params="myobj"
               />
               <!-- Engagements Table view -->
@@ -102,6 +114,8 @@ import SectorSelector from "../components/SectorSelector.vue";
 import AboutView from "../components/AboutView.vue";
 import EngagementsTableView from "../components/EngagementsTableView.vue";
 import ChantiersTableView from "../components/ChantiersTableView.vue";
+import SyntheseSectorielle from "../components/SyntheseSectorielle.vue";
+import EtatEnvironnement from "../components/EtatEnvironnement.vue";
 import dsfrAnalytics from "../services/dsfr_analytics"
 
 export default {
@@ -129,6 +143,8 @@ export default {
     AboutView,
     EngagementsTableView,
     ChantiersTableView,
+    SyntheseSectorielle,
+    EtatEnvironnement,
   },
 
   // Initialisation des données
@@ -163,6 +179,9 @@ export default {
     if (this.$route.query.sectorFilter) {
       this.sidenav_initParams.sectorFilter = this.$route.query.sectorFilter;
     }
+    if (this.$route.query.chantier_sector) {
+      this.sidenav_initParams.chantier_sector = this.$route.query.chantier_sector;
+    }
     // Legacy support
     if (this.$route.query.theme !== undefined || this.$route.query.levier !== undefined) {
       this.sidenav_initParams.id_theme = this.$route.query.theme;
@@ -181,14 +200,16 @@ export default {
         const newParams = { sector: newSector };
         
         if (newSector === 'Synthèse') {
-          // For Synthèse, preserve about, general-engagements and general-chantiers
-          if (currentView === 'about' || currentView === 'general-engagements' || currentView === 'general-chantiers') {
+          // For Synthèse, preserve valid views
+          const validSyntheseViews = ['about', 'general-engagements', 'general-chantiers', 'chantiers-sectoriels', 'etat-environnement', 'engagements-table', 'chantiers-table', 'chantier']
+          if (validSyntheseViews.includes(currentView)) {
             newParams.view = currentView
             if (this.$route.query.axe) newParams.axe = this.$route.query.axe
             if (this.$route.query.sectorFilter) newParams.sectorFilter = this.$route.query.sectorFilter
+            if (this.$route.query.chantier_id) newParams.chantier_id = this.$route.query.chantier_id
+            if (this.$route.query.chantier_sector) newParams.chantier_sector = this.$route.query.chantier_sector
           } else {
-            // Default to about
-            newParams.view = 'about'
+            newParams.view = 'chantiers-sectoriels'
           }
         } else {
           // For other sectors, preserve sectorial-engagements or chantier
@@ -229,7 +250,10 @@ export default {
         if (newQuery.sectorFilter) {
           newParams.sectorFilter = newQuery.sectorFilter
         }
-        
+        if (newQuery.chantier_sector) {
+          newParams.chantier_sector = newQuery.chantier_sector
+        }
+
         // Replace the entire object to trigger Vue reactivity
         this.sidenav_initParams = newParams;
       }
@@ -240,20 +264,23 @@ export default {
     updateSelection(selectedValue) {
       if (selectedValue != undefined) {
         this.myobj = selectedValue;
-        // Only fetch data if not the about view
-        if (selectedValue.view !== 'about' && selectedValue.query) {
+        // Only fetch data if the view needs it (not about or chantiers-sectoriels which fetch their own)
+        const selfLoadingViews = ['about', 'chantiers-sectoriels', 'etat-environnement'];
+        if (!selfLoadingViews.includes(selectedValue.view) && selectedValue.query) {
           this.fetchData(selectedValue.query);
-        } else if (selectedValue.view === 'about') {
+        } else if (selfLoadingViews.includes(selectedValue.view)) {
           this.isapiloading = false;
         }
 
         // Navigation vers la page de dashboard et affichage dans l'URL
         try {
           const routeName = this.useStaging ? "staging-dashboard" : "dashboard";
+          // Use the sector from params (which may differ from currentSector for chantiers viewed from Synthèse)
+          const querySector = selectedValue.sector || this.currentSector;
           const query = {
-            sector: this.currentSector
+            sector: querySector
           };
-          
+
           // Set view and related params
           if (selectedValue.view === 'general-engagements') {
             query.view = 'general-engagements';
@@ -270,10 +297,18 @@ export default {
           } else if (selectedValue.view === 'chantier' && selectedValue.chantier_id) {
             query.view = 'chantier';
             query.chantier_id = selectedValue.chantier_id;
+            // Pass chantier_sector for breadcrumb/display when viewing under Synthèse
+            if (selectedValue.chantier_sector) {
+              query.chantier_sector = selectedValue.chantier_sector;
+            }
           } else if (selectedValue.view === 'synthesis') {
             query.view = 'synthesis';
           } else if (selectedValue.view === 'about') {
             query.view = 'about';
+          } else if (selectedValue.view === 'chantiers-sectoriels') {
+            query.view = 'chantiers-sectoriels';
+          } else if (selectedValue.view === 'etat-environnement') {
+            query.view = 'etat-environnement';
           } else if (selectedValue.view === 'engagements-table') {
             query.view = 'engagements-table';
           } else if (selectedValue.view === 'chantiers-table') {
@@ -326,7 +361,7 @@ export default {
 </script>
 <style scoped lang="scss">
 .fr-container-page {
-  background-color: #f6f6f6;
+  background-color: #fff;
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
   padding-left: 2.5rem;

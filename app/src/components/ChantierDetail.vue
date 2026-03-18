@@ -5,56 +5,62 @@
     </div>
 
     <template v-else>
-      <div class="chantier-breadcrumb">
-        Accueil / Baromètre / {{ params.sector || "Secteur" }} / Chantiers sectoriels
-      </div>
+      <nav class="fr-breadcrumb" aria-label="vous êtes ici :">
+        <ol class="fr-breadcrumb__list">
+          <li>
+            <a class="fr-breadcrumb__link" href="#" @click.prevent="goAccueil">Accueil</a>
+          </li>
+          <li>
+            <a class="fr-breadcrumb__link" href="#" @click.prevent="goChantiersSectoriels">Chantiers sectoriels</a>
+          </li>
+          <li>
+            <a class="fr-breadcrumb__link" href="#" @click.prevent="goSector">{{ displaySector }}</a>
+          </li>
+          <li>
+            <span class="fr-breadcrumb__link" aria-current="page">{{ params.chantier_name }}</span>
+          </li>
+        </ol>
+      </nav>
 
       <section class="chantier-hero">
-        <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--middle chantier-hero-row">
-          <div class="fr-col-auto sector-logo-container">
-            <SectorIcon
-              :sector="params.sector"
-              height="56px"
-              width="56px"
-            />
-          </div>
-          <div class="fr-col">
-            <p class="chantier-eyebrow">
-              {{ params.sector || "Secteur" }}
-            </p>
-            <h1 class="fr-title chantier-title" :aria-label="params.chantier_name">
-              {{ params.chantier_name }}
-            </h1>
-          </div>
-        </div>
+        <h1 class="fr-title chantier-title" :aria-label="params.chantier_name">
+          {{ params.chantier_name }}
+        </h1>
 
         <nav
           v-if="sectionLinks.length > 0"
           class="chantier-anchor-nav"
           aria-label="Navigation dans la page"
         >
-          <div class="chantier-anchor-group chantier-anchor-group--primary">
-            <span class="chantier-anchor-label">Indicateur du chantier :</span>
+          <div class="chantier-anchor-group">
+            <span class="chantier-anchor-label">Indicateurs</span>
             <a
               class="chantier-anchor-link"
               :href="'#' + primarySectionId"
             >
-              Indicateur du chantier
+              → {{ primaryIndicatorLabel }}
+            </a>
+            <a
+              v-if="otherIndicatorCount > 0"
+              class="chantier-anchor-link"
+              :href="'#' + primarySectionId"
+            >
+              → Autres indicateurs ({{ otherIndicatorCount }})
             </a>
           </div>
 
           <div
             v-if="otherLevierGroups.length > 0"
-            class="chantier-anchor-group chantier-anchor-group--leviers"
+            class="chantier-anchor-group"
           >
-            <span class="chantier-anchor-label">Leviers :</span>
+            <span class="chantier-anchor-label">Leviers</span>
             <a
               v-for="link in levierSectionLinks"
               :key="link.id"
               class="chantier-anchor-link"
               :href="'#' + link.id"
             >
-              {{ link.label }}
+              → {{ link.label }}
             </a>
           </div>
         </nav>
@@ -66,7 +72,6 @@
 
       <template v-else>
         <section class="chantier-summary">
-          <p class="section-kicker">Synthèse</p>
           <h2 class="fr-h4 chantier-section-title">Ce qu'il faut retenir</h2>
           <div
             class="chantier-summary-copy fr-text--md"
@@ -78,8 +83,10 @@
           :id="primarySectionId"
           class="chantier-section chantier-section--highlighted"
         >
-          <p class="section-kicker">Indicateur clé</p>
-          <h2 class="fr-h3 chantier-section-title">Indicateur du chantier</h2>
+          <h2 class="fr-h3 chantier-section-title">
+            <span class="section-kicker-badge">Indicateur</span>
+            Indicateur du chantier
+          </h2>
 
           <div
             v-if="hasChantierIndicators"
@@ -113,8 +120,8 @@
           :id="getSectionId(levierGroup.name)"
           class="chantier-section"
         >
-          <p class="section-kicker">Levier</p>
           <h2 class="fr-h3 chantier-section-title levier-title">
+            <span class="section-kicker-badge section-kicker-badge--levier">Levier</span>
             {{ levierGroup.name }}
           </h2>
           <p
@@ -252,6 +259,20 @@ export default {
           label: levierGroup.name,
         }));
     },
+    displaySector() {
+      // Use chantier_sector (real sector) if available, otherwise fall back to sector
+      return this.params.chantier_sector || this.params.sector || 'Secteur';
+    },
+    primaryIndicatorLabel() {
+      if (this.hasChantierIndicators && this.primaryIndicatorGroup.chartData.length > 0) {
+        return this.primaryIndicatorGroup.chartData[0].label_indic || 'Indicateur du chantier';
+      }
+      return 'Indicateur du chantier';
+    },
+    otherIndicatorCount() {
+      if (!this.hasChantierIndicators) return 0;
+      return Math.max(0, this.primaryIndicatorGroup.chartData.length - 1);
+    },
     summaryHtml() {
       const chantierDescription = this.getDescriptionHtml(
         this.primaryIndicatorGroup.chartData
@@ -363,6 +384,19 @@ export default {
 
       return descriptionHtml.replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim();
     },
+    goAccueil() {
+      const routeName = window.location.pathname.includes('/staging') ? 'staging-dashboard' : 'dashboard';
+      this.$router.push({ name: routeName, query: { sector: 'Synthèse', view: 'about' } }).catch(() => {});
+    },
+    goChantiersSectoriels() {
+      const routeName = window.location.pathname.includes('/staging') ? 'staging-dashboard' : 'dashboard';
+      this.$router.push({ name: routeName, query: { sector: 'Synthèse', view: 'chantiers-sectoriels' } }).catch(() => {});
+    },
+    goSector() {
+      // Navigate back to synthèse, scrolled to the relevant sector section
+      const routeName = window.location.pathname.includes('/staging') ? 'staging-dashboard' : 'dashboard';
+      this.$router.push({ name: routeName, query: { sector: 'Synthèse', view: 'chantiers-sectoriels' } }).catch(() => {});
+    },
     getSectionId(label) {
       const normalized = String(label || "")
         .normalize("NFD")
@@ -384,33 +418,53 @@ export default {
   gap: 1.25rem;
 }
 
-.chantier-breadcrumb {
-  color: #666;
+/* Override DSFR default link styling to avoid double underlines */
+.chantier-detail a {
+  background-image: none;
+}
+
+/* Breadcrumb */
+.fr-breadcrumb {
+  margin-bottom: 0;
+}
+
+.fr-breadcrumb__list {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
   font-size: 0.75rem;
-  margin-bottom: -0.5rem;
+  color: #666;
+}
+
+.fr-breadcrumb__list li::before {
+  content: '>';
+  margin-right: 0.5rem;
+}
+
+.fr-breadcrumb__list li:first-child::before {
+  content: '';
+  margin-right: 0;
+}
+
+.fr-breadcrumb__link {
+  color: #000091;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  font-size: 0.75rem;
+}
+
+.fr-breadcrumb__link[aria-current] {
+  color: #3a3a3a;
+  text-decoration: none;
 }
 
 .chantier-hero {
   background: transparent;
   border-bottom: 1px solid #d6d6d6;
   padding: 0 0 1rem;
-}
-
-.chantier-hero-row {
-  margin-bottom: 0.75rem;
-}
-
-.sector-logo-container {
-  flex-shrink: 0;
-}
-
-.chantier-eyebrow {
-  color: #666;
-  font-size: 0.875rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  margin-bottom: 0.5rem;
-  text-transform: uppercase;
 }
 
 .chantier-title {
@@ -438,48 +492,57 @@ export default {
 }
 
 .chantier-anchor-link {
-  background: #f6f6f6;
-  border: 1px solid #d6d6d6;
+  background: #e3e3fd;
+  border: none;
   border-radius: 999px;
   color: #000091;
   font-size: 0.8125rem;
-  line-height: 1.2;
-  padding: 0.35rem 0.75rem;
+  font-weight: 500;
+  line-height: 1.3;
+  padding: 0.3rem 0.875rem;
   text-decoration: none;
+  transition: background-color 0.15s, color 0.15s;
 }
 
 .chantier-anchor-link:hover,
 .chantier-anchor-link:focus {
-  background: #ececfe;
-  text-decoration: underline;
-}
-
-.chantier-summary,
-.chantier-section {
-  background: #fff;
-  border: 1px solid #e5e5e5;
-  padding: 1.25rem 1.5rem;
+  background: #000091;
+  color: #fff;
+  text-decoration: none;
 }
 
 .chantier-summary {
+  background: #f6f6f6;
   border-left: 4px solid #6a6af4;
+  padding: 1.25rem 1.5rem;
 }
 
 .chantier-section {
+  padding: 1.25rem 0;
   scroll-margin-top: 1.5rem;
 }
 
 .chantier-section--highlighted {
-  border-top: 2px solid #000091;
+  border-top: none;
 }
 
-.section-kicker {
-  color: #666;
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  margin-bottom: 0.5rem;
-  text-transform: uppercase;
+.section-kicker-badge {
+  display: inline-block;
+  background: #e3e3fd;
+  color: #000091;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  padding: 0.2rem 0.75rem;
+  border-radius: 999px;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+  position: relative;
+  top: -2px;
+}
+
+.section-kicker-badge--levier {
+  background: #e3e3fd;
+  color: #000091;
 }
 
 .chantier-section-title {

@@ -309,6 +309,7 @@ export default {
       Chart.defaults.global.defaultFontFamily = 'Marianne'
       Chart.defaults.global.defaultFontSize = 12
       Chart.defaults.global.defaultLineHeight = 1.66
+      Chart.defaults.global.defaultFontColor = '#3a3a3a'
 
       this.getData()
       const self = this
@@ -682,12 +683,16 @@ export default {
       }
     },
     changeColors (theme) {
-      Chart.defaults.global.defaultFontColor = this.getHexaFromToken('text-mention-grey', theme)
-      this.chart.options.scales.xAxes[0].gridLines.color = this.getHexaFromToken('border-default-grey', theme)
-      this.chart.options.scales.xAxes[0].gridLines.zeroLineColor = this.getHexaFromToken('border-default-grey', theme)
+      const effectiveTheme = theme || 'light'
+      const fontColor = this.getHexaFromToken('text-mention-grey', effectiveTheme) || '#161616'
+      Chart.defaults.global.defaultFontColor = fontColor
+      this.chart.options.scales.xAxes[0].gridLines.color = this.getHexaFromToken('border-default-grey', effectiveTheme)
+      this.chart.options.scales.xAxes[0].gridLines.zeroLineColor = this.getHexaFromToken('border-default-grey', effectiveTheme)
+      this.chart.options.scales.xAxes[0].ticks.fontColor = fontColor
 
-      this.chart.options.scales.yAxes[0].gridLines.color = this.getHexaFromToken('border-default-grey', theme)
-      this.chart.options.scales.yAxes[0].gridLines.zeroLineColor = this.getHexaFromToken('border-default-grey', theme)
+      this.chart.options.scales.yAxes[0].gridLines.color = this.getHexaFromToken('border-default-grey', effectiveTheme)
+      this.chart.options.scales.yAxes[0].gridLines.zeroLineColor = this.getHexaFromToken('border-default-grey', effectiveTheme)
+      this.chart.options.scales.yAxes[0].ticks.fontColor = fontColor
 
       this.loadColors()
       if (theme === 'light') {

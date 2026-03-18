@@ -23,7 +23,7 @@
           :aria-label="estFavori ? 'Retirer des favoris' : 'Ajouter aux favoris'"
           @click="onToggleFavori"
         >
-          <span :class="estFavori ? 'fr-icon-heart-fill' : 'fr-icon-heart-line'" aria-hidden="true"></span>
+          <span :class="estFavori ? 'fr-icon-bookmark-fill' : 'fr-icon-bookmark-line'" aria-hidden="true"></span>
         </button>
       </div>
       <!-- Région : dropdown (données Écolab) -->
@@ -166,6 +166,36 @@
         </div>
       </div>
     </div>
+    <!-- Commentaire section : tronqué par nombre de mots avec "Voir plus" -->
+    <div
+      v-if="dataObj.label_description && dataObj.label_description !== ''"
+      class="graph-box-commentaire"
+    >
+      <div class="graph-box-commentaire__text fr-text--s">
+        <template v-if="isCommentaireExpanded">
+          <span v-html="dataObj.label_description"></span>
+        </template>
+        <template v-else>
+          {{ truncatedDescription }}
+          <button
+            v-if="needsTruncation"
+            type="button"
+            class="fr-link graph-box-commentaire__voir-plus"
+            @click="isCommentaireExpanded = true"
+          >
+            Voir plus
+          </button>
+        </template>
+      </div>
+      <button
+        v-if="isCommentaireExpanded"
+        type="button"
+        class="fr-link graph-box-commentaire__voir-plus"
+        @click="isCommentaireExpanded = false"
+      >
+        Voir moins
+      </button>
+    </div>
     <!-- Affichage des informations complémentaires sous le graphique -->
     <div class="beneathGraph graph-box-resources fr-grid-row">
       <!-- Split la carte en deux colonnes"> -->
@@ -213,35 +243,13 @@
         </a>
       </div>
     </div>
-    <!-- Gestion du dropdown description -->
-    <div class="fr-accordion graph-box-comments">
-      <h3 class="fr-accordion__title">
-        <button
-          class="fr-accordion__btn fr-text--xs"
-          :aria-expanded="isAccordionOpen ? 'true' : 'false'"
-          :aria-controls="idAccordion"
-          title="Commentaires sur l'indicateur"
-        >
-          Commentaires sur l'indicateur
-        </button>
-      </h3>
-      <div
-        class="fr-collapse accordion-box"
-        :id="idAccordion"
-        :class="{ 'fr-collapse--expanded': isAccordionOpen }"
-      >
-        <p
-          v-if="dataObj.label_description && dataObj.label_description !== ''"
-          class="fr-text--s cardDescription fr-ml-1w fr-mr-1w fontSizeDescription"
-          v-html="dataObj.label_description"
-        ></p>
-        <p class="fr-text--xs cardDescription fr-ml-1w fr-mr-1w fontSizeDescription">
-          <i>Dernière mise à jour de l'indicateur : {{ formattedDateMaj }}</i>
-        </p>
-
-        <div class="fr-ml-1w" v-if="dataObj.label_tags">
-          <tags-card :tagsIndicateurs="dataObj.label_tags"></tags-card>
-        </div>
+    <!-- Métadonnées (mise à jour, tags) -->
+    <div class="graph-box-metadata">
+      <p class="fr-text--xs fr-text-mention--grey">
+        Mise à jour : {{ formattedDateMaj }}
+      </p>
+      <div v-if="dataObj.label_tags" class="graph-box-tags">
+        <tags-card :tagsIndicateurs="dataObj.label_tags"></tags-card>
       </div>
     </div>
 
@@ -295,7 +303,7 @@ export default {
   data() {
     return {
       displayChart: false,
-      isAccordionOpen: false,
+      isCommentaireExpanded: false,
       cible: undefined,
       regionsList: [],
       selectedRegionCode: "",
@@ -428,6 +436,27 @@ export default {
 
       return "Date non disponible";
     },
+    /** Texte brut sans HTML pour troncature par mots */
+    plainDescription() {
+      const html = this.dataObj?.label_description || "";
+      if (!html) return "";
+      return html.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
+    },
+    /** Texte tronqué aux N premiers mots (~3-4 lignes) */
+    truncatedDescription() {
+      const limit = 40;
+      const plain = this.plainDescription;
+      const words = plain.split(/\s+/).filter(Boolean);
+      if (words.length <= limit) return plain;
+      return words.slice(0, limit).join(" ") + "…";
+    },
+    /** True si le texte dépasse la limite de mots */
+    needsTruncation() {
+      const limit = 40;
+      const plain = this.plainDescription;
+      const words = plain.split(/\s+/).filter(Boolean);
+      return words.length > limit;
+    },
     downloadUrl() {
       let csvContent = "";
       const d = this.displayData;
@@ -536,6 +565,7 @@ export default {
     },
     stackedTrendLine() {
       if (this.effectiveChartType !== "Barres empilées" || this.selectedRegionCode) return null;
+      if (!this.stackedTargetTrajectory) return null;
       const years = this.getStackedYears();
       const totals = this.getStackedTotals();
       const statuses = Array.isArray(this.displayData?.label_value) ? this.displayData.label_value : [];
@@ -773,10 +803,6 @@ export default {
   mounted() {
     this.set_goal();
     if (this.hasRegionalData) this.loadRegions();
-    // Set accordion to closed by default in iframe mode
-    if (this.isIframe) {
-      this.isAccordionOpen = false;
-    }
     // Initialiser l'état favori
     if (this.dataObj && this.dataObj.label_indic) {
       this.estFavori = isFavori(this.dataObj.label_indic);
@@ -823,6 +849,37 @@ export default {
   border: 1px solid #d6d6d6;
   box-shadow: 0 8px 24px rgba(0, 0, 145, 0.08);
   overflow: hidden;
+}
+/* Commentaire : tronqué par nombre de mots avec Voir plus */
+.graph-box-commentaire {
+  padding: 0.75rem 1rem;
+  border-top: 1px solid #dddddd;
+}
+.graph-box-commentaire__text {
+  line-height: 1.4;
+}
+.graph-box-commentaire__voir-plus {
+  font-size: inherit;
+  padding: 0;
+  margin-left: 0.25em;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-action-high-blue-france, #000091);
+  text-decoration: underline;
+}
+.graph-box-commentaire__voir-plus:hover {
+  color: var(--text-action-high-blue-france-hover, #1212ff);
+}
+.graph-box-metadata {
+  padding: 0.5rem 1rem;
+  border-top: 1px solid #dddddd;
+}
+.graph-box-metadata .fr-text--xs {
+  margin-bottom: 0.25rem;
+}
+.graph-box-tags {
+  margin-top: 0.5rem;
 }
 .beneathGraph {
   padding: 0.5rem 1rem;

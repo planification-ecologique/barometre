@@ -29,7 +29,13 @@
         <tbody>
           <tr v-for="(row, index) in tableData" :key="index">
             <td>{{ row.engagement }}</td>
-            <td>{{ row.indicateur }}</td>
+            <td>
+              {{ row.indicateur }}
+              <template v-if="row.indicateurUnite">
+                <br><br>
+                <em>Unité : {{ row.indicateurUnite }}</em>
+              </template>
+            </td>
             <td>{{ row.derniereValeur }}</td>
             <td>{{ row.cible2030 }}</td>
           </tr>
@@ -100,9 +106,11 @@ export default {
             }
             seenRows.add(key);
 
+            const indicLabel = indicator.label_indic || '-';
             rows.push({
               engagement: engagementName || '-',
-              indicateur: indicator.label_indic || '-',
+              indicateur: indicLabel,
+              indicateurUnite: indicator.unite || '',
               cible2030: this.formatValue(indicator.objectif_valeur_cible, indicator.unite),
               derniereValeur: this.formatLastValue(indicator),
             });

@@ -5,7 +5,7 @@
         <div class="fr-container--fluid fr-container-page">
           <section>
             <div class="favoris-header">
-              <span class="fr-icon-heart-fill favoris-header-icon" aria-hidden="true"></span>
+              <span class="fr-icon-bookmark-fill favoris-header-icon" aria-hidden="true"></span>
               <h1 class="fr-title">Favoris</h1>
             </div>
             <p class="fr-text--sm fr-text-mention--grey fr-mb-3w" v-if="!isLoading && favorisIds.length > 0">
@@ -43,10 +43,10 @@
               </div>
             </div>
             <div v-else class="favoris-empty">
-              <span class="fr-icon-heart-line favoris-empty-icon" aria-hidden="true"></span>
+              <span class="fr-icon-bookmark-line favoris-empty-icon" aria-hidden="true"></span>
               <h2 class="fr-h4">Aucun indicateur sauvegardé</h2>
               <p class="fr-text--sm fr-text-mention--grey">
-                Cliquez sur l'icône <span class="fr-icon-heart-line" aria-hidden="true" style="font-size: 1rem; vertical-align: middle;"></span> sur un graphique pour l'ajouter à vos favoris.
+                Cliquez sur l'icône <span class="fr-icon-bookmark-line" aria-hidden="true" style="font-size: 1rem; vertical-align: middle;"></span> sur un graphique pour l'ajouter à vos favoris.
               </p>
               <router-link
                 :to="{ name: 'dashboard', query: { sector: 'Synthèse' } }"

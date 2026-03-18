@@ -2,13 +2,14 @@ import unitDict from '@/utils/unit_dict.json';
 import {
   fetchIndicatorsData,
   fetchLeviersData,
+  fetchEngagementsByAxe,
   setStagingDocId as setStagingDocIdInFetcher,
   GRIST_URLS,
   GRIST_LEVIERS_URL
 } from './gristDataFetcher';
 
 // Re-export URL constants for backward compatibility
-export { GRIST_URLS, GRIST_LEVIERS_URL };
+export { GRIST_URLS, GRIST_LEVIERS_URL, fetchEngagementsByAxe };
 
 /**
  * Formats a number for display using scientific notation when needed
@@ -714,10 +715,10 @@ export function transformCSVData(csvData, query) {
         ytab: values,
         legend: legend,
         colors: colors,
-        trendLine: statuses.some((s, idx) => {
+        trendLine: (targetTrajectory != null && statuses.some((s, idx) => {
           const t = normalizeStatusForLogic(s || '', years[idx]);
           return t === 'projection' || t === 'cible';
-        }) ? computeTrendLine(years, values, statuses) : null,
+        })) ? computeTrendLine(years, values, statuses) : null,
         targetTrajectory
       }
     };
@@ -875,17 +876,23 @@ function groupByIndicator(results) {
       // Build a sorted year axis and align values to it
       const rawDates = Array.isArray(item.values.x[0]) ? item.values.x[0] : item.values.x;
       const valueMap = {};
+      const statusMap = {};
       rawDates.forEach((year, idx) => {
         valueMap[year] = item.values.ytab[idx];
+        statusMap[year] = Array.isArray(item.label_value) ? item.label_value[idx] : null;
       });
       const sortedDates = [...rawDates].sort((a, b) => parseInt(a, 10) - parseInt(b, 10));
       const alignedValues = sortedDates.map(year =>
         Object.prototype.hasOwnProperty.call(valueMap, year) ? valueMap[year] : null
       );
+      const alignedStatuses = sortedDates.map(year =>
+        Object.prototype.hasOwnProperty.call(statusMap, year) ? statusMap[year] : null
+      );
 
       // Format expected by the chart & table components
       baseItem.date = [sortedDates];
       baseItem.values = [alignedValues];
+      baseItem.label_value = alignedStatuses;
       baseItem.reference_year_for_target_trajectory = item.reference_year_for_target_trajectory || null;
       indicatorMap.set(key, baseItem);
     } else {
@@ -931,6 +938,27 @@ function groupByIndicator(results) {
 
       // Update the common axis
       groupedItem.date = [mergedDates];
+
+      // Merge label_value (status per year): for each merged year, use status from first item that has it
+      const existingStatusMap = {};
+      const prevLabelValue = groupedItem.label_value || [];
+      if (Array.isArray(prevLabelValue) && existingDates.length === prevLabelValue.length) {
+        existingDates.forEach((yr, idx) => {
+          existingStatusMap[yr] = prevLabelValue[idx];
+        });
+      }
+      const newStatusMap = {};
+      const itemDates = Array.isArray(item.values.x[0]) ? item.values.x[0] : item.values.x;
+      const itemStatuses = item.label_value;
+      if (Array.isArray(itemStatuses) && itemDates.length === itemStatuses.length) {
+        itemDates.forEach((year, idx) => {
+          newStatusMap[year] = itemStatuses[idx];
+        });
+      }
+      const mergedStatuses = mergedDates.map(year =>
+        existingStatusMap[year] ?? newStatusMap[year] ?? null
+      );
+      groupedItem.label_value = mergedStatuses;
 
       // Preserve description if the current one is empty but this item has it
       if ((!groupedItem.label_description || groupedItem.label_description.trim() === '') && 
@@ -1067,10 +1095,10 @@ function getSeries(list_y, list_x, statuses, targetYear, targetValue) {
   const hasHistorical = Object.keys(historicalData).length > 0;
   if (hasHistorical) {
     const history = allYears.map(year => historicalData[year] ?? null);
-    // Zero out years where we have projection or target data
+    // Zero out years where we have projection or target data (use 'in' to handle target value 0)
     history.forEach((val, idx) => {
       const year = allYears[idx];
-      if (projectionData[year] || targetData[year]) {
+      if (year in projectionData || year in targetData) {
         history[idx] = 0;
       }
     });
@@ -1085,10 +1113,10 @@ function getSeries(list_y, list_x, statuses, targetYear, targetValue) {
   const hasProjection = SHOW_EXTRAPOLATION && Object.keys(projectionData).length > 0;
   if (hasProjection) {
     const projection = allYears.map(year => projectionData[year] ?? null);
-    // Zero out years where we have historical or target data
+    // Zero out years where we have historical or target data (use 'in' to handle value 0)
     projection.forEach((val, idx) => {
       const year = allYears[idx];
-      if (historicalData[year] || targetData[year]) {
+      if (year in historicalData || year in targetData) {
         projection[idx] = 0;
       }
     });
@@ -1287,6 +1315,16 @@ export const IMPACT_AXES = [
   'Economie circulaire',
   'Économie circulaire',
   'Eau',
+];
+
+// Display order for impact axes (Etat env + SideNavigation)
+export const IMPACT_AXE_DISPLAY_ORDER = [
+  'Atténuation climat',
+  'Adaptation climat',
+  'Biodiversité',
+  'Eau',
+  'Pollution',
+  'Économie circulaire',
 ];
 
 export function isImpactAxe(name) {

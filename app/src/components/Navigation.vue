@@ -2,26 +2,56 @@
   <div class="cursor_pointer">
     <nav class="fr-nav" id="header-navigation" role="navigation" aria-label="Menu principal">
       <ul class="fr-nav__list">
-        <li class="breadcrumb" v-for="option in menuOptions" :key="option.value">
-          <a 
-            class="fr-nav__link" 
+        <li class="nav-item" v-for="option in menuOptions" :key="option.value">
+          <!-- Disabled / coming soon item -->
+          <template v-if="option.disabled">
+            <span
+              class="fr-nav__link nav-link--disabled"
+              :title="option.label + ' — bientôt disponible'"
+            >
+              {{ option.label }}
+              <span class="nav-coming-soon">▾</span>
+            </span>
+          </template>
+          <!-- Dropdown menu for future use -->
+          <template v-else-if="option.hasDropdown">
+            <button
+              class="fr-nav__link nav-dropdown-btn"
+              :class="{ 'fr-nav__link--active': option.selected }"
+              :aria-expanded="dropdownOpen ? 'true' : 'false'"
+              @click="toggleDropdown(option)"
+            >
+              {{ option.label }}
+              <span class="nav-dropdown-arrow" aria-hidden="true"></span>
+            </button>
+            <ul v-if="dropdownOpen" class="nav-dropdown-menu">
+              <li v-for="sub in option.children" :key="sub.value">
+                <a
+                  class="nav-dropdown-item"
+                  :class="{ 'nav-dropdown-item--active': sub.selected }"
+                  :href="sub.link"
+                  @click.prevent="handleNavigation(sub)"
+                >
+                  {{ sub.label }}
+                </a>
+              </li>
+            </ul>
+          </template>
+          <!-- Regular nav links -->
+          <a
+            v-else
+            class="fr-nav__link"
             :class="{ 'fr-nav__link--active': option.selected }"
-            target="_self" 
-            :href="option.link" 
+            target="_self"
+            :href="option.link"
             :aria-current="option.selected ? 'page' : undefined"
-            :id="'navigation' + option.value" 
+            :id="'navigation' + option.value"
             :title="option.label"
             @click.prevent="handleNavigation(option)"
           >
             <span
-              v-if="option.value === 'search'"
-              class="fr-icon-search-line"
-              aria-hidden="true"
-              style="margin-right: 0.25rem;"
-            ></span>
-            <span
-              v-if="option.value === 'favoris'"
-              class="fr-icon-heart-line"
+              v-if="option.icon"
+              :class="option.icon"
               aria-hidden="true"
               style="margin-right: 0.25rem;"
             ></span>
@@ -44,7 +74,8 @@ export default {
     return {
       myrouter: router,
       menuOptions: [],
-      sectors: ['Synthèse'] // Default, will be loaded from Grist data
+      sectors: [],
+      dropdownOpen: false
     }
   },
   methods: {
@@ -52,51 +83,75 @@ export default {
       let base = process.env.VUE_APP_PREFIX_PATH
       const isStaging = window.location.pathname.includes('/staging')
       const stagingPrefix = isStaging ? '/staging' : ''
-      
+
       // Load sectors from Grist data
       try {
         const response = await getNavigationStructure('production')
         if (response.status === 'success' && response.data.sectorNames) {
-          this.sectors = response.data.sectorNames
+          this.sectors = response.data.sectorNames.filter(s => s !== 'Synthèse')
         }
       } catch (error) {
         console.error('Error loading sectors:', error)
-        // Keep default sectors
       }
-      
-      // Build menu options with sectors
-      this.menuOptions = []
-      
-      // Add sector tabs
-      this.sectors.forEach(sector => {
-        const sectorValue = sector.toLowerCase().replace(/\s+/g, '-').replace(/[àâä]/g, 'a').replace(/[éèêë]/g, 'e').replace(/[îï]/g, 'i').replace(/[ôö]/g, 'o').replace(/[ùûü]/g, 'u')
-        this.menuOptions.push({
-          value: `sector-${sectorValue}`,
-          label: sector,
-          selected: false,
-          link: base + stagingPrefix + `/dashboard?sector=${encodeURIComponent(sector)}`
-        })
-      })
-      
-      // Add other menu items
-      this.menuOptions.push(
-        { value: 'search', label: 'Recherche', selected: false, link: base + stagingPrefix + "/search" },
-        { value: 'favoris', label: 'Favoris', selected: false, link: base + "/favoris" }
-      )
-      
-      var current_page = this.get_name_page()
-      if (current_page == '') {
-        current_page = 'dashboard'
-      }
-      var pages = [];
-      for (var index in this.menuOptions) pages.push(this.menuOptions[index].value)
 
-      if (pages.includes(current_page)) this.set_selected_page(current_page)
+      // Build top nav matching Figma: Accueil, Etat de l'environnement, Chantiers sectoriels, Analyse par secteur dropdown, Favoris
+      this.menuOptions = [
+        {
+          value: 'accueil',
+          label: 'Accueil',
+          selected: false,
+          link: base + stagingPrefix + '/dashboard?sector=Synthèse&view=about'
+        },
+        {
+          value: 'etat-environnement',
+          label: 'Etat de l\'environnement',
+          selected: false,
+          link: base + stagingPrefix + '/dashboard?sector=Synthèse&view=etat-environnement'
+        },
+        {
+          value: 'chantiers-sectoriels',
+          label: 'Chantiers sectoriels',
+          selected: false,
+          link: base + stagingPrefix + '/dashboard?sector=Synthèse&view=chantiers-sectoriels'
+        },
+        {
+          value: 'analyse-par-secteur',
+          label: 'Analyse par secteur',
+          selected: false,
+          disabled: true
+        },
+        {
+          value: 'favoris',
+          label: 'Favoris',
+          selected: false,
+          icon: 'fr-icon-bookmark-line',
+          link: base + '/favoris'
+        }
+      ]
+
+      // Set initial active tab
+      this.updateActiveFromRoute()
+    },
+    slugify(str) {
+      return String(str).toLowerCase()
+        .replace(/\s+/g, '-')
+        .replace(/[àâä]/g, 'a')
+        .replace(/[éèêë]/g, 'e')
+        .replace(/[îï]/g, 'i')
+        .replace(/[ôö]/g, 'o')
+        .replace(/[ùûü]/g, 'u')
+    },
+    toggleDropdown(option) {
+      this.dropdownOpen = !this.dropdownOpen
+    },
+    closeDropdown() {
+      this.dropdownOpen = false
     },
     handleNavigation(option) {
-      // Navigate using router first
+      this.closeDropdown()
+
       if (option.value.startsWith('sector-')) {
-        // Extract sector from value
+        // Navigate to a specific sector
         const sectorMatch = option.link.match(/sector=([^&]+)/)
         if (sectorMatch) {
           const sector = decodeURIComponent(sectorMatch[1])
@@ -104,139 +159,120 @@ export default {
           this.myrouter.push({
             name: routeName,
             query: { sector: sector }
-          }).then(() => {
-            // Update selection after navigation completes
-            this.set_selected_page(option.value)
           }).catch(err => {
-            // Ignore navigation errors (e.g., navigating to same route)
-            if (err.name !== 'NavigationDuplicated') {
-              console.error('Navigation error:', err)
-            } else {
-              // Even if navigation is duplicated, update selection
-              this.set_selected_page(option.value)
-            }
+            if (err.name !== 'NavigationDuplicated') console.error('Navigation error:', err)
           })
         }
-      } else {
-        // For other pages (search, favoris, a-propos)
-        let routeName = option.value
-        if (option.value === 'search') {
-          routeName = window.location.pathname.includes('/staging') ? 'staging-search' : 'search'
-        }
-        this.myrouter.push({ name: routeName }).then(() => {
-          // Update selection after navigation completes
-          this.set_selected_page(option.value)
+      } else if (option.value === 'accueil') {
+        const routeName = window.location.pathname.includes('/staging') ? 'staging-dashboard' : 'dashboard'
+        this.myrouter.push({
+          name: routeName,
+          query: { sector: 'Synthèse', view: 'about' }
         }).catch(err => {
-          if (err.name !== 'NavigationDuplicated') {
-            console.error('Navigation error:', err)
-          } else {
-            // Even if navigation is duplicated, update selection
-            this.set_selected_page(option.value)
-          }
+          if (err.name !== 'NavigationDuplicated') console.error('Navigation error:', err)
+        })
+      } else if (option.value === 'etat-environnement') {
+        const routeName = window.location.pathname.includes('/staging') ? 'staging-dashboard' : 'dashboard'
+        this.myrouter.push({
+          name: routeName,
+          query: { sector: 'Synthèse', view: 'etat-environnement' }
+        }).catch(err => {
+          if (err.name !== 'NavigationDuplicated') console.error('Navigation error:', err)
+        })
+      } else if (option.value === 'chantiers-sectoriels') {
+        const routeName = window.location.pathname.includes('/staging') ? 'staging-dashboard' : 'dashboard'
+        this.myrouter.push({
+          name: routeName,
+          query: { sector: 'Synthèse', view: 'chantiers-sectoriels' }
+        }).catch(err => {
+          if (err.name !== 'NavigationDuplicated') console.error('Navigation error:', err)
+        })
+      } else {
+        this.myrouter.push({ name: option.value }).catch(err => {
+          if (err.name !== 'NavigationDuplicated') console.error('Navigation error:', err)
         })
       }
+
+      this.updateActiveFromRoute()
     },
-    router_to_pages(option) {
-      var name_page = this.get_name_page()
-      if (option.value != name_page) {
-        this.myrouter.push({ name: option.value })
+    updateActiveFromRoute() {
+      if (!this.$route) return
+
+      const path = this.$route.path
+      const query = this.$route.query
+
+      // Reset all
+      this.menuOptions.forEach(opt => {
+        opt.selected = false
+        if (opt.children) opt.children.forEach(c => { c.selected = false })
+      })
+
+      if (path.includes('dashboard')) {
+        const sector = query.sector
+        const view = query.view
+
+        if (sector === 'Synthèse') {
+          if (view === 'chantiers-sectoriels' || view === 'general-chantiers' || view === 'chantiers-table') {
+            this.setSelected('chantiers-sectoriels')
+          } else if (view === 'etat-environnement' || view === 'general-engagements' || view === 'engagements-table') {
+            this.setSelected('etat-environnement')
+          } else {
+            this.setSelected('accueil')
+          }
+        } else if (sector) {
+          // When viewing a chantier from any sector, stay on "Chantiers sectoriels"
+          if (view === 'chantier') {
+            this.setSelected('chantiers-sectoriels')
+          } else {
+            // Other sector views (sectorial-engagements, etc.)
+            this.setSelected('chantiers-sectoriels')
+          }
+        }
+      } else if (path.includes('favoris')) {
+        this.setSelected('favoris')
       }
-      this.set_selected_page(option.value)
+    },
+    setSelected(value) {
+      const opt = this.menuOptions.find(o => o.value === value)
+      if (opt) opt.selected = true
     },
     set_selected_page(page_name) {
-      this.menuOptions.forEach(function (element) { element.selected = false })
-      const selectedOption = this.menuOptions.find((element) => element.value === page_name)
-      if (selectedOption) {
-        selectedOption.selected = true
-      }
+      // Legacy compat
+      this.updateActiveFromRoute()
     },
     get_name_page() {
-      // Use $route if available (more reliable for Vue Router)
-      if (this.$route) {
-        const path = this.$route.path
-        const query = this.$route.query
-        
-        // Check if dashboard is in path and get sector from query
-        if (path.includes('dashboard')) {
-          const sector = query.sector
-          if (sector) {
-            const sectorValue = String(sector).toLowerCase().replace(/\s+/g, '-').replace(/[àâä]/g, 'a').replace(/[éèêë]/g, 'e').replace(/[îï]/g, 'i').replace(/[ôö]/g, 'o').replace(/[ùûü]/g, 'u')
-            return `sector-${sectorValue}`
-          }
-          return 'dashboard'
-        } else {
-          // Extract page name from path
-          const pathParts = path.split('/').filter(p => p)
-          return pathParts[pathParts.length - 1] || ''
-        }
-      }
-      
-      // Fallback to window.location
-      let location = window.location.href
-      var page = location.split('/')
-
-      // Check if dashboard is in URL and get sector from query
-      if (page.includes('dashboard')) {
-        const urlParams = new URLSearchParams(window.location.search)
-        const sector = urlParams.get('sector')
-        if (sector) {
-          const sectorValue = sector.toLowerCase().replace(/\s+/g, '-').replace(/[àâä]/g, 'a').replace(/[éèêë]/g, 'e').replace(/[îï]/g, 'i').replace(/[ôö]/g, 'o').replace(/[ùûü]/g, 'u')
-          return `sector-${sectorValue}`
-        }
-        return 'dashboard'
-      } else {
-        page = page[page.length - 1]
-        page = page.split('?')[0]
-        page = page.split('#')[0]
-      }
-
-      return page
+      // Legacy compat
+      return ''
     }
   },
   mounted() {
     this.get_menu_options()
-    
-    // Function to update selected tab
-    const updateSelectedTab = () => {
-      const current_page = this.get_name_page()
-      if (current_page) {
-        this.set_selected_page(current_page)
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.nav-dropdown-btn') && !e.target.closest('.nav-dropdown-menu')) {
+        this.closeDropdown()
       }
-    }
-    
-    // Watch for route changes to update selected tab
+    })
+
+    // Watch route changes
     if (this.$route) {
-      // Watch both query and path together for better reactivity
       this.$watch(
         () => ({
           sector: this.$route.query.sector,
+          view: this.$route.query.view,
           path: this.$route.path
         }),
         () => {
-          updateSelectedTab()
+          this.updateActiveFromRoute()
         },
         { immediate: true, deep: true }
       )
     }
-    
-    // Also listen to popstate events (browser back/forward)
-    window.addEventListener('popstate', updateSelectedTab)
-    
-    // Listen to router navigation events - this is the most reliable
-    this.myrouter.afterEach((to, from) => {
-      updateSelectedTab()
+
+    this.myrouter.afterEach(() => {
+      this.updateActiveFromRoute()
     })
-    
-    // Store cleanup function
-    this._cleanupNavigation = () => {
-      window.removeEventListener('popstate', updateSelectedTab)
-    }
-  },
-  beforeDestroy() {
-    // Cleanup event listener
-    if (this._cleanupNavigation) {
-      this._cleanupNavigation()
-    }
   }
 }
 </script>
@@ -244,7 +280,6 @@ export default {
 <style>
 a:hover:not([href]) {
   cursor: pointer;
-  /*default;*/
 }
 
 .cursor_pointer {
@@ -253,11 +288,14 @@ a:hover:not([href]) {
 
 .fr-nav__list {
   padding-left: 20px;
-  /* margin-left: 10px; */
+  display: flex;
+  align-items: center;
 }
 
-.breadcrumb {
+.nav-item {
   margin-left: 17px;
+  position: relative;
+  list-style: none;
 }
 
 /* Style pour l'onglet sélectionné */
@@ -287,5 +325,80 @@ a:hover:not([href]) {
 .fr-nav__link--active:hover::after,
 .fr-nav__link[aria-current="page"]:hover::after {
   background-color: var(--text-action-high-blue-france-hover);
+}
+
+/* Disabled / coming soon nav item */
+.nav-link--disabled {
+  color: #929292 !important;
+  cursor: default;
+  pointer-events: none;
+  font: inherit;
+}
+
+.nav-coming-soon {
+  font-size: 0.625rem;
+  margin-left: 0.25rem;
+  color: #929292;
+}
+
+/* Dropdown button */
+.nav-dropdown-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  font: inherit;
+  padding: inherit;
+}
+
+.nav-dropdown-arrow {
+  display: inline-block;
+  width: 0.75rem;
+  height: 0.75rem;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23161616' d='M12 15.586L6.707 10.293 8.121 8.879 12 12.757l3.879-3.878 1.414 1.414z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  transition: transform 0.2s ease;
+}
+
+.nav-dropdown-btn[aria-expanded="true"] .nav-dropdown-arrow {
+  transform: rotate(180deg);
+}
+
+/* Dropdown menu */
+.nav-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  min-width: 220px;
+  background: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  list-style: none;
+  padding: 0.5rem 0;
+  margin: 0.25rem 0 0;
+}
+
+.nav-dropdown-item {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: #3a3a3a;
+  text-decoration: none;
+  font-size: 0.875rem;
+  white-space: nowrap;
+}
+
+.nav-dropdown-item:hover {
+  background: #f6f6f6;
+  color: var(--text-action-high-blue-france);
+}
+
+.nav-dropdown-item--active {
+  color: var(--text-action-high-blue-france);
+  font-weight: 700;
 }
 </style>

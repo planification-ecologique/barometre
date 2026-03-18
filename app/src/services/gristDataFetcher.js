@@ -10,10 +10,12 @@ import gristUrlsConfig from '@/config/gristUrls.json';
 // Data source constants - loaded from shared config
 export const GRIST_URLS = gristUrlsConfig.GRIST_URLS;
 export const GRIST_LEVIERS_URL = gristUrlsConfig.GRIST_LEVIERS_URL;
+export const GRIST_ENGAGEMENTS_URL = gristUrlsConfig.GRIST_ENGAGEMENTS_URL || null;
 
 // Cache for fetch promises to prevent duplicate requests
 let indicatorsFetchPromise = null;
 let leviersFetchPromise = null;
+let engagementsFetchPromise = null;
 
 /**
  * Parse CSV text into structured data
@@ -131,6 +133,60 @@ export async function fetchLeviersData() {
     });
 
   return leviersFetchPromise;
+}
+
+/** Map Liste_engagements "Axe taxonomie" → our display axe names */
+const AXE_TAXONOMIE_TO_DISPLAY = {
+  'Atténuation': 'Atténuation climat',
+  'Adaptation': 'Adaptation climat',
+  'Biodiversité': 'Biodiversité',
+  'Eau': 'Eau',
+  'Pollution': 'Pollution',
+  'Economie circulaire': 'Économie circulaire',
+  'Économie circulaire': 'Économie circulaire',
+};
+
+/**
+ * Fetch Liste_engagements (Engagement, Thématique, Axe taxonomie).
+ * Returns map: displayAxeName → first engagement for that axe.
+ * Used to fill the engagement column in Etat environnement synthesis.
+ * @returns {Promise<Map<string, string>>} Map of axe name → engagement
+ */
+export async function fetchEngagementsByAxe() {
+  if (!GRIST_ENGAGEMENTS_URL) {
+    return new Map();
+  }
+
+  if (engagementsFetchPromise) {
+    return engagementsFetchPromise;
+  }
+
+  engagementsFetchPromise = (async () => {
+    try {
+      const csvText = await fetchCSVText(GRIST_ENGAGEMENTS_URL, 'grist-engagements.csv');
+      const rows = await parseCSVText(csvText);
+      const map = new Map();
+
+      for (const row of rows) {
+        const axeTaxo = String(row['Axe taxonomie'] ?? row['Axe_taxonomie'] ?? '').trim();
+        const engagement = String(row['Engagement'] ?? '').trim();
+        if (!axeTaxo || !engagement) continue;
+        const displayAxe = AXE_TAXONOMIE_TO_DISPLAY[axeTaxo] || axeTaxo;
+        if (!map.has(displayAxe)) {
+          map.set(displayAxe, engagement);
+        }
+      }
+
+      engagementsFetchPromise = null;
+      return map;
+    } catch (error) {
+      engagementsFetchPromise = null;
+      console.warn('Could not load Liste_engagements, engagement column may be empty:', error.message);
+      return new Map();
+    }
+  })();
+
+  return engagementsFetchPromise;
 }
 
 /**

@@ -234,6 +234,10 @@ export default {
     }
   },
   mounted() {
+    const q = this.$route.query.q;
+    if (q) {
+      this.searchQuery = q;
+    }
     this.fetchData(this.selectedTags);
     this.$nextTick(() => {
       this.$refs.searchInput?.focus();
