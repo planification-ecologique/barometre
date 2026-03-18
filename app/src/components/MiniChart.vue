@@ -11,6 +11,7 @@
       :color="JSON.stringify(dataObj.values.colors || barColors)"
       :aspectratio="1.5"
       :isSmall="true"
+      :point-radius="2"
       :pointopacity="pointOpacityJson"
       :trendline="trendLineJson"
       :target-trajectory="targetTrajectoryJson"
@@ -25,6 +26,7 @@
       :stacked="true"
       :aspectratio="1.5"
       :isSmall="true"
+      :point-radius="2"
       :pointopacity="stackedPointOpacityJson"
       :trendline="stackedTrendLineJson"
       :target-trajectory="stackedTargetTrajectoryJson"
@@ -37,6 +39,7 @@
       :name="JSON.stringify(dataObj.label_sous_groupe || [''])"
       :aspectratio="1.5"
       :isSmall="true"
+      :point-radius="2"
       :pointopacity="stackedPointOpacityJson"
     />
     <!-- Fallback: try bar chart with date/values format -->
@@ -49,6 +52,7 @@
       :stacked="true"
       :aspectratio="1.5"
       :isSmall="true"
+      :point-radius="2"
       :pointopacity="stackedPointOpacityJson"
       :trendline="stackedTrendLineJson"
       :target-trajectory="stackedTargetTrajectoryJson"

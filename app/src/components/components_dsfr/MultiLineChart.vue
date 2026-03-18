@@ -135,6 +135,10 @@ export default {
       pointopacity: {
         type: String,
         default: undefined
+      },
+      pointRadius: {
+        type: Number,
+        default: 4
       }
   },
   computed: {
@@ -293,13 +297,13 @@ export default {
           // Allow the visual line to be continuous across null points;
           // the actual segment rendering is handled in afterDatasetDraw.
           spanGaps: true,
-          pointRadius: 4,
+          pointRadius: self.pointRadius,
           pointStyle: 'circle',
           pointBackgroundColor: colorPerPoint,
           pointBorderColor: colorPerPoint,
           pointHoverBackgroundColor: self.colorHover[j],
           pointHoverBorderColor: self.colorHover[j],
-          pointHoverRadius: 6,
+          pointHoverRadius: Math.max(self.pointRadius + 2, 4),
           borderWidth: 3,
           lineTension: 0.2
         })

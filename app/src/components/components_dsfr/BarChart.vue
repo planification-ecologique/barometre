@@ -182,6 +182,10 @@
       'target-trajectory': {
         type: String,
         default: undefined
+      },
+      pointRadius: {
+        type: Number,
+        default: 4
       }
     },
     watch: {
@@ -461,8 +465,9 @@
           const targetData = self.labels.map(function (label) {
             return trajByYear[String(label)] != null ? trajByYear[String(label)] : null
           })
+          const dotSize = self.pointRadius
           const targetPointRadius = self.labels.map(function (label) {
-            return trajIsTargetByYear[String(label)] ? 4 : 0
+            return trajIsTargetByYear[String(label)] ? dotSize : 0
           })
           self.targetIsTargetByYear = trajIsTargetByYear
           self.datasets.push({
@@ -578,7 +583,7 @@
                   ctx.setLineDash([6, 4])
                   ctx.stroke()
                   ctx.beginPath()
-                  ctx.arc(points[1].x, points[1].y, 4, 0, 2 * Math.PI)
+                  ctx.arc(points[1].x, points[1].y, self.pointRadius, 0, 2 * Math.PI)
                   ctx.fillStyle = self.targetSegmentColor
                   ctx.fill()
                   ctx.restore()
