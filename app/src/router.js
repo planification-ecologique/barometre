@@ -49,6 +49,15 @@ const routes = [
     }
   },
   {
+    path: "/favoris",
+    name: "favoris",
+    component: () =>
+      import(/* webpackChunkName: "favoris" */ "./views/FavorisPage.vue"),
+    meta: {
+      title: GeneralTitle + " - Favoris"
+    }
+  },
+  {
     path: "/mentions-legales",
     name: "mentions-legales",
     component: () =>

@@ -9,7 +9,7 @@ import './css/website.css'
 require('../node_modules/@gouvfr/dsfr/dist/legacy/legacy.nomodule.min.js')
 require('../node_modules/@gouvfr/dsfr/dist/core/core.module.min.js')
 require('../node_modules/@gouvfr/dsfr/dist/dsfr.main.css')
-// require('../node_modules/@gouvfr/dsfr/dist/utility/utility.main.css')
+require('../node_modules/@gouvfr/dsfr/dist/utility/utility.main.css')
 require('../node_modules/@gouvfr/dsfr/dist/dsfr.css')
 require('../node_modules/@gouvfr/dsfr/dist/utility/icons/icons-system/icons-system.min.css')
 require('../node_modules/@gouvfr/dsfr/dist/dsfr.module.min.js')

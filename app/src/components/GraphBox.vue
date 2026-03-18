@@ -15,6 +15,16 @@
     <div class="titleBox graph-box-header">
       <div class="fr-grid-row fr-grid-row--middle">
         <h2 class="cardTitle graph-box-title fr-col">{{ displayData.label_indic }}</h2>
+        <button
+          v-if="!isIframe"
+          class="favori-btn"
+          :class="{ 'favori-btn--active': estFavori }"
+          :title="estFavori ? 'Retirer des favoris' : 'Ajouter aux favoris'"
+          :aria-label="estFavori ? 'Retirer des favoris' : 'Ajouter aux favoris'"
+          @click="onToggleFavori"
+        >
+          <span :class="estFavori ? 'fr-icon-heart-fill' : 'fr-icon-heart-line'" aria-hidden="true"></span>
+        </button>
       </div>
       <!-- Région : dropdown (données Écolab) -->
       <div v-if="hasRegionalData" class="fr-select-group fr-mt-1w">
@@ -251,6 +261,7 @@ import {
   extractRegionsAndExtra,
   buildRegionalSeries,
 } from "@/services/ecolabRegionHelpers.js";
+import { isFavori, toggleFavori } from "@/services/favorisService.js";
 
 export default {
   name: "GraphBox",
@@ -296,6 +307,7 @@ export default {
       regionExtraDimension: null,
       regionExtraOptions: [],
       selectedExtraValue: "",
+      estFavori: false,
     };
   },
   watch: {
@@ -309,6 +321,10 @@ export default {
       this.regionExtraOptions = [];
       this.selectedExtraValue = "";
       if (this.hasRegionalData) this.loadRegions();
+      // Mettre à jour l'état favori
+      if (this.dataObj && this.dataObj.label_indic) {
+        this.estFavori = isFavori(this.dataObj.label_indic);
+      }
     },
   },
   computed: {
@@ -715,6 +731,15 @@ export default {
       );
       this.regionalChartData = series;
     },
+    onToggleFavori() {
+      if (this.dataObj && this.dataObj.label_indic) {
+        this.estFavori = toggleFavori(this.dataObj.label_indic);
+        this.$emit('favori-changed', {
+          labelIndic: this.dataObj.label_indic,
+          estFavori: this.estFavori,
+        });
+      }
+    },
     // Fonction pour afficher le graphique ou le tableau
     handleChartSelected(type) {
       this.displayChart = type === "graphique" ? true : false;
@@ -752,11 +777,35 @@ export default {
     if (this.isIframe) {
       this.isAccordionOpen = false;
     }
+    // Initialiser l'état favori
+    if (this.dataObj && this.dataObj.label_indic) {
+      this.estFavori = isFavori(this.dataObj.label_indic);
+    }
   },
 };
 </script>
 
 <style scoped>
+.favori-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.25rem;
+  margin-left: 0.5rem;
+  color: var(--text-mention-grey, #666);
+  transition: color 0.2s ease;
+  flex-shrink: 0;
+  line-height: 1;
+}
+.favori-btn:hover {
+  color: var(--text-action-high-blue-france, #000091);
+}
+.favori-btn--active {
+  color: #e1000f;
+}
+.favori-btn--active:hover {
+  color: #c00;
+}
 .fontSizeDescription {
   font-size: 12px;
 }

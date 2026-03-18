@@ -13,9 +13,15 @@
             :title="option.label"
             @click.prevent="handleNavigation(option)"
           >
-            <span 
-              v-if="option.value === 'search'" 
-              class="fr-icon-search-line" 
+            <span
+              v-if="option.value === 'search'"
+              class="fr-icon-search-line"
+              aria-hidden="true"
+              style="margin-right: 0.25rem;"
+            ></span>
+            <span
+              v-if="option.value === 'favoris'"
+              class="fr-icon-heart-line"
               aria-hidden="true"
               style="margin-right: 0.25rem;"
             ></span>
@@ -74,7 +80,8 @@ export default {
       
       // Add other menu items
       this.menuOptions.push(
-        { value: 'search', label: 'Recherche', selected: false, link: base + stagingPrefix + "/search" }
+        { value: 'search', label: 'Recherche', selected: false, link: base + stagingPrefix + "/search" },
+        { value: 'favoris', label: 'Favoris', selected: false, link: base + "/favoris" }
       )
       
       var current_page = this.get_name_page()
@@ -111,10 +118,11 @@ export default {
           })
         }
       } else {
-        // For other pages (search, a-propos)
-        const routeName = option.value === 'search' 
-          ? (window.location.pathname.includes('/staging') ? 'staging-search' : 'search')
-          : option.value
+        // For other pages (search, favoris, a-propos)
+        let routeName = option.value
+        if (option.value === 'search') {
+          routeName = window.location.pathname.includes('/staging') ? 'staging-search' : 'search'
+        }
         this.myrouter.push({ name: routeName }).then(() => {
           // Update selection after navigation completes
           this.set_selected_page(option.value)
