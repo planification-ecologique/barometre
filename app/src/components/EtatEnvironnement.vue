@@ -54,7 +54,18 @@
         class="etat-axe-section"
       >
         <div class="etat-axe-header">
-          <h2 class="fr-h3 etat-axe-title">{{ axe.name }}</h2>
+          <h2 class="fr-h3 etat-axe-title">
+            {{ axe.name }}
+            <a
+              class="etat-axe-link-icon"
+              href="#"
+              :title="'Voir le détail pour ' + axe.name"
+              :aria-label="'Voir le détail pour ' + axe.name"
+              @click.prevent="goToAxeDetail(axe.name)"
+            >
+              <span class="fr-icon-arrow-right-line" aria-hidden="true"></span>
+            </a>
+          </h2>
           <span class="etat-axe-stats">
             {{ axe.indicatorCount }} indicateurs
           </span>
@@ -303,6 +314,13 @@ export default {
     goAccueil() {
       const routeName = window.location.pathname.includes('/staging') ? 'staging-dashboard' : 'dashboard'
       this.$router.push({ name: routeName, query: { sector: 'Synthèse', view: 'about' } }).catch(() => {})
+    },
+    goToAxeDetail(axeName) {
+      const routeName = window.location.pathname.includes('/staging') ? 'staging-dashboard' : 'dashboard'
+      this.$router.push({
+        name: routeName,
+        query: { sector: 'Synthèse', view: 'general-engagements', axe: axeName }
+      }).catch(() => {})
     }
   }
 }
@@ -434,6 +452,23 @@ export default {
 
 .etat-axe-title {
   margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.etat-axe-link-icon {
+  display: inline-flex;
+  align-items: center;
+  color: #000091;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.etat-axe-link-icon:hover,
+.etat-axe-link-icon:focus {
+  color: #1212ff;
 }
 
 .etat-axe-stats {
