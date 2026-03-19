@@ -248,9 +248,10 @@
       <p class="fr-text--xs fr-text-mention--grey">
         Mise à jour : {{ formattedDateMaj }}
       </p>
-      <div v-if="dataObj.label_tags" class="graph-box-tags">
+      <!-- TODO: Temporairement désactivé les tags -->
+      <!-- <div v-if="dataObj.label_tags" class="graph-box-tags">
         <tags-card :tagsIndicateurs="dataObj.label_tags"></tags-card>
-      </div>
+      </div> -->
     </div>
 
   </div>
