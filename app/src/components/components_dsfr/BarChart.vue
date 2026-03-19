@@ -82,6 +82,7 @@
         pointOpacityParse: [],
         typeGraph: '',
         ymax: 0,
+        isPercentUnit: false,
         annotations: [],
         colorPrecisionBar: '#161616',
         colorBox: '#2f2f2f',
@@ -194,6 +195,10 @@
       isSmall: {
         type: Boolean,
         default: false
+      },
+      unit: {
+        type: String,
+        default: ''
       }
     },
     watch: {
@@ -206,6 +211,18 @@
         this.createChart()
       },
       targetSegment: function () {
+        this.resetData()
+        this.createChart()
+      },
+      targetTrajectory: function () {
+        this.resetData()
+        this.createChart()
+      },
+      'target-trajectory': function () {
+        this.resetData()
+        this.createChart()
+      },
+      unit: function () {
         this.resetData()
         this.createChart()
       }
@@ -243,6 +260,7 @@
         this.hlineNameParse = []
         this.typeGraph = ''
         this.ymax = 0
+        this.isPercentUnit = false
         this.annotations = []
         this.colorPrecisionBar = '#161616'
         this.colorBox = '#2f2f2f'
@@ -405,6 +423,12 @@
             if (!isNaN(hMax) && hMax > maxVal) maxVal = hMax
           }
           self.ymax = maxVal > 0 ? maxVal * 1.05 : (self.hlineParse?.length ? Math.max.apply(null, self.hlineParse) : 100)
+          // Pour les unités en pourcent : plafonner l'axe Y à 120 (max au lieu de suggestedMax pour forcer la limite)
+          const unitStr = (this.unit || '').toLowerCase()
+          self.isPercentUnit = unitStr.includes('pourcent') || unitStr.includes('%')
+          if (self.isPercentUnit) {
+            self.ymax = Math.min(self.ymax, 100)
+          }
         }
   
         // Annotation
@@ -685,7 +709,7 @@
                   fontSize: self.axisFontSize,
                   suggestedMin: 0,
                   padding: 8,
-                  suggestedMax: self.ymax,
+                  ...(self.isPercentUnit ? { max: self.ymax } : { suggestedMax: self.ymax }),
                   autoSkip: true,
                   maxTicksLimit: 5,
                   callback: function (value, index, values) {

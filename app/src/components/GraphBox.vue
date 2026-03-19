@@ -107,6 +107,7 @@
             :pointopacity="regionalPointOpacity"
             :trendline="chartValues.trendLine ? JSON.stringify(chartValues.trendLine) : undefined"
             :target-trajectory="chartValues.targetTrajectory ? JSON.stringify(chartValues.targetTrajectory) : undefined"
+            :unit="displayData.label_unit"
           >
           </bar-chart>
         </div>
@@ -121,6 +122,7 @@
             :pointopacity="pointOpacityJson"
             :trendline="stackedTrendLine ? JSON.stringify(stackedTrendLine) : undefined"
             :target-trajectory="stackedTargetTrajectory ? JSON.stringify(stackedTargetTrajectory) : undefined"
+            :unit="displayData.label_unit"
           >
           </bar-chart>
         </div>
