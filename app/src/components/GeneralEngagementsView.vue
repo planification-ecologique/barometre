@@ -34,24 +34,18 @@
         </nav>
       </section>
 
-      <section class="axe-summary">
+      <section class="axe-summary" :id="sectionIndicateurImpactId">
         <h2 class="fr-h4 axe-section-title">Ce qu'il faut retenir</h2>
         <div class="axe-summary-copy fr-text--md" v-html="axeSummaryHtml"></div>
-      </section>
-
-      <section v-if="currentAxeEntry" :id="sectionIndicateurImpactId" class="axe-section axe-section--highlighted">
-        <h2 class="fr-h3 axe-section-title">
-          <span class="section-kicker-badge">Indicateur</span>
-          Indicateurs d'impact
-        </h2>
-        <div v-if="currentAxeEntry.impactIndicators && currentAxeEntry.impactIndicators.length > 0" class="fr-grid-row fr-grid-row--gutters">
+        <!-- Graphes des indicateurs clés (à l'intérieur du Ce qu'il faut retenir) -->
+        <div v-if="currentAxeEntry && currentAxeEntry.impactIndicators && currentAxeEntry.impactIndicators.length > 0" class="fr-grid-row fr-grid-row--gutters fr-mt-3w">
           <div v-for="(item, itemIndex) in currentAxeEntry.impactIndicators" :key="item.label_indic + '-impact-' + itemIndex" class="fr-col-md-6 fr-col-lg-6 fr-col-xl-6 fr-col-12">
             <article :id="getIndicatorSectionId('impact', itemIndex)" class="axe-indicator-card">
               <graph-box :dataObj="item" :compact="true" :idAccordion="'axe-accordion-impact-' + itemIndex" :titre="item.label_indic" />
             </article>
           </div>
         </div>
-        <p v-else class="fr-text--sm fr-text--alt axe-empty-state">Aucun indicateur d'impact n'est encore défini pour cet axe.</p>
+        <p v-else-if="currentAxeEntry" class="fr-text--sm fr-text--alt axe-empty-state fr-mt-3w">Aucun indicateur d'impact n'est encore défini pour cet axe.</p>
       </section>
 
       <!-- Secteurs avec indicateurs d'impact sectoriels (Consommer, Se déplacer, etc. - hors Synthèse) -->

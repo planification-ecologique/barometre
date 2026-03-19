@@ -71,12 +71,12 @@
           </span>
         </div>
 
-        <p v-if="axe.description" class="fr-text--md etat-axe-description">
-          {{ axe.description }}
-        </p>
-
-        <!-- Indicators table -->
-        <div class="etat-table-wrapper">
+        <!-- Description + tableau des indicateurs -->
+        <div class="etat-axe-content">
+          <p v-if="axe.description" class="fr-text--md etat-axe-description">
+            {{ axe.description }}
+          </p>
+          <div class="etat-table-wrapper">
           <table class="etat-table">
             <thead>
               <tr>
@@ -133,6 +133,7 @@
               </tr>
             </tbody>
           </table>
+        </div>
         </div>
       </section>
     </template>
@@ -472,6 +473,14 @@ export default {
 .etat-callout-text {
   color: #3a3a3a;
   margin: 0;
+}
+
+.etat-axe-content {
+  margin-top: 0.5rem;
+}
+
+.etat-axe-content .etat-axe-description {
+  margin-bottom: 1rem;
 }
 
 /* Quick access links - same structure as Chantiers Sectoriels (label + links on 2 lines) */
