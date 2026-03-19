@@ -114,12 +114,12 @@ export default {
           selected: false,
           link: base + stagingPrefix + '/dashboard?sector=Synthèse&view=chantiers-sectoriels'
         },
-        {
-          value: 'analyse-par-secteur',
-          label: 'Analyse par secteur',
-          selected: false,
-          disabled: true
-        },
+        // {
+        //   value: 'analyse-par-secteur',
+        //   label: 'Analyse par secteur',
+        //   selected: false,
+        //   disabled: true
+        // },
         {
           value: 'favoris',
           label: 'Favoris',
