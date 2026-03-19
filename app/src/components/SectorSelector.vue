@@ -33,18 +33,37 @@
             </option>
           </optgroup>
           
-          <!-- Synthèse sub-navigation (only shown when on Synthèse) -->
-          <optgroup v-if="activeSector === 'Synthèse'" label="Navigation Synthèse">
-            <option value="view:about">À propos</option>
-            <option value="view:engagements-table">Indicateurs d'impact - Tableau</option>
-            <option v-for="axe in taxonomyAxes" :key="'axe-' + axe" :value="'axe:' + axe">
-              Indicateurs d'impact - {{ axe }}
-            </option>
-            <option value="view:chantiers-table">Chantiers - Tableau</option>
-            <option v-for="sectorName in chantierSectors" :key="'chantier-' + sectorName" :value="'chantierSector:' + sectorName">
-              Chantiers - {{ sectorName }}
-            </option>
-          </optgroup>
+          <!-- Synthèse sub-navigation - matches SideNavigation structure -->
+          <template v-if="activeSector === 'Synthèse'">
+            <optgroup label="Accueil">
+              <option value="view:about">À propos</option>
+            </optgroup>
+            <optgroup label="État de l'environnement">
+              <option value="view:etat-environnement">Synthèse</option>
+              <option v-for="axe in displayedTaxonomyAxes" :key="'axe-' + axe" :value="'axe:' + axe">
+                {{ axe }}
+              </option>
+              <option value="view:engagements-table">Tableau des indicateurs d'impact</option>
+            </optgroup>
+            <optgroup label="Chantiers sectoriels">
+              <option value="view:chantiers-sectoriels">Synthèse</option>
+              <option
+                v-for="sectorName in chantierSectors"
+                :key="'sector-' + sectorName"
+                :value="'chantierSector:' + sectorName"
+              >
+                Vue d'ensemble — {{ sectorName }}
+              </option>
+              <option
+                v-for="chantier in allChantiersFlat"
+                :key="'chantier-' + chantier.sector + '-' + chantier.id"
+                :value="'chantierSynthese:' + chantier.id + ':' + chantier.sector"
+              >
+                {{ chantier.sector }} — {{ chantier.name }}
+              </option>
+              <option value="view:chantiers-table">Tableau des chantiers</option>
+            </optgroup>
+          </template>
           
           <!-- Sectorial sub-navigation (only shown when on a non-Synthèse sector) -->
           <optgroup v-if="activeSector && activeSector !== 'Synthèse'" :label="'Navigation ' + activeSector">
@@ -66,7 +85,7 @@
 
 <script>
 import router from '../router'
-import { getNavigationStructure } from '@/services/csvDataService.js'
+import { getNavigationStructure, IMPACT_AXE_DISPLAY_ORDER, isImpactAxe } from '@/services/csvDataService.js'
 import { getSectorIcon } from '@/utils/sectorIcons.js'
 
 export default {
@@ -84,7 +103,8 @@ export default {
       navigationData: null,
       taxonomyAxes: [],
       chantierSectors: [],
-      chantiers: []
+      chantiers: [],
+      allSectorChantiers: {}
     }
   },
   computed: {
@@ -94,6 +114,25 @@ export default {
     // Use route-based sector to ensure consistency with currentValue
     activeSector() {
       return this.$route?.query?.sector || this.currentSector || 'Synthèse'
+    },
+    // Match SideNavigation: axes in display order, filter by data, always include Adaptation climat
+    displayedTaxonomyAxes() {
+      const axes = Array.isArray(this.taxonomyAxes) ? [...this.taxonomyAxes] : []
+      const axesSet = new Set(axes)
+      return IMPACT_AXE_DISPLAY_ORDER.filter(axe =>
+        axesSet.has(axe) ||
+        (axe === 'Économie circulaire' && axesSet.has('Economie circulaire')) ||
+        axe === 'Adaptation climat'
+      )
+    },
+    // Flat list of chantiers for Synthèse dropdown: { id, name, sector }
+    allChantiersFlat() {
+      const result = []
+      this.chantierSectors.forEach(sectorName => {
+        const list = this.allSectorChantiers[sectorName] || []
+        list.forEach(c => result.push({ id: c.id, name: c.name, sector: sectorName }))
+      })
+      return result
     },
     currentValue() {
       // Determine current value based on route
@@ -109,6 +148,10 @@ export default {
       
       if (view === 'about') {
         return 'view:about'
+      } else if (view === 'etat-environnement') {
+        return 'view:etat-environnement'
+      } else if (view === 'chantiers-sectoriels') {
+        return 'view:chantiers-sectoriels'
       } else if (view === 'engagements-table') {
         return 'view:engagements-table'
       } else if (view === 'chantiers-table') {
@@ -118,6 +161,9 @@ export default {
       } else if (view === 'general-chantiers' && query.sectorFilter) {
         return 'chantierSector:' + query.sectorFilter
       } else if (view === 'chantier' && query.chantier_id) {
+        if (sector === 'Synthèse' && query.chantier_sector) {
+          return 'chantierSynthese:' + query.chantier_id + ':' + query.chantier_sector
+        }
         return 'chantier:' + query.chantier_id
       } else if (view === 'sectorial-engagements') {
         return 'view:sectorial-engagements'
@@ -160,25 +206,38 @@ export default {
       const sectorData = this.navigationData.sectors.find(s => s.name === sector)
       
       if (sector === 'Synthèse') {
-        // Load taxonomy axes
+        // Load taxonomy axes (raw keys from data; displayedTaxonomyAxes applies display order)
         const syntheseSector = this.navigationData.sectors.find(s => s.name === 'Synthèse')
         if (syntheseSector && syntheseSector.indicateursImpact) {
           this.taxonomyAxes = Object.keys(syntheseSector.indicateursImpact)
             .filter(axe => axe && axe !== 'Autre')
-            .sort()
         }
         
-        // Load chantier sectors
+        // Load chantier sectors and all sector chantiers (matches SideNavigation)
         this.chantierSectors = this.navigationData.sectors
           .filter(s => s.name !== 'Synthèse' && Object.keys(s.chantiers).length > 0)
           .map(s => s.name)
           .sort((a, b) => a.localeCompare(b, 'fr'))
         
+        this.allSectorChantiers = {}
+        this.navigationData.sectors
+          .filter(s => s.name !== 'Synthèse')
+          .forEach(s => {
+            this.allSectorChantiers[s.name] = Object.entries(s.chantiers)
+              .filter(([name]) => !isImpactAxe(name))
+              .map(([name]) => ({
+                id: name.toLowerCase().replace(/[^a-z0-9]/g, '-'),
+                name: name
+              }))
+              .sort((a, b) => a.name.localeCompare(b.name, 'fr'))
+          })
+        
         this.chantiers = []
       } else if (sectorData) {
-        // Load chantiers for current sector
+        // Load chantiers for current sector (exclude impact axes like SideNavigation)
         this.chantiers = Object.entries(sectorData.chantiers)
-          .map(([name, chantierData]) => ({
+          .filter(([name]) => !isImpactAxe(name))
+          .map(([name]) => ({
             id: name.toLowerCase().replace(/[^a-z0-9]/g, '-'),
             name: name
           }))
@@ -186,6 +245,7 @@ export default {
         
         this.taxonomyAxes = []
         this.chantierSectors = []
+        this.allSectorChantiers = {}
       }
     },
     handleChange(event) {
@@ -212,7 +272,7 @@ export default {
         // Navigate to specific view
         router.push({
           name: routeName,
-          query: { sector: this.currentSector, view: param }
+          query: { sector: 'Synthèse', view: param }
         }).catch(err => {
           if (err.name !== 'NavigationDuplicated') console.error('Navigation error:', err)
         })
@@ -225,18 +285,32 @@ export default {
           if (err.name !== 'NavigationDuplicated') console.error('Navigation error:', err)
         })
       } else if (type === 'chantierSector') {
-        // Navigate to chantiers for a specific sector
+        // Navigate to chantiers overview for a specific sector
         router.push({
           name: routeName,
           query: { sector: 'Synthèse', view: 'general-chantiers', sectorFilter: param }
         }).catch(err => {
           if (err.name !== 'NavigationDuplicated') console.error('Navigation error:', err)
         })
-      } else if (type === 'chantier') {
-        // Navigate to specific chantier
+      } else if (type === 'chantierSynthese') {
+        // Navigate to chantier from Synthèse (param is chantierId:chantierSector)
+        const [chantierId, chantierSector] = param.split(':')
         router.push({
           name: routeName,
-          query: { sector: this.currentSector, view: 'chantier', chantier_id: param }
+          query: {
+            sector: 'Synthèse',
+            view: 'chantier',
+            chantier_id: chantierId,
+            chantier_sector: chantierSector
+          }
+        }).catch(err => {
+          if (err.name !== 'NavigationDuplicated') console.error('Navigation error:', err)
+        })
+      } else if (type === 'chantier') {
+        // Navigate to specific chantier (sectorial view)
+        router.push({
+          name: routeName,
+          query: { sector: this.activeSector, view: 'chantier', chantier_id: param }
         }).catch(err => {
           if (err.name !== 'NavigationDuplicated') console.error('Navigation error:', err)
         })

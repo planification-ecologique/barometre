@@ -20,7 +20,7 @@
         <h1 class="fr-title axe-title" :aria-label="params.axe">{{ params.axe }}</h1>
         <nav v-if="axeMetadataTags.length > 0" class="chantier-metadata-tags" aria-label="Métadonnées de l'axe">
           <div v-if="axeMetadataTags.length > 0" class="chantier-tags-row">
-            <span class="chantier-tags-row__label">Indicateurs :</span>
+            <span class="chantier-tags-row__label">Indicateurs</span>
             <a
               v-for="tag in axeMetadataTags"
               :key="'ind-' + tag.id"
@@ -52,6 +52,26 @@
           </div>
         </div>
         <p v-else class="fr-text--sm fr-text--alt axe-empty-state">Aucun indicateur d'impact n'est encore défini pour cet axe.</p>
+      </section>
+
+      <!-- Secteurs avec indicateurs d'impact sectoriels (Consommer, Se déplacer, etc. - hors Synthèse) -->
+      <section
+        v-for="(sectorEntry, sectorIdx) in impactIndicatorsBySector"
+        :key="'sector-' + sectorEntry.sector + '-' + sectorIdx"
+        :id="getSectorSectionId(sectorEntry.sector)"
+        class="axe-section axe-section--highlighted"
+      >
+        <h2 class="fr-h3 axe-section-title">
+          <span class="section-kicker-badge">Indicateur</span>
+          {{ sectorEntry.sector }}
+        </h2>
+        <div class="fr-grid-row fr-grid-row--gutters">
+          <div v-for="(item, itemIndex) in sectorEntry.indicators" :key="item.label_indic + '-' + sectorEntry.sector + '-' + itemIndex" class="fr-col-md-6 fr-col-lg-6 fr-col-xl-6 fr-col-12">
+            <article :id="getIndicatorSectionId(sectorEntry.sector, itemIndex)" class="axe-indicator-card">
+              <graph-box :dataObj="item" :compact="true" :idAccordion="'axe-accordion-' + sectorEntry.sector + '-' + itemIndex" :titre="item.label_indic" />
+            </article>
+          </div>
+        </div>
       </section>
 
       <section v-if="currentAxeEntry && currentAxeEntry.autresIndicators && currentAxeEntry.autresIndicators.length > 0" :id="sectionAutresIndicateursId" class="axe-section">
@@ -209,6 +229,7 @@ export default {
     return {
       engagementsByAxe: {},
       engagementsByChantierAutres: {},  // "Indicateur d'impact - autres" grouped by chantier name
+      engagementsByAxeAndSector: {},    // axe -> { sector -> [indicators] } for "Indicateur d'impact"
     };
   },
   computed: {
@@ -230,22 +251,23 @@ export default {
       return result;
     },
     // Axes sorted alphabetically (normal indicators, shown first)
-    // Split each axe's engagements into "Indicateur d'impact" and "Autres indicateurs"
+    // Split each axe's engagements into "Indicateur d'impact" (Synthèse only) and "Autres indicateurs"
+    // Les indicateurs d'impact sectoriels (Préserver, Consommer, etc.) sont dans impactIndicatorsBySector
     sortedAxesEntries() {
       return Object.entries(this.filteredEngagementsByAxe)
         .map(([axe, engagements]) => {
           const impactIndicators = [];
           const autresIndicators = [];
           
+          // Indicateurs d'impact : uniquement secteur Synthèse (les autres sont dans les sections secteurs)
+          const syntheseImpact = (this.engagementsByAxeAndSector[axe] && this.engagementsByAxeAndSector[axe]['Synthèse']) || [];
+          impactIndicators.push(...syntheseImpact);
+          
           engagements.forEach(item => {
             const levier = (item.levier || '').toString();
-            // Check if this is "Autres indicateurs" (but not "Indicateur d'impact - autres")
-            // "Autres indicateurs" should appear in the "Autres indicateurs" section
+            // "Autres indicateurs" (hors "Indicateur d'impact - autres") → section Autres indicateurs
             if (levier.includes("Autres indicateurs") && !levier.includes("Indicateur d'impact - autres")) {
               autresIndicators.push(item);
-            } else {
-              // "Indicateur d'impact" (and anything else) goes in the main section
-              impactIndicators.push(item);
             }
           });
           
@@ -253,7 +275,7 @@ export default {
             axe,
             impactIndicators,
             autresIndicators,
-            engagements // Keep for backward compatibility if needed
+            engagements
           };
         })
         .filter(entry => entry.impactIndicators.length > 0 || entry.autresIndicators.length > 0)
@@ -271,6 +293,16 @@ export default {
     currentAxeEntry() {
       if (!this.params.axe) return null;
       return this.sortedAxesEntries.find(e => e.axe === this.params.axe) || null;
+    },
+    /** Secteurs avec indicateurs d'impact sectoriels pour l'axe courant (hors Synthèse : Consommer, Se déplacer, etc.) */
+    impactIndicatorsBySector() {
+      if (!this.params.axe) return [];
+      const bySector = this.engagementsByAxeAndSector[this.params.axe];
+      if (!bySector || typeof bySector !== 'object') return [];
+      return Object.entries(bySector)
+        .filter(([sector, indicators]) => sector !== 'Synthèse' && indicators && indicators.length > 0)
+        .map(([sector, indicators]) => ({ sector, indicators }))
+        .sort((a, b) => (a.sector || '').localeCompare(b.sector || '', 'fr'));
     },
     axeSectionLinks() {
       const links = [];
@@ -290,6 +322,13 @@ export default {
         href: '#' + this.getIndicatorSectionId('impact', idx),
       }));
     },
+    axeSectorTags() {
+      return this.impactIndicatorsBySector.map(se => ({
+        id: this.getSectorSectionId(se.sector),
+        label: `${se.sector} (${se.indicators?.length || 0})`,
+        href: '#' + this.getSectorSectionId(se.sector),
+      }));
+    },
     axeAutresIndicateursTag() {
       const count = this.currentAxeEntry?.autresIndicators?.length || 0;
       if (count === 0) return null;
@@ -300,7 +339,7 @@ export default {
       };
     },
     axeMetadataTags() {
-      const tags = [...this.axeIndicateurTags];
+      const tags = [...this.axeIndicateurTags, ...this.axeSectorTags];
       if (this.axeAutresIndicateursTag) tags.push(this.axeAutresIndicateursTag);
       return tags;
     },
@@ -338,16 +377,32 @@ export default {
       try {
         const axeGroups = {};
         const chantierAutresGroups = {};
+        const axeAndSectorGroups = {};  // axe -> { sector -> [indicators] } for Indicateur d'impact
         const seenByAxe = new Set();
         const seenByChantierAutres = new Set();
-        
+        const seenByAxeSector = new Set();
+
+        // Build (chantierOuImpact, sector) pairs from parallel arrays
+        const getAssociations = (indicator) => {
+          const coiList = indicator.chantier_ou_impact_list;
+          const sectorList = indicator.sector_list;
+          if (Array.isArray(coiList) && coiList.length) {
+            return coiList.map((coi, i) => ({
+              chantierOuImpact: coi || 'Autre',
+              sector: (Array.isArray(sectorList) && sectorList[i]) || indicator.sector || 'Synthèse'
+            }));
+          }
+          return [{
+            chantierOuImpact: indicator.chantier_ou_impact || 'Autre',
+            sector: indicator.sector || 'Synthèse'
+          }];
+        };
+
         data.forEach(indicator => {
           const levier = indicator.levier || '';
-          const axes = Array.isArray(indicator.chantier_ou_impact_list) && indicator.chantier_ou_impact_list.length
-            ? indicator.chantier_ou_impact_list
-            : [indicator.chantier_ou_impact || 'Autre'];
-          
-          axes.forEach(chantierOuImpact => {
+          const associations = getAssociations(indicator);
+
+          associations.forEach(({ chantierOuImpact, sector }) => {
             const axeName = chantierOuImpact || 'Autre';
 
             // "Indicateur d'impact - autres" can appear in a composite levier string,
@@ -369,16 +424,29 @@ export default {
                 if (!axeGroups[axeName]) axeGroups[axeName] = [];
                 axeGroups[axeName].push(indicator);
               }
+
+              // For "Indicateur d'impact" only: also group by sector (for sector sections in axe detail)
+              if (levier && levier.includes("Indicateur d'impact") && !levier.includes("Indicateur d'impact - autres")) {
+                const sectorKey = `${axeName}:::${sector}:::${indicator.label_indic}`;
+                if (!seenByAxeSector.has(sectorKey)) {
+                  seenByAxeSector.add(sectorKey);
+                  if (!axeAndSectorGroups[axeName]) axeAndSectorGroups[axeName] = {};
+                  if (!axeAndSectorGroups[axeName][sector]) axeAndSectorGroups[axeName][sector] = [];
+                  axeAndSectorGroups[axeName][sector].push(indicator);
+                }
+              }
             }
           });
         });
-        
+
         this.engagementsByAxe = axeGroups;
         this.engagementsByChantierAutres = chantierAutresGroups;
+        this.engagementsByAxeAndSector = axeAndSectorGroups;
       } catch (error) {
         console.error("Error grouping engagements by axe:", error);
         this.engagementsByAxe = {};
         this.engagementsByChantierAutres = {};
+        this.engagementsByAxeAndSector = {};
       }
     },
     goAccueil() {
@@ -390,7 +458,12 @@ export default {
       this.$router.push({ name: routeName, query: { sector: 'Synthèse', view: 'etat-environnement' } }).catch(() => {});
     },
     getIndicatorSectionId(prefix, index) {
-      return `section-indicateur-${prefix}-${index}`;
+      const safePrefix = String(prefix || '').replace(/[^a-zA-Z0-9-]/g, '-').replace(/-+/g, '-') || 'impact';
+      return `section-indicateur-${safePrefix}-${index}`;
+    },
+    getSectorSectionId(sector) {
+      const safe = String(sector || '').replace(/[^a-zA-Z0-9-]/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '') || 'secteur';
+      return `section-secteur-${safe}`;
     },
   },
 };
@@ -484,7 +557,7 @@ export default {
 .chantier-metadata-tags {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.875rem;
   margin-top: 0.75rem;
 }
 
@@ -627,7 +700,7 @@ export default {
   }
 
   .chantier-metadata-tags {
-    gap: 0.375rem;
+    gap: 0.625rem;
   }
 
   .chantier-tags-row {

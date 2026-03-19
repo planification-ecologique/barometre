@@ -4,7 +4,7 @@
     <sector-selector :currentSector="currentSector" />
     
     <div class="fr-grid-row">
-      <aside class="fr-col-12 fr-col-sm-12 fr-col-lg-3 fr-mb-sm-5w sidebar-container">
+      <aside v-show="!isAccueilPage" class="fr-col-12 fr-col-sm-12 fr-col-lg-3 fr-mb-sm-5w sidebar-container">
         <div id="sidebar" class="fr-ml-2w">
           <side-navigation
             v-on:params="updateSelection"
@@ -34,6 +34,7 @@
               <about-view
                 v-else-if="myobj.view === 'about'"
                 :params="myobj"
+                :useStaging="useStaging"
               />
               <!-- Engagements Table view -->
               <engagements-table-view 
@@ -130,6 +131,11 @@ export default {
       default: false
     }
   },
+  computed: {
+    isAccueilPage() {
+      return this.$route.query.view === 'about' || this.myobj?.view === 'about'
+    }
+  },
   components: {
     UpFooter,
     AdaptiveDashboard,
@@ -186,6 +192,13 @@ export default {
     if (this.$route.query.theme !== undefined || this.$route.query.levier !== undefined) {
       this.sidenav_initParams.id_theme = this.$route.query.theme;
       this.sidenav_initParams.id_levier = this.$route.query.levier;
+    }
+
+    // Initialize myobj from route for self-loading views (about, chantiers-sectoriels, etat-environnement)
+    const view = this.$route.query.view;
+    if (view === 'about' || view === 'chantiers-sectoriels' || view === 'etat-environnement') {
+      this.myobj = { view, sector: this.currentSector };
+      this.isapiloading = false;
     }
   },
   watch: {

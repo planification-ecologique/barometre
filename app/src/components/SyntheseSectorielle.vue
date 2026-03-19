@@ -134,6 +134,15 @@
                       <br><br>
                       <em>Unité : {{ indicator.labelUnit }}</em>
                     </template>
+                    <template v-if="indicator.legendItems && indicator.legendItems.length > 0">
+                      <br><br>
+                      <div class="td-indicateur-legend-wrap">
+                        <span v-for="(item, i) in indicator.legendItems" :key="i" class="td-indicateur-legend-item">
+                          <span class="td-indicateur-legend-dot" :style="{ backgroundColor: item.color }"></span>
+                          <span class="td-indicateur-legend-label">{{ item.label }}</span>
+                        </span>
+                      </div>
+                    </template>
                   </td>
                   <!-- Mini chart (same as GraphBox) -->
                   <td class="td-valeurs">
@@ -195,6 +204,7 @@
 <script>
 import MiniChart from './MiniChart.vue'
 import { getNavigationStructure, getIndicators, isImpactAxe } from '@/services/csvDataService.js'
+import { getAllColors, getHexaFromName } from '@/utils.js'
 
 const SECTOR_DESCRIPTIONS = {
   'Se déplacer': 'Le secteur "Se déplacer" couvre les déplacements de voyageurs et de marchandises, pour l\'ensemble des modes de transports (terrestres, aériens, maritimes et fluviaux).',
@@ -337,6 +347,14 @@ export default {
         console.error('Error loading synthèse data:', error)
       } finally {
         this.isLoading = false
+        this.$nextTick(() => this.scrollToHash())
+      }
+    },
+    scrollToHash() {
+      const hash = this.$route?.hash
+      if (hash && hash.startsWith('#sector-')) {
+        const el = document.getElementById(hash.slice(1))
+        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
       }
     },
     buildIndicatorRow(indicator) {
@@ -386,9 +404,36 @@ export default {
 
       const unit = indicator.label_unit || indicator.unite;
       const labelBase = indicator.label_indic || 'Indicateur';
+
+      // Légende avec couleurs pour les graphes non mono-barre (Barres empilées, Courbes indépendantes, Barres simple multi-séries)
+      let legendItems = [];
+      const chartType = indicator.type_de_graphique || 'Barres simple';
+      const palette = getAllColors();
+
+      if (chartType === 'Barres empilées' || chartType === 'Courbes indépendantes') {
+        const sg = indicator.label_sous_groupe;
+        const labels = Array.isArray(sg) && sg.length > 1 ? sg.filter(Boolean) : [];
+        legendItems = labels.map((lbl, i) => ({
+          label: lbl,
+          color: getHexaFromName(palette[i] || palette[0])
+        }));
+      } else if (chartType === 'Barres simple' && indicator.values?.legend) {
+        const leg = indicator.values.legend;
+        const colors = indicator.values?.colors;
+        if (Array.isArray(leg) && leg.length > 1) {
+          legendItems = leg.filter(Boolean).map((lbl, i) => {
+            const c = Array.isArray(colors) && colors[i]
+              ? (typeof colors[i] === 'string' && /^#[0-9a-fA-F]{3,8}$/.test(colors[i]) ? colors[i] : getHexaFromName(colors[i]))
+              : getHexaFromName(palette[i] || palette[0]);
+            return { label: String(lbl), color: c };
+          });
+        }
+      }
+
       return {
         label: labelBase,
         labelUnit: unit || '',
+        legendItems,
         values,
         targetValue,
         ecart,
@@ -791,6 +836,34 @@ export default {
 .td-indicateur {
   color: #3a3a3a;
   line-height: 1.4;
+}
+
+.td-indicateur-legend-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1rem;
+  font-size: 0.8125rem;
+  color: #666;
+  line-height: 1.5;
+}
+
+.td-indicateur-legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  white-space: nowrap;
+}
+
+.td-indicateur-legend-dot {
+  flex-shrink: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.td-indicateur-legend-label {
+  flex: 0 1 auto;
 }
 
 .td-empty {

@@ -6,6 +6,36 @@
       </article>
     </div>
 
+    <!-- Liens rapides vers axes et secteurs (équivalents des pages de synthèses) -->
+    <div v-if="quickLinksLoaded" class="about-quick-access fr-mt-2w">
+      <div class="about-quick-section">
+        <span class="about-quick-label">Accès rapide aux axes d'impact</span>
+        <div class="about-quick-links">
+          <router-link
+            v-for="axe in displayAxes"
+            :key="'axe-' + axe"
+            :to="etatEnvironnementLink(axe)"
+            class="about-quick-link"
+          >
+            → {{ axe }}
+          </router-link>
+        </div>
+      </div>
+      <div class="about-quick-section">
+        <span class="about-quick-label">Accès rapide aux synthèses sectorielles</span>
+        <div class="about-quick-links">
+          <router-link
+            v-for="sector in displaySectors"
+            :key="'sector-' + sector"
+            :to="chantiersSectorielsLink(sector)"
+            class="about-quick-link"
+          >
+            → {{ sector }}
+          </router-link>
+        </div>
+      </div>
+    </div>
+
     <div class="fr-mt-4w about-content">
       <p>
         Entreprises, pouvoirs publics ou citoyens, la transition écologique nous concerne tous. Pour réussir, elle demande de la transparence sur le chemin déjà parcouru et sur celui qui reste à parcourir pour atteindre les objectifs que la France s’est fixés en faveur du climat, de la biodiversité ou encore de la préservation des ressources. C'est l'objet du baromètre de la planification écologique.
@@ -52,6 +82,8 @@
 </template>
 
 <script>
+import { getNavigationStructure, IMPACT_AXE_DISPLAY_ORDER } from '@/services/csvDataService.js'
+
 export default {
   name: "AboutView",
   props: {
@@ -59,7 +91,57 @@ export default {
       type: Object,
       default: () => ({}),
     },
+    useStaging: {
+      type: Boolean,
+      default: false
+    }
   },
+  data() {
+    return {
+      quickLinksLoaded: false,
+      displayAxes: [],
+      displaySectors: []
+    }
+  },
+  async mounted() {
+    await this.loadQuickLinks()
+  },
+  methods: {
+    slugify(str) {
+      return String(str).toLowerCase()
+        .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/^-+|-+$/g, '')
+    },
+    async loadQuickLinks() {
+      try {
+        const environment = this.useStaging ? 'staging' : 'production'
+        const response = await getNavigationStructure(environment)
+        if (response.status === 'success' && response.data?.sectors) {
+          this.displayAxes = [...IMPACT_AXE_DISPLAY_ORDER]
+          this.displaySectors = response.data.sectors
+            .filter(s => s.name !== 'Synthèse')
+            .map(s => s.name)
+          this.quickLinksLoaded = true
+        }
+      } catch (error) {
+        console.error('Error loading quick links:', error)
+      }
+    },
+    etatEnvironnementLink(axe) {
+      const base = { name: this.routeName, query: { sector: 'Synthèse', view: 'etat-environnement' } }
+      return { ...base, hash: '#axe-' + this.slugify(axe) }
+    },
+    chantiersSectorielsLink(sector) {
+      const base = { name: this.routeName, query: { sector: 'Synthèse', view: 'chantiers-sectoriels' } }
+      return { ...base, hash: '#sector-' + this.slugify(sector) }
+    }
+  },
+  computed: {
+    routeName() {
+      return window.location.pathname.includes('/staging') ? 'staging-dashboard' : 'dashboard'
+    }
+  }
 };
 </script>
 
@@ -75,5 +157,51 @@ export default {
 .about-content p {
   margin-bottom: 1.5rem;
   line-height: 1.7;
+}
+
+/* Liens rapides - même structure que EtatEnvironnement et SyntheseSectorielle */
+.about-quick-access {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.about-quick-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
+}
+
+.about-quick-label {
+  font-size: 0.875rem;
+  color: #3a3a3a;
+}
+
+.about-quick-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.about-quick-link {
+  background: transparent;
+  border: 1px solid #000091;
+  border-radius: 999px;
+  color: #000091;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  line-height: 1.3;
+  padding: 0.3rem 0.875rem;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color 0.15s, color 0.15s;
+}
+
+.about-quick-link:hover {
+  background: #000091;
+  color: #fff;
+  text-decoration: none;
 }
 </style>

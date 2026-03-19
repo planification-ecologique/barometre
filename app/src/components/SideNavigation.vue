@@ -597,9 +597,12 @@ export default {
               const axeKey = axe === 'Économie circulaire' && !syntheseSector.indicateursImpact?.[axe]
                 ? 'Economie circulaire'
                 : axe;
-              const axeIndicators = syntheseSector.indicateursImpact?.[axeKey] || [];
-              axeIndicators.forEach(item => {
-                if (item.gristId) engagementIds.push(item.gristId);
+              // Indicateurs d'impact : Synthèse + tous les secteurs (Préserver, Consommer, Se déplacer, etc.)
+              this.navigationData.sectors.forEach(sector => {
+                const indicators = sector.indicateursImpact?.[axeKey] || sector.indicateursImpact?.[axe] || [];
+                indicators.forEach(item => {
+                  if (item.gristId) engagementIds.push(item.gristId);
+                });
               });
               
               // Also include "Autres indicateurs" from chantiers when chantier name matches the axe

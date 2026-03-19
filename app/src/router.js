@@ -15,7 +15,7 @@ const routes = [
     },
     redirect: { 
       name: 'dashboard',
-      query: { sector: 'Synthèse' }
+      query: { view: 'about' }
     }
   },
   {
@@ -23,7 +23,7 @@ const routes = [
     name: "accueil",
     redirect: { 
       name: 'dashboard',
-      query: { sector: 'Synthèse' }
+      query: { view: 'about' }
     }
   },
   

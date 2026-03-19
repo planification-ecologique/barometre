@@ -34,7 +34,7 @@
         >
           <!-- Indicateurs -->
           <div v-if="indicateurTags.length > 0" class="chantier-tags-row">
-            <span class="chantier-tags-row__label">Indicateurs :</span>
+            <span class="chantier-tags-row__label">Indicateurs</span>
               <a
                 v-for="tag in indicateurTags"
                 :key="'ind-' + tag.id"
@@ -47,7 +47,7 @@
           </div>
           <!-- Leviers -->
           <div v-if="levierTags.length > 0" class="chantier-tags-row">
-            <span class="chantier-tags-row__label">Leviers :</span>
+            <span class="chantier-tags-row__label">Leviers</span>
               <a
                 v-for="tag in levierTags"
                 :key="'lev-' + tag.id"
@@ -60,7 +60,7 @@
           </div>
           <!-- Contribution à l'état de l'environnement -->
           <div v-if="contributionTags.length > 0" class="chantier-tags-row">
-            <span class="chantier-tags-row__label">Contribution à l'état de l'environnement :</span>
+            <span class="chantier-tags-row__label">Contribution à l'état de l'environnement</span>
               <span
                 v-for="tag in contributionTags"
                 :key="'cont-' + tag.id"
@@ -535,7 +535,7 @@ export default {
 .chantier-metadata-tags {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.875rem;
   margin-top: 0.75rem;
 }
 
@@ -725,7 +725,7 @@ export default {
   }
 
   .chantier-metadata-tags {
-    gap: 0.375rem;
+    gap: 0.625rem;
   }
 
   .chantier-tags-row {
