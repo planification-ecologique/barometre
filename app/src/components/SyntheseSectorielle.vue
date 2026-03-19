@@ -18,10 +18,11 @@
     <div class="synthese-callout">
       <h2 class="fr-h4 synthese-callout-title">Ce qu'il faut retenir</h2>
       <p class="fr-text--md synthese-callout-text">
-        Le baromètre de la planification écologique suit l'avancement des chantiers
-        de transformation écologique à travers des indicateurs mesurables.
-        Retrouvez ci-dessous la synthèse par secteur avec les principaux
-        indicateurs et leur écart par rapport aux cibles fixées.
+        Les "chantiers" structurent les transformations tangibles prévues par les stratégies environnementales 
+        afin d'atteindre les objectifs visés en matière d'état de l'environnement. 
+        L'ensemble des chantiers sont listés ci-dessous, regroupés par secteur, avec le ou 
+        les indicateurs permettant de suivre leur mise en œuvre. Chaque chantier se décompose en "leviers", 
+        plus concrets, présentés dans la fiche du chantier.
       </p>
     </div>
 
@@ -80,15 +81,18 @@
                 <th class="col-valeurs">Valeurs</th>
               </tr>
             </thead>
-            <tbody>
-              <template v-for="chantier in sector.chantiers">
-                <tr
-                  v-for="(indicator, idx) in chantier.indicators"
-                  :key="chantier.name + '-' + idx"
-                  :class="{ 'first-row-of-chantier': idx === 0 }"
-                  class="clickable-row"
-                  @click="scrollToSector(sector.name)"
-                >
+            <tbody
+              v-for="chantier in sector.chantiers"
+              :key="chantier.name"
+              class="chantier-group"
+            >
+              <tr
+                v-for="(indicator, idx) in chantier.indicators"
+                :key="chantier.name + '-' + idx"
+                :class="{ 'first-row-of-chantier': idx === 0 }"
+                class="clickable-row"
+                @click="scrollToSector(sector.name)"
+              >
                   <!-- Chantier name (only on first row, with rowspan) -->
                   <td
                     v-if="idx === 0"
@@ -107,15 +111,16 @@
                         v-for="(eng, eIdx) in chantier.engagementBadges"
                         :key="eIdx"
                         class="engagement-badge"
-                        :title="eng"
+                        :data-tooltip="truncateEngagement(eng) !== eng ? eng : undefined"
+                        :aria-label="eng || undefined"
                       >
-                        {{ eng }}
+                        {{ truncateEngagement(eng) }}
                       </span>
                       <span
                         v-if="chantier.remainingEngagements > 0"
                         class="engagement-badge engagement-badge--more"
-                        :data-tooltip="chantier.remainingEngagementNames"
-                        :title="chantier.remainingEngagementNames"
+                        :data-tooltip="chantier.remainingEngagementNames || undefined"
+                        :aria-label="chantier.remainingEngagementNames || undefined"
                         @click.stop
                       >
                         +{{ chantier.remainingEngagements }}
@@ -138,28 +143,27 @@
                     />
                   </td>
                 </tr>
-                <!-- Fallback if chantier has no indicators -->
-                <tr
-                  v-if="!chantier.indicators || chantier.indicators.length === 0"
-                  :key="chantier.name + '-empty'"
-                  class="clickable-row"
-                  @click="scrollToSector(sector.name)"
-                >
-                  <td class="td-chantier">
-                    <a
-                      class="chantier-link"
-                      :href="chantierHref(sector.name, chantier)"
-                      @click.stop="handleChantierClick($event, sector.name, chantier)"
-                    >
-                      {{ chantier.name }}
-                    </a>
-                  </td>
-                  <td class="td-indicateur td-empty" colspan="2">
-                    <span>Pas d'indicateur disponible</span>
-                    <span class="td-empty-message">L'indicateur n'est pas encore défini ou les données ne sont pas encore disponibles.</span>
-                  </td>
-                </tr>
-              </template>
+              <!-- Fallback if chantier has no indicators -->
+              <tr
+                v-if="!chantier.indicators || chantier.indicators.length === 0"
+                :key="chantier.name + '-empty'"
+                class="clickable-row"
+                @click="scrollToSector(sector.name)"
+              >
+                <td class="td-chantier">
+                  <a
+                    class="chantier-link"
+                    :href="chantierHref(sector.name, chantier)"
+                    @click.stop="handleChantierClick($event, sector.name, chantier)"
+                  >
+                    {{ chantier.name }}
+                  </a>
+                </td>
+                <td class="td-indicateur td-empty" colspan="2">
+                  <p>Pas d'indicateur disponible</p>
+                  <p class="td-empty-message">L'indicateur n'est pas encore défini ou les données ne sont pas encore disponibles.</p>
+                </td>
+              </tr>
             </tbody>
           </table>
         </div>
@@ -255,7 +259,7 @@ export default {
 
             // Build engagement badges from levier names
             // Show up to 2 visible, rest as +N with tooltip
-            const maxVisible = 2
+            const maxVisible = 4
             const visibleBadges = levierNames.slice(0, maxVisible)
             const remainingNames = levierNames.slice(maxVisible)
 
@@ -265,7 +269,7 @@ export default {
               gristIds,
               engagementBadges: visibleBadges,
               remainingEngagements: remainingNames.length,
-              remainingEngagementNames: remainingNames.join(', '),
+              remainingEngagementNames: remainingNames.join('\n'),
               indicators: [], // Will be populated after data fetch
               sortedLeviers: chantierData.sortedLeviers || []
             })
@@ -372,6 +376,13 @@ export default {
         id: indicator.id_indic,
         rawData: indicator
       }
+    },
+    truncateEngagement(text) {
+      if (!text || typeof text !== 'string') return ''
+      // Truncate to 80 characters
+      const maxLen = 80
+      if (text.length <= maxLen) return text
+      return text.slice(0, maxLen) + '…'
     },
     formatEcart(ecart) {
       if (ecart === null || ecart === undefined) return ''
@@ -570,7 +581,7 @@ export default {
 
 /* Table */
 .synthese-table-wrapper {
-  overflow-x: auto;
+  overflow: visible;
   margin-bottom: 1rem;
 }
 
@@ -643,7 +654,8 @@ export default {
   transition: background-color 0.1s;
 }
 
-.clickable-row:hover {
+/* Highlight entire chantier block on hover (grouped, not per-row) */
+.chantier-group:hover tr {
   background-color: #f6f6f6;
 }
 
@@ -680,7 +692,7 @@ export default {
 
 .engagement-badge {
   display: inline-block;
-  max-width: 10em;
+  max-width: 25em;
   background: #e3e3fd;
   color: #000091;
   font-size: 0.6875rem;
@@ -689,18 +701,16 @@ export default {
   border-radius: 999px;
   line-height: 1.4;
   vertical-align: baseline;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  white-space: normal;
+  word-break: break-word;
   transition: background-color 0.15s, color 0.15s;
+  position: relative;
 }
 
 .engagement-badge:hover {
   background: #000091;
   color: #fff;
-  max-width: none;
-  overflow: visible;
-  text-overflow: clip;
+  /* Keep size fixed to avoid layout shift and hover flash */
 }
 
 .engagement-badge--more {
@@ -712,13 +722,17 @@ export default {
   z-index: 10;
 }
 
-/* Custom tooltip for +X badge (native title can be clipped by overflow) */
-.engagement-badge--more[data-tooltip]:hover::after {
+/* Custom tooltip for all badges (appears immediately, avoids native title delay and overflow clipping) */
+.engagement-badge[data-tooltip]:hover::after {
   content: attr(data-tooltip);
+  display: block;
   position: absolute;
-  top: calc(100% + 0.5rem);
+  bottom: calc(100% + 0.5rem);
   left: 50%;
   transform: translateX(-50%);
+  width: max-content;
+  max-width: min(280px, 90vw);
+  min-width: 12rem;
   background: #1e1e1e;
   color: #fff;
   font-size: 0.75rem;
@@ -726,11 +740,17 @@ export default {
   padding: 0.5rem 0.75rem;
   border-radius: 4px;
   white-space: normal;
-  max-width: 280px;
+  overflow-wrap: break-word;
+  word-break: normal;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  z-index: 1000;
+  z-index: 10000;
   pointer-events: none;
   line-height: 1.4;
+}
+
+/* +X badge: one engagement per line in tooltip */
+.engagement-badge--more[data-tooltip]:hover::after {
+  white-space: pre-line;
 }
 
 .td-valeurs {
@@ -770,6 +790,10 @@ export default {
 
 /* Responsive */
 @media (max-width: 768px) {
+  .synthese-table-wrapper {
+    overflow-x: auto;
+  }
+
   .synthese-sector-header {
     flex-direction: column;
     gap: 0.25rem;

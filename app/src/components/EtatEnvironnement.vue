@@ -18,7 +18,7 @@
     <div class="etat-callout">
       <h2 class="fr-h4 etat-callout-title">Ce qu'il faut retenir</h2>
       <p class="fr-text--md etat-callout-text">
-        L'amélioration de l'état de l'environnement constitue la finalité de stratégies environnementales. 
+        L'amélioration de l'état de l'environnement constitue la finalité des stratégies environnementales. 
         Ces dernières fixent ainsi des ambitions en la matière ("engagements"), listées ci-après avec, le cas échéant, 
         un indicateur de mesure de l'atteinte de l'objectif. 
       </p>
@@ -430,12 +430,12 @@ export default {
   margin: 0;
 }
 
-/* Quick access links */
+/* Quick access links - same structure as Chantiers Sectoriels (label + links on 2 lines) */
 .etat-quick-access {
   display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 0.75rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
   padding: 0.5rem 0;
 }
 
@@ -451,8 +451,8 @@ export default {
 }
 
 .etat-quick-link {
-  background: #e3e3fd;
-  border: none;
+  background: transparent;
+  border: 1px solid #000091;
   border-radius: 999px;
   color: #000091;
   font-size: 0.8125rem;
@@ -615,10 +615,6 @@ export default {
     gap: 0.25rem;
   }
 
-  .etat-quick-access {
-    flex-direction: column;
-    align-items: flex-start;
-  }
 
   .etat-table th,
   .etat-table td {

@@ -17,51 +17,58 @@
             <a class="fr-breadcrumb__link" href="#" @click.prevent="goSector">{{ displaySector }}</a>
           </li>
           <li>
-            <span class="fr-breadcrumb__link" aria-current="page">{{ params.chantier_name }}</span>
+            <span class="fr-breadcrumb__link" aria-current="page">{{ chantierTitle }}</span>
           </li>
         </ol>
       </nav>
 
       <section class="chantier-hero">
-        <h1 class="fr-title chantier-title" :aria-label="params.chantier_name">
-          {{ params.chantier_name }}
+        <h1 class="fr-title chantier-title" :aria-label="chantierTitle">
+          {{ chantierTitle }}
         </h1>
 
         <nav
-          v-if="sectionLinks.length > 0"
-          class="chantier-anchor-nav"
-          aria-label="Navigation dans la page"
+          v-if="metadataTags.length > 0"
+          class="chantier-metadata-tags"
+          aria-label="Métadonnées du chantier"
         >
-          <div class="chantier-anchor-group">
-            <span class="chantier-anchor-label">Indicateurs</span>
-            <a
-              class="chantier-anchor-link"
-              :href="'#' + primarySectionId"
-            >
-              → {{ primaryIndicatorLabel }}
-            </a>
-            <a
-              v-if="otherIndicatorCount > 0"
-              class="chantier-anchor-link"
-              :href="'#' + primarySectionId"
-            >
-              → Autres indicateurs ({{ otherIndicatorCount }})
-            </a>
+          <!-- Indicateurs -->
+          <div v-if="indicateurTags.length > 0" class="chantier-tags-row">
+            <span class="chantier-tags-row__label">Indicateurs :</span>
+              <a
+                v-for="tag in indicateurTags"
+                :key="'ind-' + tag.id"
+                class="chantier-metadata-tag chantier-metadata-tag--indicateur"
+                :href="tag.href"
+              >
+                <span class="fr-icon-bar-chart-box-line chantier-metadata-tag__icon" aria-hidden="true"></span>
+                <span class="chantier-metadata-tag__text">{{ tag.label }}</span>
+              </a>
           </div>
-
-          <div
-            v-if="otherLevierGroups.length > 0"
-            class="chantier-anchor-group"
-          >
-            <span class="chantier-anchor-label">Leviers</span>
-            <a
-              v-for="link in levierSectionLinks"
-              :key="link.id"
-              class="chantier-anchor-link"
-              :href="'#' + link.id"
-            >
-              → {{ link.label }}
-            </a>
+          <!-- Leviers -->
+          <div v-if="levierTags.length > 0" class="chantier-tags-row">
+            <span class="chantier-tags-row__label">Leviers :</span>
+              <a
+                v-for="tag in levierTags"
+                :key="'lev-' + tag.id"
+                class="chantier-metadata-tag chantier-metadata-tag--levier"
+                :href="tag.href"
+              >
+                <span class="fr-icon-settings-5-line chantier-metadata-tag__icon" aria-hidden="true"></span>
+                <span class="chantier-metadata-tag__text">{{ tag.label }}</span>
+              </a>
+          </div>
+          <!-- Contribution à l'état de l'environnement -->
+          <div v-if="contributionTags.length > 0" class="chantier-tags-row">
+            <span class="chantier-tags-row__label">Contribution à l'état de l'environnement :</span>
+              <span
+                v-for="tag in contributionTags"
+                :key="'cont-' + tag.id"
+                class="chantier-metadata-tag chantier-metadata-tag--contribution"
+              >
+                <span class="fr-icon-plant-line chantier-metadata-tag__icon" aria-hidden="true"></span>
+                <span class="chantier-metadata-tag__text">{{ tag.label }}</span>
+              </span>
           </div>
         </nav>
       </section>
@@ -85,7 +92,7 @@
         >
           <h2 class="fr-h3 chantier-section-title">
             <span class="section-kicker-badge">Indicateur</span>
-            Indicateur du chantier
+            {{ primaryIndicatorLabel }}
           </h2>
 
           <div
@@ -262,6 +269,62 @@ export default {
     displaySector() {
       // Use chantier_sector (real sector) if available, otherwise fall back to sector
       return this.params.chantier_sector || this.params.sector || 'Secteur';
+    },
+    chantierTitle() {
+      const raw = this.params.chantier_name || '';
+      const withoutPrefix = raw.startsWith('Chantier : ') ? raw.slice(11).trim() : raw;
+      const rest = withoutPrefix ? withoutPrefix.toLowerCase() : '';
+      return rest ? `Chantier : ${rest}` : raw || 'Chantier';
+    },
+    indicateurTags() {
+      const tags = [];
+      if (this.hasChantierIndicators && this.primaryIndicatorGroup.chartData.length > 0) {
+        tags.push({
+          id: 'primary',
+          label: this.primaryIndicatorGroup.chartData[0].label_indic || 'Indicateur du chantier',
+          href: '#' + this.primarySectionId,
+        });
+        if (this.otherIndicatorCount > 0) {
+          tags.push({
+            id: 'others',
+            label: `Autres indicateurs (${this.otherIndicatorCount})`,
+            href: '#' + this.primarySectionId,
+          });
+        }
+      }
+      return tags;
+    },
+    levierTags() {
+      return this.levierSectionLinks.map((link) => ({
+        id: link.id,
+        label: link.label,
+        href: '#' + link.id,
+      }));
+    },
+    contributionTags() {
+      const seen = new Set();
+      const tags = [];
+      const allChartData = [
+        ...(this.primaryIndicatorGroup.chartData || []),
+        ...this.otherLevierGroups.flatMap((g) => g.chartData || []),
+      ];
+      allChartData.forEach((item) => {
+        const raw = item.label_tags || '';
+        raw.split(',').forEach((t) => {
+          const trimmed = t.trim();
+          if (trimmed && !seen.has(trimmed.toLowerCase())) {
+            seen.add(trimmed.toLowerCase());
+            tags.push({
+              id: trimmed.toLowerCase().replace(/\s+/g, '-'),
+              label: trimmed.charAt(0).toUpperCase() + trimmed.slice(1),
+            });
+          }
+        });
+      });
+      return tags;
+    },
+    metadataTags() {
+      return [...this.indicateurTags, ...this.levierTags, ...this.contributionTags];
     },
     primaryIndicatorLabel() {
       if (this.hasChantierIndicators && this.primaryIndicatorGroup.chartData.length > 0) {
@@ -469,46 +532,105 @@ export default {
 
 .chantier-title {
   margin-bottom: 0.75rem;
-  max-width: 54rem;
+  max-width: 100%;
 }
 
-.chantier-anchor-nav {
+.chantier-metadata-tags {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  margin-top: 0.75rem;
 }
 
-.chantier-anchor-group {
+.chantier-tags-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.25rem 0.5rem;
+}
+
+.chantier-tags-row__label {
+  color: #3a3a3a;
+  font-size: 0.75rem;
+  font-weight: 500;
+  flex-shrink: 0;
+}
+
+.chantier-tags-row__tags {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.25rem;
 }
 
-.chantier-anchor-label {
-  color: #3a3a3a;
-  font-size: 0.875rem;
-  font-weight: 700;
-}
-
-.chantier-anchor-link {
-  background: #e3e3fd;
-  border: none;
+.chantier-metadata-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
   border-radius: 999px;
-  color: #000091;
-  font-size: 0.8125rem;
+  font-size: 0.5625rem;
   font-weight: 500;
   line-height: 1.3;
-  padding: 0.3rem 0.875rem;
+  padding: 0.15rem 0.4rem;
   text-decoration: none;
   transition: background-color 0.15s, color 0.15s;
 }
 
-.chantier-anchor-link:hover,
-.chantier-anchor-link:focus {
+.chantier-metadata-tag__icon {
+  font-size: 0.75rem;
+  flex-shrink: 0;
+}
+
+/* Indicateurs - light cyan */
+.chantier-metadata-tag--indicateur {
+  background: #c7f6fc;
+  color: #000091;
+}
+
+.chantier-metadata-tag--indicateur .chantier-metadata-tag__icon {
+  color: #000091;
+}
+
+.chantier-metadata-tag--indicateur:hover,
+.chantier-metadata-tag--indicateur:focus {
   background: #000091;
   color: #fff;
-  text-decoration: none;
+}
+
+.chantier-metadata-tag--indicateur:hover .chantier-metadata-tag__icon,
+.chantier-metadata-tag--indicateur:focus .chantier-metadata-tag__icon {
+  color: inherit;
+}
+
+/* Leviers - light purple */
+.chantier-metadata-tag--levier {
+  background: #e8e0f7;
+  color: #000091;
+}
+
+.chantier-metadata-tag--levier .chantier-metadata-tag__icon {
+  color: #000091;
+}
+
+.chantier-metadata-tag--levier:hover,
+.chantier-metadata-tag--levier:focus {
+  background: #000091;
+  color: #fff;
+}
+
+.chantier-metadata-tag--levier:hover .chantier-metadata-tag__icon,
+.chantier-metadata-tag--levier:focus .chantier-metadata-tag__icon {
+  color: inherit;
+}
+
+/* Contribution à l'état de l'environnement - light mint green */
+.chantier-metadata-tag--contribution {
+  background: #d8f3e0;
+  color: #18753c;
+}
+
+.chantier-metadata-tag--contribution .chantier-metadata-tag__icon {
+  color: #18753c;
 }
 
 .chantier-summary {
@@ -578,19 +700,23 @@ export default {
     padding: 1rem;
   }
 
-  .chantier-anchor-nav {
+  .chantier-metadata-tags {
     gap: 0.375rem;
   }
 
-  .chantier-anchor-group {
-    align-items: flex-start;
+  .chantier-tags-row {
     flex-direction: column;
-    gap: 0.375rem;
+    align-items: flex-start;
+    gap: 0.25rem;
   }
 
-  .chantier-anchor-link {
-    font-size: 0.75rem;
-    padding: 0.3rem 0.625rem;
+  .chantier-tags-row__label {
+    font-size: 0.6875rem;
+  }
+
+  .chantier-metadata-tag {
+    font-size: 0.5rem;
+    padding: 0.15rem 0.4rem;
   }
 }
 </style>

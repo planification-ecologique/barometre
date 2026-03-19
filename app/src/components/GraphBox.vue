@@ -233,11 +233,12 @@
       </div>
       <div class="fr-col-md-6 fr-col-lg-6 fr-col-xl-6 fr-col-12">
         <a
-          class="fr-link fr-link--download fr-link--download-text"
+          class="fr-link fr-link--download fr-link--download-text graph-box-download-link"
           :id="downloadLinkId"
           :href="downloadUrl"
           :download="getFilename()"
         >
+          <span class="fr-icon-download-line graph-box-download-link__icon" aria-hidden="true"></span>
           Télécharger les données
           <span class="fr-link__detail">CSV – 1 ko</span>
         </a>
@@ -965,6 +966,15 @@ p.textReference {
 .fr-link--download-text {
   font-size: small !important;
   /* align-items: flex-end !important; */
+}
+.graph-box-download-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+.graph-box-download-link__icon {
+  font-size: 1rem;
+  flex-shrink: 0;
 }
 .graph-box-card--compact .beneathGraph {
   padding: 0.75rem 1rem;
