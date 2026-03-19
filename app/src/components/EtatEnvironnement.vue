@@ -95,7 +95,7 @@
                 </td>
               </tr>
               <tr v-if="axe.indicators.length === 0">
-                <td class="td-engagement">–</td>
+                <td class="td-engagement">{{ axe.engagement || '–' }}</td>
                 <td class="td-empty">Pas d'indicateur disponible</td>
                 <td class="td-valeurs"></td>
               </tr>
@@ -109,7 +109,7 @@
 
 <script>
 import MiniChart from './MiniChart.vue'
-import { getNavigationStructure, getIndicators, IMPACT_AXE_DISPLAY_ORDER } from '@/services/csvDataService.js'
+import { getNavigationStructure, getIndicators, fetchEngagementLongMapping, fetchEngagementsByAxe, IMPACT_AXE_DISPLAY_ORDER } from '@/services/csvDataService.js'
 
 const AXE_DESCRIPTIONS = {
   'Atténuation climat': 'Les indicateurs d\'atténuation suivent la réduction des émissions de gaz à effet de serre et la transition vers une économie bas-carbone.',
@@ -156,7 +156,11 @@ export default {
       this.isLoading = true
       try {
         const environment = this.useStaging ? 'staging' : 'production'
-        const response = await getNavigationStructure(environment)
+        const [response, engagementLongMap, engagementByAxe] = await Promise.all([
+          getNavigationStructure(environment),
+          fetchEngagementLongMapping(),
+          fetchEngagementsByAxe()
+        ])
 
         if (response.status !== 'success') {
           this.isLoading = false
@@ -193,7 +197,9 @@ export default {
             description: AXE_DESCRIPTIONS[axeName] || '',
             indicatorCount: gristIds.length,
             gristIds,
-            indicators: []
+            indicators: [],
+            // Engagement for axe (used when no indicators, e.g. Adaptation climat)
+            engagement: engagementByAxe.get(axeName) || ''
           })
         }
 
@@ -215,7 +221,7 @@ export default {
             axe.indicators = axe.gristIds
               .map(gid => indicatorMap[gid])
               .filter(Boolean)
-              .map(ind => this.buildIndicatorRow(ind))
+              .map(ind => this.buildIndicatorRow(ind, engagementLongMap))
           }
         }
 
@@ -227,7 +233,7 @@ export default {
         this.isLoading = false
       }
     },
-    buildIndicatorRow(indicator) {
+    buildIndicatorRow(indicator, engagementLongMap = new Map()) {
       const values = []
       let targetValue = null
 
@@ -262,8 +268,9 @@ export default {
         description = String(indicator.label_description).replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim()
       }
 
-      // Engagement from main CSV (Engagement or Ambition liée column)
-      const engagementName = indicator.engagement || ''
+      // Engagement from main CSV: use mapping to display long version (Thématique → Engagement)
+      const rawEngagement = indicator.engagement || ''
+      const engagementName = engagementLongMap.get(rawEngagement) || rawEngagement
 
       const unit = indicator.label_unit || indicator.unite
 

@@ -16,6 +16,7 @@ export const GRIST_ENGAGEMENTS_URL = gristUrlsConfig.GRIST_ENGAGEMENTS_URL || nu
 let indicatorsFetchPromise = null;
 let leviersFetchPromise = null;
 let engagementsFetchPromise = null;
+let engagementLongMappingPromise = null;
 
 /**
  * Parse CSV text into structured data
@@ -187,6 +188,45 @@ export async function fetchEngagementsByAxe() {
   })();
 
   return engagementsFetchPromise;
+}
+
+/**
+ * Fetch Liste_engagements and build Thématique → Engagement (long) mapping.
+ * Used to display the long version of engagement in Etat environnement synthesis.
+ * @returns {Promise<Map<string, string>>} Map of Thématique (short) → Engagement (long)
+ */
+export async function fetchEngagementLongMapping() {
+  if (!GRIST_ENGAGEMENTS_URL) {
+    return new Map();
+  }
+
+  if (engagementLongMappingPromise) {
+    return engagementLongMappingPromise;
+  }
+
+  engagementLongMappingPromise = (async () => {
+    try {
+      const csvText = await fetchCSVText(GRIST_ENGAGEMENTS_URL, 'grist-engagements.csv');
+      const rows = await parseCSVText(csvText);
+      const map = new Map();
+
+      for (const row of rows) {
+        const thematique = String(row['Thématique'] ?? row['Thematique'] ?? '').trim();
+        const engagement = String(row['Engagement'] ?? '').trim();
+        if (!thematique || !engagement) continue;
+        map.set(thematique, engagement);
+      }
+
+      engagementLongMappingPromise = null;
+      return map;
+    } catch (error) {
+      engagementLongMappingPromise = null;
+      console.warn('Could not load engagement long mapping:', error.message);
+      return new Map();
+    }
+  })();
+
+  return engagementLongMappingPromise;
 }
 
 /**

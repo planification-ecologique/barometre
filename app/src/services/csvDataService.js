@@ -3,13 +3,14 @@ import {
   fetchIndicatorsData,
   fetchLeviersData,
   fetchEngagementsByAxe,
+  fetchEngagementLongMapping,
   setStagingDocId as setStagingDocIdInFetcher,
   GRIST_URLS,
   GRIST_LEVIERS_URL
 } from './gristDataFetcher';
 
 // Re-export URL constants for backward compatibility
-export { GRIST_URLS, GRIST_LEVIERS_URL, fetchEngagementsByAxe };
+export { GRIST_URLS, GRIST_LEVIERS_URL, fetchEngagementsByAxe, fetchEngagementLongMapping };
 
 /**
  * Formats a number for display using scientific notation when needed
