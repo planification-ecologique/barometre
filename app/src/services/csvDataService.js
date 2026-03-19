@@ -1327,6 +1327,13 @@ export const IMPACT_AXES = [
   'Eau',
 ];
 
+/** Normalize axe name variants (accent/case) to canonical form. Handles "Economie circulaire", "Economie Circulaire", etc. */
+export function normalizeImpactAxeName(name) {
+  if (!name) return name;
+  const lower = String(name).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  return lower === 'economie circulaire' ? 'Économie circulaire' : name;
+}
+
 // Display order for impact axes (Etat env + SideNavigation)
 export const IMPACT_AXE_DISPLAY_ORDER = [
   'Atténuation climat',
@@ -1340,7 +1347,8 @@ export const IMPACT_AXE_DISPLAY_ORDER = [
 export function isImpactAxe(name) {
   if (!name) return false;
   const cleaned = String(name).trim();
-  return IMPACT_AXES.includes(cleaned);
+  const normalized = normalizeImpactAxeName(cleaned);
+  return IMPACT_AXES.includes(cleaned) || IMPACT_AXES.includes(normalized);
 }
 
 /**
@@ -1424,7 +1432,8 @@ export async function getNavigationStructure(environment = 'production') {
 
           if (cleanLevier === "Indicateur d'impact") {
             // Group by chantierOuImpact (taxonomy_axe like "Atténuation climat")
-            const axe = chantierOuImpact || 'Autre';
+            // Normalize "Economie circulaire" / "Economie Circulaire" → "Économie circulaire"
+            const axe = normalizeImpactAxeName(chantierOuImpact) || 'Autre';
             if (!sectors[sector].indicateursImpact[axe]) {
               sectors[sector].indicateursImpact[axe] = [];
             }

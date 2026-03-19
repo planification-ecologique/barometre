@@ -142,7 +142,7 @@
 
 <script>
 import MiniChart from './MiniChart.vue'
-import { getNavigationStructure, getIndicators, fetchEngagementLongMapping, fetchEngagementsByAxe, IMPACT_AXE_DISPLAY_ORDER } from '@/services/csvDataService.js'
+import { getNavigationStructure, getIndicators, fetchEngagementLongMapping, fetchEngagementsByAxe, IMPACT_AXE_DISPLAY_ORDER, normalizeImpactAxeName } from '@/services/csvDataService.js'
 import { getAllColors, getHexaFromName } from '@/utils.js'
 
 const AXE_DESCRIPTIONS = {
@@ -211,10 +211,10 @@ export default {
         const allGristIds = []
         const axeStructures = []
 
-        // Merge "Economie circulaire" and "Économie circulaire" into one
+        // Merge variants "Economie circulaire", "Economie Circulaire", "Économie circulaire" into one
         const mergedImpact = {}
         for (const [axeName, indicators] of Object.entries(syntheseSector.indicateursImpact)) {
-          const normalizedName = axeName === 'Economie circulaire' ? 'Économie circulaire' : axeName
+          const normalizedName = normalizeImpactAxeName(axeName)
           if (!mergedImpact[normalizedName]) {
             mergedImpact[normalizedName] = []
           }

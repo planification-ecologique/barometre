@@ -188,6 +188,7 @@
 <script>
 import GraphBox from "./GraphBox.vue";
 import EnvironnementImg from "./components_sgv/EnvironnementImg.vue";
+import { normalizeImpactAxeName } from "@/services/csvDataService.js";
 
 const AXE_DESCRIPTIONS = {
   'Atténuation climat': "Les indicateurs d'atténuation suivent la réduction des émissions de gaz à effet de serre et la transition vers une économie bas-carbone.",
@@ -286,12 +287,19 @@ export default {
     },
     currentAxeEntry() {
       if (!this.params.axe) return null;
-      return this.sortedAxesEntries.find(e => e.axe === this.params.axe) || null;
+      const found = this.sortedAxesEntries.find(e => e.axe === this.params.axe);
+      if (found) return found;
+      // Fallback: match by normalized name (Économie circulaire / Economie circulaire / Economie Circulaire)
+      const normalized = normalizeImpactAxeName(this.params.axe);
+      return this.sortedAxesEntries.find(e => normalizeImpactAxeName(e.axe) === normalized) || null;
     },
     /** Secteurs avec indicateurs d'impact sectoriels pour l'axe courant (hors Synthèse : Consommer, Se déplacer, etc.) */
     impactIndicatorsBySector() {
       if (!this.params.axe) return [];
-      const bySector = this.engagementsByAxeAndSector[this.params.axe];
+      const axeKey = this.params.axe in this.engagementsByAxeAndSector
+        ? this.params.axe
+        : normalizeImpactAxeName(this.params.axe);
+      const bySector = this.engagementsByAxeAndSector[axeKey];
       if (!bySector || typeof bySector !== 'object') return [];
       return Object.entries(bySector)
         .filter(([sector, indicators]) => sector !== 'Synthèse' && indicators && indicators.length > 0)
@@ -397,7 +405,7 @@ export default {
           const associations = getAssociations(indicator);
 
           associations.forEach(({ chantierOuImpact, sector }) => {
-            const axeName = chantierOuImpact || 'Autre';
+            const axeName = normalizeImpactAxeName(chantierOuImpact || 'Autre') || 'Autre';
 
             // "Indicateur d'impact - autres" can appear in a composite levier string,
             // so we check using includes instead of strict equality.
