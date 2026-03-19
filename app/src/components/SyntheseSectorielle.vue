@@ -91,7 +91,7 @@
                 :key="chantier.name + '-' + idx"
                 :class="{ 'first-row-of-chantier': idx === 0 }"
                 class="clickable-row"
-                @click="scrollToSector(sector.name)"
+                @click="handleRowClick($event, sector.name, chantier)"
               >
                   <!-- Chantier name (only on first row, with rowspan) -->
                   <td
@@ -148,7 +148,7 @@
                 v-if="!chantier.indicators || chantier.indicators.length === 0"
                 :key="chantier.name + '-empty'"
                 class="clickable-row"
-                @click="scrollToSector(sector.name)"
+                @click="handleRowClick($event, sector.name, chantier)"
               >
                 <td class="td-chantier">
                   <a
@@ -379,7 +379,7 @@ export default {
     },
     truncateEngagement(text) {
       if (!text || typeof text !== 'string') return ''
-      // Truncate to 80 characters
+      // Truncate to 80Fo characters
       const maxLen = 80
       if (text.length <= maxLen) return text
       return text.slice(0, maxLen) + '…'
@@ -417,6 +417,13 @@ export default {
       return route.href
     },
     handleChantierClick(event, sectorName, chantier) {
+      if (event.ctrlKey || event.metaKey || event.button === 1) {
+        return
+      }
+      event.preventDefault()
+      this.goToChantier(sectorName, chantier)
+    },
+    handleRowClick(event, sectorName, chantier) {
       if (event.ctrlKey || event.metaKey || event.button === 1) {
         return
       }

@@ -82,40 +82,41 @@
           :id="primarySectionId"
           class="chantier-summary"
         >
-          <h2 class="fr-h4 chantier-section-title">Ce qu'il faut retenir</h2>
-          <div
-            class="chantier-summary-copy fr-text--md"
-            v-html="summaryHtml"
-          ></div>
+          <div class="chantier-summary__highlighted">
+            <h2 class="fr-h4 chantier-section-title">Ce qu'il faut retenir</h2>
+            <div
+              class="chantier-summary-copy fr-text--md"
+              v-html="summaryHtml"
+            ></div>
 
-          <div
-            v-if="hasChantierIndicators"
-            class="chantier-summary-charts"
-          >
-            <span class="chantier-summary-charts__badge">Indicateur</span>
-            <div class="chantier-summary-charts__grid fr-grid-row fr-grid-row--gutters">
-              <div
-                v-for="(item, itemIndex) in primaryIndicatorGroup.chartData"
-                :key="item.label_indic + '-chantier-' + itemIndex"
-                class="fr-col-md-6 fr-col-lg-6 fr-col-xl-6 fr-col-12"
-              >
-                <article>
-                  <graph-box
-                    :dataObj="item"
-                    :compact="true"
-                    :hideDescription="true"
-                    :idAccordion="'levier-accordion-chantier-' + itemIndex"
-                    :titre="item.label_indic"
-                    :key="item.label_indic + '-chantier-' + itemIndex"
-                  ></graph-box>
-                </article>
+            <div
+              v-if="hasChantierIndicators"
+              class="chantier-summary-charts"
+            >
+              <span class="chantier-summary-charts__badge">Indicateur</span>
+              <div class="chantier-summary-charts__grid fr-grid-row fr-grid-row--gutters">
+                <div
+                  v-for="(item, itemIndex) in primaryIndicatorGroup.chartData"
+                  :key="item.label_indic + '-chantier-' + itemIndex"
+                  class="fr-col-md-6 fr-col-lg-6 fr-col-xl-6 fr-col-12"
+                >
+                  <article>
+                    <graph-box
+                      :dataObj="item"
+                      :compact="true"
+                      :idAccordion="'levier-accordion-chantier-' + itemIndex"
+                      :titre="item.label_indic"
+                      :key="item.label_indic + '-chantier-' + itemIndex"
+                    ></graph-box>
+                  </article>
+                </div>
               </div>
             </div>
-          </div>
 
-          <p v-else class="fr-text--sm fr-text--alt chantier-empty-state">
-            Aucun indicateur n'est encore défini pour ce chantier.
-          </p>
+            <p v-else class="fr-text--md chantier-empty-state">
+              Aucun indicateur n'est encore défini pour ce chantier.
+            </p>
+          </div>
         </section>
 
         <section
@@ -156,7 +157,7 @@
             </div>
           </div>
 
-          <p v-else class="fr-text--sm fr-text--alt chantier-empty-state">
+          <p v-else class="fr-text--md chantier-empty-state">
             Aucun indicateur n'est encore défini pour ce levier.
           </p>
         </section>
@@ -342,7 +343,7 @@ export default {
         return chantierDescription;
       }
 
-      return "Retrouvez sur cette page les principaux indicateurs de suivi du chantier et les leviers associes a sa mise en oeuvre.";
+      return "Résumé de la situation des indicateurs";
     },
   },
   watch: {
@@ -523,7 +524,6 @@ export default {
 
 .chantier-hero {
   background: transparent;
-  border-bottom: 1px solid #d6d6d6;
   padding: 0 0 1rem;
 }
 
@@ -634,11 +634,14 @@ export default {
   padding: 0;
 }
 
-.chantier-summary-charts {
-  margin-top: 1.25rem;
+.chantier-summary__highlighted {
   background: #f6f6f6;
   border-left: 4px solid #6a6af4;
   padding: 1.25rem 1.5rem;
+}
+
+.chantier-summary-charts {
+  margin-top: 1.25rem;
 }
 
 .chantier-summary-charts__badge {
@@ -690,8 +693,12 @@ export default {
 }
 
 .chantier-summary-copy,
-.chantier-levier-intro {
+.chantier-levier-intro,
+.chantier-empty-state {
   color: #3a3a3a;
+}
+.chantier-summary-copy,
+.chantier-levier-intro {
   margin-bottom: 1rem;
 }
 
