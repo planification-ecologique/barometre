@@ -90,6 +90,12 @@ function normalizeStatusForDisplay(rawLabel, yearStr) {
   return parseInt(yearStr, 10) <= currentYear ? 'mesuré' : 'projection';
 }
 
+/** Strip accents for accent-insensitive search. "déchets" → "dechets" */
+function stripAccents(str) {
+  if (!str || typeof str !== 'string') return '';
+  return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+}
+
 function parseIrpeIds(raw, valid) {
   // If the IRPE is not provided, return an empty array
   if (raw == null || String(raw).trim() === '' || String(raw).toLowerCase() === 'nan') {
@@ -298,11 +304,22 @@ export function transformCSVData(csvData, query) {
       } else if (filter.field === 'id_levier' && filter.values.length) {
         filteredData = filteredData.filter(item => item['Indicateurs_Sous-onglet'] === filter.values[0]);
       } else if (filter.field === 'sector' && filter.values.length) {
-        const targetSector = filter.values[0];
+        const targetSectors = new Set(filter.values);
         filteredData = filteredData.filter(item => {
           const associations = parseChantierOuImpactList(item['Chantier ou Impact'] || '');
           if (!associations || associations.length === 0) return false;
-          return associations.some(p => p.sector === targetSector);
+          return associations.some(p => p.sector && targetSectors.has(p.sector));
+        });
+      } else if (filter.field === 'chantier_ou_impact' && filter.values.length) {
+        const targetValues = new Set(filter.values.map(v => normalizeImpactAxeName(v)));
+        filteredData = filteredData.filter(item => {
+          const associations = parseChantierOuImpactList(item['Chantier ou Impact'] || '');
+          if (!associations || associations.length === 0) return false;
+          return associations.some(p => {
+            if (!p.chantierOuImpact) return false;
+            const normalized = normalizeImpactAxeName(p.chantierOuImpact);
+            return targetValues.has(p.chantierOuImpact) || targetValues.has(normalized);
+          });
         });
       } else if (filter.field === 'grist_ids') {
         // Filter by Grist indicator IDs (for engagements, chantiers, leviers)
@@ -745,25 +762,19 @@ export function transformCSVData(csvData, query) {
           return filter.values.some(filterTag => tags.includes(filterTag.toLowerCase()));
         });
       } else if (filter.field === 'search' && filter.values.length && filter.values[0]) {
-        const searchTerm = filter.values[0].toLowerCase().trim();
+        const searchTerm = stripAccents(filter.values[0].toLowerCase().trim());
         if (searchTerm) {
           groupedResults = groupedResults.filter(item => {
+            const includesTerm = (s) => s && stripAccents(s.toLowerCase()).includes(searchTerm);
             // Search in title (label_indic)
-            const titleMatch = item.label_indic && item.label_indic.toLowerCase().includes(searchTerm);
-            
+            const titleMatch = includesTerm(item.label_indic);
             // Search in description
-            const descMatch = item.label_description && item.label_description.toLowerCase().includes(searchTerm);
-            
+            const descMatch = includesTerm(item.label_description);
             // Search in tags
-            const tagMatch = item.label_tags && 
-              item.label_tags.toLowerCase().includes(searchTerm);
-            
+            const tagMatch = item.label_tags && includesTerm(item.label_tags);
             // Search in sub-group labels (for grouped indicators)
-            const subGroupMatch = Array.isArray(item.label_sous_groupe) && 
-              item.label_sous_groupe.some(subGroup => 
-                subGroup && subGroup.toLowerCase().includes(searchTerm)
-              );
-            
+            const subGroupMatch = Array.isArray(item.label_sous_groupe) &&
+              item.label_sous_groupe.some(subGroup => includesTerm(subGroup));
             return titleMatch || descMatch || tagMatch || subGroupMatch;
           });
         }

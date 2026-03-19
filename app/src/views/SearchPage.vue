@@ -27,7 +27,7 @@
           <br/>
           <section>
             <div class="search-filters">
-              <Tags @tags-selected="updateTagSelection" :useStaging="useStaging"></Tags>
+              <SearchTaxonomyFilters @taxonomy-selected="updateTaxonomySelection" :useStaging="useStaging" />
               <button
                 type="button"
                 class="fr-tag regional-filter-btn"
@@ -53,34 +53,10 @@
                   pour "<strong>{{ appliedSearchQuery }}</strong>"
                 </span>
               </h1>
-              <section class="fr-col-md-6 fr-col-lg-6 fr-col-xl-6 fr-col-12">
-                <div class="fr-select-group">
-                  <label class="fr-label" for="sector-select">
-                    Sélection du secteur
-                  </label>
-                  <select 
-                    class="fr-select" 
-                    id="sector-select" 
-                    name="sector-select"
-                    v-model="selectedValue"
-                    @change="onSelectionChange"
-                  >
-                    <option value="" selected>Sélectionner une option</option>
-                    <option
-                      v-for="sector in sectors"
-                      :key="sector"
-                      :value="sector"
-                    >
-                      {{ sector }}
-                    </option>
-                  </select>
-                </div>
-              </section>
-              <br/>
               <AdaptiveDashboard
                 :dashboardPage="false"
                 :inputData="results_page"
-                :params="{ sector: selectedValue || 'Non disponible', label_theme: 'Non disponible' }"
+                :params="{ sector: 'Recherche', label_theme: 'Non disponible' }"
               />
             </div>
             <div v-else>
@@ -107,10 +83,10 @@
 </template>
 
 <script>
-import Tags from "../components/Tags.vue";
+import SearchTaxonomyFilters from "../components/SearchTaxonomyFilters.vue";
 import AdaptiveDashboard from "../components/AdaptiveDashboard.vue";
 import Pagination from "../components/components_dsfr/Pagination.vue";
-import { getIndicators, getNavigationStructure } from "@/services/csvDataService.js";
+import { getIndicators } from "@/services/csvDataService.js";
 import dsfrAnalytics from "../services/dsfr_analytics"
 
 export default {
@@ -122,7 +98,7 @@ export default {
     }
   },
   components: {
-    Tags,
+    SearchTaxonomyFilters,
     AdaptiveDashboard,
     Pagination,
   },
@@ -131,10 +107,9 @@ export default {
     return {
       isapiloading: true,
       searchQuery: '',
-      sectors: [],
-      selectedValue: '',
+      selectedSectors: [],
+      selectedAxes: [],
       results_API: [],
-      selectedTags: [],
       results_page: [],
       nb_pages: 0,
       nb_graphs_pages: 6,
@@ -146,24 +121,24 @@ export default {
     toggleRegionalFilter() {
       this.filterRegionalOnly = !this.filterRegionalOnly;
       this.isapiloading = true;
-      this.fetchData(this.selectedTags);
+      this.fetchData();
     },
-    updateTagSelection(selectedTag) {
+    updateTaxonomySelection({ sectors, axes }) {
       this.isapiloading = true;
-      this.selectedTags = selectedTag;
-      // Build query based on selected tags and fetch data
-      this.fetchData(selectedTag);
+      this.selectedSectors = sectors;
+      this.selectedAxes = axes;
+      this.fetchData();
     },
     handleSearchClick() {
       this.isapiloading = true;
-      this.fetchData(this.selectedTags);
+      this.fetchData();
     },
     handleSearchInput(event) {
       // The search event fires when the clear button (X) is clicked
       // or when pressing Enter with an empty search field
       if (this.searchQuery === '') {
         this.isapiloading = true;
-        this.fetchData(this.selectedTags);
+        this.fetchData();
       }
     },
     handleSelectedPage(page) {
@@ -171,28 +146,22 @@ export default {
       var end = page * this.nb_graphs_pages;
       this.results_page = this.results_API.slice(start, end);
     },
-    async fetchData(ls_tags, theme_levier_filter = []) {
-      
-      let ls_filters = [
-          {
-            field: "label_tags",
-            values: ls_tags,
-          },
-          {
-            field: "search",
-            values: [this.searchQuery.trim()],
-          }
-        ];
+    async fetchData() {
+      const ls_filters = [
+        { field: "search", values: [this.searchQuery.trim()] }
+      ];
 
+      if (this.selectedSectors.length > 0) {
+        ls_filters.push({ field: "sector", values: this.selectedSectors });
+      }
+      if (this.selectedAxes.length > 0) {
+        ls_filters.push({ field: "chantier_ou_impact", values: this.selectedAxes });
+      }
       if (this.filterRegionalOnly) {
         ls_filters.push({ field: "has_regional_data", values: [true] });
       }
 
-      if (theme_levier_filter.length > 0) {
-        var filter_query = ls_filters.concat(theme_levier_filter);
-      } else {
-        var filter_query = ls_filters;
-      }
+      const filter_query = ls_filters;
 
       var query = {
         filter_by: filter_query,
@@ -229,37 +198,13 @@ export default {
     set_pages() {
       this.nb_pages = Math.ceil(this.results_API.length / this.nb_graphs_pages);
     },
-    async fetchSectors() {
-      try {
-        const response = await getNavigationStructure(this.useStaging ? 'staging' : 'production');
-
-        if (!response || response.status !== 'success') {
-          throw new Error("Erreur lors de la récupération des secteurs");
-        }
-
-        this.sectors = response.data.sectorNames || [];
-      } catch (error) {
-        console.error("Erreur dans le chargement des secteurs : ", error);
-      }
-    },
-    onSelectionChange() {
-      this.isapiloading = true;
-
-      if (!this.selectedValue) {
-        this.fetchData(this.selectedTags);
-        return;
-      }
-      
-      const sectorFilter = [{ field: 'sector', values: [this.selectedValue] }];
-      this.fetchData(this.selectedTags, sectorFilter);
-    },
   },
   mounted() {
     const q = this.$route.query.q;
     if (q) {
       this.searchQuery = q;
     }
-    this.fetchData(this.selectedTags);
+    this.fetchData();
     this.$nextTick(() => {
       this.$refs.searchInput?.focus();
     });
@@ -272,9 +217,6 @@ export default {
       template: "contenu_liste",
       group: "search"
     })  
-  },
-  created() {
-    this.fetchSectors();
   },
 };
 </script>
@@ -313,6 +255,13 @@ export default {
   display: inline-flex;
   align-items: center;
   gap: 0.375rem;
+  background-color: #fef7e6;
+  color: #161616;
+  transition: background-color 0.15s, color 0.15s;
+
+  &:hover {
+    background-color: #f5e6c8;
+  }
 }
 
 .regional-filter-icon {
@@ -320,7 +269,7 @@ export default {
 }
 
 .regional-filter-btn--active {
-  background-color: #000091;
+  background-color: #c4790a;
   color: #fff;
 }
 </style>
