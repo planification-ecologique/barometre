@@ -254,7 +254,8 @@ export default {
 
 
 .header-search-bar {
-  max-width: 20rem;
+  width: 100%;
+  max-width: 25rem;
 }
 
 .logo {

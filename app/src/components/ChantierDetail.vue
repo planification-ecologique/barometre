@@ -41,7 +41,7 @@
                 class="chantier-metadata-tag chantier-metadata-tag--indicateur"
                 :href="tag.href"
               >
-                <span class="fr-icon-bar-chart-box-line chantier-metadata-tag__icon" aria-hidden="true"></span>
+                <span class="ri-target-line chantier-metadata-tag__icon" aria-hidden="true"></span>
                 <span class="chantier-metadata-tag__text">{{ tag.label }}</span>
               </a>
           </div>
@@ -54,7 +54,7 @@
                 class="chantier-metadata-tag chantier-metadata-tag--levier"
                 :href="tag.href"
               >
-                <span class="fr-icon-settings-5-line chantier-metadata-tag__icon" aria-hidden="true"></span>
+                <span class="ri-wrench-line chantier-metadata-tag__icon" aria-hidden="true"></span>
                 <span class="chantier-metadata-tag__text">{{ tag.label }}</span>
               </a>
           </div>
@@ -66,7 +66,7 @@
                 :key="'cont-' + tag.id"
                 class="chantier-metadata-tag chantier-metadata-tag--contribution"
               >
-                <span class="fr-icon-plant-line chantier-metadata-tag__icon" aria-hidden="true"></span>
+                <span class="ri-tree-line chantier-metadata-tag__icon" aria-hidden="true"></span>
                 <span class="chantier-metadata-tag__text">{{ tag.label }}</span>
               </span>
           </div>
@@ -78,41 +78,38 @@
       </div>
 
       <template v-else>
-        <section class="chantier-summary">
+        <section
+          :id="primarySectionId"
+          class="chantier-summary"
+        >
           <h2 class="fr-h4 chantier-section-title">Ce qu'il faut retenir</h2>
           <div
             class="chantier-summary-copy fr-text--md"
             v-html="summaryHtml"
           ></div>
-        </section>
-
-        <section
-          :id="primarySectionId"
-          class="chantier-section chantier-section--highlighted"
-        >
-          <h2 class="fr-h3 chantier-section-title">
-            <span class="section-kicker-badge">Indicateur</span>
-            {{ primaryIndicatorLabel }}
-          </h2>
 
           <div
             v-if="hasChantierIndicators"
-            class="fr-grid-row fr-grid-row--gutters"
+            class="chantier-summary-charts"
           >
-            <div
-              v-for="(item, itemIndex) in primaryIndicatorGroup.chartData"
-              :key="item.label_indic + '-chantier-' + itemIndex"
-              class="fr-col-md-6 fr-col-lg-6 fr-col-xl-6 fr-col-12"
-            >
-              <article>
-                <graph-box
-                  :dataObj="item"
-                  :compact="true"
-                  :idAccordion="'levier-accordion-chantier-' + itemIndex"
-                  :titre="item.label_indic"
-                  :key="item.label_indic + '-chantier-' + itemIndex"
-                ></graph-box>
-              </article>
+            <span class="chantier-summary-charts__badge">Indicateur</span>
+            <div class="chantier-summary-charts__grid fr-grid-row fr-grid-row--gutters">
+              <div
+                v-for="(item, itemIndex) in primaryIndicatorGroup.chartData"
+                :key="item.label_indic + '-chantier-' + itemIndex"
+                class="fr-col-md-6 fr-col-lg-6 fr-col-xl-6 fr-col-12"
+              >
+                <article>
+                  <graph-box
+                    :dataObj="item"
+                    :compact="true"
+                    :hideDescription="true"
+                    :idAccordion="'levier-accordion-chantier-' + itemIndex"
+                    :titre="item.label_indic"
+                    :key="item.label_indic + '-chantier-' + itemIndex"
+                  ></graph-box>
+                </article>
+              </div>
             </div>
           </div>
 
@@ -552,7 +549,7 @@ export default {
 .chantier-tags-row__label {
   color: #3a3a3a;
   font-size: 0.75rem;
-  font-weight: 500;
+  font-weight: 400;
   flex-shrink: 0;
 }
 
@@ -569,7 +566,7 @@ export default {
   gap: 0.2rem;
   border-radius: 999px;
   font-size: 0.5625rem;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 1.3;
   padding: 0.15rem 0.4rem;
   text-decoration: none;
@@ -634,9 +631,29 @@ export default {
 }
 
 .chantier-summary {
+  padding: 0;
+}
+
+.chantier-summary-charts {
+  margin-top: 1.25rem;
   background: #f6f6f6;
   border-left: 4px solid #6a6af4;
   padding: 1.25rem 1.5rem;
+}
+
+.chantier-summary-charts__badge {
+  display: inline-block;
+  background: #c7f6fc;
+  color: #000091;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  padding: 0.2rem 0.75rem;
+  border-radius: 999px;
+  margin-bottom: 0.75rem;
+}
+
+.chantier-summary-charts__grid {
+  margin-top: 0;
 }
 
 .chantier-section {
