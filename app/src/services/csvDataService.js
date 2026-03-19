@@ -1,7 +1,9 @@
 import unitDict from '@/utils/unit_dict.json';
+import { CHANTIERS_AXE_FALLBACK } from '@/data/chantiersAxeFallback';
 import {
   fetchIndicatorsData,
   fetchLeviersData,
+  fetchChantiersData,
   fetchEngagementsByAxe,
   fetchEngagementLongMapping,
   setStagingDocId as setStagingDocIdInFetcher,
@@ -1374,10 +1376,11 @@ function getLevierSortOrder(levier) {
  */
 export async function getNavigationStructure(environment = 'production') {
   try {
-    // Load indicators and full leviers list in parallel
-    const [csvData, levierList] = await Promise.all([
+    // Load indicators, leviers list and chantiers list (for Axe taxonomie) in parallel
+    const [csvData, levierList, chantiersAxeMap] = await Promise.all([
       fetchCSVData(environment),
-      fetchLevierList()
+      fetchLevierList(),
+      fetchChantiersData()
     ]);
     
     // Filter out items marked for deletion
@@ -1529,9 +1532,9 @@ export async function getNavigationStructure(environment = 'production') {
       });
     }
     
-    // Sort leviers within each chantier
+    // Sort leviers within each chantier and enrich with Axe taxonomie from Liste_chantiers
     Object.values(sectors).forEach(sector => {
-      Object.values(sector.chantiers).forEach(chantier => {
+      Object.entries(sector.chantiers).forEach(([chantierName, chantier]) => {
         // Convert leviers object to sorted array
         const sortedLeviers = Object.entries(chantier.leviers)
           .map(([name, indicators]) => ({ name, indicators, sortOrder: getLevierSortOrder(name) }))
@@ -1540,6 +1543,13 @@ export async function getNavigationStructure(environment = 'production') {
             return a.name.localeCompare(b.name); // Alphabetical for same order
           });
         chantier.sortedLeviers = sortedLeviers;
+
+        // Enrich with Axe taxonomie from Liste_chantiers (key: chantier name only)
+        let axeTaxonomie = (chantiersAxeMap && chantiersAxeMap.get(chantierName)) || [];
+        if (axeTaxonomie.length === 0) {
+          axeTaxonomie = CHANTIERS_AXE_FALLBACK[chantierName] || [];
+        }
+        chantier.axeTaxonomie = axeTaxonomie;
       });
     });
     

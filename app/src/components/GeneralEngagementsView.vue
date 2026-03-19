@@ -18,10 +18,18 @@
 
       <section class="axe-hero">
         <h1 class="fr-title axe-title" :aria-label="params.axe">{{ params.axe }}</h1>
-        <nav v-if="axeSectionLinks.length > 0" class="axe-anchor-nav" aria-label="Navigation dans la page">
-          <div class="axe-anchor-group">
-            <span class="axe-anchor-label">Indicateurs</span>
-            <a v-for="link in axeSectionLinks" :key="link.id" class="axe-anchor-link" :href="'#' + link.id">→ {{ link.label }}</a>
+        <nav v-if="axeMetadataTags.length > 0" class="chantier-metadata-tags" aria-label="Métadonnées de l'axe">
+          <div v-if="axeMetadataTags.length > 0" class="chantier-tags-row">
+            <span class="chantier-tags-row__label">Indicateurs :</span>
+            <a
+              v-for="tag in axeMetadataTags"
+              :key="'ind-' + tag.id"
+              class="chantier-metadata-tag chantier-metadata-tag--indicateur"
+              :href="tag.href"
+            >
+              <span class="ri-target-line chantier-metadata-tag__icon" aria-hidden="true"></span>
+              <span class="chantier-metadata-tag__text">{{ tag.label }}</span>
+            </a>
           </div>
         </nav>
       </section>
@@ -38,7 +46,7 @@
         </h2>
         <div v-if="currentAxeEntry.impactIndicators && currentAxeEntry.impactIndicators.length > 0" class="fr-grid-row fr-grid-row--gutters">
           <div v-for="(item, itemIndex) in currentAxeEntry.impactIndicators" :key="item.label_indic + '-impact-' + itemIndex" class="fr-col-md-6 fr-col-lg-6 fr-col-xl-6 fr-col-12">
-            <article>
+            <article :id="getIndicatorSectionId('impact', itemIndex)" class="axe-indicator-card">
               <graph-box :dataObj="item" :compact="true" :idAccordion="'axe-accordion-impact-' + itemIndex" :titre="item.label_indic" />
             </article>
           </div>
@@ -53,7 +61,7 @@
         </h2>
         <div class="fr-grid-row fr-grid-row--gutters">
           <div v-for="(item, itemIndex) in currentAxeEntry.autresIndicators" :key="item.label_indic + '-autres-' + itemIndex" class="fr-col-md-6 fr-col-lg-6 fr-col-xl-6 fr-col-12">
-            <article>
+            <article :id="getIndicatorSectionId('autres', itemIndex)" class="axe-indicator-card">
               <graph-box :dataObj="item" :compact="true" :idAccordion="'axe-accordion-autres-' + itemIndex" :titre="item.label_indic" />
             </article>
           </div>
@@ -274,6 +282,28 @@ export default {
       }
       return links;
     },
+    axeIndicateurTags() {
+      if (!this.currentAxeEntry?.impactIndicators?.length) return [];
+      return this.currentAxeEntry.impactIndicators.map((item, idx) => ({
+        id: this.getIndicatorSectionId('impact', idx),
+        label: item.label_indic || `Indicateur ${idx + 1}`,
+        href: '#' + this.getIndicatorSectionId('impact', idx),
+      }));
+    },
+    axeAutresIndicateursTag() {
+      const count = this.currentAxeEntry?.autresIndicators?.length || 0;
+      if (count === 0) return null;
+      return {
+        id: this.sectionAutresIndicateursId,
+        label: `Autres indicateurs (${count})`,
+        href: '#' + this.sectionAutresIndicateursId,
+      };
+    },
+    axeMetadataTags() {
+      const tags = [...this.axeIndicateurTags];
+      if (this.axeAutresIndicateursTag) tags.push(this.axeAutresIndicateursTag);
+      return tags;
+    },
     sectionIndicateurImpactId() {
       return 'section-indicateurs-impact';
     },
@@ -358,6 +388,9 @@ export default {
     goEtatEnvironnement() {
       const routeName = window.location.pathname.includes('/staging') ? 'staging-dashboard' : 'dashboard';
       this.$router.push({ name: routeName, query: { sector: 'Synthèse', view: 'etat-environnement' } }).catch(() => {});
+    },
+    getIndicatorSectionId(prefix, index) {
+      return `section-indicateur-${prefix}-${index}`;
     },
   },
 };
@@ -447,43 +480,86 @@ export default {
   max-width: 54rem;
 }
 
-.axe-anchor-nav {
+/* Indicateurs / Leviers tags - même thème que ChantierDetail */
+.chantier-metadata-tags {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  margin-top: 0.75rem;
 }
 
-.axe-anchor-group {
+.chantier-tags-row {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
-  gap: 0.5rem;
+  align-items: baseline;
+  gap: 0.25rem 0.5rem;
 }
 
-.axe-anchor-label {
+.chantier-tags-row__label {
   color: #3a3a3a;
-  font-size: 0.875rem;
-  font-weight: 700;
+  font-size: 0.75rem;
+  font-weight: 400;
+  flex-shrink: 0;
 }
 
-.axe-anchor-link {
-  background: #e3e3fd;
-  border: none;
+.chantier-metadata-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
   border-radius: 999px;
-  color: #000091;
-  font-size: 0.8125rem;
-  font-weight: 500;
+  font-size: 0.5625rem;
+  font-weight: 400;
   line-height: 1.3;
-  padding: 0.3rem 0.875rem;
+  padding: 0.15rem 0.4rem;
   text-decoration: none;
   transition: background-color 0.15s, color 0.15s;
 }
 
-.axe-anchor-link:hover,
-.axe-anchor-link:focus {
+.chantier-metadata-tag__icon {
+  font-size: 0.75rem;
+  flex-shrink: 0;
+}
+
+/* Indicateurs - light cyan */
+.chantier-metadata-tag--indicateur {
+  background: #c7f6fc;
+  color: #000091;
+}
+
+.chantier-metadata-tag--indicateur .chantier-metadata-tag__icon {
+  color: #000091;
+}
+
+.chantier-metadata-tag--indicateur:hover,
+.chantier-metadata-tag--indicateur:focus {
   background: #000091;
   color: #fff;
-  text-decoration: none;
+}
+
+.chantier-metadata-tag--indicateur:hover .chantier-metadata-tag__icon,
+.chantier-metadata-tag--indicateur:focus .chantier-metadata-tag__icon {
+  color: inherit;
+}
+
+/* Leviers - light purple */
+.chantier-metadata-tag--levier {
+  background: #e8e0f7;
+  color: #000091;
+}
+
+.chantier-metadata-tag--levier .chantier-metadata-tag__icon {
+  color: #000091;
+}
+
+.chantier-metadata-tag--levier:hover,
+.chantier-metadata-tag--levier:focus {
+  background: #000091;
+  color: #fff;
+}
+
+.chantier-metadata-tag--levier:hover .chantier-metadata-tag__icon,
+.chantier-metadata-tag--levier:focus .chantier-metadata-tag__icon {
+  color: inherit;
 }
 
 .axe-summary {
@@ -494,6 +570,10 @@ export default {
 
 .axe-section {
   padding: 1.25rem 0;
+  scroll-margin-top: 1.5rem;
+}
+
+.axe-indicator-card {
   scroll-margin-top: 1.5rem;
 }
 
@@ -546,19 +626,19 @@ export default {
     padding: 1rem;
   }
 
-  .axe-anchor-nav {
+  .chantier-metadata-tags {
     gap: 0.375rem;
   }
 
-  .axe-anchor-group {
-    align-items: flex-start;
+  .chantier-tags-row {
     flex-direction: column;
-    gap: 0.375rem;
+    align-items: flex-start;
+    gap: 0.25rem;
   }
 
-  .axe-anchor-link {
-    font-size: 0.75rem;
-    padding: 0.3rem 0.625rem;
+  .chantier-metadata-tag {
+    font-size: 0.5rem;
+    padding: 0.15rem 0.4rem;
   }
 }
 </style>

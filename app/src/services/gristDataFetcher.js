@@ -11,11 +11,13 @@ import gristUrlsConfig from '@/config/gristUrls.json';
 export const GRIST_URLS = gristUrlsConfig.GRIST_URLS;
 export const GRIST_LEVIERS_URL = gristUrlsConfig.GRIST_LEVIERS_URL;
 export const GRIST_ENGAGEMENTS_URL = gristUrlsConfig.GRIST_ENGAGEMENTS_URL || null;
+export const GRIST_CHANTIERS_URL = gristUrlsConfig.GRIST_CHANTIERS_URL || null;
 
 // Cache for fetch promises to prevent duplicate requests
 let indicatorsFetchPromise = null;
 let leviersFetchPromise = null;
 let engagementsFetchPromise = null;
+let chantiersFetchPromise = null;
 let engagementLongMappingPromise = null;
 
 /**
@@ -188,6 +190,87 @@ export async function fetchEngagementsByAxe() {
   })();
 
   return engagementsFetchPromise;
+}
+
+/**
+ * Extract chantier name from "Sector / Chantier" or use as-is if no slash.
+ */
+function toChantierKey(value) {
+  const s = String(value ?? '').trim();
+  const idx = s.indexOf(' / ');
+  return idx >= 0 ? s.slice(idx + 3).trim() : s;
+}
+
+/**
+ * Fetch Liste_chantiers (Chantier or Chantier associé, Axe taxonomie).
+ * Returns map: chantier name → [axe taxonomie values]. Link at chantier level.
+ * @returns {Promise<Map<string, string[]>>} Map of chantier name → axes
+ */
+export async function fetchChantiersData() {
+  if (!GRIST_CHANTIERS_URL) {
+    return new Map();
+  }
+
+  if (chantiersFetchPromise) {
+    return chantiersFetchPromise;
+  }
+
+  chantiersFetchPromise = (async () => {
+    const buildMapFromRows = (rows) => {
+      const map = new Map();
+      for (const row of rows) {
+        const raw = String(
+          row['Chantier'] ?? row['Chantier associé'] ?? row['Chantier ou Impact'] ?? ''
+        ).trim();
+        const chantierKey = toChantierKey(raw);
+        const axeTaxo = String(row['Axe taxonomie'] ?? row['Axe_taxonomie'] ?? '').trim();
+        if (!chantierKey || !axeTaxo) continue;
+
+        if (!map.has(chantierKey)) {
+          map.set(chantierKey, []);
+        }
+        const arr = map.get(chantierKey);
+        if (!arr.includes(axeTaxo)) {
+          arr.push(axeTaxo);
+        }
+      }
+      return map;
+    };
+
+    try {
+      // Prefer backup first (API often returns 404 for Liste_chantiers); merge with API if both succeed
+      let map = new Map();
+      try {
+        const backupText = await loadLocalBackup('grist-chantiers.csv');
+        const backupRows = await parseCSVText(backupText);
+        map = buildMapFromRows(backupRows);
+      } catch (backupErr) {
+        console.warn('Liste_chantiers backup unavailable:', backupErr.message);
+      }
+
+      if (map.size === 0) {
+        try {
+          const response = await fetch(GRIST_CHANTIERS_URL);
+          if (response.ok) {
+            const csvText = await response.text();
+            const rows = await parseCSVText(csvText);
+            map = buildMapFromRows(rows);
+          }
+        } catch (apiErr) {
+          console.warn('Liste_chantiers API unavailable:', apiErr.message);
+        }
+      }
+
+      chantiersFetchPromise = null;
+      return map;
+    } catch (error) {
+      chantiersFetchPromise = null;
+      console.warn('Could not load Liste_chantiers, axe taxonomie column may be empty:', error.message);
+      return new Map();
+    }
+  })();
+
+  return chantiersFetchPromise;
 }
 
 /**

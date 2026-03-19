@@ -158,6 +158,26 @@
                   >
                     {{ chantier.name }}
                   </a>
+                  <div class="chantier-engagements">
+                    <span
+                      v-for="(eng, eIdx) in chantier.engagementBadges"
+                      :key="eIdx"
+                      class="engagement-badge"
+                      :data-tooltip="truncateEngagement(eng) !== eng ? eng : undefined"
+                      :aria-label="eng || undefined"
+                    >
+                      {{ truncateEngagement(eng) }}
+                    </span>
+                    <span
+                      v-if="chantier.remainingEngagements > 0"
+                      class="engagement-badge engagement-badge--more"
+                      :data-tooltip="chantier.remainingEngagementNames || undefined"
+                      :aria-label="chantier.remainingEngagementNames || undefined"
+                      @click.stop
+                    >
+                      +{{ chantier.remainingEngagements }}
+                    </span>
+                  </div>
                 </td>
                 <td class="td-indicateur td-empty" colspan="2">
                   <p>Pas d'indicateur disponible</p>
@@ -257,11 +277,11 @@ export default {
             const gristIds = chantierIndicators.map(item => item.gristId).filter(Boolean)
             allGristIds.push(...gristIds)
 
-            // Build engagement badges from levier names
-            // Show up to 2 visible, rest as +N with tooltip
+            // Build badges from Axe taxonomie (Liste_chantiers), fallback to empty if not found
+            const axeTaxonomie = chantierData.axeTaxonomie || []
             const maxVisible = 4
-            const visibleBadges = levierNames.slice(0, maxVisible)
-            const remainingNames = levierNames.slice(maxVisible)
+            const visibleBadges = axeTaxonomie.slice(0, maxVisible)
+            const remainingNames = axeTaxonomie.slice(maxVisible)
 
             chantiers.push({
               name: chantierName,
@@ -280,7 +300,7 @@ export default {
             description: SECTOR_DESCRIPTIONS[sector.name] || '',
             chantierCount: chantierEntries.length,
             levierCount,
-            engagementLabel: 'Engagement soutenu',
+            engagementLabel: 'Axe de la taxonomie',
             chantiers
           })
         }
