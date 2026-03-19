@@ -342,12 +342,13 @@ a:hover:not([href]) {
   color: #929292;
 }
 
-/* Favoris icon - barely larger than capital F (NAV 1903-11) */
+/* Favoris icon - smaller than default (DSFR icons use pseudo-elements, so use transform) */
 .nav-favoris-icon {
-  margin-right: 0.25rem;
-  font-size: 0.95em;
+  margin-right: 0.1rem;
   display: inline-block;
   vertical-align: middle;
+  transform: scale(0.7);
+  transform-origin: center center;
 }
 
 /* Dropdown button */
