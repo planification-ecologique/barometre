@@ -204,7 +204,15 @@ const router = new Router({
   base: process.env.VUE_APP_PREFIX_PATH,
   routes,
   
-  scrollBehavior(to, from, savePosition) {
+  scrollBehavior(to, from, savedPosition) {
+    // Restore scroll position when user navigates back/forward
+    if (savedPosition) {
+      return savedPosition;
+    }
+    // Scroll to hash anchor if present
+    if (to.hash) {
+      return { selector: to.hash, behavior: 'smooth' };
+    }
     return { x: 0, y: 0 };
   }
   

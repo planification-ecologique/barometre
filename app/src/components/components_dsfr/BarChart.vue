@@ -186,6 +186,10 @@
       pointRadius: {
         type: Number,
         default: 4
+      },
+      axisFontSize: {
+        type: Number,
+        default: 12
       }
     },
     watch: {
@@ -645,6 +649,7 @@
                 },
                 ticks: {
                   fontColor: '#161616',
+                  fontSize: self.axisFontSize,
                   callback: function (value) {
                     if (self.formatdate) {
                       return value.toString().substring(5, 7) + '/' + value.toString().substring(0, 4)
@@ -665,6 +670,7 @@
                 },
                 ticks: {
                   fontColor: '#161616',
+                  fontSize: self.axisFontSize,
                   suggestedMin: 0,
                   padding: 8,
                   suggestedMax: self.ymax,

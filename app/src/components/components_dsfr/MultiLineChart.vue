@@ -139,6 +139,10 @@ export default {
       pointRadius: {
         type: Number,
         default: 4
+      },
+      axisFontSize: {
+        type: Number,
+        default: 12
       }
   },
   computed: {
@@ -479,7 +483,7 @@ export default {
               ticks: {
                 display: true,
                 fontColor: '#161616',
-                fontSize: 12,
+                fontSize: self.axisFontSize,
                 callback: function (value) {
                   if (self.formatdate) {
                     return value.toString().substring(5, 7) + '/' + value.toString().substring(0, 4)
@@ -504,7 +508,7 @@ export default {
                 suggestedMin: 0,
                 suggestedMax: self.ymax,
                 fontColor: '#161616',
-                fontSize: 12,
+                fontSize: self.axisFontSize,
                 callback: function (value, index, values) {
                   if (value >= 1000000000 || value <= -1000000000) {
                     return value / 1e9 + 'B'
