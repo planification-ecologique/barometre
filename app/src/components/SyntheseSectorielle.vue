@@ -250,7 +250,7 @@ export default {
             allGristIds.push(...gristIds)
 
             // Build engagement badges from levier names
-            // Show up to 6 visible, rest as +N with tooltip (container max-height prevents row growth)
+            // Show up to 2 visible, rest as +N with tooltip
             const maxVisible = 2
             const visibleBadges = levierNames.slice(0, maxVisible)
             const remainingNames = levierNames.slice(maxVisible)
@@ -651,8 +651,6 @@ export default {
   flex-wrap: wrap;
   gap: 0.25rem;
   margin-top: 0.5rem;
-  max-height: 5rem;
-  overflow: hidden;
 }
 
 .engagement-badge {

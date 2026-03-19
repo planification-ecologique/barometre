@@ -692,6 +692,8 @@ export function transformCSVData(csvData, query) {
       unite: formattedUnitLong,
       // Add new fields from Grist
       levier: item['Levier'] || '',
+      // Engagement from main CSV (for Etat environnement synthesis)
+      engagement: String(item['Engagement'] || item['Ambition liée'] || '').trim(),
       // Primary sector / chantier (backward compatible with existing components)
       chantier_ou_impact: parsedChantierOuImpact.chantierOuImpact || '',
       sector: parsedChantierOuImpact.sector || '',

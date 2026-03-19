@@ -75,30 +75,27 @@
               </tr>
             </thead>
             <tbody>
-              <template v-for="group in getEngagementGroups(axe.indicators)">
-                <tr
-                  v-for="(indicator, idx) in group.indicators"
-                  :key="axe.name + '-' + group.engagementName + '-' + idx"
-                  :class="{ 'first-row-of-engagement': idx === 0 }"
-                >
-                  <td
-                    v-if="idx === 0"
-                    :rowspan="group.indicators.length || 1"
-                    class="td-engagement"
-                  >
-                    {{ group.engagementName || '–' }}
-                  </td>
-                  <td class="td-indicateur">{{ indicator.label }}</td>
-                  <td class="td-valeurs">
-                    <mini-chart
-                      v-if="indicator.rawData"
-                      :dataObj="indicator.rawData"
-                    />
-                  </td>
-                </tr>
-              </template>
+              <tr
+                v-for="(indicator, idx) in axe.indicators"
+                :key="axe.name + '-' + indicator.id + '-' + idx"
+              >
+                <td class="td-engagement">{{ indicator.engagementName || '–' }}</td>
+                <td class="td-indicateur">
+                  {{ indicator.label }}
+                  <template v-if="indicator.labelUnit">
+                    <br><br>
+                    <em>Unité : {{ indicator.labelUnit }}</em>
+                  </template>
+                </td>
+                <td class="td-valeurs">
+                  <mini-chart
+                    v-if="indicator.rawData"
+                    :dataObj="indicator.rawData"
+                  />
+                </td>
+              </tr>
               <tr v-if="axe.indicators.length === 0">
-                <td class="td-engagement">{{ axe.engagement || '–' }}</td>
+                <td class="td-engagement">–</td>
                 <td class="td-empty">Pas d'indicateur disponible</td>
                 <td class="td-valeurs"></td>
               </tr>
@@ -112,7 +109,7 @@
 
 <script>
 import MiniChart from './MiniChart.vue'
-import { getNavigationStructure, getIndicators, isImpactAxe, fetchEngagementsByAxe, IMPACT_AXE_DISPLAY_ORDER } from '@/services/csvDataService.js'
+import { getNavigationStructure, getIndicators, IMPACT_AXE_DISPLAY_ORDER } from '@/services/csvDataService.js'
 
 const AXE_DESCRIPTIONS = {
   'Atténuation climat': 'Les indicateurs d\'atténuation suivent la réduction des émissions de gaz à effet de serre et la transition vers une économie bas-carbone.',
@@ -159,10 +156,7 @@ export default {
       this.isLoading = true
       try {
         const environment = this.useStaging ? 'staging' : 'production'
-        const [response, engagementByAxe] = await Promise.all([
-          getNavigationStructure(environment),
-          fetchEngagementsByAxe()
-        ])
+        const response = await getNavigationStructure(environment)
 
         if (response.status !== 'success') {
           this.isLoading = false
@@ -199,8 +193,7 @@ export default {
             description: AXE_DESCRIPTIONS[axeName] || '',
             indicatorCount: gristIds.length,
             gristIds,
-            indicators: [],
-            engagement: engagementByAxe.get(axeName) || ''
+            indicators: []
           })
         }
 
@@ -222,7 +215,7 @@ export default {
             axe.indicators = axe.gristIds
               .map(gid => indicatorMap[gid])
               .filter(Boolean)
-              .map(ind => this.buildIndicatorRow(ind, axe.name, engagementByAxe))
+              .map(ind => this.buildIndicatorRow(ind))
           }
         }
 
@@ -234,7 +227,7 @@ export default {
         this.isLoading = false
       }
     },
-    buildIndicatorRow(indicator, axeName = '', engagementByAxe = new Map()) {
+    buildIndicatorRow(indicator) {
       const values = []
       let targetValue = null
 
@@ -269,17 +262,14 @@ export default {
         description = String(indicator.label_description).replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim()
       }
 
-      // Engagement: 1) from chantier_ou_impact_list (first non-axe), 2) from Liste_engagements (axe → engagement)
-      const list = Array.isArray(indicator.chantier_ou_impact_list) && indicator.chantier_ou_impact_list.length
-        ? indicator.chantier_ou_impact_list
-        : (indicator.chantier_ou_impact ? [indicator.chantier_ou_impact] : [])
-      let engagementName = list.find(x => x && !isImpactAxe(x)) || ''
-      if (!engagementName && axeName && engagementByAxe.size > 0) {
-        engagementName = engagementByAxe.get(axeName) || ''
-      }
+      // Engagement from main CSV (Engagement or Ambition liée column)
+      const engagementName = indicator.engagement || ''
+
+      const unit = indicator.label_unit || indicator.unite
 
       return {
         label: indicator.label_indic || 'Indicateur',
+        labelUnit: unit || '',
         engagementName,
         values,
         targetValue,
@@ -297,18 +287,6 @@ export default {
     ecartClass(ecart) {
       if (ecart === null) return ''
       return ecart >= 0 ? 'ecart-positive' : 'ecart-negative'
-    },
-    getEngagementGroups(indicators) {
-      if (!indicators || indicators.length === 0) return []
-      const byEngagement = new Map()
-      for (const ind of indicators) {
-        const key = ind.engagementName || '–'
-        if (!byEngagement.has(key)) byEngagement.set(key, [])
-        byEngagement.get(key).push(ind)
-      }
-      return Array.from(byEngagement.entries())
-        .map(([engagementName, indicators]) => ({ engagementName, indicators }))
-        .sort((a, b) => (a.engagementName || '').localeCompare(b.engagementName || '', 'fr'))
     },
     scrollToAxe(axeName) {
       const id = 'axe-' + this.slugify(axeName)
@@ -508,10 +486,6 @@ export default {
   padding: 0.75rem 1rem;
   border-bottom: 1px solid #e5e5e5;
   vertical-align: top;
-}
-
-.first-row-of-engagement td {
-  border-top: 1px solid #d6d6d6;
 }
 
 .td-engagement {
