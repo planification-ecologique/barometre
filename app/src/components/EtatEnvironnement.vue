@@ -86,25 +86,34 @@
               </tr>
             </thead>
             <tbody>
-              <tr
-                v-for="(indicator, idx) in axe.indicators"
-                :key="axe.name + '-' + indicator.id + '-' + idx"
-              >
-                <td class="td-engagement">{{ indicator.engagementName || '–' }}</td>
-                <td class="td-indicateur">
-                  {{ indicator.label }}
-                  <template v-if="indicator.labelUnit">
-                    <br><br>
-                    <em>Unité : {{ indicator.labelUnit }}</em>
-                  </template>
-                </td>
-                <td class="td-valeurs">
-                  <mini-chart
-                    v-if="indicator.rawData"
-                    :dataObj="indicator.rawData"
-                  />
-                </td>
-              </tr>
+              <template v-for="group in getEngagementGroups(axe.indicators)">
+                <tr
+                  v-for="(indicator, idx) in group.indicators"
+                  :key="axe.name + '-' + (group.engagementName || '') + '-' + idx"
+                  :class="{ 'first-row-of-engagement': idx === 0 }"
+                >
+                  <td
+                    v-if="idx === 0"
+                    :rowspan="group.indicators.length || 1"
+                    class="td-engagement"
+                  >
+                    {{ group.engagementName || '–' }}
+                  </td>
+                  <td class="td-indicateur">
+                    {{ indicator.label }}
+                    <template v-if="indicator.labelUnit">
+                      <br><br>
+                      <em>Unité : {{ indicator.labelUnit }}</em>
+                    </template>
+                  </td>
+                  <td class="td-valeurs">
+                    <mini-chart
+                      v-if="indicator.rawData"
+                      :dataObj="indicator.rawData"
+                    />
+                  </td>
+                </tr>
+              </template>
               <tr v-if="axe.indicators.length === 0">
                 <td class="td-engagement">{{ axe.engagement || '–' }}</td>
                 <td class="td-empty">
@@ -316,6 +325,18 @@ export default {
     ecartClass(ecart) {
       if (ecart === null) return ''
       return ecart >= 0 ? 'ecart-positive' : 'ecart-negative'
+    },
+    getEngagementGroups(indicators) {
+      if (!indicators || indicators.length === 0) return []
+      const byEngagement = new Map()
+      for (const ind of indicators) {
+        const key = ind.engagementName || '–'
+        if (!byEngagement.has(key)) byEngagement.set(key, [])
+        byEngagement.get(key).push(ind)
+      }
+      return Array.from(byEngagement.entries())
+        .map(([engagementName, indicators]) => ({ engagementName, indicators }))
+        .sort((a, b) => (a.engagementName || '').localeCompare(b.engagementName || '', 'fr'))
     },
     scrollToAxe(axeName) {
       const id = 'axe-' + this.slugify(axeName)
@@ -539,6 +560,10 @@ export default {
   padding: 0.75rem 1rem;
   border-bottom: 1px solid #e5e5e5;
   vertical-align: top;
+}
+
+.first-row-of-engagement td {
+  border-top: 1px solid #d6d6d6;
 }
 
 .td-engagement {
