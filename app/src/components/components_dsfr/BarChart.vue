@@ -11,7 +11,7 @@
             </div>
           </div>
           <canvas :id="chartId"></canvas>
-          <div v-for="(item, index) in nameParse" :key="item" class="flex fr-mt-3v fr-mb-1v" :style="{'margin-left': isSmall ? '0px' : style}">
+          <div v-for="(item, index) in nameParse" :key="item" class="flex fr-mt-3v fr-mb-1v" :style="{'margin-left': effectiveIsSmall ? '0px' : style}">
          <div class="flex-container">
     <span class="legende_dot" v-bind:style="{'background-color': colorParse[index]}"></span>
     <p class='fr-text--sm fr-text--bold fr-ml-1w fr-mb-0'>
@@ -19,26 +19,26 @@
     </p>
 </div>
           </div>
-          <div v-for="(item2, index2) in hlineNameParse" :key="item2" class="flex fr-mt-3v" :style="{'margin-left': isSmall ? '0px' : style}">
+          <div v-for="(item2, index2) in hlineNameParse" :key="item2" class="flex fr-mt-3v" :style="{'margin-left': effectiveIsSmall ? '0px' : style}">
             <span class="legende_dash_line1" v-bind:style="{'background-color': hlineColorParse[index2]}"></span>
             <span class="legende_dash_line2" v-bind:style="{'background-color': hlineColorParse[index2]}"></span>
             <p class="fr-text--sm fr-text--bold fr-ml-1w fr-mb-0">{{ capitalize(hlineNameParse[index2]) }}</p>
           </div>
-          <div v-for="(item3, index3) in vlineNameParse" :key="item3" class="flex fr-mt-3v fr-mb-1v" :style="{'margin-left': isSmall ? '0px' : style}">
+          <div v-for="(item3, index3) in vlineNameParse" :key="item3" class="flex fr-mt-3v fr-mb-1v" :style="{'margin-left': effectiveIsSmall ? '0px' : style}">
             <span class="legende_dash_line1" v-bind:style="{'background-color': vlineColorParse[index3]}"></span>
             <span class="legende_dash_line2" v-bind:style="{'background-color': vlineColorParse[index3]}"></span>
             <p class="fr-text--sm fr-text--bold fr-ml-1w fr-mb-0">{{ capitalize(vlineNameParse[index3]) }}</p>
           </div>
-          <div v-if="trendLineParse.length > 0" class="flex fr-mt-3v fr-mb-1v" :style="{'margin-left': isSmall ? '0px' : style}">
+          <div v-if="trendLineParse.length > 0" class="flex fr-mt-3v fr-mb-1v" :style="{'margin-left': effectiveIsSmall ? '0px' : style}">
             <span class="legende_dash_line1" v-bind:style="{'background-color': trendLineColor}"></span>
             <span class="legende_dash_line2" v-bind:style="{'background-color': trendLineColor}"></span>
             <p class="fr-text--sm fr-text--bold fr-ml-1w fr-mb-0">Tendance (3 ans)</p>
           </div>
-          <div v-if="targetTrajectoryParse || targetSegmentParse" class="flex fr-mt-3v fr-mb-1v" :style="{'margin-left': isSmall ? '0px' : style}">
+          <div v-if="targetTrajectoryParse || targetSegmentParse" class="flex fr-mt-3v fr-mb-1v" :style="{'margin-left': effectiveIsSmall ? '0px' : style}">
             <span class="legende_dot_circle" v-bind:style="{'background-color': targetSegmentColor}"></span>
             <p class="fr-text--sm fr-text--bold fr-ml-1w fr-mb-0">Cible(s) initiale(s)</p>
           </div>
-          <div v-if="date!==undefined" class="flex fr-mt-1w" :style="{'margin-left': isSmall ? '0px' : style}">
+          <div v-if="date!==undefined" class="flex fr-mt-1w" :style="{'margin-left': effectiveIsSmall ? '0px' : style}">
             <p class="fr-text--xs">Mise à jour : {{date}}</p>
           </div>
         </div>
@@ -86,7 +86,7 @@
         colorPrecisionBar: '#161616',
         colorBox: '#2f2f2f',
         colorHover: [],
-        isSmall: false,
+        viewportSmall: false,
         trendLineParse: [],
         trendLineColor: '#6a6156',
         targetSegmentParse: null,
@@ -190,6 +190,10 @@
       axisFontSize: {
         type: Number,
         default: 12
+      },
+      isSmall: {
+        type: Boolean,
+        default: false
       }
     },
     watch: {
@@ -209,6 +213,9 @@
     computed: {
       style () {
         return this.legendLeftMargin + 'px'
+      },
+      effectiveIsSmall () {
+        return this.isSmall === true ? true : this.viewportSmall
       }
     },
     methods: {
@@ -650,6 +657,10 @@
                 ticks: {
                   fontColor: '#161616',
                   fontSize: self.axisFontSize,
+                  maxRotation: self.effectiveIsSmall ? 0 : 0,
+                  minRotation: self.effectiveIsSmall ? 0 : 0,
+                  maxTicksLimit: self.effectiveIsSmall ? 10 : 20,
+                  autoSkip: true,
                   callback: function (value) {
                     if (self.formatdate) {
                       return value.toString().substring(5, 7) + '/' + value.toString().substring(0, 4)
@@ -914,13 +925,14 @@
     },
     mounted () {
       document.getElementById(this.widgetId).offsetWidth > 486 ? this.display = 'big' : this.display = 'small'
+      this.viewportSmall = document.documentElement.clientWidth < 767
       this.createChart()
       const element = document.documentElement // Reference à l'element <html> du DOM
       element.addEventListener('dsfr.theme', (e) => {
         this.changeColors(e.detail.theme)
       })
       addEventListener('resize', (event) => {
-        this.isSmall = document.documentElement.clientWidth < 767
+        this.viewportSmall = document.documentElement.clientWidth < 767
       })
     },
     beforeUpdate () {

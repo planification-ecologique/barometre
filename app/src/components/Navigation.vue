@@ -53,7 +53,7 @@
               v-if="option.icon"
               :class="option.icon"
               aria-hidden="true"
-              style="margin-right: 0.25rem;"
+              class="nav-favoris-icon"
             ></span>
             {{ option.label }}
           </a>
@@ -327,18 +327,27 @@ a:hover:not([href]) {
   background-color: var(--text-action-high-blue-france-hover);
 }
 
-/* Disabled / coming soon nav item */
+/* Disabled / coming soon nav item - smaller font for Analyse par secteur */
 .nav-link--disabled {
   color: #929292 !important;
   cursor: default;
   pointer-events: none;
   font: inherit;
+  font-size: 0.8125rem !important;
 }
 
 .nav-coming-soon {
   font-size: 0.625rem;
   margin-left: 0.25rem;
   color: #929292;
+}
+
+/* Favoris icon - barely larger than capital F (NAV 1903-11) */
+.nav-favoris-icon {
+  margin-right: 0.25rem;
+  font-size: 0.95em;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 /* Dropdown button */

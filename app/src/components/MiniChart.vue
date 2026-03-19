@@ -3,14 +3,14 @@
     <!-- Barres simple -->
     <bar-chart
       v-if="chartType === 'Barres simple' && hasBarSimpleData"
+      :isSmall="true"
       :x="JSON.stringify(dataObj.values.x)"
       :y="JSON.stringify(dataObj.values.y)"
       :name="JSON.stringify(dataObj.values.legend || [''])"
       :horizontal="false"
       :stacked="true"
       :color="JSON.stringify(dataObj.values.colors || barColors)"
-      :aspectratio="1.5"
-      :isSmall="true"
+      :aspectratio="2.2"
       :axis-font-size="9"
       :point-radius="2"
       :pointopacity="pointOpacityJson"
@@ -20,13 +20,13 @@
     <!-- Barres empilées -->
     <bar-chart
       v-else-if="chartType === 'Barres empilées' && hasStackedData"
+      :isSmall="true"
       :x="JSON.stringify(dataObj.date)"
       :y="JSON.stringify(dataObj.values)"
       :name="JSON.stringify(dataObj.label_sous_groupe || [''])"
       :horizontal="false"
       :stacked="true"
-      :aspectratio="1.5"
-      :isSmall="true"
+      :aspectratio="2.2"
       :axis-font-size="9"
       :point-radius="2"
       :pointopacity="stackedPointOpacityJson"
@@ -36,11 +36,11 @@
     <!-- Courbes indépendantes -->
     <multi-line-chart
       v-else-if="chartType === 'Courbes indépendantes' && hasStackedData"
+      :isSmall="true"
       :x="JSON.stringify(dataObj.date)"
       :y="JSON.stringify(dataObj.values)"
       :name="JSON.stringify(dataObj.label_sous_groupe || [''])"
-      :aspectratio="1.5"
-      :isSmall="true"
+      :aspectratio="2.2"
       :axis-font-size="9"
       :point-radius="2"
       :pointopacity="stackedPointOpacityJson"
@@ -48,13 +48,13 @@
     <!-- Fallback: try bar chart with date/values format -->
     <bar-chart
       v-else-if="hasFallbackData"
+      :isSmall="true"
       :x="JSON.stringify(dataObj.date)"
       :y="JSON.stringify(dataObj.values)"
       :name="JSON.stringify(dataObj.label_sous_groupe || [''])"
       :horizontal="false"
       :stacked="true"
-      :aspectratio="1.5"
-      :isSmall="true"
+      :aspectratio="2.2"
       :axis-font-size="9"
       :point-radius="2"
       :pointopacity="stackedPointOpacityJson"
@@ -301,7 +301,9 @@ export default {
 <style>
 /* Mini chart styles — unscoped so they can reach into child components */
 .mini-chart {
-  width: 200px;
+  width: 100%;
+  min-width: 200px;
+  max-width: 320px;
   min-height: 130px;
   overflow: visible;
   position: relative;

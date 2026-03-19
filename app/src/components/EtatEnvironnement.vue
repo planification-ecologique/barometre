@@ -18,9 +18,9 @@
     <div class="etat-callout">
       <h2 class="fr-h4 etat-callout-title">Ce qu'il faut retenir</h2>
       <p class="fr-text--md etat-callout-text">
-        L'état de l'environnement est suivi à travers des indicateurs d'impact
-        regroupés par grands axes : atténuation et adaptation au changement climatique,
-        biodiversité, qualité de l'eau, pollution et économie circulaire.
+        L'amélioration de l'état de l'environnement constitue la finalité de stratégies environnementales. 
+        Ces dernières fixent ainsi des ambitions en la matière ("engagements"), listées ci-après avec, le cas échéant, 
+        un indicateur de mesure de l'atteinte de l'objectif. 
       </p>
     </div>
 
@@ -107,7 +107,10 @@
               </tr>
               <tr v-if="axe.indicators.length === 0">
                 <td class="td-engagement">{{ axe.engagement || '–' }}</td>
-                <td class="td-empty">Pas d'indicateur disponible</td>
+                <td class="td-empty">
+                  <span>Pas d'indicateur disponible</span>
+                  <span class="td-empty-message">L'indicateur n'est pas encore défini ou les données ne sont pas encore disponibles.</span>
+                </td>
                 <td class="td-valeurs"></td>
               </tr>
             </tbody>
@@ -206,7 +209,7 @@ export default {
           axeStructures.push({
             name: axeName,
             description: AXE_DESCRIPTIONS[axeName] || '',
-            indicatorCount: gristIds.length,
+            indicatorCount: 0, // Will be set after indicators are populated
             gristIds,
             indicators: [],
             // Engagement for axe (used when no indicators, e.g. Adaptation climat)
@@ -233,6 +236,14 @@ export default {
               .map(gid => indicatorMap[gid])
               .filter(Boolean)
               .map(ind => this.buildIndicatorRow(ind, engagementLongMap))
+            axe.indicatorCount = axe.indicators.length
+          }
+        }
+
+        // Set count for axes with no indicators (e.g. Adaptation climat)
+        for (const axe of axeStructures) {
+          if (axe.indicatorCount === undefined) {
+            axe.indicatorCount = 0
           }
         }
 
@@ -510,18 +521,18 @@ export default {
 }
 
 .col-engagement {
-  width: 30%;
-  min-width: 180px;
+  width: 45%;
+  min-width: 220px;
 }
 
 .col-indicateur {
-  width: 35%;
-  min-width: 180px;
+  width: 30%;
+  min-width: 140px;
 }
 
 .col-valeurs {
-  width: 35%;
-  min-width: 220px;
+  width: 25%;
+  min-width: 180px;
 }
 
 .etat-table td {
@@ -535,23 +546,33 @@ export default {
   color: #3a3a3a;
   font-weight: 500;
   font-size: 0.875rem;
+  line-height: 1.5;
 }
 
 .td-valeurs {
-  padding: 0.25rem 0 !important;
-  height: 140px;
+  padding: 0.75rem 0.5rem !important;
+  height: 160px;
   vertical-align: middle !important;
   overflow: visible;
 }
 
 .td-indicateur {
   color: #3a3a3a;
-  line-height: 1.4;
+  line-height: 1.5;
 }
 
 .td-empty {
   color: #929292;
   font-style: italic;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.td-empty-message {
+  font-style: normal;
+  font-size: 0.8125rem;
+  color: #666;
 }
 
 

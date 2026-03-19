@@ -140,7 +140,7 @@ export default {
       chantierSectors: [],
       expandedIndicateurs: false,
       expandedChantiers: false,
-      expandedSectorName: null,
+      expandedSectorName: null, // On synthèse/chantiers-sectoriels: start with all collapsed
       allSectorChantiers: {},
       navigationData: null,  // Store the full navigation structure
       isLoading: true,
@@ -434,6 +434,7 @@ export default {
       this.currentChantierId = null;
       this.currentAxe = null;
       this.currentSectorFilter = null;
+      this.expandedSectorName = null; // All sectors collapsed on synthèse
 
       const params = {
         view: 'chantiers-sectoriels',
@@ -873,6 +874,8 @@ a:hover:not([href]) {
   display: inline-block;
   width: 1rem;
   height: 1rem;
+  margin-left: auto;
+  flex-shrink: 0;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23161616' d='M12 15.586L6.707 10.293 8.121 8.879 12 12.757l3.879-3.878 1.414 1.414z'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: center;

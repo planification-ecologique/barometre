@@ -13,7 +13,7 @@
         <canvas :id="chartId"></canvas>
         
         <!-- Legend row -->
-        <div class="fr-mt-3v legend-row" :style="{'margin-left': isSmall ? '0px' : style}">
+        <div class="fr-mt-3v legend-row" :style="{'margin-left': effectiveIsSmall ? '0px' : style}">
           <div v-for="(item, index) in nameParse" :key="item" class="flex legend-item" @click="ChangeShowLine(index)">
             <span class="legende_dot" v-bind:style="{'background-color': colorParse[index], 'opacity': opacity[index]}"></span>
             <p class='fr-text--sm fr-text--bold fr-ml-1w fr-mb-0' :style="{'opacity': opacity[index]}">
@@ -34,7 +34,7 @@
           </div>
         </div>
         
-        <div v-if="date!==undefined" class="flex fr-mt-1w" :style="{'margin-left': isSmall ? '0px' : style}">
+        <div v-if="date!==undefined" class="flex fr-mt-1w" :style="{'margin-left': effectiveIsSmall ? '0px' : style}">
           <p class="fr-text--xs">Mise à jour : {{date}}</p>
         </div>
       </div>
@@ -76,7 +76,7 @@ export default {
       pointOpacityParse: [],
       colorPrecisionBar: '#161616',
       colorHover: [],
-      isSmall: false
+      viewportSmall: false
     }
   },
   props: {
@@ -143,11 +143,18 @@ export default {
       axisFontSize: {
         type: Number,
         default: 12
-      }
+      },
+    isSmall: {
+      type: Boolean,
+      default: false
+    }
   },
   computed: {
     style () {
       return this.legendLeftMargin + 'px'
+    },
+    effectiveIsSmall () {
+      return this.isSmall === true ? true : this.viewportSmall
     }
   },
   methods: {
@@ -484,6 +491,10 @@ export default {
                 display: true,
                 fontColor: '#161616',
                 fontSize: self.axisFontSize,
+                maxRotation: self.effectiveIsSmall ? 0 : 45,
+                minRotation: self.effectiveIsSmall ? 0 : 45,
+                autoSkip: true,
+                maxTicksLimit: self.effectiveIsSmall ? 10 : 20,
                 callback: function (value) {
                   if (self.formatdate) {
                     return value.toString().substring(5, 7) + '/' + value.toString().substring(0, 4)
@@ -739,13 +750,14 @@ export default {
   },
   mounted () {
     document.getElementById(this.widgetId).offsetWidth > 486 ? this.display = 'big' : this.display = 'small'
+    this.viewportSmall = document.documentElement.clientWidth < 767
     this.createChart()
     const element = document.documentElement // Reference à l'element <html> du DOM
     element.addEventListener('dsfr.theme', (e) => {
       this.changeColors(e.detail.theme)
     })
     addEventListener('resize', (event) => {
-      this.isSmall = document.documentElement.clientWidth < 767
+      this.viewportSmall = document.documentElement.clientWidth < 767
     })
   },
   beforeUpdate () {

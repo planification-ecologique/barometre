@@ -97,8 +97,8 @@
                   >
                     <a
                       class="chantier-link"
-                      :href="'#sector-' + slugify(sector.name)"
-                      @click.stop.prevent="goToChantier(sector.name, chantier)"
+                      :href="chantierHref(sector.name, chantier)"
+                      @click.stop="handleChantierClick($event, sector.name, chantier)"
                     >
                       {{ chantier.name }}
                     </a>
@@ -107,6 +107,7 @@
                         v-for="(eng, eIdx) in chantier.engagementBadges"
                         :key="eIdx"
                         class="engagement-badge"
+                        :title="eng"
                       >
                         {{ eng }}
                       </span>
@@ -147,13 +148,16 @@
                   <td class="td-chantier">
                     <a
                       class="chantier-link"
-                      :href="'#sector-' + slugify(sector.name)"
-                      @click.stop.prevent="goToChantier(sector.name, chantier)"
+                      :href="chantierHref(sector.name, chantier)"
+                      @click.stop="handleChantierClick($event, sector.name, chantier)"
                     >
                       {{ chantier.name }}
                     </a>
                   </td>
-                  <td class="td-indicateur td-empty" colspan="2">Pas d'indicateur disponible</td>
+                  <td class="td-indicateur td-empty" colspan="2">
+                    <span>Pas d'indicateur disponible</span>
+                    <span class="td-empty-message">L'indicateur n'est pas encore défini ou les données ne sont pas encore disponibles.</span>
+                  </td>
                 </tr>
               </template>
             </tbody>
@@ -388,6 +392,26 @@ export default {
     goAccueil() {
       this.$emit('navigate', { view: 'about', sector: 'Synthèse' })
     },
+    chantierHref(sectorName, chantier) {
+      const routeName = window.location.pathname.includes('/staging') ? 'staging-dashboard' : 'dashboard'
+      const route = this.$router.resolve({
+        name: routeName,
+        query: {
+          sector: 'Synthèse',
+          view: 'chantier',
+          chantier_id: chantier.id,
+          chantier_sector: sectorName
+        }
+      })
+      return route.href
+    },
+    handleChantierClick(event, sectorName, chantier) {
+      if (event.ctrlKey || event.metaKey || event.button === 1) {
+        return
+      }
+      event.preventDefault()
+      this.goToChantier(sectorName, chantier)
+    },
     goToChantier(sectorName, chantier) {
       // Navigate to chantier detail, staying under Synthèse sector
       // The real sector is passed as chantier_sector for display
@@ -477,12 +501,12 @@ export default {
   margin: 0;
 }
 
-/* Quick access links */
+/* Quick access links - label and buttons on 2 lines like EtatEnvironnement */
 .synthese-quick-access {
   display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 0.75rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
   padding: 0.5rem 0;
 }
 
@@ -649,19 +673,34 @@ export default {
 .chantier-engagements {
   display: flex;
   flex-wrap: wrap;
+  align-items: baseline;
   gap: 0.25rem;
   margin-top: 0.5rem;
 }
 
 .engagement-badge {
   display: inline-block;
+  max-width: 10em;
   background: #e3e3fd;
   color: #000091;
   font-size: 0.6875rem;
   font-weight: 500;
   padding: 0.2rem 0.625rem;
   border-radius: 999px;
-  line-height: 1.3;
+  line-height: 1.4;
+  vertical-align: baseline;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: background-color 0.15s, color 0.15s;
+}
+
+.engagement-badge:hover {
+  background: #000091;
+  color: #fff;
+  max-width: none;
+  overflow: visible;
+  text-overflow: clip;
 }
 
 .engagement-badge--more {
@@ -695,8 +734,8 @@ export default {
 }
 
 .td-valeurs {
-  padding: 0.25rem 0 !important;
-  height: 140px;
+  padding: 0.75rem 0.5rem !important;
+  height: 160px;
   vertical-align: middle !important;
   overflow: visible;
   text-align: center;
@@ -710,6 +749,15 @@ export default {
 .td-empty {
   color: #929292;
   font-style: italic;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.td-empty-message {
+  font-style: normal;
+  font-size: 0.8125rem;
+  color: #666;
 }
 
 
