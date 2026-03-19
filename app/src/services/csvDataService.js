@@ -765,6 +765,11 @@ export function transformCSVData(csvData, query) {
             return titleMatch || descMatch || tagMatch || subGroupMatch;
           });
         }
+      } else if (filter.field === 'has_regional_data' && filter.values && filter.values.includes(true)) {
+        groupedResults = groupedResults.filter(item => {
+          const ids = item.irpe_ids;
+          return Array.isArray(ids) && ids.length > 0 && ids.some(id => id && String(id).trim() !== '');
+        });
       }
     }
   }

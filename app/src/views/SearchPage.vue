@@ -26,8 +26,19 @@
           </section>
           <br/>
           <section>
-            <div>
+            <div class="search-filters">
               <Tags @tags-selected="updateTagSelection" :useStaging="useStaging"></Tags>
+              <button
+                type="button"
+                class="fr-tag regional-filter-btn"
+                :class="{ 'regional-filter-btn--active': filterRegionalOnly }"
+                :aria-pressed="filterRegionalOnly"
+                :title="filterRegionalOnly ? 'Afficher tous les indicateurs' : 'Filtrer les indicateurs avec données régionales'"
+                @click="toggleRegionalFilter"
+              >
+                <span class="ri-hexagon-line regional-filter-icon" aria-hidden="true"></span>
+                Données régionales
+              </button>
             </div>
           </section>
           <br/>
@@ -128,9 +139,15 @@ export default {
       nb_pages: 0,
       nb_graphs_pages: 6,
       appliedSearchQuery: '',
+      filterRegionalOnly: false,
     };
   },
   methods: {
+    toggleRegionalFilter() {
+      this.filterRegionalOnly = !this.filterRegionalOnly;
+      this.isapiloading = true;
+      this.fetchData(this.selectedTags);
+    },
     updateTagSelection(selectedTag) {
       this.isapiloading = true;
       this.selectedTags = selectedTag;
@@ -166,6 +183,10 @@ export default {
             values: [this.searchQuery.trim()],
           }
         ];
+
+      if (this.filterRegionalOnly) {
+        ls_filters.push({ field: "has_regional_data", values: [true] });
+      }
 
       if (theme_levier_filter.length > 0) {
         var filter_query = ls_filters.concat(theme_levier_filter);
@@ -231,7 +252,7 @@ export default {
       
       const sectorFilter = [{ field: 'sector', values: [this.selectedValue] }];
       this.fetchData(this.selectedTags, sectorFilter);
-    }
+    },
   },
   mounted() {
     const q = this.$route.query.q;
@@ -279,5 +300,27 @@ export default {
   strong {
     color: var(--text-action-high-blue-france);
   }
+}
+
+.search-filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.regional-filter-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+}
+
+.regional-filter-icon {
+  font-size: 1rem;
+}
+
+.regional-filter-btn--active {
+  background-color: #000091;
+  color: #fff;
 }
 </style>
