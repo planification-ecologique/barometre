@@ -229,6 +229,20 @@
             Source : {{ dataObj.label_sources }}
           </p>
         </div>
+        <div v-if="dataObj.label_sources_cible">
+          <p class="fr-text--xs fr-text-mention--grey textReference" v-if="dataObj.lien_cible">
+            Cible :
+            <a
+              :href="dataObj.lien_cible"
+              target="_blank"
+              rel="noopener external"
+              >{{ dataObj.label_sources_cible }}</a
+            >
+          </p>
+          <p v-else class="fr-text--xs fr-text-mention--grey textReference">
+            Cible : {{ dataObj.label_sources_cible }}
+          </p>
+        </div>
         <p v-if="dataObj.label_perimetre" class="fr-text--xs fr-text-mention--grey textReference">
           Périmètre : {{ dataObj.label_perimetre }}
         </p>
@@ -245,15 +259,12 @@
         </a>
       </div>
     </div>
-    <!-- Métadonnées (mise à jour, tags) -->
+    <!-- Métadonnées (mise à jour, tags secteur/axe) -->
     <div class="graph-box-metadata">
       <p class="fr-text--xs fr-text-mention--grey">
         Mise à jour : {{ formattedDateMaj }}
       </p>
-      <!-- TODO: Temporairement désactivé les tags -->
-      <!-- <div v-if="dataObj.label_tags" class="graph-box-tags">
-        <tags-card :tagsIndicateurs="dataObj.label_tags"></tags-card>
-      </div> -->
+      <TaxonomyTagsCard :dataObj="dataObj" :useStaging="isStaging" />
     </div>
 
   </div>
@@ -264,7 +275,7 @@ import BarChart from "./components_dsfr/BarChart.vue";
 import MultiLineChart from "./components_dsfr/MultiLineChart.vue";
 import LineChart from "./components_dsfr/LineChart.vue";
 import SegmentedControls from "./SegmentedControls.vue";
-import tagsCard from "./TagsCard.vue";
+import TaxonomyTagsCard from "./TaxonomyTagsCard.vue";
 import TableComponent from "./TableComponent.vue";
 import TableComponentVariant from "./TableComponentVariant.vue";
 import { loadAllRegionsDataForIndicator } from "@/services/ecolabApiService.js";
@@ -279,7 +290,7 @@ export default {
   components: {
     BarChart,
     SegmentedControls,
-    tagsCard,
+    TaxonomyTagsCard,
     TableComponent,
     TableComponentVariant,
     MultiLineChart,
@@ -343,6 +354,9 @@ export default {
     },
   },
   computed: {
+    isStaging() {
+      return this.$route?.path?.includes('/staging') ?? false;
+    },
     hasRegionalData() {
       const ids = this.dataObj?.irpe_ids;
       return Array.isArray(ids) && ids.length > 0 && ids.some(id => id && String(id).trim() !== '');

@@ -40,6 +40,16 @@ export default {
     useStaging: {
       type: Boolean,
       default: false
+    },
+    /** Initial sectors to pre-select (e.g. from URL ?sector=X) */
+    initialSectors: {
+      type: Array,
+      default: () => []
+    },
+    /** Initial axes to pre-select (e.g. from URL ?axe=X) */
+    initialAxes: {
+      type: Array,
+      default: () => []
     }
   },
   data() {
@@ -73,11 +83,12 @@ export default {
           throw new Error('Erreur lors de la récupération de la taxonomie');
         }
 
-        const sectorNames = response.data.sectorNames || [];
+        const sectorNames = (response.data.sectorNames || []).filter(s => s !== 'Synthèse');
+        const initSectors = new Set(this.initialSectors || []);
         this.sectors = sectorNames.map(name => ({
           value: name,
           label: name,
-          selected: false
+          selected: initSectors.has(name)
         }));
 
         const syntheseSector = response.data.sectors?.find(s => s.name === 'Synthèse');
@@ -85,15 +96,19 @@ export default {
           ? Object.keys(syntheseSector.indicateursImpact).filter(axe => axe && axe !== 'Autre')
           : [];
         const axesSet = new Set(axeKeys);
+        const initAxes = new Set((this.initialAxes || []).map(a => String(a).trim()));
         this.axes = IMPACT_AXE_DISPLAY_ORDER.filter(axe =>
           axesSet.has(axe) ||
           (axe === 'Économie circulaire' && axesSet.has('Economie circulaire')) ||
           axe === 'Adaptation climat'
-        ).map(axe => ({
-          value: axesSet.has(axe) ? axe : (axe === 'Économie circulaire' ? 'Economie circulaire' : axe),
-          label: axe,
-          selected: false
-        }));
+        ).map(axe => {
+          const value = axesSet.has(axe) ? axe : (axe === 'Économie circulaire' ? 'Economie circulaire' : axe);
+          const selected = initAxes.has(axe) || initAxes.has(value);
+          return { value, label: axe, selected };
+        });
+        if (initSectors.size > 0 || initAxes.size > 0) {
+          this.$nextTick(() => this.emitSelection());
+        }
       } catch (error) {
         console.error('Erreur chargement taxonomie recherche:', error);
       }

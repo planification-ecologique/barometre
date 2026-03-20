@@ -27,7 +27,12 @@
           <br/>
           <section>
             <div class="search-filters">
-              <SearchTaxonomyFilters @taxonomy-selected="updateTaxonomySelection" :useStaging="useStaging" />
+              <SearchTaxonomyFilters
+                @taxonomy-selected="updateTaxonomySelection"
+                :useStaging="useStaging"
+                :initialSectors="initialSectorsFromQuery"
+                :initialAxes="initialAxesFromQuery"
+              />
               <button
                 type="button"
                 class="fr-tag regional-filter-btn"
@@ -117,6 +122,18 @@ export default {
       filterRegionalOnly: false,
     };
   },
+  computed: {
+    initialSectorsFromQuery() {
+      const q = this.$route?.query?.sector;
+      if (!q) return [];
+      return Array.isArray(q) ? q : [q];
+    },
+    initialAxesFromQuery() {
+      const q = this.$route?.query?.axe;
+      if (!q) return [];
+      return Array.isArray(q) ? q : [q];
+    },
+  },
   methods: {
     toggleRegionalFilter() {
       this.filterRegionalOnly = !this.filterRegionalOnly;
@@ -203,6 +220,12 @@ export default {
     const q = this.$route.query.q;
     if (q) {
       this.searchQuery = q;
+    }
+    const sectors = this.initialSectorsFromQuery;
+    const axes = this.initialAxesFromQuery;
+    if (sectors.length > 0 || axes.length > 0) {
+      this.selectedSectors = sectors;
+      this.selectedAxes = axes;
     }
     this.fetchData();
     this.$nextTick(() => {

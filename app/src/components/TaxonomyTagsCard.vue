@@ -1,0 +1,128 @@
+<template>
+  <div v-if="tags.length > 0" class="taxonomy-tags-card">
+    <ul class="fr-tags-group taxonomy-tags-list">
+      <li v-for="tag in tags" :key="tag.type + '-' + tag.value">
+        <router-link
+          :to="tag.href"
+          class="fr-tag taxonomy-tag"
+          :class="'taxonomy-tag--' + tag.type"
+        >
+          {{ tag.label }}
+        </router-link>
+      </li>
+    </ul>
+  </div>
+</template>
+
+<script>
+import { isImpactAxe, normalizeImpactAxeName } from '@/services/csvDataService.js';
+
+export default {
+  name: 'TaxonomyTagsCard',
+  props: {
+    /** Indicator data object with sector_list and chantier_ou_impact_list */
+    dataObj: {
+      type: Object,
+      default: null
+    },
+    useStaging: {
+      type: Boolean,
+      default: false
+    }
+  },
+  computed: {
+    routeName() {
+      return this.useStaging ? 'staging-dashboard' : 'dashboard';
+    },
+    tags() {
+      if (!this.dataObj) return [];
+      const result = [];
+
+      const sectors = (this.dataObj.sector_list || []).filter(s => s !== 'Synthèse');
+      const uniqueSectors = [...new Set(sectors)].filter(Boolean);
+      uniqueSectors.forEach(sector => {
+        result.push({
+          type: 'sector',
+          value: sector,
+          label: sector,
+          href: {
+            name: this.routeName,
+            query: { sector: 'Synthèse', view: 'chantiers-sectoriels' },
+            hash: '#sector-' + this.slugify(sector)
+          }
+        });
+      });
+
+      const chantierOuImpact = this.dataObj.chantier_ou_impact_list || [];
+      const impactAxes = chantierOuImpact
+        .filter(Boolean)
+        .filter(name => isImpactAxe(name));
+      const uniqueAxes = [...new Set(impactAxes.map(normalizeImpactAxeName))];
+      uniqueAxes.forEach(axe => {
+        result.push({
+          type: 'axe',
+          value: axe,
+          label: axe,
+          href: {
+            name: this.routeName,
+            query: { sector: 'Synthèse', view: 'general-engagements', axe }
+          }
+        });
+      });
+
+      return result;
+    }
+  },
+  methods: {
+    slugify(str) {
+      return String(str || '').toLowerCase()
+        .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/^-+|-+$/g, '');
+    }
+  }
+};
+</script>
+
+<style scoped lang="scss">
+.taxonomy-tags-card {
+  margin-top: 0.5rem;
+}
+
+.taxonomy-tags-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.taxonomy-tag {
+  text-decoration: none;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  transition: background-color 0.15s, color 0.15s;
+
+  &--sector {
+    background-color: #e3e3fd;
+    color: #161616;
+
+    &:hover {
+      background-color: #000091;
+      color: #fff;
+    }
+  }
+
+  &--axe {
+    background-color: #e8f5e9;
+    color: #161616;
+
+    &:hover {
+      background-color: #18753c;
+      color: #fff;
+    }
+  }
+}
+</style>

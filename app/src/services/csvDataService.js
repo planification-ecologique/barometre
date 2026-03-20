@@ -696,6 +696,8 @@ export function transformCSVData(csvData, query) {
       label_unit_short: formattedUnitShort,
       label_tags: item['Tags objectifs environnementaux'],
       label_sources: item.Sources,
+      label_sources_cible: item['Source de la cible'] || '',
+      lien_cible: item['Lien cible 2030'] || '',
       lien_donnees_source: item['Lien données source'],
       lien_site_source: item['Lien site source'],
       label_perimetre: item.Périmètre,
@@ -998,6 +1000,13 @@ function groupByIndicator(results) {
       if ((!groupedItem.label_sources || groupedItem.label_sources.trim() === '') && 
           item.label_sources && item.label_sources.trim() !== '') {
         groupedItem.label_sources = item.label_sources;
+      }
+      
+      // Preserve target source information if empty
+      if ((!groupedItem.label_sources_cible || groupedItem.label_sources_cible.trim() === '') && 
+          item.label_sources_cible && item.label_sources_cible.trim() !== '') {
+        groupedItem.label_sources_cible = item.label_sources_cible;
+        groupedItem.lien_cible = item.lien_cible || groupedItem.lien_cible;
       }
       
       // Preserve perimetre information if empty
