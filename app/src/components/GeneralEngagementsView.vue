@@ -55,7 +55,7 @@
         :id="getSectorSectionId(sectorEntry.sector)"
         class="axe-section axe-section--highlighted"
       >
-        <h2 class="fr-h3 axe-section-title section-title-with-chip">
+        <h2 class="fr-h3 axe-section-title">
           <span class="section-chip section-chip--indicateur section-chip--in-title">Indicateur</span>
           {{ sectorEntry.sector }}
         </h2>
@@ -69,7 +69,7 @@
       </section>
 
       <section v-if="currentAxeEntry && currentAxeEntry.autresIndicators && currentAxeEntry.autresIndicators.length > 0" :id="sectionAutresIndicateursId" class="axe-section">
-        <h2 class="fr-h3 axe-section-title levier-title section-title-with-chip">
+        <h2 class="fr-h3 axe-section-title levier-title">
           <span class="section-chip section-chip--indicateur section-chip--in-title">Indicateur</span>
           Autres indicateurs
         </h2>

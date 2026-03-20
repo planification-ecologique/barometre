@@ -26,11 +26,6 @@
   margin-bottom: 0.75rem;
 }
 
-.section-title-with-chip {
-  display: flex;
-  align-items: center;
-}
-
 .custom-footer-body {
     flex-wrap: nowrap !important;
     align-items: flex-start !important;

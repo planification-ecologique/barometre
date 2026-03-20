@@ -24,7 +24,7 @@
 
       <section class="chantier-hero">
         <h1 class="fr-title chantier-title" :aria-label="chantierTitle">
-          {{ chantierTitle }}
+          {{ chantierDisplayName }}
         </h1>
 
         <nav
@@ -125,7 +125,7 @@
           :id="getSectionId(levierGroup.name)"
           class="chantier-section"
         >
-          <h2 class="fr-h3 chantier-section-title levier-title section-title-with-chip">
+          <h2 class="fr-h3 chantier-section-title levier-title">
             <span class="section-chip section-chip--levier section-chip--in-title">Levier</span>
             {{ levierGroup.name }}
           </h2>
@@ -262,11 +262,14 @@ export default {
       // Use chantier_sector (real sector) if available, otherwise fall back to sector
       return this.params.chantier_sector || this.params.sector || 'Secteur';
     },
-    chantierTitle() {
+    chantierDisplayName() {
       const raw = this.params.chantier_name || '';
       const withoutPrefix = raw.startsWith('Chantier : ') ? raw.slice(11).trim() : raw;
-      const rest = withoutPrefix ? withoutPrefix.toLowerCase() : '';
-      return rest ? `Chantier : ${rest}` : raw || 'Chantier';
+      const name = withoutPrefix || raw || 'Chantier';
+      return name.charAt(0).toUpperCase() + name.slice(1);
+    },
+    chantierTitle() {
+      return this.chantierDisplayName;
     },
     indicateurTags() {
       const tags = [];
