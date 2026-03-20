@@ -1,3 +1,36 @@
+/* Reusable section chip (Indicateur / Levier badges) */
+.section-chip {
+  display: inline-block;
+  color: #000091;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  line-height: 1.25;
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+  vertical-align: middle;
+}
+
+.section-chip--indicateur {
+  background: #c7f6fc;
+}
+
+.section-chip--levier {
+  background: #e3e3fd;
+}
+
+.section-chip--in-title {
+  margin-right: 0.5rem;
+}
+
+.section-chip--standalone {
+  margin-bottom: 0.75rem;
+}
+
+.section-title-with-chip {
+  display: flex;
+  align-items: center;
+}
+
 .custom-footer-body {
     flex-wrap: nowrap !important;
     align-items: flex-start !important;

@@ -93,7 +93,7 @@
               v-if="hasChantierIndicators"
               class="chantier-summary-charts"
             >
-              <span class="chantier-summary-charts__badge">Indicateur</span>
+              <span class="section-chip section-chip--indicateur section-chip--standalone">Indicateur</span>
               <div class="chantier-summary-charts__grid fr-grid-row fr-grid-row--gutters">
                 <div
                   v-for="(item, itemIndex) in primaryIndicatorGroup.chartData"
@@ -125,8 +125,8 @@
           :id="getSectionId(levierGroup.name)"
           class="chantier-section"
         >
-          <h2 class="fr-h3 chantier-section-title levier-title">
-            <span class="section-kicker-badge section-kicker-badge--levier">Levier</span>
+          <h2 class="fr-h3 chantier-section-title levier-title section-title-with-chip">
+            <span class="section-chip section-chip--levier section-chip--in-title">Levier</span>
             {{ levierGroup.name }}
           </h2>
 
@@ -629,17 +629,6 @@ export default {
   margin-top: 1.25rem;
 }
 
-.chantier-summary-charts__badge {
-  display: inline-block;
-  background: #c7f6fc;
-  color: #000091;
-  font-size: 0.6875rem;
-  font-weight: 600;
-  padding: 0.2rem 0.75rem;
-  border-radius: 999px;
-  margin-bottom: 0.75rem;
-}
-
 .chantier-summary-charts__grid {
   margin-top: 0;
 }
@@ -651,25 +640,6 @@ export default {
 
 .chantier-section--highlighted {
   border-top: none;
-}
-
-.section-kicker-badge {
-  display: inline-block;
-  background: #e3e3fd;
-  color: #000091;
-  font-size: 0.6875rem;
-  font-weight: 600;
-  padding: 0.2rem 0.75rem;
-  border-radius: 999px;
-  margin-right: 0.5rem;
-  vertical-align: middle;
-  position: relative;
-  top: -2px;
-}
-
-.section-kicker-badge--levier {
-  background: #e3e3fd;
-  color: #000091;
 }
 
 .chantier-section-title {
