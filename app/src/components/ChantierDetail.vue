@@ -129,12 +129,6 @@
             <span class="section-kicker-badge section-kicker-badge--levier">Levier</span>
             {{ levierGroup.name }}
           </h2>
-          <p
-            v-if="getLevierIntro(levierGroup)"
-            class="fr-text--md chantier-levier-intro"
-          >
-            {{ getLevierIntro(levierGroup) }}
-          </p>
 
           <div
             v-if="levierGroup.chartData && levierGroup.chartData.length > 0"
@@ -435,15 +429,6 @@ export default {
       );
 
       return itemWithDescription ? itemWithDescription.label_description : "";
-    },
-    getLevierIntro(levierGroup) {
-      const descriptionHtml = this.getDescriptionHtml(levierGroup.chartData);
-
-      if (!descriptionHtml) {
-        return "";
-      }
-
-      return descriptionHtml.replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim();
     },
     goAccueil() {
       const routeName = window.location.pathname.includes('/staging') ? 'staging-dashboard' : 'dashboard';
