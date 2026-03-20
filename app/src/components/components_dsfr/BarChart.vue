@@ -11,35 +11,96 @@
             </div>
           </div>
           <canvas :id="chartId"></canvas>
-          <div v-for="(item, index) in nameParse" :key="item" class="flex fr-mt-3v fr-mb-1v" :style="{'margin-left': effectiveIsSmall ? '0px' : style}">
-         <div class="flex-container">
-    <span class="legende_dot" v-bind:style="{'background-color': colorParse[index]}"></span>
-    <p class='fr-text--sm fr-text--bold fr-ml-1w fr-mb-0'>
-        {{capitalize(nameParse[index])}}
-    </p>
-</div>
-          </div>
-          <div v-for="(item2, index2) in hlineNameParse" :key="item2" class="flex fr-mt-3v" :style="{'margin-left': effectiveIsSmall ? '0px' : style}">
-            <span class="legende_dash_line1" v-bind:style="{'background-color': hlineColorParse[index2]}"></span>
-            <span class="legende_dash_line2" v-bind:style="{'background-color': hlineColorParse[index2]}"></span>
-            <p class="fr-text--sm fr-text--bold fr-ml-1w fr-mb-0">{{ capitalize(hlineNameParse[index2]) }}</p>
-          </div>
-          <div v-for="(item3, index3) in vlineNameParse" :key="item3" class="flex fr-mt-3v fr-mb-1v" :style="{'margin-left': effectiveIsSmall ? '0px' : style}">
-            <span class="legende_dash_line1" v-bind:style="{'background-color': vlineColorParse[index3]}"></span>
-            <span class="legende_dash_line2" v-bind:style="{'background-color': vlineColorParse[index3]}"></span>
-            <p class="fr-text--sm fr-text--bold fr-ml-1w fr-mb-0">{{ capitalize(vlineNameParse[index3]) }}</p>
-          </div>
-          <div v-if="trendLineParse.length > 0" class="flex fr-mt-3v fr-mb-1v" :style="{'margin-left': effectiveIsSmall ? '0px' : style}">
-            <span class="legende_dash_line1" v-bind:style="{'background-color': trendLineColor}"></span>
-            <span class="legende_dash_line2" v-bind:style="{'background-color': trendLineColor}"></span>
-            <p class="fr-text--sm fr-text--bold fr-ml-1w fr-mb-0">Tendance (3 ans)</p>
-          </div>
-          <div v-if="targetTrajectoryParse || targetSegmentParse" class="flex fr-mt-3v fr-mb-1v" :style="{'margin-left': effectiveIsSmall ? '0px' : style}">
-            <span class="legende_dot_circle" v-bind:style="{'background-color': targetSegmentColor}"></span>
-            <p class="fr-text--sm fr-text--bold fr-ml-1w fr-mb-0">Cible(s) initiale(s)</p>
-          </div>
-          <div v-if="date!==undefined" class="flex fr-mt-1w" :style="{'margin-left': effectiveIsSmall ? '0px' : style}">
-            <p class="fr-text--xs">Mise à jour : {{date}}</p>
+          <div class="bar-chart-legend" :style="legendMarginStyle">
+            <div class="bar-chart-legend-row">
+              <div
+                v-for="(item, index) in nameParse"
+                :key="'legend-name-' + index"
+                class="bar-chart-legend-item"
+              >
+                <span class="legende_dot" :style="{ 'background-color': colorParse[index] }"></span>
+                <span class="bar-chart-legend-label">{{ capitalize(item) }}</span>
+              </div>
+              <template v-if="nameParse.length <= 1">
+                <div
+                  v-for="(item2, index2) in hlineNameParse"
+                  :key="'legend-hline-' + index2"
+                  class="bar-chart-legend-item"
+                >
+                  <div class="bar-chart-legend-dash" aria-hidden="true">
+                    <span class="legende_dash_line1" :style="{ 'background-color': hlineColorParse[index2] }"></span>
+                    <span class="legende_dash_line2" :style="{ 'background-color': hlineColorParse[index2] }"></span>
+                  </div>
+                  <span class="bar-chart-legend-label">{{ capitalize(item2) }}</span>
+                </div>
+                <div
+                  v-for="(item3, index3) in vlineNameParse"
+                  :key="'legend-vline-' + index3"
+                  class="bar-chart-legend-item"
+                >
+                  <div class="bar-chart-legend-dash" aria-hidden="true">
+                    <span class="legende_dash_line1" :style="{ 'background-color': vlineColorParse[index3] }"></span>
+                    <span class="legende_dash_line2" :style="{ 'background-color': vlineColorParse[index3] }"></span>
+                  </div>
+                  <span class="bar-chart-legend-label">{{ capitalize(item3) }}</span>
+                </div>
+                <div v-if="trendLineParse.length > 0" class="bar-chart-legend-item">
+                  <div class="bar-chart-legend-dash" aria-hidden="true">
+                    <span class="legende_dash_line1" :style="{ 'background-color': trendLineColor }"></span>
+                    <span class="legende_dash_line2" :style="{ 'background-color': trendLineColor }"></span>
+                  </div>
+                  <span class="bar-chart-legend-label">Tendance (3 ans)</span>
+                </div>
+                <div
+                  v-if="targetTrajectoryParse || targetSegmentParse"
+                  class="bar-chart-legend-item"
+                >
+                  <span class="legende_dot_circle" :style="{ 'background-color': targetSegmentColor }"></span>
+                  <span class="bar-chart-legend-label">Cible(s) initiale(s)</span>
+                </div>
+              </template>
+            </div>
+            <div
+              v-if="nameParse.length > 1 && hasAuxiliaryLegend"
+              class="bar-chart-legend-row bar-chart-legend-row--secondary"
+            >
+              <div
+                v-for="(item2, index2) in hlineNameParse"
+                :key="'legend-hline-2-' + index2"
+                class="bar-chart-legend-item"
+              >
+                <div class="bar-chart-legend-dash" aria-hidden="true">
+                  <span class="legende_dash_line1" :style="{ 'background-color': hlineColorParse[index2] }"></span>
+                  <span class="legende_dash_line2" :style="{ 'background-color': hlineColorParse[index2] }"></span>
+                </div>
+                <span class="bar-chart-legend-label">{{ capitalize(item2) }}</span>
+              </div>
+              <div
+                v-for="(item3, index3) in vlineNameParse"
+                :key="'legend-vline-2-' + index3"
+                class="bar-chart-legend-item"
+              >
+                <div class="bar-chart-legend-dash" aria-hidden="true">
+                  <span class="legende_dash_line1" :style="{ 'background-color': vlineColorParse[index3] }"></span>
+                  <span class="legende_dash_line2" :style="{ 'background-color': vlineColorParse[index3] }"></span>
+                </div>
+                <span class="bar-chart-legend-label">{{ capitalize(item3) }}</span>
+              </div>
+              <div v-if="trendLineParse.length > 0" class="bar-chart-legend-item">
+                <div class="bar-chart-legend-dash" aria-hidden="true">
+                  <span class="legende_dash_line1" :style="{ 'background-color': trendLineColor }"></span>
+                  <span class="legende_dash_line2" :style="{ 'background-color': trendLineColor }"></span>
+                </div>
+                <span class="bar-chart-legend-label">Tendance (3 ans)</span>
+              </div>
+              <div
+                v-if="targetTrajectoryParse || targetSegmentParse"
+                class="bar-chart-legend-item"
+              >
+                <span class="legende_dot_circle" :style="{ 'background-color': targetSegmentColor }"></span>
+                <span class="bar-chart-legend-label">Cible(s) initiale(s)</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -228,11 +289,21 @@
       }
     },
     computed: {
-      style () {
-        return this.legendLeftMargin + 'px'
-      },
       effectiveIsSmall () {
         return this.isSmall === true ? true : this.viewportSmall
+      },
+      legendMarginStyle () {
+        const px = Math.max(0, Number(this.legendLeftMargin) || 0)
+        return { marginLeft: px + 'px' }
+      },
+      hasAuxiliaryLegend () {
+        return (
+          (this.hlineNameParse && this.hlineNameParse.length > 0) ||
+          (this.vlineNameParse && this.vlineNameParse.length > 0) ||
+          (this.trendLineParse && this.trendLineParse.length > 0) ||
+          !!this.targetTrajectoryParse ||
+          !!this.targetSegmentParse
+        )
       }
     },
     methods: {
@@ -540,6 +611,13 @@
           },
           
           plugins: [{
+            afterLayout: function (chart) {
+              const ca = chart.chartArea
+              if (ca && typeof ca.left === 'number' && !isNaN(ca.left)) {
+                self.legendLeftMargin = Math.max(0, Math.round(ca.left))
+              }
+            }
+          }, {
             afterDatasetDraw: function (chart, args, options) {
               if (self.vlineParse !== undefined) {
                 self.vlineParse.forEach(function (line, j) {
@@ -722,9 +800,6 @@
                     }
                     return value === 0 ? 0 : parseFloat(Number(value).toPrecision(2))
                   }
-                },
-                afterFit: function (axis) {
-                  self.legendLeftMargin = axis.width
                 }
               }]
             },
@@ -969,10 +1044,6 @@
   }
   </script>
   <style scoped lang="scss">
-    .flex-container {
-    display: flex;
-    align-items: center;
-}
   .widget_container {
     .ml-lg {
       margin-left: 0;
@@ -984,50 +1055,70 @@
     }
     .r_col {
       align-self: center;
-      .flex {
-        display: inline-flex;
-        flex-direction: row;
-        align-items: center;
-        flex-wrap: nowrap;
-        .legende_dot {
-          min-width: 0.8rem;
-          width: 0.8rem;
-          height: 0.8rem;
-          min-width: 0.8rem;
-          background-color: #000091;
-          display: inline-block;
-          margin-left: 0;
-          flex-shrink: 0;
-        }
-        .legende_dot_circle {
-          min-width: 0.8rem;
-          width: 0.8rem;
-          height: 0.8rem;
-          border-radius: 50%;
-          background-color: #000091;
-          display: inline-block;
-          margin-left: 0;
-          flex-shrink: 0;
-        }
-        .legende_dash_line1{
-          min-width: 0.35rem;
-          width: 0.35rem;
-          height: 0.2rem;
-          border-radius: 0%;
-          display: inline-block;
-          margin-left: 0;
-          flex-shrink: 0;
-        }
-        .legende_dash_line2{
-          min-width: 0.35rem;
-          width: 0.35rem;
-          height: 0.2rem;
-          border-radius: 0%;
-          display: inline-block;
-          margin-left: 0.1rem;
-          flex-shrink: 0;
-        }
-      }
+    }
+    .bar-chart-legend {
+      margin-top: 0.25rem;
+    }
+    .bar-chart-legend-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.5rem 1.25rem;
+    }
+    .bar-chart-legend-row--secondary {
+      margin-top: 0.35rem;
+    }
+    .bar-chart-legend-item {
+      display: inline-flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 0.35rem;
+      flex-shrink: 0;
+    }
+    .bar-chart-legend-dash {
+      display: inline-flex;
+      flex-direction: row;
+      align-items: center;
+      flex-shrink: 0;
+    }
+    .bar-chart-legend-label {
+      font-size: 0.875rem;
+      font-weight: 700;
+      line-height: 1.25rem;
+    }
+    .legende_dot {
+      min-width: 0.8rem;
+      width: 0.8rem;
+      height: 0.8rem;
+      background-color: #000091;
+      display: inline-block;
+      flex-shrink: 0;
+    }
+    .legende_dot_circle {
+      min-width: 0.8rem;
+      width: 0.8rem;
+      height: 0.8rem;
+      border-radius: 50%;
+      background-color: #000091;
+      display: inline-block;
+      flex-shrink: 0;
+    }
+    .legende_dash_line1 {
+      min-width: 0.35rem;
+      width: 0.35rem;
+      height: 0.2rem;
+      border-radius: 0;
+      display: inline-block;
+      flex-shrink: 0;
+    }
+    .legende_dash_line2 {
+      min-width: 0.35rem;
+      width: 0.35rem;
+      height: 0.2rem;
+      border-radius: 0;
+      display: inline-block;
+      margin-left: 0.1rem;
+      flex-shrink: 0;
     }
     .chart canvas {
       max-width: 100%;

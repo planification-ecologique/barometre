@@ -13,7 +13,7 @@
         <canvas :id="chartId"></canvas>
         
         <!-- Legend row -->
-        <div class="fr-mt-3v legend-row" :style="{'margin-left': effectiveIsSmall ? '0px' : style}">
+        <div class="fr-mt-3v legend-row" :style="legendMarginStyle">
           <div v-for="(item, index) in nameParse" :key="item" class="flex legend-item" @click="ChangeShowLine(index)">
             <span class="legende_dot" v-bind:style="{'background-color': colorParse[index], 'opacity': opacity[index]}"></span>
             <p class='fr-text--sm fr-text--bold fr-ml-1w fr-mb-0' :style="{'opacity': opacity[index]}">
@@ -34,7 +34,7 @@
           </div>
         </div>
         
-        <div v-if="date!==undefined" class="flex fr-mt-1w" :style="{'margin-left': effectiveIsSmall ? '0px' : style}">
+        <div v-if="date!==undefined" class="flex fr-mt-1w" :style="legendMarginStyle">
           <p class="fr-text--xs">Mise à jour : {{date}}</p>
         </div>
       </div>
@@ -150,11 +150,12 @@ export default {
     }
   },
   computed: {
-    style () {
-      return this.legendLeftMargin + 'px'
-    },
     effectiveIsSmall () {
       return this.isSmall === true ? true : this.viewportSmall
+    },
+    legendMarginStyle () {
+      const px = Math.max(0, Number(this.legendLeftMargin) || 0)
+      return { marginLeft: px + 'px' }
     }
   },
   methods: {
@@ -335,6 +336,13 @@ export default {
           datasets: self.datasets
         },
         plugins: [{
+          afterLayout: function (chart) {
+            const ca = chart.chartArea
+            if (ca && typeof ca.left === 'number' && !isNaN(ca.left)) {
+              self.legendLeftMargin = Math.max(0, Math.round(ca.left))
+            }
+          }
+        }, {
           afterDatasetDraw: function (chart, args, options) {
             if (self.vlineParse !== undefined) {
               self.vlineParse.forEach(function (line, j) {
@@ -531,9 +539,6 @@ export default {
                   }
                   return value === 0 ? 0 : parseFloat(Number(value).toPrecision(2))
                 }
-              },
-              afterFit: function (axis) {
-                self.legendLeftMargin = axis.width
               }
             }]
           },

@@ -65,31 +65,17 @@
           </option>
         </select>
       </div>
-      <!-- <TableComponent :captionTitle="dataObj.label_indic" /> -->
-      <div class="fr-text--xs fr-text--bold cardObjectif" v-if="cible && !selectedRegionCode">
-        <p class="fr-text--xs fr-text--regular fr-unit">Cible :</p>
-        <p
-          class="fr-badge fr-badge-sm fr-badge--green-emeraude fr-badge--no-icon fr-pr-1w"
-        >
-          {{ cible }}
-        </p>
-        <p class="fr-text--xs fr-text--regular fr-unit">
-          {{ displayData.label_unit }}
-        </p>
-      </div>
-      <div v-else>
-        <p class="fr-text--xs fr-text--regular fr-unit">
-          Unité : {{ displayData.label_unit }}
-        </p>
-      </div>
     </div>
 
-    <div class="cardReference graph-box-controls">
-      <!-- Sélection du type de graphique (Graphique ou Tableau) -->
+    <div class="graph-box-toolbar">
       <segmented-controls
+        class="graph-box-toolbar__segmented"
         @chart-selected="handleChartSelected"
         :idcontrol="idAccordion + '1'"
-      ></segmented-controls>
+      />
+      <p class="graph-box-toolbar-unit fr-text--xs fr-text-mention--grey fr-mb-0">
+        Unité : {{ displayData.label_unit }}
+      </p>
     </div>
     <div v-if="displayData && (displayData.values || displayData.date)">
       <div class="cardData graph-box-data" v-if="this.displayChart">
@@ -198,69 +184,65 @@
         Voir moins
       </button>
     </div>
-    <!-- Affichage des informations complémentaires sous le graphique -->
-    <div class="beneathGraph graph-box-resources fr-grid-row">
-      <!-- Split la carte en deux colonnes"> -->
-      <div class="fr-col-md-6 fr-col-lg-6 fr-col-xl-6 fr-col-12">
-        <div v-if="dataObj.lien_donnees_source">
-          <p class="fr-text--xs fr-text-mention--grey textReference">
-            Source :
-            <a
-              :href="dataObj.lien_donnees_source"
-              target="_blank"
-              rel="noopener external"
-              >{{ dataObj.label_sources }}</a
-            >
-          </p>
-        </div>
-        <div v-else-if="dataObj.lien_site_source">
-          <p class="fr-text--xs fr-text-mention--grey textReference">
-            Source :
-            <a
-              :href="dataObj.lien_site_source"
-              target="_blank"
-              rel="noopener external"
-              >{{ dataObj.label_sources }}</a
-            >
-          </p>
-        </div>
-        <div v-else>
-          <p class="fr-text--xs fr-text-mention--grey textReference">
-            Source : {{ dataObj.label_sources }}
-          </p>
-        </div>
-        <div v-if="dataObj.label_sources_cible">
-          <p class="fr-text--xs fr-text-mention--grey textReference" v-if="dataObj.lien_cible">
-            Cible :
-            <a
-              :href="dataObj.lien_cible"
-              target="_blank"
-              rel="noopener external"
-              >{{ dataObj.label_sources_cible }}</a
-            >
-          </p>
-          <p v-else class="fr-text--xs fr-text-mention--grey textReference">
-            Cible : {{ dataObj.label_sources_cible }}
-          </p>
-        </div>
-        <p v-if="dataObj.label_perimetre" class="fr-text--xs fr-text-mention--grey textReference">
-          Périmètre : {{ dataObj.label_perimetre }}
+    <div class="graph-box-download-row">
+      <button
+        type="button"
+        class="graph-box-download-btn"
+        :id="downloadLinkId"
+        @click="triggerDownload"
+      >
+        Télécharger les données
+        <span class="fr-icon-download-line" aria-hidden="true"></span>
+      </button>
+    </div>
+    <div class="graph-box-footer graph-box-resources">
+      <div v-if="dataObj.lien_donnees_source">
+        <p class="fr-text--xs fr-text-mention--grey textReference">
+          Source :
+          <a
+            :href="dataObj.lien_donnees_source"
+            target="_blank"
+            rel="noopener external"
+            >{{ dataObj.label_sources }}</a
+          >
         </p>
       </div>
-      <div class="fr-col-md-6 fr-col-lg-6 fr-col-xl-6 fr-col-12 graph-box-download-col">
-        <p class="fr-text--xs fr-text-mention--grey graph-box-maj">
-          Mise à jour : {{ formattedDateMaj }}
+      <div v-else-if="dataObj.lien_site_source">
+        <p class="fr-text--xs fr-text-mention--grey textReference">
+          Source :
+          <a
+            :href="dataObj.lien_site_source"
+            target="_blank"
+            rel="noopener external"
+            >{{ dataObj.label_sources }}</a
+          >
         </p>
-        <button
-          type="button"
-          class="graph-box-download-btn"
-          :id="downloadLinkId"
-          @click="triggerDownload"
-        >
-          Télécharger les données
-          <span class="fr-icon-download-line" aria-hidden="true"></span>
-        </button>
       </div>
+      <div v-else>
+        <p class="fr-text--xs fr-text-mention--grey textReference">
+          Source : {{ dataObj.label_sources }}
+        </p>
+      </div>
+      <div v-if="dataObj.label_sources_cible">
+        <p class="fr-text--xs fr-text-mention--grey textReference" v-if="dataObj.lien_cible">
+          Cible :
+          <a
+            :href="dataObj.lien_cible"
+            target="_blank"
+            rel="noopener external"
+            >{{ dataObj.label_sources_cible }}</a
+          >
+        </p>
+        <p v-else class="fr-text--xs fr-text-mention--grey textReference">
+          Cible : {{ dataObj.label_sources_cible }}
+        </p>
+      </div>
+      <p class="fr-text--xs fr-text-mention--grey textReference graph-box-footer-meta">
+        Mise à jour : {{ formattedDateMaj
+        }}<template v-if="dataObj.label_perimetre">
+          <span class="graph-box-meta-sep"> — </span>Périmètre : {{ dataObj.label_perimetre }}
+        </template>
+      </p>
     </div>
     <!-- Métadonnées (tags secteur/axe) -->
     <div class="graph-box-metadata">
@@ -322,7 +304,6 @@ export default {
     return {
       displayChart: false,
       isCommentaireExpanded: false,
-      cible: undefined,
       regionsList: [],
       selectedRegionCode: "",
       regionalChartData: null,
@@ -338,7 +319,6 @@ export default {
   },
   watch: {
     dataObj: function () {
-      this.set_goal();
       this.selectedRegionCode = "";
       this.regionalChartData = null;
       this.regionalError = null;
@@ -847,30 +827,8 @@ export default {
       }
     },
 
-    set_goal() {
-      try {
-        // Calcul de la cible
-        if (
-          this.dataObj.label_sous_groupe == undefined ||
-          this.dataObj.label_sous_groupe == ""
-        ) {
-          let index = this.dataObj.values.legend.indexOf("Cible");
-          index != -1
-            ? (this.cible =
-                this.dataObj.values.y[index][
-                  this.dataObj.values.y[index].length - 1
-                ])
-            : (this.cible = undefined);
-        } else {
-          this.cible = undefined;
-        }
-      } catch (error) {
-        console.log("Erreur dans la cible", error);
-      }
-    },
   },
   mounted() {
-    this.set_goal();
     if (this.hasRegionalData) this.loadRegions();
     // Initialiser l'état favori
     if (this.dataObj && this.dataObj.label_indic) {
@@ -904,9 +862,6 @@ export default {
 .fontSizeDescription {
   font-size: 12px;
 }
-.fr-unit {
-  margin-bottom: 0rem !important;
-}
 .accordion-box {
   padding-bottom: 1rem !important;
 }
@@ -921,8 +876,7 @@ export default {
 }
 /* Commentaire : tronqué par nombre de mots avec Voir plus */
 .graph-box-commentaire {
-  padding: 0.75rem 1rem;
-  border-top: 1px solid #dddddd;
+  padding: 0.5rem 1rem;
 }
 .graph-box-commentaire__text {
   line-height: 1.4;
@@ -941,56 +895,43 @@ export default {
   color: var(--text-action-high-blue-france-hover, #1212ff);
 }
 .graph-box-metadata {
-  padding: 0.5rem 1rem;
-  border-top: 1px solid #dddddd;
+  padding: 0.375rem 1rem 0.5rem;
 }
 .graph-box-metadata .fr-text--xs {
   margin-bottom: 0.25rem;
 }
 .graph-box-tags {
-  margin-top: 0.5rem;
+  margin-top: 0.25rem;
 }
-.beneathGraph {
-  padding: 0.5rem 1rem;
-  border-bottom: 1px solid #dddddd;
-  border-top: 1px solid #dddddd;
-  align-items: flex-end;
-}
-
-.graph-box-download-col {
+.graph-box-toolbar {
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 0rem;
-  line-height: 1.25rem;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.35rem 1rem;
+  padding: 0.375rem 1rem;
 }
-
-.graph-box-download-col .graph-box-maj {
+.graph-box-toolbar__segmented {
+  flex-shrink: 0;
+}
+.graph-box-toolbar-unit {
   margin-bottom: 0;
   text-align: right;
-  width: 100%;
-  line-height: 1.25rem;
+  flex: 1 1 auto;
+  min-width: 12rem;
 }
-
-.graph-box-download-col .graph-box-download-btn {
-  line-height: 1.25rem;
-}
-
-@media (max-width: 767px) {
-  .graph-box-download-col {
-    align-items: flex-start;
-  }
-}
-.cardReference {
+.graph-box-download-row {
   padding: 0.5rem 1rem;
-  border-bottom: 1px solid #dddddd;
-  border-top: 1px solid #dddddd;
-  display: flex;
-  justify-content: space-between;
+}
+.graph-box-footer {
+  padding: 0.375rem 1rem 0.5rem;
+}
+.graph-box-footer-meta {
+  margin-bottom: 0;
 }
 .titleBox {
-  padding: 0.5rem 1rem;
-  margin-top: 0.5rem;
+  padding: 0.375rem 1rem 0.25rem;
+  margin-top: 0.25rem;
 }
 .graph-box-title-row {
   align-items: flex-start;
@@ -1003,21 +944,21 @@ export default {
   justify-content: space-between;
   align-items: center;
   font-weight: bolder;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.35rem;
   font-size: 1.25rem;
-  line-height: 1.2;
+  line-height: 1.3;
 }
 /* Mobile-specific adjustments */
 @media (max-width: 768px) {
   .cardTitle {
     font-size: 1.2rem;
-    line-height: 1.1;
+    line-height: 1.22;
   }
 }
 
 .cardData {
-  padding-top: 1.5rem;
-  padding-left: 0.75rem;
+  padding-top: 1rem;
+  padding-left: 0.5rem;
   padding-right: 1.5rem;
   max-width: 100%;
 }
@@ -1050,39 +991,31 @@ p.cardDescription {
 .unit-short {
   margin-bottom: 0rem !important;
 }
-.cardObjectif {
-  display: flex;
-  justify-content: flex-start;
-  font-size: 0.75rem;
-  align-items: center;
-  column-gap: 0.5rem;
-  margin-bottom: 0rem;
-}
 p.textReference {
   margin-bottom: 0rem;
   font-weight: 400;
 }
-.graph-box-card--compact .beneathGraph {
-  padding: 0.75rem 1rem;
+.graph-box-card--compact .graph-box-footer {
+  padding: 0.5rem 1rem;
 }
-.graph-box-card--compact .cardReference {
-  padding: 0.5rem 1rem 0.375rem;
+.graph-box-card--compact .graph-box-toolbar {
+  padding: 0.375rem 1rem 0.25rem;
+}
+.graph-box-card--compact .graph-box-download-row {
+  padding: 0.45rem 1rem;
 }
 .graph-box-card--compact .titleBox {
-  padding: 1rem 1rem 0.75rem;
+  padding: 0.75rem 1rem 0.5rem;
   margin-top: 0;
 }
 .graph-box-card--compact .cardTitle {
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.2rem;
   font-size: 1.125rem;
-  line-height: 1.3;
+  line-height: 1.5;
 }
 .graph-box-card--compact .cardData {
-  padding-top: 1rem;
+  padding-top: 0.75rem;
   padding-right: 1rem;
-}
-.graph-box-card--compact .cardObjectif {
-  flex-wrap: wrap;
 }
 .graph-box-download-btn {
   display: inline-flex;
@@ -1096,6 +1029,8 @@ p.textReference {
   font-family: inherit;
   color: var(--text-action-high-blue-france, #000091);
   cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }
 
 .graph-box-download-btn:hover {
@@ -1122,7 +1057,7 @@ p.textReference {
   padding: v-bind('isIframe ? "0" : "1rem"') !important;
 }
 :deep(.cardData) {
-  padding: v-bind('isIframe ? "0" : "1.5rem 0.75rem 0 1.5rem"') !important;
+  padding: v-bind('isIframe ? "0" : "1rem 0.75rem 0 0.5rem"') !important;
 }
 
 /* Accordion collapse height fix */

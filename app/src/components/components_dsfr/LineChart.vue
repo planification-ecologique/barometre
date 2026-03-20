@@ -11,21 +11,21 @@
             </div>
           </div>
           <canvas :id="chartId"></canvas>
-          <div class="flex fr-mt-1w fr-mb-0" :style="{'margin-left': isSmall ? '0px' : style}">
+          <div class="flex fr-mt-1w fr-mb-0" :style="legendMarginStyle">
             <span class="legende_dot" v-bind:style="{'background-color': colorParse}"></span>
             <p class="fr-text--sm fr-text--bold fr-ml-1w fr-mb-0">{{ capitalize(name) }}</p>
           </div>
-          <div v-for="(item, index) in hlineNameParse" :key="item" class="flex fr-mt-1w fr-mb-0" :style="{'margin-left': isSmall ? '0px' : style}">
+          <div v-for="(item, index) in hlineNameParse" :key="item" class="flex fr-mt-1w fr-mb-0" :style="legendMarginStyle">
             <span class="legende_dash_line1" v-bind:style="{'background-color': hlineColorParse[index]}"></span>
             <span class="legende_dash_line2" v-bind:style="{'background-color': hlineColorParse[index]}"></span>
             <p class="fr-text--sm fr-text--bold fr-ml-1w fr-mb-0">{{ capitalize(hlineNameParse[index]) }}</p>
           </div>
-          <div v-for="(item2, index2) in vlineParse" :key="item2" class="flex fr-mt-1w fr-mb-0" :style="{'margin-left': isSmall ? '0px' : style}">
+          <div v-for="(item2, index2) in vlineParse" :key="item2" class="flex fr-mt-1w fr-mb-0" :style="legendMarginStyle">
             <span class="legende_dash_line1" v-bind:style="{'background-color': vlineColorParse[index2]}"></span>
             <span class="legende_dash_line2" v-bind:style="{'background-color': vlineColorParse[index2]}"></span>
             <p class="fr-text--sm fr-text--bold fr-ml-1w fr-mb-0">{{ capitalize(vlineNameParse[index2]) }}</p>
           </div>
-          <div v-if="date!==undefined" class="flex fr-mt-1w" :style="{'margin-left': isSmall ? '0px' : style}">
+          <div v-if="date!==undefined" class="flex fr-mt-1w" :style="legendMarginStyle">
             <p class="fr-text--xs">Mise à jour : {{date}}</p>
           </div>
         </div>
@@ -128,8 +128,9 @@
       }
     },
     computed: {
-      style () {
-        return this.legendLeftMargin + 'px'
+      legendMarginStyle () {
+        const px = Math.max(0, Number(this.legendLeftMargin) || 0)
+        return { marginLeft: px + 'px' }
       }
     },
     methods: {
@@ -257,6 +258,13 @@
             datasets: self.datasets
           },
           plugins: [{
+            afterLayout: function (chart) {
+              const ca = chart.chartArea
+              if (ca && typeof ca.left === 'number' && !isNaN(ca.left)) {
+                self.legendLeftMargin = Math.max(0, Math.round(ca.left))
+              }
+            }
+          }, {
             afterDatasetDraw: function (chart, args, options) {
               if (self.vlineParse !== undefined) {
                 self.vlineParse.forEach(function (line, j) {
@@ -376,9 +384,6 @@
                     }
                     return value === 0 ? 0 : parseFloat(Number(value).toPrecision(2))
                   }
-                },
-                afterFit: function (axis) {
-                  self.legendLeftMargin = axis.width
                 }
               }]
             },
