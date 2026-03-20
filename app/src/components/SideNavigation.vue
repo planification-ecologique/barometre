@@ -59,7 +59,10 @@
                 >
                   {{ sectorName }}
                 </button>
-                <div class="fr-collapse" :class="{ 'fr-collapse--expanded': expandedSectorName === sectorName }">
+                <div
+                  class="fr-collapse sidemenu-chantiers-expanded"
+                  :class="{ 'fr-collapse--expanded': expandedSectorName === sectorName }"
+                >
                   <ul class="fr-sidemenu__list">
                     <li class="fr-sidemenu__item" v-for="chantier in getSectorChantiers(sectorName)" :key="chantier.id">
                       <a class="fr-sidemenu__link"
@@ -907,7 +910,7 @@ a:hover:not([href]) {
   max-height: 500px;
 }
 
-/* Sector view: chantiers list is always expanded and must not be cut off */
+/* Chantiers lists: no 500px cap (Synthèse per-sector accordions + sectorial always-open list) */
 .fr-sidemenu__item > .fr-collapse.sidemenu-chantiers-expanded.fr-collapse--expanded {
   max-height: none;
 }
@@ -930,13 +933,13 @@ a:hover:not([href]) {
   }
 }
 
-/* Desktop: keep original styling */
+/* Desktop / large tablet: sticky sidebar; no max-height so the page scrolls and
+   long lists (e.g. chantiers) are never clipped inside a nested scroll area */
 @media (min-width: 769px) {
   .fr-sidemenu {
     position: sticky;
-    top: 80px; /* Below sector selector */
-    max-height: calc(100vh - 100px);
-    overflow-y: auto;
+    top: 80px; /* Below header */
+    align-self: flex-start;
   }
 }
 </style>
