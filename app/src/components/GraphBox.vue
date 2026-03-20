@@ -954,20 +954,26 @@ export default {
   padding: 0.5rem 1rem;
   border-bottom: 1px solid #dddddd;
   border-top: 1px solid #dddddd;
-  align-items: flex-start;
+  align-items: flex-end;
 }
 
 .graph-box-download-col {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  gap: 0.25rem;
+  gap: 0rem;
+  line-height: 1.25rem;
 }
 
 .graph-box-download-col .graph-box-maj {
   margin-bottom: 0;
   text-align: right;
   width: 100%;
+  line-height: 1.25rem;
+}
+
+.graph-box-download-col .graph-box-download-btn {
+  line-height: 1.25rem;
 }
 
 @media (max-width: 767px) {
