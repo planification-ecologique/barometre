@@ -55,8 +55,8 @@
         :id="getSectorSectionId(sectorEntry.sector)"
         class="axe-section axe-section--highlighted"
       >
-        <h2 class="fr-h3 axe-section-title">
-          <span class="section-kicker-badge">Indicateur</span>
+        <h2 class="fr-h3 axe-section-title section-title-with-chip">
+          <span class="section-chip section-chip--indicateur section-chip--in-title">Indicateur</span>
           {{ sectorEntry.sector }}
         </h2>
         <div class="fr-grid-row fr-grid-row--gutters">
@@ -69,8 +69,8 @@
       </section>
 
       <section v-if="currentAxeEntry && currentAxeEntry.autresIndicators && currentAxeEntry.autresIndicators.length > 0" :id="sectionAutresIndicateursId" class="axe-section">
-        <h2 class="fr-h3 axe-section-title levier-title">
-          <span class="section-kicker-badge section-kicker-badge--levier">Levier</span>
+        <h2 class="fr-h3 axe-section-title levier-title section-title-with-chip">
+          <span class="section-chip section-chip--indicateur section-chip--in-title">Indicateur</span>
           Autres indicateurs
         </h2>
         <div class="fr-grid-row fr-grid-row--gutters">
@@ -659,25 +659,6 @@ export default {
 .axe-section-title {
   margin-top: 0;
   margin-bottom: 0.75rem;
-}
-
-.section-kicker-badge {
-  display: inline-block;
-  background: #e3e3fd;
-  color: #000091;
-  font-size: 0.6875rem;
-  font-weight: 600;
-  padding: 0.2rem 0.75rem;
-  border-radius: 999px;
-  margin-right: 0.5rem;
-  vertical-align: middle;
-  position: relative;
-  top: -2px;
-}
-
-.section-kicker-badge--levier {
-  background: #e3e3fd;
-  color: #000091;
 }
 
 .axe-summary-copy {

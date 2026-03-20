@@ -13,7 +13,7 @@
     v-if="dataObj"
   >
     <div class="titleBox graph-box-header">
-      <div class="fr-grid-row fr-grid-row--middle">
+      <div class="fr-grid-row graph-box-title-row">
         <h2 class="cardTitle graph-box-title fr-col">{{ displayData.label_indic }}</h2>
         <button
           v-if="!isIframe"
@@ -247,23 +247,23 @@
           Périmètre : {{ dataObj.label_perimetre }}
         </p>
       </div>
-      <div class="fr-col-md-6 fr-col-lg-6 fr-col-xl-6 fr-col-12">
-        <a
-          class="fr-link fr-link--download fr-link--download-text"
+      <div class="fr-col-md-6 fr-col-lg-6 fr-col-xl-6 fr-col-12 graph-box-download-col">
+        <p class="fr-text--xs fr-text-mention--grey graph-box-maj">
+          Mise à jour : {{ formattedDateMaj }}
+        </p>
+        <button
+          type="button"
+          class="graph-box-download-btn"
           :id="downloadLinkId"
-          :href="downloadUrl"
-          :download="getFilename()"
+          @click="triggerDownload"
         >
           Télécharger les données
-          <span class="fr-link__detail">CSV – 1 ko</span>
-        </a>
+          <span class="fr-icon-download-line" aria-hidden="true"></span>
+        </button>
       </div>
     </div>
-    <!-- Métadonnées (mise à jour, tags secteur/axe) -->
+    <!-- Métadonnées (tags secteur/axe) -->
     <div class="graph-box-metadata">
-      <p class="fr-text--xs fr-text-mention--grey">
-        Mise à jour : {{ formattedDateMaj }}
-      </p>
       <TaxonomyTagsCard :dataObj="dataObj" :useStaging="isStaging" />
     </div>
 
@@ -796,7 +796,55 @@ export default {
       this.displayChart = type === "graphique" ? true : false;
     },
     getFilename() {
-      return `${this.dataObj.label_indic.replace(/[^\w\s]/gi, "")}_data.csv`;
+      const safe = (this.dataObj.label_indic || "indicateur")
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .replace(/[^\w\s-]/gi, "")
+        .replace(/\s+/g, "_")
+        .trim() || "indicateur";
+      return `${safe}_data.csv`;
+    },
+    triggerDownload() {
+      const csv = this.downloadCsvContent();
+      if (!csv) return;
+      const blob = new Blob(["\uFEFF" + csv], { type: "text/csv;charset=utf-8" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = this.getFilename();
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    },
+    downloadCsvContent() {
+      const d = this.displayData;
+      try {
+        if (!Array.isArray(d.label_sous_groupe) || d.label_sous_groupe === "") {
+          const headers = ["Année", `Valeur - ${d.label_unit}`, "Type"];
+          let csv = headers.join(";") + "\n";
+          const xValues = this.tableAnnee;
+          const ytab = this.tableValeur;
+          const typeLabels = this.tableTypeMesure;
+          if (xValues.length && ytab.length) {
+            for (let i = 0; i < xValues.length; i++) {
+              csv += [xValues[i], ytab[i], typeLabels[i] || "Mesuré"].join(";") + "\n";
+            }
+          }
+          return csv;
+        }
+        const headers = ["Année", ...d.label_sous_groupe.map((g) => `${g} - ${d.label_unit}`)];
+        let csv = headers.join(";") + "\n";
+        if (d.date && d.values) {
+          for (let i = 0; i < d.date[0].length; i++) {
+            csv += [d.date[0][i], ...d.values.map((col) => col[i])].join(";") + "\n";
+          }
+        }
+        return csv;
+      } catch (e) {
+        console.error("Erreur création CSV:", e);
+        return null;
+      }
     },
 
     set_goal() {
@@ -906,8 +954,26 @@ export default {
   padding: 0.5rem 1rem;
   border-bottom: 1px solid #dddddd;
   border-top: 1px solid #dddddd;
-  /* display: block; */
-  justify-content: space-around;
+  align-items: flex-start;
+}
+
+.graph-box-download-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.25rem;
+}
+
+.graph-box-download-col .graph-box-maj {
+  margin-bottom: 0;
+  text-align: right;
+  width: 100%;
+}
+
+@media (max-width: 767px) {
+  .graph-box-download-col {
+    align-items: flex-start;
+  }
 }
 .cardReference {
   padding: 0.5rem 1rem;
@@ -920,6 +986,12 @@ export default {
   padding: 0.5rem 1rem;
   margin-top: 0.5rem;
 }
+.graph-box-title-row {
+  align-items: flex-start;
+}
+.graph-box-title-row .favori-btn {
+  margin-top: -2px;
+}
 .cardTitle {
   display: flex;
   justify-content: space-between;
@@ -927,6 +999,7 @@ export default {
   font-weight: bolder;
   margin-bottom: 0.5rem;
   font-size: 1.25rem;
+  line-height: 1.2;
 }
 /* Mobile-specific adjustments */
 @media (max-width: 768px) {
@@ -983,10 +1056,6 @@ p.textReference {
   margin-bottom: 0rem;
   font-weight: 400;
 }
-.fr-link--download-text {
-  font-size: small !important;
-  /* align-items: flex-end !important; */
-}
 .graph-box-card--compact .beneathGraph {
   padding: 0.75rem 1rem;
 }
@@ -1000,7 +1069,7 @@ p.textReference {
 .graph-box-card--compact .cardTitle {
   margin-bottom: 0.25rem;
   font-size: 1.125rem;
-  line-height: 1.4;
+  line-height: 1.3;
 }
 .graph-box-card--compact .cardData {
   padding-top: 1rem;
@@ -1009,8 +1078,35 @@ p.textReference {
 .graph-box-card--compact .cardObjectif {
   flex-wrap: wrap;
 }
-.graph-box-card--compact .fr-link--download-text {
-  font-size: 0.875rem !important;
+.graph-box-download-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  background: none;
+  border: none;
+  padding: 0;
+  margin-right: 0;
+  font-size: 0.75rem;
+  font-family: inherit;
+  color: var(--text-action-high-blue-france, #000091);
+  cursor: pointer;
+}
+
+.graph-box-download-btn:hover {
+  color: var(--text-action-high-blue-france-hover, #1212ff);
+}
+
+.graph-box-download-btn .fr-icon-download-line {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  margin-right: -0.25rem;
+  transform: scale(0.7);
+  transform-origin: center center;
+}
+
+.graph-box-card--compact .graph-box-download-btn {
+  font-size: 0.75rem;
 }
 .fr-collapse {
   height: 0rem !important;
