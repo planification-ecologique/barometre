@@ -8,7 +8,7 @@
       'fr-card--shadow',
       'adjust-height',
       'graph-box-card',
-      { 'graph-box-card--compact': compact }
+      { 'graph-box-card--compact': compact, 'graph-box-card--iframe': isIframe }
     ]"
     v-if="dataObj"
   >
@@ -869,6 +869,9 @@ export default {
   height: auto !important;
   z-index: inherit;
 }
+.graph-box-card--iframe {
+  padding: 0 !important;
+}
 .graph-box-card--compact {
   border: 1px solid #d6d6d6;
   box-shadow: 0 8px 24px rgba(0, 0, 145, 0.08);
@@ -895,13 +898,13 @@ export default {
   color: var(--text-action-high-blue-france-hover, #1212ff);
 }
 .graph-box-metadata {
-  padding: 0.375rem 1rem 0.5rem;
+  padding: 0 1rem 0.75rem;
 }
-.graph-box-metadata .fr-text--xs {
-  margin-bottom: 0.25rem;
+.graph-box-metadata :deep(.taxonomy-tags-card) {
+  margin: 0;
 }
-.graph-box-tags {
-  margin-top: 0.25rem;
+.graph-box-metadata :deep(.fr-tags-group) {
+  margin: 0;
 }
 .graph-box-toolbar {
   display: flex;
@@ -960,6 +963,7 @@ export default {
   padding-top: 1rem;
   padding-left: 0.5rem;
   padding-right: 1.5rem;
+  padding-bottom: 0.375rem;
   max-width: 100%;
 }
 .cardFooter {
@@ -1016,6 +1020,7 @@ p.textReference {
 .graph-box-card--compact .cardData {
   padding-top: 0.75rem;
   padding-right: 1rem;
+  padding-bottom: 0.35rem;
 }
 .graph-box-download-btn {
   display: inline-flex;
@@ -1053,11 +1058,8 @@ p.textReference {
   height: 0rem !important;
 }
 /* Add iframe-specific styles */
-:deep(.fr-card) {
-  padding: v-bind('isIframe ? "0" : "1rem"') !important;
-}
 :deep(.cardData) {
-  padding: v-bind('isIframe ? "0" : "1rem 0.75rem 0 0.5rem"') !important;
+  padding: v-bind('isIframe ? "0" : "1rem 0.75rem 0.375rem 0.5rem"') !important;
 }
 
 /* Accordion collapse height fix */

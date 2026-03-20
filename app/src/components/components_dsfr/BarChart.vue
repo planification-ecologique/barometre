@@ -1058,15 +1058,16 @@
     }
     .bar-chart-legend {
       margin-top: 0.25rem;
+      padding-bottom: 0.125rem;
     }
     .bar-chart-legend-row {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      gap: 0.5rem 1.25rem;
+      gap: 0.65rem 1.35rem;
     }
     .bar-chart-legend-row--secondary {
-      margin-top: 0.35rem;
+      margin-top: 0.5rem;
     }
     .bar-chart-legend-item {
       display: inline-flex;

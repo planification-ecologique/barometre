@@ -85,20 +85,30 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.taxonomy-tags-card {
-  margin-top: 0.5rem;
-}
-
 .taxonomy-tags-list {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   gap: 0.5rem;
   list-style: none;
   padding: 0;
   margin: 0;
+  line-height: 1;
+
+  li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+  }
 }
 
 .taxonomy-tag {
+  margin: 0 !important;
+  display: inline-flex;
+  align-items: center;
+  line-height: 1;
   text-decoration: none;
   font-size: 0.75rem;
   padding: 0.25rem 0.5rem;

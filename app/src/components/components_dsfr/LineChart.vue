@@ -11,21 +11,21 @@
             </div>
           </div>
           <canvas :id="chartId"></canvas>
-          <div class="flex fr-mt-1w fr-mb-0" :style="legendMarginStyle">
+          <div class="flex line-chart-legend-line fr-mb-0" :style="legendMarginStyle">
             <span class="legende_dot" v-bind:style="{'background-color': colorParse}"></span>
             <p class="fr-text--sm fr-text--bold fr-ml-1w fr-mb-0">{{ capitalize(name) }}</p>
           </div>
-          <div v-for="(item, index) in hlineNameParse" :key="item" class="flex fr-mt-1w fr-mb-0" :style="legendMarginStyle">
+          <div v-for="(item, index) in hlineNameParse" :key="item" class="flex line-chart-legend-line fr-mb-0" :style="legendMarginStyle">
             <span class="legende_dash_line1" v-bind:style="{'background-color': hlineColorParse[index]}"></span>
             <span class="legende_dash_line2" v-bind:style="{'background-color': hlineColorParse[index]}"></span>
             <p class="fr-text--sm fr-text--bold fr-ml-1w fr-mb-0">{{ capitalize(hlineNameParse[index]) }}</p>
           </div>
-          <div v-for="(item2, index2) in vlineParse" :key="item2" class="flex fr-mt-1w fr-mb-0" :style="legendMarginStyle">
+          <div v-for="(item2, index2) in vlineParse" :key="item2" class="flex line-chart-legend-line fr-mb-0" :style="legendMarginStyle">
             <span class="legende_dash_line1" v-bind:style="{'background-color': vlineColorParse[index2]}"></span>
             <span class="legende_dash_line2" v-bind:style="{'background-color': vlineColorParse[index2]}"></span>
             <p class="fr-text--sm fr-text--bold fr-ml-1w fr-mb-0">{{ capitalize(vlineNameParse[index2]) }}</p>
           </div>
-          <div v-if="date!==undefined" class="flex fr-mt-1w" :style="legendMarginStyle">
+          <div v-if="date!==undefined" class="flex line-chart-legend-line" :style="legendMarginStyle">
             <p class="fr-text--xs">Mise à jour : {{date}}</p>
           </div>
         </div>
@@ -547,6 +547,12 @@
     }
     .r_col {
       align-self: center;
+      .line-chart-legend-line {
+        margin-top: 0.45rem;
+      }
+      .line-chart-legend-line:first-of-type {
+        margin-top: 0.3rem;
+      }
       .flex {
         display: flex;
         .legende_dot {

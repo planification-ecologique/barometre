@@ -821,10 +821,10 @@ export default {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      gap: 1.5rem;
-      
+      gap: 0.65rem 1.5rem;
+      padding-bottom: 0.125rem;
+
       .legend-item {
-        margin-bottom: 0.25rem;
         cursor: pointer;
       }
     }
