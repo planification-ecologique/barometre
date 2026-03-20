@@ -1,95 +1,150 @@
 <template>
-  <div class="fr-my-2w">
-    <div class="fr-grid-row">
-      <article class="fr-col-12">
-        <h1 class="fr-title">Le baromètre de la planification écologique</h1>
-      </article>
-    </div>
+  <div class="home-landing">
+    <!-- Hero -->
+    <header class="home-hero">
+      <h1 class="fr-h3 home-hero__title">Le baromètre de la planification écologique</h1>
+      <figure class="home-hero__visual">
+        <img
+          class="home-hero__rosace fr-responsive-img"
+          :src="rosaceSrc"
+          alt="Schéma France Nation Verte : cinq enjeux environnementaux au centre, six thématiques et leurs chantiers opérationnels autour."
+          width="720"
+          height="720"
+          loading="eager"
+          decoding="async"
+        />
+      </figure>
+      <div class="home-hero__intro fr-text--md">
+        <p>
+          Entreprises, pouvoirs publics ou citoyens, la transition écologique nous concerne tous. Pour réussir, elle demande de la transparence sur le chemin déjà parcouru et sur celui qui reste à parcourir pour atteindre les objectifs que la France s’est fixés en faveur du climat, de la biodiversité ou encore de la préservation des ressources. C'est l'objet du baromètre de la planification écologique.
+        </p>
+        <p>
+          Fort de plus de 250 indicateurs, ce baromètre propose une vision quantifiée des actions qu’il convient de mener pour accélérer la transition dans les transports, le bâtiment, l'énergie, l'industrie, l'agriculture, l'alimentation, l'eau, les écosystèmes naturels et l'économie circulaire, en les mettant en regard de leurs éventuelles cibles à horizon 2030.
+        </p>
+      </div>
+    </header>
 
-    <!-- Liens rapides vers axes et secteurs (équivalents des pages de synthèses) -->
-    <div v-if="quickLinksLoaded" class="about-quick-access fr-mt-2w">
-      <div class="about-quick-section">
-        <span class="about-quick-label">Accès rapide aux axes d'impact</span>
-        <div class="about-quick-links">
+    <!-- État de l'environnement -->
+    <section class="home-section fr-mt-6w" aria-labelledby="home-etat-heading">
+      <h2 id="home-etat-heading" class="fr-h5 home-section__title">État de l'environnement</h2>
+      <p class="fr-text--sm home-section__lead">
+        L'amélioration de l'état de l'environnement constitue la finalité des stratégies environnementales. Les indicateurs sont regroupés par axe d'impact&nbsp;: atténuation et adaptation au climat, biodiversité, eau, pollution et économie circulaire.
+      </p>
+      <router-link
+        :to="{ name: routeName, query: { sector: 'Synthèse', view: 'etat-environnement' } }"
+        class="fr-btn fr-btn--primary fr-btn--sm fr-mt-2w fr-mb-3w"
+      >
+        Voir la synthèse
+      </router-link>
+      <div class="fr-grid-row fr-grid-row--gutters home-tiles">
+        <div
+          v-for="axe in axeTiles"
+          :key="'axe-' + axe.name"
+          class="fr-col-12 fr-col-sm-6 fr-col-md-4"
+        >
           <router-link
-            v-for="axe in displayAxes"
-            :key="'axe-' + axe"
-            :to="etatEnvironnementLink(axe)"
-            class="about-quick-link"
+            :to="etatEnvironnementLink(axe.name)"
+            class="home-tile"
           >
-            → {{ axe }}
+            <div class="home-tile__body">
+              <div class="home-tile__picto" :class="{ 'home-tile__picto--eau': axe.useEau }">
+                <eau-img v-if="axe.useEau" width="56px" height="56px" />
+                <dsfr-pictogram v-else :picto-id="axe.pictoId" :size="56" />
+              </div>
+              <h3 class="home-tile__heading">{{ axe.name }}</h3>
+              <span class="fr-icon-arrow-right-line home-tile__arrow" aria-hidden="true" />
+            </div>
           </router-link>
         </div>
       </div>
-      <div class="about-quick-section">
-        <span class="about-quick-label">Accès rapide aux synthèses sectorielles</span>
-        <div class="about-quick-links">
+    </section>
+
+    <!-- Chantiers sectoriels -->
+    <section class="home-section fr-mt-6w fr-mb-4w" aria-labelledby="home-chantiers-heading">
+      <h2 id="home-chantiers-heading" class="fr-h5 home-section__title">Chantiers sectoriels</h2>
+      <p class="fr-text--sm home-section__lead">
+        Les chantiers structurent les transformations tangibles prévues par les stratégies environnementales pour atteindre ces objectifs, secteur par secteur.
+      </p>
+      <router-link
+        :to="{ name: routeName, query: { sector: 'Synthèse', view: 'chantiers-sectoriels' } }"
+        class="fr-btn fr-btn--primary fr-btn--sm fr-mt-2w fr-mb-3w"
+      >
+        Voir la synthèse
+      </router-link>
+      <div class="fr-grid-row fr-grid-row--gutters home-tiles">
+        <div
+          v-for="item in sectorTiles"
+          :key="'sector-' + item.canonicalName"
+          class="fr-col-12 fr-col-sm-6 fr-col-md-4"
+        >
           <router-link
-            v-for="sector in displaySectors"
-            :key="'sector-' + sector"
-            :to="chantiersSectorielsLink(sector)"
-            class="about-quick-link"
+            :to="chantiersSectorielsLink(item.canonicalName)"
+            class="home-tile home-tile--rich"
           >
-            → {{ sector }}
+            <div class="home-tile__body">
+              <div class="home-tile__picto">
+                <dsfr-pictogram :picto-id="item.pictoId" :size="56" />
+              </div>
+              <h3 class="home-tile__heading">{{ item.shortLabel }}</h3>
+              <p class="home-tile__desc fr-text--sm">{{ item.blurb }}</p>
+              <span class="fr-icon-arrow-right-line home-tile__arrow" aria-hidden="true" />
+            </div>
           </router-link>
         </div>
       </div>
-    </div>
-
-    <div class="fr-mt-4w about-content">
-      <p>
-        Entreprises, pouvoirs publics ou citoyens, la transition écologique nous concerne tous. Pour réussir, elle demande de la transparence sur le chemin déjà parcouru et sur celui qui reste à parcourir pour atteindre les objectifs que la France s’est fixés en faveur du climat, de la biodiversité ou encore de la préservation des ressources. C'est l'objet du baromètre de la planification écologique.
-      </p>
-
-      <p>
-        Fort de plus de 250 indicateurs, ce baromètre propose une vision quantifiée des actions qu’il convient de mener pour accélérer la transition dans les transports, le bâtiment, l'énergie, l'industrie, l'agriculture, l'alimentation, l'eau, les écosystèmes naturels et l'économie circulaire, en les mettant en regard de leurs éventuelles cibles à horizon 2030. Sans oublier les données régionales qui sont désormais visualisables lorsque celles-ci sont disponibles, afin de matérialiser les résultats des politiques publiques territoriales.
-      </p>
-
-      <p>
-        Consulter ce baromètre, c’est appréhender l'ampleur et la complexité des changements à opérer, tout en révélant le caractère réalisable de ces objectifs. Ainsi, les projections présentées sont de deux natures :
-      </p>
-
-      <ul>
-        <li>la trajectoire tendancielle, qui correspond à une prolongation du rythme observé sur les trois dernières années ;</li>
-        <li>et la trajectoire souhaitable pour atteindre ces cibles (dont les sources sont précisées : jalons légaux ou règlementaires, documents de référence ou fichiers techniques non publics), annualisées ou, à défaut, linéarisées depuis 2023, date initiale des travaux de planification écologique et également année de base des budgets carbone du projet de Stratégie nationale bas-carbone.</li>
-      </ul>
-
-      <p>
-        Fruit d'un travail interministériel essentiel qui va se poursuivre par l’intégration de nouvelles données (implémentation d’indicateurs des futures stratégies nationales, objectifs post-2030…) et de nouveaux enjeux (coordination avec de nouvelles bases, tableaux spécifiques pour certains territoires, notamment ultramarins, etc.), ce baromètre bénéficiera de mises à jour régulières. Les sources sont précisées pour chaque indicateur, avec accès possible aux données brutes.
-      </p>
-
-      <div class="fr-callout fr-mt-4w">
-        <h2 class="fr-callout__title">Pour aller + loin</h2>
-        <p>
-          Le baromètre de la planification écologique a vu sa structure approfondie par rapport à sa version précédente, avec l’ajout de plusieurs entrées et niveaux de lecture. En effet, son arborescence reflète désormais la matrice du référentiel de la planification écologique. Véritable outil de pilotage destiné à la sphère publique, ce référentiel propose une vision systémique de nos objectifs de transition puisqu’il compile et met en cohérence des indicateurs pour l’ensemble des stratégies et plans dont s’est dotée la France pour les atteindre (Stratégie nationale pour la biodiversité, Stratégie nationale pour l'alimentation, la nutrition et le climat, Stratégie nationale bas-carbone…). Et ce, en croisant :
-        </p>
-        <ul>
-          <li>les impacts environnementaux visés sur chacun des six objectifs environnementaux de la taxonomie européenne ;</li>
-          <li>les transformations tangibles mises en œuvre pour atteindre ces objectifs, les leviers, regroupés en chantiers, dans chacun des secteurs.</li>
-        </ul>
-        <p>
-          Ainsi, pour chaque engagement de la France pris à l’échelle européenne, plusieurs chantiers sectoriels sont mis en œuvre avec des leviers concrets pour les matérialiser. Référentiel comme baromètre partagent ainsi un double objectif de pédagogie et d’évaluation, appuyé par des principes et indicateurs tangibles, pour une appropriation de la transition écologique par tous, sans obérer son caractère parfois complexe et multifactoriel.
-        </p>
-      </div>
-
-      <p class="fr-mt-4w">
-        <a href="https://www.planification-ecologique.gouv.fr" class="fr-link" target="_blank" rel="noopener">
-          En savoir plus sur la planification écologique
-        </a>
-      </p>
-    </div>
+    </section>
   </div>
 </template>
 
 <script>
 import { getNavigationStructure, IMPACT_AXE_DISPLAY_ORDER } from '@/services/csvDataService.js'
+import EauImg from '@/components/components_sgv/EauImg.vue'
+import DsfrPictogram from '@/components/components_dsfr/DsfrPictogram.vue'
+
+/** Pictogrammes DSFR (clés DsfrPictogram) par axe */
+const AXE_PICTO = {
+  'Atténuation climat': 'environment-tree',
+  'Adaptation climat': 'environment-sun',
+  'Biodiversité': 'environment-leaf',
+  'Eau': null,
+  'Pollution': 'buildings-factory',
+  'Économie circulaire': 'environment-grocery'
+}
+
+/** Ordre d'affichage des cartes secteurs (libellé court → correspondance dans les données) */
+const SECTOR_CARD_DEFS = [
+  { shortLabel: 'Consommer', match: (n) => n === 'Consommer', pictoId: 'digital-application' },
+  {
+    shortLabel: 'Préserver',
+    match: (n) => n === 'Préserver' || (n.includes('Préserver') && n.includes('écosystèmes')),
+    pictoId: 'environment-human-cooperation'
+  },
+  { shortLabel: 'Produire', match: (n) => n === 'Produire', pictoId: 'buildings-factory' },
+  { shortLabel: 'Se déplacer', match: (n) => n === 'Se déplacer', pictoId: 'map-map' },
+  { shortLabel: 'Se loger', match: (n) => n === 'Se loger', pictoId: 'buildings-house' },
+  { shortLabel: 'Se nourrir', match: (n) => n === 'Se nourrir', pictoId: 'environment-food' }
+]
+
+const SECTOR_BLURBS = {
+  'Se déplacer': 'Déplacements de personnes et de marchandises, tous modes confondus.',
+  'Se loger': 'Rénovation énergétique, chauffage et construction durable du parc bâti.',
+  'Préserver et valoriser nos écosystèmes': 'Protection de la biodiversité, forêts, sols et milieux naturels.',
+  Produire: 'Industrie, énergies renouvelables et décarbonation des procédés.',
+  'Se nourrir': 'Chaîne alimentaire, de la production agricole à la consommation.',
+  Consommer: 'Économie circulaire, déchets et modes de consommation.'
+}
+
+function pickSectorName(matchFn, names) {
+  return names.find(matchFn) || null
+}
 
 export default {
-  name: "AboutView",
+  name: 'AboutView',
+  components: { EauImg, DsfrPictogram },
   props: {
     params: {
       type: Object,
-      default: () => ({}),
+      default: () => ({})
     },
     useStaging: {
       type: Boolean,
@@ -98,13 +153,43 @@ export default {
   },
   data() {
     return {
-      quickLinksLoaded: false,
-      displayAxes: [],
-      displaySectors: []
+      sectorNamesFromApi: []
+    }
+  },
+  computed: {
+    routeName() {
+      return window.location.pathname.includes('/staging') ? 'staging-dashboard' : 'dashboard'
+    },
+    rosaceSrc() {
+      const base = process.env.VUE_APP_PREFIX_PATH || ''
+      return `${base}/images/rosace-france-nation-verte.png`
+    },
+    axeTiles() {
+      return IMPACT_AXE_DISPLAY_ORDER.map((name) => ({
+        name,
+        pictoId: AXE_PICTO[name],
+        useEau: name === 'Eau'
+      }))
+    },
+    sectorTiles() {
+      const names = this.sectorNamesFromApi
+      return SECTOR_CARD_DEFS.map((def) => {
+        const canonicalName = pickSectorName(def.match, names)
+        const shortLabel = def.shortLabel
+        const blurb = canonicalName && SECTOR_BLURBS[canonicalName]
+          ? SECTOR_BLURBS[canonicalName]
+          : 'Synthèse des chantiers et indicateurs pour ce secteur.'
+        return {
+          shortLabel,
+          canonicalName: canonicalName || shortLabel,
+          pictoId: def.pictoId,
+          blurb
+        }
+      })
     }
   },
   async mounted() {
-    await this.loadQuickLinks()
+    await this.loadSectors()
   },
   methods: {
     slugify(str) {
@@ -113,95 +198,172 @@ export default {
         .replace(/[^a-z0-9]+/g, '-')
         .replace(/^-+|-+$/g, '')
     },
-    async loadQuickLinks() {
+    async loadSectors() {
       try {
         const environment = this.useStaging ? 'staging' : 'production'
         const response = await getNavigationStructure(environment)
         if (response.status === 'success' && response.data?.sectors) {
-          this.displayAxes = [...IMPACT_AXE_DISPLAY_ORDER]
-          this.displaySectors = response.data.sectors
-            .filter(s => s.name !== 'Synthèse')
-            .map(s => s.name)
-          this.quickLinksLoaded = true
+          this.sectorNamesFromApi = response.data.sectors.map((s) => s.name)
         }
       } catch (error) {
-        console.error('Error loading quick links:', error)
+        console.error('Error loading sectors for home:', error)
       }
     },
     etatEnvironnementLink(axe) {
-      const base = { name: this.routeName, query: { sector: 'Synthèse', view: 'etat-environnement' } }
-      return { ...base, hash: '#axe-' + this.slugify(axe) }
+      return {
+        name: this.routeName,
+        query: { sector: 'Synthèse', view: 'etat-environnement' },
+        hash: '#axe-' + this.slugify(axe)
+      }
     },
     chantiersSectorielsLink(sector) {
-      const base = { name: this.routeName, query: { sector: 'Synthèse', view: 'chantiers-sectoriels' } }
-      return { ...base, hash: '#sector-' + this.slugify(sector) }
-    }
-  },
-  computed: {
-    routeName() {
-      return window.location.pathname.includes('/staging') ? 'staging-dashboard' : 'dashboard'
+      return {
+        name: this.routeName,
+        query: { sector: 'Synthèse', view: 'chantiers-sectoriels' },
+        hash: '#sector-' + this.slugify(sector)
+      }
     }
   }
-};
+}
 </script>
 
 <style scoped>
-.fr-title {
-  margin-bottom: 0.625rem;
+/* Colonne étroite type maquette / Figma (contenu centré, pas pleine largeur fluide) */
+.home-landing {
+  --home-max: 47.5rem;
+  max-width: var(--home-max);
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  box-sizing: border-box;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }
 
-.about-content {
-  max-width: 800px;
+.home-hero__title {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
 }
 
-.about-content p {
-  margin-bottom: 1.5rem;
-  line-height: 1.7;
-}
-
-/* Liens rapides - même structure que EtatEnvironnement et SyntheseSectorielle */
-.about-quick-access {
+.home-hero__visual {
   display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+  justify-content: center;
+  margin: 0.75rem 0 1.5rem;
+  padding: 0;
+  border: none;
 }
 
-.about-quick-section {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0.5rem;
-  padding: 0.5rem 0;
+.home-hero__rosace {
+  width: 100%;
+  max-width: min(100%, 28rem);
+  height: auto;
+  display: block;
 }
 
-.about-quick-label {
-  font-size: 0.875rem;
+.home-hero__intro {
+  text-align: left;
+  width: 100%;
+}
+
+.home-hero__intro p {
+  text-align: left;
+  margin-bottom: 1rem;
+  line-height: 1.65;
+}
+
+.home-section__title {
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.home-section__lead {
+  max-width: 36rem;
+  margin-bottom: 0;
+  line-height: 1.6;
   color: #3a3a3a;
 }
 
-.about-quick-links {
+.home-tiles {
+  margin-top: 0.25rem;
+}
+
+.home-tile {
+  display: block;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: inset 0 0 0 1px #e5e5e5;
+  border-bottom: 4px solid #000091;
+  background: #fff;
+  transition: background-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.home-tile:hover {
+  background: #fafafa;
+  box-shadow: inset 0 0 0 1px #cfcfcf;
+}
+
+.home-tile:focus-visible {
+  outline: 2px solid #000091;
+  outline-offset: 2px;
+}
+
+.home-tile__body {
+  position: relative;
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1.25rem 2.25rem 1.5rem 1rem;
+  min-height: 8.5rem;
 }
 
-.about-quick-link {
-  background: transparent;
-  border: 1px solid #000091;
-  border-radius: 999px;
+.home-tile--rich .home-tile__body {
+  min-height: 11.5rem;
+  align-items: center;
+}
+
+.home-tile__picto {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  height: 4rem;
+  margin-bottom: 0.625rem;
+}
+
+.home-tile__picto--eau :deep(.fr-card__img) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+.home-tile__heading {
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0;
+  color: #161616;
+  line-height: 1.35;
+  max-width: 100%;
+}
+
+.home-tile__desc {
+  color: #3a3a3a;
+  margin: 0.5rem 0 0;
+  line-height: 1.45;
+  max-width: 100%;
+}
+
+.home-tile__arrow {
+  position: absolute;
+  right: 0.75rem;
+  bottom: 0.75rem;
+  font-size: 1.125rem;
   color: #000091;
-  font-size: 0.8125rem;
-  font-weight: 500;
-  line-height: 1.3;
-  padding: 0.3rem 0.875rem;
-  text-decoration: none;
-  white-space: nowrap;
-  transition: background-color 0.15s, color 0.15s;
-}
-
-.about-quick-link:hover {
-  background: #000091;
-  color: #fff;
-  text-decoration: none;
 }
 </style>
