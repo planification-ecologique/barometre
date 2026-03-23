@@ -60,7 +60,7 @@
         L'amélioration de l'état de l'environnement constitue la finalité des stratégies environnementales. Les indicateurs sont regroupés par axe d'impact.
       </p>
       <router-link
-        :to="{ name: routeName, query: { sector: 'Synthèse', view: 'etat-environnement' } }"
+        :to="{ name: etatRouteName, query: { section: syntheseSection } }"
         class="fr-btn fr-btn--primary fr-btn--sm fr-mt-2w fr-mb-0"
       >
         Voir la synthèse
@@ -116,7 +116,7 @@
         </div>
       </div>
       <router-link
-        :to="{ name: routeName, query: { sector: 'Synthèse', view: 'etat-environnement' } }"
+        :to="{ name: etatRouteName, query: { section: syntheseSection } }"
         class="fr-btn fr-btn--primary fr-btn--sm home-v2__all-indicators-btn"
       >
         Voir tous les indicateurs
@@ -130,7 +130,7 @@
         Les chantiers structurent les transformations tangibles prévues par les stratégies environnementales, secteur par secteur.
       </p>
       <router-link
-        :to="{ name: routeName, query: { sector: 'Synthèse', view: 'chantiers-sectoriels' } }"
+        :to="{ name: chantiersRouteName, query: { section: syntheseSection } }"
         class="fr-btn fr-btn--primary fr-btn--sm fr-mt-2w fr-mb-0"
       >
         Voir la synthèse
@@ -189,7 +189,7 @@
         </div>
       </div>
       <router-link
-        :to="{ name: routeName, query: { sector: 'Synthèse', view: 'chantiers-sectoriels' } }"
+        :to="{ name: chantiersRouteName, query: { section: syntheseSection } }"
         class="fr-btn fr-btn--primary fr-btn--sm home-v2__all-indicators-btn"
       >
         Voir tous les indicateurs
@@ -207,6 +207,9 @@ import {
   isImpactAxe
 } from '@/services/csvDataService.js'
 import GraphBox from '@/components/GraphBox.vue'
+import { etatEnvironnementRouteName, chantiersRouteName } from '@/config/routeNames.js'
+import { SECTION_SYNTHESE_SLUG } from '@/utils/sectionUrl.js'
+import { impactAxeNameToSlug } from '@/utils/impactAxeUrl.js'
 
 const SECTOR_V2_DEFS = [
   { shortLabel: 'Se déplacer', match: (n) => n === 'Se déplacer' },
@@ -389,8 +392,14 @@ export default {
     }
   },
   computed: {
-    routeName() {
-      return window.location.pathname.includes('/staging') ? 'staging-dashboard' : 'dashboard'
+    syntheseSection() {
+      return SECTION_SYNTHESE_SLUG
+    },
+    etatRouteName() {
+      return etatEnvironnementRouteName(this.useStaging)
+    },
+    chantiersRouteName() {
+      return chantiersRouteName(this.useStaging)
     },
     rosaceSrc() {
       const base = process.env.VUE_APP_PREFIX_PATH || ''
@@ -554,15 +563,19 @@ export default {
     },
     etatEnvironnementLink(axe) {
       return {
-        name: this.routeName,
-        query: { sector: 'Synthèse', view: 'etat-environnement' },
+        name: this.etatRouteName,
+        query: { section: impactAxeNameToSlug(axe) },
         hash: '#axe-' + this.slugify(axe)
       }
     },
     chantiersSectorielsLink(sector) {
       return {
-        name: this.routeName,
-        query: { sector: 'Synthèse', view: 'chantiers-sectoriels' },
+        name: this.chantiersRouteName,
+        query: {
+          section: SECTION_SYNTHESE_SLUG,
+          view: 'general-chantiers',
+          sectorFilter: sector
+        },
         hash: '#sector-' + this.slugify(sector)
       }
     },

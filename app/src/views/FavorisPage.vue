@@ -49,7 +49,7 @@
                 Cliquez sur l'icône <span class="fr-icon-bookmark-line" aria-hidden="true" style="font-size: 1rem; vertical-align: middle;"></span> sur un graphique pour l'ajouter à vos favoris.
               </p>
               <router-link
-                :to="{ name: 'dashboard', query: { sector: 'Synthèse' } }"
+                :to="{ name: 'chantiers', query: { section: 'synthese' } }"
                 class="fr-btn fr-btn--secondary fr-mt-2w"
               >
                 Parcourir les indicateurs

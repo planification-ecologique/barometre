@@ -31,7 +31,7 @@
         L'amélioration de l'état de l'environnement constitue la finalité des stratégies environnementales. Les indicateurs sont regroupés par axe d'impact&nbsp;: atténuation et adaptation au climat, biodiversité, eau, pollution et économie circulaire.
       </p>
       <router-link
-        :to="{ name: routeName, query: { sector: 'Synthèse', view: 'etat-environnement' } }"
+        :to="{ name: etatRouteName, query: { section: syntheseSection } }"
         class="fr-btn fr-btn--primary fr-btn--sm fr-mt-2w fr-mb-3w"
       >
         Voir la synthèse
@@ -66,7 +66,7 @@
         Les chantiers structurent les transformations tangibles prévues par les stratégies environnementales pour atteindre ces objectifs, secteur par secteur.
       </p>
       <router-link
-        :to="{ name: routeName, query: { sector: 'Synthèse', view: 'chantiers-sectoriels' } }"
+        :to="{ name: chantiersRouteName, query: { section: syntheseSection } }"
         class="fr-btn fr-btn--primary fr-btn--sm fr-mt-2w fr-mb-3w"
       >
         Voir la synthèse
@@ -98,6 +98,9 @@
 
 <script>
 import { getNavigationStructure, IMPACT_AXE_DISPLAY_ORDER } from '@/services/csvDataService.js'
+import { etatEnvironnementRouteName, chantiersRouteName } from '@/config/routeNames.js'
+import { SECTION_SYNTHESE_SLUG } from '@/utils/sectionUrl.js'
+import { impactAxeNameToSlug } from '@/utils/impactAxeUrl.js'
 import EauImg from '@/components/components_sgv/EauImg.vue'
 import DsfrPictogram from '@/components/components_dsfr/DsfrPictogram.vue'
 
@@ -157,8 +160,14 @@ export default {
     }
   },
   computed: {
-    routeName() {
-      return window.location.pathname.includes('/staging') ? 'staging-dashboard' : 'dashboard'
+    syntheseSection() {
+      return SECTION_SYNTHESE_SLUG
+    },
+    etatRouteName() {
+      return etatEnvironnementRouteName(this.useStaging)
+    },
+    chantiersRouteName() {
+      return chantiersRouteName(this.useStaging)
     },
     rosaceSrc() {
       const base = process.env.VUE_APP_PREFIX_PATH || ''
@@ -211,15 +220,19 @@ export default {
     },
     etatEnvironnementLink(axe) {
       return {
-        name: this.routeName,
-        query: { sector: 'Synthèse', view: 'etat-environnement' },
+        name: this.etatRouteName,
+        query: { section: impactAxeNameToSlug(axe) },
         hash: '#axe-' + this.slugify(axe)
       }
     },
     chantiersSectorielsLink(sector) {
       return {
-        name: this.routeName,
-        query: { sector: 'Synthèse', view: 'chantiers-sectoriels' },
+        name: this.chantiersRouteName,
+        query: {
+          section: SECTION_SYNTHESE_SLUG,
+          view: 'general-chantiers',
+          sectorFilter: sector
+        },
         hash: '#sector-' + this.slugify(sector)
       }
     }

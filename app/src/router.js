@@ -1,15 +1,158 @@
 import Vue from "vue";
 import Router from "vue-router";
+import {
+  toSectionSlug,
+  SECTOR_SYNTHESE,
+  SECTION_SYNTHESE_SLUG,
+} from "./utils/sectionUrl.js";
+import { impactAxeNameToSlug } from "./utils/impactAxeUrl.js";
 
 Vue.use(Router);
 
 const GeneralTitle = "Baromètre de la planification écologique"
 
+const dashboardProps = (route) =>
+  ({ query: route.query.theme }, { query: route.query.levier });
+
+const DASHBOARD_SHELL_NAMES = [
+  "dashboard",
+  "staging-dashboard",
+  "etat-environnement",
+  "staging-etat-environnement",
+  "chantiers",
+  "staging-chantiers",
+];
+
+/** /etat-environnement?view=general-engagements&axe= → ?section=<slug-axe> */
+function legacyEtatEngagementsQueryRedirect(to) {
+  if (to.name !== "etat-environnement" && to.name !== "staging-etat-environnement") return null;
+  if (to.query.view !== "general-engagements" || !to.query.axe) return null;
+  const query = { section: impactAxeNameToSlug(to.query.axe) };
+  if (to.query.theme !== undefined) query.theme = to.query.theme;
+  if (to.query.levier !== undefined) query.levier = to.query.levier;
+  return { name: to.name, query, hash: to.hash, replace: true };
+}
+
+/** /chantiers?view=chantier&chantier_sector= → ?section=<slug>&chantier_id= */
+function legacyChantierDetailQueryRedirect(to) {
+  if (to.name !== "chantiers" && to.name !== "staging-chantiers") return null;
+  const q = to.query || {};
+  if (!q.chantier_id) return null;
+  if (q.view && q.view !== "chantier") return null;
+
+  const slug =
+    String(q.section || "").toLowerCase() || SECTION_SYNTHESE_SLUG;
+
+  let targetSection;
+  if (q.chantier_sector) {
+    targetSection = toSectionSlug(q.chantier_sector);
+  } else if (slug !== SECTION_SYNTHESE_SLUG) {
+    targetSection = slug;
+  } else {
+    return null;
+  }
+
+  const canonical = {
+    section: targetSection,
+    chantier_id: String(q.chantier_id),
+  };
+  if (q.theme !== undefined) canonical.theme = q.theme;
+  if (q.levier !== undefined) canonical.levier = q.levier;
+
+  const clean =
+    !q.view && q.chantier_sector === undefined && slug === targetSection;
+  if (clean) return null;
+
+  return { name: to.name, query: canonical, hash: to.hash, replace: true };
+}
+
+/** Ancien paramètre ?sector= → ?section= (slug), même route */
+function legacySectorQueryRedirect(to) {
+  if (!DASHBOARD_SHELL_NAMES.includes(to.name) || !to.query?.sector || to.query.section) return null;
+  const q = { ...to.query };
+  q.section = toSectionSlug(q.sector);
+  delete q.sector;
+  return { name: to.name, query: q, hash: to.hash, replace: true };
+}
+
+/** Anciens liens /dashboard?sector=&view= → chemins propres + ?section= */
+function legacyDashboardRedirect(to) {
+  if (to.name !== "dashboard" && to.name !== "staging-dashboard") return null;
+  const q = to.query || {};
+  const view = q.view;
+  if (!view) return null;
+  const isSt = to.name === "staging-dashboard";
+  const section = q.section || toSectionSlug(q.sector || SECTOR_SYNTHESE);
+  const carry = (base) => {
+    const out = { ...base };
+    if (q.chantier_id) out.chantier_id = q.chantier_id;
+    if (q.chantier_sector) out.chantier_sector = q.chantier_sector;
+    if (q.sectorFilter) out.sectorFilter = q.sectorFilter;
+    if (q.theme !== undefined) out.theme = q.theme;
+    if (q.levier !== undefined) out.levier = q.levier;
+    return out;
+  };
+  const etatViews = ["etat-environnement", "general-engagements", "engagements-table"];
+  const chantierViews = [
+    "chantiers-sectoriels",
+    "general-chantiers",
+    "chantiers-table",
+    "chantier"
+  ];
+  if (etatViews.includes(view)) {
+    if (view === "general-engagements" && q.axe) {
+      return {
+        name: isSt ? "staging-etat-environnement" : "etat-environnement",
+        query: carry({ section: impactAxeNameToSlug(q.axe) }),
+        hash: to.hash,
+        replace: true
+      };
+    }
+    const query = carry({ section });
+    if (view === "engagements-table") query.view = "engagements-table";
+    else if (view === "general-engagements") query.view = "general-engagements";
+    return {
+      name: isSt ? "staging-etat-environnement" : "etat-environnement",
+      query,
+      hash: to.hash,
+      replace: true
+    };
+  }
+  if (chantierViews.includes(view)) {
+    if (view === "chantier" && q.chantier_id) {
+      const query = {
+        section: q.chantier_sector
+          ? toSectionSlug(q.chantier_sector)
+          : section,
+        chantier_id: String(q.chantier_id),
+      };
+      if (q.sectorFilter) query.sectorFilter = q.sectorFilter;
+      if (q.theme !== undefined) query.theme = q.theme;
+      if (q.levier !== undefined) query.levier = q.levier;
+      return {
+        name: isSt ? "staging-chantiers" : "chantiers",
+        query,
+        hash: to.hash,
+        replace: true,
+      };
+    }
+    const query = carry({ section });
+    if (view !== "chantiers-sectoriels") query.view = view;
+    return {
+      name: isSt ? "staging-chantiers" : "chantiers",
+      query,
+      hash: to.hash,
+      replace: true
+    };
+  }
+  return null;
+}
+
 const routes = [
   {
     path: "/",
     name: "home",
-    props: route => ({query: route.query.theme}, {query: route.query.levier}),
+    props: dashboardProps,
     component: () =>
       import(/* webpackChunkName: "dashboard" */ "./views/DashboardPage.vue"),
     meta: {
@@ -25,7 +168,7 @@ const routes = [
   {
     path: "/dashboard",
     name: "dashboard",
-    props: route => ({query: route.query.theme}, {query: route.query.levier}),
+    props: dashboardProps,
     component: () =>
       import(/* webpackChunkName: "dashboard" */ "./views/DashboardPage.vue"),
     meta: {
@@ -34,13 +177,40 @@ const routes = [
     }
   },
   {
+    path: "/etat-environnement",
+    name: "etat-environnement",
+    props: dashboardProps,
+    component: () =>
+      import(/* webpackChunkName: "dashboard" */ "./views/DashboardPage.vue"),
+    meta: {
+      title: GeneralTitle + " - État de l'environnement"
+    }
+  },
+  {
+    path: "/chantiers",
+    name: "chantiers",
+    props: dashboardProps,
+    component: () =>
+      import(/* webpackChunkName: "dashboard" */ "./views/DashboardPage.vue"),
+    meta: {
+      title: GeneralTitle + " - Chantiers sectoriels"
+    }
+  },
+  {
     path: "/search",
-    name: "search",
+    redirect: (to) => ({
+      path: "/recherche",
+      query: to.query,
+      hash: to.hash
+    })
+  },
+  {
+    path: "/recherche",
+    name: "recherche",
     component: () =>
       import(/* webpackChunkName: "search" */ "./views/SearchPage.vue"),
     meta: {
-      title:  GeneralTitle + " - Recherche"
-
+      title: GeneralTitle + " - Recherche"
     }
   },
   {
@@ -195,8 +365,42 @@ if (process.env.VUE_APP_ENV !== 'prod') {
       }
     },
     {
+      path: "/staging/etat-environnement",
+      name: "staging-etat-environnement",
+      props: { useStaging: true },
+      component: () =>
+        import(/* webpackChunkName: "dashboard" */ "./views/DashboardPage.vue"),
+      meta: {
+        title: GeneralTitle + " - État de l'environnement",
+        isStaging: true,
+        noindex: true,
+        excludeFromSitemap: true
+      }
+    },
+    {
+      path: "/staging/chantiers",
+      name: "staging-chantiers",
+      props: { useStaging: true },
+      component: () =>
+        import(/* webpackChunkName: "dashboard" */ "./views/DashboardPage.vue"),
+      meta: {
+        title: GeneralTitle + " - Chantiers sectoriels",
+        isStaging: true,
+        noindex: true,
+        excludeFromSitemap: true
+      }
+    },
+    {
       path: "/staging/search",
-      name: "staging-search",
+      redirect: (to) => ({
+        path: "/staging/recherche",
+        query: to.query,
+        hash: to.hash
+      })
+    },
+    {
+      path: "/staging/recherche",
+      name: "staging-recherche",
       props: { useStaging: true },
       component: () =>
         import(/* webpackChunkName: "search" */ "./views/SearchPage.vue"),
@@ -253,6 +457,27 @@ function isStagingRoute(route) {
 }
 
 router.beforeEach(async (to, from, next) => {
+  const etatAxeRedir = legacyEtatEngagementsQueryRedirect(to);
+  if (etatAxeRedir) {
+    next(etatAxeRedir);
+    return;
+  }
+  const chantierRedir = legacyChantierDetailQueryRedirect(to);
+  if (chantierRedir) {
+    next(chantierRedir);
+    return;
+  }
+  const sectorRedir = legacySectorQueryRedirect(to);
+  if (sectorRedir) {
+    next(sectorRedir);
+    return;
+  }
+  const dashRedir = legacyDashboardRedirect(to);
+  if (dashRedir) {
+    next(dashRedir);
+    return;
+  }
+
   // If in production and trying to access a /staging route, redirect to the non-staging equivalent
   if (
     process.env.VUE_APP_ENV === 'prod' &&

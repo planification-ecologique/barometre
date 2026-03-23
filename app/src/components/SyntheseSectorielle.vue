@@ -205,6 +205,8 @@
 import MiniChart from './MiniChart.vue'
 import { getNavigationStructure, getIndicators, isImpactAxe } from '@/services/csvDataService.js'
 import { getAllColors, getHexaFromName } from '@/utils.js'
+import { chantiersRouteName } from '@/config/routeNames.js'
+import { toSectionSlug } from '@/utils/sectionUrl.js'
 
 const SECTOR_DESCRIPTIONS = {
   'Se déplacer': 'Le secteur "Se déplacer" couvre les déplacements de voyageurs et de marchandises, pour l\'ensemble des modes de transports (terrestres, aériens, maritimes et fluviaux).',
@@ -469,14 +471,12 @@ export default {
       this.$emit('navigate', { view: 'about', sector: 'Synthèse' })
     },
     chantierHref(sectorName, chantier) {
-      const routeName = window.location.pathname.includes('/staging') ? 'staging-dashboard' : 'dashboard'
+      const isStaging = window.location.pathname.includes('/staging')
       const route = this.$router.resolve({
-        name: routeName,
+        name: chantiersRouteName(isStaging),
         query: {
-          sector: 'Synthèse',
-          view: 'chantier',
-          chantier_id: chantier.id,
-          chantier_sector: sectorName
+          section: toSectionSlug(sectorName),
+          chantier_id: chantier.id
         }
       })
       return route.href
@@ -496,16 +496,12 @@ export default {
       this.goToChantier(sectorName, chantier)
     },
     goToChantier(sectorName, chantier) {
-      // Navigate to chantier detail, staying under Synthèse sector
-      // The real sector is passed as chantier_sector for display
-      const routeName = window.location.pathname.includes('/staging') ? 'staging-dashboard' : 'dashboard'
+      const isStaging = window.location.pathname.includes('/staging')
       this.$router.push({
-        name: routeName,
+        name: chantiersRouteName(isStaging),
         query: {
-          sector: 'Synthèse',
-          view: 'chantier',
-          chantier_id: chantier.id,
-          chantier_sector: sectorName
+          section: toSectionSlug(sectorName),
+          chantier_id: chantier.id
         }
       }).catch(() => {})
     }

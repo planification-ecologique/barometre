@@ -189,7 +189,8 @@
 import GraphBox from "./GraphBox.vue";
 import EnvironnementImg from "./components_sgv/EnvironnementImg.vue";
 import { normalizeImpactAxeName } from "@/services/csvDataService.js";
-import { homeRouteName } from "@/config/routeNames.js";
+import { homeRouteName, etatEnvironnementRouteName } from "@/config/routeNames.js";
+import { SECTION_SYNTHESE_SLUG } from "@/utils/sectionUrl.js";
 
 const AXE_DESCRIPTIONS = {
   'Atténuation climat': "Les indicateurs d'atténuation suivent la réduction des émissions de gaz à effet de serre et la transition vers une économie bas-carbone.",
@@ -457,8 +458,11 @@ export default {
       this.$router.push({ name: homeRouteName(isStaging) }).catch(() => {})
     },
     goEtatEnvironnement() {
-      const routeName = window.location.pathname.includes('/staging') ? 'staging-dashboard' : 'dashboard';
-      this.$router.push({ name: routeName, query: { sector: 'Synthèse', view: 'etat-environnement' } }).catch(() => {});
+      const isStaging = window.location.pathname.includes('/staging')
+      this.$router.push({
+        name: etatEnvironnementRouteName(isStaging),
+        query: { section: SECTION_SYNTHESE_SLUG }
+      }).catch(() => {})
     },
     getIndicatorSectionId(prefix, index) {
       const safePrefix = String(prefix || '').replace(/[^a-zA-Z0-9-]/g, '-').replace(/-+/g, '-') || 'impact';

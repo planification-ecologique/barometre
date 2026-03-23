@@ -157,7 +157,7 @@ export default {
   data() {
     return {
       accueil_link: "/",
-      search_link: "/search",
+      search_link: "/recherche",
       showNavigation: false,
       isDesktop: false,
       headerSearchQuery: "",
@@ -165,7 +165,7 @@ export default {
   },
   watch: {
     $route(to) {
-      if (to.name === "search" || to.name === "staging-search") {
+      if (to.name === "recherche" || to.name === "staging-recherche") {
         this.headerSearchQuery = to.query.q || "";
       }
     },
@@ -177,17 +177,17 @@ export default {
       const stagingPrefix = isStaging ? '/staging' : '';
       if (base) {
         this.accueil_link = base + (isStaging ? "/staging" : "/");
-        this.search_link = base + stagingPrefix + '/search';
+        this.search_link = base + stagingPrefix + '/recherche';
       } else {
         this.accueil_link = isStaging ? "/staging" : "/";
-        this.search_link = stagingPrefix + '/search';
+        this.search_link = stagingPrefix + '/recherche';
       }
     },
     goToSearch() {
       this.submitSearch();
     },
     submitSearch() {
-      const routeName = window.location.pathname.includes('/staging') ? 'staging-search' : 'search';
+      const routeName = window.location.pathname.includes('/staging') ? 'staging-recherche' : 'recherche';
       const query = this.headerSearchQuery?.trim() ? { q: this.headerSearchQuery.trim() } : {};
       this.$router.push({ name: routeName, query }).catch(() => {});
     },
@@ -216,7 +216,7 @@ export default {
     this.set_link();
     this.checkForMobile();
     window.addEventListener("resize", this.checkForMobile);
-    if (this.$route.name === "search" || this.$route.name === "staging-search") {
+    if (this.$route.name === "recherche" || this.$route.name === "staging-recherche") {
       this.headerSearchQuery = this.$route.query.q || "";
     }
   },

@@ -168,7 +168,8 @@
 import GraphBox from "./GraphBox.vue";
 import SectorIcon from "./SectorIcon.vue";
 import { getIndicators } from "@/services/csvDataService.js";
-import { homeRouteName } from "@/config/routeNames.js";
+import { homeRouteName, chantiersRouteName } from "@/config/routeNames.js";
+import { SECTION_SYNTHESE_SLUG } from "@/utils/sectionUrl.js";
 
 export default {
   name: "ChantierDetail",
@@ -226,6 +227,20 @@ export default {
         chartData: [],
       };
     },
+    autresIndicateursLevierGroup() {
+      return (
+        this.displayLeviers.find(
+          (g) => g.name === "Autres indicateurs"
+        ) || null
+      );
+    },
+    autresIndicateursCount() {
+      const data = this.autresIndicateursLevierGroup?.chartData;
+      return Array.isArray(data) ? data.length : 0;
+    },
+    autresIndicateursSectionId() {
+      return this.getSectionId("Autres indicateurs");
+    },
     otherLevierGroups() {
       return this.displayLeviers.filter(
         (levierGroup) =>
@@ -253,7 +268,10 @@ export default {
     },
     levierSectionLinks() {
       return this.otherLevierGroups
-        .filter((levierGroup) => levierGroup.name)
+        .filter(
+          (levierGroup) =>
+            levierGroup.name && levierGroup.name !== "Autres indicateurs"
+        )
         .map((levierGroup) => ({
           id: this.getSectionId(levierGroup.name),
           label: levierGroup.name,
@@ -274,19 +292,21 @@ export default {
     },
     indicateurTags() {
       const tags = [];
-      if (this.hasChantierIndicators && this.primaryIndicatorGroup.chartData.length > 0) {
-        tags.push({
-          id: 'primary',
-          label: this.primaryIndicatorGroup.chartData[0].label_indic || 'Indicateur du chantier',
-          href: '#' + this.primarySectionId,
-        });
-        if (this.otherIndicatorCount > 0) {
+      if (this.hasChantierIndicators) {
+        this.primaryIndicatorGroup.chartData.forEach((item, idx) => {
           tags.push({
-            id: 'others',
-            label: `Autres indicateurs (${this.otherIndicatorCount})`,
-            href: '#' + this.primarySectionId,
+            id: `primary-${idx}`,
+            label: item.label_indic || `Indicateur ${idx + 1}`,
+            href: "#" + this.primarySectionId,
           });
-        }
+        });
+      }
+      if (this.autresIndicateursCount > 0) {
+        tags.push({
+          id: "autres-indicateurs",
+          label: `Autres indicateurs (${this.autresIndicateursCount})`,
+          href: "#" + this.autresIndicateursSectionId,
+        });
       }
       return tags;
     },
@@ -298,6 +318,23 @@ export default {
       }));
     },
     contributionTags() {
+      const fromListe = this.params.axeTaxonomie;
+      if (Array.isArray(fromListe) && fromListe.length > 0) {
+        const seen = new Set();
+        const tags = [];
+        fromListe.forEach((raw) => {
+          const trimmed = String(raw || "").trim();
+          if (!trimmed) return;
+          const key = trimmed.toLowerCase();
+          if (seen.has(key)) return;
+          seen.add(key);
+          tags.push({
+            id: key.replace(/\s+/g, "-"),
+            label: trimmed,
+          });
+        });
+        return tags;
+      }
       const seen = new Set();
       const tags = [];
       const allChartData = [
@@ -305,13 +342,13 @@ export default {
         ...this.otherLevierGroups.flatMap((g) => g.chartData || []),
       ];
       allChartData.forEach((item) => {
-        const raw = item.label_tags || '';
-        raw.split(',').forEach((t) => {
+        const raw = item.label_tags || "";
+        raw.split(",").forEach((t) => {
           const trimmed = t.trim();
           if (trimmed && !seen.has(trimmed.toLowerCase())) {
             seen.add(trimmed.toLowerCase());
             tags.push({
-              id: trimmed.toLowerCase().replace(/\s+/g, '-'),
+              id: trimmed.toLowerCase().replace(/\s+/g, "-"),
               label: trimmed.charAt(0).toUpperCase() + trimmed.slice(1),
             });
           }
@@ -327,10 +364,6 @@ export default {
         return this.primaryIndicatorGroup.chartData[0].label_indic || 'Indicateur du chantier';
       }
       return 'Indicateur du chantier';
-    },
-    otherIndicatorCount() {
-      if (!this.hasChantierIndicators) return 0;
-      return Math.max(0, this.primaryIndicatorGroup.chartData.length - 1);
     },
     summaryHtml() {
       const gristRetenir = String(this.params.descriptionChantier || '').trim();
@@ -455,13 +488,18 @@ export default {
       this.$router.push({ name: homeRouteName(isStaging) }).catch(() => {})
     },
     goChantiersSectoriels() {
-      const routeName = window.location.pathname.includes('/staging') ? 'staging-dashboard' : 'dashboard';
-      this.$router.push({ name: routeName, query: { sector: 'Synthèse', view: 'chantiers-sectoriels' } }).catch(() => {});
+      const isStaging = window.location.pathname.includes('/staging')
+      this.$router.push({
+        name: chantiersRouteName(isStaging),
+        query: { section: SECTION_SYNTHESE_SLUG }
+      }).catch(() => {})
     },
     goSector() {
-      // Navigate back to synthèse, scrolled to the relevant sector section
-      const routeName = window.location.pathname.includes('/staging') ? 'staging-dashboard' : 'dashboard';
-      this.$router.push({ name: routeName, query: { sector: 'Synthèse', view: 'chantiers-sectoriels' } }).catch(() => {});
+      const isStaging = window.location.pathname.includes('/staging')
+      this.$router.push({
+        name: chantiersRouteName(isStaging),
+        query: { section: SECTION_SYNTHESE_SLUG }
+      }).catch(() => {})
     },
     getSectionId(label) {
       const normalized = String(label || "")

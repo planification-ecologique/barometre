@@ -3,7 +3,7 @@
     <strong>STAGING DATA</strong> - Testez le rendu des graphiques à partir du Grist de test
     <div class="staging-links">
       <router-link to="/staging/dashboard" class="staging-link">Tableau de bord</router-link>
-      <router-link to="/staging/search" class="staging-link">Recherche</router-link>
+      <router-link to="/staging/recherche" class="staging-link">Recherche</router-link>
       <a :href="gristDocUrl" target="_blank" class="staging-link">Grist Data</a>
       <a href="#" class="exit-link" @click.prevent="handleExitStaging" style="cursor: pointer;">Quitter Staging</a>
     </div>

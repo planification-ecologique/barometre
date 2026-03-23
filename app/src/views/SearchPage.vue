@@ -233,8 +233,8 @@ export default {
     });
     
     dsfrAnalytics({
-      path: "/search",
-      name: "search",
+      path: "/recherche",
+      name: "recherche",
       segment: "search",
       labels: ['contenu_liste', 'search', '', '', ''],
       template: "contenu_liste",

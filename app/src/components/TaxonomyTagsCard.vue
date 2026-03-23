@@ -16,6 +16,9 @@
 
 <script>
 import { isImpactAxe, normalizeImpactAxeName } from '@/services/csvDataService.js';
+import { etatEnvironnementRouteName, chantiersRouteName } from '@/config/routeNames.js';
+import { SECTION_SYNTHESE_SLUG } from '@/utils/sectionUrl.js';
+import { impactAxeNameToSlug } from '@/utils/impactAxeUrl.js';
 
 export default {
   name: 'TaxonomyTagsCard',
@@ -31,8 +34,11 @@ export default {
     }
   },
   computed: {
-    routeName() {
-      return this.useStaging ? 'staging-dashboard' : 'dashboard';
+    etatName() {
+      return etatEnvironnementRouteName(this.useStaging);
+    },
+    chantiersName() {
+      return chantiersRouteName(this.useStaging);
     },
     tags() {
       if (!this.dataObj) return [];
@@ -46,8 +52,8 @@ export default {
           value: sector,
           label: sector,
           href: {
-            name: this.routeName,
-            query: { sector: 'Synthèse', view: 'chantiers-sectoriels' },
+            name: this.chantiersName,
+            query: { section: SECTION_SYNTHESE_SLUG, view: 'chantiers-sectoriels' },
             hash: '#sector-' + this.slugify(sector)
           }
         });
@@ -64,8 +70,8 @@ export default {
           value: axe,
           label: axe,
           href: {
-            name: this.routeName,
-            query: { sector: 'Synthèse', view: 'general-engagements', axe }
+            name: this.etatName,
+            query: { section: impactAxeNameToSlug(axe) }
           }
         });
       });

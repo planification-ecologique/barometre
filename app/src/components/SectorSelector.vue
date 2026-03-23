@@ -85,7 +85,19 @@
 
 <script>
 import router from '../router'
-import { homeRouteName } from '@/config/routeNames.js'
+import {
+  homeRouteName,
+  dashboardRouteName,
+  etatEnvironnementRouteName,
+  chantiersRouteName,
+  rechercheRouteName,
+} from '@/config/routeNames.js'
+import {
+  resolveSectorFromQuery,
+  toSectionSlug,
+  SECTION_SYNTHESE_SLUG,
+} from '@/utils/sectionUrl.js'
+import { impactAxeNameToSlug, impactAxeSlugToName, isImpactAxeSlug } from '@/utils/impactAxeUrl.js'
 import { getNavigationStructure, IMPACT_AXE_DISPLAY_ORDER, isImpactAxe } from '@/services/csvDataService.js'
 import { getSectorIcon } from '@/utils/sectorIcons.js'
 
@@ -114,7 +126,11 @@ export default {
     },
     // Use route-based sector to ensure consistency with currentValue
     activeSector() {
-      return this.$route?.query?.sector || this.currentSector || 'Synthèse'
+      return (
+        resolveSectorFromQuery(this.$route?.query || {}, this.sectors) ||
+        this.currentSector ||
+        'Synthèse'
+      )
     },
     // Match SideNavigation: axes in display order, filter by data, always include Adaptation climat
     displayedTaxonomyAxes() {
@@ -140,7 +156,7 @@ export default {
       const query = this.$route?.query || {}
       const path = this.$route?.path || ''
       
-      if (path.includes('search')) {
+      if (path.includes('recherche')) {
         return 'page:search'
       }
 
@@ -148,9 +164,30 @@ export default {
       if (routeName === 'home' || routeName === 'staging-home') {
         return 'view:about'
       }
-      
-      const view = query.view
-      const sector = query.sector || 'Synthèse'
+
+      let view = query.view
+      if (routeName === 'etat-environnement' || routeName === 'staging-etat-environnement') {
+        const secSlug = String(query.section || '').toLowerCase()
+        if (secSlug && secSlug !== SECTION_SYNTHESE_SLUG && isImpactAxeSlug(secSlug)) {
+          const axeName = impactAxeSlugToName(secSlug)
+          if (axeName) return 'axe:' + axeName
+        }
+        if (!view) view = 'etat-environnement'
+      } else if (routeName === 'chantiers' || routeName === 'staging-chantiers') {
+        const chSlug = String(query.section || '').toLowerCase()
+        if (
+          query.chantier_id &&
+          chSlug &&
+          chSlug !== SECTION_SYNTHESE_SLUG &&
+          (!view || view === 'chantier')
+        ) {
+          view = 'chantier'
+        } else if (!view) {
+          view = 'chantiers-sectoriels'
+        }
+      }
+
+      const sector = resolveSectorFromQuery(query, this.sectors)
       
       if (view === 'about') {
         return 'view:about'
@@ -260,77 +297,102 @@ export default {
       const param = rest.join(':') // Rejoin in case value contains colons
       
       const isStaging = window.location.pathname.includes('/staging')
-      const routeName = isStaging ? 'staging-dashboard' : 'dashboard'
-      const searchRouteName = isStaging ? 'staging-search' : 'search'
-      
+      const dash = dashboardRouteName(isStaging)
+      const syn = SECTION_SYNTHESE_SLUG
+
       if (type === 'sector') {
-        // Navigate to sector
         if (param === 'Synthèse') {
           router.push({ name: homeRouteName(isStaging) }).catch(err => {
             if (err.name !== 'NavigationDuplicated') console.error('Navigation error:', err)
           })
         } else {
-          const query = { sector: param, view: 'sectorial-engagements' }
-          router.push({ name: routeName, query }).catch(err => {
+          router.push({
+            name: dash,
+            query: { section: toSectionSlug(param), view: 'sectorial-engagements' }
+          }).catch(err => {
             if (err.name !== 'NavigationDuplicated') console.error('Navigation error:', err)
           })
         }
       } else if (type === 'view') {
-        // Navigate to specific view
         if (param === 'about') {
           router.push({ name: homeRouteName(isStaging) }).catch(err => {
             if (err.name !== 'NavigationDuplicated') console.error('Navigation error:', err)
           })
+        } else if (param === 'etat-environnement') {
+          router.push({
+            name: etatEnvironnementRouteName(isStaging),
+            query: { section: syn }
+          }).catch(err => {
+            if (err.name !== 'NavigationDuplicated') console.error('Navigation error:', err)
+          })
+        } else if (param === 'chantiers-sectoriels') {
+          router.push({
+            name: chantiersRouteName(isStaging),
+            query: { section: syn }
+          }).catch(err => {
+            if (err.name !== 'NavigationDuplicated') console.error('Navigation error:', err)
+          })
+        } else if (param === 'engagements-table') {
+          router.push({
+            name: etatEnvironnementRouteName(isStaging),
+            query: { section: syn, view: 'engagements-table' }
+          }).catch(err => {
+            if (err.name !== 'NavigationDuplicated') console.error('Navigation error:', err)
+          })
+        } else if (param === 'chantiers-table') {
+          router.push({
+            name: chantiersRouteName(isStaging),
+            query: { section: syn, view: 'chantiers-table' }
+          }).catch(err => {
+            if (err.name !== 'NavigationDuplicated') console.error('Navigation error:', err)
+          })
         } else {
           router.push({
-            name: routeName,
-            query: { sector: 'Synthèse', view: param }
+            name: dash,
+            query: { section: syn, view: param }
           }).catch(err => {
             if (err.name !== 'NavigationDuplicated') console.error('Navigation error:', err)
           })
         }
       } else if (type === 'axe') {
-        // Navigate to specific taxonomy axe
         router.push({
-          name: routeName,
-          query: { sector: 'Synthèse', view: 'general-engagements', axe: param }
+          name: etatEnvironnementRouteName(isStaging),
+          query: { section: impactAxeNameToSlug(param) }
         }).catch(err => {
           if (err.name !== 'NavigationDuplicated') console.error('Navigation error:', err)
         })
       } else if (type === 'chantierSector') {
-        // Navigate to chantiers overview for a specific sector
         router.push({
-          name: routeName,
-          query: { sector: 'Synthèse', view: 'general-chantiers', sectorFilter: param }
+          name: chantiersRouteName(isStaging),
+          query: { section: syn, view: 'general-chantiers', sectorFilter: param }
         }).catch(err => {
           if (err.name !== 'NavigationDuplicated') console.error('Navigation error:', err)
         })
       } else if (type === 'chantierSynthese') {
-        // Navigate to chantier from Synthèse (param is chantierId:chantierSector)
         const [chantierId, chantierSector] = param.split(':')
         router.push({
-          name: routeName,
+          name: chantiersRouteName(isStaging),
           query: {
-            sector: 'Synthèse',
-            view: 'chantier',
+            section: toSectionSlug(chantierSector),
             chantier_id: chantierId,
-            chantier_sector: chantierSector
           }
         }).catch(err => {
           if (err.name !== 'NavigationDuplicated') console.error('Navigation error:', err)
         })
       } else if (type === 'chantier') {
-        // Navigate to specific chantier (sectorial view)
         router.push({
-          name: routeName,
-          query: { sector: this.activeSector, view: 'chantier', chantier_id: param }
+          name: dash,
+          query: {
+            section: toSectionSlug(this.activeSector),
+            view: 'chantier',
+            chantier_id: param
+          }
         }).catch(err => {
           if (err.name !== 'NavigationDuplicated') console.error('Navigation error:', err)
         })
       } else if (type === 'page') {
-        // Navigate to other pages
         if (param === 'search') {
-          router.push({ name: searchRouteName }).catch(err => {
+          router.push({ name: rechercheRouteName(isStaging) }).catch(err => {
             if (err.name !== 'NavigationDuplicated') console.error('Navigation error:', err)
           })
         }

@@ -7,3 +7,15 @@ export function homeRouteName(isStaging) {
 export function dashboardRouteName(isStaging) {
   return isStaging ? "staging-dashboard" : "dashboard";
 }
+
+export function etatEnvironnementRouteName(isStaging) {
+  return isStaging ? "staging-etat-environnement" : "etat-environnement";
+}
+
+export function chantiersRouteName(isStaging) {
+  return isStaging ? "staging-chantiers" : "chantiers";
+}
+
+export function rechercheRouteName(isStaging) {
+  return isStaging ? "staging-recherche" : "recherche";
+}

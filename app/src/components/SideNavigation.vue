@@ -7,82 +7,77 @@
       </button>
       <div class="fr-collapse" id="fr-sidemenu-wrapper">
         <ul class="fr-sidemenu__list">
-          <!-- Synthèse sector: context-dependent sidebar -->
-          <template v-if="sector === 'Synthèse'">
-
-            <!-- ETAT DE L'ENVIRONNEMENT sidebar: show Synthèse + impact axes -->
-            <template v-if="isEtatEnvironnementContext">
-              <li class="fr-sidemenu__item">
-                <a class="fr-sidemenu__link"
-                  title="Synthèse"
-                  @click="set_etat_environnement"
-                  target="_self"
-                  :aria-current="currentView === 'etat-environnement' ? 'page' : undefined"
-                  tabindex="0"
-                >
-                  Synthèse
-                </a>
-              </li>
-              <li class="fr-sidemenu__item" v-for="axe in displayedTaxonomyAxes" :key="'axe-' + axe">
-                <a class="fr-sidemenu__link"
-                  :title="axe"
-                  @click="set_general_engagements(axe)"
-                  target="_self"
-                  :aria-current="currentView === 'general-engagements' && axesMatch(currentAxe, axe) ? 'page' : undefined"
-                  tabindex="0"
-                >
-                  {{ axe }}
-                </a>
-              </li>
-            </template>
-
-            <!-- CHANTIERS SECTORIELS sidebar: show Synthèse + sectors with expandable chantiers -->
-            <template v-else>
-              <li class="fr-sidemenu__item">
-                <a class="fr-sidemenu__link"
-                  title="Synthèse"
-                  @click="set_chantiers_sectoriels"
-                  target="_self"
-                  :aria-current="currentView === 'chantiers-sectoriels' ? 'page' : undefined"
-                  tabindex="0"
-                >
-                  Synthèse
-                </a>
-              </li>
-
-              <li class="fr-sidemenu__item" v-for="sectorName in chantierSectors" :key="sectorName">
-                <button
-                  class="fr-sidemenu__btn"
-                  :class="{ 'sidemenu-btn--active': expandedSectorName === sectorName }"
-                  :aria-expanded="expandedSectorName === sectorName"
-                  @click="toggleSector(sectorName)"
-                >
-                  {{ sectorName }}
-                </button>
-                <div
-                  class="fr-collapse sidemenu-chantiers-expanded"
-                  :class="{ 'fr-collapse--expanded': expandedSectorName === sectorName }"
-                >
-                  <ul class="fr-sidemenu__list">
-                    <li class="fr-sidemenu__item" v-for="chantier in getSectorChantiers(sectorName)" :key="chantier.id">
-                      <a class="fr-sidemenu__link"
-                        :title="chantier.name"
-                        @click="set_chantier_from_synthese(sectorName, chantier)"
-                        target="_self"
-                        :aria-current="currentView === 'chantier' && currentChantierId === chantier.id ? 'page' : undefined"
-                        tabindex="0"
-                      >
-                        {{ chantier.name }}
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-            </template>
-
+          <!-- État de l'environnement (route / tableau de bord, secteur Synthèse uniquement) -->
+          <template v-if="sector === 'Synthèse' && isEtatEnvironnementContext">
+            <li class="fr-sidemenu__item">
+              <a class="fr-sidemenu__link"
+                title="Synthèse"
+                @click="set_etat_environnement"
+                target="_self"
+                :aria-current="currentView === 'etat-environnement' ? 'page' : undefined"
+                tabindex="0"
+              >
+                Synthèse
+              </a>
+            </li>
+            <li class="fr-sidemenu__item" v-for="axe in displayedTaxonomyAxes" :key="'axe-' + axe">
+              <a class="fr-sidemenu__link"
+                :title="axe"
+                @click="set_general_engagements(axe)"
+                target="_self"
+                :aria-current="currentView === 'general-engagements' && axesMatch(currentAxe, axe) ? 'page' : undefined"
+                tabindex="0"
+              >
+                {{ axe }}
+              </a>
+            </li>
           </template>
-          
-          <!-- Sectoriel: Indicateurs d'impact and Chantiers menu -->
+
+          <!-- Chantiers sectoriels : accordéon Synthèse + secteurs (toujours sur la route /chantiers) -->
+          <template v-else-if="showChantiersAccordionSidebar">
+            <li class="fr-sidemenu__item">
+              <a class="fr-sidemenu__link"
+                title="Synthèse"
+                @click="set_chantiers_sectoriels"
+                target="_self"
+                :aria-current="currentView === 'chantiers-sectoriels' ? 'page' : undefined"
+                tabindex="0"
+              >
+                Synthèse
+              </a>
+            </li>
+
+            <li class="fr-sidemenu__item" v-for="sectorName in chantierSectors" :key="sectorName">
+              <button
+                class="fr-sidemenu__btn"
+                :class="{ 'sidemenu-btn--active': expandedSectorName === sectorName }"
+                :aria-expanded="expandedSectorName === sectorName"
+                @click="toggleSector(sectorName)"
+              >
+                {{ sectorName }}
+              </button>
+              <div
+                class="fr-collapse sidemenu-chantiers-expanded"
+                :class="{ 'fr-collapse--expanded': expandedSectorName === sectorName }"
+              >
+                <ul class="fr-sidemenu__list">
+                  <li class="fr-sidemenu__item" v-for="chantier in getSectorChantiers(sectorName)" :key="chantier.id">
+                    <a class="fr-sidemenu__link"
+                      :title="chantier.name"
+                      @click="set_chantier_from_synthese(sectorName, chantier)"
+                      target="_self"
+                      :aria-current="currentView === 'chantier' && currentChantierId === chantier.id ? 'page' : undefined"
+                      tabindex="0"
+                    >
+                      {{ chantier.name }}
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </template>
+
+          <!-- Tableau de bord par secteur (hors route /chantiers) -->
           <template v-else>
             <li class="fr-sidemenu__item">
                   <a class="fr-sidemenu__link" 
@@ -96,13 +91,10 @@
                 Indicateurs d'impact
                   </a>
                 </li>
-            <!-- Chantiers Sectoriels: title + always-open indented sub-list -->
+            <!-- Chantiers du secteur (pas de doublon avec l’onglet « Chantiers sectoriels » ni aria-current sur le titre) -->
             <li class="fr-sidemenu__item">
-              <span
-                class="fr-sidemenu__link sidemenu-section-title"
-                :aria-current="currentView === 'chantier' ? 'page' : null"
-              >
-                Chantiers sectoriels
+              <span class="fr-sidemenu__link sidemenu-section-title">
+                Chantiers
               </span>
               <div class="fr-collapse fr-collapse--expanded sidemenu-chantiers-expanded">
                 <ul class="fr-sidemenu__list">
@@ -163,6 +155,15 @@ export default {
         axe === 'Adaptation climat' // Always show even when no indicators (matches Etat env)
       );
     },
+    /** Route dédiée Chantiers : accordéon secteurs même si `section` ≠ synthese */
+    isChantiersShellRoute() {
+      const n = this.$route && this.$route.name;
+      return n === "chantiers" || n === "staging-chantiers";
+    },
+    showChantiersAccordionSidebar() {
+      if (this.isEtatEnvironnementContext) return false;
+      return this.sector === "Synthèse" || this.isChantiersShellRoute;
+    },
   },
   props: {
     initParams: {
@@ -201,6 +202,7 @@ export default {
                 name: name,
                 sortedLeviers: chantierData.sortedLeviers || [],
                 descriptionChantier: chantierData.descriptionChantier || '',
+                axeTaxonomie: chantierData.axeTaxonomie || [],
                 // Collect all grist IDs from all leviers
                 grist_ids: Object.values(chantierData.leviers)
                   .flat()
@@ -208,15 +210,17 @@ export default {
                   .filter(id => id)
               }))
               .sort((a, b) => a.name.localeCompare(b.name));
-            
-            // For Synthèse sector, load taxonomy axes, chantier sectors, and all sector chantiers
-            if (this.sector === 'Synthèse') {
-              this.loadTaxonomyAxes();
-              this.loadChantierSectors();
-              this.loadAllSectorChantiers();
-            }
           } else {
             this.chantiers = [];
+          }
+
+          // Accordéon chantiers : axes (Synthèse) + liste multi-secteurs
+          if (this.sector === "Synthèse") {
+            this.loadTaxonomyAxes();
+          }
+          if (this.sector === "Synthèse" || this.isChantiersShellRoute) {
+            this.loadChantierSectors();
+            this.loadAllSectorChantiers();
           }
         }
         
@@ -225,7 +229,7 @@ export default {
         // Initialize with view from initParams, or default view based on sector
         if (!this.initParams || !this.initParams.view) {
           // No view specified - use default for sector
-          if (this.sector === 'Synthèse') {
+          if (this.sector === "Synthèse" || this.isChantiersShellRoute) {
             this.set_chantiers_sectoriels();
           } else {
             this.set_sectorial_engagements();
@@ -237,8 +241,7 @@ export default {
             this.set_sectorial_engagements();
           }
         } else if (this.initParams.view === 'chantiers-sectoriels') {
-          // Only valid for Synthèse sector
-          if (this.sector === 'Synthèse') {
+          if (this.sector === "Synthèse" || this.isChantiersShellRoute) {
             this.set_chantiers_sectoriels();
           } else {
             this.set_sectorial_engagements();
@@ -259,8 +262,7 @@ export default {
             this.set_sectorial_engagements();
           }
         } else if (this.initParams.view === 'chantiers-table') {
-          // Only valid for Synthèse sector
-          if (this.sector === 'Synthèse') {
+          if (this.sector === "Synthèse" || this.isChantiersShellRoute) {
             this.set_chantiers_table();
             this.expandedChantiers = true;
           } else {
@@ -292,13 +294,54 @@ export default {
             if (foundChantier && foundSector) {
               this.set_chantier_from_synthese(foundSector, foundChantier);
             } else {
+              const hint = this.initParams.chantier_sector;
+              const hintList =
+                hint && this.allSectorChantiers[hint]
+                  ? this.allSectorChantiers[hint]
+                  : null;
+              if (hintList && hintList.length > 0) {
+                this.set_chantier_from_synthese(hint, hintList[0]);
+              } else {
+                let fallbackSector = null;
+                let fallbackChantier = null;
+                for (const secName of this.chantierSectors) {
+                  const list = this.allSectorChantiers[secName];
+                  if (list && list.length > 0) {
+                    fallbackSector = secName;
+                    fallbackChantier = list[0];
+                    break;
+                  }
+                }
+                if (fallbackSector && fallbackChantier) {
+                  this.set_chantier_from_synthese(
+                    fallbackSector,
+                    fallbackChantier
+                  );
+                } else {
+                  this.set_chantiers_sectoriels();
+                }
+              }
+            }
+          } else if (this.isChantiersShellRoute) {
+            const chantier = this.chantiers.find(
+              (c) => c.id === this.initParams.chantier_id
+            );
+            if (chantier) {
+              this.set_chantier_from_synthese(this.sector, chantier);
+            } else if (this.chantiers.length > 0) {
+              this.set_chantier_from_synthese(this.sector, this.chantiers[0]);
+            } else {
               this.set_chantiers_sectoriels();
             }
           } else {
-            // Non-Synthèse: look in this sector's chantiers
-            const chantier = this.chantiers.find(c => c.id === this.initParams.chantier_id);
+            // Tableau de bord secteur : liste plate
+            const chantier = this.chantiers.find(
+              (c) => c.id === this.initParams.chantier_id
+            );
             if (chantier) {
               this.set_chantier(chantier);
+            } else if (this.chantiers.length > 0) {
+              this.set_chantier(this.chantiers[0]);
             } else {
               this.set_sectorial_engagements();
             }
@@ -314,25 +357,21 @@ export default {
             this.set_sectorial_engagements();
           }
         } else if (this.initParams.view === 'general-chantiers') {
-          // Only valid for Synthèse sector
-          if (this.sector === 'Synthèse') {
+          if (this.sector === "Synthèse" || this.isChantiersShellRoute) {
             const sectorFilter = this.initParams.sectorFilter || null;
             this.set_general_chantiers(sectorFilter);
             if (sectorFilter) this.expandedChantiers = true;
           } else {
-            // Invalid view for this sector - use default
             this.set_sectorial_engagements();
           }
         } else if (this.initParams.view === 'sectorial-engagements') {
-          // Valid for all sectors except Synthèse
-          if (this.sector === 'Synthèse') {
+          if (this.sector === "Synthèse" || this.isChantiersShellRoute) {
             this.set_chantiers_sectoriels();
           } else {
             this.set_sectorial_engagements();
           }
         } else {
-          // Unknown view - use default
-          if (this.sector === 'Synthèse') {
+          if (this.sector === "Synthèse" || this.isChantiersShellRoute) {
             this.set_chantiers_sectoriels();
           } else {
             this.set_sectorial_engagements();
@@ -391,6 +430,7 @@ export default {
                 name: name,
                 sortedLeviers: chantierData.sortedLeviers || [],
                 descriptionChantier: chantierData.descriptionChantier || '',
+                axeTaxonomie: chantierData.axeTaxonomie || [],
                 grist_ids: Object.values(chantierData.leviers)
                   .flat()
                   .map(item => item.gristId)
@@ -475,7 +515,8 @@ export default {
           },
         },
         sortedLeviers: chantier.sortedLeviers || [],
-        descriptionChantier: chantier.descriptionChantier || ''
+        descriptionChantier: chantier.descriptionChantier || '',
+        axeTaxonomie: chantier.axeTaxonomie || [],
       };
       this.$emit("params", params);
     },
@@ -785,7 +826,8 @@ export default {
         },
         // Pass sorted leviers from navigation data
         sortedLeviers: chantier.sortedLeviers || [],
-        descriptionChantier: chantier.descriptionChantier || ''
+        descriptionChantier: chantier.descriptionChantier || '',
+        axeTaxonomie: chantier.axeTaxonomie || [],
       };
       this.$emit("params", params);
     },

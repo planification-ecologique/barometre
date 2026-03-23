@@ -144,7 +144,8 @@
 import MiniChart from './MiniChart.vue'
 import { getNavigationStructure, getIndicators, fetchEngagementLongMapping, fetchEngagementsByAxe, IMPACT_AXE_DISPLAY_ORDER, normalizeImpactAxeName } from '@/services/csvDataService.js'
 import { getAllColors, getHexaFromName } from '@/utils.js'
-import { homeRouteName } from '@/config/routeNames.js'
+import { homeRouteName, etatEnvironnementRouteName } from '@/config/routeNames.js'
+import { impactAxeNameToSlug } from '@/utils/impactAxeUrl.js'
 
 const AXE_DESCRIPTIONS = {
   'Atténuation climat': 'Les indicateurs d\'atténuation suivent la réduction des émissions de gaz à effet de serre et la transition vers une économie bas-carbone.',
@@ -394,10 +395,10 @@ export default {
       this.$router.push({ name: homeRouteName(isStaging) }).catch(() => {})
     },
     goToAxeDetail(axeName) {
-      const routeName = window.location.pathname.includes('/staging') ? 'staging-dashboard' : 'dashboard'
+      const isStaging = window.location.pathname.includes('/staging')
       this.$router.push({
-        name: routeName,
-        query: { sector: 'Synthèse', view: 'general-engagements', axe: axeName }
+        name: etatEnvironnementRouteName(isStaging),
+        query: { section: impactAxeNameToSlug(axeName) }
       }).catch(() => {})
     }
   }

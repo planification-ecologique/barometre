@@ -118,7 +118,24 @@ import ChantiersTableView from "../components/ChantiersTableView.vue";
 import SyntheseSectorielle from "../components/SyntheseSectorielle.vue";
 import EtatEnvironnement from "../components/EtatEnvironnement.vue";
 import dsfrAnalytics from "../services/dsfr_analytics"
-import { homeRouteName, dashboardRouteName } from "@/config/routeNames.js"
+import {
+  homeRouteName,
+  dashboardRouteName,
+  etatEnvironnementRouteName,
+  chantiersRouteName,
+} from "@/config/routeNames.js"
+import {
+  resolveSectorFromQuery,
+  toSectionSlug,
+  SECTOR_SYNTHESE,
+  SECTION_SYNTHESE_SLUG,
+} from "@/utils/sectionUrl.js"
+import {
+  impactAxeNameToSlug,
+  impactAxeSlugToName,
+  isImpactAxeSlug,
+} from "@/utils/impactAxeUrl.js"
+import { getNavigationStructure } from "@/services/csvDataService.js"
 
 export default {
   name: "DashboardPage",
@@ -168,119 +185,175 @@ export default {
       results_API: [],
       sidenav_initParams: {},
       currentSector: 'Synthèse',
+      knownSectorNames: [],
     };
   },
   created() {
     if (this.$route.name === "home" || this.$route.name === "staging-home") {
       this.applyHomeRouteState()
-      return
+    } else {
+      this.initDashboardFromRoute()
     }
-    this.initDashboardFromRoute()
+    getNavigationStructure(this.useStaging ? "staging" : "production").then((res) => {
+      if (res.status === "success" && res.data?.sectorNames) {
+        this.knownSectorNames = res.data.sectorNames
+        if (this.$route.name !== "home" && this.$route.name !== "staging-home") {
+          this.initDashboardFromRoute()
+        } else {
+          this.applyHomeRouteState()
+        }
+      }
+    })
   },
   watch: {
-    "$route.name"(name, oldName) {
+    "$route.name"(name) {
       if (name === "home" || name === "staging-home") {
         this.applyHomeRouteState()
         return
       }
-      if (
-        (oldName === "home" || oldName === "staging-home") &&
-        (name === "dashboard" || name === "staging-dashboard")
-      ) {
+      if (this.isDashboardShellRouteName(name)) {
         this.initDashboardFromRoute()
       }
     },
-    '$route.query.sector'(newSector, oldSector) {
-      if (newSector && newSector !== oldSector) {
-        this.currentSector = newSector;
-        
-        // Create a new object for proper Vue reactivity
-        const currentView = this.$route.query.view
-        const currentChantierId = this.$route.query.chantier_id
-        
-        const newParams = { sector: newSector };
-        
-        if (newSector === 'Synthèse') {
-          // For Synthèse, preserve valid views
-          const validSyntheseViews = ['about', 'general-engagements', 'general-chantiers', 'chantiers-sectoriels', 'etat-environnement', 'engagements-table', 'chantiers-table', 'chantier']
-          if (validSyntheseViews.includes(currentView)) {
-            newParams.view = currentView
-            if (this.$route.query.axe) newParams.axe = this.$route.query.axe
-            if (this.$route.query.sectorFilter) newParams.sectorFilter = this.$route.query.sectorFilter
-            if (this.$route.query.chantier_id) newParams.chantier_id = this.$route.query.chantier_id
-            if (this.$route.query.chantier_sector) newParams.chantier_sector = this.$route.query.chantier_sector
-          } else {
-            newParams.view = 'chantiers-sectoriels'
-          }
-        } else {
-          // For other sectors, preserve sectorial-engagements or chantier
-          if (currentView === 'sectorial-engagements') {
-            newParams.view = 'sectorial-engagements'
-          } else if (currentView === 'chantier' && currentChantierId) {
-            newParams.view = 'chantier'
-            newParams.chantier_id = currentChantierId
-          } else {
-            // Default to sectorial-engagements
-            newParams.view = 'sectorial-engagements'
+    "$route.query": {
+      deep: true,
+      handler(newQuery) {
+        if (this.$route.name === "home" || this.$route.name === "staging-home") return
+        if (!this.isDashboardShellRouteName(this.$route.name)) return
+        this.currentSector = resolveSectorFromQuery(newQuery, this.knownSectorNames)
+        let view = newQuery.view || this.impliedViewFromRouteName()
+        let axeResolved = newQuery.axe
+        let chantierSectorResolved = newQuery.chantier_sector
+        const onEtat =
+          this.$route.name === "etat-environnement" ||
+          this.$route.name === "staging-etat-environnement"
+        if (onEtat && newQuery.section) {
+          const slug = String(newQuery.section).toLowerCase()
+          if (slug !== SECTION_SYNTHESE_SLUG && isImpactAxeSlug(slug)) {
+            view = "general-engagements"
+            axeResolved = impactAxeSlugToName(slug)
           }
         }
-        
-        this.sidenav_initParams = newParams;
-      }
+        const onChantiers =
+          this.$route.name === "chantiers" ||
+          this.$route.name === "staging-chantiers"
+        if (
+          onChantiers &&
+          newQuery.chantier_id &&
+          newQuery.section &&
+          (!newQuery.view || newQuery.view === "chantier")
+        ) {
+          const chSlug = String(newQuery.section).toLowerCase()
+          if (chSlug !== SECTION_SYNTHESE_SLUG) {
+            view = "chantier"
+            if (!chantierSectorResolved && this.currentSector !== SECTOR_SYNTHESE) {
+              chantierSectorResolved = this.currentSector
+            }
+          }
+        }
+        if (
+          !view &&
+          this.currentSector !== SECTOR_SYNTHESE &&
+          (this.$route.name === "dashboard" || this.$route.name === "staging-dashboard")
+        ) {
+          view = "sectorial-engagements"
+        }
+        const newParams = { sector: this.currentSector }
+        if (view) newParams.view = view
+        if (newQuery.chantier_id) newParams.chantier_id = newQuery.chantier_id
+        if (axeResolved) newParams.axe = axeResolved
+        if (newQuery.sectorFilter) newParams.sectorFilter = newQuery.sectorFilter
+        if (chantierSectorResolved) newParams.chantier_sector = chantierSectorResolved
+        if (newQuery.theme !== undefined) newParams.id_theme = newQuery.theme
+        if (newQuery.levier !== undefined) newParams.id_levier = newQuery.levier
+        this.sidenav_initParams = newParams
+      },
     },
-    '$route.query'(newQuery) {
-      // Update sector when query changes
-      if (newQuery.sector) {
-        this.currentSector = newQuery.sector;
-        
-        // Create a new object to ensure Vue reactivity detects the change
-        const newParams = {
-          sector: newQuery.sector
-        };
-        
-        // Add view and related params if present
-        if (newQuery.view) {
-          newParams.view = newQuery.view
-        }
-        if (newQuery.chantier_id) {
-          newParams.chantier_id = newQuery.chantier_id
-        }
-        if (newQuery.axe) {
-          newParams.axe = newQuery.axe
-        }
-        if (newQuery.sectorFilter) {
-          newParams.sectorFilter = newQuery.sectorFilter
-        }
-        if (newQuery.chantier_sector) {
-          newParams.chantier_sector = newQuery.chantier_sector
-        }
-
-        // Replace the entire object to trigger Vue reactivity
-        this.sidenav_initParams = newParams;
-      }
-    }
   },
   methods: {
+    isDashboardShellRouteName(name) {
+      return [
+        "dashboard",
+        "staging-dashboard",
+        "etat-environnement",
+        "staging-etat-environnement",
+        "chantiers",
+        "staging-chantiers",
+      ].includes(name)
+    },
+    impliedViewFromRouteName() {
+      const n = this.$route.name
+      if (n === "etat-environnement" || n === "staging-etat-environnement") {
+        const slug = String(this.$route.query.section || "").toLowerCase()
+        if (slug && slug !== SECTION_SYNTHESE_SLUG && isImpactAxeSlug(slug)) {
+          return "general-engagements"
+        }
+        return this.$route.query.view || "etat-environnement"
+      }
+      if (n === "chantiers" || n === "staging-chantiers") {
+        const slug = String(this.$route.query.section || "").toLowerCase()
+        const qv = this.$route.query.view
+        if (
+          this.$route.query.chantier_id &&
+          slug &&
+          slug !== SECTION_SYNTHESE_SLUG &&
+          (!qv || qv === "chantier")
+        ) {
+          return "chantier"
+        }
+        return this.$route.query.view || "chantiers-sectoriels"
+      }
+      return undefined
+    },
     applyHomeRouteState() {
-      this.currentSector = this.$route.query.sector || "Synthèse"
+      this.currentSector = resolveSectorFromQuery(this.$route.query, this.knownSectorNames)
       this.sidenav_initParams = { sector: this.currentSector, view: "about" }
       this.myobj = { view: "about", sector: this.currentSector }
       this.isapiloading = false
     },
     initDashboardFromRoute() {
       const q = this.$route.query
-      this.currentSector = q.sector || "Synthèse"
+      this.currentSector = resolveSectorFromQuery(q, this.knownSectorNames)
+      let view = q.view || this.impliedViewFromRouteName()
+      let axeResolved = q.axe
+      const onEtat =
+        this.$route.name === "etat-environnement" ||
+        this.$route.name === "staging-etat-environnement"
+      if (onEtat && q.section) {
+        const slug = String(q.section).toLowerCase()
+        if (slug !== SECTION_SYNTHESE_SLUG && isImpactAxeSlug(slug)) {
+          view = "general-engagements"
+          axeResolved = impactAxeSlugToName(slug)
+        }
+      }
+      const onChantiers =
+        this.$route.name === "chantiers" ||
+        this.$route.name === "staging-chantiers"
+      let chantierSectorInit = q.chantier_sector
+      if (
+        onChantiers &&
+        q.chantier_id &&
+        q.section &&
+        (!q.view || q.view === "chantier")
+      ) {
+        const chSlug = String(q.section).toLowerCase()
+        if (chSlug !== SECTION_SYNTHESE_SLUG) {
+          view = "chantier"
+          if (!chantierSectorInit && this.currentSector !== SECTOR_SYNTHESE) {
+            chantierSectorInit = this.currentSector
+          }
+        }
+      }
       this.sidenav_initParams = { sector: this.currentSector }
-      if (q.view) this.sidenav_initParams.view = q.view
+      if (view) this.sidenav_initParams.view = view
       if (q.chantier_id) this.sidenav_initParams.chantier_id = q.chantier_id
-      if (q.axe) this.sidenav_initParams.axe = q.axe
+      if (axeResolved) this.sidenav_initParams.axe = axeResolved
       if (q.sectorFilter) this.sidenav_initParams.sectorFilter = q.sectorFilter
-      if (q.chantier_sector) this.sidenav_initParams.chantier_sector = q.chantier_sector
+      if (chantierSectorInit) this.sidenav_initParams.chantier_sector = chantierSectorInit
       if (q.theme !== undefined || q.levier !== undefined) {
         this.sidenav_initParams.id_theme = q.theme
         this.sidenav_initParams.id_levier = q.levier
       }
-      const view = q.view
       if (view === "about" || view === "chantiers-sectoriels" || view === "etat-environnement") {
         this.myobj = { view, sector: this.currentSector }
         this.isapiloading = false
@@ -288,6 +361,15 @@ export default {
         this.myobj = {}
         this.isapiloading = true
       }
+    },
+    querySameAsRoute(query) {
+      const a = { ...this.$route.query }
+      const b = { ...query }
+      const keys = new Set([...Object.keys(a), ...Object.keys(b)])
+      for (const k of keys) {
+        if ((a[k] || "") !== (b[k] || "")) return false
+      }
+      return true
     },
     // Mise à jour de la sélection dans le menu
     updateSelection(selectedValue) {
@@ -301,69 +383,86 @@ export default {
           this.isapiloading = false;
         }
 
-        // Navigation vers la page de dashboard et affichage dans l'URL
+        // Navigation : chemins dédiés + ?section= (slug), sans ?sector=
         try {
-          const querySector = selectedValue.sector || this.currentSector;
-          if (selectedValue.view === "about" && querySector === "Synthèse") {
-            const homeName = homeRouteName(this.useStaging)
+          const querySector = selectedValue.sector || this.currentSector
+          const st = this.useStaging
+          const sec = toSectionSlug(querySector)
+
+          if (selectedValue.view === "about" && querySector === SECTOR_SYNTHESE) {
+            const homeName = homeRouteName(st)
             if (this.$route.name !== homeName) {
               this.$router.push({ name: homeName }).catch(() => {})
             }
             return
           }
 
-          let routeName = dashboardRouteName(this.useStaging);
-          // Use the sector from params (which may differ from currentSector for chantiers viewed from Synthèse)
-          const query = {
-            sector: querySector
-          };
+          const withSection = (extra = {}) => ({ section: sec, ...extra })
 
-          // Set view and related params
-          if (selectedValue.view === 'general-engagements') {
-            query.view = 'general-engagements';
+          let target = null
+          const v = selectedValue.view
+
+          if (v === "etat-environnement") {
+            target = { name: etatEnvironnementRouteName(st), query: withSection() }
+          } else if (v === "general-engagements") {
             if (selectedValue.axe) {
-              query.axe = selectedValue.axe;
+              target = {
+                name: etatEnvironnementRouteName(st),
+                query: { section: impactAxeNameToSlug(selectedValue.axe) },
+              }
+            } else {
+              target = {
+                name: etatEnvironnementRouteName(st),
+                query: {
+                  section: SECTION_SYNTHESE_SLUG,
+                  view: "general-engagements",
+                },
+              }
             }
-          } else if (selectedValue.view === 'general-chantiers') {
-            query.view = 'general-chantiers';
-            if (selectedValue.sectorFilter) {
-              query.sectorFilter = selectedValue.sectorFilter;
+          } else if (v === "engagements-table") {
+            target = {
+              name: etatEnvironnementRouteName(st),
+              query: withSection({ view: "engagements-table" }),
             }
-          } else if (selectedValue.view === 'sectorial-engagements') {
-            query.view = 'sectorial-engagements';
-          } else if (selectedValue.view === 'chantier' && selectedValue.chantier_id) {
-            query.view = 'chantier';
-            query.chantier_id = selectedValue.chantier_id;
-            // Pass chantier_sector for breadcrumb/display when viewing under Synthèse
-            if (selectedValue.chantier_sector) {
-              query.chantier_sector = selectedValue.chantier_sector;
+          } else if (v === "chantiers-sectoriels") {
+            target = { name: chantiersRouteName(st), query: withSection() }
+          } else if (v === "general-chantiers") {
+            target = {
+              name: chantiersRouteName(st),
+              query: withSection({
+                view: "general-chantiers",
+                ...(selectedValue.sectorFilter ? { sectorFilter: selectedValue.sectorFilter } : {}),
+              }),
             }
-          } else if (selectedValue.view === 'synthesis') {
-            query.view = 'synthesis';
-          } else if (selectedValue.view === 'about') {
-            query.view = 'about';
-          } else if (selectedValue.view === 'chantiers-sectoriels') {
-            query.view = 'chantiers-sectoriels';
-          } else if (selectedValue.view === 'etat-environnement') {
-            query.view = 'etat-environnement';
-          } else if (selectedValue.view === 'engagements-table') {
-            query.view = 'engagements-table';
-          } else if (selectedValue.view === 'chantiers-table') {
-            query.view = 'chantiers-table';
+          } else if (v === "chantiers-table") {
+            target = {
+              name: chantiersRouteName(st),
+              query: withSection({ view: "chantiers-table" }),
+            }
+          } else if (v === "chantier" && selectedValue.chantier_id) {
+            const secSlug = selectedValue.chantier_sector
+              ? toSectionSlug(selectedValue.chantier_sector)
+              : sec
+            target = {
+              name: chantiersRouteName(st),
+              query: {
+                section: secSlug,
+                chantier_id: selectedValue.chantier_id,
+              },
+            }
+          } else {
+            const q = withSection()
+            if (v === "sectorial-engagements") q.view = "sectorial-engagements"
+            else if (v === "synthesis") q.view = "synthesis"
+            else if (v === "about") q.view = "about"
+            target = { name: dashboardRouteName(st), query: q }
           }
-          
-          // Only update route if query params changed
-          const currentView = this.$route.query.view;
-          const currentChantierId = this.$route.query.chantier_id;
-          const currentSector = this.$route.query.sector;
-          const currentAxe = this.$route.query.axe;
-          const currentSectorFilter = this.$route.query.sectorFilter;
-          
-          if (query.view !== currentView || query.chantier_id !== currentChantierId || query.sector !== currentSector || query.axe !== currentAxe || query.sectorFilter !== currentSectorFilter) {
-            this.$router.push({
-              name: routeName,
-              query: query
-            });
+
+          if (!target) return
+          const sameName = this.$route.name === target.name
+          const sameQuery = this.querySameAsRoute(target.query)
+          if (!sameName || !sameQuery) {
+            this.$router.push(target).catch(() => {})
           }
         } catch (error) {
           console.error("Erreur dans le chargement de la navigation : ", error);
@@ -385,10 +484,16 @@ export default {
     },
   },
   mounted(){
-    const onHome = this.$route.name === homeRouteName(this.useStaging)
+    const st = this.useStaging
+    const n = this.$route.name
+    let path = "/dashboard"
+    if (n === homeRouteName(st)) path = st ? "/staging" : "/"
+    else if (n === etatEnvironnementRouteName(st)) path = st ? "/staging/etat-environnement" : "/etat-environnement"
+    else if (n === chantiersRouteName(st)) path = st ? "/staging/chantiers" : "/chantiers"
+    else if (st) path = "/staging/dashboard"
     dsfrAnalytics({
-      path: onHome ? (this.useStaging ? "/staging" : "/") : "/dashboard",
-      name: onHome ? homeRouteName(this.useStaging) : "dashboard",
+      path,
+      name: n,
       segment: "tableau_de_bord",
       labels: ['contenu_liste', 'tableau_de_bord', '', '', ''],
       template: "contenu_liste",

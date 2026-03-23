@@ -67,7 +67,13 @@
 <script>
 import router from '../router'
 import { getNavigationStructure } from '@/services/csvDataService.js'
-import { homeRouteName } from '@/config/routeNames.js'
+import {
+  homeRouteName,
+  etatEnvironnementRouteName,
+  chantiersRouteName,
+  dashboardRouteName,
+} from '@/config/routeNames.js'
+import { SECTION_SYNTHESE_SLUG } from '@/utils/sectionUrl.js'
 
 export default {
   name: 'NavigationDsfr',
@@ -84,6 +90,7 @@ export default {
       let base = process.env.VUE_APP_PREFIX_PATH
       const isStaging = window.location.pathname.includes('/staging')
       const stagingPrefix = isStaging ? '/staging' : ''
+      const p = String(base || '') + stagingPrefix
 
       // Load sectors from Grist data
       try {
@@ -107,13 +114,13 @@ export default {
           value: 'etat-environnement',
           label: 'Etat de l\'environnement',
           selected: false,
-          link: base + stagingPrefix + '/dashboard?sector=Synthèse&view=etat-environnement'
+          link: `${p}/etat-environnement?section=${SECTION_SYNTHESE_SLUG}`
         },
         {
           value: 'chantiers-sectoriels',
           label: 'Chantiers sectoriels',
           selected: false,
-          link: base + stagingPrefix + '/dashboard?sector=Synthèse&view=chantiers-sectoriels'
+          link: `${p}/chantiers?section=${SECTION_SYNTHESE_SLUG}`
         },
         // {
         //   value: 'analyse-par-secteur',
@@ -152,14 +159,13 @@ export default {
       this.closeDropdown()
 
       if (option.value.startsWith('sector-')) {
-        // Navigate to a specific sector
-        const sectorMatch = option.link.match(/sector=([^&]+)/)
+        const sectorMatch = option.link.match(/section=([^&]+)/) || option.link.match(/sector=([^&]+)/)
         if (sectorMatch) {
-          const sector = decodeURIComponent(sectorMatch[1])
-          const routeName = window.location.pathname.includes('/staging') ? 'staging-dashboard' : 'dashboard'
+          const raw = decodeURIComponent(sectorMatch[1])
+          const isStaging = window.location.pathname.includes('/staging')
           this.myrouter.push({
-            name: routeName,
-            query: { sector: sector }
+            name: dashboardRouteName(isStaging),
+            query: { section: raw, view: 'sectorial-engagements' }
           }).catch(err => {
             if (err.name !== 'NavigationDuplicated') console.error('Navigation error:', err)
           })
@@ -170,18 +176,18 @@ export default {
           if (err.name !== 'NavigationDuplicated') console.error('Navigation error:', err)
         })
       } else if (option.value === 'etat-environnement') {
-        const routeName = window.location.pathname.includes('/staging') ? 'staging-dashboard' : 'dashboard'
+        const isStaging = window.location.pathname.includes('/staging')
         this.myrouter.push({
-          name: routeName,
-          query: { sector: 'Synthèse', view: 'etat-environnement' }
+          name: etatEnvironnementRouteName(isStaging),
+          query: { section: SECTION_SYNTHESE_SLUG }
         }).catch(err => {
           if (err.name !== 'NavigationDuplicated') console.error('Navigation error:', err)
         })
       } else if (option.value === 'chantiers-sectoriels') {
-        const routeName = window.location.pathname.includes('/staging') ? 'staging-dashboard' : 'dashboard'
+        const isStaging = window.location.pathname.includes('/staging')
         this.myrouter.push({
-          name: routeName,
-          query: { sector: 'Synthèse', view: 'chantiers-sectoriels' }
+          name: chantiersRouteName(isStaging),
+          query: { section: SECTION_SYNTHESE_SLUG }
         }).catch(err => {
           if (err.name !== 'NavigationDuplicated') console.error('Navigation error:', err)
         })
@@ -207,26 +213,38 @@ export default {
 
       if (this.$route.name === 'home' || this.$route.name === 'staging-home') {
         this.setSelected('accueil')
+      } else if (
+        this.$route.name === 'etat-environnement' ||
+        this.$route.name === 'staging-etat-environnement' ||
+        (path.includes('dashboard') &&
+          (query.view === 'etat-environnement' ||
+            query.view === 'general-engagements' ||
+            query.view === 'engagements-table'))
+      ) {
+        this.setSelected('etat-environnement')
+      } else if (
+        this.$route.name === 'chantiers' ||
+        this.$route.name === 'staging-chantiers' ||
+        (path.includes('dashboard') &&
+          (query.view === 'chantiers-sectoriels' ||
+            query.view === 'general-chantiers' ||
+            query.view === 'chantiers-table' ||
+            query.view === 'chantier'))
+      ) {
+        this.setSelected('chantiers-sectoriels')
       } else if (path.includes('dashboard')) {
-        const sector = query.sector
+        const sector =
+          query.sector ||
+          (query.section === SECTION_SYNTHESE_SLUG || !query.section ? 'Synthèse' : null)
         const view = query.view
-
-        if (sector === 'Synthèse') {
-          if (view === 'chantiers-sectoriels' || view === 'general-chantiers' || view === 'chantiers-table') {
-            this.setSelected('chantiers-sectoriels')
-          } else if (view === 'etat-environnement' || view === 'general-engagements' || view === 'engagements-table') {
-            this.setSelected('etat-environnement')
+        if (sector === 'Synthèse' || query.section === SECTION_SYNTHESE_SLUG) {
+          if (!view || view === 'about' || view === 'sectorial-engagements') {
+            this.setSelected(view === 'sectorial-engagements' ? 'chantiers-sectoriels' : 'accueil')
           } else {
-            this.setSelected('accueil')
-          }
-        } else if (sector) {
-          // When viewing a chantier from any sector, stay on "Chantiers sectoriels"
-          if (view === 'chantier') {
-            this.setSelected('chantiers-sectoriels')
-          } else {
-            // Other sector views (sectorial-engagements, etc.)
             this.setSelected('chantiers-sectoriels')
           }
+        } else if (sector || query.section) {
+          this.setSelected('chantiers-sectoriels')
         }
       } else if (path.includes('favoris')) {
         this.setSelected('favoris')
@@ -261,6 +279,7 @@ export default {
         () => ({
           name: this.$route.name,
           sector: this.$route.query.sector,
+          section: this.$route.query.section,
           view: this.$route.query.view,
           path: this.$route.path
         }),

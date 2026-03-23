@@ -32,7 +32,7 @@ export default {
   },
   data() {
     return {
-      dashboard_link: base + "/dashboard?theme=default&levier=default",
+      dashboard_link: base + "/dashboard?section=synthese&theme=default&levier=default",
       datasource_link: "https://www.data.gouv.fr/fr/datasets/indicateurs-regionaux-de-planification-ecologique/",
       myrouter: router,
     };
@@ -45,7 +45,10 @@ export default {
   },
   methods: {
     onEnter() {
-      this.myrouter.push({ name: "dashboard", query: { theme: "default", levier: "default" } });
+      this.myrouter.push({
+        name: "dashboard",
+        query: { section: "synthese", theme: "default", levier: "default" }
+      });
     }
   }
 };

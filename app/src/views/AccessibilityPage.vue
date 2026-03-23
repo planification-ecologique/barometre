@@ -77,9 +77,9 @@
         <ul>
             <li><a href="https://barometre.planification-ecologique.gouv.fr/">Accueil</a></li>
             <li><a
-                    href="https://barometre.planification-ecologique.gouv.fr/dashboard?theme=transverse&levier=emissions--puits">Tableau
+                    href="https://barometre.planification-ecologique.gouv.fr/dashboard?section=synthese&theme=transverse&levier=emissions--puits">Tableau
                     de bord</a></li>
-            <li><a href="https://barometre.planification-ecologique.gouv.fr/search">Recherche</a></li>
+            <li><a href="https://barometre.planification-ecologique.gouv.fr/recherche">Recherche</a></li>
             <li><a href="https://barometre.planification-ecologique.gouv.fr/donnees-personnelles">Données
                     personnelles</a>
             </li>
