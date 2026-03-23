@@ -14,8 +14,8 @@
           />
         </div>
       </aside>
-      <section class="fr-col">
-        <div>
+      <section class="fr-col dashboard-main-section">
+        <div class="dashboard-main-section__inner">
           <div class="fr-container--fluid fr-container-page">
             <div v-if="!isapiloading || myobj.view === 'about' || myobj.view === 'chantiers-sectoriels' || myobj.view === 'etat-environnement'">
               <!-- Chantiers sectoriels synthèse view -->
@@ -503,6 +503,13 @@ export default {
 };
 </script>
 <style scoped lang="scss">
+/* Permet au contenu de respecter la largeur viewport (flex/grid DSFR) */
+.dashboard-main-section,
+.dashboard-main-section__inner {
+  min-width: 0;
+  max-width: 100%;
+}
+
 .fr-container-page {
   background-color: #fff;
   padding-top: 1.5rem;
@@ -510,6 +517,9 @@ export default {
   padding-left: 2.5rem;
   padding-right: 2.5rem;
   width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 /* Mobile optimizations */

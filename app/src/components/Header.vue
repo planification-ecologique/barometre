@@ -122,25 +122,6 @@
       </div>
     </div>
     <div class="fr-container--fluid desktop-navigation" v-if="showNavigation">
-      <ul class="fr-btns-group mobile-display-button">
-        <li>
-          <a
-            class="fr-btn fr-btn--icon-left"
-            href="https://www.info.gouv.fr/france-nation-verte"
-            target="_blank"
-            aria-controls="fr-theme-modal"
-            data-fr-opened="false"
-            id="header-button-theme-mobile"
-            title="Découvrir la planification écologique"
-            data-fr-js-modal-button="true"
-            data-fr-js-button-actionee="true"
-            data-fr-js-header-menu-button-actionee="true"
-          >
-            Découvrir la planification écologique
-          </a>
-        </li>
-      </ul>
-
       <navigation-dsfr></navigation-dsfr>
     </div>
   </header>
@@ -167,6 +148,10 @@ export default {
     $route(to) {
       if (to.name === "recherche" || to.name === "staging-recherche") {
         this.headerSearchQuery = to.query.q || "";
+      }
+      // Fermer le panneau menu mobile après navigation (liens du header)
+      if (!this.isDesktop) {
+        this.showNavigation = false;
       }
     },
   },
@@ -310,10 +295,6 @@ export default {
   }
 }
 
-.mobile-display-button {
-  display: none !important;
-}
-
 /* Hide menu button on desktop */
 .desktop-hidden {
   display: none !important;
@@ -330,12 +311,8 @@ export default {
   }
 }
 
-/* Show mobile button on mobile and medium (tablet) */
+/* Mobile / tablette : panneau navigation (sans bandeau CTA FNV) */
 @media (max-width: 991px) {
-  .mobile-display-button {
-    display: block !important;
-  }
-  
   .desktop-navigation {
     display: block; /* Show navigation when toggled on mobile/tablet */
   }

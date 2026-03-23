@@ -40,7 +40,7 @@
         <div
           v-for="axe in axeTiles"
           :key="'axe-' + axe.name"
-          class="fr-col-12 fr-col-sm-6 fr-col-md-4"
+          class="fr-col-6 fr-col-md-4"
         >
           <router-link
             :to="etatEnvironnementLink(axe.name)"
@@ -75,7 +75,7 @@
         <div
           v-for="item in sectorTiles"
           :key="'sector-' + item.canonicalName"
-          class="fr-col-12 fr-col-sm-6 fr-col-md-4"
+          class="fr-col-6 fr-col-md-4"
         >
           <router-link
             :to="chantiersSectorielsLink(item.canonicalName)"
@@ -379,5 +379,32 @@ export default {
   bottom: 0.75rem;
   font-size: 1.125rem;
   color: #000091;
+}
+
+/* Two columns on small screens: tighter tiles so text stays readable */
+@media (max-width: 767px) {
+  .home-tile__body {
+    padding: 1rem 1.5rem 1.25rem 0.625rem;
+  }
+
+  .home-tile--rich .home-tile__body {
+    min-height: 0;
+    padding-bottom: 1.75rem;
+  }
+
+  .home-tile__heading {
+    font-size: 0.9375rem;
+  }
+
+  .home-tile__desc {
+    font-size: 0.75rem;
+    line-height: 1.4;
+  }
+
+  .home-tile__picto {
+    width: 3.25rem;
+    height: 3.25rem;
+    margin-bottom: 0.5rem;
+  }
 }
 </style>

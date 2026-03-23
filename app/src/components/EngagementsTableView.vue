@@ -15,7 +15,13 @@
       </article>
     </div>
     
-    <!-- Table -->
+    <!-- Table: scroll region so wide tables work on narrow viewports -->
+    <div
+      class="dashboard-table-scroll"
+      role="region"
+      aria-label="Tableau des indicateurs d'impact"
+      tabindex="0"
+    >
     <div class="fr-table fr-table--bordered fr-mt-4w">
       <table>
         <thead>
@@ -44,6 +50,7 @@
           </tr>
         </tbody>
       </table>
+    </div>
     </div>
   </div>
 </template>
@@ -173,13 +180,20 @@ export default {
   color: #666;
 }
 
+.dashboard-table-scroll {
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+}
+
 .fr-table {
   width: 100%;
-  overflow-x: auto;
 }
 
 .fr-table table {
-  width: 100%;
+  width: max-content;
+  min-width: 100%;
   border-collapse: collapse;
 }
 
@@ -208,5 +222,35 @@ export default {
   text-align: center;
   color: #666;
   font-style: italic;
+}
+
+@media (max-width: 991px) {
+  .fr-table th,
+  .fr-table td {
+    max-width: calc(100vw - 2.5rem);
+    box-sizing: border-box;
+  }
+}
+
+@media (min-width: 992px) {
+  .dashboard-table-scroll {
+    overflow-x: visible;
+  }
+
+  .fr-table table {
+    width: 100%;
+    min-width: 0;
+    table-layout: fixed;
+  }
+
+  .fr-table th,
+  .fr-table td {
+    overflow-wrap: break-word;
+    word-break: normal;
+  }
+
+  .fr-table th {
+    white-space: normal;
+  }
 }
 </style>

@@ -302,10 +302,11 @@ export default {
 
 <style>
 /* Mini chart styles — unscoped so they can reach into child components */
+/* Largeur pilotée par la cellule du tableau (desktop) ; pas de plafond fixe pour éviter le blanc vide */
 .mini-chart {
   width: 100%;
-  min-width: 200px;
-  max-width: 320px;
+  min-width: 0;
+  max-width: 100%;
   min-height: 130px;
   overflow: visible;
   position: relative;

@@ -133,7 +133,7 @@ export default {
           label: 'Favoris',
           selected: false,
           icon: 'fr-icon-bookmark-line',
-          link: base + '/favoris'
+          link: `${p}/favoris`
         }
       ]
 

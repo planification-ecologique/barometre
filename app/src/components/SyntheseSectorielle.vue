@@ -649,12 +649,16 @@ export default {
 
 /* Table */
 .synthese-table-wrapper {
-  overflow: visible;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
   margin-bottom: 1rem;
 }
 
 .synthese-table {
-  width: 100%;
+  width: max-content;
+  min-width: 100%;
   border-collapse: collapse;
   background: #fff;
   border: 1px solid #e5e5e5;
@@ -823,7 +827,8 @@ export default {
 
 .td-valeurs {
   padding: 0.75rem 0.5rem !important;
-  height: 160px;
+  min-height: 160px;
+  height: auto;
   vertical-align: middle !important;
   overflow: visible;
   text-align: center;
@@ -884,12 +889,55 @@ export default {
   color: #666;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .synthese-table-wrapper {
-    overflow-x: auto;
+/* Aucune colonne plus large que la zone visible (mobile / tablette) */
+@media (max-width: 991px) {
+  .synthese-table th,
+  .synthese-table td {
+    max-width: calc(100vw - 2.5rem);
+    box-sizing: border-box;
   }
 
+  .col-chantier,
+  .col-indicateur,
+  .col-valeurs {
+    min-width: 7.5rem;
+  }
+
+  .col-indicateur {
+    min-width: 7rem;
+  }
+
+  .col-valeurs {
+    min-width: 9.5rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .synthese-table-wrapper {
+    overflow-x: visible;
+    width: 100%;
+  }
+
+  .synthese-table {
+    width: 100%;
+    table-layout: fixed;
+    min-width: 0;
+  }
+
+  .col-chantier,
+  .col-indicateur,
+  .col-valeurs {
+    min-width: 0;
+  }
+
+  .td-valeurs {
+    vertical-align: top !important;
+    min-height: 180px;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
   .synthese-sector-header {
     flex-direction: column;
     gap: 0.25rem;

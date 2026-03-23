@@ -410,6 +410,10 @@ export default {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
 }
 
 /* Override DSFR default link styling to avoid double underlines */
@@ -424,6 +428,7 @@ export default {
 
 .fr-breadcrumb__list {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 0.5rem;
   list-style: none !important;
@@ -459,6 +464,8 @@ export default {
 /* Title */
 .etat-title {
   margin-bottom: 0;
+  max-width: 100%;
+  overflow-wrap: break-word;
 }
 
 /* Callout */
@@ -466,6 +473,9 @@ export default {
   background: #f6f6f6;
   border-left: 4px solid #6a6af4;
   padding: 1.25rem 1.5rem;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
 }
 
 .etat-callout-title {
@@ -475,10 +485,13 @@ export default {
 .etat-callout-text {
   color: #3a3a3a;
   margin: 0;
+  overflow-wrap: break-word;
 }
 
 .etat-axe-content {
   margin-top: 0.5rem;
+  min-width: 0;
+  max-width: 100%;
 }
 
 .etat-axe-content .etat-axe-description {
@@ -492,6 +505,8 @@ export default {
   align-items: flex-start;
   gap: 0.5rem;
   padding: 0.5rem 0;
+  max-width: 100%;
+  min-width: 0;
 }
 
 .etat-quick-label {
@@ -503,6 +518,7 @@ export default {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
+  max-width: 100%;
 }
 
 .etat-quick-link {
@@ -515,7 +531,11 @@ export default {
   line-height: 1.3;
   padding: 0.3rem 0.875rem;
   text-decoration: none;
-  white-space: nowrap;
+  white-space: normal;
+  text-align: center;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  box-sizing: border-box;
   transition: background-color 0.15s, color 0.15s;
 }
 
@@ -532,22 +552,31 @@ export default {
 
 .etat-axe-header {
   display: flex;
+  flex-wrap: wrap;
   align-items: baseline;
   gap: 1rem;
   margin-bottom: 0.5rem;
+  min-width: 0;
+  max-width: 100%;
 }
 
 .etat-axe-title {
   margin: 0;
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: break-word;
 }
 
 .etat-axe-title-link {
   display: inline-flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 0.5rem;
+  max-width: 100%;
   color: #000091;
   text-decoration: none;
   transition: color 0.15s;
+  overflow-wrap: break-word;
 }
 
 .etat-axe-title-link:hover,
@@ -568,16 +597,24 @@ export default {
 .etat-axe-description {
   color: #3a3a3a;
   margin-bottom: 1rem;
+  max-width: 100%;
+  overflow-wrap: break-word;
 }
 
 /* Table */
 .etat-table-wrapper {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
   margin-bottom: 1rem;
 }
 
 .etat-table {
-  width: 100%;
+  width: max-content;
+  min-width: 100%;
   border-collapse: collapse;
   background: #fff;
   border: 1px solid #e5e5e5;
@@ -628,11 +665,14 @@ export default {
   font-weight: 500;
   font-size: 0.875rem;
   line-height: 1.5;
+  overflow-wrap: break-word;
+  word-break: normal;
 }
 
 .td-valeurs {
   padding: 0.75rem 0.5rem !important;
-  height: 160px;
+  min-height: 160px;
+  height: auto;
   vertical-align: middle !important;
   overflow: visible;
 }
@@ -640,6 +680,8 @@ export default {
 .td-indicateur {
   color: #3a3a3a;
   line-height: 1.5;
+  overflow-wrap: break-word;
+  word-break: normal;
 }
 
 .td-indicateur-legend-wrap {
@@ -692,6 +734,74 @@ export default {
   color: #666;
 }
 
+/* Desktop : tableau sur toute la largeur, pas de scroll horizontal ; graphiques qui remplissent la colonne Valeurs */
+@media (min-width: 992px) {
+  .etat-table-wrapper {
+    overflow-x: visible;
+    width: 100%;
+  }
+
+  .etat-table {
+    width: 100%;
+    table-layout: fixed;
+    min-width: 0;
+  }
+
+  .col-engagement,
+  .col-indicateur,
+  .col-valeurs {
+    min-width: 0;
+  }
+
+  .td-valeurs {
+    vertical-align: top !important;
+    min-height: 180px;
+  }
+}
+
+/* Mobile / tablette : colonnes ≤ largeur écran ; tableau borné en hauteur ; min-widths compacts */
+@media (max-width: 991px) {
+  .etat-table th,
+  .etat-table td {
+    max-width: calc(100vw - 2.5rem);
+    box-sizing: border-box;
+  }
+
+  .etat-table-wrapper {
+    max-height: min(75dvh, 34rem);
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+    box-shadow: inset 0 0 0 1px #e5e5e5;
+    border-radius: 2px;
+  }
+
+  .etat-table thead th {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background-color: #f6f6f6;
+    box-shadow: 0 1px 0 #d6d6d6;
+  }
+
+  .col-engagement {
+    min-width: 7.5rem;
+  }
+
+  .col-indicateur {
+    min-width: 7rem;
+  }
+
+  .col-valeurs {
+    min-width: 9.5rem;
+  }
+
+  .td-valeurs {
+    min-height: 7.5rem;
+    vertical-align: top !important;
+  }
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .etat-axe-header {
@@ -699,10 +809,29 @@ export default {
     gap: 0.25rem;
   }
 
+  .etat-axe-stats {
+    white-space: normal;
+  }
+
+  .etat-callout {
+    padding: 1rem 1rem;
+  }
+
+  .td-indicateur-legend-item {
+    white-space: normal;
+  }
 
   .etat-table th,
   .etat-table td {
     padding: 0.5rem 0.625rem;
+  }
+
+  .etat-table-wrapper {
+    max-height: min(70dvh, 30rem);
+  }
+
+  .etat-table {
+    font-size: 0.8125rem;
   }
 }
 </style>

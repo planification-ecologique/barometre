@@ -48,13 +48,6 @@
             <optgroup label="Chantiers sectoriels">
               <option value="view:chantiers-sectoriels">Synthèse</option>
               <option
-                v-for="sectorName in chantierSectors"
-                :key="'sector-' + sectorName"
-                :value="'chantierSector:' + sectorName"
-              >
-                Vue d'ensemble — {{ sectorName }}
-              </option>
-              <option
                 v-for="chantier in allChantiersFlat"
                 :key="'chantier-' + chantier.sector + '-' + chantier.id"
                 :value="'chantierSynthese:' + chantier.id + ':' + chantier.sector"
@@ -201,8 +194,9 @@ export default {
         return 'view:chantiers-table'
       } else if (view === 'general-engagements' && query.axe) {
         return 'axe:' + query.axe
-      } else if (view === 'general-chantiers' && query.sectorFilter) {
-        return 'chantierSector:' + query.sectorFilter
+      } else if (view === 'general-chantiers') {
+        // Pas d’entrée dédiée dans la liste : même zone que la synthèse chantiers (accès via l’accueil ou URL)
+        return 'view:chantiers-sectoriels'
       } else if (view === 'chantier' && query.chantier_id) {
         if (sector === 'Synthèse' && query.chantier_sector) {
           return 'chantierSynthese:' + query.chantier_id + ':' + query.chantier_sector
@@ -361,13 +355,6 @@ export default {
         }).catch(err => {
           if (err.name !== 'NavigationDuplicated') console.error('Navigation error:', err)
         })
-      } else if (type === 'chantierSector') {
-        router.push({
-          name: chantiersRouteName(isStaging),
-          query: { section: syn, view: 'general-chantiers', sectorFilter: param }
-        }).catch(err => {
-          if (err.name !== 'NavigationDuplicated') console.error('Navigation error:', err)
-        })
       } else if (type === 'chantierSynthese') {
         const [chantierId, chantierSector] = param.split(':')
         router.push({
@@ -404,7 +391,8 @@ export default {
 
 <style scoped>
 .sector-selector-container {
-  display: none; /* Hidden by default (desktop) */
+  /* Hidden on all viewports for now — mobile/tablet use header menu (Navigation) */
+  display: none !important;
   padding: 1rem;
   background-color: var(--background-default-grey, #f6f6f6);
   border-bottom: 1px solid var(--border-default-grey, #e5e5e5);
@@ -466,57 +454,4 @@ export default {
   padding: 0.5rem;
 }
 
-/* Mobile and Medium (tablet): show sector selector */
-@media (max-width: 991px) {
-  .sector-selector-container {
-    display: block; /* Show on mobile and tablet */
-    padding: 0.75rem 1rem;
-  }
-  
-  .fr-label {
-    font-size: 0.875rem;
-    margin-bottom: 0.375rem;
-  }
-  
-  .sector-icon-wrapper {
-    display: none; /* Hide icon on mobile/tablet to save space */
-  }
-  
-  .fr-select {
-    font-size: 1rem;
-    padding: 0.75rem;
-    max-width: 100%;
-    flex: 1;
-  }
-}
-
-/* Medium (tablet) specific adjustments */
-@media (min-width: 769px) and (max-width: 991px) {
-  .sector-selector-container {
-    padding: 0.75rem 1.5rem;
-  }
-  
-  .fr-select-group {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-  }
-  
-  .fr-label {
-    margin-bottom: 0;
-    white-space: nowrap;
-  }
-  
-  .fr-select {
-    min-width: 250px;
-    max-width: 100%;
-  }
-}
-
-/* Desktop: hide sector selector (use Navigation.vue tabs instead) */
-@media (min-width: 992px) {
-  .sector-selector-container {
-    display: none; /* Hidden on desktop */
-  }
-}
 </style>

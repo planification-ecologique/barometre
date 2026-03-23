@@ -53,7 +53,9 @@ export default {
     margin-bottom: 0rem !important;
     height: fit-content !important;
     max-height: 40vh;
+    overflow-x: auto;
     overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
 }
 
 .fr-tab-data tbody tr:hover {
