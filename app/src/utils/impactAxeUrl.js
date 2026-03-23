@@ -1,4 +1,8 @@
-import { IMPACT_AXE_DISPLAY_ORDER } from "@/services/csvDataService.js";
+import {
+  IMPACT_AXE_DISPLAY_ORDER,
+  isImpactAxe,
+  normalizeImpactAxeName,
+} from "@/services/csvDataService.js";
 
 function stripDiacritics(str) {
   return String(str || "")
@@ -26,4 +30,32 @@ export function impactAxeSlugToName(slug) {
 
 export function isImpactAxeSlug(slug) {
   return !!impactAxeSlugToName(slug);
+}
+
+/**
+ * Mappe un libellé issu des données (Liste_chantiers, indicateurs…) vers l’axe canonique
+ * d’IMPACT_AXE_DISPLAY_ORDER pour construire une URL `?section=<slug>` reconnue par l’app.
+ * Gère les formes courtes type « Atténuation » → « Atténuation climat ».
+ */
+export function resolveImpactAxeCanonicalFromLabel(raw) {
+  if (!raw || !String(raw).trim()) return null;
+  const t = String(raw).trim();
+  const norm = normalizeImpactAxeName(t);
+
+  const byExact = IMPACT_AXE_DISPLAY_ORDER.find((a) => a === t || a === norm);
+  if (byExact) return byExact;
+
+  if (isImpactAxe(t) || isImpactAxe(norm)) {
+    const label = isImpactAxe(norm) ? norm : t;
+    const fromSlug = impactAxeSlugToName(impactAxeNameToSlug(label));
+    if (fromSlug) return fromSlug;
+  }
+
+  const s = impactAxeNameToSlug(t);
+  if (!s) return null;
+  for (const axe of IMPACT_AXE_DISPLAY_ORDER) {
+    const axeSlug = impactAxeNameToSlug(axe);
+    if (axeSlug === s || axeSlug.startsWith(`${s}-`)) return axe;
+  }
+  return null;
 }

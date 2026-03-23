@@ -15,10 +15,12 @@
 </template>
 
 <script>
-import { isImpactAxe, normalizeImpactAxeName } from '@/services/csvDataService.js';
 import { etatEnvironnementRouteName, chantiersRouteName } from '@/config/routeNames.js';
 import { SECTION_SYNTHESE_SLUG } from '@/utils/sectionUrl.js';
-import { impactAxeNameToSlug } from '@/utils/impactAxeUrl.js';
+import {
+  impactAxeNameToSlug,
+  resolveImpactAxeCanonicalFromLabel,
+} from '@/utils/impactAxeUrl.js';
 
 export default {
   name: 'TaxonomyTagsCard',
@@ -60,19 +62,21 @@ export default {
       });
 
       const chantierOuImpact = this.dataObj.chantier_ou_impact_list || [];
-      const impactAxes = chantierOuImpact
-        .filter(Boolean)
-        .filter(name => isImpactAxe(name));
-      const uniqueAxes = [...new Set(impactAxes.map(normalizeImpactAxeName))];
-      uniqueAxes.forEach(axe => {
+      const seenAxeSlugs = new Set();
+      chantierOuImpact.filter(Boolean).forEach((raw) => {
+        const canonical = resolveImpactAxeCanonicalFromLabel(raw);
+        if (!canonical) return;
+        const slug = impactAxeNameToSlug(canonical);
+        if (seenAxeSlugs.has(slug)) return;
+        seenAxeSlugs.add(slug);
         result.push({
           type: 'axe',
-          value: axe,
-          label: axe,
+          value: canonical,
+          label: raw,
           href: {
             name: this.etatName,
-            query: { section: impactAxeNameToSlug(axe) }
-          }
+            query: { section: slug },
+          },
         });
       });
 

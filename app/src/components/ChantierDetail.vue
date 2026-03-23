@@ -64,10 +64,24 @@
               <span
                 v-for="tag in contributionTags"
                 :key="'cont-' + tag.id"
-                class="chantier-metadata-tag chantier-metadata-tag--contribution"
+                class="chantier-contribution-tag-slot"
               >
-                <span class="ri-tree-line chantier-metadata-tag__icon" aria-hidden="true"></span>
-                <span class="chantier-metadata-tag__text">{{ tag.label }}</span>
+                <router-link
+                  v-if="tag.etatRoute"
+                  :to="tag.etatRoute"
+                  class="chantier-metadata-tag chantier-metadata-tag--contribution"
+                  @click.native.stop
+                >
+                  <span class="ri-tree-line chantier-metadata-tag__icon" aria-hidden="true"></span>
+                  <span class="chantier-metadata-tag__text">{{ tag.label }}</span>
+                </router-link>
+                <span
+                  v-else
+                  class="chantier-metadata-tag chantier-metadata-tag--contribution"
+                >
+                  <span class="ri-tree-line chantier-metadata-tag__icon" aria-hidden="true"></span>
+                  <span class="chantier-metadata-tag__text">{{ tag.label }}</span>
+                </span>
               </span>
           </div>
         </nav>
@@ -168,8 +182,16 @@
 import GraphBox from "./GraphBox.vue";
 import SectorIcon from "./SectorIcon.vue";
 import { getIndicators } from "@/services/csvDataService.js";
-import { homeRouteName, chantiersRouteName } from "@/config/routeNames.js";
+import {
+  homeRouteName,
+  chantiersRouteName,
+  etatEnvironnementRouteName,
+} from "@/config/routeNames.js";
 import { SECTION_SYNTHESE_SLUG } from "@/utils/sectionUrl.js";
+import {
+  impactAxeNameToSlug,
+  resolveImpactAxeCanonicalFromLabel,
+} from "@/utils/impactAxeUrl.js";
 
 export default {
   name: "ChantierDetail",
@@ -318,6 +340,15 @@ export default {
       }));
     },
     contributionTags() {
+      const etatRouteForLabel = (label) => {
+        const canonical = resolveImpactAxeCanonicalFromLabel(label);
+        if (!canonical) return null;
+        return {
+          name: etatEnvironnementRouteName(this.useStaging),
+          query: { section: impactAxeNameToSlug(canonical) },
+        };
+      };
+
       const fromListe = this.params.axeTaxonomie;
       if (Array.isArray(fromListe) && fromListe.length > 0) {
         const seen = new Set();
@@ -331,6 +362,7 @@ export default {
           tags.push({
             id: key.replace(/\s+/g, "-"),
             label: trimmed,
+            etatRoute: etatRouteForLabel(trimmed),
           });
         });
         return tags;
@@ -347,9 +379,12 @@ export default {
           const trimmed = t.trim();
           if (trimmed && !seen.has(trimmed.toLowerCase())) {
             seen.add(trimmed.toLowerCase());
+            const label =
+              trimmed.charAt(0).toUpperCase() + trimmed.slice(1);
             tags.push({
               id: trimmed.toLowerCase().replace(/\s+/g, "-"),
-              label: trimmed.charAt(0).toUpperCase() + trimmed.slice(1),
+              label,
+              etatRoute: etatRouteForLabel(trimmed),
             });
           }
         });
@@ -671,6 +706,22 @@ export default {
 
 .chantier-metadata-tag--contribution .chantier-metadata-tag__icon {
   color: #18753c;
+}
+
+a.chantier-metadata-tag--contribution:hover,
+a.chantier-metadata-tag--contribution:focus {
+  background: #18753c;
+  color: #fff;
+}
+
+a.chantier-metadata-tag--contribution:hover .chantier-metadata-tag__icon,
+a.chantier-metadata-tag--contribution:focus .chantier-metadata-tag__icon {
+  color: inherit;
+}
+
+/* Clé v-for Vue 2 : wrapper sans impact flex (comme synthèse chantiers) */
+.chantier-contribution-tag-slot {
+  display: contents;
 }
 
 .chantier-summary {

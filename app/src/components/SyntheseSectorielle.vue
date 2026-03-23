@@ -109,12 +109,28 @@
                     <div class="chantier-engagements">
                       <span
                         v-for="(eng, eIdx) in chantier.engagementBadges"
-                        :key="eIdx"
-                        class="engagement-badge"
-                        :data-tooltip="truncateEngagement(eng) !== eng ? eng : undefined"
-                        :aria-label="eng || undefined"
+                        :key="'eng-' + chantier.name + '-' + eIdx"
+                        class="chantier-engagement-badge-slot"
                       >
-                        {{ truncateEngagement(eng) }}
+                        <router-link
+                          v-if="axeBadgeTo(eng)"
+                          :to="axeBadgeTo(eng)"
+                          class="engagement-badge engagement-badge--link"
+                          :data-tooltip="truncateEngagement(eng) !== eng ? eng : undefined"
+                          :aria-label="eng || undefined"
+                          @click.native.stop
+                        >
+                          {{ truncateEngagement(eng) }}
+                        </router-link>
+                        <span
+                          v-else
+                          class="engagement-badge"
+                          :data-tooltip="truncateEngagement(eng) !== eng ? eng : undefined"
+                          :aria-label="eng || undefined"
+                          @click.stop
+                        >
+                          {{ truncateEngagement(eng) }}
+                        </span>
                       </span>
                       <span
                         v-if="chantier.remainingEngagements > 0"
@@ -170,12 +186,28 @@
                   <div class="chantier-engagements">
                     <span
                       v-for="(eng, eIdx) in chantier.engagementBadges"
-                      :key="eIdx"
-                      class="engagement-badge"
-                      :data-tooltip="truncateEngagement(eng) !== eng ? eng : undefined"
-                      :aria-label="eng || undefined"
+                      :key="'eng-e-' + chantier.name + '-' + eIdx"
+                      class="chantier-engagement-badge-slot"
                     >
-                      {{ truncateEngagement(eng) }}
+                      <router-link
+                        v-if="axeBadgeTo(eng)"
+                        :to="axeBadgeTo(eng)"
+                        class="engagement-badge engagement-badge--link"
+                        :data-tooltip="truncateEngagement(eng) !== eng ? eng : undefined"
+                        :aria-label="eng || undefined"
+                        @click.native.stop
+                      >
+                        {{ truncateEngagement(eng) }}
+                      </router-link>
+                      <span
+                        v-else
+                        class="engagement-badge"
+                        :data-tooltip="truncateEngagement(eng) !== eng ? eng : undefined"
+                        :aria-label="eng || undefined"
+                        @click.stop
+                      >
+                        {{ truncateEngagement(eng) }}
+                      </span>
                     </span>
                     <span
                       v-if="chantier.remainingEngagements > 0"
@@ -205,8 +237,12 @@
 import MiniChart from './MiniChart.vue'
 import { getNavigationStructure, getIndicators, isImpactAxe } from '@/services/csvDataService.js'
 import { getAllColors, getHexaFromName } from '@/utils.js'
-import { chantiersRouteName } from '@/config/routeNames.js'
+import { chantiersRouteName, etatEnvironnementRouteName } from '@/config/routeNames.js'
 import { toSectionSlug } from '@/utils/sectionUrl.js'
+import {
+  impactAxeNameToSlug,
+  resolveImpactAxeCanonicalFromLabel,
+} from '@/utils/impactAxeUrl.js'
 
 const SECTOR_DESCRIPTIONS = {
   'Se déplacer': 'Le secteur "Se déplacer" couvre les déplacements de voyageurs et de marchandises, pour l\'ensemble des modes de transports (terrestres, aériens, maritimes et fluviaux).',
@@ -450,6 +486,15 @@ export default {
       const maxLen = 80
       if (text.length <= maxLen) return text
       return text.slice(0, maxLen) + '…'
+    },
+    /** Route état de l’environnement pour un badge d’axe taxonomie, ou null */
+    axeBadgeTo(eng) {
+      const canonical = resolveImpactAxeCanonicalFromLabel(eng)
+      if (!canonical) return null
+      return {
+        name: etatEnvironnementRouteName(this.useStaging),
+        query: { section: impactAxeNameToSlug(canonical) },
+      }
     },
     formatEcart(ecart) {
       if (ecart === null || ecart === undefined) return ''
@@ -762,6 +807,11 @@ export default {
   margin-top: 0.5rem;
 }
 
+/* Wrapper clé v-for (Vue 2 : pas de :key sur <template>) — ne casse pas le flex */
+.chantier-engagement-badge-slot {
+  display: contents;
+}
+
 .engagement-badge {
   display: inline-block;
   max-width: 25em;
@@ -783,6 +833,16 @@ export default {
   background: #000091;
   color: #fff;
   /* Keep size fixed to avoid layout shift and hover flash */
+}
+
+a.engagement-badge--link {
+  text-decoration: none;
+  color: #000091;
+}
+
+a.engagement-badge--link:hover,
+a.engagement-badge--link:focus {
+  color: #fff;
 }
 
 .engagement-badge--more {
