@@ -598,8 +598,8 @@ export default {
 }
 
 .col-engagement {
-  width: 45%;
-  min-width: 220px;
+  width: 32%;
+  min-width: 160px;
 }
 
 .col-indicateur {
@@ -608,8 +608,8 @@ export default {
 }
 
 .col-valeurs {
-  width: 25%;
-  min-width: 180px;
+  width: 38%;
+  min-width: 220px;
 }
 
 .etat-table td {

@@ -326,7 +326,8 @@ export default {
   margin: 0 !important;
 }
 
-/* Hide legends, tooltips, metadata, date text inside mini charts */
+/* Hide legends, tooltips, metadata, date text inside mini charts (same idea as MultiLineChart: no in-chart legend) */
+.mini-chart .bar-chart-legend,
 .mini-chart .flex,
 .mini-chart .linechart_tooltip,
 .mini-chart .legende_dot,
