@@ -156,7 +156,7 @@ export default {
   },
   data() {
     return {
-      accueil_link: "/dashboard?sector=Synthèse",
+      accueil_link: "/",
       search_link: "/search",
       showNavigation: false,
       isDesktop: false,
@@ -175,12 +175,11 @@ export default {
       let base = process.env.VUE_APP_PREFIX_PATH;
       const isStaging = window.location.pathname.includes('/staging');
       const stagingPrefix = isStaging ? '/staging' : '';
-      const firstSector = 'Synthèse';
       if (base) {
-        this.accueil_link = base + `/dashboard?sector=${encodeURIComponent(firstSector)}`;
+        this.accueil_link = base + (isStaging ? "/staging" : "/");
         this.search_link = base + stagingPrefix + '/search';
       } else {
-        this.accueil_link = `/dashboard?sector=${encodeURIComponent(firstSector)}`;
+        this.accueil_link = isStaging ? "/staging" : "/";
         this.search_link = stagingPrefix + '/search';
       }
     },

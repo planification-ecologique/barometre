@@ -223,6 +223,8 @@
 </template>
 
 <script>
+import { homeRouteName } from "@/config/routeNames.js"
+
 export default {
   name: "ConsentBanner",
   data() {
@@ -241,7 +243,8 @@ export default {
     },
     confirmChoices() {
       this.modalVisible = false;
-      this.$router.push("/accueil");
+      const isStaging = this.$route.path.includes("/staging");
+      this.$router.push({ name: homeRouteName(isStaging) });
     },
   },
 };

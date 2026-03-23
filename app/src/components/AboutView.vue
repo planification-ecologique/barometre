@@ -242,7 +242,8 @@ export default {
 
 .home-hero__title {
   text-align: center;
-  margin-bottom: 1rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.75rem;
   font-weight: 700;
   letter-spacing: -0.02em;
   line-height: 1.25;
@@ -258,7 +259,7 @@ export default {
 
 .home-hero__rosace {
   width: 100%;
-  max-width: min(100%, 28rem);
+  max-width: min(100%, 21rem);
   height: auto;
   display: block;
 }

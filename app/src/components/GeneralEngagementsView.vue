@@ -189,6 +189,7 @@
 import GraphBox from "./GraphBox.vue";
 import EnvironnementImg from "./components_sgv/EnvironnementImg.vue";
 import { normalizeImpactAxeName } from "@/services/csvDataService.js";
+import { homeRouteName } from "@/config/routeNames.js";
 
 const AXE_DESCRIPTIONS = {
   'Atténuation climat': "Les indicateurs d'atténuation suivent la réduction des émissions de gaz à effet de serre et la transition vers une économie bas-carbone.",
@@ -452,8 +453,8 @@ export default {
       }
     },
     goAccueil() {
-      const routeName = window.location.pathname.includes('/staging') ? 'staging-dashboard' : 'dashboard';
-      this.$router.push({ name: routeName, query: { sector: 'Synthèse', view: 'about' } }).catch(() => {});
+      const isStaging = window.location.pathname.includes('/staging')
+      this.$router.push({ name: homeRouteName(isStaging) }).catch(() => {})
     },
     goEtatEnvironnement() {
       const routeName = window.location.pathname.includes('/staging') ? 'staging-dashboard' : 'dashboard';

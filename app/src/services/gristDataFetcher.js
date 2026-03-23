@@ -45,9 +45,17 @@ function parseCSVText(csvText) {
  * @param {string} filename - Name of the backup file
  * @returns {Promise<string>} - CSV text content
  */
+function publicAssetBasePath() {
+  const raw =
+    (typeof process !== 'undefined' && process.env && process.env.VUE_APP_PREFIX_PATH) || ''
+  return String(raw).replace(/\/$/, '')
+}
+
 async function loadLocalBackup(filename) {
   try {
-    const response = await fetch(`/grist-backups/${filename}`);
+    const base = publicAssetBasePath()
+    const url = `${base}/grist-backups/${filename}`
+    const response = await fetch(url)
     if (!response.ok) {
       throw new Error(`Failed to load backup: ${response.status}`);
     }
@@ -202,13 +210,48 @@ function toChantierKey(value) {
 }
 
 /**
- * Fetch Liste_chantiers (Chantier or Chantier associé, Axe taxonomie).
- * Returns map: chantier name → [axe taxonomie values]. Link at chantier level.
- * @returns {Promise<Map<string, string[]>>} Map of chantier name → axes
+ * Multiple axes in Liste_chantiers can be stored in one cell (comma/semicolon/newline)
+ * or as a JSON array string when exported from Grist.
+ * @param {unknown} raw - Cell value from CSV/API
+ * @returns {string[]}
+ */
+function parseAxeTaxonomieCell(raw) {
+  if (raw == null) return [];
+  if (Array.isArray(raw)) {
+    return raw.flatMap((v) => parseAxeTaxonomieCell(v));
+  }
+  const s = String(raw).trim();
+  if (!s || s.toLowerCase() === 'nan') return [];
+  if (s.startsWith('[')) {
+    try {
+      const parsed = JSON.parse(s);
+      if (Array.isArray(parsed)) {
+        return parsed
+          .map((x) => String(x).trim())
+          .filter(Boolean);
+      }
+    } catch {
+      /* treat as plain text below */
+    }
+  }
+  return s
+    .split(/[,;\n]+/)
+    .map((part) => part.trim().replace(/^["']+|["']+$/g, ''))
+    .filter(Boolean);
+}
+
+/**
+ * Fetch Liste_chantiers (Chantier or Chantier associé, Axe taxonomie, Description chantier).
+ * @returns {Promise<{ axesByChantier: Map<string, string[]>, descriptionByChantier: Map<string, string> }>}
  */
 export async function fetchChantiersData() {
+  const empty = () => ({
+    axesByChantier: new Map(),
+    descriptionByChantier: new Map(),
+  });
+
   if (!GRIST_CHANTIERS_URL) {
-    return new Map();
+    return empty();
   }
 
   if (chantiersFetchPromise) {
@@ -216,57 +259,80 @@ export async function fetchChantiersData() {
   }
 
   chantiersFetchPromise = (async () => {
-    const buildMapFromRows = (rows) => {
-      const map = new Map();
+    const buildMapsFromRows = (rows) => {
+      const axesByChantier = new Map();
+      const descriptionByChantier = new Map();
+
       for (const row of rows) {
         const raw = String(
           row['Chantier'] ?? row['Chantier associé'] ?? row['Chantier ou Impact'] ?? ''
         ).trim();
         const chantierKey = toChantierKey(raw);
-        const axeTaxo = String(row['Axe taxonomie'] ?? row['Axe_taxonomie'] ?? '').trim();
-        if (!chantierKey || !axeTaxo) continue;
+        if (!chantierKey) continue;
 
-        if (!map.has(chantierKey)) {
-          map.set(chantierKey, []);
+        const axeParts = parseAxeTaxonomieCell(
+          row['Axe taxonomie'] ?? row['Axe_taxonomie'] ?? ''
+        );
+        if (axeParts.length > 0) {
+          if (!axesByChantier.has(chantierKey)) {
+            axesByChantier.set(chantierKey, []);
+          }
+          const arr = axesByChantier.get(chantierKey);
+          for (const axeTaxo of axeParts) {
+            if (axeTaxo && !arr.includes(axeTaxo)) {
+              arr.push(axeTaxo);
+            }
+          }
         }
-        const arr = map.get(chantierKey);
-        if (!arr.includes(axeTaxo)) {
-          arr.push(axeTaxo);
+
+        const desc = String(
+          row['Description chantier'] ??
+            row['Description_chantier'] ??
+            row['Description Chantier'] ??
+            ''
+        ).trim();
+        if (desc && !descriptionByChantier.has(chantierKey)) {
+          descriptionByChantier.set(chantierKey, desc);
         }
       }
-      return map;
+
+      return { axesByChantier, descriptionByChantier };
     };
 
     try {
-      // Prefer backup first (API often returns 404 for Liste_chantiers); merge with API if both succeed
-      let map = new Map();
+      // Load local backup first (works offline / when API returns 404).
+      let axesByChantier = new Map();
+      let descriptionByChantier = new Map();
       try {
         const backupText = await loadLocalBackup('grist-chantiers.csv');
         const backupRows = await parseCSVText(backupText);
-        map = buildMapFromRows(backupRows);
+        const built = buildMapsFromRows(backupRows);
+        axesByChantier = built.axesByChantier;
+        descriptionByChantier = built.descriptionByChantier;
       } catch (backupErr) {
         console.warn('Liste_chantiers backup unavailable:', backupErr.message);
       }
 
-      if (map.size === 0) {
-        try {
-          const response = await fetch(GRIST_CHANTIERS_URL);
-          if (response.ok) {
-            const csvText = await response.text();
-            const rows = await parseCSVText(csvText);
-            map = buildMapFromRows(rows);
-          }
-        } catch (apiErr) {
-          console.warn('Liste_chantiers API unavailable:', apiErr.message);
+      // When the API responds, use live Grist data (backup alone hid multi-axis updates).
+      try {
+        const response = await fetch(GRIST_CHANTIERS_URL);
+        if (response.ok) {
+          const csvText = await response.text();
+          const rows = await parseCSVText(csvText);
+          const built = buildMapsFromRows(rows);
+          axesByChantier = built.axesByChantier;
+          descriptionByChantier = built.descriptionByChantier;
         }
+      } catch (apiErr) {
+        console.warn('Liste_chantiers API unavailable:', apiErr.message);
       }
 
       chantiersFetchPromise = null;
-      return map;
+      return { axesByChantier, descriptionByChantier };
     } catch (error) {
       chantiersFetchPromise = null;
       console.warn('Could not load Liste_chantiers, axe taxonomie column may be empty:', error.message);
-      return new Map();
+      return empty();
     }
   })();
 

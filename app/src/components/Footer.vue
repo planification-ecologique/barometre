@@ -28,7 +28,7 @@
       </div>
       <div class="fr-footer__bottom">
         <ul class="fr-footer__bottom-list">
-          <li class="fr-footer__bottom-item" v-for="option in menuOptions">
+          <li class="fr-footer__bottom-item" v-for="option in footerMenuOptions">
             <router-link class="fr-footer__bottom-link" target="_self" :id="'fr-footer-link-' + option.value"
               :to="option.to" :title=option.label> {{ option.label }}
             </router-link>
@@ -59,38 +59,13 @@
 </template>
 
 <script>
+import { homeRouteName } from "@/config/routeNames.js"
+
 export default {
   name: "FooterDsfr",
   data() {
     return {
       cookiesBlocked : false,
-      menuOptions: [
-        {
-          label: "À propos",
-          value: "about",
-          to: { name: "dashboard", query: { sector: "Synthèse", view: "about" } },
-        },
-        {
-          label: "Plan du site",
-          value: "plan-du-site",
-          to: { name: "plan-du-site" },
-        },
-        {
-          label: "Accessibilité : totalement conforme",
-          value: "accessibilite",
-          to: { name: "accessibilite" }
-        },
-        {
-          label: "Mentions légales",
-          value: "mentions-legales",
-          to: { name: "mentions-legales" }
-        },
-        {
-          label: "Données personnelles",
-          value: "donnees-personnelles",
-          to: { name: "donnees-personnelles" }
-        }
-      ],
       menuLinks: [
         {
           link: "https://legifrance.gouv.fr",
@@ -116,6 +91,26 @@ export default {
           link: "https://ecologie.data.gouv.fr",
           label: "ecologie.data.gouv.fr ",
           value: "ecologie-data-gouv"
+        }
+      ]
+    }
+  },
+  computed: {
+    footerMenuOptions() {
+      const accueilName = homeRouteName(this.$route.path.includes("/staging"))
+      return [
+        { label: "À propos", value: "about", to: { name: accueilName } },
+        { label: "Plan du site", value: "plan-du-site", to: { name: "plan-du-site" } },
+        {
+          label: "Accessibilité : totalement conforme",
+          value: "accessibilite",
+          to: { name: "accessibilite" }
+        },
+        { label: "Mentions légales", value: "mentions-legales", to: { name: "mentions-legales" } },
+        {
+          label: "Données personnelles",
+          value: "donnees-personnelles",
+          to: { name: "donnees-personnelles" }
         }
       ]
     }

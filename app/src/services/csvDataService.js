@@ -1,5 +1,4 @@
 import unitDict from '@/utils/unit_dict.json';
-import { CHANTIERS_AXE_FALLBACK } from '@/data/chantiersAxeFallback';
 import {
   fetchIndicatorsData,
   fetchLeviersData,
@@ -116,9 +115,9 @@ function parseIrpeIds(raw, valid) {
   return ids;
 }
 
-// Cache variable to store parsed CSV data
-let csvDataCache = null;
-let fetchPromise = null;
+// Parsed CSV cache per environment (production vs staging may diverge in config)
+const csvDataCacheByEnv = {};
+const fetchPromiseByEnv = {};
 
 // Cache for the separate leviers list (Liste_leviers)
 let levierListCache = null;
@@ -134,39 +133,37 @@ export const SHOW_EXTRAPOLATION = false;
  * @returns {Promise} - Promise resolving to parsed CSV data
  */
 export async function fetchCSVData(environment = 'production') {
-  // If we already have cached data, return it
-  if (csvDataCache) {
-    return csvDataCache;
+  const env = environment || 'production';
+  if (csvDataCacheByEnv[env]) {
+    return csvDataCacheByEnv[env];
   }
-  
-  // If we're already fetching, return the existing promise
-  if (fetchPromise) {
-    return fetchPromise;
+  if (fetchPromiseByEnv[env]) {
+    return fetchPromiseByEnv[env];
   }
-  
-  // Fetch parsed data using the fetcher service
-  fetchPromise = (async () => {
+
+  fetchPromiseByEnv[env] = (async () => {
     try {
-      const parsedData = await fetchIndicatorsData(environment);
-      
-      // Cache the results
-      csvDataCache = parsedData;
-      fetchPromise = null;
+      const parsedData = await fetchIndicatorsData(env);
+      csvDataCacheByEnv[env] = parsedData;
+      fetchPromiseByEnv[env] = null;
       return parsedData;
     } catch (error) {
-      // Clear the fetch promise on error
-      fetchPromise = null;
+      fetchPromiseByEnv[env] = null;
       throw error;
     }
   })();
-  
-  return fetchPromise;
+
+  return fetchPromiseByEnv[env];
 }
 
 // Function to clear the cache (useful for testing or forcing a refresh)
 export function clearCSVCache() {
-  csvDataCache = null;
-  fetchPromise = null;
+  Object.keys(csvDataCacheByEnv).forEach((k) => {
+    delete csvDataCacheByEnv[k];
+  });
+  Object.keys(fetchPromiseByEnv).forEach((k) => {
+    delete fetchPromiseByEnv[k];
+  });
 }
 
 /**
@@ -328,11 +325,12 @@ export function transformCSVData(csvData, query) {
           filteredData = [];
         } else {
           const gristIds = Array.isArray(filter.values) ? filter.values : [filter.values];
-          
+          const gristIdSet = new Set(gristIds.map((id) => String(id)));
+
           // First, find all matching rows by ID
           const matchedRows = filteredData.filter(item => {
             const itemId = item.ID;
-            return gristIds.some(gristId => itemId === gristId);
+            return itemId != null && gristIdSet.has(String(itemId));
           });
           
           // Then, get all indicator names from matched rows (to handle multi-line charts)
@@ -343,9 +341,9 @@ export function transformCSVData(csvData, query) {
           filteredData = filteredData.filter(item => {
             const itemId = item.ID;
             const indicatorName = item.Indicateur;
-            
+
             // Include if ID matches directly
-            if (gristIds.some(gristId => itemId === gristId)) {
+            if (itemId != null && gristIdSet.has(String(itemId))) {
               return true;
             }
             
@@ -816,6 +814,9 @@ function linearRegression(xVals, yVals) {
   return { slope, intercept };
 }
 
+/** Last calendar year (inclusive) for which the trend line is drawn; beyond this, values are null so targets further out are unaffected. */
+export const TREND_LINE_END_YEAR = 2030;
+
 /**
  * Computes a trend line based on the last N years of measured data.
  * @param {Array<string>} years - Year labels (e.g. ['2017','2018',...])
@@ -846,6 +847,8 @@ export function computeTrendLine(years, ytab, statuses, numYears = 3) {
   for (let i = 0; i < years.length; i++) {
     if (i < firstIndex) {
       // Before the first year used for regression: no trend value
+      result.push(null);
+    } else if (yearNumbers[i] > TREND_LINE_END_YEAR) {
       result.push(null);
     } else {
       result.push(reg.slope * yearNumbers[i] + reg.intercept);
@@ -1405,11 +1408,13 @@ function getLevierSortOrder(levier) {
 export async function getNavigationStructure(environment = 'production') {
   try {
     // Load indicators, leviers list and chantiers list (for Axe taxonomie) in parallel
-    const [csvData, levierList, chantiersAxeMap] = await Promise.all([
+    const [csvData, levierList, chantiersMaps] = await Promise.all([
       fetchCSVData(environment),
       fetchLevierList(),
       fetchChantiersData()
     ]);
+    const chantiersAxeMap = chantiersMaps.axesByChantier;
+    const chantiersDescriptionMap = chantiersMaps.descriptionByChantier;
     
     // Filter out items marked for deletion
     const filteredData = csvData.filter(item => item['A supprimer de la V1'] !== 'true');
@@ -1574,11 +1579,10 @@ export async function getNavigationStructure(environment = 'production') {
         chantier.sortedLeviers = sortedLeviers;
 
         // Enrich with Axe taxonomie from Liste_chantiers (key: chantier name only)
-        let axeTaxonomie = (chantiersAxeMap && chantiersAxeMap.get(chantierName)) || [];
-        if (axeTaxonomie.length === 0) {
-          axeTaxonomie = CHANTIERS_AXE_FALLBACK[chantierName] || [];
-        }
+        const axeTaxonomie = (chantiersAxeMap && chantiersAxeMap.get(chantierName)) || [];
         chantier.axeTaxonomie = axeTaxonomie;
+        chantier.descriptionChantier =
+          (chantiersDescriptionMap && chantiersDescriptionMap.get(chantierName)) || '';
       });
     });
     

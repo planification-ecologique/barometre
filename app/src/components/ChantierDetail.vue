@@ -168,6 +168,7 @@
 import GraphBox from "./GraphBox.vue";
 import SectorIcon from "./SectorIcon.vue";
 import { getIndicators } from "@/services/csvDataService.js";
+import { homeRouteName } from "@/config/routeNames.js";
 
 export default {
   name: "ChantierDetail",
@@ -332,12 +333,21 @@ export default {
       return Math.max(0, this.primaryIndicatorGroup.chartData.length - 1);
     },
     summaryHtml() {
+      const gristRetenir = String(this.params.descriptionChantier || '').trim();
+      if (gristRetenir) {
+        return this.htmlForSummaryText(gristRetenir);
+      }
+
       const chantierDescription = this.getDescriptionHtml(
         this.primaryIndicatorGroup.chartData
       );
 
       if (chantierDescription) {
         return chantierDescription;
+      }
+
+      if (!this.hasChantierIndicators) {
+        return '';
       }
 
       return "Résumé de la situation des indicateurs";
@@ -433,9 +443,16 @@ export default {
 
       return itemWithDescription ? itemWithDescription.label_description : "";
     },
+    /** Plain text → <br>; HTML from Grist (trusted) passed through like label_description */
+    htmlForSummaryText(text) {
+      const t = String(text || '').trim();
+      if (!t) return '';
+      if (/<[a-z][\s\S]*>/i.test(t)) return t;
+      return t.replace(/\n/g, '<br />');
+    },
     goAccueil() {
-      const routeName = window.location.pathname.includes('/staging') ? 'staging-dashboard' : 'dashboard';
-      this.$router.push({ name: routeName, query: { sector: 'Synthèse', view: 'about' } }).catch(() => {});
+      const isStaging = window.location.pathname.includes('/staging')
+      this.$router.push({ name: homeRouteName(isStaging) }).catch(() => {})
     },
     goChantiersSectoriels() {
       const routeName = window.location.pathname.includes('/staging') ? 'staging-dashboard' : 'dashboard';

@@ -75,7 +75,7 @@
 
         <h3>Pages du site ayant fait l'objet de la vérification de conformité</h3>
         <ul>
-            <li><a href="https://barometre.planification-ecologique.gouv.fr/accueil">Accueil</a></li>
+            <li><a href="https://barometre.planification-ecologique.gouv.fr/">Accueil</a></li>
             <li><a
                     href="https://barometre.planification-ecologique.gouv.fr/dashboard?theme=transverse&levier=emissions--puits">Tableau
                     de bord</a></li>

@@ -266,6 +266,7 @@ import {
   buildRegionalSeries,
 } from "@/services/ecolabRegionHelpers.js";
 import { isFavori, toggleFavori } from "@/services/favorisService.js";
+import { TREND_LINE_END_YEAR } from "@/services/csvDataService.js";
 
 export default {
   name: "GraphBox",
@@ -661,6 +662,7 @@ export default {
         if (index < firstIndex) return null;
         const numericYear = Number(year);
         if (Number.isNaN(numericYear)) return null;
+        if (numericYear > TREND_LINE_END_YEAR) return null;
         return regression.slope * numericYear + regression.intercept;
       });
     },

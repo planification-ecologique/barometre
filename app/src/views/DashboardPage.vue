@@ -118,6 +118,7 @@ import ChantiersTableView from "../components/ChantiersTableView.vue";
 import SyntheseSectorielle from "../components/SyntheseSectorielle.vue";
 import EtatEnvironnement from "../components/EtatEnvironnement.vue";
 import dsfrAnalytics from "../services/dsfr_analytics"
+import { homeRouteName, dashboardRouteName } from "@/config/routeNames.js"
 
 export default {
   name: "DashboardPage",
@@ -133,7 +134,13 @@ export default {
   },
   computed: {
     isAccueilPage() {
-      return this.$route.query.view === 'about' || this.myobj?.view === 'about'
+      const n = this.$route.name
+      return (
+        n === "home" ||
+        n === "staging-home" ||
+        this.$route.query.view === "about" ||
+        this.myobj?.view === "about"
+      )
     }
   },
   components: {
@@ -164,44 +171,25 @@ export default {
     };
   },
   created() {
-    // Get sector from URL query parameter
-    this.currentSector = this.$route.query.sector || 'Synthèse';
-    
-    // Initialize sidenav_initParams with sector
-    this.sidenav_initParams = {
-      sector: this.currentSector
-    };
-    
-    // Initialisation de la requête selon les paramètres de l'URL
-    if (this.$route.query.view) {
-      this.sidenav_initParams.view = this.$route.query.view;
+    if (this.$route.name === "home" || this.$route.name === "staging-home") {
+      this.applyHomeRouteState()
+      return
     }
-    if (this.$route.query.chantier_id) {
-      this.sidenav_initParams.chantier_id = this.$route.query.chantier_id;
-    }
-    if (this.$route.query.axe) {
-      this.sidenav_initParams.axe = this.$route.query.axe;
-    }
-    if (this.$route.query.sectorFilter) {
-      this.sidenav_initParams.sectorFilter = this.$route.query.sectorFilter;
-    }
-    if (this.$route.query.chantier_sector) {
-      this.sidenav_initParams.chantier_sector = this.$route.query.chantier_sector;
-    }
-    // Legacy support
-    if (this.$route.query.theme !== undefined || this.$route.query.levier !== undefined) {
-      this.sidenav_initParams.id_theme = this.$route.query.theme;
-      this.sidenav_initParams.id_levier = this.$route.query.levier;
-    }
-
-    // Initialize myobj from route for self-loading views (about, chantiers-sectoriels, etat-environnement)
-    const view = this.$route.query.view;
-    if (view === 'about' || view === 'chantiers-sectoriels' || view === 'etat-environnement') {
-      this.myobj = { view, sector: this.currentSector };
-      this.isapiloading = false;
-    }
+    this.initDashboardFromRoute()
   },
   watch: {
+    "$route.name"(name, oldName) {
+      if (name === "home" || name === "staging-home") {
+        this.applyHomeRouteState()
+        return
+      }
+      if (
+        (oldName === "home" || oldName === "staging-home") &&
+        (name === "dashboard" || name === "staging-dashboard")
+      ) {
+        this.initDashboardFromRoute()
+      }
+    },
     '$route.query.sector'(newSector, oldSector) {
       if (newSector && newSector !== oldSector) {
         this.currentSector = newSector;
@@ -273,6 +261,34 @@ export default {
     }
   },
   methods: {
+    applyHomeRouteState() {
+      this.currentSector = this.$route.query.sector || "Synthèse"
+      this.sidenav_initParams = { sector: this.currentSector, view: "about" }
+      this.myobj = { view: "about", sector: this.currentSector }
+      this.isapiloading = false
+    },
+    initDashboardFromRoute() {
+      const q = this.$route.query
+      this.currentSector = q.sector || "Synthèse"
+      this.sidenav_initParams = { sector: this.currentSector }
+      if (q.view) this.sidenav_initParams.view = q.view
+      if (q.chantier_id) this.sidenav_initParams.chantier_id = q.chantier_id
+      if (q.axe) this.sidenav_initParams.axe = q.axe
+      if (q.sectorFilter) this.sidenav_initParams.sectorFilter = q.sectorFilter
+      if (q.chantier_sector) this.sidenav_initParams.chantier_sector = q.chantier_sector
+      if (q.theme !== undefined || q.levier !== undefined) {
+        this.sidenav_initParams.id_theme = q.theme
+        this.sidenav_initParams.id_levier = q.levier
+      }
+      const view = q.view
+      if (view === "about" || view === "chantiers-sectoriels" || view === "etat-environnement") {
+        this.myobj = { view, sector: this.currentSector }
+        this.isapiloading = false
+      } else {
+        this.myobj = {}
+        this.isapiloading = true
+      }
+    },
     // Mise à jour de la sélection dans le menu
     updateSelection(selectedValue) {
       if (selectedValue != undefined) {
@@ -287,9 +303,17 @@ export default {
 
         // Navigation vers la page de dashboard et affichage dans l'URL
         try {
-          const routeName = this.useStaging ? "staging-dashboard" : "dashboard";
-          // Use the sector from params (which may differ from currentSector for chantiers viewed from Synthèse)
           const querySector = selectedValue.sector || this.currentSector;
+          if (selectedValue.view === "about" && querySector === "Synthèse") {
+            const homeName = homeRouteName(this.useStaging)
+            if (this.$route.name !== homeName) {
+              this.$router.push({ name: homeName }).catch(() => {})
+            }
+            return
+          }
+
+          let routeName = dashboardRouteName(this.useStaging);
+          // Use the sector from params (which may differ from currentSector for chantiers viewed from Synthèse)
           const query = {
             sector: querySector
           };
@@ -361,9 +385,10 @@ export default {
     },
   },
   mounted(){
+    const onHome = this.$route.name === homeRouteName(this.useStaging)
     dsfrAnalytics({
-      path: "/dashboard",
-      name: "dashboard",
+      path: onHome ? (this.useStaging ? "/staging" : "/") : "/dashboard",
+      name: onHome ? homeRouteName(this.useStaging) : "dashboard",
       segment: "tableau_de_bord",
       labels: ['contenu_liste', 'tableau_de_bord', '', '', ''],
       template: "contenu_liste",

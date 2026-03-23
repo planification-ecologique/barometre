@@ -67,6 +67,7 @@
 <script>
 import router from '../router'
 import { getNavigationStructure } from '@/services/csvDataService.js'
+import { homeRouteName } from '@/config/routeNames.js'
 
 export default {
   name: 'NavigationDsfr',
@@ -100,7 +101,7 @@ export default {
           value: 'accueil',
           label: 'Accueil',
           selected: false,
-          link: base + stagingPrefix + '/dashboard?sector=Synthèse&view=about'
+          link: String(base || '') + stagingPrefix + (stagingPrefix ? '' : '/')
         },
         {
           value: 'etat-environnement',
@@ -164,11 +165,8 @@ export default {
           })
         }
       } else if (option.value === 'accueil') {
-        const routeName = window.location.pathname.includes('/staging') ? 'staging-dashboard' : 'dashboard'
-        this.myrouter.push({
-          name: routeName,
-          query: { sector: 'Synthèse', view: 'about' }
-        }).catch(err => {
+        const isStaging = window.location.pathname.includes('/staging')
+        this.myrouter.push({ name: homeRouteName(isStaging) }).catch(err => {
           if (err.name !== 'NavigationDuplicated') console.error('Navigation error:', err)
         })
       } else if (option.value === 'etat-environnement') {
@@ -207,7 +205,9 @@ export default {
         if (opt.children) opt.children.forEach(c => { c.selected = false })
       })
 
-      if (path.includes('dashboard')) {
+      if (this.$route.name === 'home' || this.$route.name === 'staging-home') {
+        this.setSelected('accueil')
+      } else if (path.includes('dashboard')) {
         const sector = query.sector
         const view = query.view
 
@@ -259,6 +259,7 @@ export default {
     if (this.$route) {
       this.$watch(
         () => ({
+          name: this.$route.name,
           sector: this.$route.query.sector,
           view: this.$route.query.view,
           path: this.$route.path

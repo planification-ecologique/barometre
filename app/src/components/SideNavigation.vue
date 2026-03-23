@@ -200,6 +200,7 @@ export default {
                 id: name.toLowerCase().replace(/[^a-z0-9]/g, '-'),
                 name: name,
                 sortedLeviers: chantierData.sortedLeviers || [],
+                descriptionChantier: chantierData.descriptionChantier || '',
                 // Collect all grist IDs from all leviers
                 grist_ids: Object.values(chantierData.leviers)
                   .flat()
@@ -389,6 +390,7 @@ export default {
                 id: name.toLowerCase().replace(/[^a-z0-9]/g, '-'),
                 name: name,
                 sortedLeviers: chantierData.sortedLeviers || [],
+                descriptionChantier: chantierData.descriptionChantier || '',
                 grist_ids: Object.values(chantierData.leviers)
                   .flat()
                   .map(item => item.gristId)
@@ -472,7 +474,8 @@ export default {
             date_end: "2031-01-01",
           },
         },
-        sortedLeviers: chantier.sortedLeviers || []
+        sortedLeviers: chantier.sortedLeviers || [],
+        descriptionChantier: chantier.descriptionChantier || ''
       };
       this.$emit("params", params);
     },
@@ -781,7 +784,8 @@ export default {
           },
         },
         // Pass sorted leviers from navigation data
-        sortedLeviers: chantier.sortedLeviers || []
+        sortedLeviers: chantier.sortedLeviers || [],
+        descriptionChantier: chantier.descriptionChantier || ''
       };
       this.$emit("params", params);
     },

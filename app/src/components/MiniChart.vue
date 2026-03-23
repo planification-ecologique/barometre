@@ -67,6 +67,7 @@
 <script>
 import BarChart from './components_dsfr/BarChart.vue'
 import MultiLineChart from './components_dsfr/MultiLineChart.vue'
+import { TREND_LINE_END_YEAR } from '@/services/csvDataService.js'
 
 export default {
   name: 'MiniChart',
@@ -263,6 +264,7 @@ export default {
         if (index < firstIndex) return null
         const numericYear = Number(year)
         if (Number.isNaN(numericYear)) return null
+        if (numericYear > TREND_LINE_END_YEAR) return null
         return regression.slope * numericYear + regression.intercept
       })
     },

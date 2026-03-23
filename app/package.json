@@ -5,6 +5,7 @@
   "scripts": {
     "download-grist-csvs": "node scripts/download-grist-csvs.js",
     "serve": "vue-cli-service serve",
+    "test:unit": "vue-cli-service test:unit",
     "build": "vue-cli-service build",
     "build_qualif": "vue-cli-service build --mode qualif",
     "build_prod": "vue-cli-service build",
@@ -27,6 +28,7 @@
     "mobile-device-detect": "^0.4.3",
     "papaparse": "^5.4.1",
     "patternomaly": "^1.3.2",
+    "remixicon": "^4.9.1",
     "sass": "^1.69.5",
     "sass-loader": "^13.3.2",
     "vue": "^2.7.14",
@@ -36,7 +38,10 @@
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^5.0.8",
+    "@vue/cli-plugin-unit-jest": "^5.0.9",
     "@vue/cli-service": "^5.0.8",
+    "@vue/test-utils": "^1.3.6",
+    "@vue/vue2-jest": "^27.0.0",
     "prettier": "3.1.0",
     "vue-template-compiler": "^2.7.14"
   },

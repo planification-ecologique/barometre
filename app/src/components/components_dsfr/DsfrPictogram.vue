@@ -28,6 +28,7 @@ const ASSETS = {
   'environment-food': require('@gouvfr/dsfr/dist/artwork/pictograms/environment/food.svg'),
   'environment-grocery': require('@gouvfr/dsfr/dist/artwork/pictograms/environment/grocery.svg'),
   'environment-human-cooperation': require('@gouvfr/dsfr/dist/artwork/pictograms/environment/human-cooperation.svg'),
+  'environment-environment': require('@gouvfr/dsfr/dist/artwork/pictograms/environment/environment.svg'),
   'buildings-factory': require('@gouvfr/dsfr/dist/artwork/pictograms/buildings/factory.svg'),
   'buildings-house': require('@gouvfr/dsfr/dist/artwork/pictograms/buildings/house.svg'),
   'digital-application': require('@gouvfr/dsfr/dist/artwork/pictograms/digital/application.svg'),

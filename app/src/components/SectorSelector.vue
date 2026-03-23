@@ -85,6 +85,7 @@
 
 <script>
 import router from '../router'
+import { homeRouteName } from '@/config/routeNames.js'
 import { getNavigationStructure, IMPACT_AXE_DISPLAY_ORDER, isImpactAxe } from '@/services/csvDataService.js'
 import { getSectorIcon } from '@/utils/sectorIcons.js'
 
@@ -141,6 +142,11 @@ export default {
       
       if (path.includes('search')) {
         return 'page:search'
+      }
+
+      const routeName = this.$route?.name
+      if (routeName === 'home' || routeName === 'staging-home') {
+        return 'view:about'
       }
       
       const view = query.view
@@ -259,23 +265,30 @@ export default {
       
       if (type === 'sector') {
         // Navigate to sector
-        const query = { sector: param }
         if (param === 'Synthèse') {
-          query.view = 'about'
+          router.push({ name: homeRouteName(isStaging) }).catch(err => {
+            if (err.name !== 'NavigationDuplicated') console.error('Navigation error:', err)
+          })
         } else {
-          query.view = 'sectorial-engagements'
+          const query = { sector: param, view: 'sectorial-engagements' }
+          router.push({ name: routeName, query }).catch(err => {
+            if (err.name !== 'NavigationDuplicated') console.error('Navigation error:', err)
+          })
         }
-        router.push({ name: routeName, query }).catch(err => {
-          if (err.name !== 'NavigationDuplicated') console.error('Navigation error:', err)
-        })
       } else if (type === 'view') {
         // Navigate to specific view
-        router.push({
-          name: routeName,
-          query: { sector: 'Synthèse', view: param }
-        }).catch(err => {
-          if (err.name !== 'NavigationDuplicated') console.error('Navigation error:', err)
-        })
+        if (param === 'about') {
+          router.push({ name: homeRouteName(isStaging) }).catch(err => {
+            if (err.name !== 'NavigationDuplicated') console.error('Navigation error:', err)
+          })
+        } else {
+          router.push({
+            name: routeName,
+            query: { sector: 'Synthèse', view: param }
+          }).catch(err => {
+            if (err.name !== 'NavigationDuplicated') console.error('Navigation error:', err)
+          })
+        }
       } else if (type === 'axe') {
         // Navigate to specific taxonomy axe
         router.push({

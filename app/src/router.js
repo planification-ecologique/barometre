@@ -9,22 +9,17 @@ const routes = [
   {
     path: "/",
     name: "home",
+    props: route => ({query: route.query.theme}, {query: route.query.levier}),
+    component: () =>
+      import(/* webpackChunkName: "dashboard" */ "./views/DashboardPage.vue"),
     meta: {
       title: GeneralTitle + " - Tableaux de bord"
-
-    },
-    redirect: { 
-      name: 'dashboard',
-      query: { view: 'about' }
     }
   },
   {
     path: "/accueil",
     name: "accueil",
-    redirect: { 
-      name: 'dashboard',
-      query: { view: 'about' }
-    }
+    redirect: { name: "home" }
   },
   
   {
@@ -129,14 +124,6 @@ const routes = [
     meta: {}
   },
   {
-    path: "/staging",
-    redirect: "/staging/dashboard",
-    meta: {
-      noindex: true,          // Signal to search engines not to index
-      excludeFromSitemap: true // Exclude from sitemap generation
-    }
-  },
-  {
     path: "/chart-iframe",
     name: "chart-iframe",
     component: () =>
@@ -159,6 +146,17 @@ const routes = [
     }
   },
   {
+    path: "/test/accueil-v2",
+    name: "test-accueil-v2",
+    component: () =>
+      import(/* webpackChunkName: "test-home-v2" */ "./views/HomeV2TestPage.vue"),
+    meta: {
+      title: GeneralTitle + " — Test accueil V2",
+      noindex: true,
+      excludeFromSitemap: true
+    }
+  },
+  {
     path: "*",
     name: "error404",
     component: () =>
@@ -170,6 +168,19 @@ const routes = [
 // Only add staging routes if not in production
 if (process.env.VUE_APP_ENV !== 'prod') {
   routes.push(
+    {
+      path: "/staging",
+      name: "staging-home",
+      props: { useStaging: true },
+      component: () =>
+        import(/* webpackChunkName: "dashboard" */ "./views/DashboardPage.vue"),
+      meta: {
+        title: GeneralTitle + " - Tableaux de bord",
+        isStaging: true,
+        noindex: true,
+        excludeFromSitemap: true
+      }
+    },
     {
       path: "/staging/dashboard",
       name: "staging-dashboard",
@@ -191,6 +202,19 @@ if (process.env.VUE_APP_ENV !== 'prod') {
         import(/* webpackChunkName: "search" */ "./views/SearchPage.vue"),
       meta: {
         title: GeneralTitle + " - Recherche",
+        isStaging: true,
+        noindex: true,
+        excludeFromSitemap: true
+      }
+    },
+    {
+      path: "/staging/test/accueil-v2",
+      name: "staging-test-accueil-v2",
+      props: { useStaging: true },
+      component: () =>
+        import(/* webpackChunkName: "test-home-v2" */ "./views/HomeV2TestPage.vue"),
+      meta: {
+        title: GeneralTitle + " — Test accueil V2 (staging)",
         isStaging: true,
         noindex: true,
         excludeFromSitemap: true
