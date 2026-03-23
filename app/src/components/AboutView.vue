@@ -14,7 +14,7 @@
           decoding="async"
         />
       </figure>
-      <div class="home-hero__intro fr-text--md">
+      <div class="home-hero__intro">
         <p>
           Entreprises, pouvoirs publics ou citoyens, la transition écologique nous concerne tous. Pour réussir, elle demande de la transparence sur le chemin déjà parcouru et sur celui qui reste à parcourir pour atteindre les objectifs que la France s’est fixés en faveur du climat, de la biodiversité ou encore de la préservation des ressources. C'est l'objet du baromètre de la planification écologique.
         </p>
@@ -27,7 +27,7 @@
     <!-- État de l'environnement -->
     <section class="home-section fr-mt-6w" aria-labelledby="home-etat-heading">
       <h2 id="home-etat-heading" class="fr-h5 home-section__title">État de l'environnement</h2>
-      <p class="fr-text--sm home-section__lead">
+      <p class="home-section__lead">
         L'amélioration de l'état de l'environnement constitue la finalité des stratégies environnementales. Les indicateurs sont regroupés par axe d'impact&nbsp;: atténuation et adaptation au climat, biodiversité, eau, pollution et économie circulaire.
       </p>
       <router-link
@@ -62,7 +62,7 @@
     <!-- Chantiers sectoriels -->
     <section class="home-section fr-mt-6w fr-mb-4w" aria-labelledby="home-chantiers-heading">
       <h2 id="home-chantiers-heading" class="fr-h5 home-section__title">Chantiers sectoriels</h2>
-      <p class="fr-text--sm home-section__lead">
+      <p class="home-section__lead">
         Les chantiers structurent les transformations tangibles prévues par les stratégies environnementales pour atteindre ces objectifs, secteur par secteur.
       </p>
       <router-link
@@ -131,7 +131,7 @@ const SECTOR_CARD_DEFS = [
 const SECTOR_BLURBS = {
   'Se déplacer': 'Déplacements de personnes et de marchandises, tous modes confondus.',
   'Se loger': 'Rénovation énergétique, chauffage et construction durable du parc bâti.',
-  'Préserver et valoriser nos écosystèmes': 'Protection de la biodiversité, forêts, sols et milieux naturels.',
+  'Préserver': 'Protection de la biodiversité, forêts, sols et milieux naturels.',
   Produire: 'Industrie, énergies renouvelables et décarbonation des procédés.',
   'Se nourrir': 'Chaîne alimentaire, de la production agricole à la consommation.',
   Consommer: 'Économie circulaire, déchets et modes de consommation.'
@@ -251,6 +251,12 @@ export default {
   box-sizing: border-box;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
+  font-family: "Marianne", arial, sans-serif;
+}
+
+/* DSFR .fr-text--alt uses Spectral; keep Marianne for the whole landing */
+.home-landing :deep(.fr-text--alt) {
+  font-family: "Marianne", arial, sans-serif !important;
 }
 
 .home-hero__title {
@@ -277,6 +283,12 @@ export default {
   display: block;
 }
 
+.home-hero__intro,
+.home-section__lead {
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
 .home-hero__intro {
   text-align: left;
   width: 100%;
@@ -285,7 +297,6 @@ export default {
 .home-hero__intro p {
   text-align: left;
   margin-bottom: 1rem;
-  line-height: 1.65;
 }
 
 .home-section__title {
@@ -294,9 +305,7 @@ export default {
 }
 
 .home-section__lead {
-  max-width: 36rem;
   margin-bottom: 0;
-  line-height: 1.6;
   color: #3a3a3a;
 }
 

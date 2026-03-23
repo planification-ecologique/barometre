@@ -285,13 +285,18 @@ export default {
   background-image: none;
 }
 
-@media (max-width: 768px) {
+/* Même seuil que le bouton Menu / nav DSFR (992px) : pas de barre recherche + CTA à droite en même temps que le menu burger */
+@media (max-width: 991px) {
   .header-right-tools {
     display: none;
   }
 
   .header-search-bar {
     max-width: 100%;
+  }
+
+  .desktop-navigation {
+    display: block;
   }
 }
 
@@ -308,13 +313,6 @@ export default {
   
   .fr-header__navbar {
     display: none; /* Hide menu button on desktop */
-  }
-}
-
-/* Mobile / tablette : panneau navigation (sans bandeau CTA FNV) */
-@media (max-width: 991px) {
-  .desktop-navigation {
-    display: block; /* Show navigation when toggled on mobile/tablet */
   }
 }
 </style>
