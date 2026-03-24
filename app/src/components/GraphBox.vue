@@ -438,19 +438,40 @@ export default {
 
       return "Date non disponible";
     },
-    /** Texte brut sans HTML pour troncature par mots */
+    /** Texte brut sans balises, en conservant les sauts de ligne (\\n, <br>, fins de paragraphe) */
     plainDescription() {
       const html = this.dataObj?.label_description || "";
       if (!html) return "";
-      return html.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
+      let text = html
+        .replace(/\r\n/g, "\n")
+        .replace(/<br\s*\/?>/gi, "\n")
+        .replace(/<\/p>/gi, "\n")
+        .replace(/<\/div>/gi, "\n")
+        .replace(/<[^>]+>/g, " ");
+      text = text
+        .split("\n")
+        .map((line) => line.replace(/[ \t\u00a0]+/g, " ").trimEnd())
+        .join("\n");
+      return text.replace(/\n{3,}/g, "\n\n").trim();
     },
-    /** Texte tronqué aux N premiers mots (~3-4 lignes) */
+    /** Texte tronqué aux N premiers mots (~3-4 lignes), sans aplatir les retours à la ligne */
     truncatedDescription() {
       const limit = 40;
       const plain = this.plainDescription;
       const words = plain.split(/\s+/).filter(Boolean);
       if (words.length <= limit) return plain;
-      return words.slice(0, limit).join(" ") + "…";
+      const re = /\S+/g;
+      let count = 0;
+      let end = 0;
+      let m;
+      while ((m = re.exec(plain)) !== null) {
+        count += 1;
+        if (count === limit) {
+          end = m.index + m[0].length;
+          break;
+        }
+      }
+      return plain.slice(0, end) + "…";
     },
     /** True si le texte dépasse la limite de mots */
     needsTruncation() {
@@ -885,6 +906,7 @@ export default {
 }
 .graph-box-commentaire__text {
   line-height: 1.4;
+  white-space: pre-line;
 }
 .graph-box-commentaire__voir-plus {
   font-size: inherit;
