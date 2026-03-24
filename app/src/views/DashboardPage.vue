@@ -221,7 +221,12 @@ export default {
         if (this.$route.name === "home" || this.$route.name === "staging-home") return
         if (!this.isDashboardShellRouteName(this.$route.name)) return
         this.currentSector = resolveSectorFromQuery(newQuery, this.knownSectorNames)
-        let view = newQuery.view || this.impliedViewFromRouteName()
+        // Utiliser newQuery (argument du watcher), pas this.$route.query : au même tick,
+        // impliedViewFromRouteName() pouvait encore lire l’ancienne query → vue « chantier »
+        // conservée alors que l’URL pointait déjà vers la synthèse (fil d’Ariane, badges…).
+        let view = newQuery.view
+          ? newQuery.view
+          : this.resolveShellViewFromQuery(newQuery)
         let axeResolved = newQuery.axe
         let chantierSectorResolved = newQuery.chantier_sector
         const onEtat =
@@ -267,6 +272,21 @@ export default {
         if (newQuery.theme !== undefined) newParams.id_theme = newQuery.theme
         if (newQuery.levier !== undefined) newParams.id_levier = newQuery.levier
         this.sidenav_initParams = newParams
+
+        // Même route /chantiers : seule la query change → $route.name ne bouge pas et
+        // initDashboardFromRoute ne repasse pas. Il faut aligner myobj (comme pour
+        // etat-environnement → home où le nom de route change).
+        if (
+          (this.$route.name === "chantiers" ||
+            this.$route.name === "staging-chantiers") &&
+          view === "chantiers-sectoriels"
+        ) {
+          this.myobj = {
+            view: "chantiers-sectoriels",
+            sector: this.currentSector,
+          }
+          this.isapiloading = false
+        }
       },
     },
   },
@@ -281,29 +301,35 @@ export default {
         "staging-chantiers",
       ].includes(name)
     },
-    impliedViewFromRouteName() {
+    /** Vue shell déduite d’une query précise (pour le watcher $route.query). */
+    resolveShellViewFromQuery(q) {
       const n = this.$route.name
       if (n === "etat-environnement" || n === "staging-etat-environnement") {
-        const slug = String(this.$route.query.section || "").toLowerCase()
-        if (slug && slug !== SECTION_SYNTHESE_SLUG && isImpactAxeSlug(slug)) {
-          return "general-engagements"
+        if (q.section) {
+          const slug = String(q.section).toLowerCase()
+          if (slug !== SECTION_SYNTHESE_SLUG && isImpactAxeSlug(slug)) {
+            return "general-engagements"
+          }
         }
-        return this.$route.query.view || "etat-environnement"
+        return q.view || "etat-environnement"
       }
       if (n === "chantiers" || n === "staging-chantiers") {
-        const slug = String(this.$route.query.section || "").toLowerCase()
-        const qv = this.$route.query.view
+        const slug = String(q.section || "").toLowerCase()
+        const qv = q.view
         if (
-          this.$route.query.chantier_id &&
+          q.chantier_id &&
           slug &&
           slug !== SECTION_SYNTHESE_SLUG &&
           (!qv || qv === "chantier")
         ) {
           return "chantier"
         }
-        return this.$route.query.view || "chantiers-sectoriels"
+        return qv || "chantiers-sectoriels"
       }
       return undefined
+    },
+    impliedViewFromRouteName() {
+      return this.resolveShellViewFromQuery(this.$route.query || {})
     },
     applyHomeRouteState() {
       this.currentSector = resolveSectorFromQuery(this.$route.query, this.knownSectorNames)
@@ -362,9 +388,22 @@ export default {
         this.isapiloading = true
       }
     },
+    /**
+     * Compare la query cible à l’URL actuelle.
+     * Sur /chantiers, `view=chantiers-sectoriels` est implicite si absent : sans ça,
+     * le menu réémet une cible `{ section }` alors que l’URL a encore `view=…` → faux
+     * « changement » → router.push sans hash → perte de #sector-… au chargement.
+     */
     querySameAsRoute(query) {
-      const a = { ...this.$route.query }
-      const b = { ...query }
+      const stripImplicitChantiersSyntheseView = (q) => {
+        const o = { ...(q || {}) }
+        if (o.view === "chantiers-sectoriels") {
+          delete o.view
+        }
+        return o
+      }
+      const a = stripImplicitChantiersSyntheseView(this.$route.query)
+      const b = stripImplicitChantiersSyntheseView(query)
       const keys = new Set([...Object.keys(a), ...Object.keys(b)])
       for (const k of keys) {
         if ((a[k] || "") !== (b[k] || "")) return false

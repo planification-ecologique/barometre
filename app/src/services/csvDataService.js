@@ -1401,11 +1401,27 @@ function getLevierSortOrder(levier) {
 }
 
 /**
- * Build the navigation structure dynamically from Grist data
- * @param {String} environment - Environment to use (production or staging)
- * @returns {Promise} - Promise resolving to navigation structure
+ * Cache session (mémoire) : une entrée par environnement, vidée au rechargement de la page.
+ * Évite de reconstruire toute la structure à chaque remontée de SyntheseSectorielle / SideNavigation.
  */
-export async function getNavigationStructure(environment = 'production') {
+const navigationStructureSessionCache = {
+  production: null,
+  staging: null,
+};
+const navigationStructureSessionInflight = {
+  production: null,
+  staging: null,
+};
+
+function navigationStructureEnvKey(environment) {
+  return environment === 'staging' ? 'staging' : 'production';
+}
+
+/**
+ * Construction réelle (CSV + listes) — appelée au plus une fois par env et session.
+ * @param {String} environment
+ */
+async function buildNavigationStructureCore(environment) {
   try {
     // Load indicators, leviers list and chantiers list (for Axe taxonomie) in parallel
     const [csvData, levierList, chantiersMaps] = await Promise.all([
@@ -1607,4 +1623,27 @@ export async function getNavigationStructure(environment = 'production') {
     console.error('Error building navigation structure from CSV:', error);
     throw error;
   }
+}
+
+/**
+ * Build the navigation structure dynamically from Grist data.
+ * Résultat mis en cache pour la durée de vie de la page (onglet), par environnement.
+ * @param {String} environment - Environment to use (production or staging)
+ * @returns {Promise} - Promise resolving to navigation structure
+ */
+export async function getNavigationStructure(environment = 'production') {
+  const key = navigationStructureEnvKey(environment);
+  if (navigationStructureSessionCache[key]) {
+    return navigationStructureSessionCache[key];
+  }
+  if (!navigationStructureSessionInflight[key]) {
+    navigationStructureSessionInflight[key] = (async () => {
+      const result = await buildNavigationStructureCore(environment);
+      navigationStructureSessionCache[key] = result;
+      return result;
+    })().finally(() => {
+      navigationStructureSessionInflight[key] = null;
+    });
+  }
+  return navigationStructureSessionInflight[key];
 }

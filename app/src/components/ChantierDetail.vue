@@ -8,13 +8,13 @@
       <nav class="fr-breadcrumb" aria-label="vous êtes ici :">
         <ol class="fr-breadcrumb__list">
           <li>
-            <a class="fr-breadcrumb__link" href="#" @click.prevent="goAccueil">Accueil</a>
+            <router-link class="fr-breadcrumb__link" :to="breadcrumbAccueilTo">Accueil</router-link>
           </li>
           <li>
-            <a class="fr-breadcrumb__link" href="#" @click.prevent="goChantiersSectoriels">Chantiers sectoriels</a>
+            <router-link class="fr-breadcrumb__link" :to="breadcrumbChantiersSyntheseTo">Chantiers sectoriels</router-link>
           </li>
           <li>
-            <a class="fr-breadcrumb__link" href="#" @click.prevent="goSector">{{ displaySector }}</a>
+            <router-link class="fr-breadcrumb__link" :to="breadcrumbSectorSyntheseTo">{{ displaySector }}</router-link>
           </li>
           <li>
             <span class="fr-breadcrumb__link" aria-current="page">{{ chantierTitle }}</span>
@@ -183,11 +183,10 @@ import GraphBox from "./GraphBox.vue";
 import SectorIcon from "./SectorIcon.vue";
 import { getIndicators } from "@/services/csvDataService.js";
 import {
-  homeRouteName,
   chantiersRouteName,
   etatEnvironnementRouteName,
 } from "@/config/routeNames.js";
-import { SECTION_SYNTHESE_SLUG } from "@/utils/sectionUrl.js";
+import { SECTION_SYNTHESE_SLUG, toSectionSlug } from "@/utils/sectionUrl.js";
 import {
   impactAxeNameToSlug,
   resolveImpactAxeCanonicalFromLabel,
@@ -302,6 +301,25 @@ export default {
     displaySector() {
       // Use chantier_sector (real sector) if available, otherwise fall back to sector
       return this.params.chantier_sector || this.params.sector || 'Secteur';
+    },
+    /** Liens réels (router-link) : évite href="#" + click, souvent cassé avec le DSFR */
+    breadcrumbAccueilTo() {
+      return { path: this.useStaging ? "/staging" : "/" };
+    },
+    breadcrumbChantiersSyntheseTo() {
+      return {
+        name: chantiersRouteName(this.useStaging),
+        query: { section: SECTION_SYNTHESE_SLUG },
+        hash: "",
+      };
+    },
+    breadcrumbSectorSyntheseTo() {
+      const slug = toSectionSlug(this.displaySector);
+      return {
+        name: chantiersRouteName(this.useStaging),
+        query: { section: SECTION_SYNTHESE_SLUG },
+        hash: `#sector-${slug}`,
+      };
     },
     chantierDisplayName() {
       const raw = this.params.chantier_name || '';
@@ -517,24 +535,6 @@ export default {
       if (!t) return '';
       if (/<[a-z][\s\S]*>/i.test(t)) return t;
       return t.replace(/\n/g, '<br />');
-    },
-    goAccueil() {
-      const isStaging = window.location.pathname.includes('/staging')
-      this.$router.push({ name: homeRouteName(isStaging) }).catch(() => {})
-    },
-    goChantiersSectoriels() {
-      const isStaging = window.location.pathname.includes('/staging')
-      this.$router.push({
-        name: chantiersRouteName(isStaging),
-        query: { section: SECTION_SYNTHESE_SLUG }
-      }).catch(() => {})
-    },
-    goSector() {
-      const isStaging = window.location.pathname.includes('/staging')
-      this.$router.push({
-        name: chantiersRouteName(isStaging),
-        query: { section: SECTION_SYNTHESE_SLUG }
-      }).catch(() => {})
     },
     getSectionId(label) {
       const normalized = String(label || "")

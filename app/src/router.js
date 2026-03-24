@@ -437,9 +437,16 @@ const router = new Router({
     if (savedPosition) {
       return savedPosition;
     }
-    // Scroll to hash anchor if present
+    // Ancre : ne scroller que si l’élément existe déjà (sinon la vue cible appelle scrollToHash après rendu)
     if (to.hash) {
-      return { selector: to.hash, behavior: 'smooth' };
+      try {
+        if (document.querySelector(to.hash)) {
+          return { selector: to.hash, behavior: "smooth" };
+        }
+      } catch (e) {
+        /* sélecteur invalide */
+      }
+      return false;
     }
     return { x: 0, y: 0 };
   }

@@ -16,7 +16,7 @@
 
 <script>
 import { etatEnvironnementRouteName, chantiersRouteName } from '@/config/routeNames.js';
-import { SECTION_SYNTHESE_SLUG } from '@/utils/sectionUrl.js';
+import { SECTION_SYNTHESE_SLUG, toSectionSlug } from '@/utils/sectionUrl.js';
 import {
   impactAxeNameToSlug,
   resolveImpactAxeCanonicalFromLabel,
@@ -49,15 +49,16 @@ export default {
       const sectors = (this.dataObj.sector_list || []).filter(s => s !== 'Synthèse');
       const uniqueSectors = [...new Set(sectors)].filter(Boolean);
       uniqueSectors.forEach(sector => {
+        const slug = toSectionSlug(sector)
         result.push({
           type: 'sector',
           value: sector,
           label: sector,
           href: {
             name: this.chantiersName,
-            query: { section: SECTION_SYNTHESE_SLUG, view: 'chantiers-sectoriels' },
-            hash: '#sector-' + this.slugify(sector)
-          }
+            query: { section: SECTION_SYNTHESE_SLUG },
+            hash: `#sector-${slug}`,
+          },
         });
       });
 
@@ -83,14 +84,6 @@ export default {
       return result;
     }
   },
-  methods: {
-    slugify(str) {
-      return String(str || '').toLowerCase()
-        .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
-        .replace(/[^a-z0-9]+/g, '-')
-        .replace(/^-+|-+$/g, '');
-    }
-  }
 };
 </script>
 

@@ -4,7 +4,7 @@
     <nav class="fr-breadcrumb" aria-label="vous êtes ici :">
       <ol class="fr-breadcrumb__list">
         <li>
-          <a class="fr-breadcrumb__link" href="#" @click.prevent="goAccueil">Accueil</a>
+          <router-link class="fr-breadcrumb__link" :to="accueilTo">Accueil</router-link>
         </li>
         <li>
           <span class="fr-breadcrumb__link" aria-current="page">Chantiers sectoriels</span>
@@ -279,6 +279,16 @@ export default {
   async mounted() {
     await this.loadData()
   },
+  computed: {
+    accueilTo() {
+      return { path: this.useStaging ? '/staging' : '/' }
+    },
+  },
+  watch: {
+    '$route.hash'() {
+      this.$nextTick(() => this.scrollToHash())
+    },
+  },
   methods: {
     slugify(str) {
       return String(str).toLowerCase()
@@ -390,10 +400,20 @@ export default {
     },
     scrollToHash() {
       const hash = this.$route?.hash
-      if (hash && hash.startsWith('#sector-')) {
-        const el = document.getElementById(hash.slice(1))
-        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      if (!hash || !hash.startsWith('#sector-')) return
+      const id = hash.slice(1)
+      const maxAttempts = 30
+      const tryScroll = (attempt) => {
+        const el = document.getElementById(id)
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+          return
+        }
+        if (attempt < maxAttempts) {
+          requestAnimationFrame(() => tryScroll(attempt + 1))
+        }
       }
+      this.$nextTick(() => tryScroll(0))
     },
     buildIndicatorRow(indicator) {
       // Extract time series values (non-target, non-null)
@@ -511,9 +531,6 @@ export default {
       const id = 'sector-' + this.slugify(sectorName)
       const el = document.getElementById(id)
       if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
-    },
-    goAccueil() {
-      this.$emit('navigate', { view: 'about', sector: 'Synthèse' })
     },
     chantierHref(sectorName, chantier) {
       const isStaging = window.location.pathname.includes('/staging')
