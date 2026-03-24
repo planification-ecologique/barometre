@@ -209,7 +209,6 @@ import {
 import GraphBox from '@/components/GraphBox.vue'
 import { etatEnvironnementRouteName, chantiersRouteName } from '@/config/routeNames.js'
 import { SECTION_SYNTHESE_SLUG } from '@/utils/sectionUrl.js'
-import { impactAxeNameToSlug } from '@/utils/impactAxeUrl.js'
 
 const SECTOR_V2_DEFS = [
   { shortLabel: 'Se déplacer', match: (n) => n === 'Se déplacer' },
@@ -564,18 +563,14 @@ export default {
     etatEnvironnementLink(axe) {
       return {
         name: this.etatRouteName,
-        query: { section: impactAxeNameToSlug(axe) },
+        query: { section: SECTION_SYNTHESE_SLUG },
         hash: '#axe-' + this.slugify(axe)
       }
     },
     chantiersSectorielsLink(sector) {
       return {
         name: this.chantiersRouteName,
-        query: {
-          section: SECTION_SYNTHESE_SLUG,
-          view: 'general-chantiers',
-          sectorFilter: sector
-        },
+        query: { section: SECTION_SYNTHESE_SLUG },
         hash: '#sector-' + this.slugify(sector)
       }
     },

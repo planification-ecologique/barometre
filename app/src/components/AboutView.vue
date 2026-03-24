@@ -100,7 +100,6 @@
 import { getNavigationStructure, IMPACT_AXE_DISPLAY_ORDER } from '@/services/csvDataService.js'
 import { etatEnvironnementRouteName, chantiersRouteName } from '@/config/routeNames.js'
 import { SECTION_SYNTHESE_SLUG } from '@/utils/sectionUrl.js'
-import { impactAxeNameToSlug } from '@/utils/impactAxeUrl.js'
 import EauImg from '@/components/components_sgv/EauImg.vue'
 import DsfrPictogram from '@/components/components_dsfr/DsfrPictogram.vue'
 
@@ -221,18 +220,14 @@ export default {
     etatEnvironnementLink(axe) {
       return {
         name: this.etatRouteName,
-        query: { section: impactAxeNameToSlug(axe) },
+        query: { section: SECTION_SYNTHESE_SLUG },
         hash: '#axe-' + this.slugify(axe)
       }
     },
     chantiersSectorielsLink(sector) {
       return {
         name: this.chantiersRouteName,
-        query: {
-          section: SECTION_SYNTHESE_SLUG,
-          view: 'general-chantiers',
-          sectorFilter: sector
-        },
+        query: { section: SECTION_SYNTHESE_SLUG },
         hash: '#sector-' + this.slugify(sector)
       }
     }
