@@ -815,7 +815,7 @@ function linearRegression(xVals, yVals) {
 }
 
 /** Last calendar year (inclusive) for which the trend line is drawn; beyond this, values are null so targets further out are unaffected. */
-export const TREND_LINE_END_YEAR = 2030;
+export const TREND_LINE_END_YEAR = 2035;
 
 /**
  * Computes a trend line based on the last N years of measured data.
