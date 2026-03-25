@@ -1487,7 +1487,13 @@ async function buildNavigationStructureCore(environment) {
             // When an indicator d'impact is also associated to a non-axis
             // chantier (e.g. "Développer des pratiques alimentaires saines et durables"),
             // expose it as an "Indicateur de chantier" for that chantier.
-            if (!isImpactAxe(chantierOuImpact)) {
+            // Skip if the row also has levier "Indicateur de chantier": the main
+            // branch below already registers it once (avoids duplicate rows in
+            // synthèse sectorielle and chantier views).
+            const hasIndicateurDeChantierLevier = effectiveLeviers.some(
+              (l) => (l || '').trim() === 'Indicateur de chantier'
+            );
+            if (!isImpactAxe(chantierOuImpact) && !hasIndicateurDeChantierLevier) {
               const chantierName = chantierOuImpact || 'Autres';
               if (!sectors[sector].chantiers[chantierName]) {
                 sectors[sector].chantiers[chantierName] = {
