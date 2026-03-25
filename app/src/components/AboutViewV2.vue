@@ -204,10 +204,12 @@ import {
   getIndicators,
   IMPACT_AXE_DISPLAY_ORDER,
   normalizeImpactAxeName,
+  canonicalImpactAxeNomComplet,
   isImpactAxe
 } from '@/services/csvDataService.js'
 import GraphBox from '@/components/GraphBox.vue'
 import { etatEnvironnementRouteName, chantiersRouteName } from '@/config/routeNames.js'
+import { impactAxeNameToSlug } from '@/utils/impactAxeUrl.js'
 import { SECTION_SYNTHESE_SLUG } from '@/utils/sectionUrl.js'
 
 const SECTOR_V2_DEFS = [
@@ -354,7 +356,8 @@ function mergedImpactAxesFromNavSectors(sectors) {
   const addSector = (sector) => {
     if (!sector?.indicateursImpact) return
     for (const [axeName, indicators] of Object.entries(sector.indicateursImpact)) {
-      const n = normalizeImpactAxeName(axeName)
+      const n = canonicalImpactAxeNomComplet(axeName) || normalizeImpactAxeName(axeName)
+      if (!n) continue
       if (!merged[n]) merged[n] = []
       merged[n].push(...indicators)
     }
@@ -564,7 +567,7 @@ export default {
       return {
         name: this.etatRouteName,
         query: { section: SECTION_SYNTHESE_SLUG },
-        hash: '#axe-' + this.slugify(axe)
+        hash: '#axe-' + impactAxeNameToSlug(axe)
       }
     },
     chantiersSectorielsLink(sector) {

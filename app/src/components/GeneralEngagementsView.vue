@@ -83,7 +83,8 @@
       </section>
 
       <div v-if="axeDetailEmpty" class="axe-state">
-        <p v-if="params.axe === 'Adaptation climat'">
+        <p v-if="isAdaptationAxeDetail">
+          </br>
           Bien que la France soit dotée d'un Plan national d'adaptation au changement climatique (
           <a href="https://www.ecologie.gouv.fr/sites/default/files/documents/PNACC3.pdf" target="_blank" rel="noopener noreferrer">PNACC3</a>,
           publié en mars 2025), les méthodes d'évaluation quantitative qui en découlent font défaut, d'où l'absence d'indicateurs dans ce baromètre à date. Cela tient tant à la difficulté d'élaborer des projections des conséquences du changement climatique qu'au caractère systémique des politiques d'adaptation, celles-ci portant sur des enjeux physiques et organisationnels. A ce stade, le pilotage de la politique d'adaptation repose essentiellement sur l'observation de l'évolution de la sinistralité et des moyens déployés en matière de prévention.
@@ -174,7 +175,8 @@
       </div>
     
       <div v-if="sortedAxesEntries.length === 0 && sortedChantierAutresEntries.length === 0" class="fr-mt-5w">
-        <p v-if="params.axe === 'Adaptation climat'">
+        <p v-if="isAdaptationAxeDetail">
+        </br>
         Bien que la France soit dotée d’un Plan national d’adaptation au changement climatique (
         <a href="https://www.ecologie.gouv.fr/sites/default/files/documents/PNACC3.pdf" target="_blank" rel="noopener noreferrer">PNACC3</a>,
         publié en mars 2025), les méthodes d’évaluation quantitative qui en découlent font défaut, d’où l’absence d’indicateurs dans ce baromètre à date. Cela tient tant à la difficulté d’élaborer des projections des conséquences du changement climatique qu’au caractère systémique des politiques d’adaptation, celles-ci portant sur des enjeux physiques et organisationnels. A ce stade, le pilotage de la politique d’adaptation repose essentiellement sur l’observation de l’évolution de la sinistralité et des moyens déployés en matière de prévention.
@@ -188,19 +190,14 @@
 <script>
 import GraphBox from "./GraphBox.vue";
 import EnvironnementImg from "./components_sgv/EnvironnementImg.vue";
-import { normalizeImpactAxeName } from "@/services/csvDataService.js";
+import {
+  normalizeImpactAxeName,
+  canonicalImpactAxeNomComplet,
+  impactAxeSlugFromNomComplet,
+} from "@/services/csvDataService.js";
+import { impactAxeUiForSlug } from "@/config/impactAxeUi.js";
 import { homeRouteName, etatEnvironnementRouteName } from "@/config/routeNames.js";
 import { SECTION_SYNTHESE_SLUG } from "@/utils/sectionUrl.js";
-
-const AXE_DESCRIPTIONS = {
-  'Atténuation climat': "Les indicateurs d'atténuation suivent la réduction des émissions de gaz à effet de serre et la transition vers une économie bas-carbone.",
-  'Adaptation climat': "Les indicateurs d'adaptation mesurent la capacité de la société et des territoires à faire face aux effets du changement climatique.",
-  'Biodiversité': "Les indicateurs de biodiversité suivent l'état des écosystèmes, des espèces et des habitats naturels.",
-  'Eau': "Les indicateurs liés à l'eau suivent la qualité et la gestion durable des ressources en eau.",
-  'Pollution': "Les indicateurs de pollution mesurent la qualité de l'air, des sols et l'exposition aux substances nocives.",
-  'Economie circulaire': "Les indicateurs d'économie circulaire suivent la réduction des déchets, le recyclage et la sobriété des ressources.",
-  'Économie circulaire': "Les indicateurs d'économie circulaire suivent la réduction des déchets, le recyclage et la sobriété des ressources.",
-};
 
 export default {
   name: "GeneralEngagementsView",
@@ -233,7 +230,9 @@ export default {
     filteredEngagementsByAxe() {
       const result = {};
       Object.entries(this.engagementsByAxe).forEach(([axe, engagements]) => {
-        if (this.params.axe && axe !== this.params.axe) return;
+        const filterAxe =
+          canonicalImpactAxeNomComplet(this.params.axe) || this.params.axe;
+        if (this.params.axe && axe !== filterAxe) return;
         if (engagements && engagements.length > 0) result[axe] = engagements;
       });
       return result;
@@ -287,20 +286,26 @@ export default {
     isAxeDetailView() {
       return !!this.params.axe;
     },
-    currentAxeEntry() {
+    resolvedAxeNomComplet() {
       if (!this.params.axe) return null;
-      const found = this.sortedAxesEntries.find(e => e.axe === this.params.axe);
-      if (found) return found;
-      // Fallback: match by normalized name (Économie circulaire / Economie circulaire / Economie Circulaire)
-      const normalized = normalizeImpactAxeName(this.params.axe);
-      return this.sortedAxesEntries.find(e => normalizeImpactAxeName(e.axe) === normalized) || null;
+      return canonicalImpactAxeNomComplet(this.params.axe) || this.params.axe;
+    },
+    resolvedAxeSlug() {
+      const n = this.resolvedAxeNomComplet;
+      return n ? impactAxeSlugFromNomComplet(n) : null;
+    },
+    isAdaptationAxeDetail() {
+      return this.resolvedAxeSlug === 'adaptation';
+    },
+    currentAxeEntry() {
+      const id = this.resolvedAxeNomComplet;
+      if (!id) return null;
+      return this.sortedAxesEntries.find((e) => e.axe === id) || null;
     },
     /** Secteurs avec indicateurs d'impact sectoriels pour l'axe courant (hors Synthèse : Consommer, Se déplacer, etc.) */
     impactIndicatorsBySector() {
-      if (!this.params.axe) return [];
-      const axeKey = this.params.axe in this.engagementsByAxeAndSector
-        ? this.params.axe
-        : normalizeImpactAxeName(this.params.axe);
+      const axeKey = this.resolvedAxeNomComplet;
+      if (!axeKey) return [];
       const bySector = this.engagementsByAxeAndSector[axeKey];
       if (!bySector || typeof bySector !== 'object') return [];
       return Object.entries(bySector)
@@ -354,7 +359,8 @@ export default {
       return 'section-autres-indicateurs';
     },
     axeSummaryHtml() {
-      const desc = AXE_DESCRIPTIONS[this.params.axe];
+      const ui = impactAxeUiForSlug(this.resolvedAxeSlug);
+      const desc = ui && ui.description;
       return desc || "Retrouvez sur cette page les principaux indicateurs d'impact et les autres indicateurs associes a cet axe.";
     },
     axeDetailEmpty() {
@@ -407,7 +413,10 @@ export default {
           const associations = getAssociations(indicator);
 
           associations.forEach(({ chantierOuImpact, sector }) => {
-            const axeName = normalizeImpactAxeName(chantierOuImpact || 'Autre') || 'Autre';
+            const axeName =
+              canonicalImpactAxeNomComplet(chantierOuImpact || '') ||
+              normalizeImpactAxeName(chantierOuImpact || 'Autre') ||
+              'Autre';
 
             // "Indicateur d'impact - autres" can appear in a composite levier string,
             // so we check using includes instead of strict equality.

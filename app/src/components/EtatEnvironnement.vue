@@ -32,10 +32,11 @@
           v-for="axe in displayAxes"
           :key="axe.name"
           class="etat-quick-link"
-          :href="'#axe-' + slugify(axe.name)"
+          :href="'#axe-' + impactAxeSectionSlug(axe.name)"
+          :title="axe.name"
           @click.prevent="scrollToAxe(axe.name)"
         >
-          → {{ axe.name }}
+          → {{ impactAxeNomCourt(axe.name) }}
         </a>
       </div>
     </div>
@@ -50,7 +51,7 @@
       <section
         v-for="axe in displayAxes"
         :key="axe.name"
-        :id="'axe-' + slugify(axe.name)"
+        :id="'axe-' + impactAxeSectionSlug(axe.name)"
         class="etat-axe-section"
       >
         <div class="etat-axe-header">
@@ -142,20 +143,21 @@
 
 <script>
 import MiniChart from './MiniChart.vue'
-import { getNavigationStructure, getIndicators, fetchEngagementLongMapping, fetchEngagementsByAxe, IMPACT_AXE_DISPLAY_ORDER, normalizeImpactAxeName } from '@/services/csvDataService.js'
+import {
+  getNavigationStructure,
+  getIndicators,
+  fetchEngagementLongMapping,
+  fetchEngagementsByAxe,
+  IMPACT_AXE_DISPLAY_ORDER,
+  normalizeImpactAxeName,
+  canonicalImpactAxeNomComplet,
+  impactAxeNomCourt as impactAxeNomCourtFromTaxonomy,
+  impactAxeSlugFromNomComplet,
+} from '@/services/csvDataService.js'
+import { impactAxeUiForSlug } from '@/config/impactAxeUi.js'
 import { getAllColors, getHexaFromName } from '@/utils.js'
 import { homeRouteName, etatEnvironnementRouteName } from '@/config/routeNames.js'
 import { impactAxeNameToSlug } from '@/utils/impactAxeUrl.js'
-
-const AXE_DESCRIPTIONS = {
-  'Atténuation climat': 'Les indicateurs d\'atténuation suivent la réduction des émissions de gaz à effet de serre et la transition vers une économie bas-carbone.',
-  'Adaptation climat': 'Les indicateurs d\'adaptation mesurent la capacité de la société et des territoires à faire face aux effets du changement climatique.',
-  'Biodiversité': 'Les indicateurs de biodiversité suivent l\'état des écosystèmes, des espèces et des habitats naturels.',
-  'Eau': 'Les indicateurs liés à l\'eau suivent la qualité et la gestion durable des ressources en eau.',
-  'Pollution': 'Les indicateurs de pollution mesurent la qualité de l\'air, des sols et l\'exposition aux substances nocives.',
-  'Economie circulaire': 'Les indicateurs d\'économie circulaire suivent la réduction des déchets, le recyclage et la sobriété des ressources.',
-  'Économie circulaire': 'Les indicateurs d\'économie circulaire suivent la réduction des déchets, le recyclage et la sobriété des ressources.',
-}
 
 export default {
   name: 'EtatEnvironnement',
@@ -182,11 +184,8 @@ export default {
     await this.loadData()
   },
   methods: {
-    slugify(str) {
-      return String(str).toLowerCase()
-        .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
-        .replace(/[^a-z0-9]+/g, '-')
-        .replace(/^-+|-+$/g, '')
+    impactAxeSectionSlug(nomComplet) {
+      return impactAxeNameToSlug(nomComplet)
     },
     async loadData() {
       this.isLoading = true
@@ -213,14 +212,15 @@ export default {
         const allGristIds = []
         const axeStructures = []
 
-        // Merge variants "Economie circulaire", "Economie Circulaire", "Économie circulaire" into one
         const mergedImpact = {}
         for (const [axeName, indicators] of Object.entries(syntheseSector.indicateursImpact)) {
-          const normalizedName = normalizeImpactAxeName(axeName)
-          if (!mergedImpact[normalizedName]) {
-            mergedImpact[normalizedName] = []
+          const canonical =
+            canonicalImpactAxeNomComplet(axeName) || normalizeImpactAxeName(axeName)
+          if (!canonical) continue
+          if (!mergedImpact[canonical]) {
+            mergedImpact[canonical] = []
           }
-          mergedImpact[normalizedName].push(...indicators)
+          mergedImpact[canonical].push(...indicators)
         }
 
         for (const axeName of IMPACT_AXE_DISPLAY_ORDER) {
@@ -228,9 +228,12 @@ export default {
           const gristIds = axeIndicators.map(item => item.gristId).filter(Boolean)
           allGristIds.push(...gristIds)
 
+          const slug = impactAxeSlugFromNomComplet(axeName)
+          const ui = impactAxeUiForSlug(slug)
           axeStructures.push({
             name: axeName,
-            description: AXE_DESCRIPTIONS[axeName] || '',
+            slug,
+            description: (ui && ui.description) || '',
             indicatorCount: 0, // Will be set after indicators are populated
             gristIds,
             indicators: [],
@@ -385,8 +388,11 @@ export default {
         .map(([engagementName, indicators]) => ({ engagementName, indicators }))
         .sort((a, b) => (a.engagementName || '').localeCompare(b.engagementName || '', 'fr'))
     },
+    impactAxeNomCourt(nomComplet) {
+      return impactAxeNomCourtFromTaxonomy(nomComplet)
+    },
     scrollToAxe(axeName) {
-      const id = 'axe-' + this.slugify(axeName)
+      const id = 'axe-' + impactAxeNameToSlug(axeName)
       const el = document.getElementById(id)
       if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
     },

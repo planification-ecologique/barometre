@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
+import { ensureImpactTaxonomyLoaded } from './services/csvDataService.js'
 import config_file from './services/tarteaucitron_config.js'
 import analytics_config_file from './services/dsfr_analytics_config.js'
 import './css/website.css'
@@ -44,5 +45,7 @@ function mountApp () {
   }).$mount('#app')
 }
 
-mountApp()
+ensureImpactTaxonomyLoaded()
+  .catch((e) => console.warn('Taxonomie axes (Liste_taxonomie) : chargement partiel', e))
+  .finally(() => mountApp())
 

@@ -12,10 +12,12 @@ export const GRIST_URLS = gristUrlsConfig.GRIST_URLS;
 export const GRIST_LEVIERS_URL = gristUrlsConfig.GRIST_LEVIERS_URL;
 export const GRIST_ENGAGEMENTS_URL = gristUrlsConfig.GRIST_ENGAGEMENTS_URL || null;
 export const GRIST_CHANTIERS_URL = gristUrlsConfig.GRIST_CHANTIERS_URL || null;
+export const GRIST_TAXONOMIE_URL = gristUrlsConfig.GRIST_TAXONOMIE_URL || null;
 
 // Cache for fetch promises to prevent duplicate requests
 let indicatorsFetchPromise = null;
 let leviersFetchPromise = null;
+let taxonomieFetchPromise = null;
 let engagementsFetchPromise = null;
 let chantiersFetchPromise = null;
 let engagementLongMappingPromise = null;
@@ -146,20 +148,36 @@ export async function fetchLeviersData() {
   return leviersFetchPromise;
 }
 
-/** Map Liste_engagements "Axe taxonomie" → our display axe names */
-const AXE_TAXONOMIE_TO_DISPLAY = {
-  'Atténuation': 'Atténuation climat',
-  'Adaptation': 'Adaptation climat',
-  'Biodiversité': 'Biodiversité',
-  'Eau': 'Eau',
-  'Pollution': 'Pollution',
-  'Economie circulaire': 'Économie circulaire',
-  'Économie circulaire': 'Économie circulaire',
-};
+/**
+ * Liste_taxonomie (Grist) : colonnes « Nom complet », « Nom court » — ordre des lignes = ordre d’affichage.
+ * @returns {Promise<Array<Record<string, string>>>}
+ */
+export async function fetchTaxonomieData() {
+  if (!GRIST_TAXONOMIE_URL) {
+    return [];
+  }
+  if (taxonomieFetchPromise) {
+    return taxonomieFetchPromise;
+  }
+
+  taxonomieFetchPromise = fetchCSVText(GRIST_TAXONOMIE_URL, 'grist-taxonomie.csv')
+    .then((csvText) => parseCSVText(csvText))
+    .then((parsedData) => {
+      taxonomieFetchPromise = null;
+      return parsedData;
+    })
+    .catch((error) => {
+      taxonomieFetchPromise = null;
+      console.warn('Could not load Liste_taxonomie:', error.message);
+      return [];
+    });
+
+  return taxonomieFetchPromise;
+}
 
 /**
  * Fetch Liste_engagements (Engagement, Thématique, Axe taxonomie).
- * Returns map: displayAxeName → first engagement for that axe.
+ * Returns map: nom complet d’axe (Liste_taxonomie) → premier engagement pour cet axe.
  * Used to fill the engagement column in Etat environnement synthesis.
  * @returns {Promise<Map<string, string>>} Map of axe name → engagement
  */
@@ -174,15 +192,28 @@ export async function fetchEngagementsByAxe() {
 
   engagementsFetchPromise = (async () => {
     try {
-      const csvText = await fetchCSVText(GRIST_ENGAGEMENTS_URL, 'grist-engagements.csv');
+      const [csvText, taxoRows] = await Promise.all([
+        fetchCSVText(GRIST_ENGAGEMENTS_URL, 'grist-engagements.csv'),
+        fetchTaxonomieData(),
+      ]);
       const rows = await parseCSVText(csvText);
       const map = new Map();
+
+      const nomCourtToComplet = new Map();
+      for (const tr of taxoRows || []) {
+        const long = String(tr['Nom complet'] ?? tr.Nom_complet ?? '').trim();
+        const short = String(tr['Nom court'] ?? tr.Nom_court ?? '').trim();
+        if (long && short) nomCourtToComplet.set(short, long);
+      }
+
+      const toDisplayAxe = (axeTaxo) =>
+        nomCourtToComplet.get(axeTaxo) || axeTaxo;
 
       for (const row of rows) {
         const axeTaxo = String(row['Axe taxonomie'] ?? row['Axe_taxonomie'] ?? '').trim();
         const engagement = String(row['Engagement'] ?? '').trim();
         if (!axeTaxo || !engagement) continue;
-        const displayAxe = AXE_TAXONOMIE_TO_DISPLAY[axeTaxo] || axeTaxo;
+        const displayAxe = toDisplayAxe(axeTaxo);
         if (!map.has(displayAxe)) {
           map.set(displayAxe, engagement);
         }

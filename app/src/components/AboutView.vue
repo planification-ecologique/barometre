@@ -49,7 +49,7 @@
             <div class="home-tile__body">
               <div class="home-tile__picto" :class="{ 'home-tile__picto--eau': axe.useEau }">
                 <eau-img v-if="axe.useEau" width="56px" height="56px" />
-                <dsfr-pictogram v-else :picto-id="axe.pictoId" :size="56" />
+                <dsfr-pictogram v-else-if="axe.pictoId" :picto-id="axe.pictoId" :size="56" />
               </div>
               <h3 class="home-tile__heading">{{ axe.name }}</h3>
               <span class="fr-icon-arrow-right-line home-tile__arrow" aria-hidden="true" />
@@ -97,21 +97,17 @@
 </template>
 
 <script>
-import { getNavigationStructure, IMPACT_AXE_DISPLAY_ORDER } from '@/services/csvDataService.js'
+import {
+  getNavigationStructure,
+  IMPACT_AXE_DISPLAY_ORDER,
+  impactAxeSlugFromNomComplet,
+} from '@/services/csvDataService.js'
+import { impactAxeUiForSlug } from '@/config/impactAxeUi.js'
 import { etatEnvironnementRouteName, chantiersRouteName } from '@/config/routeNames.js'
+import { impactAxeNameToSlug } from '@/utils/impactAxeUrl.js'
 import { SECTION_SYNTHESE_SLUG } from '@/utils/sectionUrl.js'
 import EauImg from '@/components/components_sgv/EauImg.vue'
 import DsfrPictogram from '@/components/components_dsfr/DsfrPictogram.vue'
-
-/** Pictogrammes DSFR (clés DsfrPictogram) par axe */
-const AXE_PICTO = {
-  'Atténuation climat': 'environment-tree',
-  'Adaptation climat': 'environment-sun',
-  'Biodiversité': 'environment-leaf',
-  'Eau': null,
-  'Pollution': 'buildings-factory',
-  'Économie circulaire': 'environment-grocery'
-}
 
 /** Ordre d'affichage des cartes secteurs (libellé court → correspondance dans les données) */
 const SECTOR_CARD_DEFS = [
@@ -173,11 +169,16 @@ export default {
       return `${base}/images/rosace-france-nation-verte.png`
     },
     axeTiles() {
-      return IMPACT_AXE_DISPLAY_ORDER.map((name) => ({
-        name,
-        pictoId: AXE_PICTO[name],
-        useEau: name === 'Eau'
-      }))
+      return IMPACT_AXE_DISPLAY_ORDER.map((name) => {
+        const slug = impactAxeSlugFromNomComplet(name)
+        const ui = impactAxeUiForSlug(slug) || {}
+        return {
+          name,
+          slug,
+          pictoId: ui.pictoId,
+          useEau: !!ui.useEauImage,
+        }
+      })
     },
     sectorTiles() {
       const names = this.sectorNamesFromApi
@@ -221,7 +222,7 @@ export default {
       return {
         name: this.etatRouteName,
         query: { section: SECTION_SYNTHESE_SLUG },
-        hash: '#axe-' + this.slugify(axe)
+        hash: '#axe-' + impactAxeNameToSlug(axe)
       }
     },
     chantiersSectorielsLink(sector) {

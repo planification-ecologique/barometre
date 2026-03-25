@@ -6,5 +6,6 @@
   },
   "GRIST_LEVIERS_URL": "https://grist.numerique.gouv.fr/o/planification-ecologique/api/docs/jGd2ge4dy2ZMaRpdgbPLnd/download/csv?viewSection=20&tableId=Liste_leviers",
   "GRIST_ENGAGEMENTS_URL": "https://grist.numerique.gouv.fr/o/planification-ecologique/api/docs/jGd2ge4dy2ZMaRpdgbPLnd/download/csv?viewSection=26&tableId=Liste_engagements",
-  "GRIST_CHANTIERS_URL": "https://grist.numerique.gouv.fr/o/planification-ecologique/api/docs/jGd2ge4dy2ZMaRpdgbPLnd/download/csv?viewSection=14&tableId=Liste_chantiers"
+  "GRIST_CHANTIERS_URL": "https://grist.numerique.gouv.fr/o/planification-ecologique/api/docs/jGd2ge4dy2ZMaRpdgbPLnd/download/csv?viewSection=14&tableId=Liste_chantiers",
+  "GRIST_TAXONOMIE_URL": "https://grist.numerique.gouv.fr/o/planification-ecologique/api/docs/jGd2ge4dy2ZMaRpdgbPLnd/download/csv?viewSection=45&tableId=Liste_taxonomie"
 }

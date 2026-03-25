@@ -28,7 +28,7 @@
                 :aria-current="currentView === 'general-engagements' && axesMatch(currentAxe, axe) ? 'page' : undefined"
                 tabindex="0"
               >
-                {{ axe }}
+                {{ impactAxeNomCourt(axe) }}
               </a>
             </li>
           </template>
@@ -120,7 +120,12 @@
   </nav>
 </template>
 <script>
-import { getNavigationStructure, IMPACT_AXES, IMPACT_AXE_DISPLAY_ORDER, isImpactAxe } from "@/services/csvDataService.js";
+import {
+  getNavigationStructure,
+  IMPACT_AXE_DISPLAY_ORDER,
+  isImpactAxe,
+  impactAxeNomCourt as impactAxeNomCourtFromTaxonomy,
+} from "@/services/csvDataService.js";
 
 export default {
   name: "SideNavigation",
@@ -149,10 +154,11 @@ export default {
     displayedTaxonomyAxes() {
       const axes = Array.isArray(this.taxonomyAxes) ? [...this.taxonomyAxes] : [];
       const axesSet = new Set(axes);
-      return IMPACT_AXE_DISPLAY_ORDER.filter(axe =>
-        axesSet.has(axe) ||
-        (axe === 'Économie circulaire' && axesSet.has('Economie circulaire')) ||
-        axe === 'Adaptation climat' // Always show even when no indicators (matches Etat env)
+      const adaptationComplet = IMPACT_AXE_DISPLAY_ORDER.find(
+        (n) => /adaptation/i.test(n) && /climat/i.test(n)
+      );
+      return IMPACT_AXE_DISPLAY_ORDER.filter(
+        (axe) => axesSet.has(axe) || (adaptationComplet && axe === adaptationComplet)
       );
     },
     /** Route dédiée Chantiers : accordéon secteurs même si `section` ≠ synthese */
@@ -449,6 +455,9 @@ export default {
       if (!a || !b) return a === b;
       return a === b || (a === 'Économie circulaire' && b === 'Economie circulaire');
     },
+    impactAxeNomCourt(nomComplet) {
+      return impactAxeNomCourtFromTaxonomy(nomComplet);
+    },
     toggleIndicateurs() {
       this.expandedIndicateurs = !this.expandedIndicateurs;
     },
@@ -680,7 +689,7 @@ export default {
               // Also include "Autres indicateurs" from chantiers when chantier name is a taxonomy axe
               if (syntheseSector.chantiers) {
                 Object.entries(syntheseSector.chantiers).forEach(([chantierName, chantier]) => {
-                  if (IMPACT_AXES.includes(chantierName) && chantier.leviers?.["Autres indicateurs"]) {
+                  if (isImpactAxe(chantierName) && chantier.leviers?.["Autres indicateurs"]) {
                     chantier.leviers["Autres indicateurs"].forEach(item => {
                       if (item.gristId) engagementIds.push(item.gristId);
                     });
@@ -693,7 +702,7 @@ export default {
       
         const params = {
           view: 'general-engagements',
-          label: axe ? axe : 'Indicateurs d\'impact',
+          label: axe ? impactAxeNomCourtFromTaxonomy(axe) : 'Indicateurs d\'impact',
           sector: 'Synthèse',
           axe: axe,
           query: {

@@ -5,6 +5,7 @@ import {
   fetchChantiersData,
   fetchEngagementsByAxe,
   fetchEngagementLongMapping,
+  fetchTaxonomieData,
   setStagingDocId as setStagingDocIdInFetcher,
   GRIST_URLS,
   GRIST_LEVIERS_URL
@@ -308,14 +309,22 @@ export function transformCSVData(csvData, query) {
           return associations.some(p => p.sector && targetSectors.has(p.sector));
         });
       } else if (filter.field === 'chantier_ou_impact' && filter.values.length) {
-        const targetValues = new Set(filter.values.map(v => normalizeImpactAxeName(v)));
+        const targetValues = new Set(
+          filter.values.map((v) => canonicalImpactAxeNomComplet(v) || normalizeImpactAxeName(v))
+        );
         filteredData = filteredData.filter(item => {
           const associations = parseChantierOuImpactList(item['Chantier ou Impact'] || '');
           if (!associations || associations.length === 0) return false;
           return associations.some(p => {
             if (!p.chantierOuImpact) return false;
-            const normalized = normalizeImpactAxeName(p.chantierOuImpact);
-            return targetValues.has(p.chantierOuImpact) || targetValues.has(normalized);
+            const canon =
+              canonicalImpactAxeNomComplet(p.chantierOuImpact) ||
+              normalizeImpactAxeName(p.chantierOuImpact);
+            return (
+              targetValues.has(canon) ||
+              targetValues.has(p.chantierOuImpact) ||
+              targetValues.has(normalizeImpactAxeName(p.chantierOuImpact))
+            );
           });
         });
       } else if (filter.field === 'grist_ids') {
@@ -1172,6 +1181,7 @@ function getSeries(list_y, list_x, statuses, targetYear, targetValue) {
  */
 export async function getIndicators(query, environment = 'production') {
   try {
+    await ensureImpactTaxonomyLoaded();
     const csvData = await fetchCSVData(environment);
     return transformCSVData(csvData, query);
   } catch (error) {
@@ -1339,16 +1349,119 @@ function parseLevierList(value) {
   return result;
 }
 
-// Known taxonomy axes used for impact indicators
-export const IMPACT_AXES = [
-  'Atténuation climat',
-  'Adaptation climat',
-  'Biodiversité',
-  'Pollution',
-  'Economie circulaire',
-  'Économie circulaire',
-  'Eau',
+/**
+ * Taxonomie des axes d’impact (Liste_taxonomie Grist : « Nom complet », « Nom court »).
+ * IMPACT_AXE_DISPLAY_ORDER = noms complets, dans l’ordre des lignes du CSV.
+ */
+export const IMPACT_AXE_DISPLAY_ORDER = [];
+
+const labelToNomComplet = new Map();
+const slugToNomComplet = new Map();
+const nomCompletToNomCourt = new Map();
+let impactTaxonomyLoaded = false;
+let impactTaxonomyLoadPromise = null;
+
+/** Copie de secours si l’API et le fichier backup sont indisponibles (même contenu que grist-taxonomie.csv). */
+const FALLBACK_TAXONOMIE_ROWS = [
+  { 'Nom complet': 'Atténuation du changement climatique', 'Nom court': 'Atténuation' },
+  { 'Nom complet': 'Adaptation au changement climatique', 'Nom court': 'Adaptation' },
+  {
+    'Nom complet': 'Utilisation durable et protection des ressources aquatiques et maritimes',
+    'Nom court': 'Eau',
+  },
+  { 'Nom complet': 'Transition vers une économie circulaire', 'Nom court': 'Economie circulaire' },
+  { 'Nom complet': 'Prévention et le contrôle de la pollution', 'Nom court': 'Pollution' },
+  {
+    'Nom complet': 'Protection et restauration de la biodiversité et des écosystèmes',
+    'Nom court': 'Biodiversité',
+  },
 ];
+
+function stripDiacriticsImpact(str) {
+  return String(str || '')
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '');
+}
+
+function slugifyImpactAxeLabel(str) {
+  return stripDiacriticsImpact(str)
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+}
+
+function clearImpactTaxonomyMaps() {
+  labelToNomComplet.clear();
+  slugToNomComplet.clear();
+  nomCompletToNomCourt.clear();
+  IMPACT_AXE_DISPLAY_ORDER.length = 0;
+}
+
+function applyTaxonomieRows(rows) {
+  clearImpactTaxonomyMaps();
+  const list = Array.isArray(rows) && rows.length > 0 ? rows : FALLBACK_TAXONOMIE_ROWS;
+  for (const row of list) {
+    const nomComplet = String(row['Nom complet'] ?? row.Nom_complet ?? '').trim();
+    const nomCourt = String(row['Nom court'] ?? row.Nom_court ?? '').trim();
+    if (!nomComplet || !nomCourt) continue;
+    IMPACT_AXE_DISPLAY_ORDER.push(nomComplet);
+    nomCompletToNomCourt.set(nomComplet, nomCourt);
+    labelToNomComplet.set(nomComplet, nomComplet);
+    labelToNomComplet.set(nomCourt, nomComplet);
+    // Slugs d’URL = uniquement slug du « Nom court » (ex. attenuation, economie-circulaire)
+    slugToNomComplet.set(slugifyImpactAxeLabel(nomCourt), nomComplet);
+    // TODO - cleanup
+    // Rétrocompatibilité indicateurs : la colonne « Chantier ou Impact » contient encore
+    // « … / Atténuation climat » (et équivalents) au lieu du nom complet ou du nom court Grist.
+    // À supprimer lorsque ces cellules seront alignées sur Liste_taxonomie.
+    if (nomCourt === 'Atténuation' || nomCourt === 'Adaptation') {
+      labelToNomComplet.set(`${nomCourt} climat`, nomComplet);
+    }
+    if (/circulaire/i.test(nomCourt)) {
+      labelToNomComplet.set('Économie circulaire', nomComplet);
+      labelToNomComplet.set('Economie circulaire', nomComplet);
+    }
+  }
+}
+
+/**
+ * Charge Liste_taxonomie (Grist ou backup). À appeler au boot (main.js) et avant getNavigationStructure / getIndicators.
+ */
+export async function ensureImpactTaxonomyLoaded() {
+  if (impactTaxonomyLoaded) return;
+  if (!impactTaxonomyLoadPromise) {
+    impactTaxonomyLoadPromise = (async () => {
+      const rows = await fetchTaxonomieData();
+      applyTaxonomieRows(rows);
+      impactTaxonomyLoaded = true;
+      impactTaxonomyLoadPromise = null;
+    })();
+  }
+  await impactTaxonomyLoadPromise;
+}
+
+/** Nom complet taxonomie → nom court (badges, menus courts). Retombe sur le libellé si inconnu. */
+export function impactAxeNomCourt(nomComplet) {
+  if (!nomComplet) return '';
+  return nomCompletToNomCourt.get(nomComplet) || String(nomComplet);
+}
+
+/** Slug d’URL (`?section=`) dérivé du nom court taxonomie. */
+export function impactAxeSlugFromNomComplet(nomComplet) {
+  if (!nomComplet) return '';
+  const court = nomCompletToNomCourt.get(nomComplet);
+  if (court) return slugifyImpactAxeLabel(court);
+  return slugifyImpactAxeLabel(nomComplet);
+}
+
+/** Slug d’URL → nom complet (clés = slugs des noms courts uniquement). */
+export function resolveImpactAxeSlugToNomComplet(slug) {
+  const s = String(slug || '')
+    .toLowerCase()
+    .trim();
+  if (!s) return null;
+  return slugToNomComplet.get(s) || null;
+}
 
 /** Normalize axe name variants (accent/case) to canonical form. Handles "Economie circulaire", "Economie Circulaire", etc. */
 export function normalizeImpactAxeName(name) {
@@ -1357,21 +1470,22 @@ export function normalizeImpactAxeName(name) {
   return lower === 'economie circulaire' ? 'Économie circulaire' : name;
 }
 
-// Display order for impact axes (Etat env + SideNavigation)
-export const IMPACT_AXE_DISPLAY_ORDER = [
-  'Atténuation climat',
-  'Adaptation climat',
-  'Biodiversité',
-  'Eau',
-  'Pollution',
-  'Économie circulaire',
-];
+/**
+ * Libellé issu des données (colonne Chantier ou Impact, Liste_chantiers, etc.) → nom complet taxonomie.
+ */
+export function canonicalImpactAxeNomComplet(raw) {
+  if (!raw || !String(raw).trim()) return null;
+  const t = String(raw).trim();
+  if (labelToNomComplet.has(t)) return labelToNomComplet.get(t);
+  const normEco = normalizeImpactAxeName(t);
+  if (labelToNomComplet.has(normEco)) return labelToNomComplet.get(normEco);
+  const sl = slugifyImpactAxeLabel(t);
+  if (slugToNomComplet.has(sl)) return slugToNomComplet.get(sl);
+  return null;
+}
 
 export function isImpactAxe(name) {
-  if (!name) return false;
-  const cleaned = String(name).trim();
-  const normalized = normalizeImpactAxeName(cleaned);
-  return IMPACT_AXES.includes(cleaned) || IMPACT_AXES.includes(normalized);
+  return canonicalImpactAxeNomComplet(name) != null;
 }
 
 /**
@@ -1472,9 +1586,11 @@ async function buildNavigationStructureCore(environment) {
           if (!cleanLevier) return;
 
           if (cleanLevier === "Indicateur d'impact") {
-            // Group by chantierOuImpact (taxonomy_axe like "Atténuation climat")
-            // Normalize "Economie circulaire" / "Economie Circulaire" → "Économie circulaire"
-            const axe = normalizeImpactAxeName(chantierOuImpact) || 'Autre';
+            // Group by nom complet taxonomie (Grist Liste_taxonomie)
+            const axe =
+              canonicalImpactAxeNomComplet(chantierOuImpact) ||
+              normalizeImpactAxeName(chantierOuImpact) ||
+              'Autre';
             if (!sectors[sector].indicateursImpact[axe]) {
               sectors[sector].indicateursImpact[axe] = [];
             }
@@ -1639,6 +1755,7 @@ async function buildNavigationStructureCore(environment) {
  */
 export async function getNavigationStructure(environment = 'production') {
   const key = navigationStructureEnvKey(environment);
+  await ensureImpactTaxonomyLoaded();
   if (navigationStructureSessionCache[key]) {
     return navigationStructureSessionCache[key];
   }
