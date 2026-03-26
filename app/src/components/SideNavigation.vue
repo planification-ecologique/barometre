@@ -214,8 +214,7 @@ export default {
                   .flat()
                   .map(item => item.gristId)
                   .filter(id => id)
-              }))
-              .sort((a, b) => a.name.localeCompare(b.name));
+              }));
           } else {
             this.chantiers = [];
           }
@@ -441,8 +440,7 @@ export default {
                   .flat()
                   .map(item => item.gristId)
                   .filter(id => id)
-              }))
-              .sort((a, b) => a.name.localeCompare(b.name, 'fr'));
+              }));
           });
 
         this.allSectorChantiers = result;

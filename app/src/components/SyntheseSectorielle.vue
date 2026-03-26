@@ -318,9 +318,9 @@ export default {
 
         for (const sector of sectors) {
           const chantiers = []
-          const chantierEntries = Object.entries(sector.chantiers || {})
-            .filter(([name]) => !isImpactAxe(name))
-            .sort(([a], [b]) => a.localeCompare(b, 'fr'))
+          const chantierEntries = Object.entries(sector.chantiers || {}).filter(
+            ([name]) => !isImpactAxe(name)
+          )
 
           let levierCount = 0
 

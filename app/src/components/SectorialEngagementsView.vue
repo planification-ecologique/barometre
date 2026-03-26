@@ -40,7 +40,7 @@
       </div>
     </div>
     
-    <!-- Indicateur d'impact - autres: under chantier name (no submenu), sorted alphabetically, below normal indicators -->
+    <!-- Indicateur d'impact - autres: under chantier name (no submenu), ordre Liste_chantiers, below normal indicators -->
     <div v-for="entry in sortedChantierAutresEntries" :key="'chantier-' + entry.chantierName" class="fr-mt-5w">
       <div class="section-header">
         <h2 class="fr-h3">{{ entry.chantierName }} - autres</h2>
@@ -73,6 +73,10 @@
 <script>
 import GraphBox from "./GraphBox.vue";
 import SectorIcon from "./SectorIcon.vue";
+import {
+  compareChantierNamesByListeOrder,
+  getChantierListeOrderIndexMap,
+} from "@/services/csvDataService.js";
 export default {
   name: "SectorialEngagementsView",
   components: {
@@ -98,7 +102,13 @@ export default {
       engagementsByAxe: {},
       engagementsByChantierAutres: {},
       sector: 'Synthèse',
+      chantierListeOrderMap: new Map(),
     };
+  },
+  created() {
+    getChantierListeOrderIndexMap().then((m) => {
+      this.chantierListeOrderMap = m;
+    });
   },
   computed: {
     // Axes sorted alphabetically (normal indicators, shown first)
@@ -108,12 +118,18 @@ export default {
         .map(([axe, engagements]) => ({ axe, engagements }))
         .sort((a, b) => a.axe.localeCompare(b.axe, 'fr'));
     },
-    // Chantier "autres" sections sorted alphabetically (shown below normal indicators)
+    // Chantier "autres" : ordre Liste_chantiers
     sortedChantierAutresEntries() {
       return Object.entries(this.engagementsByChantierAutres)
         .filter(([, engagements]) => engagements && engagements.length > 0)
         .map(([chantierName, engagements]) => ({ chantierName, engagements }))
-        .sort((a, b) => a.chantierName.localeCompare(b.chantierName, 'fr'));
+        .sort((a, b) =>
+          compareChantierNamesByListeOrder(
+            a.chantierName,
+            b.chantierName,
+            this.chantierListeOrderMap
+          )
+        );
     },
   },
   watch: {

@@ -56,7 +56,11 @@
 
 <script>
 import EnvironnementImg from "./components_sgv/EnvironnementImg.vue";
-import { isImpactAxe } from "@/services/csvDataService.js";
+import {
+  isImpactAxe,
+  compareChantierNamesByListeOrder,
+  getChantierListeOrderIndexMap,
+} from "@/services/csvDataService.js";
 
 export default {
   name: "ChantiersTableView",
@@ -76,7 +80,16 @@ export default {
   data() {
     return {
       tableData: [],
+      chantierListeOrderMap: new Map(),
     };
+  },
+  created() {
+    getChantierListeOrderIndexMap().then((m) => {
+      this.chantierListeOrderMap = m;
+      if (this.inputData && this.inputData.length > 0) {
+        this.buildTableData(this.inputData);
+      }
+    });
   },
   watch: {
     inputData: {
@@ -95,6 +108,7 @@ export default {
   },
   methods: {
     buildTableData(data) {
+      const orderMap = this.chantierListeOrderMap;
       try {
         const rows = [];
         const seenRows = new Set();
@@ -141,11 +155,15 @@ export default {
           });
         });
 
-        // Tri : d'abord par secteur (même s'il n'est pas visible), puis par chantier, puis par indicateur
+        // Tri : secteur, puis ordre Liste_chantiers, puis indicateur
         rows.sort((a, b) => {
           const s = (a.sector || '').localeCompare(b.sector || '', 'fr', { sensitivity: 'base' });
           if (s !== 0) return s;
-          const c = (a.chantier || '').localeCompare(b.chantier || '', 'fr', { sensitivity: 'base' });
+          const c = compareChantierNamesByListeOrder(
+            a.chantier,
+            b.chantier,
+            orderMap
+          );
           if (c !== 0) return c;
           return (a.indicateur || '').localeCompare(b.indicateur || '', 'fr', { sensitivity: 'base' });
         });

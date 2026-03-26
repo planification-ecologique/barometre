@@ -69,7 +69,11 @@
 import GraphBox from "./GraphBox.vue";
 import EnvironnementImg from "./components_sgv/EnvironnementImg.vue";
 import SectorIcon from "./SectorIcon.vue";
-import { isImpactAxe } from "@/services/csvDataService.js";
+import {
+  isImpactAxe,
+  compareChantierNamesByListeOrder,
+  getChantierListeOrderIndexMap,
+} from "@/services/csvDataService.js";
 
 export default {
   name: "GeneralChantiersView",
@@ -95,7 +99,16 @@ export default {
   data() {
     return {
       chantiersBySector: {},
+      chantierListeOrderMap: new Map(),
     };
+  },
+  created() {
+    getChantierListeOrderIndexMap().then((m) => {
+      this.chantierListeOrderMap = m;
+      if (this.inputData && this.inputData.length > 0) {
+        this.groupChantiersBySector(this.inputData);
+      }
+    });
   },
   computed: {
     filteredChantiersBySector() {
@@ -134,6 +147,7 @@ export default {
   },
   methods: {
     groupChantiersBySector(data) {
+      const orderMap = this.chantierListeOrderMap;
       try {
         // Group indicators by sector, then by chantier_ou_impact
         // Include all indicators rattachés à un chantier (pas seulement "Indicateur de chantier")
@@ -193,8 +207,10 @@ export default {
         const result = {};
         Object.entries(sectorGroups).forEach(([sector, chantiers]) => {
           result[sector] = Object.values(chantiers)
-            .filter(chantier => chantier.indicators.length > 0)
-            .sort((a, b) => a.name.localeCompare(b.name)); // Sort chantiers alphabetically
+            .filter((chantier) => chantier.indicators.length > 0)
+            .sort((a, b) =>
+              compareChantierNamesByListeOrder(a.name, b.name, orderMap)
+            );
         });
         
         this.chantiersBySector = result;

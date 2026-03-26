@@ -266,7 +266,6 @@ export default {
                 id: name.toLowerCase().replace(/[^a-z0-9]/g, '-'),
                 name: name
               }))
-              .sort((a, b) => a.name.localeCompare(b.name, 'fr'))
           })
         
         this.chantiers = []
@@ -278,7 +277,6 @@ export default {
             id: name.toLowerCase().replace(/[^a-z0-9]/g, '-'),
             name: name
           }))
-          .sort((a, b) => a.name.localeCompare(b.name))
         
         this.taxonomyAxes = []
         this.chantierSectors = []

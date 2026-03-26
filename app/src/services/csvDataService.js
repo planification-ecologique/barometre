@@ -1312,9 +1312,25 @@ function parseChantierOuImpact(value) {
 }
 
 /**
+ * Known levier labels (Grist). Longest first so lookaheads match the full phrase
+ * (e.g. "Indicateur d'impact - autres" before "Indicateur d'impact").
+ */
+const KNOWN_LEVIER_LABELS = [
+  "Indicateur d'impact - autres",
+  "Indicateur d'impact",
+  "Indicateur de chantier",
+  'Autres indicateurs',
+];
+
+function escapeRegExp(str) {
+  return str.replace(/[\\^$*+?.()|[\]{}]/g, '\\$&');
+}
+
+/**
  * Parse the "Levier" column which is a list field.
- * We avoid naïvely splitting on all commas to not break labels that contain commas.
- * Instead, we detect known levier labels inside the string.
+ * Splits on ", " only when followed by a known levier label, so names like
+ * "… (énergie, matières, …)" stay intact while "Nom levier, Indicateur de chantier"
+ * yields both entries.
  * @param {String} value - Raw levier value
  * @returns {string[]} - List of levier labels
  */
@@ -1326,24 +1342,48 @@ function parseLevierList(value) {
   // Clean surrounding quotes if the whole field is quoted
   s = s.replace(/^[\s"']+|[\s"']+$/g, '').trim();
 
-  const knownLeviers = [
-    "Indicateur d'impact",
-    "Indicateur de chantier",
-    "Indicateur d'impact - autres",
-    "Autres indicateurs",
-  ];
+  const knownAlternation = KNOWN_LEVIER_LABELS.map(escapeRegExp).join('|');
+  const splitBeforeKnown = new RegExp(
+    `,\\s*(?=${knownAlternation}(?:\\s*,|\\s*$|$))`
+  );
 
+  const segments = s.split(splitBeforeKnown).map((p) => p.trim()).filter(Boolean);
+  const knownSet = new Set(KNOWN_LEVIER_LABELS);
   const result = [];
+  const seen = new Set();
 
-  knownLeviers.forEach(label => {
-    if (s.includes(label)) {
-      result.push(label);
+  for (const seg of segments) {
+    if (knownSet.has(seg)) {
+      if (!seen.has(seg)) {
+        result.push(seg);
+        seen.add(seg);
+      }
+      continue;
     }
-  });
-
-  // If none of the known labels matched, keep the raw string as a single entry
-  if (result.length === 0 && s) {
-    result.push(s);
+    // Legacy: whole cell contained a known label without the ", Known" pattern
+    const legacy = [];
+    for (const label of KNOWN_LEVIER_LABELS) {
+      if (seg.includes(label)) legacy.push(label);
+    }
+    if (legacy.length > 0) {
+      for (const label of legacy) {
+        if (!seen.has(label)) {
+          result.push(label);
+          seen.add(label);
+        }
+      }
+      const rest = legacy
+        .reduce((acc, label) => acc.split(label).join(''), seg)
+        .replace(/^\s*,\s*|\s*,\s*$/g, '')
+        .trim();
+      if (rest && !seen.has(rest)) {
+        result.push(rest);
+        seen.add(rest);
+      }
+    } else if (!seen.has(seg)) {
+      result.push(seg);
+      seen.add(seg);
+    }
   }
 
   return result;
@@ -1532,6 +1572,44 @@ function navigationStructureEnvKey(environment) {
 }
 
 /**
+ * Compare two chantier display names using row order from Liste_chantiers (Grist).
+ * Names absent from the list sort after known ones, then alphabetically (fr).
+ * @param {string} nameA
+ * @param {string} nameB
+ * @param {Map<string, number>} orderMap
+ * @returns {number}
+ */
+export function compareChantierNamesByListeOrder(nameA, nameB, orderMap) {
+  const a = nameA || '';
+  const b = nameB || '';
+  const ia =
+    orderMap && orderMap.has(a) ? orderMap.get(a) : Number.MAX_SAFE_INTEGER;
+  const ib =
+    orderMap && orderMap.has(b) ? orderMap.get(b) : Number.MAX_SAFE_INTEGER;
+  if (ia !== ib) return ia - ib;
+  return a.localeCompare(b, 'fr');
+}
+
+/**
+ * @returns {Promise<Map<string, number>>}
+ */
+export async function getChantierListeOrderIndexMap() {
+  const m = await fetchChantiersData();
+  return m.orderIndexByChantier || new Map();
+}
+
+function sortChantiersObjectKeys(chantiersObj, orderMap) {
+  const sorted = {};
+  const keys = Object.keys(chantiersObj).sort((ka, kb) =>
+    compareChantierNamesByListeOrder(ka, kb, orderMap)
+  );
+  for (const k of keys) {
+    sorted[k] = chantiersObj[k];
+  }
+  return sorted;
+}
+
+/**
  * Construction réelle (CSV + listes) — appelée au plus une fois par env et session.
  * @param {String} environment
  */
@@ -1545,6 +1623,7 @@ async function buildNavigationStructureCore(environment) {
     ]);
     const chantiersAxeMap = chantiersMaps.axesByChantier;
     const chantiersDescriptionMap = chantiersMaps.descriptionByChantier;
+    const chantiersOrderMap = chantiersMaps.orderIndexByChantier || new Map();
     
     // Filter out items marked for deletion
     const filteredData = csvData.filter(item => item['A supprimer de la V1'] !== 'true');
@@ -1722,6 +1801,13 @@ async function buildNavigationStructureCore(environment) {
         chantier.descriptionChantier =
           (chantiersDescriptionMap && chantiersDescriptionMap.get(chantierName)) || '';
       });
+    });
+
+    Object.values(sectors).forEach((sector) => {
+      sector.chantiers = sortChantiersObjectKeys(
+        sector.chantiers,
+        chantiersOrderMap
+      );
     });
     
     // Sort sectors alphabetically, with "Synthèse" always first (it's the overview section)

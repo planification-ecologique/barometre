@@ -273,12 +273,13 @@ function parseAxeTaxonomieCell(raw) {
 
 /**
  * Fetch Liste_chantiers (Chantier or Chantier associé, Axe taxonomie, Description chantier).
- * @returns {Promise<{ axesByChantier: Map<string, string[]>, descriptionByChantier: Map<string, string> }>}
+ * @returns {Promise<{ axesByChantier: Map<string, string[]>, descriptionByChantier: Map<string, string>, orderIndexByChantier: Map<string, number> }>}
  */
 export async function fetchChantiersData() {
   const empty = () => ({
     axesByChantier: new Map(),
     descriptionByChantier: new Map(),
+    orderIndexByChantier: new Map(),
   });
 
   if (!GRIST_CHANTIERS_URL) {
@@ -293,6 +294,8 @@ export async function fetchChantiersData() {
     const buildMapsFromRows = (rows) => {
       const axesByChantier = new Map();
       const descriptionByChantier = new Map();
+      const orderIndexByChantier = new Map();
+      let listeOrder = 0;
 
       for (const row of rows) {
         const raw = String(
@@ -300,6 +303,10 @@ export async function fetchChantiersData() {
         ).trim();
         const chantierKey = toChantierKey(raw);
         if (!chantierKey) continue;
+
+        if (!orderIndexByChantier.has(chantierKey)) {
+          orderIndexByChantier.set(chantierKey, listeOrder++);
+        }
 
         const axeParts = parseAxeTaxonomieCell(
           row['Axe taxonomie'] ?? row['Axe_taxonomie'] ?? ''
@@ -327,19 +334,21 @@ export async function fetchChantiersData() {
         }
       }
 
-      return { axesByChantier, descriptionByChantier };
+      return { axesByChantier, descriptionByChantier, orderIndexByChantier };
     };
 
     try {
       // Load local backup first (works offline / when API returns 404).
       let axesByChantier = new Map();
       let descriptionByChantier = new Map();
+      let orderIndexByChantier = new Map();
       try {
         const backupText = await loadLocalBackup('grist-chantiers.csv');
         const backupRows = await parseCSVText(backupText);
         const built = buildMapsFromRows(backupRows);
         axesByChantier = built.axesByChantier;
         descriptionByChantier = built.descriptionByChantier;
+        orderIndexByChantier = built.orderIndexByChantier;
       } catch (backupErr) {
         console.warn('Liste_chantiers backup unavailable:', backupErr.message);
       }
@@ -353,13 +362,14 @@ export async function fetchChantiersData() {
           const built = buildMapsFromRows(rows);
           axesByChantier = built.axesByChantier;
           descriptionByChantier = built.descriptionByChantier;
+          orderIndexByChantier = built.orderIndexByChantier;
         }
       } catch (apiErr) {
         console.warn('Liste_chantiers API unavailable:', apiErr.message);
       }
 
       chantiersFetchPromise = null;
-      return { axesByChantier, descriptionByChantier };
+      return { axesByChantier, descriptionByChantier, orderIndexByChantier };
     } catch (error) {
       chantiersFetchPromise = null;
       console.warn('Could not load Liste_chantiers, axe taxonomie column may be empty:', error.message);

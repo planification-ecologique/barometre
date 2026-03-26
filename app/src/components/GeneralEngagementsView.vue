@@ -194,6 +194,8 @@ import {
   normalizeImpactAxeName,
   canonicalImpactAxeNomComplet,
   impactAxeSlugFromNomComplet,
+  compareChantierNamesByListeOrder,
+  getChantierListeOrderIndexMap,
 } from "@/services/csvDataService.js";
 import { impactAxeUiForSlug } from "@/config/impactAxeUi.js";
 import { homeRouteName, etatEnvironnementRouteName } from "@/config/routeNames.js";
@@ -224,7 +226,13 @@ export default {
       engagementsByAxe: {},
       engagementsByChantierAutres: {},  // "Indicateur d'impact - autres" grouped by chantier name
       engagementsByAxeAndSector: {},    // axe -> { sector -> [indicators] } for "Indicateur d'impact"
+      chantierListeOrderMap: new Map(),
     };
+  },
+  created() {
+    getChantierListeOrderIndexMap().then((m) => {
+      this.chantierListeOrderMap = m;
+    });
   },
   computed: {
     filteredEngagementsByAxe() {
@@ -277,11 +285,17 @@ export default {
         .filter(entry => entry.impactIndicators.length > 0 || entry.autresIndicators.length > 0)
         .sort((a, b) => a.axe.localeCompare(b.axe, 'fr'));
     },
-    // Chantier "autres" sections sorted alphabetically (shown below normal indicators)
+    // Chantier "autres" sections: ordre Liste_chantiers (puis alphabétique si absent de la liste)
     sortedChantierAutresEntries() {
       return Object.entries(this.filteredEngagementsByChantierAutres)
         .map(([chantierName, engagements]) => ({ chantierName, engagements }))
-        .sort((a, b) => a.chantierName.localeCompare(b.chantierName, 'fr'));
+        .sort((a, b) =>
+          compareChantierNamesByListeOrder(
+            a.chantierName,
+            b.chantierName,
+            this.chantierListeOrderMap
+          )
+        );
     },
     isAxeDetailView() {
       return !!this.params.axe;
