@@ -110,6 +110,7 @@
   <script>
   import { Chart } from 'chart.js'
   import { mixin } from '@/utils.js'
+  import { chartColorTestState, resolveTargetLineToken } from '@/services/chartColorTestOverrides.js'
   import annotationPlugin from 'chartjs-plugin-annotation'
   
   Chart.pluginService.register(annotationPlugin)
@@ -943,7 +944,8 @@
           if (this.tmpVlineColorParse[i] !== undefined) {
             this.vlineColorParse.push(this.getHexaFromName(this.tmpVlineColorParse[i]))
           } else {
-            this.vlineColorParse.push(this.getHexaFromName('brown-cafe-creme'))
+            const vTok = chartColorTestState.primaryToken || 'blue-france-850'
+            this.vlineColorParse.push(this.getHexaFromName(vTok))
           }
         }
   
@@ -956,10 +958,12 @@
           }
         }
         if (this.trendLineParse.length > 0) {
-          this.trendLineColor = this.getHexaFromName('beige-gris-galet')
+          this.trendLineColor = (this.colorParse.length > 0)
+            ? this.colorParse[0]
+            : this.getHexaFromName('beige-gris-galet')
         }
         if (this.targetSegmentParse || this.targetTrajectoryParse) {
-          this.targetSegmentColor = this.getHexaFromName('blue-ecume')
+          this.targetSegmentColor = this.getHexaFromName(resolveTargetLineToken('blue-ecume'))
         }
       },
       changeColors (theme) {
@@ -1007,10 +1011,12 @@
           this.chart.annotation.elements[key].options.borderColor = this.colorBox
         }
         if (this.trendLineParse.length > 0) {
-          this.trendLineColor = this.getHexaFromName('beige-gris-galet')
+          this.trendLineColor = (this.colorParse.length > 0)
+            ? this.colorParse[0]
+            : this.getHexaFromName('beige-gris-galet')
         }
         if (this.targetSegmentParse || this.targetTrajectoryParse) {
-          this.targetSegmentColor = this.getHexaFromName('blue-ecume')
+          this.targetSegmentColor = this.getHexaFromName(resolveTargetLineToken('blue-ecume'))
         }
         this.chart.update(0)
       }

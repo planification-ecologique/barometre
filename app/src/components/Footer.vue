@@ -35,6 +35,16 @@
           </li>
 
           <li class="fr-footer__bottom-item">
+            <a
+              href="#"
+              class="fr-footer__bottom-link"
+              title="Ouvrir l’outil de test des couleurs DSFR pour les graphiques"
+              @click.prevent="openChartColorTest"
+            >
+              Couleurs graphiques (test)
+            </a>
+          </li>
+          <li class="fr-footer__bottom-item">
             <a v-if="!cookiesBlocked" id="fr-footer-link-cookies" class="fr-footer__bottom-link" href="#"
               onclick="tarteaucitron.userInterface.openPanel();" title="Gestion des cookies">
               Gestion des cookies
@@ -60,6 +70,7 @@
 
 <script>
 import { homeRouteName } from "@/config/routeNames.js"
+import { chartColorTestState } from "@/services/chartColorTestOverrides.js"
 
 export default {
   name: "FooterDsfr",
@@ -116,6 +127,9 @@ export default {
     }
   },
   methods:{
+    openChartColorTest () {
+      chartColorTestState.modalOpen = true
+    },
     blocked_cookies(){
       try {
         localStorage.getItem("tarteaucitron");

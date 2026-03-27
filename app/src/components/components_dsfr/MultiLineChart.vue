@@ -44,6 +44,7 @@
 <script>
 import { Chart } from 'chart.js'
 import { mixin } from '@/utils.js'
+import { chartColorTestState } from '@/services/chartColorTestOverrides.js'
 export default {
   name: 'MultiLineChart',
   mixins: [mixin],
@@ -694,7 +695,8 @@ export default {
         if (this.tmpVlineColorParse[i] !== undefined) {
           this.vlineColorParse.push(this.getHexaFromName(this.tmpVlineColorParse[i]))
         } else {
-          this.vlineColorParse.push(this.getHexaFromName('brown-cafe-creme'))
+          const vTok = chartColorTestState.primaryToken || 'blue-france-850'
+          this.vlineColorParse.push(this.getHexaFromName(vTok))
         }
       }
 

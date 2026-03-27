@@ -1148,7 +1148,7 @@ function getSeries(list_y, list_x, statuses, targetYear, targetValue) {
     const historyForChart = history.map(v => v == null ? 0 : v);
     seriesData.push(historyForChart);
     legend.push('Historique');
-    colors.push('brown-cafe-creme');
+    colors.push('blue-france-850');
   }
   
   // Projection series (extrapolation) – controlled by SHOW_EXTRAPOLATION

@@ -9,6 +9,7 @@
           <router-view />
         </main>
         <footer-dsfr />
+        <chart-color-test-modal />
       </div>
     </div>
   </div>
@@ -19,6 +20,7 @@ import HeaderDsfr from "./components/Header.vue";
 import FooterDsfr from "./components/Footer.vue";
 import StagingBanner from "./components/StagingBanner.vue";
 import SkipLinksDsfr from "./components/components_dsfr/SkipLinks.vue";
+import ChartColorTestModal from "./components/ChartColorTestModal.vue";
 
 export default {
   name: "App",
@@ -26,7 +28,8 @@ export default {
     HeaderDsfr,
     FooterDsfr,
     StagingBanner,
-    SkipLinksDsfr
+    SkipLinksDsfr,
+    ChartColorTestModal
   },
   watch: {
     $route(to) {

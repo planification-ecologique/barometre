@@ -105,6 +105,7 @@
             :aspectratio="2"
             :stacked="true"
             :name="JSON.stringify(displayData.label_sous_groupe)"
+            :color="JSON.stringify(stackedBarColors)"
             :pointopacity="pointOpacityJson"
             :trendline="stackedTrendLine ? JSON.stringify(stackedTrendLine) : undefined"
             :target-trajectory="stackedTargetTrajectory ? JSON.stringify(stackedTargetTrajectory) : undefined"
@@ -127,6 +128,7 @@
             :y="JSON.stringify(displayData.values || [])"
             :aspectratio="2"
             :name="JSON.stringify(displayData.label_sous_groupe)"
+            :color="JSON.stringify(lineChartColors)"
             :isSmall="true"
             :pointopacity="pointOpacityJson"
           >
@@ -267,6 +269,14 @@ import {
 } from "@/services/ecolabRegionHelpers.js";
 import { isFavori, toggleFavori } from "@/services/favorisService.js";
 import { TREND_LINE_END_YEAR } from "@/services/csvDataService.js";
+import {
+  chartColorTestState,
+  resolvePrimaryBarToken,
+  resolveExtrapolationToken,
+  resolveStackedSeriesToken,
+  resolveLineSeriesToken,
+} from "@/services/chartColorTestOverrides.js";
+import { getAllColors } from "@/utils.js";
 
 export default {
   name: "GraphBox",
@@ -370,17 +380,50 @@ export default {
       return this.dataObj;
     },
     /** Values object for the chart (bar simple: x, y, legend; regional overrides). BarChart expects x[0] = array of labels. */
+    /** Couleurs par série pour barres empilées (sous-groupes), alignées sur la palette DSFR en rotation + overrides test. */
+    stackedBarColors() {
+      chartColorTestState.stackedByIndex;
+      const vals = this.displayData?.values;
+      if (!Array.isArray(vals) || vals.length === 0) return [];
+      const palette = getAllColors();
+      return vals.map((_, i) =>
+        resolveStackedSeriesToken(i, palette[i % palette.length])
+      );
+    },
+    /** Couleurs par série pour courbes indépendantes. */
+    lineChartColors() {
+      chartColorTestState.lineByIndex;
+      const vals = this.displayData?.values;
+      if (!Array.isArray(vals) || vals.length === 0) return [];
+      const palette = getAllColors();
+      return vals.map((_, i) =>
+        resolveLineSeriesToken(i, palette[i % palette.length])
+      );
+    },
     chartValues() {
+      chartColorTestState.primaryToken;
+      chartColorTestState.extrapolationToken;
+      chartColorTestState.targetToken;
       if (this.selectedRegionCode && this.regionalChartData) {
         const v = this.regionalChartData;
         return {
           x: [v.x],
           y: v.y,
           legend: v.legend,
-          colors: ['brown-cafe-creme']
+          colors: [resolvePrimaryBarToken("blue-france-850")],
         };
       }
-      return this.displayData.values || null;
+      const vals = this.displayData.values || null;
+      if (!vals) return null;
+      const out = { ...vals };
+      if (Array.isArray(vals.colors) && vals.colors.length > 0) {
+        out.colors = [...vals.colors];
+        out.colors[0] = resolvePrimaryBarToken("blue-france-850");
+        if (out.colors.length > 1) {
+          out.colors[1] = resolveExtrapolationToken("green-emeraude");
+        }
+      }
+      return out;
     },
     effectiveChartType() {
       if (this.selectedRegionCode && this.regionalChartData) return "Barres simple";

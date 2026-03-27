@@ -9,7 +9,7 @@
       :name="JSON.stringify(dataObj.values.legend || [''])"
       :horizontal="false"
       :stacked="true"
-      :color="JSON.stringify(dataObj.values.colors || barColors)"
+      :color="barSimpleColorsJson"
       :aspectratio="2.2"
       :axis-font-size="9"
       :point-radius="2"
@@ -24,6 +24,7 @@
       :x="JSON.stringify(dataObj.date)"
       :y="JSON.stringify(dataObj.values)"
       :name="JSON.stringify(dataObj.label_sous_groupe || [''])"
+      :color="stackedSeriesColorsJson"
       :horizontal="false"
       :stacked="true"
       :aspectratio="2.2"
@@ -40,6 +41,7 @@
       :x="JSON.stringify(dataObj.date)"
       :y="JSON.stringify(dataObj.values)"
       :name="JSON.stringify(dataObj.label_sous_groupe || [''])"
+      :color="lineSeriesColorsJson"
       :aspectratio="2.2"
       :axis-font-size="9"
       :point-radius="2"
@@ -52,6 +54,7 @@
       :x="JSON.stringify(dataObj.date)"
       :y="JSON.stringify(dataObj.values)"
       :name="JSON.stringify(dataObj.label_sous_groupe || [''])"
+      :color="stackedSeriesColorsJson"
       :horizontal="false"
       :stacked="true"
       :aspectratio="2.2"
@@ -68,6 +71,14 @@
 import BarChart from './components_dsfr/BarChart.vue'
 import MultiLineChart from './components_dsfr/MultiLineChart.vue'
 import { TREND_LINE_END_YEAR } from '@/services/csvDataService.js'
+import {
+  chartColorTestState,
+  resolvePrimaryBarToken,
+  resolveExtrapolationToken,
+  resolveStackedSeriesToken,
+  resolveLineSeriesToken
+} from '@/services/chartColorTestOverrides.js'
+import { getAllColors } from '@/utils.js'
 
 export default {
   name: 'MiniChart',
@@ -105,6 +116,36 @@ export default {
         return legend.map(() => '#000091')
       }
       return ['#000091']
+    },
+    barSimpleColorsJson() {
+      chartColorTestState.primaryToken
+      chartColorTestState.extrapolationToken
+      chartColorTestState.targetToken
+      const v = this.dataObj.values
+      const base = (v && v.colors && [...v.colors]) || [...this.barColors]
+      if (base.length > 0) base[0] = resolvePrimaryBarToken('blue-france-850')
+      if (base.length > 1) base[1] = resolveExtrapolationToken('green-emeraude')
+      return JSON.stringify(base)
+    },
+    stackedSeriesColorsJson() {
+      chartColorTestState.stackedByIndex
+      const vals = this.dataObj.values
+      if (!Array.isArray(vals) || !vals.length) return undefined
+      const palette = getAllColors()
+      const arr = vals.map((_, i) =>
+        resolveStackedSeriesToken(i, palette[i % palette.length])
+      )
+      return JSON.stringify(arr)
+    },
+    lineSeriesColorsJson() {
+      chartColorTestState.lineByIndex
+      const vals = this.dataObj.values
+      if (!Array.isArray(vals) || !vals.length) return undefined
+      const palette = getAllColors()
+      const arr = vals.map((_, i) =>
+        resolveLineSeriesToken(i, palette[i % palette.length])
+      )
+      return JSON.stringify(arr)
     },
     // Pass trendLine from the values object (same as GraphBox's chartValues.trendLine)
     trendLineJson() {

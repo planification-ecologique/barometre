@@ -1,3 +1,35 @@
+import { DSFR_PALETTE_MAP } from './config/dsfrChartPalette.js'
+
+/** Noms courts historiques des graphiques → jeton complet dans DSFR_PALETTE_MAP */
+const LEGACY_DSFR_COLOR_ALIASES = {
+  'blue-ecume': 'blue-ecume-sun-247',
+  'green-bourgeon': 'green-bourgeon-sun-425',
+  'green-emeraude': 'green-emeraude-sun-425',
+  'purple-glycine': 'purple-glycine-sun-319',
+  'pink-macaron': 'pink-macaron-sun-406',
+  'yellow-tournesol': 'yellow-tournesol-sun-407',
+  'orange-terre-battue': 'orange-terre-battue-sun-370',
+  'brown-cafe-creme': 'brown-cafe-creme-sun-383',
+  'beige-gris-galet': 'beige-gris-galet-sun-407',
+  'blue-cumulus': 'blue-cumulus-sun-368',
+  'pink-tuile': 'pink-tuile-sun-425',
+  'yellow-moutarde': 'yellow-moutarde-sun-348',
+  'brown-caramel': 'brown-caramel-sun-425',
+  'green-menthe': 'green-menthe-sun-373',
+  'brown-opera': 'brown-opera-sun-395',
+  'green-archipel': 'green-archipel-sun-391',
+  'green-tilleul-verveine': 'green-tilleul-verveine-sun-418'
+}
+
+function resolveDsfrPaletteKey (colorName) {
+  if (!colorName || typeof colorName !== 'string') return null
+  if (Object.prototype.hasOwnProperty.call(DSFR_PALETTE_MAP, colorName)) return colorName
+  if (Object.prototype.hasOwnProperty.call(LEGACY_DSFR_COLOR_ALIASES, colorName)) {
+    return LEGACY_DSFR_COLOR_ALIASES[colorName]
+  }
+  return null
+}
+
 export const capitalize = function (string) {
   if (string) {
     return string.charAt(0).toUpperCase() + string.slice(1)
@@ -58,6 +90,7 @@ export const testIfNaN = function (float) {
 
 const colorsDSFR = [
   'green-bourgeon',
+  'blue-france-850',
   'blue-ecume',
   'purple-glycine',
   'pink-macaron',
@@ -880,34 +913,24 @@ const reg = [
 ]
 
 export const getHexaFromName = function (colorName, options = undefined) {
-  // return window.dsfr.colors.getColor('artwork', 'major', colorName, options)
-  const colors_dsfr = {
-    'blue-ecume': {default:"#2f4077", hover: "#4e68bb" },
-    'green-bourgeon': {default:"#447049", hover: "#639f6a" },
-    'purple-glycine': {default:"#6e445a", hover: "#a66989" },
-    'pink-macaron': {default:"#8d533e", hover: "#ca795c" },
-    'yellow-tournesol': {default:"#716043", hover: "#a28a62" },
-    'orange-terre-battue': {default:"#755348", hover: "#ab7b6b" },
-    'brown-cafe-creme': {default:"#685c48", hover: "#97866a" },
-    'beige-gris-galet': {default:"#6a6156", hover: "#988b7c" },
-    'green-emeraude': {default:"#297254", hover: "#3ea47a" }
-  }
-
   var type_color = 'default'
-  if (options != undefined && 'hover' in options) {
+  if (options !== undefined && options && 'hover' in options) {
     type_color = 'hover'
   }
 
-  if (!(colorName in colors_dsfr)) {
-    console.warn(colorName + " is not in DSFR colors list; using as-is or fallback.")
-    // Already a hex value (e.g. from regional chart) or unknown name: return as-is or default
-    if (typeof colorName === 'string' && /^#[0-9a-fA-F]{3,8}$/.test(colorName)) {
-      return colorName
-    }
-    return type_color === 'hover' ? '#4e68bb' : '#2f4077'
+  const key = resolveDsfrPaletteKey(colorName)
+  if (key) {
+    const pair = DSFR_PALETTE_MAP[key]
+    const v = pair[type_color] || pair.default
+    return v
   }
 
-  return colors_dsfr[colorName][type_color]
+  if (typeof colorName === 'string' && /^#[0-9a-fA-F]{3,8}$/.test(colorName)) {
+    return colorName
+  }
+
+  console.warn(colorName + ' is not in DSFR colors list; using fallback.')
+  return type_color === 'hover' ? '#4e68bb' : '#2f4077'
 }
 
 const patternDraw = [
