@@ -36,7 +36,7 @@
 
       <section class="axe-summary" :id="sectionIndicateurImpactId">
         <h2 class="fr-h4 axe-section-title">Ce qu'il faut retenir</h2>
-        <div class="axe-summary-copy fr-text--md" v-html="axeSummaryHtml"></div>
+        <div class="axe-summary-copy fr-text--md" v-html="axeRetenirBodyHtml"></div>
         <!-- Graphes des indicateurs clés (à l'intérieur du Ce qu'il faut retenir) -->
         <div v-if="currentAxeEntry && currentAxeEntry.impactIndicators && currentAxeEntry.impactIndicators.length > 0" class="fr-grid-row fr-grid-row--gutters fr-mt-3w">
           <div v-for="(item, itemIndex) in currentAxeEntry.impactIndicators" :key="item.label_indic + '-impact-' + itemIndex" class="fr-col-md-6 fr-col-lg-6 fr-col-xl-6 fr-col-12">
@@ -82,14 +82,36 @@
         </div>
       </section>
 
-      <div v-if="axeDetailEmpty" class="axe-state">
-        <p v-if="isAdaptationAxeDetail">
-          </br>
-          Bien que la France soit dotée d'un Plan national d'adaptation au changement climatique (
-          <a href="https://www.ecologie.gouv.fr/sites/default/files/documents/PNACC3.pdf" target="_blank" rel="noopener noreferrer">PNACC3</a>,
-          publié en mars 2025), les méthodes d'évaluation quantitative qui en découlent font défaut, d'où l'absence d'indicateurs dans ce baromètre à date. Cela tient tant à la difficulté d'élaborer des projections des conséquences du changement climatique qu'au caractère systémique des politiques d'adaptation, celles-ci portant sur des enjeux physiques et organisationnels. A ce stade, le pilotage de la politique d'adaptation repose essentiellement sur l'observation de l'évolution de la sinistralité et des moyens déployés en matière de prévention.
-        </p>
-        <p v-else>Pas de données disponibles pour cet axe.</p>
+      <!-- Même grille qu'en synthèse (« {axe} - autres »), filtrée sur l'axe courant -->
+      <section
+        v-if="currentAxeImpactAutresIndicators.length > 0"
+        :id="sectionImpactAutresId"
+        class="axe-section"
+      >
+        <h2 class="fr-h3 axe-section-title levier-title">
+          <span class="section-chip section-chip--indicateur section-chip--in-title">Indicateur</span>
+          {{ resolvedAxeNomComplet }} - autres
+        </h2>
+        <div class="fr-grid-row fr-grid-row--gutters">
+          <div
+            v-for="(item, itemIndex) in currentAxeImpactAutresIndicators"
+            :key="item.label_indic + '-impact-autres-' + itemIndex"
+            class="fr-col-md-6 fr-col-lg-6 fr-col-xl-6 fr-col-12"
+          >
+            <article :id="getIndicatorSectionId('impact-autres', itemIndex)" class="axe-indicator-card">
+              <graph-box
+                :dataObj="item"
+                :compact="true"
+                :idAccordion="'axe-accordion-impact-autres-' + itemIndex"
+                :titre="item.label_indic"
+              />
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <div v-if="axeDetailEmpty && !isAdaptationAxeDetail" class="axe-state">
+        <p>Pas de données disponibles pour cet axe.</p>
       </div>
     </template>
 
@@ -245,7 +267,7 @@ export default {
       });
       return result;
     },
-    // "Indicateur d'impact - autres" by chantier; only shown when no axe filter (no submenu)
+    // "Indicateur d'impact - autres" par axe ; en vue détail une section dédiée (currentAxeImpactAutresIndicators)
     filteredEngagementsByChantierAutres() {
       if (this.params.axe) return {};
       const result = {};
@@ -253,6 +275,16 @@ export default {
         if (engagements && engagements.length > 0) result[chantierName] = engagements;
       });
       return result;
+    },
+    /** Indicateurs levier « Indicateur d'impact - autres » pour l'axe courant uniquement (vue détail) */
+    currentAxeImpactAutresIndicators() {
+      const id = this.resolvedAxeNomComplet;
+      if (!id) return [];
+      const raw = this.engagementsByChantierAutres[id];
+      if (!Array.isArray(raw) || raw.length === 0) return [];
+      return [...raw].sort((a, b) =>
+        (a.label_indic || '').localeCompare(b.label_indic || '', 'fr', { sensitivity: 'base' })
+      );
     },
     // Axes sorted alphabetically (normal indicators, shown first)
     // Split each axe's engagements into "Indicateur d'impact" (Synthèse only) and "Autres indicateurs"
@@ -361,9 +393,19 @@ export default {
         href: '#' + this.sectionAutresIndicateursId,
       };
     },
+    axeImpactAutresTag() {
+      const count = this.currentAxeImpactAutresIndicators.length;
+      if (count === 0 || !this.resolvedAxeNomComplet) return null;
+      return {
+        id: this.sectionImpactAutresId,
+        label: `${this.resolvedAxeNomComplet} - autres (${count})`,
+        href: '#' + this.sectionImpactAutresId,
+      };
+    },
     axeMetadataTags() {
       const tags = [...this.axeIndicateurTags, ...this.axeSectorTags];
       if (this.axeAutresIndicateursTag) tags.push(this.axeAutresIndicateursTag);
+      if (this.axeImpactAutresTag) tags.push(this.axeImpactAutresTag);
       return tags;
     },
     sectionIndicateurImpactId() {
@@ -372,13 +414,38 @@ export default {
     sectionAutresIndicateursId() {
       return 'section-autres-indicateurs';
     },
+    sectionImpactAutresId() {
+      return 'section-indicateur-impact-autres';
+    },
     axeSummaryHtml() {
       const ui = impactAxeUiForSlug(this.resolvedAxeSlug);
       const desc = ui && ui.description;
       return desc || "Retrouvez sur cette page les principaux indicateurs d'impact et les autres indicateurs associes a cet axe.";
     },
+    /** Paragraphe PNACC3 affiché dans « Ce qu'il faut retenir » lorsque l'axe Adaptation n'a pas d'indicateurs. */
+    pnaccAdaptationEmptyHtml() {
+      return (
+        "Bien que la France soit dotée d'un Plan national d'adaptation au changement climatique (" +
+        '<a href="https://www.ecologie.gouv.fr/sites/default/files/documents/PNACC3.pdf" target="_blank" rel="noopener noreferrer">PNACC3</a>, ' +
+        "publié en mars 2025), les méthodes d'évaluation quantitative qui en découlent font défaut, d'où l'absence d'indicateurs dans ce baromètre à date. " +
+        "Cela tient tant à la difficulté d'élaborer des projections des conséquences du changement climatique qu'au caractère systémique des politiques d'adaptation, " +
+        "celles-ci portant sur des enjeux physiques et organisationnels. A ce stade, le pilotage de la politique d'adaptation repose essentiellement sur " +
+        "l'observation de l'évolution de la sinistralité et des moyens déployés en matière de prévention."
+      );
+    },
+    axeRetenirBodyHtml() {
+      if (this.isAxeDetailView && this.isAdaptationAxeDetail && this.axeDetailEmpty) {
+        return this.pnaccAdaptationEmptyHtml;
+      }
+      return this.axeSummaryHtml;
+    },
     axeDetailEmpty() {
-      return this.isAxeDetailView && !this.currentAxeEntry;
+      if (!this.isAxeDetailView) return false;
+      const hasMain =
+        !!this.currentAxeEntry ||
+        this.impactIndicatorsBySector.length > 0;
+      const hasImpactAutres = this.currentAxeImpactAutresIndicators.length > 0;
+      return !hasMain && !hasImpactAutres;
     },
   },
   watch: {
