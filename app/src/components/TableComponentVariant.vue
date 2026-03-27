@@ -133,6 +133,6 @@ export default {
     /* overflow-x: auto !important; */
 }
 .fr-tab-data tbody tr:hover {
-    box-shadow: 0 16px 16px rgba(18, 14, 153, 0.6); /* Augmentez l'intensité de l'ombre */
+    background-color: #e3e3fd;
 }
 </style>

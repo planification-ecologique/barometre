@@ -1529,6 +1529,30 @@ export function isImpactAxe(name) {
 }
 
 /**
+ * Clé dans `sectors['Synthèse'].chantiers` pour un axe d’impact. Les données utilisent en général
+ * le nom court Grist (Pollution, Eau…) dans « Chantier ou impact », le menu le nom complet taxonomie.
+ */
+export function resolveSyntheseImpactGroupingKey(syntheseChantiersMap, axeLabel) {
+  if (!syntheseChantiersMap || axeLabel == null) return null;
+  const raw = String(axeLabel).trim();
+  if (!raw) return null;
+
+  const canonical =
+    canonicalImpactAxeNomComplet(raw) ||
+    (nomCompletToNomCourt.has(raw) ? raw : null) ||
+    raw;
+  const court = nomCompletToNomCourt.get(canonical);
+
+  const pick = (k) => (k && syntheseChantiersMap[k] ? k : null);
+
+  return (
+    pick(canonical) ||
+    pick(court) ||
+    pick(court ? normalizeImpactAxeName(court) : null)
+  );
+}
+
+/**
  * Whether the levier is an impact indicator (shown in "Indicateurs d'impact" section, not in chantiers).
  * Includes "Indicateur d'impact" (grouped by axe) and "Indicateur d'impact - autres" (grouped by chantier, no submenu).
  * @param {String} levier - The levier value

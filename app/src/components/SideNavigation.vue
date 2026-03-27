@@ -125,6 +125,7 @@ import {
   IMPACT_AXE_DISPLAY_ORDER,
   isImpactAxe,
   impactAxeNomCourt as impactAxeNomCourtFromTaxonomy,
+  resolveSyntheseImpactGroupingKey,
 } from "@/services/csvDataService.js";
 
 export default {
@@ -659,10 +660,13 @@ export default {
                 });
               });
               
-              // Also include "Autres indicateurs" from chantiers when chantier name matches the axe
-              const chantierKey = syntheseSector.chantiers?.[axe] ? axe : (axe === 'Économie circulaire' ? 'Economie circulaire' : axe);
-              if (syntheseSector.chantiers && syntheseSector.chantiers[chantierKey]) {
-                const autresIndicateurs = syntheseSector.chantiers[chantierKey].leviers?.["Autres indicateurs"] || [];
+              const autresBucketKey = resolveSyntheseImpactGroupingKey(
+                syntheseSector.chantiers,
+                axeKey
+              );
+              if (autresBucketKey) {
+                const autresIndicateurs =
+                  syntheseSector.chantiers[autresBucketKey].leviers?.["Autres indicateurs"] || [];
                 autresIndicateurs.forEach(item => {
                   if (item.gristId) engagementIds.push(item.gristId);
                 });
