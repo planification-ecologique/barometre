@@ -63,8 +63,7 @@
               :aria-label="'Voir le détail pour ' + axe.name"
               @click.prevent="goToAxeDetail(axe.name)"
             >
-              {{ axe.name }}
-              <span class="fr-icon-arrow-right-line" aria-hidden="true"></span>
+              <span class="etat-axe-title-text">{{ axe.name }}<span class="fr-icon-arrow-right-line etat-axe-title-arrow" aria-hidden="true"></span></span>
             </a>
           </h2>
           <span class="etat-axe-stats">
@@ -574,24 +573,29 @@ export default {
 }
 
 .etat-axe-title-link {
-  display: inline-flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.5rem;
+  display: inline;
   max-width: 100%;
   color: #000091;
   text-decoration: none;
   transition: color 0.15s;
+}
+
+.etat-axe-title-text {
   overflow-wrap: break-word;
+  word-break: normal;
+}
+
+.etat-axe-title-arrow {
+  display: inline-block;
+  margin-left: 0.35em;
+  vertical-align: middle;
+  line-height: 1;
+  font-size: 1rem;
 }
 
 .etat-axe-title-link:hover,
 .etat-axe-title-link:focus {
   color: #1212ff;
-}
-
-.etat-axe-title-link .fr-icon-arrow-right-line {
-  font-size: 1rem;
 }
 
 .etat-axe-stats {
