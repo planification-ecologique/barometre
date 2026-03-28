@@ -974,14 +974,12 @@ a.engagement-badge--link:focus {
     box-sizing: border-box;
   }
 
-  .col-chantier,
-  .col-indicateur,
-  .col-valeurs {
-    min-width: 7.5rem;
+  .col-chantier {
+    min-width: 6.75rem;
   }
 
   .col-indicateur {
-    min-width: 7rem;
+    min-width: 6.5rem;
   }
 
   .col-valeurs {
@@ -1028,6 +1026,14 @@ a.engagement-badge--link:focus {
   .synthese-table th,
   .synthese-table td {
     padding: 0.5rem 0.625rem;
+  }
+
+  .col-chantier {
+    min-width: 6.25rem;
+  }
+
+  .col-indicateur {
+    min-width: 6rem;
   }
 }
 </style>

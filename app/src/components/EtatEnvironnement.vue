@@ -765,7 +765,7 @@ export default {
   }
 }
 
-/* Mobile / tablette : colonnes ≤ largeur écran ; tableau borné en hauteur ; min-widths compacts */
+/* Mobile / tablette : colonnes compactes ; pas de hauteur max (scroll vertical = page) */
 @media (max-width: 991px) {
   .etat-table th,
   .etat-table td {
@@ -774,12 +774,11 @@ export default {
   }
 
   .etat-table-wrapper {
-    max-height: min(75dvh, 34rem);
-    overflow: auto;
+    overflow-x: auto;
+    overflow-y: visible;
+    max-height: none;
     -webkit-overflow-scrolling: touch;
-    overscroll-behavior: contain;
-    box-shadow: inset 0 0 0 1px #e5e5e5;
-    border-radius: 2px;
+    overscroll-behavior-x: contain;
   }
 
   .etat-table thead th {
@@ -791,11 +790,11 @@ export default {
   }
 
   .col-engagement {
-    min-width: 7.5rem;
+    min-width: 6.75rem;
   }
 
   .col-indicateur {
-    min-width: 7rem;
+    min-width: 6.5rem;
   }
 
   .col-valeurs {
@@ -832,12 +831,16 @@ export default {
     padding: 0.5rem 0.625rem;
   }
 
-  .etat-table-wrapper {
-    max-height: min(70dvh, 30rem);
-  }
-
   .etat-table {
     font-size: 0.8125rem;
+  }
+
+  .col-engagement {
+    min-width: 6.25rem;
+  }
+
+  .col-indicateur {
+    min-width: 6rem;
   }
 }
 </style>
