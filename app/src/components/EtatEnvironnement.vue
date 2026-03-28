@@ -769,8 +769,16 @@ export default {
 @media (max-width: 991px) {
   .etat-table th,
   .etat-table td {
-    max-width: calc(100vw - 2.5rem);
     box-sizing: border-box;
+  }
+
+  .etat-table .col-engagement,
+  .etat-table .td-engagement,
+  .etat-table .col-indicateur,
+  .etat-table .td-indicateur {
+    max-width: 80vw;
+    overflow-wrap: break-word;
+    word-break: normal;
   }
 
   .etat-table-wrapper {

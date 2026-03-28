@@ -966,12 +966,20 @@ a.engagement-badge--link:focus {
   color: #666;
 }
 
-/* Aucune colonne plus large que la zone visible (mobile / tablette) */
+/* Mobile / tablette : les deux premières colonnes ne dépassent pas 80 % de la largeur d’écran */
 @media (max-width: 991px) {
   .synthese-table th,
   .synthese-table td {
-    max-width: calc(100vw - 2.5rem);
     box-sizing: border-box;
+  }
+
+  .synthese-table .col-chantier,
+  .synthese-table .td-chantier,
+  .synthese-table .col-indicateur,
+  .synthese-table .td-indicateur {
+    max-width: 80vw;
+    overflow-wrap: break-word;
+    word-break: normal;
   }
 
   .col-chantier {
