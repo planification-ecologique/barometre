@@ -279,10 +279,6 @@
         this.resetData()
         this.createChart()
       },
-      'target-trajectory': function () {
-        this.resetData()
-        this.createChart()
-      },
       unit: function () {
         this.resetData()
         this.createChart()
