@@ -7,7 +7,9 @@
       <aside v-show="!isAccueilPage" class="fr-col-12 fr-col-sm-12 fr-col-lg-3 fr-mb-sm-5w sidebar-container">
         <div id="sidebar" class="fr-ml-2w">
           <side-navigation
+            ref="sideNavigation"
             v-on:params="updateSelection"
+            v-on:next-section-meta="onNextSectionMeta"
             :initParams="sidenav_initParams"
             :useStaging="useStaging"
             :sector="currentSector"
@@ -93,6 +95,12 @@
             <div v-else>
               <p>Chargement des indicateurs...</p>
             </div>
+            <section-next-bar
+              v-if="!isAccueilPage"
+              :enabled="sectionNextMeta.enabled"
+              :next-label="sectionNextMeta.label || ''"
+              @go-next="goToNextSidebarSection"
+            />
           </div>
         </div>
       </section>
@@ -117,6 +125,7 @@ import EngagementsTableView from "../components/EngagementsTableView.vue";
 import ChantiersTableView from "../components/ChantiersTableView.vue";
 import SyntheseSectorielle from "../components/SyntheseSectorielle.vue";
 import EtatEnvironnement from "../components/EtatEnvironnement.vue";
+import SectionNextBar from "../components/SectionNextBar.vue";
 import dsfrAnalytics from "../services/dsfr_analytics"
 import {
   homeRouteName,
@@ -175,6 +184,7 @@ export default {
     ChantiersTableView,
     SyntheseSectorielle,
     EtatEnvironnement,
+    SectionNextBar,
   },
 
   // Initialisation des données
@@ -186,6 +196,7 @@ export default {
       sidenav_initParams: {},
       currentSector: 'Synthèse',
       knownSectorNames: [],
+      sectionNextMeta: { label: null, enabled: false },
     };
   },
   created() {
@@ -291,6 +302,22 @@ export default {
     },
   },
   methods: {
+    onNextSectionMeta(meta) {
+      if (meta && typeof meta === "object") {
+        this.sectionNextMeta = {
+          label: meta.label || null,
+          enabled: !!meta.enabled,
+        };
+      } else {
+        this.sectionNextMeta = { label: null, enabled: false };
+      }
+    },
+    goToNextSidebarSection() {
+      const sn = this.$refs.sideNavigation;
+      if (sn && typeof sn.goToNextSection === "function") {
+        sn.goToNextSection();
+      }
+    },
     isDashboardShellRouteName(name) {
       return [
         "dashboard",

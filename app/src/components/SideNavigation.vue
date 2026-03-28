@@ -231,7 +231,7 @@ export default {
         }
         
         this.isLoading = false;
-        
+
         // Initialize with view from initParams, or default view based on sector
         if (!this.initParams || !this.initParams.view) {
           // No view specified - use default for sector
@@ -383,9 +383,12 @@ export default {
             this.set_sectorial_engagements();
           }
         }
+        this.emitNextSectionMeta();
       } catch (error) {
         console.error("Error loading chantiers:", error);
         this.chantiers = [];
+        this.isLoading = false;
+        this.emitNextSectionMeta();
       }
     },
     loadTaxonomyAxes() {
@@ -813,6 +816,160 @@ export default {
         console.error("Error setting sectorial engagements view:", error);
       }
     },
+    _buildEtatSidebarSequence() {
+      const seq = [
+        {
+          label: 'Synthèse',
+          apply: () => this.set_etat_environnement(),
+        },
+      ];
+      for (const axe of this.displayedTaxonomyAxes) {
+        seq.push({
+          label: this.impactAxeNomCourt(axe),
+          apply: () => this.set_general_engagements(axe),
+        });
+      }
+      return seq;
+    },
+    _currentEtatSidebarIndex() {
+      if (this.currentView === 'etat-environnement') return 0;
+      if (this.currentView === 'engagements-table') return -2;
+      if (this.currentView === 'general-engagements') {
+        if (!this.currentAxe) return 0;
+        const i = this.displayedTaxonomyAxes.findIndex((a) =>
+          this.axesMatch(this.currentAxe, a)
+        );
+        return i >= 0 ? i + 1 : 0;
+      }
+      return -1;
+    },
+    _resolveNextEtatStep() {
+      const valid = ['etat-environnement', 'general-engagements', 'engagements-table'];
+      if (!valid.includes(this.currentView)) return null;
+      const seq = this._buildEtatSidebarSequence();
+      if (seq.length < 2) return null;
+      const idx = this._currentEtatSidebarIndex();
+      if (idx === -2) {
+        return seq[1];
+      }
+      if (idx >= 0 && idx < seq.length - 1) {
+        return seq[idx + 1];
+      }
+      return null;
+    },
+    _buildChantiersAccordionSequence() {
+      const seq = [
+        {
+          label: 'Synthèse des chantiers sectoriels',
+          apply: () => this.set_chantiers_sectoriels(),
+        },
+      ];
+      for (const sectorName of this.chantierSectors) {
+        for (const ch of this.getSectorChantiers(sectorName)) {
+          seq.push({
+            label: ch.name,
+            apply: () => this.set_chantier_from_synthese(sectorName, ch),
+          });
+        }
+      }
+      return seq;
+    },
+    _currentChantiersAccordionIndex() {
+      if (this.currentView === 'chantiers-sectoriels') return 0;
+      if (this.currentView === 'chantiers-table' || this.currentView === 'general-chantiers') {
+        return -2;
+      }
+      if (this.currentView === 'chantier' && this.currentChantierId) {
+        let idx = 1;
+        for (const sn of this.chantierSectors) {
+          for (const ch of this.getSectorChantiers(sn)) {
+            if (ch.id === this.currentChantierId) return idx;
+            idx += 1;
+          }
+        }
+      }
+      return -1;
+    },
+    _resolveNextChantiersAccordionStep() {
+      const valid = [
+        'chantiers-sectoriels',
+        'chantier',
+        'chantiers-table',
+        'general-chantiers',
+      ];
+      if (!valid.includes(this.currentView)) return null;
+      const seq = this._buildChantiersAccordionSequence();
+      if (seq.length < 2) return null;
+      const idx = this._currentChantiersAccordionIndex();
+      if (idx === -2) {
+        return seq[1];
+      }
+      if (idx >= 0 && idx < seq.length - 1) {
+        return seq[idx + 1];
+      }
+      return null;
+    },
+    _buildSectorDashboardSequence() {
+      const seq = [
+        {
+          label: "Indicateurs d'impact",
+          apply: () => this.set_sectorial_engagements(),
+        },
+      ];
+      for (const ch of this.chantiers) {
+        seq.push({
+          label: ch.name,
+          apply: () => this.set_chantier(ch),
+        });
+      }
+      return seq;
+    },
+    _currentSectorDashboardIndex() {
+      if (this.currentView === 'sectorial-engagements') return 0;
+      if (this.currentView === 'chantier' && this.currentChantierId) {
+        const i = this.chantiers.findIndex((c) => c.id === this.currentChantierId);
+        return i >= 0 ? i + 1 : -1;
+      }
+      return -1;
+    },
+    _resolveNextSectorDashboardStep() {
+      const valid = ['sectorial-engagements', 'chantier'];
+      if (!valid.includes(this.currentView)) return null;
+      const seq = this._buildSectorDashboardSequence();
+      if (seq.length < 2) return null;
+      const idx = this._currentSectorDashboardIndex();
+      if (idx >= 0 && idx < seq.length - 1) {
+        return seq[idx + 1];
+      }
+      return null;
+    },
+    /** Prochaine entrée du menu latéral (même ordre que les liens affichés). */
+    _resolveNextSidebarStep() {
+      if (this.isLoading) return null;
+      if (this.sector === 'Synthèse' && this.isEtatEnvironnementContext) {
+        return this._resolveNextEtatStep();
+      }
+      if (this.showChantiersAccordionSidebar) {
+        return this._resolveNextChantiersAccordionStep();
+      }
+      return this._resolveNextSectorDashboardStep();
+    },
+    computeNextSectionMeta() {
+      const step = this._resolveNextSidebarStep();
+      if (!step) return { label: null, enabled: false };
+      return { label: step.label, enabled: true };
+    },
+    goToNextSection() {
+      const step = this._resolveNextSidebarStep();
+      if (step && typeof step.apply === 'function') {
+        step.apply();
+      }
+    },
+    emitNextSectionMeta() {
+      this.$nextTick(() => {
+        this.$emit('next-section-meta', this.computeNextSectionMeta());
+      });
+    },
     set_chantier(chantier) {
       this.currentView = 'chantier';
       this.currentChantierId = chantier.id;
@@ -887,6 +1044,36 @@ export default {
       },
       deep: true,
       immediate: false,
+    },
+    currentView() {
+      this.emitNextSectionMeta();
+    },
+    currentAxe() {
+      this.emitNextSectionMeta();
+    },
+    currentChantierId() {
+      this.emitNextSectionMeta();
+    },
+    expandedSectorName() {
+      this.emitNextSectionMeta();
+    },
+    displayedTaxonomyAxes() {
+      this.emitNextSectionMeta();
+    },
+    chantierSectors() {
+      this.emitNextSectionMeta();
+    },
+    chantiers() {
+      this.emitNextSectionMeta();
+    },
+    isLoading() {
+      this.emitNextSectionMeta();
+    },
+    isEtatEnvironnementContext() {
+      this.emitNextSectionMeta();
+    },
+    showChantiersAccordionSidebar() {
+      this.emitNextSectionMeta();
     },
   },
 };
