@@ -127,7 +127,7 @@ const SECTOR_BLURBS = {
   'Se déplacer': 'Déplacements de personnes et de marchandises, tous modes confondus.',
   'Se loger': 'Rénovation énergétique, chauffage et construction durable du parc bâti.',
   'Préserver': 'Protection de la biodiversité, forêts, sols et milieux naturels.',
-  Produire: 'Industrie, énergies renouvelables et décarbonation des procédés.',
+  Produire: 'Industrie, énergies et décarbonation des procédés.',
   'Se nourrir': 'Chaîne alimentaire, de la production agricole à la consommation.',
   Consommer: 'Économie circulaire, déchets et modes de consommation.'
 }
