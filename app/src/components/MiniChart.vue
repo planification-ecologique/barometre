@@ -76,7 +76,9 @@ import {
   resolvePrimaryBarToken,
   resolveExtrapolationToken,
   resolveStackedSeriesToken,
-  resolveLineSeriesToken
+  resolveLineSeriesToken,
+  getFallbackPrimaryBarToken,
+  getFallbackExtrapolationBarToken
 } from '@/services/chartColorTestOverrides.js'
 import { getAllColors } from '@/utils.js'
 
@@ -118,17 +120,18 @@ export default {
       return ['#000091']
     },
     barSimpleColorsJson() {
-      chartColorTestState.primaryToken
-      chartColorTestState.extrapolationToken
+      chartColorTestState.seriesByIndex
+      chartColorTestState.activePresetId
       chartColorTestState.targetToken
       const v = this.dataObj.values
       const base = (v && v.colors && [...v.colors]) || [...this.barColors]
-      if (base.length > 0) base[0] = resolvePrimaryBarToken('blue-france-850')
-      if (base.length > 1) base[1] = resolveExtrapolationToken('green-emeraude')
+      if (base.length > 0) base[0] = resolvePrimaryBarToken(getFallbackPrimaryBarToken())
+      if (base.length > 1) base[1] = resolveExtrapolationToken(getFallbackExtrapolationBarToken())
       return JSON.stringify(base)
     },
     stackedSeriesColorsJson() {
-      chartColorTestState.stackedByIndex
+      chartColorTestState.seriesByIndex
+      chartColorTestState.activePresetId
       const vals = this.dataObj.values
       if (!Array.isArray(vals) || !vals.length) return undefined
       const palette = getAllColors()
@@ -138,7 +141,8 @@ export default {
       return JSON.stringify(arr)
     },
     lineSeriesColorsJson() {
-      chartColorTestState.lineByIndex
+      chartColorTestState.seriesByIndex
+      chartColorTestState.activePresetId
       const vals = this.dataObj.values
       if (!Array.isArray(vals) || !vals.length) return undefined
       const palette = getAllColors()

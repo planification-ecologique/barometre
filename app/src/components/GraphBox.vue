@@ -275,6 +275,8 @@ import {
   resolveExtrapolationToken,
   resolveStackedSeriesToken,
   resolveLineSeriesToken,
+  getFallbackPrimaryBarToken,
+  getFallbackExtrapolationBarToken,
 } from "@/services/chartColorTestOverrides.js";
 import { getAllColors } from "@/utils.js";
 
@@ -382,7 +384,8 @@ export default {
     /** Values object for the chart (bar simple: x, y, legend; regional overrides). BarChart expects x[0] = array of labels. */
     /** Couleurs par série pour barres empilées (sous-groupes), alignées sur la palette DSFR en rotation + overrides test. */
     stackedBarColors() {
-      chartColorTestState.stackedByIndex;
+      chartColorTestState.seriesByIndex;
+      chartColorTestState.activePresetId;
       const vals = this.displayData?.values;
       if (!Array.isArray(vals) || vals.length === 0) return [];
       const palette = getAllColors();
@@ -392,7 +395,8 @@ export default {
     },
     /** Couleurs par série pour courbes indépendantes. */
     lineChartColors() {
-      chartColorTestState.lineByIndex;
+      chartColorTestState.seriesByIndex;
+      chartColorTestState.activePresetId;
       const vals = this.displayData?.values;
       if (!Array.isArray(vals) || vals.length === 0) return [];
       const palette = getAllColors();
@@ -401,8 +405,8 @@ export default {
       );
     },
     chartValues() {
-      chartColorTestState.primaryToken;
-      chartColorTestState.extrapolationToken;
+      chartColorTestState.seriesByIndex;
+      chartColorTestState.activePresetId;
       chartColorTestState.targetToken;
       if (this.selectedRegionCode && this.regionalChartData) {
         const v = this.regionalChartData;
@@ -410,7 +414,7 @@ export default {
           x: [v.x],
           y: v.y,
           legend: v.legend,
-          colors: [resolvePrimaryBarToken("blue-france-850")],
+          colors: [resolvePrimaryBarToken(getFallbackPrimaryBarToken())],
         };
       }
       const vals = this.displayData.values || null;
@@ -418,9 +422,9 @@ export default {
       const out = { ...vals };
       if (Array.isArray(vals.colors) && vals.colors.length > 0) {
         out.colors = [...vals.colors];
-        out.colors[0] = resolvePrimaryBarToken("blue-france-850");
+        out.colors[0] = resolvePrimaryBarToken(getFallbackPrimaryBarToken());
         if (out.colors.length > 1) {
-          out.colors[1] = resolveExtrapolationToken("green-emeraude");
+          out.colors[1] = resolveExtrapolationToken(getFallbackExtrapolationBarToken());
         }
       }
       return out;

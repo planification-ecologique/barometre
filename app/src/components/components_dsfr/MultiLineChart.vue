@@ -44,7 +44,7 @@
 <script>
 import { Chart } from 'chart.js'
 import { mixin } from '@/utils.js'
-import { chartColorTestState } from '@/services/chartColorTestOverrides.js'
+import { resolvePrimaryBarToken, getFallbackPrimaryBarToken } from '@/services/chartColorTestOverrides.js'
 export default {
   name: 'MultiLineChart',
   mixins: [mixin],
@@ -148,6 +148,16 @@ export default {
     isSmall: {
       type: Boolean,
       default: false
+    }
+  },
+  watch: {
+    y () {
+      this.resetData()
+      this.createChart()
+    },
+    color () {
+      this.resetData()
+      this.createChart()
     }
   },
   computed: {
@@ -695,7 +705,7 @@ export default {
         if (this.tmpVlineColorParse[i] !== undefined) {
           this.vlineColorParse.push(this.getHexaFromName(this.tmpVlineColorParse[i]))
         } else {
-          const vTok = chartColorTestState.primaryToken || 'blue-france-850'
+          const vTok = resolvePrimaryBarToken(getFallbackPrimaryBarToken())
           this.vlineColorParse.push(this.getHexaFromName(vTok))
         }
       }

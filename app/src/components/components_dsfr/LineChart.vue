@@ -36,7 +36,7 @@
   // import chroma from 'chroma-js'
   import { Chart } from 'chart.js'
   import { mixin } from '@/utils.js'
-  import { chartColorTestState } from '@/services/chartColorTestOverrides.js'
+  import { resolvePrimaryBarToken, getFallbackPrimaryBarToken } from '@/services/chartColorTestOverrides.js'
   
   export default {
     name: 'LineChart',
@@ -475,7 +475,7 @@
           if (this.tmpVlineColorParse[i] !== undefined) {
             this.vlineColorParse.push(this.getHexaFromName(this.tmpVlineColorParse[i]))
           } else {
-            const vTok = chartColorTestState.primaryToken || 'blue-france-850'
+            const vTok = resolvePrimaryBarToken(getFallbackPrimaryBarToken())
             this.vlineColorParse.push(this.getHexaFromName(vTok))
           }
         }

@@ -110,7 +110,7 @@
   <script>
   import { Chart } from 'chart.js'
   import { mixin } from '@/utils.js'
-  import { chartColorTestState, resolveTargetLineToken } from '@/services/chartColorTestOverrides.js'
+  import { resolvePrimaryBarToken, resolveTargetLineToken, getFallbackPrimaryBarToken } from '@/services/chartColorTestOverrides.js'
   import annotationPlugin from 'chartjs-plugin-annotation'
   
   Chart.pluginService.register(annotationPlugin)
@@ -261,9 +261,22 @@
       unit: {
         type: String,
         default: ''
+      },
+      /** Jeton DSFR pour la ligne de cible (aperçus modale sans synchroniser l’état global). */
+      previewTargetToken: {
+        type: String,
+        default: undefined
       }
     },
     watch: {
+      color: function () {
+        this.resetData()
+        this.createChart()
+      },
+      previewTargetToken: function () {
+        this.resetData()
+        this.createChart()
+      },
       y: function () {
         this.resetData()
         this.createChart()
@@ -463,6 +476,11 @@
             }
           } catch (e) { /* ignore */ }
         }
+
+        // Après parsing cible : loadColors() a déjà été appelé plus tôt quand target*Parse était encore null
+        if (self.targetTrajectoryParse || self.targetSegmentParse) {
+          self.targetSegmentColor = self.getHexaFromName(self.resolveTargetTokenForCanvas())
+        }
   
         // Set ymax: include bar data, target trajectory, and hlines so targets stay visible
         if (!this.horizontal) {
@@ -535,25 +553,18 @@
           }
         }
   
-        // Tracé de la courbe
+        // Barres : opacité pleine (plus de distinction mesuré / projection par transparence).
+        // Au survol, conserver les mêmes couleurs que l’état normal pour éviter le contraste marqué des teintes DSFR « hover ».
         data.forEach(function (dj, j) {
-          const colors = dj.map(function (_, i) {
-            let alpha = self.getExtrapolationAlpha()
-            if (Array.isArray(self.pointOpacityParse)) {
-              if (Array.isArray(self.pointOpacityParse[0])) {
-                alpha = (self.pointOpacityParse[j] && self.pointOpacityParse[j][i] !== undefined) ? self.pointOpacityParse[j][i] : self.getExtrapolationAlpha()
-              } else {
-                alpha = (self.pointOpacityParse[i] !== undefined) ? self.pointOpacityParse[i] : self.getExtrapolationAlpha()
-              }
-            }
-            return self.hexToRgba(self.colorParse[j], alpha)
+          const colors = dj.map(function () {
+            return self.hexToRgba(self.colorParse[j], 1)
           })
           self.datasets.push({
             data: dj,
             borderColor: colors,
             backgroundColor: colors,
-            hoverBorderColor: self.colorHover[j],
-            hoverBackgroundColor: self.colorHover[j],
+            hoverBorderColor: colors,
+            hoverBackgroundColor: colors,
             // barThickness: 'flex'
           })
         })
@@ -944,7 +955,7 @@
           if (this.tmpVlineColorParse[i] !== undefined) {
             this.vlineColorParse.push(this.getHexaFromName(this.tmpVlineColorParse[i]))
           } else {
-            const vTok = chartColorTestState.primaryToken || 'blue-france-850'
+            const vTok = resolvePrimaryBarToken(getFallbackPrimaryBarToken())
             this.vlineColorParse.push(this.getHexaFromName(vTok))
           }
         }
@@ -963,8 +974,14 @@
             : this.getHexaFromName('beige-gris-galet')
         }
         if (this.targetSegmentParse || this.targetTrajectoryParse) {
-          this.targetSegmentColor = this.getHexaFromName(resolveTargetLineToken('blue-ecume'))
+          this.targetSegmentColor = this.getHexaFromName(this.resolveTargetTokenForCanvas())
         }
+      },
+      resolveTargetTokenForCanvas () {
+        if (this.previewTargetToken != null && String(this.previewTargetToken).trim() !== '') {
+          return String(this.previewTargetToken).trim()
+        }
+        return resolveTargetLineToken('blue-ecume')
       },
       changeColors (theme) {
         const effectiveTheme = theme || 'light'
@@ -988,22 +1005,13 @@
         }
         for (let i = 0; i < this.yparse.length; i++) {
           const dataForDataset = this.chart.data.datasets[i].data || []
-          const extrapolationAlpha = this.getExtrapolationAlpha()
-          const colors = dataForDataset.map((_, idx) => {
-            let alpha = extrapolationAlpha
-            if (Array.isArray(this.pointOpacityParse)) {
-              if (Array.isArray(this.pointOpacityParse[0])) {
-                alpha = (this.pointOpacityParse[i] && this.pointOpacityParse[i][idx] !== undefined) ? this.pointOpacityParse[i][idx] : extrapolationAlpha
-              } else {
-                alpha = (this.pointOpacityParse[idx] !== undefined) ? this.pointOpacityParse[idx] : extrapolationAlpha
-              }
-            }
-            return this.hexToRgba(this.colorParse[i], alpha)
-          })
+          const colors = dataForDataset.map(() =>
+            this.hexToRgba(this.colorParse[i], 1)
+          )
           this.chart.data.datasets[i].borderColor = colors
           this.chart.data.datasets[i].backgroundColor = colors
-          this.chart.data.datasets[i].hoverBorderColor = this.colorHover[i]
-          this.chart.data.datasets[i].hoverBackgroundColor = this.colorHover[i]
+          this.chart.data.datasets[i].hoverBorderColor = colors
+          this.chart.data.datasets[i].hoverBackgroundColor = colors
         }
         for (const box of Object.entries(this.chart.annotation.elements)) {
           const key = box[0]
@@ -1016,7 +1024,7 @@
             : this.getHexaFromName('beige-gris-galet')
         }
         if (this.targetSegmentParse || this.targetTrajectoryParse) {
-          this.targetSegmentColor = this.getHexaFromName(resolveTargetLineToken('blue-ecume'))
+          this.targetSegmentColor = this.getHexaFromName(this.resolveTargetTokenForCanvas())
         }
         this.chart.update(0)
       }

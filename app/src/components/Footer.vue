@@ -41,7 +41,7 @@
               title="Ouvrir l’outil de test des couleurs DSFR pour les graphiques"
               @click.prevent="openChartColorTest"
             >
-              Couleurs graphiques (test)
+              Tester les couleurs des graphiques
             </a>
           </li>
           <li class="fr-footer__bottom-item">

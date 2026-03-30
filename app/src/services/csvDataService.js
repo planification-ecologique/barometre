@@ -1,4 +1,5 @@
 import unitDict from '@/utils/unit_dict.json';
+import { getDefaultSeriesPaletteToken } from './chartColorTestOverrides.js';
 import {
   fetchIndicatorsData,
   fetchLeviersData,
@@ -1148,9 +1149,9 @@ function getSeries(list_y, list_x, statuses, targetYear, targetValue) {
     const historyForChart = history.map(v => v == null ? 0 : v);
     seriesData.push(historyForChart);
     legend.push('Historique');
-    colors.push('blue-france-850');
+    colors.push(getDefaultSeriesPaletteToken(0));
   }
-  
+
   // Projection series (extrapolation) – controlled by SHOW_EXTRAPOLATION
   const hasProjection = SHOW_EXTRAPOLATION && Object.keys(projectionData).length > 0;
   if (hasProjection) {
@@ -1165,9 +1166,9 @@ function getSeries(list_y, list_x, statuses, targetYear, targetValue) {
     const projectionForChart = projection.map(v => v == null ? 0 : v);
     seriesData.push(projectionForChart);
     legend.push('Extrapolation');
-    colors.push('green-emeraude');
+    colors.push(getDefaultSeriesPaletteToken(1));
   }
-  
+
   // Targets: no bars, shown as line + dots via targetTrajectory (handled separately)
 
   return { y: seriesData, legend, colors };
