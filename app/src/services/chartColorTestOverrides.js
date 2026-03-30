@@ -2,26 +2,6 @@ import Vue from 'vue'
 import { getAllColors } from '@/utils.js'
 
 const STORAGE_KEY = 'sgpe-chart-color-test'
-/** Après « Valider » + rechargement, ne pas rouvrir la modale tout de suite (`modalOpen` est true par défaut). */
-const SESSION_MODAL_SUPPRESS_NEXT_LOAD = 'sgpe-chart-color-test-suppress-next-open'
-
-function consumeModalSuppressNextLoad () {
-  try {
-    if (sessionStorage.getItem(SESSION_MODAL_SUPPRESS_NEXT_LOAD) !== '1') return false
-    sessionStorage.removeItem(SESSION_MODAL_SUPPRESS_NEXT_LOAD)
-    return true
-  } catch (e) {
-    return false
-  }
-}
-
-export function suppressChartColorTestModalOnNextLoad () {
-  try {
-    sessionStorage.setItem(SESSION_MODAL_SUPPRESS_NEXT_LOAD, '1')
-  } catch (e) {
-    /* private mode */
-  }
-}
 
 /** Nombre max de séries modifiables dans la modale (couleur1 … couleurN) */
 export const CHART_COLOR_TEST_MAX_SERIES = 8
@@ -187,8 +167,7 @@ function writeStorage (state) {
 const initial = readStorage()
 
 export const chartColorTestState = Vue.observable({
-  /** Ouvert au chargement sauf retour immédiat après « Valider » (rechargement). */
-  modalOpen: !consumeModalSuppressNextLoad(),
+  modalOpen: false,
   targetToken: initial.targetToken || null,
   seriesByIndex: initial.seriesByIndex || {},
   activePresetId: initial.activePresetId || null,

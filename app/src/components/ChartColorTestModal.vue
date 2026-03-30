@@ -273,8 +273,7 @@ import {
   CHART_COLOR_INITIAL_PRESET_ID,
   CHART_COLOR_PRESETS,
   CHART_COLOR_TEST_MAX_SERIES,
-  getDefaultSeriesPaletteToken,
-  suppressChartColorTestModalOnNextLoad
+  getDefaultSeriesPaletteToken
 } from '@/services/chartColorTestOverrides.js'
 import { getAllColors, getHexaFromName } from '@/utils.js'
 
@@ -597,7 +596,6 @@ export default {
     },
     validate () {
       chartColorTestState.commitModalDraft(this.draft)
-      suppressChartColorTestModalOnNextLoad()
       chartColorTestState.closeModal()
       window.location.reload()
     },

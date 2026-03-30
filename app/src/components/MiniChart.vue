@@ -22,7 +22,7 @@
       v-else-if="chartType === 'Barres empilées' && hasStackedData"
       :isSmall="true"
       :x="JSON.stringify(dataObj.date)"
-      :y="JSON.stringify(dataObj.values)"
+      :y="stackedBarYJson"
       :name="JSON.stringify(dataObj.label_sous_groupe || [''])"
       :color="stackedSeriesColorsJson"
       :horizontal="false"
@@ -52,7 +52,7 @@
       v-else-if="hasFallbackData"
       :isSmall="true"
       :x="JSON.stringify(dataObj.date)"
-      :y="JSON.stringify(dataObj.values)"
+      :y="stackedBarYJson"
       :name="JSON.stringify(dataObj.label_sous_groupe || [''])"
       :color="stackedSeriesColorsJson"
       :horizontal="false"
@@ -80,7 +80,7 @@ import {
   getFallbackPrimaryBarToken,
   getFallbackExtrapolationBarToken
 } from '@/services/chartColorTestOverrides.js'
-import { getAllColors } from '@/utils.js'
+import { getAllColors, stackedBarSeriesValuesWithoutCibleYears } from '@/utils.js'
 
 export default {
   name: 'MiniChart',
@@ -111,6 +111,22 @@ export default {
     hasFallbackData() {
       return (Array.isArray(this.dataObj.date) && Array.isArray(this.dataObj.values)) ||
              (this.dataObj.values && this.dataObj.values.x)
+    },
+    /** Barres empilées : pas de segments sur les années « cible » (ligne objectif uniquement). */
+    stackedBarYJson() {
+      const vals = this.dataObj?.values
+      const years = this.getStackedYears()
+      const lv = this.dataObj?.label_value
+      const strip =
+        Array.isArray(vals) &&
+        years.length > 0 &&
+        (this.chartType === 'Barres empilées' || this.hasFallbackData)
+      if (!strip) {
+        return JSON.stringify(vals)
+      }
+      return JSON.stringify(
+        stackedBarSeriesValuesWithoutCibleYears(vals, Array.isArray(lv) ? lv : [], years)
+      )
     },
     barColors() {
       const legend = this.dataObj.values?.legend

@@ -101,7 +101,7 @@
           <!-- Composant Histogramme avec sous-groupe / DSFR (national only) -->
           <bar-chart
             :x="JSON.stringify(displayData.date)"
-            :y="JSON.stringify(displayData.values)"
+            :y="JSON.stringify(stackedBarChartSeriesForRender)"
             :aspectratio="2"
             :stacked="true"
             :name="JSON.stringify(displayData.label_sous_groupe)"
@@ -278,7 +278,7 @@ import {
   getFallbackPrimaryBarToken,
   getFallbackExtrapolationBarToken,
 } from "@/services/chartColorTestOverrides.js";
-import { getAllColors } from "@/utils.js";
+import { getAllColors, stackedBarSeriesValuesWithoutCibleYears } from "@/utils.js";
 
 export default {
   name: "GraphBox",
@@ -383,6 +383,24 @@ export default {
     },
     /** Values object for the chart (bar simple: x, y, legend; regional overrides). BarChart expects x[0] = array of labels. */
     /** Couleurs par série pour barres empilées (sous-groupes), alignées sur la palette DSFR en rotation + overrides test. */
+    /** Séries barres sans les années « cible » (évite une barre au point objectif, ex. 2030). */
+    stackedBarChartSeriesForRender() {
+      const series = this.displayData?.values;
+      if (
+        this.effectiveChartType !== "Barres empilées" ||
+        this.selectedRegionCode ||
+        !Array.isArray(series)
+      ) {
+        return series;
+      }
+      const years = this.getStackedYears();
+      const lv = this.displayData?.label_value;
+      return stackedBarSeriesValuesWithoutCibleYears(
+        series,
+        Array.isArray(lv) ? lv : [],
+        years
+      );
+    },
     stackedBarColors() {
       chartColorTestState.seriesByIndex;
       chartColorTestState.activePresetId;

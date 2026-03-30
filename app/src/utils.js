@@ -88,6 +88,37 @@ export const testIfNaN = function (float) {
   return isNaN(parseFloat(float))
 }
 
+/** Aligné sur GraphBox / MiniChart — classification d'un point (mesuré, projection, cible). */
+export const getChartPointStatus = function (labelValue, fallbackYear = '') {
+  const normalized = String(labelValue ?? '').trim().toLowerCase()
+  if (/^cible_\d{4}$/.test(normalized) || normalized === 'cible') return 'cible'
+  if (normalized === 'projection') return 'projection'
+  if (normalized === 'mesuré' || /^\d{4}$/.test(normalized)) return 'mesuré'
+  if (normalized !== '') return 'mesuré'
+  return String(fallbackYear ?? '').trim() === '2030' ? 'cible' : 'mesuré'
+}
+
+/**
+ * Les années « cible » ne doivent pas produire de barres empilées (ligne objectif séparée).
+ * Les totaux bruts pour la trajectoire restent dans dataObj.values côté composant.
+ */
+export const stackedBarSeriesValuesWithoutCibleYears = function (
+  seriesArrays,
+  labelValues,
+  years
+) {
+  if (!Array.isArray(seriesArrays) || !Array.isArray(years) || years.length === 0) {
+    return seriesArrays
+  }
+  const skipIndex = years.map(
+    (y, i) => getChartPointStatus(Array.isArray(labelValues) ? labelValues[i] : '', y) === 'cible'
+  )
+  return seriesArrays.map((series) => {
+    if (!Array.isArray(series)) return series
+    return series.map((v, i) => (skipIndex[i] ? null : v))
+  })
+}
+
 const colorsDSFR = [
   'green-bourgeon',
   'blue-france-850',
