@@ -1530,6 +1530,25 @@ export function isImpactAxe(name) {
 }
 
 /**
+ * Tri des libellés d’axe selon l’ordre des lignes de Liste_taxonomie (IMPACT_AXE_DISPLAY_ORDER).
+ * Inconnus en fin ; tie-break alphabétique (fr).
+ */
+export function compareImpactAxeLabelsTaxonomie(labelA, labelB) {
+  const rank = (raw) => {
+    const complet = canonicalImpactAxeNomComplet(raw);
+    if (!complet) return IMPACT_AXE_DISPLAY_ORDER.length;
+    const i = IMPACT_AXE_DISPLAY_ORDER.indexOf(complet);
+    return i === -1 ? IMPACT_AXE_DISPLAY_ORDER.length : i;
+  };
+  const da = rank(labelA);
+  const db = rank(labelB);
+  if (da !== db) return da - db;
+  return String(labelA || '').localeCompare(String(labelB || ''), 'fr', {
+    sensitivity: 'base',
+  });
+}
+
+/**
  * Clé dans `sectors['Synthèse'].chantiers` pour un axe d’impact. Les données utilisent en général
  * le nom court Grist (Pollution, Eau…) dans « Chantier ou impact », le menu le nom complet taxonomie.
  */

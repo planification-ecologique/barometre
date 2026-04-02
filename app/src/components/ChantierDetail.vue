@@ -181,7 +181,10 @@
 <script>
 import GraphBox from "./GraphBox.vue";
 import SectorIcon from "./SectorIcon.vue";
-import { getIndicators } from "@/services/csvDataService.js";
+import {
+  getIndicators,
+  compareImpactAxeLabelsTaxonomie,
+} from "@/services/csvDataService.js";
 import {
   chantiersRouteName,
   etatEnvironnementRouteName,
@@ -383,7 +386,9 @@ export default {
             etatRoute: etatRouteForLabel(trimmed),
           });
         });
-        return tags;
+        return tags.sort((a, b) =>
+          compareImpactAxeLabelsTaxonomie(a.label, b.label)
+        );
       }
       const seen = new Set();
       const tags = [];
@@ -407,7 +412,9 @@ export default {
           }
         });
       });
-      return tags;
+      return tags.sort((a, b) =>
+        compareImpactAxeLabelsTaxonomie(a.label, b.label)
+      );
     },
     metadataTags() {
       return [...this.indicateurTags, ...this.levierTags, ...this.contributionTags];

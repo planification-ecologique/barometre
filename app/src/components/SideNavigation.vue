@@ -38,7 +38,8 @@
             <li class="fr-sidemenu__item">
               <a class="fr-sidemenu__link"
                 title="Synthèse"
-                @click="set_chantiers_sectoriels"
+                href="#"
+                @click.prevent="set_chantiers_sectoriels"
                 target="_self"
                 :aria-current="currentView === 'chantiers-sectoriels' ? 'page' : undefined"
                 tabindex="0"
@@ -64,7 +65,8 @@
                   <li class="fr-sidemenu__item" v-for="chantier in getSectorChantiers(sectorName)" :key="chantier.id">
                     <a class="fr-sidemenu__link"
                       :title="chantier.name"
-                      @click="set_chantier_from_synthese(sectorName, chantier)"
+                      href="#"
+                      @click.prevent="set_chantier_from_synthese(sectorName, chantier)"
                       target="_self"
                       :aria-current="currentView === 'chantier' && currentChantierId === chantier.id ? 'page' : undefined"
                       tabindex="0"
@@ -101,7 +103,8 @@
                   <li class="fr-sidemenu__item" v-for="(chantier, index) in chantiers" :key="index">
                     <a class="fr-sidemenu__link" 
                       :title="chantier.name"
-                      @click="set_chantier(chantier)"
+                      href="#"
+                      @click.prevent="set_chantier(chantier)"
                       target="_self"
                       :aria-current="currentView === 'chantier' && currentChantierId === chantier.id"
                       tabindex="0"

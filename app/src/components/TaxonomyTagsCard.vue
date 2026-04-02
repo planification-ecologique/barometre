@@ -21,6 +21,7 @@ import {
   impactAxeNameToSlug,
   resolveImpactAxeCanonicalFromLabel,
 } from '@/utils/impactAxeUrl.js';
+import { compareImpactAxeLabelsTaxonomie } from '@/services/csvDataService.js';
 
 export default {
   name: 'TaxonomyTagsCard',
@@ -64,13 +65,14 @@ export default {
 
       const chantierOuImpact = this.dataObj.chantier_ou_impact_list || [];
       const seenAxeSlugs = new Set();
+      const axeTags = [];
       chantierOuImpact.filter(Boolean).forEach((raw) => {
         const canonical = resolveImpactAxeCanonicalFromLabel(raw);
         if (!canonical) return;
         const slug = impactAxeNameToSlug(canonical);
         if (seenAxeSlugs.has(slug)) return;
         seenAxeSlugs.add(slug);
-        result.push({
+        axeTags.push({
           type: 'axe',
           value: canonical,
           label: raw,
@@ -80,6 +82,10 @@ export default {
           },
         });
       });
+      axeTags.sort((a, b) =>
+        compareImpactAxeLabelsTaxonomie(a.label, b.label)
+      );
+      result.push(...axeTags);
 
       return result;
     }

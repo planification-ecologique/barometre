@@ -416,26 +416,56 @@ export default {
       }
     },
     /**
-     * Compare la query cible à l’URL actuelle.
-     * Sur /chantiers, `view=chantiers-sectoriels` est implicite si absent : sans ça,
-     * le menu réémet une cible `{ section }` alors que l’URL a encore `view=…` → faux
-     * « changement » → router.push sans hash → perte de #sector-… au chargement.
+     * Normalise la query des routes « shell » chantiers : la cible de navigation n’inclut
+     * pas ces `view` implicites ; en prod (proxy, ordre des param, doublons) l’URL réelle
+     * peut encore les porter — on les retire pour comparer au même référentiel.
      */
-    querySameAsRoute(query) {
-      const stripImplicitChantiersSyntheseView = (q) => {
-        const o = { ...(q || {}) }
-        if (o.view === "chantiers-sectoriels") {
-          delete o.view
-        }
-        return o
+    chantiersShellQueryForCompare(routeName, query) {
+      const o = { ...(query || {}) }
+      if (routeName === "chantiers" || routeName === "staging-chantiers") {
+        if (o.view === "chantiers-sectoriels") delete o.view
+        if (o.view === "chantier" && o.chantier_id) delete o.view
       }
-      const a = stripImplicitChantiersSyntheseView(this.$route.query)
-      const b = stripImplicitChantiersSyntheseView(query)
-      const keys = new Set([...Object.keys(a), ...Object.keys(b)])
+      return o
+    },
+    /** Valeur de paramètre d’URL comparable (évite divergences prod : tableau, typage). */
+    queryParamComparable(val) {
+      if (val === undefined || val === null) return ""
+      const v = Array.isArray(val) ? val[0] : val
+      if (v === undefined || v === null) return ""
+      return String(v)
+    },
+    /**
+     * `path` + query triée, même sémantique que l’URL affichée après navigation.
+     * Préféré à une boucle clé par clé : ordre des params et formes (array vs string) diffèrent
+     * souvent entre environnements.
+     */
+    canonicalPathAndQuery(routeLike) {
+      const path = routeLike.path || ""
+      const name = routeLike.name
+      const q = this.chantiersShellQueryForCompare(name, routeLike.query)
+      const keys = Object.keys(q).sort()
+      const pairs = []
       for (const k of keys) {
-        if ((a[k] || "") !== (b[k] || "")) return false
+        const raw = q[k]
+        if (raw === undefined || raw === null) continue
+        const s = this.queryParamComparable(raw)
+        pairs.push(`${encodeURIComponent(k)}=${encodeURIComponent(s)}`)
       }
-      return true
+      return pairs.length ? `${path}?${pairs.join("&")}` : path
+    },
+    /** True si la navigation Vue changerait réellement l’URL (hors #hash). */
+    shouldPushRouterTarget(target) {
+      try {
+        const resolved = this.$router.resolve(target, this.$route)
+        const next = resolved.route
+        const cur = this.$route
+        const a = this.canonicalPathAndQuery(next)
+        const b = this.canonicalPathAndQuery(cur)
+        return a !== b
+      } catch (e) {
+        return true
+      }
     },
     // Mise à jour de la sélection dans le menu
     updateSelection(selectedValue) {
@@ -505,17 +535,19 @@ export default {
               name: chantiersRouteName(st),
               query: withSection({ view: "chantiers-table" }),
             }
-          } else if (v === "chantier" && selectedValue.chantier_id) {
+          } else if (v === "chantier" && selectedValue.chantier_id != null && String(selectedValue.chantier_id).length) {
             const secSlug = selectedValue.chantier_sector
               ? toSectionSlug(selectedValue.chantier_sector)
               : sec
             target = {
               name: chantiersRouteName(st),
               query: {
-                section: secSlug,
-                chantier_id: selectedValue.chantier_id,
+                section: String(secSlug),
+                chantier_id: String(selectedValue.chantier_id),
               },
             }
+          } else if (v === "chantier") {
+            return
           } else {
             const q = withSection()
             if (v === "sectorial-engagements") q.view = "sectorial-engagements"
@@ -525,10 +557,12 @@ export default {
           }
 
           if (!target) return
-          const sameName = this.$route.name === target.name
-          const sameQuery = this.querySameAsRoute(target.query)
-          if (!sameName || !sameQuery) {
-            this.$router.push(target).catch(() => {})
+          if (this.shouldPushRouterTarget(target)) {
+            this.$router.push(target).catch((err) => {
+              if (err && err.name !== "NavigationDuplicated") {
+                console.error("router.push:", err)
+              }
+            })
           }
         } catch (error) {
           console.error("Erreur dans le chargement de la navigation : ", error);
