@@ -4,12 +4,18 @@ import {
   toSectionSlug,
   SECTOR_SYNTHESE,
   SECTION_SYNTHESE_SLUG,
+  resolveSectorFromQuery,
 } from "./utils/sectionUrl.js";
 import { impactAxeNameToSlug } from "./utils/impactAxeUrl.js";
+import {
+  getNavigationStructure,
+  impactAxeNomCourt,
+  resolveImpactAxeSlugToNomComplet,
+} from "./services/csvDataService.js";
 
 Vue.use(Router);
 
-const GeneralTitle = "Baromètre de la planification écologique"
+const GeneralTitle = "Baromètre de la planification écologique";
 
 const dashboardProps = (route) =>
   ({ query: route.query.theme }, { query: route.query.levier });
@@ -22,6 +28,62 @@ const DASHBOARD_SHELL_NAMES = [
   "chantiers",
   "staging-chantiers",
 ];
+
+async function resolveSectorNameForRoute(to) {
+  if (!DASHBOARD_SHELL_NAMES.includes(to.name)) return null;
+  const environment = isStagingRoute(to) ? "staging" : "production";
+  const nav = await getNavigationStructure(environment);
+  const sectorNames = nav?.data?.sectorNames || [];
+  const sectorName = resolveSectorFromQuery(to.query || {}, sectorNames);
+  if (!sectorName || sectorName === SECTOR_SYNTHESE) return null;
+  return sectorName;
+}
+
+function resolveImpactAxeNameForRoute(to) {
+  if (!DASHBOARD_SHELL_NAMES.includes(to.name)) return null;
+  const slug = to?.query?.section;
+  if (!slug) return null;
+  const nomComplet = resolveImpactAxeSlugToNomComplet(slug);
+  if (!nomComplet) return null;
+  return impactAxeNomCourt(nomComplet) || nomComplet;
+}
+
+async function resolvePageTitle(to) {
+  const metaTitle = to?.meta?.title;
+  if (!metaTitle) return null;
+  if (typeof metaTitle === "function") {
+    return await metaTitle(to);
+  }
+  return String(metaTitle);
+}
+
+async function updateDocumentTitle(to) {
+  let sectionName = null;
+  try {
+    sectionName =
+      (await resolveSectorNameForRoute(to)) || resolveImpactAxeNameForRoute(to);
+  } catch (e) {
+    // non-bloquant : le titre doit rester fonctionnel même si la nav n'est pas disponible
+  }
+
+  const pageTitle = await resolvePageTitle(to);
+  let full = GeneralTitle;
+
+  // Sur les pages "shell" (dashboard / état / chantiers), si un secteur est sélectionné,
+  // on privilégie un titre court : "Baromètre ... - <Secteur>" (sans répéter le nom de page).
+  if (DASHBOARD_SHELL_NAMES.includes(to.name) && sectionName) {
+    full += " - " + sectionName;
+  } else {
+    if (pageTitle) full += " - " + pageTitle;
+    if (sectionName) full += " - " + sectionName;
+  }
+
+  if (isStagingRoute(to)) {
+    document.title = "STAGING - " + full;
+  } else {
+    document.title = full;
+  }
+}
 
 /** /etat-environnement?view=general-engagements&axe= → ?section=<slug-axe> */
 function legacyEtatEngagementsQueryRedirect(to) {
@@ -156,7 +218,7 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "dashboard" */ "./views/DashboardPage.vue"),
     meta: {
-      title: GeneralTitle + " - Tableaux de bord"
+      title: null,
     }
   },
   {
@@ -172,7 +234,7 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "dashboard" */ "./views/DashboardPage.vue"),
     meta: {
-      title:  GeneralTitle + " - Tableaux de bord"
+      title: "Tableaux de bord",
 
     }
   },
@@ -183,7 +245,7 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "dashboard" */ "./views/DashboardPage.vue"),
     meta: {
-      title: GeneralTitle + " - État de l'environnement"
+      title: "État de l'environnement",
     }
   },
   {
@@ -193,7 +255,7 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "dashboard" */ "./views/DashboardPage.vue"),
     meta: {
-      title: GeneralTitle + " - Chantiers sectoriels"
+      title: "Chantiers sectoriels",
     }
   },
   {
@@ -210,7 +272,7 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "search" */ "./views/SearchPage.vue"),
     meta: {
-      title: GeneralTitle + " - Recherche"
+      title: "Recherche",
     }
   },
   {
@@ -219,7 +281,7 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "favoris" */ "./views/FavorisPage.vue"),
     meta: {
-      title: GeneralTitle + " - Favoris"
+      title: "Favoris",
     }
   },
   {
@@ -228,7 +290,7 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "tags" */ "./views/MentionsLegalesPage.vue"),
     meta: {
-      title: GeneralTitle + " - Mentions Legales"
+      title: "Mentions légales",
     }
   },
   {
@@ -237,7 +299,7 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "tags" */ "./views/PersonalDataPage.vue"),
     meta: {
-      title: GeneralTitle + " - Données Personnelles"
+      title: "Données personnelles",
     }
   },
   {
@@ -246,7 +308,7 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "tags" */ "./views/PlanDuSitePage.vue"),
     meta: {
-      title: GeneralTitle + " - Plan du Site"
+      title: "Plan du site",
     }
   },
   {
@@ -255,7 +317,7 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "accessibilite" */ "./views/AccessibilityPage.vue"),
     meta: {
-      title: GeneralTitle + " - Accessibilité"
+      title: "Accessibilité",
     }
   },
   {
@@ -299,7 +361,7 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "chart-iframe" */ './views/ChartIframeView.vue'),
     meta: {
-      title: GeneralTitle + " - Chart",
+      title: "Chart",
       noindex: true,
       hideHeader: true,
       hideFooter: true
@@ -311,7 +373,7 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "chart-selector" */ "./components/GraphBoxSelector.vue"),
     meta: {
-      title: GeneralTitle + " - Sélection d'indicateur",
+      title: "Sélection d'indicateur",
       noindex: true
     }
   },
@@ -321,7 +383,7 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "test-home-v2" */ "./views/HomeV2TestPage.vue"),
     meta: {
-      title: GeneralTitle + " — Test accueil V2",
+      title: "Test accueil V2",
       noindex: true,
       excludeFromSitemap: true
     }
@@ -345,7 +407,7 @@ if (process.env.VUE_APP_ENV !== 'prod') {
       component: () =>
         import(/* webpackChunkName: "dashboard" */ "./views/DashboardPage.vue"),
       meta: {
-        title: GeneralTitle + " - Tableaux de bord",
+        title: null,
         isStaging: true,
         noindex: true,
         excludeFromSitemap: true
@@ -358,7 +420,7 @@ if (process.env.VUE_APP_ENV !== 'prod') {
       component: () =>
         import(/* webpackChunkName: "dashboard" */ "./views/DashboardPage.vue"),
       meta: {
-        title: GeneralTitle + " - Tableaux de bord",
+        title: "Tableaux de bord",
         isStaging: true,
         noindex: true,
         excludeFromSitemap: true
@@ -371,7 +433,7 @@ if (process.env.VUE_APP_ENV !== 'prod') {
       component: () =>
         import(/* webpackChunkName: "dashboard" */ "./views/DashboardPage.vue"),
       meta: {
-        title: GeneralTitle + " - État de l'environnement",
+        title: "État de l'environnement",
         isStaging: true,
         noindex: true,
         excludeFromSitemap: true
@@ -384,7 +446,7 @@ if (process.env.VUE_APP_ENV !== 'prod') {
       component: () =>
         import(/* webpackChunkName: "dashboard" */ "./views/DashboardPage.vue"),
       meta: {
-        title: GeneralTitle + " - Chantiers sectoriels",
+        title: "Chantiers sectoriels",
         isStaging: true,
         noindex: true,
         excludeFromSitemap: true
@@ -405,7 +467,7 @@ if (process.env.VUE_APP_ENV !== 'prod') {
       component: () =>
         import(/* webpackChunkName: "search" */ "./views/SearchPage.vue"),
       meta: {
-        title: GeneralTitle + " - Recherche",
+        title: "Recherche",
         isStaging: true,
         noindex: true,
         excludeFromSitemap: true
@@ -418,7 +480,7 @@ if (process.env.VUE_APP_ENV !== 'prod') {
       component: () =>
         import(/* webpackChunkName: "test-home-v2" */ "./views/HomeV2TestPage.vue"),
       meta: {
-        title: GeneralTitle + " — Test accueil V2 (staging)",
+        title: "Test accueil V2 (staging)",
         isStaging: true,
         noindex: true,
         excludeFromSitemap: true
@@ -496,10 +558,7 @@ router.beforeEach(async (to, from, next) => {
     return;
   }
 
-  // Add document title prefix for staging routes
-  if (isStagingRoute(to)) {
-    document.title = "STAGING - " + (to.meta.title || GeneralTitle);
-  }
+  await updateDocumentTitle(to);
   // Toggle header/footer visibility via body classes (prevents component remounts)
   const body = document.body;
   if (to.meta.hideHeader) {
