@@ -1399,6 +1399,7 @@ export const IMPACT_AXE_DISPLAY_ORDER = [];
 const labelToNomComplet = new Map();
 const slugToNomComplet = new Map();
 const nomCompletToNomCourt = new Map();
+const nomCompletToRetenirHtml = new Map();
 let impactTaxonomyLoaded = false;
 let impactTaxonomyLoadPromise = null;
 
@@ -1435,7 +1436,35 @@ function clearImpactTaxonomyMaps() {
   labelToNomComplet.clear();
   slugToNomComplet.clear();
   nomCompletToNomCourt.clear();
+  nomCompletToRetenirHtml.clear();
   IMPACT_AXE_DISPLAY_ORDER.length = 0;
+}
+
+function normalizeTaxoHeaderKey(raw) {
+  return String(raw || '')
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .replace(/['’]/g, '')
+    .replace(/[^a-z0-9]+/g, ' ')
+    .trim()
+    .replace(/\s+/g, ' ');
+}
+
+function pickRowValueByHeaderAliases(row, aliases) {
+  if (!row || typeof row !== 'object') return '';
+  const normalizedToRealKey = new Map();
+  for (const k of Object.keys(row)) {
+    normalizedToRealKey.set(normalizeTaxoHeaderKey(k), k);
+  }
+  for (const a of aliases) {
+    const real = normalizedToRealKey.get(normalizeTaxoHeaderKey(a));
+    if (!real) continue;
+    const v = row[real];
+    const s = v == null ? '' : String(v).trim();
+    if (s && s.toLowerCase() !== 'nan') return s;
+  }
+  return '';
 }
 
 function applyTaxonomieRows(rows) {
@@ -1447,6 +1476,16 @@ function applyTaxonomieRows(rows) {
     if (!nomComplet || !nomCourt) continue;
     IMPACT_AXE_DISPLAY_ORDER.push(nomComplet);
     nomCompletToNomCourt.set(nomComplet, nomCourt);
+
+    // Optional: texte "Ce qu'il faut retenir" directement depuis Liste_taxonomie (si la colonne existe).
+    // On ne fige pas un nom de colonne unique pour rester compatible si l'intitulé Grist évolue.
+    const retenir = pickRowValueByHeaderAliases(row, [
+      "Ce qu'il faut retenir"
+    ]);
+    if (retenir) {
+      nomCompletToRetenirHtml.set(nomComplet, retenir);
+    }
+
     labelToNomComplet.set(nomComplet, nomComplet);
     labelToNomComplet.set(nomCourt, nomComplet);
     // Slugs d’URL = uniquement slug du « Nom court » (ex. attenuation, economie-circulaire)
@@ -1485,6 +1524,15 @@ export async function ensureImpactTaxonomyLoaded() {
 export function impactAxeNomCourt(nomComplet) {
   if (!nomComplet) return '';
   return nomCompletToNomCourt.get(nomComplet) || String(nomComplet);
+}
+
+/**
+ * Texte HTML (ou texte simple) à afficher dans « Ce qu'il faut retenir » pour l'axe.
+ * Source: Liste_taxonomie (Grist) si la colonne est disponible, sinon chaîne vide.
+ */
+export function impactAxeRetenirHtml(nomComplet) {
+  if (!nomComplet) return '';
+  return nomCompletToRetenirHtml.get(String(nomComplet).trim()) || '';
 }
 
 /** Slug d’URL (`?section=`) dérivé du nom court taxonomie. */

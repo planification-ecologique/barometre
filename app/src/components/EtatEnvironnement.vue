@@ -73,9 +73,11 @@
 
         <!-- Description + tableau des indicateurs -->
         <div class="etat-axe-content">
-          <p v-if="axe.description" class="fr-text--md etat-axe-description">
-            {{ axe.description }}
-          </p>
+          <div
+            v-if="axe.description"
+            class="fr-text--md etat-axe-description"
+            v-html="axe.description"
+          ></div>
           <div class="etat-table-wrapper">
           <table class="etat-table">
             <thead>
@@ -152,8 +154,8 @@ import {
   canonicalImpactAxeNomComplet,
   impactAxeNomCourt as impactAxeNomCourtFromTaxonomy,
   impactAxeSlugFromNomComplet,
+  impactAxeRetenirHtml,
 } from '@/services/csvDataService.js'
-import { impactAxeUiForSlug } from '@/config/impactAxeUi.js'
 import { getAllColors, getHexaFromName } from '@/utils.js'
 import { homeRouteName, etatEnvironnementRouteName } from '@/config/routeNames.js'
 import { impactAxeNameToSlug } from '@/utils/impactAxeUrl.js'
@@ -228,11 +230,10 @@ export default {
           allGristIds.push(...gristIds)
 
           const slug = impactAxeSlugFromNomComplet(axeName)
-          const ui = impactAxeUiForSlug(slug)
           axeStructures.push({
             name: axeName,
             slug,
-            description: (ui && ui.description) || '',
+            description: impactAxeRetenirHtml(axeName) || '',
             indicatorCount: 0, // Will be set after indicators are populated
             gristIds,
             indicators: [],

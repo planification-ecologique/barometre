@@ -18,13 +18,29 @@
 
       <section class="axe-hero">
         <h1 class="fr-title axe-title" :aria-label="params.axe">{{ params.axe }}</h1>
-        <nav v-if="axeMetadataTags.length > 0" class="chantier-metadata-tags" aria-label="Métadonnées de l'axe">
-          <div v-if="axeMetadataTags.length > 0" class="chantier-tags-row">
+        <nav
+          v-if="axeIndicateurHeaderTags.length > 0 || axeSectorTags.length > 0"
+          class="chantier-metadata-tags"
+          aria-label="Métadonnées de l'axe"
+        >
+          <div v-if="axeIndicateurHeaderTags.length > 0" class="chantier-tags-row">
             <span class="chantier-tags-row__label">Indicateurs</span>
             <a
-              v-for="tag in axeMetadataTags"
+              v-for="tag in axeIndicateurHeaderTags"
               :key="'ind-' + tag.id"
               class="chantier-metadata-tag chantier-metadata-tag--indicateur"
+              :href="tag.href"
+            >
+              <span class="ri-target-line chantier-metadata-tag__icon" aria-hidden="true"></span>
+              <span class="chantier-metadata-tag__text">{{ tag.label }}</span>
+            </a>
+          </div>
+          <div v-if="axeSectorTags.length > 0" class="chantier-tags-row">
+            <span class="chantier-tags-row__label">Secteurs</span>
+            <a
+              v-for="tag in axeSectorTags"
+              :key="'sector-' + tag.id"
+              class="chantier-metadata-tag chantier-metadata-tag--levier"
               :href="tag.href"
             >
               <span class="ri-target-line chantier-metadata-tag__icon" aria-hidden="true"></span>
@@ -216,10 +232,10 @@ import {
   normalizeImpactAxeName,
   canonicalImpactAxeNomComplet,
   impactAxeSlugFromNomComplet,
+  impactAxeRetenirHtml,
   compareChantierNamesByListeOrder,
   getChantierListeOrderIndexMap,
 } from "@/services/csvDataService.js";
-import { impactAxeUiForSlug } from "@/config/impactAxeUi.js";
 import { homeRouteName, etatEnvironnementRouteName } from "@/config/routeNames.js";
 import { SECTION_SYNTHESE_SLUG } from "@/utils/sectionUrl.js";
 
@@ -402,6 +418,12 @@ export default {
         href: '#' + this.sectionImpactAutresId,
       };
     },
+    axeIndicateurHeaderTags() {
+      const tags = [...this.axeIndicateurTags];
+      if (this.axeAutresIndicateursTag) tags.push(this.axeAutresIndicateursTag);
+      if (this.axeImpactAutresTag) tags.push(this.axeImpactAutresTag);
+      return tags;
+    },
     axeMetadataTags() {
       const tags = [...this.axeIndicateurTags, ...this.axeSectorTags];
       if (this.axeAutresIndicateursTag) tags.push(this.axeAutresIndicateursTag);
@@ -418,9 +440,9 @@ export default {
       return 'section-indicateur-impact-autres';
     },
     axeSummaryHtml() {
-      const ui = impactAxeUiForSlug(this.resolvedAxeSlug);
-      const desc = ui && ui.description;
-      return desc || "Retrouvez sur cette page les principaux indicateurs d'impact et les autres indicateurs associes a cet axe.";
+      const fromTaxo = impactAxeRetenirHtml(this.resolvedAxeNomComplet);
+      if (fromTaxo) return fromTaxo;
+      return "Retrouvez sur cette page les principaux indicateurs d'impact et les autres indicateurs associes a cet axe.";
     },
     /** Paragraphe PNACC3 affiché dans « Ce qu'il faut retenir » lorsque l'axe Adaptation n'a pas d'indicateurs. */
     pnaccAdaptationEmptyHtml() {
