@@ -56,7 +56,7 @@
                   class="bar-chart-legend-item"
                 >
                   <span class="legende_dot_circle" :style="{ 'background-color': targetSegmentColor }"></span>
-                  <span class="bar-chart-legend-label">Cible(s) initiale(s)</span>
+                  <span class="bar-chart-legend-label">Cible initiale</span>
                 </div>
               </template>
             </div>
@@ -98,7 +98,7 @@
                 class="bar-chart-legend-item"
               >
                 <span class="legende_dot_circle" :style="{ 'background-color': targetSegmentColor }"></span>
-                <span class="bar-chart-legend-label">Cible(s) initiale(s)</span>
+                <span class="bar-chart-legend-label">Cible initiale</span>
               </div>
             </div>
           </div>
@@ -890,7 +890,7 @@
                         return
                       }
                       const seriesLabel = isTargetDataset
-                        ? 'Cible(s) initiale(s)'
+                        ? 'Cible initiale'
                         : ((self.nameParse && self.nameParse[i]) ? self.capitalize(self.nameParse[i]) : '')
                       items.push({ line, color: (color && color[i]) || self.targetSegmentColor, label: seriesLabel })
                     }
