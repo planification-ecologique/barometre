@@ -49,7 +49,7 @@
                     <span class="legende_dash_line1" :style="{ 'background-color': trendLineColor }"></span>
                     <span class="legende_dash_line2" :style="{ 'background-color': trendLineColor }"></span>
                   </div>
-                  <span class="bar-chart-legend-label">Tendance (3 ans)</span>
+                  <span class="bar-chart-legend-label">Rythme actuel (3 ans)</span>
                 </div>
                 <div
                   v-if="targetTrajectoryParse || targetSegmentParse"
@@ -91,7 +91,7 @@
                   <span class="legende_dash_line1" :style="{ 'background-color': trendLineColor }"></span>
                   <span class="legende_dash_line2" :style="{ 'background-color': trendLineColor }"></span>
                 </div>
-                <span class="bar-chart-legend-label">Tendance (3 ans)</span>
+                <span class="bar-chart-legend-label">Rythme actuel (3 ans)</span>
               </div>
               <div
                 v-if="targetTrajectoryParse || targetSegmentParse"

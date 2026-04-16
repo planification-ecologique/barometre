@@ -44,6 +44,7 @@
 <script>
 import { Chart } from 'chart.js'
 import { mixin } from '@/utils.js'
+import { TREND_LINE_END_YEAR } from '@/services/csvDataService.js'
 import { resolvePrimaryBarToken, getFallbackPrimaryBarToken } from '@/services/chartColorTestOverrides.js'
 export default {
   name: 'MultiLineChart',
@@ -75,6 +76,7 @@ export default {
       hlineNameParse: [],
       ymax: 0,
       pointOpacityParse: [],
+      trendBySeries: [],
       colorPrecisionBar: '#161616',
       colorHover: [],
       viewportSmall: false
@@ -195,6 +197,48 @@ export default {
       this.ymax = 0
       this.colorPrecisionBar = ''
       this.colorHover = []
+      this.trendBySeries = []
+    },
+    computeLinearRegression (xValues, yValues) {
+      if (!Array.isArray(xValues) || !Array.isArray(yValues) || xValues.length !== yValues.length || xValues.length < 2) return null
+      const n = xValues.length
+      const sumX = xValues.reduce((sum, v) => sum + v, 0)
+      const sumY = yValues.reduce((sum, v) => sum + v, 0)
+      const sumXY = xValues.reduce((sum, v, i) => sum + v * yValues[i], 0)
+      const sumXX = xValues.reduce((sum, v) => sum + v * v, 0)
+      const denominator = (n * sumXX) - (sumX * sumX)
+      if (denominator === 0) return null
+      const slope = ((n * sumXY) - (sumX * sumY)) / denominator
+      const intercept = (sumY - (slope * sumX)) / n
+      return { slope, intercept }
+    },
+    computeTrendSeriesForIndex (seriesIndex, years, values, alphaByIndex, numYears = 3) {
+      // Trend based on last measured points (alpha >= 1), projected until TREND_LINE_END_YEAR.
+      if (!Array.isArray(years) || !Array.isArray(values) || years.length !== values.length) return null
+      const measured = []
+      for (let i = 0; i < years.length; i++) {
+        const raw = values[i]
+        if (raw === null || raw === undefined || raw === '') continue
+        const y = Number(raw)
+        if (Number.isNaN(y)) continue
+        const a = (alphaByIndex && alphaByIndex[i] !== undefined) ? Number(alphaByIndex[i]) : 1
+        if (a < 1) continue
+        const yr = Number(years[i])
+        if (Number.isNaN(yr)) continue
+        measured.push({ index: i, year: yr, value: y })
+      }
+      if (measured.length < 2) return null
+      const lastMeasured = measured.slice(-numYears)
+      const reg = this.computeLinearRegression(lastMeasured.map(p => p.year), lastMeasured.map(p => p.value))
+      if (!reg) return null
+      const firstIndex = lastMeasured[0].index
+      return years.map((year, i) => {
+        if (i < firstIndex) return null
+        const yr = Number(year)
+        if (Number.isNaN(yr)) return null
+        if (yr > TREND_LINE_END_YEAR) return null
+        return reg.slope * yr + reg.intercept
+      })
     },
     getData () {
       const self = this
@@ -298,9 +342,25 @@ export default {
       // Set ymax
       self.ymax = Math.max.apply(null, self.hlineParse)
 
-      // Tracé de la courbe
+      // Tracé de la courbe + tendance
+      self.trendBySeries = []
       data.forEach(function (dj, j) {
-        const colorPerPoint = dj.map(function (_, i) {
+        // Normalize series length to labels (category axis) to avoid misalignment / extra points
+        let djNormalized = dj
+        if (self.xAxisType === 'category' && Array.isArray(self.labels)) {
+          const n = self.labels.length
+          djNormalized = Array.from({ length: n }, (_, i) => (dj && dj[i] !== undefined ? dj[i] : null))
+        }
+
+        let alphaByIndex = Array.isArray(self.pointOpacityParse)
+          ? (Array.isArray(self.pointOpacityParse[0]) ? (self.pointOpacityParse[j] || []) : self.pointOpacityParse)
+          : []
+        if (self.xAxisType === 'category' && Array.isArray(self.labels)) {
+          const n = self.labels.length
+          alphaByIndex = Array.from({ length: n }, (_, i) => (alphaByIndex && alphaByIndex[i] !== undefined ? alphaByIndex[i] : 1))
+        }
+
+        const colorPerPoint = djNormalized.map(function (_, i) {
           let alpha = self.getExtrapolationAlpha()
           if (Array.isArray(self.pointOpacityParse)) {
             if (Array.isArray(self.pointOpacityParse[0])) {
@@ -312,7 +372,7 @@ export default {
           return self.hexToRgba(self.colorParse[j], alpha)
         })
         self.datasets.push({
-          data: dj,
+          data: djNormalized,
           fill: false,
           // Make the default line fully transparent; we'll custom-draw per-segment below
           borderColor: 'rgba(0,0,0,0)',
@@ -330,6 +390,14 @@ export default {
           borderWidth: 3,
           lineTension: 0.2
         })
+
+        const years = (self.xAxisType === 'linear')
+          ? (Array.isArray(self.xparse[j]) ? self.xparse[j] : [])
+          : (Array.isArray(self.labels) ? self.labels : [])
+        const values = (self.xAxisType === 'linear')
+          ? djNormalized.map(p => (p && p.y !== undefined) ? p.y : null)
+          : djNormalized
+        self.trendBySeries[j] = self.computeTrendSeriesForIndex(j, years, values, alphaByIndex)
       })
     },
     createChart () {
@@ -394,7 +462,8 @@ export default {
           // Custom per-segment line drawing that:
           // - skips null / missing points
           // - connects the last valid point to the next valid one (even if there are gaps in between)
-          // - uses the opacity of the destination point to style the segment
+          // - draws ONLY between measured points (alpha >= 1)
+          // - draws a dashed trend line instead of linking to targets/projections
           afterDatasetDraw: function (chart, args, options) {
             const dsIndex = args.index
             if (!self.showLine[dsIndex]) return
@@ -416,39 +485,70 @@ export default {
                 continue
               }
 
-              if (lastValid) {
-                // Determine alpha from the current point index i
-                let alpha = self.getExtrapolationAlpha()
-                try {
-                  if (Array.isArray(self.pointOpacityParse)) {
-                    if (Array.isArray(self.pointOpacityParse[0])) {
-                      alpha = (self.pointOpacityParse[dsIndex] && self.pointOpacityParse[dsIndex][i] !== undefined)
-                        ? self.pointOpacityParse[dsIndex][i]
-                        : self.getExtrapolationAlpha()
-                    } else {
-                      alpha = (self.pointOpacityParse[i] !== undefined) ? self.pointOpacityParse[i] : self.getExtrapolationAlpha()
-                    }
+              // Determine alpha from the current point index i
+              let alpha = self.getExtrapolationAlpha()
+              try {
+                if (Array.isArray(self.pointOpacityParse)) {
+                  if (Array.isArray(self.pointOpacityParse[0])) {
+                    alpha = (self.pointOpacityParse[dsIndex] && self.pointOpacityParse[dsIndex][i] !== undefined)
+                      ? self.pointOpacityParse[dsIndex][i]
+                      : self.getExtrapolationAlpha()
+                  } else {
+                    alpha = (self.pointOpacityParse[i] !== undefined) ? self.pointOpacityParse[i] : self.getExtrapolationAlpha()
                   }
-                } catch (e) {
-                  alpha = self.getExtrapolationAlpha()
                 }
+              } catch (e) {
+                alpha = self.getExtrapolationAlpha()
+              }
 
-                const stroke = self.hexToRgba(self.colorParse[dsIndex], alpha)
-                ctx.strokeStyle = stroke
-                // Dashed for non-fully-opaque (projection/target), solid for measured
-                if (Number(alpha) < 1) {
-                  ctx.setLineDash([6, 4])
-                } else {
-                  ctx.setLineDash([])
-                }
+              // Non-measured point => stop line, no segment toward projection/cible
+              if (Number(alpha) < 1) {
+                lastValid = null
+                continue
+              }
+
+              if (lastValid) {
+                ctx.strokeStyle = self.hexToRgba(self.colorParse[dsIndex], 1)
+                ctx.setLineDash([])
                 ctx.beginPath()
                 ctx.moveTo(lastValid.x, lastValid.y)
                 ctx.lineTo(view.x, view.y)
                 ctx.stroke()
               }
 
-              // Update last valid point
+              // Update last valid measured point
               lastValid = view
+            }
+
+            // Draw trend for this series (dashed, same color)
+            const trend = Array.isArray(self.trendBySeries) ? self.trendBySeries[dsIndex] : null
+            if (Array.isArray(trend) && trend.length >= 2) {
+              const xAxis = chart.scales['x-axis-0']
+              const yAxis = chart.scales['y-axis-0']
+              ctx.save()
+              ctx.strokeStyle = self.hexToRgba(self.colorParse[dsIndex], 0.9)
+              ctx.lineWidth = 2
+              ctx.setLineDash([6, 4])
+              ctx.beginPath()
+              let moved = false
+              for (let i = 0; i < trend.length; i++) {
+                const yVal = trend[i]
+                if (yVal === null || yVal === undefined || Number.isNaN(yVal)) continue
+                const xVal = (self.xAxisType === 'linear')
+                  ? (Array.isArray(self.xparse[dsIndex]) ? self.xparse[dsIndex][i] : null)
+                  : (Array.isArray(self.labels) ? self.labels[i] : null)
+                if (xVal === null || xVal === undefined) continue
+                const x = xAxis.getPixelForValue(xVal)
+                const y = yAxis.getPixelForValue(yVal)
+                if (!moved) {
+                  ctx.moveTo(x, y)
+                  moved = true
+                } else {
+                  ctx.lineTo(x, y)
+                }
+              }
+              if (moved) ctx.stroke()
+              ctx.restore()
             }
             ctx.restore()
           }
