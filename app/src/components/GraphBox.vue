@@ -158,7 +158,7 @@
     </div>
     <!-- Commentaire section : tronqué par nombre de mots avec "Voir plus" -->
     <div
-      v-if="!hideDescription && dataObj.label_description && dataObj.label_description !== ''"
+      v-if="!shouldHideDescription && dataObj.label_description && dataObj.label_description !== ''"
       class="graph-box-commentaire"
     >
       <div class="graph-box-commentaire__text fr-text--s">
@@ -353,6 +353,10 @@ export default {
     hasRegionalData() {
       const ids = this.dataObj?.irpe_ids;
       return Array.isArray(ids) && ids.length > 0 && ids.some(id => id && String(id).trim() !== '');
+    },
+    shouldHideDescription() {
+      // If indicateur has régional data enabled, hide Grist description (label_description).
+      return Boolean(this.hideDescription || this.hasRegionalData);
     },
     regionalIndicatorId() {
       const ids = this.dataObj?.irpe_ids;
