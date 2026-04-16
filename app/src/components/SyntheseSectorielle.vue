@@ -150,6 +150,12 @@
                       <br><br>
                       <em>Unité : {{ indicator.labelUnit }}</em>
                     </template>
+                    <template v-if="indicator.rawData && indicator.rawData.label_sources">
+                      <br><br>
+                      <em>
+                        Source : {{ indicator.rawData.label_sources }}
+                      </em>
+                    </template>
                     <template v-if="indicator.legendItems && indicator.legendItems.length > 0">
                       <br><br>
                       <div class="td-indicateur-legend-wrap">

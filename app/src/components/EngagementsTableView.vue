@@ -41,6 +41,12 @@
                 <br><br>
                 <em>Unité : {{ row.indicateurUnite }}</em>
               </template>
+              <template v-if="row.indicateurSourceLabel">
+                <br><br>
+                <em>
+                  Source : {{ row.indicateurSourceLabel }}
+                </em>
+              </template>
             </td>
             <td>{{ row.derniereValeur }}</td>
             <td>{{ row.cible2030 }}</td>
@@ -94,6 +100,14 @@ export default {
     }
   },
   methods: {
+    pickSourceMeta(indicator) {
+      const s = (v) => (v == null ? "" : String(v)).trim();
+      const label = s(indicator?.label_sources);
+      const cleanLabel = label && label.toLowerCase() !== "nan" ? label : "";
+      return {
+        label: cleanLabel,
+      };
+    },
     buildTableData(data) {
       try {
         const rows = [];
@@ -114,9 +128,11 @@ export default {
             seenRows.add(key);
 
             const indicLabel = indicator.label_indic || '-';
+            const sourceMeta = this.pickSourceMeta(indicator);
             rows.push({
               engagement: engagementName || '-',
               indicateur: indicLabel,
+              indicateurSourceLabel: sourceMeta.label,
               indicateurUnite: indicator.unite || '',
               cible2030: this.formatValue(indicator.objectif_valeur_cible, indicator.unite),
               derniereValeur: this.formatLastValue(indicator),
@@ -227,7 +243,8 @@ export default {
 @media (max-width: 991px) {
   .fr-table th,
   .fr-table td {
-    max-width: calc(100vw - 2.5rem);
+    /* Avoid `100vw` (includes scrollbar in Edge) -> tiny overflow -> horizontal page pan */
+    max-width: calc(100% - 2.5rem);
     box-sizing: border-box;
   }
 }
