@@ -355,8 +355,9 @@ export default {
       return Array.isArray(ids) && ids.length > 0 && ids.some(id => id && String(id).trim() !== '');
     },
     shouldHideDescription() {
-      // If indicateur has régional data enabled, hide Grist description (label_description).
-      return Boolean(this.hideDescription || this.hasRegionalData);
+      // Hide Grist description only when user is in "région" mode.
+      // Back to "National" => show description again.
+      return Boolean(this.hideDescription || (this.hasRegionalData && this.selectedRegionCode));
     },
     regionalIndicatorId() {
       const ids = this.dataObj?.irpe_ids;
