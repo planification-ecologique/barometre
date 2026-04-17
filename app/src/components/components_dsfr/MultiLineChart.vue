@@ -77,6 +77,7 @@ export default {
       ymax: 0,
       pointOpacityParse: [],
       trendBySeries: [],
+      hasTarget: false,
       colorPrecisionBar: '#161616',
       colorHover: [],
       viewportSmall: false
@@ -198,6 +199,7 @@ export default {
       this.colorPrecisionBar = ''
       this.colorHover = []
       this.trendBySeries = []
+      this.hasTarget = false
     },
     computeLinearRegression (xValues, yValues) {
       if (!Array.isArray(xValues) || !Array.isArray(yValues) || xValues.length !== yValues.length || xValues.length < 2) return null
@@ -344,6 +346,24 @@ export default {
 
       // Tracé de la courbe + tendance
       self.trendBySeries = []
+      // Trends only when target exists (heuristic: 2030 point with alpha < 1)
+      try {
+        const labelsOrYears = (self.xAxisType === 'linear')
+          ? (Array.isArray(self.xparse?.[0]) ? self.xparse[0] : [])
+          : (Array.isArray(self.labels) ? self.labels : [])
+        const idx2030 = labelsOrYears.findIndex(v => String(v).trim() === '2030')
+        let found = false
+        if (idx2030 !== -1) {
+          if (Array.isArray(self.pointOpacityParse?.[0])) {
+            found = self.pointOpacityParse.some(arr => Number(arr?.[idx2030]) < 1)
+          } else if (Array.isArray(self.pointOpacityParse)) {
+            found = Number(self.pointOpacityParse?.[idx2030]) < 1
+          }
+        }
+        self.hasTarget = !!found
+      } catch (e) {
+        self.hasTarget = false
+      }
       data.forEach(function (dj, j) {
         // Normalize series length to labels (category axis) to avoid misalignment / extra points
         let djNormalized = dj
@@ -397,7 +417,11 @@ export default {
         const values = (self.xAxisType === 'linear')
           ? djNormalized.map(p => (p && p.y !== undefined) ? p.y : null)
           : djNormalized
-        self.trendBySeries[j] = self.computeTrendSeriesForIndex(j, years, values, alphaByIndex)
+        if (self.hasTarget) {
+          self.trendBySeries[j] = self.computeTrendSeriesForIndex(j, years, values, alphaByIndex)
+        } else {
+          self.trendBySeries[j] = null
+        }
       })
     },
     createChart () {
@@ -521,6 +545,10 @@ export default {
             }
 
             // Draw trend for this series (dashed, same color)
+            if (self.hasTarget !== true) {
+              ctx.restore()
+              return
+            }
             const trend = Array.isArray(self.trendBySeries) ? self.trendBySeries[dsIndex] : null
             if (Array.isArray(trend) && trend.length >= 2) {
               const xAxis = chart.scales['x-axis-0']
