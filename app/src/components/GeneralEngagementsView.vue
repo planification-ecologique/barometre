@@ -72,7 +72,7 @@
         class="axe-section axe-section--highlighted"
       >
         <h2 class="fr-h3 axe-section-title">
-          <span class="section-chip section-chip--indicateur section-chip--in-title">Indicateur</span>
+          <span class="section-chip section-chip--secteur section-chip--in-title">Secteur</span>
           {{ sectorEntry.sector }}
         </h2>
         <div class="fr-grid-row fr-grid-row--gutters">
