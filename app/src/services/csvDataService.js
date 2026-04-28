@@ -128,6 +128,19 @@ let levierFetchPromise = null;
 /** When false, extrapolation (projection) series is excluded from chart data. */
 export const SHOW_EXTRAPOLATION = false;
 
+/** Colonnes CSV année (ex. 2010, 2017) : borne basse pour l’ingestion. */
+export const YEAR_COLUMN_MIN = 2010;
+/** Colonnes CSV année : borne haute (alignée traitement existant 2030 + cibles). */
+export const YEAR_COLUMN_MAX = 2030;
+/**
+ * Année pivot du baromètre (une seule règle) :
+ * - fenêtre pour compter les mesures « récentes » [YEAR_AXIS_PIVOT, YEAR_COLUMN_MAX];
+ * - mesure &lt; pivot → série considérée comme ayant un historique ancien (pas de remontée d’axe forcée);
+ * - série dense sans mesure &lt; pivot : axe minimal au pivot (évite le padding sur les premières années récentes).
+ */
+export const YEAR_AXIS_PIVOT = 2018;
+export const MEASURED_YEARS_DENSE_THRESHOLD = 5;
+
 /**
  * Fetches parsed CSV data from Grist
  * Uses gristDataFetcher for downloading and parsing
@@ -411,8 +424,8 @@ export function transformCSVData(csvData, query) {
   // Transform to API response format
   const results = filteredData.map(item => {
     // Extract years and values from columns.
-    // Year columns (2017, 2018...) = measured; cible_XXXX columns = targets.
-    // Status from projection_YYYY or cible_YYYY (label_YYYY deprecated).
+    // Year columns = measured; cible_XXXX columns = targets.
+    // Status from projection_YYYY or label_YYYY (deprecated).
     const dataPoints = new Map(); // yearStr -> { value, statusDisplay }
 
     const parseVal = (raw) => {
@@ -437,8 +450,8 @@ export function transformCSVData(csvData, query) {
       return raw != null && String(raw).trim() !== '';
     };
 
-    // 1. Year columns (2017, 2018, ...) = measured data
-    for (let i = 2017; i <= 2030; i++) {
+    // 1. Year columns (1990…2030, etc.) = measured data
+    for (let i = YEAR_COLUMN_MIN; i <= YEAR_COLUMN_MAX; i++) {
       const yearStr = i.toString();
       const rawVal = item[yearStr];
       const numVal = parseVal(rawVal);
@@ -476,8 +489,27 @@ export function transformCSVData(csvData, query) {
       ...Object.keys(targetValuesByYear).map((y) => parseInt(y, 10))
     ]);
     const allYears = Array.from(allYearNumbers).sort((a, b) => a - b);
-    const minYear = allYears.length > 0 ? allYears[0] : 2017;
+    const minYearRaw = allYears.length > 0 ? allYears[0] : YEAR_AXIS_PIVOT;
     const maxYear = allYears.length > 0 ? allYears[allYears.length - 1] : 2030;
+
+    let measuredCountInDensityWindow = 0;
+    for (const yStr of yearsWithMeasured) {
+      const y = parseInt(yStr, 10);
+      if (y >= YEAR_AXIS_PIVOT && y <= YEAR_COLUMN_MAX) {
+        measuredCountInDensityWindow += 1;
+      }
+    }
+    const hasMeasuredBeforeDensityWindow = [...yearsWithMeasured].some(
+      (yStr) => parseInt(yStr, 10) < YEAR_AXIS_PIVOT
+    );
+    let minYear = minYearRaw;
+    if (
+      !hasMeasuredBeforeDensityWindow &&
+      measuredCountInDensityWindow >= MEASURED_YEARS_DENSE_THRESHOLD &&
+      minYearRaw < YEAR_AXIS_PIVOT
+    ) {
+      minYear = YEAR_AXIS_PIVOT;
+    }
 
     const years = [];
     const values = [];
@@ -829,7 +861,7 @@ export const TREND_LINE_END_YEAR = 2035;
 
 /**
  * Computes a trend line based on the last N years of measured data.
- * @param {Array<string>} years - Year labels (e.g. ['2017','2018',...])
+ * @param {Array<string>} years - Year labels (e.g. ['2018','2019',...])
  * @param {Array<number>} ytab - Value for each year (same order as years)
  * @param {Array<string>} statuses - Status per year ('mesuré', 'projection', 'cible')
  * @param {number} numYears - Number of measured years to use (default 3)
