@@ -749,7 +749,6 @@ export function transformCSVData(csvData, query) {
       label_sous_groupe: normalizedSubGroup,
       label_value: statuses,
       type_de_graphique: chartType,
-      // For synthesis tables (EngagementsTableView, ChantiersTableView)
       objectif_valeur_cible,
       valeur_actuelle,
       date_valeur_actuelle,

@@ -43,7 +43,6 @@
               <option v-for="axe in displayedTaxonomyAxes" :key="'axe-' + axe" :value="'axe:' + axe">
                 {{ axe }}
               </option>
-              <option value="view:engagements-table">Tableau des indicateurs d'impact</option>
             </optgroup>
             <optgroup label="Chantiers sectoriels">
               <option value="view:chantiers-sectoriels">Synthèse</option>
@@ -54,7 +53,6 @@
               >
                 {{ chantier.sector }} — {{ chantier.name }}
               </option>
-              <option value="view:chantiers-table">Tableau des chantiers</option>
             </optgroup>
           </template>
           
@@ -186,12 +184,8 @@ export default {
         return 'view:about'
       } else if (view === 'etat-environnement') {
         return 'view:etat-environnement'
-      } else if (view === 'chantiers-sectoriels') {
+      } else if (view === 'chantiers-sectoriels' || view === 'chantiers-table') {
         return 'view:chantiers-sectoriels'
-      } else if (view === 'engagements-table') {
-        return 'view:engagements-table'
-      } else if (view === 'chantiers-table') {
-        return 'view:chantiers-table'
       } else if (view === 'general-engagements' && query.axe) {
         return 'axe:' + query.axe
       } else if (view === 'general-chantiers') {
@@ -321,20 +315,6 @@ export default {
           router.push({
             name: chantiersRouteName(isStaging),
             query: { section: syn }
-          }).catch(err => {
-            if (err.name !== 'NavigationDuplicated') console.error('Navigation error:', err)
-          })
-        } else if (param === 'engagements-table') {
-          router.push({
-            name: etatEnvironnementRouteName(isStaging),
-            query: { section: syn, view: 'engagements-table' }
-          }).catch(err => {
-            if (err.name !== 'NavigationDuplicated') console.error('Navigation error:', err)
-          })
-        } else if (param === 'chantiers-table') {
-          router.push({
-            name: chantiersRouteName(isStaging),
-            query: { section: syn, view: 'chantiers-table' }
           }).catch(err => {
             if (err.name !== 'NavigationDuplicated') console.error('Navigation error:', err)
           })

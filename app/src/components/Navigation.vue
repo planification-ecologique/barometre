@@ -218,8 +218,7 @@ export default {
         this.$route.name === 'staging-etat-environnement' ||
         (path.includes('dashboard') &&
           (query.view === 'etat-environnement' ||
-            query.view === 'general-engagements' ||
-            query.view === 'engagements-table'))
+            query.view === 'general-engagements'))
       ) {
         this.setSelected('etat-environnement')
       } else if (
@@ -228,7 +227,6 @@ export default {
         (path.includes('dashboard') &&
           (query.view === 'chantiers-sectoriels' ||
             query.view === 'general-chantiers' ||
-            query.view === 'chantiers-table' ||
             query.view === 'chantier'))
       ) {
         this.setSelected('chantiers-sectoriels')

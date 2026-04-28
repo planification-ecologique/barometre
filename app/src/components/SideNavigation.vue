@@ -152,7 +152,7 @@ export default {
   },
   computed: {
     isEtatEnvironnementContext() {
-      const etatViews = ['etat-environnement', 'general-engagements', 'engagements-table'];
+      const etatViews = ['etat-environnement', 'general-engagements'];
       return etatViews.includes(this.currentView);
     },
     displayedTaxonomyAxes() {
@@ -259,21 +259,6 @@ export default {
           // Only valid for Synthèse sector
           if (this.sector === 'Synthèse') {
             this.set_about();
-          } else {
-            this.set_sectorial_engagements();
-          }
-        } else if (this.initParams.view === 'engagements-table') {
-          // Only valid for Synthèse sector
-          if (this.sector === 'Synthèse') {
-            this.set_engagements_table();
-            this.expandedIndicateurs = true;
-          } else {
-            this.set_sectorial_engagements();
-          }
-        } else if (this.initParams.view === 'chantiers-table') {
-          if (this.sector === "Synthèse" || this.isChantiersShellRoute) {
-            this.set_chantiers_table();
-            this.expandedChantiers = true;
           } else {
             this.set_sectorial_engagements();
           }
@@ -547,98 +532,6 @@ export default {
       };
       this.$emit("params", params);
     },
-    set_engagements_table() {
-      this.currentView = 'engagements-table';
-      this.currentChantierId = null;
-      this.currentAxe = null;
-      this.currentSectorFilter = null;
-      
-      try {
-        // Get all impact indicator grist IDs for Synthèse sector (indicateursImpact + indicateursImpactAutresByChantier)
-        const engagementIds = [];
-        if (this.navigationData) {
-          const syntheseSector = this.navigationData.sectors.find(s => s.name === 'Synthèse');
-          if (syntheseSector) {
-            if (syntheseSector.indicateursImpact) {
-              Object.values(syntheseSector.indicateursImpact).forEach(indicators => {
-                indicators.forEach(item => {
-                  if (item.gristId) engagementIds.push(item.gristId);
-                });
-              });
-            }
-            if (syntheseSector.indicateursImpactAutresByChantier) {
-              Object.values(syntheseSector.indicateursImpactAutresByChantier).forEach(indicators => {
-                indicators.forEach(item => {
-                  if (item.gristId) engagementIds.push(item.gristId);
-                });
-              });
-            }
-          }
-        }
-      
-        const params = {
-          view: 'engagements-table',
-          label: 'Tableau de synthèse - Indicateurs d\'impact',
-          sector: 'Synthèse',
-          query: {
-            filter_by: [
-              { field: "grist_ids", values: engagementIds },
-            ],
-            time_period: {
-              date_start: "2015-01-01",
-              date_end: "2031-01-01",
-            },
-          },
-        };
-        this.$emit("params", params);
-      } catch (error) {
-        console.error("Error setting engagements table view:", error);
-      }
-    },
-    set_chantiers_table() {
-      this.currentView = 'chantiers-table';
-      this.currentChantierId = null;
-      this.currentAxe = null;
-      this.currentSectorFilter = null;
-      
-      try {
-        // Get only "Indicateur de chantier" grist IDs (excluding Synthèse sector)
-        const chantierIds = [];
-        if (this.navigationData) {
-          this.navigationData.sectors
-            .filter(s => s.name !== 'Synthèse')
-            .forEach(sector => {
-              Object.values(sector.chantiers).forEach(chantier => {
-                // Only get "Indicateur de chantier" leviers
-                const chantierLevelIndicators = chantier.leviers['Indicateur de chantier'] || [];
-                chantierLevelIndicators.forEach(item => {
-                  if (item.gristId) {
-                    chantierIds.push(item.gristId);
-                  }
-                });
-              });
-            });
-        }
-      
-        const params = {
-          view: 'chantiers-table',
-          label: 'Tableau de synthèse - Chantiers',
-          sector: 'Synthèse',
-          query: {
-            filter_by: [
-              { field: "grist_ids", values: chantierIds },
-            ],
-            time_period: {
-              date_start: "2015-01-01",
-              date_end: "2031-01-01",
-            },
-          },
-        };
-        this.$emit("params", params);
-      } catch (error) {
-        console.error("Error setting chantiers table view:", error);
-      }
-    },
     set_general_engagements(axe = null) {
       this.currentView = 'general-engagements';
       this.currentChantierId = null;
@@ -836,7 +729,6 @@ export default {
     },
     _currentEtatSidebarIndex() {
       if (this.currentView === 'etat-environnement') return 0;
-      if (this.currentView === 'engagements-table') return -2;
       if (this.currentView === 'general-engagements') {
         if (!this.currentAxe) return 0;
         const i = this.displayedTaxonomyAxes.findIndex((a) =>
@@ -847,14 +739,11 @@ export default {
       return -1;
     },
     _resolveNextEtatStep() {
-      const valid = ['etat-environnement', 'general-engagements', 'engagements-table'];
+      const valid = ['etat-environnement', 'general-engagements'];
       if (!valid.includes(this.currentView)) return null;
       const seq = this._buildEtatSidebarSequence();
       if (seq.length < 2) return null;
       const idx = this._currentEtatSidebarIndex();
-      if (idx === -2) {
-        return seq[1];
-      }
       if (idx >= 0 && idx < seq.length - 1) {
         return seq[idx + 1];
       }
@@ -879,7 +768,7 @@ export default {
     },
     _currentChantiersAccordionIndex() {
       if (this.currentView === 'chantiers-sectoriels') return 0;
-      if (this.currentView === 'chantiers-table' || this.currentView === 'general-chantiers') {
+      if (this.currentView === 'general-chantiers') {
         return -2;
       }
       if (this.currentView === 'chantier' && this.currentChantierId) {
@@ -897,7 +786,6 @@ export default {
       const valid = [
         'chantiers-sectoriels',
         'chantier',
-        'chantiers-table',
         'general-chantiers',
       ];
       if (!valid.includes(this.currentView)) return null;

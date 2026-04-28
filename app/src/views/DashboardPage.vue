@@ -38,18 +38,6 @@
                 :params="myobj"
                 :useStaging="useStaging"
               />
-              <!-- Engagements Table view -->
-              <engagements-table-view 
-                v-else-if="myobj.view === 'engagements-table'"
-                :params="myobj" 
-                :inputData="results_API"
-              />
-              <!-- Chantiers Table view -->
-              <chantiers-table-view 
-                v-else-if="myobj.view === 'chantiers-table'"
-                :params="myobj" 
-                :inputData="results_API"
-              />
               <!-- General Engagements view -->
               <general-engagements-view 
                 v-else-if="myobj.view === 'general-engagements'"
@@ -76,13 +64,6 @@
                 v-else-if="myobj.view === 'chantier'"
                 :params="myobj"
                 :chantierData="results_API"
-                :useStaging="useStaging"
-              />
-              <!-- Legacy synthesis view -->
-              <synthesis-view 
-                v-else-if="myobj.view === 'synthesis'"
-                :params="myobj" 
-                :inputData="results_API"
                 :useStaging="useStaging"
               />
               <!-- Fallback to adaptive dashboard -->
@@ -115,14 +96,11 @@ import UpFooter from "../components/UpFooter.vue";
 import AdaptiveDashboard from "../components/AdaptiveDashboard.vue";
 import SideNavigation from "../components/SideNavigation.vue";
 import ChantierDetail from "../components/ChantierDetail.vue";
-import SynthesisView from "../components/SynthesisView.vue";
 import GeneralEngagementsView from "../components/GeneralEngagementsView.vue";
 import GeneralChantiersView from "../components/GeneralChantiersView.vue";
 import SectorialEngagementsView from "../components/SectorialEngagementsView.vue";
 import SectorSelector from "../components/SectorSelector.vue";
 import AboutView from "../components/AboutView.vue";
-import EngagementsTableView from "../components/EngagementsTableView.vue";
-import ChantiersTableView from "../components/ChantiersTableView.vue";
 import SyntheseSectorielle from "../components/SyntheseSectorielle.vue";
 import EtatEnvironnement from "../components/EtatEnvironnement.vue";
 import SectionNextBar from "../components/SectionNextBar.vue";
@@ -174,14 +152,11 @@ export default {
     AdaptiveDashboard,
     SideNavigation,
     ChantierDetail,
-    SynthesisView,
     GeneralEngagementsView,
     GeneralChantiersView,
     SectorialEngagementsView,
     SectorSelector,
     AboutView,
-    EngagementsTableView,
-    ChantiersTableView,
     SyntheseSectorielle,
     EtatEnvironnement,
     SectionNextBar,
@@ -423,7 +398,7 @@ export default {
     chantiersShellQueryForCompare(routeName, query) {
       const o = { ...(query || {}) }
       if (routeName === "chantiers" || routeName === "staging-chantiers") {
-        if (o.view === "chantiers-sectoriels") delete o.view
+        if (o.view === "chantiers-sectoriels" || o.view === "chantiers-table") delete o.view
         if (o.view === "chantier" && o.chantier_id) delete o.view
       }
       return o
@@ -498,7 +473,7 @@ export default {
           let target = null
           const v = selectedValue.view
 
-          if (v === "etat-environnement") {
+          if (v === "etat-environnement" || v === "engagements-table") {
             target = { name: etatEnvironnementRouteName(st), query: withSection() }
           } else if (v === "general-engagements") {
             if (selectedValue.axe) {
@@ -515,12 +490,7 @@ export default {
                 },
               }
             }
-          } else if (v === "engagements-table") {
-            target = {
-              name: etatEnvironnementRouteName(st),
-              query: withSection({ view: "engagements-table" }),
-            }
-          } else if (v === "chantiers-sectoriels") {
+          } else if (v === "chantiers-sectoriels" || v === "chantiers-table") {
             target = { name: chantiersRouteName(st), query: withSection() }
           } else if (v === "general-chantiers") {
             target = {
@@ -529,11 +499,6 @@ export default {
                 view: "general-chantiers",
                 ...(selectedValue.sectorFilter ? { sectorFilter: selectedValue.sectorFilter } : {}),
               }),
-            }
-          } else if (v === "chantiers-table") {
-            target = {
-              name: chantiersRouteName(st),
-              query: withSection({ view: "chantiers-table" }),
             }
           } else if (v === "chantier" && selectedValue.chantier_id != null && String(selectedValue.chantier_id).length) {
             const secSlug = selectedValue.chantier_sector
@@ -551,7 +516,6 @@ export default {
           } else {
             const q = withSection()
             if (v === "sectorial-engagements") q.view = "sectorial-engagements"
-            else if (v === "synthesis") q.view = "synthesis"
             else if (v === "about") q.view = "about"
             target = { name: dashboardRouteName(st), query: q }
           }
