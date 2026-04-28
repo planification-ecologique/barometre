@@ -45,6 +45,17 @@
                 <br><br>
                 <em>
                   Source : {{ row.indicateurSourceLabel }}
+                  <a
+                    v-if="row.indicateurSourceUrl"
+                    class="source-link-icon"
+                    :href="row.indicateurSourceUrl"
+                    target="_blank"
+                    rel="noopener external"
+                    aria-label="Ouvrir la source (nouvel onglet)"
+                    @click.stop
+                    @mousedown.stop
+                  >
+                  </a>
                 </em>
               </template>
             </td>
@@ -104,8 +115,10 @@ export default {
       const s = (v) => (v == null ? "" : String(v)).trim();
       const label = s(indicator?.label_sources);
       const cleanLabel = label && label.toLowerCase() !== "nan" ? label : "";
+      const url = s(indicator?.lien_donnees_source) || s(indicator?.lien_site_source);
       return {
         label: cleanLabel,
+        url,
       };
     },
     buildTableData(data) {
@@ -133,6 +146,7 @@ export default {
               engagement: engagementName || '-',
               indicateur: indicLabel,
               indicateurSourceLabel: sourceMeta.label,
+              indicateurSourceUrl: sourceMeta.url,
               indicateurUnite: indicator.unite || '',
               cible2030: this.formatValue(indicator.objectif_valeur_cible, indicator.unite),
               derniereValeur: this.formatLastValue(indicator),
@@ -238,6 +252,10 @@ export default {
   text-align: center;
   color: #666;
   font-style: italic;
+}
+
+.source-link-icon {
+  background-image: none;
 }
 
 @media (max-width: 991px) {

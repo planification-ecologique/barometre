@@ -154,6 +154,17 @@
                       <br><br>
                       <em>
                         Source : {{ indicator.rawData.label_sources }}
+                        <a
+                          v-if="sourceUrl(indicator.rawData)"
+                          class="source-link-icon"
+                          :href="sourceUrl(indicator.rawData)"
+                          target="_blank"
+                          rel="noopener external"
+                          aria-label="Ouvrir la source (nouvel onglet)"
+                          @click.stop
+                          @mousedown.stop
+                        >
+                        </a>
                       </em>
                     </template>
                     <template v-if="indicator.legendItems && indicator.legendItems.length > 0">
@@ -296,6 +307,9 @@ export default {
     },
   },
   methods: {
+    sourceUrl(rawData) {
+      return rawData?.lien_donnees_source || rawData?.lien_site_source || ''
+    },
     slugify(str) {
       return String(str).toLowerCase()
         .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
@@ -920,6 +934,10 @@ a.engagement-badge--link:focus {
 .td-indicateur {
   color: #3a3a3a;
   line-height: 1.4;
+}
+
+.source-link-icon {
+  background-image: none;
 }
 
 .td-indicateur-legend-wrap {
