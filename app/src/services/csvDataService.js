@@ -133,12 +133,15 @@ export const YEAR_COLUMN_MIN = 2010;
 /** Colonnes CSV année : borne haute (alignée traitement existant 2030 + cibles). */
 export const YEAR_COLUMN_MAX = 2030;
 /**
- * Année pivot du baromètre (une seule règle) :
- * - fenêtre pour compter les mesures « récentes » [YEAR_AXIS_PIVOT, YEAR_COLUMN_MAX];
- * - mesure &lt; pivot → série considérée comme ayant un historique ancien (pas de remontée d’axe forcée);
- * - série dense sans mesure &lt; pivot : axe minimal au pivot (évite le padding sur les premières années récentes).
+ * Colonnes d’année : on ingère d’abord [YEAR_AXIS_PIVOT … YEAR_COLUMN_MAX].
+ * Année pivot avant laquelle l’historique gauche est optionnel.
  */
 export const YEAR_AXIS_PIVOT = 2018;
+/**
+ * Seuil de mesures (colonnes année **hors** cibles) avec année ≥ YEAR_AXIS_PIVOT.
+ * Strictement sous ce nombre → on ingère aussi les colonnes YEAR_COLUMN_MIN … YEAR_AXIS_PIVOT-1 (« expand left »).
+ * Au-delà ou égal → on ne lit pas cette plage ancienne → graphiques résents sans traîner tout l’historique CSV.
+ */
 export const MEASURED_YEARS_DENSE_THRESHOLD = 5;
 
 /**
@@ -450,19 +453,35 @@ export function transformCSVData(csvData, query) {
       return raw != null && String(raw).trim() !== '';
     };
 
-    // 1. Year columns (1990…2030, etc.) = measured data
-    for (let i = YEAR_COLUMN_MIN; i <= YEAR_COLUMN_MAX; i++) {
-      const yearStr = i.toString();
+    const ingestMeasuredYearColumn = (yearStr) => {
       const rawVal = item[yearStr];
       const numVal = parseVal(rawVal);
-      const hasMarker = hasExplicitMarker(yearStr) || numVal !== null; // value in year column = explicit
+      const hasMarker = hasExplicitMarker(yearStr) || numVal !== null;
       if (numVal !== null && isValidValue(numVal, hasMarker)) {
         const statusDisplay = getStatusDisplay(yearStr);
         dataPoints.set(yearStr, { value: numVal, statusDisplay });
       }
+    };
+
+    // 1a. Toujours : colonnes [pivot … YEAR_COLUMN_MAX] (mesures / projection depuis colonnes année)
+    for (let i = YEAR_AXIS_PIVOT; i <= YEAR_COLUMN_MAX; i++) {
+      ingestMeasuredYearColumn(i.toString());
     }
 
-    // Years with measured data (from year columns) - before cible overwrites
+    let measuredCountFromPivot = 0;
+    for (const yStr of dataPoints.keys()) {
+      const y = parseInt(yStr, 10);
+      if (!Number.isNaN(y) && y >= YEAR_AXIS_PIVOT) measuredCountFromPivot += 1;
+    }
+
+    // 1b. Colonnes &lt; pivot : seulement si « sparse » depuis le pivot (cibles encore exclues)
+    if (measuredCountFromPivot < MEASURED_YEARS_DENSE_THRESHOLD) {
+      for (let i = YEAR_COLUMN_MIN; i < YEAR_AXIS_PIVOT; i++) {
+        ingestMeasuredYearColumn(i.toString());
+      }
+    }
+
+    // Years with measured data (year columns only) — avant fusion cibles
     const yearsWithMeasured = new Set(dataPoints.keys());
 
     // 2. cible_XXXX columns (cible_2030, cible_2028, etc.) = target data
@@ -492,24 +511,7 @@ export function transformCSVData(csvData, query) {
     const minYearRaw = allYears.length > 0 ? allYears[0] : YEAR_AXIS_PIVOT;
     const maxYear = allYears.length > 0 ? allYears[allYears.length - 1] : 2030;
 
-    let measuredCountInDensityWindow = 0;
-    for (const yStr of yearsWithMeasured) {
-      const y = parseInt(yStr, 10);
-      if (y >= YEAR_AXIS_PIVOT && y <= YEAR_COLUMN_MAX) {
-        measuredCountInDensityWindow += 1;
-      }
-    }
-    const hasMeasuredBeforeDensityWindow = [...yearsWithMeasured].some(
-      (yStr) => parseInt(yStr, 10) < YEAR_AXIS_PIVOT
-    );
-    let minYear = minYearRaw;
-    if (
-      !hasMeasuredBeforeDensityWindow &&
-      measuredCountInDensityWindow >= MEASURED_YEARS_DENSE_THRESHOLD &&
-      minYearRaw < YEAR_AXIS_PIVOT
-    ) {
-      minYear = YEAR_AXIS_PIVOT;
-    }
+    const minYear = minYearRaw;
 
     const years = [];
     const values = [];
