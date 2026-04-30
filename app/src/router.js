@@ -88,8 +88,8 @@ async function updateDocumentTitle(to) {
 }
 
 /**
- * URL obsolètes ou invalides → accueil (?sector= sans section, vieilles query état/chantiers, etc.).
- * Sur /dashboard : seul `view=sectorial-engagements` ou `view=chantier` est encore valide.
+ * Anciennes URL (dashboard multi-vues, ?sector=, query obsolètes) → accueil.
+ * Plus de redirections canoniques au cas par cas.
  */
 function legacyBrokenLinkHomeRedirect(to) {
   const isSt =
