@@ -117,6 +117,27 @@ function parseIrpeIds(raw, valid) {
   return ids;
 }
 
+/**
+ * Clés d'une Map sans Map.prototype.keys() — évite erreurs prod/WebViews où .keys est absent
+ * ou l’itérateur n’est pas reconnu par for…of / Array.from.
+ */
+function mapKeysStable(map) {
+  const keys = [];
+  map.forEach((_value, key) => {
+    keys.push(key);
+  });
+  return keys;
+}
+
+/** Valeurs d'une Map sans Map.prototype.values() (même famille d’env cassés que keys). */
+function mapValuesStable(map) {
+  const values = [];
+  map.forEach((value) => {
+    values.push(value);
+  });
+  return values;
+}
+
 // Parsed CSV cache per environment (production vs staging may diverge in config)
 const csvDataCacheByEnv = {};
 const fetchPromiseByEnv = {};
@@ -469,10 +490,10 @@ export function transformCSVData(csvData, query) {
     }
 
     let measuredCountFromPivot = 0;
-    for (const yStr of dataPoints.keys()) {
+    dataPoints.forEach((_value, yStr) => {
       const y = parseInt(yStr, 10);
       if (!Number.isNaN(y) && y >= YEAR_AXIS_PIVOT) measuredCountFromPivot += 1;
-    }
+    });
 
     // 1b. Colonnes &lt; pivot : seulement si « sparse » depuis le pivot (cibles encore exclues)
     if (measuredCountFromPivot < MEASURED_YEARS_DENSE_THRESHOLD) {
@@ -482,7 +503,7 @@ export function transformCSVData(csvData, query) {
     }
 
     // Years with measured data (year columns only) — avant fusion cibles
-    const yearsWithMeasured = new Set(dataPoints.keys());
+    const yearsWithMeasured = new Set(mapKeysStable(dataPoints));
 
     // 2. cible_XXXX columns (cible_2030, cible_2028, etc.) = target data
     // Store targets separately so years with BOTH measured and target show both (bar + line)
@@ -504,7 +525,7 @@ export function transformCSVData(csvData, query) {
 
     // Build sorted year axis: union of measured years and target years
     const allYearNumbers = new Set([
-      ...Array.from(dataPoints.keys()).map((y) => parseInt(y, 10)),
+      ...mapKeysStable(dataPoints).map((y) => parseInt(y, 10)),
       ...Object.keys(targetValuesByYear).map((y) => parseInt(y, 10))
     ]);
     const allYears = Array.from(allYearNumbers).sort((a, b) => a - b);
@@ -1095,7 +1116,7 @@ function groupByIndicator(results) {
   });
   
   // Log information about each grouped item
-  const groupedItems = Array.from(indicatorMap.values());  
+  const groupedItems = mapValuesStable(indicatorMap);
   return groupedItems;
 }
 
