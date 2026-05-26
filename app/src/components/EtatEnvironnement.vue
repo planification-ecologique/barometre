@@ -84,7 +84,9 @@
               <tr>
                 <th class="col-engagement">Engagement</th>
                 <th class="col-indicateur">Indicateur</th>
-                <th class="col-valeurs">Valeurs</th>
+                <th class="col-valeurs">
+                  <synthesis-valeurs-header-legend :indicators="axeHeaderLegendIndicators(axe)" />
+                </th>
               </tr>
             </thead>
             <tbody>
@@ -161,6 +163,7 @@
 
 <script>
 import MiniChart from './MiniChart.vue'
+import SynthesisValeursHeaderLegend from './SynthesisValeursHeaderLegend.vue'
 import {
   getNavigationStructure,
   getIndicators,
@@ -180,7 +183,8 @@ import { impactAxeNameToSlug } from '@/utils/impactAxeUrl.js'
 export default {
   name: 'EtatEnvironnement',
   components: {
-    MiniChart
+    MiniChart,
+    SynthesisValeursHeaderLegend
   },
   props: {
     params: {
@@ -204,6 +208,11 @@ export default {
   methods: {
     sourceUrl(rawData) {
       return rawData?.lien_donnees_source || rawData?.lien_site_source || ''
+    },
+    axeHeaderLegendIndicators (axe) {
+      return (axe?.indicators || [])
+        .map((indicator) => indicator?.rawData)
+        .filter(Boolean)
     },
     impactAxeSectionSlug(nomComplet) {
       return impactAxeNameToSlug(nomComplet)
@@ -678,6 +687,10 @@ export default {
 .col-valeurs {
   width: 38%;
   min-width: 220px;
+}
+
+.etat-table thead .col-valeurs {
+  vertical-align: middle;
 }
 
 .etat-table td {

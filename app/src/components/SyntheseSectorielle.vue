@@ -78,7 +78,9 @@
                   </div>
                 </th>
                 <th class="col-indicateur">Indicateur</th>
-                <th class="col-valeurs">Valeurs</th>
+                <th class="col-valeurs">
+                  <synthesis-valeurs-header-legend :indicators="sectorHeaderLegendIndicators(sector)" />
+                </th>
               </tr>
             </thead>
             <tbody
@@ -252,6 +254,7 @@
 
 <script>
 import MiniChart from './MiniChart.vue'
+import SynthesisValeursHeaderLegend from './SynthesisValeursHeaderLegend.vue'
 import { getNavigationStructure, getIndicators, isImpactAxe } from '@/services/csvDataService.js'
 import { getAllColors, getHexaFromName } from '@/utils.js'
 import { chantiersRouteName, etatEnvironnementRouteName } from '@/config/routeNames.js'
@@ -273,7 +276,8 @@ const SECTOR_DESCRIPTIONS = {
 export default {
   name: 'SyntheseSectorielle',
   components: {
-    MiniChart
+    MiniChart,
+    SynthesisValeursHeaderLegend
   },
   props: {
     params: {
@@ -519,6 +523,15 @@ export default {
         id: indicator.id_indic,
         rawData: indicator
       }
+    },
+    sectorHeaderLegendIndicators (sector) {
+      const raw = []
+      for (const chantier of sector?.chantiers || []) {
+        for (const indicator of chantier?.indicators || []) {
+          if (indicator?.rawData) raw.push(indicator.rawData)
+        }
+      }
+      return raw
     },
     truncateEngagement(text) {
       if (!text || typeof text !== 'string') return ''
@@ -790,7 +803,10 @@ export default {
 .col-valeurs {
   width: 35%;
   min-width: 200px;
-  text-align: center;
+}
+
+.synthese-table thead .col-valeurs {
+  vertical-align: middle;
 }
 
 .synthese-table td {
