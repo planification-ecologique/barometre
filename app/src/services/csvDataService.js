@@ -97,12 +97,19 @@ function stripAccents(str) {
   return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
 }
 
-function parseIrpeIds(raw, valid) {
-  // If the IRPE is not provided, return an empty array
+function parseIrpeIdsFromRaw(raw) {
   if (raw == null || String(raw).trim() === '' || String(raw).toLowerCase() === 'nan') {
     return [];
   }
-  // If the IRPE is not marked valid, return an empty array
+  return String(raw)
+    .split(/[,;]/)
+    .map(s => s.replace(/^id_/i, '').trim())
+    .filter(Boolean);
+}
+
+/** IRPE ids validated in Grist — used for Écolab regional API calls. */
+function parseIrpeValidatedIds(linkIds, valid) {
+  if (!linkIds.length) return [];
   if (
     valid == null || String(valid).trim() === '' ||
     String(valid).toLowerCase() === 'nan' ||
@@ -110,11 +117,54 @@ function parseIrpeIds(raw, valid) {
   ) {
     return [];
   }
-  const ids = String(raw)
-    .split(/[,;]/)
-    .map(s => s.replace(/^id_/i, '').trim())
-    .filter(Boolean);
-  return ids;
+  return linkIds;
+}
+
+function mergeIrpeIdArrays(...arrays) {
+  const seen = new Set();
+  const merged = [];
+  for (const arr of arrays) {
+    if (!Array.isArray(arr)) continue;
+    for (const id of arr) {
+      const s = id && String(id).trim();
+      if (!s || seen.has(s)) continue;
+      seen.add(s);
+      merged.push(s);
+    }
+  }
+  return merged;
+}
+
+function indicatorHasRegionalLinkIds(ids) {
+  return Array.isArray(ids) && ids.length > 0 && ids.some(id => id && String(id).trim() !== '');
+}
+
+/** After grouping, restore IRPE link ids from all source rows (first sub-row may lack ids). */
+function enrichGroupedRegionalLinks(groupedResults, sourceResults) {
+  const linksByLabel = new Map();
+  const linksById = new Map();
+  sourceResults.forEach(item => {
+    if (!indicatorHasRegionalLinkIds(item.irpe_link_ids)) return;
+    if (item.label_indic) {
+      linksByLabel.set(
+        item.label_indic,
+        mergeIrpeIdArrays(linksByLabel.get(item.label_indic), item.irpe_link_ids)
+      );
+    }
+    if (item.id_indic != null) {
+      const key = String(item.id_indic);
+      linksById.set(key, mergeIrpeIdArrays(linksById.get(key), item.irpe_link_ids));
+    }
+  });
+  return groupedResults.map(item => {
+    const merged = mergeIrpeIdArrays(
+      item.irpe_link_ids,
+      item.label_indic ? linksByLabel.get(item.label_indic) : null,
+      item.id_indic != null ? linksById.get(String(item.id_indic)) : null
+    );
+    if (!merged.length) return item;
+    return { ...item, irpe_link_ids: merged };
+  });
 }
 
 /**
@@ -578,7 +628,8 @@ export function transformCSVData(csvData, query) {
     // Some rows have a subgroup label while still being "Barres simple".
     // In that case, keep simple-series shape to avoid grouped-series mismatch in GraphBox.
     const rawSubGroup = item['Sous-niveau (graphique)'] || '';
-    const normalizedSubGroup = chartType === 'Barres simple' ? '' : rawSubGroup;
+    const normalizedSubGroup =
+      chartType === 'Barres simple' ? '' : String(rawSubGroup).trim();
     
     // Add a NB for targets being adjusted.
     let nbNote = ''
@@ -751,6 +802,8 @@ export function transformCSVData(csvData, query) {
       }
     }
 
+    const irpeLinkIds = parseIrpeIdsFromRaw(item['IRPE ids']);
+
     const transformed = {
       label_indic: item.Indicateur,
       id_indic: item.ID,
@@ -789,8 +842,9 @@ export function transformCSVData(csvData, query) {
       sector_list: chantierOuImpactList
         .map(entry => entry.sector)
         .filter(Boolean),
-      // IRPE / Écolab: indicator ids for regional data (column IRPE_ids or ID Indicateur hub Ecolab)
-      irpe_ids: parseIrpeIds(item['IRPE ids'], item['IRPE valide']),
+      // IRPE / Écolab: link ids (search filter) vs validated ids (regional API in GraphBox)
+      irpe_link_ids: irpeLinkIds,
+      irpe_ids: parseIrpeValidatedIds(irpeLinkIds, item['IRPE valide']),
       reference_year_for_target_trajectory: refYearIdx >= 0 ? years[refYearIdx] : null,
       tableAnnee,
       tableValeur,
@@ -812,8 +866,7 @@ export function transformCSVData(csvData, query) {
     return transformed;
   });
 
-  // Group indicators by their label and process sub-groups
-  let groupedResults = groupByIndicator(results);
+  let groupedResults = enrichGroupedRegionalLinks(groupByIndicator(results), results);
 
   // Apply search and tag filters after grouping to ensure complete charts
   // This ensures that if any sub-group matches, the entire grouped indicator is included
@@ -843,10 +896,9 @@ export function transformCSVData(csvData, query) {
           });
         }
       } else if (filter.field === 'has_regional_data' && filter.values && filter.values.includes(true)) {
-        groupedResults = groupedResults.filter(item => {
-          const ids = item.irpe_ids;
-          return Array.isArray(ids) && ids.length > 0 && ids.some(id => id && String(id).trim() !== '');
-        });
+        groupedResults = groupedResults.filter(item =>
+          indicatorHasRegionalLinkIds(item.irpe_link_ids)
+        );
       }
     }
   }
@@ -1109,6 +1161,9 @@ function groupByIndicator(results) {
         
         groupedItem.label_tags = allTags.join(', ');
       }
+
+      groupedItem.irpe_ids = mergeIrpeIdArrays(groupedItem.irpe_ids, item.irpe_ids);
+      groupedItem.irpe_link_ids = mergeIrpeIdArrays(groupedItem.irpe_link_ids, item.irpe_link_ids);
       
       // Note: `groupedItem.date` and `groupedItem.values` are already
       // kept aligned and sorted above.

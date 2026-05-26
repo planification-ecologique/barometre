@@ -166,3 +166,62 @@ export function buildRegionalSeries(regionAllData, selectedRegionCode, selectedE
   };
 }
 
+/**
+ * Build a stacked bar series from multiple Écolab indicator loads (multi IRPE ids).
+ *
+ * @param {Array<{ regionAllData: object, seriesLabel?: string }>} sources
+ * @param {string} selectedRegionCode
+ * @param {string} selectedExtraValue
+ * @returns {{ x: string[], y: number[][], legend: string[] } | null}
+ */
+export function buildStackedRegionalSeries(sources, selectedRegionCode, selectedExtraValue) {
+  if (!Array.isArray(sources) || !sources.length || !selectedRegionCode) {
+    return null;
+  }
+
+  const built = sources
+    .map(({ regionAllData, seriesLabel }) => {
+      const series = buildRegionalSeries(
+        regionAllData,
+        selectedRegionCode,
+        selectedExtraValue
+      );
+      if (!series || !series.x?.length) return null;
+      const label =
+        seriesLabel ||
+        regionAllData?.measureMeta?.libelle_indicateur ||
+        regionAllData?.measureName ||
+        'Série';
+      return { series, label: String(label) };
+    })
+    .filter(Boolean);
+
+  if (!built.length) return null;
+
+  if (built.length === 1) {
+    return built[0].series;
+  }
+
+  const yearSet = new Set();
+  built.forEach(({ series }) => {
+    series.x.forEach((year) => yearSet.add(String(year)));
+  });
+  const x = Array.from(yearSet).sort((a, b) => {
+    const na = Number(a);
+    const nb = Number(b);
+    if (!Number.isNaN(na) && !Number.isNaN(nb)) return na - nb;
+    return a.localeCompare(b);
+  });
+
+  const y = built.map(({ series }) => {
+    const byYear = new Map(series.x.map((year, index) => [String(year), series.y[0][index]]));
+    return x.map((year) => (byYear.has(year) ? byYear.get(year) : null));
+  });
+
+  return {
+    x,
+    y,
+    legend: built.map((entry) => entry.label),
+  };
+}
+

@@ -97,8 +97,8 @@
           >
           </bar-chart>
         </div>
-        <div v-else-if="effectiveChartType === 'Barres empilées' && !selectedRegionCode">
-          <!-- Composant Histogramme avec sous-groupe / DSFR (national only) -->
+        <div v-else-if="effectiveChartType === 'Barres empilées'">
+          <!-- Composant Histogramme avec sous-groupe / DSFR (national ou régional multi-IRPE) -->
           <bar-chart
             :x="JSON.stringify(displayData.date)"
             :y="JSON.stringify(stackedBarChartSeriesForRender)"
@@ -106,7 +106,7 @@
             :stacked="true"
             :name="JSON.stringify(displayData.label_sous_groupe)"
             :color="JSON.stringify(stackedBarColors)"
-            :pointopacity="pointOpacityJson"
+            :pointopacity="isRegionalStacked ? regionalPointOpacity : pointOpacityJson"
             :trendline="stackedTrendLine ? JSON.stringify(stackedTrendLine) : undefined"
             :target-trajectory="stackedTargetTrajectory ? JSON.stringify(stackedTargetTrajectory) : undefined"
             :unit="displayData.label_unit"
@@ -137,8 +137,8 @@
       </div>
       <!-- Affichage du tableau -->
       <div v-else>
-        <div v-if="displayData.label_sous_groupe == '' || selectedRegionCode">
-          <!-- Tableau sans sous-groupe (ou données régionales) -->
+        <div v-if="displayData.label_sous_groupe == '' || (selectedRegionCode && !isRegionalStacked)">
+          <!-- Tableau sans sous-groupe (ou données régionales simples) -->
           <table-component
             :captionTitle="displayData.label_indic"
             :annee="tableAnnee"
@@ -265,7 +265,7 @@ import TableComponentVariant from "./TableComponentVariant.vue";
 import { loadAllRegionsDataForIndicator } from "@/services/ecolabApiService.js";
 import {
   extractRegionsAndExtra,
-  buildRegionalSeries,
+  buildStackedRegionalSeries,
 } from "@/services/ecolabRegionHelpers.js";
 import { isFavori, toggleFavori } from "@/services/favorisService.js";
 import { TREND_LINE_END_YEAR } from "@/services/csvDataService.js";
@@ -323,7 +323,7 @@ export default {
       regionalLoading: false,
       regionalError: null,
       regionsError: null,
-      regionAllData: null,
+      regionAllDataList: [],
       regionExtraDimension: null,
       regionExtraOptions: [],
       selectedExtraValue: "",
@@ -335,10 +335,7 @@ export default {
       this.selectedRegionCode = "";
       this.regionalChartData = null;
       this.regionalError = null;
-      this.regionAllData = null;
-      this.regionExtraDimension = null;
-      this.regionExtraOptions = [];
-      this.selectedExtraValue = "";
+      this.clearRegionalState();
       if (this.hasRegionalData) this.loadRegions();
       // Mettre à jour l'état favori
       if (this.dataObj && this.dataObj.label_indic) {
@@ -351,26 +348,44 @@ export default {
       return this.$route?.path?.includes('/staging') ?? false;
     },
     hasRegionalData() {
-      const ids = this.dataObj?.irpe_ids;
-      return Array.isArray(ids) && ids.length > 0 && ids.some(id => id && String(id).trim() !== '');
+      return this.regionalIndicatorIds.length > 0;
     },
     shouldHideDescription() {
       // Hide Grist description only when user is in "région" mode.
       // Back to "National" => show description again.
       return Boolean(this.hideDescription || (this.hasRegionalData && this.selectedRegionCode));
     },
-    regionalIndicatorId() {
+    regionalIndicatorIds() {
       const ids = this.dataObj?.irpe_ids;
-      if (!Array.isArray(ids) || ids.length === 0) return '';
-      return String(ids[0]).trim();
+      if (!Array.isArray(ids)) return [];
+      return ids.map((id) => String(id).trim()).filter(Boolean);
+    },
+    primaryRegionData() {
+      return this.regionAllDataList[0]?.data || null;
+    },
+    isRegionalStacked() {
+      return Boolean(
+        this.selectedRegionCode &&
+        Array.isArray(this.regionalChartData?.y) &&
+        this.regionalChartData.y.length > 1
+      );
     },
     /** Data to display: national (dataObj) or overridden by regional API data */
     displayData() {
       if (this.selectedRegionCode && this.regionalChartData) {
         const v = this.regionalChartData;
-        const metaUnit = this.regionAllData?.measureMeta?.unite || this.dataObj.label_unit;
+        const metaUnit = this.primaryRegionData?.measureMeta?.unite || this.dataObj.label_unit;
+        if (this.isRegionalStacked) {
+          return {
+            ...this.dataObj,
+            date: [v.x],
+            values: v.y,
+            label_sous_groupe: v.legend,
+            label_unit: metaUnit,
+          };
+        }
         const metaLabel =
-          this.regionAllData?.measureMeta?.libelle_indicateur || this.dataObj.label_indic;
+          this.primaryRegionData?.measureMeta?.libelle_indicateur || this.dataObj.label_indic;
         return {
           ...this.dataObj,
           values: {
@@ -391,11 +406,10 @@ export default {
     /** Séries barres sans les années « cible » (évite une barre au point objectif, ex. 2030). */
     stackedBarChartSeriesForRender() {
       const series = this.displayData?.values;
-      if (
-        this.effectiveChartType !== "Barres empilées" ||
-        this.selectedRegionCode ||
-        !Array.isArray(series)
-      ) {
+      if (this.effectiveChartType !== "Barres empilées" || !Array.isArray(series)) {
+        return series;
+      }
+      if (this.selectedRegionCode) {
         return series;
       }
       const years = this.getStackedYears();
@@ -453,7 +467,9 @@ export default {
       return out;
     },
     effectiveChartType() {
-      if (this.selectedRegionCode && this.regionalChartData) return "Barres simple";
+      if (this.selectedRegionCode && this.regionalChartData) {
+        return this.isRegionalStacked ? "Barres empilées" : "Barres simple";
+      }
       return this.getChartType;
     },
     tableAnnee() {
@@ -479,9 +495,11 @@ export default {
       return this.chartValues?.legend?.map(() => "#000091") || [];
     },
     regionalPointOpacity() {
-      if (this.selectedRegionCode && this.regionalChartData) {
-        const len = this.regionalChartData.y?.[0]?.length || 0;
-        return JSON.stringify(Array(len).fill(1));
+      if (this.selectedRegionCode && this.regionalChartData?.y) {
+        const perSeries = this.regionalChartData.y.map((row) =>
+          Array(Array.isArray(row) ? row.length : 0).fill(1)
+        );
+        return JSON.stringify(perSeries);
       }
       return this.pointOpacityJson;
     },
@@ -674,6 +692,12 @@ export default {
   },
 
   methods: {
+    clearRegionalState() {
+      this.regionAllDataList = [];
+      this.regionExtraDimension = null;
+      this.regionExtraOptions = [];
+      this.selectedExtraValue = "";
+    },
     getPointStatus(value, fallbackYear = "") {
       const normalized = String(value ?? "").trim().toLowerCase();
       if (/^cible_\d{4}$/.test(normalized) || normalized === "cible") return "cible";
@@ -796,24 +820,38 @@ export default {
       };
     },
     async loadRegions() {
-      if (!this.hasRegionalData || !this.regionalIndicatorId) return;
+      const indicatorIds = this.regionalIndicatorIds;
+      if (!this.hasRegionalData || indicatorIds.length === 0) return;
       this.regionsError = null;
-      this.regionAllData = null;
-      this.regionExtraDimension = null;
-      this.regionExtraOptions = [];
-      this.selectedExtraValue = "";
+      this.clearRegionalState();
       try {
-        const result = await loadAllRegionsDataForIndicator(
-          this.regionalIndicatorId
+        const settled = await Promise.allSettled(
+          indicatorIds.map(async (indicatorId) => {
+            const data = await loadAllRegionsDataForIndicator(indicatorId);
+            return { indicatorId, data };
+          })
         );
-        this.regionAllData = result;
+        const loaded = settled
+          .filter((result) => result.status === 'fulfilled')
+          .map((result) => result.value);
+        const failed = settled.filter((result) => result.status === 'rejected');
+        if (!loaded.length) {
+          const reason = failed[0]?.reason;
+          throw reason instanceof Error
+            ? reason
+            : new Error('Impossible de charger les données régionales.');
+        }
+        if (failed.length) {
+          console.warn('[GraphBox] Some IRPE indicator loads failed:', failed);
+        }
+        this.regionAllDataList = loaded;
 
         const {
           regionsList,
           extraDimension,
           extraOptions,
           defaultExtraValue,
-        } = extractRegionsAndExtra(result);
+        } = extractRegionsAndExtra(this.primaryRegionData);
 
         this.regionsList = regionsList;
         this.regionExtraDimension = extraDimension;
@@ -822,38 +860,30 @@ export default {
       } catch (e) {
         this.regionsError = e.message || "Impossible de charger la liste des régions.";
         this.regionsList = [];
-        this.regionAllData = null;
-        this.regionExtraDimension = null;
-        this.regionExtraOptions = [];
-        this.selectedExtraValue = "";
+        this.clearRegionalState();
       }
     },
     onRegionChange() {
       this.regionalError = null;
       this.regionalChartData = null;
       if (!this.selectedRegionCode) return;
-      if (!this.regionAllData) return;
+      if (!this.regionAllDataList.length) return;
       this.regionalLoading = true;
-      try {
-        this.updateRegionalChartData();
-      } catch (e) {
-        this.regionalError = e.message || "Impossible de charger les données régionales.";
-      } finally {
-        this.regionalLoading = false;
-      }
+      this.updateRegionalChartData();
+      this.regionalLoading = false;
     },
     onExtraDimensionChange() {
-      if (!this.selectedRegionCode || !this.regionAllData) return;
+      if (!this.selectedRegionCode || !this.regionAllDataList.length) return;
       this.updateRegionalChartData();
     },
     updateRegionalChartData() {
-      if (!this.regionAllData || !this.selectedRegionCode) return;
-      const series = buildRegionalSeries(
-        this.regionAllData,
+      if (!this.regionAllDataList.length || !this.selectedRegionCode) return;
+      const sources = this.regionAllDataList.map(({ data }) => ({ regionAllData: data }));
+      this.regionalChartData = buildStackedRegionalSeries(
+        sources,
         this.selectedRegionCode,
         this.selectedExtraValue
       );
-      this.regionalChartData = series;
     },
     onToggleFavori() {
       if (this.dataObj && this.dataObj.label_indic) {

@@ -54,6 +54,12 @@
             <div v-else-if="results_page.length > 0">
               <h1 class="fr-subtitle">
                 {{ this.results_API.length }} indicateurs trouvés
+                <span
+                  v-if="filterRegionalOnly && regionalIrpeLinkCount > 0"
+                  class="fr-text--sm fr-text--alt regional-link-count"
+                >
+                  ({{ regionalIrpeLinkCount }} liaisons IRPE Écolab)
+                </span>
                 <span v-if="appliedSearchQuery" class="search-query-display">
                   pour "<strong>{{ appliedSearchQuery }}</strong>"
                 </span>
@@ -132,6 +138,16 @@ export default {
       const q = this.$route?.query?.axe;
       if (!q) return [];
       return Array.isArray(q) ? q : [q];
+    },
+    regionalIrpeLinkCount() {
+      if (!this.filterRegionalOnly) return 0;
+      return new Set(
+        this.results_API.flatMap((item) =>
+          (item.irpe_link_ids || [])
+            .map((id) => id && String(id).trim())
+            .filter(Boolean)
+        )
+      ).size;
     },
   },
   methods: {
