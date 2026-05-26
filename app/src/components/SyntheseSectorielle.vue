@@ -262,12 +262,12 @@ import {
 } from '@/utils/impactAxeUrl.js'
 
 const SECTOR_DESCRIPTIONS = {
-  'Se déplacer': 'Le secteur "Se déplacer" couvre les déplacements de voyageurs et de marchandises, pour l\'ensemble des modes de transports (terrestres, aériens, maritimes et fluviaux).',
-  'Se loger': 'Le secteur "Se loger" traite de la rénovation énergétique des bâtiments, du chauffage et de la construction durable pour réduire l\'empreinte carbone du parc immobilier.',
-  'Préserver et valoriser nos écosystèmes': 'Le secteur "Préserver et valoriser nos écosystèmes" vise à protéger la biodiversité, les forêts, les sols et les milieux naturels tout en renforçant leur rôle de puits de carbone.',
+  'Consommer': 'Le secteur "Consommer" traite de l\'économie circulaire, de la réduction des déchets et de la transformation des modes de consommation vers plus de sobriété.',
+  'Préserver': 'Le secteur "Préserver" concerne la préservation des espaces naturels et des ressources en eaux',
   'Produire': 'Le secteur "Produire" concerne la décarbonation de l\'industrie, le développement des énergies renouvelables et la transformation des procédés industriels.',
-  'Se nourrir': 'Le secteur "Se nourrir" couvre l\'ensemble de la chaîne alimentaire, de la production agricole à la consommation, en passant par la transformation et la distribution.',
-  'Consommer': 'Le secteur "Consommer" traite de l\'économie circulaire, de la réduction des déchets et de la transformation des modes de consommation vers plus de sobriété.'
+  'Se déplacer': 'Le secteur "Se déplacer" couvre les déplacements de voyageurs et de marchandises, pour l\'ensemble des modes de transports (terrestres, aériens, maritimes et fluviaux).',
+  'Se loger': 'Le secteur "Se loger" traite du bâtiment : rénovation énergétique, construction et exploitations durables ainsi que prévention et protection contre les risques.',
+  'Se nourrir': 'Le secteur "Se nourrir" couvre l\'ensemble de la chaîne alimentaire, de la production agricole à la consommation, en passant par la transformation et la distribution.'
 }
 
 export default {
