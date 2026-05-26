@@ -157,7 +157,7 @@ export const YEAR_COLUMN_MAX = 2030;
  * Colonnes d’année : on ingère d’abord [YEAR_AXIS_PIVOT … YEAR_COLUMN_MAX].
  * Année pivot avant laquelle l’historique gauche est optionnel.
  */
-export const YEAR_AXIS_PIVOT = 2018;
+export const YEAR_AXIS_PIVOT = 2017;
 /**
  * Seuil de mesures (colonnes année **hors** cibles) avec année ≥ YEAR_AXIS_PIVOT.
  * Strictement sous ce nombre → on ingère aussi les colonnes YEAR_COLUMN_MIN … YEAR_AXIS_PIVOT-1 (« expand left »).
