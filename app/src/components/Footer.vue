@@ -15,7 +15,7 @@
         </div>
         <div class="fr-footer__content custom-footer-content">
           <p class="fr-footer__content-desc">
-            Ce site est géré par le Secrétariat Général de la Planification Ecologique (SGPE) et le Commissariat Général au Développement Durable (CGDD)
+            Ce site est géré par le Secrétariat Général de la Planification Ecologique (SGPE)
           </p>
           <ul class="fr-footer__content-list">
             <li class="fr-footer__content-item" v-for="option in menuLinks">
