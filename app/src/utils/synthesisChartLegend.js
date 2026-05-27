@@ -1,7 +1,7 @@
 import { computeTrendLine } from '@/services/csvDataService.js'
 
 export const SYNTHESIS_TREND_LEGEND_LABEL = 'Rythme actuel (3 ans)'
-export const SYNTHESIS_TARGET_LEGEND_LABEL = 'Cible initiale'
+export const SYNTHESIS_TARGET_LEGEND_LABEL = 'Cible(s)'
 export const SYNTHESIS_TREND_LEGEND_COLOR = '#6a6156'
 export const SYNTHESIS_TARGET_LEGEND_COLOR = '#000091'
 export const SYNTHESIS_TREND_LEGEND_TITLE =
