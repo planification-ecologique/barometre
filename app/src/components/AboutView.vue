@@ -29,9 +29,9 @@
       <h2 id="home-etat-heading" class="fr-h5 home-section__title">État de l'environnement</h2>
       <p class="home-section__lead">
         L'amélioration de l'état de l'environnement constitue la finalité des stratégies environnementales. 
-        Les indicateurs sont regroupés par axe d'impact : atténuation, biodiversité, eau, pollution et économie circulaire. 
+        Les indicateurs sont regroupés par axe de la taxonomie européenne : atténuation, adaptation, eau, économie circulaire, pollution, biodiversité. 
         Pour l'axe de l'adaptation au changement climatique, les méthodes d'évaluation quantitative qui en découlent font défaut, 
-        d'où l'absence d'indicateurs dans ce baromètre, dans l'attente de travaux en cours.
+        d'où le manque d'indicateurs dans ce baromètre, dans l'attente de travaux en cours.
       </p>
       <router-link
         :to="{ name: etatRouteName, query: { section: syntheseSection } }"

@@ -26,7 +26,7 @@
 
     <!-- Quick access links -->
     <div class="etat-quick-access">
-      <span class="etat-quick-label">Accès rapide aux axes d'impact</span>
+      <span class="etat-quick-label">Accès rapide aux axes de la taxonomie européenne</span>
       <div class="etat-quick-links">
         <a
           v-for="axe in displayAxes"
