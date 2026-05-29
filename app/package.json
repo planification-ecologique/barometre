@@ -14,7 +14,10 @@
     "prebuild:firebase": "npm run download-grist-csvs",
     "build:firebase": "npm run build_prod && cd dist && cp index.html 200.html && cd ..",
     "deploy:firebase": "npm run build:firebase && firebase deploy --only hosting",
-    "deploy:firebase:prod": "npm run build:firebase && firebase deploy --only hosting --project barometre-sgpe"
+    "deploy:firebase:prod": "npm run build:firebase && firebase deploy --only hosting --project barometre-sgpe",
+    "prebuild:pages": "npm run download-grist-csvs",
+    "build:pages": "vue-cli-service build && cp dist/index.html dist/404.html",
+    "deploy:pages": "npm run build:pages"
   },
   "dependencies": {
     "@gouvfr/dsfr": "^1.11.2",

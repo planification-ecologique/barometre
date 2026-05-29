@@ -7,6 +7,16 @@ commands
 secret_tls.yml
 test-resources.yml
 
+# Secrets & certificats — ne jamais committer
+.env
+app/.env
+certs/
+*.key
+*.pem
+*.p12
+app/firebase-debug.log
+irpe_recap.csv
+
 # local env files
 .env.local
 .env.*.local

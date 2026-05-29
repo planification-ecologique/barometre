@@ -1,106 +1,147 @@
-# SGPE-app front
+# Baromètre de la planification écologique
 
-## Installation
+Application web de visualisation des indicateurs du [baromètre de la planification écologique](https://barometre.planification-ecologique.gouv.fr) — tableau de bord interactif basé sur le [Système de design de l'État (DSFR)](https://www.systeme-de-design.gouv.fr/).
 
-### Local
+## Stack
 
-1. Go to ``app`` directory:
-   ```
-   cd app 
-   ```
-2. Install dependencies
-   ```
-   npm install 
-   ```
-3. Run server
-   ```
-   npm run serve
-   ```
+- **Vue 2** + Vue Router + Vuex
+- **Chart.js** pour les graphiques
+- **DSFR** (@gouvfr/dsfr)
+- Données : exports CSV [Grist](https://www.getgrist.com/) + API [Écolab](https://api.indicateurs.ecologie.gouv.fr/)
 
-### Helm 
-1. Ensure that your are in the correct cluster by commands:
-    ```
-    kubectl config get-contexts
-    kubectl config use <<your_cluster_name>>
-    ```
-2. Create the namespace and the secret to access to image register gitlab. 
-    - Production environnement use command :
-    ```
-    ./devTools/namespace_secret_to_registry.sh -p
-    ```
-    - Qualif environnement use command :
-    ```
-    ./devTools/namespace_secret_to_registry.sh -q
-    ```
-3. Inspect the values for production or qualif in app-front-chart.
-    - Production environnement:
-    ```
-    helm upgrade --install --dry-run app-front app-front-chart  --values  app-front-chart/values_prod_ecolab.yaml --namespace app-front-prod
-    ```   
-    - Qualif environnement:
-    ```
-    helm install --dry-run app-front app-front-chart  --values  app-front-chart/values_qualif.yaml --namespace app-front-qualif
-    ```
-4. Intall app-front-chart.
-    - Production environnement:
-    ```
-    helm upgrade --install app-front app-front-chart  --values  app-front-chart/values_prod_ecolab.yaml --namespace app-front-prod
-    ```   
-    - Qualif environnement:
-    ```
-    helm upgrade --install app-front app-front-chart  --values  app-front-chart/values_qualif.yaml --namespace app-front-qualif
-    ```
-5. Verify the installation by : 
-    - helm list  --namespace app-front-prod / qualif
-    - kubectl get all -n app-front-prod / qualif
+## Prérequis
 
-## Build distribution
+- Node.js 21+
+- npm
 
-To create distribution used to create docker images use commands:
+## Installation locale
 
-1. Production:
-   ```
-    npm run build
-   ```
-2. Qualification:
-   ```
-    npm run build_qualif
-   ```
+```bash
+cd app
+npm install
+cp .env.example .env
+# Éditer .env si besoin (token Écolab pour les données régionales)
+npm run serve
+```
+
+L'application est disponible sur [http://localhost:8080](http://localhost:8080).
+
+### Variables d'environnement
+
+| Variable | Description | Obligatoire |
+|----------|-------------|-------------|
+| `VUE_APP_ENV` | `dev`, `qualif` ou `prod` | Oui |
+| `VUE_APP_PREFIX_PATH` | Préfixe URL (ex. `/sgpe-app/` pour GitHub Pages) | Non (défaut : `/`) |
+| `VUE_APP_TRACKING` | Domaine analytics Eulerian | Non |
+| `VUE_APP_ECOLAB_API_TOKEN` | Token Bearer API Écolab (données régionales) | Recommandé |
+
+Voir `app/.env.example` pour le modèle complet.
+
+> **Note :** le token Écolab est injecté au build et visible dans le bundle client. Utiliser un token à droits limités.
+
+## Scripts npm
+
+| Commande | Description |
+|----------|-------------|
+| `npm run serve` | Serveur de développement |
+| `npm run build` | Build production |
+| `npm run build_qualif` | Build environnement qualif |
+| `npm run build:pages` | Build GitHub Pages (inclut fallback SPA `404.html`) |
+| `npm run download-grist-csvs` | Télécharge les CSV Grist en backup local |
+| `npm run test:unit` | Tests unitaires Jest |
+
+## Déploiement GitHub Pages
+
+### 1. Préparer le dépôt
+
+Avant le premier push public, lire **[docs/SECURITY-AUDIT.md](docs/SECURITY-AUDIT.md)** — un token GitLab est présent dans l'historique Git et doit être révoqué + historique purgé.
+
+### 2. Configurer GitHub
+
+1. Créer le dépôt sur GitHub.
+2. **Settings → Pages → Build and deployment** : source = **GitHub Actions**.
+3. *(Optionnel)* **Settings → Secrets and variables → Actions** :
+   - Secret `VUE_APP_ECOLAB_API_TOKEN` — token API Écolab pour le build CI.
+   - Variable `VUE_APP_TRACKING` — domaine analytics si nécessaire.
+
+### 3. Déployer
+
+Le workflow [`.github/workflows/deploy-github-pages.yml`](.github/workflows/deploy-github-pages.yml) se déclenche à chaque push sur `main` / `master`.
+
+URL résultante : `https://<organisation>.github.io/<nom-du-repo>/`
+
+### Déploiement manuel
+
+```bash
+cd app
+VUE_APP_PREFIX_PATH=/nom-du-repo/ VUE_APP_ENV=prod npm run build:pages
+# Publier le contenu de app/dist (ex. branche gh-pages)
+```
+
+## Sources de données
+
+### Grist (CSV publics)
+
+Les URLs sont centralisées dans `app/src/config/gristUrls.json`. Des copies de secours sont stockées dans `app/public/grist-backups/` et mises à jour via :
+
+```bash
+npm run download-grist-csvs
+```
+
+### API Écolab
+
+Indicateurs au niveau régional — nécessite un token (`VUE_APP_ECOLAB_API_TOKEN`).
+
+## Environnement de staging
+
+Routes `/staging/dashboard` et `/staging/tags` pour tester des documents Grist alternatifs. Une bannière rouge signale le mode staging.
 
 ## Docker
-There is also a Docker and docker compose:
-```
+
+```bash
 docker compose up --build
 ```
 
-## Surge Deployment
+## Déploiement interne (Kubernetes / Helm)
 
-To deploy the application easily using surge:
+Le dossier `app-front-chart/` et `.gitlab-ci.yml` documentent le déploiement sur l'infrastructure DIN (GitLab CI + Kubernetes). Ce flux est **distinct** de GitHub Pages.
+
+```bash
+# Exemple dry-run qualif
+helm upgrade --install --dry-run app-front app-front-chart \
+  --values app-front-chart/values_qualif.yaml \
+  --namespace app-front-qualif
+```
+
+## Structure du projet
 
 ```
-npm run deploy
+sgpe-app/
+├── app/                    # Application Vue.js
+│   ├── src/
+│   │   ├── components/     # Composants UI et graphiques
+│   │   ├── services/       # Grist, Écolab, analytics
+│   │   └── config/         # URLs Grist, routes
+│   ├── public/             # Assets statiques + backups CSV
+│   └── scripts/            # Scripts build (download Grist)
+├── app-front-chart/        # Chart Helm (déploiement K8s interne)
+├── docs/
+│   └── SECURITY-AUDIT.md   # Audit sécurité pré-open source
+└── .github/workflows/      # CI GitHub Pages
 ```
 
-## Staging Environment
+## Sécurité
 
-The application supports a staging environment for testing data changes without affecting the production environment.
+- Ne jamais committer `.env`, certificats (`certs/`), clés privées.
+- Utiliser `app/.env.example` comme référence.
+- Audit complet : [docs/SECURITY-AUDIT.md](docs/SECURITY-AUDIT.md).
 
-### Accessing Staging
-You can access the staging environment at the following URLs:
-- `/staging/dashboard` - View the dashboard with staging data
-- `/staging/tags` - Use the tag search with staging data
+## Licence
 
-### Test using Staging
+À définir avant publication (ex. [Licence Ouverte Etalab 2.0](https://github.com/etalab/licence-ouverte/blob/master/LO.md) pour une application de l'État).
 
-The staging environment uses a different Grist document for data. When making changes that might affect data display, test them in the staging environment first. When accessing the staging environment, a red banner will appear at the top of the page with options to:
+## Contribuer
 
-1. Navigate between staging pages
-2. Verify your changes work as expected
-3. Exit the staging environment
-
-### Production Data Source
-
-Production data is sourced from:
-`https://grist.numerique.gouv.fr/o/ecolabservicesdonnees/api/docs/49SPrgL9jgVv3JgMaVHCc8/download/csv`
-
-A sample data file is also available in the repo : `grist_indicateurs_mai_2025.csv`.
+1. Fork → branche feature → PR.
+2. Tester localement (`npm run serve`, `npm run test:unit`).
+3. Vérifier qu'aucun secret n'est introduit (`git diff` + scan regex).

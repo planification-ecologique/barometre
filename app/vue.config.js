@@ -1,8 +1,9 @@
-// Path must be ./ to deploy in dns inside to subfolder 
-// serve uses .env and build uses .env.production
-if (process.env.NODE_ENV === 'production'){
-  const webpack = require('webpack')
+// serve uses .env ; build uses .env.production (ou --mode qualif / pages)
+// VUE_APP_PREFIX_PATH : préfixe pour déploiement sous-dossier (ex. GitHub Pages /sgpe-app/)
+const publicPath = process.env.VUE_APP_PREFIX_PATH || '/'
+
+if (process.env.NODE_ENV === 'production') {
   module.exports = {
-    publicPath: '/',
+    publicPath,
   }
 }
