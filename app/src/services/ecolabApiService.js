@@ -5,6 +5,16 @@
  */
 
 const ECOLAB_BASE = 'https://api.indicateurs.ecologie.gouv.fr/cubejs-api/v1';
+const ECOLAB_CONTINUE_WAIT_DELAY_MS = 10000;
+const ECOLAB_CONTINUE_WAIT_MAX_RETRIES = 6;
+
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+function isContinueWaitResponse(body) {
+  return body && typeof body === 'object' && body.error === 'Continue wait';
+}
 
 function getAuthHeader() {
   const token = process.env.VUE_APP_ECOLAB_API_TOKEN || process.env.VUE_ECOLAB_API_TOKEN;
@@ -27,6 +37,45 @@ function checkResponse(res, context = '') {
   }
 }
 
+/**
+ * Fetch Écolab JSON, retrying when Cube.js returns {"error":"Continue wait"}.
+ */
+async function fetchEcolabJson(url, options, context = '') {
+  for (let attempt = 0; attempt <= ECOLAB_CONTINUE_WAIT_MAX_RETRIES; attempt++) {
+    const res = await fetch(url, options);
+    checkResponse(res, context);
+    const body = await res.json();
+    if (!isContinueWaitResponse(body)) return body;
+
+    if (attempt === ECOLAB_CONTINUE_WAIT_MAX_RETRIES) {
+      throw new Error(
+        `Écolab API ${context}: requête trop longue (Continue wait après ${ECOLAB_CONTINUE_WAIT_MAX_RETRIES + 1} tentatives).`
+      );
+    }
+
+    console.warn(
+      `[Écolab API] ${context}: Continue wait, nouvelle tentative dans ${ECOLAB_CONTINUE_WAIT_DELAY_MS / 1000}s (${attempt + 1}/${ECOLAB_CONTINUE_WAIT_MAX_RETRIES + 1})`
+    );
+    await sleep(ECOLAB_CONTINUE_WAIT_DELAY_MS);
+  }
+  throw new Error(`Écolab API ${context}: requête interrompue.`);
+}
+
+async function postEcolabLoad(query, context = 'load') {
+  return fetchEcolabJson(
+    `${ECOLAB_BASE}/load`,
+    {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        ...getAuthHeader()
+      },
+      body: JSON.stringify({ query })
+    },
+    context
+  );
+}
+
 let metaCache = null;
 
 /**
@@ -46,9 +95,7 @@ const KNOWN_INDICATOR_CUBES = {
  */
 export async function getMeta() {
   if (metaCache) return metaCache;
-  const res = await fetch(`${ECOLAB_BASE}/meta`, { headers: getAuthHeader() });
-  checkResponse(res, 'meta');
-  metaCache = await res.json();
+  metaCache = await fetchEcolabJson(`${ECOLAB_BASE}/meta`, { headers: getAuthHeader() }, 'meta');
   return metaCache;
 }
 
@@ -126,16 +173,7 @@ function buildRegionQuery(cubeName, measureName, options = {}) {
  */
 export async function loadRegionData(cubeName, measureName, options = {}) {
   const query = buildRegionQuery(cubeName, measureName, options);
-  const res = await fetch(`${ECOLAB_BASE}/load`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      ...getAuthHeader()
-    },
-    body: JSON.stringify({ query })
-  });
-  checkResponse(res, 'load');
-  return res.json();
+  return postEcolabLoad(query);
 }
 
 /**
@@ -197,16 +235,7 @@ export async function loadRegionDataForChart(cubeName, measureName, options = {}
   if (options.timeDimension) {
     query.order = { [options.timeDimension]: 'asc' };
   }
-  const res = await fetch(`${ECOLAB_BASE}/load`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      ...getAuthHeader()
-    },
-    body: JSON.stringify({ query })
-  });
-  checkResponse(res, 'load');
-  return res.json();
+  return postEcolabLoad(query);
 }
 
 /** Extract year from API time value (e.g. "2023-01-01T00:00:00.000" -> "2023"). */

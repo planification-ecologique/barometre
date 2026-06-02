@@ -825,11 +825,12 @@ export default {
       this.regionsError = null;
       this.clearRegionalState();
       try {
-        const settled = await Promise.allSettled(
-          indicatorIds.map(async (indicatorId) => {
-            const data = await loadAllRegionsDataForIndicator(indicatorId);
-            return { indicatorId, data };
-          })
+        const settled = await Promise.all(
+          indicatorIds.map((indicatorId) =>
+            loadAllRegionsDataForIndicator(indicatorId)
+              .then((data) => ({ status: 'fulfilled', value: { indicatorId, data } }))
+              .catch((reason) => ({ status: 'rejected', reason }))
+          )
         );
         const loaded = settled
           .filter((result) => result.status === 'fulfilled')
