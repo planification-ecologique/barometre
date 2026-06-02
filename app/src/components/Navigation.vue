@@ -72,6 +72,7 @@ import {
   etatEnvironnementRouteName,
   chantiersRouteName,
   dashboardRouteName,
+  rechercheRouteName,
 } from '@/config/routeNames.js'
 import { SECTION_SYNTHESE_SLUG } from '@/utils/sectionUrl.js'
 
@@ -128,6 +129,12 @@ export default {
         //   selected: false,
         //   disabled: true
         // },
+        {
+          value: 'recherche',
+          label: 'Recherche',
+          selected: false,
+          link: `${p}/recherche`
+        },
         {
           value: 'favoris',
           label: 'Favoris',
@@ -191,6 +198,11 @@ export default {
         }).catch(err => {
           if (err.name !== 'NavigationDuplicated') console.error('Navigation error:', err)
         })
+      } else if (option.value === 'recherche') {
+        const isStaging = window.location.pathname.includes('/staging')
+        this.myrouter.push({ name: rechercheRouteName(isStaging) }).catch(err => {
+          if (err.name !== 'NavigationDuplicated') console.error('Navigation error:', err)
+        })
       } else {
         this.myrouter.push({ name: option.value }).catch(err => {
           if (err.name !== 'NavigationDuplicated') console.error('Navigation error:', err)
@@ -244,6 +256,12 @@ export default {
         } else if (sector || query.section) {
           this.setSelected('chantiers-sectoriels')
         }
+      } else if (
+        this.$route.name === 'recherche' ||
+        this.$route.name === 'staging-recherche' ||
+        path.includes('recherche')
+      ) {
+        this.setSelected('recherche')
       } else if (path.includes('favoris')) {
         this.setSelected('favoris')
       }

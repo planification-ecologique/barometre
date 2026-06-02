@@ -296,6 +296,10 @@
       unit: function () {
         this.resetData()
         this.createChart()
+      },
+      stacked: function () {
+        this.resetData()
+        this.createChart()
       }
     },
     computed: {
@@ -485,7 +489,20 @@
         // Set ymax: include bar data, target trajectory, and hlines so targets stay visible
         if (!this.horizontal) {
           let maxVal = 0
-          if (self.yparse && self.yparse.length > 0) {
+          if (self.stacked && self.yparse && self.yparse.length > 1 && self.labels) {
+            self.labels.forEach(function (_label, index) {
+              let stackTotal = 0
+              let hasValue = false
+              self.yparse.forEach(function (dj) {
+                const v = dj && dj[index]
+                if (v != null && !isNaN(v)) {
+                  stackTotal += Math.abs(Number(v))
+                  hasValue = true
+                }
+              })
+              if (hasValue && stackTotal > maxVal) maxVal = stackTotal
+            })
+          } else if (self.yparse && self.yparse.length > 0) {
             self.yparse.forEach(function (dj) {
               (dj || []).forEach(function (v) {
                 if (v != null && !isNaN(v) && v > maxVal) maxVal = v
@@ -561,6 +578,7 @@
           })
           self.datasets.push({
             data: dj,
+            stack: self.stacked ? 'stack0' : undefined,
             borderColor: colors,
             backgroundColor: colors,
             hoverBorderColor: colors,

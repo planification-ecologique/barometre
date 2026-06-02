@@ -3,7 +3,7 @@ import GraphBox from "@/components/GraphBox.vue";
 
 const BarChartStub = {
   name: "BarChart",
-  props: ["x", "y", "name", "pointopacity", "trendline", "targetTrajectory", "target-trajectory"],
+  props: ["x", "y", "name", "stacked", "pointopacity", "trendline", "targetTrajectory", "target-trajectory"],
   template: '<div class="bar-chart-stub"></div>',
 };
 
@@ -194,6 +194,42 @@ describe("GraphBox", () => {
         { year: "2030", value: 70, isTarget: true },
       ],
     });
+  });
+
+  it("uses stacked bar chart for regional multi-IRPE series", () => {
+    const wrapper = mountGraphBox({
+      label_indic: "Répartition des résidences principales par performance énergétique",
+      label_unit: "pourcent",
+      label_sous_groupe: ["Passoires thermiques (DPE F et G)", "Logements performants (DPE A, B et C)"],
+      label_sources: "SDES",
+      date_maj: "2026-03-01",
+      type_de_graphique: "Courbes indépendantes",
+      irpe_ids: ["992", "994"],
+      date: [["2023", "2024"]],
+      values: [
+        [4.242, 3.915],
+        [null, null],
+      ],
+    });
+
+    wrapper.setData({
+      selectedRegionCode: "27",
+      regionalChartData: {
+        x: ["2023", "2024"],
+        y: [[11.75, 10.2], [9.01, 9.5]],
+        legend: [
+          "Part de résidences principales par étiquette DPE - F",
+          "Part de résidences principales par étiquette DPE - G",
+        ],
+      },
+    });
+
+    expect(wrapper.vm.isRegionalStacked).toBe(true);
+    expect(wrapper.vm.effectiveChartType).toBe("Barres empilées");
+    expect(wrapper.vm.stackedBarChartSeriesForRender).toEqual([
+      [11.75, 10.2],
+      [9.01, 9.5],
+    ]);
   });
 
   it("marks target years as lighter points for independent lines so the ending segment can be dashed", () => {
