@@ -38,7 +38,7 @@
                 class="fr-tag regional-filter-btn"
                 :class="{ 'regional-filter-btn--active': filterRegionalOnly }"
                 :aria-pressed="filterRegionalOnly"
-                :title="filterRegionalOnly ? 'Afficher tous les indicateurs' : 'Filtrer les indicateurs avec données régionales'"
+                :title="filterRegionalOnly ? 'Afficher tous les indicateurs' : 'Filtrer les indicateurs avec données régionales disponibles (IRPE valide)'"
                 @click="toggleRegionalFilter"
               >
                 <span class="ri-hexagon-line regional-filter-icon" aria-hidden="true"></span>
@@ -55,10 +55,10 @@
               <h1 class="fr-subtitle">
                 {{ this.results_API.length }} indicateurs trouvés
                 <span
-                  v-if="filterRegionalOnly && regionalIrpeLinkCount > 0"
+                  v-if="regionalIrpeLinkStats && (regionalIrpeLinkStats.active > 0 || regionalIrpeLinkStats.pending > 0)"
                   class="fr-text--sm fr-text--alt regional-link-count"
                 >
-                  ({{ regionalIrpeLinkCount }} liaisons IRPE Écolab)
+                  ({{ regionalIrpeLinkStats.active }} liaisons actives avec Écolab, et {{ regionalIrpeLinkStats.pending }} en cours d'activation)
                 </span>
                 <span v-if="appliedSearchQuery" class="search-query-display">
                   pour "<strong>{{ appliedSearchQuery }}</strong>"
@@ -97,7 +97,7 @@
 import SearchTaxonomyFilters from "../components/SearchTaxonomyFilters.vue";
 import AdaptiveDashboard from "../components/AdaptiveDashboard.vue";
 import Pagination from "../components/components_dsfr/Pagination.vue";
-import { getIndicators } from "@/services/csvDataService.js";
+import { getIndicators, computeRegionalIrpeLinkStats } from "@/services/csvDataService.js";
 import dsfrAnalytics from "../services/dsfr_analytics"
 
 export default {
@@ -126,6 +126,7 @@ export default {
       nb_graphs_pages: 6,
       appliedSearchQuery: '',
       filterRegionalOnly: false,
+      regionalIrpeLinkStats: null,
     };
   },
   computed: {
@@ -138,16 +139,6 @@ export default {
       const q = this.$route?.query?.axe;
       if (!q) return [];
       return Array.isArray(q) ? q : [q];
-    },
-    regionalIrpeLinkCount() {
-      if (!this.filterRegionalOnly) return 0;
-      return new Set(
-        this.results_API.flatMap((item) =>
-          (item.irpe_link_ids || [])
-            .map((id) => id && String(id).trim())
-            .filter(Boolean)
-        )
-      ).size;
     },
   },
   methods: {
@@ -180,21 +171,20 @@ export default {
       this.results_page = this.results_API.slice(start, end);
     },
     async fetchData() {
-      const ls_filters = [
+      const baseFilters = [
         { field: "search", values: [this.searchQuery.trim()] }
       ];
 
       if (this.selectedSectors.length > 0) {
-        ls_filters.push({ field: "sector", values: this.selectedSectors });
+        baseFilters.push({ field: "sector", values: this.selectedSectors });
       }
       if (this.selectedAxes.length > 0) {
-        ls_filters.push({ field: "chantier_ou_impact", values: this.selectedAxes });
-      }
-      if (this.filterRegionalOnly) {
-        ls_filters.push({ field: "has_regional_data", values: [true] });
+        baseFilters.push({ field: "chantier_ou_impact", values: this.selectedAxes });
       }
 
-      const filter_query = ls_filters;
+      const filter_query = this.filterRegionalOnly
+        ? [...baseFilters, { field: "has_regional_data", values: [true] }]
+        : baseFilters;
 
       var query = {
         filter_by: filter_query,
@@ -204,9 +194,19 @@ export default {
         },
       };
 
+      const queryOptions = {
+        filter_by: baseFilters,
+        time_period: query.time_period,
+      };
+
       // Use CSV data service instead of API
       try {
-        const results = await getIndicators(query, this.useStaging ? 'staging' : 'production');
+        const requests = [getIndicators(query, this.useStaging ? 'staging' : 'production')];
+        if (this.filterRegionalOnly) {
+          requests.push(getIndicators(queryOptions, this.useStaging ? 'staging' : 'production'));
+        }
+
+        const [results, allMatchingResults] = await Promise.all(requests);
 
         if (!results) {
           throw new Error("Erreur lors de la récupération des données");
@@ -214,6 +214,9 @@ export default {
 
         // Set the data
         this.results_API = results.results;
+        this.regionalIrpeLinkStats = this.filterRegionalOnly && allMatchingResults
+          ? computeRegionalIrpeLinkStats(allMatchingResults.results)
+          : null;
         this.set_pages();
         this.isapiloading = false;
         

@@ -139,6 +139,31 @@ function indicatorHasRegionalLinkIds(ids) {
   return Array.isArray(ids) && ids.length > 0 && ids.some(id => id && String(id).trim() !== '');
 }
 
+/**
+ * Count active (IRPE valide) vs pending (link present, API not yet available) Écolab liaisons.
+ * @param {Array<{ irpe_link_ids?: string[], irpe_ids?: string[] }>} indicators
+ * @returns {{ active: number, pending: number }}
+ */
+export function computeRegionalIrpeLinkStats(indicators) {
+  const allLinks = new Set();
+  const validLinks = new Set();
+  (indicators || []).forEach((item) => {
+    (item.irpe_link_ids || []).forEach((id) => {
+      const s = id && String(id).trim();
+      if (s) allLinks.add(s);
+    });
+    (item.irpe_ids || []).forEach((id) => {
+      const s = id && String(id).trim();
+      if (s) validLinks.add(s);
+    });
+  });
+  let pending = 0;
+  allLinks.forEach((id) => {
+    if (!validLinks.has(id)) pending += 1;
+  });
+  return { active: validLinks.size, pending };
+}
+
 /** After grouping, restore IRPE link ids from all source rows (first sub-row may lack ids). */
 function enrichGroupedRegionalLinks(groupedResults, sourceResults) {
   const linksByLabel = new Map();
@@ -897,7 +922,7 @@ export function transformCSVData(csvData, query) {
         }
       } else if (filter.field === 'has_regional_data' && filter.values && filter.values.includes(true)) {
         groupedResults = groupedResults.filter(item =>
-          indicatorHasRegionalLinkIds(item.irpe_link_ids)
+          indicatorHasRegionalLinkIds(item.irpe_ids)
         );
       }
     }
