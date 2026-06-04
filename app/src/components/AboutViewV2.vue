@@ -33,6 +33,9 @@
               <p>
                 Fort de plus de 250 indicateurs, ce baromètre propose une vision quantifiée des actions qu’il convient de mener pour accélérer la transition dans les transports, le bâtiment, l'énergie, l'industrie, l'agriculture, l'alimentation, l'eau, les écosystèmes naturels et l'économie circulaire, en les mettant en regard de leurs éventuelles cibles à horizon 2030.
               </p>
+              <p>
+                Le baromètre de la planification écologique a été conçu pour rendre visibles les stratégies environnementales et faciliter leur suivi lorsqu'elles disposent d'indicateurs ad hoc, voire de cibles. Les indicateurs proposés n'intègrent donc pas les données relatives aux moyens humains ou encore financiers à mettre en œuvre pour les atteindre. De même, les impacts socio-économiques des transformations induites par le dérèglement climatique ne sont pas intégrés à ce baromètre.
+              </p>
             </div>
           </div>
           <button
