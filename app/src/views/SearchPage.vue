@@ -141,6 +141,17 @@ export default {
       return Array.isArray(q) ? q : [q];
     },
   },
+  watch: {
+    "$route.query.q"(q) {
+      const nextQuery = q || "";
+      if (nextQuery === this.searchQuery) {
+        return;
+      }
+      this.searchQuery = nextQuery;
+      this.isapiloading = true;
+      this.fetchData();
+    },
+  },
   methods: {
     toggleRegionalFilter() {
       this.filterRegionalOnly = !this.filterRegionalOnly;
@@ -153,17 +164,42 @@ export default {
       this.selectedAxes = axes;
       this.fetchData();
     },
+    syncQueryToRoute() {
+      const trimmed = this.searchQuery.trim();
+      const currentQ = this.$route.query.q || "";
+      if (trimmed === currentQ) {
+        return false;
+      }
+      const query = { ...this.$route.query };
+      if (trimmed) {
+        query.q = trimmed;
+      } else {
+        delete query.q;
+      }
+      this.$router.replace({ query }).catch(() => {});
+      return true;
+    },
     handleSearchClick() {
+      this.syncQueryToRoute();
       this.isapiloading = true;
       this.fetchData();
     },
-    handleSearchInput(event) {
+    handleSearchInput() {
       // The search event fires when the clear button (X) is clicked
       // or when pressing Enter with an empty search field
-      if (this.searchQuery === '') {
+      if (this.searchQuery === "") {
+        this.syncQueryToRoute();
         this.isapiloading = true;
         this.fetchData();
       }
+    },
+    onHeaderSearchSubmit({ q }) {
+      const nextQuery = q || "";
+      if (nextQuery !== this.searchQuery) {
+        return;
+      }
+      this.isapiloading = true;
+      this.fetchData();
     },
     handleSelectedPage(page) {
       var start = (page - 1) * this.nb_graphs_pages;
@@ -246,11 +282,12 @@ export default {
       this.selectedSectors = sectors;
       this.selectedAxes = axes;
     }
+    this.$root.$on("header-search:submit", this.onHeaderSearchSubmit);
     this.fetchData();
     this.$nextTick(() => {
       this.$refs.searchInput?.focus();
     });
-    
+
     dsfrAnalytics({
       path: "/recherche",
       name: "recherche",
@@ -258,7 +295,10 @@ export default {
       labels: ['contenu_liste', 'search', '', '', ''],
       template: "contenu_liste",
       group: "search"
-    })  
+    })
+  },
+  beforeDestroy() {
+    this.$root.$off("header-search:submit", this.onHeaderSearchSubmit);
   },
 };
 </script>
