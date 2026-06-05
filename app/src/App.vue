@@ -10,6 +10,16 @@
         </main>
         <footer-dsfr />
         <chart-color-test-modal />
+        <button
+          v-if="showGlobalFeedback"
+          type="button"
+          class="fr-btn fr-btn--secondary fr-btn--sm feedback-fab"
+          title="Signaler un problème"
+          @click="feedbackOpen = true"
+        >
+          Signaler un problème
+        </button>
+        <feedback-form-modal :visible="feedbackOpen" @close="feedbackOpen = false" />
       </div>
     </div>
   </div>
@@ -21,6 +31,7 @@ import FooterDsfr from "./components/Footer.vue";
 import StagingBanner from "./components/StagingBanner.vue";
 import SkipLinksDsfr from "./components/components_dsfr/SkipLinks.vue";
 import ChartColorTestModal from "./components/ChartColorTestModal.vue";
+import FeedbackFormModal from "./components/FeedbackFormModal.vue";
 
 export default {
   name: "App",
@@ -29,7 +40,18 @@ export default {
     FooterDsfr,
     StagingBanner,
     SkipLinksDsfr,
-    ChartColorTestModal
+    ChartColorTestModal,
+    FeedbackFormModal,
+  },
+  data() {
+    return {
+      feedbackOpen: false,
+    };
+  },
+  computed: {
+    showGlobalFeedback() {
+      return !this.$route.meta.hideFooter;
+    },
   },
   watch: {
     $route(to) {
@@ -70,5 +92,21 @@ body.has-staging-banner {
 /* Hide header/footer via body classes to avoid remount flicker */
 body.hide-header header[role="banner"] { display: none; }
 body.hide-footer footer[role="contentinfo"] { display: none; }
+
+.feedback-fab.fr-btn {
+  position: fixed;
+  left: 1rem;
+  bottom: 1rem;
+  z-index: 1000;
+  background-color: #fff !important;
+  --background-default-grey: #fff;
+  --background-contrast-grey: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.16);
+}
+
+.feedback-fab.fr-btn:not(:disabled):hover,
+.feedback-fab.fr-btn:not(:disabled):active {
+  background-color: #fff !important;
+}
 
 </style>

@@ -251,6 +251,23 @@
       <TaxonomyTagsCard :dataObj="dataObj" :useStaging="isStaging" />
     </div>
 
+    <div v-if="!isIframe" class="graph-box-feedback-row">
+      <button
+        type="button"
+        class="fr-link fr-link--sm"
+        :title="'Signaler un problème sur ' + displayData.label_indic"
+        @click="feedbackOpen = true"
+      >
+        Signaler un problème
+      </button>
+    </div>
+
+    <feedback-form-modal
+      :visible="feedbackOpen"
+      :indicator-id="indicatorGristId"
+      :indicator-label="displayData.label_indic"
+      @close="feedbackOpen = false"
+    />
   </div>
 </template>
 
@@ -260,6 +277,7 @@ import MultiLineChart from "./components_dsfr/MultiLineChart.vue";
 import LineChart from "./components_dsfr/LineChart.vue";
 import SegmentedControls from "./SegmentedControls.vue";
 import TaxonomyTagsCard from "./TaxonomyTagsCard.vue";
+import FeedbackFormModal from "./FeedbackFormModal.vue";
 import TableComponent from "./TableComponent.vue";
 import TableComponentVariant from "./TableComponentVariant.vue";
 import { loadAllRegionsDataForIndicator } from "@/services/ecolabApiService.js";
@@ -286,6 +304,7 @@ export default {
     BarChart,
     SegmentedControls,
     TaxonomyTagsCard,
+    FeedbackFormModal,
     TableComponent,
     TableComponentVariant,
     MultiLineChart,
@@ -328,6 +347,7 @@ export default {
       regionExtraOptions: [],
       selectedExtraValue: "",
       estFavori: false,
+      feedbackOpen: false,
     };
   },
   watch: {
@@ -346,6 +366,10 @@ export default {
   computed: {
     isStaging() {
       return this.$route?.path?.includes('/staging') ?? false;
+    },
+    indicatorGristId() {
+      const id = this.dataObj?.id_indic;
+      return id != null ? String(id) : '';
     },
     hasRegionalData() {
       return this.regionalIndicatorIds.length > 0;
@@ -1178,6 +1202,11 @@ p.textReference {
 
 .graph-box-card--compact .graph-box-download-btn {
   font-size: 0.75rem;
+}
+
+.graph-box-feedback-row {
+  padding: 0 1rem 1rem;
+  text-align: right;
 }
 .fr-collapse {
   height: 0rem !important;
