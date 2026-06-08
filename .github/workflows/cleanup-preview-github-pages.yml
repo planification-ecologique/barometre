@@ -29,6 +29,7 @@ jobs:
       - name: Comment — preview removed
         uses: peter-evans/create-or-update-comment@v4
         with:
+          comment-id: pages-preview-${{ env.PR_NUMBER }}
           issue-number: ${{ env.PR_NUMBER }}
           body: |
             ## GitHub Pages preview

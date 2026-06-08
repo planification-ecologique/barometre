@@ -25,6 +25,7 @@ jobs:
       - name: Comment — deployment started
         uses: peter-evans/create-or-update-comment@v4
         with:
+          comment-id: pages-preview-${{ env.PR_NUMBER }}
           issue-number: ${{ env.PR_NUMBER }}
           body: |
             ## GitHub Pages preview
@@ -65,6 +66,7 @@ jobs:
         if: success()
         uses: peter-evans/create-or-update-comment@v4
         with:
+          comment-id: pages-preview-${{ env.PR_NUMBER }}
           issue-number: ${{ env.PR_NUMBER }}
           body: |
             ## GitHub Pages preview
@@ -80,6 +82,7 @@ jobs:
         if: failure()
         uses: peter-evans/create-or-update-comment@v4
         with:
+          comment-id: pages-preview-${{ env.PR_NUMBER }}
           issue-number: ${{ env.PR_NUMBER }}
           body: |
             ## GitHub Pages preview
