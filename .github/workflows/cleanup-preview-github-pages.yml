@@ -1,0 +1,37 @@
+name: Cleanup GitHub Pages preview
+
+on:
+  pull_request:
+    types: [closed]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    env:
+      PR_NUMBER: ${{ github.event.pull_request.number }}
+      PR_PATH: pr/${{ github.event.pull_request.number }}
+
+    steps:
+      - name: Remove preview folder
+        run: mkdir -p public
+
+      - uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          destination_dir: ${{ env.PR_PATH }}
+          keep_files: true
+
+      - name: Comment — preview removed
+        uses: peter-evans/create-or-update-comment@v4
+        with:
+          issue-number: ${{ env.PR_NUMBER }}
+          body: |
+            ## GitHub Pages preview
+
+            Preview removed (PR closed).
+          edit-mode: replace
