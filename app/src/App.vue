@@ -15,11 +15,15 @@
           type="button"
           class="fr-btn fr-btn--secondary fr-btn--sm feedback-fab"
           title="Signaler un problème"
-          @click="feedbackOpen = true"
+          @click="openFeedback"
         >
           Signaler un problème
         </button>
-        <feedback-form-modal :visible="feedbackOpen" @close="feedbackOpen = false" />
+        <feedback-form-modal
+          :visible="feedbackOpen"
+          :page-url="feedbackPageUrl"
+          @close="feedbackOpen = false"
+        />
       </div>
     </div>
   </div>
@@ -46,6 +50,7 @@ export default {
   data() {
     return {
       feedbackOpen: false,
+      feedbackPageUrl: '',
     };
   },
   computed: {
@@ -59,6 +64,10 @@ export default {
     }
   },
   methods: {
+    openFeedback() {
+      this.feedbackPageUrl = window.location.href;
+      this.feedbackOpen = true;
+    },
     updateNoIndexMetaTag(noindex) {
       const metaTag = document.querySelector('meta[name="robots"]');
       if (noindex) {

@@ -33,10 +33,10 @@
                 Donnée incorrecte, bug ou idée d'amélioration — dites-nous ce qui ne va pas.
               </p>
               <p
-                v-if="indicatorLabel"
-                class="fr-text--sm fr-text--bold fr-p-1w fr-background-alt--grey fr-mb-2w"
+                v-if="pageUrl"
+                class="fr-text--xs fr-text-mention--grey fr-p-1w fr-background-alt--grey fr-mb-2w feedback-modal__page"
               >
-                {{ indicatorLabel }}
+                Page : {{ pageUrl }}
               </p>
 
               <div v-if="status === 'success'" class="feedback-modal__success">
@@ -47,18 +47,23 @@
               </div>
 
               <form v-else class="feedback-form" @submit.prevent="onSubmit">
-                <fieldset class="fr-fieldset">
+                <fieldset class="fr-fieldset feedback-form__reason">
                   <legend class="fr-fieldset__legend fr-text--bold fr-mb-1w">
                     Nature du signalement
                   </legend>
-                  <div class="fr-btns-group fr-btns-group--inline-md fr-btns-group--icon-left">
+                  <div
+                    class="feedback-form__reason-options"
+                    role="radiogroup"
+                    aria-label="Nature du signalement"
+                  >
                     <button
                       v-for="option in reasonOptions"
                       :key="option.value"
                       type="button"
-                      class="fr-btn fr-btn--secondary fr-btn--sm"
-                      :class="{ 'fr-btn--primary': reason === option.value }"
-                      :aria-pressed="reason === option.value"
+                      role="radio"
+                      class="feedback-form__reason-btn"
+                      :class="{ 'feedback-form__reason-btn--active': reason === option.value }"
+                      :aria-checked="reason === option.value ? 'true' : 'false'"
                       @click="reason = option.value"
                     >
                       {{ option.label }}
@@ -143,11 +148,7 @@ export default {
       type: Boolean,
       default: false,
     },
-    indicatorId: {
-      type: String,
-      default: '',
-    },
-    indicatorLabel: {
+    pageUrl: {
       type: String,
       default: '',
     },
@@ -204,9 +205,7 @@ export default {
         type: 'utilisateur',
         commentaire: this.comment.trim(),
         email: trimmedEmail,
-        id_indicateur: this.indicatorId || undefined,
-        libelle_indicateur: this.indicatorLabel || undefined,
-        url_page: typeof window !== 'undefined' ? window.location.href : undefined,
+        url_page: this.pageUrl || undefined,
         website: this.website,
       })
 
@@ -242,6 +241,10 @@ export default {
   background: var(--background-default-grey, #fff);
 }
 
+.feedback-modal__page {
+  word-break: break-all;
+}
+
 .feedback-form__honeypot {
   position: absolute;
   left: -9999px;
@@ -255,5 +258,47 @@ export default {
   flex-direction: column;
   align-items: flex-start;
   gap: 1rem;
+}
+
+.feedback-form__reason-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.feedback-form__reason-btn {
+  flex: 0 1 auto;
+  padding: 0.375rem 0.75rem;
+  border: 1px solid var(--border-default-grey, #ddd);
+  border-radius: 4px;
+  background: #fff;
+  color: var(--text-title-grey, #161616);
+  font: inherit;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  line-height: 1.25;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.15s, background-color 0.15s, color 0.15s;
+}
+
+.feedback-form__reason-btn:hover {
+  background: var(--background-alt-grey, #f6f6f6);
+}
+
+.feedback-form__reason-btn--active,
+.feedback-form__reason-btn--active:hover {
+  border-color: var(--border-active-blue-france, #000091);
+  background: #fff;
+  color: var(--text-active-blue-france, #000091);
+  font-weight: 600;
+  box-shadow: 0 0 0 1px var(--border-active-blue-france, #000091);
+}
+
+.feedback-form__reason-btn:focus,
+.feedback-form__reason-btn:focus-visible {
+  outline: 2px solid var(--border-active-blue-france, #000091);
+  outline-offset: 2px;
+  background: #fff;
 }
 </style>
