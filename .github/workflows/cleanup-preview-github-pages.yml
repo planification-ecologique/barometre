@@ -26,12 +26,21 @@ jobs:
           destination_dir: ${{ env.PR_PATH }}
           keep_files: true
 
+      - name: Find preview comment
+        uses: peter-evans/find-comment@v3
+        id: find-comment
+        with:
+          issue-number: ${{ env.PR_NUMBER }}
+          comment-author: github-actions[bot]
+          body-includes: GitHub Pages preview
+
       - name: Comment — preview removed
         uses: peter-evans/create-or-update-comment@v4
         with:
-          comment-id: pages-preview-${{ env.PR_NUMBER }}
+          comment-id: ${{ steps.find-comment.outputs.comment-id }}
           issue-number: ${{ env.PR_NUMBER }}
           body: |
+            <!-- pages-preview -->
             ## GitHub Pages preview
 
             Preview removed (PR closed).

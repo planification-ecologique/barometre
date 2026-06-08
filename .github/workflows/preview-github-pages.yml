@@ -22,12 +22,21 @@ jobs:
       PREVIEW_URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/pr/${{ github.event.pull_request.number }}/
 
     steps:
+      - name: Find preview comment
+        uses: peter-evans/find-comment@v3
+        id: find-comment
+        with:
+          issue-number: ${{ env.PR_NUMBER }}
+          comment-author: github-actions[bot]
+          body-includes: GitHub Pages preview
+
       - name: Comment — deployment started
         uses: peter-evans/create-or-update-comment@v4
         with:
-          comment-id: pages-preview-${{ env.PR_NUMBER }}
+          comment-id: ${{ steps.find-comment.outputs.comment-id }}
           issue-number: ${{ env.PR_NUMBER }}
           body: |
+            <!-- pages-preview -->
             ## GitHub Pages preview
 
             Building preview for commit `${{ github.event.pull_request.head.sha }}`…
@@ -62,13 +71,23 @@ jobs:
           destination_dir: ${{ env.PR_PATH }}
           keep_files: true
 
+      - name: Find preview comment
+        if: always()
+        uses: peter-evans/find-comment@v3
+        id: find-comment-final
+        with:
+          issue-number: ${{ env.PR_NUMBER }}
+          comment-author: github-actions[bot]
+          body-includes: GitHub Pages preview
+
       - name: Comment — preview ready
         if: success()
         uses: peter-evans/create-or-update-comment@v4
         with:
-          comment-id: pages-preview-${{ env.PR_NUMBER }}
+          comment-id: ${{ steps.find-comment-final.outputs.comment-id }}
           issue-number: ${{ env.PR_NUMBER }}
           body: |
+            <!-- pages-preview -->
             ## GitHub Pages preview
 
             Preview ready for commit `${{ github.event.pull_request.head.sha }}`:
@@ -82,9 +101,10 @@ jobs:
         if: failure()
         uses: peter-evans/create-or-update-comment@v4
         with:
-          comment-id: pages-preview-${{ env.PR_NUMBER }}
+          comment-id: ${{ steps.find-comment-final.outputs.comment-id }}
           issue-number: ${{ env.PR_NUMBER }}
           body: |
+            <!-- pages-preview -->
             ## GitHub Pages preview
 
             Preview deployment failed for commit `${{ github.event.pull_request.head.sha }}`.
