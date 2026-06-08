@@ -11,15 +11,13 @@ const GRIST_BASE_URL = defineString('GRIST_BASE_URL', {
   default: 'https://grist.numerique.gouv.fr',
 })
 const GRIST_DOC_ID = defineString('GRIST_DOC_ID', { default: 'jGd2ge4dy2ZMaRpdgbPLnd' })
-const GRIST_TABLE_ID = defineString('GRIST_TABLE_ID', { default: 'Commentaires' })
+const GRIST_TABLE_ID = defineString('GRIST_TABLE_ID', { default: 'Commentaires_recus' })
 
 const FEEDBACK_REASONS = new Set(['bug', 'suggestion', 'donnee_fausse'])
 const FEEDBACK_AUTHOR_TYPES = new Set(['utilisateur', 'operateur'])
 
 const MAX_COMMENT_LENGTH = 2000
 const MAX_EMAIL_LENGTH = 200
-const MAX_INDICATOR_ID_LENGTH = 50
-const MAX_INDICATOR_LABEL_LENGTH = 300
 const MAX_PAGE_URL_LENGTH = 500
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
@@ -72,8 +70,6 @@ exports.submitFeedback = onRequest(
     const authorType = asTrimmedString(body.type, 50) || 'utilisateur'
     const comment = asTrimmedString(body.commentaire, MAX_COMMENT_LENGTH)
     const email = asTrimmedString(body.email, MAX_EMAIL_LENGTH)
-    const indicatorId = asTrimmedString(body.id_indicateur, MAX_INDICATOR_ID_LENGTH)
-    const indicatorLabel = asTrimmedString(body.libelle_indicateur, MAX_INDICATOR_LABEL_LENGTH)
     const pageUrl = asTrimmedString(body.url_page, MAX_PAGE_URL_LENGTH)
 
     if (!FEEDBACK_REASONS.has(reason)) {
@@ -97,16 +93,15 @@ exports.submitFeedback = onRequest(
       return
     }
 
+    // Colonnes Grist complétées manuellement : id_indicateur, indicateur, responsable
     const fields = {
       date: new Date().toISOString(),
-      type: authorType,
+      utilisateur: authorType,
       raison: reason,
       commentaire: comment,
       email,
-      id_indicateur: indicatorId || null,
-      libelle_indicateur: indicatorLabel || null,
       url_page: pageUrl || null,
-      status: 'nouveau',
+      statut: 'nouveau',
     }
 
     const url = `${GRIST_BASE_URL.value()}/api/docs/${GRIST_DOC_ID.value()}/tables/${GRIST_TABLE_ID.value()}/records`
