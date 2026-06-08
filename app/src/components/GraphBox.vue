@@ -473,6 +473,9 @@ export default {
       return this.getChartType;
     },
     tableAnnee() {
+      if (this.selectedRegionCode && this.regionalChartData) {
+        return this.regionalChartData.x || [];
+      }
       const d = this.displayData;
       if (d.tableAnnee && d.tableAnnee.length > 0) return d.tableAnnee;
       const v = d.values;
@@ -480,6 +483,10 @@ export default {
       return (v.x && v.x[0]) ? v.x[0] : (v.x || []);
     },
     tableValeur() {
+      if (this.selectedRegionCode && this.regionalChartData) {
+        const v = this.regionalChartData;
+        return (v.y && v.y[0]) ? v.y[0] : [];
+      }
       const d = this.displayData;
       if (d.tableValeur && d.tableValeur.length > 0) return d.tableValeur;
       const v = d.values;
@@ -487,6 +494,10 @@ export default {
       return v.ytab || (v.y && v.y[0]) || [];
     },
     tableTypeMesure() {
+      if (this.selectedRegionCode && this.regionalChartData) {
+        const len = (this.regionalChartData.x || []).length;
+        return Array(len).fill("Mesuré");
+      }
       const d = this.displayData;
       if (d.tableTypeMesure && d.tableTypeMesure.length > 0) return d.tableTypeMesure;
       return d.label_value || [];
@@ -899,14 +910,30 @@ export default {
     handleChartSelected(type) {
       this.displayChart = type === "graphique" ? true : false;
     },
+    sanitizeFilenamePart(value, fallback = "indicateur") {
+      return (
+        String(value || fallback)
+          .normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "")
+          .replace(/[^\w\s-]/gi, "")
+          .replace(/\s+/g, "_")
+          .trim() || fallback
+      );
+    },
     getFilename() {
-      const safe = (this.dataObj.label_indic || "indicateur")
-        .normalize("NFD")
-        .replace(/[\u0300-\u036f]/g, "")
-        .replace(/[^\w\s-]/gi, "")
-        .replace(/\s+/g, "_")
-        .trim() || "indicateur";
-      return `${safe}_data.csv`;
+      const parts = [this.sanitizeFilenamePart(this.dataObj.label_indic)];
+      if (this.selectedRegionCode) {
+        const region = this.regionsList.find(
+          (r) => String(r.geocode_region) === String(this.selectedRegionCode)
+        );
+        parts.push(
+          this.sanitizeFilenamePart(
+            region?.libelle_region || this.selectedRegionCode,
+            this.selectedRegionCode
+          )
+        );
+      }
+      return `${parts.join("_")}_data.csv`;
     },
     triggerDownload() {
       const csv = this.downloadCsvContent();

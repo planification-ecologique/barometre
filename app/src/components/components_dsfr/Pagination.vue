@@ -92,6 +92,13 @@ export default {
       length_pages: 5,
     };
   },
+  watch: {
+    nbPages(newVal, oldVal) {
+      if (newVal !== oldVal) {
+        this.changePage(1);
+      }
+    },
+  },
   methods: {
     changePage(select) {
       if (select === 0 || select == 9999) return;

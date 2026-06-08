@@ -254,6 +254,7 @@ export default {
           ? computeRegionalIrpeLinkStats(allMatchingResults.results)
           : null;
         this.set_pages();
+        this.handleSelectedPage(1);
         this.isapiloading = false;
         
         // Update the applied search query only when search is performed

@@ -232,6 +232,44 @@ describe("GraphBox", () => {
     ]);
   });
 
+  it("uses regional data for table and download when a region is selected", () => {
+    const wrapper = mountGraphBox({
+      label_indic: "Test indicator",
+      label_unit: "%",
+      label_sous_groupe: "",
+      irpe_ids: ["949"],
+      tableAnnee: ["2020", "2021", "2022"],
+      tableValeur: [10, 11, 12],
+      tableTypeMesure: ["Mesuré", "Mesuré", "Mesuré"],
+      values: {
+        legend: ["Historique"],
+        x: [["2020", "2021", "2022"]],
+        y: [[10, 11, 12]],
+        ytab: [10, 11, 12],
+      },
+    });
+
+    wrapper.setData({
+      selectedRegionCode: "84",
+      regionsList: [{ geocode_region: "84", libelle_region: "Auvergne-Rhône-Alpes" }],
+      regionalChartData: {
+        x: ["2023", "2024"],
+        y: [[50, 55]],
+        legend: ["Historique"],
+      },
+    });
+
+    expect(wrapper.vm.tableAnnee).toEqual(["2023", "2024"]);
+    expect(wrapper.vm.tableValeur).toEqual([50, 55]);
+    expect(wrapper.vm.tableTypeMesure).toEqual(["Mesuré", "Mesuré"]);
+    expect(wrapper.vm.getFilename()).toBe("Test_indicator_Auvergne-Rhone-Alpes_data.csv");
+
+    const csv = wrapper.vm.downloadCsvContent();
+    expect(csv).toContain("2023;50;Mesuré");
+    expect(csv).toContain("2024;55;Mesuré");
+    expect(csv).not.toContain("2020;10");
+  });
+
   it("marks target years as lighter points for independent lines so the ending segment can be dashed", () => {
     const wrapper = mountGraphBox({
       label_indic: "Emissions par sous-groupe",
