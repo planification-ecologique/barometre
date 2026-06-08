@@ -233,7 +233,6 @@
           data: dataLine,
           borderColor: this.colorParse,
           type: 'line',
-          pointRadius: 8,
           pointStyle: 'rect',
           pointBackgroundColor: 'rgba(47, 64, 119, 1)',
           pointBorderColor: 'rgba(0, 0, 0, 0)',

@@ -28,7 +28,7 @@ if (typeof Storage !== 'undefined' && !window.location.pathname.includes('chart-
     require('../public/tarteaucitron/tarteaucitron.js')
     require('../public/tarteaucitron/tarteaucitron.services.js')
     require('../public/tarteaucitron/css/dsfr-theme-tac.css')
-    tarteaucitronForceLanguage = 'fr'
+    window.tarteaucitronForceLanguage = 'fr'
     tarteaucitron.init(config_file)
     tarteaucitron.user.eulerianHost = process.env.VUE_APP_TRACKING
     window.dsfr = analytics_config_file
