@@ -292,13 +292,14 @@ export default {
   background: #fff;
   color: var(--text-active-blue-france, #000091);
   font-weight: 600;
-  box-shadow: 0 0 0 1px var(--border-active-blue-france, #000091);
 }
 
-.feedback-form__reason-btn:focus,
+.feedback-form__reason-btn:focus {
+  outline: none;
+}
+
 .feedback-form__reason-btn:focus-visible {
   outline: 2px solid var(--border-active-blue-france, #000091);
   outline-offset: 2px;
-  background: #fff;
 }
 </style>
