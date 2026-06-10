@@ -668,15 +668,8 @@ export default {
                 suggestedMax: self.ymax,
                 fontColor: '#161616',
                 fontSize: self.axisFontSize,
-                callback: function (value, index, values) {
-                  if (value >= 1000000000 || value <= -1000000000) {
-                    return parseFloat(Number(value / 1e9).toPrecision(2)) + 'B'
-                  } else if (value >= 1000000 || value <= -1000000) {
-                    return parseFloat(Number(value / 1e6).toPrecision(2)) + 'M'
-                  } else if (value >= 1000 || value <= -1000) {
-                    return parseFloat(Number(value / 1e3).toPrecision(2)) + 'K'
-                  }
-                  return value === 0 ? 0 : parseFloat(Number(value).toPrecision(2))
+                callback: function (value) {
+                  return self.formatChartAxisTick(value)
                 }
               }
             }]

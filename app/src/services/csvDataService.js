@@ -139,6 +139,12 @@ function indicatorHasRegionalLinkIds(ids) {
   return Array.isArray(ids) && ids.length > 0 && ids.some(id => id && String(id).trim() !== '');
 }
 
+function hasValidIndicatorId(id) {
+  if (id == null) return false;
+  const s = String(id).trim();
+  return s !== '' && s.toLowerCase() !== 'nan';
+}
+
 /**
  * Count active (IRPE valide) vs pending (link present, API not yet available) Écolab liaisons.
  * @param {Array<{ irpe_link_ids?: string[], irpe_ids?: string[] }>} indicators
@@ -484,6 +490,9 @@ export function transformCSVData(csvData, query) {
 
   // Filter out items marked for deletion in V1
   filteredData = filteredData.filter(item => item['A supprimer de la V1'] !== 'true');
+
+  // Exclude indicators without a Grist ID (uuid)
+  filteredData = filteredData.filter(item => hasValidIndicatorId(item.ID));
 
   // Sort by order
   filteredData.sort((a, b) => parseInt(a.Ordre) - parseInt(b.Ordre));

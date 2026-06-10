@@ -79,6 +79,23 @@ export const convertIntToHumanTable = function (int) {
     return parseFloat(res).toFixed(2).toLocaleString('fr-FR')
   }
 }
+
+/** Seuil (absolu) à partir duquel les ticks d'axe Y graphiques passent en notation K. */
+export const CHART_AXIS_K_THRESHOLD = 10000
+
+/** Format court B/M/K pour les ticks d'axe Y (BarChart, LineChart, MultiLineChart). */
+export const formatChartAxisTick = function (value) {
+  if (value >= 1e9 || value <= -1e9) {
+    return parseFloat(Number(value / 1e9).toPrecision(2)) + 'B'
+  }
+  if (value >= 1e6 || value <= -1e6) {
+    return parseFloat(Number(value / 1e6).toPrecision(2)) + 'M'
+  }
+  if (value >= CHART_AXIS_K_THRESHOLD || value <= -CHART_AXIS_K_THRESHOLD) {
+    return parseFloat(Number(value / 1e3).toPrecision(2)) + 'K'
+  }
+  return value === 0 ? 0 : parseFloat(Number(value).toPrecision(2))
+}
 export const convertDateToHuman = function (string) {
   const date = new Date(string)
   return date.toLocaleDateString('fr-FR')
@@ -1212,6 +1229,7 @@ export const mixin = {
     convertFloatToHuman,
     convertIntToHuman,
     convertIntToHumanTable,
+    formatChartAxisTick,
     convertDateToHuman,
     testIfNaN,
     getDep,
