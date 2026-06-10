@@ -96,6 +96,73 @@ export const formatChartAxisTick = function (value) {
   }
   return value === 0 ? 0 : parseFloat(Number(value).toPrecision(2))
 }
+
+/** Nombre max de libellés visibles sur l'axe X (1re et dernière toujours gardées). */
+export function getChartXAxisMaxVisible(isSmall = false) {
+  return isSmall ? 6 : 20
+}
+
+/** Indices des ticks X à afficher — 1re/dernière toujours, espacement min pour éviter chevauchement. */
+export function getChartXAxisVisibleIndices(total, maxVisible = 20) {
+  if (total <= 0) return []
+  if (total === 1) return [0]
+  if (total === 2) return [0, 1]
+  if (total === 3) return [0, 1, 2]
+
+  const lastIndex = total - 1
+  const minGap = 2 // au moins 1 année masquée entre deux libellés affichés
+  const maxFit = Math.floor(lastIndex / minGap) + 1
+  let targetCount = Math.min(total, maxVisible, maxFit)
+  targetCount = Math.max(targetCount, 2)
+
+  if (targetCount >= total) {
+    return Array.from({ length: total }, (_, i) => i)
+  }
+
+  if (targetCount === 2) return [0, lastIndex]
+
+  const innerCount = targetCount - 2
+  const indices = [0]
+
+  for (let k = 1; k <= innerCount; k++) {
+    const ideal = Math.round((k * lastIndex) / (innerCount + 1))
+    const minPos = indices[indices.length - 1] + minGap
+    const slotsAfter = innerCount - k
+    const maxPos = lastIndex - slotsAfter * minGap
+    if (minPos > maxPos) break
+    const pos = Math.min(Math.max(ideal, minPos), maxPos)
+    if (pos >= lastIndex) break
+    indices.push(pos)
+  }
+
+  if (indices[indices.length - 1] !== lastIndex) {
+    while (
+      indices.length > 1 &&
+      lastIndex - indices[indices.length - 1] < minGap
+    ) {
+      indices.pop()
+    }
+    indices.push(lastIndex)
+  }
+
+  return indices
+}
+
+/**
+ * Afficher ce tick d'axe X ? Première et dernière année toujours ; milieu réparti sans chevauchement.
+ */
+export function shouldShowChartXAxisTick(index, total, maxVisible = 20) {
+  return getChartXAxisVisibleIndices(total, maxVisible).includes(index)
+}
+
+/** Format d'un libellé d'axe X (année ou date selon formatdate). */
+export function formatChartXAxisTickValue(value, formatdate) {
+  if (value == null || value === '') return ''
+  if (formatdate) {
+    return value.toString().substring(5, 7) + '/' + value.toString().substring(0, 4)
+  }
+  return value
+}
 export const convertDateToHuman = function (string) {
   const date = new Date(string)
   return date.toLocaleDateString('fr-FR')
@@ -1230,6 +1297,19 @@ export const mixin = {
     convertIntToHuman,
     convertIntToHumanTable,
     formatChartAxisTick,
+    getChartXAxisMaxVisible(isSmall) {
+      if (this.effectiveIsSmall === true || isSmall === true) return 6
+      if (this.isSmall === true) return 6
+      return 20
+    },
+    chartXAxisTickCallback(total) {
+      const self = this
+      const maxVisible = self.getChartXAxisMaxVisible()
+      return function (value, index) {
+        if (!shouldShowChartXAxisTick(index, total, maxVisible)) return ''
+        return formatChartXAxisTickValue(value, self.formatdate)
+      }
+    },
     convertDateToHuman,
     testIfNaN,
     getDep,

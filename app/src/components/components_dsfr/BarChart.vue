@@ -787,16 +787,8 @@
                   fontSize: self.axisFontSize,
                   maxRotation: self.effectiveIsSmall ? 0 : 45,
                   minRotation: self.effectiveIsSmall ? 0 : 0,
-                  maxTicksLimit: self.effectiveIsSmall ? 6 : 20,
-                  autoSkip: true,
-                  autoSkipPadding: self.effectiveIsSmall ? 8 : 0,
-                  callback: function (value) {
-                    if (self.formatdate) {
-                      return value.toString().substring(5, 7) + '/' + value.toString().substring(0, 4)
-                    } else {
-                      return value
-                    }
-                  }
+                  autoSkip: false,
+                  callback: self.chartXAxisTickCallback(self.labels.length)
                 }
               }],
               yAxes: [{

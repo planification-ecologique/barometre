@@ -351,13 +351,15 @@
                 ticks: {
                   fontColor: '#161616',
                   labelOffset: 10,
-                  callback: function (value) {
-                    if (self.formatdate) {
-                      return value.toString().substring(5, 7) + '/' + value.toString().substring(0, 4)
-                    } else {
+                  autoSkip: false,
+                  callback: self.xAxisType === 'category'
+                    ? self.chartXAxisTickCallback(self.labels.length)
+                    : function (value) {
+                      if (self.formatdate) {
+                        return value.toString().substring(5, 7) + '/' + value.toString().substring(0, 4)
+                      }
                       return value
                     }
-                  }
                 }
               }],
               yAxes: [{
