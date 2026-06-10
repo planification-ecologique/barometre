@@ -168,7 +168,7 @@
           <div v-else class="chantier-empty-state">
             <p class="fr-text--md fr-mb-0">
               <template v-if="levierGroup.objectifLevier">
-                Aucun indicateur n'est encore défini pour ce levier. L'objectif est le suivant :
+                Aucun indicateur n'est encore disponible pour ce levier. L'objectif est le suivant :
               </template>
               <template v-else>
                 Aucun indicateur n'est encore défini pour ce levier.
