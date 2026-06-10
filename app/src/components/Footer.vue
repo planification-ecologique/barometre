@@ -38,10 +38,12 @@
             <a
               href="#"
               class="fr-footer__bottom-link"
-              title="Ouvrir l’outil de test des couleurs DSFR pour les graphiques"
-              @click.prevent="openChartColorTest"
+              :class="{ 'fr-footer__bottom-link--loading': exportLoading }"
+              :aria-busy="exportLoading"
+              :title="exportLoading ? 'Export en cours…' : 'Télécharger toutes les données des indicateurs au format CSV'"
+              @click.prevent="exportIndicators"
             >
-              Tester les couleurs des graphiques
+              {{ exportLoading ? 'Export en cours…' : 'Exporter les indicateurs' }}
             </a>
           </li>
           <li class="fr-footer__bottom-item">
@@ -70,13 +72,14 @@
 
 <script>
 import { homeRouteName } from "@/config/routeNames.js"
-import { chartColorTestState } from "@/services/chartColorTestOverrides.js"
+import { downloadAllIndicators } from "@/services/indicatorsExportService.js"
 
 export default {
   name: "FooterDsfr",
   data() {
     return {
       cookiesBlocked : false,
+      exportLoading: false,
       menuLinks: [
         {
           link: "https://legifrance.gouv.fr",
@@ -127,8 +130,18 @@ export default {
     }
   },
   methods:{
-    openChartColorTest () {
-      chartColorTestState.modalOpen = true
+    async exportIndicators() {
+      if (this.exportLoading) return
+      this.exportLoading = true
+      try {
+        const environment = this.$route.path.includes('/staging') ? 'staging' : 'production'
+        await downloadAllIndicators(environment)
+      } catch (error) {
+        console.error('[Export indicateurs]', error)
+        window.alert("Impossible d'exporter les indicateurs. Réessayez plus tard.")
+      } finally {
+        this.exportLoading = false
+      }
     },
     blocked_cookies(){
       try {
