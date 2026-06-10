@@ -5,6 +5,9 @@
   "scripts": {
     "download-grist-csvs": "node scripts/download-grist-csvs.js",
     "serve": "vue-cli-service serve",
+    "lint": "npm run lint:eslint",
+    "lint:eslint": "eslint \"src/**/*.{js,vue}\" \"tests/**/*.js\"",
+    "lint:format": "prettier --check \"src/**/*.{js,vue,css,scss}\" \"tests/**/*.js\"",
     "test:unit": "vue-cli-service test:unit",
     "build": "vue-cli-service build",
     "build_qualif": "vue-cli-service build --mode qualif",
