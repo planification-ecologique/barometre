@@ -1,23 +1,12 @@
-const DEFAULT_FEEDBACK_URL = '/api/feedback'
-
-function feedbackApiUrl() {
-  const configured = process.env.VUE_APP_FEEDBACK_API_URL
-  if (configured && String(configured).trim()) {
-    return String(configured).trim()
-  }
-  const prefix = process.env.VUE_APP_PREFIX_PATH || ''
-  const base = prefix.endsWith('/') ? prefix.slice(0, -1) : prefix
-  return `${base}${DEFAULT_FEEDBACK_URL}`
-}
+const FEEDBACK_API_URL =
+  'https://europe-west1-barometre-sgpe.cloudfunctions.net/submitFeedback'
 
 /**
  * @param {{
  *   raison: 'bug' | 'suggestion' | 'donnee_fausse',
- *   type: 'utilisateur' | 'operateur',
+ *   type?: 'utilisateur' | 'operateur',
  *   commentaire: string,
- *   email?: string,
- *   id_indicateur?: string,
- *   libelle_indicateur?: string,
+ *   email: string,
  *   url_page?: string,
  *   website?: string,
  * }} payload
@@ -25,7 +14,7 @@ function feedbackApiUrl() {
  */
 export async function submitFeedback(payload) {
   try {
-    const response = await fetch(feedbackApiUrl(), {
+    const response = await fetch(FEEDBACK_API_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload),
