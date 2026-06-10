@@ -1979,6 +1979,7 @@ async function buildNavigationStructureCore(environment) {
     
     // Enrich the structure with all chantiers & leviers from the dedicated
     // "Liste_leviers" table, so that leviers without indicators still appear.
+    const levierObjectifByKey = new Map();
     if (Array.isArray(levierList)) {
       levierList.forEach(row => {
         const associated = row['Chantier associé'] || '';
@@ -1989,6 +1990,11 @@ async function buildNavigationStructureCore(environment) {
 
         const { sector, chantierOuImpact } = parseChantierOuImpact(associated);
         if (!sector || !chantierOuImpact) return;
+
+        const objectif = String(row['Objectif du levier'] || '').trim();
+        if (objectif) {
+          levierObjectifByKey.set(`${sector}::${chantierOuImpact}::${rawLevierName}`, objectif);
+        }
 
         // Ensure sector exists
         if (!sectors[sector]) {
@@ -2023,7 +2029,12 @@ async function buildNavigationStructureCore(environment) {
       Object.entries(sector.chantiers).forEach(([chantierName, chantier]) => {
         // Convert leviers object to sorted array
         const sortedLeviers = Object.entries(chantier.leviers)
-          .map(([name, indicators]) => ({ name, indicators, sortOrder: getLevierSortOrder(name) }))
+          .map(([name, indicators]) => ({
+            name,
+            indicators,
+            sortOrder: getLevierSortOrder(name),
+            objectifLevier: levierObjectifByKey.get(`${sector.name}::${chantierName}::${name}`) || ''
+          }))
           .sort((a, b) => {
             if (a.sortOrder !== b.sortOrder) return a.sortOrder - b.sortOrder;
             return a.name.localeCompare(b.name); // Alphabetical for same order

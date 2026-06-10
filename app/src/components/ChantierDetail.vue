@@ -165,9 +165,21 @@
             </div>
           </div>
 
-          <p v-else class="fr-text--md chantier-empty-state">
-            Aucun indicateur n'est encore défini pour ce levier.
-          </p>
+          <div v-else class="chantier-empty-state">
+            <p class="fr-text--md fr-mb-0">
+              <template v-if="levierGroup.objectifLevier">
+                Aucun indicateur n'est encore défini pour ce levier. L'objectif est le suivant :
+              </template>
+              <template v-else>
+                Aucun indicateur n'est encore défini pour ce levier.
+              </template>
+            </p>
+            <div
+              v-if="levierGroup.objectifLevier"
+              class="fr-text--md fr-mt-1w chantier-levier-intro"
+              v-html="htmlForSummaryText(levierGroup.objectifLevier)"
+            ></div>
+          </div>
         </section>
 
         <div v-if="hasNoLeviers" class="chantier-state">
@@ -516,6 +528,7 @@ export default {
             name: levierGroup.name,
             sortOrder: levierGroup.sortOrder,
             chartData,
+            objectifLevier: levierGroup.objectifLevier || '',
           });
         });
       } else if (this.allIndicatorsData.length > 0) {
