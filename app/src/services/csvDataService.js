@@ -664,17 +664,6 @@ export function transformCSVData(csvData, query) {
     const rawSubGroup = item['Sous-niveau (graphique)'] || '';
     const normalizedSubGroup =
       chartType === 'Barres simple' ? '' : String(rawSubGroup).trim();
-    
-    // Add a NB for targets being adjusted.
-    let nbNote = ''
-    if (
-      item['MAJ cible'] && [
-        "Cible en cours d'ajustement - SNBC",
-        "Cible en cours d'ajustement - autre"
-      ].includes(item['MAJ cible'])
-    ) {
-      nbNote = "</br>NB : Des travaux sont en cours et pourraient légèrement modifier la cible dans les mois qui viennent (ex : SNBC 3)";
-    }
 
     // Parse the "Chantier ou Impact" column
     const chantierOuImpactRaw = item['Chantier ou Impact'] || '';
@@ -841,7 +830,7 @@ export function transformCSVData(csvData, query) {
     const transformed = {
       label_indic: item.Indicateur,
       id_indic: item.ID,
-      label_description: (item.Description || '').toString() + nbNote,
+      label_description: (item.Description || '').toString(),
       label_unit: formattedUnitLong,
       label_unit_short: formattedUnitShort,
       label_tags: item['Tags objectifs environnementaux'],
