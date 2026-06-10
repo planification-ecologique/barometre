@@ -1206,6 +1206,7 @@ p.textReference {
 .graph-box-card--compact .graph-box-download-btn {
   font-size: 0.75rem;
 }
+
 .fr-collapse {
   height: 0rem !important;
 }

@@ -15,6 +15,7 @@ certs/
 *.pem
 *.p12
 app/firebase-debug.log
+app/functions/node_modules
 irpe_recap.csv
 
 # local env files

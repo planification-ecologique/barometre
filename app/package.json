@@ -5,6 +5,9 @@
   "scripts": {
     "download-grist-csvs": "node scripts/download-grist-csvs.js",
     "serve": "vue-cli-service serve",
+    "lint": "npm run lint:eslint",
+    "lint:eslint": "eslint \"src/**/*.{js,vue}\" \"tests/**/*.js\"",
+    "lint:format": "prettier --check \"src/**/*.{js,vue,css,scss}\" \"tests/**/*.js\"",
     "test:unit": "vue-cli-service test:unit",
     "build": "vue-cli-service build",
     "build_qualif": "vue-cli-service build --mode qualif",
@@ -13,8 +16,9 @@
     "deploy": "npm run build_qualif && cd dist && cp index.html 200.html && cd .. && surge ./dist -d barometre-sgpe.surge.sh",
     "prebuild:firebase": "npm run download-grist-csvs",
     "build:firebase": "npm run build_prod && cd dist && cp index.html 200.html && cd ..",
-    "deploy:firebase": "npm run build:firebase && firebase deploy --only hosting",
-    "deploy:firebase:prod": "npm run build:firebase && firebase deploy --only hosting --project barometre-sgpe",
+    "predeploy:functions": "npm install --prefix functions",
+    "deploy:firebase": "npm run predeploy:functions && npm run build:firebase && firebase deploy --only hosting,functions",
+    "deploy:firebase:prod": "npm run predeploy:functions && npm run build:firebase && firebase deploy --only hosting,functions --project barometre-sgpe",
     "prebuild:pages": "npm run download-grist-csvs",
     "build:pages": "vue-cli-service build && cp dist/index.html dist/404.html",
     "deploy:pages": "npm run build:pages"

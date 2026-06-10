@@ -59,16 +59,20 @@ Avant le premier push public, lire **[docs/SECURITY-AUDIT.md](docs/SECURITY-AUDI
 ### 2. Configurer GitHub
 
 1. Créer le dépôt sur GitHub.
-2. **Settings → Pages → Build and deployment** : source = **GitHub Actions**.
+2. **Settings → Pages → Build and deployment** : source = **Deploy from a branch**, branche **`gh-pages`**, dossier **`/ (root)`**.
 3. *(Optionnel)* **Settings → Secrets and variables → Actions** :
    - Secret `VUE_APP_ECOLAB_API_TOKEN` — token API Écolab pour le build CI.
    - Variable `VUE_APP_TRACKING` — domaine analytics si nécessaire.
 
 ### 3. Déployer
 
-Le workflow [`.github/workflows/deploy-github-pages.yml`](.github/workflows/deploy-github-pages.yml) se déclenche à chaque push sur `main` / `master`.
+| Workflow | Déclencheur | URL |
+|----------|-------------|-----|
+| [`deploy-github-pages.yml`](.github/workflows/deploy-github-pages.yml) | push `main` / `master` | `https://<organisation>.github.io/<nom-du-repo>/` |
+| [`preview-github-pages.yml`](.github/workflows/preview-github-pages.yml) | ouverture / mise à jour d'une PR | `https://<organisation>.github.io/<nom-du-repo>/pr/<numéro>/` |
+| [`cleanup-preview-github-pages.yml`](.github/workflows/cleanup-preview-github-pages.yml) | fermeture d'une PR | supprime le dossier `pr/<numéro>/` |
 
-URL résultante : `https://<organisation>.github.io/<nom-du-repo>/`
+Chaque PR reçoit un commentaire automatique avec le lien de prévisualisation.
 
 ### Déploiement manuel
 

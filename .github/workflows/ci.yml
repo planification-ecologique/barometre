@@ -1,0 +1,75 @@
+name: CI
+
+on:
+  push:
+    branches: [main, master, qualif]
+  pull_request:
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '21'
+          cache: npm
+          cache-dependency-path: app/package-lock.json
+
+      - name: Install dependencies
+        working-directory: app
+        run: npm ci
+
+      - name: ESLint
+        working-directory: app
+        run: npm run lint:eslint
+
+  test:
+    name: Unit tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '21'
+          cache: npm
+          cache-dependency-path: app/package-lock.json
+
+      - name: Install dependencies
+        working-directory: app
+        run: npm ci
+
+      - name: Run unit tests
+        working-directory: app
+        run: npm run test:unit -- --ci
+
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '21'
+          cache: npm
+          cache-dependency-path: app/package-lock.json
+
+      - name: Install dependencies
+        working-directory: app
+        run: npm ci
+
+      - name: Build production bundle
+        working-directory: app
+        env:
+          VUE_APP_ENV: prod
+          VUE_APP_ECOLAB_API_TOKEN: ${{ secrets.VUE_APP_ECOLAB_API_TOKEN }}
+          VUE_APP_TRACKING: ${{ vars.VUE_APP_TRACKING || '' }}
+        run: npm run build

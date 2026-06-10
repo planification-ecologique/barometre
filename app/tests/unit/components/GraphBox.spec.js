@@ -56,12 +56,22 @@ describe("GraphBox", () => {
           },
         },
       },
+      stubs: {
+        BarChart: BarChartStub,
+        MultiLineChart: MultiLineChartStub,
+        SegmentedControls: true,
+        tagsCard: true,
+        TableComponent: true,
+        TableComponentVariant: true,
+        LineChart: true,
+      },
     });
 
-    expect(wrapper.classes()).toContain("graph-box-card");
-    expect(wrapper.classes()).toContain("graph-box-card--compact");
+    expect(wrapper.props("compact")).toBe(true);
+    expect(wrapper.attributes("class")).toContain("graph-box-card");
+    expect(wrapper.attributes("class")).toContain("graph-box-card--compact");
     expect(wrapper.find(".graph-box-header").exists()).toBe(true);
-    expect(wrapper.find(".graph-box-controls").exists()).toBe(true);
+    expect(wrapper.find(".graph-box-toolbar").exists()).toBe(true);
     expect(wrapper.find(".graph-box-resources").exists()).toBe(true);
     expect(wrapper.text()).toContain("Télécharger les données");
     expect(wrapper.find("#graph-box-test-download").exists()).toBe(true);
@@ -87,7 +97,7 @@ describe("GraphBox", () => {
       },
     });
 
-    expect(wrapper.classes()).not.toContain("graph-box-card--compact");
+    expect(wrapper.attributes("class") || "").not.toContain("graph-box-card--compact");
   });
 
   it("does not mutate the input indicator object when formatting the update date", () => {
