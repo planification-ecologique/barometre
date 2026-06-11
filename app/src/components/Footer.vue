@@ -36,14 +36,13 @@
 
           <li class="fr-footer__bottom-item">
             <a
-              href="#"
+              :href="exportUrl"
               class="fr-footer__bottom-link"
-              :class="{ 'fr-footer__bottom-link--loading': exportLoading }"
-              :aria-busy="exportLoading"
-              :title="exportLoading ? 'Export en cours…' : 'Télécharger toutes les données des indicateurs au format CSV'"
-              @click.prevent="exportIndicators"
+              target="_blank"
+              rel="noopener external"
+              title="Télécharger toutes les données des indicateurs au format CSV - nouvelle fenêtre"
             >
-              {{ exportLoading ? 'Export en cours…' : 'Exporter les indicateurs' }}
+              Exporter les indicateurs
             </a>
           </li>
           <li class="fr-footer__bottom-item">
@@ -72,14 +71,15 @@
 
 <script>
 import { homeRouteName } from "@/config/routeNames.js"
-import { downloadAllIndicators } from "@/services/indicatorsExportService.js"
+
+const INDICATORS_EXPORT_URL = "https://grist.numerique.gouv.fr/o/planification-ecologique/api/docs/jGd2ge4dy2ZMaRpdgbPLnd/download/csv?viewSection=63&tableId=Tdb_planif_staging"
 
 export default {
   name: "FooterDsfr",
   data() {
     return {
       cookiesBlocked : false,
-      exportLoading: false,
+      exportUrl: INDICATORS_EXPORT_URL,
       menuLinks: [
         {
           link: "https://legifrance.gouv.fr",
@@ -130,19 +130,6 @@ export default {
     }
   },
   methods:{
-    async exportIndicators() {
-      if (this.exportLoading) return
-      this.exportLoading = true
-      try {
-        const environment = this.$route.path.includes('/staging') ? 'staging' : 'production'
-        await downloadAllIndicators(environment)
-      } catch (error) {
-        console.error('[Export indicateurs]', error)
-        window.alert("Impossible d'exporter les indicateurs. Réessayez plus tard.")
-      } finally {
-        this.exportLoading = false
-      }
-    },
     blocked_cookies(){
       try {
         localStorage.getItem("tarteaucitron");
