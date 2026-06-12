@@ -1,0 +1,857 @@
+{
+  "cubeName": "valorisation_dechets_dpt",
+  "measureName": "valorisation_dechets_dpt.id_681",
+  "timeDimension": "valorisation_dechets_dpt.date_mesure",
+  "extraDimension": "valorisation_dechets_dpt.annee",
+  "data": [
+    {
+      "valorisation_dechets_dpt.libelle_region": "Centre-Val de Loire",
+      "valorisation_dechets_dpt.geocode_region": "24",
+      "valorisation_dechets_dpt.date_mesure.year": "2009-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 39.596428633158325,
+      "valorisation_dechets_dpt.date_mesure": "2009-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Île-de-France",
+      "valorisation_dechets_dpt.geocode_region": "11",
+      "valorisation_dechets_dpt.date_mesure.year": "2009-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 27.659714605923124,
+      "valorisation_dechets_dpt.date_mesure": "2009-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Auvergne-Rhône-Alpes",
+      "valorisation_dechets_dpt.geocode_region": "84",
+      "valorisation_dechets_dpt.date_mesure.year": "2009-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 38.57485064522452,
+      "valorisation_dechets_dpt.date_mesure": "2009-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Normandie",
+      "valorisation_dechets_dpt.geocode_region": "28",
+      "valorisation_dechets_dpt.date_mesure.year": "2009-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 38.45719388179531,
+      "valorisation_dechets_dpt.date_mesure": "2009-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Pays de la Loire",
+      "valorisation_dechets_dpt.geocode_region": "52",
+      "valorisation_dechets_dpt.date_mesure.year": "2009-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 42.645883240101554,
+      "valorisation_dechets_dpt.date_mesure": "2009-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Bourgogne-Franche-Comté",
+      "valorisation_dechets_dpt.geocode_region": "27",
+      "valorisation_dechets_dpt.date_mesure.year": "2009-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 37.437123865604406,
+      "valorisation_dechets_dpt.date_mesure": "2009-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Hauts-de-France",
+      "valorisation_dechets_dpt.geocode_region": "32",
+      "valorisation_dechets_dpt.date_mesure.year": "2009-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 42.86444350315125,
+      "valorisation_dechets_dpt.date_mesure": "2009-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "La Réunion",
+      "valorisation_dechets_dpt.geocode_region": "04",
+      "valorisation_dechets_dpt.date_mesure.year": "2009-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 36.27220326806393,
+      "valorisation_dechets_dpt.date_mesure": "2009-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Occitanie",
+      "valorisation_dechets_dpt.geocode_region": "76",
+      "valorisation_dechets_dpt.date_mesure.year": "2009-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 33.44249371644609,
+      "valorisation_dechets_dpt.date_mesure": "2009-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Guadeloupe",
+      "valorisation_dechets_dpt.geocode_region": "01",
+      "valorisation_dechets_dpt.date_mesure.year": "2009-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 4.4906638941892885,
+      "valorisation_dechets_dpt.date_mesure": "2009-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Grand Est",
+      "valorisation_dechets_dpt.geocode_region": "44",
+      "valorisation_dechets_dpt.date_mesure.year": "2009-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 31.996816249644617,
+      "valorisation_dechets_dpt.date_mesure": "2009-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Guyane",
+      "valorisation_dechets_dpt.geocode_region": "03",
+      "valorisation_dechets_dpt.date_mesure.year": "2009-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 41.80704537732391,
+      "valorisation_dechets_dpt.date_mesure": "2009-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Martinique",
+      "valorisation_dechets_dpt.geocode_region": "02",
+      "valorisation_dechets_dpt.date_mesure.year": "2009-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 9.569282930412394,
+      "valorisation_dechets_dpt.date_mesure": "2009-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Corse",
+      "valorisation_dechets_dpt.geocode_region": "94",
+      "valorisation_dechets_dpt.date_mesure.year": "2009-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 11.162779507188286,
+      "valorisation_dechets_dpt.date_mesure": "2009-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Nouvelle-Aquitaine",
+      "valorisation_dechets_dpt.geocode_region": "75",
+      "valorisation_dechets_dpt.date_mesure.year": "2009-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 41.410560842872876,
+      "valorisation_dechets_dpt.date_mesure": "2009-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Bretagne",
+      "valorisation_dechets_dpt.geocode_region": "53",
+      "valorisation_dechets_dpt.date_mesure.year": "2009-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 44.6847963106758,
+      "valorisation_dechets_dpt.date_mesure": "2009-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "valorisation_dechets_dpt.geocode_region": "93",
+      "valorisation_dechets_dpt.date_mesure.year": "2009-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 27.244902260064176,
+      "valorisation_dechets_dpt.date_mesure": "2009-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Auvergne-Rhône-Alpes",
+      "valorisation_dechets_dpt.geocode_region": "84",
+      "valorisation_dechets_dpt.date_mesure.year": "2011-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 41.33111688623826,
+      "valorisation_dechets_dpt.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Occitanie",
+      "valorisation_dechets_dpt.geocode_region": "76",
+      "valorisation_dechets_dpt.date_mesure.year": "2011-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 37.29160543600833,
+      "valorisation_dechets_dpt.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Grand Est",
+      "valorisation_dechets_dpt.geocode_region": "44",
+      "valorisation_dechets_dpt.date_mesure.year": "2011-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 34.03787312717361,
+      "valorisation_dechets_dpt.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Bretagne",
+      "valorisation_dechets_dpt.geocode_region": "53",
+      "valorisation_dechets_dpt.date_mesure.year": "2011-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 48.636472271480415,
+      "valorisation_dechets_dpt.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Corse",
+      "valorisation_dechets_dpt.geocode_region": "94",
+      "valorisation_dechets_dpt.date_mesure.year": "2011-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 13.440920307232476,
+      "valorisation_dechets_dpt.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Hauts-de-France",
+      "valorisation_dechets_dpt.geocode_region": "32",
+      "valorisation_dechets_dpt.date_mesure.year": "2011-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 43.65092810797755,
+      "valorisation_dechets_dpt.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Nouvelle-Aquitaine",
+      "valorisation_dechets_dpt.geocode_region": "75",
+      "valorisation_dechets_dpt.date_mesure.year": "2011-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 40.847951003594645,
+      "valorisation_dechets_dpt.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Bourgogne-Franche-Comté",
+      "valorisation_dechets_dpt.geocode_region": "27",
+      "valorisation_dechets_dpt.date_mesure.year": "2011-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 40.85276209401087,
+      "valorisation_dechets_dpt.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Normandie",
+      "valorisation_dechets_dpt.geocode_region": "28",
+      "valorisation_dechets_dpt.date_mesure.year": "2011-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 38.361630046161935,
+      "valorisation_dechets_dpt.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Centre-Val de Loire",
+      "valorisation_dechets_dpt.geocode_region": "24",
+      "valorisation_dechets_dpt.date_mesure.year": "2011-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 42.59289281809009,
+      "valorisation_dechets_dpt.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "La Réunion",
+      "valorisation_dechets_dpt.geocode_region": "04",
+      "valorisation_dechets_dpt.date_mesure.year": "2011-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 40.449064278230864,
+      "valorisation_dechets_dpt.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Guyane",
+      "valorisation_dechets_dpt.geocode_region": "03",
+      "valorisation_dechets_dpt.date_mesure.year": "2011-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 7.394499189235185,
+      "valorisation_dechets_dpt.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Île-de-France",
+      "valorisation_dechets_dpt.geocode_region": "11",
+      "valorisation_dechets_dpt.date_mesure.year": "2011-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 27.36135328590254,
+      "valorisation_dechets_dpt.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Martinique",
+      "valorisation_dechets_dpt.geocode_region": "02",
+      "valorisation_dechets_dpt.date_mesure.year": "2011-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 10.352978466252791,
+      "valorisation_dechets_dpt.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "valorisation_dechets_dpt.geocode_region": "93",
+      "valorisation_dechets_dpt.date_mesure.year": "2011-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 33.18798514325625,
+      "valorisation_dechets_dpt.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Pays de la Loire",
+      "valorisation_dechets_dpt.geocode_region": "52",
+      "valorisation_dechets_dpt.date_mesure.year": "2011-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 40.20510875139533,
+      "valorisation_dechets_dpt.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Guadeloupe",
+      "valorisation_dechets_dpt.geocode_region": "01",
+      "valorisation_dechets_dpt.date_mesure.year": "2011-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 4.624156712586761,
+      "valorisation_dechets_dpt.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Bourgogne-Franche-Comté",
+      "valorisation_dechets_dpt.geocode_region": "27",
+      "valorisation_dechets_dpt.date_mesure.year": "2013-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 42.85261588331034,
+      "valorisation_dechets_dpt.date_mesure": "2013-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Grand Est",
+      "valorisation_dechets_dpt.geocode_region": "44",
+      "valorisation_dechets_dpt.date_mesure.year": "2013-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 39.33041262878182,
+      "valorisation_dechets_dpt.date_mesure": "2013-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "La Réunion",
+      "valorisation_dechets_dpt.geocode_region": "04",
+      "valorisation_dechets_dpt.date_mesure.year": "2013-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 41.52759879005115,
+      "valorisation_dechets_dpt.date_mesure": "2013-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Normandie",
+      "valorisation_dechets_dpt.geocode_region": "28",
+      "valorisation_dechets_dpt.date_mesure.year": "2013-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 41.55216085100169,
+      "valorisation_dechets_dpt.date_mesure": "2013-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Pays de la Loire",
+      "valorisation_dechets_dpt.geocode_region": "52",
+      "valorisation_dechets_dpt.date_mesure.year": "2013-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 55.14740997559118,
+      "valorisation_dechets_dpt.date_mesure": "2013-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Occitanie",
+      "valorisation_dechets_dpt.geocode_region": "76",
+      "valorisation_dechets_dpt.date_mesure.year": "2013-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 41.489163438352854,
+      "valorisation_dechets_dpt.date_mesure": "2013-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Corse",
+      "valorisation_dechets_dpt.geocode_region": "94",
+      "valorisation_dechets_dpt.date_mesure.year": "2013-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 19.462710114075385,
+      "valorisation_dechets_dpt.date_mesure": "2013-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Martinique",
+      "valorisation_dechets_dpt.geocode_region": "02",
+      "valorisation_dechets_dpt.date_mesure.year": "2013-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 13.781011668070626,
+      "valorisation_dechets_dpt.date_mesure": "2013-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Hauts-de-France",
+      "valorisation_dechets_dpt.geocode_region": "32",
+      "valorisation_dechets_dpt.date_mesure.year": "2013-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 47.71339431121235,
+      "valorisation_dechets_dpt.date_mesure": "2013-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Auvergne-Rhône-Alpes",
+      "valorisation_dechets_dpt.geocode_region": "84",
+      "valorisation_dechets_dpt.date_mesure.year": "2013-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 44.70294585805497,
+      "valorisation_dechets_dpt.date_mesure": "2013-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Guyane",
+      "valorisation_dechets_dpt.geocode_region": "03",
+      "valorisation_dechets_dpt.date_mesure.year": "2013-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 3.5063834423372526,
+      "valorisation_dechets_dpt.date_mesure": "2013-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Centre-Val de Loire",
+      "valorisation_dechets_dpt.geocode_region": "24",
+      "valorisation_dechets_dpt.date_mesure.year": "2013-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 40.249382656367956,
+      "valorisation_dechets_dpt.date_mesure": "2013-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Guadeloupe",
+      "valorisation_dechets_dpt.geocode_region": "01",
+      "valorisation_dechets_dpt.date_mesure.year": "2013-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 16.615897002973437,
+      "valorisation_dechets_dpt.date_mesure": "2013-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Bretagne",
+      "valorisation_dechets_dpt.geocode_region": "53",
+      "valorisation_dechets_dpt.date_mesure.year": "2013-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 50.927120535358036,
+      "valorisation_dechets_dpt.date_mesure": "2013-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "valorisation_dechets_dpt.geocode_region": "93",
+      "valorisation_dechets_dpt.date_mesure.year": "2013-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 31.0554926993362,
+      "valorisation_dechets_dpt.date_mesure": "2013-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Nouvelle-Aquitaine",
+      "valorisation_dechets_dpt.geocode_region": "75",
+      "valorisation_dechets_dpt.date_mesure.year": "2013-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 46.780466686202615,
+      "valorisation_dechets_dpt.date_mesure": "2013-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Île-de-France",
+      "valorisation_dechets_dpt.geocode_region": "11",
+      "valorisation_dechets_dpt.date_mesure.year": "2013-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 28.282197902506397,
+      "valorisation_dechets_dpt.date_mesure": "2013-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Corse",
+      "valorisation_dechets_dpt.geocode_region": "94",
+      "valorisation_dechets_dpt.date_mesure.year": "2015-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 21.180432425584627,
+      "valorisation_dechets_dpt.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Bretagne",
+      "valorisation_dechets_dpt.geocode_region": "53",
+      "valorisation_dechets_dpt.date_mesure.year": "2015-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 53.84757733147316,
+      "valorisation_dechets_dpt.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Hauts-de-France",
+      "valorisation_dechets_dpt.geocode_region": "32",
+      "valorisation_dechets_dpt.date_mesure.year": "2015-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 48.661401085195195,
+      "valorisation_dechets_dpt.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Nouvelle-Aquitaine",
+      "valorisation_dechets_dpt.geocode_region": "75",
+      "valorisation_dechets_dpt.date_mesure.year": "2015-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 50.44129563738275,
+      "valorisation_dechets_dpt.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Martinique",
+      "valorisation_dechets_dpt.geocode_region": "02",
+      "valorisation_dechets_dpt.date_mesure.year": "2015-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 17.58418776243695,
+      "valorisation_dechets_dpt.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Pays de la Loire",
+      "valorisation_dechets_dpt.geocode_region": "52",
+      "valorisation_dechets_dpt.date_mesure.year": "2015-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 57.427513450715246,
+      "valorisation_dechets_dpt.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Île-de-France",
+      "valorisation_dechets_dpt.geocode_region": "11",
+      "valorisation_dechets_dpt.date_mesure.year": "2015-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 29.60471378159472,
+      "valorisation_dechets_dpt.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Mayotte",
+      "valorisation_dechets_dpt.geocode_region": "06",
+      "valorisation_dechets_dpt.date_mesure.year": "2015-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 0.20993301252545965,
+      "valorisation_dechets_dpt.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "La Réunion",
+      "valorisation_dechets_dpt.geocode_region": "04",
+      "valorisation_dechets_dpt.date_mesure.year": "2015-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 29.315348127069363,
+      "valorisation_dechets_dpt.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Occitanie",
+      "valorisation_dechets_dpt.geocode_region": "76",
+      "valorisation_dechets_dpt.date_mesure.year": "2015-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 45.31510464890849,
+      "valorisation_dechets_dpt.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Guadeloupe",
+      "valorisation_dechets_dpt.geocode_region": "01",
+      "valorisation_dechets_dpt.date_mesure.year": "2015-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 17.598326685185754,
+      "valorisation_dechets_dpt.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Normandie",
+      "valorisation_dechets_dpt.geocode_region": "28",
+      "valorisation_dechets_dpt.date_mesure.year": "2015-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 43.5401489353899,
+      "valorisation_dechets_dpt.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Bourgogne-Franche-Comté",
+      "valorisation_dechets_dpt.geocode_region": "27",
+      "valorisation_dechets_dpt.date_mesure.year": "2015-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 47.44543364054631,
+      "valorisation_dechets_dpt.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Centre-Val de Loire",
+      "valorisation_dechets_dpt.geocode_region": "24",
+      "valorisation_dechets_dpt.date_mesure.year": "2015-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 42.992476233969526,
+      "valorisation_dechets_dpt.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Auvergne-Rhône-Alpes",
+      "valorisation_dechets_dpt.geocode_region": "84",
+      "valorisation_dechets_dpt.date_mesure.year": "2015-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 47.36565054930493,
+      "valorisation_dechets_dpt.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Guyane",
+      "valorisation_dechets_dpt.geocode_region": "03",
+      "valorisation_dechets_dpt.date_mesure.year": "2015-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 19.867442203061568,
+      "valorisation_dechets_dpt.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Grand Est",
+      "valorisation_dechets_dpt.geocode_region": "44",
+      "valorisation_dechets_dpt.date_mesure.year": "2015-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 41.52589471139421,
+      "valorisation_dechets_dpt.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "valorisation_dechets_dpt.geocode_region": "93",
+      "valorisation_dechets_dpt.date_mesure.year": "2015-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 32.2430960639678,
+      "valorisation_dechets_dpt.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Centre-Val de Loire",
+      "valorisation_dechets_dpt.geocode_region": "24",
+      "valorisation_dechets_dpt.date_mesure.year": "2017-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 46.33698275958711,
+      "valorisation_dechets_dpt.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Normandie",
+      "valorisation_dechets_dpt.geocode_region": "28",
+      "valorisation_dechets_dpt.date_mesure.year": "2017-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 45.53865330434461,
+      "valorisation_dechets_dpt.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Bourgogne-Franche-Comté",
+      "valorisation_dechets_dpt.geocode_region": "27",
+      "valorisation_dechets_dpt.date_mesure.year": "2017-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 48.11517970403779,
+      "valorisation_dechets_dpt.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Martinique",
+      "valorisation_dechets_dpt.geocode_region": "02",
+      "valorisation_dechets_dpt.date_mesure.year": "2017-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 24.209449020260887,
+      "valorisation_dechets_dpt.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "valorisation_dechets_dpt.geocode_region": "93",
+      "valorisation_dechets_dpt.date_mesure.year": "2017-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 36.60824585961147,
+      "valorisation_dechets_dpt.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Guyane",
+      "valorisation_dechets_dpt.geocode_region": "03",
+      "valorisation_dechets_dpt.date_mesure.year": "2017-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 13.703234803240978,
+      "valorisation_dechets_dpt.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Pays de la Loire",
+      "valorisation_dechets_dpt.geocode_region": "52",
+      "valorisation_dechets_dpt.date_mesure.year": "2017-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 58.585997734023614,
+      "valorisation_dechets_dpt.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "La Réunion",
+      "valorisation_dechets_dpt.geocode_region": "04",
+      "valorisation_dechets_dpt.date_mesure.year": "2017-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 40.348252582408584,
+      "valorisation_dechets_dpt.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Île-de-France",
+      "valorisation_dechets_dpt.geocode_region": "11",
+      "valorisation_dechets_dpt.date_mesure.year": "2017-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 31.782647783753855,
+      "valorisation_dechets_dpt.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Mayotte",
+      "valorisation_dechets_dpt.geocode_region": "06",
+      "valorisation_dechets_dpt.date_mesure.year": "2017-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 1.0234850078562914,
+      "valorisation_dechets_dpt.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Bretagne",
+      "valorisation_dechets_dpt.geocode_region": "53",
+      "valorisation_dechets_dpt.date_mesure.year": "2017-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 57.3443838949708,
+      "valorisation_dechets_dpt.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Occitanie",
+      "valorisation_dechets_dpt.geocode_region": "76",
+      "valorisation_dechets_dpt.date_mesure.year": "2017-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 47.19180604119225,
+      "valorisation_dechets_dpt.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Grand Est",
+      "valorisation_dechets_dpt.geocode_region": "44",
+      "valorisation_dechets_dpt.date_mesure.year": "2017-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 44.88049411747649,
+      "valorisation_dechets_dpt.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Auvergne-Rhône-Alpes",
+      "valorisation_dechets_dpt.geocode_region": "84",
+      "valorisation_dechets_dpt.date_mesure.year": "2017-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 49.39076077739829,
+      "valorisation_dechets_dpt.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Hauts-de-France",
+      "valorisation_dechets_dpt.geocode_region": "32",
+      "valorisation_dechets_dpt.date_mesure.year": "2017-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 48.836173413100674,
+      "valorisation_dechets_dpt.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Guadeloupe",
+      "valorisation_dechets_dpt.geocode_region": "01",
+      "valorisation_dechets_dpt.date_mesure.year": "2017-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 26.083898416582443,
+      "valorisation_dechets_dpt.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Corse",
+      "valorisation_dechets_dpt.geocode_region": "94",
+      "valorisation_dechets_dpt.date_mesure.year": "2017-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 25.99646404586675,
+      "valorisation_dechets_dpt.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Nouvelle-Aquitaine",
+      "valorisation_dechets_dpt.geocode_region": "75",
+      "valorisation_dechets_dpt.date_mesure.year": "2017-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 51.82199605611029,
+      "valorisation_dechets_dpt.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Hauts-de-France",
+      "valorisation_dechets_dpt.geocode_region": "32",
+      "valorisation_dechets_dpt.date_mesure.year": "2019-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 51.85581824613008,
+      "valorisation_dechets_dpt.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "La Réunion",
+      "valorisation_dechets_dpt.geocode_region": "04",
+      "valorisation_dechets_dpt.date_mesure.year": "2019-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 44.20652943297756,
+      "valorisation_dechets_dpt.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Île-de-France",
+      "valorisation_dechets_dpt.geocode_region": "11",
+      "valorisation_dechets_dpt.date_mesure.year": "2019-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 33.06719275711766,
+      "valorisation_dechets_dpt.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Nouvelle-Aquitaine",
+      "valorisation_dechets_dpt.geocode_region": "75",
+      "valorisation_dechets_dpt.date_mesure.year": "2019-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 55.19485415779861,
+      "valorisation_dechets_dpt.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Bourgogne-Franche-Comté",
+      "valorisation_dechets_dpt.geocode_region": "27",
+      "valorisation_dechets_dpt.date_mesure.year": "2019-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 52.01621756469088,
+      "valorisation_dechets_dpt.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Corse",
+      "valorisation_dechets_dpt.geocode_region": "94",
+      "valorisation_dechets_dpt.date_mesure.year": "2019-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 34.161698084238715,
+      "valorisation_dechets_dpt.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Centre-Val de Loire",
+      "valorisation_dechets_dpt.geocode_region": "24",
+      "valorisation_dechets_dpt.date_mesure.year": "2019-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 46.86651390151316,
+      "valorisation_dechets_dpt.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Guadeloupe",
+      "valorisation_dechets_dpt.geocode_region": "01",
+      "valorisation_dechets_dpt.date_mesure.year": "2019-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 21.137095636086794,
+      "valorisation_dechets_dpt.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Martinique",
+      "valorisation_dechets_dpt.geocode_region": "02",
+      "valorisation_dechets_dpt.date_mesure.year": "2019-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 24.172191973563628,
+      "valorisation_dechets_dpt.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Grand Est",
+      "valorisation_dechets_dpt.geocode_region": "44",
+      "valorisation_dechets_dpt.date_mesure.year": "2019-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 46.49282758210003,
+      "valorisation_dechets_dpt.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Occitanie",
+      "valorisation_dechets_dpt.geocode_region": "76",
+      "valorisation_dechets_dpt.date_mesure.year": "2019-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 49.75247278038066,
+      "valorisation_dechets_dpt.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "valorisation_dechets_dpt.geocode_region": "93",
+      "valorisation_dechets_dpt.date_mesure.year": "2019-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 41.41307168448277,
+      "valorisation_dechets_dpt.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Normandie",
+      "valorisation_dechets_dpt.geocode_region": "28",
+      "valorisation_dechets_dpt.date_mesure.year": "2019-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 45.35369400525524,
+      "valorisation_dechets_dpt.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Pays de la Loire",
+      "valorisation_dechets_dpt.geocode_region": "52",
+      "valorisation_dechets_dpt.date_mesure.year": "2019-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 58.72678418098276,
+      "valorisation_dechets_dpt.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Bretagne",
+      "valorisation_dechets_dpt.geocode_region": "53",
+      "valorisation_dechets_dpt.date_mesure.year": "2019-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 57.59604603076656,
+      "valorisation_dechets_dpt.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Guyane",
+      "valorisation_dechets_dpt.geocode_region": "03",
+      "valorisation_dechets_dpt.date_mesure.year": "2019-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 14.751519130369257,
+      "valorisation_dechets_dpt.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Auvergne-Rhône-Alpes",
+      "valorisation_dechets_dpt.geocode_region": "84",
+      "valorisation_dechets_dpt.date_mesure.year": "2019-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 48.609012243322695,
+      "valorisation_dechets_dpt.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Martinique",
+      "valorisation_dechets_dpt.geocode_region": "02",
+      "valorisation_dechets_dpt.date_mesure.year": "2021-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 21.961635185227053,
+      "valorisation_dechets_dpt.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Île-de-France",
+      "valorisation_dechets_dpt.geocode_region": "11",
+      "valorisation_dechets_dpt.date_mesure.year": "2021-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 35.70689927845039,
+      "valorisation_dechets_dpt.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "La Réunion",
+      "valorisation_dechets_dpt.geocode_region": "04",
+      "valorisation_dechets_dpt.date_mesure.year": "2021-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 47.53293277335044,
+      "valorisation_dechets_dpt.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Occitanie",
+      "valorisation_dechets_dpt.geocode_region": "76",
+      "valorisation_dechets_dpt.date_mesure.year": "2021-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 51.656988190418225,
+      "valorisation_dechets_dpt.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Bourgogne-Franche-Comté",
+      "valorisation_dechets_dpt.geocode_region": "27",
+      "valorisation_dechets_dpt.date_mesure.year": "2021-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 54.13978004962728,
+      "valorisation_dechets_dpt.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "valorisation_dechets_dpt.geocode_region": "93",
+      "valorisation_dechets_dpt.date_mesure.year": "2021-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 41.54423830642646,
+      "valorisation_dechets_dpt.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Nouvelle-Aquitaine",
+      "valorisation_dechets_dpt.geocode_region": "75",
+      "valorisation_dechets_dpt.date_mesure.year": "2021-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 59.72176452743162,
+      "valorisation_dechets_dpt.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Normandie",
+      "valorisation_dechets_dpt.geocode_region": "28",
+      "valorisation_dechets_dpt.date_mesure.year": "2021-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 47.59179257642887,
+      "valorisation_dechets_dpt.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Centre-Val de Loire",
+      "valorisation_dechets_dpt.geocode_region": "24",
+      "valorisation_dechets_dpt.date_mesure.year": "2021-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 48.27381585369681,
+      "valorisation_dechets_dpt.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Pays de la Loire",
+      "valorisation_dechets_dpt.geocode_region": "52",
+      "valorisation_dechets_dpt.date_mesure.year": "2021-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 56.479358886677154,
+      "valorisation_dechets_dpt.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Corse",
+      "valorisation_dechets_dpt.geocode_region": "94",
+      "valorisation_dechets_dpt.date_mesure.year": "2021-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 37.24732730393344,
+      "valorisation_dechets_dpt.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Guadeloupe",
+      "valorisation_dechets_dpt.geocode_region": "01",
+      "valorisation_dechets_dpt.date_mesure.year": "2021-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 27.250840976352414,
+      "valorisation_dechets_dpt.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Hauts-de-France",
+      "valorisation_dechets_dpt.geocode_region": "32",
+      "valorisation_dechets_dpt.date_mesure.year": "2021-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 50.02478439637512,
+      "valorisation_dechets_dpt.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Grand Est",
+      "valorisation_dechets_dpt.geocode_region": "44",
+      "valorisation_dechets_dpt.date_mesure.year": "2021-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 48.210091136262356,
+      "valorisation_dechets_dpt.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Bretagne",
+      "valorisation_dechets_dpt.geocode_region": "53",
+      "valorisation_dechets_dpt.date_mesure.year": "2021-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 57.7143912509653,
+      "valorisation_dechets_dpt.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "valorisation_dechets_dpt.libelle_region": "Auvergne-Rhône-Alpes",
+      "valorisation_dechets_dpt.geocode_region": "84",
+      "valorisation_dechets_dpt.date_mesure.year": "2021-01-01T00:00:00.000",
+      "valorisation_dechets_dpt.id_681": 49.55070107972078,
+      "valorisation_dechets_dpt.date_mesure": "2021-01-01T00:00:00.000"
+    }
+  ],
+  "measureMeta": {
+    "libelle_indicateur": "Taux de valorisation des déchets ménagers et assimilés",
+    "statut_commun": "Mesure",
+    "unite": "%",
+    "type spatial": "quantitatif",
+    "methode_calcul": "Indicateur calculé d'après les données de l'ADEME. Sont considérés comme valorisations de déchets les valorisations matières et les valorisations organiques",
+    "numerator": "qte_dechets_valorises",
+    "denominator": "quantite_dechets_tot"
+  }
+}

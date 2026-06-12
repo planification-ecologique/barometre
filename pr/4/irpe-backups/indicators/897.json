@@ -1,0 +1,140 @@
+{
+  "cubeName": "tri_biodechets_dpt",
+  "measureName": "tri_biodechets_dpt.id_897",
+  "timeDimension": "tri_biodechets_dpt.date_mesure",
+  "extraDimension": "tri_biodechets_dpt.geocode_departement",
+  "data": [
+    {
+      "tri_biodechets_dpt.libelle_region": "Auvergne-Rhône-Alpes",
+      "tri_biodechets_dpt.geocode_region": "84",
+      "tri_biodechets_dpt.date_mesure.year": "2025-01-01T00:00:00.000",
+      "tri_biodechets_dpt.id_897": "4530900",
+      "tri_biodechets_dpt.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "tri_biodechets_dpt.libelle_region": "Normandie",
+      "tri_biodechets_dpt.geocode_region": "28",
+      "tri_biodechets_dpt.date_mesure.year": "2025-01-01T00:00:00.000",
+      "tri_biodechets_dpt.id_897": "1583712",
+      "tri_biodechets_dpt.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "tri_biodechets_dpt.libelle_region": "Grand Est",
+      "tri_biodechets_dpt.geocode_region": "44",
+      "tri_biodechets_dpt.date_mesure.year": "2025-01-01T00:00:00.000",
+      "tri_biodechets_dpt.id_897": "3856956",
+      "tri_biodechets_dpt.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "tri_biodechets_dpt.libelle_region": "Mayotte",
+      "tri_biodechets_dpt.geocode_region": "06",
+      "tri_biodechets_dpt.date_mesure.year": "2025-01-01T00:00:00.000",
+      "tri_biodechets_dpt.id_897": "0",
+      "tri_biodechets_dpt.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "tri_biodechets_dpt.libelle_region": "Centre-Val de Loire",
+      "tri_biodechets_dpt.geocode_region": "24",
+      "tri_biodechets_dpt.date_mesure.year": "2025-01-01T00:00:00.000",
+      "tri_biodechets_dpt.id_897": "953762",
+      "tri_biodechets_dpt.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "tri_biodechets_dpt.libelle_region": "Île-de-France",
+      "tri_biodechets_dpt.geocode_region": "11",
+      "tri_biodechets_dpt.date_mesure.year": "2025-01-01T00:00:00.000",
+      "tri_biodechets_dpt.id_897": "5029175",
+      "tri_biodechets_dpt.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "tri_biodechets_dpt.libelle_region": "Martinique",
+      "tri_biodechets_dpt.geocode_region": "02",
+      "tri_biodechets_dpt.date_mesure.year": "2025-01-01T00:00:00.000",
+      "tri_biodechets_dpt.id_897": "309839",
+      "tri_biodechets_dpt.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "tri_biodechets_dpt.libelle_region": "Pays de la Loire",
+      "tri_biodechets_dpt.geocode_region": "52",
+      "tri_biodechets_dpt.date_mesure.year": "2025-01-01T00:00:00.000",
+      "tri_biodechets_dpt.id_897": "1693886",
+      "tri_biodechets_dpt.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "tri_biodechets_dpt.libelle_region": "Occitanie",
+      "tri_biodechets_dpt.geocode_region": "76",
+      "tri_biodechets_dpt.date_mesure.year": "2025-01-01T00:00:00.000",
+      "tri_biodechets_dpt.id_897": "3470475",
+      "tri_biodechets_dpt.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "tri_biodechets_dpt.libelle_region": "Guyane",
+      "tri_biodechets_dpt.geocode_region": "03",
+      "tri_biodechets_dpt.date_mesure.year": "2025-01-01T00:00:00.000",
+      "tri_biodechets_dpt.id_897": "6330",
+      "tri_biodechets_dpt.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "tri_biodechets_dpt.libelle_region": "Nouvelle-Aquitaine",
+      "tri_biodechets_dpt.geocode_region": "75",
+      "tri_biodechets_dpt.date_mesure.year": "2025-01-01T00:00:00.000",
+      "tri_biodechets_dpt.id_897": "4186886",
+      "tri_biodechets_dpt.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "tri_biodechets_dpt.libelle_region": "Hauts-de-France",
+      "tri_biodechets_dpt.geocode_region": "32",
+      "tri_biodechets_dpt.date_mesure.year": "2025-01-01T00:00:00.000",
+      "tri_biodechets_dpt.id_897": "2582603",
+      "tri_biodechets_dpt.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "tri_biodechets_dpt.libelle_region": "La Réunion",
+      "tri_biodechets_dpt.geocode_region": "04",
+      "tri_biodechets_dpt.date_mesure.year": "2025-01-01T00:00:00.000",
+      "tri_biodechets_dpt.id_897": "145929",
+      "tri_biodechets_dpt.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "tri_biodechets_dpt.libelle_region": "Bourgogne-Franche-Comté",
+      "tri_biodechets_dpt.geocode_region": "27",
+      "tri_biodechets_dpt.date_mesure.year": "2025-01-01T00:00:00.000",
+      "tri_biodechets_dpt.id_897": "1609099",
+      "tri_biodechets_dpt.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "tri_biodechets_dpt.libelle_region": "Guadeloupe",
+      "tri_biodechets_dpt.geocode_region": "01",
+      "tri_biodechets_dpt.date_mesure.year": "2025-01-01T00:00:00.000",
+      "tri_biodechets_dpt.id_897": "14133",
+      "tri_biodechets_dpt.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "tri_biodechets_dpt.libelle_region": "Corse",
+      "tri_biodechets_dpt.geocode_region": "94",
+      "tri_biodechets_dpt.date_mesure.year": "2025-01-01T00:00:00.000",
+      "tri_biodechets_dpt.id_897": "211184",
+      "tri_biodechets_dpt.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "tri_biodechets_dpt.libelle_region": "Bretagne",
+      "tri_biodechets_dpt.geocode_region": "53",
+      "tri_biodechets_dpt.date_mesure.year": "2025-01-01T00:00:00.000",
+      "tri_biodechets_dpt.id_897": "2150356",
+      "tri_biodechets_dpt.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "tri_biodechets_dpt.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "tri_biodechets_dpt.geocode_region": "93",
+      "tri_biodechets_dpt.date_mesure.year": "2025-01-01T00:00:00.000",
+      "tri_biodechets_dpt.id_897": "2778625",
+      "tri_biodechets_dpt.date_mesure": "2025-01-01T00:00:00.000"
+    }
+  ],
+  "measureMeta": {
+    "libelle_indicateur": "Nombre d’habitants disposant d’une solution de tri à la source des biodéchets",
+    "statut_commun": "Mesure",
+    "unite": "nb",
+    "methode_calcul": "Ce nombre est défini par l’ADEME selon le retour des « enquêtes collecte » de l’ADEME, de questionnaires spécifiques envoyés aux EPCI sur les biodéchets et des dossiers de demandes d’aides que l’ADEME instruit en matière de biodéchets. Il est produit dans le cadre des Politiques Prioritaires du Gouvernement (PPG) à la maille départemental (sous l'égide de la Direction Générale de la Prévention des Risques du Ministère de l'Ecologie) ."
+  }
+}

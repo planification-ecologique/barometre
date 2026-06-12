@@ -1,0 +1,199 @@
+{
+  "cubeName": "residences_principales_etiquette_dpe_region",
+  "measureName": "residences_principales_etiquette_dpe_region.id_992",
+  "timeDimension": "residences_principales_etiquette_dpe_region.date_mesure",
+  "extraDimension": "residences_principales_etiquette_dpe_region.annee",
+  "data": [
+    {
+      "residences_principales_etiquette_dpe_region.libelle_region": "Centre-Val de Loire",
+      "residences_principales_etiquette_dpe_region.geocode_region": "24",
+      "residences_principales_etiquette_dpe_region.date_mesure.year": "2023-01-01T00:00:00.000",
+      "residences_principales_etiquette_dpe_region.id_992": 10.294015985473122,
+      "residences_principales_etiquette_dpe_region.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "residences_principales_etiquette_dpe_region.libelle_region": "Normandie",
+      "residences_principales_etiquette_dpe_region.geocode_region": "28",
+      "residences_principales_etiquette_dpe_region.date_mesure.year": "2023-01-01T00:00:00.000",
+      "residences_principales_etiquette_dpe_region.id_992": 10.399709667347498,
+      "residences_principales_etiquette_dpe_region.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "residences_principales_etiquette_dpe_region.libelle_region": "Bourgogne-Franche-Comté",
+      "residences_principales_etiquette_dpe_region.geocode_region": "27",
+      "residences_principales_etiquette_dpe_region.date_mesure.year": "2023-01-01T00:00:00.000",
+      "residences_principales_etiquette_dpe_region.id_992": 11.748780396795553,
+      "residences_principales_etiquette_dpe_region.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "residences_principales_etiquette_dpe_region.libelle_region": "Bretagne",
+      "residences_principales_etiquette_dpe_region.geocode_region": "53",
+      "residences_principales_etiquette_dpe_region.date_mesure.year": "2023-01-01T00:00:00.000",
+      "residences_principales_etiquette_dpe_region.id_992": 7.992171479519981,
+      "residences_principales_etiquette_dpe_region.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "residences_principales_etiquette_dpe_region.libelle_region": "Île-de-France",
+      "residences_principales_etiquette_dpe_region.geocode_region": "11",
+      "residences_principales_etiquette_dpe_region.date_mesure.year": "2023-01-01T00:00:00.000",
+      "residences_principales_etiquette_dpe_region.id_992": 12.177705848374051,
+      "residences_principales_etiquette_dpe_region.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "residences_principales_etiquette_dpe_region.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "residences_principales_etiquette_dpe_region.geocode_region": "93",
+      "residences_principales_etiquette_dpe_region.date_mesure.year": "2023-01-01T00:00:00.000",
+      "residences_principales_etiquette_dpe_region.id_992": 6.282350328339325,
+      "residences_principales_etiquette_dpe_region.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "residences_principales_etiquette_dpe_region.libelle_region": "Hauts-de-France",
+      "residences_principales_etiquette_dpe_region.geocode_region": "32",
+      "residences_principales_etiquette_dpe_region.date_mesure.year": "2023-01-01T00:00:00.000",
+      "residences_principales_etiquette_dpe_region.id_992": 10.604914083851375,
+      "residences_principales_etiquette_dpe_region.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "residences_principales_etiquette_dpe_region.libelle_region": "Grand Est",
+      "residences_principales_etiquette_dpe_region.geocode_region": "44",
+      "residences_principales_etiquette_dpe_region.date_mesure.year": "2023-01-01T00:00:00.000",
+      "residences_principales_etiquette_dpe_region.id_992": 10.27799502267704,
+      "residences_principales_etiquette_dpe_region.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "residences_principales_etiquette_dpe_region.libelle_region": "Corse",
+      "residences_principales_etiquette_dpe_region.geocode_region": "94",
+      "residences_principales_etiquette_dpe_region.date_mesure.year": "2023-01-01T00:00:00.000",
+      "residences_principales_etiquette_dpe_region.id_992": 4.573398606699625,
+      "residences_principales_etiquette_dpe_region.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "residences_principales_etiquette_dpe_region.libelle_region": "Nouvelle-Aquitaine",
+      "residences_principales_etiquette_dpe_region.geocode_region": "75",
+      "residences_principales_etiquette_dpe_region.date_mesure.year": "2023-01-01T00:00:00.000",
+      "residences_principales_etiquette_dpe_region.id_992": 8.25972408602329,
+      "residences_principales_etiquette_dpe_region.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "residences_principales_etiquette_dpe_region.libelle_region": "Pays de la Loire",
+      "residences_principales_etiquette_dpe_region.geocode_region": "52",
+      "residences_principales_etiquette_dpe_region.date_mesure.year": "2023-01-01T00:00:00.000",
+      "residences_principales_etiquette_dpe_region.id_992": 8.003939534275636,
+      "residences_principales_etiquette_dpe_region.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "residences_principales_etiquette_dpe_region.libelle_region": "Occitanie",
+      "residences_principales_etiquette_dpe_region.geocode_region": "76",
+      "residences_principales_etiquette_dpe_region.date_mesure.year": "2023-01-01T00:00:00.000",
+      "residences_principales_etiquette_dpe_region.id_992": 6.165588006477729,
+      "residences_principales_etiquette_dpe_region.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "residences_principales_etiquette_dpe_region.libelle_region": "Auvergne-Rhône-Alpes",
+      "residences_principales_etiquette_dpe_region.geocode_region": "84",
+      "residences_principales_etiquette_dpe_region.date_mesure.year": "2023-01-01T00:00:00.000",
+      "residences_principales_etiquette_dpe_region.id_992": 9.850228207347264,
+      "residences_principales_etiquette_dpe_region.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "residences_principales_etiquette_dpe_region.libelle_region": "Occitanie",
+      "residences_principales_etiquette_dpe_region.geocode_region": "76",
+      "residences_principales_etiquette_dpe_region.date_mesure.year": "2024-01-01T00:00:00.000",
+      "residences_principales_etiquette_dpe_region.id_992": 4.923358582331387,
+      "residences_principales_etiquette_dpe_region.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "residences_principales_etiquette_dpe_region.libelle_region": "Pays de la Loire",
+      "residences_principales_etiquette_dpe_region.geocode_region": "52",
+      "residences_principales_etiquette_dpe_region.date_mesure.year": "2024-01-01T00:00:00.000",
+      "residences_principales_etiquette_dpe_region.id_992": 6.420223370297302,
+      "residences_principales_etiquette_dpe_region.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "residences_principales_etiquette_dpe_region.libelle_region": "Grand Est",
+      "residences_principales_etiquette_dpe_region.geocode_region": "44",
+      "residences_principales_etiquette_dpe_region.date_mesure.year": "2024-01-01T00:00:00.000",
+      "residences_principales_etiquette_dpe_region.id_992": 9.075546818173652,
+      "residences_principales_etiquette_dpe_region.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "residences_principales_etiquette_dpe_region.libelle_region": "Corse",
+      "residences_principales_etiquette_dpe_region.geocode_region": "94",
+      "residences_principales_etiquette_dpe_region.date_mesure.year": "2024-01-01T00:00:00.000",
+      "residences_principales_etiquette_dpe_region.id_992": 4.021952185488012,
+      "residences_principales_etiquette_dpe_region.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "residences_principales_etiquette_dpe_region.libelle_region": "Bretagne",
+      "residences_principales_etiquette_dpe_region.geocode_region": "53",
+      "residences_principales_etiquette_dpe_region.date_mesure.year": "2024-01-01T00:00:00.000",
+      "residences_principales_etiquette_dpe_region.id_992": 6.70752157099928,
+      "residences_principales_etiquette_dpe_region.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "residences_principales_etiquette_dpe_region.libelle_region": "Normandie",
+      "residences_principales_etiquette_dpe_region.geocode_region": "28",
+      "residences_principales_etiquette_dpe_region.date_mesure.year": "2024-01-01T00:00:00.000",
+      "residences_principales_etiquette_dpe_region.id_992": 9.006700166787716,
+      "residences_principales_etiquette_dpe_region.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "residences_principales_etiquette_dpe_region.libelle_region": "Île-de-France",
+      "residences_principales_etiquette_dpe_region.geocode_region": "11",
+      "residences_principales_etiquette_dpe_region.date_mesure.year": "2024-01-01T00:00:00.000",
+      "residences_principales_etiquette_dpe_region.id_992": 11.074459285930688,
+      "residences_principales_etiquette_dpe_region.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "residences_principales_etiquette_dpe_region.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "residences_principales_etiquette_dpe_region.geocode_region": "93",
+      "residences_principales_etiquette_dpe_region.date_mesure.year": "2024-01-01T00:00:00.000",
+      "residences_principales_etiquette_dpe_region.id_992": 5.173993615190515,
+      "residences_principales_etiquette_dpe_region.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "residences_principales_etiquette_dpe_region.libelle_region": "Nouvelle-Aquitaine",
+      "residences_principales_etiquette_dpe_region.geocode_region": "75",
+      "residences_principales_etiquette_dpe_region.date_mesure.year": "2024-01-01T00:00:00.000",
+      "residences_principales_etiquette_dpe_region.id_992": 6.742409778675971,
+      "residences_principales_etiquette_dpe_region.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "residences_principales_etiquette_dpe_region.libelle_region": "Centre-Val de Loire",
+      "residences_principales_etiquette_dpe_region.geocode_region": "24",
+      "residences_principales_etiquette_dpe_region.date_mesure.year": "2024-01-01T00:00:00.000",
+      "residences_principales_etiquette_dpe_region.id_992": 8.671272087061634,
+      "residences_principales_etiquette_dpe_region.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "residences_principales_etiquette_dpe_region.libelle_region": "Bourgogne-Franche-Comté",
+      "residences_principales_etiquette_dpe_region.geocode_region": "27",
+      "residences_principales_etiquette_dpe_region.date_mesure.year": "2024-01-01T00:00:00.000",
+      "residences_principales_etiquette_dpe_region.id_992": 10.086116093522797,
+      "residences_principales_etiquette_dpe_region.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "residences_principales_etiquette_dpe_region.libelle_region": "Hauts-de-France",
+      "residences_principales_etiquette_dpe_region.geocode_region": "32",
+      "residences_principales_etiquette_dpe_region.date_mesure.year": "2024-01-01T00:00:00.000",
+      "residences_principales_etiquette_dpe_region.id_992": 9.141703320345524,
+      "residences_principales_etiquette_dpe_region.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "residences_principales_etiquette_dpe_region.libelle_region": "Auvergne-Rhône-Alpes",
+      "residences_principales_etiquette_dpe_region.geocode_region": "84",
+      "residences_principales_etiquette_dpe_region.date_mesure.year": "2024-01-01T00:00:00.000",
+      "residences_principales_etiquette_dpe_region.id_992": 8.762946563843203,
+      "residences_principales_etiquette_dpe_region.date_mesure": "2024-01-01T00:00:00.000"
+    }
+  ],
+  "measureMeta": {
+    "libelle_indicateur": "Part de résidences principales par étiquette DPE - F",
+    "statut_commun": "Métrique",
+    "unite": "%",
+    "id_parents": "947, 938",
+    "methode_calcul": null,
+    "numerator": "nb_resid_prin_dpeF",
+    "denominator": "id_947"
+  }
+}
