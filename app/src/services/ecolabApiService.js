@@ -7,6 +7,7 @@
 const ECOLAB_BASE = 'https://api.indicateurs.ecologie.gouv.fr/cubejs-api/v1';
 const ECOLAB_CONTINUE_WAIT_DELAY_MS = 10000;
 const ECOLAB_CONTINUE_WAIT_MAX_RETRIES = 6;
+const IRPE_BACKUP_DIR = 'irpe-backups';
 
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
@@ -14,6 +15,22 @@ function sleep(ms) {
 
 function isContinueWaitResponse(body) {
   return body && typeof body === 'object' && body.error === 'Continue wait';
+}
+
+function publicAssetBasePath() {
+  const raw =
+    (typeof process !== 'undefined' && process.env && process.env.VUE_APP_PREFIX_PATH) || '';
+  return String(raw).replace(/\/$/, '');
+}
+
+async function loadLocalIrpeJson(relativePath) {
+  const base = publicAssetBasePath();
+  const url = `${base}/${IRPE_BACKUP_DIR}/${relativePath}`;
+  const response = await fetch(url);
+  if (!response.ok) {
+    throw new Error(`Failed to load IRPE backup ${relativePath}: ${response.status}`);
+  }
+  return response.json();
 }
 
 function getAuthHeader() {
@@ -95,6 +112,12 @@ const KNOWN_INDICATOR_CUBES = {
  */
 export async function getMeta() {
   if (metaCache) return metaCache;
+  try {
+    metaCache = await loadLocalIrpeJson('meta.json');
+    return metaCache;
+  } catch (localError) {
+    console.warn('[Écolab API] Local meta unavailable, fetching from API:', localError.message);
+  }
   metaCache = await fetchEcolabJson(`${ECOLAB_BASE}/meta`, { headers: getAuthHeader() }, 'meta');
   return metaCache;
 }
@@ -305,6 +328,16 @@ export async function getRegionChartData(indicatorId, regionCode) {
  * @returns {Promise<{ cubeName: string, measureName: string, timeDimension: string | null, extraDimension: string | null, data: Array }>}
  */
 export async function loadAllRegionsDataForIndicator(indicatorId) {
+  const id = String(indicatorId).trim();
+  try {
+    return await loadLocalIrpeJson(`indicators/${id}.json`);
+  } catch (localError) {
+    console.warn(
+      `[Écolab API] Local cache miss for indicator ${id}, fetching from API:`,
+      localError.message
+    );
+  }
+
   const meta = await getMeta();
   const resolved = resolveRegionCubeForIndicator(meta, indicatorId);
   if (!resolved) throw new Error('Indicateur non trouvé dans l\'API Écolab. ID: ' + indicatorId);
