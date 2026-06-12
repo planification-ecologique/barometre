@@ -1,0 +1,2410 @@
+{
+  "cubeName": "dechets_population_dpt",
+  "measureName": "dechets_population_dpt.id_42",
+  "timeDimension": "dechets_population_dpt.date_mesure",
+  "extraDimension": "dechets_population_dpt.annee",
+  "data": [
+    {
+      "dechets_population_dpt.libelle_region": "Guyane",
+      "dechets_population_dpt.geocode_region": "03",
+      "dechets_population_dpt.date_mesure.year": "2006-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2006-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Guadeloupe",
+      "dechets_population_dpt.geocode_region": "01",
+      "dechets_population_dpt.date_mesure.year": "2006-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2006-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Bretagne",
+      "dechets_population_dpt.geocode_region": "53",
+      "dechets_population_dpt.date_mesure.year": "2006-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2006-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Grand Est",
+      "dechets_population_dpt.geocode_region": "44",
+      "dechets_population_dpt.date_mesure.year": "2006-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2006-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Normandie",
+      "dechets_population_dpt.geocode_region": "28",
+      "dechets_population_dpt.date_mesure.year": "2006-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2006-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Auvergne-Rhône-Alpes",
+      "dechets_population_dpt.geocode_region": "84",
+      "dechets_population_dpt.date_mesure.year": "2006-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2006-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Corse",
+      "dechets_population_dpt.geocode_region": "94",
+      "dechets_population_dpt.date_mesure.year": "2006-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2006-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "dechets_population_dpt.geocode_region": "93",
+      "dechets_population_dpt.date_mesure.year": "2006-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2006-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Hauts-de-France",
+      "dechets_population_dpt.geocode_region": "32",
+      "dechets_population_dpt.date_mesure.year": "2006-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2006-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Nouvelle-Aquitaine",
+      "dechets_population_dpt.geocode_region": "75",
+      "dechets_population_dpt.date_mesure.year": "2006-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2006-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Bourgogne-Franche-Comté",
+      "dechets_population_dpt.geocode_region": "27",
+      "dechets_population_dpt.date_mesure.year": "2006-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2006-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Occitanie",
+      "dechets_population_dpt.geocode_region": "76",
+      "dechets_population_dpt.date_mesure.year": "2006-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2006-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Martinique",
+      "dechets_population_dpt.geocode_region": "02",
+      "dechets_population_dpt.date_mesure.year": "2006-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2006-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Île-de-France",
+      "dechets_population_dpt.geocode_region": "11",
+      "dechets_population_dpt.date_mesure.year": "2006-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2006-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Pays de la Loire",
+      "dechets_population_dpt.geocode_region": "52",
+      "dechets_population_dpt.date_mesure.year": "2006-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2006-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Centre-Val de Loire",
+      "dechets_population_dpt.geocode_region": "24",
+      "dechets_population_dpt.date_mesure.year": "2006-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2006-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "La Réunion",
+      "dechets_population_dpt.geocode_region": "04",
+      "dechets_population_dpt.date_mesure.year": "2006-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2006-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Bretagne",
+      "dechets_population_dpt.geocode_region": "53",
+      "dechets_population_dpt.date_mesure.year": "2007-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2007-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Guyane",
+      "dechets_population_dpt.geocode_region": "03",
+      "dechets_population_dpt.date_mesure.year": "2007-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2007-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Grand Est",
+      "dechets_population_dpt.geocode_region": "44",
+      "dechets_population_dpt.date_mesure.year": "2007-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2007-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Bourgogne-Franche-Comté",
+      "dechets_population_dpt.geocode_region": "27",
+      "dechets_population_dpt.date_mesure.year": "2007-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2007-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Normandie",
+      "dechets_population_dpt.geocode_region": "28",
+      "dechets_population_dpt.date_mesure.year": "2007-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2007-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "La Réunion",
+      "dechets_population_dpt.geocode_region": "04",
+      "dechets_population_dpt.date_mesure.year": "2007-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2007-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Martinique",
+      "dechets_population_dpt.geocode_region": "02",
+      "dechets_population_dpt.date_mesure.year": "2007-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2007-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Centre-Val de Loire",
+      "dechets_population_dpt.geocode_region": "24",
+      "dechets_population_dpt.date_mesure.year": "2007-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2007-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Île-de-France",
+      "dechets_population_dpt.geocode_region": "11",
+      "dechets_population_dpt.date_mesure.year": "2007-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2007-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Hauts-de-France",
+      "dechets_population_dpt.geocode_region": "32",
+      "dechets_population_dpt.date_mesure.year": "2007-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2007-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Pays de la Loire",
+      "dechets_population_dpt.geocode_region": "52",
+      "dechets_population_dpt.date_mesure.year": "2007-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2007-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Corse",
+      "dechets_population_dpt.geocode_region": "94",
+      "dechets_population_dpt.date_mesure.year": "2007-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2007-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "dechets_population_dpt.geocode_region": "93",
+      "dechets_population_dpt.date_mesure.year": "2007-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2007-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Occitanie",
+      "dechets_population_dpt.geocode_region": "76",
+      "dechets_population_dpt.date_mesure.year": "2007-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2007-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Auvergne-Rhône-Alpes",
+      "dechets_population_dpt.geocode_region": "84",
+      "dechets_population_dpt.date_mesure.year": "2007-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2007-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Nouvelle-Aquitaine",
+      "dechets_population_dpt.geocode_region": "75",
+      "dechets_population_dpt.date_mesure.year": "2007-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2007-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Guadeloupe",
+      "dechets_population_dpt.geocode_region": "01",
+      "dechets_population_dpt.date_mesure.year": "2007-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2007-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Martinique",
+      "dechets_population_dpt.geocode_region": "02",
+      "dechets_population_dpt.date_mesure.year": "2008-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2008-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Corse",
+      "dechets_population_dpt.geocode_region": "94",
+      "dechets_population_dpt.date_mesure.year": "2008-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2008-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Bretagne",
+      "dechets_population_dpt.geocode_region": "53",
+      "dechets_population_dpt.date_mesure.year": "2008-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2008-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Normandie",
+      "dechets_population_dpt.geocode_region": "28",
+      "dechets_population_dpt.date_mesure.year": "2008-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2008-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Nouvelle-Aquitaine",
+      "dechets_population_dpt.geocode_region": "75",
+      "dechets_population_dpt.date_mesure.year": "2008-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2008-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Guadeloupe",
+      "dechets_population_dpt.geocode_region": "01",
+      "dechets_population_dpt.date_mesure.year": "2008-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2008-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "dechets_population_dpt.geocode_region": "93",
+      "dechets_population_dpt.date_mesure.year": "2008-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2008-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Île-de-France",
+      "dechets_population_dpt.geocode_region": "11",
+      "dechets_population_dpt.date_mesure.year": "2008-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2008-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Auvergne-Rhône-Alpes",
+      "dechets_population_dpt.geocode_region": "84",
+      "dechets_population_dpt.date_mesure.year": "2008-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2008-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "La Réunion",
+      "dechets_population_dpt.geocode_region": "04",
+      "dechets_population_dpt.date_mesure.year": "2008-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2008-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Guyane",
+      "dechets_population_dpt.geocode_region": "03",
+      "dechets_population_dpt.date_mesure.year": "2008-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2008-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Pays de la Loire",
+      "dechets_population_dpt.geocode_region": "52",
+      "dechets_population_dpt.date_mesure.year": "2008-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2008-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Hauts-de-France",
+      "dechets_population_dpt.geocode_region": "32",
+      "dechets_population_dpt.date_mesure.year": "2008-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2008-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Grand Est",
+      "dechets_population_dpt.geocode_region": "44",
+      "dechets_population_dpt.date_mesure.year": "2008-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2008-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Bourgogne-Franche-Comté",
+      "dechets_population_dpt.geocode_region": "27",
+      "dechets_population_dpt.date_mesure.year": "2008-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2008-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Occitanie",
+      "dechets_population_dpt.geocode_region": "76",
+      "dechets_population_dpt.date_mesure.year": "2008-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2008-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Centre-Val de Loire",
+      "dechets_population_dpt.geocode_region": "24",
+      "dechets_population_dpt.date_mesure.year": "2008-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2008-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Guyane",
+      "dechets_population_dpt.geocode_region": "03",
+      "dechets_population_dpt.date_mesure.year": "2009-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.4162902227033577,
+      "dechets_population_dpt.date_mesure": "2009-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Corse",
+      "dechets_population_dpt.geocode_region": "94",
+      "dechets_population_dpt.date_mesure.year": "2009-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.6431544063283106,
+      "dechets_population_dpt.date_mesure": "2009-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Normandie",
+      "dechets_population_dpt.geocode_region": "28",
+      "dechets_population_dpt.date_mesure.year": "2009-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.664244938135287,
+      "dechets_population_dpt.date_mesure": "2009-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Île-de-France",
+      "dechets_population_dpt.geocode_region": "11",
+      "dechets_population_dpt.date_mesure.year": "2009-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.4786544093572436,
+      "dechets_population_dpt.date_mesure": "2009-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Martinique",
+      "dechets_population_dpt.geocode_region": "02",
+      "dechets_population_dpt.date_mesure.year": "2009-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.4562207243115609,
+      "dechets_population_dpt.date_mesure": "2009-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "La Réunion",
+      "dechets_population_dpt.geocode_region": "04",
+      "dechets_population_dpt.date_mesure.year": "2009-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.5724521046983944,
+      "dechets_population_dpt.date_mesure": "2009-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Nouvelle-Aquitaine",
+      "dechets_population_dpt.geocode_region": "75",
+      "dechets_population_dpt.date_mesure.year": "2009-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.6282738626296904,
+      "dechets_population_dpt.date_mesure": "2009-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "dechets_population_dpt.geocode_region": "93",
+      "dechets_population_dpt.date_mesure.year": "2009-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.7300542374975275,
+      "dechets_population_dpt.date_mesure": "2009-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Occitanie",
+      "dechets_population_dpt.geocode_region": "76",
+      "dechets_population_dpt.date_mesure.year": "2009-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.6270738839560165,
+      "dechets_population_dpt.date_mesure": "2009-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Bourgogne-Franche-Comté",
+      "dechets_population_dpt.geocode_region": "27",
+      "dechets_population_dpt.date_mesure.year": "2009-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.5682787919369484,
+      "dechets_population_dpt.date_mesure": "2009-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Grand Est",
+      "dechets_population_dpt.geocode_region": "44",
+      "dechets_population_dpt.date_mesure.year": "2009-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.5502751784204983,
+      "dechets_population_dpt.date_mesure": "2009-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Guadeloupe",
+      "dechets_population_dpt.geocode_region": "01",
+      "dechets_population_dpt.date_mesure.year": "2009-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.5103868470990203,
+      "dechets_population_dpt.date_mesure": "2009-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Pays de la Loire",
+      "dechets_population_dpt.geocode_region": "52",
+      "dechets_population_dpt.date_mesure.year": "2009-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.5840180185636544,
+      "dechets_population_dpt.date_mesure": "2009-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Bretagne",
+      "dechets_population_dpt.geocode_region": "53",
+      "dechets_population_dpt.date_mesure.year": "2009-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.6684141012590612,
+      "dechets_population_dpt.date_mesure": "2009-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Auvergne-Rhône-Alpes",
+      "dechets_population_dpt.geocode_region": "84",
+      "dechets_population_dpt.date_mesure.year": "2009-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.5584065892914039,
+      "dechets_population_dpt.date_mesure": "2009-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Hauts-de-France",
+      "dechets_population_dpt.geocode_region": "32",
+      "dechets_population_dpt.date_mesure.year": "2009-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.631822624536398,
+      "dechets_population_dpt.date_mesure": "2009-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Centre-Val de Loire",
+      "dechets_population_dpt.geocode_region": "24",
+      "dechets_population_dpt.date_mesure.year": "2009-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.566345278284402,
+      "dechets_population_dpt.date_mesure": "2009-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "La Réunion",
+      "dechets_population_dpt.geocode_region": "04",
+      "dechets_population_dpt.date_mesure.year": "2010-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2010-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Normandie",
+      "dechets_population_dpt.geocode_region": "28",
+      "dechets_population_dpt.date_mesure.year": "2010-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2010-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Guadeloupe",
+      "dechets_population_dpt.geocode_region": "01",
+      "dechets_population_dpt.date_mesure.year": "2010-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2010-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Bretagne",
+      "dechets_population_dpt.geocode_region": "53",
+      "dechets_population_dpt.date_mesure.year": "2010-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2010-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Hauts-de-France",
+      "dechets_population_dpt.geocode_region": "32",
+      "dechets_population_dpt.date_mesure.year": "2010-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2010-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Pays de la Loire",
+      "dechets_population_dpt.geocode_region": "52",
+      "dechets_population_dpt.date_mesure.year": "2010-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2010-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Occitanie",
+      "dechets_population_dpt.geocode_region": "76",
+      "dechets_population_dpt.date_mesure.year": "2010-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2010-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Bourgogne-Franche-Comté",
+      "dechets_population_dpt.geocode_region": "27",
+      "dechets_population_dpt.date_mesure.year": "2010-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2010-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Nouvelle-Aquitaine",
+      "dechets_population_dpt.geocode_region": "75",
+      "dechets_population_dpt.date_mesure.year": "2010-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2010-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "dechets_population_dpt.geocode_region": "93",
+      "dechets_population_dpt.date_mesure.year": "2010-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2010-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Centre-Val de Loire",
+      "dechets_population_dpt.geocode_region": "24",
+      "dechets_population_dpt.date_mesure.year": "2010-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2010-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Guyane",
+      "dechets_population_dpt.geocode_region": "03",
+      "dechets_population_dpt.date_mesure.year": "2010-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2010-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Corse",
+      "dechets_population_dpt.geocode_region": "94",
+      "dechets_population_dpt.date_mesure.year": "2010-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2010-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Île-de-France",
+      "dechets_population_dpt.geocode_region": "11",
+      "dechets_population_dpt.date_mesure.year": "2010-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2010-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Martinique",
+      "dechets_population_dpt.geocode_region": "02",
+      "dechets_population_dpt.date_mesure.year": "2010-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2010-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Grand Est",
+      "dechets_population_dpt.geocode_region": "44",
+      "dechets_population_dpt.date_mesure.year": "2010-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2010-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Auvergne-Rhône-Alpes",
+      "dechets_population_dpt.geocode_region": "84",
+      "dechets_population_dpt.date_mesure.year": "2010-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2010-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Corse",
+      "dechets_population_dpt.geocode_region": "94",
+      "dechets_population_dpt.date_mesure.year": "2011-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.6861911182055799,
+      "dechets_population_dpt.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Hauts-de-France",
+      "dechets_population_dpt.geocode_region": "32",
+      "dechets_population_dpt.date_mesure.year": "2011-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.6371226403855452,
+      "dechets_population_dpt.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Guadeloupe",
+      "dechets_population_dpt.geocode_region": "01",
+      "dechets_population_dpt.date_mesure.year": "2011-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.5868219506468794,
+      "dechets_population_dpt.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Nouvelle-Aquitaine",
+      "dechets_population_dpt.geocode_region": "75",
+      "dechets_population_dpt.date_mesure.year": "2011-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.6357212547621911,
+      "dechets_population_dpt.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Auvergne-Rhône-Alpes",
+      "dechets_population_dpt.geocode_region": "84",
+      "dechets_population_dpt.date_mesure.year": "2011-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.55798423370608,
+      "dechets_population_dpt.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "dechets_population_dpt.geocode_region": "93",
+      "dechets_population_dpt.date_mesure.year": "2011-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.729177845144159,
+      "dechets_population_dpt.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Occitanie",
+      "dechets_population_dpt.geocode_region": "76",
+      "dechets_population_dpt.date_mesure.year": "2011-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.6152379811772425,
+      "dechets_population_dpt.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Grand Est",
+      "dechets_population_dpt.geocode_region": "44",
+      "dechets_population_dpt.date_mesure.year": "2011-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.5559724853274397,
+      "dechets_population_dpt.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Guyane",
+      "dechets_population_dpt.geocode_region": "03",
+      "dechets_population_dpt.date_mesure.year": "2011-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.47023212053092206,
+      "dechets_population_dpt.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Martinique",
+      "dechets_population_dpt.geocode_region": "02",
+      "dechets_population_dpt.date_mesure.year": "2011-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.5034510095821724,
+      "dechets_population_dpt.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "La Réunion",
+      "dechets_population_dpt.geocode_region": "04",
+      "dechets_population_dpt.date_mesure.year": "2011-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.6403732284471886,
+      "dechets_population_dpt.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Centre-Val de Loire",
+      "dechets_population_dpt.geocode_region": "24",
+      "dechets_population_dpt.date_mesure.year": "2011-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.5743529754559836,
+      "dechets_population_dpt.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Bretagne",
+      "dechets_population_dpt.geocode_region": "53",
+      "dechets_population_dpt.date_mesure.year": "2011-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.6619833319193092,
+      "dechets_population_dpt.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Bourgogne-Franche-Comté",
+      "dechets_population_dpt.geocode_region": "27",
+      "dechets_population_dpt.date_mesure.year": "2011-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.5667058960135275,
+      "dechets_population_dpt.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Normandie",
+      "dechets_population_dpt.geocode_region": "28",
+      "dechets_population_dpt.date_mesure.year": "2011-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.6663764733066533,
+      "dechets_population_dpt.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Île-de-France",
+      "dechets_population_dpt.geocode_region": "11",
+      "dechets_population_dpt.date_mesure.year": "2011-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.4825544782432514,
+      "dechets_population_dpt.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Pays de la Loire",
+      "dechets_population_dpt.geocode_region": "52",
+      "dechets_population_dpt.date_mesure.year": "2011-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.5798653568487155,
+      "dechets_population_dpt.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Guyane",
+      "dechets_population_dpt.geocode_region": "03",
+      "dechets_population_dpt.date_mesure.year": "2012-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2012-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Hauts-de-France",
+      "dechets_population_dpt.geocode_region": "32",
+      "dechets_population_dpt.date_mesure.year": "2012-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2012-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Normandie",
+      "dechets_population_dpt.geocode_region": "28",
+      "dechets_population_dpt.date_mesure.year": "2012-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2012-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Bourgogne-Franche-Comté",
+      "dechets_population_dpt.geocode_region": "27",
+      "dechets_population_dpt.date_mesure.year": "2012-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2012-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Île-de-France",
+      "dechets_population_dpt.geocode_region": "11",
+      "dechets_population_dpt.date_mesure.year": "2012-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2012-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Corse",
+      "dechets_population_dpt.geocode_region": "94",
+      "dechets_population_dpt.date_mesure.year": "2012-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2012-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Occitanie",
+      "dechets_population_dpt.geocode_region": "76",
+      "dechets_population_dpt.date_mesure.year": "2012-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2012-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Guadeloupe",
+      "dechets_population_dpt.geocode_region": "01",
+      "dechets_population_dpt.date_mesure.year": "2012-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2012-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Grand Est",
+      "dechets_population_dpt.geocode_region": "44",
+      "dechets_population_dpt.date_mesure.year": "2012-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2012-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Pays de la Loire",
+      "dechets_population_dpt.geocode_region": "52",
+      "dechets_population_dpt.date_mesure.year": "2012-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2012-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Auvergne-Rhône-Alpes",
+      "dechets_population_dpt.geocode_region": "84",
+      "dechets_population_dpt.date_mesure.year": "2012-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2012-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Centre-Val de Loire",
+      "dechets_population_dpt.geocode_region": "24",
+      "dechets_population_dpt.date_mesure.year": "2012-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2012-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "La Réunion",
+      "dechets_population_dpt.geocode_region": "04",
+      "dechets_population_dpt.date_mesure.year": "2012-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2012-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Martinique",
+      "dechets_population_dpt.geocode_region": "02",
+      "dechets_population_dpt.date_mesure.year": "2012-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2012-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "dechets_population_dpt.geocode_region": "93",
+      "dechets_population_dpt.date_mesure.year": "2012-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2012-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Nouvelle-Aquitaine",
+      "dechets_population_dpt.geocode_region": "75",
+      "dechets_population_dpt.date_mesure.year": "2012-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2012-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Bretagne",
+      "dechets_population_dpt.geocode_region": "53",
+      "dechets_population_dpt.date_mesure.year": "2012-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2012-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "La Réunion",
+      "dechets_population_dpt.geocode_region": "04",
+      "dechets_population_dpt.date_mesure.year": "2013-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.6179852305643735,
+      "dechets_population_dpt.date_mesure": "2013-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Corse",
+      "dechets_population_dpt.geocode_region": "94",
+      "dechets_population_dpt.date_mesure.year": "2013-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.7043118847748963,
+      "dechets_population_dpt.date_mesure": "2013-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Pays de la Loire",
+      "dechets_population_dpt.geocode_region": "52",
+      "dechets_population_dpt.date_mesure.year": "2013-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.573774684728808,
+      "dechets_population_dpt.date_mesure": "2013-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Hauts-de-France",
+      "dechets_population_dpt.geocode_region": "32",
+      "dechets_population_dpt.date_mesure.year": "2013-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.6162417413126684,
+      "dechets_population_dpt.date_mesure": "2013-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Bretagne",
+      "dechets_population_dpt.geocode_region": "53",
+      "dechets_population_dpt.date_mesure.year": "2013-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.6537477594641065,
+      "dechets_population_dpt.date_mesure": "2013-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "dechets_population_dpt.geocode_region": "93",
+      "dechets_population_dpt.date_mesure.year": "2013-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.707004367464559,
+      "dechets_population_dpt.date_mesure": "2013-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Île-de-France",
+      "dechets_population_dpt.geocode_region": "11",
+      "dechets_population_dpt.date_mesure.year": "2013-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.4658784794771354,
+      "dechets_population_dpt.date_mesure": "2013-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Bourgogne-Franche-Comté",
+      "dechets_population_dpt.geocode_region": "27",
+      "dechets_population_dpt.date_mesure.year": "2013-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.548393245153971,
+      "dechets_population_dpt.date_mesure": "2013-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Nouvelle-Aquitaine",
+      "dechets_population_dpt.geocode_region": "75",
+      "dechets_population_dpt.date_mesure.year": "2013-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.6106430212500409,
+      "dechets_population_dpt.date_mesure": "2013-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Guadeloupe",
+      "dechets_population_dpt.geocode_region": "01",
+      "dechets_population_dpt.date_mesure.year": "2013-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.654373804769235,
+      "dechets_population_dpt.date_mesure": "2013-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Auvergne-Rhône-Alpes",
+      "dechets_population_dpt.geocode_region": "84",
+      "dechets_population_dpt.date_mesure.year": "2013-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.5433200904159156,
+      "dechets_population_dpt.date_mesure": "2013-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Guyane",
+      "dechets_population_dpt.geocode_region": "03",
+      "dechets_population_dpt.date_mesure.year": "2013-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.28725612203934164,
+      "dechets_population_dpt.date_mesure": "2013-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Grand Est",
+      "dechets_population_dpt.geocode_region": "44",
+      "dechets_population_dpt.date_mesure.year": "2013-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.538523442417606,
+      "dechets_population_dpt.date_mesure": "2013-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Normandie",
+      "dechets_population_dpt.geocode_region": "28",
+      "dechets_population_dpt.date_mesure.year": "2013-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.6681665827415512,
+      "dechets_population_dpt.date_mesure": "2013-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Martinique",
+      "dechets_population_dpt.geocode_region": "02",
+      "dechets_population_dpt.date_mesure.year": "2013-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.5044973297955394,
+      "dechets_population_dpt.date_mesure": "2013-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Occitanie",
+      "dechets_population_dpt.geocode_region": "76",
+      "dechets_population_dpt.date_mesure.year": "2013-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.5962752349716162,
+      "dechets_population_dpt.date_mesure": "2013-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Centre-Val de Loire",
+      "dechets_population_dpt.geocode_region": "24",
+      "dechets_population_dpt.date_mesure.year": "2013-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.5536540729836595,
+      "dechets_population_dpt.date_mesure": "2013-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Nouvelle-Aquitaine",
+      "dechets_population_dpt.geocode_region": "75",
+      "dechets_population_dpt.date_mesure.year": "2014-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2014-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Martinique",
+      "dechets_population_dpt.geocode_region": "02",
+      "dechets_population_dpt.date_mesure.year": "2014-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2014-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Guyane",
+      "dechets_population_dpt.geocode_region": "03",
+      "dechets_population_dpt.date_mesure.year": "2014-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2014-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Centre-Val de Loire",
+      "dechets_population_dpt.geocode_region": "24",
+      "dechets_population_dpt.date_mesure.year": "2014-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2014-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Occitanie",
+      "dechets_population_dpt.geocode_region": "76",
+      "dechets_population_dpt.date_mesure.year": "2014-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2014-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Auvergne-Rhône-Alpes",
+      "dechets_population_dpt.geocode_region": "84",
+      "dechets_population_dpt.date_mesure.year": "2014-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2014-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Bourgogne-Franche-Comté",
+      "dechets_population_dpt.geocode_region": "27",
+      "dechets_population_dpt.date_mesure.year": "2014-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2014-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Grand Est",
+      "dechets_population_dpt.geocode_region": "44",
+      "dechets_population_dpt.date_mesure.year": "2014-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2014-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "La Réunion",
+      "dechets_population_dpt.geocode_region": "04",
+      "dechets_population_dpt.date_mesure.year": "2014-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2014-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Corse",
+      "dechets_population_dpt.geocode_region": "94",
+      "dechets_population_dpt.date_mesure.year": "2014-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2014-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Normandie",
+      "dechets_population_dpt.geocode_region": "28",
+      "dechets_population_dpt.date_mesure.year": "2014-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2014-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Île-de-France",
+      "dechets_population_dpt.geocode_region": "11",
+      "dechets_population_dpt.date_mesure.year": "2014-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2014-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Guadeloupe",
+      "dechets_population_dpt.geocode_region": "01",
+      "dechets_population_dpt.date_mesure.year": "2014-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2014-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Hauts-de-France",
+      "dechets_population_dpt.geocode_region": "32",
+      "dechets_population_dpt.date_mesure.year": "2014-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2014-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "dechets_population_dpt.geocode_region": "93",
+      "dechets_population_dpt.date_mesure.year": "2014-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2014-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Bretagne",
+      "dechets_population_dpt.geocode_region": "53",
+      "dechets_population_dpt.date_mesure.year": "2014-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2014-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Pays de la Loire",
+      "dechets_population_dpt.geocode_region": "52",
+      "dechets_population_dpt.date_mesure.year": "2014-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2014-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Auvergne-Rhône-Alpes",
+      "dechets_population_dpt.geocode_region": "84",
+      "dechets_population_dpt.date_mesure.year": "2015-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.5434745035078727,
+      "dechets_population_dpt.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "La Réunion",
+      "dechets_population_dpt.geocode_region": "04",
+      "dechets_population_dpt.date_mesure.year": "2015-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.5758452241435854,
+      "dechets_population_dpt.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Bretagne",
+      "dechets_population_dpt.geocode_region": "53",
+      "dechets_population_dpt.date_mesure.year": "2015-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.6601894834312432,
+      "dechets_population_dpt.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Hauts-de-France",
+      "dechets_population_dpt.geocode_region": "32",
+      "dechets_population_dpt.date_mesure.year": "2015-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.6056187999531419,
+      "dechets_population_dpt.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Occitanie",
+      "dechets_population_dpt.geocode_region": "76",
+      "dechets_population_dpt.date_mesure.year": "2015-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.6177026731911083,
+      "dechets_population_dpt.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Mayotte",
+      "dechets_population_dpt.geocode_region": "06",
+      "dechets_population_dpt.date_mesure.year": "2015-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Corse",
+      "dechets_population_dpt.geocode_region": "94",
+      "dechets_population_dpt.date_mesure.year": "2015-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.6594046742421696,
+      "dechets_population_dpt.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Guyane",
+      "dechets_population_dpt.geocode_region": "03",
+      "dechets_population_dpt.date_mesure.year": "2015-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.4270892578839013,
+      "dechets_population_dpt.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Pays de la Loire",
+      "dechets_population_dpt.geocode_region": "52",
+      "dechets_population_dpt.date_mesure.year": "2015-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.5739635580285638,
+      "dechets_population_dpt.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Île-de-France",
+      "dechets_population_dpt.geocode_region": "11",
+      "dechets_population_dpt.date_mesure.year": "2015-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.45592828888647574,
+      "dechets_population_dpt.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "dechets_population_dpt.geocode_region": "93",
+      "dechets_population_dpt.date_mesure.year": "2015-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.7042412594946024,
+      "dechets_population_dpt.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Nouvelle-Aquitaine",
+      "dechets_population_dpt.geocode_region": "75",
+      "dechets_population_dpt.date_mesure.year": "2015-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.6128999546983311,
+      "dechets_population_dpt.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Normandie",
+      "dechets_population_dpt.geocode_region": "28",
+      "dechets_population_dpt.date_mesure.year": "2015-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.6538325779970896,
+      "dechets_population_dpt.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Martinique",
+      "dechets_population_dpt.geocode_region": "02",
+      "dechets_population_dpt.date_mesure.year": "2015-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.5028514717349696,
+      "dechets_population_dpt.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Bourgogne-Franche-Comté",
+      "dechets_population_dpt.geocode_region": "27",
+      "dechets_population_dpt.date_mesure.year": "2015-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.5407836394960545,
+      "dechets_population_dpt.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Guadeloupe",
+      "dechets_population_dpt.geocode_region": "01",
+      "dechets_population_dpt.date_mesure.year": "2015-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.5370391969647479,
+      "dechets_population_dpt.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Centre-Val de Loire",
+      "dechets_population_dpt.geocode_region": "24",
+      "dechets_population_dpt.date_mesure.year": "2015-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.5627924309080304,
+      "dechets_population_dpt.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Grand Est",
+      "dechets_population_dpt.geocode_region": "44",
+      "dechets_population_dpt.date_mesure.year": "2015-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.525027530778185,
+      "dechets_population_dpt.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Martinique",
+      "dechets_population_dpt.geocode_region": "02",
+      "dechets_population_dpt.date_mesure.year": "2016-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Auvergne-Rhône-Alpes",
+      "dechets_population_dpt.geocode_region": "84",
+      "dechets_population_dpt.date_mesure.year": "2016-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Bourgogne-Franche-Comté",
+      "dechets_population_dpt.geocode_region": "27",
+      "dechets_population_dpt.date_mesure.year": "2016-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Normandie",
+      "dechets_population_dpt.geocode_region": "28",
+      "dechets_population_dpt.date_mesure.year": "2016-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Centre-Val de Loire",
+      "dechets_population_dpt.geocode_region": "24",
+      "dechets_population_dpt.date_mesure.year": "2016-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Hauts-de-France",
+      "dechets_population_dpt.geocode_region": "32",
+      "dechets_population_dpt.date_mesure.year": "2016-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Occitanie",
+      "dechets_population_dpt.geocode_region": "76",
+      "dechets_population_dpt.date_mesure.year": "2016-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Grand Est",
+      "dechets_population_dpt.geocode_region": "44",
+      "dechets_population_dpt.date_mesure.year": "2016-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Nouvelle-Aquitaine",
+      "dechets_population_dpt.geocode_region": "75",
+      "dechets_population_dpt.date_mesure.year": "2016-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Pays de la Loire",
+      "dechets_population_dpt.geocode_region": "52",
+      "dechets_population_dpt.date_mesure.year": "2016-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Guyane",
+      "dechets_population_dpt.geocode_region": "03",
+      "dechets_population_dpt.date_mesure.year": "2016-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "La Réunion",
+      "dechets_population_dpt.geocode_region": "04",
+      "dechets_population_dpt.date_mesure.year": "2016-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Guadeloupe",
+      "dechets_population_dpt.geocode_region": "01",
+      "dechets_population_dpt.date_mesure.year": "2016-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Île-de-France",
+      "dechets_population_dpt.geocode_region": "11",
+      "dechets_population_dpt.date_mesure.year": "2016-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Corse",
+      "dechets_population_dpt.geocode_region": "94",
+      "dechets_population_dpt.date_mesure.year": "2016-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Bretagne",
+      "dechets_population_dpt.geocode_region": "53",
+      "dechets_population_dpt.date_mesure.year": "2016-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "dechets_population_dpt.geocode_region": "93",
+      "dechets_population_dpt.date_mesure.year": "2016-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Bourgogne-Franche-Comté",
+      "dechets_population_dpt.geocode_region": "27",
+      "dechets_population_dpt.date_mesure.year": "2017-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.5477893294605615,
+      "dechets_population_dpt.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "La Réunion",
+      "dechets_population_dpt.geocode_region": "04",
+      "dechets_population_dpt.date_mesure.year": "2017-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.6654932707322244,
+      "dechets_population_dpt.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Bretagne",
+      "dechets_population_dpt.geocode_region": "53",
+      "dechets_population_dpt.date_mesure.year": "2017-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.6836163986665478,
+      "dechets_population_dpt.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Guyane",
+      "dechets_population_dpt.geocode_region": "03",
+      "dechets_population_dpt.date_mesure.year": "2017-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.39049616672869375,
+      "dechets_population_dpt.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Centre-Val de Loire",
+      "dechets_population_dpt.geocode_region": "24",
+      "dechets_population_dpt.date_mesure.year": "2017-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.5779005819306496,
+      "dechets_population_dpt.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Normandie",
+      "dechets_population_dpt.geocode_region": "28",
+      "dechets_population_dpt.date_mesure.year": "2017-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.6675774738641121,
+      "dechets_population_dpt.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Martinique",
+      "dechets_population_dpt.geocode_region": "02",
+      "dechets_population_dpt.date_mesure.year": "2017-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.531044219713683,
+      "dechets_population_dpt.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "dechets_population_dpt.geocode_region": "93",
+      "dechets_population_dpt.date_mesure.year": "2017-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.7143682092035405,
+      "dechets_population_dpt.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Île-de-France",
+      "dechets_population_dpt.geocode_region": "11",
+      "dechets_population_dpt.date_mesure.year": "2017-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.46319879949535436,
+      "dechets_population_dpt.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Mayotte",
+      "dechets_population_dpt.geocode_region": "06",
+      "dechets_population_dpt.date_mesure.year": "2017-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Corse",
+      "dechets_population_dpt.geocode_region": "94",
+      "dechets_population_dpt.date_mesure.year": "2017-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.7077277585702428,
+      "dechets_population_dpt.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Guadeloupe",
+      "dechets_population_dpt.geocode_region": "01",
+      "dechets_population_dpt.date_mesure.year": "2017-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.6692047210399408,
+      "dechets_population_dpt.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Occitanie",
+      "dechets_population_dpt.geocode_region": "76",
+      "dechets_population_dpt.date_mesure.year": "2017-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.6204142887497942,
+      "dechets_population_dpt.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Hauts-de-France",
+      "dechets_population_dpt.geocode_region": "32",
+      "dechets_population_dpt.date_mesure.year": "2017-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.6283738093556529,
+      "dechets_population_dpt.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Grand Est",
+      "dechets_population_dpt.geocode_region": "44",
+      "dechets_population_dpt.date_mesure.year": "2017-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.534162665467298,
+      "dechets_population_dpt.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Nouvelle-Aquitaine",
+      "dechets_population_dpt.geocode_region": "75",
+      "dechets_population_dpt.date_mesure.year": "2017-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.6353644985762915,
+      "dechets_population_dpt.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Auvergne-Rhône-Alpes",
+      "dechets_population_dpt.geocode_region": "84",
+      "dechets_population_dpt.date_mesure.year": "2017-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.5405021257448411,
+      "dechets_population_dpt.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Pays de la Loire",
+      "dechets_population_dpt.geocode_region": "52",
+      "dechets_population_dpt.date_mesure.year": "2017-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.585745624850545,
+      "dechets_population_dpt.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Guyane",
+      "dechets_population_dpt.geocode_region": "03",
+      "dechets_population_dpt.date_mesure.year": "2018-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Centre-Val de Loire",
+      "dechets_population_dpt.geocode_region": "24",
+      "dechets_population_dpt.date_mesure.year": "2018-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Guadeloupe",
+      "dechets_population_dpt.geocode_region": "01",
+      "dechets_population_dpt.date_mesure.year": "2018-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "dechets_population_dpt.geocode_region": "93",
+      "dechets_population_dpt.date_mesure.year": "2018-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Auvergne-Rhône-Alpes",
+      "dechets_population_dpt.geocode_region": "84",
+      "dechets_population_dpt.date_mesure.year": "2018-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "La Réunion",
+      "dechets_population_dpt.geocode_region": "04",
+      "dechets_population_dpt.date_mesure.year": "2018-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Normandie",
+      "dechets_population_dpt.geocode_region": "28",
+      "dechets_population_dpt.date_mesure.year": "2018-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Hauts-de-France",
+      "dechets_population_dpt.geocode_region": "32",
+      "dechets_population_dpt.date_mesure.year": "2018-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Pays de la Loire",
+      "dechets_population_dpt.geocode_region": "52",
+      "dechets_population_dpt.date_mesure.year": "2018-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Bretagne",
+      "dechets_population_dpt.geocode_region": "53",
+      "dechets_population_dpt.date_mesure.year": "2018-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Bourgogne-Franche-Comté",
+      "dechets_population_dpt.geocode_region": "27",
+      "dechets_population_dpt.date_mesure.year": "2018-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Occitanie",
+      "dechets_population_dpt.geocode_region": "76",
+      "dechets_population_dpt.date_mesure.year": "2018-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Corse",
+      "dechets_population_dpt.geocode_region": "94",
+      "dechets_population_dpt.date_mesure.year": "2018-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Grand Est",
+      "dechets_population_dpt.geocode_region": "44",
+      "dechets_population_dpt.date_mesure.year": "2018-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Nouvelle-Aquitaine",
+      "dechets_population_dpt.geocode_region": "75",
+      "dechets_population_dpt.date_mesure.year": "2018-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Île-de-France",
+      "dechets_population_dpt.geocode_region": "11",
+      "dechets_population_dpt.date_mesure.year": "2018-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Martinique",
+      "dechets_population_dpt.geocode_region": "02",
+      "dechets_population_dpt.date_mesure.year": "2018-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Grand Est",
+      "dechets_population_dpt.geocode_region": "44",
+      "dechets_population_dpt.date_mesure.year": "2019-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.5385200367372128,
+      "dechets_population_dpt.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Pays de la Loire",
+      "dechets_population_dpt.geocode_region": "52",
+      "dechets_population_dpt.date_mesure.year": "2019-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.5829507052576479,
+      "dechets_population_dpt.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "dechets_population_dpt.geocode_region": "93",
+      "dechets_population_dpt.date_mesure.year": "2019-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.7080755115869573,
+      "dechets_population_dpt.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Martinique",
+      "dechets_population_dpt.geocode_region": "02",
+      "dechets_population_dpt.date_mesure.year": "2019-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.5428491830083291,
+      "dechets_population_dpt.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Auvergne-Rhône-Alpes",
+      "dechets_population_dpt.geocode_region": "84",
+      "dechets_population_dpt.date_mesure.year": "2019-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.5411348664106356,
+      "dechets_population_dpt.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Guyane",
+      "dechets_population_dpt.geocode_region": "03",
+      "dechets_population_dpt.date_mesure.year": "2019-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.38350744467086534,
+      "dechets_population_dpt.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Hauts-de-France",
+      "dechets_population_dpt.geocode_region": "32",
+      "dechets_population_dpt.date_mesure.year": "2019-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.6017782665507112,
+      "dechets_population_dpt.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Bourgogne-Franche-Comté",
+      "dechets_population_dpt.geocode_region": "27",
+      "dechets_population_dpt.date_mesure.year": "2019-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.5453621675375502,
+      "dechets_population_dpt.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Normandie",
+      "dechets_population_dpt.geocode_region": "28",
+      "dechets_population_dpt.date_mesure.year": "2019-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.6685689220434571,
+      "dechets_population_dpt.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Corse",
+      "dechets_population_dpt.geocode_region": "94",
+      "dechets_population_dpt.date_mesure.year": "2019-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.7516829690988134,
+      "dechets_population_dpt.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Île-de-France",
+      "dechets_population_dpt.geocode_region": "11",
+      "dechets_population_dpt.date_mesure.year": "2019-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.4666963135871317,
+      "dechets_population_dpt.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Centre-Val de Loire",
+      "dechets_population_dpt.geocode_region": "24",
+      "dechets_population_dpt.date_mesure.year": "2019-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.5727171437676338,
+      "dechets_population_dpt.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Occitanie",
+      "dechets_population_dpt.geocode_region": "76",
+      "dechets_population_dpt.date_mesure.year": "2019-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.621262837750719,
+      "dechets_population_dpt.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Guadeloupe",
+      "dechets_population_dpt.geocode_region": "01",
+      "dechets_population_dpt.date_mesure.year": "2019-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.6391788964680837,
+      "dechets_population_dpt.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Bretagne",
+      "dechets_population_dpt.geocode_region": "53",
+      "dechets_population_dpt.date_mesure.year": "2019-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.6883533560625886,
+      "dechets_population_dpt.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "La Réunion",
+      "dechets_population_dpt.geocode_region": "04",
+      "dechets_population_dpt.date_mesure.year": "2019-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.5891137237143089,
+      "dechets_population_dpt.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Nouvelle-Aquitaine",
+      "dechets_population_dpt.geocode_region": "75",
+      "dechets_population_dpt.date_mesure.year": "2019-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.6440289876243886,
+      "dechets_population_dpt.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Île-de-France",
+      "dechets_population_dpt.geocode_region": "11",
+      "dechets_population_dpt.date_mesure.year": "2020-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Guadeloupe",
+      "dechets_population_dpt.geocode_region": "01",
+      "dechets_population_dpt.date_mesure.year": "2020-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Centre-Val de Loire",
+      "dechets_population_dpt.geocode_region": "24",
+      "dechets_population_dpt.date_mesure.year": "2020-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Martinique",
+      "dechets_population_dpt.geocode_region": "02",
+      "dechets_population_dpt.date_mesure.year": "2020-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Occitanie",
+      "dechets_population_dpt.geocode_region": "76",
+      "dechets_population_dpt.date_mesure.year": "2020-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Pays de la Loire",
+      "dechets_population_dpt.geocode_region": "52",
+      "dechets_population_dpt.date_mesure.year": "2020-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Corse",
+      "dechets_population_dpt.geocode_region": "94",
+      "dechets_population_dpt.date_mesure.year": "2020-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Normandie",
+      "dechets_population_dpt.geocode_region": "28",
+      "dechets_population_dpt.date_mesure.year": "2020-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Auvergne-Rhône-Alpes",
+      "dechets_population_dpt.geocode_region": "84",
+      "dechets_population_dpt.date_mesure.year": "2020-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Nouvelle-Aquitaine",
+      "dechets_population_dpt.geocode_region": "75",
+      "dechets_population_dpt.date_mesure.year": "2020-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "dechets_population_dpt.geocode_region": "93",
+      "dechets_population_dpt.date_mesure.year": "2020-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Hauts-de-France",
+      "dechets_population_dpt.geocode_region": "32",
+      "dechets_population_dpt.date_mesure.year": "2020-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "La Réunion",
+      "dechets_population_dpt.geocode_region": "04",
+      "dechets_population_dpt.date_mesure.year": "2020-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Guyane",
+      "dechets_population_dpt.geocode_region": "03",
+      "dechets_population_dpt.date_mesure.year": "2020-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Bretagne",
+      "dechets_population_dpt.geocode_region": "53",
+      "dechets_population_dpt.date_mesure.year": "2020-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Grand Est",
+      "dechets_population_dpt.geocode_region": "44",
+      "dechets_population_dpt.date_mesure.year": "2020-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Bourgogne-Franche-Comté",
+      "dechets_population_dpt.geocode_region": "27",
+      "dechets_population_dpt.date_mesure.year": "2020-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Guyane",
+      "dechets_population_dpt.geocode_region": "03",
+      "dechets_population_dpt.date_mesure.year": "2021-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Île-de-France",
+      "dechets_population_dpt.geocode_region": "11",
+      "dechets_population_dpt.date_mesure.year": "2021-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.4759104717852052,
+      "dechets_population_dpt.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Normandie",
+      "dechets_population_dpt.geocode_region": "28",
+      "dechets_population_dpt.date_mesure.year": "2021-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.7205587617181185,
+      "dechets_population_dpt.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Hauts-de-France",
+      "dechets_population_dpt.geocode_region": "32",
+      "dechets_population_dpt.date_mesure.year": "2021-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.6736606834711242,
+      "dechets_population_dpt.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Grand Est",
+      "dechets_population_dpt.geocode_region": "44",
+      "dechets_population_dpt.date_mesure.year": "2021-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.5576364068245355,
+      "dechets_population_dpt.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Pays de la Loire",
+      "dechets_population_dpt.geocode_region": "52",
+      "dechets_population_dpt.date_mesure.year": "2021-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.625758878163606,
+      "dechets_population_dpt.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Occitanie",
+      "dechets_population_dpt.geocode_region": "76",
+      "dechets_population_dpt.date_mesure.year": "2021-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.641566706120844,
+      "dechets_population_dpt.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "La Réunion",
+      "dechets_population_dpt.geocode_region": "04",
+      "dechets_population_dpt.date_mesure.year": "2021-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.6218931145591438,
+      "dechets_population_dpt.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Auvergne-Rhône-Alpes",
+      "dechets_population_dpt.geocode_region": "84",
+      "dechets_population_dpt.date_mesure.year": "2021-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.5640514052459046,
+      "dechets_population_dpt.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "dechets_population_dpt.geocode_region": "93",
+      "dechets_population_dpt.date_mesure.year": "2021-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.7302239207931605,
+      "dechets_population_dpt.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Corse",
+      "dechets_population_dpt.geocode_region": "94",
+      "dechets_population_dpt.date_mesure.year": "2021-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.7450960739016735,
+      "dechets_population_dpt.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Martinique",
+      "dechets_population_dpt.geocode_region": "02",
+      "dechets_population_dpt.date_mesure.year": "2021-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.4855727389403713,
+      "dechets_population_dpt.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Bretagne",
+      "dechets_population_dpt.geocode_region": "53",
+      "dechets_population_dpt.date_mesure.year": "2021-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.7219435291747076,
+      "dechets_population_dpt.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Nouvelle-Aquitaine",
+      "dechets_population_dpt.geocode_region": "75",
+      "dechets_population_dpt.date_mesure.year": "2021-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.666833340692713,
+      "dechets_population_dpt.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Guadeloupe",
+      "dechets_population_dpt.geocode_region": "01",
+      "dechets_population_dpt.date_mesure.year": "2021-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.6125467390031615,
+      "dechets_population_dpt.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Bourgogne-Franche-Comté",
+      "dechets_population_dpt.geocode_region": "27",
+      "dechets_population_dpt.date_mesure.year": "2021-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.5965176305641681,
+      "dechets_population_dpt.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Centre-Val de Loire",
+      "dechets_population_dpt.geocode_region": "24",
+      "dechets_population_dpt.date_mesure.year": "2021-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": 0.6229835545988949,
+      "dechets_population_dpt.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "La Réunion",
+      "dechets_population_dpt.geocode_region": "04",
+      "dechets_population_dpt.date_mesure.year": "2022-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Centre-Val de Loire",
+      "dechets_population_dpt.geocode_region": "24",
+      "dechets_population_dpt.date_mesure.year": "2022-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Grand Est",
+      "dechets_population_dpt.geocode_region": "44",
+      "dechets_population_dpt.date_mesure.year": "2022-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Bretagne",
+      "dechets_population_dpt.geocode_region": "53",
+      "dechets_population_dpt.date_mesure.year": "2022-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Nouvelle-Aquitaine",
+      "dechets_population_dpt.geocode_region": "75",
+      "dechets_population_dpt.date_mesure.year": "2022-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Corse",
+      "dechets_population_dpt.geocode_region": "94",
+      "dechets_population_dpt.date_mesure.year": "2022-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Auvergne-Rhône-Alpes",
+      "dechets_population_dpt.geocode_region": "84",
+      "dechets_population_dpt.date_mesure.year": "2022-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Guadeloupe",
+      "dechets_population_dpt.geocode_region": "01",
+      "dechets_population_dpt.date_mesure.year": "2022-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Hauts-de-France",
+      "dechets_population_dpt.geocode_region": "32",
+      "dechets_population_dpt.date_mesure.year": "2022-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Île-de-France",
+      "dechets_population_dpt.geocode_region": "11",
+      "dechets_population_dpt.date_mesure.year": "2022-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Bourgogne-Franche-Comté",
+      "dechets_population_dpt.geocode_region": "27",
+      "dechets_population_dpt.date_mesure.year": "2022-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "dechets_population_dpt.geocode_region": "93",
+      "dechets_population_dpt.date_mesure.year": "2022-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Pays de la Loire",
+      "dechets_population_dpt.geocode_region": "52",
+      "dechets_population_dpt.date_mesure.year": "2022-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Occitanie",
+      "dechets_population_dpt.geocode_region": "76",
+      "dechets_population_dpt.date_mesure.year": "2022-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Guyane",
+      "dechets_population_dpt.geocode_region": "03",
+      "dechets_population_dpt.date_mesure.year": "2022-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Martinique",
+      "dechets_population_dpt.geocode_region": "02",
+      "dechets_population_dpt.date_mesure.year": "2022-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Normandie",
+      "dechets_population_dpt.geocode_region": "28",
+      "dechets_population_dpt.date_mesure.year": "2022-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Hauts-de-France",
+      "dechets_population_dpt.geocode_region": "32",
+      "dechets_population_dpt.date_mesure.year": "2023-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Nouvelle-Aquitaine",
+      "dechets_population_dpt.geocode_region": "75",
+      "dechets_population_dpt.date_mesure.year": "2023-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Guadeloupe",
+      "dechets_population_dpt.geocode_region": "01",
+      "dechets_population_dpt.date_mesure.year": "2023-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Pays de la Loire",
+      "dechets_population_dpt.geocode_region": "52",
+      "dechets_population_dpt.date_mesure.year": "2023-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Bretagne",
+      "dechets_population_dpt.geocode_region": "53",
+      "dechets_population_dpt.date_mesure.year": "2023-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Bourgogne-Franche-Comté",
+      "dechets_population_dpt.geocode_region": "27",
+      "dechets_population_dpt.date_mesure.year": "2023-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Normandie",
+      "dechets_population_dpt.geocode_region": "28",
+      "dechets_population_dpt.date_mesure.year": "2023-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "dechets_population_dpt.geocode_region": "93",
+      "dechets_population_dpt.date_mesure.year": "2023-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Guyane",
+      "dechets_population_dpt.geocode_region": "03",
+      "dechets_population_dpt.date_mesure.year": "2023-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Auvergne-Rhône-Alpes",
+      "dechets_population_dpt.geocode_region": "84",
+      "dechets_population_dpt.date_mesure.year": "2023-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "La Réunion",
+      "dechets_population_dpt.geocode_region": "04",
+      "dechets_population_dpt.date_mesure.year": "2023-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Corse",
+      "dechets_population_dpt.geocode_region": "94",
+      "dechets_population_dpt.date_mesure.year": "2023-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Occitanie",
+      "dechets_population_dpt.geocode_region": "76",
+      "dechets_population_dpt.date_mesure.year": "2023-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Martinique",
+      "dechets_population_dpt.geocode_region": "02",
+      "dechets_population_dpt.date_mesure.year": "2023-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Grand Est",
+      "dechets_population_dpt.geocode_region": "44",
+      "dechets_population_dpt.date_mesure.year": "2023-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Île-de-France",
+      "dechets_population_dpt.geocode_region": "11",
+      "dechets_population_dpt.date_mesure.year": "2023-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Centre-Val de Loire",
+      "dechets_population_dpt.geocode_region": "24",
+      "dechets_population_dpt.date_mesure.year": "2023-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "dechets_population_dpt.geocode_region": "93",
+      "dechets_population_dpt.date_mesure.year": "2024-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Bourgogne-Franche-Comté",
+      "dechets_population_dpt.geocode_region": "27",
+      "dechets_population_dpt.date_mesure.year": "2024-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Pays de la Loire",
+      "dechets_population_dpt.geocode_region": "52",
+      "dechets_population_dpt.date_mesure.year": "2024-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Hauts-de-France",
+      "dechets_population_dpt.geocode_region": "32",
+      "dechets_population_dpt.date_mesure.year": "2024-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Grand Est",
+      "dechets_population_dpt.geocode_region": "44",
+      "dechets_population_dpt.date_mesure.year": "2024-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Corse",
+      "dechets_population_dpt.geocode_region": "94",
+      "dechets_population_dpt.date_mesure.year": "2024-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "La Réunion",
+      "dechets_population_dpt.geocode_region": "04",
+      "dechets_population_dpt.date_mesure.year": "2024-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Bretagne",
+      "dechets_population_dpt.geocode_region": "53",
+      "dechets_population_dpt.date_mesure.year": "2024-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Nouvelle-Aquitaine",
+      "dechets_population_dpt.geocode_region": "75",
+      "dechets_population_dpt.date_mesure.year": "2024-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Île-de-France",
+      "dechets_population_dpt.geocode_region": "11",
+      "dechets_population_dpt.date_mesure.year": "2024-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Centre-Val de Loire",
+      "dechets_population_dpt.geocode_region": "24",
+      "dechets_population_dpt.date_mesure.year": "2024-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Guadeloupe",
+      "dechets_population_dpt.geocode_region": "01",
+      "dechets_population_dpt.date_mesure.year": "2024-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Auvergne-Rhône-Alpes",
+      "dechets_population_dpt.geocode_region": "84",
+      "dechets_population_dpt.date_mesure.year": "2024-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Guyane",
+      "dechets_population_dpt.geocode_region": "03",
+      "dechets_population_dpt.date_mesure.year": "2024-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Normandie",
+      "dechets_population_dpt.geocode_region": "28",
+      "dechets_population_dpt.date_mesure.year": "2024-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Occitanie",
+      "dechets_population_dpt.geocode_region": "76",
+      "dechets_population_dpt.date_mesure.year": "2024-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Martinique",
+      "dechets_population_dpt.geocode_region": "02",
+      "dechets_population_dpt.date_mesure.year": "2024-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "La Réunion",
+      "dechets_population_dpt.geocode_region": "04",
+      "dechets_population_dpt.date_mesure.year": "2025-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Corse",
+      "dechets_population_dpt.geocode_region": "94",
+      "dechets_population_dpt.date_mesure.year": "2025-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Bourgogne-Franche-Comté",
+      "dechets_population_dpt.geocode_region": "27",
+      "dechets_population_dpt.date_mesure.year": "2025-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Île-de-France",
+      "dechets_population_dpt.geocode_region": "11",
+      "dechets_population_dpt.date_mesure.year": "2025-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Bretagne",
+      "dechets_population_dpt.geocode_region": "53",
+      "dechets_population_dpt.date_mesure.year": "2025-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "dechets_population_dpt.geocode_region": "93",
+      "dechets_population_dpt.date_mesure.year": "2025-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Martinique",
+      "dechets_population_dpt.geocode_region": "02",
+      "dechets_population_dpt.date_mesure.year": "2025-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Hauts-de-France",
+      "dechets_population_dpt.geocode_region": "32",
+      "dechets_population_dpt.date_mesure.year": "2025-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Nouvelle-Aquitaine",
+      "dechets_population_dpt.geocode_region": "75",
+      "dechets_population_dpt.date_mesure.year": "2025-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Auvergne-Rhône-Alpes",
+      "dechets_population_dpt.geocode_region": "84",
+      "dechets_population_dpt.date_mesure.year": "2025-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Centre-Val de Loire",
+      "dechets_population_dpt.geocode_region": "24",
+      "dechets_population_dpt.date_mesure.year": "2025-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Normandie",
+      "dechets_population_dpt.geocode_region": "28",
+      "dechets_population_dpt.date_mesure.year": "2025-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Pays de la Loire",
+      "dechets_population_dpt.geocode_region": "52",
+      "dechets_population_dpt.date_mesure.year": "2025-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Occitanie",
+      "dechets_population_dpt.geocode_region": "76",
+      "dechets_population_dpt.date_mesure.year": "2025-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Grand Est",
+      "dechets_population_dpt.geocode_region": "44",
+      "dechets_population_dpt.date_mesure.year": "2025-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Guadeloupe",
+      "dechets_population_dpt.geocode_region": "01",
+      "dechets_population_dpt.date_mesure.year": "2025-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "dechets_population_dpt.libelle_region": "Guyane",
+      "dechets_population_dpt.geocode_region": "03",
+      "dechets_population_dpt.date_mesure.year": "2025-01-01T00:00:00.000",
+      "dechets_population_dpt.id_42": null,
+      "dechets_population_dpt.date_mesure": "2025-01-01T00:00:00.000"
+    }
+  ],
+  "measureMeta": {
+    "libelle_indicateur": "Tonnage total de déchets ménagers et assimiles par habitant",
+    "statut_commun": "Mesure",
+    "unite": "t / hab / an",
+    "methode_calcul": "Indicateur calculé d'après les données de l'ADEME. Les données de populations provienent de l'INSEE.",
+    "numerator": "qte_dechets",
+    "denominator": "population"
+  }
+}

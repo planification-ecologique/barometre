@@ -1,0 +1,898 @@
+{
+  "cubeName": "parc_poids_lourd_e_com",
+  "measureName": "parc_poids_lourd_e_com.id_463",
+  "timeDimension": "parc_poids_lourd_e_com.date_mesure",
+  "extraDimension": "parc_poids_lourd_e_com.geocode_commune",
+  "data": [
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "parc_poids_lourd_e_com.geocode_region": "93",
+      "parc_poids_lourd_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0.0221445794990404,
+      "parc_poids_lourd_e_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Hauts-de-France",
+      "parc_poids_lourd_e_com.geocode_region": "32",
+      "parc_poids_lourd_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0.008750743813224124,
+      "parc_poids_lourd_e_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Nouvelle-Aquitaine",
+      "parc_poids_lourd_e_com.geocode_region": "75",
+      "parc_poids_lourd_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0.0031178873195522715,
+      "parc_poids_lourd_e_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Corse",
+      "parc_poids_lourd_e_com.geocode_region": "94",
+      "parc_poids_lourd_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0,
+      "parc_poids_lourd_e_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "parc_poids_lourd_e_com.geocode_region": "84",
+      "parc_poids_lourd_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0.004803304673615448,
+      "parc_poids_lourd_e_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Mayotte",
+      "parc_poids_lourd_e_com.geocode_region": "06",
+      "parc_poids_lourd_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0,
+      "parc_poids_lourd_e_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Grand Est",
+      "parc_poids_lourd_e_com.geocode_region": "44",
+      "parc_poids_lourd_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0.003714434291657381,
+      "parc_poids_lourd_e_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Guyane",
+      "parc_poids_lourd_e_com.geocode_region": "03",
+      "parc_poids_lourd_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0,
+      "parc_poids_lourd_e_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Centre-Val de Loire",
+      "parc_poids_lourd_e_com.geocode_region": "24",
+      "parc_poids_lourd_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0.17067687952710017,
+      "parc_poids_lourd_e_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Bourgogne-Franche-Comté",
+      "parc_poids_lourd_e_com.geocode_region": "27",
+      "parc_poids_lourd_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0.0034374892578460693,
+      "parc_poids_lourd_e_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Normandie",
+      "parc_poids_lourd_e_com.geocode_region": "28",
+      "parc_poids_lourd_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0,
+      "parc_poids_lourd_e_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Île-de-France",
+      "parc_poids_lourd_e_com.geocode_region": "11",
+      "parc_poids_lourd_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0.052333318380956645,
+      "parc_poids_lourd_e_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Bretagne",
+      "parc_poids_lourd_e_com.geocode_region": "53",
+      "parc_poids_lourd_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0.0027349305327644675,
+      "parc_poids_lourd_e_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Martinique",
+      "parc_poids_lourd_e_com.geocode_region": "02",
+      "parc_poids_lourd_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0,
+      "parc_poids_lourd_e_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Guadeloupe",
+      "parc_poids_lourd_e_com.geocode_region": "01",
+      "parc_poids_lourd_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0,
+      "parc_poids_lourd_e_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Pays de la Loire",
+      "parc_poids_lourd_e_com.geocode_region": "52",
+      "parc_poids_lourd_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0.0023889725029264913,
+      "parc_poids_lourd_e_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Occitanie",
+      "parc_poids_lourd_e_com.geocode_region": "76",
+      "parc_poids_lourd_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0.0017054078482869176,
+      "parc_poids_lourd_e_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "La Réunion",
+      "parc_poids_lourd_e_com.geocode_region": "04",
+      "parc_poids_lourd_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0,
+      "parc_poids_lourd_e_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Nouvelle-Aquitaine",
+      "parc_poids_lourd_e_com.geocode_region": "75",
+      "parc_poids_lourd_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0.0015598677232170712,
+      "parc_poids_lourd_e_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Normandie",
+      "parc_poids_lourd_e_com.geocode_region": "28",
+      "parc_poids_lourd_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0.0028096201393571587,
+      "parc_poids_lourd_e_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "La Réunion",
+      "parc_poids_lourd_e_com.geocode_region": "04",
+      "parc_poids_lourd_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0,
+      "parc_poids_lourd_e_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Corse",
+      "parc_poids_lourd_e_com.geocode_region": "94",
+      "parc_poids_lourd_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0,
+      "parc_poids_lourd_e_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Bourgogne-Franche-Comté",
+      "parc_poids_lourd_e_com.geocode_region": "27",
+      "parc_poids_lourd_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0.003465603881476347,
+      "parc_poids_lourd_e_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Martinique",
+      "parc_poids_lourd_e_com.geocode_region": "02",
+      "parc_poids_lourd_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0,
+      "parc_poids_lourd_e_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "parc_poids_lourd_e_com.geocode_region": "93",
+      "parc_poids_lourd_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0.024445693891021095,
+      "parc_poids_lourd_e_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Guadeloupe",
+      "parc_poids_lourd_e_com.geocode_region": "01",
+      "parc_poids_lourd_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0,
+      "parc_poids_lourd_e_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Bretagne",
+      "parc_poids_lourd_e_com.geocode_region": "53",
+      "parc_poids_lourd_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0,
+      "parc_poids_lourd_e_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Mayotte",
+      "parc_poids_lourd_e_com.geocode_region": "06",
+      "parc_poids_lourd_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0,
+      "parc_poids_lourd_e_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "parc_poids_lourd_e_com.geocode_region": "84",
+      "parc_poids_lourd_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0.016721209660081695,
+      "parc_poids_lourd_e_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Pays de la Loire",
+      "parc_poids_lourd_e_com.geocode_region": "52",
+      "parc_poids_lourd_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0.014190100040205284,
+      "parc_poids_lourd_e_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Occitanie",
+      "parc_poids_lourd_e_com.geocode_region": "76",
+      "parc_poids_lourd_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0.003415358868833143,
+      "parc_poids_lourd_e_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Grand Est",
+      "parc_poids_lourd_e_com.geocode_region": "44",
+      "parc_poids_lourd_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0.01298797684429271,
+      "parc_poids_lourd_e_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Centre-Val de Loire",
+      "parc_poids_lourd_e_com.geocode_region": "24",
+      "parc_poids_lourd_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0.13537524325239023,
+      "parc_poids_lourd_e_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Hauts-de-France",
+      "parc_poids_lourd_e_com.geocode_region": "32",
+      "parc_poids_lourd_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0.005105079554156385,
+      "parc_poids_lourd_e_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Guyane",
+      "parc_poids_lourd_e_com.geocode_region": "03",
+      "parc_poids_lourd_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0,
+      "parc_poids_lourd_e_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Île-de-France",
+      "parc_poids_lourd_e_com.geocode_region": "11",
+      "parc_poids_lourd_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0.047630044454708156,
+      "parc_poids_lourd_e_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Bourgogne-Franche-Comté",
+      "parc_poids_lourd_e_com.geocode_region": "27",
+      "parc_poids_lourd_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0.0034946706272933775,
+      "parc_poids_lourd_e_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Grand Est",
+      "parc_poids_lourd_e_com.geocode_region": "44",
+      "parc_poids_lourd_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0.005675476267050077,
+      "parc_poids_lourd_e_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Martinique",
+      "parc_poids_lourd_e_com.geocode_region": "02",
+      "parc_poids_lourd_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0,
+      "parc_poids_lourd_e_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Île-de-France",
+      "parc_poids_lourd_e_com.geocode_region": "11",
+      "parc_poids_lourd_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0.05644320944772491,
+      "parc_poids_lourd_e_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "La Réunion",
+      "parc_poids_lourd_e_com.geocode_region": "04",
+      "parc_poids_lourd_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0,
+      "parc_poids_lourd_e_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Nouvelle-Aquitaine",
+      "parc_poids_lourd_e_com.geocode_region": "75",
+      "parc_poids_lourd_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0.0015581420713940697,
+      "parc_poids_lourd_e_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Guyane",
+      "parc_poids_lourd_e_com.geocode_region": "03",
+      "parc_poids_lourd_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0,
+      "parc_poids_lourd_e_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "parc_poids_lourd_e_com.geocode_region": "93",
+      "parc_poids_lourd_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0.027062933622004626,
+      "parc_poids_lourd_e_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Mayotte",
+      "parc_poids_lourd_e_com.geocode_region": "06",
+      "parc_poids_lourd_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0,
+      "parc_poids_lourd_e_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Corse",
+      "parc_poids_lourd_e_com.geocode_region": "94",
+      "parc_poids_lourd_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0,
+      "parc_poids_lourd_e_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Centre-Val de Loire",
+      "parc_poids_lourd_e_com.geocode_region": "24",
+      "parc_poids_lourd_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0.10676004612033992,
+      "parc_poids_lourd_e_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Normandie",
+      "parc_poids_lourd_e_com.geocode_region": "28",
+      "parc_poids_lourd_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0,
+      "parc_poids_lourd_e_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Pays de la Loire",
+      "parc_poids_lourd_e_com.geocode_region": "52",
+      "parc_poids_lourd_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0.026222317576104315,
+      "parc_poids_lourd_e_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "parc_poids_lourd_e_com.geocode_region": "84",
+      "parc_poids_lourd_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0.0059944132068911775,
+      "parc_poids_lourd_e_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Bretagne",
+      "parc_poids_lourd_e_com.geocode_region": "53",
+      "parc_poids_lourd_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0,
+      "parc_poids_lourd_e_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Hauts-de-France",
+      "parc_poids_lourd_e_com.geocode_region": "32",
+      "parc_poids_lourd_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0.006814542233125489,
+      "parc_poids_lourd_e_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Guadeloupe",
+      "parc_poids_lourd_e_com.geocode_region": "01",
+      "parc_poids_lourd_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0.04452359750667854,
+      "parc_poids_lourd_e_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Occitanie",
+      "parc_poids_lourd_e_com.geocode_region": "76",
+      "parc_poids_lourd_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0.0034094202280902136,
+      "parc_poids_lourd_e_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Centre-Val de Loire",
+      "parc_poids_lourd_e_com.geocode_region": "24",
+      "parc_poids_lourd_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0.0557533130334091,
+      "parc_poids_lourd_e_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Martinique",
+      "parc_poids_lourd_e_com.geocode_region": "02",
+      "parc_poids_lourd_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0,
+      "parc_poids_lourd_e_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "parc_poids_lourd_e_com.geocode_region": "93",
+      "parc_poids_lourd_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0.04370098812789823,
+      "parc_poids_lourd_e_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Corse",
+      "parc_poids_lourd_e_com.geocode_region": "94",
+      "parc_poids_lourd_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0.10269576379974327,
+      "parc_poids_lourd_e_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Normandie",
+      "parc_poids_lourd_e_com.geocode_region": "28",
+      "parc_poids_lourd_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0,
+      "parc_poids_lourd_e_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Île-de-France",
+      "parc_poids_lourd_e_com.geocode_region": "11",
+      "parc_poids_lourd_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0.08752295684113866,
+      "parc_poids_lourd_e_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Grand Est",
+      "parc_poids_lourd_e_com.geocode_region": "44",
+      "parc_poids_lourd_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0.00747328301322771,
+      "parc_poids_lourd_e_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "parc_poids_lourd_e_com.geocode_region": "84",
+      "parc_poids_lourd_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0.014236733144301154,
+      "parc_poids_lourd_e_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Mayotte",
+      "parc_poids_lourd_e_com.geocode_region": "06",
+      "parc_poids_lourd_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0,
+      "parc_poids_lourd_e_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Bourgogne-Franche-Comté",
+      "parc_poids_lourd_e_com.geocode_region": "27",
+      "parc_poids_lourd_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0,
+      "parc_poids_lourd_e_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Occitanie",
+      "parc_poids_lourd_e_com.geocode_region": "76",
+      "parc_poids_lourd_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0.010032605969400551,
+      "parc_poids_lourd_e_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Guyane",
+      "parc_poids_lourd_e_com.geocode_region": "03",
+      "parc_poids_lourd_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0,
+      "parc_poids_lourd_e_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Pays de la Loire",
+      "parc_poids_lourd_e_com.geocode_region": "52",
+      "parc_poids_lourd_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0.028170997957602646,
+      "parc_poids_lourd_e_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "La Réunion",
+      "parc_poids_lourd_e_com.geocode_region": "04",
+      "parc_poids_lourd_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0,
+      "parc_poids_lourd_e_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Hauts-de-France",
+      "parc_poids_lourd_e_com.geocode_region": "32",
+      "parc_poids_lourd_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0.011594779036639502,
+      "parc_poids_lourd_e_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Nouvelle-Aquitaine",
+      "parc_poids_lourd_e_com.geocode_region": "75",
+      "parc_poids_lourd_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0.004599322366504668,
+      "parc_poids_lourd_e_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Guadeloupe",
+      "parc_poids_lourd_e_com.geocode_region": "01",
+      "parc_poids_lourd_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0,
+      "parc_poids_lourd_e_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Bretagne",
+      "parc_poids_lourd_e_com.geocode_region": "53",
+      "parc_poids_lourd_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0.005392725213686737,
+      "parc_poids_lourd_e_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Pays de la Loire",
+      "parc_poids_lourd_e_com.geocode_region": "52",
+      "parc_poids_lourd_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0.06016151051669482,
+      "parc_poids_lourd_e_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Nouvelle-Aquitaine",
+      "parc_poids_lourd_e_com.geocode_region": "75",
+      "parc_poids_lourd_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0.009133671279170662,
+      "parc_poids_lourd_e_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Corse",
+      "parc_poids_lourd_e_com.geocode_region": "94",
+      "parc_poids_lourd_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0.10243277848911651,
+      "parc_poids_lourd_e_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "La Réunion",
+      "parc_poids_lourd_e_com.geocode_region": "04",
+      "parc_poids_lourd_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0,
+      "parc_poids_lourd_e_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Guadeloupe",
+      "parc_poids_lourd_e_com.geocode_region": "01",
+      "parc_poids_lourd_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0,
+      "parc_poids_lourd_e_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Bretagne",
+      "parc_poids_lourd_e_com.geocode_region": "53",
+      "parc_poids_lourd_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0.021182513834829348,
+      "parc_poids_lourd_e_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Hauts-de-France",
+      "parc_poids_lourd_e_com.geocode_region": "32",
+      "parc_poids_lourd_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0.029255448827344092,
+      "parc_poids_lourd_e_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Guyane",
+      "parc_poids_lourd_e_com.geocode_region": "03",
+      "parc_poids_lourd_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0,
+      "parc_poids_lourd_e_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Mayotte",
+      "parc_poids_lourd_e_com.geocode_region": "06",
+      "parc_poids_lourd_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0,
+      "parc_poids_lourd_e_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Centre-Val de Loire",
+      "parc_poids_lourd_e_com.geocode_region": "24",
+      "parc_poids_lourd_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0.06456055780321943,
+      "parc_poids_lourd_e_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Martinique",
+      "parc_poids_lourd_e_com.geocode_region": "02",
+      "parc_poids_lourd_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0,
+      "parc_poids_lourd_e_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Normandie",
+      "parc_poids_lourd_e_com.geocode_region": "28",
+      "parc_poids_lourd_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0.013954397030504313,
+      "parc_poids_lourd_e_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Grand Est",
+      "parc_poids_lourd_e_com.geocode_region": "44",
+      "parc_poids_lourd_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0.02415189685282206,
+      "parc_poids_lourd_e_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Bourgogne-Franche-Comté",
+      "parc_poids_lourd_e_com.geocode_region": "27",
+      "parc_poids_lourd_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0.003462843687235958,
+      "parc_poids_lourd_e_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Occitanie",
+      "parc_poids_lourd_e_com.geocode_region": "76",
+      "parc_poids_lourd_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0.016600265604249667,
+      "parc_poids_lourd_e_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "parc_poids_lourd_e_com.geocode_region": "84",
+      "parc_poids_lourd_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0.03628829292846524,
+      "parc_poids_lourd_e_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "parc_poids_lourd_e_com.geocode_region": "93",
+      "parc_poids_lourd_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0.040507052992756386,
+      "parc_poids_lourd_e_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Île-de-France",
+      "parc_poids_lourd_e_com.geocode_region": "11",
+      "parc_poids_lourd_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0.19097706806128895,
+      "parc_poids_lourd_e_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Guyane",
+      "parc_poids_lourd_e_com.geocode_region": "03",
+      "parc_poids_lourd_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0,
+      "parc_poids_lourd_e_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Centre-Val de Loire",
+      "parc_poids_lourd_e_com.geocode_region": "24",
+      "parc_poids_lourd_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0.11275912915257177,
+      "parc_poids_lourd_e_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Bretagne",
+      "parc_poids_lourd_e_com.geocode_region": "53",
+      "parc_poids_lourd_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0.06834012353791563,
+      "parc_poids_lourd_e_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Grand Est",
+      "parc_poids_lourd_e_com.geocode_region": "44",
+      "parc_poids_lourd_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0.08755262471591967,
+      "parc_poids_lourd_e_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Mayotte",
+      "parc_poids_lourd_e_com.geocode_region": "06",
+      "parc_poids_lourd_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0,
+      "parc_poids_lourd_e_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Île-de-France",
+      "parc_poids_lourd_e_com.geocode_region": "11",
+      "parc_poids_lourd_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0.4922067268252666,
+      "parc_poids_lourd_e_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Pays de la Loire",
+      "parc_poids_lourd_e_com.geocode_region": "52",
+      "parc_poids_lourd_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0.16443612113460923,
+      "parc_poids_lourd_e_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "parc_poids_lourd_e_com.geocode_region": "84",
+      "parc_poids_lourd_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0.13952677169931982,
+      "parc_poids_lourd_e_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Hauts-de-France",
+      "parc_poids_lourd_e_com.geocode_region": "32",
+      "parc_poids_lourd_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0.21406727828746178,
+      "parc_poids_lourd_e_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "parc_poids_lourd_e_com.geocode_region": "93",
+      "parc_poids_lourd_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0.1273705066515709,
+      "parc_poids_lourd_e_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Corse",
+      "parc_poids_lourd_e_com.geocode_region": "94",
+      "parc_poids_lourd_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0.20015011258443832,
+      "parc_poids_lourd_e_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "La Réunion",
+      "parc_poids_lourd_e_com.geocode_region": "04",
+      "parc_poids_lourd_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0,
+      "parc_poids_lourd_e_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Normandie",
+      "parc_poids_lourd_e_com.geocode_region": "28",
+      "parc_poids_lourd_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0.0415777365080245,
+      "parc_poids_lourd_e_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Guadeloupe",
+      "parc_poids_lourd_e_com.geocode_region": "01",
+      "parc_poids_lourd_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0,
+      "parc_poids_lourd_e_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Occitanie",
+      "parc_poids_lourd_e_com.geocode_region": "76",
+      "parc_poids_lourd_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0.06307053941908713,
+      "parc_poids_lourd_e_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Bourgogne-Franche-Comté",
+      "parc_poids_lourd_e_com.geocode_region": "27",
+      "parc_poids_lourd_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0.01733883552380622,
+      "parc_poids_lourd_e_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Nouvelle-Aquitaine",
+      "parc_poids_lourd_e_com.geocode_region": "75",
+      "parc_poids_lourd_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0.03331263911812359,
+      "parc_poids_lourd_e_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Martinique",
+      "parc_poids_lourd_e_com.geocode_region": "02",
+      "parc_poids_lourd_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0,
+      "parc_poids_lourd_e_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Mayotte",
+      "parc_poids_lourd_e_com.geocode_region": "06",
+      "parc_poids_lourd_e_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0,
+      "parc_poids_lourd_e_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Bourgogne-Franche-Comté",
+      "parc_poids_lourd_e_com.geocode_region": "27",
+      "parc_poids_lourd_e_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0.028369800347530054,
+      "parc_poids_lourd_e_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Guyane",
+      "parc_poids_lourd_e_com.geocode_region": "03",
+      "parc_poids_lourd_e_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0,
+      "parc_poids_lourd_e_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Grand Est",
+      "parc_poids_lourd_e_com.geocode_region": "44",
+      "parc_poids_lourd_e_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0.11601145145294987,
+      "parc_poids_lourd_e_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Corse",
+      "parc_poids_lourd_e_com.geocode_region": "94",
+      "parc_poids_lourd_e_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0.20570840833119053,
+      "parc_poids_lourd_e_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "parc_poids_lourd_e_com.geocode_region": "84",
+      "parc_poids_lourd_e_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0.29952780322785255,
+      "parc_poids_lourd_e_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "La Réunion",
+      "parc_poids_lourd_e_com.geocode_region": "04",
+      "parc_poids_lourd_e_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0.01765536723163842,
+      "parc_poids_lourd_e_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Nouvelle-Aquitaine",
+      "parc_poids_lourd_e_com.geocode_region": "75",
+      "parc_poids_lourd_e_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0.08736569440399737,
+      "parc_poids_lourd_e_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Normandie",
+      "parc_poids_lourd_e_com.geocode_region": "28",
+      "parc_poids_lourd_e_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0.14512962067101107,
+      "parc_poids_lourd_e_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Occitanie",
+      "parc_poids_lourd_e_com.geocode_region": "76",
+      "parc_poids_lourd_e_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0.08546005998961073,
+      "parc_poids_lourd_e_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Bretagne",
+      "parc_poids_lourd_e_com.geocode_region": "53",
+      "parc_poids_lourd_e_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0.10019247501779735,
+      "parc_poids_lourd_e_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Centre-Val de Loire",
+      "parc_poids_lourd_e_com.geocode_region": "24",
+      "parc_poids_lourd_e_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0.2801618713034198,
+      "parc_poids_lourd_e_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Martinique",
+      "parc_poids_lourd_e_com.geocode_region": "02",
+      "parc_poids_lourd_e_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0,
+      "parc_poids_lourd_e_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Île-de-France",
+      "parc_poids_lourd_e_com.geocode_region": "11",
+      "parc_poids_lourd_e_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0.9096447851282996,
+      "parc_poids_lourd_e_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Pays de la Loire",
+      "parc_poids_lourd_e_com.geocode_region": "52",
+      "parc_poids_lourd_e_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0.26393852334571277,
+      "parc_poids_lourd_e_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "parc_poids_lourd_e_com.geocode_region": "93",
+      "parc_poids_lourd_e_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0.19297660456473054,
+      "parc_poids_lourd_e_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Guadeloupe",
+      "parc_poids_lourd_e_com.geocode_region": "01",
+      "parc_poids_lourd_e_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0,
+      "parc_poids_lourd_e_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "parc_poids_lourd_e_com.libelle_region": "Hauts-de-France",
+      "parc_poids_lourd_e_com.geocode_region": "32",
+      "parc_poids_lourd_e_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "parc_poids_lourd_e_com.id_463": 0.39363674810501315,
+      "parc_poids_lourd_e_com.date_mesure": "2025-01-01T00:00:00.000"
+    }
+  ],
+  "measureMeta": {
+    "libelle_indicateur": "Part des poids lourds électriques (et hydrogène) dans le parc roulant",
+    "statut_commun": "Mesure",
+    "unite": "%",
+    "methode_calcul": "Indicateur filtré sur type_vehicule = 'PL' et critair = 'Crit''Air E'",
+    "numerator": "parc_poids_lourd_critair_e",
+    "denominator": "tot_parc_poids_lourd"
+  }
+}
