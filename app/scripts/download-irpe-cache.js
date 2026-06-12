@@ -16,7 +16,10 @@ const TIME_DIM_PATTERNS = ['annee', 'année', 'year', 'date', 'annee_cible', 'an
 
 const OUTPUT_DIR = path.join(__dirname, '..', 'public', 'irpe-backups');
 const INDICATORS_DIR = path.join(OUTPUT_DIR, 'indicators');
+const MANIFEST_PATH = path.join(OUTPUT_DIR, 'manifest.json');
+const META_PATH = path.join(OUTPUT_DIR, 'meta.json');
 const GRIST_INDICATORS_CSV = path.join(__dirname, '..', 'public', 'grist-backups', 'grist-indicators.csv');
+const CACHE_MAX_AGE_MS = 24 * 60 * 60 * 1000;
 
 const KNOWN_INDICATOR_CUBES = {
   '949': {
@@ -245,6 +248,31 @@ function writeJson(filePath, data) {
   fs.writeFileSync(filePath, `${JSON.stringify(data, null, 2)}\n`, 'utf8');
 }
 
+function readManifest() {
+  if (!fs.existsSync(MANIFEST_PATH)) return null;
+  try {
+    return JSON.parse(fs.readFileSync(MANIFEST_PATH, 'utf8'));
+  } catch {
+    return null;
+  }
+}
+
+function isCacheFresh(manifest) {
+  if (!manifest?.generatedAt) return false;
+  const generatedAt = new Date(manifest.generatedAt).getTime();
+  if (Number.isNaN(generatedAt)) return false;
+  const ageMs = Date.now() - generatedAt;
+  return ageMs >= 0 && ageMs < CACHE_MAX_AGE_MS;
+}
+
+function indicatorCachePath(indicatorId) {
+  return path.join(INDICATORS_DIR, `${indicatorId}.json`);
+}
+
+function getMissingIndicatorIds(indicatorIds) {
+  return indicatorIds.filter((id) => !fs.existsSync(indicatorCachePath(id)));
+}
+
 async function main() {
   loadEnvFile('.env');
   loadEnvFile('.env.production');
@@ -261,17 +289,40 @@ async function main() {
   }
   console.log(`Found ${indicatorIds.length} validated IRPE indicator id(s).\n`);
 
-  console.log('Fetching Écolab meta...');
-  const meta = await fetchEcolabJson(`${ECOLAB_BASE}/meta`, { headers: getAuthHeader() }, 'meta');
-  writeJson(path.join(OUTPUT_DIR, 'meta.json'), meta);
-  console.log('✓ Saved meta.json\n');
+  const manifest = readManifest();
+  const cacheFresh = isCacheFresh(manifest);
+  const missingIds = getMissingIndicatorIds(indicatorIds);
+  const needsMeta = !fs.existsSync(META_PATH) || !cacheFresh;
+  const idsToFetch = cacheFresh ? missingIds : indicatorIds;
+
+  if (cacheFresh && !needsMeta && idsToFetch.length === 0) {
+    console.log(`IRPE cache is fresh (generated ${manifest.generatedAt}), skipping download.`);
+    return;
+  }
+
+  if (cacheFresh) {
+    console.log(`IRPE cache is fresh; fetching ${idsToFetch.length} missing indicator(s) only.\n`);
+  } else if (manifest?.generatedAt) {
+    console.log(`IRPE cache is older than 1 day (generated ${manifest.generatedAt}), refreshing.\n`);
+  }
+
+  let meta;
+  if (needsMeta) {
+    console.log('Fetching Écolab meta...');
+    meta = await fetchEcolabJson(`${ECOLAB_BASE}/meta`, { headers: getAuthHeader() }, 'meta');
+    writeJson(META_PATH, meta);
+    console.log('✓ Saved meta.json\n');
+  } else {
+    meta = JSON.parse(fs.readFileSync(META_PATH, 'utf8'));
+    console.log('Using cached meta.json\n');
+  }
 
   const errors = [];
-  for (const indicatorId of indicatorIds) {
+  for (const indicatorId of idsToFetch) {
     try {
       console.log(`Fetching indicator ${indicatorId}...`);
       const payload = await loadAllRegionsDataForIndicator(meta, indicatorId);
-      writeJson(path.join(INDICATORS_DIR, `${indicatorId}.json`), payload);
+      writeJson(indicatorCachePath(indicatorId), payload);
       console.log(`✓ Saved indicators/${indicatorId}.json (${payload.data.length} rows)`);
     } catch (error) {
       console.error(`✗ Error caching indicator ${indicatorId}:`, error.message);
@@ -279,16 +330,20 @@ async function main() {
     }
   }
 
-  writeJson(path.join(OUTPUT_DIR, 'manifest.json'), {
+  writeJson(MANIFEST_PATH, {
     generatedAt: new Date().toISOString(),
     indicatorIds,
-    cachedCount: indicatorIds.length - errors.length,
+    cachedCount: indicatorIds.filter((id) => fs.existsSync(indicatorCachePath(id))).length,
     failed: errors,
   });
 
   console.log('\n--- Download Summary ---');
   if (errors.length === 0) {
-    console.log(`✓ All ${indicatorIds.length} IRPE indicator(s) cached successfully!`);
+    if (idsToFetch.length === 0) {
+      console.log('✓ IRPE cache unchanged.');
+    } else {
+      console.log(`✓ Cached ${idsToFetch.length} IRPE indicator(s) successfully!`);
+    }
     console.log(`Files saved to: ${OUTPUT_DIR}`);
     return;
   }
