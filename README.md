@@ -31,7 +31,7 @@ L'application est disponible sur [http://localhost:8080](http://localhost:8080).
 | Variable | Description | Obligatoire |
 |----------|-------------|-------------|
 | `VUE_APP_ENV` | `dev`, `qualif` ou `prod` | Oui |
-| `VUE_APP_PREFIX_PATH` | Préfixe URL (ex. `/sgpe-app/` pour GitHub Pages) | Non (défaut : `/`) |
+| `VUE_APP_PREFIX_PATH` | Préfixe URL (vide pour prod gov.fr ; `/pr/N/` pour previews PR) | Non (défaut : `/`) |
 | `VUE_APP_TRACKING` | Domaine analytics Eulerian | Non |
 | `VUE_APP_ECOLAB_API_TOKEN` | Token Bearer API Écolab (données régionales) | Recommandé |
 
@@ -50,36 +50,48 @@ Voir `app/.env.example` pour le modèle complet.
 | `npm run download-grist-csvs` | Télécharge les CSV Grist en backup local |
 | `npm run test:unit` | Tests unitaires Jest |
 
-## Déploiement GitHub Pages
+## Déploiement production (GitHub Pages)
 
-### 1. Préparer le dépôt
+**URL cible :** [https://barometre.planification-ecologique.gouv.fr/](https://barometre.planification-ecologique.gouv.fr/)
 
-Avant le premier push public, lire **[docs/SECURITY-AUDIT.md](docs/SECURITY-AUDIT.md)** — un token GitLab est présent dans l'historique Git et doit être révoqué + historique purgé.
+L'application est déployée via **GitHub Pages** avec un **domaine personnalisé** (racine du domaine, `VUE_APP_PREFIX_PATH` vide). Le fallback SPA est assuré par `404.html` (généré par `npm run build:pages`).
 
-### 2. Configurer GitHub
+### 1. Configurer GitHub
 
-1. Créer le dépôt sur GitHub.
-2. **Settings → Pages → Build and deployment** : source = **Deploy from a branch**, branche **`gh-pages`**, dossier **`/ (root)`**.
-3. *(Optionnel)* **Settings → Secrets and variables → Actions** :
+1. **Settings → Pages → Build and deployment** : source = **Deploy from a branch**, branche **`gh-pages`**, dossier **`/ (root)`**.
+2. **Settings → Pages → Custom domain** : `barometre.planification-ecologique.gouv.fr` puis activer **Enforce HTTPS** (après propagation DNS).
+3. **Settings → Secrets and variables → Actions** :
    - Secret `VUE_APP_ECOLAB_API_TOKEN` — token API Écolab pour le build CI.
-   - Variable `VUE_APP_TRACKING` — domaine analytics si nécessaire.
+   - Variable `VUE_APP_TRACKING` — défaut : `phdd.barometre.planification-ecologique.gouv.fr`
+   - Variable `PAGES_CUSTOM_DOMAIN` — défaut : `barometre.planification-ecologique.gouv.fr`
 
-### 3. Déployer
+### 2. Configurer le DNS
+
+Chez le gestionnaire DNS de `planification-ecologique.gouv.fr` :
+
+| Type | Nom | Valeur |
+|------|-----|--------|
+| CNAME | `barometre` | `planification-ecologique.github.io` |
+
+Le workflow publie un fichier `CNAME` sur la branche `gh-pages` ; le record DNS ci-dessus pointe le sous-domaine vers GitHub Pages.
+
+### 3. Workflows
 
 | Workflow | Déclencheur | URL |
 |----------|-------------|-----|
-| [`deploy-github-pages.yml`](.github/workflows/deploy-github-pages.yml) | push `main` / `master` | `https://<organisation>.github.io/<nom-du-repo>/` |
-| [`preview-github-pages.yml`](.github/workflows/preview-github-pages.yml) | ouverture / mise à jour d'une PR | `https://<organisation>.github.io/<nom-du-repo>/pr/<numéro>/` |
-| [`cleanup-preview-github-pages.yml`](.github/workflows/cleanup-preview-github-pages.yml) | fermeture d'une PR | supprime le dossier `pr/<numéro>/` |
+| [`deploy-github-pages.yml`](.github/workflows/deploy-github-pages.yml) | push `main` / `master` | `https://barometre.planification-ecologique.gouv.fr/` |
+| [`preview-github-pages.yml`](.github/workflows/preview-github-pages.yml) | PR ouverte / mise à jour | `https://barometre.planification-ecologique.gouv.fr/pr/<numéro>/` |
+| [`cleanup-preview-github-pages.yml`](.github/workflows/cleanup-preview-github-pages.yml) | PR fermée | supprime `pr/<numéro>/` |
 
-Chaque PR reçoit un commentaire automatique avec le lien de prévisualisation.
+Chaque PR reçoit un commentaire avec le lien de prévisualisation.
 
 ### Déploiement manuel
 
 ```bash
 cd app
-VUE_APP_PREFIX_PATH=/nom-du-repo/ VUE_APP_ENV=prod npm run build:pages
-# Publier le contenu de app/dist (ex. branche gh-pages)
+VUE_APP_PREFIX_PATH= VUE_APP_ENV=prod npm run build:pages
+# Publier le contenu de app/dist sur gh-pages (racine)
+# Inclure CNAME (barometre.planification-ecologique.gouv.fr) et .nojekyll
 ```
 
 ## Sources de données
@@ -106,17 +118,6 @@ Routes `/staging/dashboard` et `/staging/tags` pour tester des documents Grist a
 docker compose up --build
 ```
 
-## Déploiement interne (Kubernetes / Helm)
-
-Le dossier `app-front-chart/` et `.gitlab-ci.yml` documentent le déploiement sur l'infrastructure DIN (GitLab CI + Kubernetes). Ce flux est **distinct** de GitHub Pages.
-
-```bash
-# Exemple dry-run qualif
-helm upgrade --install --dry-run app-front app-front-chart \
-  --values app-front-chart/values_qualif.yaml \
-  --namespace app-front-qualif
-```
-
 ## Structure du projet
 
 ```
@@ -128,17 +129,15 @@ sgpe-app/
 │   │   └── config/         # URLs Grist, routes
 │   ├── public/             # Assets statiques + backups CSV
 │   └── scripts/            # Scripts build (download Grist)
-├── app-front-chart/        # Chart Helm (déploiement K8s interne)
-├── docs/
-│   └── SECURITY-AUDIT.md   # Audit sécurité pré-open source
-└── .github/workflows/      # CI GitHub Pages
+├── app-front-chart/        # Chart Helm (legacy K8s, non utilisé pour prod)
+└── .github/workflows/      # CI + déploiement GitHub Pages
 ```
 
 ## Sécurité
 
 - Ne jamais committer `.env`, certificats (`certs/`), clés privées.
 - Utiliser `app/.env.example` comme référence.
-- Audit complet : [docs/SECURITY-AUDIT.md](docs/SECURITY-AUDIT.md).
+- Le token Écolab est visible dans le bundle client : utiliser un token à droits limités.
 
 ## Licence
 

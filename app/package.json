@@ -12,6 +12,7 @@
     "test:unit": "vue-cli-service test:unit",
     "build": "vue-cli-service build",
     "build_qualif": "vue-cli-service build --mode qualif",
+    "prebuild_prod": "npm run download-grist-csvs && npm run download-irpe-cache",
     "build_prod": "vue-cli-service build",
     "watch": "vue-cli-service build --watch",
     "deploy": "npm run build_qualif && cd dist && cp index.html 200.html && cd .. && surge ./dist -d barometre-sgpe.surge.sh",

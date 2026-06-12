@@ -12,9 +12,15 @@ concurrency:
   group: pages
   cancel-in-progress: true
 
+env:
+  CUSTOM_DOMAIN: ${{ vars.PAGES_CUSTOM_DOMAIN || 'barometre.planification-ecologique.gouv.fr' }}
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: https://${{ vars.PAGES_CUSTOM_DOMAIN || 'barometre.planification-ecologique.gouv.fr' }}/
     steps:
       - uses: actions/checkout@v4
 
@@ -31,16 +37,17 @@ jobs:
       - name: Build for GitHub Pages
         working-directory: app
         env:
-          # Sous-dossier pour les Project Pages : https://<org>.github.io/<repo>/
-          VUE_APP_PREFIX_PATH: /${{ github.event.repository.name }}/
+          # Racine du domaine custom — pas de sous-dossier /barometre/
+          VUE_APP_PREFIX_PATH: ''
           VUE_APP_ENV: prod
-          VUE_APP_TRACKING: ${{ vars.VUE_APP_TRACKING || '' }}
+          VUE_APP_TRACKING: ${{ vars.VUE_APP_TRACKING || 'phdd.barometre.planification-ecologique.gouv.fr' }}
           VUE_APP_ECOLAB_API_TOKEN: ${{ secrets.VUE_APP_ECOLAB_API_TOKEN }}
         run: npm run build:pages
 
-      - name: Deploy production
+      - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: app/dist
+          cname: ${{ env.CUSTOM_DOMAIN }}
           keep_files: true
