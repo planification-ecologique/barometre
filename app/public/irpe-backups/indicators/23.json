@@ -1,0 +1,2124 @@
+{
+  "cubeName": "surface_bio_dpt",
+  "measureName": "surface_bio_dpt.id_23",
+  "timeDimension": "surface_bio_dpt.date_mesure",
+  "extraDimension": "surface_bio_dpt.geocode_departement",
+  "data": [
+    {
+      "surface_bio_dpt.libelle_region": "Grand Est",
+      "surface_bio_dpt.geocode_region": "44",
+      "surface_bio_dpt.date_mesure.year": "2008-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 1.231248994806465,
+      "surface_bio_dpt.date_mesure": "2008-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Guyane",
+      "surface_bio_dpt.geocode_region": "03",
+      "surface_bio_dpt.date_mesure.year": "2008-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 8.97,
+      "surface_bio_dpt.date_mesure": "2008-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Normandie",
+      "surface_bio_dpt.geocode_region": "28",
+      "surface_bio_dpt.date_mesure.year": "2008-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 1.5025132221744566,
+      "surface_bio_dpt.date_mesure": "2008-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Île-de-France",
+      "surface_bio_dpt.geocode_region": "11",
+      "surface_bio_dpt.date_mesure.year": "2008-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 0.7708839006827949,
+      "surface_bio_dpt.date_mesure": "2008-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "surface_bio_dpt.geocode_region": "93",
+      "surface_bio_dpt.date_mesure.year": "2008-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 7.762337076885084,
+      "surface_bio_dpt.date_mesure": "2008-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Guadeloupe",
+      "surface_bio_dpt.geocode_region": "01",
+      "surface_bio_dpt.date_mesure.year": "2008-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 0.20999999999999996,
+      "surface_bio_dpt.date_mesure": "2008-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Pays de la Loire",
+      "surface_bio_dpt.geocode_region": "52",
+      "surface_bio_dpt.date_mesure.year": "2008-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 3.028270622533067,
+      "surface_bio_dpt.date_mesure": "2008-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Martinique",
+      "surface_bio_dpt.geocode_region": "02",
+      "surface_bio_dpt.date_mesure.year": "2008-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 0.64,
+      "surface_bio_dpt.date_mesure": "2008-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Auvergne-Rhône-Alpes",
+      "surface_bio_dpt.geocode_region": "84",
+      "surface_bio_dpt.date_mesure.year": "2008-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 2.6446139893347502,
+      "surface_bio_dpt.date_mesure": "2008-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Corse",
+      "surface_bio_dpt.geocode_region": "94",
+      "surface_bio_dpt.date_mesure.year": "2008-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 3.296587554999015,
+      "surface_bio_dpt.date_mesure": "2008-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Nouvelle-Aquitaine",
+      "surface_bio_dpt.geocode_region": "75",
+      "surface_bio_dpt.date_mesure.year": "2008-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 1.5176655982614327,
+      "surface_bio_dpt.date_mesure": "2008-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Centre-Val de Loire",
+      "surface_bio_dpt.geocode_region": "24",
+      "surface_bio_dpt.date_mesure.year": "2008-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 0.8534339047187852,
+      "surface_bio_dpt.date_mesure": "2008-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "La Réunion",
+      "surface_bio_dpt.geocode_region": "04",
+      "surface_bio_dpt.date_mesure.year": "2008-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 0.48,
+      "surface_bio_dpt.date_mesure": "2008-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Bourgogne-Franche-Comté",
+      "surface_bio_dpt.geocode_region": "27",
+      "surface_bio_dpt.date_mesure.year": "2008-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 2.0512281517260735,
+      "surface_bio_dpt.date_mesure": "2008-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Bretagne",
+      "surface_bio_dpt.geocode_region": "53",
+      "surface_bio_dpt.date_mesure.year": "2008-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 2.187910661795366,
+      "surface_bio_dpt.date_mesure": "2008-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Occitanie",
+      "surface_bio_dpt.geocode_region": "76",
+      "surface_bio_dpt.date_mesure.year": "2008-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 3.2761542744822534,
+      "surface_bio_dpt.date_mesure": "2008-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Hauts-de-France",
+      "surface_bio_dpt.geocode_region": "32",
+      "surface_bio_dpt.date_mesure.year": "2008-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 0.40157105047959213,
+      "surface_bio_dpt.date_mesure": "2008-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Hauts-de-France",
+      "surface_bio_dpt.geocode_region": "32",
+      "surface_bio_dpt.date_mesure.year": "2009-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 0.48395974434973726,
+      "surface_bio_dpt.date_mesure": "2009-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Pays de la Loire",
+      "surface_bio_dpt.geocode_region": "52",
+      "surface_bio_dpt.date_mesure.year": "2009-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 3.2092810935299294,
+      "surface_bio_dpt.date_mesure": "2009-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Bretagne",
+      "surface_bio_dpt.geocode_region": "53",
+      "surface_bio_dpt.date_mesure.year": "2009-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 2.5106518969994007,
+      "surface_bio_dpt.date_mesure": "2009-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Bourgogne-Franche-Comté",
+      "surface_bio_dpt.geocode_region": "27",
+      "surface_bio_dpt.date_mesure.year": "2009-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 2.3822925932833914,
+      "surface_bio_dpt.date_mesure": "2009-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Martinique",
+      "surface_bio_dpt.geocode_region": "02",
+      "surface_bio_dpt.date_mesure.year": "2009-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 0.55,
+      "surface_bio_dpt.date_mesure": "2009-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "surface_bio_dpt.geocode_region": "93",
+      "surface_bio_dpt.date_mesure.year": "2009-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 9.248435000877008,
+      "surface_bio_dpt.date_mesure": "2009-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Normandie",
+      "surface_bio_dpt.geocode_region": "28",
+      "surface_bio_dpt.date_mesure.year": "2009-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 1.7843359195869837,
+      "surface_bio_dpt.date_mesure": "2009-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Guyane",
+      "surface_bio_dpt.geocode_region": "03",
+      "surface_bio_dpt.date_mesure.year": "2009-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 8.42,
+      "surface_bio_dpt.date_mesure": "2009-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Corse",
+      "surface_bio_dpt.geocode_region": "94",
+      "surface_bio_dpt.date_mesure.year": "2009-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 4.366388397608118,
+      "surface_bio_dpt.date_mesure": "2009-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Grand Est",
+      "surface_bio_dpt.geocode_region": "44",
+      "surface_bio_dpt.date_mesure.year": "2009-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 1.443903520525249,
+      "surface_bio_dpt.date_mesure": "2009-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Guadeloupe",
+      "surface_bio_dpt.geocode_region": "01",
+      "surface_bio_dpt.date_mesure.year": "2009-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 0.26,
+      "surface_bio_dpt.date_mesure": "2009-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Nouvelle-Aquitaine",
+      "surface_bio_dpt.geocode_region": "75",
+      "surface_bio_dpt.date_mesure.year": "2009-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 1.7226717275077963,
+      "surface_bio_dpt.date_mesure": "2009-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Occitanie",
+      "surface_bio_dpt.geocode_region": "76",
+      "surface_bio_dpt.date_mesure.year": "2009-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 4.052130113150108,
+      "surface_bio_dpt.date_mesure": "2009-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Auvergne-Rhône-Alpes",
+      "surface_bio_dpt.geocode_region": "84",
+      "surface_bio_dpt.date_mesure.year": "2009-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 3.194670930449855,
+      "surface_bio_dpt.date_mesure": "2009-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "La Réunion",
+      "surface_bio_dpt.geocode_region": "04",
+      "surface_bio_dpt.date_mesure.year": "2009-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 0.22,
+      "surface_bio_dpt.date_mesure": "2009-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Île-de-France",
+      "surface_bio_dpt.geocode_region": "11",
+      "surface_bio_dpt.date_mesure.year": "2009-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 0.882840479381224,
+      "surface_bio_dpt.date_mesure": "2009-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Centre-Val de Loire",
+      "surface_bio_dpt.geocode_region": "24",
+      "surface_bio_dpt.date_mesure.year": "2009-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 1.022215103524464,
+      "surface_bio_dpt.date_mesure": "2009-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Martinique",
+      "surface_bio_dpt.geocode_region": "02",
+      "surface_bio_dpt.date_mesure.year": "2010-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 0.7499999999999999,
+      "surface_bio_dpt.date_mesure": "2010-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Grand Est",
+      "surface_bio_dpt.geocode_region": "44",
+      "surface_bio_dpt.date_mesure.year": "2010-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 1.9336141879686473,
+      "surface_bio_dpt.date_mesure": "2010-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Centre-Val de Loire",
+      "surface_bio_dpt.geocode_region": "24",
+      "surface_bio_dpt.date_mesure.year": "2010-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 1.3164339175633624,
+      "surface_bio_dpt.date_mesure": "2010-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "surface_bio_dpt.geocode_region": "93",
+      "surface_bio_dpt.date_mesure.year": "2010-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 10.24060157139398,
+      "surface_bio_dpt.date_mesure": "2010-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Guadeloupe",
+      "surface_bio_dpt.geocode_region": "01",
+      "surface_bio_dpt.date_mesure.year": "2010-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 0.09999999999999999,
+      "surface_bio_dpt.date_mesure": "2010-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Nouvelle-Aquitaine",
+      "surface_bio_dpt.geocode_region": "75",
+      "surface_bio_dpt.date_mesure.year": "2010-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 2.215514486399137,
+      "surface_bio_dpt.date_mesure": "2010-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "La Réunion",
+      "surface_bio_dpt.geocode_region": "04",
+      "surface_bio_dpt.date_mesure.year": "2010-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 0.58,
+      "surface_bio_dpt.date_mesure": "2010-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Corse",
+      "surface_bio_dpt.geocode_region": "94",
+      "surface_bio_dpt.date_mesure.year": "2010-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 5.097432788458468,
+      "surface_bio_dpt.date_mesure": "2010-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Auvergne-Rhône-Alpes",
+      "surface_bio_dpt.geocode_region": "84",
+      "surface_bio_dpt.date_mesure.year": "2010-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 4.033731051463503,
+      "surface_bio_dpt.date_mesure": "2010-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Guyane",
+      "surface_bio_dpt.geocode_region": "03",
+      "surface_bio_dpt.date_mesure.year": "2010-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 6.669999999999999,
+      "surface_bio_dpt.date_mesure": "2010-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Bourgogne-Franche-Comté",
+      "surface_bio_dpt.geocode_region": "27",
+      "surface_bio_dpt.date_mesure.year": "2010-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 2.934401270592329,
+      "surface_bio_dpt.date_mesure": "2010-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Bretagne",
+      "surface_bio_dpt.geocode_region": "53",
+      "surface_bio_dpt.date_mesure.year": "2010-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 3.228738970185047,
+      "surface_bio_dpt.date_mesure": "2010-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Normandie",
+      "surface_bio_dpt.geocode_region": "28",
+      "surface_bio_dpt.date_mesure.year": "2010-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 2.1045512846137697,
+      "surface_bio_dpt.date_mesure": "2010-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Hauts-de-France",
+      "surface_bio_dpt.geocode_region": "32",
+      "surface_bio_dpt.date_mesure.year": "2010-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 0.5869613211841537,
+      "surface_bio_dpt.date_mesure": "2010-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Pays de la Loire",
+      "surface_bio_dpt.geocode_region": "52",
+      "surface_bio_dpt.date_mesure.year": "2010-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 4.1227340317986,
+      "surface_bio_dpt.date_mesure": "2010-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Occitanie",
+      "surface_bio_dpt.geocode_region": "76",
+      "surface_bio_dpt.date_mesure.year": "2010-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 5.271465302481101,
+      "surface_bio_dpt.date_mesure": "2010-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Île-de-France",
+      "surface_bio_dpt.geocode_region": "11",
+      "surface_bio_dpt.date_mesure.year": "2010-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 1.1700200241939258,
+      "surface_bio_dpt.date_mesure": "2010-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Nouvelle-Aquitaine",
+      "surface_bio_dpt.geocode_region": "75",
+      "surface_bio_dpt.date_mesure.year": "2011-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 2.598521065812934,
+      "surface_bio_dpt.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "La Réunion",
+      "surface_bio_dpt.geocode_region": "04",
+      "surface_bio_dpt.date_mesure.year": "2011-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 1.22,
+      "surface_bio_dpt.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Guyane",
+      "surface_bio_dpt.geocode_region": "03",
+      "surface_bio_dpt.date_mesure.year": "2011-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 8.689999999999998,
+      "surface_bio_dpt.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Normandie",
+      "surface_bio_dpt.geocode_region": "28",
+      "surface_bio_dpt.date_mesure.year": "2011-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 2.5969725865205824,
+      "surface_bio_dpt.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Bourgogne-Franche-Comté",
+      "surface_bio_dpt.geocode_region": "27",
+      "surface_bio_dpt.date_mesure.year": "2011-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 3.2505047847055324,
+      "surface_bio_dpt.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Île-de-France",
+      "surface_bio_dpt.geocode_region": "11",
+      "surface_bio_dpt.date_mesure.year": "2011-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 1.480285693820985,
+      "surface_bio_dpt.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Auvergne-Rhône-Alpes",
+      "surface_bio_dpt.geocode_region": "84",
+      "surface_bio_dpt.date_mesure.year": "2011-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 4.49505635799082,
+      "surface_bio_dpt.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Guadeloupe",
+      "surface_bio_dpt.geocode_region": "01",
+      "surface_bio_dpt.date_mesure.year": "2011-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 0.58,
+      "surface_bio_dpt.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Centre-Val de Loire",
+      "surface_bio_dpt.geocode_region": "24",
+      "surface_bio_dpt.date_mesure.year": "2011-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 1.4650617978728042,
+      "surface_bio_dpt.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Occitanie",
+      "surface_bio_dpt.geocode_region": "76",
+      "surface_bio_dpt.date_mesure.year": "2011-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 6.090223301378524,
+      "surface_bio_dpt.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Bretagne",
+      "surface_bio_dpt.geocode_region": "53",
+      "surface_bio_dpt.date_mesure.year": "2011-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 3.692119599602462,
+      "surface_bio_dpt.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Hauts-de-France",
+      "surface_bio_dpt.geocode_region": "32",
+      "surface_bio_dpt.date_mesure.year": "2011-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 0.7454634826410961,
+      "surface_bio_dpt.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Grand Est",
+      "surface_bio_dpt.geocode_region": "44",
+      "surface_bio_dpt.date_mesure.year": "2011-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 2.2194815275665425,
+      "surface_bio_dpt.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Corse",
+      "surface_bio_dpt.geocode_region": "94",
+      "surface_bio_dpt.date_mesure.year": "2011-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 6.207993551227761,
+      "surface_bio_dpt.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "surface_bio_dpt.geocode_region": "93",
+      "surface_bio_dpt.date_mesure.year": "2011-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 12.087499592847816,
+      "surface_bio_dpt.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Pays de la Loire",
+      "surface_bio_dpt.geocode_region": "52",
+      "surface_bio_dpt.date_mesure.year": "2011-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 4.590581198895343,
+      "surface_bio_dpt.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Martinique",
+      "surface_bio_dpt.geocode_region": "02",
+      "surface_bio_dpt.date_mesure.year": "2011-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 1.14,
+      "surface_bio_dpt.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Bourgogne-Franche-Comté",
+      "surface_bio_dpt.geocode_region": "27",
+      "surface_bio_dpt.date_mesure.year": "2012-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 3.3655953871902167,
+      "surface_bio_dpt.date_mesure": "2012-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Île-de-France",
+      "surface_bio_dpt.geocode_region": "11",
+      "surface_bio_dpt.date_mesure.year": "2012-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 1.4960955431029062,
+      "surface_bio_dpt.date_mesure": "2012-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Hauts-de-France",
+      "surface_bio_dpt.geocode_region": "32",
+      "surface_bio_dpt.date_mesure.year": "2012-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 0.8069712251503297,
+      "surface_bio_dpt.date_mesure": "2012-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Auvergne-Rhône-Alpes",
+      "surface_bio_dpt.geocode_region": "84",
+      "surface_bio_dpt.date_mesure.year": "2012-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 4.72025983736882,
+      "surface_bio_dpt.date_mesure": "2012-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Guadeloupe",
+      "surface_bio_dpt.geocode_region": "01",
+      "surface_bio_dpt.date_mesure.year": "2012-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 0.5399999999999999,
+      "surface_bio_dpt.date_mesure": "2012-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Guyane",
+      "surface_bio_dpt.geocode_region": "03",
+      "surface_bio_dpt.date_mesure.year": "2012-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 8.76,
+      "surface_bio_dpt.date_mesure": "2012-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Centre-Val de Loire",
+      "surface_bio_dpt.geocode_region": "24",
+      "surface_bio_dpt.date_mesure.year": "2012-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 1.5502516595313403,
+      "surface_bio_dpt.date_mesure": "2012-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Bretagne",
+      "surface_bio_dpt.geocode_region": "53",
+      "surface_bio_dpt.date_mesure.year": "2012-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 3.927765188594943,
+      "surface_bio_dpt.date_mesure": "2012-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Nouvelle-Aquitaine",
+      "surface_bio_dpt.geocode_region": "75",
+      "surface_bio_dpt.date_mesure.year": "2012-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 2.8531200390599674,
+      "surface_bio_dpt.date_mesure": "2012-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "surface_bio_dpt.geocode_region": "93",
+      "surface_bio_dpt.date_mesure.year": "2012-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 13.175220596824804,
+      "surface_bio_dpt.date_mesure": "2012-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Occitanie",
+      "surface_bio_dpt.geocode_region": "76",
+      "surface_bio_dpt.date_mesure.year": "2012-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 6.491553550543607,
+      "surface_bio_dpt.date_mesure": "2012-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Corse",
+      "surface_bio_dpt.geocode_region": "94",
+      "surface_bio_dpt.date_mesure.year": "2012-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 6.481214924366315,
+      "surface_bio_dpt.date_mesure": "2012-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Grand Est",
+      "surface_bio_dpt.geocode_region": "44",
+      "surface_bio_dpt.date_mesure.year": "2012-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 2.367902740607959,
+      "surface_bio_dpt.date_mesure": "2012-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "La Réunion",
+      "surface_bio_dpt.geocode_region": "04",
+      "surface_bio_dpt.date_mesure.year": "2012-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 1.29,
+      "surface_bio_dpt.date_mesure": "2012-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Pays de la Loire",
+      "surface_bio_dpt.geocode_region": "52",
+      "surface_bio_dpt.date_mesure.year": "2012-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 5.121564867243224,
+      "surface_bio_dpt.date_mesure": "2012-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Martinique",
+      "surface_bio_dpt.geocode_region": "02",
+      "surface_bio_dpt.date_mesure.year": "2012-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 0.8,
+      "surface_bio_dpt.date_mesure": "2012-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Mayotte",
+      "surface_bio_dpt.geocode_region": "06",
+      "surface_bio_dpt.date_mesure.year": "2012-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": null,
+      "surface_bio_dpt.date_mesure": "2012-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Normandie",
+      "surface_bio_dpt.geocode_region": "28",
+      "surface_bio_dpt.date_mesure.year": "2012-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 2.761067389908177,
+      "surface_bio_dpt.date_mesure": "2012-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Bretagne",
+      "surface_bio_dpt.geocode_region": "53",
+      "surface_bio_dpt.date_mesure.year": "2013-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 4.116461731951455,
+      "surface_bio_dpt.date_mesure": "2013-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Martinique",
+      "surface_bio_dpt.geocode_region": "02",
+      "surface_bio_dpt.date_mesure.year": "2013-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 1.0399999999999998,
+      "surface_bio_dpt.date_mesure": "2013-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Auvergne-Rhône-Alpes",
+      "surface_bio_dpt.geocode_region": "84",
+      "surface_bio_dpt.date_mesure.year": "2013-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 4.95782360997193,
+      "surface_bio_dpt.date_mesure": "2013-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Normandie",
+      "surface_bio_dpt.geocode_region": "28",
+      "surface_bio_dpt.date_mesure.year": "2013-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 2.795665496662199,
+      "surface_bio_dpt.date_mesure": "2013-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Grand Est",
+      "surface_bio_dpt.geocode_region": "44",
+      "surface_bio_dpt.date_mesure.year": "2013-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 2.4181143313222226,
+      "surface_bio_dpt.date_mesure": "2013-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Pays de la Loire",
+      "surface_bio_dpt.geocode_region": "52",
+      "surface_bio_dpt.date_mesure.year": "2013-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 5.1811540275741335,
+      "surface_bio_dpt.date_mesure": "2013-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Île-de-France",
+      "surface_bio_dpt.geocode_region": "11",
+      "surface_bio_dpt.date_mesure.year": "2013-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 1.5778779906526508,
+      "surface_bio_dpt.date_mesure": "2013-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Nouvelle-Aquitaine",
+      "surface_bio_dpt.geocode_region": "75",
+      "surface_bio_dpt.date_mesure.year": "2013-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 2.9224902303736107,
+      "surface_bio_dpt.date_mesure": "2013-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Corse",
+      "surface_bio_dpt.geocode_region": "94",
+      "surface_bio_dpt.date_mesure.year": "2013-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 6.098388908225957,
+      "surface_bio_dpt.date_mesure": "2013-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Mayotte",
+      "surface_bio_dpt.geocode_region": "06",
+      "surface_bio_dpt.date_mesure.year": "2013-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": null,
+      "surface_bio_dpt.date_mesure": "2013-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Guadeloupe",
+      "surface_bio_dpt.geocode_region": "01",
+      "surface_bio_dpt.date_mesure.year": "2013-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 0.66,
+      "surface_bio_dpt.date_mesure": "2013-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Occitanie",
+      "surface_bio_dpt.geocode_region": "76",
+      "surface_bio_dpt.date_mesure.year": "2013-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 6.850156430181482,
+      "surface_bio_dpt.date_mesure": "2013-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Hauts-de-France",
+      "surface_bio_dpt.geocode_region": "32",
+      "surface_bio_dpt.date_mesure.year": "2013-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 0.8009136227215556,
+      "surface_bio_dpt.date_mesure": "2013-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "La Réunion",
+      "surface_bio_dpt.geocode_region": "04",
+      "surface_bio_dpt.date_mesure.year": "2013-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 1.37,
+      "surface_bio_dpt.date_mesure": "2013-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Centre-Val de Loire",
+      "surface_bio_dpt.geocode_region": "24",
+      "surface_bio_dpt.date_mesure.year": "2013-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 1.6465951576547126,
+      "surface_bio_dpt.date_mesure": "2013-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "surface_bio_dpt.geocode_region": "93",
+      "surface_bio_dpt.date_mesure.year": "2013-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 14.195539143230103,
+      "surface_bio_dpt.date_mesure": "2013-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Bourgogne-Franche-Comté",
+      "surface_bio_dpt.geocode_region": "27",
+      "surface_bio_dpt.date_mesure.year": "2013-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 3.363702464519348,
+      "surface_bio_dpt.date_mesure": "2013-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Guyane",
+      "surface_bio_dpt.geocode_region": "03",
+      "surface_bio_dpt.date_mesure.year": "2013-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 10.12,
+      "surface_bio_dpt.date_mesure": "2013-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Martinique",
+      "surface_bio_dpt.geocode_region": "02",
+      "surface_bio_dpt.date_mesure.year": "2014-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 1.0799999999999998,
+      "surface_bio_dpt.date_mesure": "2014-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Mayotte",
+      "surface_bio_dpt.geocode_region": "06",
+      "surface_bio_dpt.date_mesure.year": "2014-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": null,
+      "surface_bio_dpt.date_mesure": "2014-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "surface_bio_dpt.geocode_region": "93",
+      "surface_bio_dpt.date_mesure.year": "2014-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 14.624052820874585,
+      "surface_bio_dpt.date_mesure": "2014-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Grand Est",
+      "surface_bio_dpt.geocode_region": "44",
+      "surface_bio_dpt.date_mesure.year": "2014-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 2.620812884887376,
+      "surface_bio_dpt.date_mesure": "2014-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Pays de la Loire",
+      "surface_bio_dpt.geocode_region": "52",
+      "surface_bio_dpt.date_mesure.year": "2014-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 5.469458733500963,
+      "surface_bio_dpt.date_mesure": "2014-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Occitanie",
+      "surface_bio_dpt.geocode_region": "76",
+      "surface_bio_dpt.date_mesure.year": "2014-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 7.26793670680384,
+      "surface_bio_dpt.date_mesure": "2014-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Normandie",
+      "surface_bio_dpt.geocode_region": "28",
+      "surface_bio_dpt.date_mesure.year": "2014-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 2.952120965440051,
+      "surface_bio_dpt.date_mesure": "2014-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Guyane",
+      "surface_bio_dpt.geocode_region": "03",
+      "surface_bio_dpt.date_mesure.year": "2014-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 7.06,
+      "surface_bio_dpt.date_mesure": "2014-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Guadeloupe",
+      "surface_bio_dpt.geocode_region": "01",
+      "surface_bio_dpt.date_mesure.year": "2014-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 0.22,
+      "surface_bio_dpt.date_mesure": "2014-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Île-de-France",
+      "surface_bio_dpt.geocode_region": "11",
+      "surface_bio_dpt.date_mesure.year": "2014-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 1.6786624607341842,
+      "surface_bio_dpt.date_mesure": "2014-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Auvergne-Rhône-Alpes",
+      "surface_bio_dpt.geocode_region": "84",
+      "surface_bio_dpt.date_mesure.year": "2014-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 5.031710311708675,
+      "surface_bio_dpt.date_mesure": "2014-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Bourgogne-Franche-Comté",
+      "surface_bio_dpt.geocode_region": "27",
+      "surface_bio_dpt.date_mesure.year": "2014-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 3.537089414946347,
+      "surface_bio_dpt.date_mesure": "2014-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Centre-Val de Loire",
+      "surface_bio_dpt.geocode_region": "24",
+      "surface_bio_dpt.date_mesure.year": "2014-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 1.7679375094774856,
+      "surface_bio_dpt.date_mesure": "2014-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Bretagne",
+      "surface_bio_dpt.geocode_region": "53",
+      "surface_bio_dpt.date_mesure.year": "2014-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 4.260408514066306,
+      "surface_bio_dpt.date_mesure": "2014-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "La Réunion",
+      "surface_bio_dpt.geocode_region": "04",
+      "surface_bio_dpt.date_mesure.year": "2014-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 1.55,
+      "surface_bio_dpt.date_mesure": "2014-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Nouvelle-Aquitaine",
+      "surface_bio_dpt.geocode_region": "75",
+      "surface_bio_dpt.date_mesure.year": "2014-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 3.1727260347084854,
+      "surface_bio_dpt.date_mesure": "2014-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Corse",
+      "surface_bio_dpt.geocode_region": "94",
+      "surface_bio_dpt.date_mesure.year": "2014-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 6.066542433412228,
+      "surface_bio_dpt.date_mesure": "2014-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Hauts-de-France",
+      "surface_bio_dpt.geocode_region": "32",
+      "surface_bio_dpt.date_mesure.year": "2014-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 0.8379737940213925,
+      "surface_bio_dpt.date_mesure": "2014-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "surface_bio_dpt.geocode_region": "93",
+      "surface_bio_dpt.date_mesure.year": "2015-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 16.96325238744481,
+      "surface_bio_dpt.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Centre-Val de Loire",
+      "surface_bio_dpt.geocode_region": "24",
+      "surface_bio_dpt.date_mesure.year": "2015-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 2.1608046024958782,
+      "surface_bio_dpt.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Auvergne-Rhône-Alpes",
+      "surface_bio_dpt.geocode_region": "84",
+      "surface_bio_dpt.date_mesure.year": "2015-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 5.642631602860198,
+      "surface_bio_dpt.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Occitanie",
+      "surface_bio_dpt.geocode_region": "76",
+      "surface_bio_dpt.date_mesure.year": "2015-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 9.726432151272661,
+      "surface_bio_dpt.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Bretagne",
+      "surface_bio_dpt.geocode_region": "53",
+      "surface_bio_dpt.date_mesure.year": "2015-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 4.546080373739795,
+      "surface_bio_dpt.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Grand Est",
+      "surface_bio_dpt.geocode_region": "44",
+      "surface_bio_dpt.date_mesure.year": "2015-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 3.138886171421506,
+      "surface_bio_dpt.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Nouvelle-Aquitaine",
+      "surface_bio_dpt.geocode_region": "75",
+      "surface_bio_dpt.date_mesure.year": "2015-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 4.019639731415046,
+      "surface_bio_dpt.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Mayotte",
+      "surface_bio_dpt.geocode_region": "06",
+      "surface_bio_dpt.date_mesure.year": "2015-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": null,
+      "surface_bio_dpt.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Île-de-France",
+      "surface_bio_dpt.geocode_region": "11",
+      "surface_bio_dpt.date_mesure.year": "2015-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 1.936243167868888,
+      "surface_bio_dpt.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "La Réunion",
+      "surface_bio_dpt.geocode_region": "04",
+      "surface_bio_dpt.date_mesure.year": "2015-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 1.7100000000000002,
+      "surface_bio_dpt.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Martinique",
+      "surface_bio_dpt.geocode_region": "02",
+      "surface_bio_dpt.date_mesure.year": "2015-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 1.25,
+      "surface_bio_dpt.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Guyane",
+      "surface_bio_dpt.geocode_region": "03",
+      "surface_bio_dpt.date_mesure.year": "2015-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 9.48,
+      "surface_bio_dpt.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Hauts-de-France",
+      "surface_bio_dpt.geocode_region": "32",
+      "surface_bio_dpt.date_mesure.year": "2015-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 0.9564805719946157,
+      "surface_bio_dpt.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Corse",
+      "surface_bio_dpt.geocode_region": "94",
+      "surface_bio_dpt.date_mesure.year": "2015-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 6.884102804849562,
+      "surface_bio_dpt.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Guadeloupe",
+      "surface_bio_dpt.geocode_region": "01",
+      "surface_bio_dpt.date_mesure.year": "2015-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 0.34,
+      "surface_bio_dpt.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Pays de la Loire",
+      "surface_bio_dpt.geocode_region": "52",
+      "surface_bio_dpt.date_mesure.year": "2015-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 5.987747741880365,
+      "surface_bio_dpt.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Normandie",
+      "surface_bio_dpt.geocode_region": "28",
+      "surface_bio_dpt.date_mesure.year": "2015-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 3.307593679810429,
+      "surface_bio_dpt.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Bourgogne-Franche-Comté",
+      "surface_bio_dpt.geocode_region": "27",
+      "surface_bio_dpt.date_mesure.year": "2015-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 4.342310970521618,
+      "surface_bio_dpt.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Pays de la Loire",
+      "surface_bio_dpt.geocode_region": "52",
+      "surface_bio_dpt.date_mesure.year": "2016-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 7.2317408460305765,
+      "surface_bio_dpt.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Nouvelle-Aquitaine",
+      "surface_bio_dpt.geocode_region": "75",
+      "surface_bio_dpt.date_mesure.year": "2016-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 4.693178704196802,
+      "surface_bio_dpt.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Bourgogne-Franche-Comté",
+      "surface_bio_dpt.geocode_region": "27",
+      "surface_bio_dpt.date_mesure.year": "2016-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 5.113366255597093,
+      "surface_bio_dpt.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "surface_bio_dpt.geocode_region": "93",
+      "surface_bio_dpt.date_mesure.year": "2016-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 18.297377530636997,
+      "surface_bio_dpt.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Guadeloupe",
+      "surface_bio_dpt.geocode_region": "01",
+      "surface_bio_dpt.date_mesure.year": "2016-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 0.56,
+      "surface_bio_dpt.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Occitanie",
+      "surface_bio_dpt.geocode_region": "76",
+      "surface_bio_dpt.date_mesure.year": "2016-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 11.375309831905536,
+      "surface_bio_dpt.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Guyane",
+      "surface_bio_dpt.geocode_region": "03",
+      "surface_bio_dpt.date_mesure.year": "2016-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 10.310000000000002,
+      "surface_bio_dpt.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Île-de-France",
+      "surface_bio_dpt.geocode_region": "11",
+      "surface_bio_dpt.date_mesure.year": "2016-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 2.438772067564806,
+      "surface_bio_dpt.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Auvergne-Rhône-Alpes",
+      "surface_bio_dpt.geocode_region": "84",
+      "surface_bio_dpt.date_mesure.year": "2016-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 7.043701948780431,
+      "surface_bio_dpt.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "La Réunion",
+      "surface_bio_dpt.geocode_region": "04",
+      "surface_bio_dpt.date_mesure.year": "2016-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 2.02,
+      "surface_bio_dpt.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Bretagne",
+      "surface_bio_dpt.geocode_region": "53",
+      "surface_bio_dpt.date_mesure.year": "2016-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 5.727478595856831,
+      "surface_bio_dpt.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Martinique",
+      "surface_bio_dpt.geocode_region": "02",
+      "surface_bio_dpt.date_mesure.year": "2016-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 1.41,
+      "surface_bio_dpt.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Grand Est",
+      "surface_bio_dpt.geocode_region": "44",
+      "surface_bio_dpt.date_mesure.year": "2016-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 3.827917252262946,
+      "surface_bio_dpt.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Centre-Val de Loire",
+      "surface_bio_dpt.geocode_region": "24",
+      "surface_bio_dpt.date_mesure.year": "2016-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 2.2375419983736435,
+      "surface_bio_dpt.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Corse",
+      "surface_bio_dpt.geocode_region": "94",
+      "surface_bio_dpt.date_mesure.year": "2016-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 7.3501666360946105,
+      "surface_bio_dpt.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Normandie",
+      "surface_bio_dpt.geocode_region": "28",
+      "surface_bio_dpt.date_mesure.year": "2016-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 3.974254123391097,
+      "surface_bio_dpt.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Hauts-de-France",
+      "surface_bio_dpt.geocode_region": "32",
+      "surface_bio_dpt.date_mesure.year": "2016-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 1.2272537411625175,
+      "surface_bio_dpt.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Occitanie",
+      "surface_bio_dpt.geocode_region": "76",
+      "surface_bio_dpt.date_mesure.year": "2017-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 12.725460980699646,
+      "surface_bio_dpt.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Mayotte",
+      "surface_bio_dpt.geocode_region": "06",
+      "surface_bio_dpt.date_mesure.year": "2017-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 0.32999999999999996,
+      "surface_bio_dpt.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Centre-Val de Loire",
+      "surface_bio_dpt.geocode_region": "24",
+      "surface_bio_dpt.date_mesure.year": "2017-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 2.5006193401645658,
+      "surface_bio_dpt.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Guyane",
+      "surface_bio_dpt.geocode_region": "03",
+      "surface_bio_dpt.date_mesure.year": "2017-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 10.26,
+      "surface_bio_dpt.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "La Réunion",
+      "surface_bio_dpt.geocode_region": "04",
+      "surface_bio_dpt.date_mesure.year": "2017-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 2.62,
+      "surface_bio_dpt.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Grand Est",
+      "surface_bio_dpt.geocode_region": "44",
+      "surface_bio_dpt.date_mesure.year": "2017-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 4.176574547954669,
+      "surface_bio_dpt.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Martinique",
+      "surface_bio_dpt.geocode_region": "02",
+      "surface_bio_dpt.date_mesure.year": "2017-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 1.8099999999999998,
+      "surface_bio_dpt.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Bourgogne-Franche-Comté",
+      "surface_bio_dpt.geocode_region": "27",
+      "surface_bio_dpt.date_mesure.year": "2017-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 5.841994226379684,
+      "surface_bio_dpt.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Nouvelle-Aquitaine",
+      "surface_bio_dpt.geocode_region": "75",
+      "surface_bio_dpt.date_mesure.year": "2017-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 5.409196252457979,
+      "surface_bio_dpt.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Auvergne-Rhône-Alpes",
+      "surface_bio_dpt.geocode_region": "84",
+      "surface_bio_dpt.date_mesure.year": "2017-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 7.9939921518929875,
+      "surface_bio_dpt.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Pays de la Loire",
+      "surface_bio_dpt.geocode_region": "52",
+      "surface_bio_dpt.date_mesure.year": "2017-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 8.203666870940456,
+      "surface_bio_dpt.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Guadeloupe",
+      "surface_bio_dpt.geocode_region": "01",
+      "surface_bio_dpt.date_mesure.year": "2017-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 0.66,
+      "surface_bio_dpt.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Bretagne",
+      "surface_bio_dpt.geocode_region": "53",
+      "surface_bio_dpt.date_mesure.year": "2017-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 6.441442399717481,
+      "surface_bio_dpt.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "surface_bio_dpt.geocode_region": "93",
+      "surface_bio_dpt.date_mesure.year": "2017-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 21.6455916690634,
+      "surface_bio_dpt.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Hauts-de-France",
+      "surface_bio_dpt.geocode_region": "32",
+      "surface_bio_dpt.date_mesure.year": "2017-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 1.501548078405223,
+      "surface_bio_dpt.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Île-de-France",
+      "surface_bio_dpt.geocode_region": "11",
+      "surface_bio_dpt.date_mesure.year": "2017-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 2.7642757784294565,
+      "surface_bio_dpt.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Corse",
+      "surface_bio_dpt.geocode_region": "94",
+      "surface_bio_dpt.date_mesure.year": "2017-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 11.317318806729482,
+      "surface_bio_dpt.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Normandie",
+      "surface_bio_dpt.geocode_region": "28",
+      "surface_bio_dpt.date_mesure.year": "2017-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 4.500282423445098,
+      "surface_bio_dpt.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Normandie",
+      "surface_bio_dpt.geocode_region": "28",
+      "surface_bio_dpt.date_mesure.year": "2018-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 4.983661168060184,
+      "surface_bio_dpt.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Grand Est",
+      "surface_bio_dpt.geocode_region": "44",
+      "surface_bio_dpt.date_mesure.year": "2018-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 4.860749693981602,
+      "surface_bio_dpt.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Guadeloupe",
+      "surface_bio_dpt.geocode_region": "01",
+      "surface_bio_dpt.date_mesure.year": "2018-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 0.94,
+      "surface_bio_dpt.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Guyane",
+      "surface_bio_dpt.geocode_region": "03",
+      "surface_bio_dpt.date_mesure.year": "2018-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 10.03,
+      "surface_bio_dpt.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Nouvelle-Aquitaine",
+      "surface_bio_dpt.geocode_region": "75",
+      "surface_bio_dpt.date_mesure.year": "2018-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 6.386530526620081,
+      "surface_bio_dpt.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Auvergne-Rhône-Alpes",
+      "surface_bio_dpt.geocode_region": "84",
+      "surface_bio_dpt.date_mesure.year": "2018-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 8.733172794214207,
+      "surface_bio_dpt.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Bourgogne-Franche-Comté",
+      "surface_bio_dpt.geocode_region": "27",
+      "surface_bio_dpt.date_mesure.year": "2018-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 6.9718766844542825,
+      "surface_bio_dpt.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Bretagne",
+      "surface_bio_dpt.geocode_region": "53",
+      "surface_bio_dpt.date_mesure.year": "2018-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 7.7294495863710155,
+      "surface_bio_dpt.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Centre-Val de Loire",
+      "surface_bio_dpt.geocode_region": "24",
+      "surface_bio_dpt.date_mesure.year": "2018-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 3.105229540899239,
+      "surface_bio_dpt.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Île-de-France",
+      "surface_bio_dpt.geocode_region": "11",
+      "surface_bio_dpt.date_mesure.year": "2018-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 4.190883066298676,
+      "surface_bio_dpt.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Martinique",
+      "surface_bio_dpt.geocode_region": "02",
+      "surface_bio_dpt.date_mesure.year": "2018-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 1.89,
+      "surface_bio_dpt.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Pays de la Loire",
+      "surface_bio_dpt.geocode_region": "52",
+      "surface_bio_dpt.date_mesure.year": "2018-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 9.369478046683039,
+      "surface_bio_dpt.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Mayotte",
+      "surface_bio_dpt.geocode_region": "06",
+      "surface_bio_dpt.date_mesure.year": "2018-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 0.4099999999999999,
+      "surface_bio_dpt.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Occitanie",
+      "surface_bio_dpt.geocode_region": "76",
+      "surface_bio_dpt.date_mesure.year": "2018-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 14.29515529130681,
+      "surface_bio_dpt.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Hauts-de-France",
+      "surface_bio_dpt.geocode_region": "32",
+      "surface_bio_dpt.date_mesure.year": "2018-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 1.7636241842777436,
+      "surface_bio_dpt.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Corse",
+      "surface_bio_dpt.geocode_region": "94",
+      "surface_bio_dpt.date_mesure.year": "2018-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 14.737010651442102,
+      "surface_bio_dpt.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "La Réunion",
+      "surface_bio_dpt.geocode_region": "04",
+      "surface_bio_dpt.date_mesure.year": "2018-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 3.19,
+      "surface_bio_dpt.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "surface_bio_dpt.geocode_region": "93",
+      "surface_bio_dpt.date_mesure.year": "2018-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 24.1902446997765,
+      "surface_bio_dpt.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Guadeloupe",
+      "surface_bio_dpt.geocode_region": "01",
+      "surface_bio_dpt.date_mesure.year": "2019-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 1.61,
+      "surface_bio_dpt.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Normandie",
+      "surface_bio_dpt.geocode_region": "28",
+      "surface_bio_dpt.date_mesure.year": "2019-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 5.6342454110861295,
+      "surface_bio_dpt.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Île-de-France",
+      "surface_bio_dpt.geocode_region": "11",
+      "surface_bio_dpt.date_mesure.year": "2019-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 5.451206729032664,
+      "surface_bio_dpt.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Occitanie",
+      "surface_bio_dpt.geocode_region": "76",
+      "surface_bio_dpt.date_mesure.year": "2019-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 15.95930799571587,
+      "surface_bio_dpt.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Grand Est",
+      "surface_bio_dpt.geocode_region": "44",
+      "surface_bio_dpt.date_mesure.year": "2019-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 5.780029690035411,
+      "surface_bio_dpt.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Pays de la Loire",
+      "surface_bio_dpt.geocode_region": "52",
+      "surface_bio_dpt.date_mesure.year": "2019-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 10.610761675240624,
+      "surface_bio_dpt.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "surface_bio_dpt.geocode_region": "93",
+      "surface_bio_dpt.date_mesure.year": "2019-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 26.7811025976122,
+      "surface_bio_dpt.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Mayotte",
+      "surface_bio_dpt.geocode_region": "06",
+      "surface_bio_dpt.date_mesure.year": "2019-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 0.54,
+      "surface_bio_dpt.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Guyane",
+      "surface_bio_dpt.geocode_region": "03",
+      "surface_bio_dpt.date_mesure.year": "2019-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 12.300000000000002,
+      "surface_bio_dpt.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "La Réunion",
+      "surface_bio_dpt.geocode_region": "04",
+      "surface_bio_dpt.date_mesure.year": "2019-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 3.74,
+      "surface_bio_dpt.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Auvergne-Rhône-Alpes",
+      "surface_bio_dpt.geocode_region": "84",
+      "surface_bio_dpt.date_mesure.year": "2019-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 9.552473433935493,
+      "surface_bio_dpt.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Hauts-de-France",
+      "surface_bio_dpt.geocode_region": "32",
+      "surface_bio_dpt.date_mesure.year": "2019-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 2.113830866866358,
+      "surface_bio_dpt.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Martinique",
+      "surface_bio_dpt.geocode_region": "02",
+      "surface_bio_dpt.date_mesure.year": "2019-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 2.5699999999999994,
+      "surface_bio_dpt.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Bourgogne-Franche-Comté",
+      "surface_bio_dpt.geocode_region": "27",
+      "surface_bio_dpt.date_mesure.year": "2019-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 8.09747492560002,
+      "surface_bio_dpt.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Bretagne",
+      "surface_bio_dpt.geocode_region": "53",
+      "surface_bio_dpt.date_mesure.year": "2019-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 8.635236777025256,
+      "surface_bio_dpt.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Corse",
+      "surface_bio_dpt.geocode_region": "94",
+      "surface_bio_dpt.date_mesure.year": "2019-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 16.34431816273499,
+      "surface_bio_dpt.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Centre-Val de Loire",
+      "surface_bio_dpt.geocode_region": "24",
+      "surface_bio_dpt.date_mesure.year": "2019-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 3.6149231548801755,
+      "surface_bio_dpt.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Nouvelle-Aquitaine",
+      "surface_bio_dpt.geocode_region": "75",
+      "surface_bio_dpt.date_mesure.year": "2019-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 7.451882901850915,
+      "surface_bio_dpt.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "La Réunion",
+      "surface_bio_dpt.geocode_region": "04",
+      "surface_bio_dpt.date_mesure.year": "2020-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 4.64,
+      "surface_bio_dpt.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Guadeloupe",
+      "surface_bio_dpt.geocode_region": "01",
+      "surface_bio_dpt.date_mesure.year": "2020-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 2.78,
+      "surface_bio_dpt.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Centre-Val de Loire",
+      "surface_bio_dpt.geocode_region": "24",
+      "surface_bio_dpt.date_mesure.year": "2020-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 4.102819050400159,
+      "surface_bio_dpt.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Grand Est",
+      "surface_bio_dpt.geocode_region": "44",
+      "surface_bio_dpt.date_mesure.year": "2020-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 6.927315022143233,
+      "surface_bio_dpt.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Martinique",
+      "surface_bio_dpt.geocode_region": "02",
+      "surface_bio_dpt.date_mesure.year": "2020-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 3.04,
+      "surface_bio_dpt.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Auvergne-Rhône-Alpes",
+      "surface_bio_dpt.geocode_region": "84",
+      "surface_bio_dpt.date_mesure.year": "2020-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 10.23862544820538,
+      "surface_bio_dpt.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Mayotte",
+      "surface_bio_dpt.geocode_region": "06",
+      "surface_bio_dpt.date_mesure.year": "2020-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 1.02,
+      "surface_bio_dpt.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Hauts-de-France",
+      "surface_bio_dpt.geocode_region": "32",
+      "surface_bio_dpt.date_mesure.year": "2020-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 2.453740791044403,
+      "surface_bio_dpt.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Bourgogne-Franche-Comté",
+      "surface_bio_dpt.geocode_region": "27",
+      "surface_bio_dpt.date_mesure.year": "2020-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 9.110403993004493,
+      "surface_bio_dpt.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "surface_bio_dpt.geocode_region": "93",
+      "surface_bio_dpt.date_mesure.year": "2020-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 29.431515561040897,
+      "surface_bio_dpt.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Pays de la Loire",
+      "surface_bio_dpt.geocode_region": "52",
+      "surface_bio_dpt.date_mesure.year": "2020-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 11.483610615072239,
+      "surface_bio_dpt.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Occitanie",
+      "surface_bio_dpt.geocode_region": "76",
+      "surface_bio_dpt.date_mesure.year": "2020-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 17.51241359607976,
+      "surface_bio_dpt.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Île-de-France",
+      "surface_bio_dpt.geocode_region": "11",
+      "surface_bio_dpt.date_mesure.year": "2020-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 6.254161431404392,
+      "surface_bio_dpt.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Bretagne",
+      "surface_bio_dpt.geocode_region": "53",
+      "surface_bio_dpt.date_mesure.year": "2020-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 9.321014423152512,
+      "surface_bio_dpt.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Normandie",
+      "surface_bio_dpt.geocode_region": "28",
+      "surface_bio_dpt.date_mesure.year": "2020-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 6.2479753318723406,
+      "surface_bio_dpt.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Guyane",
+      "surface_bio_dpt.geocode_region": "03",
+      "surface_bio_dpt.date_mesure.year": "2020-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 10.490000000000002,
+      "surface_bio_dpt.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Nouvelle-Aquitaine",
+      "surface_bio_dpt.geocode_region": "75",
+      "surface_bio_dpt.date_mesure.year": "2020-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 8.408629949972527,
+      "surface_bio_dpt.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Corse",
+      "surface_bio_dpt.geocode_region": "94",
+      "surface_bio_dpt.date_mesure.year": "2020-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 18.51109244606316,
+      "surface_bio_dpt.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Auvergne-Rhône-Alpes",
+      "surface_bio_dpt.geocode_region": "84",
+      "surface_bio_dpt.date_mesure.year": "2021-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 10.69491611905109,
+      "surface_bio_dpt.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Martinique",
+      "surface_bio_dpt.geocode_region": "02",
+      "surface_bio_dpt.date_mesure.year": "2021-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 3.28,
+      "surface_bio_dpt.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Hauts-de-France",
+      "surface_bio_dpt.geocode_region": "32",
+      "surface_bio_dpt.date_mesure.year": "2021-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 2.760244774640729,
+      "surface_bio_dpt.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Bretagne",
+      "surface_bio_dpt.geocode_region": "53",
+      "surface_bio_dpt.date_mesure.year": "2021-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 10.09276966225955,
+      "surface_bio_dpt.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Île-de-France",
+      "surface_bio_dpt.geocode_region": "11",
+      "surface_bio_dpt.date_mesure.year": "2021-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 6.940368560554123,
+      "surface_bio_dpt.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Guyane",
+      "surface_bio_dpt.geocode_region": "03",
+      "surface_bio_dpt.date_mesure.year": "2021-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 11.25,
+      "surface_bio_dpt.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Centre-Val de Loire",
+      "surface_bio_dpt.geocode_region": "24",
+      "surface_bio_dpt.date_mesure.year": "2021-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 4.509787657500379,
+      "surface_bio_dpt.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "La Réunion",
+      "surface_bio_dpt.geocode_region": "04",
+      "surface_bio_dpt.date_mesure.year": "2021-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 5.15,
+      "surface_bio_dpt.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Guadeloupe",
+      "surface_bio_dpt.geocode_region": "01",
+      "surface_bio_dpt.date_mesure.year": "2021-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 3.79,
+      "surface_bio_dpt.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Mayotte",
+      "surface_bio_dpt.geocode_region": "06",
+      "surface_bio_dpt.date_mesure.year": "2021-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 1.16,
+      "surface_bio_dpt.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "surface_bio_dpt.geocode_region": "93",
+      "surface_bio_dpt.date_mesure.year": "2021-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 32.31791737490527,
+      "surface_bio_dpt.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Grand Est",
+      "surface_bio_dpt.geocode_region": "44",
+      "surface_bio_dpt.date_mesure.year": "2021-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 7.56564959271771,
+      "surface_bio_dpt.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Normandie",
+      "surface_bio_dpt.geocode_region": "28",
+      "surface_bio_dpt.date_mesure.year": "2021-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 6.725361715178562,
+      "surface_bio_dpt.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Pays de la Loire",
+      "surface_bio_dpt.geocode_region": "52",
+      "surface_bio_dpt.date_mesure.year": "2021-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 12.117763799508047,
+      "surface_bio_dpt.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Nouvelle-Aquitaine",
+      "surface_bio_dpt.geocode_region": "75",
+      "surface_bio_dpt.date_mesure.year": "2021-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 9.410910135574872,
+      "surface_bio_dpt.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Corse",
+      "surface_bio_dpt.geocode_region": "94",
+      "surface_bio_dpt.date_mesure.year": "2021-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 22.911422121747844,
+      "surface_bio_dpt.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Occitanie",
+      "surface_bio_dpt.geocode_region": "76",
+      "surface_bio_dpt.date_mesure.year": "2021-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 19.172175225991076,
+      "surface_bio_dpt.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Bourgogne-Franche-Comté",
+      "surface_bio_dpt.geocode_region": "27",
+      "surface_bio_dpt.date_mesure.year": "2021-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 9.979667085314954,
+      "surface_bio_dpt.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Martinique",
+      "surface_bio_dpt.geocode_region": "02",
+      "surface_bio_dpt.date_mesure.year": "2022-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 3.6400000000000006,
+      "surface_bio_dpt.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Bourgogne-Franche-Comté",
+      "surface_bio_dpt.geocode_region": "27",
+      "surface_bio_dpt.date_mesure.year": "2022-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 10.212706161156634,
+      "surface_bio_dpt.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Mayotte",
+      "surface_bio_dpt.geocode_region": "06",
+      "surface_bio_dpt.date_mesure.year": "2022-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 2.6200000000000006,
+      "surface_bio_dpt.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Corse",
+      "surface_bio_dpt.geocode_region": "94",
+      "surface_bio_dpt.date_mesure.year": "2022-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 24.53419628790652,
+      "surface_bio_dpt.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Normandie",
+      "surface_bio_dpt.geocode_region": "28",
+      "surface_bio_dpt.date_mesure.year": "2022-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 6.903433045391956,
+      "surface_bio_dpt.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Pays de la Loire",
+      "surface_bio_dpt.geocode_region": "52",
+      "surface_bio_dpt.date_mesure.year": "2022-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 12.462753389944904,
+      "surface_bio_dpt.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Hauts-de-France",
+      "surface_bio_dpt.geocode_region": "32",
+      "surface_bio_dpt.date_mesure.year": "2022-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 2.861771968223242,
+      "surface_bio_dpt.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Guadeloupe",
+      "surface_bio_dpt.geocode_region": "01",
+      "surface_bio_dpt.date_mesure.year": "2022-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 4.4,
+      "surface_bio_dpt.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Grand Est",
+      "surface_bio_dpt.geocode_region": "44",
+      "surface_bio_dpt.date_mesure.year": "2022-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 7.857382568528733,
+      "surface_bio_dpt.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Centre-Val de Loire",
+      "surface_bio_dpt.geocode_region": "24",
+      "surface_bio_dpt.date_mesure.year": "2022-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 4.7636587369801004,
+      "surface_bio_dpt.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Bretagne",
+      "surface_bio_dpt.geocode_region": "53",
+      "surface_bio_dpt.date_mesure.year": "2022-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 10.371833836658803,
+      "surface_bio_dpt.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Auvergne-Rhône-Alpes",
+      "surface_bio_dpt.geocode_region": "84",
+      "surface_bio_dpt.date_mesure.year": "2022-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 10.99459828737109,
+      "surface_bio_dpt.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Nouvelle-Aquitaine",
+      "surface_bio_dpt.geocode_region": "75",
+      "surface_bio_dpt.date_mesure.year": "2022-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 9.565527158973623,
+      "surface_bio_dpt.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "surface_bio_dpt.geocode_region": "93",
+      "surface_bio_dpt.date_mesure.year": "2022-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 33.182836006319,
+      "surface_bio_dpt.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "La Réunion",
+      "surface_bio_dpt.geocode_region": "04",
+      "surface_bio_dpt.date_mesure.year": "2022-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 5.75,
+      "surface_bio_dpt.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Guyane",
+      "surface_bio_dpt.geocode_region": "03",
+      "surface_bio_dpt.date_mesure.year": "2022-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 10.43,
+      "surface_bio_dpt.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Île-de-France",
+      "surface_bio_dpt.geocode_region": "11",
+      "surface_bio_dpt.date_mesure.year": "2022-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 7.528399627529564,
+      "surface_bio_dpt.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Occitanie",
+      "surface_bio_dpt.geocode_region": "76",
+      "surface_bio_dpt.date_mesure.year": "2022-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 19.67975701060044,
+      "surface_bio_dpt.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Grand Est",
+      "surface_bio_dpt.geocode_region": "44",
+      "surface_bio_dpt.date_mesure.year": "2023-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 7.578310238059386,
+      "surface_bio_dpt.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Martinique",
+      "surface_bio_dpt.geocode_region": "02",
+      "surface_bio_dpt.date_mesure.year": "2023-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 3.34,
+      "surface_bio_dpt.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Corse",
+      "surface_bio_dpt.geocode_region": "94",
+      "surface_bio_dpt.date_mesure.year": "2023-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 21.75083470119908,
+      "surface_bio_dpt.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Île-de-France",
+      "surface_bio_dpt.geocode_region": "11",
+      "surface_bio_dpt.date_mesure.year": "2023-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 7.244957697704579,
+      "surface_bio_dpt.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Occitanie",
+      "surface_bio_dpt.geocode_region": "76",
+      "surface_bio_dpt.date_mesure.year": "2023-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 19.21624746328635,
+      "surface_bio_dpt.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Auvergne-Rhône-Alpes",
+      "surface_bio_dpt.geocode_region": "84",
+      "surface_bio_dpt.date_mesure.year": "2023-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 10.830217576067948,
+      "surface_bio_dpt.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "surface_bio_dpt.geocode_region": "93",
+      "surface_bio_dpt.date_mesure.year": "2023-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 34.74558697192015,
+      "surface_bio_dpt.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "La Réunion",
+      "surface_bio_dpt.geocode_region": "04",
+      "surface_bio_dpt.date_mesure.year": "2023-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 6.39,
+      "surface_bio_dpt.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Bourgogne-Franche-Comté",
+      "surface_bio_dpt.geocode_region": "27",
+      "surface_bio_dpt.date_mesure.year": "2023-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 10.181680822051584,
+      "surface_bio_dpt.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Normandie",
+      "surface_bio_dpt.geocode_region": "28",
+      "surface_bio_dpt.date_mesure.year": "2023-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 6.678226266320462,
+      "surface_bio_dpt.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Nouvelle-Aquitaine",
+      "surface_bio_dpt.geocode_region": "75",
+      "surface_bio_dpt.date_mesure.year": "2023-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 9.2257504284318,
+      "surface_bio_dpt.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Pays de la Loire",
+      "surface_bio_dpt.geocode_region": "52",
+      "surface_bio_dpt.date_mesure.year": "2023-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 12.471013699513682,
+      "surface_bio_dpt.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Guadeloupe",
+      "surface_bio_dpt.geocode_region": "01",
+      "surface_bio_dpt.date_mesure.year": "2023-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 4.51,
+      "surface_bio_dpt.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Hauts-de-France",
+      "surface_bio_dpt.geocode_region": "32",
+      "surface_bio_dpt.date_mesure.year": "2023-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 2.7249101118682852,
+      "surface_bio_dpt.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Guyane",
+      "surface_bio_dpt.geocode_region": "03",
+      "surface_bio_dpt.date_mesure.year": "2023-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 10.959999999999999,
+      "surface_bio_dpt.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Centre-Val de Loire",
+      "surface_bio_dpt.geocode_region": "24",
+      "surface_bio_dpt.date_mesure.year": "2023-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 4.687996534825926,
+      "surface_bio_dpt.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Mayotte",
+      "surface_bio_dpt.geocode_region": "06",
+      "surface_bio_dpt.date_mesure.year": "2023-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 2.16,
+      "surface_bio_dpt.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Bretagne",
+      "surface_bio_dpt.geocode_region": "53",
+      "surface_bio_dpt.date_mesure.year": "2023-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 10.310235641913575,
+      "surface_bio_dpt.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Bourgogne-Franche-Comté",
+      "surface_bio_dpt.geocode_region": "27",
+      "surface_bio_dpt.date_mesure.year": "2024-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 9.978982068539988,
+      "surface_bio_dpt.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Centre-Val de Loire",
+      "surface_bio_dpt.geocode_region": "24",
+      "surface_bio_dpt.date_mesure.year": "2024-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 4.5062346794136365,
+      "surface_bio_dpt.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Corse",
+      "surface_bio_dpt.geocode_region": "94",
+      "surface_bio_dpt.date_mesure.year": "2024-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 20.200489275613688,
+      "surface_bio_dpt.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Auvergne-Rhône-Alpes",
+      "surface_bio_dpt.geocode_region": "84",
+      "surface_bio_dpt.date_mesure.year": "2024-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 10.731045450808438,
+      "surface_bio_dpt.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Île-de-France",
+      "surface_bio_dpt.geocode_region": "11",
+      "surface_bio_dpt.date_mesure.year": "2024-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 7.07739689955517,
+      "surface_bio_dpt.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Guyane",
+      "surface_bio_dpt.geocode_region": "03",
+      "surface_bio_dpt.date_mesure.year": "2024-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 11.930000000000001,
+      "surface_bio_dpt.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Normandie",
+      "surface_bio_dpt.geocode_region": "28",
+      "surface_bio_dpt.date_mesure.year": "2024-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 6.529784305928054,
+      "surface_bio_dpt.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Occitanie",
+      "surface_bio_dpt.geocode_region": "76",
+      "surface_bio_dpt.date_mesure.year": "2024-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 18.987930724805807,
+      "surface_bio_dpt.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Grand Est",
+      "surface_bio_dpt.geocode_region": "44",
+      "surface_bio_dpt.date_mesure.year": "2024-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 7.323048348204569,
+      "surface_bio_dpt.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Bretagne",
+      "surface_bio_dpt.geocode_region": "53",
+      "surface_bio_dpt.date_mesure.year": "2024-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 10.299724123011668,
+      "surface_bio_dpt.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "surface_bio_dpt.geocode_region": "93",
+      "surface_bio_dpt.date_mesure.year": "2024-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 33.397345291742276,
+      "surface_bio_dpt.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Martinique",
+      "surface_bio_dpt.geocode_region": "02",
+      "surface_bio_dpt.date_mesure.year": "2024-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 3.82,
+      "surface_bio_dpt.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Hauts-de-France",
+      "surface_bio_dpt.geocode_region": "32",
+      "surface_bio_dpt.date_mesure.year": "2024-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 2.6497771183700682,
+      "surface_bio_dpt.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Nouvelle-Aquitaine",
+      "surface_bio_dpt.geocode_region": "75",
+      "surface_bio_dpt.date_mesure.year": "2024-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 8.869714681945265,
+      "surface_bio_dpt.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Guadeloupe",
+      "surface_bio_dpt.geocode_region": "01",
+      "surface_bio_dpt.date_mesure.year": "2024-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 4.65,
+      "surface_bio_dpt.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Mayotte",
+      "surface_bio_dpt.geocode_region": "06",
+      "surface_bio_dpt.date_mesure.year": "2024-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 4.13,
+      "surface_bio_dpt.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "Pays de la Loire",
+      "surface_bio_dpt.geocode_region": "52",
+      "surface_bio_dpt.date_mesure.year": "2024-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 12.246678187556228,
+      "surface_bio_dpt.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "surface_bio_dpt.libelle_region": "La Réunion",
+      "surface_bio_dpt.geocode_region": "04",
+      "surface_bio_dpt.date_mesure.year": "2024-01-01T00:00:00.000",
+      "surface_bio_dpt.id_23": 6,
+      "surface_bio_dpt.date_mesure": "2024-01-01T00:00:00.000"
+    }
+  ],
+  "measureMeta": {
+    "libelle_indicateur": "Part de la surface agricole en agriculture biologique dans la surface agricole utile",
+    "statut_commun": "Mesure",
+    "unite": "%",
+    "id_parents": "544, 606",
+    "methode_calcul": "Les données utilisées sont celles disponibles sur l'API de l'agence bio au niveau départemental et EPCI.",
+    "numerator": "id_606",
+    "denominator": "sau"
+  }
+}

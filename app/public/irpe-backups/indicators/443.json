@@ -1,0 +1,395 @@
+{
+  "cubeName": "emission_moy_co2_immat_vp_dpt",
+  "measureName": "emission_moy_co2_immat_vp_dpt.id_443",
+  "timeDimension": "emission_moy_co2_immat_vp_dpt.date_mesure",
+  "extraDimension": "emission_moy_co2_immat_vp_dpt.geocode_departement",
+  "data": [
+    {
+      "emission_moy_co2_immat_vp_dpt.libelle_region": "Île-de-France",
+      "emission_moy_co2_immat_vp_dpt.geocode_region": "11",
+      "emission_moy_co2_immat_vp_dpt.date_mesure.year": "2022-01-01T00:00:00.000",
+      "emission_moy_co2_immat_vp_dpt.id_443": 115.01071032270241,
+      "emission_moy_co2_immat_vp_dpt.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "emission_moy_co2_immat_vp_dpt.libelle_region": "Nouvelle-Aquitaine",
+      "emission_moy_co2_immat_vp_dpt.geocode_region": "75",
+      "emission_moy_co2_immat_vp_dpt.date_mesure.year": "2022-01-01T00:00:00.000",
+      "emission_moy_co2_immat_vp_dpt.id_443": 118.18228216013763,
+      "emission_moy_co2_immat_vp_dpt.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "emission_moy_co2_immat_vp_dpt.libelle_region": "La Réunion",
+      "emission_moy_co2_immat_vp_dpt.geocode_region": "04",
+      "emission_moy_co2_immat_vp_dpt.date_mesure.year": "2022-01-01T00:00:00.000",
+      "emission_moy_co2_immat_vp_dpt.id_443": 122.59999999999998,
+      "emission_moy_co2_immat_vp_dpt.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "emission_moy_co2_immat_vp_dpt.libelle_region": "Grand Est",
+      "emission_moy_co2_immat_vp_dpt.geocode_region": "44",
+      "emission_moy_co2_immat_vp_dpt.date_mesure.year": "2022-01-01T00:00:00.000",
+      "emission_moy_co2_immat_vp_dpt.id_443": 118.83027598331407,
+      "emission_moy_co2_immat_vp_dpt.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "emission_moy_co2_immat_vp_dpt.libelle_region": "Pays de la Loire",
+      "emission_moy_co2_immat_vp_dpt.geocode_region": "52",
+      "emission_moy_co2_immat_vp_dpt.date_mesure.year": "2022-01-01T00:00:00.000",
+      "emission_moy_co2_immat_vp_dpt.id_443": 118.55923937639476,
+      "emission_moy_co2_immat_vp_dpt.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "emission_moy_co2_immat_vp_dpt.libelle_region": "Occitanie",
+      "emission_moy_co2_immat_vp_dpt.geocode_region": "76",
+      "emission_moy_co2_immat_vp_dpt.date_mesure.year": "2022-01-01T00:00:00.000",
+      "emission_moy_co2_immat_vp_dpt.id_443": 117.3964106011139,
+      "emission_moy_co2_immat_vp_dpt.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "emission_moy_co2_immat_vp_dpt.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "emission_moy_co2_immat_vp_dpt.geocode_region": "93",
+      "emission_moy_co2_immat_vp_dpt.date_mesure.year": "2022-01-01T00:00:00.000",
+      "emission_moy_co2_immat_vp_dpt.id_443": 117.34085311971724,
+      "emission_moy_co2_immat_vp_dpt.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "emission_moy_co2_immat_vp_dpt.libelle_region": "Bretagne",
+      "emission_moy_co2_immat_vp_dpt.geocode_region": "53",
+      "emission_moy_co2_immat_vp_dpt.date_mesure.year": "2022-01-01T00:00:00.000",
+      "emission_moy_co2_immat_vp_dpt.id_443": 118.64026226782306,
+      "emission_moy_co2_immat_vp_dpt.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "emission_moy_co2_immat_vp_dpt.libelle_region": "Normandie",
+      "emission_moy_co2_immat_vp_dpt.geocode_region": "28",
+      "emission_moy_co2_immat_vp_dpt.date_mesure.year": "2022-01-01T00:00:00.000",
+      "emission_moy_co2_immat_vp_dpt.id_443": 118.84221446955928,
+      "emission_moy_co2_immat_vp_dpt.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "emission_moy_co2_immat_vp_dpt.libelle_region": "Mayotte",
+      "emission_moy_co2_immat_vp_dpt.geocode_region": "06",
+      "emission_moy_co2_immat_vp_dpt.date_mesure.year": "2022-01-01T00:00:00.000",
+      "emission_moy_co2_immat_vp_dpt.id_443": 127.9,
+      "emission_moy_co2_immat_vp_dpt.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "emission_moy_co2_immat_vp_dpt.libelle_region": "Guadeloupe",
+      "emission_moy_co2_immat_vp_dpt.geocode_region": "01",
+      "emission_moy_co2_immat_vp_dpt.date_mesure.year": "2022-01-01T00:00:00.000",
+      "emission_moy_co2_immat_vp_dpt.id_443": 126.09999999999998,
+      "emission_moy_co2_immat_vp_dpt.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "emission_moy_co2_immat_vp_dpt.libelle_region": "Bourgogne-Franche-Comté",
+      "emission_moy_co2_immat_vp_dpt.geocode_region": "27",
+      "emission_moy_co2_immat_vp_dpt.date_mesure.year": "2022-01-01T00:00:00.000",
+      "emission_moy_co2_immat_vp_dpt.id_443": 119.27153304385764,
+      "emission_moy_co2_immat_vp_dpt.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "emission_moy_co2_immat_vp_dpt.libelle_region": "Guyane",
+      "emission_moy_co2_immat_vp_dpt.geocode_region": "03",
+      "emission_moy_co2_immat_vp_dpt.date_mesure.year": "2022-01-01T00:00:00.000",
+      "emission_moy_co2_immat_vp_dpt.id_443": 126.39999999999999,
+      "emission_moy_co2_immat_vp_dpt.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "emission_moy_co2_immat_vp_dpt.libelle_region": "Hauts-de-France",
+      "emission_moy_co2_immat_vp_dpt.geocode_region": "32",
+      "emission_moy_co2_immat_vp_dpt.date_mesure.year": "2022-01-01T00:00:00.000",
+      "emission_moy_co2_immat_vp_dpt.id_443": 119.89779138513512,
+      "emission_moy_co2_immat_vp_dpt.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "emission_moy_co2_immat_vp_dpt.libelle_region": "Corse",
+      "emission_moy_co2_immat_vp_dpt.geocode_region": "94",
+      "emission_moy_co2_immat_vp_dpt.date_mesure.year": "2022-01-01T00:00:00.000",
+      "emission_moy_co2_immat_vp_dpt.id_443": 117.25170801869831,
+      "emission_moy_co2_immat_vp_dpt.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "emission_moy_co2_immat_vp_dpt.libelle_region": "Martinique",
+      "emission_moy_co2_immat_vp_dpt.geocode_region": "02",
+      "emission_moy_co2_immat_vp_dpt.date_mesure.year": "2022-01-01T00:00:00.000",
+      "emission_moy_co2_immat_vp_dpt.id_443": 125.9,
+      "emission_moy_co2_immat_vp_dpt.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "emission_moy_co2_immat_vp_dpt.libelle_region": "Centre-Val de Loire",
+      "emission_moy_co2_immat_vp_dpt.geocode_region": "24",
+      "emission_moy_co2_immat_vp_dpt.date_mesure.year": "2022-01-01T00:00:00.000",
+      "emission_moy_co2_immat_vp_dpt.id_443": 120.16826877977735,
+      "emission_moy_co2_immat_vp_dpt.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "emission_moy_co2_immat_vp_dpt.libelle_region": "Auvergne-Rhône-Alpes",
+      "emission_moy_co2_immat_vp_dpt.geocode_region": "84",
+      "emission_moy_co2_immat_vp_dpt.date_mesure.year": "2022-01-01T00:00:00.000",
+      "emission_moy_co2_immat_vp_dpt.id_443": 119.19498483909881,
+      "emission_moy_co2_immat_vp_dpt.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "emission_moy_co2_immat_vp_dpt.libelle_region": "Corse",
+      "emission_moy_co2_immat_vp_dpt.geocode_region": "94",
+      "emission_moy_co2_immat_vp_dpt.date_mesure.year": "2023-01-01T00:00:00.000",
+      "emission_moy_co2_immat_vp_dpt.id_443": 118.19375668620825,
+      "emission_moy_co2_immat_vp_dpt.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "emission_moy_co2_immat_vp_dpt.libelle_region": "Occitanie",
+      "emission_moy_co2_immat_vp_dpt.geocode_region": "76",
+      "emission_moy_co2_immat_vp_dpt.date_mesure.year": "2023-01-01T00:00:00.000",
+      "emission_moy_co2_immat_vp_dpt.id_443": 114.56878780096878,
+      "emission_moy_co2_immat_vp_dpt.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "emission_moy_co2_immat_vp_dpt.libelle_region": "Martinique",
+      "emission_moy_co2_immat_vp_dpt.geocode_region": "02",
+      "emission_moy_co2_immat_vp_dpt.date_mesure.year": "2023-01-01T00:00:00.000",
+      "emission_moy_co2_immat_vp_dpt.id_443": 125.5,
+      "emission_moy_co2_immat_vp_dpt.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "emission_moy_co2_immat_vp_dpt.libelle_region": "La Réunion",
+      "emission_moy_co2_immat_vp_dpt.geocode_region": "04",
+      "emission_moy_co2_immat_vp_dpt.date_mesure.year": "2023-01-01T00:00:00.000",
+      "emission_moy_co2_immat_vp_dpt.id_443": 121.5,
+      "emission_moy_co2_immat_vp_dpt.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "emission_moy_co2_immat_vp_dpt.libelle_region": "Auvergne-Rhône-Alpes",
+      "emission_moy_co2_immat_vp_dpt.geocode_region": "84",
+      "emission_moy_co2_immat_vp_dpt.date_mesure.year": "2023-01-01T00:00:00.000",
+      "emission_moy_co2_immat_vp_dpt.id_443": 116.12606640019956,
+      "emission_moy_co2_immat_vp_dpt.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "emission_moy_co2_immat_vp_dpt.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "emission_moy_co2_immat_vp_dpt.geocode_region": "93",
+      "emission_moy_co2_immat_vp_dpt.date_mesure.year": "2023-01-01T00:00:00.000",
+      "emission_moy_co2_immat_vp_dpt.id_443": 114.30708027121007,
+      "emission_moy_co2_immat_vp_dpt.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "emission_moy_co2_immat_vp_dpt.libelle_region": "Mayotte",
+      "emission_moy_co2_immat_vp_dpt.geocode_region": "06",
+      "emission_moy_co2_immat_vp_dpt.date_mesure.year": "2023-01-01T00:00:00.000",
+      "emission_moy_co2_immat_vp_dpt.id_443": 128,
+      "emission_moy_co2_immat_vp_dpt.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "emission_moy_co2_immat_vp_dpt.libelle_region": "Guadeloupe",
+      "emission_moy_co2_immat_vp_dpt.geocode_region": "01",
+      "emission_moy_co2_immat_vp_dpt.date_mesure.year": "2023-01-01T00:00:00.000",
+      "emission_moy_co2_immat_vp_dpt.id_443": 125.9,
+      "emission_moy_co2_immat_vp_dpt.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "emission_moy_co2_immat_vp_dpt.libelle_region": "Bretagne",
+      "emission_moy_co2_immat_vp_dpt.geocode_region": "53",
+      "emission_moy_co2_immat_vp_dpt.date_mesure.year": "2023-01-01T00:00:00.000",
+      "emission_moy_co2_immat_vp_dpt.id_443": 116.9017196846112,
+      "emission_moy_co2_immat_vp_dpt.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "emission_moy_co2_immat_vp_dpt.libelle_region": "Centre-Val de Loire",
+      "emission_moy_co2_immat_vp_dpt.geocode_region": "24",
+      "emission_moy_co2_immat_vp_dpt.date_mesure.year": "2023-01-01T00:00:00.000",
+      "emission_moy_co2_immat_vp_dpt.id_443": 117.07110645226041,
+      "emission_moy_co2_immat_vp_dpt.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "emission_moy_co2_immat_vp_dpt.libelle_region": "Île-de-France",
+      "emission_moy_co2_immat_vp_dpt.geocode_region": "11",
+      "emission_moy_co2_immat_vp_dpt.date_mesure.year": "2023-01-01T00:00:00.000",
+      "emission_moy_co2_immat_vp_dpt.id_443": 110.80482484914229,
+      "emission_moy_co2_immat_vp_dpt.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "emission_moy_co2_immat_vp_dpt.libelle_region": "Grand Est",
+      "emission_moy_co2_immat_vp_dpt.geocode_region": "44",
+      "emission_moy_co2_immat_vp_dpt.date_mesure.year": "2023-01-01T00:00:00.000",
+      "emission_moy_co2_immat_vp_dpt.id_443": 116.23722511306717,
+      "emission_moy_co2_immat_vp_dpt.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "emission_moy_co2_immat_vp_dpt.libelle_region": "Pays de la Loire",
+      "emission_moy_co2_immat_vp_dpt.geocode_region": "52",
+      "emission_moy_co2_immat_vp_dpt.date_mesure.year": "2023-01-01T00:00:00.000",
+      "emission_moy_co2_immat_vp_dpt.id_443": 116.58459269805756,
+      "emission_moy_co2_immat_vp_dpt.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "emission_moy_co2_immat_vp_dpt.libelle_region": "Bourgogne-Franche-Comté",
+      "emission_moy_co2_immat_vp_dpt.geocode_region": "27",
+      "emission_moy_co2_immat_vp_dpt.date_mesure.year": "2023-01-01T00:00:00.000",
+      "emission_moy_co2_immat_vp_dpt.id_443": 117.1445666334585,
+      "emission_moy_co2_immat_vp_dpt.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "emission_moy_co2_immat_vp_dpt.libelle_region": "Nouvelle-Aquitaine",
+      "emission_moy_co2_immat_vp_dpt.geocode_region": "75",
+      "emission_moy_co2_immat_vp_dpt.date_mesure.year": "2023-01-01T00:00:00.000",
+      "emission_moy_co2_immat_vp_dpt.id_443": 116.11384265674386,
+      "emission_moy_co2_immat_vp_dpt.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "emission_moy_co2_immat_vp_dpt.libelle_region": "Guyane",
+      "emission_moy_co2_immat_vp_dpt.geocode_region": "03",
+      "emission_moy_co2_immat_vp_dpt.date_mesure.year": "2023-01-01T00:00:00.000",
+      "emission_moy_co2_immat_vp_dpt.id_443": 126.1,
+      "emission_moy_co2_immat_vp_dpt.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "emission_moy_co2_immat_vp_dpt.libelle_region": "Normandie",
+      "emission_moy_co2_immat_vp_dpt.geocode_region": "28",
+      "emission_moy_co2_immat_vp_dpt.date_mesure.year": "2023-01-01T00:00:00.000",
+      "emission_moy_co2_immat_vp_dpt.id_443": 118.09877760406486,
+      "emission_moy_co2_immat_vp_dpt.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "emission_moy_co2_immat_vp_dpt.libelle_region": "Hauts-de-France",
+      "emission_moy_co2_immat_vp_dpt.geocode_region": "32",
+      "emission_moy_co2_immat_vp_dpt.date_mesure.year": "2023-01-01T00:00:00.000",
+      "emission_moy_co2_immat_vp_dpt.id_443": 117.69936403264319,
+      "emission_moy_co2_immat_vp_dpt.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "emission_moy_co2_immat_vp_dpt.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "emission_moy_co2_immat_vp_dpt.geocode_region": "93",
+      "emission_moy_co2_immat_vp_dpt.date_mesure.year": "2024-01-01T00:00:00.000",
+      "emission_moy_co2_immat_vp_dpt.id_443": 109.89150494290176,
+      "emission_moy_co2_immat_vp_dpt.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "emission_moy_co2_immat_vp_dpt.libelle_region": "Bretagne",
+      "emission_moy_co2_immat_vp_dpt.geocode_region": "53",
+      "emission_moy_co2_immat_vp_dpt.date_mesure.year": "2024-01-01T00:00:00.000",
+      "emission_moy_co2_immat_vp_dpt.id_443": 113.5757634770293,
+      "emission_moy_co2_immat_vp_dpt.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "emission_moy_co2_immat_vp_dpt.libelle_region": "Corse",
+      "emission_moy_co2_immat_vp_dpt.geocode_region": "94",
+      "emission_moy_co2_immat_vp_dpt.date_mesure.year": "2024-01-01T00:00:00.000",
+      "emission_moy_co2_immat_vp_dpt.id_443": 116.92088537489019,
+      "emission_moy_co2_immat_vp_dpt.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "emission_moy_co2_immat_vp_dpt.libelle_region": "Grand Est",
+      "emission_moy_co2_immat_vp_dpt.geocode_region": "44",
+      "emission_moy_co2_immat_vp_dpt.date_mesure.year": "2024-01-01T00:00:00.000",
+      "emission_moy_co2_immat_vp_dpt.id_443": 112.9782004782782,
+      "emission_moy_co2_immat_vp_dpt.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "emission_moy_co2_immat_vp_dpt.libelle_region": "Centre-Val de Loire",
+      "emission_moy_co2_immat_vp_dpt.geocode_region": "24",
+      "emission_moy_co2_immat_vp_dpt.date_mesure.year": "2024-01-01T00:00:00.000",
+      "emission_moy_co2_immat_vp_dpt.id_443": 113.80209435209673,
+      "emission_moy_co2_immat_vp_dpt.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "emission_moy_co2_immat_vp_dpt.libelle_region": "Normandie",
+      "emission_moy_co2_immat_vp_dpt.geocode_region": "28",
+      "emission_moy_co2_immat_vp_dpt.date_mesure.year": "2024-01-01T00:00:00.000",
+      "emission_moy_co2_immat_vp_dpt.id_443": 115.26816354260639,
+      "emission_moy_co2_immat_vp_dpt.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "emission_moy_co2_immat_vp_dpt.libelle_region": "Guyane",
+      "emission_moy_co2_immat_vp_dpt.geocode_region": "03",
+      "emission_moy_co2_immat_vp_dpt.date_mesure.year": "2024-01-01T00:00:00.000",
+      "emission_moy_co2_immat_vp_dpt.id_443": 124.80000000000001,
+      "emission_moy_co2_immat_vp_dpt.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "emission_moy_co2_immat_vp_dpt.libelle_region": "Île-de-France",
+      "emission_moy_co2_immat_vp_dpt.geocode_region": "11",
+      "emission_moy_co2_immat_vp_dpt.date_mesure.year": "2024-01-01T00:00:00.000",
+      "emission_moy_co2_immat_vp_dpt.id_443": 108.41011827232087,
+      "emission_moy_co2_immat_vp_dpt.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "emission_moy_co2_immat_vp_dpt.libelle_region": "Pays de la Loire",
+      "emission_moy_co2_immat_vp_dpt.geocode_region": "52",
+      "emission_moy_co2_immat_vp_dpt.date_mesure.year": "2024-01-01T00:00:00.000",
+      "emission_moy_co2_immat_vp_dpt.id_443": 114.10682849123873,
+      "emission_moy_co2_immat_vp_dpt.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "emission_moy_co2_immat_vp_dpt.libelle_region": "Auvergne-Rhône-Alpes",
+      "emission_moy_co2_immat_vp_dpt.geocode_region": "84",
+      "emission_moy_co2_immat_vp_dpt.date_mesure.year": "2024-01-01T00:00:00.000",
+      "emission_moy_co2_immat_vp_dpt.id_443": 112.51133574677432,
+      "emission_moy_co2_immat_vp_dpt.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "emission_moy_co2_immat_vp_dpt.libelle_region": "Bourgogne-Franche-Comté",
+      "emission_moy_co2_immat_vp_dpt.geocode_region": "27",
+      "emission_moy_co2_immat_vp_dpt.date_mesure.year": "2024-01-01T00:00:00.000",
+      "emission_moy_co2_immat_vp_dpt.id_443": 113.92081446158143,
+      "emission_moy_co2_immat_vp_dpt.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "emission_moy_co2_immat_vp_dpt.libelle_region": "Hauts-de-France",
+      "emission_moy_co2_immat_vp_dpt.geocode_region": "32",
+      "emission_moy_co2_immat_vp_dpt.date_mesure.year": "2024-01-01T00:00:00.000",
+      "emission_moy_co2_immat_vp_dpt.id_443": 114.7507539082794,
+      "emission_moy_co2_immat_vp_dpt.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "emission_moy_co2_immat_vp_dpt.libelle_region": "Guadeloupe",
+      "emission_moy_co2_immat_vp_dpt.geocode_region": "01",
+      "emission_moy_co2_immat_vp_dpt.date_mesure.year": "2024-01-01T00:00:00.000",
+      "emission_moy_co2_immat_vp_dpt.id_443": 121.1,
+      "emission_moy_co2_immat_vp_dpt.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "emission_moy_co2_immat_vp_dpt.libelle_region": "La Réunion",
+      "emission_moy_co2_immat_vp_dpt.geocode_region": "04",
+      "emission_moy_co2_immat_vp_dpt.date_mesure.year": "2024-01-01T00:00:00.000",
+      "emission_moy_co2_immat_vp_dpt.id_443": 116.6,
+      "emission_moy_co2_immat_vp_dpt.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "emission_moy_co2_immat_vp_dpt.libelle_region": "Martinique",
+      "emission_moy_co2_immat_vp_dpt.geocode_region": "02",
+      "emission_moy_co2_immat_vp_dpt.date_mesure.year": "2024-01-01T00:00:00.000",
+      "emission_moy_co2_immat_vp_dpt.id_443": 122.4,
+      "emission_moy_co2_immat_vp_dpt.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "emission_moy_co2_immat_vp_dpt.libelle_region": "Occitanie",
+      "emission_moy_co2_immat_vp_dpt.geocode_region": "76",
+      "emission_moy_co2_immat_vp_dpt.date_mesure.year": "2024-01-01T00:00:00.000",
+      "emission_moy_co2_immat_vp_dpt.id_443": 111.91449530352538,
+      "emission_moy_co2_immat_vp_dpt.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "emission_moy_co2_immat_vp_dpt.libelle_region": "Nouvelle-Aquitaine",
+      "emission_moy_co2_immat_vp_dpt.geocode_region": "75",
+      "emission_moy_co2_immat_vp_dpt.date_mesure.year": "2024-01-01T00:00:00.000",
+      "emission_moy_co2_immat_vp_dpt.id_443": 113.67656647408239,
+      "emission_moy_co2_immat_vp_dpt.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "emission_moy_co2_immat_vp_dpt.libelle_region": "Mayotte",
+      "emission_moy_co2_immat_vp_dpt.geocode_region": "06",
+      "emission_moy_co2_immat_vp_dpt.date_mesure.year": "2024-01-01T00:00:00.000",
+      "emission_moy_co2_immat_vp_dpt.id_443": 126.2,
+      "emission_moy_co2_immat_vp_dpt.date_mesure": "2024-01-01T00:00:00.000"
+    }
+  ],
+  "measureMeta": {
+    "libelle_indicateur": "Emissions moyennes de co2 (g/km) pour les véhicules thermiques neufs",
+    "statut_commun": "Mesure",
+    "unite": "g/km",
+    "methode_calcul": "Nous utilisons des données fournies par le SDES sur les émissions moyennes de CO2 ainsi que les données provenant du nombre de nouvelles immatriculations publiées aussi par le SDES:  - Les données moyennes d'émission moyenne de CO2 du SDES étant partielles sur 2025, nous faisons le choix de ne pas les publier - Sont considérés comme véhicules thermiques les véhicules dont le carburant est l'un de ces carburants:  - 'Hybride rechargeable' - 'Diesel - hybride NR' - 'Essence - thermique' - 'Diesel - thermique' - 'Essence - hybride NR' - 'Gaz et ND'",
+    "fonction_calcul": "(emissions_totales_veh_thermique / nb_vehicules_thermique)",
+    "numerator": "emissions_totales_veh_thermique",
+    "denominator": "nb_vehicules_thermique"
+  }
+}
