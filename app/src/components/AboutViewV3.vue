@@ -3,7 +3,7 @@
     <!-- Hero -->
     <header class="home-v3__hero">
       <p class="home-v3__eyebrow">Le point de départ</p>
-      <h1 class="fr-h3 home-v3__title">Réussir plusieurs transitions en même temps</h1>
+      <h1 class="fr-h3 home-v3__title">Réussir simultanément nos transitions écologiques</h1>
 
       <div class="fr-grid-row fr-grid-row--gutters home-v3__hero-grid">
         <div class="fr-col-12 fr-col-lg-6">
@@ -23,7 +23,8 @@
         <div class="fr-col-12 fr-col-lg-6 home-v3__hero-text fr-text--md">
           <p>
             Réduire nos émissions, s'adapter au climat qui change, protéger l'eau et la nature, moins gaspiller, moins polluer.
-            Ces défis sont liés — et ils nous concernent tous, dans notre façon de nous déplacer, nous loger, nous nourrir.
+            Ces défis systémiques sont interdépendants — et ils nous concernent tous, dans notre façon de nous déplacer, nous loger, nous nourrir.
+            Fort de plus de 250 indicateurs, ce baromètre propose une vision quantifiée de ces transitions.
           </p>
           <div
             id="home-v3-hero-intro-region"
@@ -58,12 +59,13 @@
       </div>
     </header>
 
-    <!-- 1 - Ce qu'on veut réussir -->
+    <!-- 1 - Améliorer l'état de l'environnement -->
     <section class="home-v3__section fr-mt-6w" aria-labelledby="v3-enjeux-heading">
-      <p class="home-v3__eyebrow home-v3__eyebrow--pill">1 — Ce qu'on veut réussir</p>
-      <h2 id="v3-enjeux-heading" class="fr-h5 home-v3__section-title">6 grands enjeux environnementaux</h2>
+      <p class="home-v3__eyebrow home-v3__eyebrow--pill">1 — Améliorer l'état de l'environnement</p>
+      <h2 id="v3-enjeux-heading" class="fr-h5 home-v3__section-title">6 grands objectifs stratégiques</h2>
       <p class="home-v3__lead">
-        Ce sont les objectifs partagés au niveau européen. Tout ce que fait l'État sert un ou plusieurs de ces enjeux.
+        L'amélioration concrète de l'état de l'environnement constitue la finalité de ces politiques publiques.
+        Pour mesurer la réussite de cette trajectoire, ce baromètre est structuré autour des 6 objectifs de la taxonomie européenne.
       </p>
       <router-link
         :to="{ name: etatRouteName, query: { section: syntheseSection } }"
@@ -83,21 +85,26 @@
                 <eau-img v-if="axe.useEau" width="56px" height="56px" />
                 <dsfr-pictogram v-else-if="axe.pictoId" :picto-id="axe.pictoId" :size="56" />
               </div>
-              <h3 class="home-v3-card__heading">{{ axe.name }}</h3>
+              <h3 class="home-v3-card__heading">{{ axe.displayName }}</h3>
               <span class="fr-icon-arrow-right-line home-v3-card__arrow" aria-hidden="true" />
             </div>
           </router-link>
         </div>
       </div>
+      <p class="home-v3__example fr-text--sm fr-mt-2w">
+        <span class="home-v3__example-label">Exemple&nbsp;:</span>
+        l'objectif « Atténuation du changement climatique » se mesure notamment au travers de l'évolution des émissions
+        de gaz à effet de serre du secteur des transports, suivie dans le baromètre.
+      </p>
     </section>
 
-    <!-- 2 - Où ça se joue -->
+    <!-- 2 - Déployer nos chantiers sectoriels -->
     <section class="home-v3__section fr-mt-6w" aria-labelledby="v3-secteurs-heading">
-      <p class="home-v3__eyebrow home-v3__eyebrow--pill">2 — Où ça se joue</p>
-      <h2 id="v3-secteurs-heading" class="fr-h5 home-v3__section-title">6 secteurs de notre vie quotidienne</h2>
+      <p class="home-v3__eyebrow home-v3__eyebrow--pill">2 — Déployer nos chantiers sectoriels</p>
+      <h2 id="v3-secteurs-heading" class="fr-h5 home-v3__section-title">Des transformations tangibles de notre quotidien</h2>
       <p class="home-v3__lead">
-        L'action se déploie dans 6 grands secteurs. Et la clé, c'est que les enjeux les <strong>traversent</strong>&nbsp;:
-        un même secteur sert plusieurs enjeux à la fois.
+        L'atteinte de nos cibles écologiques impose le déploiement de transformations concrètes, structurées par grands
+        secteurs d'activité. Chaque secteur fait l'objet de chantiers précis.
       </p>
       <router-link
         :to="{ name: chantiersRouteName, query: { section: syntheseSection } }"
@@ -123,15 +130,23 @@
           </router-link>
         </div>
       </div>
+      <p class="home-v3__example fr-text--sm fr-mt-2w">
+        <span class="home-v3__example-label">Exemple&nbsp;:</span>
+        dans le secteur « Se loger », le chantier de rénovation énergétique des bâtiments contribue à la fois à
+        l'atténuation du changement climatique et à la prévention de la pollution.
+      </p>
     </section>
 
-    <!-- 3 - Sur quoi l'État s'appuie -->
+    <!-- 3 - Planifier et évaluer -->
     <section class="home-v3__section fr-mt-6w fr-mb-4w" aria-labelledby="v3-strategies-heading">
-      <p class="home-v3__eyebrow home-v3__eyebrow--pill">3 — Sur quoi l'État s'appuie</p>
-      <h2 id="v3-strategies-heading" class="fr-h5 home-v3__section-title">Des stratégies dans tous les secteurs</h2>
+      <p class="home-v3__eyebrow home-v3__eyebrow--pill">3 — Planifier et évaluer</p>
+      <h2 id="v3-strategies-heading" class="fr-h5 home-v3__section-title">Un pilotage unifié des feuilles de route environnementales</h2>
       <p class="home-v3__lead">
-        Derrière le baromètre, il y a des dizaines de feuilles de route de l'État. Loin du désordre, elles forment un ensemble
-        cohérent — chaque objectif vient de l'une d'elles.
+        Ce baromètre constitue l'outil central de pilotage qui synthétise les orientations stratégiques de l'État en matière
+        d'environnement. Il a été conçu pour rendre visibles les stratégies environnementales et faciliter le suivi de leurs
+        résultats. Les indicateurs proposés n'intègrent donc pas les données relatives aux moyens humains ou encore financiers
+        à mettre en œuvre pour les atteindre. De même, les impacts socio-économiques des transformations induites par le
+        dérèglement climatique ne sont pas intégrés à ce baromètre.
       </p>
 
       <ul class="home-v3-strategies" role="list">
@@ -203,10 +218,15 @@ const STRATEGIES = [
   { code: 'SNB 2030', label: 'Biodiversité', color: '#00a95f' },
   { code: 'Plan Eau', label: "", color: '#417dc4' },
   { code: 'PRÉPA', label: "Qualité de l'air", color: '#e1000f' },
-  { code: 'Loi AGEC', label: 'Anti-gaspillage', color: '#a558a0' },
+  { code: 'Loi AGEC', label: 'Économie circulaire', color: '#a558a0' },
   { code: 'SNANC', label: 'Alimentation', color: '#00aec7' },
   { code: '+', label: 'Restauration nature, forêt, mer…', color: '#3fad46' }
 ]
+
+/** Corrections d'intitulés relevées sur la taxonomie (cf. relecture). */
+const AXE_DISPLAY_NAME_OVERRIDES = {
+  'Prévention et le contrôle de la pollution': 'Prévention et contrôle de la pollution'
+}
 
 function pickSectorName(matchFn, names) {
   return names.find(matchFn) || null
@@ -250,6 +270,7 @@ export default {
         const ui = impactAxeUiForSlug(slug) || {}
         return {
           name,
+          displayName: AXE_DISPLAY_NAME_OVERRIDES[name] || name,
           slug,
           pictoId: ui.pictoId,
           useEau: !!ui.useEauImage,
@@ -486,6 +507,20 @@ export default {
   line-height: 1.6;
   color: #3a3a3a;
   text-align: left;
+}
+
+.home-v3__example {
+  max-width: 40rem;
+  margin-bottom: 0;
+  line-height: 1.6;
+  color: #3a3a3a;
+  text-align: left;
+  font-style: italic;
+}
+
+.home-v3__example-label {
+  font-weight: 700;
+  font-style: normal;
 }
 
 /* Cartes "enjeux" / "secteurs" : reprises du style home-tile existant */
