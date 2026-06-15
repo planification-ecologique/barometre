@@ -21,7 +21,7 @@
         <div class="fr-col-12 fr-col-lg-6 home-v3__hero-text fr-text--md">
           <p>
             Réduire nos émissions, s'adapter au climat qui change, protéger l'eau et la nature, moins gaspiller, moins polluer.
-            Ces défis systémiques sont interdépendants — et ils nous concernent tous, dans notre façon de nous déplacer, nous loger, nous nourrir.
+            Ces défis systémiques sont interdépendants - et ils nous concernent tous, dans notre façon de nous déplacer, nous loger, nous nourrir.
             Fort de plus de 250 indicateurs, ce baromètre propose une vision quantifiée de ces transitions.
           </p>
         </div>
@@ -30,7 +30,7 @@
 
     <!-- 1 - Améliorer l'état de l'environnement -->
     <section class="home-v3__section fr-mt-6w" aria-labelledby="v3-enjeux-heading">
-      <p class="home-v3__eyebrow home-v3__eyebrow--pill">1 — Améliorer l'état de l'environnement</p>
+      <p class="home-v3__eyebrow home-v3__eyebrow--pill">1 - Améliorer l'état de l'environnement</p>
       <h2 id="v3-enjeux-heading" class="fr-h5 home-v3__section-title">6 grands objectifs stratégiques</h2>
       <p class="home-v3__lead">
         L'amélioration concrète de l'état de l'environnement constitue la finalité de ces politiques publiques.
@@ -69,7 +69,7 @@
 
     <!-- 2 - Déployer nos chantiers sectoriels -->
     <section class="home-v3__section fr-mt-6w" aria-labelledby="v3-secteurs-heading">
-      <p class="home-v3__eyebrow home-v3__eyebrow--pill">2 — Déployer nos chantiers sectoriels</p>
+      <p class="home-v3__eyebrow home-v3__eyebrow--pill">2 - Déployer nos chantiers sectoriels</p>
       <h2 id="v3-secteurs-heading" class="fr-h5 home-v3__section-title">Des transformations tangibles de notre quotidien</h2>
       <p class="home-v3__lead">
         L'atteinte de nos cibles écologiques impose le déploiement de transformations concrètes, structurées par grands
@@ -108,7 +108,7 @@
 
     <!-- 3 - Planifier et évaluer -->
     <section class="home-v3__section fr-mt-6w fr-mb-4w" aria-labelledby="v3-strategies-heading">
-      <p class="home-v3__eyebrow home-v3__eyebrow--pill">3 — Planifier et évaluer</p>
+      <p class="home-v3__eyebrow home-v3__eyebrow--pill">3 - Planifier et évaluer</p>
       <h2 id="v3-strategies-heading" class="fr-h5 home-v3__section-title">Un pilotage unifié des feuilles de route environnementales</h2>
       <p class="home-v3__lead">
         Ce baromètre constitue l'outil central de pilotage qui synthétise les orientations stratégiques de l'État en matière
