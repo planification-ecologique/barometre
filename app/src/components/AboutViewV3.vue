@@ -229,7 +229,7 @@ const SECTOR_BLURBS = {
 /** Feuilles de route de l'État citées dans la proposition de refonte. */
 const STRATEGIES = [
   { code: 'SNBC 3', label: 'Stratégie bas-carbone', color: '#e4794a' },
-  { code: 'PPE', label: "Prog. de l'énergie", color: '#009099' },
+  { code: 'PPE', label: "Energie", color: '#009099' },
   { code: 'PNACC', label: 'Adaptation climat', color: '#b34000' },
   { code: 'SNB 2030', label: 'Biodiversité', color: '#00a95f' },
   { code: 'Plan Eau', label: "", color: '#417dc4' },
