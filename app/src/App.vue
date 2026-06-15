@@ -89,6 +89,10 @@ export default {
 </script>
 
 <style>
+:root {
+  --desktop-nav-height: 3rem;
+}
+
 /* Override DSFR's overflow: hidden so the sticky desktop nav can stick to the viewport */
 .app-root-container.fr-container--fluid {
   overflow: visible !important;

@@ -1,4 +1,5 @@
 <template>
+  <div class="header-group">
   <header role="banner" class="fr-header">
     <div class="fr-header__body">
       <div class="header-container">
@@ -121,10 +122,11 @@
         </div>
       </div>
     </div>
-    <div class="fr-container--fluid desktop-navigation" v-if="showNavigation">
-      <navigation-dsfr></navigation-dsfr>
-    </div>
   </header>
+  <div class="fr-container--fluid desktop-navigation" v-if="showNavigation">
+    <navigation-dsfr></navigation-dsfr>
+  </div>
+  </div>
 </template>
 
 <script>
@@ -214,6 +216,12 @@ export default {
 </script>
 
 <style>
+/* Flatten wrapper so nav/header are layout children of #app — required for
+   position:sticky to persist for the full page scroll (not just header height). */
+.header-group {
+  display: contents;
+}
+
 .desktop-navigation {
   display: block;
 }

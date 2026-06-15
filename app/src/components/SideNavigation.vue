@@ -1073,7 +1073,7 @@ a:hover:not([href]) {
 @media (min-width: 769px) {
   .fr-sidemenu {
     position: sticky;
-    top: 80px; /* Below header */
+    top: var(--desktop-nav-height, 3rem); /* Below sticky menu row */
     align-self: flex-start;
   }
 }
