@@ -331,28 +331,6 @@ const routes = [
     }
   },
   {
-    path: "/test/accueil-v2",
-    name: "test-accueil-v2",
-    component: () =>
-      import(/* webpackChunkName: "test-home-v2" */ "./views/HomeV2TestPage.vue"),
-    meta: {
-      title: "Test accueil V2",
-      noindex: true,
-      excludeFromSitemap: true
-    }
-  },
-  {
-    path: "/test/accueil-v3",
-    name: "test-accueil-v3",
-    component: () =>
-      import(/* webpackChunkName: "test-home-v3" */ "./views/HomeV3TestPage.vue"),
-    meta: {
-      title: "Test accueil V3",
-      noindex: true,
-      excludeFromSitemap: true
-    }
-  },
-  {
     path: "*",
     name: "error404",
     component: () =>
@@ -437,32 +415,6 @@ if (process.env.VUE_APP_ENV !== 'prod') {
         excludeFromSitemap: true
       }
     },
-    {
-      path: "/staging/test/accueil-v2",
-      name: "staging-test-accueil-v2",
-      props: { useStaging: true },
-      component: () =>
-        import(/* webpackChunkName: "test-home-v2" */ "./views/HomeV2TestPage.vue"),
-      meta: {
-        title: "Test accueil V2 (staging)",
-        isStaging: true,
-        noindex: true,
-        excludeFromSitemap: true
-      }
-    },
-    {
-      path: "/staging/test/accueil-v3",
-      name: "staging-test-accueil-v3",
-      props: { useStaging: true },
-      component: () =>
-        import(/* webpackChunkName: "test-home-v3" */ "./views/HomeV3TestPage.vue"),
-      meta: {
-        title: "Test accueil V3 (staging)",
-        isStaging: true,
-        noindex: true,
-        excludeFromSitemap: true
-      }
-    }
   );
 }
 
