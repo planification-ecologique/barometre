@@ -1,0 +1,392 @@
+{
+  "cubeName": "covoiturage_trajet_simple_com",
+  "measureName": "covoiturage_trajet_simple_com.id_1082",
+  "timeDimension": "covoiturage_trajet_simple_com.date_mesure",
+  "extraDimension": "covoiturage_trajet_simple_com.geocode_commune",
+  "data": [
+    {
+      "covoiturage_trajet_simple_com.libelle_region": "Bretagne",
+      "covoiturage_trajet_simple_com.geocode_region": "53",
+      "covoiturage_trajet_simple_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "covoiturage_trajet_simple_com.id_1082": 136621,
+      "covoiturage_trajet_simple_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "covoiturage_trajet_simple_com.libelle_region": "Nouvelle-Aquitaine",
+      "covoiturage_trajet_simple_com.geocode_region": "75",
+      "covoiturage_trajet_simple_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "covoiturage_trajet_simple_com.id_1082": 147600,
+      "covoiturage_trajet_simple_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "covoiturage_trajet_simple_com.libelle_region": "Martinique",
+      "covoiturage_trajet_simple_com.geocode_region": "02",
+      "covoiturage_trajet_simple_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "covoiturage_trajet_simple_com.id_1082": 0,
+      "covoiturage_trajet_simple_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "covoiturage_trajet_simple_com.libelle_region": "Bourgogne-Franche-Comté",
+      "covoiturage_trajet_simple_com.geocode_region": "27",
+      "covoiturage_trajet_simple_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "covoiturage_trajet_simple_com.id_1082": 27153,
+      "covoiturage_trajet_simple_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "covoiturage_trajet_simple_com.libelle_region": "Hauts-de-France",
+      "covoiturage_trajet_simple_com.geocode_region": "32",
+      "covoiturage_trajet_simple_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "covoiturage_trajet_simple_com.id_1082": 267662,
+      "covoiturage_trajet_simple_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "covoiturage_trajet_simple_com.libelle_region": "Centre-Val de Loire",
+      "covoiturage_trajet_simple_com.geocode_region": "24",
+      "covoiturage_trajet_simple_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "covoiturage_trajet_simple_com.id_1082": 64412,
+      "covoiturage_trajet_simple_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "covoiturage_trajet_simple_com.libelle_region": "Grand Est",
+      "covoiturage_trajet_simple_com.geocode_region": "44",
+      "covoiturage_trajet_simple_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "covoiturage_trajet_simple_com.id_1082": 280780,
+      "covoiturage_trajet_simple_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "covoiturage_trajet_simple_com.libelle_region": "Mayotte",
+      "covoiturage_trajet_simple_com.geocode_region": "06",
+      "covoiturage_trajet_simple_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "covoiturage_trajet_simple_com.id_1082": 0,
+      "covoiturage_trajet_simple_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "covoiturage_trajet_simple_com.libelle_region": "Guadeloupe",
+      "covoiturage_trajet_simple_com.geocode_region": "01",
+      "covoiturage_trajet_simple_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "covoiturage_trajet_simple_com.id_1082": 118,
+      "covoiturage_trajet_simple_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "covoiturage_trajet_simple_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "covoiturage_trajet_simple_com.geocode_region": "93",
+      "covoiturage_trajet_simple_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "covoiturage_trajet_simple_com.id_1082": 202998,
+      "covoiturage_trajet_simple_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "covoiturage_trajet_simple_com.libelle_region": "Normandie",
+      "covoiturage_trajet_simple_com.geocode_region": "28",
+      "covoiturage_trajet_simple_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "covoiturage_trajet_simple_com.id_1082": 511737,
+      "covoiturage_trajet_simple_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "covoiturage_trajet_simple_com.libelle_region": "La Réunion",
+      "covoiturage_trajet_simple_com.geocode_region": "04",
+      "covoiturage_trajet_simple_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "covoiturage_trajet_simple_com.id_1082": 35258,
+      "covoiturage_trajet_simple_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "covoiturage_trajet_simple_com.libelle_region": "Pays de la Loire",
+      "covoiturage_trajet_simple_com.geocode_region": "52",
+      "covoiturage_trajet_simple_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "covoiturage_trajet_simple_com.id_1082": 558914,
+      "covoiturage_trajet_simple_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "covoiturage_trajet_simple_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "covoiturage_trajet_simple_com.geocode_region": "84",
+      "covoiturage_trajet_simple_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "covoiturage_trajet_simple_com.id_1082": 289797,
+      "covoiturage_trajet_simple_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "covoiturage_trajet_simple_com.libelle_region": "Île-de-France",
+      "covoiturage_trajet_simple_com.geocode_region": "11",
+      "covoiturage_trajet_simple_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "covoiturage_trajet_simple_com.id_1082": 2074966,
+      "covoiturage_trajet_simple_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "covoiturage_trajet_simple_com.libelle_region": "Guyane",
+      "covoiturage_trajet_simple_com.geocode_region": "03",
+      "covoiturage_trajet_simple_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "covoiturage_trajet_simple_com.id_1082": 0,
+      "covoiturage_trajet_simple_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "covoiturage_trajet_simple_com.libelle_region": "Corse",
+      "covoiturage_trajet_simple_com.geocode_region": "94",
+      "covoiturage_trajet_simple_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "covoiturage_trajet_simple_com.id_1082": 101,
+      "covoiturage_trajet_simple_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "covoiturage_trajet_simple_com.libelle_region": "Occitanie",
+      "covoiturage_trajet_simple_com.geocode_region": "76",
+      "covoiturage_trajet_simple_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "covoiturage_trajet_simple_com.id_1082": 399872,
+      "covoiturage_trajet_simple_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "covoiturage_trajet_simple_com.libelle_region": "Pays de la Loire",
+      "covoiturage_trajet_simple_com.geocode_region": "52",
+      "covoiturage_trajet_simple_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "covoiturage_trajet_simple_com.id_1082": 1244484,
+      "covoiturage_trajet_simple_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "covoiturage_trajet_simple_com.libelle_region": "Nouvelle-Aquitaine",
+      "covoiturage_trajet_simple_com.geocode_region": "75",
+      "covoiturage_trajet_simple_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "covoiturage_trajet_simple_com.id_1082": 361332,
+      "covoiturage_trajet_simple_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "covoiturage_trajet_simple_com.libelle_region": "Corse",
+      "covoiturage_trajet_simple_com.geocode_region": "94",
+      "covoiturage_trajet_simple_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "covoiturage_trajet_simple_com.id_1082": 796,
+      "covoiturage_trajet_simple_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "covoiturage_trajet_simple_com.libelle_region": "Mayotte",
+      "covoiturage_trajet_simple_com.geocode_region": "06",
+      "covoiturage_trajet_simple_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "covoiturage_trajet_simple_com.id_1082": 43,
+      "covoiturage_trajet_simple_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "covoiturage_trajet_simple_com.libelle_region": "Centre-Val de Loire",
+      "covoiturage_trajet_simple_com.geocode_region": "24",
+      "covoiturage_trajet_simple_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "covoiturage_trajet_simple_com.id_1082": 127961,
+      "covoiturage_trajet_simple_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "covoiturage_trajet_simple_com.libelle_region": "La Réunion",
+      "covoiturage_trajet_simple_com.geocode_region": "04",
+      "covoiturage_trajet_simple_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "covoiturage_trajet_simple_com.id_1082": 332546,
+      "covoiturage_trajet_simple_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "covoiturage_trajet_simple_com.libelle_region": "Martinique",
+      "covoiturage_trajet_simple_com.geocode_region": "02",
+      "covoiturage_trajet_simple_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "covoiturage_trajet_simple_com.id_1082": 80,
+      "covoiturage_trajet_simple_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "covoiturage_trajet_simple_com.libelle_region": "Normandie",
+      "covoiturage_trajet_simple_com.geocode_region": "28",
+      "covoiturage_trajet_simple_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "covoiturage_trajet_simple_com.id_1082": 955918,
+      "covoiturage_trajet_simple_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "covoiturage_trajet_simple_com.libelle_region": "Grand Est",
+      "covoiturage_trajet_simple_com.geocode_region": "44",
+      "covoiturage_trajet_simple_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "covoiturage_trajet_simple_com.id_1082": 396102,
+      "covoiturage_trajet_simple_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "covoiturage_trajet_simple_com.libelle_region": "Guadeloupe",
+      "covoiturage_trajet_simple_com.geocode_region": "01",
+      "covoiturage_trajet_simple_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "covoiturage_trajet_simple_com.id_1082": 5891,
+      "covoiturage_trajet_simple_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "covoiturage_trajet_simple_com.libelle_region": "Bourgogne-Franche-Comté",
+      "covoiturage_trajet_simple_com.geocode_region": "27",
+      "covoiturage_trajet_simple_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "covoiturage_trajet_simple_com.id_1082": 94151,
+      "covoiturage_trajet_simple_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "covoiturage_trajet_simple_com.libelle_region": "Bretagne",
+      "covoiturage_trajet_simple_com.geocode_region": "53",
+      "covoiturage_trajet_simple_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "covoiturage_trajet_simple_com.id_1082": 317645,
+      "covoiturage_trajet_simple_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "covoiturage_trajet_simple_com.libelle_region": "Occitanie",
+      "covoiturage_trajet_simple_com.geocode_region": "76",
+      "covoiturage_trajet_simple_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "covoiturage_trajet_simple_com.id_1082": 790159,
+      "covoiturage_trajet_simple_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "covoiturage_trajet_simple_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "covoiturage_trajet_simple_com.geocode_region": "84",
+      "covoiturage_trajet_simple_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "covoiturage_trajet_simple_com.id_1082": 862745,
+      "covoiturage_trajet_simple_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "covoiturage_trajet_simple_com.libelle_region": "Hauts-de-France",
+      "covoiturage_trajet_simple_com.geocode_region": "32",
+      "covoiturage_trajet_simple_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "covoiturage_trajet_simple_com.id_1082": 741723,
+      "covoiturage_trajet_simple_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "covoiturage_trajet_simple_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "covoiturage_trajet_simple_com.geocode_region": "93",
+      "covoiturage_trajet_simple_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "covoiturage_trajet_simple_com.id_1082": 465132,
+      "covoiturage_trajet_simple_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "covoiturage_trajet_simple_com.libelle_region": "Guyane",
+      "covoiturage_trajet_simple_com.geocode_region": "03",
+      "covoiturage_trajet_simple_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "covoiturage_trajet_simple_com.id_1082": 0,
+      "covoiturage_trajet_simple_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "covoiturage_trajet_simple_com.libelle_region": "Île-de-France",
+      "covoiturage_trajet_simple_com.geocode_region": "11",
+      "covoiturage_trajet_simple_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "covoiturage_trajet_simple_com.id_1082": 2365600,
+      "covoiturage_trajet_simple_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "covoiturage_trajet_simple_com.libelle_region": "Occitanie",
+      "covoiturage_trajet_simple_com.geocode_region": "76",
+      "covoiturage_trajet_simple_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "covoiturage_trajet_simple_com.id_1082": 971021,
+      "covoiturage_trajet_simple_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "covoiturage_trajet_simple_com.libelle_region": "Île-de-France",
+      "covoiturage_trajet_simple_com.geocode_region": "11",
+      "covoiturage_trajet_simple_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "covoiturage_trajet_simple_com.id_1082": 3153043,
+      "covoiturage_trajet_simple_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "covoiturage_trajet_simple_com.libelle_region": "Guadeloupe",
+      "covoiturage_trajet_simple_com.geocode_region": "01",
+      "covoiturage_trajet_simple_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "covoiturage_trajet_simple_com.id_1082": 14941,
+      "covoiturage_trajet_simple_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "covoiturage_trajet_simple_com.libelle_region": "Corse",
+      "covoiturage_trajet_simple_com.geocode_region": "94",
+      "covoiturage_trajet_simple_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "covoiturage_trajet_simple_com.id_1082": 5533,
+      "covoiturage_trajet_simple_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "covoiturage_trajet_simple_com.libelle_region": "Martinique",
+      "covoiturage_trajet_simple_com.geocode_region": "02",
+      "covoiturage_trajet_simple_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "covoiturage_trajet_simple_com.id_1082": 3120,
+      "covoiturage_trajet_simple_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "covoiturage_trajet_simple_com.libelle_region": "La Réunion",
+      "covoiturage_trajet_simple_com.geocode_region": "04",
+      "covoiturage_trajet_simple_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "covoiturage_trajet_simple_com.id_1082": 592934,
+      "covoiturage_trajet_simple_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "covoiturage_trajet_simple_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "covoiturage_trajet_simple_com.geocode_region": "93",
+      "covoiturage_trajet_simple_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "covoiturage_trajet_simple_com.id_1082": 802663,
+      "covoiturage_trajet_simple_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "covoiturage_trajet_simple_com.libelle_region": "Grand Est",
+      "covoiturage_trajet_simple_com.geocode_region": "44",
+      "covoiturage_trajet_simple_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "covoiturage_trajet_simple_com.id_1082": 651411,
+      "covoiturage_trajet_simple_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "covoiturage_trajet_simple_com.libelle_region": "Mayotte",
+      "covoiturage_trajet_simple_com.geocode_region": "06",
+      "covoiturage_trajet_simple_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "covoiturage_trajet_simple_com.id_1082": 329,
+      "covoiturage_trajet_simple_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "covoiturage_trajet_simple_com.libelle_region": "Pays de la Loire",
+      "covoiturage_trajet_simple_com.geocode_region": "52",
+      "covoiturage_trajet_simple_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "covoiturage_trajet_simple_com.id_1082": 1542688,
+      "covoiturage_trajet_simple_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "covoiturage_trajet_simple_com.libelle_region": "Normandie",
+      "covoiturage_trajet_simple_com.geocode_region": "28",
+      "covoiturage_trajet_simple_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "covoiturage_trajet_simple_com.id_1082": 517743,
+      "covoiturage_trajet_simple_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "covoiturage_trajet_simple_com.libelle_region": "Bretagne",
+      "covoiturage_trajet_simple_com.geocode_region": "53",
+      "covoiturage_trajet_simple_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "covoiturage_trajet_simple_com.id_1082": 415853,
+      "covoiturage_trajet_simple_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "covoiturage_trajet_simple_com.libelle_region": "Hauts-de-France",
+      "covoiturage_trajet_simple_com.geocode_region": "32",
+      "covoiturage_trajet_simple_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "covoiturage_trajet_simple_com.id_1082": 1021707,
+      "covoiturage_trajet_simple_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "covoiturage_trajet_simple_com.libelle_region": "Nouvelle-Aquitaine",
+      "covoiturage_trajet_simple_com.geocode_region": "75",
+      "covoiturage_trajet_simple_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "covoiturage_trajet_simple_com.id_1082": 575190,
+      "covoiturage_trajet_simple_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "covoiturage_trajet_simple_com.libelle_region": "Centre-Val de Loire",
+      "covoiturage_trajet_simple_com.geocode_region": "24",
+      "covoiturage_trajet_simple_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "covoiturage_trajet_simple_com.id_1082": 238299,
+      "covoiturage_trajet_simple_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "covoiturage_trajet_simple_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "covoiturage_trajet_simple_com.geocode_region": "84",
+      "covoiturage_trajet_simple_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "covoiturage_trajet_simple_com.id_1082": 1456577,
+      "covoiturage_trajet_simple_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "covoiturage_trajet_simple_com.libelle_region": "Bourgogne-Franche-Comté",
+      "covoiturage_trajet_simple_com.geocode_region": "27",
+      "covoiturage_trajet_simple_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "covoiturage_trajet_simple_com.id_1082": 171968,
+      "covoiturage_trajet_simple_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "covoiturage_trajet_simple_com.libelle_region": "Guyane",
+      "covoiturage_trajet_simple_com.geocode_region": "03",
+      "covoiturage_trajet_simple_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "covoiturage_trajet_simple_com.id_1082": 465,
+      "covoiturage_trajet_simple_com.date_mesure": "2024-01-01T00:00:00.000"
+    }
+  ],
+  "measureMeta": {
+    "libelle_indicateur": "Nombre de trajets effectués en covoiturage intermédié",
+    "statut_commun": "Mesure",
+    "unite": "nb",
+    "methode_calcul": null
+  }
+}

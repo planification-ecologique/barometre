@@ -1,0 +1,252 @@
+{
+  "cubeName": "recyclage_bouteilles_plastique_region",
+  "measureName": "recyclage_bouteilles_plastique_region.id_407",
+  "timeDimension": "recyclage_bouteilles_plastique_region.date_mesure",
+  "extraDimension": "recyclage_bouteilles_plastique_region.annee",
+  "data": [
+    {
+      "recyclage_bouteilles_plastique_region.libelle_region": "Nouvelle-Aquitaine",
+      "recyclage_bouteilles_plastique_region.geocode_region": "75",
+      "recyclage_bouteilles_plastique_region.date_mesure.year": "2023-01-01T00:00:00.000",
+      "recyclage_bouteilles_plastique_region.id_407": 65.66,
+      "recyclage_bouteilles_plastique_region.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "recyclage_bouteilles_plastique_region.libelle_region": "Hauts-de-France",
+      "recyclage_bouteilles_plastique_region.geocode_region": "32",
+      "recyclage_bouteilles_plastique_region.date_mesure.year": "2023-01-01T00:00:00.000",
+      "recyclage_bouteilles_plastique_region.id_407": 55.25,
+      "recyclage_bouteilles_plastique_region.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "recyclage_bouteilles_plastique_region.libelle_region": "Bretagne",
+      "recyclage_bouteilles_plastique_region.geocode_region": "53",
+      "recyclage_bouteilles_plastique_region.date_mesure.year": "2023-01-01T00:00:00.000",
+      "recyclage_bouteilles_plastique_region.id_407": 71.26,
+      "recyclage_bouteilles_plastique_region.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "recyclage_bouteilles_plastique_region.libelle_region": "Guadeloupe",
+      "recyclage_bouteilles_plastique_region.geocode_region": "01",
+      "recyclage_bouteilles_plastique_region.date_mesure.year": "2023-01-01T00:00:00.000",
+      "recyclage_bouteilles_plastique_region.id_407": 30.98,
+      "recyclage_bouteilles_plastique_region.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "recyclage_bouteilles_plastique_region.libelle_region": "Île-de-France",
+      "recyclage_bouteilles_plastique_region.geocode_region": "11",
+      "recyclage_bouteilles_plastique_region.date_mesure.year": "2023-01-01T00:00:00.000",
+      "recyclage_bouteilles_plastique_region.id_407": 46.04,
+      "recyclage_bouteilles_plastique_region.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "recyclage_bouteilles_plastique_region.libelle_region": "Grand Est",
+      "recyclage_bouteilles_plastique_region.geocode_region": "44",
+      "recyclage_bouteilles_plastique_region.date_mesure.year": "2023-01-01T00:00:00.000",
+      "recyclage_bouteilles_plastique_region.id_407": 60.1,
+      "recyclage_bouteilles_plastique_region.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "recyclage_bouteilles_plastique_region.libelle_region": "Bourgogne-Franche-Comté",
+      "recyclage_bouteilles_plastique_region.geocode_region": "27",
+      "recyclage_bouteilles_plastique_region.date_mesure.year": "2023-01-01T00:00:00.000",
+      "recyclage_bouteilles_plastique_region.id_407": 71.43,
+      "recyclage_bouteilles_plastique_region.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "recyclage_bouteilles_plastique_region.libelle_region": "Corse",
+      "recyclage_bouteilles_plastique_region.geocode_region": "94",
+      "recyclage_bouteilles_plastique_region.date_mesure.year": "2023-01-01T00:00:00.000",
+      "recyclage_bouteilles_plastique_region.id_407": 54.83,
+      "recyclage_bouteilles_plastique_region.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "recyclage_bouteilles_plastique_region.libelle_region": "Martinique",
+      "recyclage_bouteilles_plastique_region.geocode_region": "02",
+      "recyclage_bouteilles_plastique_region.date_mesure.year": "2023-01-01T00:00:00.000",
+      "recyclage_bouteilles_plastique_region.id_407": 35.1,
+      "recyclage_bouteilles_plastique_region.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "recyclage_bouteilles_plastique_region.libelle_region": "Occitanie",
+      "recyclage_bouteilles_plastique_region.geocode_region": "76",
+      "recyclage_bouteilles_plastique_region.date_mesure.year": "2023-01-01T00:00:00.000",
+      "recyclage_bouteilles_plastique_region.id_407": 53.8,
+      "recyclage_bouteilles_plastique_region.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "recyclage_bouteilles_plastique_region.libelle_region": "La Réunion",
+      "recyclage_bouteilles_plastique_region.geocode_region": "04",
+      "recyclage_bouteilles_plastique_region.date_mesure.year": "2023-01-01T00:00:00.000",
+      "recyclage_bouteilles_plastique_region.id_407": 28.3,
+      "recyclage_bouteilles_plastique_region.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "recyclage_bouteilles_plastique_region.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "recyclage_bouteilles_plastique_region.geocode_region": "93",
+      "recyclage_bouteilles_plastique_region.date_mesure.year": "2023-01-01T00:00:00.000",
+      "recyclage_bouteilles_plastique_region.id_407": 36.97,
+      "recyclage_bouteilles_plastique_region.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "recyclage_bouteilles_plastique_region.libelle_region": "Pays de la Loire",
+      "recyclage_bouteilles_plastique_region.geocode_region": "52",
+      "recyclage_bouteilles_plastique_region.date_mesure.year": "2023-01-01T00:00:00.000",
+      "recyclage_bouteilles_plastique_region.id_407": 72.6,
+      "recyclage_bouteilles_plastique_region.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "recyclage_bouteilles_plastique_region.libelle_region": "Centre-Val de Loire",
+      "recyclage_bouteilles_plastique_region.geocode_region": "24",
+      "recyclage_bouteilles_plastique_region.date_mesure.year": "2023-01-01T00:00:00.000",
+      "recyclage_bouteilles_plastique_region.id_407": 66.06,
+      "recyclage_bouteilles_plastique_region.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "recyclage_bouteilles_plastique_region.libelle_region": "Guyane",
+      "recyclage_bouteilles_plastique_region.geocode_region": "03",
+      "recyclage_bouteilles_plastique_region.date_mesure.year": "2023-01-01T00:00:00.000",
+      "recyclage_bouteilles_plastique_region.id_407": 12.39,
+      "recyclage_bouteilles_plastique_region.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "recyclage_bouteilles_plastique_region.libelle_region": "Normandie",
+      "recyclage_bouteilles_plastique_region.geocode_region": "28",
+      "recyclage_bouteilles_plastique_region.date_mesure.year": "2023-01-01T00:00:00.000",
+      "recyclage_bouteilles_plastique_region.id_407": 60.15,
+      "recyclage_bouteilles_plastique_region.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "recyclage_bouteilles_plastique_region.libelle_region": "Auvergne-Rhône-Alpes",
+      "recyclage_bouteilles_plastique_region.geocode_region": "84",
+      "recyclage_bouteilles_plastique_region.date_mesure.year": "2023-01-01T00:00:00.000",
+      "recyclage_bouteilles_plastique_region.id_407": 56.85,
+      "recyclage_bouteilles_plastique_region.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "recyclage_bouteilles_plastique_region.libelle_region": "Bourgogne-Franche-Comté",
+      "recyclage_bouteilles_plastique_region.geocode_region": "27",
+      "recyclage_bouteilles_plastique_region.date_mesure.year": "2024-01-01T00:00:00.000",
+      "recyclage_bouteilles_plastique_region.id_407": 74.1,
+      "recyclage_bouteilles_plastique_region.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "recyclage_bouteilles_plastique_region.libelle_region": "Martinique",
+      "recyclage_bouteilles_plastique_region.geocode_region": "02",
+      "recyclage_bouteilles_plastique_region.date_mesure.year": "2024-01-01T00:00:00.000",
+      "recyclage_bouteilles_plastique_region.id_407": 37.8,
+      "recyclage_bouteilles_plastique_region.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "recyclage_bouteilles_plastique_region.libelle_region": "Normandie",
+      "recyclage_bouteilles_plastique_region.geocode_region": "28",
+      "recyclage_bouteilles_plastique_region.date_mesure.year": "2024-01-01T00:00:00.000",
+      "recyclage_bouteilles_plastique_region.id_407": 60.1,
+      "recyclage_bouteilles_plastique_region.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "recyclage_bouteilles_plastique_region.libelle_region": "Bretagne",
+      "recyclage_bouteilles_plastique_region.geocode_region": "53",
+      "recyclage_bouteilles_plastique_region.date_mesure.year": "2024-01-01T00:00:00.000",
+      "recyclage_bouteilles_plastique_region.id_407": 75.4,
+      "recyclage_bouteilles_plastique_region.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "recyclage_bouteilles_plastique_region.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "recyclage_bouteilles_plastique_region.geocode_region": "93",
+      "recyclage_bouteilles_plastique_region.date_mesure.year": "2024-01-01T00:00:00.000",
+      "recyclage_bouteilles_plastique_region.id_407": 35.5,
+      "recyclage_bouteilles_plastique_region.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "recyclage_bouteilles_plastique_region.libelle_region": "Nouvelle-Aquitaine",
+      "recyclage_bouteilles_plastique_region.geocode_region": "75",
+      "recyclage_bouteilles_plastique_region.date_mesure.year": "2024-01-01T00:00:00.000",
+      "recyclage_bouteilles_plastique_region.id_407": 67.1,
+      "recyclage_bouteilles_plastique_region.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "recyclage_bouteilles_plastique_region.libelle_region": "La Réunion",
+      "recyclage_bouteilles_plastique_region.geocode_region": "04",
+      "recyclage_bouteilles_plastique_region.date_mesure.year": "2024-01-01T00:00:00.000",
+      "recyclage_bouteilles_plastique_region.id_407": 31.1,
+      "recyclage_bouteilles_plastique_region.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "recyclage_bouteilles_plastique_region.libelle_region": "Corse",
+      "recyclage_bouteilles_plastique_region.geocode_region": "94",
+      "recyclage_bouteilles_plastique_region.date_mesure.year": "2024-01-01T00:00:00.000",
+      "recyclage_bouteilles_plastique_region.id_407": 52,
+      "recyclage_bouteilles_plastique_region.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "recyclage_bouteilles_plastique_region.libelle_region": "Grand Est",
+      "recyclage_bouteilles_plastique_region.geocode_region": "44",
+      "recyclage_bouteilles_plastique_region.date_mesure.year": "2024-01-01T00:00:00.000",
+      "recyclage_bouteilles_plastique_region.id_407": 65.1,
+      "recyclage_bouteilles_plastique_region.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "recyclage_bouteilles_plastique_region.libelle_region": "Île-de-France",
+      "recyclage_bouteilles_plastique_region.geocode_region": "11",
+      "recyclage_bouteilles_plastique_region.date_mesure.year": "2024-01-01T00:00:00.000",
+      "recyclage_bouteilles_plastique_region.id_407": 51.1,
+      "recyclage_bouteilles_plastique_region.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "recyclage_bouteilles_plastique_region.libelle_region": "Centre-Val de Loire",
+      "recyclage_bouteilles_plastique_region.geocode_region": "24",
+      "recyclage_bouteilles_plastique_region.date_mesure.year": "2024-01-01T00:00:00.000",
+      "recyclage_bouteilles_plastique_region.id_407": 72.1,
+      "recyclage_bouteilles_plastique_region.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "recyclage_bouteilles_plastique_region.libelle_region": "Guadeloupe",
+      "recyclage_bouteilles_plastique_region.geocode_region": "01",
+      "recyclage_bouteilles_plastique_region.date_mesure.year": "2024-01-01T00:00:00.000",
+      "recyclage_bouteilles_plastique_region.id_407": 36.9,
+      "recyclage_bouteilles_plastique_region.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "recyclage_bouteilles_plastique_region.libelle_region": "Hauts-de-France",
+      "recyclage_bouteilles_plastique_region.geocode_region": "32",
+      "recyclage_bouteilles_plastique_region.date_mesure.year": "2024-01-01T00:00:00.000",
+      "recyclage_bouteilles_plastique_region.id_407": 58.3,
+      "recyclage_bouteilles_plastique_region.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "recyclage_bouteilles_plastique_region.libelle_region": "Auvergne-Rhône-Alpes",
+      "recyclage_bouteilles_plastique_region.geocode_region": "84",
+      "recyclage_bouteilles_plastique_region.date_mesure.year": "2024-01-01T00:00:00.000",
+      "recyclage_bouteilles_plastique_region.id_407": 58.4,
+      "recyclage_bouteilles_plastique_region.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "recyclage_bouteilles_plastique_region.libelle_region": "Pays de la Loire",
+      "recyclage_bouteilles_plastique_region.geocode_region": "52",
+      "recyclage_bouteilles_plastique_region.date_mesure.year": "2024-01-01T00:00:00.000",
+      "recyclage_bouteilles_plastique_region.id_407": 74.8,
+      "recyclage_bouteilles_plastique_region.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "recyclage_bouteilles_plastique_region.libelle_region": "Guyane",
+      "recyclage_bouteilles_plastique_region.geocode_region": "03",
+      "recyclage_bouteilles_plastique_region.date_mesure.year": "2024-01-01T00:00:00.000",
+      "recyclage_bouteilles_plastique_region.id_407": 9.4,
+      "recyclage_bouteilles_plastique_region.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "recyclage_bouteilles_plastique_region.libelle_region": "Occitanie",
+      "recyclage_bouteilles_plastique_region.geocode_region": "76",
+      "recyclage_bouteilles_plastique_region.date_mesure.year": "2024-01-01T00:00:00.000",
+      "recyclage_bouteilles_plastique_region.id_407": 57.4,
+      "recyclage_bouteilles_plastique_region.date_mesure": "2024-01-01T00:00:00.000"
+    }
+  ],
+  "measureMeta": {
+    "libelle_indicateur": "Taux de recyclage des bouteilles en plastique",
+    "statut_commun": "Mesure",
+    "unite": "%",
+    "methode_calcul": "Le numérateur correspond ainsi aux quantités de bouteilles plastiques de boisson collectées pour recyclage par les différents canaux de collecte (via les collectivités et hors collectivité) et le dénominateur correspond au gisement collectable, c’est-à-dire aux quantités de bouteilles en plastique mises sur le marché durant la même année.\n"
+  }
+}

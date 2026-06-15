@@ -1,0 +1,2345 @@
+{
+  "cubeName": "parts_modales_actifs_com",
+  "measureName": "parts_modales_actifs_com.id_955",
+  "timeDimension": "parts_modales_actifs_com.date_mesure",
+  "extraDimension": "parts_modales_actifs_com.geocode_commune",
+  "data": [
+    {
+      "parts_modales_actifs_com.libelle_region": "Nouvelle-Aquitaine",
+      "parts_modales_actifs_com.geocode_region": "75",
+      "parts_modales_actifs_com.mode_transport": "Voiture",
+      "parts_modales_actifs_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "parts_modales_actifs_com.geocode_region": "93",
+      "parts_modales_actifs_com.mode_transport": "Marche",
+      "parts_modales_actifs_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Guyane",
+      "parts_modales_actifs_com.geocode_region": "03",
+      "parts_modales_actifs_com.mode_transport": "Pas de transport",
+      "parts_modales_actifs_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Bourgogne-Franche-Comté",
+      "parts_modales_actifs_com.geocode_region": "27",
+      "parts_modales_actifs_com.mode_transport": "Pas de transport",
+      "parts_modales_actifs_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Centre-Val de Loire",
+      "parts_modales_actifs_com.geocode_region": "24",
+      "parts_modales_actifs_com.mode_transport": "Pas de transport",
+      "parts_modales_actifs_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Grand Est",
+      "parts_modales_actifs_com.geocode_region": "44",
+      "parts_modales_actifs_com.mode_transport": "Marche",
+      "parts_modales_actifs_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Île-de-France",
+      "parts_modales_actifs_com.geocode_region": "11",
+      "parts_modales_actifs_com.mode_transport": "Marche",
+      "parts_modales_actifs_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "La Réunion",
+      "parts_modales_actifs_com.geocode_region": "04",
+      "parts_modales_actifs_com.mode_transport": "Transports en commun",
+      "parts_modales_actifs_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Grand Est",
+      "parts_modales_actifs_com.geocode_region": "44",
+      "parts_modales_actifs_com.mode_transport": "Deux-roues motorisé (depuis 2017)",
+      "parts_modales_actifs_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Normandie",
+      "parts_modales_actifs_com.geocode_region": "28",
+      "parts_modales_actifs_com.mode_transport": "Marche",
+      "parts_modales_actifs_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Centre-Val de Loire",
+      "parts_modales_actifs_com.geocode_region": "24",
+      "parts_modales_actifs_com.mode_transport": "Transports en commun",
+      "parts_modales_actifs_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Grand Est",
+      "parts_modales_actifs_com.geocode_region": "44",
+      "parts_modales_actifs_com.mode_transport": "Deux-roues (jusqu'à 2016)",
+      "parts_modales_actifs_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Occitanie",
+      "parts_modales_actifs_com.geocode_region": "76",
+      "parts_modales_actifs_com.mode_transport": "Pas de transport",
+      "parts_modales_actifs_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Normandie",
+      "parts_modales_actifs_com.geocode_region": "28",
+      "parts_modales_actifs_com.mode_transport": "Voiture",
+      "parts_modales_actifs_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Pays de la Loire",
+      "parts_modales_actifs_com.geocode_region": "52",
+      "parts_modales_actifs_com.mode_transport": "Deux-roues motorisé (depuis 2017)",
+      "parts_modales_actifs_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Bretagne",
+      "parts_modales_actifs_com.geocode_region": "53",
+      "parts_modales_actifs_com.mode_transport": "Transports en commun",
+      "parts_modales_actifs_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Corse",
+      "parts_modales_actifs_com.geocode_region": "94",
+      "parts_modales_actifs_com.mode_transport": "Voiture",
+      "parts_modales_actifs_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Guadeloupe",
+      "parts_modales_actifs_com.geocode_region": "01",
+      "parts_modales_actifs_com.mode_transport": "Deux-roues (jusqu'à 2016)",
+      "parts_modales_actifs_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "parts_modales_actifs_com.geocode_region": "93",
+      "parts_modales_actifs_com.mode_transport": "Voiture",
+      "parts_modales_actifs_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Hauts-de-France",
+      "parts_modales_actifs_com.geocode_region": "32",
+      "parts_modales_actifs_com.mode_transport": "Vélo (depuis 2017)",
+      "parts_modales_actifs_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Martinique",
+      "parts_modales_actifs_com.geocode_region": "02",
+      "parts_modales_actifs_com.mode_transport": "Deux-roues (jusqu'à 2016)",
+      "parts_modales_actifs_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "parts_modales_actifs_com.geocode_region": "84",
+      "parts_modales_actifs_com.mode_transport": "Transports en commun",
+      "parts_modales_actifs_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Martinique",
+      "parts_modales_actifs_com.geocode_region": "02",
+      "parts_modales_actifs_com.mode_transport": "Pas de transport",
+      "parts_modales_actifs_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Centre-Val de Loire",
+      "parts_modales_actifs_com.geocode_region": "24",
+      "parts_modales_actifs_com.mode_transport": "Marche",
+      "parts_modales_actifs_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Île-de-France",
+      "parts_modales_actifs_com.geocode_region": "11",
+      "parts_modales_actifs_com.mode_transport": "Pas de transport",
+      "parts_modales_actifs_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Bretagne",
+      "parts_modales_actifs_com.geocode_region": "53",
+      "parts_modales_actifs_com.mode_transport": "Marche",
+      "parts_modales_actifs_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Bourgogne-Franche-Comté",
+      "parts_modales_actifs_com.geocode_region": "27",
+      "parts_modales_actifs_com.mode_transport": "Marche",
+      "parts_modales_actifs_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Occitanie",
+      "parts_modales_actifs_com.geocode_region": "76",
+      "parts_modales_actifs_com.mode_transport": "Deux-roues (jusqu'à 2016)",
+      "parts_modales_actifs_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Hauts-de-France",
+      "parts_modales_actifs_com.geocode_region": "32",
+      "parts_modales_actifs_com.mode_transport": "Deux-roues (jusqu'à 2016)",
+      "parts_modales_actifs_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Guyane",
+      "parts_modales_actifs_com.geocode_region": "03",
+      "parts_modales_actifs_com.mode_transport": "Deux-roues (jusqu'à 2016)",
+      "parts_modales_actifs_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "La Réunion",
+      "parts_modales_actifs_com.geocode_region": "04",
+      "parts_modales_actifs_com.mode_transport": "Deux-roues (jusqu'à 2016)",
+      "parts_modales_actifs_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Corse",
+      "parts_modales_actifs_com.geocode_region": "94",
+      "parts_modales_actifs_com.mode_transport": "Deux-roues (jusqu'à 2016)",
+      "parts_modales_actifs_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Île-de-France",
+      "parts_modales_actifs_com.geocode_region": "11",
+      "parts_modales_actifs_com.mode_transport": "Deux-roues (jusqu'à 2016)",
+      "parts_modales_actifs_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Guyane",
+      "parts_modales_actifs_com.geocode_region": "03",
+      "parts_modales_actifs_com.mode_transport": "Voiture",
+      "parts_modales_actifs_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Bourgogne-Franche-Comté",
+      "parts_modales_actifs_com.geocode_region": "27",
+      "parts_modales_actifs_com.mode_transport": "Transports en commun",
+      "parts_modales_actifs_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Normandie",
+      "parts_modales_actifs_com.geocode_region": "28",
+      "parts_modales_actifs_com.mode_transport": "Pas de transport",
+      "parts_modales_actifs_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Hauts-de-France",
+      "parts_modales_actifs_com.geocode_region": "32",
+      "parts_modales_actifs_com.mode_transport": "Marche",
+      "parts_modales_actifs_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Martinique",
+      "parts_modales_actifs_com.geocode_region": "02",
+      "parts_modales_actifs_com.mode_transport": "Transports en commun",
+      "parts_modales_actifs_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Grand Est",
+      "parts_modales_actifs_com.geocode_region": "44",
+      "parts_modales_actifs_com.mode_transport": "Voiture",
+      "parts_modales_actifs_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Nouvelle-Aquitaine",
+      "parts_modales_actifs_com.geocode_region": "75",
+      "parts_modales_actifs_com.mode_transport": "Transports en commun",
+      "parts_modales_actifs_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Bretagne",
+      "parts_modales_actifs_com.geocode_region": "53",
+      "parts_modales_actifs_com.mode_transport": "Deux-roues (jusqu'à 2016)",
+      "parts_modales_actifs_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "parts_modales_actifs_com.geocode_region": "84",
+      "parts_modales_actifs_com.mode_transport": "Deux-roues motorisé (depuis 2017)",
+      "parts_modales_actifs_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "parts_modales_actifs_com.geocode_region": "84",
+      "parts_modales_actifs_com.mode_transport": "Marche",
+      "parts_modales_actifs_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Pays de la Loire",
+      "parts_modales_actifs_com.geocode_region": "52",
+      "parts_modales_actifs_com.mode_transport": "Pas de transport",
+      "parts_modales_actifs_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Nouvelle-Aquitaine",
+      "parts_modales_actifs_com.geocode_region": "75",
+      "parts_modales_actifs_com.mode_transport": "Pas de transport",
+      "parts_modales_actifs_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Pays de la Loire",
+      "parts_modales_actifs_com.geocode_region": "52",
+      "parts_modales_actifs_com.mode_transport": "Transports en commun",
+      "parts_modales_actifs_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Occitanie",
+      "parts_modales_actifs_com.geocode_region": "76",
+      "parts_modales_actifs_com.mode_transport": "Voiture",
+      "parts_modales_actifs_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Pays de la Loire",
+      "parts_modales_actifs_com.geocode_region": "52",
+      "parts_modales_actifs_com.mode_transport": "Voiture",
+      "parts_modales_actifs_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Hauts-de-France",
+      "parts_modales_actifs_com.geocode_region": "32",
+      "parts_modales_actifs_com.mode_transport": "Pas de transport",
+      "parts_modales_actifs_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Guyane",
+      "parts_modales_actifs_com.geocode_region": "03",
+      "parts_modales_actifs_com.mode_transport": "Transports en commun",
+      "parts_modales_actifs_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "La Réunion",
+      "parts_modales_actifs_com.geocode_region": "04",
+      "parts_modales_actifs_com.mode_transport": "Voiture",
+      "parts_modales_actifs_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Guyane",
+      "parts_modales_actifs_com.geocode_region": "03",
+      "parts_modales_actifs_com.mode_transport": "Marche",
+      "parts_modales_actifs_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Île-de-France",
+      "parts_modales_actifs_com.geocode_region": "11",
+      "parts_modales_actifs_com.mode_transport": "Transports en commun",
+      "parts_modales_actifs_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Guadeloupe",
+      "parts_modales_actifs_com.geocode_region": "01",
+      "parts_modales_actifs_com.mode_transport": "Pas de transport",
+      "parts_modales_actifs_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Occitanie",
+      "parts_modales_actifs_com.geocode_region": "76",
+      "parts_modales_actifs_com.mode_transport": "Marche",
+      "parts_modales_actifs_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Centre-Val de Loire",
+      "parts_modales_actifs_com.geocode_region": "24",
+      "parts_modales_actifs_com.mode_transport": "Voiture",
+      "parts_modales_actifs_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Grand Est",
+      "parts_modales_actifs_com.geocode_region": "44",
+      "parts_modales_actifs_com.mode_transport": "Transports en commun",
+      "parts_modales_actifs_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Normandie",
+      "parts_modales_actifs_com.geocode_region": "28",
+      "parts_modales_actifs_com.mode_transport": "Vélo (depuis 2017)",
+      "parts_modales_actifs_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Bretagne",
+      "parts_modales_actifs_com.geocode_region": "53",
+      "parts_modales_actifs_com.mode_transport": "Voiture",
+      "parts_modales_actifs_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Normandie",
+      "parts_modales_actifs_com.geocode_region": "28",
+      "parts_modales_actifs_com.mode_transport": "Deux-roues motorisé (depuis 2017)",
+      "parts_modales_actifs_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Pays de la Loire",
+      "parts_modales_actifs_com.geocode_region": "52",
+      "parts_modales_actifs_com.mode_transport": "Vélo (depuis 2017)",
+      "parts_modales_actifs_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Pays de la Loire",
+      "parts_modales_actifs_com.geocode_region": "52",
+      "parts_modales_actifs_com.mode_transport": "Deux-roues (jusqu'à 2016)",
+      "parts_modales_actifs_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Nouvelle-Aquitaine",
+      "parts_modales_actifs_com.geocode_region": "75",
+      "parts_modales_actifs_com.mode_transport": "Deux-roues (jusqu'à 2016)",
+      "parts_modales_actifs_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Normandie",
+      "parts_modales_actifs_com.geocode_region": "28",
+      "parts_modales_actifs_com.mode_transport": "Deux-roues (jusqu'à 2016)",
+      "parts_modales_actifs_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Grand Est",
+      "parts_modales_actifs_com.geocode_region": "44",
+      "parts_modales_actifs_com.mode_transport": "Pas de transport",
+      "parts_modales_actifs_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "parts_modales_actifs_com.geocode_region": "84",
+      "parts_modales_actifs_com.mode_transport": "Pas de transport",
+      "parts_modales_actifs_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Centre-Val de Loire",
+      "parts_modales_actifs_com.geocode_region": "24",
+      "parts_modales_actifs_com.mode_transport": "Deux-roues (jusqu'à 2016)",
+      "parts_modales_actifs_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Martinique",
+      "parts_modales_actifs_com.geocode_region": "02",
+      "parts_modales_actifs_com.mode_transport": "Voiture",
+      "parts_modales_actifs_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Corse",
+      "parts_modales_actifs_com.geocode_region": "94",
+      "parts_modales_actifs_com.mode_transport": "Marche",
+      "parts_modales_actifs_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "parts_modales_actifs_com.geocode_region": "84",
+      "parts_modales_actifs_com.mode_transport": "Deux-roues (jusqu'à 2016)",
+      "parts_modales_actifs_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Bourgogne-Franche-Comté",
+      "parts_modales_actifs_com.geocode_region": "27",
+      "parts_modales_actifs_com.mode_transport": "Deux-roues (jusqu'à 2016)",
+      "parts_modales_actifs_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Guadeloupe",
+      "parts_modales_actifs_com.geocode_region": "01",
+      "parts_modales_actifs_com.mode_transport": "Voiture",
+      "parts_modales_actifs_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "parts_modales_actifs_com.geocode_region": "84",
+      "parts_modales_actifs_com.mode_transport": "Vélo (depuis 2017)",
+      "parts_modales_actifs_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Corse",
+      "parts_modales_actifs_com.geocode_region": "94",
+      "parts_modales_actifs_com.mode_transport": "Transports en commun",
+      "parts_modales_actifs_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Corse",
+      "parts_modales_actifs_com.geocode_region": "94",
+      "parts_modales_actifs_com.mode_transport": "Pas de transport",
+      "parts_modales_actifs_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Hauts-de-France",
+      "parts_modales_actifs_com.geocode_region": "32",
+      "parts_modales_actifs_com.mode_transport": "Voiture",
+      "parts_modales_actifs_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Pays de la Loire",
+      "parts_modales_actifs_com.geocode_region": "52",
+      "parts_modales_actifs_com.mode_transport": "Marche",
+      "parts_modales_actifs_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Bretagne",
+      "parts_modales_actifs_com.geocode_region": "53",
+      "parts_modales_actifs_com.mode_transport": "Pas de transport",
+      "parts_modales_actifs_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Guadeloupe",
+      "parts_modales_actifs_com.geocode_region": "01",
+      "parts_modales_actifs_com.mode_transport": "Transports en commun",
+      "parts_modales_actifs_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Bourgogne-Franche-Comté",
+      "parts_modales_actifs_com.geocode_region": "27",
+      "parts_modales_actifs_com.mode_transport": "Voiture",
+      "parts_modales_actifs_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "parts_modales_actifs_com.geocode_region": "93",
+      "parts_modales_actifs_com.mode_transport": "Deux-roues (jusqu'à 2016)",
+      "parts_modales_actifs_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Hauts-de-France",
+      "parts_modales_actifs_com.geocode_region": "32",
+      "parts_modales_actifs_com.mode_transport": "Transports en commun",
+      "parts_modales_actifs_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Hauts-de-France",
+      "parts_modales_actifs_com.geocode_region": "32",
+      "parts_modales_actifs_com.mode_transport": "Deux-roues motorisé (depuis 2017)",
+      "parts_modales_actifs_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Guadeloupe",
+      "parts_modales_actifs_com.geocode_region": "01",
+      "parts_modales_actifs_com.mode_transport": "Marche",
+      "parts_modales_actifs_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "parts_modales_actifs_com.geocode_region": "84",
+      "parts_modales_actifs_com.mode_transport": "Voiture",
+      "parts_modales_actifs_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Martinique",
+      "parts_modales_actifs_com.geocode_region": "02",
+      "parts_modales_actifs_com.mode_transport": "Marche",
+      "parts_modales_actifs_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "parts_modales_actifs_com.geocode_region": "93",
+      "parts_modales_actifs_com.mode_transport": "Transports en commun",
+      "parts_modales_actifs_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "La Réunion",
+      "parts_modales_actifs_com.geocode_region": "04",
+      "parts_modales_actifs_com.mode_transport": "Marche",
+      "parts_modales_actifs_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Occitanie",
+      "parts_modales_actifs_com.geocode_region": "76",
+      "parts_modales_actifs_com.mode_transport": "Transports en commun",
+      "parts_modales_actifs_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "La Réunion",
+      "parts_modales_actifs_com.geocode_region": "04",
+      "parts_modales_actifs_com.mode_transport": "Pas de transport",
+      "parts_modales_actifs_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "parts_modales_actifs_com.geocode_region": "93",
+      "parts_modales_actifs_com.mode_transport": "Pas de transport",
+      "parts_modales_actifs_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Grand Est",
+      "parts_modales_actifs_com.geocode_region": "44",
+      "parts_modales_actifs_com.mode_transport": "Vélo (depuis 2017)",
+      "parts_modales_actifs_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Île-de-France",
+      "parts_modales_actifs_com.geocode_region": "11",
+      "parts_modales_actifs_com.mode_transport": "Voiture",
+      "parts_modales_actifs_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Nouvelle-Aquitaine",
+      "parts_modales_actifs_com.geocode_region": "75",
+      "parts_modales_actifs_com.mode_transport": "Marche",
+      "parts_modales_actifs_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Normandie",
+      "parts_modales_actifs_com.geocode_region": "28",
+      "parts_modales_actifs_com.mode_transport": "Transports en commun",
+      "parts_modales_actifs_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Grand Est",
+      "parts_modales_actifs_com.geocode_region": "44",
+      "parts_modales_actifs_com.mode_transport": "Marche",
+      "parts_modales_actifs_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Pays de la Loire",
+      "parts_modales_actifs_com.geocode_region": "52",
+      "parts_modales_actifs_com.mode_transport": "Marche",
+      "parts_modales_actifs_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Hauts-de-France",
+      "parts_modales_actifs_com.geocode_region": "32",
+      "parts_modales_actifs_com.mode_transport": "Deux-roues (jusqu'à 2016)",
+      "parts_modales_actifs_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Hauts-de-France",
+      "parts_modales_actifs_com.geocode_region": "32",
+      "parts_modales_actifs_com.mode_transport": "Deux-roues motorisé (depuis 2017)",
+      "parts_modales_actifs_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "parts_modales_actifs_com.geocode_region": "84",
+      "parts_modales_actifs_com.mode_transport": "Deux-roues (jusqu'à 2016)",
+      "parts_modales_actifs_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Normandie",
+      "parts_modales_actifs_com.geocode_region": "28",
+      "parts_modales_actifs_com.mode_transport": "Deux-roues (jusqu'à 2016)",
+      "parts_modales_actifs_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Corse",
+      "parts_modales_actifs_com.geocode_region": "94",
+      "parts_modales_actifs_com.mode_transport": "Marche",
+      "parts_modales_actifs_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Bretagne",
+      "parts_modales_actifs_com.geocode_region": "53",
+      "parts_modales_actifs_com.mode_transport": "Marche",
+      "parts_modales_actifs_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Guyane",
+      "parts_modales_actifs_com.geocode_region": "03",
+      "parts_modales_actifs_com.mode_transport": "Pas de transport",
+      "parts_modales_actifs_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Pays de la Loire",
+      "parts_modales_actifs_com.geocode_region": "52",
+      "parts_modales_actifs_com.mode_transport": "Voiture",
+      "parts_modales_actifs_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Grand Est",
+      "parts_modales_actifs_com.geocode_region": "44",
+      "parts_modales_actifs_com.mode_transport": "Pas de transport",
+      "parts_modales_actifs_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Pays de la Loire",
+      "parts_modales_actifs_com.geocode_region": "52",
+      "parts_modales_actifs_com.mode_transport": "Pas de transport",
+      "parts_modales_actifs_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Pays de la Loire",
+      "parts_modales_actifs_com.geocode_region": "52",
+      "parts_modales_actifs_com.mode_transport": "Transports en commun",
+      "parts_modales_actifs_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "parts_modales_actifs_com.geocode_region": "93",
+      "parts_modales_actifs_com.mode_transport": "Marche",
+      "parts_modales_actifs_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Normandie",
+      "parts_modales_actifs_com.geocode_region": "28",
+      "parts_modales_actifs_com.mode_transport": "Vélo (depuis 2017)",
+      "parts_modales_actifs_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Bretagne",
+      "parts_modales_actifs_com.geocode_region": "53",
+      "parts_modales_actifs_com.mode_transport": "Transports en commun",
+      "parts_modales_actifs_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Bourgogne-Franche-Comté",
+      "parts_modales_actifs_com.geocode_region": "27",
+      "parts_modales_actifs_com.mode_transport": "Pas de transport",
+      "parts_modales_actifs_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "La Réunion",
+      "parts_modales_actifs_com.geocode_region": "04",
+      "parts_modales_actifs_com.mode_transport": "Marche",
+      "parts_modales_actifs_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Martinique",
+      "parts_modales_actifs_com.geocode_region": "02",
+      "parts_modales_actifs_com.mode_transport": "Marche",
+      "parts_modales_actifs_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Martinique",
+      "parts_modales_actifs_com.geocode_region": "02",
+      "parts_modales_actifs_com.mode_transport": "Voiture",
+      "parts_modales_actifs_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Corse",
+      "parts_modales_actifs_com.geocode_region": "94",
+      "parts_modales_actifs_com.mode_transport": "Pas de transport",
+      "parts_modales_actifs_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Pays de la Loire",
+      "parts_modales_actifs_com.geocode_region": "52",
+      "parts_modales_actifs_com.mode_transport": "Deux-roues (jusqu'à 2016)",
+      "parts_modales_actifs_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Bourgogne-Franche-Comté",
+      "parts_modales_actifs_com.geocode_region": "27",
+      "parts_modales_actifs_com.mode_transport": "Marche",
+      "parts_modales_actifs_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "parts_modales_actifs_com.geocode_region": "84",
+      "parts_modales_actifs_com.mode_transport": "Vélo (depuis 2017)",
+      "parts_modales_actifs_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Hauts-de-France",
+      "parts_modales_actifs_com.geocode_region": "32",
+      "parts_modales_actifs_com.mode_transport": "Pas de transport",
+      "parts_modales_actifs_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Île-de-France",
+      "parts_modales_actifs_com.geocode_region": "11",
+      "parts_modales_actifs_com.mode_transport": "Transports en commun",
+      "parts_modales_actifs_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Occitanie",
+      "parts_modales_actifs_com.geocode_region": "76",
+      "parts_modales_actifs_com.mode_transport": "Voiture",
+      "parts_modales_actifs_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Guyane",
+      "parts_modales_actifs_com.geocode_region": "03",
+      "parts_modales_actifs_com.mode_transport": "Transports en commun",
+      "parts_modales_actifs_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Nouvelle-Aquitaine",
+      "parts_modales_actifs_com.geocode_region": "75",
+      "parts_modales_actifs_com.mode_transport": "Transports en commun",
+      "parts_modales_actifs_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Grand Est",
+      "parts_modales_actifs_com.geocode_region": "44",
+      "parts_modales_actifs_com.mode_transport": "Transports en commun",
+      "parts_modales_actifs_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Occitanie",
+      "parts_modales_actifs_com.geocode_region": "76",
+      "parts_modales_actifs_com.mode_transport": "Marche",
+      "parts_modales_actifs_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Centre-Val de Loire",
+      "parts_modales_actifs_com.geocode_region": "24",
+      "parts_modales_actifs_com.mode_transport": "Marche",
+      "parts_modales_actifs_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Guadeloupe",
+      "parts_modales_actifs_com.geocode_region": "01",
+      "parts_modales_actifs_com.mode_transport": "Marche",
+      "parts_modales_actifs_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Corse",
+      "parts_modales_actifs_com.geocode_region": "94",
+      "parts_modales_actifs_com.mode_transport": "Voiture",
+      "parts_modales_actifs_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Nouvelle-Aquitaine",
+      "parts_modales_actifs_com.geocode_region": "75",
+      "parts_modales_actifs_com.mode_transport": "Pas de transport",
+      "parts_modales_actifs_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Martinique",
+      "parts_modales_actifs_com.geocode_region": "02",
+      "parts_modales_actifs_com.mode_transport": "Transports en commun",
+      "parts_modales_actifs_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Bourgogne-Franche-Comté",
+      "parts_modales_actifs_com.geocode_region": "27",
+      "parts_modales_actifs_com.mode_transport": "Deux-roues (jusqu'à 2016)",
+      "parts_modales_actifs_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Bourgogne-Franche-Comté",
+      "parts_modales_actifs_com.geocode_region": "27",
+      "parts_modales_actifs_com.mode_transport": "Voiture",
+      "parts_modales_actifs_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "La Réunion",
+      "parts_modales_actifs_com.geocode_region": "04",
+      "parts_modales_actifs_com.mode_transport": "Deux-roues (jusqu'à 2016)",
+      "parts_modales_actifs_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Bretagne",
+      "parts_modales_actifs_com.geocode_region": "53",
+      "parts_modales_actifs_com.mode_transport": "Voiture",
+      "parts_modales_actifs_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Occitanie",
+      "parts_modales_actifs_com.geocode_region": "76",
+      "parts_modales_actifs_com.mode_transport": "Deux-roues (jusqu'à 2016)",
+      "parts_modales_actifs_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "La Réunion",
+      "parts_modales_actifs_com.geocode_region": "04",
+      "parts_modales_actifs_com.mode_transport": "Transports en commun",
+      "parts_modales_actifs_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Hauts-de-France",
+      "parts_modales_actifs_com.geocode_region": "32",
+      "parts_modales_actifs_com.mode_transport": "Marche",
+      "parts_modales_actifs_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "parts_modales_actifs_com.geocode_region": "84",
+      "parts_modales_actifs_com.mode_transport": "Marche",
+      "parts_modales_actifs_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Martinique",
+      "parts_modales_actifs_com.geocode_region": "02",
+      "parts_modales_actifs_com.mode_transport": "Pas de transport",
+      "parts_modales_actifs_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Martinique",
+      "parts_modales_actifs_com.geocode_region": "02",
+      "parts_modales_actifs_com.mode_transport": "Deux-roues (jusqu'à 2016)",
+      "parts_modales_actifs_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Guadeloupe",
+      "parts_modales_actifs_com.geocode_region": "01",
+      "parts_modales_actifs_com.mode_transport": "Transports en commun",
+      "parts_modales_actifs_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Pays de la Loire",
+      "parts_modales_actifs_com.geocode_region": "52",
+      "parts_modales_actifs_com.mode_transport": "Deux-roues motorisé (depuis 2017)",
+      "parts_modales_actifs_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Guyane",
+      "parts_modales_actifs_com.geocode_region": "03",
+      "parts_modales_actifs_com.mode_transport": "Deux-roues (jusqu'à 2016)",
+      "parts_modales_actifs_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Centre-Val de Loire",
+      "parts_modales_actifs_com.geocode_region": "24",
+      "parts_modales_actifs_com.mode_transport": "Deux-roues (jusqu'à 2016)",
+      "parts_modales_actifs_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Hauts-de-France",
+      "parts_modales_actifs_com.geocode_region": "32",
+      "parts_modales_actifs_com.mode_transport": "Transports en commun",
+      "parts_modales_actifs_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Grand Est",
+      "parts_modales_actifs_com.geocode_region": "44",
+      "parts_modales_actifs_com.mode_transport": "Deux-roues (jusqu'à 2016)",
+      "parts_modales_actifs_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "La Réunion",
+      "parts_modales_actifs_com.geocode_region": "04",
+      "parts_modales_actifs_com.mode_transport": "Voiture",
+      "parts_modales_actifs_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Corse",
+      "parts_modales_actifs_com.geocode_region": "94",
+      "parts_modales_actifs_com.mode_transport": "Deux-roues (jusqu'à 2016)",
+      "parts_modales_actifs_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Île-de-France",
+      "parts_modales_actifs_com.geocode_region": "11",
+      "parts_modales_actifs_com.mode_transport": "Deux-roues (jusqu'à 2016)",
+      "parts_modales_actifs_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Guadeloupe",
+      "parts_modales_actifs_com.geocode_region": "01",
+      "parts_modales_actifs_com.mode_transport": "Deux-roues (jusqu'à 2016)",
+      "parts_modales_actifs_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "parts_modales_actifs_com.geocode_region": "84",
+      "parts_modales_actifs_com.mode_transport": "Pas de transport",
+      "parts_modales_actifs_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Normandie",
+      "parts_modales_actifs_com.geocode_region": "28",
+      "parts_modales_actifs_com.mode_transport": "Pas de transport",
+      "parts_modales_actifs_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "parts_modales_actifs_com.geocode_region": "93",
+      "parts_modales_actifs_com.mode_transport": "Voiture",
+      "parts_modales_actifs_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "parts_modales_actifs_com.geocode_region": "93",
+      "parts_modales_actifs_com.mode_transport": "Pas de transport",
+      "parts_modales_actifs_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Hauts-de-France",
+      "parts_modales_actifs_com.geocode_region": "32",
+      "parts_modales_actifs_com.mode_transport": "Voiture",
+      "parts_modales_actifs_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Normandie",
+      "parts_modales_actifs_com.geocode_region": "28",
+      "parts_modales_actifs_com.mode_transport": "Marche",
+      "parts_modales_actifs_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Normandie",
+      "parts_modales_actifs_com.geocode_region": "28",
+      "parts_modales_actifs_com.mode_transport": "Transports en commun",
+      "parts_modales_actifs_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Nouvelle-Aquitaine",
+      "parts_modales_actifs_com.geocode_region": "75",
+      "parts_modales_actifs_com.mode_transport": "Deux-roues (jusqu'à 2016)",
+      "parts_modales_actifs_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Occitanie",
+      "parts_modales_actifs_com.geocode_region": "76",
+      "parts_modales_actifs_com.mode_transport": "Pas de transport",
+      "parts_modales_actifs_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Centre-Val de Loire",
+      "parts_modales_actifs_com.geocode_region": "24",
+      "parts_modales_actifs_com.mode_transport": "Voiture",
+      "parts_modales_actifs_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Corse",
+      "parts_modales_actifs_com.geocode_region": "94",
+      "parts_modales_actifs_com.mode_transport": "Transports en commun",
+      "parts_modales_actifs_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Occitanie",
+      "parts_modales_actifs_com.geocode_region": "76",
+      "parts_modales_actifs_com.mode_transport": "Transports en commun",
+      "parts_modales_actifs_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "parts_modales_actifs_com.geocode_region": "93",
+      "parts_modales_actifs_com.mode_transport": "Deux-roues (jusqu'à 2016)",
+      "parts_modales_actifs_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Île-de-France",
+      "parts_modales_actifs_com.geocode_region": "11",
+      "parts_modales_actifs_com.mode_transport": "Pas de transport",
+      "parts_modales_actifs_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Bourgogne-Franche-Comté",
+      "parts_modales_actifs_com.geocode_region": "27",
+      "parts_modales_actifs_com.mode_transport": "Transports en commun",
+      "parts_modales_actifs_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "parts_modales_actifs_com.geocode_region": "93",
+      "parts_modales_actifs_com.mode_transport": "Transports en commun",
+      "parts_modales_actifs_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Centre-Val de Loire",
+      "parts_modales_actifs_com.geocode_region": "24",
+      "parts_modales_actifs_com.mode_transport": "Transports en commun",
+      "parts_modales_actifs_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Centre-Val de Loire",
+      "parts_modales_actifs_com.geocode_region": "24",
+      "parts_modales_actifs_com.mode_transport": "Pas de transport",
+      "parts_modales_actifs_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Guadeloupe",
+      "parts_modales_actifs_com.geocode_region": "01",
+      "parts_modales_actifs_com.mode_transport": "Pas de transport",
+      "parts_modales_actifs_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Bretagne",
+      "parts_modales_actifs_com.geocode_region": "53",
+      "parts_modales_actifs_com.mode_transport": "Pas de transport",
+      "parts_modales_actifs_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Guyane",
+      "parts_modales_actifs_com.geocode_region": "03",
+      "parts_modales_actifs_com.mode_transport": "Marche",
+      "parts_modales_actifs_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Guadeloupe",
+      "parts_modales_actifs_com.geocode_region": "01",
+      "parts_modales_actifs_com.mode_transport": "Voiture",
+      "parts_modales_actifs_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Bretagne",
+      "parts_modales_actifs_com.geocode_region": "53",
+      "parts_modales_actifs_com.mode_transport": "Deux-roues (jusqu'à 2016)",
+      "parts_modales_actifs_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Normandie",
+      "parts_modales_actifs_com.geocode_region": "28",
+      "parts_modales_actifs_com.mode_transport": "Deux-roues motorisé (depuis 2017)",
+      "parts_modales_actifs_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Île-de-France",
+      "parts_modales_actifs_com.geocode_region": "11",
+      "parts_modales_actifs_com.mode_transport": "Marche",
+      "parts_modales_actifs_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Hauts-de-France",
+      "parts_modales_actifs_com.geocode_region": "32",
+      "parts_modales_actifs_com.mode_transport": "Vélo (depuis 2017)",
+      "parts_modales_actifs_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Grand Est",
+      "parts_modales_actifs_com.geocode_region": "44",
+      "parts_modales_actifs_com.mode_transport": "Voiture",
+      "parts_modales_actifs_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "La Réunion",
+      "parts_modales_actifs_com.geocode_region": "04",
+      "parts_modales_actifs_com.mode_transport": "Pas de transport",
+      "parts_modales_actifs_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Nouvelle-Aquitaine",
+      "parts_modales_actifs_com.geocode_region": "75",
+      "parts_modales_actifs_com.mode_transport": "Marche",
+      "parts_modales_actifs_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Normandie",
+      "parts_modales_actifs_com.geocode_region": "28",
+      "parts_modales_actifs_com.mode_transport": "Voiture",
+      "parts_modales_actifs_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Guyane",
+      "parts_modales_actifs_com.geocode_region": "03",
+      "parts_modales_actifs_com.mode_transport": "Voiture",
+      "parts_modales_actifs_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "parts_modales_actifs_com.geocode_region": "84",
+      "parts_modales_actifs_com.mode_transport": "Deux-roues motorisé (depuis 2017)",
+      "parts_modales_actifs_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Île-de-France",
+      "parts_modales_actifs_com.geocode_region": "11",
+      "parts_modales_actifs_com.mode_transport": "Voiture",
+      "parts_modales_actifs_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Nouvelle-Aquitaine",
+      "parts_modales_actifs_com.geocode_region": "75",
+      "parts_modales_actifs_com.mode_transport": "Voiture",
+      "parts_modales_actifs_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "parts_modales_actifs_com.geocode_region": "84",
+      "parts_modales_actifs_com.mode_transport": "Voiture",
+      "parts_modales_actifs_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Pays de la Loire",
+      "parts_modales_actifs_com.geocode_region": "52",
+      "parts_modales_actifs_com.mode_transport": "Vélo (depuis 2017)",
+      "parts_modales_actifs_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "parts_modales_actifs_com.geocode_region": "84",
+      "parts_modales_actifs_com.mode_transport": "Transports en commun",
+      "parts_modales_actifs_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Bretagne",
+      "parts_modales_actifs_com.geocode_region": "53",
+      "parts_modales_actifs_com.mode_transport": "Marche",
+      "parts_modales_actifs_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Pays de la Loire",
+      "parts_modales_actifs_com.geocode_region": "52",
+      "parts_modales_actifs_com.mode_transport": "Pas de transport",
+      "parts_modales_actifs_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Bourgogne-Franche-Comté",
+      "parts_modales_actifs_com.geocode_region": "27",
+      "parts_modales_actifs_com.mode_transport": "Deux-roues motorisé (depuis 2017)",
+      "parts_modales_actifs_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Guadeloupe",
+      "parts_modales_actifs_com.geocode_region": "01",
+      "parts_modales_actifs_com.mode_transport": "Marche",
+      "parts_modales_actifs_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Nouvelle-Aquitaine",
+      "parts_modales_actifs_com.geocode_region": "75",
+      "parts_modales_actifs_com.mode_transport": "Transports en commun",
+      "parts_modales_actifs_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Île-de-France",
+      "parts_modales_actifs_com.geocode_region": "11",
+      "parts_modales_actifs_com.mode_transport": "Voiture",
+      "parts_modales_actifs_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Guadeloupe",
+      "parts_modales_actifs_com.geocode_region": "01",
+      "parts_modales_actifs_com.mode_transport": "Transports en commun",
+      "parts_modales_actifs_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Guadeloupe",
+      "parts_modales_actifs_com.geocode_region": "01",
+      "parts_modales_actifs_com.mode_transport": "Vélo (depuis 2017)",
+      "parts_modales_actifs_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": 0.6007766268396598,
+      "parts_modales_actifs_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Martinique",
+      "parts_modales_actifs_com.geocode_region": "02",
+      "parts_modales_actifs_com.mode_transport": "Marche",
+      "parts_modales_actifs_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Martinique",
+      "parts_modales_actifs_com.geocode_region": "02",
+      "parts_modales_actifs_com.mode_transport": "Deux-roues motorisé (depuis 2017)",
+      "parts_modales_actifs_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Normandie",
+      "parts_modales_actifs_com.geocode_region": "28",
+      "parts_modales_actifs_com.mode_transport": "Voiture",
+      "parts_modales_actifs_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "parts_modales_actifs_com.geocode_region": "84",
+      "parts_modales_actifs_com.mode_transport": "Deux-roues motorisé (depuis 2017)",
+      "parts_modales_actifs_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Nouvelle-Aquitaine",
+      "parts_modales_actifs_com.geocode_region": "75",
+      "parts_modales_actifs_com.mode_transport": "Voiture",
+      "parts_modales_actifs_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Grand Est",
+      "parts_modales_actifs_com.geocode_region": "44",
+      "parts_modales_actifs_com.mode_transport": "Vélo (depuis 2017)",
+      "parts_modales_actifs_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": 3.5032238300689023,
+      "parts_modales_actifs_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Guadeloupe",
+      "parts_modales_actifs_com.geocode_region": "01",
+      "parts_modales_actifs_com.mode_transport": "Deux-roues motorisé (depuis 2017)",
+      "parts_modales_actifs_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Île-de-France",
+      "parts_modales_actifs_com.geocode_region": "11",
+      "parts_modales_actifs_com.mode_transport": "Transports en commun",
+      "parts_modales_actifs_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Martinique",
+      "parts_modales_actifs_com.geocode_region": "02",
+      "parts_modales_actifs_com.mode_transport": "Voiture",
+      "parts_modales_actifs_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Hauts-de-France",
+      "parts_modales_actifs_com.geocode_region": "32",
+      "parts_modales_actifs_com.mode_transport": "Deux-roues motorisé (depuis 2017)",
+      "parts_modales_actifs_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Centre-Val de Loire",
+      "parts_modales_actifs_com.geocode_region": "24",
+      "parts_modales_actifs_com.mode_transport": "Voiture",
+      "parts_modales_actifs_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "parts_modales_actifs_com.geocode_region": "84",
+      "parts_modales_actifs_com.mode_transport": "Deux-roues (jusqu'à 2016)",
+      "parts_modales_actifs_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Guyane",
+      "parts_modales_actifs_com.geocode_region": "03",
+      "parts_modales_actifs_com.mode_transport": "Voiture",
+      "parts_modales_actifs_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Guadeloupe",
+      "parts_modales_actifs_com.geocode_region": "01",
+      "parts_modales_actifs_com.mode_transport": "Voiture",
+      "parts_modales_actifs_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Normandie",
+      "parts_modales_actifs_com.geocode_region": "28",
+      "parts_modales_actifs_com.mode_transport": "Vélo (depuis 2017)",
+      "parts_modales_actifs_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": 2.0827423535216165,
+      "parts_modales_actifs_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Occitanie",
+      "parts_modales_actifs_com.geocode_region": "76",
+      "parts_modales_actifs_com.mode_transport": "Marche",
+      "parts_modales_actifs_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Corse",
+      "parts_modales_actifs_com.geocode_region": "94",
+      "parts_modales_actifs_com.mode_transport": "Deux-roues motorisé (depuis 2017)",
+      "parts_modales_actifs_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Nouvelle-Aquitaine",
+      "parts_modales_actifs_com.geocode_region": "75",
+      "parts_modales_actifs_com.mode_transport": "Marche",
+      "parts_modales_actifs_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Pays de la Loire",
+      "parts_modales_actifs_com.geocode_region": "52",
+      "parts_modales_actifs_com.mode_transport": "Deux-roues motorisé (depuis 2017)",
+      "parts_modales_actifs_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "La Réunion",
+      "parts_modales_actifs_com.geocode_region": "04",
+      "parts_modales_actifs_com.mode_transport": "Transports en commun",
+      "parts_modales_actifs_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "parts_modales_actifs_com.geocode_region": "84",
+      "parts_modales_actifs_com.mode_transport": "Pas de transport",
+      "parts_modales_actifs_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Nouvelle-Aquitaine",
+      "parts_modales_actifs_com.geocode_region": "75",
+      "parts_modales_actifs_com.mode_transport": "Vélo (depuis 2017)",
+      "parts_modales_actifs_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": 3.4937692197935575,
+      "parts_modales_actifs_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Corse",
+      "parts_modales_actifs_com.geocode_region": "94",
+      "parts_modales_actifs_com.mode_transport": "Transports en commun",
+      "parts_modales_actifs_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Centre-Val de Loire",
+      "parts_modales_actifs_com.geocode_region": "24",
+      "parts_modales_actifs_com.mode_transport": "Deux-roues motorisé (depuis 2017)",
+      "parts_modales_actifs_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Martinique",
+      "parts_modales_actifs_com.geocode_region": "02",
+      "parts_modales_actifs_com.mode_transport": "Pas de transport",
+      "parts_modales_actifs_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Normandie",
+      "parts_modales_actifs_com.geocode_region": "28",
+      "parts_modales_actifs_com.mode_transport": "Transports en commun",
+      "parts_modales_actifs_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "La Réunion",
+      "parts_modales_actifs_com.geocode_region": "04",
+      "parts_modales_actifs_com.mode_transport": "Marche",
+      "parts_modales_actifs_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Martinique",
+      "parts_modales_actifs_com.geocode_region": "02",
+      "parts_modales_actifs_com.mode_transport": "Vélo (depuis 2017)",
+      "parts_modales_actifs_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": 0.20685746475539987,
+      "parts_modales_actifs_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Bourgogne-Franche-Comté",
+      "parts_modales_actifs_com.geocode_region": "27",
+      "parts_modales_actifs_com.mode_transport": "Voiture",
+      "parts_modales_actifs_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Centre-Val de Loire",
+      "parts_modales_actifs_com.geocode_region": "24",
+      "parts_modales_actifs_com.mode_transport": "Vélo (depuis 2017)",
+      "parts_modales_actifs_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": 2.8393947299934155,
+      "parts_modales_actifs_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Occitanie",
+      "parts_modales_actifs_com.geocode_region": "76",
+      "parts_modales_actifs_com.mode_transport": "Voiture",
+      "parts_modales_actifs_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Occitanie",
+      "parts_modales_actifs_com.geocode_region": "76",
+      "parts_modales_actifs_com.mode_transport": "Deux-roues motorisé (depuis 2017)",
+      "parts_modales_actifs_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Guyane",
+      "parts_modales_actifs_com.geocode_region": "03",
+      "parts_modales_actifs_com.mode_transport": "Pas de transport",
+      "parts_modales_actifs_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Corse",
+      "parts_modales_actifs_com.geocode_region": "94",
+      "parts_modales_actifs_com.mode_transport": "Pas de transport",
+      "parts_modales_actifs_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "parts_modales_actifs_com.geocode_region": "93",
+      "parts_modales_actifs_com.mode_transport": "Voiture",
+      "parts_modales_actifs_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "parts_modales_actifs_com.geocode_region": "93",
+      "parts_modales_actifs_com.mode_transport": "Transports en commun",
+      "parts_modales_actifs_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Hauts-de-France",
+      "parts_modales_actifs_com.geocode_region": "32",
+      "parts_modales_actifs_com.mode_transport": "Voiture",
+      "parts_modales_actifs_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Pays de la Loire",
+      "parts_modales_actifs_com.geocode_region": "52",
+      "parts_modales_actifs_com.mode_transport": "Voiture",
+      "parts_modales_actifs_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Centre-Val de Loire",
+      "parts_modales_actifs_com.geocode_region": "24",
+      "parts_modales_actifs_com.mode_transport": "Transports en commun",
+      "parts_modales_actifs_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "parts_modales_actifs_com.geocode_region": "93",
+      "parts_modales_actifs_com.mode_transport": "Deux-roues motorisé (depuis 2017)",
+      "parts_modales_actifs_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Bretagne",
+      "parts_modales_actifs_com.geocode_region": "53",
+      "parts_modales_actifs_com.mode_transport": "Vélo (depuis 2017)",
+      "parts_modales_actifs_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": 3.0745359719116836,
+      "parts_modales_actifs_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Normandie",
+      "parts_modales_actifs_com.geocode_region": "28",
+      "parts_modales_actifs_com.mode_transport": "Marche",
+      "parts_modales_actifs_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Grand Est",
+      "parts_modales_actifs_com.geocode_region": "44",
+      "parts_modales_actifs_com.mode_transport": "Pas de transport",
+      "parts_modales_actifs_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Pays de la Loire",
+      "parts_modales_actifs_com.geocode_region": "52",
+      "parts_modales_actifs_com.mode_transport": "Transports en commun",
+      "parts_modales_actifs_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Île-de-France",
+      "parts_modales_actifs_com.geocode_region": "11",
+      "parts_modales_actifs_com.mode_transport": "Vélo (depuis 2017)",
+      "parts_modales_actifs_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": 4.026677123573527,
+      "parts_modales_actifs_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "parts_modales_actifs_com.geocode_region": "84",
+      "parts_modales_actifs_com.mode_transport": "Vélo (depuis 2017)",
+      "parts_modales_actifs_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": 3.9043727152590115,
+      "parts_modales_actifs_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Grand Est",
+      "parts_modales_actifs_com.geocode_region": "44",
+      "parts_modales_actifs_com.mode_transport": "Transports en commun",
+      "parts_modales_actifs_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Guadeloupe",
+      "parts_modales_actifs_com.geocode_region": "01",
+      "parts_modales_actifs_com.mode_transport": "Pas de transport",
+      "parts_modales_actifs_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Grand Est",
+      "parts_modales_actifs_com.geocode_region": "44",
+      "parts_modales_actifs_com.mode_transport": "Deux-roues motorisé (depuis 2017)",
+      "parts_modales_actifs_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "La Réunion",
+      "parts_modales_actifs_com.geocode_region": "04",
+      "parts_modales_actifs_com.mode_transport": "Pas de transport",
+      "parts_modales_actifs_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "parts_modales_actifs_com.geocode_region": "93",
+      "parts_modales_actifs_com.mode_transport": "Marche",
+      "parts_modales_actifs_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "La Réunion",
+      "parts_modales_actifs_com.geocode_region": "04",
+      "parts_modales_actifs_com.mode_transport": "Deux-roues motorisé (depuis 2017)",
+      "parts_modales_actifs_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Corse",
+      "parts_modales_actifs_com.geocode_region": "94",
+      "parts_modales_actifs_com.mode_transport": "Marche",
+      "parts_modales_actifs_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Occitanie",
+      "parts_modales_actifs_com.geocode_region": "76",
+      "parts_modales_actifs_com.mode_transport": "Pas de transport",
+      "parts_modales_actifs_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Guyane",
+      "parts_modales_actifs_com.geocode_region": "03",
+      "parts_modales_actifs_com.mode_transport": "Marche",
+      "parts_modales_actifs_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Corse",
+      "parts_modales_actifs_com.geocode_region": "94",
+      "parts_modales_actifs_com.mode_transport": "Vélo (depuis 2017)",
+      "parts_modales_actifs_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": 0.6837540960928287,
+      "parts_modales_actifs_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Normandie",
+      "parts_modales_actifs_com.geocode_region": "28",
+      "parts_modales_actifs_com.mode_transport": "Pas de transport",
+      "parts_modales_actifs_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "La Réunion",
+      "parts_modales_actifs_com.geocode_region": "04",
+      "parts_modales_actifs_com.mode_transport": "Vélo (depuis 2017)",
+      "parts_modales_actifs_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": 1.6626241095239547,
+      "parts_modales_actifs_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Bretagne",
+      "parts_modales_actifs_com.geocode_region": "53",
+      "parts_modales_actifs_com.mode_transport": "Transports en commun",
+      "parts_modales_actifs_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Nouvelle-Aquitaine",
+      "parts_modales_actifs_com.geocode_region": "75",
+      "parts_modales_actifs_com.mode_transport": "Pas de transport",
+      "parts_modales_actifs_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Bourgogne-Franche-Comté",
+      "parts_modales_actifs_com.geocode_region": "27",
+      "parts_modales_actifs_com.mode_transport": "Transports en commun",
+      "parts_modales_actifs_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Guyane",
+      "parts_modales_actifs_com.geocode_region": "03",
+      "parts_modales_actifs_com.mode_transport": "Transports en commun",
+      "parts_modales_actifs_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Corse",
+      "parts_modales_actifs_com.geocode_region": "94",
+      "parts_modales_actifs_com.mode_transport": "Voiture",
+      "parts_modales_actifs_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Bretagne",
+      "parts_modales_actifs_com.geocode_region": "53",
+      "parts_modales_actifs_com.mode_transport": "Deux-roues motorisé (depuis 2017)",
+      "parts_modales_actifs_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "La Réunion",
+      "parts_modales_actifs_com.geocode_region": "04",
+      "parts_modales_actifs_com.mode_transport": "Voiture",
+      "parts_modales_actifs_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "parts_modales_actifs_com.geocode_region": "84",
+      "parts_modales_actifs_com.mode_transport": "Transports en commun",
+      "parts_modales_actifs_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Centre-Val de Loire",
+      "parts_modales_actifs_com.geocode_region": "24",
+      "parts_modales_actifs_com.mode_transport": "Marche",
+      "parts_modales_actifs_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Hauts-de-France",
+      "parts_modales_actifs_com.geocode_region": "32",
+      "parts_modales_actifs_com.mode_transport": "Transports en commun",
+      "parts_modales_actifs_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Occitanie",
+      "parts_modales_actifs_com.geocode_region": "76",
+      "parts_modales_actifs_com.mode_transport": "Vélo (depuis 2017)",
+      "parts_modales_actifs_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": 3.580327222993492,
+      "parts_modales_actifs_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Hauts-de-France",
+      "parts_modales_actifs_com.geocode_region": "32",
+      "parts_modales_actifs_com.mode_transport": "Marche",
+      "parts_modales_actifs_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Pays de la Loire",
+      "parts_modales_actifs_com.geocode_region": "52",
+      "parts_modales_actifs_com.mode_transport": "Marche",
+      "parts_modales_actifs_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "parts_modales_actifs_com.geocode_region": "84",
+      "parts_modales_actifs_com.mode_transport": "Voiture",
+      "parts_modales_actifs_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Grand Est",
+      "parts_modales_actifs_com.geocode_region": "44",
+      "parts_modales_actifs_com.mode_transport": "Marche",
+      "parts_modales_actifs_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Bourgogne-Franche-Comté",
+      "parts_modales_actifs_com.geocode_region": "27",
+      "parts_modales_actifs_com.mode_transport": "Pas de transport",
+      "parts_modales_actifs_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Guyane",
+      "parts_modales_actifs_com.geocode_region": "03",
+      "parts_modales_actifs_com.mode_transport": "Vélo (depuis 2017)",
+      "parts_modales_actifs_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": 3.8027362430716596,
+      "parts_modales_actifs_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Centre-Val de Loire",
+      "parts_modales_actifs_com.geocode_region": "24",
+      "parts_modales_actifs_com.mode_transport": "Pas de transport",
+      "parts_modales_actifs_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "parts_modales_actifs_com.geocode_region": "93",
+      "parts_modales_actifs_com.mode_transport": "Pas de transport",
+      "parts_modales_actifs_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Bourgogne-Franche-Comté",
+      "parts_modales_actifs_com.geocode_region": "27",
+      "parts_modales_actifs_com.mode_transport": "Vélo (depuis 2017)",
+      "parts_modales_actifs_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": 2.399010608523298,
+      "parts_modales_actifs_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Bourgogne-Franche-Comté",
+      "parts_modales_actifs_com.geocode_region": "27",
+      "parts_modales_actifs_com.mode_transport": "Marche",
+      "parts_modales_actifs_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Occitanie",
+      "parts_modales_actifs_com.geocode_region": "76",
+      "parts_modales_actifs_com.mode_transport": "Transports en commun",
+      "parts_modales_actifs_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Hauts-de-France",
+      "parts_modales_actifs_com.geocode_region": "32",
+      "parts_modales_actifs_com.mode_transport": "Vélo (depuis 2017)",
+      "parts_modales_actifs_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": 2.28775664459497,
+      "parts_modales_actifs_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "parts_modales_actifs_com.geocode_region": "93",
+      "parts_modales_actifs_com.mode_transport": "Vélo (depuis 2017)",
+      "parts_modales_actifs_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": 2.2245778245839114,
+      "parts_modales_actifs_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Martinique",
+      "parts_modales_actifs_com.geocode_region": "02",
+      "parts_modales_actifs_com.mode_transport": "Transports en commun",
+      "parts_modales_actifs_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Île-de-France",
+      "parts_modales_actifs_com.geocode_region": "11",
+      "parts_modales_actifs_com.mode_transport": "Marche",
+      "parts_modales_actifs_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Normandie",
+      "parts_modales_actifs_com.geocode_region": "28",
+      "parts_modales_actifs_com.mode_transport": "Deux-roues motorisé (depuis 2017)",
+      "parts_modales_actifs_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Bretagne",
+      "parts_modales_actifs_com.geocode_region": "53",
+      "parts_modales_actifs_com.mode_transport": "Voiture",
+      "parts_modales_actifs_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Hauts-de-France",
+      "parts_modales_actifs_com.geocode_region": "32",
+      "parts_modales_actifs_com.mode_transport": "Pas de transport",
+      "parts_modales_actifs_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Nouvelle-Aquitaine",
+      "parts_modales_actifs_com.geocode_region": "75",
+      "parts_modales_actifs_com.mode_transport": "Deux-roues motorisé (depuis 2017)",
+      "parts_modales_actifs_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Bretagne",
+      "parts_modales_actifs_com.geocode_region": "53",
+      "parts_modales_actifs_com.mode_transport": "Pas de transport",
+      "parts_modales_actifs_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Pays de la Loire",
+      "parts_modales_actifs_com.geocode_region": "52",
+      "parts_modales_actifs_com.mode_transport": "Vélo (depuis 2017)",
+      "parts_modales_actifs_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": 4.141849023505346,
+      "parts_modales_actifs_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "parts_modales_actifs_com.geocode_region": "84",
+      "parts_modales_actifs_com.mode_transport": "Marche",
+      "parts_modales_actifs_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Île-de-France",
+      "parts_modales_actifs_com.geocode_region": "11",
+      "parts_modales_actifs_com.mode_transport": "Deux-roues motorisé (depuis 2017)",
+      "parts_modales_actifs_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Guyane",
+      "parts_modales_actifs_com.geocode_region": "03",
+      "parts_modales_actifs_com.mode_transport": "Deux-roues motorisé (depuis 2017)",
+      "parts_modales_actifs_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Grand Est",
+      "parts_modales_actifs_com.geocode_region": "44",
+      "parts_modales_actifs_com.mode_transport": "Voiture",
+      "parts_modales_actifs_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parts_modales_actifs_com.libelle_region": "Île-de-France",
+      "parts_modales_actifs_com.geocode_region": "11",
+      "parts_modales_actifs_com.mode_transport": "Pas de transport",
+      "parts_modales_actifs_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parts_modales_actifs_com.id_955": null,
+      "parts_modales_actifs_com.date_mesure": "2022-01-01T00:00:00.000"
+    }
+  ],
+  "measureMeta": {
+    "libelle_indicateur": "Part d'actifs selon le mode de transport principalement utilisé pour aller travailler - vélo",
+    "statut_commun": "Métrique",
+    "unite": "%",
+    "id_parents": 1053,
+    "methode_calcul": null,
+    "numerator": "nb_actifs_velo",
+    "denominator": "nb_actifs_total"
+  }
+}

@@ -1,0 +1,2930 @@
+{
+  "cubeName": "lineaire_cyclable_habitant_com",
+  "measureName": "lineaire_cyclable_habitant_com.id_133",
+  "timeDimension": "lineaire_cyclable_habitant_com.date_mesure",
+  "extraDimension": "lineaire_cyclable_habitant_com.geocode_commune",
+  "data": [
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "lineaire_cyclable_habitant_com.geocode_region": "93",
+      "lineaire_cyclable_habitant_com.type_amenagement": "voies bus partagées",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.004772981288897818,
+      "lineaire_cyclable_habitant_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Île-de-France",
+      "lineaire_cyclable_habitant_com.geocode_region": "11",
+      "lineaire_cyclable_habitant_com.type_amenagement": "voies vertes",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.09294009464920164,
+      "lineaire_cyclable_habitant_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Bretagne",
+      "lineaire_cyclable_habitant_com.geocode_region": "53",
+      "lineaire_cyclable_habitant_com.type_amenagement": "aménagements mixtes",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.10014265896518895,
+      "lineaire_cyclable_habitant_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Centre-Val de Loire",
+      "lineaire_cyclable_habitant_com.geocode_region": "24",
+      "lineaire_cyclable_habitant_com.type_amenagement": "voies bus partagées",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.005292672879472093,
+      "lineaire_cyclable_habitant_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Occitanie",
+      "lineaire_cyclable_habitant_com.geocode_region": "76",
+      "lineaire_cyclable_habitant_com.type_amenagement": "pistes cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.6015143637017901,
+      "lineaire_cyclable_habitant_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Pays de la Loire",
+      "lineaire_cyclable_habitant_com.geocode_region": "52",
+      "lineaire_cyclable_habitant_com.type_amenagement": "aménagements mixtes",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.06620375198905233,
+      "lineaire_cyclable_habitant_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Pays de la Loire",
+      "lineaire_cyclable_habitant_com.geocode_region": "52",
+      "lineaire_cyclable_habitant_com.type_amenagement": "voies vertes",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.5563480093451635,
+      "lineaire_cyclable_habitant_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Occitanie",
+      "lineaire_cyclable_habitant_com.geocode_region": "76",
+      "lineaire_cyclable_habitant_com.type_amenagement": "aménagements mixtes",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.04411542872841484,
+      "lineaire_cyclable_habitant_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Bourgogne-Franche-Comté",
+      "lineaire_cyclable_habitant_com.geocode_region": "27",
+      "lineaire_cyclable_habitant_com.type_amenagement": "double-sens cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.029077410018605792,
+      "lineaire_cyclable_habitant_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Grand Est",
+      "lineaire_cyclable_habitant_com.geocode_region": "44",
+      "lineaire_cyclable_habitant_com.type_amenagement": "voies bus partagées",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.0058482216053758855,
+      "lineaire_cyclable_habitant_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Grand Est",
+      "lineaire_cyclable_habitant_com.geocode_region": "44",
+      "lineaire_cyclable_habitant_com.type_amenagement": "pistes cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.8941567997949685,
+      "lineaire_cyclable_habitant_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Hauts-de-France",
+      "lineaire_cyclable_habitant_com.geocode_region": "32",
+      "lineaire_cyclable_habitant_com.type_amenagement": "autre",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.15384482161124816,
+      "lineaire_cyclable_habitant_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Bretagne",
+      "lineaire_cyclable_habitant_com.geocode_region": "53",
+      "lineaire_cyclable_habitant_com.type_amenagement": "pistes cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.605225145416164,
+      "lineaire_cyclable_habitant_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Corse",
+      "lineaire_cyclable_habitant_com.geocode_region": "94",
+      "lineaire_cyclable_habitant_com.type_amenagement": "double-sens cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0,
+      "lineaire_cyclable_habitant_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "lineaire_cyclable_habitant_com.geocode_region": "84",
+      "lineaire_cyclable_habitant_com.type_amenagement": "double-sens cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.06669852899488445,
+      "lineaire_cyclable_habitant_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Centre-Val de Loire",
+      "lineaire_cyclable_habitant_com.geocode_region": "24",
+      "lineaire_cyclable_habitant_com.type_amenagement": "pistes cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.6000602367498579,
+      "lineaire_cyclable_habitant_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Nouvelle-Aquitaine",
+      "lineaire_cyclable_habitant_com.geocode_region": "75",
+      "lineaire_cyclable_habitant_com.type_amenagement": "bandes cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.21194504956417257,
+      "lineaire_cyclable_habitant_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Bretagne",
+      "lineaire_cyclable_habitant_com.geocode_region": "53",
+      "lineaire_cyclable_habitant_com.type_amenagement": "bandes cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.3124159799502451,
+      "lineaire_cyclable_habitant_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Normandie",
+      "lineaire_cyclable_habitant_com.geocode_region": "28",
+      "lineaire_cyclable_habitant_com.type_amenagement": "voies vertes",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.526434332060564,
+      "lineaire_cyclable_habitant_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Occitanie",
+      "lineaire_cyclable_habitant_com.geocode_region": "76",
+      "lineaire_cyclable_habitant_com.type_amenagement": "double-sens cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.05455484701724284,
+      "lineaire_cyclable_habitant_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Bretagne",
+      "lineaire_cyclable_habitant_com.geocode_region": "53",
+      "lineaire_cyclable_habitant_com.type_amenagement": "double-sens cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.059626737855060154,
+      "lineaire_cyclable_habitant_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "lineaire_cyclable_habitant_com.geocode_region": "93",
+      "lineaire_cyclable_habitant_com.type_amenagement": "aménagements mixtes",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.035987869558192206,
+      "lineaire_cyclable_habitant_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Île-de-France",
+      "lineaire_cyclable_habitant_com.geocode_region": "11",
+      "lineaire_cyclable_habitant_com.type_amenagement": "aménagements mixtes",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.02477128726306712,
+      "lineaire_cyclable_habitant_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "lineaire_cyclable_habitant_com.geocode_region": "84",
+      "lineaire_cyclable_habitant_com.type_amenagement": "pistes cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.42418365631654925,
+      "lineaire_cyclable_habitant_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Île-de-France",
+      "lineaire_cyclable_habitant_com.geocode_region": "11",
+      "lineaire_cyclable_habitant_com.type_amenagement": "pistes cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.27653470601206404,
+      "lineaire_cyclable_habitant_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Occitanie",
+      "lineaire_cyclable_habitant_com.geocode_region": "76",
+      "lineaire_cyclable_habitant_com.type_amenagement": "voies vertes",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.2659070971156301,
+      "lineaire_cyclable_habitant_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Hauts-de-France",
+      "lineaire_cyclable_habitant_com.geocode_region": "32",
+      "lineaire_cyclable_habitant_com.type_amenagement": "pistes cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.37694271073499935,
+      "lineaire_cyclable_habitant_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Bretagne",
+      "lineaire_cyclable_habitant_com.geocode_region": "53",
+      "lineaire_cyclable_habitant_com.type_amenagement": "autre",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.22258852397153506,
+      "lineaire_cyclable_habitant_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Normandie",
+      "lineaire_cyclable_habitant_com.geocode_region": "28",
+      "lineaire_cyclable_habitant_com.type_amenagement": "bandes cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.11420401367565786,
+      "lineaire_cyclable_habitant_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Nouvelle-Aquitaine",
+      "lineaire_cyclable_habitant_com.geocode_region": "75",
+      "lineaire_cyclable_habitant_com.type_amenagement": "double-sens cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.07739960590913347,
+      "lineaire_cyclable_habitant_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "lineaire_cyclable_habitant_com.geocode_region": "84",
+      "lineaire_cyclable_habitant_com.type_amenagement": "voies vertes",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.19485993671962581,
+      "lineaire_cyclable_habitant_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Pays de la Loire",
+      "lineaire_cyclable_habitant_com.geocode_region": "52",
+      "lineaire_cyclable_habitant_com.type_amenagement": "autre",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.1365050108223886,
+      "lineaire_cyclable_habitant_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Normandie",
+      "lineaire_cyclable_habitant_com.geocode_region": "28",
+      "lineaire_cyclable_habitant_com.type_amenagement": "voies bus partagées",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.009308181094196987,
+      "lineaire_cyclable_habitant_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Grand Est",
+      "lineaire_cyclable_habitant_com.geocode_region": "44",
+      "lineaire_cyclable_habitant_com.type_amenagement": "voies vertes",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.3125503152413538,
+      "lineaire_cyclable_habitant_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Nouvelle-Aquitaine",
+      "lineaire_cyclable_habitant_com.geocode_region": "75",
+      "lineaire_cyclable_habitant_com.type_amenagement": "aménagements mixtes",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.045793139065359416,
+      "lineaire_cyclable_habitant_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Corse",
+      "lineaire_cyclable_habitant_com.geocode_region": "94",
+      "lineaire_cyclable_habitant_com.type_amenagement": "pistes cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.1521384091176125,
+      "lineaire_cyclable_habitant_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "lineaire_cyclable_habitant_com.geocode_region": "93",
+      "lineaire_cyclable_habitant_com.type_amenagement": "voies vertes",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.1299206608961326,
+      "lineaire_cyclable_habitant_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Centre-Val de Loire",
+      "lineaire_cyclable_habitant_com.geocode_region": "24",
+      "lineaire_cyclable_habitant_com.type_amenagement": "bandes cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.2811583332685626,
+      "lineaire_cyclable_habitant_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Normandie",
+      "lineaire_cyclable_habitant_com.geocode_region": "28",
+      "lineaire_cyclable_habitant_com.type_amenagement": "pistes cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.472305830440128,
+      "lineaire_cyclable_habitant_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Corse",
+      "lineaire_cyclable_habitant_com.geocode_region": "94",
+      "lineaire_cyclable_habitant_com.type_amenagement": "autre",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.16032193631770653,
+      "lineaire_cyclable_habitant_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Normandie",
+      "lineaire_cyclable_habitant_com.geocode_region": "28",
+      "lineaire_cyclable_habitant_com.type_amenagement": "autre",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.1280619254190636,
+      "lineaire_cyclable_habitant_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "lineaire_cyclable_habitant_com.geocode_region": "84",
+      "lineaire_cyclable_habitant_com.type_amenagement": "aménagements mixtes",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.034601916514068964,
+      "lineaire_cyclable_habitant_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Île-de-France",
+      "lineaire_cyclable_habitant_com.geocode_region": "11",
+      "lineaire_cyclable_habitant_com.type_amenagement": "voies bus partagées",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.019603028539591772,
+      "lineaire_cyclable_habitant_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Bourgogne-Franche-Comté",
+      "lineaire_cyclable_habitant_com.geocode_region": "27",
+      "lineaire_cyclable_habitant_com.type_amenagement": "voies vertes",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.5103133754874217,
+      "lineaire_cyclable_habitant_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Normandie",
+      "lineaire_cyclable_habitant_com.geocode_region": "28",
+      "lineaire_cyclable_habitant_com.type_amenagement": "double-sens cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.050401319445948216,
+      "lineaire_cyclable_habitant_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Bourgogne-Franche-Comté",
+      "lineaire_cyclable_habitant_com.geocode_region": "27",
+      "lineaire_cyclable_habitant_com.type_amenagement": "pistes cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.754296081380677,
+      "lineaire_cyclable_habitant_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Île-de-France",
+      "lineaire_cyclable_habitant_com.geocode_region": "11",
+      "lineaire_cyclable_habitant_com.type_amenagement": "autre",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.11777963854808596,
+      "lineaire_cyclable_habitant_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "lineaire_cyclable_habitant_com.geocode_region": "93",
+      "lineaire_cyclable_habitant_com.type_amenagement": "pistes cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.2500828068562307,
+      "lineaire_cyclable_habitant_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Nouvelle-Aquitaine",
+      "lineaire_cyclable_habitant_com.geocode_region": "75",
+      "lineaire_cyclable_habitant_com.type_amenagement": "pistes cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.9720665678472374,
+      "lineaire_cyclable_habitant_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Centre-Val de Loire",
+      "lineaire_cyclable_habitant_com.geocode_region": "24",
+      "lineaire_cyclable_habitant_com.type_amenagement": "voies vertes",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.4195567352458827,
+      "lineaire_cyclable_habitant_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Grand Est",
+      "lineaire_cyclable_habitant_com.geocode_region": "44",
+      "lineaire_cyclable_habitant_com.type_amenagement": "bandes cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.18375913548404046,
+      "lineaire_cyclable_habitant_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Nouvelle-Aquitaine",
+      "lineaire_cyclable_habitant_com.geocode_region": "75",
+      "lineaire_cyclable_habitant_com.type_amenagement": "autre",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.09525947920307995,
+      "lineaire_cyclable_habitant_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Hauts-de-France",
+      "lineaire_cyclable_habitant_com.geocode_region": "32",
+      "lineaire_cyclable_habitant_com.type_amenagement": "aménagements mixtes",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.035065421892982576,
+      "lineaire_cyclable_habitant_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Corse",
+      "lineaire_cyclable_habitant_com.geocode_region": "94",
+      "lineaire_cyclable_habitant_com.type_amenagement": "voies vertes",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.010486429326753614,
+      "lineaire_cyclable_habitant_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Bretagne",
+      "lineaire_cyclable_habitant_com.geocode_region": "53",
+      "lineaire_cyclable_habitant_com.type_amenagement": "voies vertes",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.6647872008737198,
+      "lineaire_cyclable_habitant_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "lineaire_cyclable_habitant_com.geocode_region": "93",
+      "lineaire_cyclable_habitant_com.type_amenagement": "autre",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.21658101265847693,
+      "lineaire_cyclable_habitant_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Corse",
+      "lineaire_cyclable_habitant_com.geocode_region": "94",
+      "lineaire_cyclable_habitant_com.type_amenagement": "voies bus partagées",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.0029256256609094112,
+      "lineaire_cyclable_habitant_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Bretagne",
+      "lineaire_cyclable_habitant_com.geocode_region": "53",
+      "lineaire_cyclable_habitant_com.type_amenagement": "voies bus partagées",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.01535864153849914,
+      "lineaire_cyclable_habitant_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "lineaire_cyclable_habitant_com.geocode_region": "84",
+      "lineaire_cyclable_habitant_com.type_amenagement": "bandes cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.3305996715627234,
+      "lineaire_cyclable_habitant_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Île-de-France",
+      "lineaire_cyclable_habitant_com.geocode_region": "11",
+      "lineaire_cyclable_habitant_com.type_amenagement": "double-sens cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.12317647952985938,
+      "lineaire_cyclable_habitant_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Pays de la Loire",
+      "lineaire_cyclable_habitant_com.geocode_region": "52",
+      "lineaire_cyclable_habitant_com.type_amenagement": "bandes cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.34306958615890176,
+      "lineaire_cyclable_habitant_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "lineaire_cyclable_habitant_com.geocode_region": "84",
+      "lineaire_cyclable_habitant_com.type_amenagement": "autre",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.1773092562218572,
+      "lineaire_cyclable_habitant_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Centre-Val de Loire",
+      "lineaire_cyclable_habitant_com.geocode_region": "24",
+      "lineaire_cyclable_habitant_com.type_amenagement": "autre",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.13277500990991692,
+      "lineaire_cyclable_habitant_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Hauts-de-France",
+      "lineaire_cyclable_habitant_com.geocode_region": "32",
+      "lineaire_cyclable_habitant_com.type_amenagement": "voies vertes",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.39492355219787945,
+      "lineaire_cyclable_habitant_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Corse",
+      "lineaire_cyclable_habitant_com.geocode_region": "94",
+      "lineaire_cyclable_habitant_com.type_amenagement": "bandes cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0,
+      "lineaire_cyclable_habitant_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Grand Est",
+      "lineaire_cyclable_habitant_com.geocode_region": "44",
+      "lineaire_cyclable_habitant_com.type_amenagement": "aménagements mixtes",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.03936813865688158,
+      "lineaire_cyclable_habitant_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Pays de la Loire",
+      "lineaire_cyclable_habitant_com.geocode_region": "52",
+      "lineaire_cyclable_habitant_com.type_amenagement": "voies bus partagées",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.016737331605394094,
+      "lineaire_cyclable_habitant_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Centre-Val de Loire",
+      "lineaire_cyclable_habitant_com.geocode_region": "24",
+      "lineaire_cyclable_habitant_com.type_amenagement": "aménagements mixtes",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.095407627915653,
+      "lineaire_cyclable_habitant_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Occitanie",
+      "lineaire_cyclable_habitant_com.geocode_region": "76",
+      "lineaire_cyclable_habitant_com.type_amenagement": "autre",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.3211372980953734,
+      "lineaire_cyclable_habitant_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Bourgogne-Franche-Comté",
+      "lineaire_cyclable_habitant_com.geocode_region": "27",
+      "lineaire_cyclable_habitant_com.type_amenagement": "bandes cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.1916509242295711,
+      "lineaire_cyclable_habitant_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Pays de la Loire",
+      "lineaire_cyclable_habitant_com.geocode_region": "52",
+      "lineaire_cyclable_habitant_com.type_amenagement": "pistes cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.6802318479028158,
+      "lineaire_cyclable_habitant_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Corse",
+      "lineaire_cyclable_habitant_com.geocode_region": "94",
+      "lineaire_cyclable_habitant_com.type_amenagement": "aménagements mixtes",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.002960874162848079,
+      "lineaire_cyclable_habitant_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Grand Est",
+      "lineaire_cyclable_habitant_com.geocode_region": "44",
+      "lineaire_cyclable_habitant_com.type_amenagement": "autre",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.3428352986086403,
+      "lineaire_cyclable_habitant_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Bourgogne-Franche-Comté",
+      "lineaire_cyclable_habitant_com.geocode_region": "27",
+      "lineaire_cyclable_habitant_com.type_amenagement": "aménagements mixtes",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.041256353409990086,
+      "lineaire_cyclable_habitant_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Normandie",
+      "lineaire_cyclable_habitant_com.geocode_region": "28",
+      "lineaire_cyclable_habitant_com.type_amenagement": "aménagements mixtes",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.0554695413457675,
+      "lineaire_cyclable_habitant_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Nouvelle-Aquitaine",
+      "lineaire_cyclable_habitant_com.geocode_region": "75",
+      "lineaire_cyclable_habitant_com.type_amenagement": "voies bus partagées",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.01485768820767188,
+      "lineaire_cyclable_habitant_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Grand Est",
+      "lineaire_cyclable_habitant_com.geocode_region": "44",
+      "lineaire_cyclable_habitant_com.type_amenagement": "double-sens cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.06121806933815964,
+      "lineaire_cyclable_habitant_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "lineaire_cyclable_habitant_com.geocode_region": "84",
+      "lineaire_cyclable_habitant_com.type_amenagement": "voies bus partagées",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.019482313423854168,
+      "lineaire_cyclable_habitant_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Île-de-France",
+      "lineaire_cyclable_habitant_com.geocode_region": "11",
+      "lineaire_cyclable_habitant_com.type_amenagement": "bandes cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.08714798495320375,
+      "lineaire_cyclable_habitant_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Hauts-de-France",
+      "lineaire_cyclable_habitant_com.geocode_region": "32",
+      "lineaire_cyclable_habitant_com.type_amenagement": "voies bus partagées",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.017885586667126287,
+      "lineaire_cyclable_habitant_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Bourgogne-Franche-Comté",
+      "lineaire_cyclable_habitant_com.geocode_region": "27",
+      "lineaire_cyclable_habitant_com.type_amenagement": "voies bus partagées",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.009375957912445913,
+      "lineaire_cyclable_habitant_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Centre-Val de Loire",
+      "lineaire_cyclable_habitant_com.geocode_region": "24",
+      "lineaire_cyclable_habitant_com.type_amenagement": "double-sens cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.06337527883785822,
+      "lineaire_cyclable_habitant_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Hauts-de-France",
+      "lineaire_cyclable_habitant_com.geocode_region": "32",
+      "lineaire_cyclable_habitant_com.type_amenagement": "bandes cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.2565902746518829,
+      "lineaire_cyclable_habitant_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Occitanie",
+      "lineaire_cyclable_habitant_com.geocode_region": "76",
+      "lineaire_cyclable_habitant_com.type_amenagement": "voies bus partagées",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.010550488481313156,
+      "lineaire_cyclable_habitant_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Pays de la Loire",
+      "lineaire_cyclable_habitant_com.geocode_region": "52",
+      "lineaire_cyclable_habitant_com.type_amenagement": "double-sens cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.06815254379330303,
+      "lineaire_cyclable_habitant_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Hauts-de-France",
+      "lineaire_cyclable_habitant_com.geocode_region": "32",
+      "lineaire_cyclable_habitant_com.type_amenagement": "double-sens cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.0846357178506322,
+      "lineaire_cyclable_habitant_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Bourgogne-Franche-Comté",
+      "lineaire_cyclable_habitant_com.geocode_region": "27",
+      "lineaire_cyclable_habitant_com.type_amenagement": "autre",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.2533914555991987,
+      "lineaire_cyclable_habitant_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "lineaire_cyclable_habitant_com.geocode_region": "93",
+      "lineaire_cyclable_habitant_com.type_amenagement": "double-sens cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.026526534308213914,
+      "lineaire_cyclable_habitant_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Nouvelle-Aquitaine",
+      "lineaire_cyclable_habitant_com.geocode_region": "75",
+      "lineaire_cyclable_habitant_com.type_amenagement": "voies vertes",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.21617063671979853,
+      "lineaire_cyclable_habitant_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "lineaire_cyclable_habitant_com.geocode_region": "93",
+      "lineaire_cyclable_habitant_com.type_amenagement": "bandes cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.2319816118593195,
+      "lineaire_cyclable_habitant_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Occitanie",
+      "lineaire_cyclable_habitant_com.geocode_region": "76",
+      "lineaire_cyclable_habitant_com.type_amenagement": "bandes cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.16211764844682913,
+      "lineaire_cyclable_habitant_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Hauts-de-France",
+      "lineaire_cyclable_habitant_com.geocode_region": "32",
+      "lineaire_cyclable_habitant_com.type_amenagement": "bandes cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.2643403325322532,
+      "lineaire_cyclable_habitant_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Hauts-de-France",
+      "lineaire_cyclable_habitant_com.geocode_region": "32",
+      "lineaire_cyclable_habitant_com.type_amenagement": "autre",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.16500598392659632,
+      "lineaire_cyclable_habitant_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Bourgogne-Franche-Comté",
+      "lineaire_cyclable_habitant_com.geocode_region": "27",
+      "lineaire_cyclable_habitant_com.type_amenagement": "voies vertes",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.5180695971545798,
+      "lineaire_cyclable_habitant_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Hauts-de-France",
+      "lineaire_cyclable_habitant_com.geocode_region": "32",
+      "lineaire_cyclable_habitant_com.type_amenagement": "aménagements mixtes",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.0349453643659422,
+      "lineaire_cyclable_habitant_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "lineaire_cyclable_habitant_com.geocode_region": "84",
+      "lineaire_cyclable_habitant_com.type_amenagement": "pistes cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.43330013472544715,
+      "lineaire_cyclable_habitant_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Bretagne",
+      "lineaire_cyclable_habitant_com.geocode_region": "53",
+      "lineaire_cyclable_habitant_com.type_amenagement": "double-sens cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.06909585086407607,
+      "lineaire_cyclable_habitant_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Bourgogne-Franche-Comté",
+      "lineaire_cyclable_habitant_com.geocode_region": "27",
+      "lineaire_cyclable_habitant_com.type_amenagement": "pistes cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.7684362501985407,
+      "lineaire_cyclable_habitant_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Île-de-France",
+      "lineaire_cyclable_habitant_com.geocode_region": "11",
+      "lineaire_cyclable_habitant_com.type_amenagement": "pistes cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.2719402721395096,
+      "lineaire_cyclable_habitant_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Centre-Val de Loire",
+      "lineaire_cyclable_habitant_com.geocode_region": "24",
+      "lineaire_cyclable_habitant_com.type_amenagement": "autre",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.1370624378850448,
+      "lineaire_cyclable_habitant_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Corse",
+      "lineaire_cyclable_habitant_com.geocode_region": "94",
+      "lineaire_cyclable_habitant_com.type_amenagement": "double-sens cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0,
+      "lineaire_cyclable_habitant_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Nouvelle-Aquitaine",
+      "lineaire_cyclable_habitant_com.geocode_region": "75",
+      "lineaire_cyclable_habitant_com.type_amenagement": "aménagements mixtes",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.05210498857133764,
+      "lineaire_cyclable_habitant_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "lineaire_cyclable_habitant_com.geocode_region": "93",
+      "lineaire_cyclable_habitant_com.type_amenagement": "autre",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.23746427006593468,
+      "lineaire_cyclable_habitant_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "lineaire_cyclable_habitant_com.geocode_region": "84",
+      "lineaire_cyclable_habitant_com.type_amenagement": "voies bus partagées",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.020690828123305714,
+      "lineaire_cyclable_habitant_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Occitanie",
+      "lineaire_cyclable_habitant_com.geocode_region": "76",
+      "lineaire_cyclable_habitant_com.type_amenagement": "bandes cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.1621089764610429,
+      "lineaire_cyclable_habitant_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Corse",
+      "lineaire_cyclable_habitant_com.geocode_region": "94",
+      "lineaire_cyclable_habitant_com.type_amenagement": "aménagements mixtes",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.0029560577362300372,
+      "lineaire_cyclable_habitant_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Bourgogne-Franche-Comté",
+      "lineaire_cyclable_habitant_com.geocode_region": "27",
+      "lineaire_cyclable_habitant_com.type_amenagement": "bandes cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.2062522865622417,
+      "lineaire_cyclable_habitant_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Pays de la Loire",
+      "lineaire_cyclable_habitant_com.geocode_region": "52",
+      "lineaire_cyclable_habitant_com.type_amenagement": "voies bus partagées",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.017615314760498105,
+      "lineaire_cyclable_habitant_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Hauts-de-France",
+      "lineaire_cyclable_habitant_com.geocode_region": "32",
+      "lineaire_cyclable_habitant_com.type_amenagement": "pistes cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.3899826167682665,
+      "lineaire_cyclable_habitant_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "lineaire_cyclable_habitant_com.geocode_region": "93",
+      "lineaire_cyclable_habitant_com.type_amenagement": "voies vertes",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.10971281507751245,
+      "lineaire_cyclable_habitant_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Centre-Val de Loire",
+      "lineaire_cyclable_habitant_com.geocode_region": "24",
+      "lineaire_cyclable_habitant_com.type_amenagement": "bandes cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.2782901459223268,
+      "lineaire_cyclable_habitant_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Centre-Val de Loire",
+      "lineaire_cyclable_habitant_com.geocode_region": "24",
+      "lineaire_cyclable_habitant_com.type_amenagement": "double-sens cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.06637518190288182,
+      "lineaire_cyclable_habitant_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Île-de-France",
+      "lineaire_cyclable_habitant_com.geocode_region": "11",
+      "lineaire_cyclable_habitant_com.type_amenagement": "autre",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.12412333518636319,
+      "lineaire_cyclable_habitant_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Île-de-France",
+      "lineaire_cyclable_habitant_com.geocode_region": "11",
+      "lineaire_cyclable_habitant_com.type_amenagement": "voies vertes",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.10512953525784414,
+      "lineaire_cyclable_habitant_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Occitanie",
+      "lineaire_cyclable_habitant_com.geocode_region": "76",
+      "lineaire_cyclable_habitant_com.type_amenagement": "voies bus partagées",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.012381215905204726,
+      "lineaire_cyclable_habitant_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Bourgogne-Franche-Comté",
+      "lineaire_cyclable_habitant_com.geocode_region": "27",
+      "lineaire_cyclable_habitant_com.type_amenagement": "voies bus partagées",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.010202752262469684,
+      "lineaire_cyclable_habitant_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Normandie",
+      "lineaire_cyclable_habitant_com.geocode_region": "28",
+      "lineaire_cyclable_habitant_com.type_amenagement": "bandes cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.1121646466329196,
+      "lineaire_cyclable_habitant_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Pays de la Loire",
+      "lineaire_cyclable_habitant_com.geocode_region": "52",
+      "lineaire_cyclable_habitant_com.type_amenagement": "bandes cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.3536011398390447,
+      "lineaire_cyclable_habitant_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Occitanie",
+      "lineaire_cyclable_habitant_com.geocode_region": "76",
+      "lineaire_cyclable_habitant_com.type_amenagement": "pistes cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.6196480095561255,
+      "lineaire_cyclable_habitant_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Bourgogne-Franche-Comté",
+      "lineaire_cyclable_habitant_com.geocode_region": "27",
+      "lineaire_cyclable_habitant_com.type_amenagement": "double-sens cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.030949121870867447,
+      "lineaire_cyclable_habitant_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Centre-Val de Loire",
+      "lineaire_cyclable_habitant_com.geocode_region": "24",
+      "lineaire_cyclable_habitant_com.type_amenagement": "pistes cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.6640632919110652,
+      "lineaire_cyclable_habitant_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Bourgogne-Franche-Comté",
+      "lineaire_cyclable_habitant_com.geocode_region": "27",
+      "lineaire_cyclable_habitant_com.type_amenagement": "aménagements mixtes",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.05410189189044491,
+      "lineaire_cyclable_habitant_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Pays de la Loire",
+      "lineaire_cyclable_habitant_com.geocode_region": "52",
+      "lineaire_cyclable_habitant_com.type_amenagement": "double-sens cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.07131196309092619,
+      "lineaire_cyclable_habitant_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Corse",
+      "lineaire_cyclable_habitant_com.geocode_region": "94",
+      "lineaire_cyclable_habitant_com.type_amenagement": "voies vertes",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.013709590603460565,
+      "lineaire_cyclable_habitant_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Bretagne",
+      "lineaire_cyclable_habitant_com.geocode_region": "53",
+      "lineaire_cyclable_habitant_com.type_amenagement": "bandes cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.3126039062372641,
+      "lineaire_cyclable_habitant_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Normandie",
+      "lineaire_cyclable_habitant_com.geocode_region": "28",
+      "lineaire_cyclable_habitant_com.type_amenagement": "pistes cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.3979056521051433,
+      "lineaire_cyclable_habitant_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Normandie",
+      "lineaire_cyclable_habitant_com.geocode_region": "28",
+      "lineaire_cyclable_habitant_com.type_amenagement": "autre",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.15406814328697865,
+      "lineaire_cyclable_habitant_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Centre-Val de Loire",
+      "lineaire_cyclable_habitant_com.geocode_region": "24",
+      "lineaire_cyclable_habitant_com.type_amenagement": "voies vertes",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.39803981804080435,
+      "lineaire_cyclable_habitant_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Grand Est",
+      "lineaire_cyclable_habitant_com.geocode_region": "44",
+      "lineaire_cyclable_habitant_com.type_amenagement": "aménagements mixtes",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.049160732895160944,
+      "lineaire_cyclable_habitant_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Grand Est",
+      "lineaire_cyclable_habitant_com.geocode_region": "44",
+      "lineaire_cyclable_habitant_com.type_amenagement": "voies bus partagées",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.005696384691399837,
+      "lineaire_cyclable_habitant_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Grand Est",
+      "lineaire_cyclable_habitant_com.geocode_region": "44",
+      "lineaire_cyclable_habitant_com.type_amenagement": "autre",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.3492480473788488,
+      "lineaire_cyclable_habitant_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "lineaire_cyclable_habitant_com.geocode_region": "93",
+      "lineaire_cyclable_habitant_com.type_amenagement": "aménagements mixtes",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.05158310036389911,
+      "lineaire_cyclable_habitant_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "lineaire_cyclable_habitant_com.geocode_region": "93",
+      "lineaire_cyclable_habitant_com.type_amenagement": "double-sens cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.02861317058226603,
+      "lineaire_cyclable_habitant_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Nouvelle-Aquitaine",
+      "lineaire_cyclable_habitant_com.geocode_region": "75",
+      "lineaire_cyclable_habitant_com.type_amenagement": "bandes cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.21858128801820123,
+      "lineaire_cyclable_habitant_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Grand Est",
+      "lineaire_cyclable_habitant_com.geocode_region": "44",
+      "lineaire_cyclable_habitant_com.type_amenagement": "pistes cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.9394279813707528,
+      "lineaire_cyclable_habitant_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "lineaire_cyclable_habitant_com.geocode_region": "84",
+      "lineaire_cyclable_habitant_com.type_amenagement": "double-sens cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.07251704863633189,
+      "lineaire_cyclable_habitant_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Corse",
+      "lineaire_cyclable_habitant_com.geocode_region": "94",
+      "lineaire_cyclable_habitant_com.type_amenagement": "bandes cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.05791661938719993,
+      "lineaire_cyclable_habitant_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Grand Est",
+      "lineaire_cyclable_habitant_com.geocode_region": "44",
+      "lineaire_cyclable_habitant_com.type_amenagement": "bandes cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.18949813676968058,
+      "lineaire_cyclable_habitant_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Pays de la Loire",
+      "lineaire_cyclable_habitant_com.geocode_region": "52",
+      "lineaire_cyclable_habitant_com.type_amenagement": "autre",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.14312208385958677,
+      "lineaire_cyclable_habitant_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "lineaire_cyclable_habitant_com.geocode_region": "93",
+      "lineaire_cyclable_habitant_com.type_amenagement": "voies bus partagées",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.005458878851840853,
+      "lineaire_cyclable_habitant_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Nouvelle-Aquitaine",
+      "lineaire_cyclable_habitant_com.geocode_region": "75",
+      "lineaire_cyclable_habitant_com.type_amenagement": "autre",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.1178942093009691,
+      "lineaire_cyclable_habitant_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Nouvelle-Aquitaine",
+      "lineaire_cyclable_habitant_com.geocode_region": "75",
+      "lineaire_cyclable_habitant_com.type_amenagement": "voies vertes",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.2141508583429237,
+      "lineaire_cyclable_habitant_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "lineaire_cyclable_habitant_com.geocode_region": "84",
+      "lineaire_cyclable_habitant_com.type_amenagement": "aménagements mixtes",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.04601844466131232,
+      "lineaire_cyclable_habitant_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Normandie",
+      "lineaire_cyclable_habitant_com.geocode_region": "28",
+      "lineaire_cyclable_habitant_com.type_amenagement": "voies vertes",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.6534826712919058,
+      "lineaire_cyclable_habitant_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Île-de-France",
+      "lineaire_cyclable_habitant_com.geocode_region": "11",
+      "lineaire_cyclable_habitant_com.type_amenagement": "aménagements mixtes",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.03026721276449065,
+      "lineaire_cyclable_habitant_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Corse",
+      "lineaire_cyclable_habitant_com.geocode_region": "94",
+      "lineaire_cyclable_habitant_com.type_amenagement": "voies bus partagées",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.0029182341628333935,
+      "lineaire_cyclable_habitant_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Grand Est",
+      "lineaire_cyclable_habitant_com.geocode_region": "44",
+      "lineaire_cyclable_habitant_com.type_amenagement": "double-sens cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.0708397848435935,
+      "lineaire_cyclable_habitant_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Bretagne",
+      "lineaire_cyclable_habitant_com.geocode_region": "53",
+      "lineaire_cyclable_habitant_com.type_amenagement": "voies bus partagées",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.015392868945873167,
+      "lineaire_cyclable_habitant_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Normandie",
+      "lineaire_cyclable_habitant_com.geocode_region": "28",
+      "lineaire_cyclable_habitant_com.type_amenagement": "double-sens cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.053175110554072424,
+      "lineaire_cyclable_habitant_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Occitanie",
+      "lineaire_cyclable_habitant_com.geocode_region": "76",
+      "lineaire_cyclable_habitant_com.type_amenagement": "autre",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.3291111821972961,
+      "lineaire_cyclable_habitant_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Pays de la Loire",
+      "lineaire_cyclable_habitant_com.geocode_region": "52",
+      "lineaire_cyclable_habitant_com.type_amenagement": "voies vertes",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.5219766082481758,
+      "lineaire_cyclable_habitant_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Hauts-de-France",
+      "lineaire_cyclable_habitant_com.geocode_region": "32",
+      "lineaire_cyclable_habitant_com.type_amenagement": "voies bus partagées",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.016837525638849608,
+      "lineaire_cyclable_habitant_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Pays de la Loire",
+      "lineaire_cyclable_habitant_com.geocode_region": "52",
+      "lineaire_cyclable_habitant_com.type_amenagement": "pistes cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.7499859085832387,
+      "lineaire_cyclable_habitant_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Corse",
+      "lineaire_cyclable_habitant_com.geocode_region": "94",
+      "lineaire_cyclable_habitant_com.type_amenagement": "pistes cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.13902490827783454,
+      "lineaire_cyclable_habitant_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Hauts-de-France",
+      "lineaire_cyclable_habitant_com.geocode_region": "32",
+      "lineaire_cyclable_habitant_com.type_amenagement": "voies vertes",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.4420689547085614,
+      "lineaire_cyclable_habitant_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Île-de-France",
+      "lineaire_cyclable_habitant_com.geocode_region": "11",
+      "lineaire_cyclable_habitant_com.type_amenagement": "bandes cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.08864946722541141,
+      "lineaire_cyclable_habitant_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Bretagne",
+      "lineaire_cyclable_habitant_com.geocode_region": "53",
+      "lineaire_cyclable_habitant_com.type_amenagement": "voies vertes",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.6918180646060048,
+      "lineaire_cyclable_habitant_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Centre-Val de Loire",
+      "lineaire_cyclable_habitant_com.geocode_region": "24",
+      "lineaire_cyclable_habitant_com.type_amenagement": "aménagements mixtes",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.11097794329251694,
+      "lineaire_cyclable_habitant_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Centre-Val de Loire",
+      "lineaire_cyclable_habitant_com.geocode_region": "24",
+      "lineaire_cyclable_habitant_com.type_amenagement": "voies bus partagées",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.005281057671806228,
+      "lineaire_cyclable_habitant_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "lineaire_cyclable_habitant_com.geocode_region": "84",
+      "lineaire_cyclable_habitant_com.type_amenagement": "autre",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.2069447972260717,
+      "lineaire_cyclable_habitant_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Pays de la Loire",
+      "lineaire_cyclable_habitant_com.geocode_region": "52",
+      "lineaire_cyclable_habitant_com.type_amenagement": "aménagements mixtes",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.09506252413807506,
+      "lineaire_cyclable_habitant_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Bretagne",
+      "lineaire_cyclable_habitant_com.geocode_region": "53",
+      "lineaire_cyclable_habitant_com.type_amenagement": "autre",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.24021062085134598,
+      "lineaire_cyclable_habitant_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "lineaire_cyclable_habitant_com.geocode_region": "93",
+      "lineaire_cyclable_habitant_com.type_amenagement": "pistes cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.293048416978088,
+      "lineaire_cyclable_habitant_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Île-de-France",
+      "lineaire_cyclable_habitant_com.geocode_region": "11",
+      "lineaire_cyclable_habitant_com.type_amenagement": "double-sens cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.13200400854186436,
+      "lineaire_cyclable_habitant_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Hauts-de-France",
+      "lineaire_cyclable_habitant_com.geocode_region": "32",
+      "lineaire_cyclable_habitant_com.type_amenagement": "double-sens cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.09326589008448855,
+      "lineaire_cyclable_habitant_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Île-de-France",
+      "lineaire_cyclable_habitant_com.geocode_region": "11",
+      "lineaire_cyclable_habitant_com.type_amenagement": "voies bus partagées",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.01956535450318022,
+      "lineaire_cyclable_habitant_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Normandie",
+      "lineaire_cyclable_habitant_com.geocode_region": "28",
+      "lineaire_cyclable_habitant_com.type_amenagement": "voies bus partagées",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.01018035664776838,
+      "lineaire_cyclable_habitant_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Nouvelle-Aquitaine",
+      "lineaire_cyclable_habitant_com.geocode_region": "75",
+      "lineaire_cyclable_habitant_com.type_amenagement": "pistes cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 1.0023278275995577,
+      "lineaire_cyclable_habitant_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Occitanie",
+      "lineaire_cyclable_habitant_com.geocode_region": "76",
+      "lineaire_cyclable_habitant_com.type_amenagement": "aménagements mixtes",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.05131663723062506,
+      "lineaire_cyclable_habitant_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Corse",
+      "lineaire_cyclable_habitant_com.geocode_region": "94",
+      "lineaire_cyclable_habitant_com.type_amenagement": "autre",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.13695043075231086,
+      "lineaire_cyclable_habitant_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "lineaire_cyclable_habitant_com.geocode_region": "84",
+      "lineaire_cyclable_habitant_com.type_amenagement": "voies vertes",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.20794508786861945,
+      "lineaire_cyclable_habitant_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Grand Est",
+      "lineaire_cyclable_habitant_com.geocode_region": "44",
+      "lineaire_cyclable_habitant_com.type_amenagement": "voies vertes",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.32494542620056477,
+      "lineaire_cyclable_habitant_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Occitanie",
+      "lineaire_cyclable_habitant_com.geocode_region": "76",
+      "lineaire_cyclable_habitant_com.type_amenagement": "double-sens cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.05803227301648202,
+      "lineaire_cyclable_habitant_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Bourgogne-Franche-Comté",
+      "lineaire_cyclable_habitant_com.geocode_region": "27",
+      "lineaire_cyclable_habitant_com.type_amenagement": "autre",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.2732378078270474,
+      "lineaire_cyclable_habitant_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "lineaire_cyclable_habitant_com.geocode_region": "84",
+      "lineaire_cyclable_habitant_com.type_amenagement": "bandes cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.3385115487088689,
+      "lineaire_cyclable_habitant_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Nouvelle-Aquitaine",
+      "lineaire_cyclable_habitant_com.geocode_region": "75",
+      "lineaire_cyclable_habitant_com.type_amenagement": "double-sens cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.08249104401228248,
+      "lineaire_cyclable_habitant_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Nouvelle-Aquitaine",
+      "lineaire_cyclable_habitant_com.geocode_region": "75",
+      "lineaire_cyclable_habitant_com.type_amenagement": "voies bus partagées",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.015118781190171885,
+      "lineaire_cyclable_habitant_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Occitanie",
+      "lineaire_cyclable_habitant_com.geocode_region": "76",
+      "lineaire_cyclable_habitant_com.type_amenagement": "voies vertes",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.29370005100461677,
+      "lineaire_cyclable_habitant_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Normandie",
+      "lineaire_cyclable_habitant_com.geocode_region": "28",
+      "lineaire_cyclable_habitant_com.type_amenagement": "aménagements mixtes",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.05632228564417859,
+      "lineaire_cyclable_habitant_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Bretagne",
+      "lineaire_cyclable_habitant_com.geocode_region": "53",
+      "lineaire_cyclable_habitant_com.type_amenagement": "pistes cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.6265389386262223,
+      "lineaire_cyclable_habitant_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "lineaire_cyclable_habitant_com.geocode_region": "93",
+      "lineaire_cyclable_habitant_com.type_amenagement": "bandes cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.24102657440201006,
+      "lineaire_cyclable_habitant_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Bretagne",
+      "lineaire_cyclable_habitant_com.geocode_region": "53",
+      "lineaire_cyclable_habitant_com.type_amenagement": "aménagements mixtes",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.1144747742554097,
+      "lineaire_cyclable_habitant_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Normandie",
+      "lineaire_cyclable_habitant_com.geocode_region": "28",
+      "lineaire_cyclable_habitant_com.type_amenagement": "autre",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.16461676591647859,
+      "lineaire_cyclable_habitant_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Occitanie",
+      "lineaire_cyclable_habitant_com.geocode_region": "76",
+      "lineaire_cyclable_habitant_com.type_amenagement": "pistes cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.6296934862083073,
+      "lineaire_cyclable_habitant_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Centre-Val de Loire",
+      "lineaire_cyclable_habitant_com.geocode_region": "24",
+      "lineaire_cyclable_habitant_com.type_amenagement": "double-sens cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.07400255624774854,
+      "lineaire_cyclable_habitant_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Île-de-France",
+      "lineaire_cyclable_habitant_com.geocode_region": "11",
+      "lineaire_cyclable_habitant_com.type_amenagement": "aménagements mixtes",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.03904790985086885,
+      "lineaire_cyclable_habitant_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "lineaire_cyclable_habitant_com.geocode_region": "93",
+      "lineaire_cyclable_habitant_com.type_amenagement": "aménagements mixtes",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.056763276545290065,
+      "lineaire_cyclable_habitant_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Pays de la Loire",
+      "lineaire_cyclable_habitant_com.geocode_region": "52",
+      "lineaire_cyclable_habitant_com.type_amenagement": "voies bus partagées",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.017053455384913173,
+      "lineaire_cyclable_habitant_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Normandie",
+      "lineaire_cyclable_habitant_com.geocode_region": "28",
+      "lineaire_cyclable_habitant_com.type_amenagement": "voies vertes",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.6891647931499298,
+      "lineaire_cyclable_habitant_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "lineaire_cyclable_habitant_com.geocode_region": "93",
+      "lineaire_cyclable_habitant_com.type_amenagement": "double-sens cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.02974273768292301,
+      "lineaire_cyclable_habitant_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "lineaire_cyclable_habitant_com.geocode_region": "93",
+      "lineaire_cyclable_habitant_com.type_amenagement": "pistes cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.32165180660863046,
+      "lineaire_cyclable_habitant_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Bourgogne-Franche-Comté",
+      "lineaire_cyclable_habitant_com.geocode_region": "27",
+      "lineaire_cyclable_habitant_com.type_amenagement": "pistes cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.6995536737811741,
+      "lineaire_cyclable_habitant_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Centre-Val de Loire",
+      "lineaire_cyclable_habitant_com.geocode_region": "24",
+      "lineaire_cyclable_habitant_com.type_amenagement": "voies vertes",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.3432242530319981,
+      "lineaire_cyclable_habitant_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Occitanie",
+      "lineaire_cyclable_habitant_com.geocode_region": "76",
+      "lineaire_cyclable_habitant_com.type_amenagement": "bandes cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.16200091129850744,
+      "lineaire_cyclable_habitant_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Corse",
+      "lineaire_cyclable_habitant_com.geocode_region": "94",
+      "lineaire_cyclable_habitant_com.type_amenagement": "double-sens cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.0006588089080170428,
+      "lineaire_cyclable_habitant_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Pays de la Loire",
+      "lineaire_cyclable_habitant_com.geocode_region": "52",
+      "lineaire_cyclable_habitant_com.type_amenagement": "bandes cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.3593755473211071,
+      "lineaire_cyclable_habitant_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "lineaire_cyclable_habitant_com.geocode_region": "84",
+      "lineaire_cyclable_habitant_com.type_amenagement": "double-sens cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.08038427178677417,
+      "lineaire_cyclable_habitant_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Grand Est",
+      "lineaire_cyclable_habitant_com.geocode_region": "44",
+      "lineaire_cyclable_habitant_com.type_amenagement": "aménagements mixtes",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.05276098859850246,
+      "lineaire_cyclable_habitant_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Centre-Val de Loire",
+      "lineaire_cyclable_habitant_com.geocode_region": "24",
+      "lineaire_cyclable_habitant_com.type_amenagement": "bandes cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.292055385626955,
+      "lineaire_cyclable_habitant_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Centre-Val de Loire",
+      "lineaire_cyclable_habitant_com.geocode_region": "24",
+      "lineaire_cyclable_habitant_com.type_amenagement": "aménagements mixtes",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.12272553989949885,
+      "lineaire_cyclable_habitant_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Hauts-de-France",
+      "lineaire_cyclable_habitant_com.geocode_region": "32",
+      "lineaire_cyclable_habitant_com.type_amenagement": "double-sens cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.10100759062277546,
+      "lineaire_cyclable_habitant_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Hauts-de-France",
+      "lineaire_cyclable_habitant_com.geocode_region": "32",
+      "lineaire_cyclable_habitant_com.type_amenagement": "autre",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.18804638706505028,
+      "lineaire_cyclable_habitant_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "lineaire_cyclable_habitant_com.geocode_region": "93",
+      "lineaire_cyclable_habitant_com.type_amenagement": "voies bus partagées",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.005753689662703984,
+      "lineaire_cyclable_habitant_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Occitanie",
+      "lineaire_cyclable_habitant_com.geocode_region": "76",
+      "lineaire_cyclable_habitant_com.type_amenagement": "voies bus partagées",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.013128311095524274,
+      "lineaire_cyclable_habitant_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Corse",
+      "lineaire_cyclable_habitant_com.geocode_region": "94",
+      "lineaire_cyclable_habitant_com.type_amenagement": "voies vertes",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.013452360060644942,
+      "lineaire_cyclable_habitant_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Normandie",
+      "lineaire_cyclable_habitant_com.geocode_region": "28",
+      "lineaire_cyclable_habitant_com.type_amenagement": "aménagements mixtes",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.05848316959968946,
+      "lineaire_cyclable_habitant_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Pays de la Loire",
+      "lineaire_cyclable_habitant_com.geocode_region": "52",
+      "lineaire_cyclable_habitant_com.type_amenagement": "autre",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.18080855755281702,
+      "lineaire_cyclable_habitant_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "lineaire_cyclable_habitant_com.geocode_region": "93",
+      "lineaire_cyclable_habitant_com.type_amenagement": "autre",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.28394821211270266,
+      "lineaire_cyclable_habitant_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Île-de-France",
+      "lineaire_cyclable_habitant_com.geocode_region": "11",
+      "lineaire_cyclable_habitant_com.type_amenagement": "bandes cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.09000364447375112,
+      "lineaire_cyclable_habitant_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "lineaire_cyclable_habitant_com.geocode_region": "93",
+      "lineaire_cyclable_habitant_com.type_amenagement": "voies vertes",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.12394419482667163,
+      "lineaire_cyclable_habitant_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Nouvelle-Aquitaine",
+      "lineaire_cyclable_habitant_com.geocode_region": "75",
+      "lineaire_cyclable_habitant_com.type_amenagement": "voies vertes",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.23690832233820036,
+      "lineaire_cyclable_habitant_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Nouvelle-Aquitaine",
+      "lineaire_cyclable_habitant_com.geocode_region": "75",
+      "lineaire_cyclable_habitant_com.type_amenagement": "pistes cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 1.0292177814040122,
+      "lineaire_cyclable_habitant_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Normandie",
+      "lineaire_cyclable_habitant_com.geocode_region": "28",
+      "lineaire_cyclable_habitant_com.type_amenagement": "voies bus partagées",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.0108360482048194,
+      "lineaire_cyclable_habitant_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Pays de la Loire",
+      "lineaire_cyclable_habitant_com.geocode_region": "52",
+      "lineaire_cyclable_habitant_com.type_amenagement": "double-sens cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.07924418247124611,
+      "lineaire_cyclable_habitant_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Corse",
+      "lineaire_cyclable_habitant_com.geocode_region": "94",
+      "lineaire_cyclable_habitant_com.type_amenagement": "voies bus partagées",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.002885525479218751,
+      "lineaire_cyclable_habitant_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "lineaire_cyclable_habitant_com.geocode_region": "84",
+      "lineaire_cyclable_habitant_com.type_amenagement": "autre",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.27301632254221886,
+      "lineaire_cyclable_habitant_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Bourgogne-Franche-Comté",
+      "lineaire_cyclable_habitant_com.geocode_region": "27",
+      "lineaire_cyclable_habitant_com.type_amenagement": "bandes cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.2120724492660152,
+      "lineaire_cyclable_habitant_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Île-de-France",
+      "lineaire_cyclable_habitant_com.geocode_region": "11",
+      "lineaire_cyclable_habitant_com.type_amenagement": "voies bus partagées",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.02020600491390996,
+      "lineaire_cyclable_habitant_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Grand Est",
+      "lineaire_cyclable_habitant_com.geocode_region": "44",
+      "lineaire_cyclable_habitant_com.type_amenagement": "voies vertes",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.37450431887438973,
+      "lineaire_cyclable_habitant_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Pays de la Loire",
+      "lineaire_cyclable_habitant_com.geocode_region": "52",
+      "lineaire_cyclable_habitant_com.type_amenagement": "voies vertes",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.5866143193083341,
+      "lineaire_cyclable_habitant_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Bretagne",
+      "lineaire_cyclable_habitant_com.geocode_region": "53",
+      "lineaire_cyclable_habitant_com.type_amenagement": "aménagements mixtes",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.12290138919043289,
+      "lineaire_cyclable_habitant_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Hauts-de-France",
+      "lineaire_cyclable_habitant_com.geocode_region": "32",
+      "lineaire_cyclable_habitant_com.type_amenagement": "voies bus partagées",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.01673613228513307,
+      "lineaire_cyclable_habitant_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Bretagne",
+      "lineaire_cyclable_habitant_com.geocode_region": "53",
+      "lineaire_cyclable_habitant_com.type_amenagement": "voies bus partagées",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.013031706252962455,
+      "lineaire_cyclable_habitant_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "lineaire_cyclable_habitant_com.geocode_region": "84",
+      "lineaire_cyclable_habitant_com.type_amenagement": "aménagements mixtes",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.06645735874950598,
+      "lineaire_cyclable_habitant_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Nouvelle-Aquitaine",
+      "lineaire_cyclable_habitant_com.geocode_region": "75",
+      "lineaire_cyclable_habitant_com.type_amenagement": "aménagements mixtes",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.0681123783889944,
+      "lineaire_cyclable_habitant_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Bourgogne-Franche-Comté",
+      "lineaire_cyclable_habitant_com.geocode_region": "27",
+      "lineaire_cyclable_habitant_com.type_amenagement": "double-sens cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.03551539643324712,
+      "lineaire_cyclable_habitant_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Nouvelle-Aquitaine",
+      "lineaire_cyclable_habitant_com.geocode_region": "75",
+      "lineaire_cyclable_habitant_com.type_amenagement": "autre",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.1393287125215346,
+      "lineaire_cyclable_habitant_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Hauts-de-France",
+      "lineaire_cyclable_habitant_com.geocode_region": "32",
+      "lineaire_cyclable_habitant_com.type_amenagement": "pistes cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.3842211521974245,
+      "lineaire_cyclable_habitant_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Pays de la Loire",
+      "lineaire_cyclable_habitant_com.geocode_region": "52",
+      "lineaire_cyclable_habitant_com.type_amenagement": "pistes cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.7299794317538748,
+      "lineaire_cyclable_habitant_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Occitanie",
+      "lineaire_cyclable_habitant_com.geocode_region": "76",
+      "lineaire_cyclable_habitant_com.type_amenagement": "voies vertes",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.31843821900920855,
+      "lineaire_cyclable_habitant_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Bretagne",
+      "lineaire_cyclable_habitant_com.geocode_region": "53",
+      "lineaire_cyclable_habitant_com.type_amenagement": "voies vertes",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.7148634862708558,
+      "lineaire_cyclable_habitant_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Île-de-France",
+      "lineaire_cyclable_habitant_com.geocode_region": "11",
+      "lineaire_cyclable_habitant_com.type_amenagement": "voies vertes",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.10827569952746867,
+      "lineaire_cyclable_habitant_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "lineaire_cyclable_habitant_com.geocode_region": "84",
+      "lineaire_cyclable_habitant_com.type_amenagement": "pistes cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.469334060932216,
+      "lineaire_cyclable_habitant_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "lineaire_cyclable_habitant_com.geocode_region": "84",
+      "lineaire_cyclable_habitant_com.type_amenagement": "voies bus partagées",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.019403746025102895,
+      "lineaire_cyclable_habitant_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Corse",
+      "lineaire_cyclable_habitant_com.geocode_region": "94",
+      "lineaire_cyclable_habitant_com.type_amenagement": "pistes cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.16839615992082785,
+      "lineaire_cyclable_habitant_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Nouvelle-Aquitaine",
+      "lineaire_cyclable_habitant_com.geocode_region": "75",
+      "lineaire_cyclable_habitant_com.type_amenagement": "voies bus partagées",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.015181192324979673,
+      "lineaire_cyclable_habitant_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Corse",
+      "lineaire_cyclable_habitant_com.geocode_region": "94",
+      "lineaire_cyclable_habitant_com.type_amenagement": "bandes cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.062284772308161464,
+      "lineaire_cyclable_habitant_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Pays de la Loire",
+      "lineaire_cyclable_habitant_com.geocode_region": "52",
+      "lineaire_cyclable_habitant_com.type_amenagement": "aménagements mixtes",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.12780646803489043,
+      "lineaire_cyclable_habitant_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Hauts-de-France",
+      "lineaire_cyclable_habitant_com.geocode_region": "32",
+      "lineaire_cyclable_habitant_com.type_amenagement": "bandes cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.2671184322631826,
+      "lineaire_cyclable_habitant_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Occitanie",
+      "lineaire_cyclable_habitant_com.geocode_region": "76",
+      "lineaire_cyclable_habitant_com.type_amenagement": "autre",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.3987679868539208,
+      "lineaire_cyclable_habitant_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Île-de-France",
+      "lineaire_cyclable_habitant_com.geocode_region": "11",
+      "lineaire_cyclable_habitant_com.type_amenagement": "double-sens cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.1394046526022509,
+      "lineaire_cyclable_habitant_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Bretagne",
+      "lineaire_cyclable_habitant_com.geocode_region": "53",
+      "lineaire_cyclable_habitant_com.type_amenagement": "autre",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.2699516609924035,
+      "lineaire_cyclable_habitant_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "lineaire_cyclable_habitant_com.geocode_region": "84",
+      "lineaire_cyclable_habitant_com.type_amenagement": "bandes cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.3541249890163873,
+      "lineaire_cyclable_habitant_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Île-de-France",
+      "lineaire_cyclable_habitant_com.geocode_region": "11",
+      "lineaire_cyclable_habitant_com.type_amenagement": "autre",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.13094848302129067,
+      "lineaire_cyclable_habitant_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Grand Est",
+      "lineaire_cyclable_habitant_com.geocode_region": "44",
+      "lineaire_cyclable_habitant_com.type_amenagement": "voies bus partagées",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.006176268191157911,
+      "lineaire_cyclable_habitant_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "lineaire_cyclable_habitant_com.geocode_region": "93",
+      "lineaire_cyclable_habitant_com.type_amenagement": "bandes cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.2426585072857187,
+      "lineaire_cyclable_habitant_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Normandie",
+      "lineaire_cyclable_habitant_com.geocode_region": "28",
+      "lineaire_cyclable_habitant_com.type_amenagement": "pistes cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.4004881660449657,
+      "lineaire_cyclable_habitant_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Grand Est",
+      "lineaire_cyclable_habitant_com.geocode_region": "44",
+      "lineaire_cyclable_habitant_com.type_amenagement": "pistes cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.948875682912966,
+      "lineaire_cyclable_habitant_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Grand Est",
+      "lineaire_cyclable_habitant_com.geocode_region": "44",
+      "lineaire_cyclable_habitant_com.type_amenagement": "autre",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.36466702761429154,
+      "lineaire_cyclable_habitant_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Bourgogne-Franche-Comté",
+      "lineaire_cyclable_habitant_com.geocode_region": "27",
+      "lineaire_cyclable_habitant_com.type_amenagement": "voies bus partagées",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.011509559694792577,
+      "lineaire_cyclable_habitant_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Grand Est",
+      "lineaire_cyclable_habitant_com.geocode_region": "44",
+      "lineaire_cyclable_habitant_com.type_amenagement": "bandes cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.1944075175404543,
+      "lineaire_cyclable_habitant_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Nouvelle-Aquitaine",
+      "lineaire_cyclable_habitant_com.geocode_region": "75",
+      "lineaire_cyclable_habitant_com.type_amenagement": "bandes cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.22496207173352287,
+      "lineaire_cyclable_habitant_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Île-de-France",
+      "lineaire_cyclable_habitant_com.geocode_region": "11",
+      "lineaire_cyclable_habitant_com.type_amenagement": "pistes cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.26954069969511935,
+      "lineaire_cyclable_habitant_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Hauts-de-France",
+      "lineaire_cyclable_habitant_com.geocode_region": "32",
+      "lineaire_cyclable_habitant_com.type_amenagement": "voies vertes",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.48966572437172373,
+      "lineaire_cyclable_habitant_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Bretagne",
+      "lineaire_cyclable_habitant_com.geocode_region": "53",
+      "lineaire_cyclable_habitant_com.type_amenagement": "double-sens cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.07738159240928219,
+      "lineaire_cyclable_habitant_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Centre-Val de Loire",
+      "lineaire_cyclable_habitant_com.geocode_region": "24",
+      "lineaire_cyclable_habitant_com.type_amenagement": "pistes cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.7883510025830618,
+      "lineaire_cyclable_habitant_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Nouvelle-Aquitaine",
+      "lineaire_cyclable_habitant_com.geocode_region": "75",
+      "lineaire_cyclable_habitant_com.type_amenagement": "double-sens cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.09477288514490517,
+      "lineaire_cyclable_habitant_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Hauts-de-France",
+      "lineaire_cyclable_habitant_com.geocode_region": "32",
+      "lineaire_cyclable_habitant_com.type_amenagement": "aménagements mixtes",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.043276457593725226,
+      "lineaire_cyclable_habitant_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Occitanie",
+      "lineaire_cyclable_habitant_com.geocode_region": "76",
+      "lineaire_cyclable_habitant_com.type_amenagement": "aménagements mixtes",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.0654836391364184,
+      "lineaire_cyclable_habitant_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Normandie",
+      "lineaire_cyclable_habitant_com.geocode_region": "28",
+      "lineaire_cyclable_habitant_com.type_amenagement": "double-sens cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.05757540792183572,
+      "lineaire_cyclable_habitant_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "lineaire_cyclable_habitant_com.geocode_region": "84",
+      "lineaire_cyclable_habitant_com.type_amenagement": "voies vertes",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.20855702624026673,
+      "lineaire_cyclable_habitant_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Centre-Val de Loire",
+      "lineaire_cyclable_habitant_com.geocode_region": "24",
+      "lineaire_cyclable_habitant_com.type_amenagement": "voies bus partagées",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.005734653089822692,
+      "lineaire_cyclable_habitant_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Grand Est",
+      "lineaire_cyclable_habitant_com.geocode_region": "44",
+      "lineaire_cyclable_habitant_com.type_amenagement": "double-sens cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.07787603840621786,
+      "lineaire_cyclable_habitant_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Normandie",
+      "lineaire_cyclable_habitant_com.geocode_region": "28",
+      "lineaire_cyclable_habitant_com.type_amenagement": "bandes cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.1137998405031782,
+      "lineaire_cyclable_habitant_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Bourgogne-Franche-Comté",
+      "lineaire_cyclable_habitant_com.geocode_region": "27",
+      "lineaire_cyclable_habitant_com.type_amenagement": "voies vertes",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.6240653326162402,
+      "lineaire_cyclable_habitant_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Bourgogne-Franche-Comté",
+      "lineaire_cyclable_habitant_com.geocode_region": "27",
+      "lineaire_cyclable_habitant_com.type_amenagement": "aménagements mixtes",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.0639166429183121,
+      "lineaire_cyclable_habitant_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Corse",
+      "lineaire_cyclable_habitant_com.geocode_region": "94",
+      "lineaire_cyclable_habitant_com.type_amenagement": "autre",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.13697183807685337,
+      "lineaire_cyclable_habitant_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Corse",
+      "lineaire_cyclable_habitant_com.geocode_region": "94",
+      "lineaire_cyclable_habitant_com.type_amenagement": "aménagements mixtes",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.003314182803649053,
+      "lineaire_cyclable_habitant_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Occitanie",
+      "lineaire_cyclable_habitant_com.geocode_region": "76",
+      "lineaire_cyclable_habitant_com.type_amenagement": "double-sens cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.06425833452891445,
+      "lineaire_cyclable_habitant_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Bretagne",
+      "lineaire_cyclable_habitant_com.geocode_region": "53",
+      "lineaire_cyclable_habitant_com.type_amenagement": "bandes cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.3302615620784623,
+      "lineaire_cyclable_habitant_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Bourgogne-Franche-Comté",
+      "lineaire_cyclable_habitant_com.geocode_region": "27",
+      "lineaire_cyclable_habitant_com.type_amenagement": "autre",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.2945492348030173,
+      "lineaire_cyclable_habitant_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Bretagne",
+      "lineaire_cyclable_habitant_com.geocode_region": "53",
+      "lineaire_cyclable_habitant_com.type_amenagement": "pistes cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.671469733842343,
+      "lineaire_cyclable_habitant_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Centre-Val de Loire",
+      "lineaire_cyclable_habitant_com.geocode_region": "24",
+      "lineaire_cyclable_habitant_com.type_amenagement": "autre",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.1530181249545817,
+      "lineaire_cyclable_habitant_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Centre-Val de Loire",
+      "lineaire_cyclable_habitant_com.geocode_region": "24",
+      "lineaire_cyclable_habitant_com.type_amenagement": "double-sens cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.08045639966268944,
+      "lineaire_cyclable_habitant_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Centre-Val de Loire",
+      "lineaire_cyclable_habitant_com.geocode_region": "24",
+      "lineaire_cyclable_habitant_com.type_amenagement": "voies vertes",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.3735923926158885,
+      "lineaire_cyclable_habitant_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Centre-Val de Loire",
+      "lineaire_cyclable_habitant_com.geocode_region": "24",
+      "lineaire_cyclable_habitant_com.type_amenagement": "voies bus partagées",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.006387906400572979,
+      "lineaire_cyclable_habitant_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Grand Est",
+      "lineaire_cyclable_habitant_com.geocode_region": "44",
+      "lineaire_cyclable_habitant_com.type_amenagement": "voies vertes",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.45240580214777537,
+      "lineaire_cyclable_habitant_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Grand Est",
+      "lineaire_cyclable_habitant_com.geocode_region": "44",
+      "lineaire_cyclable_habitant_com.type_amenagement": "voies bus partagées",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.009378643720709724,
+      "lineaire_cyclable_habitant_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Corse",
+      "lineaire_cyclable_habitant_com.geocode_region": "94",
+      "lineaire_cyclable_habitant_com.type_amenagement": "autre",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.19263200446372655,
+      "lineaire_cyclable_habitant_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Corse",
+      "lineaire_cyclable_habitant_com.geocode_region": "94",
+      "lineaire_cyclable_habitant_com.type_amenagement": "double-sens cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.0006519090401849258,
+      "lineaire_cyclable_habitant_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "lineaire_cyclable_habitant_com.geocode_region": "93",
+      "lineaire_cyclable_habitant_com.type_amenagement": "bandes cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.2616919443159329,
+      "lineaire_cyclable_habitant_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Hauts-de-France",
+      "lineaire_cyclable_habitant_com.geocode_region": "32",
+      "lineaire_cyclable_habitant_com.type_amenagement": "double-sens cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.11687178150185808,
+      "lineaire_cyclable_habitant_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Normandie",
+      "lineaire_cyclable_habitant_com.geocode_region": "28",
+      "lineaire_cyclable_habitant_com.type_amenagement": "double-sens cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.06440797658272919,
+      "lineaire_cyclable_habitant_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Pays de la Loire",
+      "lineaire_cyclable_habitant_com.geocode_region": "52",
+      "lineaire_cyclable_habitant_com.type_amenagement": "bandes cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.3793160783003576,
+      "lineaire_cyclable_habitant_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Bourgogne-Franche-Comté",
+      "lineaire_cyclable_habitant_com.geocode_region": "27",
+      "lineaire_cyclable_habitant_com.type_amenagement": "voies bus partagées",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.012546108616440151,
+      "lineaire_cyclable_habitant_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Bourgogne-Franche-Comté",
+      "lineaire_cyclable_habitant_com.geocode_region": "27",
+      "lineaire_cyclable_habitant_com.type_amenagement": "autre",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.47589727019872125,
+      "lineaire_cyclable_habitant_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Île-de-France",
+      "lineaire_cyclable_habitant_com.geocode_region": "11",
+      "lineaire_cyclable_habitant_com.type_amenagement": "autre",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.16975665222837263,
+      "lineaire_cyclable_habitant_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Normandie",
+      "lineaire_cyclable_habitant_com.geocode_region": "28",
+      "lineaire_cyclable_habitant_com.type_amenagement": "aménagements mixtes",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.05654741404353423,
+      "lineaire_cyclable_habitant_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Occitanie",
+      "lineaire_cyclable_habitant_com.geocode_region": "76",
+      "lineaire_cyclable_habitant_com.type_amenagement": "pistes cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.6532671811991023,
+      "lineaire_cyclable_habitant_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "lineaire_cyclable_habitant_com.geocode_region": "84",
+      "lineaire_cyclable_habitant_com.type_amenagement": "pistes cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.4637903968258246,
+      "lineaire_cyclable_habitant_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Normandie",
+      "lineaire_cyclable_habitant_com.geocode_region": "28",
+      "lineaire_cyclable_habitant_com.type_amenagement": "voies bus partagées",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.01000427064509502,
+      "lineaire_cyclable_habitant_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Occitanie",
+      "lineaire_cyclable_habitant_com.geocode_region": "76",
+      "lineaire_cyclable_habitant_com.type_amenagement": "double-sens cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.06904054792096544,
+      "lineaire_cyclable_habitant_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Grand Est",
+      "lineaire_cyclable_habitant_com.geocode_region": "44",
+      "lineaire_cyclable_habitant_com.type_amenagement": "autre",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.5563998281319382,
+      "lineaire_cyclable_habitant_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Nouvelle-Aquitaine",
+      "lineaire_cyclable_habitant_com.geocode_region": "75",
+      "lineaire_cyclable_habitant_com.type_amenagement": "pistes cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 1.0437077075478987,
+      "lineaire_cyclable_habitant_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Pays de la Loire",
+      "lineaire_cyclable_habitant_com.geocode_region": "52",
+      "lineaire_cyclable_habitant_com.type_amenagement": "autre",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.30866778235602244,
+      "lineaire_cyclable_habitant_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Occitanie",
+      "lineaire_cyclable_habitant_com.geocode_region": "76",
+      "lineaire_cyclable_habitant_com.type_amenagement": "bandes cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.16047018031220261,
+      "lineaire_cyclable_habitant_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Île-de-France",
+      "lineaire_cyclable_habitant_com.geocode_region": "11",
+      "lineaire_cyclable_habitant_com.type_amenagement": "voies bus partagées",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.02016878491852492,
+      "lineaire_cyclable_habitant_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Bretagne",
+      "lineaire_cyclable_habitant_com.geocode_region": "53",
+      "lineaire_cyclable_habitant_com.type_amenagement": "voies bus partagées",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.012697916499286413,
+      "lineaire_cyclable_habitant_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Pays de la Loire",
+      "lineaire_cyclable_habitant_com.geocode_region": "52",
+      "lineaire_cyclable_habitant_com.type_amenagement": "aménagements mixtes",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.14263397552495147,
+      "lineaire_cyclable_habitant_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Île-de-France",
+      "lineaire_cyclable_habitant_com.geocode_region": "11",
+      "lineaire_cyclable_habitant_com.type_amenagement": "bandes cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.08911672790583995,
+      "lineaire_cyclable_habitant_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Hauts-de-France",
+      "lineaire_cyclable_habitant_com.geocode_region": "32",
+      "lineaire_cyclable_habitant_com.type_amenagement": "voies bus partagées",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.01697106610594314,
+      "lineaire_cyclable_habitant_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Corse",
+      "lineaire_cyclable_habitant_com.geocode_region": "94",
+      "lineaire_cyclable_habitant_com.type_amenagement": "aménagements mixtes",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.003279472551497967,
+      "lineaire_cyclable_habitant_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Nouvelle-Aquitaine",
+      "lineaire_cyclable_habitant_com.geocode_region": "75",
+      "lineaire_cyclable_habitant_com.type_amenagement": "voies vertes",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.2686415576054115,
+      "lineaire_cyclable_habitant_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Nouvelle-Aquitaine",
+      "lineaire_cyclable_habitant_com.geocode_region": "75",
+      "lineaire_cyclable_habitant_com.type_amenagement": "voies bus partagées",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.015883183519962114,
+      "lineaire_cyclable_habitant_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Île-de-France",
+      "lineaire_cyclable_habitant_com.geocode_region": "11",
+      "lineaire_cyclable_habitant_com.type_amenagement": "aménagements mixtes",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.042581417731284876,
+      "lineaire_cyclable_habitant_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Corse",
+      "lineaire_cyclable_habitant_com.geocode_region": "94",
+      "lineaire_cyclable_habitant_com.type_amenagement": "voies bus partagées",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.012784818774980356,
+      "lineaire_cyclable_habitant_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Normandie",
+      "lineaire_cyclable_habitant_com.geocode_region": "28",
+      "lineaire_cyclable_habitant_com.type_amenagement": "pistes cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.3278537702368981,
+      "lineaire_cyclable_habitant_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "lineaire_cyclable_habitant_com.geocode_region": "84",
+      "lineaire_cyclable_habitant_com.type_amenagement": "autre",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.37349746762692887,
+      "lineaire_cyclable_habitant_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "lineaire_cyclable_habitant_com.geocode_region": "93",
+      "lineaire_cyclable_habitant_com.type_amenagement": "voies bus partagées",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.006280665460807781,
+      "lineaire_cyclable_habitant_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Centre-Val de Loire",
+      "lineaire_cyclable_habitant_com.geocode_region": "24",
+      "lineaire_cyclable_habitant_com.type_amenagement": "autre",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.24064948944393713,
+      "lineaire_cyclable_habitant_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Nouvelle-Aquitaine",
+      "lineaire_cyclable_habitant_com.geocode_region": "75",
+      "lineaire_cyclable_habitant_com.type_amenagement": "double-sens cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.10266588848336708,
+      "lineaire_cyclable_habitant_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Hauts-de-France",
+      "lineaire_cyclable_habitant_com.geocode_region": "32",
+      "lineaire_cyclable_habitant_com.type_amenagement": "bandes cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.2688784106995329,
+      "lineaire_cyclable_habitant_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Occitanie",
+      "lineaire_cyclable_habitant_com.geocode_region": "76",
+      "lineaire_cyclable_habitant_com.type_amenagement": "voies vertes",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.34564709407470895,
+      "lineaire_cyclable_habitant_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Occitanie",
+      "lineaire_cyclable_habitant_com.geocode_region": "76",
+      "lineaire_cyclable_habitant_com.type_amenagement": "voies bus partagées",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.012826747310479614,
+      "lineaire_cyclable_habitant_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Nouvelle-Aquitaine",
+      "lineaire_cyclable_habitant_com.geocode_region": "75",
+      "lineaire_cyclable_habitant_com.type_amenagement": "bandes cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.22942906907205568,
+      "lineaire_cyclable_habitant_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Hauts-de-France",
+      "lineaire_cyclable_habitant_com.geocode_region": "32",
+      "lineaire_cyclable_habitant_com.type_amenagement": "voies vertes",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.5448245983107624,
+      "lineaire_cyclable_habitant_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Bourgogne-Franche-Comté",
+      "lineaire_cyclable_habitant_com.geocode_region": "27",
+      "lineaire_cyclable_habitant_com.type_amenagement": "aménagements mixtes",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.07312613477214686,
+      "lineaire_cyclable_habitant_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Hauts-de-France",
+      "lineaire_cyclable_habitant_com.geocode_region": "32",
+      "lineaire_cyclable_habitant_com.type_amenagement": "pistes cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.39534342537885186,
+      "lineaire_cyclable_habitant_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Nouvelle-Aquitaine",
+      "lineaire_cyclable_habitant_com.geocode_region": "75",
+      "lineaire_cyclable_habitant_com.type_amenagement": "aménagements mixtes",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.08543484263380147,
+      "lineaire_cyclable_habitant_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Normandie",
+      "lineaire_cyclable_habitant_com.geocode_region": "28",
+      "lineaire_cyclable_habitant_com.type_amenagement": "voies vertes",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.7756126399115443,
+      "lineaire_cyclable_habitant_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Hauts-de-France",
+      "lineaire_cyclable_habitant_com.geocode_region": "32",
+      "lineaire_cyclable_habitant_com.type_amenagement": "autre",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.3294075129573409,
+      "lineaire_cyclable_habitant_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Grand Est",
+      "lineaire_cyclable_habitant_com.geocode_region": "44",
+      "lineaire_cyclable_habitant_com.type_amenagement": "pistes cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.9190453948585975,
+      "lineaire_cyclable_habitant_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Pays de la Loire",
+      "lineaire_cyclable_habitant_com.geocode_region": "52",
+      "lineaire_cyclable_habitant_com.type_amenagement": "voies vertes",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.6658043790291643,
+      "lineaire_cyclable_habitant_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Bourgogne-Franche-Comté",
+      "lineaire_cyclable_habitant_com.geocode_region": "27",
+      "lineaire_cyclable_habitant_com.type_amenagement": "double-sens cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.03718468446781126,
+      "lineaire_cyclable_habitant_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Occitanie",
+      "lineaire_cyclable_habitant_com.geocode_region": "76",
+      "lineaire_cyclable_habitant_com.type_amenagement": "aménagements mixtes",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.0750926163318193,
+      "lineaire_cyclable_habitant_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Centre-Val de Loire",
+      "lineaire_cyclable_habitant_com.geocode_region": "24",
+      "lineaire_cyclable_habitant_com.type_amenagement": "aménagements mixtes",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.13250441490286824,
+      "lineaire_cyclable_habitant_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Bretagne",
+      "lineaire_cyclable_habitant_com.geocode_region": "53",
+      "lineaire_cyclable_habitant_com.type_amenagement": "autre",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.3646861017662206,
+      "lineaire_cyclable_habitant_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "lineaire_cyclable_habitant_com.geocode_region": "93",
+      "lineaire_cyclable_habitant_com.type_amenagement": "double-sens cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.03199168638178895,
+      "lineaire_cyclable_habitant_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "lineaire_cyclable_habitant_com.geocode_region": "84",
+      "lineaire_cyclable_habitant_com.type_amenagement": "voies bus partagées",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.02038857974954078,
+      "lineaire_cyclable_habitant_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Corse",
+      "lineaire_cyclable_habitant_com.geocode_region": "94",
+      "lineaire_cyclable_habitant_com.type_amenagement": "voies vertes",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.016636490964369897,
+      "lineaire_cyclable_habitant_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Normandie",
+      "lineaire_cyclable_habitant_com.geocode_region": "28",
+      "lineaire_cyclable_habitant_com.type_amenagement": "bandes cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.1136312043398859,
+      "lineaire_cyclable_habitant_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Grand Est",
+      "lineaire_cyclable_habitant_com.geocode_region": "44",
+      "lineaire_cyclable_habitant_com.type_amenagement": "aménagements mixtes",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.06459854257466481,
+      "lineaire_cyclable_habitant_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Occitanie",
+      "lineaire_cyclable_habitant_com.geocode_region": "76",
+      "lineaire_cyclable_habitant_com.type_amenagement": "autre",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.4759960603420867,
+      "lineaire_cyclable_habitant_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Bretagne",
+      "lineaire_cyclable_habitant_com.geocode_region": "53",
+      "lineaire_cyclable_habitant_com.type_amenagement": "bandes cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.3414025467118729,
+      "lineaire_cyclable_habitant_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Bretagne",
+      "lineaire_cyclable_habitant_com.geocode_region": "53",
+      "lineaire_cyclable_habitant_com.type_amenagement": "voies vertes",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.7831654661546166,
+      "lineaire_cyclable_habitant_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "lineaire_cyclable_habitant_com.geocode_region": "93",
+      "lineaire_cyclable_habitant_com.type_amenagement": "aménagements mixtes",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.06282754309604531,
+      "lineaire_cyclable_habitant_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Centre-Val de Loire",
+      "lineaire_cyclable_habitant_com.geocode_region": "24",
+      "lineaire_cyclable_habitant_com.type_amenagement": "bandes cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.3014823769937756,
+      "lineaire_cyclable_habitant_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Île-de-France",
+      "lineaire_cyclable_habitant_com.geocode_region": "11",
+      "lineaire_cyclable_habitant_com.type_amenagement": "voies vertes",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.10977133929151227,
+      "lineaire_cyclable_habitant_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Corse",
+      "lineaire_cyclable_habitant_com.geocode_region": "94",
+      "lineaire_cyclable_habitant_com.type_amenagement": "pistes cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.16474794748289098,
+      "lineaire_cyclable_habitant_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Corse",
+      "lineaire_cyclable_habitant_com.geocode_region": "94",
+      "lineaire_cyclable_habitant_com.type_amenagement": "bandes cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.0666911488402282,
+      "lineaire_cyclable_habitant_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Normandie",
+      "lineaire_cyclable_habitant_com.geocode_region": "28",
+      "lineaire_cyclable_habitant_com.type_amenagement": "autre",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.27568631303169694,
+      "lineaire_cyclable_habitant_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "lineaire_cyclable_habitant_com.geocode_region": "84",
+      "lineaire_cyclable_habitant_com.type_amenagement": "bandes cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.3681328642102216,
+      "lineaire_cyclable_habitant_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Bourgogne-Franche-Comté",
+      "lineaire_cyclable_habitant_com.geocode_region": "27",
+      "lineaire_cyclable_habitant_com.type_amenagement": "pistes cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.726237412075777,
+      "lineaire_cyclable_habitant_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Bourgogne-Franche-Comté",
+      "lineaire_cyclable_habitant_com.geocode_region": "27",
+      "lineaire_cyclable_habitant_com.type_amenagement": "voies vertes",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.6240118945340853,
+      "lineaire_cyclable_habitant_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Île-de-France",
+      "lineaire_cyclable_habitant_com.geocode_region": "11",
+      "lineaire_cyclable_habitant_com.type_amenagement": "double-sens cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.14702481971516917,
+      "lineaire_cyclable_habitant_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Nouvelle-Aquitaine",
+      "lineaire_cyclable_habitant_com.geocode_region": "75",
+      "lineaire_cyclable_habitant_com.type_amenagement": "autre",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.20092734236880916,
+      "lineaire_cyclable_habitant_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Grand Est",
+      "lineaire_cyclable_habitant_com.geocode_region": "44",
+      "lineaire_cyclable_habitant_com.type_amenagement": "double-sens cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.0865212526656546,
+      "lineaire_cyclable_habitant_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "lineaire_cyclable_habitant_com.geocode_region": "84",
+      "lineaire_cyclable_habitant_com.type_amenagement": "voies vertes",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.25349894731478323,
+      "lineaire_cyclable_habitant_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Grand Est",
+      "lineaire_cyclable_habitant_com.geocode_region": "44",
+      "lineaire_cyclable_habitant_com.type_amenagement": "bandes cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.19371325479368204,
+      "lineaire_cyclable_habitant_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "lineaire_cyclable_habitant_com.geocode_region": "93",
+      "lineaire_cyclable_habitant_com.type_amenagement": "pistes cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.3187393720146871,
+      "lineaire_cyclable_habitant_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "lineaire_cyclable_habitant_com.geocode_region": "84",
+      "lineaire_cyclable_habitant_com.type_amenagement": "aménagements mixtes",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.08100323326495086,
+      "lineaire_cyclable_habitant_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Pays de la Loire",
+      "lineaire_cyclable_habitant_com.geocode_region": "52",
+      "lineaire_cyclable_habitant_com.type_amenagement": "voies bus partagées",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.017449144363190915,
+      "lineaire_cyclable_habitant_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Pays de la Loire",
+      "lineaire_cyclable_habitant_com.geocode_region": "52",
+      "lineaire_cyclable_habitant_com.type_amenagement": "double-sens cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.08456940783910975,
+      "lineaire_cyclable_habitant_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Île-de-France",
+      "lineaire_cyclable_habitant_com.geocode_region": "11",
+      "lineaire_cyclable_habitant_com.type_amenagement": "pistes cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.28363615304914847,
+      "lineaire_cyclable_habitant_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "lineaire_cyclable_habitant_com.geocode_region": "93",
+      "lineaire_cyclable_habitant_com.type_amenagement": "voies vertes",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.15143515517051973,
+      "lineaire_cyclable_habitant_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Centre-Val de Loire",
+      "lineaire_cyclable_habitant_com.geocode_region": "24",
+      "lineaire_cyclable_habitant_com.type_amenagement": "pistes cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.8432234000891695,
+      "lineaire_cyclable_habitant_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Bretagne",
+      "lineaire_cyclable_habitant_com.geocode_region": "53",
+      "lineaire_cyclable_habitant_com.type_amenagement": "pistes cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.6746399559430828,
+      "lineaire_cyclable_habitant_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Bretagne",
+      "lineaire_cyclable_habitant_com.geocode_region": "53",
+      "lineaire_cyclable_habitant_com.type_amenagement": "double-sens cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.08370230027944582,
+      "lineaire_cyclable_habitant_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Pays de la Loire",
+      "lineaire_cyclable_habitant_com.geocode_region": "52",
+      "lineaire_cyclable_habitant_com.type_amenagement": "pistes cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.7119562303310777,
+      "lineaire_cyclable_habitant_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "lineaire_cyclable_habitant_com.geocode_region": "84",
+      "lineaire_cyclable_habitant_com.type_amenagement": "double-sens cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.0888720368883244,
+      "lineaire_cyclable_habitant_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Hauts-de-France",
+      "lineaire_cyclable_habitant_com.geocode_region": "32",
+      "lineaire_cyclable_habitant_com.type_amenagement": "aménagements mixtes",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.04532835598964882,
+      "lineaire_cyclable_habitant_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Bourgogne-Franche-Comté",
+      "lineaire_cyclable_habitant_com.geocode_region": "27",
+      "lineaire_cyclable_habitant_com.type_amenagement": "bandes cyclables",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.22542196316160937,
+      "lineaire_cyclable_habitant_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Bretagne",
+      "lineaire_cyclable_habitant_com.geocode_region": "53",
+      "lineaire_cyclable_habitant_com.type_amenagement": "aménagements mixtes",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.14246219153949424,
+      "lineaire_cyclable_habitant_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "lineaire_cyclable_habitant_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "lineaire_cyclable_habitant_com.geocode_region": "93",
+      "lineaire_cyclable_habitant_com.type_amenagement": "autre",
+      "lineaire_cyclable_habitant_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "lineaire_cyclable_habitant_com.id_133": 0.37009352627075526,
+      "lineaire_cyclable_habitant_com.date_mesure": "2025-01-01T00:00:00.000"
+    }
+  ],
+  "measureMeta": {
+    "libelle_indicateur": "Linéaire d'aménagements cyclables pour 1000 hab",
+    "statut_commun": "Mesure",
+    "unite": "km / 1000 hab.",
+    "fonction_calcul": "(nombre de kilomètres d’aménagements cyclables / nombre d'habitants) * 1000",
+    "id_parents": "839",
+    "methode_calcul": null,
+    "numerator": "id_839",
+    "denominator": "pop"
+  }
+}
