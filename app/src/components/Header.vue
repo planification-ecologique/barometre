@@ -311,8 +311,13 @@ export default {
 @media (min-width: 992px) {
   .desktop-navigation {
     display: block !important;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: var(--background-default-grey, #fff);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
   }
-  
+
   .fr-header__navbar {
     display: none; /* Hide menu button on desktop */
   }
