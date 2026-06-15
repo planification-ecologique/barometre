@@ -9,7 +9,6 @@
         <div class="fr-col-12 fr-col-lg-6">
           <figure class="home-v3__rosace-wrap">
             <img
-              ref="rosaceImg"
               class="home-v3__rosace fr-responsive-img"
               :src="rosaceSrc"
               alt="Schéma France Nation Verte : cinq enjeux environnementaux au centre, six thématiques et leurs chantiers opérationnels autour."
@@ -26,35 +25,6 @@
             Ces défis systémiques sont interdépendants — et ils nous concernent tous, dans notre façon de nous déplacer, nous loger, nous nourrir.
             Fort de plus de 250 indicateurs, ce baromètre propose une vision quantifiée de ces transitions.
           </p>
-          <div
-            id="home-v3-hero-intro-region"
-            ref="heroIntroClip"
-            class="home-v3__hero-intro-clip"
-            :class="{ 'home-v3__hero-intro-clip--expanded': heroIntroExpanded }"
-            :style="heroIntroClipStyle"
-          >
-            <div ref="heroIntroInner" class="home-v3__hero-intro-inner">
-              <p>
-                Entreprises, pouvoirs publics ou citoyens, la transition écologique nous concerne tous. Pour réussir, elle demande de la transparence sur le chemin déjà parcouru et sur celui qui reste à parcourir pour atteindre les objectifs que la France s'est fixés en faveur du climat, de la biodiversité ou encore de la préservation des ressources. C'est l'objet du baromètre de la planification écologique.
-              </p>
-              <p>
-                Fort de plus de 250 indicateurs, ce baromètre propose une vision quantifiée des actions qu'il convient de mener pour accélérer la transition dans les transports, le bâtiment, l'énergie, l'industrie, l'agriculture, l'alimentation, l'eau, les écosystèmes naturels et l'économie circulaire, en les mettant en regard de leurs éventuelles cibles à horizon 2030.
-              </p>
-              <p>
-                Le baromètre de la planification écologique a été conçu pour rendre visibles les stratégies environnementales et faciliter leur suivi lorsqu'elles disposent d'indicateurs ad hoc, voire de cibles. Les indicateurs proposés n'intègrent donc pas les données relatives aux moyens humains ou encore financiers à mettre en œuvre pour les atteindre. De même, les impacts socio-économiques des transformations induites par le dérèglement climatique ne sont pas intégrés à ce baromètre.
-              </p>
-            </div>
-          </div>
-          <button
-            v-if="heroIntroShowToggle"
-            type="button"
-            class="fr-btn fr-btn--tertiary-no-outline fr-btn--sm home-v3__hero-read-more fr-mt-1w"
-            :aria-expanded="heroIntroExpanded ? 'true' : 'false'"
-            aria-controls="home-v3-hero-intro-region"
-            @click="toggleHeroIntro"
-          >
-            {{ heroIntroExpanded ? 'Lire moins' : 'Lire plus' }}
-          </button>
         </div>
       </div>
     </header>
@@ -244,9 +214,6 @@ export default {
   data() {
     return {
       sectorNamesFromApi: [],
-      heroIntroExpanded: false,
-      heroIntroMaxHeightPx: null,
-      heroIntroShowToggle: false,
       strategies: STRATEGIES
     }
   },
@@ -292,32 +259,10 @@ export default {
           blurb
         }
       })
-    },
-    heroIntroClipStyle() {
-      if (this.heroIntroExpanded || this.heroIntroMaxHeightPx == null) return {}
-      return { maxHeight: `${this.heroIntroMaxHeightPx}px` }
     }
   },
   async mounted() {
     await this.loadSectors()
-    this.$nextTick(() => {
-      this.setupHeroIntroLayout()
-      this.updateHeroIntroClamp()
-      if (typeof document !== 'undefined' && document.fonts && document.fonts.ready) {
-        document.fonts.ready.then(() => this.updateHeroIntroClamp())
-      }
-    })
-  },
-  beforeDestroy() {
-    window.removeEventListener('resize', this._onHeroIntroLayout)
-    const img = this.$refs.rosaceImg
-    if (img && this._onHeroIntroLayout) {
-      img.removeEventListener('load', this._onHeroIntroLayout)
-    }
-    if (this._rosaceResizeObserver) {
-      this._rosaceResizeObserver.disconnect()
-      this._rosaceResizeObserver = null
-    }
   },
   methods: {
     slugify(str) {
@@ -350,51 +295,6 @@ export default {
         query: { section: SECTION_SYNTHESE_SLUG },
         hash: '#sector-' + this.slugify(sector)
       }
-    },
-    setupHeroIntroLayout() {
-      if (this._heroIntroLayoutBound) return
-      this._heroIntroLayoutBound = true
-      this._onHeroIntroLayout = () => {
-        window.requestAnimationFrame(() => this.updateHeroIntroClamp())
-      }
-      window.addEventListener('resize', this._onHeroIntroLayout)
-      const img = this.$refs.rosaceImg
-      if (img) {
-        img.addEventListener('load', this._onHeroIntroLayout)
-        if (typeof ResizeObserver !== 'undefined') {
-          this._rosaceResizeObserver = new ResizeObserver(this._onHeroIntroLayout)
-          this._rosaceResizeObserver.observe(img)
-        }
-      }
-    },
-    updateHeroIntroClamp() {
-      const img = this.$refs.rosaceImg
-      const inner = this.$refs.heroIntroInner
-      if (!img || !inner) return
-
-      const isLgUp = window.matchMedia('(min-width: 62em)').matches
-      if (!isLgUp) {
-        this.heroIntroMaxHeightPx = null
-        this.heroIntroShowToggle = false
-        this.heroIntroExpanded = false
-        return
-      }
-
-      const h = img.offsetHeight
-      if (!h) {
-        this.heroIntroMaxHeightPx = null
-        this.heroIntroShowToggle = false
-        return
-      }
-      this.heroIntroMaxHeightPx = h
-      this.$nextTick(() => {
-        const overflows = inner.scrollHeight > h + 4
-        this.heroIntroShowToggle = overflows
-        if (!overflows) this.heroIntroExpanded = false
-      })
-    },
-    toggleHeroIntro() {
-      this.heroIntroExpanded = !this.heroIntroExpanded
     }
   }
 }
@@ -468,31 +368,6 @@ export default {
 .home-v3__hero-text p {
   margin-bottom: 1rem;
   line-height: 1.65;
-}
-
-.home-v3__hero-intro-clip {
-  overflow: hidden;
-  transition: max-height 0.4s ease;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .home-v3__hero-intro-clip {
-    transition: none;
-  }
-}
-
-.home-v3__hero-intro-clip--expanded {
-  max-height: none !important;
-  overflow: visible;
-}
-
-.home-v3__hero-text .home-v3__hero-intro-inner p:last-child {
-  margin-bottom: 0;
-}
-
-.home-v3__hero-read-more {
-  display: inline-flex;
-  align-self: flex-start;
 }
 
 .home-v3__section-title {
