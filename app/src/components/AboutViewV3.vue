@@ -60,11 +60,32 @@
           </router-link>
         </div>
       </div>
-      <p class="home-v3__example fr-text--sm fr-mt-2w">
-        <span class="home-v3__example-label">Exemple&nbsp;:</span>
-        l'objectif « Atténuation du changement climatique » se mesure notamment au travers de l'évolution des émissions
-        de gaz à effet de serre du secteur des transports, suivie dans le baromètre.
+      <h3 class="fr-h6 home-v3__examples-title">Exemples d'indicateurs</h3>
+      <p v-if="spotlightLoading" class="fr-text--sm fr-text-mention--grey">
+        Chargement d'indicateurs tirés au hasard parmi la synthèse…
       </p>
+      <div v-else-if="etatSpotlights.length === 0" class="fr-col-12 fr-mb-1w">
+        <p class="fr-text--sm">Aucun indicateur graphique disponible pour l'aperçu.</p>
+      </div>
+      <div v-else class="fr-grid-row fr-grid-row--gutters home-v3-spotlights">
+        <div
+          v-for="(card, i) in etatSpotlights"
+          :key="'etat-spot-' + card.raw.id_indic"
+          class="fr-col-12 fr-col-md-6"
+        >
+          <div class="home-v3-spotlight">
+            <ul class="fr-badges-group fr-badges-group--sm fr-mb-1w">
+              <li>
+                <p class="fr-badge fr-badge--sm" :class="card.kindBadge.variant">{{ card.kindBadge.label }}</p>
+              </li>
+              <li>
+                <p class="fr-badge fr-badge--sm fr-badge--info">{{ card.contextLabel }}</p>
+              </li>
+            </ul>
+            <mini-chart :dataObj="card.raw" />
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- 2 - Déployer nos chantiers sectoriels -->
@@ -99,11 +120,35 @@
           </router-link>
         </div>
       </div>
-      <p class="home-v3__example fr-text--sm fr-mt-2w">
-        <span class="home-v3__example-label">Exemple&nbsp;:</span>
-        dans le secteur « Se loger », le chantier de rénovation énergétique des bâtiments contribue à la fois à
-        l'atténuation du changement climatique et à la prévention de la pollution.
+      <h3 class="fr-h6 home-v3__examples-title">Exemples d'indicateurs</h3>
+      <p v-if="spotlightLoading" class="fr-text--sm fr-text-mention--grey">
+        Chargement d'indicateurs tirés au hasard parmi les chantiers…
       </p>
+      <div v-else-if="chantierSpotlights.length === 0" class="fr-col-12 fr-mb-1w">
+        <p class="fr-text--sm">Aucun indicateur de chantier graphique disponible pour l'aperçu.</p>
+      </div>
+      <div v-else class="fr-grid-row fr-grid-row--gutters home-v3-spotlights">
+        <div
+          v-for="(card, i) in chantierSpotlights"
+          :key="'chantier-spot-' + card.raw.id_indic"
+          class="fr-col-12 fr-col-md-6"
+        >
+          <div class="home-v3-spotlight">
+            <ul class="fr-badges-group fr-badges-group--sm fr-mb-1w">
+              <li>
+                <p class="fr-badge fr-badge--sm" :class="card.kindBadge.variant">{{ card.kindBadge.label }}</p>
+              </li>
+              <li>
+                <p class="fr-badge fr-badge--sm fr-badge--info">{{ card.contextLabel }}</p>
+              </li>
+              <li v-if="card.chantierLabel">
+                <p class="fr-badge fr-badge--sm fr-badge--purple-glycine">{{ card.chantierLabel }}</p>
+              </li>
+            </ul>
+            <mini-chart :dataObj="card.raw" />
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- 3 - Planifier et évaluer -->
@@ -146,7 +191,11 @@
 <script>
 import {
   getNavigationStructure,
+  getIndicators,
   IMPACT_AXE_DISPLAY_ORDER,
+  normalizeImpactAxeName,
+  canonicalImpactAxeNomComplet,
+  isImpactAxe,
   impactAxeSlugFromNomComplet,
 } from '@/services/csvDataService.js'
 import { impactAxeUiForSlug } from '@/config/impactAxeUi.js'
@@ -155,6 +204,7 @@ import { impactAxeNameToSlug } from '@/utils/impactAxeUrl.js'
 import { SECTION_SYNTHESE_SLUG } from '@/utils/sectionUrl.js'
 import EauImg from '@/components/components_sgv/EauImg.vue'
 import DsfrPictogram from '@/components/components_dsfr/DsfrPictogram.vue'
+import MiniChart from '@/components/MiniChart.vue'
 
 /** Ordre d'affichage des cartes secteurs (libellé court → correspondance dans les données) */
 const SECTOR_CARD_DEFS = [
@@ -197,13 +247,158 @@ const AXE_DISPLAY_NAME_OVERRIDES = {
   'Prévention et le contrôle de la pollution': 'Prévention et contrôle de la pollution'
 }
 
+const TIME_QUERY = { date_start: '2015-01-01', date_end: '2031-01-01' }
+const SPOTLIGHT_COUNT = 2
+
 function pickSectorName(matchFn, names) {
   return names.find(matchFn) || null
 }
 
+function isChartableForGraphBox(ind) {
+  if (!ind || !ind.id_indic) return false
+  const t = ind.type_de_graphique || 'Barres simple'
+  if (t === 'Barres simple') {
+    const v = ind.values
+    if (!v || !v.x || !v.y) return false
+    const x = Array.isArray(v.x[0]) ? v.x[0] : v.x
+    const y = Array.isArray(v.y[0]) ? v.y[0] : v.y
+    return Array.isArray(x) && Array.isArray(y) && x.length > 0 && y.length > 0
+  }
+  if (t === 'Barres empilées' || t === 'Courbes indépendantes') {
+    return !!(
+      ind.date &&
+      Array.isArray(ind.date[0]) &&
+      ind.date[0].length > 0 &&
+      ind.values &&
+      Array.isArray(ind.values) &&
+      ind.values.length > 0
+    )
+  }
+  return false
+}
+
+/** Dernière valeur numérique exploitable (aligné sur valeur_actuelle CSV ou lecture des séries). */
+function extractLastNumericValue(ind) {
+  if (ind == null) return null
+  const va = ind.valeur_actuelle
+  if (va != null && va !== '' && !Number.isNaN(Number(va))) {
+    return Number(va)
+  }
+  const t = ind.type_de_graphique || 'Barres simple'
+  if (t === 'Barres simple' && ind.values?.y) {
+    const y = ind.values.y
+    const series = Array.isArray(y[0]) ? y[0] : y
+    if (Array.isArray(series)) {
+      for (let i = series.length - 1; i >= 0; i--) {
+        const v = series[i]
+        if (v != null && v !== '' && !Number.isNaN(Number(v))) return Number(v)
+      }
+    }
+  }
+  if (ind.date?.[0] && Array.isArray(ind.values) && ind.values.length > 0) {
+    const years = ind.date[0]
+    const lastIdx = years.length - 1
+    if (lastIdx >= 0) {
+      let sum = 0
+      let any = false
+      for (const serie of ind.values) {
+        if (Array.isArray(serie) && lastIdx < serie.length) {
+          const v = serie[lastIdx]
+          if (v != null && v !== '' && !Number.isNaN(Number(v))) {
+            sum += Number(v)
+            any = true
+          }
+        }
+      }
+      if (any) return sum
+    }
+  }
+  return null
+}
+
+function formatLastValueWithUnitBadge(ind) {
+  const unit = (ind.label_unit_short || ind.label_unit || ind.unite || '').trim()
+  const num = extractLastNumericValue(ind)
+  if (num == null || Number.isNaN(num)) {
+    return { label: '—', variant: 'fr-badge--green-emeraude' }
+  }
+  const formatted = new Intl.NumberFormat('fr-FR', {
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 4
+  }).format(num)
+  const label = unit ? `${formatted} ${unit}` : formatted
+  return { label, variant: 'fr-badge--green-emeraude' }
+}
+
+function kindBadgeFor(ind) {
+  const t = ind.type_de_graphique || 'Barres simple'
+  if (t === 'Courbes indépendantes') {
+    return { label: 'Évolution', variant: 'fr-badge--green-archipel' }
+  }
+  if (t === 'Barres empilées') {
+    return { label: 'Répartition', variant: 'fr-badge--green-menthe' }
+  }
+  const leg = ind.values?.legend
+  if (Array.isArray(leg) && leg.length > 1) {
+    return { label: 'Comparaison', variant: 'fr-badge--blue-ecume' }
+  }
+  return formatLastValueWithUnitBadge(ind)
+}
+
+function shuffleInPlace(arr) {
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1))
+    ;[arr[i], arr[j]] = [arr[j], arr[i]]
+  }
+  return arr
+}
+
+function pickRandomUnique(pool, count) {
+  const copy = [...pool]
+  shuffleInPlace(copy)
+  const out = []
+  const seen = new Set()
+  for (const item of copy) {
+    const id = item.raw?.id_indic
+    if (!id || seen.has(id)) continue
+    seen.add(id)
+    out.push(item)
+    if (out.length >= count) break
+  }
+  return out
+}
+
+/**
+ * Indicators d'impact par axe : on prend d'abord le secteur « Synthèse » s'il en fournit ;
+ * sinon fusion de tous les secteurs (déploiement où la synthèse est vide ou absente).
+ */
+function mergedImpactAxesFromNavSectors(sectors) {
+  if (!Array.isArray(sectors) || sectors.length === 0) return {}
+  const synthese = sectors.find((s) => s.name === 'Synthèse')
+  const merged = {}
+  const addSector = (sector) => {
+    if (!sector?.indicateursImpact) return
+    for (const [axeName, indicators] of Object.entries(sector.indicateursImpact)) {
+      const n = canonicalImpactAxeNomComplet(axeName) || normalizeImpactAxeName(axeName)
+      if (!n) continue
+      if (!merged[n]) merged[n] = []
+      merged[n].push(...indicators)
+    }
+  }
+  if (synthese) addSector(synthese)
+  const hasRows = Object.values(merged).some((arr) => arr && arr.length > 0)
+  if (!hasRows) {
+    Object.keys(merged).forEach((k) => {
+      delete merged[k]
+    })
+    for (const s of sectors) addSector(s)
+  }
+  return merged
+}
+
 export default {
   name: 'AboutViewV3',
-  components: { EauImg, DsfrPictogram },
+  components: { EauImg, DsfrPictogram, MiniChart },
   props: {
     useStaging: {
       type: Boolean,
@@ -213,7 +408,10 @@ export default {
   data() {
     return {
       sectorNamesFromApi: [],
-      strategies: STRATEGIES
+      strategies: STRATEGIES,
+      spotlightLoading: true,
+      etatSpotlights: [],
+      chantierSpotlights: []
     }
   },
   computed: {
@@ -261,7 +459,7 @@ export default {
     }
   },
   async mounted() {
-    await this.loadSectors()
+    await Promise.all([this.loadSectors(), this.loadSpotlights()])
   },
   methods: {
     slugify(str) {
@@ -279,6 +477,100 @@ export default {
         }
       } catch (error) {
         console.error('Error loading sectors for home V3:', error)
+      }
+    },
+    async loadSpotlights() {
+      this.spotlightLoading = true
+      this.etatSpotlights = []
+      this.chantierSpotlights = []
+      try {
+        const environment = this.useStaging ? 'staging' : 'production'
+        const nav = await getNavigationStructure(environment)
+        if (nav.status !== 'success' || !nav.data?.sectors) return
+
+        const etatPool = []
+        const mergedImpact = mergedImpactAxesFromNavSectors(nav.data.sectors)
+        const gristToAxe = Object.create(null)
+        const etatGristIds = []
+        for (const axeName of IMPACT_AXE_DISPLAY_ORDER) {
+          for (const item of mergedImpact[axeName] || []) {
+            const gid = item.gristId
+            if (!gid) continue
+            const key = String(gid)
+            if (!gristToAxe[key]) {
+              gristToAxe[key] = axeName
+              etatGristIds.push(gid)
+            }
+          }
+        }
+        if (etatGristIds.length > 0) {
+          const q = {
+            filter_by: [{ field: 'grist_ids', values: etatGristIds }],
+            time_period: TIME_QUERY
+          }
+          const resp = await getIndicators(q, environment)
+          for (const ind of resp.results || []) {
+            if (!isChartableForGraphBox(ind)) continue
+            const axeLabel = gristToAxe[String(ind.id_indic)] || 'Axe d’impact'
+            etatPool.push({
+              raw: ind,
+              kindBadge: kindBadgeFor(ind),
+              contextLabel: axeLabel
+            })
+          }
+        }
+
+        const chantierByGrist = Object.create(null)
+        for (const sector of nav.data.sectors) {
+          for (const [chantierName, chantierData] of Object.entries(sector.chantiers || {})) {
+            if (isImpactAxe(chantierName)) continue
+            const levier = chantierData.leviers?.['Indicateur de chantier'] || []
+            const items = Array.isArray(levier) ? levier : []
+            for (const item of items) {
+              const gid = item.gristId
+              if (!gid) continue
+              const key = String(gid)
+              if (!chantierByGrist[key]) {
+                chantierByGrist[key] = {
+                  sectorName: sector.name,
+                  chantierName
+                }
+              }
+            }
+          }
+        }
+
+        const chantierIds = Object.keys(chantierByGrist)
+        const chantierPool = []
+        if (chantierIds.length > 0) {
+          const q2 = {
+            filter_by: [{ field: 'grist_ids', values: chantierIds }],
+            time_period: TIME_QUERY
+          }
+          const resp2 = await getIndicators(q2, environment)
+          for (const ind of resp2.results || []) {
+            if (!isChartableForGraphBox(ind)) continue
+            const meta = chantierByGrist[String(ind.id_indic)]
+            if (!meta) continue
+            const shortChantier =
+              meta.chantierName.length > 42
+                ? `${meta.chantierName.slice(0, 40)}…`
+                : meta.chantierName
+            chantierPool.push({
+              raw: ind,
+              kindBadge: kindBadgeFor(ind),
+              contextLabel: meta.sectorName,
+              chantierLabel: shortChantier
+            })
+          }
+        }
+
+        this.etatSpotlights = pickRandomUnique(etatPool, SPOTLIGHT_COUNT)
+        this.chantierSpotlights = pickRandomUnique(chantierPool, SPOTLIGHT_COUNT)
+      } catch (e) {
+        console.error('AboutViewV3 loadSpotlights:', e)
+      } finally {
+        this.spotlightLoading = false
       }
     },
     etatEnvironnementLink(axe) {
@@ -383,18 +675,18 @@ export default {
   text-align: left;
 }
 
-.home-v3__example {
-  max-width: 40rem;
-  margin-bottom: 0;
-  line-height: 1.6;
-  color: #3a3a3a;
+.home-v3__examples-title {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
   text-align: left;
-  font-style: italic;
 }
 
-.home-v3__example-label {
-  font-weight: 700;
-  font-style: normal;
+.home-v3-spotlight {
+  height: 100%;
+  padding: 1rem;
+  box-shadow: inset 0 0 0 1px #e5e5e5;
+  background: #fff;
 }
 
 /* Cartes "enjeux" / "secteurs" : reprises du style home-tile existant */
