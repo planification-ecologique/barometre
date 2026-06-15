@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="fr-container--fluid">
+    <div class="fr-container--fluid app-root-container">
       <div id="app">
         <StagingBanner />
         <SkipLinksDsfr></SkipLinksDsfr>
@@ -89,6 +89,11 @@ export default {
 </script>
 
 <style>
+/* Override DSFR's overflow: hidden so the sticky desktop nav can stick to the viewport */
+.app-root-container {
+  overflow: visible;
+}
+
 body {
   padding-top: 0; /* This will be adjusted by JavaScript when the banner is present */
 }
