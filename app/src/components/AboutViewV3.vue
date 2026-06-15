@@ -28,13 +28,49 @@
       </div>
     </header>
 
-    <!-- 1 - Améliorer l'état de l'environnement -->
+    <!-- 1 - Planifier et évaluer -->
+    <section class="home-v3__section fr-mt-6w" aria-labelledby="v3-strategies-heading">
+      <p class="home-v3__eyebrow home-v3__eyebrow--pill">1 - Planifier et évaluer</p>
+      <h2 id="v3-strategies-heading" class="fr-h5 home-v3__section-title">Un pilotage unifié des feuilles de route environnementales</h2>
+      <p class="home-v3__lead">
+        Ce baromètre constitue l'outil central de transparence en matière d'environnement.
+        Il a été conçu pour rendre visibles les stratégies environnementales et faciliter le suivi de leurs
+        résultats. Les indicateurs proposés n'intègrent donc pas les données relatives aux moyens humains ou encore financiers
+        à mettre en œuvre pour les atteindre. De même, les impacts socio-économiques des transformations induites par le
+        dérèglement climatique ne sont pas intégrés à ce baromètre.
+      </p>
+
+      <ul class="home-v3-strategies" role="list">
+        <li v-for="strategy in strategies" :key="strategy.code" class="home-v3-strategy" :style="{ '--strategy-color': strategy.color }">
+          <span class="home-v3-strategy__code">{{ strategy.code }}</span>
+          <span class="home-v3-strategy__label">{{ strategy.label }}</span>
+        </li>
+      </ul>
+
+      <div class="home-v3-stats">
+        <div class="home-v3-stat">
+          <p class="home-v3-stat__value">130+</p>
+          <p class="home-v3-stat__label">leviers d'action recensés</p>
+        </div>
+        <div class="home-v3-stat">
+          <p class="home-v3-stat__value">6</p>
+          <p class="home-v3-stat__label">enjeux croisés avec 6 secteurs</p>
+        </div>
+        <div class="home-v3-stat">
+          <p class="home-v3-stat__value">1</p>
+          <p class="home-v3-stat__label">cadre commun de lecture</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2 - Améliorer l'état de l'environnement -->
     <section class="home-v3__section fr-mt-6w" aria-labelledby="v3-enjeux-heading">
-      <p class="home-v3__eyebrow home-v3__eyebrow--pill">1 - Améliorer l'état de l'environnement</p>
+      <p class="home-v3__eyebrow home-v3__eyebrow--pill">2 - Améliorer l'état de l'environnement</p>
       <h2 id="v3-enjeux-heading" class="fr-h5 home-v3__section-title">6 grands objectifs stratégiques</h2>
       <p class="home-v3__lead">
         L'amélioration concrète de l'état de l'environnement constitue la finalité de ces politiques publiques.
-        Pour mesurer la réussite de cette trajectoire, ce baromètre est structuré autour des 6 objectifs de la taxonomie européenne.
+        Pour mesurer sa réussite, ce baromètre est structuré autour des 6 objectifs environnementaux de la France,
+        issus de la taxonomie européenne.
       </p>
       <router-link
         :to="{ name: etatRouteName, query: { section: syntheseSection } }"
@@ -85,9 +121,9 @@
       </div>
     </section>
 
-    <!-- 2 - Déployer nos chantiers sectoriels -->
-    <section class="home-v3__section fr-mt-6w" aria-labelledby="v3-secteurs-heading">
-      <p class="home-v3__eyebrow home-v3__eyebrow--pill">2 - Déployer nos chantiers sectoriels</p>
+    <!-- 3 - Déployer nos chantiers sectoriels -->
+    <section class="home-v3__section fr-mt-6w fr-mb-4w" aria-labelledby="v3-secteurs-heading">
+      <p class="home-v3__eyebrow home-v3__eyebrow--pill">3 - Déployer nos chantiers sectoriels</p>
       <h2 id="v3-secteurs-heading" class="fr-h5 home-v3__section-title">Des transformations tangibles de notre quotidien</h2>
       <p class="home-v3__lead">
         L'atteinte de nos cibles écologiques impose le déploiement de transformations concrètes, structurées par grands
@@ -141,41 +177,6 @@
             </ul>
             <mini-chart :data-obj="card.raw" detailed />
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 3 - Planifier et évaluer -->
-    <section class="home-v3__section fr-mt-6w fr-mb-4w" aria-labelledby="v3-strategies-heading">
-      <p class="home-v3__eyebrow home-v3__eyebrow--pill">3 - Planifier et évaluer</p>
-      <h2 id="v3-strategies-heading" class="fr-h5 home-v3__section-title">Un pilotage unifié des feuilles de route environnementales</h2>
-      <p class="home-v3__lead">
-        Ce baromètre constitue l'outil central de transparence en matière d'environnement. 
-        Il a été conçu pour rendre visibles les stratégies environnementales et faciliter le suivi de leurs
-        résultats. Les indicateurs proposés n'intègrent donc pas les données relatives aux moyens humains ou encore financiers
-        à mettre en œuvre pour les atteindre. De même, les impacts socio-économiques des transformations induites par le
-        dérèglement climatique ne sont pas intégrés à ce baromètre.
-      </p>
-
-      <ul class="home-v3-strategies" role="list">
-        <li v-for="strategy in strategies" :key="strategy.code" class="home-v3-strategy" :style="{ '--strategy-color': strategy.color }">
-          <span class="home-v3-strategy__code">{{ strategy.code }}</span>
-          <span class="home-v3-strategy__label">{{ strategy.label }}</span>
-        </li>
-      </ul>
-
-      <div class="home-v3-stats">
-        <div class="home-v3-stat">
-          <p class="home-v3-stat__value">130+</p>
-          <p class="home-v3-stat__label">leviers d'action recensés</p>
-        </div>
-        <div class="home-v3-stat">
-          <p class="home-v3-stat__value">6</p>
-          <p class="home-v3-stat__label">enjeux croisés avec 6 secteurs</p>
-        </div>
-        <div class="home-v3-stat">
-          <p class="home-v3-stat__value">1</p>
-          <p class="home-v3-stat__label">cadre commun de lecture</p>
         </div>
       </div>
     </section>
