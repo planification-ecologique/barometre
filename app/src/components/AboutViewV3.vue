@@ -630,7 +630,7 @@ export default {
 
 .home-v3__title {
   text-align: left;
-  margin-top: 0;
+  margin-top: 1.5rem;
   margin-bottom: 1.75rem;
   font-weight: 700;
   letter-spacing: -0.02em;
