@@ -76,13 +76,10 @@
           <div class="home-v3-spotlight">
             <ul class="fr-badges-group fr-badges-group--sm fr-mb-1w">
               <li>
-                <p class="fr-badge fr-badge--sm" :class="card.kindBadge.variant">{{ card.kindBadge.label }}</p>
-              </li>
-              <li>
                 <p class="fr-badge fr-badge--sm fr-badge--info">{{ card.contextLabel }}</p>
               </li>
             </ul>
-            <mini-chart :dataObj="card.raw" />
+            <mini-chart :data-obj="card.raw" detailed />
           </div>
         </div>
       </div>
@@ -136,16 +133,13 @@
           <div class="home-v3-spotlight">
             <ul class="fr-badges-group fr-badges-group--sm fr-mb-1w">
               <li>
-                <p class="fr-badge fr-badge--sm" :class="card.kindBadge.variant">{{ card.kindBadge.label }}</p>
-              </li>
-              <li>
                 <p class="fr-badge fr-badge--sm fr-badge--info">{{ card.contextLabel }}</p>
               </li>
               <li v-if="card.chantierLabel">
                 <p class="fr-badge fr-badge--sm fr-badge--purple-glycine">{{ card.chantierLabel }}</p>
               </li>
             </ul>
-            <mini-chart :dataObj="card.raw" />
+            <mini-chart :data-obj="card.raw" detailed />
           </div>
         </div>
       </div>
@@ -275,74 +269,6 @@ function isChartableForGraphBox(ind) {
     )
   }
   return false
-}
-
-/** Dernière valeur numérique exploitable (aligné sur valeur_actuelle CSV ou lecture des séries). */
-function extractLastNumericValue(ind) {
-  if (ind == null) return null
-  const va = ind.valeur_actuelle
-  if (va != null && va !== '' && !Number.isNaN(Number(va))) {
-    return Number(va)
-  }
-  const t = ind.type_de_graphique || 'Barres simple'
-  if (t === 'Barres simple' && ind.values?.y) {
-    const y = ind.values.y
-    const series = Array.isArray(y[0]) ? y[0] : y
-    if (Array.isArray(series)) {
-      for (let i = series.length - 1; i >= 0; i--) {
-        const v = series[i]
-        if (v != null && v !== '' && !Number.isNaN(Number(v))) return Number(v)
-      }
-    }
-  }
-  if (ind.date?.[0] && Array.isArray(ind.values) && ind.values.length > 0) {
-    const years = ind.date[0]
-    const lastIdx = years.length - 1
-    if (lastIdx >= 0) {
-      let sum = 0
-      let any = false
-      for (const serie of ind.values) {
-        if (Array.isArray(serie) && lastIdx < serie.length) {
-          const v = serie[lastIdx]
-          if (v != null && v !== '' && !Number.isNaN(Number(v))) {
-            sum += Number(v)
-            any = true
-          }
-        }
-      }
-      if (any) return sum
-    }
-  }
-  return null
-}
-
-function formatLastValueWithUnitBadge(ind) {
-  const unit = (ind.label_unit_short || ind.label_unit || ind.unite || '').trim()
-  const num = extractLastNumericValue(ind)
-  if (num == null || Number.isNaN(num)) {
-    return { label: '—', variant: 'fr-badge--green-emeraude' }
-  }
-  const formatted = new Intl.NumberFormat('fr-FR', {
-    minimumFractionDigits: 0,
-    maximumFractionDigits: 4
-  }).format(num)
-  const label = unit ? `${formatted} ${unit}` : formatted
-  return { label, variant: 'fr-badge--green-emeraude' }
-}
-
-function kindBadgeFor(ind) {
-  const t = ind.type_de_graphique || 'Barres simple'
-  if (t === 'Courbes indépendantes') {
-    return { label: 'Évolution', variant: 'fr-badge--green-archipel' }
-  }
-  if (t === 'Barres empilées') {
-    return { label: 'Répartition', variant: 'fr-badge--green-menthe' }
-  }
-  const leg = ind.values?.legend
-  if (Array.isArray(leg) && leg.length > 1) {
-    return { label: 'Comparaison', variant: 'fr-badge--blue-ecume' }
-  }
-  return formatLastValueWithUnitBadge(ind)
 }
 
 function shuffleInPlace(arr) {
@@ -514,7 +440,6 @@ export default {
             const axeLabel = gristToAxe[String(ind.id_indic)] || 'Axe d’impact'
             etatPool.push({
               raw: ind,
-              kindBadge: kindBadgeFor(ind),
               contextLabel: axeLabel
             })
           }
@@ -558,7 +483,6 @@ export default {
                 : meta.chantierName
             chantierPool.push({
               raw: ind,
-              kindBadge: kindBadgeFor(ind),
               contextLabel: meta.sectorName,
               chantierLabel: shortChantier
             })

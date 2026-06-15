@@ -1,5 +1,11 @@
 <template>
-  <div class="mini-chart" :id="containerId">
+  <div class="mini-chart" :class="{ 'mini-chart--detailed': detailed }" :id="containerId">
+    <template v-if="detailed">
+      <p class="mini-chart__title">{{ dataObj.label_indic }}</p>
+      <p v-if="dataObj.label_unit" class="mini-chart__unit fr-text--xs fr-text-mention--grey">
+        Unité : {{ dataObj.label_unit }}
+      </p>
+    </template>
     <!-- Barres simple -->
     <bar-chart
       v-if="chartType === 'Barres simple' && hasBarSimpleData"
@@ -92,6 +98,11 @@ export default {
     dataObj: {
       type: Object,
       required: true
+    },
+    /** Titre, unité et légende visibles (aperçu home) ; défaut = graphique seul (tableaux synthèse). */
+    detailed: {
+      type: Boolean,
+      default: false
     }
   },
   computed: {
@@ -388,25 +399,53 @@ export default {
   margin: 0 !important;
 }
 
-/* Hide legends, tooltips, metadata, date text inside mini charts (same idea as MultiLineChart: no in-chart legend) */
-.mini-chart .bar-chart-legend,
-.mini-chart .flex,
-.mini-chart .linechart_tooltip,
-.mini-chart .legende_dot,
-.mini-chart .legende_dash_line1,
-.mini-chart .legende_dash_line2,
-.mini-chart .legende_dot_circle,
-.mini-chart .fr-text--xs,
-.mini-chart .fr-text--sm,
-.mini-chart .fr-text--bold,
-.mini-chart .fr-mt-3v,
-.mini-chart .fr-mt-1w,
-.mini-chart .fr-mb-1v,
-.mini-chart .fr-mb-0 {
+/* Hide legends, tooltips, metadata in compact/table mode */
+.mini-chart .linechart_tooltip {
   display: none !important;
 }
 
-.mini-chart p {
+.mini-chart:not(.mini-chart--detailed) .bar-chart-legend,
+.mini-chart:not(.mini-chart--detailed) .flex,
+.mini-chart:not(.mini-chart--detailed) .legende_dot,
+.mini-chart:not(.mini-chart--detailed) .legende_dash_line1,
+.mini-chart:not(.mini-chart--detailed) .legende_dash_line2,
+.mini-chart:not(.mini-chart--detailed) .legende_dot_circle,
+.mini-chart:not(.mini-chart--detailed) .fr-text--xs,
+.mini-chart:not(.mini-chart--detailed) .fr-text--sm,
+.mini-chart:not(.mini-chart--detailed) .fr-text--bold,
+.mini-chart:not(.mini-chart--detailed) .fr-mt-3v,
+.mini-chart:not(.mini-chart--detailed) .fr-mt-1w,
+.mini-chart:not(.mini-chart--detailed) .fr-mb-1v,
+.mini-chart:not(.mini-chart--detailed) .fr-mb-0 {
   display: none !important;
+}
+
+.mini-chart:not(.mini-chart--detailed) p {
+  display: none !important;
+}
+
+.mini-chart--detailed .mini-chart__title {
+  display: block;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.35;
+  margin: 0 0 0.35rem;
+  color: #161616;
+}
+
+.mini-chart--detailed .mini-chart__unit {
+  display: block;
+  margin: 0 0 0.5rem;
+}
+
+.mini-chart--detailed .bar-chart-legend-row,
+.mini-chart--detailed .legend-row {
+  flex-wrap: wrap;
+  gap: 0.25rem 0.75rem;
+}
+
+.mini-chart--detailed .bar-chart-legend-label,
+.mini-chart--detailed .legend-item {
+  font-size: 0.75rem;
 }
 </style>
