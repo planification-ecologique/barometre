@@ -105,6 +105,7 @@
                   name="header-search-input"
                   placeholder="Rechercher"
                   autocomplete="off"
+                  @mousedown.prevent="focusHeaderSearch"
                   @keyup.enter="submitSearch"
                 >
                 <button
@@ -173,12 +174,18 @@ export default {
     goToSearch() {
       this.submitSearch();
     },
+    focusHeaderSearch() {
+      this.$refs.headerSearchInput?.focus({ preventScroll: true, focusVisible: false });
+    },
     submitSearch() {
       const routeName = window.location.pathname.includes('/staging') ? 'staging-recherche' : 'recherche';
       const query = this.headerSearchQuery?.trim() ? { q: this.headerSearchQuery.trim() } : {};
       this.$router.push({ name: routeName, query }).catch(() => {});
       // Force re-search even if route/query unchanged (NavigationDuplicated)
       this.$root.$emit("header-search:submit", { q: query.q || "" });
+      this.$nextTick(() => {
+        this.focusHeaderSearch();
+      });
     },
     toggleNavigation() {
       // On desktop, don't toggle - menu is always visible

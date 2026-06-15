@@ -286,7 +286,7 @@ export default {
     this.$root.$on("header-search:submit", this.onHeaderSearchSubmit);
     this.fetchData();
     this.$nextTick(() => {
-      this.$refs.searchInput?.focus();
+      this.$refs.searchInput?.focus({ preventScroll: true, focusVisible: false });
     });
 
     dsfrAnalytics({
