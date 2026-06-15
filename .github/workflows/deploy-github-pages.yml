@@ -13,16 +13,35 @@ concurrency:
   cancel-in-progress: true
 
 env:
-  CUSTOM_DOMAIN: ${{ vars.PAGES_CUSTOM_DOMAIN || 'barometre.planification-ecologique.gouv.fr' }}
+  # Domaine custom (vide = désactivé, ex. pendant un incident DNS) → repli sur le github.io du dépôt
+  CUSTOM_DOMAIN: ${{ vars.PAGES_CUSTOM_DOMAIN }}
+  PAGES_BASE_URL: ${{ vars.PAGES_CUSTOM_DOMAIN && format('https://{0}', vars.PAGES_CUSTOM_DOMAIN) || 'https://planification-ecologique.github.io/barometre' }}
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     environment:
       name: github-pages
-      url: https://${{ vars.PAGES_CUSTOM_DOMAIN || 'barometre.planification-ecologique.gouv.fr' }}/
+      url: ${{ env.PAGES_BASE_URL }}/
     steps:
       - uses: actions/checkout@v4
+
+      - name: Remove stale CNAME when custom domain is disabled
+        if: ${{ env.CUSTOM_DOMAIN == '' }}
+        run: |
+          if git ls-remote --exit-code --heads origin gh-pages > /dev/null 2>&1; then
+            git fetch origin gh-pages --depth=1
+            git worktree add /tmp/gh-pages-cname origin/gh-pages
+            if [ -f /tmp/gh-pages-cname/CNAME ]; then
+              cd /tmp/gh-pages-cname
+              git checkout -B gh-pages
+              git rm CNAME
+              git config user.name "github-actions[bot]"
+              git config user.email "github-actions[bot]@users.noreply.github.com"
+              git commit -m "Remove CNAME (custom domain disabled)"
+              git push origin gh-pages
+            fi
+          fi
 
       - uses: actions/setup-node@v4
         with:
@@ -37,8 +56,8 @@ jobs:
       - name: Build for GitHub Pages
         working-directory: app
         env:
-          # Racine du domaine custom — pas de sous-dossier /barometre/
-          VUE_APP_PREFIX_PATH: ''
+          # Racine du domaine custom (pas de sous-dossier), ou /barometre/ sous github.io
+          VUE_APP_PREFIX_PATH: ${{ env.CUSTOM_DOMAIN && '' || '/barometre' }}
           VUE_APP_ENV: prod
           VUE_APP_TRACKING: ${{ vars.VUE_APP_TRACKING || 'phdd.barometre.planification-ecologique.gouv.fr' }}
           VUE_APP_ECOLAB_API_TOKEN: ${{ secrets.VUE_APP_ECOLAB_API_TOKEN }}

@@ -18,8 +18,9 @@ jobs:
     env:
       PR_NUMBER: ${{ github.event.pull_request.number }}
       PR_PATH: pr/${{ github.event.pull_request.number }}
-      CUSTOM_DOMAIN: ${{ vars.PAGES_CUSTOM_DOMAIN || 'barometre.planification-ecologique.gouv.fr' }}
-      PREVIEW_URL: https://${{ vars.PAGES_CUSTOM_DOMAIN || 'barometre.planification-ecologique.gouv.fr' }}/pr/${{ github.event.pull_request.number }}/
+      # Domaine custom (vide = désactivé, ex. pendant un incident DNS) → repli sur le github.io du dépôt
+      CUSTOM_DOMAIN: ${{ vars.PAGES_CUSTOM_DOMAIN }}
+      PREVIEW_URL: ${{ vars.PAGES_CUSTOM_DOMAIN && format('https://{0}/pr/{1}/', vars.PAGES_CUSTOM_DOMAIN, github.event.pull_request.number) || format('https://planification-ecologique.github.io/barometre/pr/{0}/', github.event.pull_request.number) }}
 
     steps:
       - name: Find preview comment
@@ -57,7 +58,7 @@ jobs:
       - name: Build preview
         working-directory: app
         env:
-          VUE_APP_PREFIX_PATH: /pr/${{ env.PR_NUMBER }}/
+          VUE_APP_PREFIX_PATH: ${{ env.CUSTOM_DOMAIN && format('/pr/{0}/', env.PR_NUMBER) || format('/barometre/pr/{0}/', env.PR_NUMBER) }}
           VUE_APP_ENV: prod
           VUE_APP_TRACKING: ${{ vars.VUE_APP_TRACKING || '' }}
           VUE_APP_ECOLAB_API_TOKEN: ${{ secrets.VUE_APP_ECOLAB_API_TOKEN }}
