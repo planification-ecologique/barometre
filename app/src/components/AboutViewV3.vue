@@ -34,8 +34,10 @@
       <h2 id="v3-strategies-heading" class="fr-h5 home-v3__section-title">Un pilotage unifié des feuilles de route environnementales</h2>
       <p class="home-v3__lead">
         Ce baromètre constitue l'outil central de transparence en matière d'environnement.
-        Il a été conçu pour rendre visibles les stratégies environnementales et faciliter le suivi de leurs
-        résultats. Les indicateurs proposés n'intègrent donc pas les données relatives aux moyens humains ou encore financiers
+        Il synthétise et hiérarchise les stratégies environnementales afin de les rendre plus visibles et de suivre leurs résultats.
+      </p>
+      <p class="home-v3__note fr-text--sm">
+        Les indicateurs proposés n'intègrent donc pas les données relatives aux moyens humains ou encore financiers
         à mettre en œuvre pour les atteindre. De même, les impacts socio-économiques des transformations induites par le
         dérèglement climatique ne sont pas intégrés à ce baromètre.
       </p>
@@ -597,6 +599,15 @@ export default {
   margin-bottom: 0;
   line-height: 1.6;
   color: #3a3a3a;
+  text-align: left;
+}
+
+.home-v3__note {
+  max-width: 40rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+  line-height: 1.5;
+  color: #666;
   text-align: left;
 }
 
