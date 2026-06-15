@@ -1,4 +1,5 @@
 <template>
+  <div class="header-group">
   <header role="banner" class="fr-header">
     <div class="fr-header__body">
       <div class="header-container">
@@ -104,6 +105,7 @@
                   name="header-search-input"
                   placeholder="Rechercher"
                   autocomplete="off"
+                  @mousedown.prevent="focusHeaderSearch"
                   @keyup.enter="submitSearch"
                 >
                 <button
@@ -121,10 +123,11 @@
         </div>
       </div>
     </div>
-    <div class="fr-container--fluid desktop-navigation" v-if="showNavigation">
-      <navigation-dsfr></navigation-dsfr>
-    </div>
   </header>
+  <div class="fr-container--fluid desktop-navigation" v-if="showNavigation">
+    <navigation-dsfr></navigation-dsfr>
+  </div>
+  </div>
 </template>
 
 <script>
@@ -171,12 +174,18 @@ export default {
     goToSearch() {
       this.submitSearch();
     },
+    focusHeaderSearch() {
+      this.$refs.headerSearchInput?.focus({ preventScroll: true, focusVisible: false });
+    },
     submitSearch() {
       const routeName = window.location.pathname.includes('/staging') ? 'staging-recherche' : 'recherche';
       const query = this.headerSearchQuery?.trim() ? { q: this.headerSearchQuery.trim() } : {};
       this.$router.push({ name: routeName, query }).catch(() => {});
       // Force re-search even if route/query unchanged (NavigationDuplicated)
       this.$root.$emit("header-search:submit", { q: query.q || "" });
+      this.$nextTick(() => {
+        this.focusHeaderSearch();
+      });
     },
     toggleNavigation() {
       // On desktop, don't toggle - menu is always visible
@@ -214,6 +223,12 @@ export default {
 </script>
 
 <style>
+/* Flatten wrapper so nav/header are layout children of #app — required for
+   position:sticky to persist for the full page scroll (not just header height). */
+.header-group {
+  display: contents;
+}
+
 .desktop-navigation {
   display: block;
 }
@@ -311,8 +326,13 @@ export default {
 @media (min-width: 992px) {
   .desktop-navigation {
     display: block !important;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: var(--background-default-grey, #fff);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
   }
-  
+
   .fr-header__navbar {
     display: none; /* Hide menu button on desktop */
   }

@@ -2,7 +2,6 @@
   <div class="home-v3">
     <!-- Hero -->
     <header class="home-v3__hero">
-      <p class="home-v3__eyebrow">Le point de départ</p>
       <h1 class="fr-h3 home-v3__title">Réussir simultanément nos transitions écologiques</h1>
 
       <div class="fr-grid-row fr-grid-row--gutters home-v3__hero-grid">
