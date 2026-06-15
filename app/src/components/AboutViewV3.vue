@@ -69,7 +69,7 @@
       </div>
       <div v-else class="fr-grid-row fr-grid-row--gutters home-v3-spotlights">
         <div
-          v-for="(card, i) in etatSpotlights"
+          v-for="card in etatSpotlights"
           :key="'etat-spot-' + card.raw.id_indic"
           class="fr-col-12 fr-col-md-6"
         >
@@ -129,7 +129,7 @@
       </div>
       <div v-else class="fr-grid-row fr-grid-row--gutters home-v3-spotlights">
         <div
-          v-for="(card, i) in chantierSpotlights"
+          v-for="card in chantierSpotlights"
           :key="'chantier-spot-' + card.raw.id_indic"
           class="fr-col-12 fr-col-md-6"
         >
@@ -326,7 +326,7 @@ function formatLastValueWithUnitBadge(ind) {
     minimumFractionDigits: 0,
     maximumFractionDigits: 4
   }).format(num)
-  const label = unit ? `${formatted} ${unit}` : formatted
+  const label = unit ? `${formatted} ${unit}` : formatted
   return { label, variant: 'fr-badge--green-emeraude' }
 }
 
