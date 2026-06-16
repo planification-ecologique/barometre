@@ -885,11 +885,11 @@ export function transformCSVData(csvData, query) {
         targetTrajectory
       }
     };
-    validateTransformedIndicatorShape(transformed);
     return transformed;
   });
 
   let groupedResults = enrichGroupedRegionalLinks(groupByIndicator(results), results);
+  groupedResults.forEach(validateTransformedIndicatorShape);
 
   // Apply search and tag filters after grouping to ensure complete charts
   // This ensures that if any sub-group matches, the entire grouped indicator is included
