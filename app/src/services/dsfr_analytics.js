@@ -1,10 +1,15 @@
 // import analytics_config_file from '../services/dsfr_analytics_config.js'
 export function dsfrAnalytics (params = {}) {
+    if (typeof window.EA_push !== 'function') {
+        return
+    }
 
     try {
         localStorage.setItem("dsfr_analytics", "available");
         try {
-            if(_EA_disabled() != 1){
+            const isDisabled =
+                typeof window._EA_disabled === 'function' && window._EA_disabled() === 1
+            if (!isDisabled) {
                         
                 window.EA_datalayer = [];            
                 // Informations de page :

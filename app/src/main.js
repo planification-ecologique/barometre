@@ -6,6 +6,24 @@ import config_file from './services/tarteaucitron_config.js'
 import analytics_config_file from './services/dsfr_analytics_config.js'
 import './css/website.css'
 
+const trackingDomain = (process.env.VUE_APP_TRACKING || '').trim()
+const analyticsEnabled =
+  Boolean(trackingDomain) && !window.location.pathname.includes('chart-iframe')
+
+if (!trackingDomain && !window.location.pathname.includes('chart-iframe')) {
+  const appEnv = process.env.VUE_APP_ENV || 'dev'
+  const prodHint =
+    appEnv === 'prod'
+      ? 'Set VUE_APP_TRACKING in the deploy workflow (GitHub Actions vars or .env.production).'
+      : 'Add VUE_APP_TRACKING to .env or run with --mode qualif.'
+  console.warn(`[DSFR analytics] VUE_APP_TRACKING not set (VUE_APP_ENV=${appEnv}). Eulerian disabled. ${prodHint}`)
+}
+
+// DSFR analytics config must exist before dsfr.module.js and analytics.module.js
+if (analyticsEnabled) {
+  window.dsfr = analytics_config_file
+}
+
 // DSFR core and legacy assets
 require('../node_modules/@gouvfr/dsfr/dist/legacy/legacy.nomodule.min.js')
 require('../node_modules/@gouvfr/dsfr/dist/core/core.module.min.js')
@@ -17,7 +35,9 @@ require('../node_modules/@gouvfr/dsfr/dist/utility/icons/icons.main.min.css')
 require('remixicon/fonts/remixicon.css')
 require('../node_modules/@gouvfr/dsfr/dist/dsfr.module.min.js')
 require('../node_modules/@gouvfr/dsfr/dist/scheme/scheme.module.min.js')
-require('../node_modules/@gouvfr/dsfr/dist/analytics/analytics.module.js')
+if (analyticsEnabled) {
+  require('../node_modules/@gouvfr/dsfr/dist/analytics/analytics.module.js')
+}
 
 Vue.config.productionTip = false
 
@@ -30,8 +50,9 @@ if (typeof Storage !== 'undefined' && !window.location.pathname.includes('chart-
     require('../public/tarteaucitron/css/dsfr-theme-tac.css')
     window.tarteaucitronForceLanguage = 'fr'
     tarteaucitron.init(config_file)
-    tarteaucitron.user.eulerianHost = process.env.VUE_APP_TRACKING
-    window.dsfr = analytics_config_file
+    if (trackingDomain) {
+      tarteaucitron.user.eulerianHost = trackingDomain
+    }
   } catch (err) {
     console.warn('Cookies failed to be set; blocked by the browser')
   }

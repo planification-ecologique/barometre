@@ -248,8 +248,9 @@ export default {
     eulerian_button_status() {
       try {
         localStorage.getItem("tarteaucitron");
-        // _EA_toggle();
-        window.dsfr.analytics.opt.toggle()
+        if (window.dsfr?.analytics?.opt?.toggle) {
+          window.dsfr.analytics.opt.toggle()
+        }
         this.set_message_boutton()
       } catch (err) {
         console.warn("Cookies failed to be set; Blocked!");
@@ -258,7 +259,9 @@ export default {
     set_message_boutton() {
       try {
         localStorage.getItem("tarteaucitron");
-        if (_EA_disabled()) {
+        const isDisabled =
+          typeof window._EA_disabled === 'function' && window._EA_disabled()
+        if (isDisabled) {
           this.message_button = "Activer les cookies de la mesure d'audience strictement nécessaire";
         }
         else {
