@@ -17,8 +17,9 @@ const analytics_config_file = {
         },
         domain: trackingDomain,
         collection: 'manual',
-        isActionEnabled: true,
-        isDebugging: true,
+        // Component action tracking needs stable id on each DSFR element; Vue SPA uses manual page pushes instead.
+        isActionEnabled: false,
+        isDebugging: process.env.NODE_ENV !== 'production',
         page: {
             path: '', // path for page tracking
             referrer: '', // referrer for virtual pages (not for real page, eulerian automatically collects document.referrer)
