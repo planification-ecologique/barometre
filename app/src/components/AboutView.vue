@@ -98,29 +98,32 @@
           </router-link>
         </div>
       </div>
-      <h3 class="fr-h6 home__examples-title">Exemples d'indicateurs</h3>
+      <h3 class="fr-h6 home__examples-title">Exemples d'indicateurs d'état de l'environnement</h3>
       <p v-if="spotlightLoading" class="fr-text--sm fr-text-mention--grey">
         Chargement d'indicateurs tirés au hasard parmi la synthèse…
       </p>
-      <div v-else-if="etatSpotlights.length === 0" class="fr-col-12 fr-mb-1w">
-        <p class="fr-text--sm">Aucun indicateur graphique disponible pour l'aperçu.</p>
-      </div>
-      <div v-else class="fr-grid-row fr-grid-row--gutters home-spotlights">
-        <div
-          v-for="card in etatSpotlights"
-          :key="'etat-spot-' + card.raw.id_indic"
-          class="fr-col-12 fr-col-md-6"
-        >
-          <div class="home-spotlight">
-            <ul class="fr-badges-group fr-badges-group--sm fr-mb-1w">
-              <li>
-                <p class="fr-badge fr-badge--sm fr-badge--info">{{ card.contextLabel }}</p>
-              </li>
-            </ul>
-            <mini-chart :data-obj="card.raw" detailed />
+      <template v-else>
+        <p v-if="etatSpotlights.length > 0" class="home__examples-lead fr-text--sm">
+          Voici deux indicateurs choisis au hasard parmi nos indicateurs d'état de l'environnement.
+        </p>
+        <p v-else class="fr-text--sm">Aucun indicateur graphique disponible pour l'aperçu.</p>
+        <div v-if="etatSpotlights.length > 0" class="fr-grid-row fr-grid-row--gutters home-spotlights">
+          <div
+            v-for="card in etatSpotlights"
+            :key="'etat-spot-' + card.raw.id_indic"
+            class="fr-col-12 fr-col-md-6"
+          >
+            <div class="home-spotlight">
+              <ul class="fr-badges-group fr-badges-group--sm fr-mb-1w">
+                <li>
+                  <p class="fr-badge fr-badge--sm fr-badge--info">{{ card.contextLabel }}</p>
+                </li>
+              </ul>
+              <mini-chart :data-obj="card.raw" detailed />
+            </div>
           </div>
         </div>
-      </div>
+      </template>
     </section>
 
     <!-- 3 - Déployer nos chantiers sectoriels -->
@@ -155,32 +158,35 @@
           </router-link>
         </div>
       </div>
-      <h3 class="fr-h6 home__examples-title">Exemples d'indicateurs</h3>
+      <h3 class="fr-h6 home__examples-title">Exemples d'indicateurs des chantiers sectoriels</h3>
       <p v-if="spotlightLoading" class="fr-text--sm fr-text-mention--grey">
         Chargement d'indicateurs tirés au hasard parmi les chantiers…
       </p>
-      <div v-else-if="chantierSpotlights.length === 0" class="fr-col-12 fr-mb-1w">
-        <p class="fr-text--sm">Aucun indicateur de chantier graphique disponible pour l'aperçu.</p>
-      </div>
-      <div v-else class="fr-grid-row fr-grid-row--gutters home-spotlights">
-        <div
-          v-for="card in chantierSpotlights"
-          :key="'chantier-spot-' + card.raw.id_indic"
-          class="fr-col-12 fr-col-md-6"
-        >
-          <div class="home-spotlight">
-            <ul class="fr-badges-group fr-badges-group--sm fr-mb-1w">
-              <li>
-                <p class="fr-badge fr-badge--sm fr-badge--info">{{ card.contextLabel }}</p>
-              </li>
-              <li v-if="card.chantierLabel">
-                <p class="fr-badge fr-badge--sm fr-badge--purple-glycine">{{ card.chantierLabel }}</p>
-              </li>
-            </ul>
-            <mini-chart :data-obj="card.raw" detailed />
+      <template v-else>
+        <p v-if="chantierSpotlights.length > 0" class="home__examples-lead fr-text--sm">
+          Voici deux indicateurs choisis au hasard parmi nos indicateurs de chantiers sectoriels.
+        </p>
+        <p v-else class="fr-text--sm">Aucun indicateur de chantier graphique disponible pour l'aperçu.</p>
+        <div v-if="chantierSpotlights.length > 0" class="fr-grid-row fr-grid-row--gutters home-spotlights">
+          <div
+            v-for="card in chantierSpotlights"
+            :key="'chantier-spot-' + card.raw.id_indic"
+            class="fr-col-12 fr-col-md-6"
+          >
+            <div class="home-spotlight">
+              <ul class="fr-badges-group fr-badges-group--sm fr-mb-1w">
+                <li>
+                  <p class="fr-badge fr-badge--sm fr-badge--info">{{ card.contextLabel }}</p>
+                </li>
+                <li v-if="card.chantierLabel">
+                  <p class="fr-badge fr-badge--sm fr-badge--purple-glycine">{{ card.chantierLabel }}</p>
+                </li>
+              </ul>
+              <mini-chart :data-obj="card.raw" detailed />
+            </div>
           </div>
         </div>
-      </div>
+      </template>
     </section>
   </div>
 </template>
@@ -345,7 +351,9 @@ export default {
       strategies: STRATEGIES,
       spotlightLoading: true,
       etatSpotlights: [],
-      chantierSpotlights: []
+      chantierSpotlights: [],
+      etatSpotlightPoolSize: 0,
+      chantierSpotlightPoolSize: 0
     }
   },
   computed: {
@@ -417,6 +425,8 @@ export default {
       this.spotlightLoading = true
       this.etatSpotlights = []
       this.chantierSpotlights = []
+      this.etatSpotlightPoolSize = 0
+      this.chantierSpotlightPoolSize = 0
       try {
         const environment = this.useStaging ? 'staging' : 'production'
         const nav = await getNavigationStructure(environment)
@@ -495,6 +505,8 @@ export default {
           }
         }
 
+        this.etatSpotlightPoolSize = etatPool.length
+        this.chantierSpotlightPoolSize = chantierPool.length
         this.etatSpotlights = pickRandomUnique(etatPool, SPOTLIGHT_COUNT)
         this.chantierSpotlights = pickRandomUnique(chantierPool, SPOTLIGHT_COUNT)
       } catch (e) {
@@ -619,6 +631,11 @@ export default {
   margin-bottom: 1rem;
   font-weight: 700;
   text-align: left;
+}
+
+.home__examples-lead {
+  margin: 0 0 1rem;
+  color: #666;
 }
 
 .home-spotlight {
