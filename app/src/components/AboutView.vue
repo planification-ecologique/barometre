@@ -487,14 +487,10 @@ export default {
             if (!hasDefinedTarget(ind)) continue
             const meta = chantierByGrist[String(ind.id_indic)]
             if (!meta) continue
-            const shortChantier =
-              meta.chantierName.length > 42
-                ? `${meta.chantierName.slice(0, 40)}…`
-                : meta.chantierName
             chantierPool.push({
               raw: ind,
               contextLabel: meta.sectorName,
-              chantierLabel: shortChantier
+              chantierLabel: meta.chantierName
             })
           }
         }
@@ -630,6 +626,16 @@ export default {
   padding: 1rem;
   box-shadow: inset 0 0 0 1px #e5e5e5;
   background: #fff;
+}
+
+.home-spotlight :deep(.fr-badges-group) {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.25rem;
+}
+
+.home-spotlight :deep(.fr-badge) {
+  white-space: normal;
 }
 
 /* Cartes "enjeux" / "secteurs" : reprises du style home-tile existant */
