@@ -1,14 +1,14 @@
 <template>
-  <div class="home-v3">
+  <div class="home">
     <!-- Hero -->
-    <header class="home-v3__hero">
-      <h1 class="fr-h3 home-v3__title">Réussir simultanément nos transitions écologiques</h1>
+    <header class="home__hero">
+      <h1 class="fr-h3 home__title">Réussir simultanément nos transitions écologiques</h1>
 
-      <div class="fr-grid-row fr-grid-row--gutters home-v3__hero-grid">
+      <div class="fr-grid-row fr-grid-row--gutters home__hero-grid">
         <div class="fr-col-12 fr-col-lg-6">
-          <figure class="home-v3__rosace-wrap">
+          <figure class="home__rosace-wrap">
             <img
-              class="home-v3__rosace fr-responsive-img"
+              class="home__rosace fr-responsive-img"
               :src="rosaceSrc"
               alt="Schéma France Nation Verte : cinq enjeux environnementaux au centre, six thématiques et leurs chantiers opérationnels autour."
               width="720"
@@ -18,7 +18,7 @@
             />
           </figure>
         </div>
-        <div class="fr-col-12 fr-col-lg-6 home-v3__hero-text fr-text--md">
+        <div class="fr-col-12 fr-col-lg-6 home__hero-text fr-text--md">
           <p>
             Réduire nos émissions, s'adapter au climat qui change, protéger l'eau et la nature, moins gaspiller, moins polluer.
             Ces défis systémiques sont interdépendants - et ils nous concernent tous, dans notre façon de nous déplacer, nous loger, nous nourrir.
@@ -29,47 +29,47 @@
     </header>
 
     <!-- 1 - Planifier et évaluer -->
-    <section class="home-v3__section fr-mt-6w" aria-labelledby="v3-strategies-heading">
-      <p class="home-v3__eyebrow home-v3__eyebrow--pill">1 - Planifier et évaluer</p>
-      <h2 id="v3-strategies-heading" class="fr-h5 home-v3__section-title">Un pilotage unifié des feuilles de route environnementales</h2>
-      <p class="home-v3__lead">
+    <section class="home__section fr-mt-6w" aria-labelledby="home-strategies-heading">
+      <p class="home__eyebrow home__eyebrow--pill">1 - Planifier et évaluer</p>
+      <h2 id="home-strategies-heading" class="fr-h5 home__section-title">Un pilotage unifié des feuilles de route environnementales</h2>
+      <p class="home__lead">
         Ce baromètre constitue l'outil central de transparence en matière d'environnement.
         Il synthétise et hiérarchise les stratégies environnementales afin de les rendre plus visibles et de suivre leurs résultats.
       </p>
-      <p class="home-v3__note fr-text--sm">
+      <p class="home__note fr-text--sm">
         Les indicateurs proposés n'intègrent donc pas les données relatives aux moyens humains ou encore financiers
         à mettre en œuvre pour les atteindre. De même, les impacts socio-économiques des transformations induites par le
         dérèglement climatique ne sont pas intégrés à ce baromètre.
       </p>
 
-      <ul class="home-v3-strategies" role="list">
-        <li v-for="strategy in strategies" :key="strategy.code" class="home-v3-strategy" :style="{ '--strategy-color': strategy.color }">
-          <span class="home-v3-strategy__code">{{ strategy.code }}</span>
-          <span class="home-v3-strategy__label">{{ strategy.label }}</span>
+      <ul class="home-strategies" role="list">
+        <li v-for="strategy in strategies" :key="strategy.code" class="home-strategy" :style="{ '--strategy-color': strategy.color }">
+          <span class="home-strategy__code">{{ strategy.code }}</span>
+          <span class="home-strategy__label">{{ strategy.label }}</span>
         </li>
       </ul>
 
-      <div class="home-v3-stats">
-        <div class="home-v3-stat">
-          <p class="home-v3-stat__value">130+</p>
-          <p class="home-v3-stat__label">leviers d'action recensés</p>
+      <div class="home-stats">
+        <div class="home-stat">
+          <p class="home-stat__value">130+</p>
+          <p class="home-stat__label">leviers d'action recensés</p>
         </div>
-        <div class="home-v3-stat">
-          <p class="home-v3-stat__value">6</p>
-          <p class="home-v3-stat__label">enjeux croisés avec 6 secteurs</p>
+        <div class="home-stat">
+          <p class="home-stat__value">6</p>
+          <p class="home-stat__label">enjeux croisés avec 6 secteurs</p>
         </div>
-        <div class="home-v3-stat">
-          <p class="home-v3-stat__value">1</p>
-          <p class="home-v3-stat__label">cadre commun de lecture</p>
+        <div class="home-stat">
+          <p class="home-stat__value">1</p>
+          <p class="home-stat__label">cadre commun de lecture</p>
         </div>
       </div>
     </section>
 
     <!-- 2 - Améliorer l'état de l'environnement -->
-    <section class="home-v3__section fr-mt-6w" aria-labelledby="v3-enjeux-heading">
-      <p class="home-v3__eyebrow home-v3__eyebrow--pill">2 - Améliorer l'état de l'environnement</p>
-      <h2 id="v3-enjeux-heading" class="fr-h5 home-v3__section-title">6 grands objectifs stratégiques</h2>
-      <p class="home-v3__lead">
+    <section class="home__section fr-mt-6w" aria-labelledby="home-enjeux-heading">
+      <p class="home__eyebrow home__eyebrow--pill">2 - Améliorer l'état de l'environnement</p>
+      <h2 id="home-enjeux-heading" class="fr-h5 home__section-title">6 grands objectifs stratégiques</h2>
+      <p class="home__lead">
         L'amélioration concrète de l'état de l'environnement constitue la finalité de ces politiques publiques.
         Pour mesurer sa réussite, ce baromètre est structuré autour des 6 objectifs environnementaux de la France,
         issus de la taxonomie européenne.
@@ -80,38 +80,38 @@
       >
         Voir la synthèse
       </router-link>
-      <div class="fr-grid-row fr-grid-row--gutters home-v3__cards">
+      <div class="fr-grid-row fr-grid-row--gutters home__cards">
         <div
           v-for="axe in axeTiles"
-          :key="'v3-axe-' + axe.name"
+          :key="'home-axe-' + axe.name"
           class="fr-col-12 fr-col-md-4"
         >
-          <router-link :to="etatEnvironnementLink(axe.name)" class="home-v3-card">
-            <div class="home-v3-card__body">
-              <div class="home-v3-card__picto" :class="{ 'home-v3-card__picto--eau': axe.useEau }">
+          <router-link :to="etatEnvironnementLink(axe.name)" class="home-card">
+            <div class="home-card__body">
+              <div class="home-card__picto" :class="{ 'home-card__picto--eau': axe.useEau }">
                 <eau-img v-if="axe.useEau" width="56px" height="56px" />
                 <dsfr-pictogram v-else-if="axe.pictoId" :picto-id="axe.pictoId" :size="56" />
               </div>
-              <h3 class="home-v3-card__heading">{{ axe.displayName }}</h3>
-              <span class="fr-icon-arrow-right-line home-v3-card__arrow" aria-hidden="true" />
+              <h3 class="home-card__heading">{{ axe.displayName }}</h3>
+              <span class="fr-icon-arrow-right-line home-card__arrow" aria-hidden="true" />
             </div>
           </router-link>
         </div>
       </div>
-      <h3 class="fr-h6 home-v3__examples-title">Exemples d'indicateurs</h3>
+      <h3 class="fr-h6 home__examples-title">Exemples d'indicateurs</h3>
       <p v-if="spotlightLoading" class="fr-text--sm fr-text-mention--grey">
         Chargement d'indicateurs tirés au hasard parmi la synthèse…
       </p>
       <div v-else-if="etatSpotlights.length === 0" class="fr-col-12 fr-mb-1w">
         <p class="fr-text--sm">Aucun indicateur graphique disponible pour l'aperçu.</p>
       </div>
-      <div v-else class="fr-grid-row fr-grid-row--gutters home-v3-spotlights">
+      <div v-else class="fr-grid-row fr-grid-row--gutters home-spotlights">
         <div
           v-for="card in etatSpotlights"
           :key="'etat-spot-' + card.raw.id_indic"
           class="fr-col-12 fr-col-md-6"
         >
-          <div class="home-v3-spotlight">
+          <div class="home-spotlight">
             <ul class="fr-badges-group fr-badges-group--sm fr-mb-1w">
               <li>
                 <p class="fr-badge fr-badge--sm fr-badge--info">{{ card.contextLabel }}</p>
@@ -124,10 +124,10 @@
     </section>
 
     <!-- 3 - Déployer nos chantiers sectoriels -->
-    <section class="home-v3__section fr-mt-6w fr-mb-4w" aria-labelledby="v3-secteurs-heading">
-      <p class="home-v3__eyebrow home-v3__eyebrow--pill">3 - Déployer nos chantiers sectoriels</p>
-      <h2 id="v3-secteurs-heading" class="fr-h5 home-v3__section-title">Des transformations tangibles de notre quotidien</h2>
-      <p class="home-v3__lead">
+    <section class="home__section fr-mt-6w fr-mb-4w" aria-labelledby="home-secteurs-heading">
+      <p class="home__eyebrow home__eyebrow--pill">3 - Déployer nos chantiers sectoriels</p>
+      <h2 id="home-secteurs-heading" class="fr-h5 home__section-title">Des transformations tangibles de notre quotidien</h2>
+      <p class="home__lead">
         L'atteinte de nos cibles écologiques impose le déploiement de transformations concrètes, structurées par grands
         secteurs d'activité. Chaque secteur fait l'objet de chantiers précis.
       </p>
@@ -137,38 +137,38 @@
       >
         Voir la synthèse
       </router-link>
-      <div class="fr-grid-row fr-grid-row--gutters home-v3__cards">
+      <div class="fr-grid-row fr-grid-row--gutters home__cards">
         <div
           v-for="item in sectorTiles"
-          :key="'v3-sector-' + item.canonicalName"
+          :key="'home-sector-' + item.canonicalName"
           class="fr-col-12 fr-col-md-4"
         >
-          <router-link :to="chantiersSectorielsLink(item.canonicalName)" class="home-v3-card home-v3-card--rich">
-            <div class="home-v3-card__body">
-              <div class="home-v3-card__picto">
+          <router-link :to="chantiersSectorielsLink(item.canonicalName)" class="home-card home-card--rich">
+            <div class="home-card__body">
+              <div class="home-card__picto">
                 <dsfr-pictogram :picto-id="item.pictoId" :size="56" />
               </div>
-              <h3 class="home-v3-card__heading">{{ item.shortLabel }}</h3>
-              <p class="home-v3-card__desc fr-text--sm">{{ item.blurb }}</p>
-              <span class="fr-icon-arrow-right-line home-v3-card__arrow" aria-hidden="true" />
+              <h3 class="home-card__heading">{{ item.shortLabel }}</h3>
+              <p class="home-card__desc fr-text--sm">{{ item.blurb }}</p>
+              <span class="fr-icon-arrow-right-line home-card__arrow" aria-hidden="true" />
             </div>
           </router-link>
         </div>
       </div>
-      <h3 class="fr-h6 home-v3__examples-title">Exemples d'indicateurs</h3>
+      <h3 class="fr-h6 home__examples-title">Exemples d'indicateurs</h3>
       <p v-if="spotlightLoading" class="fr-text--sm fr-text-mention--grey">
         Chargement d'indicateurs tirés au hasard parmi les chantiers…
       </p>
       <div v-else-if="chantierSpotlights.length === 0" class="fr-col-12 fr-mb-1w">
         <p class="fr-text--sm">Aucun indicateur de chantier graphique disponible pour l'aperçu.</p>
       </div>
-      <div v-else class="fr-grid-row fr-grid-row--gutters home-v3-spotlights">
+      <div v-else class="fr-grid-row fr-grid-row--gutters home-spotlights">
         <div
           v-for="card in chantierSpotlights"
           :key="'chantier-spot-' + card.raw.id_indic"
           class="fr-col-12 fr-col-md-6"
         >
-          <div class="home-v3-spotlight">
+          <div class="home-spotlight">
             <ul class="fr-badges-group fr-badges-group--sm fr-mb-1w">
               <li>
                 <p class="fr-badge fr-badge--sm fr-badge--info">{{ card.contextLabel }}</p>
@@ -199,6 +199,7 @@ import { impactAxeUiForSlug } from '@/config/impactAxeUi.js'
 import { etatEnvironnementRouteName, chantiersRouteName } from '@/config/routeNames.js'
 import { impactAxeNameToSlug } from '@/utils/impactAxeUrl.js'
 import { SECTION_SYNTHESE_SLUG } from '@/utils/sectionUrl.js'
+import { indicatorAuxChartLegend } from '@/utils/synthesisChartLegend.js'
 import EauImg from '@/components/components_sgv/EauImg.vue'
 import DsfrPictogram from '@/components/components_dsfr/DsfrPictogram.vue'
 import MiniChart from '@/components/MiniChart.vue'
@@ -274,6 +275,10 @@ function isChartableForGraphBox(ind) {
   return false
 }
 
+function hasDefinedTarget(ind) {
+  return indicatorAuxChartLegend(ind).showTarget
+}
+
 function shuffleInPlace(arr) {
   for (let i = arr.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1))
@@ -326,7 +331,7 @@ function mergedImpactAxesFromNavSectors(sectors) {
 }
 
 export default {
-  name: 'AboutViewV3',
+  name: 'AboutView',
   components: { EauImg, DsfrPictogram, MiniChart },
   props: {
     useStaging: {
@@ -405,7 +410,7 @@ export default {
           this.sectorNamesFromApi = response.data.sectors.map((s) => s.name)
         }
       } catch (error) {
-        console.error('Error loading sectors for home V3:', error)
+        console.error('Error loading sectors for home:', error)
       }
     },
     async loadSpotlights() {
@@ -440,6 +445,7 @@ export default {
           const resp = await getIndicators(q, environment)
           for (const ind of resp.results || []) {
             if (!isChartableForGraphBox(ind)) continue
+            if (!hasDefinedTarget(ind)) continue
             const axeLabel = gristToAxe[String(ind.id_indic)] || 'Axe d’impact'
             etatPool.push({
               raw: ind,
@@ -478,6 +484,7 @@ export default {
           const resp2 = await getIndicators(q2, environment)
           for (const ind of resp2.results || []) {
             if (!isChartableForGraphBox(ind)) continue
+            if (!hasDefinedTarget(ind)) continue
             const meta = chantierByGrist[String(ind.id_indic)]
             if (!meta) continue
             const shortChantier =
@@ -495,7 +502,7 @@ export default {
         this.etatSpotlights = pickRandomUnique(etatPool, SPOTLIGHT_COUNT)
         this.chantierSpotlights = pickRandomUnique(chantierPool, SPOTLIGHT_COUNT)
       } catch (e) {
-        console.error('AboutViewV3 loadSpotlights:', e)
+        console.error('AboutView loadSpotlights:', e)
       } finally {
         this.spotlightLoading = false
       }
@@ -519,9 +526,9 @@ export default {
 </script>
 
 <style scoped>
-.home-v3 {
-  --home-v3-max: 58rem;
-  max-width: var(--home-v3-max);
+.home {
+  --home-max: 58rem;
+  max-width: var(--home-max);
   margin-left: auto;
   margin-right: auto;
   width: 100%;
@@ -531,11 +538,11 @@ export default {
   font-family: "Marianne", arial, sans-serif;
 }
 
-.home-v3 :deep(.fr-text--alt) {
+.home :deep(.fr-text--alt) {
   font-family: "Marianne", arial, sans-serif !important;
 }
 
-.home-v3__eyebrow {
+.home__eyebrow {
   text-align: left;
   margin: 0 0 0.5rem;
   font-size: 0.75rem;
@@ -545,7 +552,7 @@ export default {
   color: #666;
 }
 
-.home-v3__eyebrow--pill {
+.home__eyebrow--pill {
   display: inline-flex;
   align-items: center;
   padding: 0.25rem 0.75rem;
@@ -555,7 +562,7 @@ export default {
   letter-spacing: 0.02em;
 }
 
-.home-v3__title {
+.home__title {
   text-align: left;
   margin-top: 1.5rem;
   margin-bottom: 1.75rem;
@@ -564,7 +571,7 @@ export default {
   line-height: 1.25;
 }
 
-.home-v3__rosace-wrap {
+.home__rosace-wrap {
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -572,29 +579,29 @@ export default {
   padding: 0;
 }
 
-.home-v3__rosace {
+.home__rosace {
   width: 100%;
   max-width: min(100%, 21rem);
   height: auto;
   display: block;
 }
 
-.home-v3__hero-text {
+.home__hero-text {
   text-align: left;
 }
 
-.home-v3__hero-text p {
+.home__hero-text p {
   margin-bottom: 1rem;
   line-height: 1.65;
 }
 
-.home-v3__section-title {
+.home__section-title {
   text-align: left;
   margin-bottom: 0.5rem;
   font-weight: 700;
 }
 
-.home-v3__lead {
+.home__lead {
   max-width: 40rem;
   margin-bottom: 0;
   line-height: 1.6;
@@ -602,7 +609,7 @@ export default {
   text-align: left;
 }
 
-.home-v3__note {
+.home__note {
   max-width: 40rem;
   margin-top: 0.5rem;
   margin-bottom: 0;
@@ -611,14 +618,14 @@ export default {
   text-align: left;
 }
 
-.home-v3__examples-title {
+.home__examples-title {
   margin-top: 2rem;
   margin-bottom: 1rem;
   font-weight: 700;
   text-align: left;
 }
 
-.home-v3-spotlight {
+.home-spotlight {
   height: 100%;
   padding: 1rem;
   box-shadow: inset 0 0 0 1px #e5e5e5;
@@ -626,11 +633,11 @@ export default {
 }
 
 /* Cartes "enjeux" / "secteurs" : reprises du style home-tile existant */
-.home-v3__cards {
+.home__cards {
   margin-top: 0.25rem;
 }
 
-.home-v3-card {
+.home-card {
   display: block;
   height: 100%;
   text-decoration: none;
@@ -641,17 +648,17 @@ export default {
   transition: background-color 0.15s ease, box-shadow 0.15s ease;
 }
 
-.home-v3-card:hover {
+.home-card:hover {
   background: #fafafa;
   box-shadow: inset 0 0 0 1px #cfcfcf;
 }
 
-.home-v3-card:focus-visible {
+.home-card:focus-visible {
   outline: 2px solid #000091;
   outline-offset: 2px;
 }
 
-.home-v3-card__body {
+.home-card__body {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -661,11 +668,11 @@ export default {
   min-height: 9rem;
 }
 
-.home-v3-card--rich .home-v3-card__body {
+.home-card--rich .home-card__body {
   min-height: 11.5rem;
 }
 
-.home-v3-card__picto {
+.home-card__picto {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -674,7 +681,7 @@ export default {
   margin-bottom: 0.75rem;
 }
 
-.home-v3-card__picto--eau :deep(.fr-card__img) {
+.home-card__picto--eau :deep(.fr-card__img) {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -682,7 +689,7 @@ export default {
   padding: 0;
 }
 
-.home-v3-card__heading {
+.home-card__heading {
   font-size: 1rem;
   font-weight: 700;
   margin: 0;
@@ -691,14 +698,14 @@ export default {
   max-width: 100%;
 }
 
-.home-v3-card__desc {
+.home-card__desc {
   color: #3a3a3a;
   margin: 0.5rem 0 0;
   line-height: 1.45;
   max-width: 100%;
 }
 
-.home-v3-card__arrow {
+.home-card__arrow {
   position: absolute;
   right: 0.875rem;
   bottom: 0.875rem;
@@ -707,7 +714,7 @@ export default {
 }
 
 /* Section 3 : pastilles de stratégies */
-.home-v3-strategies {
+.home-strategies {
   list-style: none;
   margin: 1.75rem 0 0;
   padding: 0;
@@ -716,7 +723,7 @@ export default {
   gap: 0.75rem;
 }
 
-.home-v3-strategy {
+.home-strategy {
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -728,29 +735,29 @@ export default {
   line-height: 1.3;
 }
 
-.home-v3-strategy__code {
+.home-strategy__code {
   font-weight: 700;
   color: #161616;
   white-space: nowrap;
 }
 
-.home-v3-strategy__label {
+.home-strategy__label {
   color: #3a3a3a;
 }
 
 /* Section 3 : statistiques */
-.home-v3-stats {
+.home-stats {
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
   margin-top: 2.5rem;
 }
 
-.home-v3-stat {
+.home-stat {
   min-width: 9rem;
 }
 
-.home-v3-stat__value {
+.home-stat__value {
   margin: 0;
   font-size: 2rem;
   font-weight: 700;
@@ -758,7 +765,7 @@ export default {
   line-height: 1.2;
 }
 
-.home-v3-stat__label {
+.home-stat__label {
   margin: 0.25rem 0 0;
   color: #3a3a3a;
   font-size: 0.875rem;
@@ -767,25 +774,25 @@ export default {
 
 /* Deux colonnes sur petits écrans */
 @media (max-width: 767px) {
-  .home-v3-card__body {
+  .home-card__body {
     padding: 1rem 1.5rem 1.25rem 0.875rem;
   }
 
-  .home-v3-card--rich .home-v3-card__body {
+  .home-card--rich .home-card__body {
     min-height: 0;
     padding-bottom: 1.75rem;
   }
 
-  .home-v3-card__heading {
+  .home-card__heading {
     font-size: 0.9375rem;
   }
 
-  .home-v3-card__desc {
+  .home-card__desc {
     font-size: 0.75rem;
     line-height: 1.4;
   }
 
-  .home-v3-card__picto {
+  .home-card__picto {
     width: 3rem;
     height: 3rem;
     margin-bottom: 0.5rem;

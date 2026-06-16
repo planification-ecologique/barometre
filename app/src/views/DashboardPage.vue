@@ -33,7 +33,7 @@
                 :useStaging="useStaging"
               />
               <!-- About view -->
-              <about-view-v3
+              <about-view
                 v-else-if="myobj.view === 'about'"
                 :useStaging="useStaging"
               />
@@ -99,7 +99,7 @@ import GeneralEngagementsView from "../components/GeneralEngagementsView.vue";
 import GeneralChantiersView from "../components/GeneralChantiersView.vue";
 import SectorialEngagementsView from "../components/SectorialEngagementsView.vue";
 import SectorSelector from "../components/SectorSelector.vue";
-import AboutViewV3 from "../components/AboutViewV3.vue";
+import AboutView from "../components/AboutView.vue";
 import SyntheseSectorielle from "../components/SyntheseSectorielle.vue";
 import EtatEnvironnement from "../components/EtatEnvironnement.vue";
 import SectionNextBar from "../components/SectionNextBar.vue";
@@ -155,7 +155,7 @@ export default {
     GeneralChantiersView,
     SectorialEngagementsView,
     SectorSelector,
-    AboutViewV3,
+    AboutView,
     SyntheseSectorielle,
     EtatEnvironnement,
     SectionNextBar,
