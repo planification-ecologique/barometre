@@ -43,9 +43,26 @@
       </p>
 
       <ul class="home-strategies" role="list">
-        <li v-for="strategy in strategies" :key="strategy.code" class="home-strategy" :style="{ '--strategy-color': strategy.color }">
-          <span class="home-strategy__code">{{ strategy.code }}</span>
-          <span class="home-strategy__label">{{ strategy.label }}</span>
+        <li v-for="strategy in strategies" :key="strategy.code" class="home-strategies__item">
+          <a
+            v-if="strategy.href"
+            :href="strategy.href"
+            class="home-strategy home-strategy--link"
+            :style="{ '--strategy-color': strategy.color }"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span class="home-strategy__code">{{ strategy.code }}</span>
+            <span v-if="strategy.label" class="home-strategy__label">{{ strategy.label }}</span>
+          </a>
+          <div
+            v-else
+            class="home-strategy"
+            :style="{ '--strategy-color': strategy.color }"
+          >
+            <span class="home-strategy__code">{{ strategy.code }}</span>
+            <span v-if="strategy.label" class="home-strategy__label">{{ strategy.label }}</span>
+          </div>
         </li>
       </ul>
 
@@ -235,14 +252,54 @@ const SECTOR_BLURBS = {
 
 /** Feuilles de route de l'État citées dans la proposition de refonte. */
 const STRATEGIES = [
-  { code: 'SNBC 3', label: 'Stratégie bas-carbone', color: '#e4794a' },
-  { code: 'PPE', label: "Energie", color: '#009099' },
-  { code: 'PNACC', label: 'Adaptation climat', color: '#b34000' },
-  { code: 'SNB 2030', label: 'Biodiversité', color: '#00a95f' },
-  { code: 'Plan Eau', label: "", color: '#417dc4' },
-  { code: 'PRÉPA', label: "Qualité de l'air", color: '#e1000f' },
-  { code: 'Loi AGEC', label: 'Économie circulaire', color: '#a558a0' },
-  { code: 'SNANC', label: 'Alimentation', color: '#00aec7' },
+  {
+    code: 'SNBC3',
+    label: 'Stratégie bas-carbone',
+    color: '#e4794a',
+    href: 'https://www.ecologie.gouv.fr/politiques-publiques/3e-strategie-nationale-bas-carbone-snbc-3'
+  },
+  {
+    code: 'PPE3',
+    label: 'Energie',
+    color: '#009099',
+    href: 'https://www.info.gouv.fr/actualite/ppe-3-la-nouvelle-feuille-de-route-energetique-de-la-france'
+  },
+  {
+    code: 'PNACC3',
+    label: 'Adaptation climat',
+    color: '#b34000',
+    href: 'https://www.ecologie.gouv.fr/politiques-publiques/adaptation-france-changement-climatique'
+  },
+  {
+    code: 'SNB 2030',
+    label: 'Biodiversité',
+    color: '#00a95f',
+    href: 'https://www.ecologie.gouv.fr/politiques-publiques/strategie-nationale-biodiversite-2030'
+  },
+  {
+    code: 'Plan eau',
+    label: '',
+    color: '#417dc4',
+    href: 'https://www.ecologie.gouv.fr/dossiers/comment-mieux-gerer-ressource-eau/plan-eau-3-enjeux-53-mesures'
+  },
+  {
+    code: 'PREPA',
+    label: "Qualité de l'air",
+    color: '#e1000f',
+    href: 'https://www.ecologie.gouv.fr/presse/plan-national-reduction-emissions-polluants-atmospheriques-prepa-periode-2022-2025'
+  },
+  {
+    code: 'loi Agec',
+    label: 'Économie circulaire',
+    color: '#a558a0',
+    href: 'https://www.ecologie.gouv.fr/loi-anti-gaspillage-economie-circulaire'
+  },
+  {
+    code: 'Snanc',
+    label: 'Alimentation',
+    color: '#00aec7',
+    href: 'https://agriculture.gouv.fr/SNANC-20252030'
+  },
   { code: '+', label: 'Restauration nature, forêt, mer…', color: '#3fad46' }
 ]
 
@@ -746,6 +803,10 @@ export default {
   gap: 0.75rem;
 }
 
+.home-strategies__item {
+  margin: 0;
+}
+
 .home-strategy {
   display: flex;
   align-items: center;
@@ -756,6 +817,28 @@ export default {
   border-left: 4px solid var(--strategy-color, #000091);
   font-size: 0.875rem;
   line-height: 1.3;
+}
+
+.home-strategy--link {
+  text-decoration: none;
+  color: inherit;
+  transition: background-color 0.15s ease, box-shadow 0.15s ease;
+  --underline-img: none;
+  background-image: none;
+}
+
+.home-strategy--link:hover {
+  background: #fafafa;
+  box-shadow: inset 0 0 0 1px #cfcfcf;
+}
+
+.home-strategy--link:focus-visible {
+  outline: 2px solid #000091;
+  outline-offset: 2px;
+}
+
+.home-strategy--link::after {
+  margin-left: auto;
 }
 
 .home-strategy__code {
