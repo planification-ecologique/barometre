@@ -13,6 +13,7 @@ export const GRIST_LEVIERS_URL = gristUrlsConfig.GRIST_LEVIERS_URL;
 export const GRIST_ENGAGEMENTS_URL = gristUrlsConfig.GRIST_ENGAGEMENTS_URL || null;
 export const GRIST_CHANTIERS_URL = gristUrlsConfig.GRIST_CHANTIERS_URL || null;
 export const GRIST_TAXONOMIE_URL = gristUrlsConfig.GRIST_TAXONOMIE_URL || null;
+export const GRIST_DOCUMENTS_URL = gristUrlsConfig.GRIST_DOCUMENTS_URL || null;
 
 // Cache for fetch promises to prevent duplicate requests
 let indicatorsFetchPromise = null;
@@ -21,6 +22,7 @@ let taxonomieFetchPromise = null;
 let engagementsFetchPromise = null;
 let chantiersFetchPromise = null;
 let engagementLongMappingPromise = null;
+let documentsFetchPromise = null;
 
 /**
  * Parse CSV text into structured data
@@ -417,6 +419,33 @@ export async function fetchEngagementLongMapping() {
   })();
 
   return engagementLongMappingPromise;
+}
+
+/**
+ * Document_reference (Grist) : colonnes « Nom court », « Lien vers document ».
+ * @returns {Promise<Array<Record<string, string>>>}
+ */
+export async function fetchDocumentReferenceData() {
+  if (!GRIST_DOCUMENTS_URL) {
+    return [];
+  }
+  if (documentsFetchPromise) {
+    return documentsFetchPromise;
+  }
+
+  documentsFetchPromise = fetchCSVText(GRIST_DOCUMENTS_URL, 'grist-documents.csv')
+    .then((csvText) => parseCSVText(csvText))
+    .then((parsedData) => {
+      documentsFetchPromise = null;
+      return parsedData;
+    })
+    .catch((error) => {
+      documentsFetchPromise = null;
+      console.warn('Could not load Document_reference:', error.message);
+      return [];
+    });
+
+  return documentsFetchPromise;
 }
 
 /**

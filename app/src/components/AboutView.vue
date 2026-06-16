@@ -43,26 +43,18 @@
       </p>
 
       <ul class="home-strategies" role="list">
-        <li v-for="strategy in strategies" :key="strategy.code" class="home-strategies__item">
+        <li v-for="strategy in strategies" :key="strategy.href" class="home-strategies__item">
           <a
-            v-if="strategy.href"
             :href="strategy.href"
             class="home-strategy home-strategy--link"
             :style="{ '--strategy-color': strategy.color }"
+            :title="strategy.title || undefined"
             target="_blank"
             rel="noopener noreferrer"
           >
             <span class="home-strategy__code">{{ strategy.code }}</span>
             <span v-if="strategy.label" class="home-strategy__label">{{ strategy.label }}</span>
           </a>
-          <div
-            v-else
-            class="home-strategy"
-            :style="{ '--strategy-color': strategy.color }"
-          >
-            <span class="home-strategy__code">{{ strategy.code }}</span>
-            <span v-if="strategy.label" class="home-strategy__label">{{ strategy.label }}</span>
-          </div>
         </li>
       </ul>
 
@@ -223,6 +215,7 @@ import { etatEnvironnementRouteName, chantiersRouteName } from '@/config/routeNa
 import { impactAxeNameToSlug } from '@/utils/impactAxeUrl.js'
 import { SECTION_SYNTHESE_SLUG } from '@/utils/sectionUrl.js'
 import { indicatorAuxChartLegend } from '@/utils/synthesisChartLegend.js'
+import { fetchDocumentReferenceData } from '@/services/gristDataFetcher.js'
 import EauImg from '@/components/components_sgv/EauImg.vue'
 import DsfrPictogram from '@/components/components_dsfr/DsfrPictogram.vue'
 import MiniChart from '@/components/MiniChart.vue'
@@ -250,58 +243,61 @@ const SECTOR_BLURBS = {
   Consommer: 'Économie circulaire, déchets et modes de consommation.'
 }
 
-/** Feuilles de route de l'État citées dans la proposition de refonte. */
-const STRATEGIES = [
-  {
-    code: 'SNBC3',
-    label: 'Stratégie bas-carbone',
-    color: '#e4794a',
-    href: 'https://www.ecologie.gouv.fr/politiques-publiques/3e-strategie-nationale-bas-carbone-snbc-3'
-  },
-  {
-    code: 'PPE3',
-    label: 'Energie',
-    color: '#009099',
-    href: 'https://www.info.gouv.fr/actualite/ppe-3-la-nouvelle-feuille-de-route-energetique-de-la-france'
-  },
-  {
-    code: 'PNACC3',
-    label: 'Adaptation climat',
-    color: '#b34000',
-    href: 'https://www.ecologie.gouv.fr/politiques-publiques/adaptation-france-changement-climatique'
-  },
-  {
-    code: 'SNB 2030',
-    label: 'Biodiversité',
-    color: '#00a95f',
-    href: 'https://www.ecologie.gouv.fr/politiques-publiques/strategie-nationale-biodiversite-2030'
-  },
-  {
-    code: 'Plan eau',
-    label: '',
-    color: '#417dc4',
-    href: 'https://www.ecologie.gouv.fr/dossiers/comment-mieux-gerer-ressource-eau/plan-eau-3-enjeux-53-mesures'
-  },
-  {
-    code: 'PREPA',
-    label: "Qualité de l'air",
-    color: '#e1000f',
-    href: 'https://www.ecologie.gouv.fr/presse/plan-national-reduction-emissions-polluants-atmospheriques-prepa-periode-2022-2025'
-  },
-  {
-    code: 'loi Agec',
-    label: 'Économie circulaire',
-    color: '#a558a0',
-    href: 'https://www.ecologie.gouv.fr/loi-anti-gaspillage-economie-circulaire'
-  },
-  {
-    code: 'Snanc',
-    label: 'Alimentation',
-    color: '#00aec7',
-    href: 'https://agriculture.gouv.fr/SNANC-20252030'
-  },
-  { code: '+', label: 'Restauration nature, forêt, mer…', color: '#3fad46' }
+/** Style optionnel par nom court Grist ; défaut sinon. */
+const STRATEGY_UI_BY_SHORT = {
+  SNBC: { label: 'Stratégie bas-carbone', color: '#e4794a' },
+  PPE: { label: 'Energie', color: '#009099' },
+  PNACC: { label: 'Adaptation climat', color: '#b34000' },
+  SNB: { label: 'Biodiversité', color: '#00a95f' },
+  'Plan eau': { label: '', color: '#417dc4' },
+  PREPA: { label: "Qualité de l'air", color: '#e1000f' },
+  'Loi AGEC': { label: 'Économie circulaire', color: '#a558a0' },
+  SNANC: { label: 'Alimentation', color: '#00aec7' },
+  LTECV: { label: 'Transition énergétique', color: '#7e57c2' },
+  RRN: { label: 'Restauration de la nature', color: '#3fad46' },
+  LEMA: { label: 'Eau et milieux aquatiques', color: '#5b8ff9' }
+}
+
+const STRATEGY_DEFAULT_COLOR = '#666666'
+
+function buildHomeStrategies(docRows) {
+  const items = []
+  const seenShortName = new Set()
+  for (const row of docRows || []) {
+    const shortName = String(row['Nom court'] ?? '').trim()
+    const href = String(row['Lien vers document'] ?? '').trim()
+    if (!shortName || !href || seenShortName.has(shortName)) continue
+    seenShortName.add(shortName)
+
+    const documentName = String(row.Document ?? '').trim()
+    const ui = STRATEGY_UI_BY_SHORT[shortName] || {}
+
+    items.push({
+      code: shortName,
+      label: ui.label ?? '',
+      color: ui.color || STRATEGY_DEFAULT_COLOR,
+      href,
+      title: documentName || undefined
+    })
+  }
+  return items
+}
+
+const HOME_STRATEGY_FALLBACK_DOCS = [
+  { Document: '3e stratégie nationale bas-carbone (provisoire)', 'Lien vers document': 'https://www.ecologie.gouv.fr/politiques-publiques/3e-strategie-nationale-bas-carbone-snbc-3', 'Nom court': 'SNBC' },
+  { Document: "Plan national d'adaptation au changement climatique 2024", 'Lien vers document': 'https://www.ecologie.gouv.fr/sites/default/files/documents/PNACC3.pdf', 'Nom court': 'PNACC' },
+  { Document: 'Stratégie nationale biodiversité 2030', 'Lien vers document': 'https://www.ecologie.gouv.fr/sites/default/files/documents/Doc-chapeau-SNB2030-HauteDef.pdf', 'Nom court': 'SNB' },
+  { Document: "Programmation pluriannuelle de l'énergie 2026-2035", 'Lien vers document': 'https://www.economie.gouv.fr/files/files/2026/ppe3.pdf?v=1770975902', 'Nom court': 'PPE' },
+  { Document: 'Plan national de réduction des émissions de polluants atmosphériques 2022-2025', 'Lien vers document': 'https://www.ecologie.gouv.fr/presse/plan-national-reduction-emissions-polluants-atmospheriques-prepa-periode-2022-2025', 'Nom court': 'PREPA' },
+  { Document: 'Loi anti-gaspillage pour une économie circulaire', 'Lien vers document': 'https://www.ecologie.gouv.fr/loi-anti-gaspillage-economie-circulaire', 'Nom court': 'Loi AGEC' },
+  { Document: 'Loi de transition énergétique pour la croissance verte', 'Lien vers document': 'https://www.ecologie.gouv.fr/politiques-publiques/loi-transition-energetique-croissance-verte', 'Nom court': 'LTECV' },
+  { Document: 'Règlement sur la restauration de la nature', 'Lien vers document': 'https://www.consilium.europa.eu/fr/press/press-releases/2024/06/17/nature-restoration-law-council-gives-final-green-light/', 'Nom court': 'RRN' },
+  { Document: "Loi sur l'eau et les milieux aquatiques", 'Lien vers document': 'https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000649171', 'Nom court': 'LEMA' },
+  { Document: 'Plan d’action pour une gestion résiliente et concertée de l’eau', 'Lien vers document': 'https://www.info.gouv.fr/grand-dossier/preservons-notre-ressource-en-eau/les-53-mesures-du-plan-eau', 'Nom court': 'Plan eau' },
+  { Document: 'Stratégie nationale pour l’alimentation, la nutrition et le climat 2025/2030', 'Lien vers document': 'https://agriculture.gouv.fr/SNANC-20252030', 'Nom court': 'SNANC' }
 ]
+
+const STRATEGIES = buildHomeStrategies(HOME_STRATEGY_FALLBACK_DOCS)
 
 /** Corrections d'intitulés relevées sur la taxonomie (cf. relecture). */
 const AXE_DISPLAY_NAME_OVERRIDES = {
@@ -458,7 +454,7 @@ export default {
     }
   },
   async mounted() {
-    await Promise.all([this.loadSectors(), this.loadSpotlights()])
+    await Promise.all([this.loadSectors(), this.loadStrategies(), this.loadSpotlights()])
   },
   methods: {
     slugify(str) {
@@ -476,6 +472,14 @@ export default {
         }
       } catch (error) {
         console.error('Error loading sectors for home:', error)
+      }
+    },
+    async loadStrategies() {
+      try {
+        const docs = await fetchDocumentReferenceData()
+        this.strategies = buildHomeStrategies(docs)
+      } catch (error) {
+        console.error('Error loading strategies for home:', error)
       }
     },
     async loadSpotlights() {
