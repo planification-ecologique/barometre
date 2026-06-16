@@ -3,10 +3,10 @@ import App from './App.vue'
 import router from './router'
 import { ensureImpactTaxonomyLoaded } from './services/csvDataService.js'
 import config_file from './services/tarteaucitron_config.js'
-import analytics_config_file from './services/dsfr_analytics_config.js'
+import analytics_config_file, { resolveTrackingDomain } from './services/dsfr_analytics_config.js'
 import './css/website.css'
 
-const trackingDomain = (process.env.VUE_APP_TRACKING || '').trim()
+const trackingDomain = resolveTrackingDomain()
 const analyticsEnabled =
   Boolean(trackingDomain) && !window.location.pathname.includes('chart-iframe')
 
@@ -24,9 +24,8 @@ if (analyticsEnabled) {
   window.dsfr = analytics_config_file
 }
 
-// DSFR core and legacy assets
+// DSFR core and legacy assets (dsfr.module includes core — do not load core.module separately)
 require('../node_modules/@gouvfr/dsfr/dist/legacy/legacy.nomodule.min.js')
-require('../node_modules/@gouvfr/dsfr/dist/core/core.module.min.js')
 require('../node_modules/@gouvfr/dsfr/dist/dsfr.main.css')
 require('../node_modules/@gouvfr/dsfr/dist/utility/utility.main.css')
 require('../node_modules/@gouvfr/dsfr/dist/dsfr.css')

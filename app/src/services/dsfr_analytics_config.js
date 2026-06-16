@@ -1,10 +1,21 @@
-const analytics_config_file =  {
+export const DEFAULT_PROD_TRACKING_DOMAIN = 'phdd.barometre.planification-ecologique.gouv.fr'
+
+export function resolveTrackingDomain () {
+  const fromEnv = (process.env.VUE_APP_TRACKING || '').trim()
+  if (fromEnv) return fromEnv
+  if (process.env.VUE_APP_ENV === 'prod') return DEFAULT_PROD_TRACKING_DOMAIN
+  return ''
+}
+
+const trackingDomain = resolveTrackingDomain()
+
+const analytics_config_file = {
     // verbose : true,
     analytics: {
         cmp: {
-            id: 'tarteaucitron'                    
+            id: 'tarteaucitron'
         },
-        domain: process.env.VUE_APP_TRACKING,
+        domain: trackingDomain,
         collection: 'manual',
         isActionEnabled: true,
         isDebugging: true,
