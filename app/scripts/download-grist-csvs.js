@@ -14,6 +14,7 @@ const path = require('path');
 const gristUrlsConfig = require('../src/config/gristUrls.json');
 const GRIST_URLS = gristUrlsConfig.GRIST_URLS;
 const GRIST_LEVIERS_URL = gristUrlsConfig.GRIST_LEVIERS_URL;
+const GRIST_DOCUMENTS_URL = gristUrlsConfig.GRIST_DOCUMENTS_URL;
 
 // Output directory (public folder so files are copied to dist during build)
 const OUTPUT_DIR = path.join(__dirname, '..', 'public', 'grist-backups');
@@ -84,6 +85,10 @@ async function main() {
     {
       url: GRIST_LEVIERS_URL,
       filename: 'grist-leviers.csv'
+    },
+    {
+      url: GRIST_DOCUMENTS_URL,
+      filename: 'grist-documents.csv'
     }
   ];
   

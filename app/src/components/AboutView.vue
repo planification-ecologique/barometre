@@ -243,19 +243,19 @@ const SECTOR_BLURBS = {
   Consommer: 'Économie circulaire, déchets et modes de consommation.'
 }
 
-/** Style optionnel par nom court Grist ; défaut sinon. */
-const STRATEGY_UI_BY_SHORT = {
-  SNBC: { label: 'Stratégie bas-carbone', color: '#e4794a' },
-  PPE: { label: 'Energie', color: '#009099' },
-  PNACC: { label: 'Adaptation climat', color: '#b34000' },
-  SNB: { label: 'Biodiversité', color: '#00a95f' },
-  'Plan eau': { label: '', color: '#417dc4' },
-  PREPA: { label: "Qualité de l'air", color: '#e1000f' },
-  'Loi AGEC': { label: 'Économie circulaire', color: '#a558a0' },
-  SNANC: { label: 'Alimentation', color: '#00aec7' },
-  LTECV: { label: 'Transition énergétique', color: '#7e57c2' },
-  RRN: { label: 'Restauration de la nature', color: '#3fad46' },
-  LEMA: { label: 'Eau et milieux aquatiques', color: '#5b8ff9' }
+/** Couleurs optionnelles par nom court Grist. */
+const STRATEGY_COLOR_BY_SHORT = {
+  SNBC: '#e4794a',
+  PPE: '#009099',
+  PNACC: '#b34000',
+  SNB: '#00a95f',
+  'Plan eau': '#417dc4',
+  PREPA: '#e1000f',
+  'Loi AGEC': '#a558a0',
+  SNANC: '#00aec7',
+  LTECV: '#7e57c2',
+  RRN: '#3fad46',
+  LEMA: '#5b8ff9'
 }
 
 const STRATEGY_DEFAULT_COLOR = '#666666'
@@ -270,34 +270,18 @@ function buildHomeStrategies(docRows) {
     seenShortName.add(shortName)
 
     const documentName = String(row.Document ?? '').trim()
-    const ui = STRATEGY_UI_BY_SHORT[shortName] || {}
+    const theme = String(row['Thème'] ?? row.Theme ?? '').trim()
 
     items.push({
       code: shortName,
-      label: ui.label ?? '',
-      color: ui.color || STRATEGY_DEFAULT_COLOR,
+      label: theme,
+      color: STRATEGY_COLOR_BY_SHORT[shortName] || STRATEGY_DEFAULT_COLOR,
       href,
       title: documentName || undefined
     })
   }
   return items
 }
-
-const HOME_STRATEGY_FALLBACK_DOCS = [
-  { Document: '3e stratégie nationale bas-carbone (provisoire)', 'Lien vers document': 'https://www.ecologie.gouv.fr/politiques-publiques/3e-strategie-nationale-bas-carbone-snbc-3', 'Nom court': 'SNBC' },
-  { Document: "Plan national d'adaptation au changement climatique 2024", 'Lien vers document': 'https://www.ecologie.gouv.fr/sites/default/files/documents/PNACC3.pdf', 'Nom court': 'PNACC' },
-  { Document: 'Stratégie nationale biodiversité 2030', 'Lien vers document': 'https://www.ecologie.gouv.fr/sites/default/files/documents/Doc-chapeau-SNB2030-HauteDef.pdf', 'Nom court': 'SNB' },
-  { Document: "Programmation pluriannuelle de l'énergie 2026-2035", 'Lien vers document': 'https://www.economie.gouv.fr/files/files/2026/ppe3.pdf?v=1770975902', 'Nom court': 'PPE' },
-  { Document: 'Plan national de réduction des émissions de polluants atmosphériques 2022-2025', 'Lien vers document': 'https://www.ecologie.gouv.fr/presse/plan-national-reduction-emissions-polluants-atmospheriques-prepa-periode-2022-2025', 'Nom court': 'PREPA' },
-  { Document: 'Loi anti-gaspillage pour une économie circulaire', 'Lien vers document': 'https://www.ecologie.gouv.fr/loi-anti-gaspillage-economie-circulaire', 'Nom court': 'Loi AGEC' },
-  { Document: 'Loi de transition énergétique pour la croissance verte', 'Lien vers document': 'https://www.ecologie.gouv.fr/politiques-publiques/loi-transition-energetique-croissance-verte', 'Nom court': 'LTECV' },
-  { Document: 'Règlement sur la restauration de la nature', 'Lien vers document': 'https://www.consilium.europa.eu/fr/press/press-releases/2024/06/17/nature-restoration-law-council-gives-final-green-light/', 'Nom court': 'RRN' },
-  { Document: "Loi sur l'eau et les milieux aquatiques", 'Lien vers document': 'https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000649171', 'Nom court': 'LEMA' },
-  { Document: 'Plan d’action pour une gestion résiliente et concertée de l’eau', 'Lien vers document': 'https://www.info.gouv.fr/grand-dossier/preservons-notre-ressource-en-eau/les-53-mesures-du-plan-eau', 'Nom court': 'Plan eau' },
-  { Document: 'Stratégie nationale pour l’alimentation, la nutrition et le climat 2025/2030', 'Lien vers document': 'https://agriculture.gouv.fr/SNANC-20252030', 'Nom court': 'SNANC' }
-]
-
-const STRATEGIES = buildHomeStrategies(HOME_STRATEGY_FALLBACK_DOCS)
 
 /** Corrections d'intitulés relevées sur la taxonomie (cf. relecture). */
 const AXE_DISPLAY_NAME_OVERRIDES = {
@@ -401,7 +385,7 @@ export default {
   data() {
     return {
       sectorNamesFromApi: [],
-      strategies: STRATEGIES,
+      strategies: [],
       spotlightLoading: true,
       etatSpotlights: [],
       chantierSpotlights: [],
