@@ -53,11 +53,29 @@ jobs:
         working-directory: app
         run: npm ci
 
+      # Racine si domaine custom (var ou CNAME gh-pages), sinon /barometre/ pour github.io/barometre/
+      - name: Resolve public path prefix
+        id: pages-prefix
+        run: |
+          if [ -n "${CUSTOM_DOMAIN}" ]; then
+            echo "prefix=" >> "$GITHUB_OUTPUT"
+            echo "Root publicPath (PAGES_CUSTOM_DOMAIN=${CUSTOM_DOMAIN})"
+            exit 0
+          fi
+          git fetch origin gh-pages --depth=1 2>/dev/null || true
+          cname_on_pages="$(git show origin/gh-pages:CNAME 2>/dev/null | tr -d '\r\n' || true)"
+          if [ -n "${cname_on_pages}" ]; then
+            echo "prefix=" >> "$GITHUB_OUTPUT"
+            echo "Root publicPath (gh-pages CNAME=${cname_on_pages})"
+          else
+            echo "prefix=/barometre" >> "$GITHUB_OUTPUT"
+            echo "Subpath publicPath /barometre (github.io fallback)"
+          fi
+
       - name: Build for GitHub Pages
         working-directory: app
         env:
-          # Racine du domaine custom (pas de sous-dossier), ou /barometre/ sous github.io
-          VUE_APP_PREFIX_PATH: ${{ env.CUSTOM_DOMAIN && '' || '/barometre' }}
+          VUE_APP_PREFIX_PATH: ${{ steps.pages-prefix.outputs.prefix }}
           VUE_APP_ENV: prod
           VUE_APP_TRACKING: ${{ vars.VUE_APP_TRACKING || 'phdd.barometre.planification-ecologique.gouv.fr' }}
           VUE_APP_ECOLAB_API_TOKEN: ${{ secrets.VUE_APP_ECOLAB_API_TOKEN }}
