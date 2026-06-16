@@ -75,6 +75,7 @@ jobs:
       - name: Build for GitHub Pages
         working-directory: app
         env:
+          NODE_ENV: production
           VUE_APP_PREFIX_PATH: ${{ steps.pages-prefix.outputs.prefix }}
           VUE_APP_ENV: prod
           VUE_APP_TRACKING: ${{ vars.VUE_APP_TRACKING || 'phdd.barometre.planification-ecologique.gouv.fr' }}

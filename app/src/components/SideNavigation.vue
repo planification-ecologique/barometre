@@ -58,8 +58,8 @@
                 {{ sectorName }}
               </button>
               <div
-                class="fr-collapse sidemenu-chantiers-expanded"
-                :class="{ 'fr-collapse--expanded': expandedSectorName === sectorName }"
+                class="sidemenu-chantiers-expanded"
+                :class="{ 'sidemenu-chantiers-expanded--open': expandedSectorName === sectorName }"
               >
                 <ul class="fr-sidemenu__list">
                   <li class="fr-sidemenu__item" v-for="chantier in getSectorChantiers(sectorName)" :key="chantier.id">
@@ -98,7 +98,7 @@
               <span class="fr-sidemenu__link sidemenu-section-title">
                 Chantiers
               </span>
-              <div class="fr-collapse fr-collapse--expanded sidemenu-chantiers-expanded">
+              <div class="sidemenu-chantiers-expanded sidemenu-chantiers-expanded--open">
                 <ul class="fr-sidemenu__list">
                   <li class="fr-sidemenu__item" v-for="(chantier, index) in chantiers" :key="index">
                     <a class="fr-sidemenu__link" 
@@ -1035,28 +1035,23 @@ a:hover:not([href]) {
   font-weight: 700;
 }
 
-.fr-sidemenu__item > .fr-collapse {
+.fr-sidemenu__item > .sidemenu-chantiers-expanded {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.3s ease;
 }
 
-.fr-sidemenu__item > .fr-collapse.fr-collapse--expanded {
-  max-height: 500px;
-}
-
-/* Chantiers lists: no 500px cap (Synthèse per-sector accordions + sectorial always-open list) */
-.fr-sidemenu__item > .fr-collapse.sidemenu-chantiers-expanded.fr-collapse--expanded {
+.fr-sidemenu__item > .sidemenu-chantiers-expanded.sidemenu-chantiers-expanded--open {
   max-height: none;
 }
 
-.fr-sidemenu__item > .fr-collapse > .fr-sidemenu__list {
+.fr-sidemenu__item > .sidemenu-chantiers-expanded > .fr-sidemenu__list {
   padding-left: 1rem;
   margin: 0;
   list-style: none;
 }
 
-.fr-sidemenu__item > .fr-collapse .fr-sidemenu__link {
+.fr-sidemenu__item > .sidemenu-chantiers-expanded .fr-sidemenu__link {
   font-size: 0.9375rem;
   padding: 0.5rem 1rem;
 }

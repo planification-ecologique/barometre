@@ -10,6 +10,8 @@ export function resolveTrackingDomain () {
 const trackingDomain = resolveTrackingDomain()
 
 const analytics_config_file = {
+    // Vue SPA: DSFR must not auto-bind collapses on dynamic sidemenu DOM.
+    mode: 'vue',
     // verbose : true,
     analytics: {
         cmp: {
