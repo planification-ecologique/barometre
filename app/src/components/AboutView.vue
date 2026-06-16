@@ -113,7 +113,7 @@
       </p>
       <template v-else>
         <p v-if="etatSpotlights.length > 0" class="home__examples-lead fr-text--sm">
-          Voici deux indicateurs choisis aléatoirement parmi nos indicateurs d'état de l'environnement.
+          Voici deux indicateurs choisis de manière aléatoire parmi nos indicateurs d'état de l'environnement.
         </p>
         <p v-else class="fr-text--sm">Aucun indicateur graphique disponible pour l'aperçu.</p>
         <div v-if="etatSpotlights.length > 0" class="fr-grid-row fr-grid-row--gutters home-spotlights">
@@ -173,7 +173,7 @@
       </p>
       <template v-else>
         <p v-if="chantierSpotlights.length > 0" class="home__examples-lead fr-text--sm">
-          Voici deux indicateurs choisis aléatoirement parmi nos indicateurs de chantiers sectoriels.
+          Voici deux indicateurs choisis de manière aléatoire parmi nos indicateurs de chantiers sectoriels.
         </p>
         <p v-else class="fr-text--sm">Aucun indicateur de chantier graphique disponible pour l'aperçu.</p>
         <div v-if="chantierSpotlights.length > 0" class="fr-grid-row fr-grid-row--gutters home-spotlights">
