@@ -1,7 +1,7 @@
 {
   "GRIST_URLS": {
-    "production": "https://grist.numerique.gouv.fr/o/planification-ecologique/api/docs/jGd2ge4dy2ZMaRpdgbPLnd/download/csv?tableId=Tdb_planif_staging",
-    "staging": "https://grist.numerique.gouv.fr/o/planification-ecologique/api/docs/jGd2ge4dy2ZMaRpdgbPLnd/download/csv?tableId=Tdb_planif_staging",
+    "production": "https://grist.numerique.gouv.fr/o/planification-ecologique/api/docs/jGd2ge4dy2ZMaRpdgbPLnd/download/csv?tableId=Tdb_planif_indicateurs",
+    "staging": "https://grist.numerique.gouv.fr/o/planification-ecologique/api/docs/jGd2ge4dy2ZMaRpdgbPLnd/download/csv?tableId=Tdb_planif_indicateurs",
     "stagingEditPage": "https://grist.numerique.gouv.fr/o/planification-ecologique/jGd2ge4dy2ZM/Tableau-de-Bord/p/2"
   },
   "GRIST_LEVIERS_URL": "https://grist.numerique.gouv.fr/o/planification-ecologique/api/docs/jGd2ge4dy2ZMaRpdgbPLnd/download/csv?viewSection=20&tableId=Liste_leviers",

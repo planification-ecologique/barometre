@@ -72,7 +72,7 @@
 <script>
 import { homeRouteName } from "@/config/routeNames.js"
 
-const INDICATORS_EXPORT_URL = "https://grist.numerique.gouv.fr/o/planification-ecologique/api/docs/jGd2ge4dy2ZMaRpdgbPLnd/download/csv?viewSection=63&tableId=Tdb_planif_staging"
+const INDICATORS_EXPORT_URL = "https://grist.numerique.gouv.fr/o/planification-ecologique/api/docs/jGd2ge4dy2ZMaRpdgbPLnd/download/csv?viewSection=63&tableId=Tdb_planif_indicateurs"
 
 export default {
   name: "FooterDsfr",
