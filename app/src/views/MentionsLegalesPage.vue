@@ -23,20 +23,20 @@
                       <li>Augustin Augier, Secrétaire général à la planification écologique</li>
                     </ul>
 
-                    <h2>Développement, intégration, hébergement et diffusion</h2>
-                      <p><b>Commissariat Général au Développement Durable</b></p>
-                      <p class="company-text">Ecolab</p>
-                      <p class="company-text">Tour Séquoia</p>
-                      <p class="company-text">1 place Carpeaux</p>
-                      <p class="company-text">92800 Puteaux</p>
-                      <p class="company-text">Tél : <a href="tel:0140812122">01 40 81 21 22</a></p>
+                    <h2>Développement et diffusion</h2>
+                      <p>Le développement et la diffusion du site sont assurés par le Secrétariat général à la planification écologique.</p>
+                      <p class="company-text">Secrétariat général à la planification écologique (SGPE)</p>
+                      <p class="company-text">Services du Premier ministre</p>
+                      <p class="company-text">19 rue de Constantine</p>
+                      <p class="company-text">75007 Paris</p>
                       <p></p>
 
-                    <h2>Hébergement et développement</h2>
-                      <p>L'hébergement du portail est assuré par la société Scaleway</p>
-                      <p class="company-text">Société Scaleway</p>
-                      <p class="company-text">8 rue de la Ville - l'Evêque</p>
-                      <p class="company-text">75008 Paris</p>
+                    <h2>Hébergement</h2>
+                      <p>L'hébergement du site est assuré par GitHub Pages.</p>
+                      <p class="company-text">GitHub, Inc.</p>
+                      <p class="company-text">88 Colin P. Kelly Jr. Street</p>
+                      <p class="company-text">San Francisco, CA 94107</p>
+                      <p class="company-text">États-Unis</p>
                       <p></p>
 
 
