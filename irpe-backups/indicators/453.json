@@ -761,10 +761,10 @@
       "parc_autobus_e_com.date_mesure": "2024-01-01T00:00:00.000"
     },
     {
-      "parc_autobus_e_com.libelle_region": "Mayotte",
-      "parc_autobus_e_com.geocode_region": "06",
+      "parc_autobus_e_com.libelle_region": "Hauts-de-France",
+      "parc_autobus_e_com.geocode_region": "32",
       "parc_autobus_e_com.date_mesure.year": "2025-01-01T00:00:00.000",
-      "parc_autobus_e_com.id_453": null,
+      "parc_autobus_e_com.id_453": 4.4363256784968685,
       "parc_autobus_e_com.date_mesure": "2025-01-01T00:00:00.000"
     },
     {
@@ -880,10 +880,10 @@
       "parc_autobus_e_com.date_mesure": "2025-01-01T00:00:00.000"
     },
     {
-      "parc_autobus_e_com.libelle_region": "Hauts-de-France",
-      "parc_autobus_e_com.geocode_region": "32",
+      "parc_autobus_e_com.libelle_region": "Mayotte",
+      "parc_autobus_e_com.geocode_region": "06",
       "parc_autobus_e_com.date_mesure.year": "2025-01-01T00:00:00.000",
-      "parc_autobus_e_com.id_453": 4.4363256784968685,
+      "parc_autobus_e_com.id_453": null,
       "parc_autobus_e_com.date_mesure": "2025-01-01T00:00:00.000"
     }
   ],
