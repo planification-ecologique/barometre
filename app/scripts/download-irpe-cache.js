@@ -278,7 +278,13 @@ async function main() {
   loadEnvFile('.env.production');
   loadEnvFile('.env.local');
 
+  const forceRefresh =
+    process.argv.includes('--force') || process.env.IRPE_CACHE_FORCE === '1';
+
   console.log('Starting Écolab IRPE cache download...\n');
+  if (forceRefresh) {
+    console.log('Force refresh enabled — ignoring cache age.\n');
+  }
 
   if (!fs.existsSync(OUTPUT_DIR)) fs.mkdirSync(OUTPUT_DIR, { recursive: true });
   if (!fs.existsSync(INDICATORS_DIR)) fs.mkdirSync(INDICATORS_DIR, { recursive: true });
@@ -290,7 +296,7 @@ async function main() {
   console.log(`Found ${indicatorIds.length} validated IRPE indicator id(s).\n`);
 
   const manifest = readManifest();
-  const cacheFresh = isCacheFresh(manifest);
+  const cacheFresh = !forceRefresh && isCacheFresh(manifest);
   const missingIds = getMissingIndicatorIds(indicatorIds);
   const needsMeta = !fs.existsSync(META_PATH) || !cacheFresh;
   const idsToFetch = cacheFresh ? missingIds : indicatorIds;
