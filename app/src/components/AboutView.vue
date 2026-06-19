@@ -20,8 +20,8 @@
         </div>
         <div class="fr-col-12 fr-col-lg-6 home__hero-text fr-text--md">
           <p>
-            Réduire nos émissions, s'adapter au climat qui change, protéger l'eau et la nature, moins gaspiller, moins polluer.
-            Ces défis systémiques sont interdépendants - et ils nous concernent tous, dans notre façon de nous déplacer, nous loger, nous nourrir.
+            Réduire nos émissions, s'adapter au climat qui change, protéger l'eau et la nature, préserver nos ressources, moins polluer.
+            Ces défis systémiques sont interdépendants - et ils nous concernent tous, dans notre façon de nous déplacer, nous loger, nous nourrir...
             Fort de plus de 250 indicateurs, ce baromètre propose une vision quantifiée de ces transitions.
           </p>
         </div>
@@ -31,10 +31,10 @@
     <!-- 1 - Planifier et évaluer -->
     <section class="home__section fr-mt-6w" aria-labelledby="home-strategies-heading">
       <p class="home__eyebrow home__eyebrow--pill">1 - Planifier et évaluer</p>
-      <h2 id="home-strategies-heading" class="fr-h5 home__section-title">Un pilotage unifié des feuilles de route environnementales</h2>
+      <h2 id="home-strategies-heading" class="fr-h5 home__section-title">Un suivi unifié des feuilles de route environnementales</h2>
       <p class="home__lead">
         Ce baromètre constitue l'outil central de transparence en matière d'environnement.
-        Il synthétise et hiérarchise les stratégies environnementales afin de les rendre plus visibles et de suivre leurs résultats.
+        Il synthétise les stratégies environnementales avec une structure homogène afin de rendre plus visibles leurs objectifs et de suivre leurs résultats.
       </p>
       <p class="home__note fr-text--sm">
         Les indicateurs proposés n'intègrent donc pas les données relatives aux moyens humains ou encore financiers
@@ -79,7 +79,7 @@
       <p class="home__eyebrow home__eyebrow--pill">2 - Améliorer l'état de l'environnement</p>
       <h2 id="home-enjeux-heading" class="fr-h5 home__section-title">6 grands objectifs stratégiques</h2>
       <p class="home__lead">
-        L'amélioration concrète de l'état de l'environnement constitue la finalité de ces politiques publiques.
+        L'amélioration concrète de l'état de l'environnement constitue la finalité des stratégies environnementales et des politiques publiques associées.
         Pour mesurer sa réussite, ce baromètre est structuré autour des 6 objectifs environnementaux de la France,
         issus de la taxonomie européenne.
       </p>
@@ -140,8 +140,8 @@
       <p class="home__eyebrow home__eyebrow--pill">3 - Déployer nos chantiers sectoriels</p>
       <h2 id="home-secteurs-heading" class="fr-h5 home__section-title">Des transformations tangibles de notre quotidien</h2>
       <p class="home__lead">
-        L'atteinte de nos cibles écologiques impose le déploiement de transformations concrètes, structurées par grands
-        secteurs d'activité. Chaque secteur fait l'objet de chantiers précis.
+        L'atteinte de nos objectifs environnementaux impose le déploiement de transformations concrètes, structurées par grands
+        secteurs d'activité. Chaque secteur fait l'objet de chantiers organisant ces transformations.
       </p>
       <router-link
         :to="{ name: chantiersRouteName, query: { section: syntheseSection } }"
