@@ -1,0 +1,898 @@
+{
+  "cubeName": "parc_autobus_e_com",
+  "measureName": "parc_autobus_e_com.id_453",
+  "timeDimension": "parc_autobus_e_com.date_mesure",
+  "extraDimension": "parc_autobus_e_com.geocode_commune",
+  "data": [
+    {
+      "parc_autobus_e_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "parc_autobus_e_com.geocode_region": "93",
+      "parc_autobus_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 0.8554705087798289,
+      "parc_autobus_e_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Hauts-de-France",
+      "parc_autobus_e_com.geocode_region": "32",
+      "parc_autobus_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 1.0770059235325793,
+      "parc_autobus_e_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Nouvelle-Aquitaine",
+      "parc_autobus_e_com.geocode_region": "75",
+      "parc_autobus_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 2.2822822822822824,
+      "parc_autobus_e_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Corse",
+      "parc_autobus_e_com.geocode_region": "94",
+      "parc_autobus_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 9.859154929577464,
+      "parc_autobus_e_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "parc_autobus_e_com.geocode_region": "84",
+      "parc_autobus_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 3.8606081311923472,
+      "parc_autobus_e_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Mayotte",
+      "parc_autobus_e_com.geocode_region": "06",
+      "parc_autobus_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 0,
+      "parc_autobus_e_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Grand Est",
+      "parc_autobus_e_com.geocode_region": "44",
+      "parc_autobus_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 0.7175472928897586,
+      "parc_autobus_e_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Guyane",
+      "parc_autobus_e_com.geocode_region": "03",
+      "parc_autobus_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 0,
+      "parc_autobus_e_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Centre-Val de Loire",
+      "parc_autobus_e_com.geocode_region": "24",
+      "parc_autobus_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 2.8189910979228485,
+      "parc_autobus_e_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Bourgogne-Franche-Comté",
+      "parc_autobus_e_com.geocode_region": "27",
+      "parc_autobus_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 1.585014409221902,
+      "parc_autobus_e_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Normandie",
+      "parc_autobus_e_com.geocode_region": "28",
+      "parc_autobus_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 0.769971126082772,
+      "parc_autobus_e_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Île-de-France",
+      "parc_autobus_e_com.geocode_region": "11",
+      "parc_autobus_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 1.116237535347522,
+      "parc_autobus_e_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Bretagne",
+      "parc_autobus_e_com.geocode_region": "53",
+      "parc_autobus_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 3.7701974865350087,
+      "parc_autobus_e_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Martinique",
+      "parc_autobus_e_com.geocode_region": "02",
+      "parc_autobus_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 0,
+      "parc_autobus_e_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Guadeloupe",
+      "parc_autobus_e_com.geocode_region": "01",
+      "parc_autobus_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 1.36986301369863,
+      "parc_autobus_e_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Pays de la Loire",
+      "parc_autobus_e_com.geocode_region": "52",
+      "parc_autobus_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 0.9581881533101044,
+      "parc_autobus_e_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Occitanie",
+      "parc_autobus_e_com.geocode_region": "76",
+      "parc_autobus_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 0.78125,
+      "parc_autobus_e_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "La Réunion",
+      "parc_autobus_e_com.geocode_region": "04",
+      "parc_autobus_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 4.30622009569378,
+      "parc_autobus_e_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Nouvelle-Aquitaine",
+      "parc_autobus_e_com.geocode_region": "75",
+      "parc_autobus_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 4,
+      "parc_autobus_e_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Normandie",
+      "parc_autobus_e_com.geocode_region": "28",
+      "parc_autobus_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 0.9587727708533078,
+      "parc_autobus_e_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "La Réunion",
+      "parc_autobus_e_com.geocode_region": "04",
+      "parc_autobus_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 4.10958904109589,
+      "parc_autobus_e_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Corse",
+      "parc_autobus_e_com.geocode_region": "94",
+      "parc_autobus_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 10.95890410958904,
+      "parc_autobus_e_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Bourgogne-Franche-Comté",
+      "parc_autobus_e_com.geocode_region": "27",
+      "parc_autobus_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 1.6296296296296295,
+      "parc_autobus_e_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Martinique",
+      "parc_autobus_e_com.geocode_region": "02",
+      "parc_autobus_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 0,
+      "parc_autobus_e_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "parc_autobus_e_com.geocode_region": "93",
+      "parc_autobus_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 1.95822454308094,
+      "parc_autobus_e_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Guadeloupe",
+      "parc_autobus_e_com.geocode_region": "01",
+      "parc_autobus_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 1.3333333333333335,
+      "parc_autobus_e_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Bretagne",
+      "parc_autobus_e_com.geocode_region": "53",
+      "parc_autobus_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 4.253472222222222,
+      "parc_autobus_e_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Mayotte",
+      "parc_autobus_e_com.geocode_region": "06",
+      "parc_autobus_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": null,
+      "parc_autobus_e_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "parc_autobus_e_com.geocode_region": "84",
+      "parc_autobus_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 4.59652706843718,
+      "parc_autobus_e_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Pays de la Loire",
+      "parc_autobus_e_com.geocode_region": "52",
+      "parc_autobus_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 2.9654036243822075,
+      "parc_autobus_e_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Occitanie",
+      "parc_autobus_e_com.geocode_region": "76",
+      "parc_autobus_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 1.100811123986095,
+      "parc_autobus_e_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Grand Est",
+      "parc_autobus_e_com.geocode_region": "44",
+      "parc_autobus_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 1.5915119363395225,
+      "parc_autobus_e_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Centre-Val de Loire",
+      "parc_autobus_e_com.geocode_region": "24",
+      "parc_autobus_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 4.273504273504273,
+      "parc_autobus_e_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Hauts-de-France",
+      "parc_autobus_e_com.geocode_region": "32",
+      "parc_autobus_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 3.1655422937208098,
+      "parc_autobus_e_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Guyane",
+      "parc_autobus_e_com.geocode_region": "03",
+      "parc_autobus_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 0,
+      "parc_autobus_e_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Île-de-France",
+      "parc_autobus_e_com.geocode_region": "11",
+      "parc_autobus_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 1.943416181914331,
+      "parc_autobus_e_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Bourgogne-Franche-Comté",
+      "parc_autobus_e_com.geocode_region": "27",
+      "parc_autobus_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 1.2121212121212122,
+      "parc_autobus_e_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Grand Est",
+      "parc_autobus_e_com.geocode_region": "44",
+      "parc_autobus_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 2.9683377308707124,
+      "parc_autobus_e_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Martinique",
+      "parc_autobus_e_com.geocode_region": "02",
+      "parc_autobus_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 0,
+      "parc_autobus_e_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Île-de-France",
+      "parc_autobus_e_com.geocode_region": "11",
+      "parc_autobus_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 2.2105742935278028,
+      "parc_autobus_e_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "La Réunion",
+      "parc_autobus_e_com.geocode_region": "04",
+      "parc_autobus_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 3.571428571428571,
+      "parc_autobus_e_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Nouvelle-Aquitaine",
+      "parc_autobus_e_com.geocode_region": "75",
+      "parc_autobus_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 3.9886039886039883,
+      "parc_autobus_e_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Guyane",
+      "parc_autobus_e_com.geocode_region": "03",
+      "parc_autobus_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 0,
+      "parc_autobus_e_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "parc_autobus_e_com.geocode_region": "93",
+      "parc_autobus_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 2.7837259100642395,
+      "parc_autobus_e_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Mayotte",
+      "parc_autobus_e_com.geocode_region": "06",
+      "parc_autobus_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": null,
+      "parc_autobus_e_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Corse",
+      "parc_autobus_e_com.geocode_region": "94",
+      "parc_autobus_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 10,
+      "parc_autobus_e_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Centre-Val de Loire",
+      "parc_autobus_e_com.geocode_region": "24",
+      "parc_autobus_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 4.390934844192635,
+      "parc_autobus_e_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Normandie",
+      "parc_autobus_e_com.geocode_region": "28",
+      "parc_autobus_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 1.2232415902140672,
+      "parc_autobus_e_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Pays de la Loire",
+      "parc_autobus_e_com.geocode_region": "52",
+      "parc_autobus_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 3.201347935973041,
+      "parc_autobus_e_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "parc_autobus_e_com.geocode_region": "84",
+      "parc_autobus_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 5.300472653612424,
+      "parc_autobus_e_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Bretagne",
+      "parc_autobus_e_com.geocode_region": "53",
+      "parc_autobus_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 4.712939160239932,
+      "parc_autobus_e_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Hauts-de-France",
+      "parc_autobus_e_com.geocode_region": "32",
+      "parc_autobus_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 3.3299180327868854,
+      "parc_autobus_e_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Guadeloupe",
+      "parc_autobus_e_com.geocode_region": "01",
+      "parc_autobus_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 1.3157894736842104,
+      "parc_autobus_e_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Occitanie",
+      "parc_autobus_e_com.geocode_region": "76",
+      "parc_autobus_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 1.3385387618516453,
+      "parc_autobus_e_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Centre-Val de Loire",
+      "parc_autobus_e_com.geocode_region": "24",
+      "parc_autobus_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 9.31174089068826,
+      "parc_autobus_e_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Martinique",
+      "parc_autobus_e_com.geocode_region": "02",
+      "parc_autobus_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 0,
+      "parc_autobus_e_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "parc_autobus_e_com.geocode_region": "93",
+      "parc_autobus_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 4.8141891891891895,
+      "parc_autobus_e_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Corse",
+      "parc_autobus_e_com.geocode_region": "94",
+      "parc_autobus_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 10.666666666666668,
+      "parc_autobus_e_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Normandie",
+      "parc_autobus_e_com.geocode_region": "28",
+      "parc_autobus_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 2.9702970297029703,
+      "parc_autobus_e_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Île-de-France",
+      "parc_autobus_e_com.geocode_region": "11",
+      "parc_autobus_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 6.0768012668250195,
+      "parc_autobus_e_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Grand Est",
+      "parc_autobus_e_com.geocode_region": "44",
+      "parc_autobus_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 5.410566518141311,
+      "parc_autobus_e_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "parc_autobus_e_com.geocode_region": "84",
+      "parc_autobus_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 7.169056352117373,
+      "parc_autobus_e_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Mayotte",
+      "parc_autobus_e_com.geocode_region": "06",
+      "parc_autobus_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": null,
+      "parc_autobus_e_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Bourgogne-Franche-Comté",
+      "parc_autobus_e_com.geocode_region": "27",
+      "parc_autobus_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 3.7257824143070044,
+      "parc_autobus_e_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Occitanie",
+      "parc_autobus_e_com.geocode_region": "76",
+      "parc_autobus_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 1.5100671140939599,
+      "parc_autobus_e_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Guyane",
+      "parc_autobus_e_com.geocode_region": "03",
+      "parc_autobus_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 0,
+      "parc_autobus_e_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Pays de la Loire",
+      "parc_autobus_e_com.geocode_region": "52",
+      "parc_autobus_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 3.580146460537022,
+      "parc_autobus_e_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "La Réunion",
+      "parc_autobus_e_com.geocode_region": "04",
+      "parc_autobus_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 3.862660944206009,
+      "parc_autobus_e_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Hauts-de-France",
+      "parc_autobus_e_com.geocode_region": "32",
+      "parc_autobus_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 3.4067085953878404,
+      "parc_autobus_e_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Nouvelle-Aquitaine",
+      "parc_autobus_e_com.geocode_region": "75",
+      "parc_autobus_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 4.589787722317843,
+      "parc_autobus_e_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Guadeloupe",
+      "parc_autobus_e_com.geocode_region": "01",
+      "parc_autobus_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 1.2345679012345678,
+      "parc_autobus_e_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Bretagne",
+      "parc_autobus_e_com.geocode_region": "53",
+      "parc_autobus_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 5.05050505050505,
+      "parc_autobus_e_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Pays de la Loire",
+      "parc_autobus_e_com.geocode_region": "52",
+      "parc_autobus_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 4.37956204379562,
+      "parc_autobus_e_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Nouvelle-Aquitaine",
+      "parc_autobus_e_com.geocode_region": "75",
+      "parc_autobus_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 5.486425339366516,
+      "parc_autobus_e_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Corse",
+      "parc_autobus_e_com.geocode_region": "94",
+      "parc_autobus_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 8.536585365853659,
+      "parc_autobus_e_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "La Réunion",
+      "parc_autobus_e_com.geocode_region": "04",
+      "parc_autobus_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 4.741379310344827,
+      "parc_autobus_e_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Guadeloupe",
+      "parc_autobus_e_com.geocode_region": "01",
+      "parc_autobus_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 1.2345679012345678,
+      "parc_autobus_e_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Bretagne",
+      "parc_autobus_e_com.geocode_region": "53",
+      "parc_autobus_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 6.265664160401002,
+      "parc_autobus_e_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Hauts-de-France",
+      "parc_autobus_e_com.geocode_region": "32",
+      "parc_autobus_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 3.74414976599064,
+      "parc_autobus_e_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Guyane",
+      "parc_autobus_e_com.geocode_region": "03",
+      "parc_autobus_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 0,
+      "parc_autobus_e_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Mayotte",
+      "parc_autobus_e_com.geocode_region": "06",
+      "parc_autobus_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": null,
+      "parc_autobus_e_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Centre-Val de Loire",
+      "parc_autobus_e_com.geocode_region": "24",
+      "parc_autobus_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 12.550607287449392,
+      "parc_autobus_e_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Martinique",
+      "parc_autobus_e_com.geocode_region": "02",
+      "parc_autobus_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 0,
+      "parc_autobus_e_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Normandie",
+      "parc_autobus_e_com.geocode_region": "28",
+      "parc_autobus_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 6.043437204910293,
+      "parc_autobus_e_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Grand Est",
+      "parc_autobus_e_com.geocode_region": "44",
+      "parc_autobus_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 8.312958435207824,
+      "parc_autobus_e_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Bourgogne-Franche-Comté",
+      "parc_autobus_e_com.geocode_region": "27",
+      "parc_autobus_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 7.2592592592592595,
+      "parc_autobus_e_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Occitanie",
+      "parc_autobus_e_com.geocode_region": "76",
+      "parc_autobus_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 4.4491525423728815,
+      "parc_autobus_e_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "parc_autobus_e_com.geocode_region": "84",
+      "parc_autobus_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 7.553589656345696,
+      "parc_autobus_e_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "parc_autobus_e_com.geocode_region": "93",
+      "parc_autobus_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 12.651087832393232,
+      "parc_autobus_e_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Île-de-France",
+      "parc_autobus_e_com.geocode_region": "11",
+      "parc_autobus_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 6.904416338378602,
+      "parc_autobus_e_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Guyane",
+      "parc_autobus_e_com.geocode_region": "03",
+      "parc_autobus_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 0,
+      "parc_autobus_e_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Centre-Val de Loire",
+      "parc_autobus_e_com.geocode_region": "24",
+      "parc_autobus_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 9.235209235209235,
+      "parc_autobus_e_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Bretagne",
+      "parc_autobus_e_com.geocode_region": "53",
+      "parc_autobus_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 7.855973813420622,
+      "parc_autobus_e_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Grand Est",
+      "parc_autobus_e_com.geocode_region": "44",
+      "parc_autobus_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 6.852791878172589,
+      "parc_autobus_e_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Mayotte",
+      "parc_autobus_e_com.geocode_region": "06",
+      "parc_autobus_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": null,
+      "parc_autobus_e_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Île-de-France",
+      "parc_autobus_e_com.geocode_region": "11",
+      "parc_autobus_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 8.130831539013638,
+      "parc_autobus_e_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Pays de la Loire",
+      "parc_autobus_e_com.geocode_region": "52",
+      "parc_autobus_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 4.372937293729374,
+      "parc_autobus_e_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "parc_autobus_e_com.geocode_region": "84",
+      "parc_autobus_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 8.509922637066936,
+      "parc_autobus_e_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Hauts-de-France",
+      "parc_autobus_e_com.geocode_region": "32",
+      "parc_autobus_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 3.810504634397528,
+      "parc_autobus_e_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "parc_autobus_e_com.geocode_region": "93",
+      "parc_autobus_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 15.12013256006628,
+      "parc_autobus_e_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Corse",
+      "parc_autobus_e_com.geocode_region": "94",
+      "parc_autobus_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 8.860759493670885,
+      "parc_autobus_e_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "La Réunion",
+      "parc_autobus_e_com.geocode_region": "04",
+      "parc_autobus_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 3.9647577092511015,
+      "parc_autobus_e_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Normandie",
+      "parc_autobus_e_com.geocode_region": "28",
+      "parc_autobus_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 8.735213830755233,
+      "parc_autobus_e_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Guadeloupe",
+      "parc_autobus_e_com.geocode_region": "01",
+      "parc_autobus_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 0,
+      "parc_autobus_e_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Occitanie",
+      "parc_autobus_e_com.geocode_region": "76",
+      "parc_autobus_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 3.260288615713522,
+      "parc_autobus_e_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Bourgogne-Franche-Comté",
+      "parc_autobus_e_com.geocode_region": "27",
+      "parc_autobus_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 4.508856682769726,
+      "parc_autobus_e_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Nouvelle-Aquitaine",
+      "parc_autobus_e_com.geocode_region": "75",
+      "parc_autobus_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 6.706981858163827,
+      "parc_autobus_e_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Martinique",
+      "parc_autobus_e_com.geocode_region": "02",
+      "parc_autobus_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 0,
+      "parc_autobus_e_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Hauts-de-France",
+      "parc_autobus_e_com.geocode_region": "32",
+      "parc_autobus_e_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 4.4363256784968685,
+      "parc_autobus_e_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Bourgogne-Franche-Comté",
+      "parc_autobus_e_com.geocode_region": "27",
+      "parc_autobus_e_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 6.372549019607843,
+      "parc_autobus_e_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Guyane",
+      "parc_autobus_e_com.geocode_region": "03",
+      "parc_autobus_e_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 0,
+      "parc_autobus_e_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Grand Est",
+      "parc_autobus_e_com.geocode_region": "44",
+      "parc_autobus_e_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 8.16831683168317,
+      "parc_autobus_e_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Corse",
+      "parc_autobus_e_com.geocode_region": "94",
+      "parc_autobus_e_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 11.11111111111111,
+      "parc_autobus_e_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "parc_autobus_e_com.geocode_region": "84",
+      "parc_autobus_e_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 8.881469115191987,
+      "parc_autobus_e_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "La Réunion",
+      "parc_autobus_e_com.geocode_region": "04",
+      "parc_autobus_e_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 4.054054054054054,
+      "parc_autobus_e_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Nouvelle-Aquitaine",
+      "parc_autobus_e_com.geocode_region": "75",
+      "parc_autobus_e_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 7.9245283018867925,
+      "parc_autobus_e_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Normandie",
+      "parc_autobus_e_com.geocode_region": "28",
+      "parc_autobus_e_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 9.30451127819549,
+      "parc_autobus_e_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Occitanie",
+      "parc_autobus_e_com.geocode_region": "76",
+      "parc_autobus_e_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 3.7589828634604756,
+      "parc_autobus_e_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Bretagne",
+      "parc_autobus_e_com.geocode_region": "53",
+      "parc_autobus_e_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 10.364842454394694,
+      "parc_autobus_e_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Centre-Val de Loire",
+      "parc_autobus_e_com.geocode_region": "24",
+      "parc_autobus_e_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 10.5643994211288,
+      "parc_autobus_e_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Martinique",
+      "parc_autobus_e_com.geocode_region": "02",
+      "parc_autobus_e_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 0,
+      "parc_autobus_e_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Île-de-France",
+      "parc_autobus_e_com.geocode_region": "11",
+      "parc_autobus_e_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 12.947103274559193,
+      "parc_autobus_e_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Pays de la Loire",
+      "parc_autobus_e_com.geocode_region": "52",
+      "parc_autobus_e_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 5.421184320266889,
+      "parc_autobus_e_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "parc_autobus_e_com.geocode_region": "93",
+      "parc_autobus_e_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 16.32,
+      "parc_autobus_e_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Guadeloupe",
+      "parc_autobus_e_com.geocode_region": "01",
+      "parc_autobus_e_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": 0,
+      "parc_autobus_e_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "parc_autobus_e_com.libelle_region": "Mayotte",
+      "parc_autobus_e_com.geocode_region": "06",
+      "parc_autobus_e_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "parc_autobus_e_com.id_453": null,
+      "parc_autobus_e_com.date_mesure": "2025-01-01T00:00:00.000"
+    }
+  ],
+  "measureMeta": {
+    "libelle_indicateur": "Part des autobus électriques dans le parc roulant",
+    "statut_commun": "Mesure",
+    "unite": "%",
+    "methode_calcul": "Indicateur filtré sur type_vehicule = 'TCP_BUS' et critair = 'Crit''Air E'",
+    "numerator": "parc_autobus_critair_e",
+    "denominator": "tot_parc_autobus"
+  }
+}

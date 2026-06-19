@@ -1,0 +1,1911 @@
+{
+  "cubeName": "transport_marchandise_origine_region",
+  "measureName": "transport_marchandise_origine_region.id_686",
+  "timeDimension": "transport_marchandise_origine_region.date_mesure",
+  "extraDimension": "transport_marchandise_origine_region.geocode_pays",
+  "data": [
+    {
+      "transport_marchandise_origine_region.libelle_region": "Non précisé",
+      "transport_marchandise_origine_region.geocode_region": "99",
+      "transport_marchandise_origine_region.date_mesure.year": "2011-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 0,
+      "transport_marchandise_origine_region.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Auvergne-Rhône-Alpes",
+      "transport_marchandise_origine_region.geocode_region": "84",
+      "transport_marchandise_origine_region.date_mesure.year": "2011-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 330679276,
+      "transport_marchandise_origine_region.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Pays de la Loire",
+      "transport_marchandise_origine_region.geocode_region": "52",
+      "transport_marchandise_origine_region.date_mesure.year": "2011-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 36041431,
+      "transport_marchandise_origine_region.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Allemagne",
+      "transport_marchandise_origine_region.geocode_region": "DE",
+      "transport_marchandise_origine_region.date_mesure.year": "2011-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 402424187,
+      "transport_marchandise_origine_region.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "transport_marchandise_origine_region.geocode_region": "93",
+      "transport_marchandise_origine_region.date_mesure.year": "2011-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 690937804,
+      "transport_marchandise_origine_region.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Occitanie",
+      "transport_marchandise_origine_region.geocode_region": "76",
+      "transport_marchandise_origine_region.date_mesure.year": "2011-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 88587880,
+      "transport_marchandise_origine_region.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Belgique",
+      "transport_marchandise_origine_region.geocode_region": "BE",
+      "transport_marchandise_origine_region.date_mesure.year": "2011-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 670197904,
+      "transport_marchandise_origine_region.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Île-de-France",
+      "transport_marchandise_origine_region.geocode_region": "11",
+      "transport_marchandise_origine_region.date_mesure.year": "2011-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 1653761351,
+      "transport_marchandise_origine_region.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Centre-Val de Loire",
+      "transport_marchandise_origine_region.geocode_region": "24",
+      "transport_marchandise_origine_region.date_mesure.year": "2011-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 11823554,
+      "transport_marchandise_origine_region.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Normandie",
+      "transport_marchandise_origine_region.geocode_region": "28",
+      "transport_marchandise_origine_region.date_mesure.year": "2011-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 1375021467,
+      "transport_marchandise_origine_region.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Bourgogne-Franche-Comté",
+      "transport_marchandise_origine_region.geocode_region": "27",
+      "transport_marchandise_origine_region.date_mesure.year": "2011-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 471712392,
+      "transport_marchandise_origine_region.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Nouvelle-Aquitaine",
+      "transport_marchandise_origine_region.geocode_region": "75",
+      "transport_marchandise_origine_region.date_mesure.year": "2011-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 1289330,
+      "transport_marchandise_origine_region.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Hauts-de-France",
+      "transport_marchandise_origine_region.geocode_region": "32",
+      "transport_marchandise_origine_region.date_mesure.year": "2011-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 924004036,
+      "transport_marchandise_origine_region.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Pays-Bas",
+      "transport_marchandise_origine_region.geocode_region": "NL",
+      "transport_marchandise_origine_region.date_mesure.year": "2011-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 945584449,
+      "transport_marchandise_origine_region.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Autres pays étrangers",
+      "transport_marchandise_origine_region.geocode_region": "ZZ",
+      "transport_marchandise_origine_region.date_mesure.year": "2011-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 214675779,
+      "transport_marchandise_origine_region.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Bretagne",
+      "transport_marchandise_origine_region.geocode_region": "53",
+      "transport_marchandise_origine_region.date_mesure.year": "2011-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 0,
+      "transport_marchandise_origine_region.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Grand Est",
+      "transport_marchandise_origine_region.geocode_region": "44",
+      "transport_marchandise_origine_region.date_mesure.year": "2011-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 1109744089,
+      "transport_marchandise_origine_region.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Occitanie",
+      "transport_marchandise_origine_region.geocode_region": "76",
+      "transport_marchandise_origine_region.date_mesure.year": "2012-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 89394553,
+      "transport_marchandise_origine_region.date_mesure": "2012-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Hauts-de-France",
+      "transport_marchandise_origine_region.geocode_region": "32",
+      "transport_marchandise_origine_region.date_mesure.year": "2012-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 885586445,
+      "transport_marchandise_origine_region.date_mesure": "2012-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Autres pays étrangers",
+      "transport_marchandise_origine_region.geocode_region": "ZZ",
+      "transport_marchandise_origine_region.date_mesure.year": "2012-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 205147357,
+      "transport_marchandise_origine_region.date_mesure": "2012-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Normandie",
+      "transport_marchandise_origine_region.geocode_region": "28",
+      "transport_marchandise_origine_region.date_mesure.year": "2012-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 1552669060,
+      "transport_marchandise_origine_region.date_mesure": "2012-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Non précisé",
+      "transport_marchandise_origine_region.geocode_region": "99",
+      "transport_marchandise_origine_region.date_mesure.year": "2012-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 0,
+      "transport_marchandise_origine_region.date_mesure": "2012-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Bretagne",
+      "transport_marchandise_origine_region.geocode_region": "53",
+      "transport_marchandise_origine_region.date_mesure.year": "2012-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 0,
+      "transport_marchandise_origine_region.date_mesure": "2012-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Auvergne-Rhône-Alpes",
+      "transport_marchandise_origine_region.geocode_region": "84",
+      "transport_marchandise_origine_region.date_mesure.year": "2012-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 366396666,
+      "transport_marchandise_origine_region.date_mesure": "2012-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "transport_marchandise_origine_region.geocode_region": "93",
+      "transport_marchandise_origine_region.date_mesure.year": "2012-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 602368054,
+      "transport_marchandise_origine_region.date_mesure": "2012-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Île-de-France",
+      "transport_marchandise_origine_region.geocode_region": "11",
+      "transport_marchandise_origine_region.date_mesure.year": "2012-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 1674072283,
+      "transport_marchandise_origine_region.date_mesure": "2012-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Pays-Bas",
+      "transport_marchandise_origine_region.geocode_region": "NL",
+      "transport_marchandise_origine_region.date_mesure.year": "2012-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 860068930,
+      "transport_marchandise_origine_region.date_mesure": "2012-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Bourgogne-Franche-Comté",
+      "transport_marchandise_origine_region.geocode_region": "27",
+      "transport_marchandise_origine_region.date_mesure.year": "2012-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 455255389,
+      "transport_marchandise_origine_region.date_mesure": "2012-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Allemagne",
+      "transport_marchandise_origine_region.geocode_region": "DE",
+      "transport_marchandise_origine_region.date_mesure.year": "2012-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 457846750,
+      "transport_marchandise_origine_region.date_mesure": "2012-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Belgique",
+      "transport_marchandise_origine_region.geocode_region": "BE",
+      "transport_marchandise_origine_region.date_mesure.year": "2012-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 652996106,
+      "transport_marchandise_origine_region.date_mesure": "2012-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Grand Est",
+      "transport_marchandise_origine_region.geocode_region": "44",
+      "transport_marchandise_origine_region.date_mesure.year": "2012-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 1122978184,
+      "transport_marchandise_origine_region.date_mesure": "2012-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Pays de la Loire",
+      "transport_marchandise_origine_region.geocode_region": "52",
+      "transport_marchandise_origine_region.date_mesure.year": "2012-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 43851971,
+      "transport_marchandise_origine_region.date_mesure": "2012-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Non précisé",
+      "transport_marchandise_origine_region.geocode_region": "99",
+      "transport_marchandise_origine_region.date_mesure.year": "2013-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 0,
+      "transport_marchandise_origine_region.date_mesure": "2013-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Autres pays étrangers",
+      "transport_marchandise_origine_region.geocode_region": "ZZ",
+      "transport_marchandise_origine_region.date_mesure.year": "2013-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 253069596,
+      "transport_marchandise_origine_region.date_mesure": "2013-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "transport_marchandise_origine_region.geocode_region": "93",
+      "transport_marchandise_origine_region.date_mesure.year": "2013-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 711401339,
+      "transport_marchandise_origine_region.date_mesure": "2013-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Normandie",
+      "transport_marchandise_origine_region.geocode_region": "28",
+      "transport_marchandise_origine_region.date_mesure.year": "2013-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 1600059291,
+      "transport_marchandise_origine_region.date_mesure": "2013-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Pays-Bas",
+      "transport_marchandise_origine_region.geocode_region": "NL",
+      "transport_marchandise_origine_region.date_mesure.year": "2013-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 872516117,
+      "transport_marchandise_origine_region.date_mesure": "2013-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Grand Est",
+      "transport_marchandise_origine_region.geocode_region": "44",
+      "transport_marchandise_origine_region.date_mesure.year": "2013-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 1190174195,
+      "transport_marchandise_origine_region.date_mesure": "2013-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Bretagne",
+      "transport_marchandise_origine_region.geocode_region": "53",
+      "transport_marchandise_origine_region.date_mesure.year": "2013-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 0,
+      "transport_marchandise_origine_region.date_mesure": "2013-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Auvergne-Rhône-Alpes",
+      "transport_marchandise_origine_region.geocode_region": "84",
+      "transport_marchandise_origine_region.date_mesure.year": "2013-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 345519645,
+      "transport_marchandise_origine_region.date_mesure": "2013-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Bourgogne-Franche-Comté",
+      "transport_marchandise_origine_region.geocode_region": "27",
+      "transport_marchandise_origine_region.date_mesure.year": "2013-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 328850776,
+      "transport_marchandise_origine_region.date_mesure": "2013-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Île-de-France",
+      "transport_marchandise_origine_region.geocode_region": "11",
+      "transport_marchandise_origine_region.date_mesure.year": "2013-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 1603798222,
+      "transport_marchandise_origine_region.date_mesure": "2013-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Hauts-de-France",
+      "transport_marchandise_origine_region.geocode_region": "32",
+      "transport_marchandise_origine_region.date_mesure.year": "2013-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 920915725,
+      "transport_marchandise_origine_region.date_mesure": "2013-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Allemagne",
+      "transport_marchandise_origine_region.geocode_region": "DE",
+      "transport_marchandise_origine_region.date_mesure.year": "2013-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 505380241,
+      "transport_marchandise_origine_region.date_mesure": "2013-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Pays de la Loire",
+      "transport_marchandise_origine_region.geocode_region": "52",
+      "transport_marchandise_origine_region.date_mesure.year": "2013-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 30366959,
+      "transport_marchandise_origine_region.date_mesure": "2013-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Occitanie",
+      "transport_marchandise_origine_region.geocode_region": "76",
+      "transport_marchandise_origine_region.date_mesure.year": "2013-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 64500843,
+      "transport_marchandise_origine_region.date_mesure": "2013-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Belgique",
+      "transport_marchandise_origine_region.geocode_region": "BE",
+      "transport_marchandise_origine_region.date_mesure.year": "2013-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 644737058,
+      "transport_marchandise_origine_region.date_mesure": "2013-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Nouvelle-Aquitaine",
+      "transport_marchandise_origine_region.geocode_region": "75",
+      "transport_marchandise_origine_region.date_mesure.year": "2014-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 22735966903.3946,
+      "transport_marchandise_origine_region.date_mesure": "2014-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Occitanie",
+      "transport_marchandise_origine_region.geocode_region": "76",
+      "transport_marchandise_origine_region.date_mesure.year": "2014-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 15433141677.1403,
+      "transport_marchandise_origine_region.date_mesure": "2014-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Centre-Val de Loire",
+      "transport_marchandise_origine_region.geocode_region": "24",
+      "transport_marchandise_origine_region.date_mesure.year": "2014-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 11302362494.1085,
+      "transport_marchandise_origine_region.date_mesure": "2014-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Auvergne-Rhône-Alpes",
+      "transport_marchandise_origine_region.geocode_region": "84",
+      "transport_marchandise_origine_region.date_mesure.year": "2014-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 28069260886.497402,
+      "transport_marchandise_origine_region.date_mesure": "2014-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Bourgogne-Franche-Comté",
+      "transport_marchandise_origine_region.geocode_region": "27",
+      "transport_marchandise_origine_region.date_mesure.year": "2014-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 12176314586.7881,
+      "transport_marchandise_origine_region.date_mesure": "2014-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Belgique",
+      "transport_marchandise_origine_region.geocode_region": "BE",
+      "transport_marchandise_origine_region.date_mesure.year": "2014-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 579627639,
+      "transport_marchandise_origine_region.date_mesure": "2014-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Grand Est",
+      "transport_marchandise_origine_region.geocode_region": "44",
+      "transport_marchandise_origine_region.date_mesure.year": "2014-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 28507066915.546,
+      "transport_marchandise_origine_region.date_mesure": "2014-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Corse",
+      "transport_marchandise_origine_region.geocode_region": "94",
+      "transport_marchandise_origine_region.date_mesure.year": "2014-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 230343812.54346,
+      "transport_marchandise_origine_region.date_mesure": "2014-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Normandie",
+      "transport_marchandise_origine_region.geocode_region": "28",
+      "transport_marchandise_origine_region.date_mesure.year": "2014-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 16230010543.188301,
+      "transport_marchandise_origine_region.date_mesure": "2014-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Île-de-France",
+      "transport_marchandise_origine_region.geocode_region": "11",
+      "transport_marchandise_origine_region.date_mesure.year": "2014-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 19472587443.5298,
+      "transport_marchandise_origine_region.date_mesure": "2014-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Pays-Bas",
+      "transport_marchandise_origine_region.geocode_region": "NL",
+      "transport_marchandise_origine_region.date_mesure.year": "2014-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 811982512,
+      "transport_marchandise_origine_region.date_mesure": "2014-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Autres pays étrangers",
+      "transport_marchandise_origine_region.geocode_region": "ZZ",
+      "transport_marchandise_origine_region.date_mesure.year": "2014-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 227127954,
+      "transport_marchandise_origine_region.date_mesure": "2014-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Allemagne",
+      "transport_marchandise_origine_region.geocode_region": "DE",
+      "transport_marchandise_origine_region.date_mesure.year": "2014-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 496697613,
+      "transport_marchandise_origine_region.date_mesure": "2014-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Hauts-de-France",
+      "transport_marchandise_origine_region.geocode_region": "32",
+      "transport_marchandise_origine_region.date_mesure.year": "2014-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 26384853120.9978,
+      "transport_marchandise_origine_region.date_mesure": "2014-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "transport_marchandise_origine_region.geocode_region": "93",
+      "transport_marchandise_origine_region.date_mesure.year": "2014-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 13250583488.4856,
+      "transport_marchandise_origine_region.date_mesure": "2014-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Non précisé",
+      "transport_marchandise_origine_region.geocode_region": "99",
+      "transport_marchandise_origine_region.date_mesure.year": "2014-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 1466474180.1100001,
+      "transport_marchandise_origine_region.date_mesure": "2014-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Bretagne",
+      "transport_marchandise_origine_region.geocode_region": "53",
+      "transport_marchandise_origine_region.date_mesure.year": "2014-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 11529192426.0263,
+      "transport_marchandise_origine_region.date_mesure": "2014-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Pays de la Loire",
+      "transport_marchandise_origine_region.geocode_region": "52",
+      "transport_marchandise_origine_region.date_mesure.year": "2014-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 15414470433.1915,
+      "transport_marchandise_origine_region.date_mesure": "2014-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Nouvelle-Aquitaine",
+      "transport_marchandise_origine_region.geocode_region": "75",
+      "transport_marchandise_origine_region.date_mesure.year": "2015-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 20759065600.2676,
+      "transport_marchandise_origine_region.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Allemagne",
+      "transport_marchandise_origine_region.geocode_region": "DE",
+      "transport_marchandise_origine_region.date_mesure.year": "2015-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 561787339,
+      "transport_marchandise_origine_region.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Belgique",
+      "transport_marchandise_origine_region.geocode_region": "BE",
+      "transport_marchandise_origine_region.date_mesure.year": "2015-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 585356755,
+      "transport_marchandise_origine_region.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "transport_marchandise_origine_region.geocode_region": "93",
+      "transport_marchandise_origine_region.date_mesure.year": "2015-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 12953745408.785799,
+      "transport_marchandise_origine_region.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Grand Est",
+      "transport_marchandise_origine_region.geocode_region": "44",
+      "transport_marchandise_origine_region.date_mesure.year": "2015-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 26738270708.3211,
+      "transport_marchandise_origine_region.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Île-de-France",
+      "transport_marchandise_origine_region.geocode_region": "11",
+      "transport_marchandise_origine_region.date_mesure.year": "2015-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 18795482379.0531,
+      "transport_marchandise_origine_region.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Autres pays étrangers",
+      "transport_marchandise_origine_region.geocode_region": "ZZ",
+      "transport_marchandise_origine_region.date_mesure.year": "2015-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 226964962,
+      "transport_marchandise_origine_region.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Bourgogne-Franche-Comté",
+      "transport_marchandise_origine_region.geocode_region": "27",
+      "transport_marchandise_origine_region.date_mesure.year": "2015-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 11888772378.3342,
+      "transport_marchandise_origine_region.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Centre-Val de Loire",
+      "transport_marchandise_origine_region.geocode_region": "24",
+      "transport_marchandise_origine_region.date_mesure.year": "2015-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 10633836575.4942,
+      "transport_marchandise_origine_region.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Bretagne",
+      "transport_marchandise_origine_region.geocode_region": "53",
+      "transport_marchandise_origine_region.date_mesure.year": "2015-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 11432851532.1381,
+      "transport_marchandise_origine_region.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Hauts-de-France",
+      "transport_marchandise_origine_region.geocode_region": "32",
+      "transport_marchandise_origine_region.date_mesure.year": "2015-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 25805204935.6312,
+      "transport_marchandise_origine_region.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Non précisé",
+      "transport_marchandise_origine_region.geocode_region": "99",
+      "transport_marchandise_origine_region.date_mesure.year": "2015-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 0,
+      "transport_marchandise_origine_region.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Corse",
+      "transport_marchandise_origine_region.geocode_region": "94",
+      "transport_marchandise_origine_region.date_mesure.year": "2015-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 234722755.07507002,
+      "transport_marchandise_origine_region.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Auvergne-Rhône-Alpes",
+      "transport_marchandise_origine_region.geocode_region": "84",
+      "transport_marchandise_origine_region.date_mesure.year": "2015-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 27078234716.8536,
+      "transport_marchandise_origine_region.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Occitanie",
+      "transport_marchandise_origine_region.geocode_region": "76",
+      "transport_marchandise_origine_region.date_mesure.year": "2015-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 15614944745.499,
+      "transport_marchandise_origine_region.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Pays de la Loire",
+      "transport_marchandise_origine_region.geocode_region": "52",
+      "transport_marchandise_origine_region.date_mesure.year": "2015-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 15293339842.120901,
+      "transport_marchandise_origine_region.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Normandie",
+      "transport_marchandise_origine_region.geocode_region": "28",
+      "transport_marchandise_origine_region.date_mesure.year": "2015-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 15401629565.396,
+      "transport_marchandise_origine_region.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Pays-Bas",
+      "transport_marchandise_origine_region.geocode_region": "NL",
+      "transport_marchandise_origine_region.date_mesure.year": "2015-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 806413531,
+      "transport_marchandise_origine_region.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Hauts-de-France",
+      "transport_marchandise_origine_region.geocode_region": "32",
+      "transport_marchandise_origine_region.date_mesure.year": "2016-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 32906967601.393402,
+      "transport_marchandise_origine_region.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Centre-Val de Loire",
+      "transport_marchandise_origine_region.geocode_region": "24",
+      "transport_marchandise_origine_region.date_mesure.year": "2016-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 11984524137.7736,
+      "transport_marchandise_origine_region.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Auvergne-Rhône-Alpes",
+      "transport_marchandise_origine_region.geocode_region": "84",
+      "transport_marchandise_origine_region.date_mesure.year": "2016-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 29301828734.3655,
+      "transport_marchandise_origine_region.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Belgique",
+      "transport_marchandise_origine_region.geocode_region": "BE",
+      "transport_marchandise_origine_region.date_mesure.year": "2016-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 3055090683,
+      "transport_marchandise_origine_region.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Normandie",
+      "transport_marchandise_origine_region.geocode_region": "28",
+      "transport_marchandise_origine_region.date_mesure.year": "2016-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 16327792447.0484,
+      "transport_marchandise_origine_region.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Autre",
+      "transport_marchandise_origine_region.geocode_region": "ZZ",
+      "transport_marchandise_origine_region.date_mesure.year": "2016-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 1124130745,
+      "transport_marchandise_origine_region.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Grand Est",
+      "transport_marchandise_origine_region.geocode_region": "44",
+      "transport_marchandise_origine_region.date_mesure.year": "2016-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 31202859251.9309,
+      "transport_marchandise_origine_region.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Pays de la Loire",
+      "transport_marchandise_origine_region.geocode_region": "52",
+      "transport_marchandise_origine_region.date_mesure.year": "2016-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 15603225550.8825,
+      "transport_marchandise_origine_region.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Luxembourg",
+      "transport_marchandise_origine_region.geocode_region": "LU",
+      "transport_marchandise_origine_region.date_mesure.year": "2016-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 754859742,
+      "transport_marchandise_origine_region.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Espagne",
+      "transport_marchandise_origine_region.geocode_region": "ES",
+      "transport_marchandise_origine_region.date_mesure.year": "2016-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 2340159305,
+      "transport_marchandise_origine_region.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Allemagne",
+      "transport_marchandise_origine_region.geocode_region": "DE",
+      "transport_marchandise_origine_region.date_mesure.year": "2016-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 2703283036,
+      "transport_marchandise_origine_region.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Nouvelle-Aquitaine",
+      "transport_marchandise_origine_region.geocode_region": "75",
+      "transport_marchandise_origine_region.date_mesure.year": "2016-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 23929237024.6633,
+      "transport_marchandise_origine_region.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Pays-Bas",
+      "transport_marchandise_origine_region.geocode_region": "NL",
+      "transport_marchandise_origine_region.date_mesure.year": "2016-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 795277488,
+      "transport_marchandise_origine_region.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Non précisé",
+      "transport_marchandise_origine_region.geocode_region": "99",
+      "transport_marchandise_origine_region.date_mesure.year": "2016-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 135254010,
+      "transport_marchandise_origine_region.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Corse",
+      "transport_marchandise_origine_region.geocode_region": "94",
+      "transport_marchandise_origine_region.date_mesure.year": "2016-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 233284639.1492,
+      "transport_marchandise_origine_region.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Bourgogne-Franche-Comté",
+      "transport_marchandise_origine_region.geocode_region": "27",
+      "transport_marchandise_origine_region.date_mesure.year": "2016-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 13552345354.2107,
+      "transport_marchandise_origine_region.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Occitanie",
+      "transport_marchandise_origine_region.geocode_region": "76",
+      "transport_marchandise_origine_region.date_mesure.year": "2016-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 18675458633.850597,
+      "transport_marchandise_origine_region.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Bretagne",
+      "transport_marchandise_origine_region.geocode_region": "53",
+      "transport_marchandise_origine_region.date_mesure.year": "2016-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 11487211804.0886,
+      "transport_marchandise_origine_region.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Île-de-France",
+      "transport_marchandise_origine_region.geocode_region": "11",
+      "transport_marchandise_origine_region.date_mesure.year": "2016-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 21470979215.9795,
+      "transport_marchandise_origine_region.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Italie",
+      "transport_marchandise_origine_region.geocode_region": "IT",
+      "transport_marchandise_origine_region.date_mesure.year": "2016-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 666622776,
+      "transport_marchandise_origine_region.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "transport_marchandise_origine_region.geocode_region": "93",
+      "transport_marchandise_origine_region.date_mesure.year": "2016-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 16201474272.0839,
+      "transport_marchandise_origine_region.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Autres pays étrangers",
+      "transport_marchandise_origine_region.geocode_region": "ZZ",
+      "transport_marchandise_origine_region.date_mesure.year": "2016-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 280583454,
+      "transport_marchandise_origine_region.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Autres pays étrangers",
+      "transport_marchandise_origine_region.geocode_region": "ZZ",
+      "transport_marchandise_origine_region.date_mesure.year": "2017-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 84157699,
+      "transport_marchandise_origine_region.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Occitanie",
+      "transport_marchandise_origine_region.geocode_region": "76",
+      "transport_marchandise_origine_region.date_mesure.year": "2017-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 19038986189.482697,
+      "transport_marchandise_origine_region.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "transport_marchandise_origine_region.geocode_region": "93",
+      "transport_marchandise_origine_region.date_mesure.year": "2017-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 17880056299.1994,
+      "transport_marchandise_origine_region.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Centre-Val de Loire",
+      "transport_marchandise_origine_region.geocode_region": "24",
+      "transport_marchandise_origine_region.date_mesure.year": "2017-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 13261642510.9838,
+      "transport_marchandise_origine_region.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Auvergne-Rhône-Alpes",
+      "transport_marchandise_origine_region.geocode_region": "84",
+      "transport_marchandise_origine_region.date_mesure.year": "2017-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 32433403734.996,
+      "transport_marchandise_origine_region.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Allemagne",
+      "transport_marchandise_origine_region.geocode_region": "DE",
+      "transport_marchandise_origine_region.date_mesure.year": "2017-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 3045457233,
+      "transport_marchandise_origine_region.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Espagne",
+      "transport_marchandise_origine_region.geocode_region": "ES",
+      "transport_marchandise_origine_region.date_mesure.year": "2017-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 1652640121,
+      "transport_marchandise_origine_region.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Hauts-de-France",
+      "transport_marchandise_origine_region.geocode_region": "32",
+      "transport_marchandise_origine_region.date_mesure.year": "2017-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 35177951949.3323,
+      "transport_marchandise_origine_region.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Île-de-France",
+      "transport_marchandise_origine_region.geocode_region": "11",
+      "transport_marchandise_origine_region.date_mesure.year": "2017-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 21800343881.5957,
+      "transport_marchandise_origine_region.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Pays de la Loire",
+      "transport_marchandise_origine_region.geocode_region": "52",
+      "transport_marchandise_origine_region.date_mesure.year": "2017-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 16507307159.474298,
+      "transport_marchandise_origine_region.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Grand Est",
+      "transport_marchandise_origine_region.geocode_region": "44",
+      "transport_marchandise_origine_region.date_mesure.year": "2017-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 31865110391.3209,
+      "transport_marchandise_origine_region.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Corse",
+      "transport_marchandise_origine_region.geocode_region": "94",
+      "transport_marchandise_origine_region.date_mesure.year": "2017-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 217135988.43221,
+      "transport_marchandise_origine_region.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Belgique",
+      "transport_marchandise_origine_region.geocode_region": "BE",
+      "transport_marchandise_origine_region.date_mesure.year": "2017-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 2920527437,
+      "transport_marchandise_origine_region.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Italie",
+      "transport_marchandise_origine_region.geocode_region": "IT",
+      "transport_marchandise_origine_region.date_mesure.year": "2017-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 599901121,
+      "transport_marchandise_origine_region.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Nouvelle-Aquitaine",
+      "transport_marchandise_origine_region.geocode_region": "75",
+      "transport_marchandise_origine_region.date_mesure.year": "2017-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 26308215128.4427,
+      "transport_marchandise_origine_region.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Normandie",
+      "transport_marchandise_origine_region.geocode_region": "28",
+      "transport_marchandise_origine_region.date_mesure.year": "2017-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 17700694713.8538,
+      "transport_marchandise_origine_region.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Non précisé",
+      "transport_marchandise_origine_region.geocode_region": "99",
+      "transport_marchandise_origine_region.date_mesure.year": "2017-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 245303402,
+      "transport_marchandise_origine_region.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Pays-Bas",
+      "transport_marchandise_origine_region.geocode_region": "NL",
+      "transport_marchandise_origine_region.date_mesure.year": "2017-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 615093619,
+      "transport_marchandise_origine_region.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Bretagne",
+      "transport_marchandise_origine_region.geocode_region": "53",
+      "transport_marchandise_origine_region.date_mesure.year": "2017-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 12184229626.5469,
+      "transport_marchandise_origine_region.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Bourgogne-Franche-Comté",
+      "transport_marchandise_origine_region.geocode_region": "27",
+      "transport_marchandise_origine_region.date_mesure.year": "2017-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 14529358767.1506,
+      "transport_marchandise_origine_region.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Nouvelle-Aquitaine",
+      "transport_marchandise_origine_region.geocode_region": "75",
+      "transport_marchandise_origine_region.date_mesure.year": "2018-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 25990363625.441803,
+      "transport_marchandise_origine_region.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Belgique",
+      "transport_marchandise_origine_region.geocode_region": "BE",
+      "transport_marchandise_origine_region.date_mesure.year": "2018-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 2753049386,
+      "transport_marchandise_origine_region.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Centre-Val de Loire",
+      "transport_marchandise_origine_region.geocode_region": "24",
+      "transport_marchandise_origine_region.date_mesure.year": "2018-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 13196055677.0887,
+      "transport_marchandise_origine_region.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Italie",
+      "transport_marchandise_origine_region.geocode_region": "IT",
+      "transport_marchandise_origine_region.date_mesure.year": "2018-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 642290688,
+      "transport_marchandise_origine_region.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Allemagne",
+      "transport_marchandise_origine_region.geocode_region": "DE",
+      "transport_marchandise_origine_region.date_mesure.year": "2018-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 2111975944,
+      "transport_marchandise_origine_region.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Grand Est",
+      "transport_marchandise_origine_region.geocode_region": "44",
+      "transport_marchandise_origine_region.date_mesure.year": "2018-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 31511774361.1534,
+      "transport_marchandise_origine_region.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Bourgogne-Franche-Comté",
+      "transport_marchandise_origine_region.geocode_region": "27",
+      "transport_marchandise_origine_region.date_mesure.year": "2018-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 14376552072.3863,
+      "transport_marchandise_origine_region.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Île-de-France",
+      "transport_marchandise_origine_region.geocode_region": "11",
+      "transport_marchandise_origine_region.date_mesure.year": "2018-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 22867655273.699898,
+      "transport_marchandise_origine_region.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Pays de la Loire",
+      "transport_marchandise_origine_region.geocode_region": "52",
+      "transport_marchandise_origine_region.date_mesure.year": "2018-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 16885177031.8902,
+      "transport_marchandise_origine_region.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "transport_marchandise_origine_region.geocode_region": "93",
+      "transport_marchandise_origine_region.date_mesure.year": "2018-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 17864556761.2666,
+      "transport_marchandise_origine_region.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Bretagne",
+      "transport_marchandise_origine_region.geocode_region": "53",
+      "transport_marchandise_origine_region.date_mesure.year": "2018-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 12321021503.4518,
+      "transport_marchandise_origine_region.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Non précisé",
+      "transport_marchandise_origine_region.geocode_region": "99",
+      "transport_marchandise_origine_region.date_mesure.year": "2018-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 13708307,
+      "transport_marchandise_origine_region.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Normandie",
+      "transport_marchandise_origine_region.geocode_region": "28",
+      "transport_marchandise_origine_region.date_mesure.year": "2018-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 17600888136.5846,
+      "transport_marchandise_origine_region.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Espagne",
+      "transport_marchandise_origine_region.geocode_region": "ES",
+      "transport_marchandise_origine_region.date_mesure.year": "2018-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 1580758863,
+      "transport_marchandise_origine_region.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Occitanie",
+      "transport_marchandise_origine_region.geocode_region": "76",
+      "transport_marchandise_origine_region.date_mesure.year": "2018-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 18280132382.3503,
+      "transport_marchandise_origine_region.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Auvergne-Rhône-Alpes",
+      "transport_marchandise_origine_region.geocode_region": "84",
+      "transport_marchandise_origine_region.date_mesure.year": "2018-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 32870201378.9296,
+      "transport_marchandise_origine_region.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Hauts-de-France",
+      "transport_marchandise_origine_region.geocode_region": "32",
+      "transport_marchandise_origine_region.date_mesure.year": "2018-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 35165846890.905,
+      "transport_marchandise_origine_region.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Corse",
+      "transport_marchandise_origine_region.geocode_region": "94",
+      "transport_marchandise_origine_region.date_mesure.year": "2018-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 209173198.56454998,
+      "transport_marchandise_origine_region.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Pays-Bas",
+      "transport_marchandise_origine_region.geocode_region": "NL",
+      "transport_marchandise_origine_region.date_mesure.year": "2018-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 464807650,
+      "transport_marchandise_origine_region.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Bretagne",
+      "transport_marchandise_origine_region.geocode_region": "53",
+      "transport_marchandise_origine_region.date_mesure.year": "2019-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 14010731422.2059,
+      "transport_marchandise_origine_region.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Luxembourg",
+      "transport_marchandise_origine_region.geocode_region": "LU",
+      "transport_marchandise_origine_region.date_mesure.year": "2019-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 737906105,
+      "transport_marchandise_origine_region.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Hauts-de-France",
+      "transport_marchandise_origine_region.geocode_region": "32",
+      "transport_marchandise_origine_region.date_mesure.year": "2019-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 34518644387.2944,
+      "transport_marchandise_origine_region.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Pays-Bas",
+      "transport_marchandise_origine_region.geocode_region": "NL",
+      "transport_marchandise_origine_region.date_mesure.year": "2019-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 587072244,
+      "transport_marchandise_origine_region.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Grand Est",
+      "transport_marchandise_origine_region.geocode_region": "44",
+      "transport_marchandise_origine_region.date_mesure.year": "2019-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 31224601894.2104,
+      "transport_marchandise_origine_region.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "transport_marchandise_origine_region.geocode_region": "93",
+      "transport_marchandise_origine_region.date_mesure.year": "2019-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 18435998788.481003,
+      "transport_marchandise_origine_region.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Corse",
+      "transport_marchandise_origine_region.geocode_region": "94",
+      "transport_marchandise_origine_region.date_mesure.year": "2019-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 221434326.50807,
+      "transport_marchandise_origine_region.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Italie",
+      "transport_marchandise_origine_region.geocode_region": "IT",
+      "transport_marchandise_origine_region.date_mesure.year": "2019-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 695368307,
+      "transport_marchandise_origine_region.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Centre-Val de Loire",
+      "transport_marchandise_origine_region.geocode_region": "24",
+      "transport_marchandise_origine_region.date_mesure.year": "2019-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 14352724482.0609,
+      "transport_marchandise_origine_region.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Espagne",
+      "transport_marchandise_origine_region.geocode_region": "ES",
+      "transport_marchandise_origine_region.date_mesure.year": "2019-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 1515976271,
+      "transport_marchandise_origine_region.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Bourgogne-Franche-Comté",
+      "transport_marchandise_origine_region.geocode_region": "27",
+      "transport_marchandise_origine_region.date_mesure.year": "2019-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 15758544842.944601,
+      "transport_marchandise_origine_region.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Allemagne",
+      "transport_marchandise_origine_region.geocode_region": "DE",
+      "transport_marchandise_origine_region.date_mesure.year": "2019-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 2772682012,
+      "transport_marchandise_origine_region.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Belgique",
+      "transport_marchandise_origine_region.geocode_region": "BE",
+      "transport_marchandise_origine_region.date_mesure.year": "2019-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 2335089773,
+      "transport_marchandise_origine_region.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Pays de la Loire",
+      "transport_marchandise_origine_region.geocode_region": "52",
+      "transport_marchandise_origine_region.date_mesure.year": "2019-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 16817396268.901299,
+      "transport_marchandise_origine_region.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Non précisé",
+      "transport_marchandise_origine_region.geocode_region": "99",
+      "transport_marchandise_origine_region.date_mesure.year": "2019-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 1507827293,
+      "transport_marchandise_origine_region.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Autre",
+      "transport_marchandise_origine_region.geocode_region": "ZZ",
+      "transport_marchandise_origine_region.date_mesure.year": "2019-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 1262341250,
+      "transport_marchandise_origine_region.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Normandie",
+      "transport_marchandise_origine_region.geocode_region": "28",
+      "transport_marchandise_origine_region.date_mesure.year": "2019-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 18189541872.315002,
+      "transport_marchandise_origine_region.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Auvergne-Rhône-Alpes",
+      "transport_marchandise_origine_region.geocode_region": "84",
+      "transport_marchandise_origine_region.date_mesure.year": "2019-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 32695600344.562397,
+      "transport_marchandise_origine_region.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Nouvelle-Aquitaine",
+      "transport_marchandise_origine_region.geocode_region": "75",
+      "transport_marchandise_origine_region.date_mesure.year": "2019-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 26523805615.1764,
+      "transport_marchandise_origine_region.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Île-de-France",
+      "transport_marchandise_origine_region.geocode_region": "11",
+      "transport_marchandise_origine_region.date_mesure.year": "2019-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 23272462169.2906,
+      "transport_marchandise_origine_region.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Occitanie",
+      "transport_marchandise_origine_region.geocode_region": "76",
+      "transport_marchandise_origine_region.date_mesure.year": "2019-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 19704921067.3588,
+      "transport_marchandise_origine_region.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Bretagne",
+      "transport_marchandise_origine_region.geocode_region": "53",
+      "transport_marchandise_origine_region.date_mesure.year": "2020-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 13357563211.8118,
+      "transport_marchandise_origine_region.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Pays-Bas",
+      "transport_marchandise_origine_region.geocode_region": "NL",
+      "transport_marchandise_origine_region.date_mesure.year": "2020-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 491589975,
+      "transport_marchandise_origine_region.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Belgique",
+      "transport_marchandise_origine_region.geocode_region": "BE",
+      "transport_marchandise_origine_region.date_mesure.year": "2020-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 2416117246,
+      "transport_marchandise_origine_region.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Centre-Val de Loire",
+      "transport_marchandise_origine_region.geocode_region": "24",
+      "transport_marchandise_origine_region.date_mesure.year": "2020-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 13226922615.8721,
+      "transport_marchandise_origine_region.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Autre",
+      "transport_marchandise_origine_region.geocode_region": "ZZ",
+      "transport_marchandise_origine_region.date_mesure.year": "2020-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 1020363444,
+      "transport_marchandise_origine_region.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Auvergne-Rhône-Alpes",
+      "transport_marchandise_origine_region.geocode_region": "84",
+      "transport_marchandise_origine_region.date_mesure.year": "2020-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 31824759446.1263,
+      "transport_marchandise_origine_region.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Italie",
+      "transport_marchandise_origine_region.geocode_region": "IT",
+      "transport_marchandise_origine_region.date_mesure.year": "2020-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 538773247,
+      "transport_marchandise_origine_region.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Grand Est",
+      "transport_marchandise_origine_region.geocode_region": "44",
+      "transport_marchandise_origine_region.date_mesure.year": "2020-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 31195950195.9028,
+      "transport_marchandise_origine_region.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Île-de-France",
+      "transport_marchandise_origine_region.geocode_region": "11",
+      "transport_marchandise_origine_region.date_mesure.year": "2020-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 21640642399.6562,
+      "transport_marchandise_origine_region.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Occitanie",
+      "transport_marchandise_origine_region.geocode_region": "76",
+      "transport_marchandise_origine_region.date_mesure.year": "2020-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 19074948127.3139,
+      "transport_marchandise_origine_region.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Allemagne",
+      "transport_marchandise_origine_region.geocode_region": "DE",
+      "transport_marchandise_origine_region.date_mesure.year": "2020-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 2696802056,
+      "transport_marchandise_origine_region.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Bourgogne-Franche-Comté",
+      "transport_marchandise_origine_region.geocode_region": "27",
+      "transport_marchandise_origine_region.date_mesure.year": "2020-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 15357961078.3373,
+      "transport_marchandise_origine_region.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Non précisé",
+      "transport_marchandise_origine_region.geocode_region": "99",
+      "transport_marchandise_origine_region.date_mesure.year": "2020-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 42645201,
+      "transport_marchandise_origine_region.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Luxembourg",
+      "transport_marchandise_origine_region.geocode_region": "LU",
+      "transport_marchandise_origine_region.date_mesure.year": "2020-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 790835614,
+      "transport_marchandise_origine_region.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Corse",
+      "transport_marchandise_origine_region.geocode_region": "94",
+      "transport_marchandise_origine_region.date_mesure.year": "2020-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 377976157.67642003,
+      "transport_marchandise_origine_region.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Nouvelle-Aquitaine",
+      "transport_marchandise_origine_region.geocode_region": "75",
+      "transport_marchandise_origine_region.date_mesure.year": "2020-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 25670616223.6953,
+      "transport_marchandise_origine_region.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Normandie",
+      "transport_marchandise_origine_region.geocode_region": "28",
+      "transport_marchandise_origine_region.date_mesure.year": "2020-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 16534632904.1909,
+      "transport_marchandise_origine_region.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Espagne",
+      "transport_marchandise_origine_region.geocode_region": "ES",
+      "transport_marchandise_origine_region.date_mesure.year": "2020-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 1276853855,
+      "transport_marchandise_origine_region.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Pays de la Loire",
+      "transport_marchandise_origine_region.geocode_region": "52",
+      "transport_marchandise_origine_region.date_mesure.year": "2020-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 15969596618.5914,
+      "transport_marchandise_origine_region.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "transport_marchandise_origine_region.geocode_region": "93",
+      "transport_marchandise_origine_region.date_mesure.year": "2020-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 16947789456.8654,
+      "transport_marchandise_origine_region.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Hauts-de-France",
+      "transport_marchandise_origine_region.geocode_region": "32",
+      "transport_marchandise_origine_region.date_mesure.year": "2020-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 33991337887.8138,
+      "transport_marchandise_origine_region.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Normandie",
+      "transport_marchandise_origine_region.geocode_region": "28",
+      "transport_marchandise_origine_region.date_mesure.year": "2021-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 17018017385.4894,
+      "transport_marchandise_origine_region.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Italie",
+      "transport_marchandise_origine_region.geocode_region": "IT",
+      "transport_marchandise_origine_region.date_mesure.year": "2021-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 757413662,
+      "transport_marchandise_origine_region.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Corse",
+      "transport_marchandise_origine_region.geocode_region": "94",
+      "transport_marchandise_origine_region.date_mesure.year": "2021-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 249803187.20161,
+      "transport_marchandise_origine_region.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "transport_marchandise_origine_region.geocode_region": "93",
+      "transport_marchandise_origine_region.date_mesure.year": "2021-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 19244786292.366997,
+      "transport_marchandise_origine_region.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Centre-Val de Loire",
+      "transport_marchandise_origine_region.geocode_region": "24",
+      "transport_marchandise_origine_region.date_mesure.year": "2021-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 13883726388.3554,
+      "transport_marchandise_origine_region.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Grand Est",
+      "transport_marchandise_origine_region.geocode_region": "44",
+      "transport_marchandise_origine_region.date_mesure.year": "2021-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 32683261306.162598,
+      "transport_marchandise_origine_region.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Nouvelle-Aquitaine",
+      "transport_marchandise_origine_region.geocode_region": "75",
+      "transport_marchandise_origine_region.date_mesure.year": "2021-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 27947779372.419502,
+      "transport_marchandise_origine_region.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Pays-Bas",
+      "transport_marchandise_origine_region.geocode_region": "NL",
+      "transport_marchandise_origine_region.date_mesure.year": "2021-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 537875161,
+      "transport_marchandise_origine_region.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Autre",
+      "transport_marchandise_origine_region.geocode_region": "ZZ",
+      "transport_marchandise_origine_region.date_mesure.year": "2021-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 866238489,
+      "transport_marchandise_origine_region.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Luxembourg",
+      "transport_marchandise_origine_region.geocode_region": "LU",
+      "transport_marchandise_origine_region.date_mesure.year": "2021-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 1118940439,
+      "transport_marchandise_origine_region.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Espagne",
+      "transport_marchandise_origine_region.geocode_region": "ES",
+      "transport_marchandise_origine_region.date_mesure.year": "2021-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 1617357229,
+      "transport_marchandise_origine_region.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Bretagne",
+      "transport_marchandise_origine_region.geocode_region": "53",
+      "transport_marchandise_origine_region.date_mesure.year": "2021-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 12822956429.9291,
+      "transport_marchandise_origine_region.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Hauts-de-France",
+      "transport_marchandise_origine_region.geocode_region": "32",
+      "transport_marchandise_origine_region.date_mesure.year": "2021-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 37390105476.0187,
+      "transport_marchandise_origine_region.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Auvergne-Rhône-Alpes",
+      "transport_marchandise_origine_region.geocode_region": "84",
+      "transport_marchandise_origine_region.date_mesure.year": "2021-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 33743440971.909897,
+      "transport_marchandise_origine_region.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Île-de-France",
+      "transport_marchandise_origine_region.geocode_region": "11",
+      "transport_marchandise_origine_region.date_mesure.year": "2021-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 22328810439.1764,
+      "transport_marchandise_origine_region.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Allemagne",
+      "transport_marchandise_origine_region.geocode_region": "DE",
+      "transport_marchandise_origine_region.date_mesure.year": "2021-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 2662756016,
+      "transport_marchandise_origine_region.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Non précisé",
+      "transport_marchandise_origine_region.geocode_region": "99",
+      "transport_marchandise_origine_region.date_mesure.year": "2021-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 2676241748.028,
+      "transport_marchandise_origine_region.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Belgique",
+      "transport_marchandise_origine_region.geocode_region": "BE",
+      "transport_marchandise_origine_region.date_mesure.year": "2021-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 2382534386,
+      "transport_marchandise_origine_region.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Bourgogne-Franche-Comté",
+      "transport_marchandise_origine_region.geocode_region": "27",
+      "transport_marchandise_origine_region.date_mesure.year": "2021-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 15556349253.342499,
+      "transport_marchandise_origine_region.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Pays de la Loire",
+      "transport_marchandise_origine_region.geocode_region": "52",
+      "transport_marchandise_origine_region.date_mesure.year": "2021-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 16855963062.788198,
+      "transport_marchandise_origine_region.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Occitanie",
+      "transport_marchandise_origine_region.geocode_region": "76",
+      "transport_marchandise_origine_region.date_mesure.year": "2021-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 19846526461.081398,
+      "transport_marchandise_origine_region.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Centre-Val de Loire",
+      "transport_marchandise_origine_region.geocode_region": "24",
+      "transport_marchandise_origine_region.date_mesure.year": "2022-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 14280001574.3953,
+      "transport_marchandise_origine_region.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Grand Est",
+      "transport_marchandise_origine_region.geocode_region": "44",
+      "transport_marchandise_origine_region.date_mesure.year": "2022-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 32989912667.2932,
+      "transport_marchandise_origine_region.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Belgique",
+      "transport_marchandise_origine_region.geocode_region": "BE",
+      "transport_marchandise_origine_region.date_mesure.year": "2022-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 2431588460,
+      "transport_marchandise_origine_region.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Auvergne-Rhône-Alpes",
+      "transport_marchandise_origine_region.geocode_region": "84",
+      "transport_marchandise_origine_region.date_mesure.year": "2022-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 32434839201.2608,
+      "transport_marchandise_origine_region.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Pays-Bas",
+      "transport_marchandise_origine_region.geocode_region": "NL",
+      "transport_marchandise_origine_region.date_mesure.year": "2022-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 481643388,
+      "transport_marchandise_origine_region.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Bourgogne-Franche-Comté",
+      "transport_marchandise_origine_region.geocode_region": "27",
+      "transport_marchandise_origine_region.date_mesure.year": "2022-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 15456311548.5958,
+      "transport_marchandise_origine_region.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Normandie",
+      "transport_marchandise_origine_region.geocode_region": "28",
+      "transport_marchandise_origine_region.date_mesure.year": "2022-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 17111813342.9021,
+      "transport_marchandise_origine_region.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Occitanie",
+      "transport_marchandise_origine_region.geocode_region": "76",
+      "transport_marchandise_origine_region.date_mesure.year": "2022-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 20912746906.0671,
+      "transport_marchandise_origine_region.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Nouvelle-Aquitaine",
+      "transport_marchandise_origine_region.geocode_region": "75",
+      "transport_marchandise_origine_region.date_mesure.year": "2022-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 26800605021.3493,
+      "transport_marchandise_origine_region.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Île-de-France",
+      "transport_marchandise_origine_region.geocode_region": "11",
+      "transport_marchandise_origine_region.date_mesure.year": "2022-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 22633500389.9072,
+      "transport_marchandise_origine_region.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Espagne",
+      "transport_marchandise_origine_region.geocode_region": "ES",
+      "transport_marchandise_origine_region.date_mesure.year": "2022-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 1513440113,
+      "transport_marchandise_origine_region.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Hauts-de-France",
+      "transport_marchandise_origine_region.geocode_region": "32",
+      "transport_marchandise_origine_region.date_mesure.year": "2022-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 35537066166.660904,
+      "transport_marchandise_origine_region.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Non précisé",
+      "transport_marchandise_origine_region.geocode_region": "99",
+      "transport_marchandise_origine_region.date_mesure.year": "2022-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 1633018075.928,
+      "transport_marchandise_origine_region.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Corse",
+      "transport_marchandise_origine_region.geocode_region": "94",
+      "transport_marchandise_origine_region.date_mesure.year": "2022-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 203160007.9237,
+      "transport_marchandise_origine_region.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Italie",
+      "transport_marchandise_origine_region.geocode_region": "IT",
+      "transport_marchandise_origine_region.date_mesure.year": "2022-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 607298903,
+      "transport_marchandise_origine_region.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Autre",
+      "transport_marchandise_origine_region.geocode_region": "ZZ",
+      "transport_marchandise_origine_region.date_mesure.year": "2022-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 866812026,
+      "transport_marchandise_origine_region.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "transport_marchandise_origine_region.geocode_region": "93",
+      "transport_marchandise_origine_region.date_mesure.year": "2022-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 18281815015.6409,
+      "transport_marchandise_origine_region.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Luxembourg",
+      "transport_marchandise_origine_region.geocode_region": "LU",
+      "transport_marchandise_origine_region.date_mesure.year": "2022-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 1189758504,
+      "transport_marchandise_origine_region.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Allemagne",
+      "transport_marchandise_origine_region.geocode_region": "DE",
+      "transport_marchandise_origine_region.date_mesure.year": "2022-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 2557402497,
+      "transport_marchandise_origine_region.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Pays de la Loire",
+      "transport_marchandise_origine_region.geocode_region": "52",
+      "transport_marchandise_origine_region.date_mesure.year": "2022-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 16913807180.255999,
+      "transport_marchandise_origine_region.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Bretagne",
+      "transport_marchandise_origine_region.geocode_region": "53",
+      "transport_marchandise_origine_region.date_mesure.year": "2022-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 12451455299.1756,
+      "transport_marchandise_origine_region.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Autre",
+      "transport_marchandise_origine_region.geocode_region": "ZZ",
+      "transport_marchandise_origine_region.date_mesure.year": "2023-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 754127985,
+      "transport_marchandise_origine_region.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "transport_marchandise_origine_region.geocode_region": "93",
+      "transport_marchandise_origine_region.date_mesure.year": "2023-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 17058183585.9274,
+      "transport_marchandise_origine_region.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Bourgogne-Franche-Comté",
+      "transport_marchandise_origine_region.geocode_region": "27",
+      "transport_marchandise_origine_region.date_mesure.year": "2023-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 14302373836.8754,
+      "transport_marchandise_origine_region.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Normandie",
+      "transport_marchandise_origine_region.geocode_region": "28",
+      "transport_marchandise_origine_region.date_mesure.year": "2023-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 16863970501.0054,
+      "transport_marchandise_origine_region.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Hauts-de-France",
+      "transport_marchandise_origine_region.geocode_region": "32",
+      "transport_marchandise_origine_region.date_mesure.year": "2023-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 33363716503.189503,
+      "transport_marchandise_origine_region.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Centre-Val de Loire",
+      "transport_marchandise_origine_region.geocode_region": "24",
+      "transport_marchandise_origine_region.date_mesure.year": "2023-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 12816494475.121698,
+      "transport_marchandise_origine_region.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Auvergne-Rhône-Alpes",
+      "transport_marchandise_origine_region.geocode_region": "84",
+      "transport_marchandise_origine_region.date_mesure.year": "2023-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 31184181603.5957,
+      "transport_marchandise_origine_region.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Allemagne",
+      "transport_marchandise_origine_region.geocode_region": "DE",
+      "transport_marchandise_origine_region.date_mesure.year": "2023-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 2036286621,
+      "transport_marchandise_origine_region.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Espagne",
+      "transport_marchandise_origine_region.geocode_region": "ES",
+      "transport_marchandise_origine_region.date_mesure.year": "2023-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 1071067100,
+      "transport_marchandise_origine_region.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Bretagne",
+      "transport_marchandise_origine_region.geocode_region": "53",
+      "transport_marchandise_origine_region.date_mesure.year": "2023-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 12461763911.2339,
+      "transport_marchandise_origine_region.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Non précisé",
+      "transport_marchandise_origine_region.geocode_region": "99",
+      "transport_marchandise_origine_region.date_mesure.year": "2023-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 5683294674.461949,
+      "transport_marchandise_origine_region.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Grand Est",
+      "transport_marchandise_origine_region.geocode_region": "44",
+      "transport_marchandise_origine_region.date_mesure.year": "2023-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 31374703322.6186,
+      "transport_marchandise_origine_region.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Italie",
+      "transport_marchandise_origine_region.geocode_region": "IT",
+      "transport_marchandise_origine_region.date_mesure.year": "2023-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 444055439,
+      "transport_marchandise_origine_region.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Occitanie",
+      "transport_marchandise_origine_region.geocode_region": "76",
+      "transport_marchandise_origine_region.date_mesure.year": "2023-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 19247630062.2245,
+      "transport_marchandise_origine_region.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Luxembourg",
+      "transport_marchandise_origine_region.geocode_region": "LU",
+      "transport_marchandise_origine_region.date_mesure.year": "2023-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 971291738,
+      "transport_marchandise_origine_region.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Île-de-France",
+      "transport_marchandise_origine_region.geocode_region": "11",
+      "transport_marchandise_origine_region.date_mesure.year": "2023-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 21109484876.6849,
+      "transport_marchandise_origine_region.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Pays de la Loire",
+      "transport_marchandise_origine_region.geocode_region": "52",
+      "transport_marchandise_origine_region.date_mesure.year": "2023-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 16682281766.875599,
+      "transport_marchandise_origine_region.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Corse",
+      "transport_marchandise_origine_region.geocode_region": "94",
+      "transport_marchandise_origine_region.date_mesure.year": "2023-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 202839509.89464998,
+      "transport_marchandise_origine_region.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Pays-Bas",
+      "transport_marchandise_origine_region.geocode_region": "NL",
+      "transport_marchandise_origine_region.date_mesure.year": "2023-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 439059465,
+      "transport_marchandise_origine_region.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Belgique",
+      "transport_marchandise_origine_region.geocode_region": "BE",
+      "transport_marchandise_origine_region.date_mesure.year": "2023-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 2037135693,
+      "transport_marchandise_origine_region.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Nouvelle-Aquitaine",
+      "transport_marchandise_origine_region.geocode_region": "75",
+      "transport_marchandise_origine_region.date_mesure.year": "2023-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 26148966897.187798,
+      "transport_marchandise_origine_region.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Collectivités d'outre-mer",
+      "transport_marchandise_origine_region.geocode_region": "0",
+      "transport_marchandise_origine_region.date_mesure.year": "2024-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 38259777.7163,
+      "transport_marchandise_origine_region.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Pays de la Loire",
+      "transport_marchandise_origine_region.geocode_region": "52",
+      "transport_marchandise_origine_region.date_mesure.year": "2024-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 16371015689.4252,
+      "transport_marchandise_origine_region.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Grand Est",
+      "transport_marchandise_origine_region.geocode_region": "44",
+      "transport_marchandise_origine_region.date_mesure.year": "2024-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 33252382594.9501,
+      "transport_marchandise_origine_region.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Corse",
+      "transport_marchandise_origine_region.geocode_region": "94",
+      "transport_marchandise_origine_region.date_mesure.year": "2024-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 234281053.04511,
+      "transport_marchandise_origine_region.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Espagne",
+      "transport_marchandise_origine_region.geocode_region": "ES",
+      "transport_marchandise_origine_region.date_mesure.year": "2024-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 837245370,
+      "transport_marchandise_origine_region.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Centre-Val de Loire",
+      "transport_marchandise_origine_region.geocode_region": "24",
+      "transport_marchandise_origine_region.date_mesure.year": "2024-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 13222581916.5056,
+      "transport_marchandise_origine_region.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Pays-Bas",
+      "transport_marchandise_origine_region.geocode_region": "NL",
+      "transport_marchandise_origine_region.date_mesure.year": "2024-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 487844585,
+      "transport_marchandise_origine_region.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "transport_marchandise_origine_region.geocode_region": "93",
+      "transport_marchandise_origine_region.date_mesure.year": "2024-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 17804335467.4934,
+      "transport_marchandise_origine_region.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Autre",
+      "transport_marchandise_origine_region.geocode_region": "ZZ",
+      "transport_marchandise_origine_region.date_mesure.year": "2024-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 878233883,
+      "transport_marchandise_origine_region.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Normandie",
+      "transport_marchandise_origine_region.geocode_region": "28",
+      "transport_marchandise_origine_region.date_mesure.year": "2024-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 16802806412.4553,
+      "transport_marchandise_origine_region.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Nouvelle-Aquitaine",
+      "transport_marchandise_origine_region.geocode_region": "75",
+      "transport_marchandise_origine_region.date_mesure.year": "2024-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 26223399531.933502,
+      "transport_marchandise_origine_region.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Belgique",
+      "transport_marchandise_origine_region.geocode_region": "BE",
+      "transport_marchandise_origine_region.date_mesure.year": "2024-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 2694248496,
+      "transport_marchandise_origine_region.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Île-de-France",
+      "transport_marchandise_origine_region.geocode_region": "11",
+      "transport_marchandise_origine_region.date_mesure.year": "2024-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 21111753163.6071,
+      "transport_marchandise_origine_region.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Non précisé",
+      "transport_marchandise_origine_region.geocode_region": "99",
+      "transport_marchandise_origine_region.date_mesure.year": "2024-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 6395892243.118979,
+      "transport_marchandise_origine_region.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Bourgogne-Franche-Comté",
+      "transport_marchandise_origine_region.geocode_region": "27",
+      "transport_marchandise_origine_region.date_mesure.year": "2024-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 15065225277.7182,
+      "transport_marchandise_origine_region.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Auvergne-Rhône-Alpes",
+      "transport_marchandise_origine_region.geocode_region": "84",
+      "transport_marchandise_origine_region.date_mesure.year": "2024-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 32432427120.056,
+      "transport_marchandise_origine_region.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Occitanie",
+      "transport_marchandise_origine_region.geocode_region": "76",
+      "transport_marchandise_origine_region.date_mesure.year": "2024-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 21580952669.8444,
+      "transport_marchandise_origine_region.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Hauts-de-France",
+      "transport_marchandise_origine_region.geocode_region": "32",
+      "transport_marchandise_origine_region.date_mesure.year": "2024-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 35775500035.890305,
+      "transport_marchandise_origine_region.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Allemagne",
+      "transport_marchandise_origine_region.geocode_region": "DE",
+      "transport_marchandise_origine_region.date_mesure.year": "2024-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 2050909340,
+      "transport_marchandise_origine_region.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Luxembourg",
+      "transport_marchandise_origine_region.geocode_region": "LU",
+      "transport_marchandise_origine_region.date_mesure.year": "2024-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 1101179950,
+      "transport_marchandise_origine_region.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Bretagne",
+      "transport_marchandise_origine_region.geocode_region": "53",
+      "transport_marchandise_origine_region.date_mesure.year": "2024-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 12630472596.287699,
+      "transport_marchandise_origine_region.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "transport_marchandise_origine_region.libelle_region": "Italie",
+      "transport_marchandise_origine_region.geocode_region": "IT",
+      "transport_marchandise_origine_region.date_mesure.year": "2024-01-01T00:00:00.000",
+      "transport_marchandise_origine_region.id_686": 355172915,
+      "transport_marchandise_origine_region.date_mesure": "2024-01-01T00:00:00.000"
+    }
+  ],
+  "measureMeta": {
+    "libelle_indicateur": "Tonnes-kilomètres de marchandises transportées par mode (ferroviaire, fluvial, routier) par région d'origine",
+    "statut_commun": "Mesure",
+    "unite": "t.km",
+    "methode_calcul": "Les données proviennent de 3 sources provenant du SDES. Un fichier par mode de transport de marchandise: \n - routier; \n - fluvial; \n - ferroviaire.\n\nDans les fichiers source, pour certaines années et régions les valeurs de tonnes ou de tonnes kilomètres sont indiquées comme 'secret' ces valeurs sont traitées comme NULL et n'apparaissent dans l'API.\n Les tonnes de marchandises en transit dans ces régions ne sont pas inclues."
+  }
+}

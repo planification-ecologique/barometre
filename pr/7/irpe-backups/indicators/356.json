@@ -1,0 +1,645 @@
+{
+  "cubeName": "surface_prairies_dpt",
+  "measureName": "surface_prairies_dpt.id_356",
+  "timeDimension": "surface_prairies_dpt.date_mesure",
+  "extraDimension": "surface_prairies_dpt.geocode_departement",
+  "data": [
+    {
+      "surface_prairies_dpt.libelle_region": "Auvergne-Rhône-Alpes",
+      "surface_prairies_dpt.geocode_region": "84",
+      "surface_prairies_dpt.date_mesure.year": "2020-01-01T00:00:00.000",
+      "surface_prairies_dpt.id_356": "1950591",
+      "surface_prairies_dpt.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "surface_prairies_dpt.libelle_region": "Centre-Val de Loire",
+      "surface_prairies_dpt.geocode_region": "24",
+      "surface_prairies_dpt.date_mesure.year": "2020-01-01T00:00:00.000",
+      "surface_prairies_dpt.id_356": "439706",
+      "surface_prairies_dpt.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "surface_prairies_dpt.libelle_region": "Hauts-de-France",
+      "surface_prairies_dpt.geocode_region": "32",
+      "surface_prairies_dpt.date_mesure.year": "2020-01-01T00:00:00.000",
+      "surface_prairies_dpt.id_356": "342022",
+      "surface_prairies_dpt.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "surface_prairies_dpt.libelle_region": "La Réunion",
+      "surface_prairies_dpt.geocode_region": "04",
+      "surface_prairies_dpt.date_mesure.year": "2020-01-01T00:00:00.000",
+      "surface_prairies_dpt.id_356": "11748",
+      "surface_prairies_dpt.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "surface_prairies_dpt.libelle_region": "Guyane",
+      "surface_prairies_dpt.geocode_region": "03",
+      "surface_prairies_dpt.date_mesure.year": "2020-01-01T00:00:00.000",
+      "surface_prairies_dpt.id_356": "20674",
+      "surface_prairies_dpt.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "surface_prairies_dpt.libelle_region": "Normandie",
+      "surface_prairies_dpt.geocode_region": "28",
+      "surface_prairies_dpt.date_mesure.year": "2020-01-01T00:00:00.000",
+      "surface_prairies_dpt.id_356": "780100",
+      "surface_prairies_dpt.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "surface_prairies_dpt.libelle_region": "Bretagne",
+      "surface_prairies_dpt.geocode_region": "53",
+      "surface_prairies_dpt.date_mesure.year": "2020-01-01T00:00:00.000",
+      "surface_prairies_dpt.id_356": "392289",
+      "surface_prairies_dpt.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "surface_prairies_dpt.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "surface_prairies_dpt.geocode_region": "93",
+      "surface_prairies_dpt.date_mesure.year": "2020-01-01T00:00:00.000",
+      "surface_prairies_dpt.id_356": "586402",
+      "surface_prairies_dpt.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "surface_prairies_dpt.libelle_region": "Occitanie",
+      "surface_prairies_dpt.geocode_region": "76",
+      "surface_prairies_dpt.date_mesure.year": "2020-01-01T00:00:00.000",
+      "surface_prairies_dpt.id_356": "1595474",
+      "surface_prairies_dpt.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "surface_prairies_dpt.libelle_region": "Île-de-France",
+      "surface_prairies_dpt.geocode_region": "11",
+      "surface_prairies_dpt.date_mesure.year": "2020-01-01T00:00:00.000",
+      "surface_prairies_dpt.id_356": "37777",
+      "surface_prairies_dpt.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "surface_prairies_dpt.libelle_region": "Pays de la Loire",
+      "surface_prairies_dpt.geocode_region": "52",
+      "surface_prairies_dpt.date_mesure.year": "2020-01-01T00:00:00.000",
+      "surface_prairies_dpt.id_356": "712100",
+      "surface_prairies_dpt.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "surface_prairies_dpt.libelle_region": "Nouvelle-Aquitaine",
+      "surface_prairies_dpt.geocode_region": "75",
+      "surface_prairies_dpt.date_mesure.year": "2020-01-01T00:00:00.000",
+      "surface_prairies_dpt.id_356": "1440261",
+      "surface_prairies_dpt.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "surface_prairies_dpt.libelle_region": "Mayotte",
+      "surface_prairies_dpt.geocode_region": "06",
+      "surface_prairies_dpt.date_mesure.year": "2020-01-01T00:00:00.000",
+      "surface_prairies_dpt.id_356": "86",
+      "surface_prairies_dpt.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "surface_prairies_dpt.libelle_region": "Corse",
+      "surface_prairies_dpt.geocode_region": "94",
+      "surface_prairies_dpt.date_mesure.year": "2020-01-01T00:00:00.000",
+      "surface_prairies_dpt.id_356": "188825",
+      "surface_prairies_dpt.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "surface_prairies_dpt.libelle_region": "Grand Est",
+      "surface_prairies_dpt.geocode_region": "44",
+      "surface_prairies_dpt.date_mesure.year": "2020-01-01T00:00:00.000",
+      "surface_prairies_dpt.id_356": "809026",
+      "surface_prairies_dpt.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "surface_prairies_dpt.libelle_region": "Guadeloupe",
+      "surface_prairies_dpt.geocode_region": "01",
+      "surface_prairies_dpt.date_mesure.year": "2020-01-01T00:00:00.000",
+      "surface_prairies_dpt.id_356": "24207",
+      "surface_prairies_dpt.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "surface_prairies_dpt.libelle_region": "Martinique",
+      "surface_prairies_dpt.geocode_region": "02",
+      "surface_prairies_dpt.date_mesure.year": "2020-01-01T00:00:00.000",
+      "surface_prairies_dpt.id_356": "14326",
+      "surface_prairies_dpt.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "surface_prairies_dpt.libelle_region": "Bourgogne-Franche-Comté",
+      "surface_prairies_dpt.geocode_region": "27",
+      "surface_prairies_dpt.date_mesure.year": "2020-01-01T00:00:00.000",
+      "surface_prairies_dpt.id_356": "1182902",
+      "surface_prairies_dpt.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "surface_prairies_dpt.libelle_region": "Mayotte",
+      "surface_prairies_dpt.geocode_region": "06",
+      "surface_prairies_dpt.date_mesure.year": "2021-01-01T00:00:00.000",
+      "surface_prairies_dpt.id_356": "12",
+      "surface_prairies_dpt.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "surface_prairies_dpt.libelle_region": "Corse",
+      "surface_prairies_dpt.geocode_region": "94",
+      "surface_prairies_dpt.date_mesure.year": "2021-01-01T00:00:00.000",
+      "surface_prairies_dpt.id_356": "188082",
+      "surface_prairies_dpt.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "surface_prairies_dpt.libelle_region": "Nouvelle-Aquitaine",
+      "surface_prairies_dpt.geocode_region": "75",
+      "surface_prairies_dpt.date_mesure.year": "2021-01-01T00:00:00.000",
+      "surface_prairies_dpt.id_356": "1436676",
+      "surface_prairies_dpt.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "surface_prairies_dpt.libelle_region": "Île-de-France",
+      "surface_prairies_dpt.geocode_region": "11",
+      "surface_prairies_dpt.date_mesure.year": "2021-01-01T00:00:00.000",
+      "surface_prairies_dpt.id_356": "38159",
+      "surface_prairies_dpt.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "surface_prairies_dpt.libelle_region": "Guadeloupe",
+      "surface_prairies_dpt.geocode_region": "01",
+      "surface_prairies_dpt.date_mesure.year": "2021-01-01T00:00:00.000",
+      "surface_prairies_dpt.id_356": "24207",
+      "surface_prairies_dpt.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "surface_prairies_dpt.libelle_region": "Pays de la Loire",
+      "surface_prairies_dpt.geocode_region": "52",
+      "surface_prairies_dpt.date_mesure.year": "2021-01-01T00:00:00.000",
+      "surface_prairies_dpt.id_356": "703070",
+      "surface_prairies_dpt.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "surface_prairies_dpt.libelle_region": "Guyane",
+      "surface_prairies_dpt.geocode_region": "03",
+      "surface_prairies_dpt.date_mesure.year": "2021-01-01T00:00:00.000",
+      "surface_prairies_dpt.id_356": "20674",
+      "surface_prairies_dpt.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "surface_prairies_dpt.libelle_region": "Auvergne-Rhône-Alpes",
+      "surface_prairies_dpt.geocode_region": "84",
+      "surface_prairies_dpt.date_mesure.year": "2021-01-01T00:00:00.000",
+      "surface_prairies_dpt.id_356": "1952335",
+      "surface_prairies_dpt.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "surface_prairies_dpt.libelle_region": "Hauts-de-France",
+      "surface_prairies_dpt.geocode_region": "32",
+      "surface_prairies_dpt.date_mesure.year": "2021-01-01T00:00:00.000",
+      "surface_prairies_dpt.id_356": "338928",
+      "surface_prairies_dpt.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "surface_prairies_dpt.libelle_region": "Bretagne",
+      "surface_prairies_dpt.geocode_region": "53",
+      "surface_prairies_dpt.date_mesure.year": "2021-01-01T00:00:00.000",
+      "surface_prairies_dpt.id_356": "388306",
+      "surface_prairies_dpt.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "surface_prairies_dpt.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "surface_prairies_dpt.geocode_region": "93",
+      "surface_prairies_dpt.date_mesure.year": "2021-01-01T00:00:00.000",
+      "surface_prairies_dpt.id_356": "594833",
+      "surface_prairies_dpt.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "surface_prairies_dpt.libelle_region": "Bourgogne-Franche-Comté",
+      "surface_prairies_dpt.geocode_region": "27",
+      "surface_prairies_dpt.date_mesure.year": "2021-01-01T00:00:00.000",
+      "surface_prairies_dpt.id_356": "1179730",
+      "surface_prairies_dpt.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "surface_prairies_dpt.libelle_region": "Occitanie",
+      "surface_prairies_dpt.geocode_region": "76",
+      "surface_prairies_dpt.date_mesure.year": "2021-01-01T00:00:00.000",
+      "surface_prairies_dpt.id_356": "1608245",
+      "surface_prairies_dpt.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "surface_prairies_dpt.libelle_region": "Normandie",
+      "surface_prairies_dpt.geocode_region": "28",
+      "surface_prairies_dpt.date_mesure.year": "2021-01-01T00:00:00.000",
+      "surface_prairies_dpt.id_356": "778625",
+      "surface_prairies_dpt.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "surface_prairies_dpt.libelle_region": "Grand Est",
+      "surface_prairies_dpt.geocode_region": "44",
+      "surface_prairies_dpt.date_mesure.year": "2021-01-01T00:00:00.000",
+      "surface_prairies_dpt.id_356": "806557",
+      "surface_prairies_dpt.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "surface_prairies_dpt.libelle_region": "La Réunion",
+      "surface_prairies_dpt.geocode_region": "04",
+      "surface_prairies_dpt.date_mesure.year": "2021-01-01T00:00:00.000",
+      "surface_prairies_dpt.id_356": "11698",
+      "surface_prairies_dpt.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "surface_prairies_dpt.libelle_region": "Martinique",
+      "surface_prairies_dpt.geocode_region": "02",
+      "surface_prairies_dpt.date_mesure.year": "2021-01-01T00:00:00.000",
+      "surface_prairies_dpt.id_356": "14375",
+      "surface_prairies_dpt.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "surface_prairies_dpt.libelle_region": "Centre-Val de Loire",
+      "surface_prairies_dpt.geocode_region": "24",
+      "surface_prairies_dpt.date_mesure.year": "2021-01-01T00:00:00.000",
+      "surface_prairies_dpt.id_356": "437724",
+      "surface_prairies_dpt.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "surface_prairies_dpt.libelle_region": "Grand Est",
+      "surface_prairies_dpt.geocode_region": "44",
+      "surface_prairies_dpt.date_mesure.year": "2022-01-01T00:00:00.000",
+      "surface_prairies_dpt.id_356": "802151",
+      "surface_prairies_dpt.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "surface_prairies_dpt.libelle_region": "Pays de la Loire",
+      "surface_prairies_dpt.geocode_region": "52",
+      "surface_prairies_dpt.date_mesure.year": "2022-01-01T00:00:00.000",
+      "surface_prairies_dpt.id_356": "702202",
+      "surface_prairies_dpt.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "surface_prairies_dpt.libelle_region": "Occitanie",
+      "surface_prairies_dpt.geocode_region": "76",
+      "surface_prairies_dpt.date_mesure.year": "2022-01-01T00:00:00.000",
+      "surface_prairies_dpt.id_356": "1609775",
+      "surface_prairies_dpt.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "surface_prairies_dpt.libelle_region": "Nouvelle-Aquitaine",
+      "surface_prairies_dpt.geocode_region": "75",
+      "surface_prairies_dpt.date_mesure.year": "2022-01-01T00:00:00.000",
+      "surface_prairies_dpt.id_356": "1424705",
+      "surface_prairies_dpt.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "surface_prairies_dpt.libelle_region": "Bretagne",
+      "surface_prairies_dpt.geocode_region": "53",
+      "surface_prairies_dpt.date_mesure.year": "2022-01-01T00:00:00.000",
+      "surface_prairies_dpt.id_356": "381837",
+      "surface_prairies_dpt.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "surface_prairies_dpt.libelle_region": "Centre-Val de Loire",
+      "surface_prairies_dpt.geocode_region": "24",
+      "surface_prairies_dpt.date_mesure.year": "2022-01-01T00:00:00.000",
+      "surface_prairies_dpt.id_356": "434988",
+      "surface_prairies_dpt.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "surface_prairies_dpt.libelle_region": "Guadeloupe",
+      "surface_prairies_dpt.geocode_region": "01",
+      "surface_prairies_dpt.date_mesure.year": "2022-01-01T00:00:00.000",
+      "surface_prairies_dpt.id_356": "24207",
+      "surface_prairies_dpt.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "surface_prairies_dpt.libelle_region": "Hauts-de-France",
+      "surface_prairies_dpt.geocode_region": "32",
+      "surface_prairies_dpt.date_mesure.year": "2022-01-01T00:00:00.000",
+      "surface_prairies_dpt.id_356": "341568",
+      "surface_prairies_dpt.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "surface_prairies_dpt.libelle_region": "Bourgogne-Franche-Comté",
+      "surface_prairies_dpt.geocode_region": "27",
+      "surface_prairies_dpt.date_mesure.year": "2022-01-01T00:00:00.000",
+      "surface_prairies_dpt.id_356": "1179720",
+      "surface_prairies_dpt.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "surface_prairies_dpt.libelle_region": "Martinique",
+      "surface_prairies_dpt.geocode_region": "02",
+      "surface_prairies_dpt.date_mesure.year": "2022-01-01T00:00:00.000",
+      "surface_prairies_dpt.id_356": "14375",
+      "surface_prairies_dpt.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "surface_prairies_dpt.libelle_region": "Mayotte",
+      "surface_prairies_dpt.geocode_region": "06",
+      "surface_prairies_dpt.date_mesure.year": "2022-01-01T00:00:00.000",
+      "surface_prairies_dpt.id_356": "12",
+      "surface_prairies_dpt.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "surface_prairies_dpt.libelle_region": "Corse",
+      "surface_prairies_dpt.geocode_region": "94",
+      "surface_prairies_dpt.date_mesure.year": "2022-01-01T00:00:00.000",
+      "surface_prairies_dpt.id_356": "187412",
+      "surface_prairies_dpt.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "surface_prairies_dpt.libelle_region": "Normandie",
+      "surface_prairies_dpt.geocode_region": "28",
+      "surface_prairies_dpt.date_mesure.year": "2022-01-01T00:00:00.000",
+      "surface_prairies_dpt.id_356": "768454",
+      "surface_prairies_dpt.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "surface_prairies_dpt.libelle_region": "Auvergne-Rhône-Alpes",
+      "surface_prairies_dpt.geocode_region": "84",
+      "surface_prairies_dpt.date_mesure.year": "2022-01-01T00:00:00.000",
+      "surface_prairies_dpt.id_356": "1953025",
+      "surface_prairies_dpt.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "surface_prairies_dpt.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "surface_prairies_dpt.geocode_region": "93",
+      "surface_prairies_dpt.date_mesure.year": "2022-01-01T00:00:00.000",
+      "surface_prairies_dpt.id_356": "599307",
+      "surface_prairies_dpt.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "surface_prairies_dpt.libelle_region": "La Réunion",
+      "surface_prairies_dpt.geocode_region": "04",
+      "surface_prairies_dpt.date_mesure.year": "2022-01-01T00:00:00.000",
+      "surface_prairies_dpt.id_356": "11645",
+      "surface_prairies_dpt.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "surface_prairies_dpt.libelle_region": "Guyane",
+      "surface_prairies_dpt.geocode_region": "03",
+      "surface_prairies_dpt.date_mesure.year": "2022-01-01T00:00:00.000",
+      "surface_prairies_dpt.id_356": "21800",
+      "surface_prairies_dpt.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "surface_prairies_dpt.libelle_region": "Île-de-France",
+      "surface_prairies_dpt.geocode_region": "11",
+      "surface_prairies_dpt.date_mesure.year": "2022-01-01T00:00:00.000",
+      "surface_prairies_dpt.id_356": "39167",
+      "surface_prairies_dpt.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "surface_prairies_dpt.libelle_region": "Auvergne-Rhône-Alpes",
+      "surface_prairies_dpt.geocode_region": "84",
+      "surface_prairies_dpt.date_mesure.year": "2023-01-01T00:00:00.000",
+      "surface_prairies_dpt.id_356": "1974035",
+      "surface_prairies_dpt.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "surface_prairies_dpt.libelle_region": "Bourgogne-Franche-Comté",
+      "surface_prairies_dpt.geocode_region": "27",
+      "surface_prairies_dpt.date_mesure.year": "2023-01-01T00:00:00.000",
+      "surface_prairies_dpt.id_356": "1173430",
+      "surface_prairies_dpt.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "surface_prairies_dpt.libelle_region": "La Réunion",
+      "surface_prairies_dpt.geocode_region": "04",
+      "surface_prairies_dpt.date_mesure.year": "2023-01-01T00:00:00.000",
+      "surface_prairies_dpt.id_356": "11631",
+      "surface_prairies_dpt.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "surface_prairies_dpt.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "surface_prairies_dpt.geocode_region": "93",
+      "surface_prairies_dpt.date_mesure.year": "2023-01-01T00:00:00.000",
+      "surface_prairies_dpt.id_356": "604782",
+      "surface_prairies_dpt.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "surface_prairies_dpt.libelle_region": "Occitanie",
+      "surface_prairies_dpt.geocode_region": "76",
+      "surface_prairies_dpt.date_mesure.year": "2023-01-01T00:00:00.000",
+      "surface_prairies_dpt.id_356": "1613950",
+      "surface_prairies_dpt.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "surface_prairies_dpt.libelle_region": "Corse",
+      "surface_prairies_dpt.geocode_region": "94",
+      "surface_prairies_dpt.date_mesure.year": "2023-01-01T00:00:00.000",
+      "surface_prairies_dpt.id_356": "187590",
+      "surface_prairies_dpt.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "surface_prairies_dpt.libelle_region": "Guyane",
+      "surface_prairies_dpt.geocode_region": "03",
+      "surface_prairies_dpt.date_mesure.year": "2023-01-01T00:00:00.000",
+      "surface_prairies_dpt.id_356": "22000",
+      "surface_prairies_dpt.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "surface_prairies_dpt.libelle_region": "Normandie",
+      "surface_prairies_dpt.geocode_region": "28",
+      "surface_prairies_dpt.date_mesure.year": "2023-01-01T00:00:00.000",
+      "surface_prairies_dpt.id_356": "772357",
+      "surface_prairies_dpt.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "surface_prairies_dpt.libelle_region": "Grand Est",
+      "surface_prairies_dpt.geocode_region": "44",
+      "surface_prairies_dpt.date_mesure.year": "2023-01-01T00:00:00.000",
+      "surface_prairies_dpt.id_356": "798438",
+      "surface_prairies_dpt.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "surface_prairies_dpt.libelle_region": "Île-de-France",
+      "surface_prairies_dpt.geocode_region": "11",
+      "surface_prairies_dpt.date_mesure.year": "2023-01-01T00:00:00.000",
+      "surface_prairies_dpt.id_356": "37387",
+      "surface_prairies_dpt.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "surface_prairies_dpt.libelle_region": "Martinique",
+      "surface_prairies_dpt.geocode_region": "02",
+      "surface_prairies_dpt.date_mesure.year": "2023-01-01T00:00:00.000",
+      "surface_prairies_dpt.id_356": "14375",
+      "surface_prairies_dpt.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "surface_prairies_dpt.libelle_region": "Nouvelle-Aquitaine",
+      "surface_prairies_dpt.geocode_region": "75",
+      "surface_prairies_dpt.date_mesure.year": "2023-01-01T00:00:00.000",
+      "surface_prairies_dpt.id_356": "1425519",
+      "surface_prairies_dpt.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "surface_prairies_dpt.libelle_region": "Bretagne",
+      "surface_prairies_dpt.geocode_region": "53",
+      "surface_prairies_dpt.date_mesure.year": "2023-01-01T00:00:00.000",
+      "surface_prairies_dpt.id_356": "374064",
+      "surface_prairies_dpt.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "surface_prairies_dpt.libelle_region": "Centre-Val de Loire",
+      "surface_prairies_dpt.geocode_region": "24",
+      "surface_prairies_dpt.date_mesure.year": "2023-01-01T00:00:00.000",
+      "surface_prairies_dpt.id_356": "442621",
+      "surface_prairies_dpt.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "surface_prairies_dpt.libelle_region": "Hauts-de-France",
+      "surface_prairies_dpt.geocode_region": "32",
+      "surface_prairies_dpt.date_mesure.year": "2023-01-01T00:00:00.000",
+      "surface_prairies_dpt.id_356": "343931",
+      "surface_prairies_dpt.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "surface_prairies_dpt.libelle_region": "Pays de la Loire",
+      "surface_prairies_dpt.geocode_region": "52",
+      "surface_prairies_dpt.date_mesure.year": "2023-01-01T00:00:00.000",
+      "surface_prairies_dpt.id_356": "692967",
+      "surface_prairies_dpt.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "surface_prairies_dpt.libelle_region": "Guadeloupe",
+      "surface_prairies_dpt.geocode_region": "01",
+      "surface_prairies_dpt.date_mesure.year": "2023-01-01T00:00:00.000",
+      "surface_prairies_dpt.id_356": "24207",
+      "surface_prairies_dpt.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "surface_prairies_dpt.libelle_region": "Mayotte",
+      "surface_prairies_dpt.geocode_region": "06",
+      "surface_prairies_dpt.date_mesure.year": "2023-01-01T00:00:00.000",
+      "surface_prairies_dpt.id_356": "12",
+      "surface_prairies_dpt.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "surface_prairies_dpt.libelle_region": "Bourgogne-Franche-Comté",
+      "surface_prairies_dpt.geocode_region": "27",
+      "surface_prairies_dpt.date_mesure.year": "2024-01-01T00:00:00.000",
+      "surface_prairies_dpt.id_356": "1161730",
+      "surface_prairies_dpt.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "surface_prairies_dpt.libelle_region": "Martinique",
+      "surface_prairies_dpt.geocode_region": "02",
+      "surface_prairies_dpt.date_mesure.year": "2024-01-01T00:00:00.000",
+      "surface_prairies_dpt.id_356": "14375",
+      "surface_prairies_dpt.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "surface_prairies_dpt.libelle_region": "Pays de la Loire",
+      "surface_prairies_dpt.geocode_region": "52",
+      "surface_prairies_dpt.date_mesure.year": "2024-01-01T00:00:00.000",
+      "surface_prairies_dpt.id_356": "695212",
+      "surface_prairies_dpt.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "surface_prairies_dpt.libelle_region": "Normandie",
+      "surface_prairies_dpt.geocode_region": "28",
+      "surface_prairies_dpt.date_mesure.year": "2024-01-01T00:00:00.000",
+      "surface_prairies_dpt.id_356": "770754",
+      "surface_prairies_dpt.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "surface_prairies_dpt.libelle_region": "Hauts-de-France",
+      "surface_prairies_dpt.geocode_region": "32",
+      "surface_prairies_dpt.date_mesure.year": "2024-01-01T00:00:00.000",
+      "surface_prairies_dpt.id_356": "342209",
+      "surface_prairies_dpt.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "surface_prairies_dpt.libelle_region": "Grand Est",
+      "surface_prairies_dpt.geocode_region": "44",
+      "surface_prairies_dpt.date_mesure.year": "2024-01-01T00:00:00.000",
+      "surface_prairies_dpt.id_356": "802151",
+      "surface_prairies_dpt.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "surface_prairies_dpt.libelle_region": "Corse",
+      "surface_prairies_dpt.geocode_region": "94",
+      "surface_prairies_dpt.date_mesure.year": "2024-01-01T00:00:00.000",
+      "surface_prairies_dpt.id_356": "186507",
+      "surface_prairies_dpt.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "surface_prairies_dpt.libelle_region": "La Réunion",
+      "surface_prairies_dpt.geocode_region": "04",
+      "surface_prairies_dpt.date_mesure.year": "2024-01-01T00:00:00.000",
+      "surface_prairies_dpt.id_356": "11682",
+      "surface_prairies_dpt.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "surface_prairies_dpt.libelle_region": "Centre-Val de Loire",
+      "surface_prairies_dpt.geocode_region": "24",
+      "surface_prairies_dpt.date_mesure.year": "2024-01-01T00:00:00.000",
+      "surface_prairies_dpt.id_356": "450303",
+      "surface_prairies_dpt.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "surface_prairies_dpt.libelle_region": "Mayotte",
+      "surface_prairies_dpt.geocode_region": "06",
+      "surface_prairies_dpt.date_mesure.year": "2024-01-01T00:00:00.000",
+      "surface_prairies_dpt.id_356": "12",
+      "surface_prairies_dpt.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "surface_prairies_dpt.libelle_region": "Nouvelle-Aquitaine",
+      "surface_prairies_dpt.geocode_region": "75",
+      "surface_prairies_dpt.date_mesure.year": "2024-01-01T00:00:00.000",
+      "surface_prairies_dpt.id_356": "1441114",
+      "surface_prairies_dpt.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "surface_prairies_dpt.libelle_region": "Occitanie",
+      "surface_prairies_dpt.geocode_region": "76",
+      "surface_prairies_dpt.date_mesure.year": "2024-01-01T00:00:00.000",
+      "surface_prairies_dpt.id_356": "1623105",
+      "surface_prairies_dpt.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "surface_prairies_dpt.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "surface_prairies_dpt.geocode_region": "93",
+      "surface_prairies_dpt.date_mesure.year": "2024-01-01T00:00:00.000",
+      "surface_prairies_dpt.id_356": "601865",
+      "surface_prairies_dpt.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "surface_prairies_dpt.libelle_region": "Guadeloupe",
+      "surface_prairies_dpt.geocode_region": "01",
+      "surface_prairies_dpt.date_mesure.year": "2024-01-01T00:00:00.000",
+      "surface_prairies_dpt.id_356": "24810",
+      "surface_prairies_dpt.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "surface_prairies_dpt.libelle_region": "Bretagne",
+      "surface_prairies_dpt.geocode_region": "53",
+      "surface_prairies_dpt.date_mesure.year": "2024-01-01T00:00:00.000",
+      "surface_prairies_dpt.id_356": "370179",
+      "surface_prairies_dpt.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "surface_prairies_dpt.libelle_region": "Auvergne-Rhône-Alpes",
+      "surface_prairies_dpt.geocode_region": "84",
+      "surface_prairies_dpt.date_mesure.year": "2024-01-01T00:00:00.000",
+      "surface_prairies_dpt.id_356": "1959605",
+      "surface_prairies_dpt.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "surface_prairies_dpt.libelle_region": "Guyane",
+      "surface_prairies_dpt.geocode_region": "03",
+      "surface_prairies_dpt.date_mesure.year": "2024-01-01T00:00:00.000",
+      "surface_prairies_dpt.id_356": "22150",
+      "surface_prairies_dpt.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "surface_prairies_dpt.libelle_region": "Île-de-France",
+      "surface_prairies_dpt.geocode_region": "11",
+      "surface_prairies_dpt.date_mesure.year": "2024-01-01T00:00:00.000",
+      "surface_prairies_dpt.id_356": "37819",
+      "surface_prairies_dpt.date_mesure": "2024-01-01T00:00:00.000"
+    }
+  ],
+  "measureMeta": {
+    "libelle_indicateur": "Surfaces en prairies permanentes",
+    "statut_commun": "Mesure",
+    "unite": "ha",
+    "id_parents": "804",
+    "methode_calcul": "Nous utilisons ici les données venant des statistiques agricoles annuelles de l'Agreste. La surface totale du territoire classée en prairie permanente tient compte des espaces agricoles suivant : 14 - Prairies naturelles ou semées depuis plus de 5 ans,\n 15 - STH (Superficies toujours en herbe) peu productives (pâturages pauvres),\n 16 - STH non productives subventionnées"
+  }
+}
