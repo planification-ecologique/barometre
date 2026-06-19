@@ -5,9 +5,10 @@
       <h1 class="fr-h3 home__title">Réussir simultanément nos transitions écologiques</h1>
 
       <div class="fr-grid-row fr-grid-row--gutters home__hero-grid">
-        <div class="fr-col-12 fr-col-lg-6">
+        <div class="fr-col-12 fr-col-lg-5">
           <figure class="home__rosace-wrap">
             <img
+              ref="rosaceImg"
               class="home__rosace fr-responsive-img"
               :src="rosaceSrc"
               alt="Schéma France Nation Verte : cinq enjeux environnementaux au centre, six thématiques et leurs chantiers opérationnels autour."
@@ -18,12 +19,39 @@
             />
           </figure>
         </div>
-        <div class="fr-col-12 fr-col-lg-6 home__hero-text fr-text--md">
-          <p>
-            Réduire nos émissions, s'adapter au climat qui change, protéger l'eau et la nature, préserver nos ressources, moins polluer.
-            Ces défis systémiques sont interdépendants - et ils nous concernent tous, dans notre façon de nous déplacer, nous loger, nous nourrir...
-            Fort de plus de 250 indicateurs, ce baromètre propose une vision quantifiée de ces transitions.
-          </p>
+        <div class="fr-col-12 fr-col-lg-7 home__hero-text fr-text--md">
+          <div
+            id="home-hero-intro-region"
+            ref="heroIntroClip"
+            class="home__hero-intro-clip"
+          >
+            <div ref="heroIntroInner" class="home__hero-intro-inner">
+              <template v-if="heroIntroExpanded || !heroIntroShowToggle">
+                <p>{{ heroIntroP1 }}</p>
+                <p>{{ heroIntroP2 }}</p>
+                <p v-if="heroIntroShowToggle && heroIntroExpanded" class="home__hero-read-more-wrap">
+                  <button
+                    type="button"
+                    class="home__hero-read-more"
+                    aria-expanded="true"
+                    aria-controls="home-hero-intro-region"
+                    @click="toggleHeroIntro"
+                  >
+                    Lire moins
+                  </button>
+                </p>
+              </template>
+              <p v-else>
+                {{ heroIntroCollapsedText }}<span aria-hidden="true">{{ heroIntroReadMoreSeparator }}</span><button
+                  type="button"
+                  class="home__hero-read-more"
+                  aria-expanded="false"
+                  aria-controls="home-hero-intro-region"
+                  @click="toggleHeroIntro"
+                >{{ heroIntroReadMoreLabel }}</button>
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </header>
@@ -291,6 +319,58 @@ const AXE_DISPLAY_NAME_OVERRIDES = {
 const TIME_QUERY = { date_start: '2015-01-01', date_end: '2031-01-01' }
 const SPOTLIGHT_COUNT = 2
 
+const HERO_INTRO_P1 =
+  "Réduire nos émissions, s'adapter au climat qui change, protéger l'eau et la nature, préserver nos ressources, moins polluer. " +
+  "Ces défis systémiques sont interdépendants - et ils nous concernent tous, dans notre façon de nous déplacer, nous loger, nous nourrir... " +
+  'Fort de plus de 250 indicateurs, ce baromètre propose une vision quantifiée de ces transitions.'
+
+const HERO_INTRO_P2 =
+  'Les cibles affichées ne constituent pas systématiquement des engagements formels, mais donnent une indication sur les points de passage cohérents avec les stratégies environnementales. ' +
+  'Les données alimentant les indicateurs proviennent de sources diverses, disponibles à des niveaux variables de fréquence de mise à jour ou de granularité. Les sources et précisions méthodologiques sont données en commentaire pour chaque indicateur.'
+
+const HERO_INTRO_READ_MORE_LABEL = '… Lire plus'
+const HERO_INTRO_READ_MORE_SEPARATOR = '\u00A0'
+const HERO_INTRO_READ_MORE_BTN_STYLE =
+  'display:inline;margin:0;padding:0;border:none;background:none;font:inherit;line-height:inherit;color:#000091;text-decoration:underline'
+
+function escapeHtml(text) {
+  return String(text)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+}
+
+/** Largest word prefix of fullText + inline « Lire plus » that fits in maxHeight. */
+function fitHeroIntroCollapsedText(probe, fullText, maxHeight) {
+  const words = fullText.split(/\s+/).filter(Boolean)
+  if (!words.length) return ''
+
+  let lo = 0
+  let hi = words.length
+  let best = ''
+
+  while (lo <= hi) {
+    const mid = Math.floor((lo + hi) / 2)
+    const text = words.slice(0, mid).join(' ')
+    probe.innerHTML =
+      `<p style="margin:0;line-height:1.65">${escapeHtml(text)}${HERO_INTRO_READ_MORE_SEPARATOR}<button type="button" style="${HERO_INTRO_READ_MORE_BTN_STYLE}">${HERO_INTRO_READ_MORE_LABEL}</button></p>`
+    if (probe.scrollHeight <= maxHeight + 1) {
+      best = text
+      lo = mid + 1
+    } else {
+      hi = mid - 1
+    }
+  }
+
+  return best
+}
+
+function measureHeroIntroFullHeight(probe, p1, p2) {
+  const pStyle = 'margin:0 0 1rem;line-height:1.65;'
+  probe.innerHTML = `<p style="${pStyle}">${escapeHtml(p1)}</p><p style="${pStyle}margin-bottom:0">${escapeHtml(p2)}</p>`
+  return probe.scrollHeight
+}
+
 function pickSectorName(matchFn, names) {
   return names.find(matchFn) || null
 }
@@ -390,7 +470,14 @@ export default {
       etatSpotlights: [],
       chantierSpotlights: [],
       etatSpotlightPoolSize: 0,
-      chantierSpotlightPoolSize: 0
+      chantierSpotlightPoolSize: 0,
+      heroIntroExpanded: false,
+      heroIntroShowToggle: false,
+      heroIntroCollapsedText: '',
+      heroIntroP1: HERO_INTRO_P1,
+      heroIntroP2: HERO_INTRO_P2,
+      heroIntroReadMoreLabel: HERO_INTRO_READ_MORE_LABEL,
+      heroIntroReadMoreSeparator: HERO_INTRO_READ_MORE_SEPARATOR
     }
   },
   computed: {
@@ -439,6 +526,28 @@ export default {
   },
   async mounted() {
     await Promise.all([this.loadSectors(), this.loadStrategies(), this.loadSpotlights()])
+    this.$nextTick(() => {
+      this.setupHeroIntroLayout()
+      this.updateHeroIntroClamp()
+      if (typeof document !== 'undefined' && document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(() => this.updateHeroIntroClamp())
+      }
+    })
+  },
+  beforeDestroy() {
+    window.removeEventListener('resize', this._onHeroIntroLayout)
+    const img = this.$refs.rosaceImg
+    if (img && this._onHeroIntroLayout) {
+      img.removeEventListener('load', this._onHeroIntroLayout)
+    }
+    if (this._rosaceResizeObserver) {
+      this._rosaceResizeObserver.disconnect()
+      this._rosaceResizeObserver = null
+    }
+    if (this._heroIntroMeasureProbe && this._heroIntroMeasureProbe.parentNode) {
+      this._heroIntroMeasureProbe.parentNode.removeChild(this._heroIntroMeasureProbe)
+      this._heroIntroMeasureProbe = null
+    }
   },
   methods: {
     slugify(str) {
@@ -573,6 +682,76 @@ export default {
         query: { section: SECTION_SYNTHESE_SLUG },
         hash: '#sector-' + this.slugify(sector)
       }
+    },
+    getHeroIntroMeasureProbe(width) {
+      if (!this._heroIntroMeasureProbe) {
+        const el = document.createElement('div')
+        el.setAttribute('aria-hidden', 'true')
+        el.style.cssText =
+          'position:fixed;left:-9999px;top:0;visibility:hidden;pointer-events:none;font-family:Marianne,arial,sans-serif;font-size:1rem;line-height:1.65;'
+        document.body.appendChild(el)
+        this._heroIntroMeasureProbe = el
+      }
+      this._heroIntroMeasureProbe.style.width = `${width}px`
+      return this._heroIntroMeasureProbe
+    },
+    setupHeroIntroLayout() {
+      if (this._heroIntroLayoutBound) return
+      this._heroIntroLayoutBound = true
+      this._onHeroIntroLayout = () => {
+        window.requestAnimationFrame(() => this.updateHeroIntroClamp())
+      }
+      window.addEventListener('resize', this._onHeroIntroLayout)
+      const img = this.$refs.rosaceImg
+      if (img) {
+        img.addEventListener('load', this._onHeroIntroLayout)
+        if (typeof ResizeObserver !== 'undefined') {
+          this._rosaceResizeObserver = new ResizeObserver(this._onHeroIntroLayout)
+          this._rosaceResizeObserver.observe(img)
+        }
+      }
+    },
+    updateHeroIntroClamp() {
+      const img = this.$refs.rosaceImg
+      const inner = this.$refs.heroIntroInner
+      if (!img || !inner) return
+
+      const isLgUp = window.matchMedia('(min-width: 62em)').matches
+      if (!isLgUp) {
+        this.heroIntroShowToggle = false
+        this.heroIntroExpanded = false
+        this.heroIntroCollapsedText = ''
+        return
+      }
+
+      const h = img.offsetHeight
+      const width = inner.clientWidth
+      if (!h || !width) {
+        this.heroIntroShowToggle = false
+        this.heroIntroCollapsedText = ''
+        return
+      }
+
+      const probe = this.getHeroIntroMeasureProbe(width)
+      const fullHeight = measureHeroIntroFullHeight(probe, HERO_INTRO_P1, HERO_INTRO_P2)
+      const overflows = fullHeight > h + 4
+      this.heroIntroShowToggle = overflows
+
+      if (!overflows) {
+        this.heroIntroExpanded = false
+        this.heroIntroCollapsedText = ''
+        return
+      }
+
+      const fullText = `${HERO_INTRO_P1} ${HERO_INTRO_P2}`
+      this.heroIntroCollapsedText = fitHeroIntroCollapsedText(probe, fullText, h)
+      if (!this.heroIntroCollapsedText) this.heroIntroShowToggle = false
+    },
+    toggleHeroIntro() {
+      this.heroIntroExpanded = !this.heroIntroExpanded
+      if (!this.heroIntroExpanded) {
+        this.$nextTick(() => this.updateHeroIntroClamp())
+      }
     }
   }
 }
@@ -641,6 +820,35 @@ export default {
 
 .home__hero-text {
   text-align: left;
+}
+
+.home__hero-intro-clip {
+  position: relative;
+}
+
+.home__hero-read-more-wrap {
+  margin: 0;
+}
+
+.home__hero-read-more {
+  display: inline;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  font: inherit;
+  line-height: inherit;
+  color: var(--text-action-high-blue-france, #000091);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.home__hero-read-more:hover {
+  color: var(--text-action-high-blue-france-hover, #1212ff);
+}
+
+.home__hero-text .home__hero-intro-inner p:last-child {
+  margin-bottom: 0;
 }
 
 .home__hero-text p {
