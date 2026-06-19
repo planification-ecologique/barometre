@@ -248,6 +248,29 @@ function writeJson(filePath, data) {
   fs.writeFileSync(filePath, `${JSON.stringify(data, null, 2)}\n`, 'utf8');
 }
 
+function readExistingIndicatorPayload(indicatorId) {
+  const filePath = indicatorCachePath(indicatorId);
+  if (!fs.existsSync(filePath)) return null;
+  try {
+    return JSON.parse(fs.readFileSync(filePath, 'utf8'));
+  } catch {
+    return null;
+  }
+}
+
+function validateIndicatorPayload(payload, existing) {
+  const rowCount = Array.isArray(payload?.data) ? payload.data.length : 0;
+  const existingRows = Array.isArray(existing?.data) ? existing.data.length : 0;
+
+  if (rowCount === 0) {
+    throw new Error('Réponse API vide.');
+  }
+
+  if (existingRows > 0 && rowCount < existingRows) {
+    throw new Error(`Moins de lignes qu'en cache (${rowCount} < ${existingRows}).`);
+  }
+}
+
 function readManifest() {
   if (!fs.existsSync(MANIFEST_PATH)) return null;
   try {
@@ -278,7 +301,13 @@ async function main() {
   loadEnvFile('.env.production');
   loadEnvFile('.env.local');
 
+  const forceRefresh =
+    process.argv.includes('--force') || process.env.IRPE_CACHE_FORCE === '1';
+
   console.log('Starting Écolab IRPE cache download...\n');
+  if (forceRefresh) {
+    console.log('Force refresh enabled — ignoring cache age.\n');
+  }
 
   if (!fs.existsSync(OUTPUT_DIR)) fs.mkdirSync(OUTPUT_DIR, { recursive: true });
   if (!fs.existsSync(INDICATORS_DIR)) fs.mkdirSync(INDICATORS_DIR, { recursive: true });
@@ -290,7 +319,7 @@ async function main() {
   console.log(`Found ${indicatorIds.length} validated IRPE indicator id(s).\n`);
 
   const manifest = readManifest();
-  const cacheFresh = isCacheFresh(manifest);
+  const cacheFresh = !forceRefresh && isCacheFresh(manifest);
   const missingIds = getMissingIndicatorIds(indicatorIds);
   const needsMeta = !fs.existsSync(META_PATH) || !cacheFresh;
   const idsToFetch = cacheFresh ? missingIds : indicatorIds;
@@ -321,7 +350,9 @@ async function main() {
   for (const indicatorId of idsToFetch) {
     try {
       console.log(`Fetching indicator ${indicatorId}...`);
+      const existing = readExistingIndicatorPayload(indicatorId);
       const payload = await loadAllRegionsDataForIndicator(meta, indicatorId);
+      validateIndicatorPayload(payload, existing);
       writeJson(indicatorCachePath(indicatorId), payload);
       console.log(`✓ Saved indicators/${indicatorId}.json (${payload.data.length} rows)`);
     } catch (error) {

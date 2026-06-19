@@ -1,0 +1,60 @@
+name: Cache IRPE data
+
+on:
+  schedule:
+    # Daily at 04:00 UTC (05:00/06:00 Paris)
+    - cron: '0 4 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: cache-irpe
+  cancel-in-progress: false
+
+jobs:
+  cache-irpe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '21'
+          cache: npm
+          cache-dependency-path: app/package-lock.json
+
+      - name: Install dependencies
+        working-directory: app
+        run: npm ci
+
+      - name: Download Grist CSV backups
+        working-directory: app
+        run: npm run download-grist-csvs
+
+      - name: Refresh IRPE cache
+        working-directory: app
+        env:
+          VUE_APP_ECOLAB_API_TOKEN: ${{ secrets.VUE_APP_ECOLAB_API_TOKEN }}
+        run: npm run download-irpe-cache -- --force
+
+      - name: Commit and push updates to main
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          if git diff --quiet -- app/public/grist-backups app/public/irpe-backups; then
+            echo "No cache changes to commit."
+            exit 0
+          fi
+
+          git add app/public/grist-backups app/public/irpe-backups
+          git commit -m "$(cat <<'EOF'
+chore: refresh IRPE cache and Grist backups
+
+Scheduled daily update of Écolab regional data and Grist CSV snapshots.
+EOF
+)"
+          git pull --rebase origin main
+          git push origin HEAD:main
