@@ -1,0 +1,645 @@
+{
+  "cubeName": "chaleur_livree_com",
+  "measureName": "chaleur_livree_com.id_509",
+  "timeDimension": "chaleur_livree_com.date_mesure",
+  "extraDimension": "chaleur_livree_com.geocode_commune",
+  "data": [
+    {
+      "chaleur_livree_com.libelle_region": "Occitanie",
+      "chaleur_livree_com.geocode_region": "76",
+      "chaleur_livree_com.date_mesure.year": "2018-01-01T00:00:00.000",
+      "chaleur_livree_com.id_509": 0.5050699999999999,
+      "chaleur_livree_com.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "chaleur_livree_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "chaleur_livree_com.geocode_region": "84",
+      "chaleur_livree_com.date_mesure.year": "2018-01-01T00:00:00.000",
+      "chaleur_livree_com.id_509": 2.9051819999999995,
+      "chaleur_livree_com.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "chaleur_livree_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "chaleur_livree_com.geocode_region": "93",
+      "chaleur_livree_com.date_mesure.year": "2018-01-01T00:00:00.000",
+      "chaleur_livree_com.id_509": 0.331796,
+      "chaleur_livree_com.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "chaleur_livree_com.libelle_region": "Hauts-de-France",
+      "chaleur_livree_com.geocode_region": "32",
+      "chaleur_livree_com.date_mesure.year": "2018-01-01T00:00:00.000",
+      "chaleur_livree_com.id_509": 1.4464119999999998,
+      "chaleur_livree_com.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "chaleur_livree_com.libelle_region": "Normandie",
+      "chaleur_livree_com.geocode_region": "28",
+      "chaleur_livree_com.date_mesure.year": "2018-01-01T00:00:00.000",
+      "chaleur_livree_com.id_509": 1.0950579999999999,
+      "chaleur_livree_com.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "chaleur_livree_com.libelle_region": "Bourgogne-Franche-Comté",
+      "chaleur_livree_com.geocode_region": "27",
+      "chaleur_livree_com.date_mesure.year": "2018-01-01T00:00:00.000",
+      "chaleur_livree_com.id_509": 1.1207650000000002,
+      "chaleur_livree_com.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "chaleur_livree_com.libelle_region": "Pays de la Loire",
+      "chaleur_livree_com.geocode_region": "52",
+      "chaleur_livree_com.date_mesure.year": "2018-01-01T00:00:00.000",
+      "chaleur_livree_com.id_509": 0.7491429999999999,
+      "chaleur_livree_com.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "chaleur_livree_com.libelle_region": "Île-de-France",
+      "chaleur_livree_com.geocode_region": "11",
+      "chaleur_livree_com.date_mesure.year": "2018-01-01T00:00:00.000",
+      "chaleur_livree_com.id_509": 11.379617999999997,
+      "chaleur_livree_com.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "chaleur_livree_com.libelle_region": "Grand Est",
+      "chaleur_livree_com.geocode_region": "44",
+      "chaleur_livree_com.date_mesure.year": "2018-01-01T00:00:00.000",
+      "chaleur_livree_com.id_509": 2.304168,
+      "chaleur_livree_com.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "chaleur_livree_com.libelle_region": "Corse",
+      "chaleur_livree_com.geocode_region": "94",
+      "chaleur_livree_com.date_mesure.year": "2018-01-01T00:00:00.000",
+      "chaleur_livree_com.id_509": null,
+      "chaleur_livree_com.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "chaleur_livree_com.libelle_region": "Centre-Val de Loire",
+      "chaleur_livree_com.geocode_region": "24",
+      "chaleur_livree_com.date_mesure.year": "2018-01-01T00:00:00.000",
+      "chaleur_livree_com.id_509": 0.208416,
+      "chaleur_livree_com.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "chaleur_livree_com.libelle_region": "Nouvelle-Aquitaine",
+      "chaleur_livree_com.geocode_region": "75",
+      "chaleur_livree_com.date_mesure.year": "2018-01-01T00:00:00.000",
+      "chaleur_livree_com.id_509": 0.6282190000000001,
+      "chaleur_livree_com.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "chaleur_livree_com.libelle_region": "Bretagne",
+      "chaleur_livree_com.geocode_region": "53",
+      "chaleur_livree_com.date_mesure.year": "2018-01-01T00:00:00.000",
+      "chaleur_livree_com.id_509": 0.577888,
+      "chaleur_livree_com.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "chaleur_livree_com.libelle_region": "Bretagne",
+      "chaleur_livree_com.geocode_region": "53",
+      "chaleur_livree_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "chaleur_livree_com.id_509": 0.703369,
+      "chaleur_livree_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "chaleur_livree_com.libelle_region": "Normandie",
+      "chaleur_livree_com.geocode_region": "28",
+      "chaleur_livree_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "chaleur_livree_com.id_509": 1.261878,
+      "chaleur_livree_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "chaleur_livree_com.libelle_region": "Hauts-de-France",
+      "chaleur_livree_com.geocode_region": "32",
+      "chaleur_livree_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "chaleur_livree_com.id_509": 1.508182,
+      "chaleur_livree_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "chaleur_livree_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "chaleur_livree_com.geocode_region": "84",
+      "chaleur_livree_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "chaleur_livree_com.id_509": 3.060282,
+      "chaleur_livree_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "chaleur_livree_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "chaleur_livree_com.geocode_region": "93",
+      "chaleur_livree_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "chaleur_livree_com.id_509": 0.261854,
+      "chaleur_livree_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "chaleur_livree_com.libelle_region": "Bourgogne-Franche-Comté",
+      "chaleur_livree_com.geocode_region": "27",
+      "chaleur_livree_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "chaleur_livree_com.id_509": 1.2102219999999997,
+      "chaleur_livree_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "chaleur_livree_com.libelle_region": "Occitanie",
+      "chaleur_livree_com.geocode_region": "76",
+      "chaleur_livree_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "chaleur_livree_com.id_509": 0.6332780000000001,
+      "chaleur_livree_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "chaleur_livree_com.libelle_region": "Nouvelle-Aquitaine",
+      "chaleur_livree_com.geocode_region": "75",
+      "chaleur_livree_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "chaleur_livree_com.id_509": 0.780621,
+      "chaleur_livree_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "chaleur_livree_com.libelle_region": "Île-de-France",
+      "chaleur_livree_com.geocode_region": "11",
+      "chaleur_livree_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "chaleur_livree_com.id_509": 11.022020999999995,
+      "chaleur_livree_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "chaleur_livree_com.libelle_region": "Pays de la Loire",
+      "chaleur_livree_com.geocode_region": "52",
+      "chaleur_livree_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "chaleur_livree_com.id_509": 0.8463959999999998,
+      "chaleur_livree_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "chaleur_livree_com.libelle_region": "Grand Est",
+      "chaleur_livree_com.geocode_region": "44",
+      "chaleur_livree_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "chaleur_livree_com.id_509": 2.8500249999999996,
+      "chaleur_livree_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "chaleur_livree_com.libelle_region": "Centre-Val de Loire",
+      "chaleur_livree_com.geocode_region": "24",
+      "chaleur_livree_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "chaleur_livree_com.id_509": 0.709897,
+      "chaleur_livree_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "chaleur_livree_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "chaleur_livree_com.geocode_region": "93",
+      "chaleur_livree_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "chaleur_livree_com.id_509": 0.40628200000000003,
+      "chaleur_livree_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "chaleur_livree_com.libelle_region": "Normandie",
+      "chaleur_livree_com.geocode_region": "28",
+      "chaleur_livree_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "chaleur_livree_com.id_509": 1.496902,
+      "chaleur_livree_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "chaleur_livree_com.libelle_region": "Bretagne",
+      "chaleur_livree_com.geocode_region": "53",
+      "chaleur_livree_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "chaleur_livree_com.id_509": 0.6523859999999999,
+      "chaleur_livree_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "chaleur_livree_com.libelle_region": "Pays de la Loire",
+      "chaleur_livree_com.geocode_region": "52",
+      "chaleur_livree_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "chaleur_livree_com.id_509": 0.8937550000000002,
+      "chaleur_livree_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "chaleur_livree_com.libelle_region": "Occitanie",
+      "chaleur_livree_com.geocode_region": "76",
+      "chaleur_livree_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "chaleur_livree_com.id_509": 0.7013230000000001,
+      "chaleur_livree_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "chaleur_livree_com.libelle_region": "Grand Est",
+      "chaleur_livree_com.geocode_region": "44",
+      "chaleur_livree_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "chaleur_livree_com.id_509": 2.736158999999999,
+      "chaleur_livree_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "chaleur_livree_com.libelle_region": "Centre-Val de Loire",
+      "chaleur_livree_com.geocode_region": "24",
+      "chaleur_livree_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "chaleur_livree_com.id_509": 0.8384990000000001,
+      "chaleur_livree_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "chaleur_livree_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "chaleur_livree_com.geocode_region": "84",
+      "chaleur_livree_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "chaleur_livree_com.id_509": 3.0434579999999998,
+      "chaleur_livree_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "chaleur_livree_com.libelle_region": "Bourgogne-Franche-Comté",
+      "chaleur_livree_com.geocode_region": "27",
+      "chaleur_livree_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "chaleur_livree_com.id_509": 1.1274090000000005,
+      "chaleur_livree_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "chaleur_livree_com.libelle_region": "Île-de-France",
+      "chaleur_livree_com.geocode_region": "11",
+      "chaleur_livree_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "chaleur_livree_com.id_509": 11.015104000000001,
+      "chaleur_livree_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "chaleur_livree_com.libelle_region": "Hauts-de-France",
+      "chaleur_livree_com.geocode_region": "32",
+      "chaleur_livree_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "chaleur_livree_com.id_509": 1.4833559999999997,
+      "chaleur_livree_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "chaleur_livree_com.libelle_region": "Nouvelle-Aquitaine",
+      "chaleur_livree_com.geocode_region": "75",
+      "chaleur_livree_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "chaleur_livree_com.id_509": 0.8494119999999998,
+      "chaleur_livree_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "chaleur_livree_com.libelle_region": "Occitanie",
+      "chaleur_livree_com.geocode_region": "76",
+      "chaleur_livree_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "chaleur_livree_com.id_509": 0.8164369999999999,
+      "chaleur_livree_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "chaleur_livree_com.libelle_region": "Bourgogne-Franche-Comté",
+      "chaleur_livree_com.geocode_region": "27",
+      "chaleur_livree_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "chaleur_livree_com.id_509": 1.366279,
+      "chaleur_livree_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "chaleur_livree_com.libelle_region": "Bretagne",
+      "chaleur_livree_com.geocode_region": "53",
+      "chaleur_livree_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "chaleur_livree_com.id_509": 0.806322,
+      "chaleur_livree_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "chaleur_livree_com.libelle_region": "Centre-Val de Loire",
+      "chaleur_livree_com.geocode_region": "24",
+      "chaleur_livree_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "chaleur_livree_com.id_509": 0.874841,
+      "chaleur_livree_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "chaleur_livree_com.libelle_region": "Normandie",
+      "chaleur_livree_com.geocode_region": "28",
+      "chaleur_livree_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "chaleur_livree_com.id_509": 1.7006600000000003,
+      "chaleur_livree_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "chaleur_livree_com.libelle_region": "Nouvelle-Aquitaine",
+      "chaleur_livree_com.geocode_region": "75",
+      "chaleur_livree_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "chaleur_livree_com.id_509": 0.9293319999999999,
+      "chaleur_livree_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "chaleur_livree_com.libelle_region": "Pays de la Loire",
+      "chaleur_livree_com.geocode_region": "52",
+      "chaleur_livree_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "chaleur_livree_com.id_509": 1.105648,
+      "chaleur_livree_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "chaleur_livree_com.libelle_region": "Corse",
+      "chaleur_livree_com.geocode_region": "94",
+      "chaleur_livree_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "chaleur_livree_com.id_509": 0.011347,
+      "chaleur_livree_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "chaleur_livree_com.libelle_region": "Île-de-France",
+      "chaleur_livree_com.geocode_region": "11",
+      "chaleur_livree_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "chaleur_livree_com.id_509": 12.385403000000002,
+      "chaleur_livree_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "chaleur_livree_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "chaleur_livree_com.geocode_region": "84",
+      "chaleur_livree_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "chaleur_livree_com.id_509": 3.8205150000000008,
+      "chaleur_livree_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "chaleur_livree_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "chaleur_livree_com.geocode_region": "93",
+      "chaleur_livree_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "chaleur_livree_com.id_509": 0.5231610000000001,
+      "chaleur_livree_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "chaleur_livree_com.libelle_region": "Grand Est",
+      "chaleur_livree_com.geocode_region": "44",
+      "chaleur_livree_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "chaleur_livree_com.id_509": 3.1809360000000004,
+      "chaleur_livree_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "chaleur_livree_com.libelle_region": "Hauts-de-France",
+      "chaleur_livree_com.geocode_region": "32",
+      "chaleur_livree_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "chaleur_livree_com.id_509": 1.809802,
+      "chaleur_livree_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "chaleur_livree_com.libelle_region": "Centre-Val de Loire",
+      "chaleur_livree_com.geocode_region": "24",
+      "chaleur_livree_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "chaleur_livree_com.id_509": 0.766582,
+      "chaleur_livree_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "chaleur_livree_com.libelle_region": "Pays de la Loire",
+      "chaleur_livree_com.geocode_region": "52",
+      "chaleur_livree_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "chaleur_livree_com.id_509": 0.9630859999999999,
+      "chaleur_livree_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "chaleur_livree_com.libelle_region": "Bretagne",
+      "chaleur_livree_com.geocode_region": "53",
+      "chaleur_livree_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "chaleur_livree_com.id_509": 0.750279,
+      "chaleur_livree_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "chaleur_livree_com.libelle_region": "Normandie",
+      "chaleur_livree_com.geocode_region": "28",
+      "chaleur_livree_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "chaleur_livree_com.id_509": 1.5494910000000002,
+      "chaleur_livree_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "chaleur_livree_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "chaleur_livree_com.geocode_region": "84",
+      "chaleur_livree_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "chaleur_livree_com.id_509": 3.5636389999999993,
+      "chaleur_livree_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "chaleur_livree_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "chaleur_livree_com.geocode_region": "93",
+      "chaleur_livree_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "chaleur_livree_com.id_509": 0.4439759999999999,
+      "chaleur_livree_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "chaleur_livree_com.libelle_region": "Occitanie",
+      "chaleur_livree_com.geocode_region": "76",
+      "chaleur_livree_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "chaleur_livree_com.id_509": 0.7285999999999999,
+      "chaleur_livree_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "chaleur_livree_com.libelle_region": "Nouvelle-Aquitaine",
+      "chaleur_livree_com.geocode_region": "75",
+      "chaleur_livree_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "chaleur_livree_com.id_509": 0.8887290000000002,
+      "chaleur_livree_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "chaleur_livree_com.libelle_region": "Hauts-de-France",
+      "chaleur_livree_com.geocode_region": "32",
+      "chaleur_livree_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "chaleur_livree_com.id_509": 1.5139659999999997,
+      "chaleur_livree_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "chaleur_livree_com.libelle_region": "Bourgogne-Franche-Comté",
+      "chaleur_livree_com.geocode_region": "27",
+      "chaleur_livree_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "chaleur_livree_com.id_509": 1.1584689999999997,
+      "chaleur_livree_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "chaleur_livree_com.libelle_region": "Corse",
+      "chaleur_livree_com.geocode_region": "94",
+      "chaleur_livree_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "chaleur_livree_com.id_509": 0.009873,
+      "chaleur_livree_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "chaleur_livree_com.libelle_region": "Grand Est",
+      "chaleur_livree_com.geocode_region": "44",
+      "chaleur_livree_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "chaleur_livree_com.id_509": 2.6642580000000007,
+      "chaleur_livree_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "chaleur_livree_com.libelle_region": "Île-de-France",
+      "chaleur_livree_com.geocode_region": "11",
+      "chaleur_livree_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "chaleur_livree_com.id_509": 10.776306999999992,
+      "chaleur_livree_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "chaleur_livree_com.libelle_region": "Centre-Val de Loire",
+      "chaleur_livree_com.geocode_region": "24",
+      "chaleur_livree_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "chaleur_livree_com.id_509": 0.7831709999999998,
+      "chaleur_livree_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "chaleur_livree_com.libelle_region": "Pays de la Loire",
+      "chaleur_livree_com.geocode_region": "52",
+      "chaleur_livree_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "chaleur_livree_com.id_509": 0.9710599999999998,
+      "chaleur_livree_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "chaleur_livree_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "chaleur_livree_com.geocode_region": "84",
+      "chaleur_livree_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "chaleur_livree_com.id_509": 3.9710189999999996,
+      "chaleur_livree_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "chaleur_livree_com.libelle_region": "Bretagne",
+      "chaleur_livree_com.geocode_region": "53",
+      "chaleur_livree_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "chaleur_livree_com.id_509": 0.7691650000000001,
+      "chaleur_livree_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "chaleur_livree_com.libelle_region": "Occitanie",
+      "chaleur_livree_com.geocode_region": "76",
+      "chaleur_livree_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "chaleur_livree_com.id_509": 0.7738929999999999,
+      "chaleur_livree_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "chaleur_livree_com.libelle_region": "Normandie",
+      "chaleur_livree_com.geocode_region": "28",
+      "chaleur_livree_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "chaleur_livree_com.id_509": 1.472114,
+      "chaleur_livree_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "chaleur_livree_com.libelle_region": "Corse",
+      "chaleur_livree_com.geocode_region": "94",
+      "chaleur_livree_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "chaleur_livree_com.id_509": 0.00889,
+      "chaleur_livree_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "chaleur_livree_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "chaleur_livree_com.geocode_region": "93",
+      "chaleur_livree_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "chaleur_livree_com.id_509": 0.40535199999999993,
+      "chaleur_livree_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "chaleur_livree_com.libelle_region": "Grand Est",
+      "chaleur_livree_com.geocode_region": "44",
+      "chaleur_livree_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "chaleur_livree_com.id_509": 2.6527709999999995,
+      "chaleur_livree_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "chaleur_livree_com.libelle_region": "Île-de-France",
+      "chaleur_livree_com.geocode_region": "11",
+      "chaleur_livree_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "chaleur_livree_com.id_509": 10.544648000000004,
+      "chaleur_livree_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "chaleur_livree_com.libelle_region": "Bourgogne-Franche-Comté",
+      "chaleur_livree_com.geocode_region": "27",
+      "chaleur_livree_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "chaleur_livree_com.id_509": 1.129614,
+      "chaleur_livree_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "chaleur_livree_com.libelle_region": "Nouvelle-Aquitaine",
+      "chaleur_livree_com.geocode_region": "75",
+      "chaleur_livree_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "chaleur_livree_com.id_509": 0.9795730000000002,
+      "chaleur_livree_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "chaleur_livree_com.libelle_region": "Hauts-de-France",
+      "chaleur_livree_com.geocode_region": "32",
+      "chaleur_livree_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "chaleur_livree_com.id_509": 1.5706600000000002,
+      "chaleur_livree_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "chaleur_livree_com.libelle_region": "Pays de la Loire",
+      "chaleur_livree_com.geocode_region": "52",
+      "chaleur_livree_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "chaleur_livree_com.id_509": 1.0690046313900001,
+      "chaleur_livree_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "chaleur_livree_com.libelle_region": "Normandie",
+      "chaleur_livree_com.geocode_region": "28",
+      "chaleur_livree_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "chaleur_livree_com.id_509": 1.4160007572179998,
+      "chaleur_livree_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "chaleur_livree_com.libelle_region": "Île-de-France",
+      "chaleur_livree_com.geocode_region": "11",
+      "chaleur_livree_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "chaleur_livree_com.id_509": 10.064805859159,
+      "chaleur_livree_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "chaleur_livree_com.libelle_region": "Bretagne",
+      "chaleur_livree_com.geocode_region": "53",
+      "chaleur_livree_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "chaleur_livree_com.id_509": 0.905373975,
+      "chaleur_livree_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "chaleur_livree_com.libelle_region": "Bourgogne-Franche-Comté",
+      "chaleur_livree_com.geocode_region": "27",
+      "chaleur_livree_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "chaleur_livree_com.id_509": 1.4930062117400005,
+      "chaleur_livree_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "chaleur_livree_com.libelle_region": "Hauts-de-France",
+      "chaleur_livree_com.geocode_region": "32",
+      "chaleur_livree_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "chaleur_livree_com.id_509": 1.6648334927200001,
+      "chaleur_livree_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "chaleur_livree_com.libelle_region": "Occitanie",
+      "chaleur_livree_com.geocode_region": "76",
+      "chaleur_livree_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "chaleur_livree_com.id_509": 1.1839529168300003,
+      "chaleur_livree_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "chaleur_livree_com.libelle_region": "Corse",
+      "chaleur_livree_com.geocode_region": "94",
+      "chaleur_livree_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "chaleur_livree_com.id_509": 0.008999,
+      "chaleur_livree_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "chaleur_livree_com.libelle_region": "La Réunion",
+      "chaleur_livree_com.geocode_region": "04",
+      "chaleur_livree_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "chaleur_livree_com.id_509": null,
+      "chaleur_livree_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "chaleur_livree_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "chaleur_livree_com.geocode_region": "93",
+      "chaleur_livree_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "chaleur_livree_com.id_509": 0.3912237624500001,
+      "chaleur_livree_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "chaleur_livree_com.libelle_region": "Nouvelle-Aquitaine",
+      "chaleur_livree_com.geocode_region": "75",
+      "chaleur_livree_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "chaleur_livree_com.id_509": 1.1001400398199999,
+      "chaleur_livree_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "chaleur_livree_com.libelle_region": "Centre-Val de Loire",
+      "chaleur_livree_com.geocode_region": "24",
+      "chaleur_livree_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "chaleur_livree_com.id_509": 0.9599462299999999,
+      "chaleur_livree_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "chaleur_livree_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "chaleur_livree_com.geocode_region": "84",
+      "chaleur_livree_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "chaleur_livree_com.id_509": 4.243991382166002,
+      "chaleur_livree_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "chaleur_livree_com.libelle_region": "Grand Est",
+      "chaleur_livree_com.geocode_region": "44",
+      "chaleur_livree_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "chaleur_livree_com.id_509": 2.814075839999999,
+      "chaleur_livree_com.date_mesure": "2024-01-01T00:00:00.000"
+    }
+  ],
+  "measureMeta": {
+    "libelle_indicateur": "Volume de chaleur livrée par les réseaux",
+    "statut_commun": "Mesure",
+    "unite": "TWh",
+    "type spatial": "quantitatif",
+    "methode_calcul": "Les consommations pour chaque réseau sont agrégées en fonction de la commune où est situé le réseau. Certaines données sont privées et ne sont pas prises en compte"
+  }
+}
