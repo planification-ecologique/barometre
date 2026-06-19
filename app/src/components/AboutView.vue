@@ -24,6 +24,10 @@
             Ces défis systémiques sont interdépendants - et ils nous concernent tous, dans notre façon de nous déplacer, nous loger, nous nourrir...
             Fort de plus de 250 indicateurs, ce baromètre propose une vision quantifiée de ces transitions.
           </p>
+          <p>
+            Les cibles affichées ne constituent pas systématiquement des engagements formels, mais donnent une indication sur les points de passage cohérents avec les stratégies environnementales.
+            Les données alimentant les indicateurs proviennent de sources diverses, disponibles à des niveaux variables de fréquence de mise à jour ou de granularité. Les sources et précisions méthodologiques sont données en commentaire pour chaque indicateur.
+          </p>
         </div>
       </div>
     </header>
