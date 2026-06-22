@@ -15,7 +15,7 @@
       "prelevement_eau_usage_com.libelle_region": "Bourgogne-Franche-Comté",
       "prelevement_eau_usage_com.geocode_region": "27",
       "prelevement_eau_usage_com.date_mesure.year": "2008-01-01T00:00:00.000",
-      "prelevement_eau_usage_com.id_638": 409802822.01308995,
+      "prelevement_eau_usage_com.id_638": 409802822.01309,
       "prelevement_eau_usage_com.date_mesure": "2008-01-01T00:00:00.000"
     },
     {
@@ -120,7 +120,7 @@
       "prelevement_eau_usage_com.libelle_region": "Normandie",
       "prelevement_eau_usage_com.geocode_region": "28",
       "prelevement_eau_usage_com.date_mesure.year": "2009-01-01T00:00:00.000",
-      "prelevement_eau_usage_com.id_638": 608397620.680139,
+      "prelevement_eau_usage_com.id_638": 608397620.6801391,
       "prelevement_eau_usage_com.date_mesure": "2009-01-01T00:00:00.000"
     },
     {
@@ -141,7 +141,7 @@
       "prelevement_eau_usage_com.libelle_region": "Occitanie",
       "prelevement_eau_usage_com.geocode_region": "76",
       "prelevement_eau_usage_com.date_mesure.year": "2009-01-01T00:00:00.000",
-      "prelevement_eau_usage_com.id_638": 2092438522.99997,
+      "prelevement_eau_usage_com.id_638": 2092438522.9999697,
       "prelevement_eau_usage_com.date_mesure": "2009-01-01T00:00:00.000"
     },
     {
@@ -253,7 +253,7 @@
       "prelevement_eau_usage_com.libelle_region": "Normandie",
       "prelevement_eau_usage_com.geocode_region": "28",
       "prelevement_eau_usage_com.date_mesure.year": "2010-01-01T00:00:00.000",
-      "prelevement_eau_usage_com.id_638": 587422134.859967,
+      "prelevement_eau_usage_com.id_638": 587422134.8599671,
       "prelevement_eau_usage_com.date_mesure": "2010-01-01T00:00:00.000"
     },
     {
@@ -288,7 +288,7 @@
       "prelevement_eau_usage_com.libelle_region": "Hauts-de-France",
       "prelevement_eau_usage_com.geocode_region": "32",
       "prelevement_eau_usage_com.date_mesure.year": "2011-01-01T00:00:00.000",
-      "prelevement_eau_usage_com.id_638": 671925010.67,
+      "prelevement_eau_usage_com.id_638": 671925010.6700001,
       "prelevement_eau_usage_com.date_mesure": "2011-01-01T00:00:00.000"
     },
     {
@@ -323,14 +323,14 @@
       "prelevement_eau_usage_com.libelle_region": "Centre-Val de Loire",
       "prelevement_eau_usage_com.geocode_region": "24",
       "prelevement_eau_usage_com.date_mesure.year": "2011-01-01T00:00:00.000",
-      "prelevement_eau_usage_com.id_638": 1243922452.6338708,
+      "prelevement_eau_usage_com.id_638": 1243922452.633871,
       "prelevement_eau_usage_com.date_mesure": "2011-01-01T00:00:00.000"
     },
     {
       "prelevement_eau_usage_com.libelle_region": "Occitanie",
       "prelevement_eau_usage_com.geocode_region": "76",
       "prelevement_eau_usage_com.date_mesure.year": "2011-01-01T00:00:00.000",
-      "prelevement_eau_usage_com.id_638": 1667861750.2519703,
+      "prelevement_eau_usage_com.id_638": 1667861750.2519698,
       "prelevement_eau_usage_com.date_mesure": "2011-01-01T00:00:00.000"
     },
     {
