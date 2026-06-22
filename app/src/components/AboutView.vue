@@ -26,7 +26,7 @@
             class="home__hero-intro-clip"
           >
             <div ref="heroIntroInner" class="home__hero-intro-inner">
-              <template v-if="heroIntroExpanded || !heroIntroShowToggle">
+              <template v-if="heroIntroShowFull">
                 <p>{{ heroIntroP1 }}</p>
                 <p>{{ heroIntroP2 }}</p>
                 <p v-if="heroIntroShowToggle && heroIntroExpanded" class="home__hero-read-more-wrap">
@@ -42,7 +42,7 @@
                 </p>
               </template>
               <p v-else>
-                {{ heroIntroCollapsedText }}<span aria-hidden="true">{{ heroIntroReadMoreSeparator }}</span><button
+                {{ heroIntroCollapsedDisplayText }}<span aria-hidden="true">{{ heroIntroReadMoreSeparator }}</span><button
                   type="button"
                   class="home__hero-read-more"
                   aria-expanded="false"
@@ -474,6 +474,8 @@ export default {
       heroIntroExpanded: false,
       heroIntroShowToggle: false,
       heroIntroCollapsedText: '',
+      heroIntroMeasured: false,
+      heroIntroAssumeCollapsed: false,
       heroIntroP1: HERO_INTRO_P1,
       heroIntroP2: HERO_INTRO_P2,
       heroIntroReadMoreLabel: HERO_INTRO_READ_MORE_LABEL,
@@ -522,9 +524,26 @@ export default {
           blurb
         }
       })
+    },
+    heroIntroShowFull() {
+      if (this.heroIntroExpanded) return true
+      if (!this.heroIntroMeasured) return !this.heroIntroAssumeCollapsed
+      return !this.heroIntroShowToggle
+    },
+    heroIntroCollapsedDisplayText() {
+      return this.heroIntroCollapsedText || this.heroIntroP1
+    }
+  },
+  created() {
+    if (typeof window !== 'undefined') {
+      this.heroIntroAssumeCollapsed = window.matchMedia('(min-width: 62em)').matches
     }
   },
   async mounted() {
+    this.$nextTick(() => {
+      this.setupHeroIntroLayout()
+      this.updateHeroIntroClamp()
+    })
     await Promise.all([this.loadSectors(), this.loadStrategies(), this.loadSpotlights()])
     this.$nextTick(() => {
       this.setupHeroIntroLayout()
@@ -718,6 +737,7 @@ export default {
 
       const isLgUp = window.matchMedia('(min-width: 62em)').matches
       if (!isLgUp) {
+        this.heroIntroMeasured = true
         this.heroIntroShowToggle = false
         this.heroIntroExpanded = false
         this.heroIntroCollapsedText = ''
@@ -727,8 +747,6 @@ export default {
       const h = img.offsetHeight
       const width = inner.clientWidth
       if (!h || !width) {
-        this.heroIntroShowToggle = false
-        this.heroIntroCollapsedText = ''
         return
       }
 
@@ -740,12 +758,14 @@ export default {
       if (!overflows) {
         this.heroIntroExpanded = false
         this.heroIntroCollapsedText = ''
+        this.heroIntroMeasured = true
         return
       }
 
       const fullText = `${HERO_INTRO_P1} ${HERO_INTRO_P2}`
       this.heroIntroCollapsedText = fitHeroIntroCollapsedText(probe, fullText, h)
       if (!this.heroIntroCollapsedText) this.heroIntroShowToggle = false
+      this.heroIntroMeasured = true
     },
     toggleHeroIntro() {
       this.heroIntroExpanded = !this.heroIntroExpanded
