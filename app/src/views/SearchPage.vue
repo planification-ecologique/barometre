@@ -24,30 +24,34 @@
               </button>
             </div>
           </section>
-          <br/>
-          <section>
-            <div class="search-filters">
-              <SearchTaxonomyFilters
-                @taxonomy-selected="updateTaxonomySelection"
-                :useStaging="useStaging"
-                :initialSectors="initialSectorsFromQuery"
-                :initialAxes="initialAxesFromQuery"
-              />
-              <button
-                type="button"
-                class="fr-tag regional-filter-btn"
-                :class="{ 'regional-filter-btn--active': filterRegionalOnly }"
-                :aria-pressed="filterRegionalOnly"
-                :title="filterRegionalOnly ? 'Afficher tous les indicateurs' : 'Filtrer les indicateurs avec données régionales disponibles (IRPE valide)'"
-                @click="toggleRegionalFilter"
-              >
-                <span class="ri-hexagon-line regional-filter-icon" aria-hidden="true"></span>
-                Données régionales
-              </button>
-            </div>
+          <section class="search-section search-section--filters">
+            <SearchTaxonomyFilters
+              @taxonomy-selected="updateTaxonomySelection"
+              :useStaging="useStaging"
+              :initialSectors="initialSectorsFromQuery"
+              :initialAxes="initialAxesFromQuery"
+            >
+              <template #extra-filters>
+                <button
+                  type="button"
+                  class="fr-tag filter-tag filter-tag--regional"
+                  :class="{ 'filter-tag--selected': filterRegionalOnly }"
+                  :aria-pressed="filterRegionalOnly"
+                  :title="filterRegionalOnly ? 'Afficher tous les indicateurs' : 'Filtrer les indicateurs avec données régionales disponibles (IRPE valide)'"
+                  @click="toggleRegionalFilter"
+                >
+                  <span
+                    v-if="filterRegionalOnly"
+                    class="filter-tag__check-badge"
+                    aria-hidden="true"
+                  >✓</span>
+                  <span class="ri-hexagon-line filter-tag__icon" aria-hidden="true" />
+                  <span class="filter-tag__label">Données régionales</span>
+                </button>
+              </template>
+            </SearchTaxonomyFilters>
           </section>
-          <br/>
-          <section>
+          <section class="search-section search-section--results">
             <div v-if="isapiloading">
               <p>Chargement des indicateurs...</p>
             </div>
@@ -305,6 +309,8 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import '@/css/search-filter-chips.scss';
+
 .fr-container-page {
   background-color: #f6f6f6;
   padding-top: 1.5rem;
@@ -327,32 +333,11 @@ export default {
   }
 }
 
-.search-filters {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.5rem;
-}
+.search-section {
+  margin-bottom: 1.5rem;
 
-.regional-filter-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.375rem;
-  background-color: #fef7e6;
-  color: #161616;
-  transition: background-color 0.15s, color 0.15s;
-
-  &:hover {
-    background-color: #f5e6c8;
+  &--filters {
+    margin-top: 1rem;
   }
-}
-
-.regional-filter-icon {
-  font-size: 1rem;
-}
-
-.regional-filter-btn--active {
-  background-color: #c4790a;
-  color: #fff;
 }
 </style>
