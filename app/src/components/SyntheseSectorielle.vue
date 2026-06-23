@@ -37,7 +37,7 @@
           :href="'#sector-' + slugify(sector.name)"
           @click.prevent="scrollToSector(sector.name)"
         >
-          → {{ sector.name }}
+          → {{ sectorNomMieux(sector.name) }}
         </a>
       </div>
     </div>
@@ -56,7 +56,7 @@
         class="synthese-sector-section"
       >
         <div class="synthese-sector-header">
-          <h2 class="fr-h3 synthese-sector-title">{{ sector.name }}</h2>
+          <h2 class="fr-h3 synthese-sector-title">{{ sectorNomMieux(sector.name) }}</h2>
           <span class="synthese-sector-stats">
             {{ sector.chantierCount }} chantiers – {{ sector.levierCount }} leviers
           </span>
@@ -255,7 +255,8 @@
 <script>
 import MiniChart from './MiniChart.vue'
 import SynthesisValeursHeaderLegend from './SynthesisValeursHeaderLegend.vue'
-import { getNavigationStructure, getIndicators, isImpactAxe } from '@/services/csvDataService.js'
+import { chantierSectorNomMieux as sectorNomMieux, resolveSectorDescription } from '@/config/sectorMieuxLabels.js';
+import { getNavigationStructure, getIndicators, getSectorDescriptionsMap, isImpactAxe } from '@/services/csvDataService.js'
 import { getAllColors, getHexaFromName } from '@/utils.js'
 import { chantiersRouteName, etatEnvironnementRouteName } from '@/config/routeNames.js'
 import { toSectionSlug } from '@/utils/sectionUrl.js'
@@ -263,15 +264,6 @@ import {
   impactAxeNameToSlug,
   resolveImpactAxeCanonicalFromLabel,
 } from '@/utils/impactAxeUrl.js'
-
-const SECTOR_DESCRIPTIONS = {
-  'Consommer': 'Le secteur "Consommer" traite de l\'économie circulaire, de la réduction des déchets et de la transformation des modes de consommation vers plus de sobriété.',
-  'Préserver': 'Le secteur "Préserver" concerne la préservation des espaces naturels et des ressources en eaux',
-  'Produire': 'Le secteur "Produire" concerne la décarbonation de l\'industrie, le développement des énergies renouvelables et la transformation des procédés industriels.',
-  'Se déplacer': 'Le secteur "Se déplacer" couvre les déplacements de voyageurs et de marchandises, pour l\'ensemble des modes de transports (terrestres, aériens, maritimes et fluviaux).',
-  'Se loger': 'Le secteur "Se loger" traite du bâtiment : rénovation énergétique, construction et exploitations durables ainsi que prévention et protection contre les risques.',
-  'Se nourrir': 'Le secteur "Se nourrir" couvre l\'ensemble de la chaîne alimentaire, de la production agricole à la consommation, en passant par la transformation et la distribution.'
-}
 
 export default {
   name: 'SyntheseSectorielle',
@@ -311,6 +303,7 @@ export default {
     },
   },
   methods: {
+    sectorNomMieux,
     sourceUrl(rawData) {
       return rawData?.lien_donnees_source || rawData?.lien_site_source || ''
     },
@@ -332,6 +325,8 @@ export default {
         }
 
         this.navigationData = response.data
+
+        const sectorDescriptions = await getSectorDescriptionsMap()
 
         // Build the display structure for each non-Synthèse sector
         const sectors = response.data.sectors.filter(s => s.name !== 'Synthèse')
@@ -379,7 +374,7 @@ export default {
 
           sectorStructures.push({
             name: sector.name,
-            description: SECTOR_DESCRIPTIONS[sector.name] || '',
+            description: resolveSectorDescription(sector.name, sectorDescriptions),
             chantierCount: chantierEntries.length,
             levierCount,
             engagementLabel: 'Axe de la taxonomie',

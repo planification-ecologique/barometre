@@ -8,7 +8,7 @@
         class="fr-tag filter-tag filter-tag--sector"
         :class="{ 'filter-tag--selected': sector.selected }"
         :aria-pressed="sector.selected"
-        :title="sector.label"
+        :title="sector.value"
         @click="toggleSector(sector)"
       >
         <span
@@ -46,6 +46,7 @@
 </template>
 
 <script>
+import { chantierSectorNomMieux } from '@/config/sectorMieuxLabels.js';
 import {
   getNavigationStructure,
   IMPACT_AXE_DISPLAY_ORDER,
@@ -99,7 +100,7 @@ export default {
         const initSectors = new Set(this.initialSectors || []);
         this.sectors = sectorNames.map(name => ({
           value: name,
-          label: name,
+          label: chantierSectorNomMieux(name),
           selected: initSectors.has(name)
         }));
 

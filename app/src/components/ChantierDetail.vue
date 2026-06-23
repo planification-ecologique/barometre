@@ -14,7 +14,7 @@
             <router-link class="fr-breadcrumb__link" :to="breadcrumbChantiersSyntheseTo">Chantiers sectoriels</router-link>
           </li>
           <li>
-            <router-link class="fr-breadcrumb__link" :to="breadcrumbSectorSyntheseTo">{{ displaySector }}</router-link>
+            <router-link class="fr-breadcrumb__link" :to="breadcrumbSectorSyntheseTo">{{ displaySectorLabel }}</router-link>
           </li>
           <li>
             <span class="fr-breadcrumb__link" aria-current="page">{{ chantierTitle }}</span>
@@ -192,7 +192,7 @@
 
 <script>
 import GraphBox from "./GraphBox.vue";
-import SectorIcon from "./SectorIcon.vue";
+import { chantierSectorNomMieux as sectorNomMieux } from '@/config/sectorMieuxLabels.js';
 import {
   getIndicators,
   compareImpactAxeLabelsTaxonomie,
@@ -211,7 +211,6 @@ export default {
   name: "ChantierDetail",
   components: {
     GraphBox,
-    SectorIcon,
   },
   props: {
     params: {
@@ -314,8 +313,10 @@ export default {
         }));
     },
     displaySector() {
-      // Use chantier_sector (real sector) if available, otherwise fall back to sector
       return this.params.chantier_sector || this.params.sector || 'Secteur';
+    },
+    displaySectorLabel() {
+      return sectorNomMieux(this.displaySector);
     },
     /** Liens réels (router-link) : évite href="#" + click, souvent cassé avec le DSFR */
     breadcrumbAccueilTo() {

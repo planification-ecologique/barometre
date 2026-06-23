@@ -275,12 +275,13 @@ function parseAxeTaxonomieCell(raw) {
 
 /**
  * Fetch Liste_chantiers (Chantier or Chantier associé, Axe taxonomie, Description chantier).
- * @returns {Promise<{ axesByChantier: Map<string, string[]>, descriptionByChantier: Map<string, string>, orderIndexByChantier: Map<string, number> }>}
+ * @returns {Promise<{ axesByChantier: Map<string, string[]>, descriptionByChantier: Map<string, string>, descriptionBySector: Map<string, string>, orderIndexByChantier: Map<string, number> }>}
  */
 export async function fetchChantiersData() {
   const empty = () => ({
     axesByChantier: new Map(),
     descriptionByChantier: new Map(),
+    descriptionBySector: new Map(),
     orderIndexByChantier: new Map(),
   });
 
@@ -296,10 +297,22 @@ export async function fetchChantiersData() {
     const buildMapsFromRows = (rows) => {
       const axesByChantier = new Map();
       const descriptionByChantier = new Map();
+      const descriptionBySector = new Map();
       const orderIndexByChantier = new Map();
       let listeOrder = 0;
 
       for (const row of rows) {
+        const sectorName = String(row.Secteur ?? row['Nom secteur'] ?? '').trim();
+        const sectorDesc = String(
+          row['Description secteur'] ??
+            row['Description_secteur'] ??
+            row['Description Secteur'] ??
+            ''
+        ).trim();
+        if (sectorName && sectorDesc && !descriptionBySector.has(sectorName)) {
+          descriptionBySector.set(sectorName, sectorDesc);
+        }
+
         const raw = String(
           row['Chantier'] ?? row['Chantier associé'] ?? row['Chantier ou Impact'] ?? ''
         ).trim();
@@ -336,13 +349,14 @@ export async function fetchChantiersData() {
         }
       }
 
-      return { axesByChantier, descriptionByChantier, orderIndexByChantier };
+      return { axesByChantier, descriptionByChantier, descriptionBySector, orderIndexByChantier };
     };
 
     try {
       // Load local backup first (works offline / when API returns 404).
       let axesByChantier = new Map();
       let descriptionByChantier = new Map();
+      let descriptionBySector = new Map();
       let orderIndexByChantier = new Map();
       try {
         const backupText = await loadLocalBackup('grist-chantiers.csv');
@@ -350,6 +364,7 @@ export async function fetchChantiersData() {
         const built = buildMapsFromRows(backupRows);
         axesByChantier = built.axesByChantier;
         descriptionByChantier = built.descriptionByChantier;
+        descriptionBySector = built.descriptionBySector;
         orderIndexByChantier = built.orderIndexByChantier;
       } catch (backupErr) {
         console.warn('Liste_chantiers backup unavailable:', backupErr.message);
@@ -364,6 +379,7 @@ export async function fetchChantiersData() {
           const built = buildMapsFromRows(rows);
           axesByChantier = built.axesByChantier;
           descriptionByChantier = built.descriptionByChantier;
+          descriptionBySector = built.descriptionBySector;
           orderIndexByChantier = built.orderIndexByChantier;
         }
       } catch (apiErr) {
@@ -371,7 +387,7 @@ export async function fetchChantiersData() {
       }
 
       chantiersFetchPromise = null;
-      return { axesByChantier, descriptionByChantier, orderIndexByChantier };
+      return { axesByChantier, descriptionByChantier, descriptionBySector, orderIndexByChantier };
     } catch (error) {
       chantiersFetchPromise = null;
       console.warn('Could not load Liste_chantiers, axe taxonomie column may be empty:', error.message);

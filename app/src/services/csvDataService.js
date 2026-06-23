@@ -1822,6 +1822,14 @@ export async function getChantierListeOrderIndexMap() {
   return m.orderIndexByChantier || new Map();
 }
 
+/**
+ * @returns {Promise<Map<string, string>>}
+ */
+export async function getSectorDescriptionsMap() {
+  const m = await fetchChantiersData();
+  return m.descriptionBySector || new Map();
+}
+
 function sortChantiersObjectKeys(chantiersObj, orderMap) {
   const sorted = {};
   const keys = Object.keys(chantiersObj).sort((ka, kb) =>

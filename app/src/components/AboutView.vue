@@ -238,6 +238,7 @@ import {
   isImpactAxe,
   impactAxeSlugFromNomComplet,
 } from '@/services/csvDataService.js'
+import { chantierSectorNomMieux } from '@/config/sectorMieuxLabels.js'
 import { impactAxeUiForSlug } from '@/config/impactAxeUi.js'
 import { etatEnvironnementRouteName, chantiersRouteName } from '@/config/routeNames.js'
 import { impactAxeNameToSlug } from '@/utils/impactAxeUrl.js'
@@ -513,13 +514,12 @@ export default {
       const names = this.sectorNamesFromApi
       return SECTOR_CARD_DEFS.map((def) => {
         const canonicalName = pickSectorName(def.match, names)
-        const shortLabel = def.shortLabel
         const blurb = canonicalName && SECTOR_BLURBS[canonicalName]
           ? SECTOR_BLURBS[canonicalName]
           : 'Synthèse des chantiers et indicateurs pour ce secteur.'
         return {
-          shortLabel,
-          canonicalName: canonicalName || shortLabel,
+          shortLabel: chantierSectorNomMieux(canonicalName || def.shortLabel),
+          canonicalName: canonicalName || def.shortLabel,
           pictoId: def.pictoId,
           blurb
         }
@@ -672,7 +672,7 @@ export default {
             if (!meta) continue
             chantierPool.push({
               raw: ind,
-              contextLabel: meta.sectorName,
+              contextLabel: chantierSectorNomMieux(meta.sectorName),
               chantierLabel: meta.chantierName
             })
           }

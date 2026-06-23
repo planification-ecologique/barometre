@@ -20,7 +20,7 @@
         </div>
         <div>
           <h1 class="fr-title">Synthèse</h1>
-          <h2 class="fr-subtitle">{{ params.sectorFilter || 'Chantiers sectoriels' }}</h2>
+          <h2 class="fr-subtitle">{{ sectorFilterLabel }}</h2>
         </div>
       </article>
     </div>
@@ -28,7 +28,7 @@
     <!-- Chantiers grouped by sector -->
     <div v-for="(sectorData, sector) in filteredChantiersBySector" :key="sector" class="fr-mt-5w">
       <div class="section-header" v-if="!params.sectorFilter">
-        <h2 class="fr-h3">{{ sector }}</h2>
+        <h2 class="fr-h3">{{ sectorNomMieux(sector) }}</h2>
       </div>
       
       <!-- Chantiers for this sector -->
@@ -69,6 +69,7 @@
 import GraphBox from "./GraphBox.vue";
 import EnvironnementImg from "./components_sgv/EnvironnementImg.vue";
 import SectorIcon from "./SectorIcon.vue";
+import { chantierSectorNomMieux as sectorNomMieux } from '@/config/sectorMieuxLabels.js';
 import {
   isImpactAxe,
   compareChantierNamesByListeOrder,
@@ -111,6 +112,10 @@ export default {
     });
   },
   computed: {
+    sectorFilterLabel() {
+      if (this.params.sectorFilter) return sectorNomMieux(this.params.sectorFilter);
+      return 'Chantiers sectoriels';
+    },
     filteredChantiersBySector() {
       // Filter by selected sector if specified, and remove empty sections
       const result = {};
@@ -146,6 +151,7 @@ export default {
     }
   },
   methods: {
+    sectorNomMieux,
     groupChantiersBySector(data) {
       const orderMap = this.chantierListeOrderMap;
       try {

@@ -53,9 +53,10 @@
                 class="fr-sidemenu__btn"
                 :class="{ 'sidemenu-btn--active': expandedSectorName === sectorName }"
                 :aria-expanded="expandedSectorName === sectorName"
+                :title="sectorNomMieux(sectorName)"
                 @click="toggleSector(sectorName)"
               >
-                {{ sectorName }}
+                {{ sectorNomMieux(sectorName) }}
               </button>
               <div
                 class="sidemenu-chantiers-expanded"
@@ -123,6 +124,7 @@
   </nav>
 </template>
 <script>
+import { chantierSectorNomMieux as sectorNomMieux } from '@/config/sectorMieuxLabels.js';
 import {
   getNavigationStructure,
   IMPACT_AXE_DISPLAY_ORDER,
@@ -448,6 +450,7 @@ export default {
     impactAxeNomCourt(nomComplet) {
       return impactAxeNomCourtFromTaxonomy(nomComplet);
     },
+    sectorNomMieux,
     toggleIndicateurs() {
       this.expandedIndicateurs = !this.expandedIndicateurs;
     },
@@ -648,7 +651,7 @@ export default {
       
         const params = {
           view: 'general-chantiers',
-          label: sectorFilter ? sectorFilter : 'Chantiers',
+          label: sectorFilter ? sectorNomMieux(sectorFilter) : 'Chantiers',
           sector: 'Synthèse',
           sectorFilter: sectorFilter,
           query: {
