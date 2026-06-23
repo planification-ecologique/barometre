@@ -1,6 +1,6 @@
 <template>
   <div class="search-taxonomy-filters">
-    <div v-if="sectors.length > 0" class="fr-tags-group filter-group">
+    <div v-if="sectors.length > 0" class="filter-row">
       <button
         v-for="sector in sectors"
         :key="'sector-' + sector.value"
@@ -11,10 +11,20 @@
         :title="sector.label"
         @click="toggleSector(sector)"
       >
-        {{ sector.label }}
+        <span
+          v-if="sector.selected"
+          class="filter-tag__check-badge"
+          aria-hidden="true"
+        >
+          <span class="fr-icon-check-line" aria-hidden="true" />
+        </span>
+        <span class="filter-tag__label">{{ sector.label }}</span>
       </button>
     </div>
-    <div v-if="displayedAxes.length > 0" class="fr-tags-group filter-group">
+    <div
+      v-if="displayedAxes.length > 0 || $slots['extra-filters']"
+      class="filter-row"
+    >
       <button
         v-for="axe in displayedAxes"
         :key="'axe-' + axe.value"
@@ -22,17 +32,30 @@
         class="fr-tag filter-tag filter-tag--axe"
         :class="{ 'filter-tag--selected': axe.selected }"
         :aria-pressed="axe.selected"
-        :title="axe.label"
+        :title="axe.value"
         @click="toggleAxe(axe)"
       >
-        {{ axe.label }}
+        <span
+          v-if="axe.selected"
+          class="filter-tag__check-badge"
+          aria-hidden="true"
+        >
+          <span class="fr-icon-check-line" aria-hidden="true" />
+        </span>
+        <span class="filter-tag__label">{{ axe.label }}</span>
       </button>
+      <slot name="extra-filters" />
     </div>
   </div>
 </template>
 
 <script>
-import { getNavigationStructure, IMPACT_AXE_DISPLAY_ORDER } from '@/services/csvDataService.js';
+import {
+  getNavigationStructure,
+  IMPACT_AXE_DISPLAY_ORDER,
+  collectSearchImpactAxes,
+  impactAxeNomCourt
+} from '@/services/csvDataService.js';
 
 export default {
   name: 'SearchTaxonomyFilters',
@@ -60,19 +83,10 @@ export default {
   },
   computed: {
     displayedAxes() {
-      const axesSet = new Set(this.axes.map(a => a.value));
-      return IMPACT_AXE_DISPLAY_ORDER.filter(axe =>
-        axesSet.has(axe) ||
-        (axe === 'Économie circulaire' && axesSet.has('Economie circulaire'))
-      ).map(axe => {
-        const value = axesSet.has(axe) ? axe : (axe === 'Économie circulaire' ? 'Economie circulaire' : axe);
-        const existing = this.axes.find(a => a.value === value);
-        return {
-          value: existing?.value ?? value,
-          label: axe,
-          selected: existing ? existing.selected : false
-        };
-      });
+      const order = new Map(IMPACT_AXE_DISPLAY_ORDER.map((axe, i) => [axe, i]));
+      return [...this.axes].sort(
+        (a, b) => (order.get(a.value) ?? 999) - (order.get(b.value) ?? 999)
+      );
     }
   },
   methods: {
@@ -91,21 +105,13 @@ export default {
           selected: initSectors.has(name)
         }));
 
-        const syntheseSector = response.data.sectors?.find(s => s.name === 'Synthèse');
-        const axeKeys = syntheseSector?.indicateursImpact
-          ? Object.keys(syntheseSector.indicateursImpact).filter(axe => axe && axe !== 'Autre')
-          : [];
-        const axesSet = new Set(axeKeys);
+        const availableAxes = collectSearchImpactAxes(response.data);
         const initAxes = new Set((this.initialAxes || []).map(a => String(a).trim()));
-        this.axes = IMPACT_AXE_DISPLAY_ORDER.filter(axe =>
-          axesSet.has(axe) ||
-          (axe === 'Économie circulaire' && axesSet.has('Economie circulaire')) ||
-          axe === 'Adaptation climat'
-        ).map(axe => {
-          const value = axesSet.has(axe) ? axe : (axe === 'Économie circulaire' ? 'Economie circulaire' : axe);
-          const selected = initAxes.has(axe) || initAxes.has(value);
-          return { value, label: axe, selected };
-        });
+        this.axes = IMPACT_AXE_DISPLAY_ORDER.filter((axe) => availableAxes.has(axe)).map((axe) => ({
+          value: axe,
+          label: impactAxeNomCourt(axe),
+          selected: initAxes.has(axe)
+        }));
         if (initSectors.size > 0 || initAxes.size > 0) {
           this.$nextTick(() => this.emitSelection());
         }
@@ -139,52 +145,25 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import '@/css/search-filter-chips.scss';
+
 .search-taxonomy-filters {
   display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: 1rem;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
-.filter-group {
+.filter-row {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: 0.5rem;
-}
+  margin: 0;
+  padding-top: 0.375rem;
+  padding-right: 0.375rem;
 
-.filter-tag {
-  border: 1px solid transparent;
-  transition: background-color 0.15s, border-color 0.15s, color 0.15s;
-
-  &--sector {
-    background-color: #e3e3fd;
-    color: #161616;
-
-    &:hover {
-      background-color: #c9c9e6;
-    }
-
-    &.filter-tag--selected {
-      background-color: #000091;
-      color: #fff;
-      border-color: #000091;
-    }
-  }
-
-  &--axe {
-    background-color: #e8f5e9;
-    color: #161616;
-
-    &:hover {
-      background-color: #c8e6c9;
-    }
-
-    &.filter-tag--selected {
-      background-color: #18753c;
-      color: #fff;
-      border-color: #18753c;
-    }
+  :deep(.filter-tag) {
+    margin: 0;
   }
 }
 </style>

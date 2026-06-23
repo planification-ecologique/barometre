@@ -403,13 +403,44 @@ function parseChantierOuImpactInternal(value) {
   return list[0];
 }
 
+function taxonomyAxeMatchesTarget(rawLabel, targetValues) {
+  if (!rawLabel) return false;
+  const canon =
+    canonicalImpactAxeNomComplet(rawLabel) || normalizeImpactAxeName(rawLabel);
+  return (
+    targetValues.has(canon) ||
+    targetValues.has(rawLabel) ||
+    targetValues.has(normalizeImpactAxeName(rawLabel))
+  );
+}
+
+/**
+ * Direct match (Synthèse / axe) or via Liste_chantiers.Axe taxonomie on chantier name.
+ */
+function associationMatchesTaxonomyAxe(association, targetValues, axesByChantier) {
+  const chantierName = association?.chantierOuImpact;
+  if (!chantierName) return false;
+
+  if (taxonomyAxeMatchesTarget(chantierName, targetValues)) {
+    return true;
+  }
+
+  if (!axesByChantier) return false;
+
+  const axes = axesByChantier.get(chantierName) || [];
+  return axes.some((axeTaxo) => taxonomyAxeMatchesTarget(axeTaxo, targetValues));
+}
+
 /**
  * Transforms CSV data to match the API response format
  * @param {Array} csvData - Raw CSV data
  * @param {Object} query - Query parameters (similar to API request)
+ * @param {Object} [options]
+ * @param {Map<string, string[]>} [options.axesByChantier] - Liste_chantiers axe lookup
  * @returns {Object} - Data in API response format
  */
-export function transformCSVData(csvData, query) {
+export function transformCSVData(csvData, query, options = {}) {
+  const { axesByChantier = null } = options;
   let filteredData = csvData;
   
   // Apply structural filters early (theme, levier, grist_ids) - these filter at the item level
@@ -434,17 +465,9 @@ export function transformCSVData(csvData, query) {
         filteredData = filteredData.filter(item => {
           const associations = parseChantierOuImpactList(item['Chantier ou Impact'] || '');
           if (!associations || associations.length === 0) return false;
-          return associations.some(p => {
-            if (!p.chantierOuImpact) return false;
-            const canon =
-              canonicalImpactAxeNomComplet(p.chantierOuImpact) ||
-              normalizeImpactAxeName(p.chantierOuImpact);
-            return (
-              targetValues.has(canon) ||
-              targetValues.has(p.chantierOuImpact) ||
-              targetValues.has(normalizeImpactAxeName(p.chantierOuImpact))
-            );
-          });
+          return associations.some((p) =>
+            associationMatchesTaxonomyAxe(p, targetValues, axesByChantier)
+          );
         });
       } else if (filter.field === 'grist_ids') {
         // Filter by Grist indicator IDs (for engagements, chantiers, leviers)
@@ -1316,7 +1339,15 @@ export async function getIndicators(query, environment = 'production') {
   try {
     await ensureImpactTaxonomyLoaded();
     const csvData = await fetchCSVData(environment);
-    return transformCSVData(csvData, query);
+    const needsChantierAxes = query.filter_by?.some(
+      (f) => f.field === 'chantier_ou_impact' && f.values?.length
+    );
+    let axesByChantier = null;
+    if (needsChantierAxes) {
+      const chantiersMaps = await fetchChantiersData();
+      axesByChantier = chantiersMaps.axesByChantier;
+    }
+    return transformCSVData(csvData, query, { axesByChantier });
   } catch (error) {
     console.error('Error getting indicators from CSV:', error);
     throw error;
@@ -1710,6 +1741,38 @@ export function isImpactAxe(name) {
 }
 
 /**
+ * Axes d'impact proposés dans les filtres recherche : Synthèse / axe direct
+ * ou chantiers porteurs d'indicateurs (Liste_chantiers.Axe taxonomie).
+ * @param {{ sectors?: Array }} navData - data from getNavigationStructure
+ * @returns {Set<string>} - noms complets taxonomie
+ */
+export function collectSearchImpactAxes(navData) {
+  const availableAxes = new Set();
+  const sectors = navData?.sectors || [];
+  const syntheseSector = sectors.find((s) => s.name === 'Synthèse');
+  if (syntheseSector?.indicateursImpact) {
+    for (const axe of Object.keys(syntheseSector.indicateursImpact)) {
+      if (axe && axe !== 'Autre') availableAxes.add(axe);
+    }
+  }
+  for (const sector of sectors) {
+    for (const chantier of Object.values(sector.chantiers || {})) {
+      const leviers = chantier.sortedLeviers || [];
+      const hasIndicators =
+        leviers.some((l) => (l.indicators || []).length > 0) ||
+        Object.values(chantier.leviers || {}).some((arr) => arr.length > 0);
+      if (!hasIndicators) continue;
+      for (const axeTaxo of chantier.axeTaxonomie || []) {
+        const complet =
+          canonicalImpactAxeNomComplet(axeTaxo) || normalizeImpactAxeName(axeTaxo);
+        if (complet && complet !== 'Autre') availableAxes.add(complet);
+      }
+    }
+  }
+  return availableAxes;
+}
+
+/**
  * Tri des libellés d’axe selon l’ordre des lignes de Liste_taxonomie (IMPACT_AXE_DISPLAY_ORDER).
  * Inconnus en fin ; tie-break alphabétique (fr).
  */
@@ -2032,7 +2095,7 @@ async function buildNavigationStructureCore(environment) {
 
         // Enrich with Axe taxonomie from Liste_chantiers (key: chantier name only)
         const axeTaxonomie = (chantiersAxeMap && chantiersAxeMap.get(chantierName)) || [];
-        chantier.axeTaxonomie = axeTaxonomie;
+        chantier.axeTaxonomie = [...axeTaxonomie].sort(compareImpactAxeLabelsTaxonomie);
         chantier.descriptionChantier =
           (chantiersDescriptionMap && chantiersDescriptionMap.get(chantierName)) || '';
       });
