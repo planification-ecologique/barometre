@@ -1,7 +1,10 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
-import { ensureImpactTaxonomyLoaded } from './services/csvDataService.js'
+import {
+  ensureImpactTaxonomyLoaded,
+  getNavigationStructure,
+} from './services/csvDataService.js'
 import config_file from './services/tarteaucitron_config.js'
 import analytics_config_file, { resolveTrackingDomain } from './services/dsfr_analytics_config.js'
 import './css/website.css'
@@ -65,7 +68,17 @@ function mountApp () {
   }).$mount('#app')
 }
 
-ensureImpactTaxonomyLoaded()
-  .catch((e) => console.warn('Taxonomie axes (Liste_taxonomie) : chargement partiel', e))
-  .finally(() => mountApp())
+const navEnvironment =
+  typeof window !== 'undefined' && window.location.pathname.includes('/staging')
+    ? 'staging'
+    : 'production'
+
+Promise.all([
+  ensureImpactTaxonomyLoaded().catch((e) =>
+    console.warn('Taxonomie axes (Liste_taxonomie) : chargement partiel', e)
+  ),
+  getNavigationStructure(navEnvironment).catch((e) =>
+    console.warn('Structure de navigation : chargement partiel', e)
+  ),
+]).finally(() => mountApp())
 

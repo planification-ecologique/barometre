@@ -41,7 +41,10 @@
           <a
             v-else
             class="fr-nav__link"
-            :class="{ 'fr-nav__link--active': option.selected }"
+            :class="{
+              'fr-nav__link--active': option.selected,
+              'nav-link--with-icon': option.icon,
+            }"
             target="_self"
             :href="option.link"
             :aria-current="option.selected ? 'page' : undefined"
@@ -49,13 +52,13 @@
             :title="option.label"
             @click.prevent="handleNavigation(option)"
           >
+            {{ option.label }}
             <span
               v-if="option.icon"
               :class="option.icon"
               aria-hidden="true"
               class="nav-favoris-icon"
             ></span>
-            {{ option.label }}
           </a>
         </li>
       </ul>
@@ -76,76 +79,69 @@ import {
 } from '@/config/routeNames.js'
 import { SECTION_SYNTHESE_SLUG } from '@/utils/sectionUrl.js'
 
+function buildMenuOptions() {
+  const base = process.env.VUE_APP_PREFIX_PATH
+  const isStaging =
+    typeof window !== 'undefined' &&
+    window.location.pathname.includes('/staging')
+  const stagingPrefix = isStaging ? '/staging' : ''
+  const p = String(base || '') + stagingPrefix
+
+  return [
+    {
+      value: 'accueil',
+      label: 'Accueil',
+      selected: false,
+      link: String(base || '') + stagingPrefix + (stagingPrefix ? '' : '/'),
+    },
+    {
+      value: 'etat-environnement',
+      label: "Etat de l'environnement",
+      selected: false,
+      link: `${p}/etat-environnement?section=${SECTION_SYNTHESE_SLUG}`,
+    },
+    {
+      value: 'chantiers-sectoriels',
+      label: 'Chantiers sectoriels',
+      selected: false,
+      link: `${p}/chantiers?section=${SECTION_SYNTHESE_SLUG}`,
+    },
+    {
+      value: 'recherche',
+      label: 'Recherche',
+      selected: false,
+      link: `${p}/recherche`,
+    },
+    {
+      value: 'favoris',
+      label: 'Favoris',
+      selected: false,
+      icon: 'fr-icon-bookmark-line',
+      link: `${p}/favoris`,
+    },
+  ]
+}
+
 export default {
   name: 'NavigationDsfr',
   data() {
     return {
       myrouter: router,
-      menuOptions: [],
+      menuOptions: buildMenuOptions(),
       sectors: [],
-      dropdownOpen: false
+      dropdownOpen: false,
     }
   },
   methods: {
-    async get_menu_options() {
-      let base = process.env.VUE_APP_PREFIX_PATH
-      const isStaging = window.location.pathname.includes('/staging')
-      const stagingPrefix = isStaging ? '/staging' : ''
-      const p = String(base || '') + stagingPrefix
-
-      // Load sectors from Grist data
+    async loadSectors() {
       try {
         const response = await getNavigationStructure('production')
         if (response.status === 'success' && response.data.sectorNames) {
-          this.sectors = response.data.sectorNames.filter(s => s !== 'Synthèse')
+          this.sectors = response.data.sectorNames.filter((s) => s !== 'Synthèse')
         }
       } catch (error) {
         console.error('Error loading sectors:', error)
       }
-
-      // Build top nav matching Figma: Accueil, Etat de l'environnement, Chantiers sectoriels, Analyse par secteur dropdown, Favoris
-      this.menuOptions = [
-        {
-          value: 'accueil',
-          label: 'Accueil',
-          selected: false,
-          link: String(base || '') + stagingPrefix + (stagingPrefix ? '' : '/')
-        },
-        {
-          value: 'etat-environnement',
-          label: 'Etat de l\'environnement',
-          selected: false,
-          link: `${p}/etat-environnement?section=${SECTION_SYNTHESE_SLUG}`
-        },
-        {
-          value: 'chantiers-sectoriels',
-          label: 'Chantiers sectoriels',
-          selected: false,
-          link: `${p}/chantiers?section=${SECTION_SYNTHESE_SLUG}`
-        },
-        // {
-        //   value: 'analyse-par-secteur',
-        //   label: 'Analyse par secteur',
-        //   selected: false,
-        //   disabled: true
-        // },
-        {
-          value: 'recherche',
-          label: 'Recherche',
-          selected: false,
-          link: `${p}/recherche`
-        },
-        {
-          value: 'favoris',
-          label: 'Favoris',
-          selected: false,
-          icon: 'fr-icon-bookmark-line',
-          link: `${p}/favoris`
-        }
-      ]
-
-      // Set initial active tab
-      this.updateActiveFromRoute()
     },
     slugify(str) {
       return String(str).toLowerCase()
@@ -279,9 +275,11 @@ export default {
       return ''
     }
   },
+  created() {
+    this.updateActiveFromRoute()
+    this.loadSectors()
+  },
   mounted() {
-    this.get_menu_options()
-
     // Close dropdown when clicking outside
     document.addEventListener('click', (e) => {
       if (!e.target.closest('.nav-dropdown-btn') && !e.target.closest('.nav-dropdown-menu')) {
@@ -332,6 +330,37 @@ a:hover:not([href]) {
   margin-left: 17px;
   position: relative;
   list-style: none;
+}
+
+@media (max-width: 991px) {
+  .fr-nav__list {
+    align-items: stretch;
+    padding-left: 0;
+  }
+
+  .nav-item {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .fr-nav__link,
+  .nav-dropdown-btn {
+    text-align: left;
+    justify-content: flex-start;
+  }
+
+  .nav-link--with-icon {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .nav-link--with-icon .nav-favoris-icon {
+    margin-right: 0;
+    margin-left: 0.5rem;
+    flex-shrink: 0;
+  }
 }
 
 /* Style pour l'onglet sélectionné */
@@ -385,6 +414,20 @@ a:hover:not([href]) {
   vertical-align: middle;
   transform: scale(0.7);
   transform-origin: center center;
+}
+
+@media (min-width: 992px) {
+  .nav-link--with-icon {
+    display: inline-flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 0.1rem;
+  }
+
+  .nav-link--with-icon .nav-favoris-icon {
+    margin-right: 0;
+    margin-left: 0;
+  }
 }
 
 /* Dropdown button */

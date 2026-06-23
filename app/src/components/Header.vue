@@ -124,7 +124,10 @@
       </div>
     </div>
   </header>
-  <div class="fr-container--fluid desktop-navigation" v-if="showNavigation">
+  <div
+    class="fr-container--fluid desktop-navigation"
+    :class="{ 'desktop-navigation--open': showNavigation }"
+  >
     <navigation-dsfr></navigation-dsfr>
   </div>
   </div>
@@ -139,11 +142,13 @@ export default {
     NavigationDsfr,
   },
   data() {
+    const isDesktop =
+      typeof window !== "undefined" && window.innerWidth > 991;
     return {
       accueil_link: "/",
       search_link: "/recherche",
-      showNavigation: false,
-      isDesktop: false,
+      showNavigation: isDesktop,
+      isDesktop,
       headerSearchQuery: "",
     };
   },
@@ -313,6 +318,10 @@ export default {
   }
 
   .desktop-navigation {
+    display: none;
+  }
+
+  .desktop-navigation.desktop-navigation--open {
     display: block;
   }
 }
