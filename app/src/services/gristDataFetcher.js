@@ -399,6 +399,41 @@ export async function fetchChantiersData() {
 }
 
 /**
+ * Raw rows from Liste_engagements (Engagement, Thématique, Axe taxonomie).
+ * @returns {Promise<Array<Record<string, string>>>}
+ */
+let engagementsRowsCache = null;
+let engagementsRowsPromise = null;
+
+export async function fetchEngagementsRows() {
+  if (engagementsRowsCache) {
+    return engagementsRowsCache;
+  }
+  if (engagementsRowsPromise) {
+    return engagementsRowsPromise;
+  }
+  if (!GRIST_ENGAGEMENTS_URL) {
+    return [];
+  }
+
+  engagementsRowsPromise = (async () => {
+    try {
+      const csvText = await fetchCSVText(GRIST_ENGAGEMENTS_URL, 'grist-engagements.csv');
+      const rows = await parseCSVText(csvText);
+      engagementsRowsCache = rows;
+      engagementsRowsPromise = null;
+      return rows;
+    } catch (error) {
+      engagementsRowsPromise = null;
+      console.warn('Could not load Liste_engagements rows:', error.message);
+      return [];
+    }
+  })();
+
+  return engagementsRowsPromise;
+}
+
+/**
  * Fetch Liste_engagements and build Thématique → Engagement (long) mapping.
  * Used to display the long version of engagement in Etat environnement synthesis.
  * @returns {Promise<Map<string, string>>} Map of Thématique (short) → Engagement (long)

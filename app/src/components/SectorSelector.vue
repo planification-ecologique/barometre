@@ -89,7 +89,7 @@ import {
   SECTION_SYNTHESE_SLUG,
 } from '@/utils/sectionUrl.js'
 import { impactAxeNameToSlug, impactAxeSlugToName, isImpactAxeSlug } from '@/utils/impactAxeUrl.js'
-import { getNavigationStructure, IMPACT_AXE_DISPLAY_ORDER, isImpactAxe } from '@/services/csvDataService.js'
+import { getNavigationStructure, isImpactAxe, taxonomyAxesForDisplay } from '@/services/csvDataService.js'
 import { getSectorIcon } from '@/utils/sectorIcons.js'
 
 export default {
@@ -126,12 +126,7 @@ export default {
     // Match SideNavigation: axes in display order, filter by data, always include Adaptation climat
     displayedTaxonomyAxes() {
       const axes = Array.isArray(this.taxonomyAxes) ? [...this.taxonomyAxes] : []
-      const axesSet = new Set(axes)
-      return IMPACT_AXE_DISPLAY_ORDER.filter(axe =>
-        axesSet.has(axe) ||
-        (axe === 'Économie circulaire' && axesSet.has('Economie circulaire')) ||
-        axe === 'Adaptation climat'
-      )
+      return taxonomyAxesForDisplay(axes)
     },
     // Flat list of chantiers for Synthèse dropdown: { id, name, sector }
     allChantiersFlat() {

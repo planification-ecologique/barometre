@@ -50,7 +50,9 @@ import { chantierSectorNomMieux } from '@/config/sectorMieuxLabels.js';
 import {
   getNavigationStructure,
   IMPACT_AXE_DISPLAY_ORDER,
-  impactAxeNomCourt
+  impactAxeNomCourt,
+  taxonomyAxesForDisplay,
+  taxonomyAxeFilterValue,
 } from '@/services/csvDataService.js';
 
 export default {
@@ -110,12 +112,8 @@ export default {
           : [];
         const axesSet = new Set(axeKeys);
         const initAxes = new Set((this.initialAxes || []).map(a => String(a).trim()));
-        this.axes = IMPACT_AXE_DISPLAY_ORDER.filter(axe =>
-          axesSet.has(axe) ||
-          (axe === 'Économie circulaire' && axesSet.has('Economie circulaire')) ||
-          axe === 'Adaptation climat'
-        ).map(axe => {
-          const value = axesSet.has(axe) ? axe : (axe === 'Économie circulaire' ? 'Economie circulaire' : axe);
+        this.axes = taxonomyAxesForDisplay(axeKeys).map(axe => {
+          const value = taxonomyAxeFilterValue(axe, axesSet);
           const selected = initAxes.has(axe) || initAxes.has(value);
           return { value, label: impactAxeNomCourt(axe), selected };
         });

@@ -127,7 +127,7 @@
 import { chantierSectorNomMieux as sectorNomMieux } from '@/config/sectorMieuxLabels.js';
 import {
   getNavigationStructure,
-  IMPACT_AXE_DISPLAY_ORDER,
+  taxonomyAxesForDisplay,
   isImpactAxe,
   impactAxeNomCourt as impactAxeNomCourtFromTaxonomy,
   resolveSyntheseImpactGroupingKey,
@@ -159,13 +159,7 @@ export default {
     },
     displayedTaxonomyAxes() {
       const axes = Array.isArray(this.taxonomyAxes) ? [...this.taxonomyAxes] : [];
-      const axesSet = new Set(axes);
-      const adaptationComplet = IMPACT_AXE_DISPLAY_ORDER.find(
-        (n) => /adaptation/i.test(n) && /climat/i.test(n)
-      );
-      return IMPACT_AXE_DISPLAY_ORDER.filter(
-        (axe) => axesSet.has(axe) || (adaptationComplet && axe === adaptationComplet)
-      );
+      return taxonomyAxesForDisplay(axes);
     },
     /** Route dédiée Chantiers : accordéon secteurs même si `section` ≠ synthese */
     isChantiersShellRoute() {
