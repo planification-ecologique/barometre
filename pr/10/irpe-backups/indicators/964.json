@@ -1,0 +1,150 @@
+{
+  "cubeName": "aires_protegees_dpt",
+  "measureName": "aires_protegees_dpt.id_964",
+  "timeDimension": "aires_protegees_dpt.date_mesure",
+  "extraDimension": "aires_protegees_dpt.geocode_departement",
+  "data": [
+    {
+      "aires_protegees_dpt.libelle_region": "Corse",
+      "aires_protegees_dpt.geocode_region": "94",
+      "aires_protegees_dpt.date_mesure.year": "2024-01-01T00:00:00.000",
+      "aires_protegees_dpt.id_964": 0.9244232092702006,
+      "aires_protegees_dpt.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "aires_protegees_dpt.libelle_region": "Grand Est",
+      "aires_protegees_dpt.geocode_region": "44",
+      "aires_protegees_dpt.date_mesure.year": "2024-01-01T00:00:00.000",
+      "aires_protegees_dpt.id_964": 1.1435132708280433,
+      "aires_protegees_dpt.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "aires_protegees_dpt.libelle_region": "Guyane",
+      "aires_protegees_dpt.geocode_region": "03",
+      "aires_protegees_dpt.date_mesure.year": "2024-01-01T00:00:00.000",
+      "aires_protegees_dpt.id_964": 28.823198101167996,
+      "aires_protegees_dpt.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "aires_protegees_dpt.libelle_region": "Bretagne",
+      "aires_protegees_dpt.geocode_region": "53",
+      "aires_protegees_dpt.date_mesure.year": "2024-01-01T00:00:00.000",
+      "aires_protegees_dpt.id_964": 0.5659055735024359,
+      "aires_protegees_dpt.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "aires_protegees_dpt.libelle_region": "Normandie",
+      "aires_protegees_dpt.geocode_region": "28",
+      "aires_protegees_dpt.date_mesure.year": "2024-01-01T00:00:00.000",
+      "aires_protegees_dpt.id_964": 0.5352758100503676,
+      "aires_protegees_dpt.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "aires_protegees_dpt.libelle_region": "Île-de-France",
+      "aires_protegees_dpt.geocode_region": "11",
+      "aires_protegees_dpt.date_mesure.year": "2024-01-01T00:00:00.000",
+      "aires_protegees_dpt.id_964": 0.5676202156529804,
+      "aires_protegees_dpt.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "aires_protegees_dpt.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "aires_protegees_dpt.geocode_region": "93",
+      "aires_protegees_dpt.date_mesure.year": "2024-01-01T00:00:00.000",
+      "aires_protegees_dpt.id_964": 6.705975669581766,
+      "aires_protegees_dpt.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "aires_protegees_dpt.libelle_region": "Mayotte",
+      "aires_protegees_dpt.geocode_region": "06",
+      "aires_protegees_dpt.date_mesure.year": "2024-01-01T00:00:00.000",
+      "aires_protegees_dpt.id_964": 7.903927615767663,
+      "aires_protegees_dpt.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "aires_protegees_dpt.libelle_region": "Nouvelle-Aquitaine",
+      "aires_protegees_dpt.geocode_region": "75",
+      "aires_protegees_dpt.date_mesure.year": "2024-01-01T00:00:00.000",
+      "aires_protegees_dpt.id_964": 0.5257526409463462,
+      "aires_protegees_dpt.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "aires_protegees_dpt.libelle_region": "Collectivités d'outre-mer",
+      "aires_protegees_dpt.geocode_region": "0",
+      "aires_protegees_dpt.date_mesure.year": "2024-01-01T00:00:00.000",
+      "aires_protegees_dpt.id_964": 60.07472426467112,
+      "aires_protegees_dpt.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "aires_protegees_dpt.libelle_region": "Centre-Val de Loire",
+      "aires_protegees_dpt.geocode_region": "24",
+      "aires_protegees_dpt.date_mesure.year": "2024-01-01T00:00:00.000",
+      "aires_protegees_dpt.id_964": 0.15485491988271158,
+      "aires_protegees_dpt.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "aires_protegees_dpt.libelle_region": "Bourgogne-Franche-Comté",
+      "aires_protegees_dpt.geocode_region": "27",
+      "aires_protegees_dpt.date_mesure.year": "2024-01-01T00:00:00.000",
+      "aires_protegees_dpt.id_964": 1.440397167397172,
+      "aires_protegees_dpt.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "aires_protegees_dpt.libelle_region": "Guadeloupe",
+      "aires_protegees_dpt.geocode_region": "01",
+      "aires_protegees_dpt.date_mesure.year": "2024-01-01T00:00:00.000",
+      "aires_protegees_dpt.id_964": 13.836644099573459,
+      "aires_protegees_dpt.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "aires_protegees_dpt.libelle_region": "Martinique",
+      "aires_protegees_dpt.geocode_region": "02",
+      "aires_protegees_dpt.date_mesure.year": "2024-01-01T00:00:00.000",
+      "aires_protegees_dpt.id_964": 7.703349515988429,
+      "aires_protegees_dpt.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "aires_protegees_dpt.libelle_region": "Hauts-de-France",
+      "aires_protegees_dpt.geocode_region": "32",
+      "aires_protegees_dpt.date_mesure.year": "2024-01-01T00:00:00.000",
+      "aires_protegees_dpt.id_964": 0.21818826156347318,
+      "aires_protegees_dpt.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "aires_protegees_dpt.libelle_region": "La Réunion",
+      "aires_protegees_dpt.geocode_region": "04",
+      "aires_protegees_dpt.date_mesure.year": "2024-01-01T00:00:00.000",
+      "aires_protegees_dpt.id_964": 42.80642156291755,
+      "aires_protegees_dpt.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "aires_protegees_dpt.libelle_region": "Occitanie",
+      "aires_protegees_dpt.geocode_region": "76",
+      "aires_protegees_dpt.date_mesure.year": "2024-01-01T00:00:00.000",
+      "aires_protegees_dpt.id_964": 2.321686166976958,
+      "aires_protegees_dpt.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "aires_protegees_dpt.libelle_region": "Auvergne-Rhône-Alpes",
+      "aires_protegees_dpt.geocode_region": "84",
+      "aires_protegees_dpt.date_mesure.year": "2024-01-01T00:00:00.000",
+      "aires_protegees_dpt.id_964": 3.087021529460696,
+      "aires_protegees_dpt.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "aires_protegees_dpt.libelle_region": "Pays de la Loire",
+      "aires_protegees_dpt.geocode_region": "52",
+      "aires_protegees_dpt.date_mesure.year": "2024-01-01T00:00:00.000",
+      "aires_protegees_dpt.id_964": 0.28240611681740635,
+      "aires_protegees_dpt.date_mesure": "2024-01-01T00:00:00.000"
+    }
+  ],
+  "measureMeta": {
+    "libelle_indicateur": "Part de territoire sous protection forte - terrestre ",
+    "statut_commun": "Mesure",
+    "unite": "%",
+    "id_parents": "832, 966",
+    "methode_calcul": "Ratio entre la surface totale classée en 'aire sous protection forte' - uniquement terrestre - et la surface totale du territoire.",
+    "numerator": "id_966",
+    "denominator": "surf_dep"
+  }
+}
