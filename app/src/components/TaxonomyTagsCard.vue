@@ -21,7 +21,31 @@ import {
   impactAxeNameToSlug,
   resolveImpactAxeCanonicalFromLabel,
 } from '@/utils/impactAxeUrl.js';
-import { compareImpactAxeLabelsTaxonomie } from '@/services/csvDataService.js';
+import {
+  compareImpactAxeLabelsTaxonomie,
+  impactAxeNomCourt,
+} from '@/services/csvDataService.js';
+import { normalizeAxeTaxonomieList } from '@/utils/taxonomyAxeTags.js';
+
+function asStringList(value) {
+  if (Array.isArray(value)) return value;
+  if (value == null || value === '') return [];
+  return [value];
+}
+
+function dedupeStrings(values) {
+  const seen = Object.create(null);
+  const out = [];
+  for (const raw of asStringList(values)) {
+    const s = String(raw ?? '').trim();
+    if (!s) continue;
+    const key = s.toLowerCase();
+    if (seen[key]) continue;
+    seen[key] = true;
+    out.push(s);
+  }
+  return out;
+}
 
 export default {
   name: 'TaxonomyTagsCard',
@@ -47,8 +71,10 @@ export default {
       if (!this.dataObj) return [];
       const result = [];
 
-      const sectors = (this.dataObj.sector_list || []).filter(s => s !== 'Synthèse');
-      const uniqueSectors = [...new Set(sectors)].filter(Boolean);
+      const sectors = asStringList(this.dataObj.sector_list).filter(
+        (s) => s && s !== 'Synthèse'
+      );
+      const uniqueSectors = dedupeStrings(sectors);
       uniqueSectors.forEach(sector => {
         const slug = toSectionSlug(sector)
         result.push({
@@ -63,19 +89,18 @@ export default {
         });
       });
 
-      const chantierOuImpact = this.dataObj.chantier_ou_impact_list || [];
-      const seenAxeSlugs = new Set();
+      const axeLabels = normalizeAxeTaxonomieList(this.dataObj.axe_taxonomie_list);
+      const seenAxeSlugs = Object.create(null);
       const axeTags = [];
-      chantierOuImpact.filter(Boolean).forEach((raw) => {
-        const canonical = resolveImpactAxeCanonicalFromLabel(raw);
-        if (!canonical) return;
+      axeLabels.forEach((raw) => {
+        const canonical = resolveImpactAxeCanonicalFromLabel(raw) || raw;
         const slug = impactAxeNameToSlug(canonical);
-        if (seenAxeSlugs.has(slug)) return;
-        seenAxeSlugs.add(slug);
+        if (!slug || seenAxeSlugs[slug]) return;
+        seenAxeSlugs[slug] = true;
         axeTags.push({
           type: 'axe',
           value: canonical,
-          label: raw,
+          label: impactAxeNomCourt(canonical) || raw,
           href: {
             name: this.etatName,
             query: { section: slug },

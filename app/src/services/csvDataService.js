@@ -5,12 +5,25 @@ import {
   fetchLeviersData,
   fetchChantiersData,
   fetchEngagementsByAxe,
+  fetchEngagementsRows,
   fetchEngagementLongMapping,
   fetchTaxonomieData,
   setStagingDocId as setStagingDocIdInFetcher,
   GRIST_URLS,
   GRIST_LEVIERS_URL
 } from './gristDataFetcher';
+import {
+  axesTaxonomieFromIndicatorRow,
+  buildTaxonomyAxeMaps,
+  FALLBACK_META_LEVIERS,
+  mergeAxeTaxonomieLists,
+  normalizeAxeTaxonomieList,
+  metaLeviersFromListeLeviers,
+  resolveTaxonomyAxeTags,
+  resolveIndicatorTaxonomyAxeTags,
+} from '@/utils/taxonomyAxeTags.js';
+
+export { resolveTaxonomyAxeTags, resolveIndicatorTaxonomyAxeTags };
 
 // Re-export URL constants for backward compatibility
 export { GRIST_URLS, GRIST_LEVIERS_URL, fetchEngagementsByAxe, fetchEngagementLongMapping };
@@ -135,6 +148,16 @@ function mergeIrpeIdArrays(...arrays) {
   return merged;
 }
 
+/** Années / axes : uniquement si tableau (évite spread sur number/object). */
+function asYearArray(value) {
+  return Array.isArray(value) ? value : [];
+}
+
+function indicatorYearsFromValues(values) {
+  if (!values || typeof values !== 'object') return [];
+  return asYearArray(Array.isArray(values.x?.[0]) ? values.x[0] : values.x);
+}
+
 function indicatorHasRegionalLinkIds(ids) {
   return Array.isArray(ids) && ids.length > 0 && ids.some(id => id && String(id).trim() !== '');
 }
@@ -227,6 +250,9 @@ const fetchPromiseByEnv = {};
 let levierListCache = null;
 let levierFetchPromise = null;
 
+let taxonomyAxeMapsCache = null;
+let taxonomyAxeMapsPromise = null;
+
 /** When false, extrapolation (projection) series is excluded from chart data. */
 export const SHOW_EXTRAPOLATION = false;
 
@@ -284,6 +310,39 @@ export function clearCSVCache() {
   Object.keys(fetchPromiseByEnv).forEach((k) => {
     delete fetchPromiseByEnv[k];
   });
+  levierListCache = null;
+  levierFetchPromise = null;
+  taxonomyAxeMapsCache = null;
+  taxonomyAxeMapsPromise = null;
+}
+
+/**
+ * Maps levier / chantier / engagement → tags « Axe taxonomie » (Grist).
+ */
+export async function getTaxonomyAxeMaps() {
+  if (taxonomyAxeMapsCache) {
+    return taxonomyAxeMapsCache;
+  }
+  if (taxonomyAxeMapsPromise) {
+    return taxonomyAxeMapsPromise;
+  }
+
+  taxonomyAxeMapsPromise = (async () => {
+    const [levierRows, chantiersMaps, engagementRows] = await Promise.all([
+      fetchLevierList(),
+      fetchChantiersData(),
+      fetchEngagementsRows(),
+    ]);
+    taxonomyAxeMapsCache = buildTaxonomyAxeMaps({
+      levierRows,
+      axesByChantier: chantiersMaps.axesByChantier,
+      engagementRows,
+    });
+    taxonomyAxeMapsPromise = null;
+    return taxonomyAxeMapsCache;
+  })();
+
+  return taxonomyAxeMapsPromise;
 }
 
 /**
@@ -309,6 +368,7 @@ export async function fetchLevierList() {
       
       // Cache the results
       levierListCache = parsedData;
+      syncKnownLevierLabelsFromRows(parsedData);
       levierFetchPromise = null;
       return parsedData;
     } catch (error) {
@@ -426,25 +486,6 @@ export function transformCSVData(csvData, query) {
           const associations = parseChantierOuImpactList(item['Chantier ou Impact'] || '');
           if (!associations || associations.length === 0) return false;
           return associations.some(p => p.sector && targetSectors.has(p.sector));
-        });
-      } else if (filter.field === 'chantier_ou_impact' && filter.values.length) {
-        const targetValues = new Set(
-          filter.values.map((v) => canonicalImpactAxeNomComplet(v) || normalizeImpactAxeName(v))
-        );
-        filteredData = filteredData.filter(item => {
-          const associations = parseChantierOuImpactList(item['Chantier ou Impact'] || '');
-          if (!associations || associations.length === 0) return false;
-          return associations.some(p => {
-            if (!p.chantierOuImpact) return false;
-            const canon =
-              canonicalImpactAxeNomComplet(p.chantierOuImpact) ||
-              normalizeImpactAxeName(p.chantierOuImpact);
-            return (
-              targetValues.has(canon) ||
-              targetValues.has(p.chantierOuImpact) ||
-              targetValues.has(normalizeImpactAxeName(p.chantierOuImpact))
-            );
-          });
         });
       } else if (filter.field === 'grist_ids') {
         // Filter by Grist indicator IDs (for engagements, chantiers, leviers)
@@ -669,6 +710,7 @@ export function transformCSVData(csvData, query) {
     const chantierOuImpactRaw = item['Chantier ou Impact'] || '';
     const chantierOuImpactList = parseChantierOuImpactList(chantierOuImpactRaw);
     const parsedChantierOuImpact = chantierOuImpactList[0] || { sector: null, chantierOuImpact: null };
+    const levierListParsed = parseLevierList(item['Levier'] || '');
 
     // Target trajectory: line from reference year through all target years, with dots at targets
     // Uses "Année de référence de la source" column; falls back to last measured year if absent
@@ -852,6 +894,9 @@ export function transformCSVData(csvData, query) {
       unite: formattedUnitLong,
       // Add new fields from Grist
       levier: item['Levier'] || '',
+      levier_list: levierListParsed.length
+        ? levierListParsed
+        : (item['Levier'] ? [String(item['Levier']).trim()] : []),
       // Engagement from main CSV (for Etat environnement synthesis)
       engagement: String(item['Engagement'] || item['Ambition liée'] || '').trim(),
       // Primary sector / chantier (backward compatible with existing components)
@@ -865,6 +910,7 @@ export function transformCSVData(csvData, query) {
       sector_list: chantierOuImpactList
         .map(entry => entry.sector)
         .filter(Boolean),
+      axe_taxonomie_list: axesTaxonomieFromIndicatorRow(item),
       // IRPE / Écolab: link ids (search filter) vs validated ids (regional API in GraphBox)
       irpe_link_ids: irpeLinkIds,
       irpe_ids: parseIrpeValidatedIds(irpeLinkIds, item['IRPE valide']),
@@ -921,6 +967,10 @@ export function transformCSVData(csvData, query) {
       } else if (filter.field === 'has_regional_data' && filter.values && filter.values.includes(true)) {
         groupedResults = groupedResults.filter(item =>
           indicatorHasRegionalLinkIds(item.irpe_ids)
+        );
+      } else if (filter.field === 'chantier_ou_impact' && filter.values.length) {
+        groupedResults = groupedResults.filter((item) =>
+          indicatorMatchesAxeTaxonomyFilter(item, filter.values)
         );
       }
     }
@@ -1026,7 +1076,7 @@ function groupByIndicator(results) {
   
   results.forEach(item => {
     if (!item.label_sous_groupe) {
-      // If no sub-group, keep as is
+      item.axe_taxonomie_list = normalizeAxeTaxonomieList(item.axe_taxonomie_list);
       indicatorMap.set(item.id_indic, item);
       return;
     }
@@ -1039,7 +1089,7 @@ function groupByIndicator(results) {
       baseItem.label_sous_groupe = [item.label_sous_groupe];
 
       // Build a sorted year axis and align values to it
-      const rawDates = Array.isArray(item.values.x[0]) ? item.values.x[0] : item.values.x;
+      const rawDates = indicatorYearsFromValues(item.values);
       const valueMap = {};
       const statusMap = {};
       rawDates.forEach((year, idx) => {
@@ -1059,6 +1109,7 @@ function groupByIndicator(results) {
       baseItem.values = [alignedValues];
       baseItem.label_value = alignedStatuses;
       baseItem.reference_year_for_target_trajectory = item.reference_year_for_target_trajectory || null;
+      baseItem.axe_taxonomie_list = normalizeAxeTaxonomieList(baseItem.axe_taxonomie_list);
       indicatorMap.set(key, baseItem);
     } else {
       // Add to existing grouped item
@@ -1071,12 +1122,15 @@ function groupByIndicator(results) {
         : [];
 
       // Dates for the new sub-group
-      const newDates = Array.isArray(item.values.x[0]) ? item.values.x[0] : item.values.x;
+      const newDates = indicatorYearsFromValues(item.values);
 
       // Build merged, unique, numerically sorted axis
-      const mergedDates = Array.from(
-        new Set([...(existingDates || []), ...(newDates || [])])
-      ).sort((a, b) => parseInt(a, 10) - parseInt(b, 10));
+      const mergedYearKeys = new Set();
+      for (const year of existingDates) mergedYearKeys.add(year);
+      for (const year of newDates) mergedYearKeys.add(year);
+      const mergedDates = Array.from(mergedYearKeys).sort(
+        (a, b) => parseInt(a, 10) - parseInt(b, 10)
+      );
 
       // Realign all existing series to mergedDates
       if (groupedItem.values && Array.isArray(groupedItem.values)) {
@@ -1113,7 +1167,7 @@ function groupByIndicator(results) {
         });
       }
       const newStatusMap = {};
-      const itemDates = Array.isArray(item.values.x[0]) ? item.values.x[0] : item.values.x;
+      const itemDates = indicatorYearsFromValues(item.values);
       const itemStatuses = item.label_value;
       if (Array.isArray(itemStatuses) && itemDates.length === itemStatuses.length) {
         itemDates.forEach((year, idx) => {
@@ -1184,6 +1238,11 @@ function groupByIndicator(results) {
         
         groupedItem.label_tags = allTags.join(', ');
       }
+
+      groupedItem.axe_taxonomie_list = mergeAxeTaxonomieLists(
+        groupedItem.axe_taxonomie_list,
+        item.axe_taxonomie_list
+      );
 
       groupedItem.irpe_ids = mergeIrpeIdArrays(groupedItem.irpe_ids, item.irpe_ids);
       groupedItem.irpe_link_ids = mergeIrpeIdArrays(groupedItem.irpe_link_ids, item.irpe_link_ids);
@@ -1316,7 +1375,23 @@ export async function getIndicators(query, environment = 'production') {
   try {
     await ensureImpactTaxonomyLoaded();
     const csvData = await fetchCSVData(environment);
-    return transformCSVData(csvData, query);
+    const result = transformCSVData(csvData, query);
+    if (result.results?.some(
+      (item) => !normalizeAxeTaxonomieList(item.axe_taxonomie_list).length
+    )) {
+      const taxonomyMaps = await getTaxonomyAxeMaps();
+      result.results.forEach((item) => {
+        if (!normalizeAxeTaxonomieList(item.axe_taxonomie_list).length) {
+          item.axe_taxonomie_list = resolveIndicatorTaxonomyAxeTags(item, taxonomyMaps);
+        }
+        item.axe_taxonomie_list = normalizeAxeTaxonomieList(item.axe_taxonomie_list);
+      });
+    } else if (result.results) {
+      result.results.forEach((item) => {
+        item.axe_taxonomie_list = normalizeAxeTaxonomieList(item.axe_taxonomie_list);
+      });
+    }
+    return result;
   } catch (error) {
     console.error('Error getting indicators from CSV:', error);
     throw error;
@@ -1445,15 +1520,19 @@ function parseChantierOuImpact(value) {
 }
 
 /**
- * Known levier labels (Grist). Longest first so lookaheads match the full phrase
- * (e.g. "Indicateur d'impact - autres" before "Indicateur d'impact").
+ * Known levier labels (Grist Liste_leviers : lignes sans « Chantier associé »).
+ * Longest first so lookaheads match the full phrase.
  */
-const KNOWN_LEVIER_LABELS = [
-  "Indicateur d'impact - autres",
-  "Indicateur d'impact",
-  "Indicateur de chantier",
-  'Autres indicateurs',
-];
+const KNOWN_LEVIER_LABELS = [...FALLBACK_META_LEVIERS];
+
+function syncKnownLevierLabelsFromRows(levierRows) {
+  if (!Array.isArray(levierRows) || levierRows.length === 0) return;
+  const meta = metaLeviersFromListeLeviers(levierRows);
+  KNOWN_LEVIER_LABELS.length = 0;
+  KNOWN_LEVIER_LABELS.push(
+    ...Array.from(meta).sort((a, b) => b.length - a.length)
+  );
+}
 
 function escapeRegExp(str) {
   return str.replace(/[\\^$*+?.()|[\]{}]/g, '\\$&');
@@ -1659,6 +1738,65 @@ export function impactAxeNomCourt(nomComplet) {
 }
 
 /**
+ * Axes à afficher dans filtres / navigation : présents dans les données,
+ * alias économie circulaire, et Adaptation même sans indicateurs Synthèse.
+ * @param {string[]} axeKeysFromData — clés `indicateursImpact` (noms complets)
+ */
+export function taxonomyAxesForDisplay(axeKeysFromData = []) {
+  const axesSet = new Set(axeKeysFromData);
+  const adaptationComplet = IMPACT_AXE_DISPLAY_ORDER.find(
+    (n) => /adaptation/i.test(n) && /climat/i.test(n)
+  );
+  return IMPACT_AXE_DISPLAY_ORDER.filter(
+    (axe) =>
+      axesSet.has(axe) ||
+      (axe === 'Économie circulaire' && axesSet.has('Economie circulaire')) ||
+      (adaptationComplet && axe === adaptationComplet)
+  );
+}
+
+/** Valeur de filtre URL / API pour un axe affiché. */
+export function taxonomyAxeFilterValue(axe, axesSet) {
+  if (axesSet.has(axe)) return axe;
+  if (axe === 'Économie circulaire' && axesSet.has('Economie circulaire')) {
+    return 'Economie circulaire';
+  }
+  return axe;
+}
+
+function axeLabelMatchesTaxonomyFilter(label, filterValues) {
+  const raw = String(label || '').trim();
+  if (!raw) return false;
+  for (const fv of filterValues) {
+    const target = String(fv || '').trim();
+    if (!target) continue;
+    if (raw === target) return true;
+    const canonRaw = canonicalImpactAxeNomComplet(raw) || normalizeImpactAxeName(raw);
+    const canonTarget = canonicalImpactAxeNomComplet(target) || normalizeImpactAxeName(target);
+    if (canonRaw && canonTarget && canonRaw === canonTarget) return true;
+    if (canonTarget && (raw === canonTarget || raw === target)) return true;
+    if (canonRaw && target === canonRaw) return true;
+    const courtRaw = impactAxeNomCourt(canonRaw || raw);
+    const courtTarget = impactAxeNomCourt(canonTarget || target);
+    if (courtRaw && courtTarget && courtRaw === courtTarget) return true;
+    if (courtTarget && raw === courtTarget) return true;
+    if (courtRaw && target === courtRaw) return true;
+  }
+  return false;
+}
+
+/** Filtre recherche / API par axe (colonne « Axes taxonomie » ou association chantier/impact). */
+function indicatorMatchesAxeTaxonomyFilter(item, filterValues) {
+  if (!filterValues?.length) return true;
+  const axes = normalizeAxeTaxonomieList(item.axe_taxonomie_list);
+  if (axes.some((axe) => axeLabelMatchesTaxonomyFilter(axe, filterValues))) return true;
+  const coi = item.chantier_ou_impact_list?.length
+    ? item.chantier_ou_impact_list
+    : [item.chantier_ou_impact].filter(Boolean);
+  return coi.some((raw) => axeLabelMatchesTaxonomyFilter(raw, filterValues));
+}
+
+/**
  * Texte HTML (ou texte simple) à afficher dans « Ce qu'il faut retenir » pour l'axe.
  * Source: Liste_taxonomie (Grist) si la colonne est disponible, sinon chaîne vide.
  */
@@ -1848,14 +1986,20 @@ function sortChantiersObjectKeys(chantiersObj, orderMap) {
 async function buildNavigationStructureCore(environment) {
   try {
     // Load indicators, leviers list and chantiers list (for Axe taxonomie) in parallel
-    const [csvData, levierList, chantiersMaps] = await Promise.all([
+    const [csvData, levierList, chantiersMaps, engagementRows] = await Promise.all([
       fetchCSVData(environment),
       fetchLevierList(),
-      fetchChantiersData()
+      fetchChantiersData(),
+      fetchEngagementsRows(),
     ]);
     const chantiersAxeMap = chantiersMaps.axesByChantier;
     const chantiersDescriptionMap = chantiersMaps.descriptionByChantier;
     const chantiersOrderMap = chantiersMaps.orderIndexByChantier || new Map();
+    const taxonomyMaps = buildTaxonomyAxeMaps({
+      levierRows: levierList,
+      axesByChantier: chantiersAxeMap,
+      engagementRows,
+    });
     
     // Filter out items marked for deletion
     const filteredData = csvData.filter(item => item['A supprimer de la V1'] !== 'true');
@@ -2038,9 +2182,26 @@ async function buildNavigationStructureCore(environment) {
           });
         chantier.sortedLeviers = sortedLeviers;
 
-        // Enrich with Axe taxonomie from Liste_chantiers (key: chantier name only)
-        const axeTaxonomie = (chantiersAxeMap && chantiersAxeMap.get(chantierName)) || [];
-        chantier.axeTaxonomie = axeTaxonomie;
+        chantier.axeTaxonomie = resolveTaxonomyAxeTags(
+          {
+            sector: sector.name,
+            chantierOuImpact: chantierName,
+            levier: null,
+            engagement: null,
+          },
+          taxonomyMaps
+        );
+        sortedLeviers.forEach((lev) => {
+          lev.axeTaxonomie = resolveTaxonomyAxeTags(
+            {
+              sector: sector.name,
+              chantierOuImpact: chantierName,
+              levier: lev.name,
+              engagement: null,
+            },
+            taxonomyMaps
+          );
+        });
         chantier.descriptionChantier =
           (chantiersDescriptionMap && chantiersDescriptionMap.get(chantierName)) || '';
       });
