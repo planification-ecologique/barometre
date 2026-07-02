@@ -1,4 +1,31 @@
-<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Baromètre de la planification écologique</title><meta name="description" content="Baromètre de la planification écologique - Synthèse et suivi des stratégies environnementales."><script src="./tarteaucitron/tarteaucitron.js"></script><link rel="icon" href="/favicon.ico"><style>a {
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><script>(function () {
+      var segs = location.pathname.split('/').filter(Boolean);
+      var isPreview = segs[0] === 'pr' && /^[0-9]+$/.test(segs[1]);
+      if (!isPreview) return;
+      var base = '/pr/' + segs[1] + '/';
+      var rest = segs.slice(2).join('/');
+      if (rest || location.pathname !== base) {
+        // 404.html racine servi pour une route profonde de preview → on rebondit.
+        try {
+          sessionStorage.setItem(
+            'previewRedirectPath',
+            '/' + rest + location.search + location.hash
+          );
+        } catch (e) { /* sessionStorage indisponible : rebond simple */ }
+        location.replace(base);
+        return;
+      }
+      // À la racine de la preview : on restaure le chemin mémorisé pour le routeur.
+      try {
+        var saved = sessionStorage.getItem('previewRedirectPath');
+        if (saved) {
+          sessionStorage.removeItem('previewRedirectPath');
+          if (saved !== '/') {
+            history.replaceState(null, '', base.replace(/\/$/, '') + saved);
+          }
+        }
+      } catch (e) { /* ignore */ }
+    })();</script><title>Baromètre de la planification écologique</title><meta name="description" content="Baromètre de la planification écologique - Synthèse et suivi des stratégies environnementales."><script src="./tarteaucitron/tarteaucitron.js"></script><link rel="icon" href="/favicon.ico"><style>a {
       color: orange;
     }
 
@@ -19,4 +46,4 @@
     .geo_container {
       max-width: 200px;
       margin: 0 auto 50px;
-    }</style><script defer="defer" type="module" src="/pr/11/js/chunk-vendors.d82dde3e.js"></script><script defer="defer" type="module" src="/pr/11/js/app.8c0ccff1.js"></script><link href="/pr/11/css/chunk-vendors.216cb6ca.css" rel="stylesheet"><link href="/pr/11/css/app.1d84e910.css" rel="stylesheet"><script defer="defer" src="/pr/11/js/chunk-vendors-legacy.f4698ecf.js" nomodule></script><script defer="defer" src="/pr/11/js/app-legacy.00acd18a.js" nomodule></script></head><body><noscript><strong>We're sorry but Baromètre SGPE - Planification écologique doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><div id="app"></div></body></html>
+    }</style><script defer="defer" type="module" src="/pr/11/js/chunk-vendors.d82dde3e.js"></script><script defer="defer" type="module" src="/pr/11/js/app.8c0ccff1.js"></script><link href="/pr/11/css/chunk-vendors.216cb6ca.css" rel="stylesheet"><link href="/pr/11/css/app.1d84e910.css" rel="stylesheet"><script defer="defer" src="/pr/11/js/chunk-vendors-legacy.f4698ecf.js" nomodule></script><script defer="defer" src="/pr/11/js/app-legacy.4aa5f074.js" nomodule></script></head><body><noscript><strong>We're sorry but Baromètre SGPE - Planification écologique doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><div id="app"></div></body></html>
