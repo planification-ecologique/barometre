@@ -290,9 +290,12 @@ export async function fetchCSVData(environment = 'production') {
   fetchPromiseByEnv[env] = (async () => {
     try {
       const parsedData = await fetchIndicatorsData(env);
-      csvDataCacheByEnv[env] = parsedData;
+      // Nouveau schéma Grist (Test_org_table) : reconstruit « Chantier ou Impact »
+      // et « Levier » depuis les colonnes Chantier/Engagement/Emplacement_*.
+      const normalizedData = reconstructLegacyIndicatorRows(parsedData);
+      csvDataCacheByEnv[env] = normalizedData;
       fetchPromiseByEnv[env] = null;
-      return parsedData;
+      return normalizedData;
     } catch (error) {
       fetchPromiseByEnv[env] = null;
       throw error;
@@ -389,6 +392,150 @@ export function setStagingDocId(docId) {
   setStagingDocIdInFetcher(docId);
   // Clear cache to ensure using new URL
   clearCSVCache();
+}
+
+/**
+ * Secteurs valides comme « placement » dans la navigation (6 SGPE + Synthèse).
+ * Sert à mapper Emplacement_engagement (nouveau schéma Grist) vers un secteur.
+ */
+const NAV_PLACEMENT_SECTORS = new Set([
+  'Se déplacer',
+  'Se loger',
+  'Se nourrir',
+  'Produire',
+  'Consommer',
+  'Préserver',
+  'Synthèse',
+]);
+
+/** Leviers « méta » (rôle), à ne pas confondre avec un nom de levier réel. */
+const META_LEVIER_LABELS = new Set([
+  "Indicateur d'impact - autres",
+  "Indicateur d'impact",
+  'Indicateur de chantier',
+  'Autres indicateurs',
+]);
+
+/**
+ * Découpe une cellule « Secteur / X » (nouveau schéma Grist) pouvant contenir
+ * plusieurs entrées (retour ligne, « ; » ou « , » suivi d'un « / »).
+ * @param {unknown} raw - Valeur brute de la cellule
+ * @returns {Array<{ first: string, rest: string|null }>}
+ */
+function splitSectorSlashCell(raw) {
+  if (raw == null) return [];
+  const s = String(raw).trim();
+  if (!s || s.toLowerCase() === 'nan') return [];
+  return s
+    .split(/[\r\n]+/)
+    .flatMap((e) => e.split(';'))
+    .flatMap((e) => e.split(/,\s+(?=[^/]+\/)/))
+    .map((e) => e.trim())
+    .filter(Boolean)
+    .map((e) => {
+      const norm = e.replace(/\s*\/\s*/g, ' / ').replace(/\s+/g, ' ').trim();
+      const parts = norm.split(' / ');
+      if (parts.length >= 2) {
+        return { first: parts[0], rest: parts.slice(1).join(' / ') };
+      }
+      return { first: parts[0], rest: null };
+    });
+}
+
+/** Emplacement_engagement → secteur de navigation (Transverse/Autres/inconnu → Synthèse). */
+function normalizePlacementSector(value) {
+  const s = String(value || '').trim();
+  return NAV_PLACEMENT_SECTORS.has(s) ? s : 'Synthèse';
+}
+
+/**
+ * Nouveau schéma Grist (table Test_org_table) : la colonne unique
+ * « Chantier ou Impact » est éclatée en colonnes séparées « Chantier » /
+ * « Engagement », et le rôle méta du levier (« Indicateur de chantier »,
+ * « Indicateur d'impact ») a migré de « Levier » vers « Emplacement_chantier » /
+ * « Emplacement_engagement ».
+ *
+ * On reconstruit les valeurs legacy « Chantier ou Impact » + « Levier » pour que
+ * tout le pipeline navigation/transform continue de fonctionner sans réécriture.
+ *
+ * Mapping :
+ *  - « Chantier »   = "Secteur / Chantier"          → entrée Chantier ou Impact telle quelle
+ *  - « Engagement » = "Axe / NomEngagement"         → "<placement> / <Axe>" (indicateur d'impact)
+ *        placement = Emplacement_engagement normalisé en secteur (sinon Synthèse)
+ *  - « Levier » reconstruit : méta depuis Emplacement_chantier + présence d'engagement,
+ *        plus le nom de levier réel éventuel.
+ *
+ * Limite connue : une ligne portant À LA FOIS un chantier et un engagement produit
+ * un produit croisé (association × levier) dans la navigation ; cas rare, toléré.
+ *
+ * No-op si « Chantier ou Impact » est déjà rempli (ancien schéma).
+ * @param {Record<string, unknown>} row - Ligne CSV brute
+ * @returns {Record<string, unknown>} - Ligne (éventuellement) enrichie
+ */
+function reconstructLegacyIndicatorColumns(row) {
+  if (!row) return row;
+  const existingCoi = String(row['Chantier ou Impact'] || '').trim();
+  if (existingCoi) return row;
+
+  const chantierEntries = splitSectorSlashCell(row['Chantier']);
+  const engagementEntries = splitSectorSlashCell(row['Engagement']);
+  if (!chantierEntries.length && !engagementEntries.length) {
+    return row;
+  }
+
+  const chantierAssoc = chantierEntries.filter((e) => e.first && e.rest);
+  const coiParts = [];
+  for (const { first, rest } of chantierAssoc) {
+    coiParts.push(`${first} / ${rest}`);
+  }
+  for (const { first: axe } of engagementEntries) {
+    if (!axe) continue;
+    coiParts.push(`${normalizePlacementSector(row['Emplacement_engagement'])} / ${axe}`);
+  }
+  if (!coiParts.length) return row;
+
+  const emplChantier = String(row['Emplacement_chantier'] || '');
+  const rawLevier = String(row['Levier'] || '').trim();
+  const namedLevier = rawLevier && !META_LEVIER_LABELS.has(rawLevier) ? rawLevier : '';
+  const levierParts = [];
+  if (chantierAssoc.length) {
+    if (/Indicateur de chantier/i.test(emplChantier)) {
+      levierParts.push('Indicateur de chantier');
+    }
+    if (namedLevier) {
+      levierParts.push(namedLevier);
+    }
+    // Défaut : un indicateur rattaché à un « Chantier » est l'indicateur de ce
+    // chantier (Emplacement_chantier est souvent vide dans le nouveau schéma).
+    if (!levierParts.length) {
+      levierParts.push('Indicateur de chantier');
+    }
+  }
+  if (engagementEntries.length) {
+    levierParts.push("Indicateur d'impact");
+  }
+  if (!levierParts.length) {
+    levierParts.push(namedLevier || rawLevier || 'Autres indicateurs');
+  }
+
+  // Déduplique en préservant l'ordre.
+  const uniqueLeviers = [...new Set(levierParts)];
+
+  return {
+    ...row,
+    'Chantier ou Impact': coiParts.join('\n'),
+    Levier: uniqueLeviers.join(', '),
+  };
+}
+
+/**
+ * Applique reconstructLegacyIndicatorColumns à toutes les lignes indicateurs.
+ * @param {Array<Record<string, unknown>>} rows - Lignes CSV brutes
+ * @returns {Array<Record<string, unknown>>}
+ */
+export function reconstructLegacyIndicatorRows(rows) {
+  if (!Array.isArray(rows)) return rows;
+  return rows.map((row) => reconstructLegacyIndicatorColumns(row));
 }
 
 /**

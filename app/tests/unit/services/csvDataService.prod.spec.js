@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import Papa from 'papaparse';
-import { transformCSVData } from '@/services/csvDataService.js';
+import { transformCSVData, reconstructLegacyIndicatorRows } from '@/services/csvDataService.js';
 
 const prodCsvPath = path.join(__dirname, '../../../public/grist-backups/grist-indicators.csv');
 
@@ -11,7 +11,7 @@ function loadRows() {
     Papa.parse(csv, {
       header: true,
       skipEmptyLines: true,
-      complete: (results) => resolve(results.data),
+      complete: (results) => resolve(reconstructLegacyIndicatorRows(results.data)),
       error: reject,
     });
   });
@@ -29,6 +29,18 @@ describe('transformCSVData with production-like indicators', () => {
     expect(result.results.length).toBeGreaterThan(0);
     result.results.forEach((item) => {
       expect(Array.isArray(item.axe_taxonomie_list)).toBe(true);
+    });
+  });
+
+  it('reconstructs sector/chantier from new Grist columns (Chantier/Engagement)', async () => {
+    const rows = await loadRows();
+    const query = { filter_by: [{ field: 'search', values: [''] }] };
+    const result = transformCSVData(rows, query);
+    const withSector = result.results.filter((item) => item.sector);
+    // Some indicators carry Chantier/Engagement data → must yield a sector.
+    expect(withSector.length).toBeGreaterThan(0);
+    withSector.forEach((item) => {
+      expect(typeof item.sector).toBe('string');
     });
   });
 });
