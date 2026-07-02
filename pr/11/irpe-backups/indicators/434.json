@@ -1,0 +1,989 @@
+{
+  "cubeName": "immatriculations_vp_e_com",
+  "measureName": "immatriculations_vp_e_com.id_434",
+  "timeDimension": "immatriculations_vp_e_com.date_mesure",
+  "extraDimension": "immatriculations_vp_e_com.geocode_commune",
+  "data": [
+    {
+      "immatriculations_vp_e_com.libelle_region": "Hauts-de-France",
+      "immatriculations_vp_e_com.geocode_region": "32",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 0.9330203442879499,
+      "immatriculations_vp_e_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "immatriculations_vp_e_com.geocode_region": "93",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 2.93983891621489,
+      "immatriculations_vp_e_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "immatriculations_vp_e_com.geocode_region": "84",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 2.2315207848380627,
+      "immatriculations_vp_e_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "Guyane",
+      "immatriculations_vp_e_com.geocode_region": "03",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 0.36643459142543056,
+      "immatriculations_vp_e_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "Grand Est",
+      "immatriculations_vp_e_com.geocode_region": "44",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 1.8497637922759784,
+      "immatriculations_vp_e_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "Mayotte",
+      "immatriculations_vp_e_com.geocode_region": "06",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 0.2745744096650192,
+      "immatriculations_vp_e_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "Guadeloupe",
+      "immatriculations_vp_e_com.geocode_region": "01",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 0.7096257296554882,
+      "immatriculations_vp_e_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "Martinique",
+      "immatriculations_vp_e_com.geocode_region": "02",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 0.5859856896126326,
+      "immatriculations_vp_e_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "Île-de-France",
+      "immatriculations_vp_e_com.geocode_region": "11",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 2.599304271649834,
+      "immatriculations_vp_e_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "Normandie",
+      "immatriculations_vp_e_com.geocode_region": "28",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 1.27433940743557,
+      "immatriculations_vp_e_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "Bretagne",
+      "immatriculations_vp_e_com.geocode_region": "53",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 1.9412225618840564,
+      "immatriculations_vp_e_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "Corse",
+      "immatriculations_vp_e_com.geocode_region": "94",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 0.4970835847484412,
+      "immatriculations_vp_e_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "Occitanie",
+      "immatriculations_vp_e_com.geocode_region": "76",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 2.299006057754514,
+      "immatriculations_vp_e_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "Pays de la Loire",
+      "immatriculations_vp_e_com.geocode_region": "52",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 2.147136303996257,
+      "immatriculations_vp_e_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "La Réunion",
+      "immatriculations_vp_e_com.geocode_region": "04",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 1.7336010709504686,
+      "immatriculations_vp_e_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "Bourgogne-Franche-Comté",
+      "immatriculations_vp_e_com.geocode_region": "27",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 1.4960405898809805,
+      "immatriculations_vp_e_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "Nouvelle-Aquitaine",
+      "immatriculations_vp_e_com.geocode_region": "75",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 1.7896687785112293,
+      "immatriculations_vp_e_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "Centre-Val de Loire",
+      "immatriculations_vp_e_com.geocode_region": "24",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 2.096079606427606,
+      "immatriculations_vp_e_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "Guadeloupe",
+      "immatriculations_vp_e_com.geocode_region": "01",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 2.2545796148426493,
+      "immatriculations_vp_e_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "Normandie",
+      "immatriculations_vp_e_com.geocode_region": "28",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 6.492982139252208,
+      "immatriculations_vp_e_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "La Réunion",
+      "immatriculations_vp_e_com.geocode_region": "04",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 4.245569928226755,
+      "immatriculations_vp_e_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "Bourgogne-Franche-Comté",
+      "immatriculations_vp_e_com.geocode_region": "27",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 6.418643961685344,
+      "immatriculations_vp_e_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "Guyane",
+      "immatriculations_vp_e_com.geocode_region": "03",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 0.9532062391681109,
+      "immatriculations_vp_e_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "Occitanie",
+      "immatriculations_vp_e_com.geocode_region": "76",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 7.787154632476825,
+      "immatriculations_vp_e_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "immatriculations_vp_e_com.geocode_region": "84",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 7.808281064498167,
+      "immatriculations_vp_e_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "Martinique",
+      "immatriculations_vp_e_com.geocode_region": "02",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 2.1232522009321597,
+      "immatriculations_vp_e_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "Bretagne",
+      "immatriculations_vp_e_com.geocode_region": "53",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 7.513187746182861,
+      "immatriculations_vp_e_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "Mayotte",
+      "immatriculations_vp_e_com.geocode_region": "06",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 0,
+      "immatriculations_vp_e_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "Île-de-France",
+      "immatriculations_vp_e_com.geocode_region": "11",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 6.151591289782244,
+      "immatriculations_vp_e_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "Corse",
+      "immatriculations_vp_e_com.geocode_region": "94",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 5.463750119400133,
+      "immatriculations_vp_e_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "Nouvelle-Aquitaine",
+      "immatriculations_vp_e_com.geocode_region": "75",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 6.747004173959876,
+      "immatriculations_vp_e_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "Grand Est",
+      "immatriculations_vp_e_com.geocode_region": "44",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 7.107904057664824,
+      "immatriculations_vp_e_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "Pays de la Loire",
+      "immatriculations_vp_e_com.geocode_region": "52",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 7.41998182552504,
+      "immatriculations_vp_e_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "Centre-Val de Loire",
+      "immatriculations_vp_e_com.geocode_region": "24",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 7.035576050521326,
+      "immatriculations_vp_e_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "Hauts-de-France",
+      "immatriculations_vp_e_com.geocode_region": "32",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 4.312031495912324,
+      "immatriculations_vp_e_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "immatriculations_vp_e_com.geocode_region": "93",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 9.037060452793835,
+      "immatriculations_vp_e_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "Île-de-France",
+      "immatriculations_vp_e_com.geocode_region": "11",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 8.811853810630163,
+      "immatriculations_vp_e_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "Pays de la Loire",
+      "immatriculations_vp_e_com.geocode_region": "52",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 10.287734885620916,
+      "immatriculations_vp_e_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "Centre-Val de Loire",
+      "immatriculations_vp_e_com.geocode_region": "24",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 9.939880529358662,
+      "immatriculations_vp_e_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "Mayotte",
+      "immatriculations_vp_e_com.geocode_region": "06",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 0.6060606060606061,
+      "immatriculations_vp_e_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "Nouvelle-Aquitaine",
+      "immatriculations_vp_e_com.geocode_region": "75",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 10.05826185466904,
+      "immatriculations_vp_e_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "immatriculations_vp_e_com.geocode_region": "84",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 10.827792030996386,
+      "immatriculations_vp_e_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "Hauts-de-France",
+      "immatriculations_vp_e_com.geocode_region": "32",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 6.628859242865796,
+      "immatriculations_vp_e_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "Occitanie",
+      "immatriculations_vp_e_com.geocode_region": "76",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 11.210106686770384,
+      "immatriculations_vp_e_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "Guyane",
+      "immatriculations_vp_e_com.geocode_region": "03",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 2.247191011235955,
+      "immatriculations_vp_e_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "Bourgogne-Franche-Comté",
+      "immatriculations_vp_e_com.geocode_region": "27",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 9.213129642243198,
+      "immatriculations_vp_e_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "Grand Est",
+      "immatriculations_vp_e_com.geocode_region": "44",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 11.001211464277745,
+      "immatriculations_vp_e_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "Martinique",
+      "immatriculations_vp_e_com.geocode_region": "02",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 3.603400285864741,
+      "immatriculations_vp_e_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "Corse",
+      "immatriculations_vp_e_com.geocode_region": "94",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 7.17930793428871,
+      "immatriculations_vp_e_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "La Réunion",
+      "immatriculations_vp_e_com.geocode_region": "04",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 7.653764670276087,
+      "immatriculations_vp_e_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "Guadeloupe",
+      "immatriculations_vp_e_com.geocode_region": "01",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 4.173873806121682,
+      "immatriculations_vp_e_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "Bretagne",
+      "immatriculations_vp_e_com.geocode_region": "53",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 10.86395920072609,
+      "immatriculations_vp_e_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "Normandie",
+      "immatriculations_vp_e_com.geocode_region": "28",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 8.299848561332661,
+      "immatriculations_vp_e_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "immatriculations_vp_e_com.geocode_region": "93",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 14.604866292950536,
+      "immatriculations_vp_e_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "Pays de la Loire",
+      "immatriculations_vp_e_com.geocode_region": "52",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 14.277878852739725,
+      "immatriculations_vp_e_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "immatriculations_vp_e_com.geocode_region": "84",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 14.124360223543773,
+      "immatriculations_vp_e_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "Centre-Val de Loire",
+      "immatriculations_vp_e_com.geocode_region": "24",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 14.17766572742103,
+      "immatriculations_vp_e_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "Normandie",
+      "immatriculations_vp_e_com.geocode_region": "28",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 12.333176490717769,
+      "immatriculations_vp_e_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "Hauts-de-France",
+      "immatriculations_vp_e_com.geocode_region": "32",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 9.956107948372518,
+      "immatriculations_vp_e_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "Île-de-France",
+      "immatriculations_vp_e_com.geocode_region": "11",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 11.289755548784775,
+      "immatriculations_vp_e_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "Bourgogne-Franche-Comté",
+      "immatriculations_vp_e_com.geocode_region": "27",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 13.041985836103484,
+      "immatriculations_vp_e_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "La Réunion",
+      "immatriculations_vp_e_com.geocode_region": "04",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 10.148541689255124,
+      "immatriculations_vp_e_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "Occitanie",
+      "immatriculations_vp_e_com.geocode_region": "76",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 15.691131944107122,
+      "immatriculations_vp_e_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "Martinique",
+      "immatriculations_vp_e_com.geocode_region": "02",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 4.557838156247699,
+      "immatriculations_vp_e_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "immatriculations_vp_e_com.geocode_region": "93",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 17.14983726315622,
+      "immatriculations_vp_e_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "Mayotte",
+      "immatriculations_vp_e_com.geocode_region": "06",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 3.344982526210684,
+      "immatriculations_vp_e_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "Corse",
+      "immatriculations_vp_e_com.geocode_region": "94",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 12.528832040260012,
+      "immatriculations_vp_e_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "Grand Est",
+      "immatriculations_vp_e_com.geocode_region": "44",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 15.820307368974124,
+      "immatriculations_vp_e_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "Nouvelle-Aquitaine",
+      "immatriculations_vp_e_com.geocode_region": "75",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 13.324715577328446,
+      "immatriculations_vp_e_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "Guyane",
+      "immatriculations_vp_e_com.geocode_region": "03",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 1.7041198501872659,
+      "immatriculations_vp_e_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "Guadeloupe",
+      "immatriculations_vp_e_com.geocode_region": "01",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 4.818363548631695,
+      "immatriculations_vp_e_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "Bretagne",
+      "immatriculations_vp_e_com.geocode_region": "53",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 16.108425140683206,
+      "immatriculations_vp_e_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "Grand Est",
+      "immatriculations_vp_e_com.geocode_region": "44",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 19.89044981027403,
+      "immatriculations_vp_e_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "Nouvelle-Aquitaine",
+      "immatriculations_vp_e_com.geocode_region": "75",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 16.651202626507743,
+      "immatriculations_vp_e_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "Centre-Val de Loire",
+      "immatriculations_vp_e_com.geocode_region": "24",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 17.787597638343907,
+      "immatriculations_vp_e_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "Bourgogne-Franche-Comté",
+      "immatriculations_vp_e_com.geocode_region": "27",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 16.141574152916792,
+      "immatriculations_vp_e_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "Guyane",
+      "immatriculations_vp_e_com.geocode_region": "03",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 3.275988286969253,
+      "immatriculations_vp_e_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "Corse",
+      "immatriculations_vp_e_com.geocode_region": "94",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 17.07533444519357,
+      "immatriculations_vp_e_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "Guadeloupe",
+      "immatriculations_vp_e_com.geocode_region": "01",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 5.63778256189451,
+      "immatriculations_vp_e_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "immatriculations_vp_e_com.geocode_region": "93",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 20.9617183590889,
+      "immatriculations_vp_e_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "Île-de-France",
+      "immatriculations_vp_e_com.geocode_region": "11",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 14.923352380110302,
+      "immatriculations_vp_e_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "Occitanie",
+      "immatriculations_vp_e_com.geocode_region": "76",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 19.929804658418124,
+      "immatriculations_vp_e_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "Martinique",
+      "immatriculations_vp_e_com.geocode_region": "02",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 4.816562213928597,
+      "immatriculations_vp_e_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "Normandie",
+      "immatriculations_vp_e_com.geocode_region": "28",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 14.457901819671171,
+      "immatriculations_vp_e_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "La Réunion",
+      "immatriculations_vp_e_com.geocode_region": "04",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 13.19308189811787,
+      "immatriculations_vp_e_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "Hauts-de-France",
+      "immatriculations_vp_e_com.geocode_region": "32",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 13.78052728486737,
+      "immatriculations_vp_e_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "Pays de la Loire",
+      "immatriculations_vp_e_com.geocode_region": "52",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 18.545123192350477,
+      "immatriculations_vp_e_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "Mayotte",
+      "immatriculations_vp_e_com.geocode_region": "06",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 2.761627906976744,
+      "immatriculations_vp_e_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "Bretagne",
+      "immatriculations_vp_e_com.geocode_region": "53",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 19.090371633233882,
+      "immatriculations_vp_e_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "immatriculations_vp_e_com.geocode_region": "84",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 17.883479420731707,
+      "immatriculations_vp_e_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "Pays de la Loire",
+      "immatriculations_vp_e_com.geocode_region": "52",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 19.833866436398576,
+      "immatriculations_vp_e_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "Centre-Val de Loire",
+      "immatriculations_vp_e_com.geocode_region": "24",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 18.165130523834367,
+      "immatriculations_vp_e_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "Guadeloupe",
+      "immatriculations_vp_e_com.geocode_region": "01",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 5.998280063064354,
+      "immatriculations_vp_e_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "Mayotte",
+      "immatriculations_vp_e_com.geocode_region": "06",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 2.035623409669211,
+      "immatriculations_vp_e_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "Bourgogne-Franche-Comté",
+      "immatriculations_vp_e_com.geocode_region": "27",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 16.683567450752225,
+      "immatriculations_vp_e_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "Île-de-France",
+      "immatriculations_vp_e_com.geocode_region": "11",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 15.905438132981066,
+      "immatriculations_vp_e_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "Hauts-de-France",
+      "immatriculations_vp_e_com.geocode_region": "32",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 13.108783305461223,
+      "immatriculations_vp_e_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "Bretagne",
+      "immatriculations_vp_e_com.geocode_region": "53",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 19.43259781197849,
+      "immatriculations_vp_e_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "immatriculations_vp_e_com.geocode_region": "84",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 18.64399099820266,
+      "immatriculations_vp_e_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "Normandie",
+      "immatriculations_vp_e_com.geocode_region": "28",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 13.370640165951084,
+      "immatriculations_vp_e_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "immatriculations_vp_e_com.geocode_region": "93",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 20.934549030917466,
+      "immatriculations_vp_e_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "Occitanie",
+      "immatriculations_vp_e_com.geocode_region": "76",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 20.49014092846992,
+      "immatriculations_vp_e_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "Corse",
+      "immatriculations_vp_e_com.geocode_region": "94",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 8.945153549194867,
+      "immatriculations_vp_e_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "Guyane",
+      "immatriculations_vp_e_com.geocode_region": "03",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 2.5806451612903225,
+      "immatriculations_vp_e_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "Nouvelle-Aquitaine",
+      "immatriculations_vp_e_com.geocode_region": "75",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 16.795916297623474,
+      "immatriculations_vp_e_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "Martinique",
+      "immatriculations_vp_e_com.geocode_region": "02",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 4.870281186888302,
+      "immatriculations_vp_e_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "Grand Est",
+      "immatriculations_vp_e_com.geocode_region": "44",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 19.28972383510527,
+      "immatriculations_vp_e_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_vp_e_com.libelle_region": "La Réunion",
+      "immatriculations_vp_e_com.geocode_region": "04",
+      "immatriculations_vp_e_com.type_vehicule": "VP",
+      "immatriculations_vp_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_vp_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "immatriculations_vp_e_com.id_434": 11.448437563164491,
+      "immatriculations_vp_e_com.date_mesure": "2024-01-01T00:00:00.000"
+    }
+  ],
+  "measureMeta": {
+    "libelle_indicateur": "Part des véhicules \"électriques et hydrogène\" dans les immatriculations de véhicules particuliers (véhicules neufs)",
+    "statut_commun": "Mesure",
+    "unite": "%",
+    "id_parents": "815",
+    "methode_calcul": "Indicateur filtré sur type_vehicule = 'VP' et carburant = 'Electrique et hydrogène'",
+    "numerator": "tot_immatriculations_vp_carburant_e",
+    "denominator": "tot_immatriculations_vp"
+  }
+}
