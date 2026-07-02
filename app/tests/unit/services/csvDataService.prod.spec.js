@@ -43,4 +43,27 @@ describe('transformCSVData with production-like indicators', () => {
       expect(typeof item.sector).toBe('string');
     });
   });
+
+  it('classifies empty Emplacement_engagement as impact-autres, not Synthèse principal', async () => {
+    const rows = await loadRows();
+    const pib = rows.find(
+      (r) =>
+        String(r.Indicateur || '').includes('par unité de PIB') &&
+        String(r['Emplacement_engagement'] || '').trim() === 'Autres indicateurs'
+    );
+    expect(pib).toBeTruthy();
+    expect(String(pib.Levier || '')).toContain("Indicateur d'impact - autres");
+    expect(String(pib.Levier || '')).not.toBe("Indicateur d'impact");
+
+    const emptyEmpl = {
+      Engagement: 'Atténuation / Émissions territoriales',
+      'Emplacement_engagement': '',
+      Chantier: '',
+      Levier: '',
+      Indicateur: 'Test indicateur sans emplacement',
+      ID: 'test-empty-emplacement',
+    };
+    const [reconstructed] = reconstructLegacyIndicatorRows([emptyEmpl]);
+    expect(String(reconstructed.Levier || '')).toContain("Indicateur d'impact - autres");
+  });
 });

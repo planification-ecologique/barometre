@@ -106,7 +106,7 @@
       >
         <h2 class="fr-h3 axe-section-title levier-title">
           <span class="section-chip section-chip--indicateur section-chip--in-title">Indicateur</span>
-          {{ resolvedAxeNomComplet }} - autres
+          Autres
         </h2>
         <div class="fr-grid-row fr-grid-row--gutters">
           <div
@@ -414,7 +414,7 @@ export default {
       if (count === 0 || !this.resolvedAxeNomComplet) return null;
       return {
         id: this.sectionImpactAutresId,
-        label: `${this.resolvedAxeNomComplet} - autres (${count})`,
+        label: `Autres (${count})`,
         href: '#' + this.sectionImpactAutresId,
       };
     },

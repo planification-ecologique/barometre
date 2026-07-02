@@ -548,14 +548,29 @@ export default {
               const axeKey = axe === 'Économie circulaire' && !syntheseSector.indicateursImpact?.[axe]
                 ? 'Economie circulaire'
                 : axe;
-              // Indicateurs d'impact : Synthèse + tous les secteurs (Préserver, Consommer, Se déplacer, etc.)
-              this.navigationData.sectors.forEach(sector => {
+              // Indicateurs d'impact : secteurs visibles + masqués (Transverse) + « impact - autres »
+              const allSectors = [
+                ...(this.navigationData.sectors || []),
+                ...(this.navigationData.hiddenSectors || []),
+              ];
+              allSectors.forEach(sector => {
                 const indicators = sector.indicateursImpact?.[axeKey] || sector.indicateursImpact?.[axe] || [];
                 indicators.forEach(item => {
                   if (item.gristId) engagementIds.push(item.gristId);
                 });
+                if (sector.indicateursImpactAutresByChantier) {
+                  const autresKey = resolveSyntheseImpactGroupingKey(
+                    sector.indicateursImpactAutresByChantier,
+                    axeKey
+                  );
+                  if (autresKey) {
+                    (sector.indicateursImpactAutresByChantier[autresKey] || []).forEach(item => {
+                      if (item.gristId) engagementIds.push(item.gristId);
+                    });
+                  }
+                }
               });
-              
+
               const autresBucketKey = resolveSyntheseImpactGroupingKey(
                 syntheseSector.chantiers,
                 axeKey
@@ -569,21 +584,27 @@ export default {
               }
             } else {
               // Get all impact indicators (axes + indicateursImpactAutresByChantier)
-              if (syntheseSector.indicateursImpact) {
-                Object.values(syntheseSector.indicateursImpact).forEach(indicators => {
-                  indicators.forEach(item => {
-                    if (item.gristId) engagementIds.push(item.gristId);
+              const allSectors = [
+                ...(this.navigationData.sectors || []),
+                ...(this.navigationData.hiddenSectors || []),
+              ];
+              allSectors.forEach(sector => {
+                if (sector.indicateursImpact) {
+                  Object.values(sector.indicateursImpact).forEach(indicators => {
+                    indicators.forEach(item => {
+                      if (item.gristId) engagementIds.push(item.gristId);
+                    });
                   });
-                });
-              }
-              if (syntheseSector.indicateursImpactAutresByChantier) {
-                Object.values(syntheseSector.indicateursImpactAutresByChantier).forEach(indicators => {
-                  indicators.forEach(item => {
-                    if (item.gristId) engagementIds.push(item.gristId);
+                }
+                if (sector.indicateursImpactAutresByChantier) {
+                  Object.values(sector.indicateursImpactAutresByChantier).forEach(indicators => {
+                    indicators.forEach(item => {
+                      if (item.gristId) engagementIds.push(item.gristId);
+                    });
                   });
-                });
-              }
-              
+                }
+              });
+
               // Also include "Autres indicateurs" from chantiers when chantier name is a taxonomy axe
               if (syntheseSector.chantiers) {
                 Object.entries(syntheseSector.chantiers).forEach(([chantierName, chantier]) => {
@@ -598,6 +619,10 @@ export default {
           }
         }
       
+        const uniqueEngagementIds = engagementIds.filter(
+          (id, index) => engagementIds.indexOf(id) === index
+        );
+
         const params = {
           view: 'general-engagements',
           label: axe ? impactAxeNomCourtFromTaxonomy(axe) : 'Indicateurs d\'impact',
@@ -605,7 +630,7 @@ export default {
           axe: axe,
           query: {
             filter_by: [
-              { field: "grist_ids", values: engagementIds },
+              { field: "grist_ids", values: uniqueEngagementIds },
             ],
             time_period: {
               date_start: "2015-01-01",

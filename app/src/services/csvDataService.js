@@ -395,8 +395,13 @@ export function setStagingDocId(docId) {
 }
 
 /**
- * Secteurs valides comme « placement » dans la navigation (6 SGPE + Synthèse).
- * Sert à mapper Emplacement_engagement (nouveau schéma Grist) vers un secteur.
+ * Secteurs valides comme « placement » dans la navigation (6 SGPE + Synthèse
+ * + Transverse). Sert à mapper Emplacement_engagement (nouveau schéma Grist).
+ * « Transverse » est un secteur uniquement au sens des données : ses indicateurs
+ * d'impact sont regroupés dans sectors["Transverse"].indicateursImpact et
+ * affichés dans la page État de l'environnement sous « secteur - Transverse ».
+ * En revanche il est masqué du menu secteurs et des chips cliquables côté UI
+ * (cf. HIDDEN_NAV_SECTORS / composants de navigation).
  */
 const NAV_PLACEMENT_SECTORS = new Set([
   'Se déplacer',
@@ -406,7 +411,14 @@ const NAV_PLACEMENT_SECTORS = new Set([
   'Consommer',
   'Préserver',
   'Synthèse',
+  'Transverse',
 ]);
+
+/**
+ * Secteurs « données » à NE PAS exposer dans la navigation cliquable (menu de
+ * gauche, chips de synthèse). Ils restent affichés dans État de l'environnement.
+ */
+export const HIDDEN_NAV_SECTORS = new Set(['Transverse']);
 
 /** Leviers « méta » (rôle), à ne pas confondre avec un nom de levier réel. */
 const META_LEVIER_LABELS = new Set([
@@ -442,10 +454,30 @@ function splitSectorSlashCell(raw) {
     });
 }
 
-/** Emplacement_engagement → secteur de navigation (Transverse/Autres/inconnu → Synthèse). */
+/** Emplacement_engagement → secteur de navigation (6 SGPE + Synthèse + Transverse). */
 function normalizePlacementSector(value) {
   const s = String(value || '').trim();
   return NAV_PLACEMENT_SECTORS.has(s) ? s : 'Synthèse';
+}
+
+/**
+ * Indicateur d'impact principal vs secondaire (« Autres »).
+ * Seul Emplacement_engagement = « Synthèse » (ou un secteur connu) → principal.
+ * Vide ou inconnu → « Autres » (pas de fallback principal Synthèse).
+ */
+function isEngagementAutresImpact(rawEmpl, rawLevier) {
+  if (
+    rawEmpl === 'Autres indicateurs' ||
+    rawEmpl === "Indicateur d'impact - autres" ||
+    rawLevier === 'Autres indicateurs' ||
+    rawLevier === "Indicateur d'impact - autres"
+  ) {
+    return true;
+  }
+  const empl = String(rawEmpl || '').trim();
+  if (empl === 'Synthèse') return false;
+  if (NAV_PLACEMENT_SECTORS.has(empl)) return false;
+  return true;
 }
 
 /**
@@ -461,7 +493,8 @@ function normalizePlacementSector(value) {
  * Mapping :
  *  - « Chantier »   = "Secteur / Chantier"          → entrée Chantier ou Impact telle quelle
  *  - « Engagement » = "Axe / NomEngagement"         → "<placement> / <Axe>" (indicateur d'impact)
- *        placement = Emplacement_engagement normalisé en secteur (sinon Synthèse)
+ *        placement = Emplacement_engagement normalisé en secteur (vide/inconnu →
+ *        bucket Synthèse côté COI, mais classé « Autres » via isEngagementAutresImpact)
  *  - « Levier » reconstruit : méta depuis Emplacement_chantier + présence d'engagement,
  *        plus le nom de levier réel éventuel.
  *
@@ -488,14 +521,25 @@ function reconstructLegacyIndicatorColumns(row) {
   for (const { first, rest } of chantierAssoc) {
     coiParts.push(`${first} / ${rest}`);
   }
+
+  // Rôle de l'indicateur d'impact (principal vs secondaire).
+  //  - Emplacement_engagement explicite « Synthèse » ou secteur connu (Consommer,
+  //    Transverse, …) → indicateur d'impact principal de son placement.
+  //  - Secondaire (« Indicateur d'impact - autres ») : vide, inconnu, ou
+  //    « Autres indicateurs » / Levier « Autres indicateurs ».
+  const rawEmpl = String(row['Emplacement_engagement'] || '').trim();
+  const rawLevier = String(row['Levier'] || '').trim();
+  const isAutresImpact = isEngagementAutresImpact(rawEmpl, rawLevier);
+  const engagementPlacement = normalizePlacementSector(rawEmpl);
+  let hasEngagementImpact = false;
   for (const { first: axe } of engagementEntries) {
     if (!axe) continue;
-    coiParts.push(`${normalizePlacementSector(row['Emplacement_engagement'])} / ${axe}`);
+    coiParts.push(`${engagementPlacement} / ${axe}`);
+    hasEngagementImpact = true;
   }
   if (!coiParts.length) return row;
 
   const emplChantier = String(row['Emplacement_chantier'] || '');
-  const rawLevier = String(row['Levier'] || '').trim();
   const namedLevier = rawLevier && !META_LEVIER_LABELS.has(rawLevier) ? rawLevier : '';
   const levierParts = [];
   if (chantierAssoc.length) {
@@ -511,8 +555,10 @@ function reconstructLegacyIndicatorColumns(row) {
       levierParts.push('Indicateur de chantier');
     }
   }
-  if (engagementEntries.length) {
-    levierParts.push("Indicateur d'impact");
+  if (hasEngagementImpact) {
+    levierParts.push(
+      isAutresImpact ? "Indicateur d'impact - autres" : "Indicateur d'impact"
+    );
   }
   if (!levierParts.length) {
     levierParts.push(namedLevier || rawLevier || 'Autres indicateurs');
@@ -2374,11 +2420,19 @@ async function buildNavigationStructureCore(environment) {
         return a.name.localeCompare(b.name, 'fr');
       });
     
+    // Secteurs masqués (« Transverse ») : sortis du tableau `sectors` pour ne PAS
+    // polluer la navigation cliquable (menu de gauche, chips, sections synthèse).
+    // Ils sont exposés à part dans `hiddenSectors`, consommé uniquement par la page
+    // État de l'environnement (groupe « secteur - Transverse »).
+    const visibleSectors = sortedSectors.filter(s => !HIDDEN_NAV_SECTORS.has(s.name));
+    const hiddenSectors = sortedSectors.filter(s => HIDDEN_NAV_SECTORS.has(s.name));
+
     return {
       status: 'success',
       data: {
-        sectors: sortedSectors,
-        sectorNames: sortedSectors.map(s => s.name)
+        sectors: visibleSectors,
+        hiddenSectors,
+        sectorNames: visibleSectors.map(s => s.name)
       }
     };
   } catch (error) {

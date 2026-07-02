@@ -91,58 +91,58 @@
             </thead>
             <tbody>
               <template v-for="group in getEngagementGroups(axe.indicators)">
-                <tr
-                  v-for="(indicator, idx) in group.indicators"
-                  :key="axe.name + '-' + (group.engagementName || '') + '-' + idx"
-                  :class="{ 'first-row-of-engagement': idx === 0 }"
-                >
-                  <td
-                    v-if="idx === 0"
-                    :rowspan="group.indicators.length || 1"
-                    class="td-engagement"
+                  <tr
+                    v-for="(indicator, idx) in group.indicators"
+                    :key="axe.name + '-' + (group.engagementName || '') + '-' + idx"
+                    :class="{ 'first-row-of-engagement': idx === 0 }"
                   >
-                    {{ group.engagementName || '–' }}
-                  </td>
-                  <td class="td-indicateur">
-                    {{ indicator.label }}
-                    <template v-if="indicator.labelUnit">
-                      <br><br>
-                      <em>Unité : {{ indicator.labelUnit }}</em>
-                    </template>
-                    <template v-if="indicator.rawData && indicator.rawData.label_sources">
-                      <br><br>
-                      <em>
-                        Source : {{ indicator.rawData.label_sources }}
-                        <a
-                          v-if="sourceUrl(indicator.rawData)"
-                          class="source-link-icon"
-                          :href="sourceUrl(indicator.rawData)"
-                          target="_blank"
-                          rel="noopener external"
-                          aria-label="Ouvrir la source (nouvel onglet)"
-                          @click.stop
-                          @mousedown.stop
-                        >
-                        </a>
-                      </em>
-                    </template>
-                    <template v-if="indicator.legendItems && indicator.legendItems.length > 0">
-                      <br><br>
-                      <div class="td-indicateur-legend-wrap">
-                        <span v-for="(item, i) in indicator.legendItems" :key="i" class="td-indicateur-legend-item">
-                          <span class="td-indicateur-legend-dot" :style="{ backgroundColor: item.color }"></span>
-                          <span class="td-indicateur-legend-label">{{ item.label }}</span>
-                        </span>
-                      </div>
-                    </template>
-                  </td>
-                  <td class="td-valeurs">
-                    <mini-chart
-                      v-if="indicator.rawData"
-                      :dataObj="indicator.rawData"
-                    />
-                  </td>
-                </tr>
+                    <td
+                      v-if="idx === 0"
+                      :rowspan="group.indicators.length || 1"
+                      class="td-engagement"
+                    >
+                      {{ group.engagementName || '–' }}
+                    </td>
+                    <td class="td-indicateur">
+                      {{ indicator.label }}
+                      <template v-if="indicator.labelUnit">
+                        <br><br>
+                        <em>Unité : {{ indicator.labelUnit }}</em>
+                      </template>
+                      <template v-if="indicator.rawData && indicator.rawData.label_sources">
+                        <br><br>
+                        <em>
+                          Source : {{ indicator.rawData.label_sources }}
+                          <a
+                            v-if="sourceUrl(indicator.rawData)"
+                            class="source-link-icon"
+                            :href="sourceUrl(indicator.rawData)"
+                            target="_blank"
+                            rel="noopener external"
+                            aria-label="Ouvrir la source (nouvel onglet)"
+                            @click.stop
+                            @mousedown.stop
+                          >
+                          </a>
+                        </em>
+                      </template>
+                      <template v-if="indicator.legendItems && indicator.legendItems.length > 0">
+                        <br><br>
+                        <div class="td-indicateur-legend-wrap">
+                          <span v-for="(item, i) in indicator.legendItems" :key="i" class="td-indicateur-legend-item">
+                            <span class="td-indicateur-legend-dot" :style="{ backgroundColor: item.color }"></span>
+                            <span class="td-indicateur-legend-label">{{ item.label }}</span>
+                          </span>
+                        </div>
+                      </template>
+                    </td>
+                    <td class="td-valeurs">
+                      <mini-chart
+                        v-if="indicator.rawData"
+                        :dataObj="indicator.rawData"
+                      />
+                    </td>
+                  </tr>
               </template>
               <tr v-if="axe.indicators.length === 0">
                 <td class="td-engagement">{{ axe.engagement || '–' }}</td>
@@ -232,30 +232,34 @@ export default {
           return
         }
 
-        const syntheseSector = response.data.sectors.find(s => s.name === 'Synthèse')
-        if (!syntheseSector || !syntheseSector.indicateursImpact) {
-          this.isLoading = false
-          return
+        // Synthèse « Ce qu'il faut retenir » : uniquement les indicateurs d'impact du
+        // secteur Synthèse, regroupés par axe de la taxonomie européenne. Les groupes
+        // par secteur et « Autres indicateurs » sont affichés sur les pages dédiées par
+        // axe (composant impact/engagements), pas ici.
+        const sectors = response.data.sectors || []
+
+        const canonAxe = (key) =>
+          canonicalImpactAxeNomComplet(key) || normalizeImpactAxeName(key)
+
+        const mainByAxe = {}
+        for (const sector of sectors) {
+          if (sector.name !== 'Synthèse') continue
+          for (const [axeName, indicators] of Object.entries(sector.indicateursImpact || {})) {
+            const c = canonAxe(axeName)
+            if (!c) continue
+            if (!mainByAxe[c]) mainByAxe[c] = []
+            mainByAxe[c].push(...indicators)
+          }
         }
 
         // Build axe structures and collect all grist IDs
         const allGristIds = []
         const axeStructures = []
-
-        const mergedImpact = {}
-        for (const [axeName, indicators] of Object.entries(syntheseSector.indicateursImpact)) {
-          const canonical =
-            canonicalImpactAxeNomComplet(axeName) || normalizeImpactAxeName(axeName)
-          if (!canonical) continue
-          if (!mergedImpact[canonical]) {
-            mergedImpact[canonical] = []
-          }
-          mergedImpact[canonical].push(...indicators)
-        }
+        const collectIds = (items) =>
+          (items || []).map(item => item.gristId).filter(Boolean)
 
         for (const axeName of IMPACT_AXE_DISPLAY_ORDER) {
-          const axeIndicators = mergedImpact[axeName] || []
-          const gristIds = axeIndicators.map(item => item.gristId).filter(Boolean)
+          const gristIds = collectIds(mainByAxe[axeName])
           allGristIds.push(...gristIds)
 
           const slug = impactAxeSlugFromNomComplet(axeName)
@@ -285,11 +289,13 @@ export default {
             if (ind.id_indic) indicatorMap[ind.id_indic] = ind
           })
 
+          const buildRows = (ids) => (ids || [])
+            .map(gid => indicatorMap[gid])
+            .filter(Boolean)
+            .map(ind => this.buildIndicatorRow(ind, engagementLongMap))
+
           for (const axe of axeStructures) {
-            axe.indicators = axe.gristIds
-              .map(gid => indicatorMap[gid])
-              .filter(Boolean)
-              .map(ind => this.buildIndicatorRow(ind, engagementLongMap))
+            axe.indicators = buildRows(axe.gristIds)
             axe.indicatorCount = axe.indicators.length
           }
         }
@@ -352,9 +358,18 @@ export default {
         description = String(indicator.label_description).replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim()
       }
 
-      // Engagement from main CSV: use mapping to display long version (Thématique → Engagement)
+      // Engagement from main CSV → intitulé long (mapping Thématique → Engagement long).
+      // Nouveau schéma Grist : la colonne « Engagement » vaut « Axe / Thématique »
+      // (ex. « Atténuation / Émissions territoriales ») ; on isole la thématique
+      // (partie après « / ») pour retrouver l'intitulé long.
       const rawEngagement = indicator.engagement || ''
-      const engagementName = engagementLongMap.get(rawEngagement) || rawEngagement
+      const thematique = rawEngagement.includes(' / ')
+        ? rawEngagement.split(' / ').slice(1).join(' / ').trim()
+        : rawEngagement
+      const engagementName =
+        engagementLongMap.get(thematique) ||
+        engagementLongMap.get(rawEngagement) ||
+        thematique
 
       const unit = indicator.label_unit || indicator.unite
 
@@ -719,6 +734,16 @@ export default {
   height: auto;
   vertical-align: middle !important;
   overflow: visible;
+}
+
+/* Séparateur de groupe (« secteur - X », « secteur - Transverse », « indicateurs - Autres ») */
+.etat-autres-row .td-autres-title {
+  padding: 0.75rem 0.5rem !important;
+  background: #f6f6f6;
+  color: #555;
+  font-weight: 700;
+  font-size: 0.875rem;
+  border-top: 2px solid #ddd;
 }
 
 .td-indicateur {
