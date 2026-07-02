@@ -5,6 +5,45 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <!--
+    Preview GitHub Pages (PR) SPA fallback.
+    GitHub Pages sert le 404.html RACINE (build main, publicPath "/") pour toute
+    route profonde d'un sous-dossier /pr/<n>/… → l'app main ne connaît pas ce
+    préfixe et renvoie vers le site principal. Ce snippet (présent dans index.html
+    donc recopié dans 404.html) rattrape ce cas : il rebondit vers la racine de la
+    preview /pr/<n>/ en mémorisant le chemin voulu, que la preview restaure ensuite.
+    No-op hors préfixe /pr/<n>/ → aucun impact sur le site principal.
+  -->
+  <script>
+    (function () {
+      var segs = location.pathname.split('/').filter(Boolean);
+      var isPreview = segs[0] === 'pr' && /^[0-9]+$/.test(segs[1]);
+      if (!isPreview) return;
+      var base = '/pr/' + segs[1] + '/';
+      var rest = segs.slice(2).join('/');
+      if (rest || location.pathname !== base) {
+        // 404.html racine servi pour une route profonde de preview → on rebondit.
+        try {
+          sessionStorage.setItem(
+            'previewRedirectPath',
+            '/' + rest + location.search + location.hash
+          );
+        } catch (e) { /* sessionStorage indisponible : rebond simple */ }
+        location.replace(base);
+        return;
+      }
+      // À la racine de la preview : on restaure le chemin mémorisé pour le routeur.
+      try {
+        var saved = sessionStorage.getItem('previewRedirectPath');
+        if (saved) {
+          sessionStorage.removeItem('previewRedirectPath');
+          if (saved !== '/') {
+            history.replaceState(null, '', base.replace(/\/$/, '') + saved);
+          }
+        }
+      } catch (e) { /* ignore */ }
+    })();
+  </script>
   <title>Baromètre de la planification écologique</title>
   <meta name="description" content="Baromètre de la planification écologique - Synthèse et suivi des stratégies environnementales.">
   <!-- <script src="/tarteaucitron/tarteaucitron.js"></script> -->
