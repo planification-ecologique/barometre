@@ -518,8 +518,11 @@ function reconstructLegacyIndicatorColumns(row) {
     levierParts.push(namedLevier || rawLevier || 'Autres indicateurs');
   }
 
-  // Déduplique en préservant l'ordre.
-  const uniqueLeviers = [...new Set(levierParts)];
+  // Déduplique en préservant l'ordre (évite le spread d'un Set : il casse le
+  // bundle legacy transpilé, cf. « Set ... not iterable »).
+  const uniqueLeviers = levierParts.filter(
+    (levier, index) => levierParts.indexOf(levier) === index
+  );
 
   return {
     ...row,
