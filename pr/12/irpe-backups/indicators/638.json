@@ -1,0 +1,1765 @@
+{
+  "cubeName": "prelevement_eau_usage_com",
+  "measureName": "prelevement_eau_usage_com.id_638",
+  "timeDimension": "prelevement_eau_usage_com.date_mesure",
+  "extraDimension": "prelevement_eau_usage_com.geocode_commune",
+  "data": [
+    {
+      "prelevement_eau_usage_com.libelle_region": "Corse",
+      "prelevement_eau_usage_com.geocode_region": "94",
+      "prelevement_eau_usage_com.date_mesure.year": "2008-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 95407700,
+      "prelevement_eau_usage_com.date_mesure": "2008-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Bourgogne-Franche-Comté",
+      "prelevement_eau_usage_com.geocode_region": "27",
+      "prelevement_eau_usage_com.date_mesure.year": "2008-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 409802822.01309,
+      "prelevement_eau_usage_com.date_mesure": "2008-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Occitanie",
+      "prelevement_eau_usage_com.geocode_region": "76",
+      "prelevement_eau_usage_com.date_mesure.year": "2008-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 2078084087.6977134,
+      "prelevement_eau_usage_com.date_mesure": "2008-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "prelevement_eau_usage_com.geocode_region": "93",
+      "prelevement_eau_usage_com.date_mesure.year": "2008-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 1516705900,
+      "prelevement_eau_usage_com.date_mesure": "2008-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "prelevement_eau_usage_com.geocode_region": "84",
+      "prelevement_eau_usage_com.date_mesure.year": "2008-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 12939553542,
+      "prelevement_eau_usage_com.date_mesure": "2008-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Normandie",
+      "prelevement_eau_usage_com.geocode_region": "28",
+      "prelevement_eau_usage_com.date_mesure.year": "2008-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 600475019.8999561,
+      "prelevement_eau_usage_com.date_mesure": "2008-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Nouvelle-Aquitaine",
+      "prelevement_eau_usage_com.geocode_region": "75",
+      "prelevement_eau_usage_com.date_mesure.year": "2008-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 6341160347.8970785,
+      "prelevement_eau_usage_com.date_mesure": "2008-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Bretagne",
+      "prelevement_eau_usage_com.geocode_region": "53",
+      "prelevement_eau_usage_com.date_mesure.year": "2008-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 277157663,
+      "prelevement_eau_usage_com.date_mesure": "2008-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Pays de la Loire",
+      "prelevement_eau_usage_com.geocode_region": "52",
+      "prelevement_eau_usage_com.date_mesure.year": "2008-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 1503843841,
+      "prelevement_eau_usage_com.date_mesure": "2008-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Île-de-France",
+      "prelevement_eau_usage_com.geocode_region": "11",
+      "prelevement_eau_usage_com.date_mesure.year": "2008-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 1832180644.194837,
+      "prelevement_eau_usage_com.date_mesure": "2008-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Hauts-de-France",
+      "prelevement_eau_usage_com.geocode_region": "32",
+      "prelevement_eau_usage_com.date_mesure.year": "2008-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 698792209.299,
+      "prelevement_eau_usage_com.date_mesure": "2008-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Centre-Val de Loire",
+      "prelevement_eau_usage_com.geocode_region": "24",
+      "prelevement_eau_usage_com.date_mesure.year": "2008-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 1136797838.9,
+      "prelevement_eau_usage_com.date_mesure": "2008-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Grand Est",
+      "prelevement_eau_usage_com.geocode_region": "44",
+      "prelevement_eau_usage_com.date_mesure.year": "2008-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 4708143467.780099,
+      "prelevement_eau_usage_com.date_mesure": "2008-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Île-de-France",
+      "prelevement_eau_usage_com.geocode_region": "11",
+      "prelevement_eau_usage_com.date_mesure.year": "2009-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 1736840126.2795997,
+      "prelevement_eau_usage_com.date_mesure": "2009-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Centre-Val de Loire",
+      "prelevement_eau_usage_com.geocode_region": "24",
+      "prelevement_eau_usage_com.date_mesure.year": "2009-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 1161842809.31,
+      "prelevement_eau_usage_com.date_mesure": "2009-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "prelevement_eau_usage_com.geocode_region": "93",
+      "prelevement_eau_usage_com.date_mesure.year": "2009-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 1573869200,
+      "prelevement_eau_usage_com.date_mesure": "2009-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Normandie",
+      "prelevement_eau_usage_com.geocode_region": "28",
+      "prelevement_eau_usage_com.date_mesure.year": "2009-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 608397620.6801391,
+      "prelevement_eau_usage_com.date_mesure": "2009-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Pays de la Loire",
+      "prelevement_eau_usage_com.geocode_region": "52",
+      "prelevement_eau_usage_com.date_mesure.year": "2009-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 1796581669.47,
+      "prelevement_eau_usage_com.date_mesure": "2009-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Hauts-de-France",
+      "prelevement_eau_usage_com.geocode_region": "32",
+      "prelevement_eau_usage_com.date_mesure.year": "2009-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 673847851.29899,
+      "prelevement_eau_usage_com.date_mesure": "2009-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Occitanie",
+      "prelevement_eau_usage_com.geocode_region": "76",
+      "prelevement_eau_usage_com.date_mesure.year": "2009-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 2092438522.9999697,
+      "prelevement_eau_usage_com.date_mesure": "2009-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Grand Est",
+      "prelevement_eau_usage_com.geocode_region": "44",
+      "prelevement_eau_usage_com.date_mesure.year": "2009-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 4521493846.960009,
+      "prelevement_eau_usage_com.date_mesure": "2009-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Bourgogne-Franche-Comté",
+      "prelevement_eau_usage_com.geocode_region": "27",
+      "prelevement_eau_usage_com.date_mesure.year": "2009-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 446119505.001979,
+      "prelevement_eau_usage_com.date_mesure": "2009-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Corse",
+      "prelevement_eau_usage_com.geocode_region": "94",
+      "prelevement_eau_usage_com.date_mesure.year": "2009-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 99725400,
+      "prelevement_eau_usage_com.date_mesure": "2009-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Nouvelle-Aquitaine",
+      "prelevement_eau_usage_com.geocode_region": "75",
+      "prelevement_eau_usage_com.date_mesure.year": "2009-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 5506257647.974,
+      "prelevement_eau_usage_com.date_mesure": "2009-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "prelevement_eau_usage_com.geocode_region": "84",
+      "prelevement_eau_usage_com.date_mesure.year": "2009-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 13051902662.77,
+      "prelevement_eau_usage_com.date_mesure": "2009-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Bretagne",
+      "prelevement_eau_usage_com.geocode_region": "53",
+      "prelevement_eau_usage_com.date_mesure.year": "2009-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 267629398.6,
+      "prelevement_eau_usage_com.date_mesure": "2009-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Grand Est",
+      "prelevement_eau_usage_com.geocode_region": "44",
+      "prelevement_eau_usage_com.date_mesure.year": "2010-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 4792357084.999889,
+      "prelevement_eau_usage_com.date_mesure": "2010-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Nouvelle-Aquitaine",
+      "prelevement_eau_usage_com.geocode_region": "75",
+      "prelevement_eau_usage_com.date_mesure.year": "2010-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 6270343214.690001,
+      "prelevement_eau_usage_com.date_mesure": "2010-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "prelevement_eau_usage_com.geocode_region": "84",
+      "prelevement_eau_usage_com.date_mesure.year": "2010-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 12151881312.0432,
+      "prelevement_eau_usage_com.date_mesure": "2010-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Corse",
+      "prelevement_eau_usage_com.geocode_region": "94",
+      "prelevement_eau_usage_com.date_mesure.year": "2010-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 90651300,
+      "prelevement_eau_usage_com.date_mesure": "2010-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Bretagne",
+      "prelevement_eau_usage_com.geocode_region": "53",
+      "prelevement_eau_usage_com.date_mesure.year": "2010-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 277960091.4,
+      "prelevement_eau_usage_com.date_mesure": "2010-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "prelevement_eau_usage_com.geocode_region": "93",
+      "prelevement_eau_usage_com.date_mesure.year": "2010-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 1477496800,
+      "prelevement_eau_usage_com.date_mesure": "2010-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Île-de-France",
+      "prelevement_eau_usage_com.geocode_region": "11",
+      "prelevement_eau_usage_com.date_mesure.year": "2010-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 1746521775.011627,
+      "prelevement_eau_usage_com.date_mesure": "2010-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Hauts-de-France",
+      "prelevement_eau_usage_com.geocode_region": "32",
+      "prelevement_eau_usage_com.date_mesure.year": "2010-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 666182261.50099,
+      "prelevement_eau_usage_com.date_mesure": "2010-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Bourgogne-Franche-Comté",
+      "prelevement_eau_usage_com.geocode_region": "27",
+      "prelevement_eau_usage_com.date_mesure.year": "2010-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 399793684.61211014,
+      "prelevement_eau_usage_com.date_mesure": "2010-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Normandie",
+      "prelevement_eau_usage_com.geocode_region": "28",
+      "prelevement_eau_usage_com.date_mesure.year": "2010-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 587422134.8599671,
+      "prelevement_eau_usage_com.date_mesure": "2010-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Centre-Val de Loire",
+      "prelevement_eau_usage_com.geocode_region": "24",
+      "prelevement_eau_usage_com.date_mesure.year": "2010-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 1160773226,
+      "prelevement_eau_usage_com.date_mesure": "2010-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Pays de la Loire",
+      "prelevement_eau_usage_com.geocode_region": "52",
+      "prelevement_eau_usage_com.date_mesure.year": "2010-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 1727892279.1,
+      "prelevement_eau_usage_com.date_mesure": "2010-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Occitanie",
+      "prelevement_eau_usage_com.geocode_region": "76",
+      "prelevement_eau_usage_com.date_mesure.year": "2010-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 1760820042.9999704,
+      "prelevement_eau_usage_com.date_mesure": "2010-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Grand Est",
+      "prelevement_eau_usage_com.geocode_region": "44",
+      "prelevement_eau_usage_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 3942843653.0600004,
+      "prelevement_eau_usage_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Hauts-de-France",
+      "prelevement_eau_usage_com.geocode_region": "32",
+      "prelevement_eau_usage_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 671925010.6700001,
+      "prelevement_eau_usage_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "prelevement_eau_usage_com.geocode_region": "93",
+      "prelevement_eau_usage_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 1499385400,
+      "prelevement_eau_usage_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Corse",
+      "prelevement_eau_usage_com.geocode_region": "94",
+      "prelevement_eau_usage_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 107957400,
+      "prelevement_eau_usage_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Pays de la Loire",
+      "prelevement_eau_usage_com.geocode_region": "52",
+      "prelevement_eau_usage_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 1503476189.66,
+      "prelevement_eau_usage_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Île-de-France",
+      "prelevement_eau_usage_com.geocode_region": "11",
+      "prelevement_eau_usage_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 1496033287.49,
+      "prelevement_eau_usage_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Centre-Val de Loire",
+      "prelevement_eau_usage_com.geocode_region": "24",
+      "prelevement_eau_usage_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 1243922452.633871,
+      "prelevement_eau_usage_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Occitanie",
+      "prelevement_eau_usage_com.geocode_region": "76",
+      "prelevement_eau_usage_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 1667861750.2519698,
+      "prelevement_eau_usage_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Normandie",
+      "prelevement_eau_usage_com.geocode_region": "28",
+      "prelevement_eau_usage_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 574910644.26,
+      "prelevement_eau_usage_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Bourgogne-Franche-Comté",
+      "prelevement_eau_usage_com.geocode_region": "27",
+      "prelevement_eau_usage_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 394600588.46999997,
+      "prelevement_eau_usage_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Bretagne",
+      "prelevement_eau_usage_com.geocode_region": "53",
+      "prelevement_eau_usage_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 272849770.68799996,
+      "prelevement_eau_usage_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Nouvelle-Aquitaine",
+      "prelevement_eau_usage_com.geocode_region": "75",
+      "prelevement_eau_usage_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 6145714534.190666,
+      "prelevement_eau_usage_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "prelevement_eau_usage_com.geocode_region": "84",
+      "prelevement_eau_usage_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 13514161648.407,
+      "prelevement_eau_usage_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Pays de la Loire",
+      "prelevement_eau_usage_com.geocode_region": "52",
+      "prelevement_eau_usage_com.date_mesure.year": "2012-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 1559525872,
+      "prelevement_eau_usage_com.date_mesure": "2012-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "prelevement_eau_usage_com.geocode_region": "84",
+      "prelevement_eau_usage_com.date_mesure.year": "2012-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 13756244314,
+      "prelevement_eau_usage_com.date_mesure": "2012-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Guadeloupe",
+      "prelevement_eau_usage_com.geocode_region": "01",
+      "prelevement_eau_usage_com.date_mesure.year": "2012-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 82767777,
+      "prelevement_eau_usage_com.date_mesure": "2012-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Centre-Val de Loire",
+      "prelevement_eau_usage_com.geocode_region": "24",
+      "prelevement_eau_usage_com.date_mesure.year": "2012-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 1251394060,
+      "prelevement_eau_usage_com.date_mesure": "2012-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Grand Est",
+      "prelevement_eau_usage_com.geocode_region": "44",
+      "prelevement_eau_usage_com.date_mesure.year": "2012-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 6708467486,
+      "prelevement_eau_usage_com.date_mesure": "2012-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "La Réunion",
+      "prelevement_eau_usage_com.geocode_region": "04",
+      "prelevement_eau_usage_com.date_mesure.year": "2012-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 225627320,
+      "prelevement_eau_usage_com.date_mesure": "2012-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Bourgogne-Franche-Comté",
+      "prelevement_eau_usage_com.geocode_region": "27",
+      "prelevement_eau_usage_com.date_mesure.year": "2012-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 1486770270,
+      "prelevement_eau_usage_com.date_mesure": "2012-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Île-de-France",
+      "prelevement_eau_usage_com.geocode_region": "11",
+      "prelevement_eau_usage_com.date_mesure.year": "2012-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 2195075776,
+      "prelevement_eau_usage_com.date_mesure": "2012-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Normandie",
+      "prelevement_eau_usage_com.geocode_region": "28",
+      "prelevement_eau_usage_com.date_mesure.year": "2012-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 485302612,
+      "prelevement_eau_usage_com.date_mesure": "2012-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Mayotte",
+      "prelevement_eau_usage_com.geocode_region": "06",
+      "prelevement_eau_usage_com.date_mesure.year": "2012-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 1617064,
+      "prelevement_eau_usage_com.date_mesure": "2012-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Martinique",
+      "prelevement_eau_usage_com.geocode_region": "02",
+      "prelevement_eau_usage_com.date_mesure.year": "2012-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 56092942,
+      "prelevement_eau_usage_com.date_mesure": "2012-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Corse",
+      "prelevement_eau_usage_com.geocode_region": "94",
+      "prelevement_eau_usage_com.date_mesure.year": "2012-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 108439498,
+      "prelevement_eau_usage_com.date_mesure": "2012-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Occitanie",
+      "prelevement_eau_usage_com.geocode_region": "76",
+      "prelevement_eau_usage_com.date_mesure.year": "2012-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 2500931073,
+      "prelevement_eau_usage_com.date_mesure": "2012-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "prelevement_eau_usage_com.geocode_region": "93",
+      "prelevement_eau_usage_com.date_mesure.year": "2012-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 2685569124,
+      "prelevement_eau_usage_com.date_mesure": "2012-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Nouvelle-Aquitaine",
+      "prelevement_eau_usage_com.geocode_region": "75",
+      "prelevement_eau_usage_com.date_mesure.year": "2012-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 6283722382,
+      "prelevement_eau_usage_com.date_mesure": "2012-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Bretagne",
+      "prelevement_eau_usage_com.geocode_region": "53",
+      "prelevement_eau_usage_com.date_mesure.year": "2012-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 257325808,
+      "prelevement_eau_usage_com.date_mesure": "2012-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Guyane",
+      "prelevement_eau_usage_com.geocode_region": "03",
+      "prelevement_eau_usage_com.date_mesure.year": "2012-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 6858837,
+      "prelevement_eau_usage_com.date_mesure": "2012-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Hauts-de-France",
+      "prelevement_eau_usage_com.geocode_region": "32",
+      "prelevement_eau_usage_com.date_mesure.year": "2012-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 1398815377,
+      "prelevement_eau_usage_com.date_mesure": "2012-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Normandie",
+      "prelevement_eau_usage_com.geocode_region": "28",
+      "prelevement_eau_usage_com.date_mesure.year": "2013-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 528079645,
+      "prelevement_eau_usage_com.date_mesure": "2013-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Pays de la Loire",
+      "prelevement_eau_usage_com.geocode_region": "52",
+      "prelevement_eau_usage_com.date_mesure.year": "2013-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 1568896167,
+      "prelevement_eau_usage_com.date_mesure": "2013-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Hauts-de-France",
+      "prelevement_eau_usage_com.geocode_region": "32",
+      "prelevement_eau_usage_com.date_mesure.year": "2013-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 1627963822,
+      "prelevement_eau_usage_com.date_mesure": "2013-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Grand Est",
+      "prelevement_eau_usage_com.geocode_region": "44",
+      "prelevement_eau_usage_com.date_mesure.year": "2013-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 5876581195,
+      "prelevement_eau_usage_com.date_mesure": "2013-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Martinique",
+      "prelevement_eau_usage_com.geocode_region": "02",
+      "prelevement_eau_usage_com.date_mesure.year": "2013-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 53996728,
+      "prelevement_eau_usage_com.date_mesure": "2013-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Nouvelle-Aquitaine",
+      "prelevement_eau_usage_com.geocode_region": "75",
+      "prelevement_eau_usage_com.date_mesure.year": "2013-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 6025271991,
+      "prelevement_eau_usage_com.date_mesure": "2013-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Occitanie",
+      "prelevement_eau_usage_com.geocode_region": "76",
+      "prelevement_eau_usage_com.date_mesure.year": "2013-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 2415348681,
+      "prelevement_eau_usage_com.date_mesure": "2013-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Centre-Val de Loire",
+      "prelevement_eau_usage_com.geocode_region": "24",
+      "prelevement_eau_usage_com.date_mesure.year": "2013-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 1278557612,
+      "prelevement_eau_usage_com.date_mesure": "2013-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Guyane",
+      "prelevement_eau_usage_com.geocode_region": "03",
+      "prelevement_eau_usage_com.date_mesure.year": "2013-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 6802047,
+      "prelevement_eau_usage_com.date_mesure": "2013-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Bourgogne-Franche-Comté",
+      "prelevement_eau_usage_com.geocode_region": "27",
+      "prelevement_eau_usage_com.date_mesure.year": "2013-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 1335590248,
+      "prelevement_eau_usage_com.date_mesure": "2013-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Guadeloupe",
+      "prelevement_eau_usage_com.geocode_region": "01",
+      "prelevement_eau_usage_com.date_mesure.year": "2013-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 85062185,
+      "prelevement_eau_usage_com.date_mesure": "2013-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "La Réunion",
+      "prelevement_eau_usage_com.geocode_region": "04",
+      "prelevement_eau_usage_com.date_mesure.year": "2013-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 215675563,
+      "prelevement_eau_usage_com.date_mesure": "2013-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Île-de-France",
+      "prelevement_eau_usage_com.geocode_region": "11",
+      "prelevement_eau_usage_com.date_mesure.year": "2013-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 1932586992,
+      "prelevement_eau_usage_com.date_mesure": "2013-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Bretagne",
+      "prelevement_eau_usage_com.geocode_region": "53",
+      "prelevement_eau_usage_com.date_mesure.year": "2013-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 272658358,
+      "prelevement_eau_usage_com.date_mesure": "2013-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "prelevement_eau_usage_com.geocode_region": "93",
+      "prelevement_eau_usage_com.date_mesure.year": "2013-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 2465599142,
+      "prelevement_eau_usage_com.date_mesure": "2013-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Corse",
+      "prelevement_eau_usage_com.geocode_region": "94",
+      "prelevement_eau_usage_com.date_mesure.year": "2013-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 104156849,
+      "prelevement_eau_usage_com.date_mesure": "2013-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Mayotte",
+      "prelevement_eau_usage_com.geocode_region": "06",
+      "prelevement_eau_usage_com.date_mesure.year": "2013-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 1693378,
+      "prelevement_eau_usage_com.date_mesure": "2013-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "prelevement_eau_usage_com.geocode_region": "84",
+      "prelevement_eau_usage_com.date_mesure.year": "2013-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 13025565588,
+      "prelevement_eau_usage_com.date_mesure": "2013-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Guadeloupe",
+      "prelevement_eau_usage_com.geocode_region": "01",
+      "prelevement_eau_usage_com.date_mesure.year": "2014-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 81855162,
+      "prelevement_eau_usage_com.date_mesure": "2014-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Bourgogne-Franche-Comté",
+      "prelevement_eau_usage_com.geocode_region": "27",
+      "prelevement_eau_usage_com.date_mesure.year": "2014-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 1382705192,
+      "prelevement_eau_usage_com.date_mesure": "2014-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Grand Est",
+      "prelevement_eau_usage_com.geocode_region": "44",
+      "prelevement_eau_usage_com.date_mesure.year": "2014-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 5919804601,
+      "prelevement_eau_usage_com.date_mesure": "2014-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Île-de-France",
+      "prelevement_eau_usage_com.geocode_region": "11",
+      "prelevement_eau_usage_com.date_mesure.year": "2014-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 1681409992,
+      "prelevement_eau_usage_com.date_mesure": "2014-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Guyane",
+      "prelevement_eau_usage_com.geocode_region": "03",
+      "prelevement_eau_usage_com.date_mesure.year": "2014-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 7124625,
+      "prelevement_eau_usage_com.date_mesure": "2014-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Occitanie",
+      "prelevement_eau_usage_com.geocode_region": "76",
+      "prelevement_eau_usage_com.date_mesure.year": "2014-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 2020113148,
+      "prelevement_eau_usage_com.date_mesure": "2014-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Nouvelle-Aquitaine",
+      "prelevement_eau_usage_com.geocode_region": "75",
+      "prelevement_eau_usage_com.date_mesure.year": "2014-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 5966351939,
+      "prelevement_eau_usage_com.date_mesure": "2014-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Hauts-de-France",
+      "prelevement_eau_usage_com.geocode_region": "32",
+      "prelevement_eau_usage_com.date_mesure.year": "2014-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 1440986400,
+      "prelevement_eau_usage_com.date_mesure": "2014-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Centre-Val de Loire",
+      "prelevement_eau_usage_com.geocode_region": "24",
+      "prelevement_eau_usage_com.date_mesure.year": "2014-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 1199506193,
+      "prelevement_eau_usage_com.date_mesure": "2014-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Pays de la Loire",
+      "prelevement_eau_usage_com.geocode_region": "52",
+      "prelevement_eau_usage_com.date_mesure.year": "2014-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 1129487505,
+      "prelevement_eau_usage_com.date_mesure": "2014-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Mayotte",
+      "prelevement_eau_usage_com.geocode_region": "06",
+      "prelevement_eau_usage_com.date_mesure.year": "2014-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 1792343,
+      "prelevement_eau_usage_com.date_mesure": "2014-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Martinique",
+      "prelevement_eau_usage_com.geocode_region": "02",
+      "prelevement_eau_usage_com.date_mesure.year": "2014-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 57216606,
+      "prelevement_eau_usage_com.date_mesure": "2014-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "La Réunion",
+      "prelevement_eau_usage_com.geocode_region": "04",
+      "prelevement_eau_usage_com.date_mesure.year": "2014-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 217761143,
+      "prelevement_eau_usage_com.date_mesure": "2014-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Corse",
+      "prelevement_eau_usage_com.geocode_region": "94",
+      "prelevement_eau_usage_com.date_mesure.year": "2014-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 93637195,
+      "prelevement_eau_usage_com.date_mesure": "2014-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Normandie",
+      "prelevement_eau_usage_com.geocode_region": "28",
+      "prelevement_eau_usage_com.date_mesure.year": "2014-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 567077942,
+      "prelevement_eau_usage_com.date_mesure": "2014-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "prelevement_eau_usage_com.geocode_region": "84",
+      "prelevement_eau_usage_com.date_mesure.year": "2014-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 13613793215,
+      "prelevement_eau_usage_com.date_mesure": "2014-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Bretagne",
+      "prelevement_eau_usage_com.geocode_region": "53",
+      "prelevement_eau_usage_com.date_mesure.year": "2014-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 268276883,
+      "prelevement_eau_usage_com.date_mesure": "2014-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "prelevement_eau_usage_com.geocode_region": "93",
+      "prelevement_eau_usage_com.date_mesure.year": "2014-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 2231574279,
+      "prelevement_eau_usage_com.date_mesure": "2014-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Normandie",
+      "prelevement_eau_usage_com.geocode_region": "28",
+      "prelevement_eau_usage_com.date_mesure.year": "2015-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 547188305,
+      "prelevement_eau_usage_com.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Corse",
+      "prelevement_eau_usage_com.geocode_region": "94",
+      "prelevement_eau_usage_com.date_mesure.year": "2015-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 102660346,
+      "prelevement_eau_usage_com.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Guyane",
+      "prelevement_eau_usage_com.geocode_region": "03",
+      "prelevement_eau_usage_com.date_mesure.year": "2015-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 7236680,
+      "prelevement_eau_usage_com.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Grand Est",
+      "prelevement_eau_usage_com.geocode_region": "44",
+      "prelevement_eau_usage_com.date_mesure.year": "2015-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 5751654868,
+      "prelevement_eau_usage_com.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Nouvelle-Aquitaine",
+      "prelevement_eau_usage_com.geocode_region": "75",
+      "prelevement_eau_usage_com.date_mesure.year": "2015-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 5818387827,
+      "prelevement_eau_usage_com.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Occitanie",
+      "prelevement_eau_usage_com.geocode_region": "76",
+      "prelevement_eau_usage_com.date_mesure.year": "2015-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 2244917391,
+      "prelevement_eau_usage_com.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Mayotte",
+      "prelevement_eau_usage_com.geocode_region": "06",
+      "prelevement_eau_usage_com.date_mesure.year": "2015-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 1944245,
+      "prelevement_eau_usage_com.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Pays de la Loire",
+      "prelevement_eau_usage_com.geocode_region": "52",
+      "prelevement_eau_usage_com.date_mesure.year": "2015-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 1074326553,
+      "prelevement_eau_usage_com.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "prelevement_eau_usage_com.geocode_region": "93",
+      "prelevement_eau_usage_com.date_mesure.year": "2015-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 2294373815,
+      "prelevement_eau_usage_com.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Centre-Val de Loire",
+      "prelevement_eau_usage_com.geocode_region": "24",
+      "prelevement_eau_usage_com.date_mesure.year": "2015-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 1453149998,
+      "prelevement_eau_usage_com.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "La Réunion",
+      "prelevement_eau_usage_com.geocode_region": "04",
+      "prelevement_eau_usage_com.date_mesure.year": "2015-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 199717104,
+      "prelevement_eau_usage_com.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Hauts-de-France",
+      "prelevement_eau_usage_com.geocode_region": "32",
+      "prelevement_eau_usage_com.date_mesure.year": "2015-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 1475118943,
+      "prelevement_eau_usage_com.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Martinique",
+      "prelevement_eau_usage_com.geocode_region": "02",
+      "prelevement_eau_usage_com.date_mesure.year": "2015-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 59948156,
+      "prelevement_eau_usage_com.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Bretagne",
+      "prelevement_eau_usage_com.geocode_region": "53",
+      "prelevement_eau_usage_com.date_mesure.year": "2015-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 281059666,
+      "prelevement_eau_usage_com.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "prelevement_eau_usage_com.geocode_region": "84",
+      "prelevement_eau_usage_com.date_mesure.year": "2015-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 14215938076,
+      "prelevement_eau_usage_com.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Guadeloupe",
+      "prelevement_eau_usage_com.geocode_region": "01",
+      "prelevement_eau_usage_com.date_mesure.year": "2015-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 89865053,
+      "prelevement_eau_usage_com.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Île-de-France",
+      "prelevement_eau_usage_com.geocode_region": "11",
+      "prelevement_eau_usage_com.date_mesure.year": "2015-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 1495389000,
+      "prelevement_eau_usage_com.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Bourgogne-Franche-Comté",
+      "prelevement_eau_usage_com.geocode_region": "27",
+      "prelevement_eau_usage_com.date_mesure.year": "2015-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 1389267156,
+      "prelevement_eau_usage_com.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Bourgogne-Franche-Comté",
+      "prelevement_eau_usage_com.geocode_region": "27",
+      "prelevement_eau_usage_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 1387428149,
+      "prelevement_eau_usage_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Centre-Val de Loire",
+      "prelevement_eau_usage_com.geocode_region": "24",
+      "prelevement_eau_usage_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 1336165109,
+      "prelevement_eau_usage_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Pays de la Loire",
+      "prelevement_eau_usage_com.geocode_region": "52",
+      "prelevement_eau_usage_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 1083849665,
+      "prelevement_eau_usage_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Nouvelle-Aquitaine",
+      "prelevement_eau_usage_com.geocode_region": "75",
+      "prelevement_eau_usage_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 6607920552,
+      "prelevement_eau_usage_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Guadeloupe",
+      "prelevement_eau_usage_com.geocode_region": "01",
+      "prelevement_eau_usage_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 90138419,
+      "prelevement_eau_usage_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Occitanie",
+      "prelevement_eau_usage_com.geocode_region": "76",
+      "prelevement_eau_usage_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 2229991592,
+      "prelevement_eau_usage_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Guyane",
+      "prelevement_eau_usage_com.geocode_region": "03",
+      "prelevement_eau_usage_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 7253389,
+      "prelevement_eau_usage_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Île-de-France",
+      "prelevement_eau_usage_com.geocode_region": "11",
+      "prelevement_eau_usage_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 1313776398,
+      "prelevement_eau_usage_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Normandie",
+      "prelevement_eau_usage_com.geocode_region": "28",
+      "prelevement_eau_usage_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 543810533,
+      "prelevement_eau_usage_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Mayotte",
+      "prelevement_eau_usage_com.geocode_region": "06",
+      "prelevement_eau_usage_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 3159517,
+      "prelevement_eau_usage_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "prelevement_eau_usage_com.geocode_region": "84",
+      "prelevement_eau_usage_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 13429186390,
+      "prelevement_eau_usage_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Corse",
+      "prelevement_eau_usage_com.geocode_region": "94",
+      "prelevement_eau_usage_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 97095311,
+      "prelevement_eau_usage_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "La Réunion",
+      "prelevement_eau_usage_com.geocode_region": "04",
+      "prelevement_eau_usage_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 200512088,
+      "prelevement_eau_usage_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Bretagne",
+      "prelevement_eau_usage_com.geocode_region": "53",
+      "prelevement_eau_usage_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 280375450,
+      "prelevement_eau_usage_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Martinique",
+      "prelevement_eau_usage_com.geocode_region": "02",
+      "prelevement_eau_usage_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 54381138,
+      "prelevement_eau_usage_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Hauts-de-France",
+      "prelevement_eau_usage_com.geocode_region": "32",
+      "prelevement_eau_usage_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 1388012413,
+      "prelevement_eau_usage_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Grand Est",
+      "prelevement_eau_usage_com.geocode_region": "44",
+      "prelevement_eau_usage_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 4974805225,
+      "prelevement_eau_usage_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "prelevement_eau_usage_com.geocode_region": "93",
+      "prelevement_eau_usage_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 2580839641,
+      "prelevement_eau_usage_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Mayotte",
+      "prelevement_eau_usage_com.geocode_region": "06",
+      "prelevement_eau_usage_com.date_mesure.year": "2017-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 9011381,
+      "prelevement_eau_usage_com.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "prelevement_eau_usage_com.geocode_region": "93",
+      "prelevement_eau_usage_com.date_mesure.year": "2017-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 2606191544,
+      "prelevement_eau_usage_com.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Bourgogne-Franche-Comté",
+      "prelevement_eau_usage_com.geocode_region": "27",
+      "prelevement_eau_usage_com.date_mesure.year": "2017-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 1443002836,
+      "prelevement_eau_usage_com.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "La Réunion",
+      "prelevement_eau_usage_com.geocode_region": "04",
+      "prelevement_eau_usage_com.date_mesure.year": "2017-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 211319422,
+      "prelevement_eau_usage_com.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Grand Est",
+      "prelevement_eau_usage_com.geocode_region": "44",
+      "prelevement_eau_usage_com.date_mesure.year": "2017-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 4561657114,
+      "prelevement_eau_usage_com.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Pays de la Loire",
+      "prelevement_eau_usage_com.geocode_region": "52",
+      "prelevement_eau_usage_com.date_mesure.year": "2017-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 1518964285,
+      "prelevement_eau_usage_com.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Guadeloupe",
+      "prelevement_eau_usage_com.geocode_region": "01",
+      "prelevement_eau_usage_com.date_mesure.year": "2017-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 92085977,
+      "prelevement_eau_usage_com.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Nouvelle-Aquitaine",
+      "prelevement_eau_usage_com.geocode_region": "75",
+      "prelevement_eau_usage_com.date_mesure.year": "2017-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 6324903623,
+      "prelevement_eau_usage_com.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Normandie",
+      "prelevement_eau_usage_com.geocode_region": "28",
+      "prelevement_eau_usage_com.date_mesure.year": "2017-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 556517080,
+      "prelevement_eau_usage_com.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Bretagne",
+      "prelevement_eau_usage_com.geocode_region": "53",
+      "prelevement_eau_usage_com.date_mesure.year": "2017-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 284999560,
+      "prelevement_eau_usage_com.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Occitanie",
+      "prelevement_eau_usage_com.geocode_region": "76",
+      "prelevement_eau_usage_com.date_mesure.year": "2017-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 2186918473,
+      "prelevement_eau_usage_com.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Île-de-France",
+      "prelevement_eau_usage_com.geocode_region": "11",
+      "prelevement_eau_usage_com.date_mesure.year": "2017-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 1509699970,
+      "prelevement_eau_usage_com.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Martinique",
+      "prelevement_eau_usage_com.geocode_region": "02",
+      "prelevement_eau_usage_com.date_mesure.year": "2017-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 52125903,
+      "prelevement_eau_usage_com.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Corse",
+      "prelevement_eau_usage_com.geocode_region": "94",
+      "prelevement_eau_usage_com.date_mesure.year": "2017-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 120369030,
+      "prelevement_eau_usage_com.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Guyane",
+      "prelevement_eau_usage_com.geocode_region": "03",
+      "prelevement_eau_usage_com.date_mesure.year": "2017-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 7518874,
+      "prelevement_eau_usage_com.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Hauts-de-France",
+      "prelevement_eau_usage_com.geocode_region": "32",
+      "prelevement_eau_usage_com.date_mesure.year": "2017-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 1323831321,
+      "prelevement_eau_usage_com.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "prelevement_eau_usage_com.geocode_region": "84",
+      "prelevement_eau_usage_com.date_mesure.year": "2017-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 13772898074,
+      "prelevement_eau_usage_com.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Centre-Val de Loire",
+      "prelevement_eau_usage_com.geocode_region": "24",
+      "prelevement_eau_usage_com.date_mesure.year": "2017-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 1379203070,
+      "prelevement_eau_usage_com.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Centre-Val de Loire",
+      "prelevement_eau_usage_com.geocode_region": "24",
+      "prelevement_eau_usage_com.date_mesure.year": "2018-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 1365700204,
+      "prelevement_eau_usage_com.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Martinique",
+      "prelevement_eau_usage_com.geocode_region": "02",
+      "prelevement_eau_usage_com.date_mesure.year": "2018-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 51629002,
+      "prelevement_eau_usage_com.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Bourgogne-Franche-Comté",
+      "prelevement_eau_usage_com.geocode_region": "27",
+      "prelevement_eau_usage_com.date_mesure.year": "2018-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 1462714533,
+      "prelevement_eau_usage_com.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Bretagne",
+      "prelevement_eau_usage_com.geocode_region": "53",
+      "prelevement_eau_usage_com.date_mesure.year": "2018-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 291472491,
+      "prelevement_eau_usage_com.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "prelevement_eau_usage_com.geocode_region": "84",
+      "prelevement_eau_usage_com.date_mesure.year": "2018-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 13147101760,
+      "prelevement_eau_usage_com.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "prelevement_eau_usage_com.geocode_region": "93",
+      "prelevement_eau_usage_com.date_mesure.year": "2018-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 2392653438,
+      "prelevement_eau_usage_com.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Normandie",
+      "prelevement_eau_usage_com.geocode_region": "28",
+      "prelevement_eau_usage_com.date_mesure.year": "2018-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 561410167,
+      "prelevement_eau_usage_com.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Île-de-France",
+      "prelevement_eau_usage_com.geocode_region": "11",
+      "prelevement_eau_usage_com.date_mesure.year": "2018-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 1312159204,
+      "prelevement_eau_usage_com.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Hauts-de-France",
+      "prelevement_eau_usage_com.geocode_region": "32",
+      "prelevement_eau_usage_com.date_mesure.year": "2018-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 1764918045,
+      "prelevement_eau_usage_com.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Mayotte",
+      "prelevement_eau_usage_com.geocode_region": "06",
+      "prelevement_eau_usage_com.date_mesure.year": "2018-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 11018284,
+      "prelevement_eau_usage_com.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "La Réunion",
+      "prelevement_eau_usage_com.geocode_region": "04",
+      "prelevement_eau_usage_com.date_mesure.year": "2018-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 203025366,
+      "prelevement_eau_usage_com.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Corse",
+      "prelevement_eau_usage_com.geocode_region": "94",
+      "prelevement_eau_usage_com.date_mesure.year": "2018-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 114365259,
+      "prelevement_eau_usage_com.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Grand Est",
+      "prelevement_eau_usage_com.geocode_region": "44",
+      "prelevement_eau_usage_com.date_mesure.year": "2018-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 5487322373,
+      "prelevement_eau_usage_com.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Pays de la Loire",
+      "prelevement_eau_usage_com.geocode_region": "52",
+      "prelevement_eau_usage_com.date_mesure.year": "2018-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 1310320720,
+      "prelevement_eau_usage_com.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Guadeloupe",
+      "prelevement_eau_usage_com.geocode_region": "01",
+      "prelevement_eau_usage_com.date_mesure.year": "2018-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 94409730,
+      "prelevement_eau_usage_com.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Nouvelle-Aquitaine",
+      "prelevement_eau_usage_com.geocode_region": "75",
+      "prelevement_eau_usage_com.date_mesure.year": "2018-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 6366153203,
+      "prelevement_eau_usage_com.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Guyane",
+      "prelevement_eau_usage_com.geocode_region": "03",
+      "prelevement_eau_usage_com.date_mesure.year": "2018-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 8481058,
+      "prelevement_eau_usage_com.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Occitanie",
+      "prelevement_eau_usage_com.geocode_region": "76",
+      "prelevement_eau_usage_com.date_mesure.year": "2018-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 1989360068,
+      "prelevement_eau_usage_com.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "prelevement_eau_usage_com.geocode_region": "93",
+      "prelevement_eau_usage_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 2657378675,
+      "prelevement_eau_usage_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "La Réunion",
+      "prelevement_eau_usage_com.geocode_region": "04",
+      "prelevement_eau_usage_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 222872328,
+      "prelevement_eau_usage_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Normandie",
+      "prelevement_eau_usage_com.geocode_region": "28",
+      "prelevement_eau_usage_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 595936057,
+      "prelevement_eau_usage_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Pays de la Loire",
+      "prelevement_eau_usage_com.geocode_region": "52",
+      "prelevement_eau_usage_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 928517429,
+      "prelevement_eau_usage_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Île-de-France",
+      "prelevement_eau_usage_com.geocode_region": "11",
+      "prelevement_eau_usage_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 1283418380,
+      "prelevement_eau_usage_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Grand Est",
+      "prelevement_eau_usage_com.geocode_region": "44",
+      "prelevement_eau_usage_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 5317093067,
+      "prelevement_eau_usage_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Nouvelle-Aquitaine",
+      "prelevement_eau_usage_com.geocode_region": "75",
+      "prelevement_eau_usage_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 6396464134,
+      "prelevement_eau_usage_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "prelevement_eau_usage_com.geocode_region": "84",
+      "prelevement_eau_usage_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 12837498566,
+      "prelevement_eau_usage_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Bretagne",
+      "prelevement_eau_usage_com.geocode_region": "53",
+      "prelevement_eau_usage_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 285415654,
+      "prelevement_eau_usage_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Hauts-de-France",
+      "prelevement_eau_usage_com.geocode_region": "32",
+      "prelevement_eau_usage_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 1388439361,
+      "prelevement_eau_usage_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Bourgogne-Franche-Comté",
+      "prelevement_eau_usage_com.geocode_region": "27",
+      "prelevement_eau_usage_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 1463185938,
+      "prelevement_eau_usage_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Corse",
+      "prelevement_eau_usage_com.geocode_region": "94",
+      "prelevement_eau_usage_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 108976417,
+      "prelevement_eau_usage_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Centre-Val de Loire",
+      "prelevement_eau_usage_com.geocode_region": "24",
+      "prelevement_eau_usage_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 1346217004,
+      "prelevement_eau_usage_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Guadeloupe",
+      "prelevement_eau_usage_com.geocode_region": "01",
+      "prelevement_eau_usage_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 98483863,
+      "prelevement_eau_usage_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Guyane",
+      "prelevement_eau_usage_com.geocode_region": "03",
+      "prelevement_eau_usage_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 21724406,
+      "prelevement_eau_usage_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Occitanie",
+      "prelevement_eau_usage_com.geocode_region": "76",
+      "prelevement_eau_usage_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 2190797587,
+      "prelevement_eau_usage_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Mayotte",
+      "prelevement_eau_usage_com.geocode_region": "06",
+      "prelevement_eau_usage_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 15536284,
+      "prelevement_eau_usage_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Martinique",
+      "prelevement_eau_usage_com.geocode_region": "02",
+      "prelevement_eau_usage_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 51347542,
+      "prelevement_eau_usage_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Mayotte",
+      "prelevement_eau_usage_com.geocode_region": "06",
+      "prelevement_eau_usage_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 14774510,
+      "prelevement_eau_usage_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "La Réunion",
+      "prelevement_eau_usage_com.geocode_region": "04",
+      "prelevement_eau_usage_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 220837264,
+      "prelevement_eau_usage_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Guyane",
+      "prelevement_eau_usage_com.geocode_region": "03",
+      "prelevement_eau_usage_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 22880084,
+      "prelevement_eau_usage_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Normandie",
+      "prelevement_eau_usage_com.geocode_region": "28",
+      "prelevement_eau_usage_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 531051773,
+      "prelevement_eau_usage_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Bretagne",
+      "prelevement_eau_usage_com.geocode_region": "53",
+      "prelevement_eau_usage_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 290442720,
+      "prelevement_eau_usage_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Hauts-de-France",
+      "prelevement_eau_usage_com.geocode_region": "32",
+      "prelevement_eau_usage_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 1538322631.01,
+      "prelevement_eau_usage_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Pays de la Loire",
+      "prelevement_eau_usage_com.geocode_region": "52",
+      "prelevement_eau_usage_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 1176068187,
+      "prelevement_eau_usage_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Grand Est",
+      "prelevement_eau_usage_com.geocode_region": "44",
+      "prelevement_eau_usage_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 4035215396,
+      "prelevement_eau_usage_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Bourgogne-Franche-Comté",
+      "prelevement_eau_usage_com.geocode_region": "27",
+      "prelevement_eau_usage_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 1418749488,
+      "prelevement_eau_usage_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Occitanie",
+      "prelevement_eau_usage_com.geocode_region": "76",
+      "prelevement_eau_usage_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 2151035809,
+      "prelevement_eau_usage_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Île-de-France",
+      "prelevement_eau_usage_com.geocode_region": "11",
+      "prelevement_eau_usage_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 1314280120,
+      "prelevement_eau_usage_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Martinique",
+      "prelevement_eau_usage_com.geocode_region": "02",
+      "prelevement_eau_usage_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 55824546,
+      "prelevement_eau_usage_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "prelevement_eau_usage_com.geocode_region": "84",
+      "prelevement_eau_usage_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 12385545368,
+      "prelevement_eau_usage_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "prelevement_eau_usage_com.geocode_region": "93",
+      "prelevement_eau_usage_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 2637420046,
+      "prelevement_eau_usage_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Centre-Val de Loire",
+      "prelevement_eau_usage_com.geocode_region": "24",
+      "prelevement_eau_usage_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 1521659363,
+      "prelevement_eau_usage_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Nouvelle-Aquitaine",
+      "prelevement_eau_usage_com.geocode_region": "75",
+      "prelevement_eau_usage_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 6090562992,
+      "prelevement_eau_usage_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Corse",
+      "prelevement_eau_usage_com.geocode_region": "94",
+      "prelevement_eau_usage_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 103203572,
+      "prelevement_eau_usage_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Guadeloupe",
+      "prelevement_eau_usage_com.geocode_region": "01",
+      "prelevement_eau_usage_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 104361809,
+      "prelevement_eau_usage_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Bourgogne-Franche-Comté",
+      "prelevement_eau_usage_com.geocode_region": "27",
+      "prelevement_eau_usage_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 1404149705,
+      "prelevement_eau_usage_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "prelevement_eau_usage_com.geocode_region": "93",
+      "prelevement_eau_usage_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 2593539036,
+      "prelevement_eau_usage_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "prelevement_eau_usage_com.geocode_region": "84",
+      "prelevement_eau_usage_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 13556513460,
+      "prelevement_eau_usage_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Hauts-de-France",
+      "prelevement_eau_usage_com.geocode_region": "32",
+      "prelevement_eau_usage_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 1438315848,
+      "prelevement_eau_usage_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Mayotte",
+      "prelevement_eau_usage_com.geocode_region": "06",
+      "prelevement_eau_usage_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 16728228,
+      "prelevement_eau_usage_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Bretagne",
+      "prelevement_eau_usage_com.geocode_region": "53",
+      "prelevement_eau_usage_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 282981643,
+      "prelevement_eau_usage_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Guadeloupe",
+      "prelevement_eau_usage_com.geocode_region": "01",
+      "prelevement_eau_usage_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 111539858,
+      "prelevement_eau_usage_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Occitanie",
+      "prelevement_eau_usage_com.geocode_region": "76",
+      "prelevement_eau_usage_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 1984843993,
+      "prelevement_eau_usage_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Nouvelle-Aquitaine",
+      "prelevement_eau_usage_com.geocode_region": "75",
+      "prelevement_eau_usage_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 6132018841,
+      "prelevement_eau_usage_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Pays de la Loire",
+      "prelevement_eau_usage_com.geocode_region": "52",
+      "prelevement_eau_usage_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 1315889084,
+      "prelevement_eau_usage_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Normandie",
+      "prelevement_eau_usage_com.geocode_region": "28",
+      "prelevement_eau_usage_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 518242005,
+      "prelevement_eau_usage_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Grand Est",
+      "prelevement_eau_usage_com.geocode_region": "44",
+      "prelevement_eau_usage_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 3105066838,
+      "prelevement_eau_usage_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Corse",
+      "prelevement_eau_usage_com.geocode_region": "94",
+      "prelevement_eau_usage_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 108057424,
+      "prelevement_eau_usage_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "La Réunion",
+      "prelevement_eau_usage_com.geocode_region": "04",
+      "prelevement_eau_usage_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 214969411,
+      "prelevement_eau_usage_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Martinique",
+      "prelevement_eau_usage_com.geocode_region": "02",
+      "prelevement_eau_usage_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 58150283,
+      "prelevement_eau_usage_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Île-de-France",
+      "prelevement_eau_usage_com.geocode_region": "11",
+      "prelevement_eau_usage_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 1201960640,
+      "prelevement_eau_usage_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Centre-Val de Loire",
+      "prelevement_eau_usage_com.geocode_region": "24",
+      "prelevement_eau_usage_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 1274975844,
+      "prelevement_eau_usage_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Guyane",
+      "prelevement_eau_usage_com.geocode_region": "03",
+      "prelevement_eau_usage_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 23936206,
+      "prelevement_eau_usage_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Guadeloupe",
+      "prelevement_eau_usage_com.geocode_region": "01",
+      "prelevement_eau_usage_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 109532160,
+      "prelevement_eau_usage_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "La Réunion",
+      "prelevement_eau_usage_com.geocode_region": "04",
+      "prelevement_eau_usage_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 0,
+      "prelevement_eau_usage_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Grand Est",
+      "prelevement_eau_usage_com.geocode_region": "44",
+      "prelevement_eau_usage_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 2955212773,
+      "prelevement_eau_usage_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Normandie",
+      "prelevement_eau_usage_com.geocode_region": "28",
+      "prelevement_eau_usage_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 517057698,
+      "prelevement_eau_usage_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "prelevement_eau_usage_com.geocode_region": "93",
+      "prelevement_eau_usage_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 2587116742,
+      "prelevement_eau_usage_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Hauts-de-France",
+      "prelevement_eau_usage_com.geocode_region": "32",
+      "prelevement_eau_usage_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 1454215961.96,
+      "prelevement_eau_usage_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Guyane",
+      "prelevement_eau_usage_com.geocode_region": "03",
+      "prelevement_eau_usage_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 0,
+      "prelevement_eau_usage_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Pays de la Loire",
+      "prelevement_eau_usage_com.geocode_region": "52",
+      "prelevement_eau_usage_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 1180730886.04,
+      "prelevement_eau_usage_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Nouvelle-Aquitaine",
+      "prelevement_eau_usage_com.geocode_region": "75",
+      "prelevement_eau_usage_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 6066322311.0199995,
+      "prelevement_eau_usage_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Occitanie",
+      "prelevement_eau_usage_com.geocode_region": "76",
+      "prelevement_eau_usage_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 2109560247,
+      "prelevement_eau_usage_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Mayotte",
+      "prelevement_eau_usage_com.geocode_region": "06",
+      "prelevement_eau_usage_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 0,
+      "prelevement_eau_usage_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Corse",
+      "prelevement_eau_usage_com.geocode_region": "94",
+      "prelevement_eau_usage_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 124193541,
+      "prelevement_eau_usage_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Martinique",
+      "prelevement_eau_usage_com.geocode_region": "02",
+      "prelevement_eau_usage_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 63317868,
+      "prelevement_eau_usage_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Bretagne",
+      "prelevement_eau_usage_com.geocode_region": "53",
+      "prelevement_eau_usage_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 287208987.01,
+      "prelevement_eau_usage_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Bourgogne-Franche-Comté",
+      "prelevement_eau_usage_com.geocode_region": "27",
+      "prelevement_eau_usage_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 1388545641,
+      "prelevement_eau_usage_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "prelevement_eau_usage_com.geocode_region": "84",
+      "prelevement_eau_usage_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 12594881000.04,
+      "prelevement_eau_usage_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Île-de-France",
+      "prelevement_eau_usage_com.geocode_region": "11",
+      "prelevement_eau_usage_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 1279979259,
+      "prelevement_eau_usage_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "prelevement_eau_usage_com.libelle_region": "Centre-Val de Loire",
+      "prelevement_eau_usage_com.geocode_region": "24",
+      "prelevement_eau_usage_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "prelevement_eau_usage_com.id_638": 1424162889.05,
+      "prelevement_eau_usage_com.date_mesure": "2022-01-01T00:00:00.000"
+    }
+  ],
+  "measureMeta": {
+    "libelle_indicateur": "Prélèvements d'eau par usage",
+    "statut_commun": "Mesure",
+    "unite": "m3",
+    "methode_calcul": "Source et traitement:\n \n Indicateur partagé dans le fichier ITDD département :\n- ID indicateur 'i031' \n- filtre sur le libellé 'vol_prelev'\n  Pour en savoir plus sur les traitements oppérés par le SDES, se référer à leurs fiches méthodologiques: \n https://www.data.gouv.fr/api/1/datasets/r/8536a6cd-3896-445f-9ea3-b358f3b8f3c9 \n \n Source utilisée par le SDES:\n à partir des données d'entrées de la BNPE par agence, fournies par l'Office Français de la Biodiversité (OFB), traitements SDES.\n \n Périmètre:\n \n Les volumes d'eau interceptés par les barrages hydro-électriques sont de loin les plus importants.\n Ils représentent des centaines de milliards de mètres cubes, toutefois les barrages n'entraînent pas de prélèvements directs dans les ressources en eau.\n  Ils ne sont pas retenus du fait qu'ils ne constituent pas un réel prélèvement.\n \n Limites et précautions:\n \n L'indicateur est basé sur une estimation des prélèvements en eau, or celle-ci est dépendante de l'évolution des textes de loi encadrant le calcul des taux de recouvrement de la redevance ce qui peut occasionner des ruptures de série. \n Les prélèvements d'eau douce sont estimés à l'aide des déclarations faites par les préleveurs auprès des agences et offices de l'eau, au titre de la redevance pour prélèvement de la ressource en eau.\n Cette redevance est due par les personnes (physiques ou morales) prélevant un volume annuel supérieur à 10 000 m³ hors zone de répartition des eaux, ou supérieur à 7 000 m³ en zone de répartition des eaux (zone caractérisée par une insuffisance chronique des ressources en eau par rapport aux besoins, article R211-71 du Code de l'environnement). \n Certains usages étant exonérés et certains prélèvements non déclarés, l'estimation n'est donc pas exhaustive. \n Cette estimation donne toutefois une idée des ordres de grandeur des volumes prélevés et de la répartition selon les usages.\n \n Des écarts sont possibles entre les données des ITDD fournies par les agences de l'OFB et celles qui sont diffusées sur le site bnpe.eaudefrance, car des corrections sont apportées par le SDES notamment sur des codes usages, milieux ou codes insee erronés.\n En outre les écarts en 2019 viennent essentiellement de deux ajouts manuels exceptionnels puisqu'il manquait les prélèvements de 2 centrales nucléaires, pour près de 4 milliards de m3 sur le CNPE de Saint Alban en Isère, et 450 millions de m3 pour le CNPE de Cruas en Ardèche.\n A noter qu'aucun prélèvement n'a été effectué pour l'alimentation du canal de Tancarville (76684) en 2020 (contre 13 020 600 m3 en 2019 et 13 005 270 m3 en 2021) en raison de travaux de rénovation des deux écluses du canal\n",
+    "id_itdd": true
+  }
+}
