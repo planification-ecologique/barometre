@@ -4,8 +4,8 @@ import router from './router'
 import {
   ensureImpactTaxonomyLoaded,
   getNavigationStructure,
-  prewarmShellIndicatorCaches,
 } from './services/csvDataService.js'
+import { prewarmShellViewData } from './services/shellViewDataService.js'
 import config_file from './services/tarteaucitron_config.js'
 import analytics_config_file, { resolveTrackingDomain } from './services/dsfr_analytics_config.js'
 import './css/website.css'
@@ -83,8 +83,8 @@ Promise.all([
   ),
 ]).finally(() => {
   mountApp()
-  prewarmShellIndicatorCaches(navEnvironment).catch((e) =>
-    console.warn('Préchauffage indicateurs shell : échec partiel', e)
+  prewarmShellViewData(navEnvironment).catch((e) =>
+    console.warn('Préchauffage vues shell : échec partiel', e)
   )
 })
 

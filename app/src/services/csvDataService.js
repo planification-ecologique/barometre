@@ -250,11 +250,6 @@ const fetchPromiseByEnv = {};
 const indicatorsResultCache = new Map();
 const indicatorsResultPromiseCache = new Map();
 
-const SHELL_INDICATORS_TIME_PERIOD = {
-  date_start: '2015-01-01',
-  date_end: '2031-01-01',
-};
-
 function normalizeQueryForCache(query) {
   const q = JSON.parse(JSON.stringify(query || {}));
   if (Array.isArray(q.filter_by)) {
@@ -2308,79 +2303,4 @@ export async function getNavigationStructure(environment = 'production') {
     });
   }
   return navigationStructureSessionInflight[key];
-}
-
-function collectEtatEnvironnementGristIds(navData) {
-  const syntheseSector = navData?.sectors?.find((s) => s.name === 'Synthèse');
-  if (!syntheseSector?.indicateursImpact) return [];
-
-  const mergedImpact = {};
-  for (const [axeName, indicators] of Object.entries(syntheseSector.indicateursImpact)) {
-    const canonical =
-      canonicalImpactAxeNomComplet(axeName) || normalizeImpactAxeName(axeName);
-    if (!canonical) continue;
-    if (!mergedImpact[canonical]) mergedImpact[canonical] = [];
-    mergedImpact[canonical].push(...indicators);
-  }
-
-  const allGristIds = [];
-  for (const axeName of IMPACT_AXE_DISPLAY_ORDER) {
-    const axeIndicators = mergedImpact[axeName] || [];
-    allGristIds.push(
-      ...axeIndicators.map((item) => item.gristId).filter(Boolean)
-    );
-  }
-  return allGristIds;
-}
-
-function collectChantiersSyntheseGristIds(navData) {
-  const sectors = (navData?.sectors || []).filter((s) => s.name !== 'Synthèse');
-  const allGristIds = [];
-
-  for (const sector of sectors) {
-    const chantierEntries = Object.entries(sector.chantiers || {}).filter(
-      ([name]) => !isImpactAxe(name)
-    );
-    for (const [, chantierData] of chantierEntries) {
-      const chantierIndicators =
-        chantierData.leviers?.['Indicateur de chantier'] || [];
-      allGristIds.push(
-        ...chantierIndicators.map((item) => item.gristId).filter(Boolean)
-      );
-    }
-  }
-
-  return allGristIds;
-}
-
-/**
- * Préchauffe les requêtes getIndicators des vues shell lourdes (état env, synthèse chantiers).
- * Non bloquant : à lancer en arrière-plan après le boot.
- */
-export async function prewarmShellIndicatorCaches(environment = 'production') {
-  try {
-    const nav = await getNavigationStructure(environment);
-    if (nav.status !== 'success' || !nav.data) return;
-
-    const queries = [];
-    const etatIds = collectEtatEnvironnementGristIds(nav.data);
-    const chantierIds = collectChantiersSyntheseGristIds(nav.data);
-
-    if (etatIds.length) {
-      queries.push({
-        filter_by: [{ field: 'grist_ids', values: etatIds }],
-        time_period: SHELL_INDICATORS_TIME_PERIOD,
-      });
-    }
-    if (chantierIds.length) {
-      queries.push({
-        filter_by: [{ field: 'grist_ids', values: chantierIds }],
-        time_period: SHELL_INDICATORS_TIME_PERIOD,
-      });
-    }
-
-    await Promise.all(queries.map((q) => getIndicators(q, environment)));
-  } catch (error) {
-    console.warn('Préchauffage indicateurs shell : échec partiel', error);
-  }
 }
