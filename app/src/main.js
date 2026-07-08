@@ -5,6 +5,7 @@ import {
   ensureImpactTaxonomyLoaded,
   getNavigationStructure,
 } from './services/csvDataService.js'
+import { prewarmShellViewData } from './services/shellViewDataService.js'
 import config_file from './services/tarteaucitron_config.js'
 import analytics_config_file, { resolveTrackingDomain } from './services/dsfr_analytics_config.js'
 import './css/website.css'
@@ -80,5 +81,10 @@ Promise.all([
   getNavigationStructure(navEnvironment).catch((e) =>
     console.warn('Structure de navigation : chargement partiel', e)
   ),
-]).finally(() => mountApp())
+]).finally(() => {
+  mountApp()
+  prewarmShellViewData(navEnvironment).catch((e) =>
+    console.warn('Préchauffage vues shell : échec partiel', e)
+  )
+})
 

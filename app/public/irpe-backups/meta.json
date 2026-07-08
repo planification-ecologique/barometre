@@ -19790,6 +19790,236 @@
       "nestedFolders": []
     },
     {
+      "name": "tiges_alt_essence_dpt",
+      "type": "cube",
+      "title": "Tiges Alt Essence Dpt",
+      "isVisible": true,
+      "public": true,
+      "description": "Nombre de tiges altérées par essence, provenant des données de l’inventaire forestier de l’IGN fournies dans le service « Les forêts de mon territoire » de l’Observatoire des Forêts Françaises",
+      "meta": {
+        "responsable_calcul": "Institut national de l’information géographique et forestière - IGN"
+      },
+      "measures": [
+        {
+          "name": "tiges_alt_essence_dpt.id_1240",
+          "title": "Tiges Alt Essence Dpt Id1240",
+          "shortTitle": "Id1240",
+          "cumulativeTotal": false,
+          "cumulative": false,
+          "type": "number",
+          "aggType": "sum",
+          "drillMembers": [],
+          "drillMembersGrouped": {
+            "measures": [],
+            "dimensions": []
+          },
+          "meta": {
+            "libelle_indicateur": "Nombre de tiges altérées par essence",
+            "statut_commun": "Mesure",
+            "unite": "tiges",
+            "methode_calcul": "Les données brutes ont été filtrées en utilisant la colonne label = DEPERIS_ESS (conformément à documentation ign disponible en ligne). \n Afin de récupérer l'indicateur, nous avons utilisé la colonne tot_stand. \n Les autres informations statistiques (colonnes moy_ha_stand, ic_moy_ha_stand, ic_stand, pourc_stand) n'ont pas été prises en compte. \n\nLe nombre de tiges correspond au nombre d’arbres ou au nombre de tiges en cas de cépées dont le diamètre à 1,30 m est supérieur à 7,5 cm.",
+            "summable": false
+          },
+          "isVisible": true,
+          "public": true
+        },
+        {
+          "name": "tiges_alt_essence_dpt.intervalle_confiance",
+          "title": "Tiges Alt Essence Dpt Intervalle Confiance",
+          "shortTitle": "Intervalle Confiance",
+          "cumulativeTotal": false,
+          "cumulative": false,
+          "type": "number",
+          "aggType": "max",
+          "drillMembers": [],
+          "drillMembersGrouped": {
+            "measures": [],
+            "dimensions": []
+          },
+          "meta": {
+            "libelle_indicateur": "Intervalle de confiance",
+            "statut_commun": "Extra",
+            "unite": "ha",
+            "methode_calcul": "L'intervalle de confiance a été récupéré en utilisant la colonne ic_stand",
+            "summable": false
+          },
+          "isVisible": true,
+          "public": true
+        }
+      ],
+      "dimensions": [
+        {
+          "name": "tiges_alt_essence_dpt.date_mesure",
+          "title": "Tiges Alt Essence Dpt Date Mesure",
+          "type": "time",
+          "shortTitle": "Date Mesure",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "tiges_alt_essence_dpt.geocode_departement",
+          "title": "Tiges Alt Essence Dpt Geocode Departement",
+          "type": "string",
+          "shortTitle": "Geocode Departement",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "tiges_alt_essence_dpt.libelle_departement",
+          "title": "Tiges Alt Essence Dpt Libelle Departement",
+          "type": "string",
+          "shortTitle": "Libelle Departement",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "tiges_alt_essence_dpt.essence",
+          "title": "Tiges Alt Essence Dpt Essence",
+          "type": "string",
+          "shortTitle": "Essence",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "tiges_alt_essence_dpt.significativite",
+          "title": "Tiges Alt Essence Dpt Significativite",
+          "type": "string",
+          "shortTitle": "Significativite",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        }
+      ],
+      "segments": [],
+      "hierarchies": [],
+      "folders": [],
+      "nestedFolders": []
+    },
+    {
+      "name": "tiges_alt_essence_region",
+      "type": "cube",
+      "title": "Tiges Alt Essence Region",
+      "isVisible": true,
+      "public": true,
+      "description": "Nombre de tiges altérées par essence, provenant des données de l’inventaire forestier de l’IGN fournies dans le service « Les forêts de mon territoire » de l’Observatoire des Forêts Françaises",
+      "meta": {
+        "responsable_calcul": "Institut national de l’information géographique et forestière - IGN"
+      },
+      "measures": [
+        {
+          "name": "tiges_alt_essence_region.id_1240",
+          "title": "Tiges Alt Essence Region Id1240",
+          "shortTitle": "Id1240",
+          "cumulativeTotal": false,
+          "cumulative": false,
+          "type": "number",
+          "aggType": "sum",
+          "drillMembers": [],
+          "drillMembersGrouped": {
+            "measures": [],
+            "dimensions": []
+          },
+          "meta": {
+            "libelle_indicateur": "Nombre de tiges altérées par essence",
+            "statut_commun": "Mesure",
+            "unite": "tiges",
+            "methode_calcul": "Les données brutes ont été filtrées en utilisant la colonne label = DEPERIS_ESS (conformément à documentation ign disponible en ligne). \n Afin de récupérer l'indicateur, nous avons utilisé la colonne tot_stand. \n Les autres informations statistiques (colonnes moy_ha_stand, ic_moy_ha_stand, ic_stand, pourc_stand) n'ont pas été prises en compte. \n\nLe nombre de tiges correspond au nombre d’arbres ou au nombre de tiges en cas de cépées dont le diamètre à 1,30 m est supérieur à 7,5 cm.",
+            "summable": false
+          },
+          "isVisible": true,
+          "public": true
+        },
+        {
+          "name": "tiges_alt_essence_region.intervalle_confiance",
+          "title": "Tiges Alt Essence Region Intervalle Confiance",
+          "shortTitle": "Intervalle Confiance",
+          "cumulativeTotal": false,
+          "cumulative": false,
+          "type": "number",
+          "aggType": "max",
+          "drillMembers": [],
+          "drillMembersGrouped": {
+            "measures": [],
+            "dimensions": []
+          },
+          "meta": {
+            "libelle_indicateur": "Intervalle de confiance",
+            "statut_commun": "Extra",
+            "unite": "ha",
+            "methode_calcul": "L'intervalle de confiance a été récupéré en utilisant la colonne ic_stand",
+            "summable": false
+          },
+          "isVisible": true,
+          "public": true
+        }
+      ],
+      "dimensions": [
+        {
+          "name": "tiges_alt_essence_region.date_mesure",
+          "title": "Tiges Alt Essence Region Date Mesure",
+          "type": "time",
+          "shortTitle": "Date Mesure",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "tiges_alt_essence_region.geocode_region",
+          "title": "Tiges Alt Essence Region Geocode Region",
+          "type": "string",
+          "shortTitle": "Geocode Region",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "tiges_alt_essence_region.libelle_region",
+          "title": "Tiges Alt Essence Region Libelle Region",
+          "type": "string",
+          "shortTitle": "Libelle Region",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "tiges_alt_essence_region.essence",
+          "title": "Tiges Alt Essence Region Essence",
+          "type": "string",
+          "shortTitle": "Essence",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "tiges_alt_essence_region.significativite",
+          "title": "Tiges Alt Essence Region Significativite",
+          "type": "string",
+          "shortTitle": "Significativite",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        }
+      ],
+      "segments": [],
+      "hierarchies": [],
+      "folders": [],
+      "nestedFolders": []
+    },
+    {
       "name": "dechets_population_dpt",
       "type": "cube",
       "title": "Dechets Population Dpt",

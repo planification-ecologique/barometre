@@ -20,54 +20,51 @@
         <div class="dashboard-main-section__inner">
           <div class="fr-container--fluid fr-container-page">
             <div v-if="!isapiloading || myobj.view === 'about' || myobj.view === 'chantiers-sectoriels' || myobj.view === 'etat-environnement'">
-              <!-- Chantiers sectoriels synthèse view -->
               <synthese-sectorielle
                 v-if="myobj.view === 'chantiers-sectoriels'"
                 :params="myobj"
                 :useStaging="useStaging"
               />
-              <!-- Etat de l'environnement view -->
               <etat-environnement
-                v-else-if="myobj.view === 'etat-environnement'"
+                v-if="myobj.view === 'etat-environnement'"
                 :params="myobj"
                 :useStaging="useStaging"
               />
-              <!-- About view -->
               <about-view
-                v-else-if="myobj.view === 'about'"
+                v-if="myobj.view === 'about'"
                 :useStaging="useStaging"
               />
               <!-- General Engagements view -->
               <general-engagements-view 
-                v-else-if="myobj.view === 'general-engagements'"
+                v-if="myobj.view === 'general-engagements'"
                 :params="myobj" 
                 :inputData="results_API"
                 :useStaging="useStaging"
               />
               <!-- General Chantiers view -->
               <general-chantiers-view 
-                v-else-if="myobj.view === 'general-chantiers'"
+                v-if="myobj.view === 'general-chantiers'"
                 :params="myobj" 
                 :inputData="results_API"
                 :useStaging="useStaging"
               />
               <!-- Sectorial Engagements view -->
               <sectorial-engagements-view 
-                v-else-if="myobj.view === 'sectorial-engagements'"
+                v-if="myobj.view === 'sectorial-engagements'"
                 :params="myobj" 
                 :inputData="results_API"
                 :useStaging="useStaging"
               />
               <!-- Chantier detail view -->
               <chantier-detail
-                v-else-if="myobj.view === 'chantier'"
+                v-if="myobj.view === 'chantier'"
                 :params="myobj"
                 :chantierData="results_API"
                 :useStaging="useStaging"
               />
               <!-- Fallback to adaptive dashboard -->
               <adaptive-dashboard 
-                v-else
+                v-if="showAdaptiveDashboard"
                 :params="myobj" 
                 :inputData="results_API"
               />
@@ -90,7 +87,7 @@
 
 <script>
 // Import CSV data service instead of API
-import { getIndicators } from "@/services/csvDataService.js";
+import { getIndicators, getNavigationStructure } from "@/services/csvDataService.js";
 import UpFooter from "../components/UpFooter.vue";
 import AdaptiveDashboard from "../components/AdaptiveDashboard.vue";
 import SideNavigation from "../components/SideNavigation.vue";
@@ -121,7 +118,6 @@ import {
   impactAxeSlugToName,
   isImpactAxeSlug,
 } from "@/utils/impactAxeUrl.js"
-import { getNavigationStructure } from "@/services/csvDataService.js"
 
 export default {
   name: "DashboardPage",
@@ -144,7 +140,21 @@ export default {
         this.$route.query.view === "about" ||
         this.myobj?.view === "about"
       )
-    }
+    },
+    showAdaptiveDashboard() {
+      const v = this.myobj?.view
+      if (!v) return true
+      return ![
+        "about",
+        "chantiers-sectoriels",
+        "etat-environnement",
+        "general-engagements",
+        "general-chantiers",
+        "sectorial-engagements",
+        "chantier",
+        "engagements-table",
+      ].includes(v)
+    },
   },
   components: {
     UpFooter,

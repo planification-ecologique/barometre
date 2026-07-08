@@ -6,7 +6,9 @@
         <SkipLinksDsfr></SkipLinksDsfr>
         <header-dsfr />
         <main id="content" role="main">
-          <router-view />
+          <keep-alive include="DashboardPage,SearchPage">
+            <router-view />
+          </keep-alive>
         </main>
         <footer-dsfr />
         <chart-color-test-modal />
