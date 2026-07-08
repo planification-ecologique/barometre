@@ -255,9 +255,12 @@
 <script>
 import MiniChart from './MiniChart.vue'
 import SynthesisValeursHeaderLegend from './SynthesisValeursHeaderLegend.vue'
-import { chantierSectorNomMieux as sectorNomMieux, resolveSectorDescription } from '@/config/sectorMieuxLabels.js';
-import { getNavigationStructure, getIndicators, getSectorDescriptionsMap, isImpactAxe } from '@/services/csvDataService.js'
-import { getAllColors, getHexaFromName } from '@/utils.js'
+import { chantierSectorNomMieux as sectorNomMieux } from '@/config/sectorMieuxLabels.js';
+import {
+  ensureShellViewData,
+  peekShellViewData,
+  SHELL_VIEW_CHANTIERS,
+} from '@/services/shellViewDataService.js'
 import { chantiersRouteName, etatEnvironnementRouteName } from '@/config/routeNames.js'
 import { toSectionSlug } from '@/utils/sectionUrl.js'
 import {
@@ -286,11 +289,17 @@ export default {
       isLoading: true,
       navigationData: null,
       displaySectors: [],
-      indicatorDataCache: {}
     }
   },
+  created() {
+    this.hydrateFromShellCache()
+  },
   async mounted() {
-    await this.loadData()
+    if (this.isLoading) {
+      await this.loadData()
+    } else {
+      this.$nextTick(() => this.scrollToHash())
+    }
   },
   computed: {
     accueilTo() {
@@ -304,6 +313,17 @@ export default {
   },
   methods: {
     sectorNomMieux,
+    hydrateFromShellCache() {
+      const environment = this.useStaging ? 'staging' : 'production'
+      const cached = peekShellViewData(SHELL_VIEW_CHANTIERS, environment)
+      if (cached?.displaySectors) {
+        this.displaySectors = cached.displaySectors
+        this.navigationData = cached.navigationData || null
+        this.isLoading = false
+        return true
+      }
+      return false
+    },
     sourceUrl(rawData) {
       return rawData?.lien_donnees_source || rawData?.lien_site_source || ''
     },
@@ -314,102 +334,16 @@ export default {
         .replace(/^-+|-+$/g, '')
     },
     async loadData() {
+      if (this.hydrateFromShellCache()) {
+        this.$nextTick(() => this.scrollToHash())
+        return
+      }
       this.isLoading = true
       try {
         const environment = this.useStaging ? 'staging' : 'production'
-        const response = await getNavigationStructure(environment)
-
-        if (response.status !== 'success') {
-          this.isLoading = false
-          return
-        }
-
-        this.navigationData = response.data
-
-        const sectorDescriptions = await getSectorDescriptionsMap()
-
-        // Build the display structure for each non-Synthèse sector
-        const sectors = response.data.sectors.filter(s => s.name !== 'Synthèse')
-
-        // Collect all grist IDs we need across all sectors
-        const allGristIds = []
-        const sectorStructures = []
-
-        for (const sector of sectors) {
-          const chantiers = []
-          const chantierEntries = Object.entries(sector.chantiers || {}).filter(
-            ([name]) => !isImpactAxe(name)
-          )
-
-          let levierCount = 0
-
-          for (const [chantierName, chantierData] of chantierEntries) {
-            const levierNames = Object.keys(chantierData.leviers || {})
-              .filter(l => l !== 'Indicateur de chantier' && l !== 'Autres indicateurs' && l !== "Indicateur d'impact - autres")
-
-            levierCount += levierNames.length
-
-            // Get the "Indicateur de chantier" items
-            const chantierIndicators = chantierData.leviers['Indicateur de chantier'] || []
-            const gristIds = chantierIndicators.map(item => item.gristId).filter(Boolean)
-            allGristIds.push(...gristIds)
-
-            // Build badges from Axe taxonomie (Liste_chantiers), fallback to empty if not found
-            const axeTaxonomie = chantierData.axeTaxonomie || []
-            const maxVisible = 4
-            const visibleBadges = axeTaxonomie.slice(0, maxVisible)
-            const remainingNames = axeTaxonomie.slice(maxVisible)
-
-            chantiers.push({
-              name: chantierName,
-              id: chantierName.toLowerCase().replace(/[^a-z0-9]/g, '-'),
-              gristIds,
-              engagementBadges: visibleBadges,
-              remainingEngagements: remainingNames.length,
-              remainingEngagementNames: remainingNames.join('\n'),
-              indicators: [], // Will be populated after data fetch
-              sortedLeviers: chantierData.sortedLeviers || []
-            })
-          }
-
-          sectorStructures.push({
-            name: sector.name,
-            description: resolveSectorDescription(sector.name, sectorDescriptions),
-            chantierCount: chantierEntries.length,
-            levierCount,
-            engagementLabel: 'Axe de la taxonomie',
-            chantiers
-          })
-        }
-
-        // Fetch all indicator data at once
-        if (allGristIds.length > 0) {
-          const query = {
-            filter_by: [{ field: 'grist_ids', values: allGristIds }],
-            time_period: { date_start: '2015-01-01', date_end: '2031-01-01' }
-          }
-          const environment = this.useStaging ? 'staging' : 'production'
-          const indicatorResponse = await getIndicators(query, environment)
-          const allIndicators = indicatorResponse.results || []
-
-          // Index indicators by grist ID
-          const indicatorMap = {}
-          allIndicators.forEach(ind => {
-            if (ind.id_indic) indicatorMap[ind.id_indic] = ind
-          })
-
-          // Populate each chantier with its indicators
-          for (const sector of sectorStructures) {
-            for (const chantier of sector.chantiers) {
-              chantier.indicators = chantier.gristIds
-                .map(gid => indicatorMap[gid])
-                .filter(Boolean)
-                .map(ind => this.buildIndicatorRow(ind))
-            }
-          }
-        }
-
-        this.displaySectors = sectorStructures
+        const data = await ensureShellViewData(SHELL_VIEW_CHANTIERS, environment)
+        this.displaySectors = data.displaySectors || []
+        this.navigationData = data.navigationData || null
       } catch (error) {
         console.error('Error loading synthèse data:', error)
       } finally {
@@ -433,91 +367,6 @@ export default {
         }
       }
       this.$nextTick(() => tryScroll(0))
-    },
-    buildIndicatorRow(indicator) {
-      // Extract time series values (non-target, non-null)
-      // Data format from csvDataService:
-      //   indicator.date = [["2017", "2018", ...]]  (array of arrays)
-      //   indicator.values = [[val1, val2, ...], ...]  (array of series arrays)
-      const values = []
-      let targetValue = null
-
-      if (indicator.date && indicator.values) {
-        // date[0] is the array of year strings
-        const years = Array.isArray(indicator.date[0]) ? indicator.date[0] : indicator.date
-        // values[0] is the first (or only) data series
-        const series = Array.isArray(indicator.values[0]) ? indicator.values[0] : indicator.values
-
-        if (years.length > 0 && series.length > 0) {
-          years.forEach((year, i) => {
-            const val = series[i]
-            if (val !== null && val !== undefined && !isNaN(val)) {
-              values.push(parseFloat(val))
-            }
-          })
-        }
-      }
-
-      // Get target value (cible)
-      if (indicator.cible !== null && indicator.cible !== undefined && String(indicator.cible).trim() !== '' && !isNaN(indicator.cible)) {
-        targetValue = parseFloat(indicator.cible)
-      }
-
-      // Compute ecart vs cible
-      let ecart = null
-      if (targetValue !== null && values.length > 0) {
-        const lastValue = values[values.length - 1]
-        if (lastValue !== 0 && targetValue !== 0) {
-          // Percentage difference relative to target
-          ecart = ((lastValue - targetValue) / Math.abs(targetValue)) * 100
-        }
-      }
-
-      // Extract plain text description for tooltip
-      let description = ''
-      if (indicator.label_description) {
-        description = String(indicator.label_description).replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim()
-      }
-
-      const unit = indicator.label_unit || indicator.unite;
-      const labelBase = indicator.label_indic || 'Indicateur';
-
-      // Légende avec couleurs pour les graphes non mono-barre (Barres empilées, Courbes indépendantes, Barres simple multi-séries)
-      let legendItems = [];
-      const chartType = indicator.type_de_graphique || 'Barres simple';
-      const palette = getAllColors();
-
-      if (chartType === 'Barres empilées' || chartType === 'Courbes indépendantes') {
-        const sg = indicator.label_sous_groupe;
-        const labels = Array.isArray(sg) && sg.length > 1 ? sg.filter(Boolean) : [];
-        legendItems = labels.map((lbl, i) => ({
-          label: lbl,
-          color: getHexaFromName(palette[i] || palette[0])
-        }));
-      } else if (chartType === 'Barres simple' && indicator.values?.legend) {
-        const leg = indicator.values.legend;
-        const colors = indicator.values?.colors;
-        if (Array.isArray(leg) && leg.length > 1) {
-          legendItems = leg.filter(Boolean).map((lbl, i) => {
-            const c = Array.isArray(colors) && colors[i]
-              ? (typeof colors[i] === 'string' && /^#[0-9a-fA-F]{3,8}$/.test(colors[i]) ? colors[i] : getHexaFromName(colors[i]))
-              : getHexaFromName(palette[i] || palette[0]);
-            return { label: String(lbl), color: c };
-          });
-        }
-      }
-
-      return {
-        label: labelBase,
-        labelUnit: unit || '',
-        legendItems,
-        values,
-        targetValue,
-        ecart,
-        description,
-        id: indicator.id_indic,
-        rawData: indicator
-      }
     },
     sectorHeaderLegendIndicators (sector) {
       const raw = []

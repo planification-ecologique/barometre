@@ -165,18 +165,13 @@
 import MiniChart from './MiniChart.vue'
 import SynthesisValeursHeaderLegend from './SynthesisValeursHeaderLegend.vue'
 import {
-  getNavigationStructure,
-  getIndicators,
-  fetchEngagementLongMapping,
-  fetchEngagementsByAxe,
-  IMPACT_AXE_DISPLAY_ORDER,
-  normalizeImpactAxeName,
-  canonicalImpactAxeNomComplet,
   impactAxeNomCourt as impactAxeNomCourtFromTaxonomy,
-  impactAxeSlugFromNomComplet,
-  impactAxeRetenirHtml,
 } from '@/services/csvDataService.js'
-import { getAllColors, getHexaFromName } from '@/utils.js'
+import {
+  ensureShellViewData,
+  peekShellViewData,
+  SHELL_VIEW_ETAT,
+} from '@/services/shellViewDataService.js'
 import { homeRouteName, etatEnvironnementRouteName } from '@/config/routeNames.js'
 import { impactAxeNameToSlug } from '@/utils/impactAxeUrl.js'
 
@@ -202,10 +197,27 @@ export default {
       displayAxes: []
     }
   },
+  created() {
+    this.hydrateFromShellCache()
+  },
   async mounted() {
-    await this.loadData()
+    if (this.isLoading) {
+      await this.loadData()
+    } else {
+      this.$nextTick(() => this.scrollToHash())
+    }
   },
   methods: {
+    hydrateFromShellCache() {
+      const environment = this.useStaging ? 'staging' : 'production'
+      const cached = peekShellViewData(SHELL_VIEW_ETAT, environment)
+      if (cached?.displayAxes) {
+        this.displayAxes = cached.displayAxes
+        this.isLoading = false
+        return true
+      }
+      return false
+    },
     sourceUrl(rawData) {
       return rawData?.lien_donnees_source || rawData?.lien_site_source || ''
     },
@@ -218,97 +230,15 @@ export default {
       return impactAxeNameToSlug(nomComplet)
     },
     async loadData() {
+      if (this.hydrateFromShellCache()) {
+        this.$nextTick(() => this.scrollToHash())
+        return
+      }
       this.isLoading = true
       try {
         const environment = this.useStaging ? 'staging' : 'production'
-        const [response, engagementLongMap, engagementByAxe] = await Promise.all([
-          getNavigationStructure(environment),
-          fetchEngagementLongMapping(),
-          fetchEngagementsByAxe()
-        ])
-
-        if (response.status !== 'success') {
-          this.isLoading = false
-          return
-        }
-
-        // Synthèse « Ce qu'il faut retenir » : uniquement les indicateurs d'impact du
-        // secteur Synthèse, regroupés par axe de la taxonomie européenne. Les groupes
-        // par secteur et « Autres indicateurs » sont affichés sur les pages dédiées par
-        // axe (composant impact/engagements), pas ici.
-        const sectors = response.data.sectors || []
-
-        const canonAxe = (key) =>
-          canonicalImpactAxeNomComplet(key) || normalizeImpactAxeName(key)
-
-        const mainByAxe = {}
-        for (const sector of sectors) {
-          if (sector.name !== 'Synthèse') continue
-          for (const [axeName, indicators] of Object.entries(sector.indicateursImpact || {})) {
-            const c = canonAxe(axeName)
-            if (!c) continue
-            if (!mainByAxe[c]) mainByAxe[c] = []
-            mainByAxe[c].push(...indicators)
-          }
-        }
-
-        // Build axe structures and collect all grist IDs
-        const allGristIds = []
-        const axeStructures = []
-        const collectIds = (items) =>
-          (items || []).map(item => item.gristId).filter(Boolean)
-
-        for (const axeName of IMPACT_AXE_DISPLAY_ORDER) {
-          const gristIds = collectIds(mainByAxe[axeName])
-          allGristIds.push(...gristIds)
-
-          const slug = impactAxeSlugFromNomComplet(axeName)
-          axeStructures.push({
-            name: axeName,
-            slug,
-            description: impactAxeRetenirHtml(axeName) || '',
-            indicatorCount: 0, // Will be set after indicators are populated
-            gristIds,
-            indicators: [],
-            // Engagement for axe (used when no indicators, e.g. Adaptation climat)
-            engagement: engagementByAxe.get(axeName) || ''
-          })
-        }
-
-        // Fetch all indicator data at once
-        if (allGristIds.length > 0) {
-          const query = {
-            filter_by: [{ field: 'grist_ids', values: allGristIds }],
-            time_period: { date_start: '2015-01-01', date_end: '2031-01-01' }
-          }
-          const indicatorResponse = await getIndicators(query, environment)
-          const allIndicators = indicatorResponse.results || []
-
-          const indicatorMap = {}
-          allIndicators.forEach(ind => {
-            if (ind.id_indic) indicatorMap[ind.id_indic] = ind
-          })
-
-          const buildRows = (ids) => (ids || [])
-            .map(gid => indicatorMap[gid])
-            .filter(Boolean)
-            .map(ind => this.buildIndicatorRow(ind, engagementLongMap))
-
-          for (const axe of axeStructures) {
-            axe.indicators = buildRows(axe.gristIds)
-            axe.indicatorCount = axe.indicators.length
-          }
-        }
-
-        // Set count for axes with no indicators (e.g. Adaptation climat)
-        for (const axe of axeStructures) {
-          if (axe.indicatorCount === undefined) {
-            axe.indicatorCount = 0
-          }
-        }
-
-        // Keep all axes (including Adaptation) even when empty, so quick access links always show
-        this.displayAxes = axeStructures
+        const data = await ensureShellViewData(SHELL_VIEW_ETAT, environment)
+        this.displayAxes = data.displayAxes || []
       } catch (error) {
         console.error('Error loading etat environnement data:', error)
       } finally {
@@ -321,94 +251,6 @@ export default {
       if (hash && hash.startsWith('#axe-')) {
         const el = document.getElementById(hash.slice(1))
         if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
-      }
-    },
-    buildIndicatorRow(indicator, engagementLongMap = new Map()) {
-      const values = []
-      let targetValue = null
-
-      if (indicator.date && indicator.values) {
-        const years = Array.isArray(indicator.date[0]) ? indicator.date[0] : indicator.date
-        const series = Array.isArray(indicator.values[0]) ? indicator.values[0] : indicator.values
-
-        if (years.length > 0 && series.length > 0) {
-          years.forEach((year, i) => {
-            const val = series[i]
-            if (val !== null && val !== undefined && !isNaN(val)) {
-              values.push(parseFloat(val))
-            }
-          })
-        }
-      }
-
-      if (indicator.cible !== null && indicator.cible !== undefined && String(indicator.cible).trim() !== '' && !isNaN(indicator.cible)) {
-        targetValue = parseFloat(indicator.cible)
-      }
-
-      let ecart = null
-      if (targetValue !== null && values.length > 0) {
-        const lastValue = values[values.length - 1]
-        if (lastValue !== 0 && targetValue !== 0) {
-          ecart = ((lastValue - targetValue) / Math.abs(targetValue)) * 100
-        }
-      }
-
-      let description = ''
-      if (indicator.label_description) {
-        description = String(indicator.label_description).replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim()
-      }
-
-      // Engagement from main CSV → intitulé long (mapping Thématique → Engagement long).
-      // Nouveau schéma Grist : la colonne « Engagement » vaut « Axe / Thématique »
-      // (ex. « Atténuation / Émissions territoriales ») ; on isole la thématique
-      // (partie après « / ») pour retrouver l'intitulé long.
-      const rawEngagement = indicator.engagement || ''
-      const thematique = rawEngagement.includes(' / ')
-        ? rawEngagement.split(' / ').slice(1).join(' / ').trim()
-        : rawEngagement
-      const engagementName =
-        engagementLongMap.get(thematique) ||
-        engagementLongMap.get(rawEngagement) ||
-        thematique
-
-      const unit = indicator.label_unit || indicator.unite
-
-      // Légende avec couleurs pour les graphes non mono-barre
-      let legendItems = []
-      const chartType = indicator.type_de_graphique || 'Barres simple'
-      const palette = getAllColors()
-
-      if (chartType === 'Barres empilées' || chartType === 'Courbes indépendantes') {
-        const sg = indicator.label_sous_groupe
-        const labels = Array.isArray(sg) && sg.length > 1 ? sg.filter(Boolean) : []
-        legendItems = labels.map((lbl, i) => ({
-          label: lbl,
-          color: getHexaFromName(palette[i] || palette[0])
-        }))
-      } else if (chartType === 'Barres simple' && indicator.values?.legend) {
-        const leg = indicator.values.legend
-        const colors = indicator.values?.colors
-        if (Array.isArray(leg) && leg.length > 1) {
-          legendItems = leg.filter(Boolean).map((lbl, i) => {
-            const c = Array.isArray(colors) && colors[i]
-              ? (typeof colors[i] === 'string' && /^#[0-9a-fA-F]{3,8}$/.test(colors[i]) ? colors[i] : getHexaFromName(colors[i]))
-              : getHexaFromName(palette[i] || palette[0])
-            return { label: String(lbl), color: c }
-          })
-        }
-      }
-
-      return {
-        label: indicator.label_indic || 'Indicateur',
-        labelUnit: unit || '',
-        legendItems,
-        engagementName,
-        values,
-        targetValue,
-        ecart,
-        description,
-        id: indicator.id_indic,
-        rawData: indicator
       }
     },
     formatEcart(ecart) {

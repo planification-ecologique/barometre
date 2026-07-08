@@ -246,6 +246,32 @@ function mapValuesStable(map) {
 const csvDataCacheByEnv = {};
 const fetchPromiseByEnv = {};
 
+/** Session cache for getIndicators() results (key = env + normalized query). */
+const indicatorsResultCache = new Map();
+const indicatorsResultPromiseCache = new Map();
+
+function normalizeQueryForCache(query) {
+  const q = JSON.parse(JSON.stringify(query || {}));
+  if (Array.isArray(q.filter_by)) {
+    q.filter_by = q.filter_by
+      .map((filter) => {
+        if (Array.isArray(filter.values)) {
+          return {
+            ...filter,
+            values: [...filter.values].map(String).sort(),
+          };
+        }
+        return filter;
+      })
+      .sort((a, b) => String(a.field).localeCompare(String(b.field)));
+  }
+  return q;
+}
+
+function indicatorsCacheKey(query, environment) {
+  return `${environment || 'production'}:${JSON.stringify(normalizeQueryForCache(query))}`;
+}
+
 // Cache for the separate leviers list (Liste_leviers)
 let levierListCache = null;
 let levierFetchPromise = null;
@@ -317,6 +343,8 @@ export function clearCSVCache() {
   levierFetchPromise = null;
   taxonomyAxeMapsCache = null;
   taxonomyAxeMapsPromise = null;
+  indicatorsResultCache.clear();
+  indicatorsResultPromiseCache.clear();
 }
 
 /**
@@ -1568,30 +1596,46 @@ function getSeries(list_y, list_x, statuses, targetYear, targetValue) {
  * @returns {Promise} - Promise resolving to processed data
  */
 export async function getIndicators(query, environment = 'production') {
-  try {
-    await ensureImpactTaxonomyLoaded();
-    const csvData = await fetchCSVData(environment);
-    const result = transformCSVData(csvData, query);
-    if (result.results?.some(
-      (item) => !normalizeAxeTaxonomieList(item.axe_taxonomie_list).length
-    )) {
-      const taxonomyMaps = await getTaxonomyAxeMaps();
-      result.results.forEach((item) => {
-        if (!normalizeAxeTaxonomieList(item.axe_taxonomie_list).length) {
-          item.axe_taxonomie_list = resolveIndicatorTaxonomyAxeTags(item, taxonomyMaps);
-        }
-        item.axe_taxonomie_list = normalizeAxeTaxonomieList(item.axe_taxonomie_list);
-      });
-    } else if (result.results) {
-      result.results.forEach((item) => {
-        item.axe_taxonomie_list = normalizeAxeTaxonomieList(item.axe_taxonomie_list);
-      });
-    }
-    return result;
-  } catch (error) {
-    console.error('Error getting indicators from CSV:', error);
-    throw error;
+  const cacheKey = indicatorsCacheKey(query, environment);
+  if (indicatorsResultCache.has(cacheKey)) {
+    return indicatorsResultCache.get(cacheKey);
   }
+  if (indicatorsResultPromiseCache.has(cacheKey)) {
+    return indicatorsResultPromiseCache.get(cacheKey);
+  }
+
+  const promise = (async () => {
+    try {
+      await ensureImpactTaxonomyLoaded();
+      const csvData = await fetchCSVData(environment);
+      const result = transformCSVData(csvData, query);
+      if (result.results?.some(
+        (item) => !normalizeAxeTaxonomieList(item.axe_taxonomie_list).length
+      )) {
+        const taxonomyMaps = await getTaxonomyAxeMaps();
+        result.results.forEach((item) => {
+          if (!normalizeAxeTaxonomieList(item.axe_taxonomie_list).length) {
+            item.axe_taxonomie_list = resolveIndicatorTaxonomyAxeTags(item, taxonomyMaps);
+          }
+          item.axe_taxonomie_list = normalizeAxeTaxonomieList(item.axe_taxonomie_list);
+        });
+      } else if (result.results) {
+        result.results.forEach((item) => {
+          item.axe_taxonomie_list = normalizeAxeTaxonomieList(item.axe_taxonomie_list);
+        });
+      }
+      indicatorsResultCache.set(cacheKey, result);
+      return result;
+    } catch (error) {
+      console.error('Error getting indicators from CSV:', error);
+      throw error;
+    } finally {
+      indicatorsResultPromiseCache.delete(cacheKey);
+    }
+  })();
+
+  indicatorsResultPromiseCache.set(cacheKey, promise);
+  return promise;
 }
 
 /**

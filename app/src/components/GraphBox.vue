@@ -131,6 +131,8 @@
             :color="JSON.stringify(lineChartColors)"
             :isSmall="true"
             :pointopacity="pointOpacityJson"
+            :target-overlay="multiLineHasTarget"
+            :trend-by-series-json="multiLineTrendBySeriesJson"
           >
           </multi-line-chart>
         </div>
@@ -268,7 +270,6 @@ import {
   buildStackedRegionalSeries,
 } from "@/services/ecolabRegionHelpers.js";
 import { isFavori, toggleFavori } from "@/services/favorisService.js";
-import { TREND_LINE_END_YEAR } from "@/services/csvDataService.js";
 import {
   chartColorTestState,
   resolvePrimaryBarToken,
@@ -278,6 +279,12 @@ import {
   getFallbackPrimaryBarToken,
   getFallbackExtrapolationBarToken,
 } from "@/services/chartColorTestOverrides.js";
+import {
+  chartPointOpacity,
+  getStackedYears,
+  isMeasuredPointStatus,
+  resolveIndicatorOverlays,
+} from "@/utils/chartOverlays.js";
 import { getAllColors, stackedBarSeriesValuesWithoutCibleYears } from "@/utils.js";
 
 export default {
@@ -412,7 +419,7 @@ export default {
       if (this.selectedRegionCode) {
         return series;
       }
-      const years = this.getStackedYears();
+      const years = getStackedYears(this.displayData);
       const lv = this.displayData?.label_value;
       return stackedBarSeriesValuesWithoutCibleYears(
         series,
@@ -652,53 +659,52 @@ export default {
         return "Barres simple"; // Default fallback
       }
     },
+    indicatorOverlays() {
+      return resolveIndicatorOverlays(this.displayData);
+    },
     pointOpacityJson() {
       try {
-        // Build per-point opacity from label_value
-        // If label_value is array per point: map to 1 for 'mesuré', else 0.6
-        const lv = this.displayData && this.displayData.label_value
-        const values = this.displayData && this.displayData.values
-        if (!values) return undefined
-
-        // Multi-series case (grouped indicator: values is an array of arrays)
-        if (Array.isArray(values) && Array.isArray(values[0])) {
-          const years = Array.isArray(this.displayData?.date?.[0]) ? this.displayData.date[0] : []
-          const yearCount = years.length
-          const baseOpacity = this.buildOpacityArray(lv, yearCount, years)
-          const perSeries = values.map(series => (
-            Array.isArray(series)
-              ? series.map((_, index) => (baseOpacity[index] !== undefined ? baseOpacity[index] : 1))
-              : []
-          ))
-          return JSON.stringify(perSeries)
+        if (this.selectedRegionCode && this.regionalChartData?.y) {
+          const perSeries = this.regionalChartData.y.map((row) =>
+            Array(Array.isArray(row) ? row.length : 0).fill(1)
+          );
+          return JSON.stringify(perSeries);
         }
 
-        const length = Array.isArray(values?.x) ? (values.x[0]?.length || 0) : (values?.[0]?.length || 0)
-        if (Array.isArray(lv)) {
-          const arr = this.buildOpacityArray(lv, length)
-          return JSON.stringify(arr)
+        const overlays = this.indicatorOverlays;
+        if (overlays.pointOpacities) {
+          return JSON.stringify(overlays.pointOpacities);
         }
-        // Else single scalar -> same opacity for all points
-        const alpha = this.isMeasuredValue(lv) ? 1 : 0.6
-        return JSON.stringify(Array(length).fill(alpha))
+
+        const lv = this.displayData && this.displayData.label_value;
+        const values = this.displayData && this.displayData.values;
+        if (!values) return undefined;
+
+        const length = Array.isArray(values?.x)
+          ? (values.x[0]?.length || 0)
+          : (values?.[0]?.length || 0);
+        const alpha = isMeasuredPointStatus(lv) ? 1 : chartPointOpacity(lv);
+        return JSON.stringify(Array(length).fill(alpha));
       } catch (e) {
-        return undefined
+        return undefined;
       }
     },
     stackedTrendLine() {
       if (this.effectiveChartType !== "Barres empilées" || this.selectedRegionCode) return null;
-      if (!this.stackedTargetTrajectory) return null;
-      const years = this.getStackedYears();
-      const totals = this.getStackedTotals();
-      const statuses = Array.isArray(this.displayData?.label_value) ? this.displayData.label_value : [];
-      return this.computeTrendSeries(years, totals, statuses);
+      return this.indicatorOverlays.trendLine;
     },
     stackedTargetTrajectory() {
       if (this.effectiveChartType !== "Barres empilées" || this.selectedRegionCode) return null;
-      const years = this.getStackedYears();
-      const totals = this.getStackedTotals();
-      const statuses = Array.isArray(this.displayData?.label_value) ? this.displayData.label_value : [];
-      return this.computeTargetTrajectory(years, totals, statuses);
+      return this.indicatorOverlays.targetTrajectory;
+    },
+    multiLineHasTarget() {
+      if (this.effectiveChartType !== "Courbes indépendantes" || this.selectedRegionCode) return undefined;
+      return this.indicatorOverlays.hasTarget;
+    },
+    multiLineTrendBySeriesJson() {
+      if (this.effectiveChartType !== "Courbes indépendantes" || this.selectedRegionCode) return undefined;
+      const trendLines = this.indicatorOverlays.trendLines;
+      return Array.isArray(trendLines) ? JSON.stringify(trendLines) : undefined;
     }
   },
 
@@ -708,127 +714,6 @@ export default {
       this.regionExtraDimension = null;
       this.regionExtraOptions = [];
       this.selectedExtraValue = "";
-    },
-    getPointStatus(value, fallbackYear = "") {
-      const normalized = String(value ?? "").trim().toLowerCase();
-      if (/^cible_\d{4}$/.test(normalized) || normalized === "cible") return "cible";
-      if (normalized === "projection") return "projection";
-      if (normalized === "mesuré" || /^\d{4}$/.test(normalized)) return "mesuré";
-      if (normalized !== "") return "mesuré";
-      return String(fallbackYear ?? "").trim() === "2030" ? "cible" : "mesuré";
-    },
-    isMeasuredValue(value, fallbackYear = "") {
-      return this.getPointStatus(value, fallbackYear) === "mesuré";
-    },
-    buildOpacityArray(labelValues, length, years = []) {
-      const opacities = [];
-      for (let index = 0; index < length; index += 1) {
-        opacities.push(this.isMeasuredValue(labelValues?.[index], years[index]) ? 1 : 0.6);
-      }
-      return opacities;
-    },
-    getStackedYears() {
-      return Array.isArray(this.displayData?.date?.[0]) ? this.displayData.date[0] : [];
-    },
-    getStackedTotals() {
-      const years = this.getStackedYears();
-      const series = Array.isArray(this.displayData?.values) ? this.displayData.values : [];
-      return years.map((_, index) => {
-        let total = 0;
-        let hasValue = false;
-        series.forEach((currentSeries) => {
-          const rawValue = currentSeries?.[index];
-          if (rawValue === null || rawValue === undefined || rawValue === "") return;
-          const numericValue = Number(rawValue);
-          if (Number.isNaN(numericValue)) return;
-          hasValue = true;
-          total += numericValue;
-        });
-        return hasValue ? total : null;
-      });
-    },
-    computeLinearRegression(xValues, yValues) {
-      if (!Array.isArray(xValues) || !Array.isArray(yValues) || xValues.length !== yValues.length || xValues.length < 2) {
-        return null;
-      }
-      const n = xValues.length;
-      const sumX = xValues.reduce((sum, value) => sum + value, 0);
-      const sumY = yValues.reduce((sum, value) => sum + value, 0);
-      const sumXY = xValues.reduce((sum, value, index) => sum + value * yValues[index], 0);
-      const sumXX = xValues.reduce((sum, value) => sum + value * value, 0);
-      const denominator = (n * sumXX) - (sumX * sumX);
-      if (denominator === 0) return null;
-      const slope = ((n * sumXY) - (sumX * sumY)) / denominator;
-      const intercept = (sumY - (slope * sumX)) / n;
-      return { slope, intercept };
-    },
-    computeTrendSeries(years, values, statuses, numYears = 3) {
-      if (!Array.isArray(years) || !Array.isArray(values) || years.length !== values.length) return null;
-      const measured = [];
-      for (let index = 0; index < years.length; index += 1) {
-        if (values[index] === null || values[index] === undefined || values[index] === "") continue;
-        const numericValue = Number(values[index]);
-        if (this.isMeasuredValue(statuses[index], years[index]) && !Number.isNaN(numericValue)) {
-          measured.push({
-            index,
-            year: Number(years[index]),
-            value: numericValue,
-          });
-        }
-      }
-      if (measured.length < 2) return null;
-      const lastMeasured = measured.slice(-numYears);
-      const regression = this.computeLinearRegression(
-        lastMeasured.map((point) => point.year),
-        lastMeasured.map((point) => point.value)
-      );
-      if (!regression) return null;
-      const firstIndex = lastMeasured[0].index;
-      return years.map((year, index) => {
-        if (index < firstIndex) return null;
-        const numericYear = Number(year);
-        if (Number.isNaN(numericYear)) return null;
-        if (numericYear > TREND_LINE_END_YEAR) return null;
-        return regression.slope * numericYear + regression.intercept;
-      });
-    },
-    computeTargetTrajectory(years, values, statuses) {
-      if (!Array.isArray(years) || !Array.isArray(values) || years.length !== values.length) return null;
-      const explicitReferenceYear = this.displayData?.reference_year_for_target_trajectory;
-      let lastMeasuredPoint = null;
-      let referencePoint = null;
-      const targetPoints = [];
-
-      for (let index = 0; index < years.length; index += 1) {
-        if (values[index] === null || values[index] === undefined || values[index] === "") continue;
-        const numericValue = Number(values[index]);
-        if (Number.isNaN(numericValue)) continue;
-
-        if (this.isMeasuredValue(statuses[index], years[index])) {
-          const measuredPoint = {
-            year: String(years[index]),
-            value: numericValue,
-            isTarget: false,
-          };
-          lastMeasuredPoint = measuredPoint;
-          if (explicitReferenceYear && String(years[index]) === String(explicitReferenceYear)) {
-            referencePoint = measuredPoint;
-          }
-          continue;
-        }
-
-        targetPoints.push({
-          year: String(years[index]),
-          value: numericValue,
-          isTarget: true,
-        });
-      }
-
-      const startPoint = referencePoint || lastMeasuredPoint;
-      if (!startPoint || targetPoints.length === 0) return null;
-      return {
-        points: [startPoint, ...targetPoints],
-      };
     },
     async loadRegions() {
       const indicatorIds = this.regionalIndicatorIds;

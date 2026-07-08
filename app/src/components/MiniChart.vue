@@ -52,6 +52,8 @@
       :axis-font-size="9"
       :point-radius="2"
       :pointopacity="stackedPointOpacityJson"
+      :target-overlay="multiLineHasTarget"
+      :trend-by-series-json="multiLineTrendBySeriesJson"
     />
     <!-- Fallback: try bar chart with date/values format -->
     <bar-chart
@@ -76,7 +78,6 @@
 <script>
 import BarChart from './components_dsfr/BarChart.vue'
 import MultiLineChart from './components_dsfr/MultiLineChart.vue'
-import { TREND_LINE_END_YEAR } from '@/services/csvDataService.js'
 import {
   chartColorTestState,
   resolvePrimaryBarToken,
@@ -86,6 +87,7 @@ import {
   getFallbackPrimaryBarToken,
   getFallbackExtrapolationBarToken
 } from '@/services/chartColorTestOverrides.js'
+import { getStackedYears, resolveIndicatorOverlays } from '@/utils/chartOverlays.js'
 import { getAllColors, stackedBarSeriesValuesWithoutCibleYears } from '@/utils.js'
 
 export default {
@@ -123,10 +125,13 @@ export default {
       return (Array.isArray(this.dataObj.date) && Array.isArray(this.dataObj.values)) ||
              (this.dataObj.values && this.dataObj.values.x)
     },
+    overlays() {
+      return resolveIndicatorOverlays(this.dataObj)
+    },
     /** Barres empilées : pas de segments sur les années « cible » (ligne objectif uniquement). */
     stackedBarYJson() {
       const vals = this.dataObj?.values
-      const years = this.getStackedYears()
+      const years = getStackedYears(this.dataObj)
       const lv = this.dataObj?.label_value
       const strip =
         Array.isArray(vals) &&
@@ -178,195 +183,42 @@ export default {
       )
       return JSON.stringify(arr)
     },
-    // Pass trendLine from the values object (same as GraphBox's chartValues.trendLine)
     trendLineJson() {
-      const tl = this.dataObj.values?.trendLine
-      return tl ? JSON.stringify(tl) : undefined
+      const trendLine = this.overlays.trendLine
+      return trendLine ? JSON.stringify(trendLine) : undefined
     },
-    // Pass targetTrajectory from the values object
     targetTrajectoryJson() {
-      const tt = this.dataObj.values?.targetTrajectory
-      return tt ? JSON.stringify(tt) : undefined
+      const targetTrajectory = this.overlays.targetTrajectory
+      return targetTrajectory ? JSON.stringify(targetTrajectory) : undefined
     },
-    // Build point opacity from label_value (same logic as GraphBox)
     pointOpacityJson() {
-      try {
-        const lv = this.dataObj.label_value
-        const values = this.dataObj.values
-        if (!values || !values.x) return undefined
-        const length = values.x[0]?.length || 0
-        if (!length) return undefined
-
-        if (Array.isArray(lv)) {
-          const arr = lv.map(v => {
-            const s = String(v ?? '').trim().toLowerCase()
-            if (s === 'mesuré' || /^\d{4}$/.test(s)) return 1
-            // projection and cible: use 0.6 to match GraphBox (avoids ghost target dots)
-            if (s === 'projection' || /^cible_\d{4}$/.test(s) || s === 'cible') return 0.6
-            return 0.6
-          })
-          // Pad to match length
-          while (arr.length < length) arr.push(1)
-          return JSON.stringify(arr.slice(0, length))
-        }
-        return undefined
-      } catch (e) {
-        return undefined
-      }
+      const opacities = this.overlays.pointOpacities
+      if (!opacities || Array.isArray(opacities[0])) return undefined
+      return JSON.stringify(opacities)
     },
-    // Point opacity for stacked/multi-line charts (must match GraphBox.buildOpacityArray logic)
     stackedPointOpacityJson() {
-      try {
-        const lv = this.dataObj.label_value
-        const values = this.dataObj.values
-        if (!Array.isArray(values)) return undefined
-
-        const years = Array.isArray(this.dataObj.date?.[0]) ? this.dataObj.date[0] : []
-        // Use year for fallback when status is empty: 2030 -> cible (0.6), else mesuré (1)
-        const baseOpacity = years.map((year, i) => {
-          const v = Array.isArray(lv) ? lv[i] : null
-          const s = String(v ?? '').trim().toLowerCase()
-          if (s === 'mesuré' || /^\d{4}$/.test(s)) return 1
-          if (s === 'projection' || /^cible_\d{4}$/.test(s) || s === 'cible') return 0.6
-          // Empty/unknown: match GraphBox isMeasuredValue fallback (year 2030 -> cible, else mesuré)
-          return String(year ?? '').trim() === '2030' ? 0.6 : 1
-        })
-        while (baseOpacity.length < years.length) baseOpacity.push(1)
-        const perSeries = values.map(series =>
-          Array.isArray(series)
-            ? series.map((_, i) => baseOpacity[i] !== undefined ? baseOpacity[i] : 1)
-            : []
-        )
-        return JSON.stringify(perSeries)
-      } catch (e) {
-        return undefined
-      }
+      const opacities = this.overlays.pointOpacities
+      if (!opacities || !Array.isArray(opacities[0])) return undefined
+      return JSON.stringify(opacities)
     },
-    // Trend line for Barres empilées (same logic as GraphBox.stackedTrendLine) - only when there is a target
     stackedTrendLineJson() {
       if (this.chartType !== 'Barres empilées' || !this.hasStackedData) return undefined
-      const traj = this.computeTargetTrajectory(
-        this.getStackedYears(),
-        this.getStackedTotals(),
-        Array.isArray(this.dataObj?.label_value) ? this.dataObj.label_value : []
-      )
-      if (!traj) return undefined
-      const years = this.getStackedYears()
-      const totals = this.getStackedTotals()
-      const statuses = Array.isArray(this.dataObj?.label_value) ? this.dataObj.label_value : []
-      const series = this.computeTrendSeries(years, totals, statuses)
-      return series ? JSON.stringify(series) : undefined
+      const trendLine = this.overlays.trendLine
+      return trendLine ? JSON.stringify(trendLine) : undefined
     },
-    // Target trajectory for Barres empilées (same logic as GraphBox.stackedTargetTrajectory)
     stackedTargetTrajectoryJson() {
       if (this.chartType !== 'Barres empilées' || !this.hasStackedData) return undefined
-      const years = this.getStackedYears()
-      const totals = this.getStackedTotals()
-      const statuses = Array.isArray(this.dataObj?.label_value) ? this.dataObj.label_value : []
-      const traj = this.computeTargetTrajectory(years, totals, statuses)
-      return traj ? JSON.stringify(traj) : undefined
-    }
-  },
-  methods: {
-    getStackedYears() {
-      return Array.isArray(this.dataObj?.date?.[0]) ? this.dataObj.date[0] : []
+      const targetTrajectory = this.overlays.targetTrajectory
+      return targetTrajectory ? JSON.stringify(targetTrajectory) : undefined
     },
-    getStackedTotals() {
-      const years = this.getStackedYears()
-      const series = Array.isArray(this.dataObj?.values) ? this.dataObj.values : []
-      return years.map((_, index) => {
-        let total = 0
-        let hasValue = false
-        series.forEach((currentSeries) => {
-          const rawValue = currentSeries?.[index]
-          if (rawValue === null || rawValue === undefined || rawValue === '') return
-          const numericValue = Number(rawValue)
-          if (Number.isNaN(numericValue)) return
-          hasValue = true
-          total += numericValue
-        })
-        return hasValue ? total : null
-      })
+    multiLineHasTarget() {
+      if (this.chartType !== 'Courbes indépendantes' || !this.hasStackedData) return undefined
+      return this.overlays.hasTarget
     },
-    isMeasuredValue(value, fallbackYear = '') {
-      return this.getPointStatus(value, fallbackYear) === 'mesuré'
-    },
-    getPointStatus(value, fallbackYear = '') {
-      const normalized = String(value ?? '').trim().toLowerCase()
-      if (/^cible_\d{4}$/.test(normalized) || normalized === 'cible') return 'cible'
-      if (normalized === 'projection') return 'projection'
-      if (normalized === 'mesuré' || /^\d{4}$/.test(normalized)) return 'mesuré'
-      if (normalized !== '') return 'mesuré'
-      return String(fallbackYear ?? '').trim() === '2030' ? 'cible' : 'mesuré'
-    },
-    computeLinearRegression(xValues, yValues) {
-      if (!Array.isArray(xValues) || !Array.isArray(yValues) || xValues.length !== yValues.length || xValues.length < 2) {
-        return null
-      }
-      const n = xValues.length
-      const sumX = xValues.reduce((sum, v) => sum + v, 0)
-      const sumY = yValues.reduce((sum, v) => sum + v, 0)
-      const sumXY = xValues.reduce((sum, v, i) => sum + v * yValues[i], 0)
-      const sumXX = xValues.reduce((sum, v) => sum + v * v, 0)
-      const denominator = (n * sumXX) - (sumX * sumX)
-      if (denominator === 0) return null
-      const slope = ((n * sumXY) - (sumX * sumY)) / denominator
-      const intercept = (sumY - (slope * sumX)) / n
-      return { slope, intercept }
-    },
-    computeTrendSeries(years, values, statuses, numYears = 3) {
-      if (!Array.isArray(years) || !Array.isArray(values) || years.length !== values.length) return null
-      const measured = []
-      for (let index = 0; index < years.length; index += 1) {
-        if (values[index] === null || values[index] === undefined || values[index] === '') continue
-        const numericValue = Number(values[index])
-        if (this.isMeasuredValue(statuses[index], years[index]) && !Number.isNaN(numericValue)) {
-          measured.push({ index, year: Number(years[index]), value: numericValue })
-        }
-      }
-      if (measured.length < 2) return null
-      const lastMeasured = measured.slice(-numYears)
-      const regression = this.computeLinearRegression(
-        lastMeasured.map((p) => p.year),
-        lastMeasured.map((p) => p.value)
-      )
-      if (!regression) return null
-      const firstIndex = lastMeasured[0].index
-      return years.map((year, index) => {
-        if (index < firstIndex) return null
-        const numericYear = Number(year)
-        if (Number.isNaN(numericYear)) return null
-        if (numericYear > TREND_LINE_END_YEAR) return null
-        return regression.slope * numericYear + regression.intercept
-      })
-    },
-    computeTargetTrajectory(years, values, statuses) {
-      if (!Array.isArray(years) || !Array.isArray(values) || years.length !== values.length) return null
-      const explicitReferenceYear = this.dataObj?.reference_year_for_target_trajectory
-      let lastMeasuredPoint = null
-      let referencePoint = null
-      const targetPoints = []
-
-      for (let index = 0; index < years.length; index += 1) {
-        if (values[index] === null || values[index] === undefined || values[index] === '') continue
-        const numericValue = Number(values[index])
-        if (Number.isNaN(numericValue)) continue
-
-        if (this.isMeasuredValue(statuses[index], years[index])) {
-          const measuredPoint = { year: String(years[index]), value: numericValue, isTarget: false }
-          lastMeasuredPoint = measuredPoint
-          if (explicitReferenceYear && String(years[index]) === String(explicitReferenceYear)) {
-            referencePoint = measuredPoint
-          }
-          continue
-        }
-
-        targetPoints.push({ year: String(years[index]), value: numericValue, isTarget: true })
-      }
-
-      const startPoint = referencePoint || lastMeasuredPoint
-      if (!startPoint || targetPoints.length === 0) return null
-      return { points: [startPoint, ...targetPoints] }
+    multiLineTrendBySeriesJson() {
+      if (this.chartType !== 'Courbes indépendantes' || !this.hasStackedData) return undefined
+      const trendLines = this.overlays.trendLines
+      return Array.isArray(trendLines) ? JSON.stringify(trendLines) : undefined
     }
   }
 }

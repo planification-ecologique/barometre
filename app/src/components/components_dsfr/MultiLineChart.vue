@@ -151,6 +151,14 @@ export default {
     isSmall: {
       type: Boolean,
       default: false
+    },
+    targetOverlay: {
+      type: Boolean,
+      default: undefined
+    },
+    trendBySeriesJson: {
+      type: String,
+      default: undefined
     }
   },
   watch: {
@@ -164,6 +172,20 @@ export default {
     }
   },
   computed: {
+    overlayHasTarget () {
+      return this.targetOverlay
+    },
+    overlayTrendBySeries () {
+      if (this.trendBySeriesJson === undefined || this.trendBySeriesJson === null || this.trendBySeriesJson === '') {
+        return null
+      }
+      try {
+        const parsed = JSON.parse(this.trendBySeriesJson)
+        return Array.isArray(parsed) ? parsed : null
+      } catch (e) {
+        return null
+      }
+    },
     effectiveIsSmall () {
       return this.isSmall === true ? true : this.viewportSmall
     },
@@ -346,23 +368,27 @@ export default {
 
       // Tracé de la courbe + tendance
       self.trendBySeries = []
-      // Trends only when target exists (heuristic: 2030 point with alpha < 1)
-      try {
-        const labelsOrYears = (self.xAxisType === 'linear')
-          ? (Array.isArray(self.xparse?.[0]) ? self.xparse[0] : [])
-          : (Array.isArray(self.labels) ? self.labels : [])
-        const idx2030 = labelsOrYears.findIndex(v => String(v).trim() === '2030')
-        let found = false
-        if (idx2030 !== -1) {
-          if (Array.isArray(self.pointOpacityParse?.[0])) {
-            found = self.pointOpacityParse.some(arr => Number(arr?.[idx2030]) < 1)
-          } else if (Array.isArray(self.pointOpacityParse)) {
-            found = Number(self.pointOpacityParse?.[idx2030]) < 1
+      if (self.overlayHasTarget !== undefined) {
+        self.hasTarget = self.overlayHasTarget === true
+      } else {
+        // Trends only when target exists (heuristic: 2030 point with alpha < 1)
+        try {
+          const labelsOrYears = (self.xAxisType === 'linear')
+            ? (Array.isArray(self.xparse?.[0]) ? self.xparse[0] : [])
+            : (Array.isArray(self.labels) ? self.labels : [])
+          const idx2030 = labelsOrYears.findIndex(v => String(v).trim() === '2030')
+          let found = false
+          if (idx2030 !== -1) {
+            if (Array.isArray(self.pointOpacityParse?.[0])) {
+              found = self.pointOpacityParse.some(arr => Number(arr?.[idx2030]) < 1)
+            } else if (Array.isArray(self.pointOpacityParse)) {
+              found = Number(self.pointOpacityParse?.[idx2030]) < 1
+            }
           }
+          self.hasTarget = !!found
+        } catch (e) {
+          self.hasTarget = false
         }
-        self.hasTarget = !!found
-      } catch (e) {
-        self.hasTarget = false
       }
       data.forEach(function (dj, j) {
         // Normalize series length to labels (category axis) to avoid misalignment / extra points
@@ -418,7 +444,10 @@ export default {
           ? djNormalized.map(p => (p && p.y !== undefined) ? p.y : null)
           : djNormalized
         if (self.hasTarget) {
-          self.trendBySeries[j] = self.computeTrendSeriesForIndex(j, years, values, alphaByIndex)
+          const externalTrend = Array.isArray(self.overlayTrendBySeries)
+            ? self.overlayTrendBySeries[j]
+            : null
+          self.trendBySeries[j] = externalTrend || self.computeTrendSeriesForIndex(j, years, values, alphaByIndex)
         } else {
           self.trendBySeries[j] = null
         }
