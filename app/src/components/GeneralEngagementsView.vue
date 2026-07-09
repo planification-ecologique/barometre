@@ -213,14 +213,13 @@
       </div>
     
       <div v-if="sortedAxesEntries.length === 0 && sortedChantierAutresEntries.length === 0" class="fr-mt-5w">
-        <p v-if="isAdaptationAxeDetail">
-        <br />
-        Bien que la France soit dotée d’un Plan national d’adaptation au changement climatique (
-        <a href="https://www.ecologie.gouv.fr/sites/default/files/documents/PNACC3.pdf" target="_blank" rel="noopener noreferrer">PNACC3</a>,
-        publié en mars 2025), les méthodes d’évaluation quantitative qui en découlent font défaut, d’où l’absence d’indicateurs dans ce baromètre à date. Cela tient tant à la difficulté d’élaborer des projections des conséquences du changement climatique qu’au caractère systémique des politiques d’adaptation, celles-ci portant sur des enjeux physiques et organisationnels. A ce stade, le pilotage de la politique d’adaptation repose essentiellement sur l’observation de l’évolution de la sinistralité et des moyens déployés en matière de prévention.
-      </p>
-      <p v-else>Pas de données disponibles pour les engagements.</p>
-    </div>
+        <div
+          v-if="isAdaptationAxeDetail"
+          class="axe-summary-copy fr-text--md"
+          v-html="pnaccAdaptationRetenirHtml"
+        ></div>
+        <p v-else>Pas de données disponibles pour les engagements.</p>
+      </div>
     </template>
   </div>
 </template>
@@ -238,6 +237,7 @@ import {
 } from "@/services/csvDataService.js";
 import { homeRouteName, etatEnvironnementRouteName } from "@/config/routeNames.js";
 import { SECTION_SYNTHESE_SLUG } from "@/utils/sectionUrl.js";
+import { PNACC_ADAPTATION_RETENIR_HTML } from "@/config/pnaccAdaptationRetenir.js";
 
 export default {
   name: "GeneralEngagementsView",
@@ -444,20 +444,13 @@ export default {
       if (fromTaxo) return fromTaxo;
       return "Retrouvez sur cette page les principaux indicateurs d'impact et les autres indicateurs associes a cet axe.";
     },
-    /** Paragraphe PNACC3 affiché dans « Ce qu'il faut retenir » lorsque l'axe Adaptation n'a pas d'indicateurs. */
-    pnaccAdaptationEmptyHtml() {
-      return (
-        "Bien que la France soit dotée d'un Plan national d'adaptation au changement climatique (" +
-        '<a href="https://www.ecologie.gouv.fr/sites/default/files/documents/PNACC3.pdf" target="_blank" rel="noopener noreferrer">PNACC3</a>, ' +
-        "publié en mars 2025), les méthodes d'évaluation quantitative qui en découlent font défaut, d'où l'absence d'indicateurs dans ce baromètre à date. " +
-        "Cela tient tant à la difficulté d'élaborer des projections des conséquences du changement climatique qu'au caractère systémique des politiques d'adaptation, " +
-        "celles-ci portant sur des enjeux physiques et organisationnels. A ce stade, le pilotage de la politique d'adaptation repose essentiellement sur " +
-        "l'observation de l'évolution de la sinistralité et des moyens déployés en matière de prévention."
-      );
+    /** Texte PNACC affiché dans « Synthèse » et « Ce qu'il faut retenir » pour l'axe Adaptation sans indicateurs. */
+    pnaccAdaptationRetenirHtml() {
+      return PNACC_ADAPTATION_RETENIR_HTML;
     },
     axeRetenirBodyHtml() {
       if (this.isAxeDetailView && this.isAdaptationAxeDetail && this.axeDetailEmpty) {
-        return this.pnaccAdaptationEmptyHtml;
+        return this.pnaccAdaptationRetenirHtml;
       }
       return this.axeSummaryHtml;
     },

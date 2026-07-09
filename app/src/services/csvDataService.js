@@ -22,6 +22,10 @@ import {
   resolveTaxonomyAxeTags,
   resolveIndicatorTaxonomyAxeTags,
 } from '@/utils/taxonomyAxeTags.js';
+import {
+  ADAPTATION_AXE_NOM_COMPLET,
+  PNACC_ADAPTATION_RETENIR_HTML,
+} from '@/config/pnaccAdaptationRetenir.js';
 
 export { resolveTaxonomyAxeTags, resolveIndicatorTaxonomyAxeTags };
 
@@ -1846,7 +1850,11 @@ function indicatorMatchesAxeTaxonomyFilter(item, filterValues) {
  */
 export function impactAxeRetenirHtml(nomComplet) {
   if (!nomComplet) return '';
-  return nomCompletToRetenirHtml.get(String(nomComplet).trim()) || '';
+  const key = String(nomComplet).trim();
+  if (key === ADAPTATION_AXE_NOM_COMPLET) {
+    return PNACC_ADAPTATION_RETENIR_HTML;
+  }
+  return nomCompletToRetenirHtml.get(key) || '';
 }
 
 /** Slug d’URL (`?section=`) dérivé du nom court taxonomie. */
