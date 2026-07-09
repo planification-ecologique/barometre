@@ -19,7 +19,7 @@ const INDICATORS_DIR = path.join(OUTPUT_DIR, 'indicators');
 const MANIFEST_PATH = path.join(OUTPUT_DIR, 'manifest.json');
 const META_PATH = path.join(OUTPUT_DIR, 'meta.json');
 const GRIST_INDICATORS_CSV = path.join(__dirname, '..', 'public', 'grist-backups', 'grist-indicators.csv');
-const CACHE_MAX_AGE_MS = 24 * 60 * 60 * 1000;
+const CACHE_MAX_AGE_MS = 7 * 24 * 60 * 60 * 1000;
 
 const KNOWN_INDICATOR_CUBES = {
   '949': {
@@ -332,7 +332,7 @@ async function main() {
   if (cacheFresh) {
     console.log(`IRPE cache is fresh; fetching ${idsToFetch.length} missing indicator(s) only.\n`);
   } else if (manifest?.generatedAt) {
-    console.log(`IRPE cache is older than 1 day (generated ${manifest.generatedAt}), refreshing.\n`);
+    console.log(`IRPE cache is older than 7 days (generated ${manifest.generatedAt}), refreshing.\n`);
   }
 
   let meta;

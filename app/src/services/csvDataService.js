@@ -316,9 +316,12 @@ export async function fetchCSVData(environment = 'production') {
   fetchPromiseByEnv[env] = (async () => {
     try {
       const parsedData = await fetchIndicatorsData(env);
-      csvDataCacheByEnv[env] = parsedData;
+      // Nouveau schéma Grist (Test_org_table) : reconstruit « Chantier ou Impact »
+      // et « Levier » depuis les colonnes Chantier/Engagement/Emplacement_*.
+      const normalizedData = reconstructLegacyIndicatorRows(parsedData);
+      csvDataCacheByEnv[env] = normalizedData;
       fetchPromiseByEnv[env] = null;
-      return parsedData;
+      return normalizedData;
     } catch (error) {
       fetchPromiseByEnv[env] = null;
       throw error;
@@ -417,6 +420,199 @@ export function setStagingDocId(docId) {
   setStagingDocIdInFetcher(docId);
   // Clear cache to ensure using new URL
   clearCSVCache();
+}
+
+/**
+ * Secteurs valides comme « placement » dans la navigation (6 SGPE + Synthèse
+ * + Transverse). Sert à mapper Emplacement_engagement (nouveau schéma Grist).
+ * « Transverse » est un secteur uniquement au sens des données : ses indicateurs
+ * d'impact sont regroupés dans sectors["Transverse"].indicateursImpact et
+ * affichés dans la page État de l'environnement sous « secteur - Transverse ».
+ * En revanche il est masqué du menu secteurs et des chips cliquables côté UI
+ * (cf. HIDDEN_NAV_SECTORS / composants de navigation).
+ */
+const NAV_PLACEMENT_SECTORS = new Set([
+  'Se déplacer',
+  'Se loger',
+  'Se nourrir',
+  'Produire',
+  'Consommer',
+  'Préserver',
+  'Synthèse',
+  'Transverse',
+]);
+
+/**
+ * Secteurs « données » à NE PAS exposer dans la navigation cliquable (menu de
+ * gauche, chips de synthèse). Ils restent affichés dans État de l'environnement.
+ */
+export const HIDDEN_NAV_SECTORS = new Set(['Transverse']);
+
+/** Leviers « méta » (rôle), à ne pas confondre avec un nom de levier réel. */
+const META_LEVIER_LABELS = new Set([
+  "Indicateur d'impact - autres",
+  "Indicateur d'impact",
+  'Indicateur de chantier',
+  'Autres indicateurs',
+]);
+
+/**
+ * Découpe une cellule « Secteur / X » (nouveau schéma Grist) pouvant contenir
+ * plusieurs entrées (retour ligne, « ; » ou « , » suivi d'un « / »).
+ * @param {unknown} raw - Valeur brute de la cellule
+ * @returns {Array<{ first: string, rest: string|null }>}
+ */
+function splitSectorSlashCell(raw) {
+  if (raw == null) return [];
+  const s = String(raw).trim();
+  if (!s || s.toLowerCase() === 'nan') return [];
+  return s
+    .split(/[\r\n]+/)
+    .flatMap((e) => e.split(';'))
+    .flatMap((e) => e.split(/,\s+(?=[^/]+\/)/))
+    .map((e) => e.trim())
+    .filter(Boolean)
+    .map((e) => {
+      const norm = e.replace(/\s*\/\s*/g, ' / ').replace(/\s+/g, ' ').trim();
+      const parts = norm.split(' / ');
+      if (parts.length >= 2) {
+        return { first: parts[0], rest: parts.slice(1).join(' / ') };
+      }
+      return { first: parts[0], rest: null };
+    });
+}
+
+/** Emplacement_engagement → secteur de navigation (6 SGPE + Synthèse + Transverse). */
+function normalizePlacementSector(value) {
+  const s = String(value || '').trim();
+  return NAV_PLACEMENT_SECTORS.has(s) ? s : 'Synthèse';
+}
+
+/**
+ * Indicateur d'impact principal vs secondaire (« Autres »).
+ * Seul Emplacement_engagement = « Synthèse » (ou un secteur connu) → principal.
+ * Vide ou inconnu → « Autres » (pas de fallback principal Synthèse).
+ */
+function isEngagementAutresImpact(rawEmpl, rawLevier) {
+  if (
+    rawEmpl === 'Autres indicateurs' ||
+    rawEmpl === "Indicateur d'impact - autres" ||
+    rawLevier === 'Autres indicateurs' ||
+    rawLevier === "Indicateur d'impact - autres"
+  ) {
+    return true;
+  }
+  const empl = String(rawEmpl || '').trim();
+  if (empl === 'Synthèse') return false;
+  if (NAV_PLACEMENT_SECTORS.has(empl)) return false;
+  return true;
+}
+
+/**
+ * Nouveau schéma Grist (table Test_org_table) : la colonne unique
+ * « Chantier ou Impact » est éclatée en colonnes séparées « Chantier » /
+ * « Engagement », et le rôle méta du levier (« Indicateur de chantier »,
+ * « Indicateur d'impact ») a migré de « Levier » vers « Emplacement_chantier » /
+ * « Emplacement_engagement ».
+ *
+ * On reconstruit les valeurs legacy « Chantier ou Impact » + « Levier » pour que
+ * tout le pipeline navigation/transform continue de fonctionner sans réécriture.
+ *
+ * Mapping :
+ *  - « Chantier »   = "Secteur / Chantier"          → entrée Chantier ou Impact telle quelle
+ *  - « Engagement » = "Axe / NomEngagement"         → "<placement> / <Axe>" (indicateur d'impact)
+ *        placement = Emplacement_engagement normalisé en secteur (vide/inconnu →
+ *        bucket Synthèse côté COI, mais classé « Autres » via isEngagementAutresImpact)
+ *  - « Levier » reconstruit : méta depuis Emplacement_chantier + présence d'engagement,
+ *        plus le nom de levier réel éventuel.
+ *
+ * Limite connue : une ligne portant À LA FOIS un chantier et un engagement produit
+ * un produit croisé (association × levier) dans la navigation ; cas rare, toléré.
+ *
+ * No-op si « Chantier ou Impact » est déjà rempli (ancien schéma).
+ * @param {Record<string, unknown>} row - Ligne CSV brute
+ * @returns {Record<string, unknown>} - Ligne (éventuellement) enrichie
+ */
+function reconstructLegacyIndicatorColumns(row) {
+  if (!row) return row;
+  const existingCoi = String(row['Chantier ou Impact'] || '').trim();
+  if (existingCoi) return row;
+
+  const chantierEntries = splitSectorSlashCell(row['Chantier']);
+  const engagementEntries = splitSectorSlashCell(row['Engagement']);
+  if (!chantierEntries.length && !engagementEntries.length) {
+    return row;
+  }
+
+  const chantierAssoc = chantierEntries.filter((e) => e.first && e.rest);
+  const coiParts = [];
+  for (const { first, rest } of chantierAssoc) {
+    coiParts.push(`${first} / ${rest}`);
+  }
+
+  // Rôle de l'indicateur d'impact (principal vs secondaire).
+  //  - Emplacement_engagement explicite « Synthèse » ou secteur connu (Consommer,
+  //    Transverse, …) → indicateur d'impact principal de son placement.
+  //  - Secondaire (« Indicateur d'impact - autres ») : vide, inconnu, ou
+  //    « Autres indicateurs » / Levier « Autres indicateurs ».
+  const rawEmpl = String(row['Emplacement_engagement'] || '').trim();
+  const rawLevier = String(row['Levier'] || '').trim();
+  const isAutresImpact = isEngagementAutresImpact(rawEmpl, rawLevier);
+  const engagementPlacement = normalizePlacementSector(rawEmpl);
+  let hasEngagementImpact = false;
+  for (const { first: axe } of engagementEntries) {
+    if (!axe) continue;
+    coiParts.push(`${engagementPlacement} / ${axe}`);
+    hasEngagementImpact = true;
+  }
+  if (!coiParts.length) return row;
+
+  const emplChantier = String(row['Emplacement_chantier'] || '');
+  const namedLevier = rawLevier && !META_LEVIER_LABELS.has(rawLevier) ? rawLevier : '';
+  const levierParts = [];
+  if (chantierAssoc.length) {
+    if (/Indicateur de chantier/i.test(emplChantier)) {
+      levierParts.push('Indicateur de chantier');
+    }
+    if (namedLevier) {
+      levierParts.push(namedLevier);
+    }
+    // Défaut : un indicateur rattaché à un « Chantier » est l'indicateur de ce
+    // chantier (Emplacement_chantier est souvent vide dans le nouveau schéma).
+    if (!levierParts.length) {
+      levierParts.push('Indicateur de chantier');
+    }
+  }
+  if (hasEngagementImpact) {
+    levierParts.push(
+      isAutresImpact ? "Indicateur d'impact - autres" : "Indicateur d'impact"
+    );
+  }
+  if (!levierParts.length) {
+    levierParts.push(namedLevier || rawLevier || 'Autres indicateurs');
+  }
+
+  // Déduplique en préservant l'ordre (évite le spread d'un Set : il casse le
+  // bundle legacy transpilé, cf. « Set ... not iterable »).
+  const uniqueLeviers = levierParts.filter(
+    (levier, index) => levierParts.indexOf(levier) === index
+  );
+
+  return {
+    ...row,
+    'Chantier ou Impact': coiParts.join('\n'),
+    Levier: uniqueLeviers.join(', '),
+  };
+}
+
+/**
+ * Applique reconstructLegacyIndicatorColumns à toutes les lignes indicateurs.
+ * @param {Array<Record<string, unknown>>} rows - Lignes CSV brutes
+ * @returns {Array<Record<string, unknown>>}
+ */
+export function reconstructLegacyIndicatorRows(rows) {
+  if (!Array.isArray(rows)) return rows;
+  return rows.map((row) => reconstructLegacyIndicatorColumns(row));
 }
 
 /**
@@ -2268,11 +2464,19 @@ async function buildNavigationStructureCore(environment) {
         return a.name.localeCompare(b.name, 'fr');
       });
     
+    // Secteurs masqués (« Transverse ») : sortis du tableau `sectors` pour ne PAS
+    // polluer la navigation cliquable (menu de gauche, chips, sections synthèse).
+    // Ils sont exposés à part dans `hiddenSectors`, consommé uniquement par la page
+    // État de l'environnement (groupe « secteur - Transverse »).
+    const visibleSectors = sortedSectors.filter(s => !HIDDEN_NAV_SECTORS.has(s.name));
+    const hiddenSectors = sortedSectors.filter(s => HIDDEN_NAV_SECTORS.has(s.name));
+
     return {
       status: 'success',
       data: {
-        sectors: sortedSectors,
-        sectorNames: sortedSectors.map(s => s.name)
+        sectors: visibleSectors,
+        hiddenSectors,
+        sectorNames: visibleSectors.map(s => s.name)
       }
     };
   } catch (error) {
