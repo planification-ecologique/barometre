@@ -50,11 +50,8 @@ jobs:
           fi
 
           git add app/public/grist-backups app/public/irpe-backups
-          git commit -m "$(cat <<'EOF'
-chore: refresh IRPE cache and Grist backups
-
-Scheduled daily update of Écolab regional data and Grist CSV snapshots.
-EOF
-)"
+          git commit \
+            -m "chore: refresh IRPE cache and Grist backups" \
+            -m "Scheduled daily update of Écolab regional data and Grist CSV snapshots."
           git pull --rebase origin main
           git push origin HEAD:main
