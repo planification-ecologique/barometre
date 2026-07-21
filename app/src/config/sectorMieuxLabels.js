@@ -2,6 +2,11 @@
  * Libellés « Mieux … » des thématiques chantiers (SGPE / France Nation Verte).
  * Les données Grist utilisent les noms courts (Se déplacer, Se loger, …).
  */
+/** Libellés d'affichage pour secteurs / thèmes (clé métier inchangée). */
+const SECTOR_DISPLAY_LABEL_OVERRIDES = {
+  Transverse: 'Objectifs transverses',
+};
+
 export const CHANTIER_SECTOR_TO_MIEUX = {
   'Se déplacer': 'Mieux se déplacer',
   'Se loger': 'Mieux se loger',
@@ -23,6 +28,14 @@ export function chantierSectorNomMieux(sectorName) {
     return CHANTIER_SECTOR_TO_MIEUX.Préserver;
   }
   return key;
+}
+
+/** Secteur ou thème (données) → libellé affiché. */
+export function sectorDisplayLabel(sectorOrThemeName) {
+  if (!sectorOrThemeName) return '';
+  const key = String(sectorOrThemeName).trim();
+  if (SECTOR_DISPLAY_LABEL_OVERRIDES[key]) return SECTOR_DISPLAY_LABEL_OVERRIDES[key];
+  return chantierSectorNomMieux(key);
 }
 
 /** Fallback si `Description secteur` absente dans Liste_chantiers (Grist). */

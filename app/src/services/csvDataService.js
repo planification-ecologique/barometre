@@ -22,6 +22,7 @@ import {
   resolveTaxonomyAxeTags,
   resolveIndicatorTaxonomyAxeTags,
 } from '@/utils/taxonomyAxeTags.js';
+import { sectorDisplayLabel } from '@/config/sectorMieuxLabels.js';
 
 export { resolveTaxonomyAxeTags, resolveIndicatorTaxonomyAxeTags };
 
@@ -492,13 +493,12 @@ function normalizePlacementSector(value) {
  * Indicateur d'impact principal vs secondaire (« Autres »).
  * Seul Emplacement_engagement = « Synthèse » (ou un secteur connu) → principal.
  * Vide ou inconnu → « Autres » (pas de fallback principal Synthèse).
+ * Ne consulte pas la colonne « Levier » (legacy, peut être vide ou obsolète).
  */
-function isEngagementAutresImpact(rawEmpl, rawLevier) {
+export function isEmplacementEngagementAutresImpact(rawEmpl) {
   if (
     rawEmpl === 'Autres indicateurs' ||
-    rawEmpl === "Indicateur d'impact - autres" ||
-    rawLevier === 'Autres indicateurs' ||
-    rawLevier === "Indicateur d'impact - autres"
+    rawEmpl === "Indicateur d'impact - autres"
   ) {
     return true;
   }
@@ -522,7 +522,7 @@ function isEngagementAutresImpact(rawEmpl, rawLevier) {
  *  - « Chantier »   = "Secteur / Chantier"          → entrée Chantier ou Impact telle quelle
  *  - « Engagement » = "Axe / NomEngagement"         → "<placement> / <Axe>" (indicateur d'impact)
  *        placement = Emplacement_engagement normalisé en secteur (vide/inconnu →
- *        bucket Synthèse côté COI, mais classé « Autres » via isEngagementAutresImpact)
+ *        bucket Synthèse côté COI, mais classé « Autres » via isEmplacementEngagementAutresImpact)
  *  - « Levier » reconstruit : méta depuis Emplacement_chantier + présence d'engagement,
  *        plus le nom de levier réel éventuel.
  *
@@ -554,10 +554,10 @@ function reconstructLegacyIndicatorColumns(row) {
   //  - Emplacement_engagement explicite « Synthèse » ou secteur connu (Consommer,
   //    Transverse, …) → indicateur d'impact principal de son placement.
   //  - Secondaire (« Indicateur d'impact - autres ») : vide, inconnu, ou
-  //    « Autres indicateurs » / Levier « Autres indicateurs ».
+  //    Emplacement_engagement « Autres indicateurs ».
   const rawEmpl = String(row['Emplacement_engagement'] || '').trim();
   const rawLevier = String(row['Levier'] || '').trim();
-  const isAutresImpact = isEngagementAutresImpact(rawEmpl, rawLevier);
+  const isAutresImpact = isEmplacementEngagementAutresImpact(rawEmpl);
   const engagementPlacement = normalizePlacementSector(rawEmpl);
   let hasEngagementImpact = false;
   for (const { first: axe } of engagementEntries) {
@@ -1123,6 +1123,7 @@ export function transformCSVData(csvData, query) {
         : (item['Levier'] ? [String(item['Levier']).trim()] : []),
       // Engagement from main CSV (for Etat environnement synthesis)
       engagement: String(item['Engagement'] || item['Ambition liée'] || '').trim(),
+      emplacement_engagement: String(item['Emplacement_engagement'] || '').trim(),
       // Primary sector / chantier (backward compatible with existing components)
       chantier_ou_impact: parsedChantierOuImpact.chantierOuImpact || '',
       sector: parsedChantierOuImpact.sector || '',
@@ -1662,7 +1663,7 @@ export async function getThemesLevier(environment = 'production') {
     // Create theme objects
     const themes = uniqueThemes.map(theme => ({
       id_theme: theme,
-      label_theme: theme
+      label_theme: sectorDisplayLabel(theme)
     }));
     
     // Group leviers by theme

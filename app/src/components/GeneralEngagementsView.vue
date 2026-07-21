@@ -73,7 +73,7 @@
       >
         <h2 class="fr-h3 axe-section-title">
           <span class="section-chip section-chip--secteur section-chip--in-title">Secteur</span>
-          {{ sectorEntry.sector }}
+          {{ sectorDisplayLabel(sectorEntry.sector) }}
         </h2>
         <div class="fr-grid-row fr-grid-row--gutters">
           <div v-for="(item, itemIndex) in sectorEntry.indicators" :key="item.label_indic + '-' + sectorEntry.sector + '-' + itemIndex" class="fr-col-md-6 fr-col-lg-6 fr-col-xl-6 fr-col-12">
@@ -235,9 +235,11 @@ import {
   impactAxeRetenirHtml,
   compareChantierNamesByListeOrder,
   getChantierListeOrderIndexMap,
+  isEmplacementEngagementAutresImpact,
 } from "@/services/csvDataService.js";
 import { homeRouteName, etatEnvironnementRouteName } from "@/config/routeNames.js";
 import { SECTION_SYNTHESE_SLUG } from "@/utils/sectionUrl.js";
+import { sectorDisplayLabel } from "@/config/sectorMieuxLabels.js";
 
 export default {
   name: "GeneralEngagementsView",
@@ -316,8 +318,10 @@ export default {
           impactIndicators.push(...syntheseImpact);
           
           engagements.forEach(item => {
+            const hasEngagement = String(item.engagement || '').trim();
+            if (hasEngagement) return;
             const levier = (item.levier || '').toString();
-            // "Autres indicateurs" (hors "Indicateur d'impact - autres") → section Autres indicateurs
+            // Hors engagement : levier legacy « Autres indicateurs »
             if (levier.includes("Autres indicateurs") && !levier.includes("Indicateur d'impact - autres")) {
               autresIndicators.push(item);
             }
@@ -396,7 +400,7 @@ export default {
     axeSectorTags() {
       return this.impactIndicatorsBySector.map(se => ({
         id: this.getSectorSectionId(se.sector),
-        label: `${se.sector} (${se.indicators?.length || 0})`,
+        label: `${sectorDisplayLabel(se.sector)} (${se.indicators?.length || 0})`,
         href: '#' + this.getSectorSectionId(se.sector),
       }));
     },
@@ -486,6 +490,7 @@ export default {
     }
   },
   methods: {
+    sectorDisplayLabel,
     groupEngagementsByAxe(data) {
       try {
         const axeGroups = {};
@@ -512,7 +517,11 @@ export default {
         };
 
         data.forEach(indicator => {
-          const levier = indicator.levier || '';
+          const hasEngagement = String(indicator.engagement || '').trim();
+          const isImpactAutres =
+            hasEngagement &&
+            isEmplacementEngagementAutresImpact(indicator.emplacement_engagement);
+          const isImpactPrincipal = hasEngagement && !isImpactAutres;
           const associations = getAssociations(indicator);
 
           associations.forEach(({ chantierOuImpact, sector }) => {
@@ -521,9 +530,7 @@ export default {
               normalizeImpactAxeName(chantierOuImpact || 'Autre') ||
               'Autre';
 
-            // "Indicateur d'impact - autres" can appear in a composite levier string,
-            // so we check using includes instead of strict equality.
-            if (levier && levier.includes("Indicateur d'impact - autres")) {
+            if (isImpactAutres) {
               // Group by chantier name (chantier_ou_impact); displayed under chantier title, no submenu
               const key = `${axeName}:::${indicator.label_indic}`;
               if (!seenByChantierAutres.has(key)) {
@@ -532,8 +539,6 @@ export default {
                 chantierAutresGroups[axeName].push(indicator);
               }
             } else {
-              // Group by taxonomy axe (chantier_ou_impact)
-              // This includes both "Indicateur d'impact" and "Autres indicateurs"
               const key = `${axeName}:::${indicator.label_indic}`;
               if (!seenByAxe.has(key)) {
                 seenByAxe.add(key);
@@ -541,8 +546,8 @@ export default {
                 axeGroups[axeName].push(indicator);
               }
 
-              // For "Indicateur d'impact" only: also group by sector (for sector sections in axe detail)
-              if (levier && levier.includes("Indicateur d'impact") && !levier.includes("Indicateur d'impact - autres")) {
+              // Indicateurs d'impact principal : regroupés par secteur (Emplacement_engagement)
+              if (isImpactPrincipal) {
                 const sectorKey = `${axeName}:::${sector}:::${indicator.label_indic}`;
                 if (!seenByAxeSector.has(sectorKey)) {
                   seenByAxeSector.add(sectorKey);

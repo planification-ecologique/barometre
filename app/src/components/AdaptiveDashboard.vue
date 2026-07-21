@@ -76,6 +76,7 @@
 import GraphBox from "../components/GraphBox.vue";
 import SectorIcon from "./SectorIcon.vue";
 import EnvironnementImg from "../components/components_sgv/EnvironnementImg.vue";
+import { sectorDisplayLabel } from "@/config/sectorMieuxLabels.js";
 import FranceImg from "../components/components_sgv/FranceImg.vue";
 import EauImg from "../components/components_sgv/EauImg.vue";
 export default {
@@ -90,7 +91,12 @@ export default {
   computed: {
     pageTitle() {
       const p = this.params || {};
-      return p.label || p.label_theme || p.sector || '';
+      return (
+        p.label ||
+        sectorDisplayLabel(p.label_theme) ||
+        sectorDisplayLabel(p.sector) ||
+        ''
+      );
     },
   },
   data() {

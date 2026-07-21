@@ -1,20 +1,28 @@
 import fs from 'fs';
 import path from 'path';
 import Papa from 'papaparse';
-import { transformCSVData, reconstructLegacyIndicatorRows } from '@/services/csvDataService.js';
+import {
+  transformCSVData,
+  reconstructLegacyIndicatorRows,
+  isEmplacementEngagementAutresImpact,
+} from '@/services/csvDataService.js';
 
 const prodCsvPath = path.join(__dirname, '../../../public/grist-backups/grist-indicators.csv');
 
-function loadRows() {
+function loadRawRows() {
   const csv = fs.readFileSync(prodCsvPath, 'utf8');
   return new Promise((resolve, reject) => {
     Papa.parse(csv, {
       header: true,
       skipEmptyLines: true,
-      complete: (results) => resolve(reconstructLegacyIndicatorRows(results.data)),
+      complete: (results) => resolve(results.data),
       error: reject,
     });
   });
+}
+
+function loadRows() {
+  return loadRawRows().then((rows) => reconstructLegacyIndicatorRows(rows));
 }
 
 describe('transformCSVData with production-like indicators', () => {
@@ -46,11 +54,7 @@ describe('transformCSVData with production-like indicators', () => {
 
   it('classifies empty Emplacement_engagement as impact-autres, not Synthèse principal', async () => {
     const rows = await loadRows();
-    const pib = rows.find(
-      (r) =>
-        String(r.Indicateur || '').includes('par unité de PIB') &&
-        String(r['Emplacement_engagement'] || '').trim() === 'Autres indicateurs'
-    );
+    const pib = rows.find((r) => String(r.Indicateur || '').includes('par unité de PIB'));
     expect(pib).toBeTruthy();
     expect(String(pib.Levier || '')).toContain("Indicateur d'impact - autres");
     expect(String(pib.Levier || '')).not.toBe("Indicateur d'impact");
@@ -65,5 +69,37 @@ describe('transformCSVData with production-like indicators', () => {
     };
     const [reconstructed] = reconstructLegacyIndicatorRows([emptyEmpl]);
     expect(String(reconstructed.Levier || '')).toContain("Indicateur d'impact - autres");
+  });
+
+  it('ignores legacy Levier for engagement placement when Emplacement_engagement is set', async () => {
+    const rawRows = await loadRawRows();
+    const fossiles = rawRows.find(
+      (r) =>
+        String(r.Indicateur || '').includes('Part des sources fossiles') &&
+        String(r['Emplacement_engagement'] || '').trim() === 'Transverse' &&
+        String(r.Engagement || '').includes('Atténuation')
+    );
+    expect(fossiles).toBeTruthy();
+    expect(isEmplacementEngagementAutresImpact(fossiles['Emplacement_engagement'])).toBe(false);
+
+    const withLegacyLevier = {
+      ...fossiles,
+      Levier: 'Autres indicateurs',
+      'Chantier ou Impact': '',
+    };
+    const withoutLevier = {
+      ...fossiles,
+      Levier: '',
+      'Chantier ou Impact': '',
+    };
+    const [reconstructedWith] = reconstructLegacyIndicatorRows([withLegacyLevier]);
+    const [reconstructedWithout] = reconstructLegacyIndicatorRows([withoutLevier]);
+
+    expect(String(reconstructedWith['Chantier ou Impact'] || '')).toBe(
+      String(reconstructedWithout['Chantier ou Impact'] || '')
+    );
+    expect(String(reconstructedWith.Levier || '')).toContain("Indicateur d'impact");
+    expect(String(reconstructedWith.Levier || '')).not.toContain("Indicateur d'impact - autres");
+    expect(String(reconstructedWithout.Levier || '')).toBe(String(reconstructedWith.Levier || ''));
   });
 });
