@@ -1,0 +1,1239 @@
+{
+  "cubeName": "conso_energie_finale_region",
+  "measureName": "conso_energie_finale_region.id_255",
+  "timeDimension": "conso_energie_finale_region.date_mesure",
+  "extraDimension": "conso_energie_finale_region.annee",
+  "data": [
+    {
+      "conso_energie_finale_region.libelle_region": "Martinique",
+      "conso_energie_finale_region.geocode_region": "02",
+      "conso_energie_finale_region.date_mesure.year": "2013-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 792.0395322360603,
+      "conso_energie_finale_region.date_mesure": "2013-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Guyane",
+      "conso_energie_finale_region.geocode_region": "03",
+      "conso_energie_finale_region.date_mesure.year": "2013-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 467.5163390171053,
+      "conso_energie_finale_region.date_mesure": "2013-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Guadeloupe",
+      "conso_energie_finale_region.geocode_region": "01",
+      "conso_energie_finale_region.date_mesure.year": "2013-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 850.393627179028,
+      "conso_energie_finale_region.date_mesure": "2013-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "La Réunion",
+      "conso_energie_finale_region.geocode_region": "04",
+      "conso_energie_finale_region.date_mesure.year": "2013-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 1435.803475815043,
+      "conso_energie_finale_region.date_mesure": "2013-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Mayotte",
+      "conso_energie_finale_region.geocode_region": "06",
+      "conso_energie_finale_region.date_mesure.year": "2013-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 56.44345259028345,
+      "conso_energie_finale_region.date_mesure": "2013-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "La Réunion",
+      "conso_energie_finale_region.geocode_region": "04",
+      "conso_energie_finale_region.date_mesure.year": "2014-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 1461.384925331547,
+      "conso_energie_finale_region.date_mesure": "2014-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Nouvelle-Aquitaine",
+      "conso_energie_finale_region.geocode_region": "75",
+      "conso_energie_finale_region.date_mesure.year": "2014-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 21165,
+      "conso_energie_finale_region.date_mesure": "2014-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Guadeloupe",
+      "conso_energie_finale_region.geocode_region": "01",
+      "conso_energie_finale_region.date_mesure.year": "2014-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 814.1117191793763,
+      "conso_energie_finale_region.date_mesure": "2014-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Île-de-France",
+      "conso_energie_finale_region.geocode_region": "11",
+      "conso_energie_finale_region.date_mesure.year": "2014-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 51728,
+      "conso_energie_finale_region.date_mesure": "2014-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Normandie",
+      "conso_energie_finale_region.geocode_region": "28",
+      "conso_energie_finale_region.date_mesure.year": "2014-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 11446,
+      "conso_energie_finale_region.date_mesure": "2014-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Bretagne",
+      "conso_energie_finale_region.geocode_region": "53",
+      "conso_energie_finale_region.date_mesure.year": "2014-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 11966,
+      "conso_energie_finale_region.date_mesure": "2014-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Corse",
+      "conso_energie_finale_region.geocode_region": "94",
+      "conso_energie_finale_region.date_mesure.year": "2014-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 1076,
+      "conso_energie_finale_region.date_mesure": "2014-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Pays de la Loire",
+      "conso_energie_finale_region.geocode_region": "52",
+      "conso_energie_finale_region.date_mesure.year": "2014-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 13431,
+      "conso_energie_finale_region.date_mesure": "2014-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "conso_energie_finale_region.geocode_region": "93",
+      "conso_energie_finale_region.date_mesure.year": "2014-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 16725,
+      "conso_energie_finale_region.date_mesure": "2014-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Guyane",
+      "conso_energie_finale_region.geocode_region": "03",
+      "conso_energie_finale_region.date_mesure.year": "2014-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 458.8443394450317,
+      "conso_energie_finale_region.date_mesure": "2014-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Mayotte",
+      "conso_energie_finale_region.geocode_region": "06",
+      "conso_energie_finale_region.date_mesure.year": "2014-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 63.694360097523514,
+      "conso_energie_finale_region.date_mesure": "2014-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Occitanie",
+      "conso_energie_finale_region.geocode_region": "76",
+      "conso_energie_finale_region.date_mesure.year": "2014-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 17655,
+      "conso_energie_finale_region.date_mesure": "2014-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Centre-Val de Loire",
+      "conso_energie_finale_region.geocode_region": "24",
+      "conso_energie_finale_region.date_mesure.year": "2014-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 9830,
+      "conso_energie_finale_region.date_mesure": "2014-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Martinique",
+      "conso_energie_finale_region.geocode_region": "02",
+      "conso_energie_finale_region.date_mesure.year": "2014-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 808.3579689825976,
+      "conso_energie_finale_region.date_mesure": "2014-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Grand Est",
+      "conso_energie_finale_region.geocode_region": "44",
+      "conso_energie_finale_region.date_mesure.year": "2014-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 24431,
+      "conso_energie_finale_region.date_mesure": "2014-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Hauts-de-France",
+      "conso_energie_finale_region.geocode_region": "32",
+      "conso_energie_finale_region.date_mesure.year": "2014-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 20914,
+      "conso_energie_finale_region.date_mesure": "2014-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Auvergne-Rhône-Alpes",
+      "conso_energie_finale_region.geocode_region": "84",
+      "conso_energie_finale_region.date_mesure.year": "2014-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 32288,
+      "conso_energie_finale_region.date_mesure": "2014-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Bourgogne-Franche-Comté",
+      "conso_energie_finale_region.geocode_region": "27",
+      "conso_energie_finale_region.date_mesure.year": "2014-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 11127,
+      "conso_energie_finale_region.date_mesure": "2014-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Nouvelle-Aquitaine",
+      "conso_energie_finale_region.geocode_region": "75",
+      "conso_energie_finale_region.date_mesure.year": "2015-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 21143,
+      "conso_energie_finale_region.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Centre-Val de Loire",
+      "conso_energie_finale_region.geocode_region": "24",
+      "conso_energie_finale_region.date_mesure.year": "2015-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 10068,
+      "conso_energie_finale_region.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Bretagne",
+      "conso_energie_finale_region.geocode_region": "53",
+      "conso_energie_finale_region.date_mesure.year": "2015-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 12294,
+      "conso_energie_finale_region.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Île-de-France",
+      "conso_energie_finale_region.geocode_region": "11",
+      "conso_energie_finale_region.date_mesure.year": "2015-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 53966,
+      "conso_energie_finale_region.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Guyane",
+      "conso_energie_finale_region.geocode_region": "03",
+      "conso_energie_finale_region.date_mesure.year": "2015-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 465.1274894074742,
+      "conso_energie_finale_region.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Guadeloupe",
+      "conso_energie_finale_region.geocode_region": "01",
+      "conso_energie_finale_region.date_mesure.year": "2015-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 824.727947897589,
+      "conso_energie_finale_region.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Auvergne-Rhône-Alpes",
+      "conso_energie_finale_region.geocode_region": "84",
+      "conso_energie_finale_region.date_mesure.year": "2015-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 33711,
+      "conso_energie_finale_region.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Pays de la Loire",
+      "conso_energie_finale_region.geocode_region": "52",
+      "conso_energie_finale_region.date_mesure.year": "2015-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 14944,
+      "conso_energie_finale_region.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Mayotte",
+      "conso_energie_finale_region.geocode_region": "06",
+      "conso_energie_finale_region.date_mesure.year": "2015-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 69.20856042854943,
+      "conso_energie_finale_region.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Grand Est",
+      "conso_energie_finale_region.geocode_region": "44",
+      "conso_energie_finale_region.date_mesure.year": "2015-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 25006,
+      "conso_energie_finale_region.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Corse",
+      "conso_energie_finale_region.geocode_region": "94",
+      "conso_energie_finale_region.date_mesure.year": "2015-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 1065,
+      "conso_energie_finale_region.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Normandie",
+      "conso_energie_finale_region.geocode_region": "28",
+      "conso_energie_finale_region.date_mesure.year": "2015-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 12224,
+      "conso_energie_finale_region.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Martinique",
+      "conso_energie_finale_region.geocode_region": "02",
+      "conso_energie_finale_region.date_mesure.year": "2015-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 851.9033975052666,
+      "conso_energie_finale_region.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Occitanie",
+      "conso_energie_finale_region.geocode_region": "76",
+      "conso_energie_finale_region.date_mesure.year": "2015-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 18188,
+      "conso_energie_finale_region.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "conso_energie_finale_region.geocode_region": "93",
+      "conso_energie_finale_region.date_mesure.year": "2015-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 17531,
+      "conso_energie_finale_region.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Hauts-de-France",
+      "conso_energie_finale_region.geocode_region": "32",
+      "conso_energie_finale_region.date_mesure.year": "2015-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 21056,
+      "conso_energie_finale_region.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "La Réunion",
+      "conso_energie_finale_region.geocode_region": "04",
+      "conso_energie_finale_region.date_mesure.year": "2015-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 1514.9709174005136,
+      "conso_energie_finale_region.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Bourgogne-Franche-Comté",
+      "conso_energie_finale_region.geocode_region": "27",
+      "conso_energie_finale_region.date_mesure.year": "2015-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 11842,
+      "conso_energie_finale_region.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Auvergne-Rhône-Alpes",
+      "conso_energie_finale_region.geocode_region": "84",
+      "conso_energie_finale_region.date_mesure.year": "2016-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 32436,
+      "conso_energie_finale_region.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Grand Est",
+      "conso_energie_finale_region.geocode_region": "44",
+      "conso_energie_finale_region.date_mesure.year": "2016-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 24064,
+      "conso_energie_finale_region.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "conso_energie_finale_region.geocode_region": "93",
+      "conso_energie_finale_region.date_mesure.year": "2016-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 16928,
+      "conso_energie_finale_region.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Hauts-de-France",
+      "conso_energie_finale_region.geocode_region": "32",
+      "conso_energie_finale_region.date_mesure.year": "2016-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 21097,
+      "conso_energie_finale_region.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Corse",
+      "conso_energie_finale_region.geocode_region": "94",
+      "conso_energie_finale_region.date_mesure.year": "2016-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 805,
+      "conso_energie_finale_region.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Nouvelle-Aquitaine",
+      "conso_energie_finale_region.geocode_region": "75",
+      "conso_energie_finale_region.date_mesure.year": "2016-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 20953,
+      "conso_energie_finale_region.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Pays de la Loire",
+      "conso_energie_finale_region.geocode_region": "52",
+      "conso_energie_finale_region.date_mesure.year": "2016-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 14342,
+      "conso_energie_finale_region.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Guadeloupe",
+      "conso_energie_finale_region.geocode_region": "01",
+      "conso_energie_finale_region.date_mesure.year": "2016-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 774.4538014006507,
+      "conso_energie_finale_region.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Normandie",
+      "conso_energie_finale_region.geocode_region": "28",
+      "conso_energie_finale_region.date_mesure.year": "2016-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 12555,
+      "conso_energie_finale_region.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Occitanie",
+      "conso_energie_finale_region.geocode_region": "76",
+      "conso_energie_finale_region.date_mesure.year": "2016-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 18248,
+      "conso_energie_finale_region.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Guyane",
+      "conso_energie_finale_region.geocode_region": "03",
+      "conso_energie_finale_region.date_mesure.year": "2016-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 447.5144981248438,
+      "conso_energie_finale_region.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Île-de-France",
+      "conso_energie_finale_region.geocode_region": "11",
+      "conso_energie_finale_region.date_mesure.year": "2016-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 57347,
+      "conso_energie_finale_region.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Bourgogne-Franche-Comté",
+      "conso_energie_finale_region.geocode_region": "27",
+      "conso_energie_finale_region.date_mesure.year": "2016-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 12360,
+      "conso_energie_finale_region.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Mayotte",
+      "conso_energie_finale_region.geocode_region": "06",
+      "conso_energie_finale_region.date_mesure.year": "2016-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 66.01082895129781,
+      "conso_energie_finale_region.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "La Réunion",
+      "conso_energie_finale_region.geocode_region": "04",
+      "conso_energie_finale_region.date_mesure.year": "2016-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 1424.8979639012532,
+      "conso_energie_finale_region.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Bretagne",
+      "conso_energie_finale_region.geocode_region": "53",
+      "conso_energie_finale_region.date_mesure.year": "2016-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 12880,
+      "conso_energie_finale_region.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Martinique",
+      "conso_energie_finale_region.geocode_region": "02",
+      "conso_energie_finale_region.date_mesure.year": "2016-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 759.7804222835093,
+      "conso_energie_finale_region.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Centre-Val de Loire",
+      "conso_energie_finale_region.geocode_region": "24",
+      "conso_energie_finale_region.date_mesure.year": "2016-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 10172,
+      "conso_energie_finale_region.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Grand Est",
+      "conso_energie_finale_region.geocode_region": "44",
+      "conso_energie_finale_region.date_mesure.year": "2017-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 24076,
+      "conso_energie_finale_region.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Auvergne-Rhône-Alpes",
+      "conso_energie_finale_region.geocode_region": "84",
+      "conso_energie_finale_region.date_mesure.year": "2017-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 34609,
+      "conso_energie_finale_region.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Martinique",
+      "conso_energie_finale_region.geocode_region": "02",
+      "conso_energie_finale_region.date_mesure.year": "2017-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 793.1576350675092,
+      "conso_energie_finale_region.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Bretagne",
+      "conso_energie_finale_region.geocode_region": "53",
+      "conso_energie_finale_region.date_mesure.year": "2017-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 12208,
+      "conso_energie_finale_region.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Normandie",
+      "conso_energie_finale_region.geocode_region": "28",
+      "conso_energie_finale_region.date_mesure.year": "2017-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 12723,
+      "conso_energie_finale_region.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Pays de la Loire",
+      "conso_energie_finale_region.geocode_region": "52",
+      "conso_energie_finale_region.date_mesure.year": "2017-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 14129,
+      "conso_energie_finale_region.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Centre-Val de Loire",
+      "conso_energie_finale_region.geocode_region": "24",
+      "conso_energie_finale_region.date_mesure.year": "2017-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 10791,
+      "conso_energie_finale_region.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "La Réunion",
+      "conso_energie_finale_region.geocode_region": "04",
+      "conso_energie_finale_region.date_mesure.year": "2017-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 1372.0469873649242,
+      "conso_energie_finale_region.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "conso_energie_finale_region.geocode_region": "93",
+      "conso_energie_finale_region.date_mesure.year": "2017-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 17040,
+      "conso_energie_finale_region.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Guadeloupe",
+      "conso_energie_finale_region.geocode_region": "01",
+      "conso_energie_finale_region.date_mesure.year": "2017-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 799.9747300429178,
+      "conso_energie_finale_region.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Bourgogne-Franche-Comté",
+      "conso_energie_finale_region.geocode_region": "27",
+      "conso_energie_finale_region.date_mesure.year": "2017-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 12714,
+      "conso_energie_finale_region.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Corse",
+      "conso_energie_finale_region.geocode_region": "94",
+      "conso_energie_finale_region.date_mesure.year": "2017-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 863,
+      "conso_energie_finale_region.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Guyane",
+      "conso_energie_finale_region.geocode_region": "03",
+      "conso_energie_finale_region.date_mesure.year": "2017-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 466.3379829675981,
+      "conso_energie_finale_region.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Île-de-France",
+      "conso_energie_finale_region.geocode_region": "11",
+      "conso_energie_finale_region.date_mesure.year": "2017-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 58098,
+      "conso_energie_finale_region.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Hauts-de-France",
+      "conso_energie_finale_region.geocode_region": "32",
+      "conso_energie_finale_region.date_mesure.year": "2017-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 21492,
+      "conso_energie_finale_region.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Nouvelle-Aquitaine",
+      "conso_energie_finale_region.geocode_region": "75",
+      "conso_energie_finale_region.date_mesure.year": "2017-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 21196,
+      "conso_energie_finale_region.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Occitanie",
+      "conso_energie_finale_region.geocode_region": "76",
+      "conso_energie_finale_region.date_mesure.year": "2017-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 18578,
+      "conso_energie_finale_region.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Mayotte",
+      "conso_energie_finale_region.geocode_region": "06",
+      "conso_energie_finale_region.date_mesure.year": "2017-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 70.1599562167771,
+      "conso_energie_finale_region.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Martinique",
+      "conso_energie_finale_region.geocode_region": "02",
+      "conso_energie_finale_region.date_mesure.year": "2018-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 732.6936485879901,
+      "conso_energie_finale_region.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Grand Est",
+      "conso_energie_finale_region.geocode_region": "44",
+      "conso_energie_finale_region.date_mesure.year": "2018-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 22463,
+      "conso_energie_finale_region.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Pays de la Loire",
+      "conso_energie_finale_region.geocode_region": "52",
+      "conso_energie_finale_region.date_mesure.year": "2018-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 13560,
+      "conso_energie_finale_region.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Mayotte",
+      "conso_energie_finale_region.geocode_region": "06",
+      "conso_energie_finale_region.date_mesure.year": "2018-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 74.39735402000001,
+      "conso_energie_finale_region.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Île-de-France",
+      "conso_energie_finale_region.geocode_region": "11",
+      "conso_energie_finale_region.date_mesure.year": "2018-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 56602,
+      "conso_energie_finale_region.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Normandie",
+      "conso_energie_finale_region.geocode_region": "28",
+      "conso_energie_finale_region.date_mesure.year": "2018-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 13598,
+      "conso_energie_finale_region.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Auvergne-Rhône-Alpes",
+      "conso_energie_finale_region.geocode_region": "84",
+      "conso_energie_finale_region.date_mesure.year": "2018-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 33592,
+      "conso_energie_finale_region.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Hauts-de-France",
+      "conso_energie_finale_region.geocode_region": "32",
+      "conso_energie_finale_region.date_mesure.year": "2018-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 22714,
+      "conso_energie_finale_region.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "conso_energie_finale_region.geocode_region": "93",
+      "conso_energie_finale_region.date_mesure.year": "2018-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 18083,
+      "conso_energie_finale_region.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "La Réunion",
+      "conso_energie_finale_region.geocode_region": "04",
+      "conso_energie_finale_region.date_mesure.year": "2018-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 1537.9708389448335,
+      "conso_energie_finale_region.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Bretagne",
+      "conso_energie_finale_region.geocode_region": "53",
+      "conso_energie_finale_region.date_mesure.year": "2018-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 12433,
+      "conso_energie_finale_region.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Guyane",
+      "conso_energie_finale_region.geocode_region": "03",
+      "conso_energie_finale_region.date_mesure.year": "2018-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 464.07620304356107,
+      "conso_energie_finale_region.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Corse",
+      "conso_energie_finale_region.geocode_region": "94",
+      "conso_energie_finale_region.date_mesure.year": "2018-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 905,
+      "conso_energie_finale_region.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Guadeloupe",
+      "conso_energie_finale_region.geocode_region": "01",
+      "conso_energie_finale_region.date_mesure.year": "2018-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 724.222771662013,
+      "conso_energie_finale_region.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Occitanie",
+      "conso_energie_finale_region.geocode_region": "76",
+      "conso_energie_finale_region.date_mesure.year": "2018-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 18711,
+      "conso_energie_finale_region.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Nouvelle-Aquitaine",
+      "conso_energie_finale_region.geocode_region": "75",
+      "conso_energie_finale_region.date_mesure.year": "2018-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 21159,
+      "conso_energie_finale_region.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Centre-Val de Loire",
+      "conso_energie_finale_region.geocode_region": "24",
+      "conso_energie_finale_region.date_mesure.year": "2018-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 10274,
+      "conso_energie_finale_region.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Bourgogne-Franche-Comté",
+      "conso_energie_finale_region.geocode_region": "27",
+      "conso_energie_finale_region.date_mesure.year": "2018-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 12185,
+      "conso_energie_finale_region.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Centre-Val de Loire",
+      "conso_energie_finale_region.geocode_region": "24",
+      "conso_energie_finale_region.date_mesure.year": "2019-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 10040,
+      "conso_energie_finale_region.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Bourgogne-Franche-Comté",
+      "conso_energie_finale_region.geocode_region": "27",
+      "conso_energie_finale_region.date_mesure.year": "2019-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 11994,
+      "conso_energie_finale_region.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Île-de-France",
+      "conso_energie_finale_region.geocode_region": "11",
+      "conso_energie_finale_region.date_mesure.year": "2019-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 54812,
+      "conso_energie_finale_region.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Bretagne",
+      "conso_energie_finale_region.geocode_region": "53",
+      "conso_energie_finale_region.date_mesure.year": "2019-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 12281,
+      "conso_energie_finale_region.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Mayotte",
+      "conso_energie_finale_region.geocode_region": "06",
+      "conso_energie_finale_region.date_mesure.year": "2019-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 78.33528102000001,
+      "conso_energie_finale_region.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Occitanie",
+      "conso_energie_finale_region.geocode_region": "76",
+      "conso_energie_finale_region.date_mesure.year": "2019-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 18495,
+      "conso_energie_finale_region.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Grand Est",
+      "conso_energie_finale_region.geocode_region": "44",
+      "conso_energie_finale_region.date_mesure.year": "2019-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 22324,
+      "conso_energie_finale_region.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Pays de la Loire",
+      "conso_energie_finale_region.geocode_region": "52",
+      "conso_energie_finale_region.date_mesure.year": "2019-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 13412,
+      "conso_energie_finale_region.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "La Réunion",
+      "conso_energie_finale_region.geocode_region": "04",
+      "conso_energie_finale_region.date_mesure.year": "2019-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 1521.17520045615,
+      "conso_energie_finale_region.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "conso_energie_finale_region.geocode_region": "93",
+      "conso_energie_finale_region.date_mesure.year": "2019-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 17801,
+      "conso_energie_finale_region.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Nouvelle-Aquitaine",
+      "conso_energie_finale_region.geocode_region": "75",
+      "conso_energie_finale_region.date_mesure.year": "2019-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 20839,
+      "conso_energie_finale_region.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Martinique",
+      "conso_energie_finale_region.geocode_region": "02",
+      "conso_energie_finale_region.date_mesure.year": "2019-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 739.9869476996262,
+      "conso_energie_finale_region.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Hauts-de-France",
+      "conso_energie_finale_region.geocode_region": "32",
+      "conso_energie_finale_region.date_mesure.year": "2019-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 22525,
+      "conso_energie_finale_region.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Guadeloupe",
+      "conso_energie_finale_region.geocode_region": "01",
+      "conso_energie_finale_region.date_mesure.year": "2019-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 732.0679217470309,
+      "conso_energie_finale_region.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Auvergne-Rhône-Alpes",
+      "conso_energie_finale_region.geocode_region": "84",
+      "conso_energie_finale_region.date_mesure.year": "2019-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 32646,
+      "conso_energie_finale_region.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Normandie",
+      "conso_energie_finale_region.geocode_region": "28",
+      "conso_energie_finale_region.date_mesure.year": "2019-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 13932,
+      "conso_energie_finale_region.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Corse",
+      "conso_energie_finale_region.geocode_region": "94",
+      "conso_energie_finale_region.date_mesure.year": "2019-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 926,
+      "conso_energie_finale_region.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Guyane",
+      "conso_energie_finale_region.geocode_region": "03",
+      "conso_energie_finale_region.date_mesure.year": "2019-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 477.037138980246,
+      "conso_energie_finale_region.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Hauts-de-France",
+      "conso_energie_finale_region.geocode_region": "32",
+      "conso_energie_finale_region.date_mesure.year": "2020-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 21425,
+      "conso_energie_finale_region.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Guadeloupe",
+      "conso_energie_finale_region.geocode_region": "01",
+      "conso_energie_finale_region.date_mesure.year": "2020-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 697.980165501197,
+      "conso_energie_finale_region.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Bourgogne-Franche-Comté",
+      "conso_energie_finale_region.geocode_region": "27",
+      "conso_energie_finale_region.date_mesure.year": "2020-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 10831,
+      "conso_energie_finale_region.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Normandie",
+      "conso_energie_finale_region.geocode_region": "28",
+      "conso_energie_finale_region.date_mesure.year": "2020-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 13077,
+      "conso_energie_finale_region.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "conso_energie_finale_region.geocode_region": "93",
+      "conso_energie_finale_region.date_mesure.year": "2020-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 16519,
+      "conso_energie_finale_region.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Pays de la Loire",
+      "conso_energie_finale_region.geocode_region": "52",
+      "conso_energie_finale_region.date_mesure.year": "2020-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 11562,
+      "conso_energie_finale_region.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Corse",
+      "conso_energie_finale_region.geocode_region": "94",
+      "conso_energie_finale_region.date_mesure.year": "2020-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 801,
+      "conso_energie_finale_region.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Martinique",
+      "conso_energie_finale_region.geocode_region": "02",
+      "conso_energie_finale_region.date_mesure.year": "2020-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 679.799106051112,
+      "conso_energie_finale_region.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Auvergne-Rhône-Alpes",
+      "conso_energie_finale_region.geocode_region": "84",
+      "conso_energie_finale_region.date_mesure.year": "2020-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 30087,
+      "conso_energie_finale_region.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Centre-Val de Loire",
+      "conso_energie_finale_region.geocode_region": "24",
+      "conso_energie_finale_region.date_mesure.year": "2020-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 8946,
+      "conso_energie_finale_region.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "La Réunion",
+      "conso_energie_finale_region.geocode_region": "04",
+      "conso_energie_finale_region.date_mesure.year": "2020-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 1420.3726171284052,
+      "conso_energie_finale_region.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Guyane",
+      "conso_energie_finale_region.geocode_region": "03",
+      "conso_energie_finale_region.date_mesure.year": "2020-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 465.66993793951696,
+      "conso_energie_finale_region.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Grand Est",
+      "conso_energie_finale_region.geocode_region": "44",
+      "conso_energie_finale_region.date_mesure.year": "2020-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 22173,
+      "conso_energie_finale_region.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Mayotte",
+      "conso_energie_finale_region.geocode_region": "06",
+      "conso_energie_finale_region.date_mesure.year": "2020-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 76.7071058,
+      "conso_energie_finale_region.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Île-de-France",
+      "conso_energie_finale_region.geocode_region": "11",
+      "conso_energie_finale_region.date_mesure.year": "2020-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 51763,
+      "conso_energie_finale_region.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Occitanie",
+      "conso_energie_finale_region.geocode_region": "76",
+      "conso_energie_finale_region.date_mesure.year": "2020-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 16991,
+      "conso_energie_finale_region.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Bretagne",
+      "conso_energie_finale_region.geocode_region": "53",
+      "conso_energie_finale_region.date_mesure.year": "2020-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 10481,
+      "conso_energie_finale_region.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Nouvelle-Aquitaine",
+      "conso_energie_finale_region.geocode_region": "75",
+      "conso_energie_finale_region.date_mesure.year": "2020-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 19659,
+      "conso_energie_finale_region.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Centre-Val de Loire",
+      "conso_energie_finale_region.geocode_region": "24",
+      "conso_energie_finale_region.date_mesure.year": "2021-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 9248,
+      "conso_energie_finale_region.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "conso_energie_finale_region.geocode_region": "93",
+      "conso_energie_finale_region.date_mesure.year": "2021-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 16971,
+      "conso_energie_finale_region.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Bretagne",
+      "conso_energie_finale_region.geocode_region": "53",
+      "conso_energie_finale_region.date_mesure.year": "2021-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 11067,
+      "conso_energie_finale_region.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Mayotte",
+      "conso_energie_finale_region.geocode_region": "06",
+      "conso_energie_finale_region.date_mesure.year": "2021-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 80.478979,
+      "conso_energie_finale_region.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Hauts-de-France",
+      "conso_energie_finale_region.geocode_region": "32",
+      "conso_energie_finale_region.date_mesure.year": "2021-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 22564,
+      "conso_energie_finale_region.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Martinique",
+      "conso_energie_finale_region.geocode_region": "02",
+      "conso_energie_finale_region.date_mesure.year": "2021-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 704.1865868363487,
+      "conso_energie_finale_region.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Corse",
+      "conso_energie_finale_region.geocode_region": "94",
+      "conso_energie_finale_region.date_mesure.year": "2021-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 874,
+      "conso_energie_finale_region.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Pays de la Loire",
+      "conso_energie_finale_region.geocode_region": "52",
+      "conso_energie_finale_region.date_mesure.year": "2021-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 12377,
+      "conso_energie_finale_region.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Bourgogne-Franche-Comté",
+      "conso_energie_finale_region.geocode_region": "27",
+      "conso_energie_finale_region.date_mesure.year": "2021-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 11451,
+      "conso_energie_finale_region.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Guyane",
+      "conso_energie_finale_region.geocode_region": "03",
+      "conso_energie_finale_region.date_mesure.year": "2021-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 465.321691696857,
+      "conso_energie_finale_region.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Île-de-France",
+      "conso_energie_finale_region.geocode_region": "11",
+      "conso_energie_finale_region.date_mesure.year": "2021-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 55941,
+      "conso_energie_finale_region.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Guadeloupe",
+      "conso_energie_finale_region.geocode_region": "01",
+      "conso_energie_finale_region.date_mesure.year": "2021-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 715.1493204602817,
+      "conso_energie_finale_region.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Occitanie",
+      "conso_energie_finale_region.geocode_region": "76",
+      "conso_energie_finale_region.date_mesure.year": "2021-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 17722,
+      "conso_energie_finale_region.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Nouvelle-Aquitaine",
+      "conso_energie_finale_region.geocode_region": "75",
+      "conso_energie_finale_region.date_mesure.year": "2021-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 21171,
+      "conso_energie_finale_region.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Auvergne-Rhône-Alpes",
+      "conso_energie_finale_region.geocode_region": "84",
+      "conso_energie_finale_region.date_mesure.year": "2021-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 31371,
+      "conso_energie_finale_region.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Grand Est",
+      "conso_energie_finale_region.geocode_region": "44",
+      "conso_energie_finale_region.date_mesure.year": "2021-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 24528,
+      "conso_energie_finale_region.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Normandie",
+      "conso_energie_finale_region.geocode_region": "28",
+      "conso_energie_finale_region.date_mesure.year": "2021-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 13618,
+      "conso_energie_finale_region.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "La Réunion",
+      "conso_energie_finale_region.geocode_region": "04",
+      "conso_energie_finale_region.date_mesure.year": "2021-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 1496.9481637574233,
+      "conso_energie_finale_region.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Auvergne-Rhône-Alpes",
+      "conso_energie_finale_region.geocode_region": "84",
+      "conso_energie_finale_region.date_mesure.year": "2022-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 29838,
+      "conso_energie_finale_region.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Pays de la Loire",
+      "conso_energie_finale_region.geocode_region": "52",
+      "conso_energie_finale_region.date_mesure.year": "2022-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 11109,
+      "conso_energie_finale_region.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Bourgogne-Franche-Comté",
+      "conso_energie_finale_region.geocode_region": "27",
+      "conso_energie_finale_region.date_mesure.year": "2022-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 9962,
+      "conso_energie_finale_region.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "conso_energie_finale_region.geocode_region": "93",
+      "conso_energie_finale_region.date_mesure.year": "2022-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 16542,
+      "conso_energie_finale_region.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Hauts-de-France",
+      "conso_energie_finale_region.geocode_region": "32",
+      "conso_energie_finale_region.date_mesure.year": "2022-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 18925,
+      "conso_energie_finale_region.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Centre-Val de Loire",
+      "conso_energie_finale_region.geocode_region": "24",
+      "conso_energie_finale_region.date_mesure.year": "2022-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 8606,
+      "conso_energie_finale_region.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Bretagne",
+      "conso_energie_finale_region.geocode_region": "53",
+      "conso_energie_finale_region.date_mesure.year": "2022-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 10518,
+      "conso_energie_finale_region.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Nouvelle-Aquitaine",
+      "conso_energie_finale_region.geocode_region": "75",
+      "conso_energie_finale_region.date_mesure.year": "2022-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 20908,
+      "conso_energie_finale_region.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Île-de-France",
+      "conso_energie_finale_region.geocode_region": "11",
+      "conso_energie_finale_region.date_mesure.year": "2022-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 51642,
+      "conso_energie_finale_region.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Occitanie",
+      "conso_energie_finale_region.geocode_region": "76",
+      "conso_energie_finale_region.date_mesure.year": "2022-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 16874,
+      "conso_energie_finale_region.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Normandie",
+      "conso_energie_finale_region.geocode_region": "28",
+      "conso_energie_finale_region.date_mesure.year": "2022-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 11609,
+      "conso_energie_finale_region.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Grand Est",
+      "conso_energie_finale_region.geocode_region": "44",
+      "conso_energie_finale_region.date_mesure.year": "2022-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 21748,
+      "conso_energie_finale_region.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Corse",
+      "conso_energie_finale_region.geocode_region": "94",
+      "conso_energie_finale_region.date_mesure.year": "2022-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 1519,
+      "conso_energie_finale_region.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Hauts-de-France",
+      "conso_energie_finale_region.geocode_region": "32",
+      "conso_energie_finale_region.date_mesure.year": "2023-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 17495,
+      "conso_energie_finale_region.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "conso_energie_finale_region.geocode_region": "93",
+      "conso_energie_finale_region.date_mesure.year": "2023-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 16347,
+      "conso_energie_finale_region.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Grand Est",
+      "conso_energie_finale_region.geocode_region": "44",
+      "conso_energie_finale_region.date_mesure.year": "2023-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 19791,
+      "conso_energie_finale_region.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Île-de-France",
+      "conso_energie_finale_region.geocode_region": "11",
+      "conso_energie_finale_region.date_mesure.year": "2023-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 49116,
+      "conso_energie_finale_region.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Centre-Val de Loire",
+      "conso_energie_finale_region.geocode_region": "24",
+      "conso_energie_finale_region.date_mesure.year": "2023-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 7564,
+      "conso_energie_finale_region.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Pays de la Loire",
+      "conso_energie_finale_region.geocode_region": "52",
+      "conso_energie_finale_region.date_mesure.year": "2023-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 11920,
+      "conso_energie_finale_region.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Nouvelle-Aquitaine",
+      "conso_energie_finale_region.geocode_region": "75",
+      "conso_energie_finale_region.date_mesure.year": "2023-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 19198,
+      "conso_energie_finale_region.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Occitanie",
+      "conso_energie_finale_region.geocode_region": "76",
+      "conso_energie_finale_region.date_mesure.year": "2023-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 15175,
+      "conso_energie_finale_region.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Bourgogne-Franche-Comté",
+      "conso_energie_finale_region.geocode_region": "27",
+      "conso_energie_finale_region.date_mesure.year": "2023-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 8824,
+      "conso_energie_finale_region.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Corse",
+      "conso_energie_finale_region.geocode_region": "94",
+      "conso_energie_finale_region.date_mesure.year": "2023-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 900,
+      "conso_energie_finale_region.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Normandie",
+      "conso_energie_finale_region.geocode_region": "28",
+      "conso_energie_finale_region.date_mesure.year": "2023-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 11326,
+      "conso_energie_finale_region.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Bretagne",
+      "conso_energie_finale_region.geocode_region": "53",
+      "conso_energie_finale_region.date_mesure.year": "2023-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 9064,
+      "conso_energie_finale_region.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "conso_energie_finale_region.libelle_region": "Auvergne-Rhône-Alpes",
+      "conso_energie_finale_region.geocode_region": "84",
+      "conso_energie_finale_region.date_mesure.year": "2023-01-01T00:00:00.000",
+      "conso_energie_finale_region.id_255": 27668,
+      "conso_energie_finale_region.date_mesure": "2023-01-01T00:00:00.000"
+    }
+  ],
+  "measureMeta": {
+    "libelle_indicateur": "Consommation finale d'énergie du secteur tertiaire -  non corrigée des variations climatiques",
+    "statut_commun": "Mesure",
+    "unite": "GWh",
+    "methode_calcul": "L'indicateur calculé par Ecolab exclut les communes qui ont connu une scission car il n'est pas possible d'attribuer aux communes résultantes les données. La valeur de l'indicateur peut légèrement varier si l'agrégation est faite à une maille supérieure à la maille communale."
+  }
+}

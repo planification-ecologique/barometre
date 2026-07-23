@@ -1,0 +1,647 @@
+{
+  "cubeName": "part_production_chaleur_enr_r_com",
+  "measureName": "part_production_chaleur_enr_r_com.id_510",
+  "timeDimension": "part_production_chaleur_enr_r_com.date_mesure",
+  "extraDimension": "part_production_chaleur_enr_r_com.geocode_commune",
+  "data": [
+    {
+      "part_production_chaleur_enr_r_com.libelle_region": "Occitanie",
+      "part_production_chaleur_enr_r_com.geocode_region": "76",
+      "part_production_chaleur_enr_r_com.date_mesure.year": "2018-01-01T00:00:00.000",
+      "part_production_chaleur_enr_r_com.id_510": 77.29376146169427,
+      "part_production_chaleur_enr_r_com.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "part_production_chaleur_enr_r_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "part_production_chaleur_enr_r_com.geocode_region": "84",
+      "part_production_chaleur_enr_r_com.date_mesure.year": "2018-01-01T00:00:00.000",
+      "part_production_chaleur_enr_r_com.id_510": 63.52354076933313,
+      "part_production_chaleur_enr_r_com.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "part_production_chaleur_enr_r_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "part_production_chaleur_enr_r_com.geocode_region": "93",
+      "part_production_chaleur_enr_r_com.date_mesure.year": "2018-01-01T00:00:00.000",
+      "part_production_chaleur_enr_r_com.id_510": 53.86898527915722,
+      "part_production_chaleur_enr_r_com.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "part_production_chaleur_enr_r_com.libelle_region": "Hauts-de-France",
+      "part_production_chaleur_enr_r_com.geocode_region": "32",
+      "part_production_chaleur_enr_r_com.date_mesure.year": "2018-01-01T00:00:00.000",
+      "part_production_chaleur_enr_r_com.id_510": 41.98810124510659,
+      "part_production_chaleur_enr_r_com.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "part_production_chaleur_enr_r_com.libelle_region": "Normandie",
+      "part_production_chaleur_enr_r_com.geocode_region": "28",
+      "part_production_chaleur_enr_r_com.date_mesure.year": "2018-01-01T00:00:00.000",
+      "part_production_chaleur_enr_r_com.id_510": 69.26187645444855,
+      "part_production_chaleur_enr_r_com.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "part_production_chaleur_enr_r_com.libelle_region": "Bourgogne-Franche-Comté",
+      "part_production_chaleur_enr_r_com.geocode_region": "27",
+      "part_production_chaleur_enr_r_com.date_mesure.year": "2018-01-01T00:00:00.000",
+      "part_production_chaleur_enr_r_com.id_510": 63.205048142434144,
+      "part_production_chaleur_enr_r_com.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "part_production_chaleur_enr_r_com.libelle_region": "Pays de la Loire",
+      "part_production_chaleur_enr_r_com.geocode_region": "52",
+      "part_production_chaleur_enr_r_com.date_mesure.year": "2018-01-01T00:00:00.000",
+      "part_production_chaleur_enr_r_com.id_510": 65.29320265321286,
+      "part_production_chaleur_enr_r_com.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "part_production_chaleur_enr_r_com.libelle_region": "Île-de-France",
+      "part_production_chaleur_enr_r_com.geocode_region": "11",
+      "part_production_chaleur_enr_r_com.date_mesure.year": "2018-01-01T00:00:00.000",
+      "part_production_chaleur_enr_r_com.id_510": 53.01858094126238,
+      "part_production_chaleur_enr_r_com.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "part_production_chaleur_enr_r_com.libelle_region": "Grand Est",
+      "part_production_chaleur_enr_r_com.geocode_region": "44",
+      "part_production_chaleur_enr_r_com.date_mesure.year": "2018-01-01T00:00:00.000",
+      "part_production_chaleur_enr_r_com.id_510": 64.48373890011773,
+      "part_production_chaleur_enr_r_com.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "part_production_chaleur_enr_r_com.libelle_region": "Corse",
+      "part_production_chaleur_enr_r_com.geocode_region": "94",
+      "part_production_chaleur_enr_r_com.date_mesure.year": "2018-01-01T00:00:00.000",
+      "part_production_chaleur_enr_r_com.id_510": 100,
+      "part_production_chaleur_enr_r_com.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "part_production_chaleur_enr_r_com.libelle_region": "Centre-Val de Loire",
+      "part_production_chaleur_enr_r_com.geocode_region": "24",
+      "part_production_chaleur_enr_r_com.date_mesure.year": "2018-01-01T00:00:00.000",
+      "part_production_chaleur_enr_r_com.id_510": 71.03510095864067,
+      "part_production_chaleur_enr_r_com.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "part_production_chaleur_enr_r_com.libelle_region": "Nouvelle-Aquitaine",
+      "part_production_chaleur_enr_r_com.geocode_region": "75",
+      "part_production_chaleur_enr_r_com.date_mesure.year": "2018-01-01T00:00:00.000",
+      "part_production_chaleur_enr_r_com.id_510": 75.75741116549857,
+      "part_production_chaleur_enr_r_com.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "part_production_chaleur_enr_r_com.libelle_region": "Bretagne",
+      "part_production_chaleur_enr_r_com.geocode_region": "53",
+      "part_production_chaleur_enr_r_com.date_mesure.year": "2018-01-01T00:00:00.000",
+      "part_production_chaleur_enr_r_com.id_510": 73.7433143982855,
+      "part_production_chaleur_enr_r_com.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "part_production_chaleur_enr_r_com.libelle_region": "Bretagne",
+      "part_production_chaleur_enr_r_com.geocode_region": "53",
+      "part_production_chaleur_enr_r_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "part_production_chaleur_enr_r_com.id_510": 77.7489511446929,
+      "part_production_chaleur_enr_r_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "part_production_chaleur_enr_r_com.libelle_region": "Normandie",
+      "part_production_chaleur_enr_r_com.geocode_region": "28",
+      "part_production_chaleur_enr_r_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "part_production_chaleur_enr_r_com.id_510": 67.42221631845038,
+      "part_production_chaleur_enr_r_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "part_production_chaleur_enr_r_com.libelle_region": "Hauts-de-France",
+      "part_production_chaleur_enr_r_com.geocode_region": "32",
+      "part_production_chaleur_enr_r_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "part_production_chaleur_enr_r_com.id_510": 42.28723357389529,
+      "part_production_chaleur_enr_r_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "part_production_chaleur_enr_r_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "part_production_chaleur_enr_r_com.geocode_region": "84",
+      "part_production_chaleur_enr_r_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "part_production_chaleur_enr_r_com.id_510": 66.5125320899703,
+      "part_production_chaleur_enr_r_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "part_production_chaleur_enr_r_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "part_production_chaleur_enr_r_com.geocode_region": "93",
+      "part_production_chaleur_enr_r_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "part_production_chaleur_enr_r_com.id_510": 51.66790150449842,
+      "part_production_chaleur_enr_r_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "part_production_chaleur_enr_r_com.libelle_region": "Bourgogne-Franche-Comté",
+      "part_production_chaleur_enr_r_com.geocode_region": "27",
+      "part_production_chaleur_enr_r_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "part_production_chaleur_enr_r_com.id_510": 69.95947367289182,
+      "part_production_chaleur_enr_r_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "part_production_chaleur_enr_r_com.libelle_region": "Occitanie",
+      "part_production_chaleur_enr_r_com.geocode_region": "76",
+      "part_production_chaleur_enr_r_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "part_production_chaleur_enr_r_com.id_510": 77.11479561909444,
+      "part_production_chaleur_enr_r_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "part_production_chaleur_enr_r_com.libelle_region": "Nouvelle-Aquitaine",
+      "part_production_chaleur_enr_r_com.geocode_region": "75",
+      "part_production_chaleur_enr_r_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "part_production_chaleur_enr_r_com.id_510": 74.32362553662458,
+      "part_production_chaleur_enr_r_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "part_production_chaleur_enr_r_com.libelle_region": "Île-de-France",
+      "part_production_chaleur_enr_r_com.geocode_region": "11",
+      "part_production_chaleur_enr_r_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "part_production_chaleur_enr_r_com.id_510": 55.1532767435274,
+      "part_production_chaleur_enr_r_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "part_production_chaleur_enr_r_com.libelle_region": "Pays de la Loire",
+      "part_production_chaleur_enr_r_com.geocode_region": "52",
+      "part_production_chaleur_enr_r_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "part_production_chaleur_enr_r_com.id_510": 73.15447030824969,
+      "part_production_chaleur_enr_r_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "part_production_chaleur_enr_r_com.libelle_region": "Grand Est",
+      "part_production_chaleur_enr_r_com.geocode_region": "44",
+      "part_production_chaleur_enr_r_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "part_production_chaleur_enr_r_com.id_510": 67.1059463497555,
+      "part_production_chaleur_enr_r_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "part_production_chaleur_enr_r_com.libelle_region": "Centre-Val de Loire",
+      "part_production_chaleur_enr_r_com.geocode_region": "24",
+      "part_production_chaleur_enr_r_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "part_production_chaleur_enr_r_com.id_510": 73.31072555343673,
+      "part_production_chaleur_enr_r_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "part_production_chaleur_enr_r_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "part_production_chaleur_enr_r_com.geocode_region": "93",
+      "part_production_chaleur_enr_r_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "part_production_chaleur_enr_r_com.id_510": 61.7655915965869,
+      "part_production_chaleur_enr_r_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "part_production_chaleur_enr_r_com.libelle_region": "Normandie",
+      "part_production_chaleur_enr_r_com.geocode_region": "28",
+      "part_production_chaleur_enr_r_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "part_production_chaleur_enr_r_com.id_510": 69.99759260318415,
+      "part_production_chaleur_enr_r_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "part_production_chaleur_enr_r_com.libelle_region": "Bretagne",
+      "part_production_chaleur_enr_r_com.geocode_region": "53",
+      "part_production_chaleur_enr_r_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "part_production_chaleur_enr_r_com.id_510": 78.078438772152,
+      "part_production_chaleur_enr_r_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "part_production_chaleur_enr_r_com.libelle_region": "Pays de la Loire",
+      "part_production_chaleur_enr_r_com.geocode_region": "52",
+      "part_production_chaleur_enr_r_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "part_production_chaleur_enr_r_com.id_510": 74.22209058309977,
+      "part_production_chaleur_enr_r_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "part_production_chaleur_enr_r_com.libelle_region": "Occitanie",
+      "part_production_chaleur_enr_r_com.geocode_region": "76",
+      "part_production_chaleur_enr_r_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "part_production_chaleur_enr_r_com.id_510": 80.61875004433267,
+      "part_production_chaleur_enr_r_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "part_production_chaleur_enr_r_com.libelle_region": "Grand Est",
+      "part_production_chaleur_enr_r_com.geocode_region": "44",
+      "part_production_chaleur_enr_r_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "part_production_chaleur_enr_r_com.id_510": 65.60908863072319,
+      "part_production_chaleur_enr_r_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "part_production_chaleur_enr_r_com.libelle_region": "Centre-Val de Loire",
+      "part_production_chaleur_enr_r_com.geocode_region": "24",
+      "part_production_chaleur_enr_r_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "part_production_chaleur_enr_r_com.id_510": 75.17265083465145,
+      "part_production_chaleur_enr_r_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "part_production_chaleur_enr_r_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "part_production_chaleur_enr_r_com.geocode_region": "84",
+      "part_production_chaleur_enr_r_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "part_production_chaleur_enr_r_com.id_510": 66.4996832118462,
+      "part_production_chaleur_enr_r_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "part_production_chaleur_enr_r_com.libelle_region": "Bourgogne-Franche-Comté",
+      "part_production_chaleur_enr_r_com.geocode_region": "27",
+      "part_production_chaleur_enr_r_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "part_production_chaleur_enr_r_com.id_510": 66.11317042191072,
+      "part_production_chaleur_enr_r_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "part_production_chaleur_enr_r_com.libelle_region": "Île-de-France",
+      "part_production_chaleur_enr_r_com.geocode_region": "11",
+      "part_production_chaleur_enr_r_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "part_production_chaleur_enr_r_com.id_510": 55.29168656203236,
+      "part_production_chaleur_enr_r_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "part_production_chaleur_enr_r_com.libelle_region": "Hauts-de-France",
+      "part_production_chaleur_enr_r_com.geocode_region": "32",
+      "part_production_chaleur_enr_r_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "part_production_chaleur_enr_r_com.id_510": 47.69790226883059,
+      "part_production_chaleur_enr_r_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "part_production_chaleur_enr_r_com.libelle_region": "Nouvelle-Aquitaine",
+      "part_production_chaleur_enr_r_com.geocode_region": "75",
+      "part_production_chaleur_enr_r_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "part_production_chaleur_enr_r_com.id_510": 72.98864593023569,
+      "part_production_chaleur_enr_r_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "part_production_chaleur_enr_r_com.libelle_region": "Occitanie",
+      "part_production_chaleur_enr_r_com.geocode_region": "76",
+      "part_production_chaleur_enr_r_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "part_production_chaleur_enr_r_com.id_510": 81.56604033850726,
+      "part_production_chaleur_enr_r_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "part_production_chaleur_enr_r_com.libelle_region": "Bourgogne-Franche-Comté",
+      "part_production_chaleur_enr_r_com.geocode_region": "27",
+      "part_production_chaleur_enr_r_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "part_production_chaleur_enr_r_com.id_510": 69.67889997298978,
+      "part_production_chaleur_enr_r_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "part_production_chaleur_enr_r_com.libelle_region": "Bretagne",
+      "part_production_chaleur_enr_r_com.geocode_region": "53",
+      "part_production_chaleur_enr_r_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "part_production_chaleur_enr_r_com.id_510": 72.99204802823664,
+      "part_production_chaleur_enr_r_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "part_production_chaleur_enr_r_com.libelle_region": "Centre-Val de Loire",
+      "part_production_chaleur_enr_r_com.geocode_region": "24",
+      "part_production_chaleur_enr_r_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "part_production_chaleur_enr_r_com.id_510": 72.42735339778596,
+      "part_production_chaleur_enr_r_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "part_production_chaleur_enr_r_com.libelle_region": "Normandie",
+      "part_production_chaleur_enr_r_com.geocode_region": "28",
+      "part_production_chaleur_enr_r_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "part_production_chaleur_enr_r_com.id_510": 80.90847590385174,
+      "part_production_chaleur_enr_r_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "part_production_chaleur_enr_r_com.libelle_region": "Nouvelle-Aquitaine",
+      "part_production_chaleur_enr_r_com.geocode_region": "75",
+      "part_production_chaleur_enr_r_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "part_production_chaleur_enr_r_com.id_510": 72.1621123384088,
+      "part_production_chaleur_enr_r_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "part_production_chaleur_enr_r_com.libelle_region": "Pays de la Loire",
+      "part_production_chaleur_enr_r_com.geocode_region": "52",
+      "part_production_chaleur_enr_r_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "part_production_chaleur_enr_r_com.id_510": 77.06004300046382,
+      "part_production_chaleur_enr_r_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "part_production_chaleur_enr_r_com.libelle_region": "Corse",
+      "part_production_chaleur_enr_r_com.geocode_region": "94",
+      "part_production_chaleur_enr_r_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "part_production_chaleur_enr_r_com.id_510": 99.86868023637557,
+      "part_production_chaleur_enr_r_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "part_production_chaleur_enr_r_com.libelle_region": "Île-de-France",
+      "part_production_chaleur_enr_r_com.geocode_region": "11",
+      "part_production_chaleur_enr_r_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "part_production_chaleur_enr_r_com.id_510": 53.73255323481674,
+      "part_production_chaleur_enr_r_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "part_production_chaleur_enr_r_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "part_production_chaleur_enr_r_com.geocode_region": "84",
+      "part_production_chaleur_enr_r_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "part_production_chaleur_enr_r_com.id_510": 69.72984227012255,
+      "part_production_chaleur_enr_r_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "part_production_chaleur_enr_r_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "part_production_chaleur_enr_r_com.geocode_region": "93",
+      "part_production_chaleur_enr_r_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "part_production_chaleur_enr_r_com.id_510": 69.84278013308187,
+      "part_production_chaleur_enr_r_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "part_production_chaleur_enr_r_com.libelle_region": "Grand Est",
+      "part_production_chaleur_enr_r_com.geocode_region": "44",
+      "part_production_chaleur_enr_r_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "part_production_chaleur_enr_r_com.id_510": 66.10383840001587,
+      "part_production_chaleur_enr_r_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "part_production_chaleur_enr_r_com.libelle_region": "Hauts-de-France",
+      "part_production_chaleur_enr_r_com.geocode_region": "32",
+      "part_production_chaleur_enr_r_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "part_production_chaleur_enr_r_com.id_510": 58.065044972325815,
+      "part_production_chaleur_enr_r_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "part_production_chaleur_enr_r_com.libelle_region": "Centre-Val de Loire",
+      "part_production_chaleur_enr_r_com.geocode_region": "24",
+      "part_production_chaleur_enr_r_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "part_production_chaleur_enr_r_com.id_510": 75.18247793021158,
+      "part_production_chaleur_enr_r_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "part_production_chaleur_enr_r_com.libelle_region": "Pays de la Loire",
+      "part_production_chaleur_enr_r_com.geocode_region": "52",
+      "part_production_chaleur_enr_r_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "part_production_chaleur_enr_r_com.id_510": 75.92113169938169,
+      "part_production_chaleur_enr_r_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "part_production_chaleur_enr_r_com.libelle_region": "Bretagne",
+      "part_production_chaleur_enr_r_com.geocode_region": "53",
+      "part_production_chaleur_enr_r_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "part_production_chaleur_enr_r_com.id_510": 69.5852454690436,
+      "part_production_chaleur_enr_r_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "part_production_chaleur_enr_r_com.libelle_region": "Normandie",
+      "part_production_chaleur_enr_r_com.geocode_region": "28",
+      "part_production_chaleur_enr_r_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "part_production_chaleur_enr_r_com.id_510": 83.12436496190914,
+      "part_production_chaleur_enr_r_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "part_production_chaleur_enr_r_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "part_production_chaleur_enr_r_com.geocode_region": "84",
+      "part_production_chaleur_enr_r_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "part_production_chaleur_enr_r_com.id_510": 74.9591655253847,
+      "part_production_chaleur_enr_r_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "part_production_chaleur_enr_r_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "part_production_chaleur_enr_r_com.geocode_region": "93",
+      "part_production_chaleur_enr_r_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "part_production_chaleur_enr_r_com.id_510": 73.80119719992128,
+      "part_production_chaleur_enr_r_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "part_production_chaleur_enr_r_com.libelle_region": "Occitanie",
+      "part_production_chaleur_enr_r_com.geocode_region": "76",
+      "part_production_chaleur_enr_r_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "part_production_chaleur_enr_r_com.id_510": 81.11689508495465,
+      "part_production_chaleur_enr_r_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "part_production_chaleur_enr_r_com.libelle_region": "Nouvelle-Aquitaine",
+      "part_production_chaleur_enr_r_com.geocode_region": "75",
+      "part_production_chaleur_enr_r_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "part_production_chaleur_enr_r_com.id_510": 76.18446375121242,
+      "part_production_chaleur_enr_r_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "part_production_chaleur_enr_r_com.libelle_region": "Hauts-de-France",
+      "part_production_chaleur_enr_r_com.geocode_region": "32",
+      "part_production_chaleur_enr_r_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "part_production_chaleur_enr_r_com.id_510": 68.5908042858691,
+      "part_production_chaleur_enr_r_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "part_production_chaleur_enr_r_com.libelle_region": "Bourgogne-Franche-Comté",
+      "part_production_chaleur_enr_r_com.geocode_region": "27",
+      "part_production_chaleur_enr_r_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "part_production_chaleur_enr_r_com.id_510": 74.25288893334435,
+      "part_production_chaleur_enr_r_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "part_production_chaleur_enr_r_com.libelle_region": "Corse",
+      "part_production_chaleur_enr_r_com.geocode_region": "94",
+      "part_production_chaleur_enr_r_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "part_production_chaleur_enr_r_com.id_510": 99.85345599609215,
+      "part_production_chaleur_enr_r_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "part_production_chaleur_enr_r_com.libelle_region": "Grand Est",
+      "part_production_chaleur_enr_r_com.geocode_region": "44",
+      "part_production_chaleur_enr_r_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "part_production_chaleur_enr_r_com.id_510": 70.50692958460503,
+      "part_production_chaleur_enr_r_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "part_production_chaleur_enr_r_com.libelle_region": "Île-de-France",
+      "part_production_chaleur_enr_r_com.geocode_region": "11",
+      "part_production_chaleur_enr_r_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "part_production_chaleur_enr_r_com.id_510": 58.85392456440401,
+      "part_production_chaleur_enr_r_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "part_production_chaleur_enr_r_com.libelle_region": "Centre-Val de Loire",
+      "part_production_chaleur_enr_r_com.geocode_region": "24",
+      "part_production_chaleur_enr_r_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "part_production_chaleur_enr_r_com.id_510": 76.8985365419796,
+      "part_production_chaleur_enr_r_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "part_production_chaleur_enr_r_com.libelle_region": "Pays de la Loire",
+      "part_production_chaleur_enr_r_com.geocode_region": "52",
+      "part_production_chaleur_enr_r_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "part_production_chaleur_enr_r_com.id_510": 76.67578422671473,
+      "part_production_chaleur_enr_r_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "part_production_chaleur_enr_r_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "part_production_chaleur_enr_r_com.geocode_region": "84",
+      "part_production_chaleur_enr_r_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "part_production_chaleur_enr_r_com.id_510": 74.14547697201141,
+      "part_production_chaleur_enr_r_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "part_production_chaleur_enr_r_com.libelle_region": "Bretagne",
+      "part_production_chaleur_enr_r_com.geocode_region": "53",
+      "part_production_chaleur_enr_r_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "part_production_chaleur_enr_r_com.id_510": 63.43893889521435,
+      "part_production_chaleur_enr_r_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "part_production_chaleur_enr_r_com.libelle_region": "Occitanie",
+      "part_production_chaleur_enr_r_com.geocode_region": "76",
+      "part_production_chaleur_enr_r_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "part_production_chaleur_enr_r_com.id_510": 81.02302684969357,
+      "part_production_chaleur_enr_r_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "part_production_chaleur_enr_r_com.libelle_region": "Normandie",
+      "part_production_chaleur_enr_r_com.geocode_region": "28",
+      "part_production_chaleur_enr_r_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "part_production_chaleur_enr_r_com.id_510": 82.18140905174707,
+      "part_production_chaleur_enr_r_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "part_production_chaleur_enr_r_com.libelle_region": "Corse",
+      "part_production_chaleur_enr_r_com.geocode_region": "94",
+      "part_production_chaleur_enr_r_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "part_production_chaleur_enr_r_com.id_510": 99.98256320836967,
+      "part_production_chaleur_enr_r_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "part_production_chaleur_enr_r_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "part_production_chaleur_enr_r_com.geocode_region": "93",
+      "part_production_chaleur_enr_r_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "part_production_chaleur_enr_r_com.id_510": 65.30815590377063,
+      "part_production_chaleur_enr_r_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "part_production_chaleur_enr_r_com.libelle_region": "Grand Est",
+      "part_production_chaleur_enr_r_com.geocode_region": "44",
+      "part_production_chaleur_enr_r_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "part_production_chaleur_enr_r_com.id_510": 72.20720398582029,
+      "part_production_chaleur_enr_r_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "part_production_chaleur_enr_r_com.libelle_region": "Île-de-France",
+      "part_production_chaleur_enr_r_com.geocode_region": "11",
+      "part_production_chaleur_enr_r_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "part_production_chaleur_enr_r_com.id_510": 57.3502500895739,
+      "part_production_chaleur_enr_r_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "part_production_chaleur_enr_r_com.libelle_region": "Bourgogne-Franche-Comté",
+      "part_production_chaleur_enr_r_com.geocode_region": "27",
+      "part_production_chaleur_enr_r_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "part_production_chaleur_enr_r_com.id_510": 73.15875565409195,
+      "part_production_chaleur_enr_r_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "part_production_chaleur_enr_r_com.libelle_region": "Nouvelle-Aquitaine",
+      "part_production_chaleur_enr_r_com.geocode_region": "75",
+      "part_production_chaleur_enr_r_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "part_production_chaleur_enr_r_com.id_510": 79.47443893093043,
+      "part_production_chaleur_enr_r_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "part_production_chaleur_enr_r_com.libelle_region": "Hauts-de-France",
+      "part_production_chaleur_enr_r_com.geocode_region": "32",
+      "part_production_chaleur_enr_r_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "part_production_chaleur_enr_r_com.id_510": 70.07549431498457,
+      "part_production_chaleur_enr_r_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "part_production_chaleur_enr_r_com.libelle_region": "Pays de la Loire",
+      "part_production_chaleur_enr_r_com.geocode_region": "52",
+      "part_production_chaleur_enr_r_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "part_production_chaleur_enr_r_com.id_510": 75.1341311663951,
+      "part_production_chaleur_enr_r_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "part_production_chaleur_enr_r_com.libelle_region": "Normandie",
+      "part_production_chaleur_enr_r_com.geocode_region": "28",
+      "part_production_chaleur_enr_r_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "part_production_chaleur_enr_r_com.id_510": 78.68216897507226,
+      "part_production_chaleur_enr_r_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "part_production_chaleur_enr_r_com.libelle_region": "Île-de-France",
+      "part_production_chaleur_enr_r_com.geocode_region": "11",
+      "part_production_chaleur_enr_r_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "part_production_chaleur_enr_r_com.id_510": 56.35748888804556,
+      "part_production_chaleur_enr_r_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "part_production_chaleur_enr_r_com.libelle_region": "Bretagne",
+      "part_production_chaleur_enr_r_com.geocode_region": "53",
+      "part_production_chaleur_enr_r_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "part_production_chaleur_enr_r_com.id_510": 66.52725223199171,
+      "part_production_chaleur_enr_r_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "part_production_chaleur_enr_r_com.libelle_region": "Bourgogne-Franche-Comté",
+      "part_production_chaleur_enr_r_com.geocode_region": "27",
+      "part_production_chaleur_enr_r_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "part_production_chaleur_enr_r_com.id_510": 74.54409210360973,
+      "part_production_chaleur_enr_r_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "part_production_chaleur_enr_r_com.libelle_region": "Hauts-de-France",
+      "part_production_chaleur_enr_r_com.geocode_region": "32",
+      "part_production_chaleur_enr_r_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "part_production_chaleur_enr_r_com.id_510": 69.17878087874807,
+      "part_production_chaleur_enr_r_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "part_production_chaleur_enr_r_com.libelle_region": "Occitanie",
+      "part_production_chaleur_enr_r_com.geocode_region": "76",
+      "part_production_chaleur_enr_r_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "part_production_chaleur_enr_r_com.id_510": 76.44486883466952,
+      "part_production_chaleur_enr_r_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "part_production_chaleur_enr_r_com.libelle_region": "Corse",
+      "part_production_chaleur_enr_r_com.geocode_region": "94",
+      "part_production_chaleur_enr_r_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "part_production_chaleur_enr_r_com.id_510": 99.92932862190813,
+      "part_production_chaleur_enr_r_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "part_production_chaleur_enr_r_com.libelle_region": "La Réunion",
+      "part_production_chaleur_enr_r_com.geocode_region": "04",
+      "part_production_chaleur_enr_r_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "part_production_chaleur_enr_r_com.id_510": 90.49385578483654,
+      "part_production_chaleur_enr_r_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "part_production_chaleur_enr_r_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "part_production_chaleur_enr_r_com.geocode_region": "93",
+      "part_production_chaleur_enr_r_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "part_production_chaleur_enr_r_com.id_510": 61.0004870625371,
+      "part_production_chaleur_enr_r_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "part_production_chaleur_enr_r_com.libelle_region": "Nouvelle-Aquitaine",
+      "part_production_chaleur_enr_r_com.geocode_region": "75",
+      "part_production_chaleur_enr_r_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "part_production_chaleur_enr_r_com.id_510": 77.35345925683829,
+      "part_production_chaleur_enr_r_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "part_production_chaleur_enr_r_com.libelle_region": "Centre-Val de Loire",
+      "part_production_chaleur_enr_r_com.geocode_region": "24",
+      "part_production_chaleur_enr_r_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "part_production_chaleur_enr_r_com.id_510": 78.19926713549444,
+      "part_production_chaleur_enr_r_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "part_production_chaleur_enr_r_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "part_production_chaleur_enr_r_com.geocode_region": "84",
+      "part_production_chaleur_enr_r_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "part_production_chaleur_enr_r_com.id_510": 73.69972956924187,
+      "part_production_chaleur_enr_r_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "part_production_chaleur_enr_r_com.libelle_region": "Grand Est",
+      "part_production_chaleur_enr_r_com.geocode_region": "44",
+      "part_production_chaleur_enr_r_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "part_production_chaleur_enr_r_com.id_510": 71.00977032909326,
+      "part_production_chaleur_enr_r_com.date_mesure": "2024-01-01T00:00:00.000"
+    }
+  ],
+  "measureMeta": {
+    "libelle_indicateur": "Part de chaleur décarbonée (ENR&R : renouvelable et de récupération) dans les réseaux de chaleur",
+    "statut_commun": "Mesure",
+    "unite": "%",
+    "type spatial": "quantitatif",
+    "methode_calcul": "Les données de productions sont agrégées par communes. Les production considérés comme ENR&R proviennent de, en accord avec la réglementation : Biomasse solide, déchets internes, UIOM, biogaz, géothermie, PAC, solaire/thermique, chaleur industrielle, autre ENR&R",
+    "numerator": "agregation_prod_enr",
+    "denominator": "agregation_prod"
+  }
+}

@@ -1,0 +1,989 @@
+{
+  "cubeName": "immatriculations_autobus_e_com",
+  "measureName": "immatriculations_autobus_e_com.id_451",
+  "timeDimension": "immatriculations_autobus_e_com.date_mesure",
+  "extraDimension": "immatriculations_autobus_e_com.geocode_commune",
+  "data": [
+    {
+      "immatriculations_autobus_e_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "immatriculations_autobus_e_com.geocode_region": "93",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": 9.574468085106384,
+      "immatriculations_autobus_e_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "Pays de la Loire",
+      "immatriculations_autobus_e_com.geocode_region": "52",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": 25.252525252525253,
+      "immatriculations_autobus_e_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "Corse",
+      "immatriculations_autobus_e_com.geocode_region": "94",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": 25,
+      "immatriculations_autobus_e_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "Mayotte",
+      "immatriculations_autobus_e_com.geocode_region": "06",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": null,
+      "immatriculations_autobus_e_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "Normandie",
+      "immatriculations_autobus_e_com.geocode_region": "28",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": 2.4096385542168677,
+      "immatriculations_autobus_e_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "Martinique",
+      "immatriculations_autobus_e_com.geocode_region": "02",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": 0,
+      "immatriculations_autobus_e_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "Bretagne",
+      "immatriculations_autobus_e_com.geocode_region": "53",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": 12,
+      "immatriculations_autobus_e_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "immatriculations_autobus_e_com.geocode_region": "84",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": 7.725321888412017,
+      "immatriculations_autobus_e_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "Occitanie",
+      "immatriculations_autobus_e_com.geocode_region": "76",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": 4.195804195804196,
+      "immatriculations_autobus_e_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "Guyane",
+      "immatriculations_autobus_e_com.geocode_region": "03",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": null,
+      "immatriculations_autobus_e_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "Centre-Val de Loire",
+      "immatriculations_autobus_e_com.geocode_region": "24",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": 37.93103448275862,
+      "immatriculations_autobus_e_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "Grand Est",
+      "immatriculations_autobus_e_com.geocode_region": "44",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": 26.923076923076923,
+      "immatriculations_autobus_e_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "Île-de-France",
+      "immatriculations_autobus_e_com.geocode_region": "11",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": 18.38074398249453,
+      "immatriculations_autobus_e_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "Hauts-de-France",
+      "immatriculations_autobus_e_com.geocode_region": "32",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": 18.22222222222222,
+      "immatriculations_autobus_e_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "Nouvelle-Aquitaine",
+      "immatriculations_autobus_e_com.geocode_region": "75",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": 18.055555555555557,
+      "immatriculations_autobus_e_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "Bourgogne-Franche-Comté",
+      "immatriculations_autobus_e_com.geocode_region": "27",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": 5.2631578947368425,
+      "immatriculations_autobus_e_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "Guadeloupe",
+      "immatriculations_autobus_e_com.geocode_region": "01",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": 0,
+      "immatriculations_autobus_e_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "La Réunion",
+      "immatriculations_autobus_e_com.geocode_region": "04",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": 0,
+      "immatriculations_autobus_e_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "Hauts-de-France",
+      "immatriculations_autobus_e_com.geocode_region": "32",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": 3.5714285714285716,
+      "immatriculations_autobus_e_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "Martinique",
+      "immatriculations_autobus_e_com.geocode_region": "02",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": 0,
+      "immatriculations_autobus_e_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "Île-de-France",
+      "immatriculations_autobus_e_com.geocode_region": "11",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": 10.485933503836318,
+      "immatriculations_autobus_e_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "La Réunion",
+      "immatriculations_autobus_e_com.geocode_region": "04",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": 0,
+      "immatriculations_autobus_e_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "immatriculations_autobus_e_com.geocode_region": "93",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": 9.405940594059405,
+      "immatriculations_autobus_e_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "Bretagne",
+      "immatriculations_autobus_e_com.geocode_region": "53",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": 15.625,
+      "immatriculations_autobus_e_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "Nouvelle-Aquitaine",
+      "immatriculations_autobus_e_com.geocode_region": "75",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": 6.976744186046512,
+      "immatriculations_autobus_e_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "Occitanie",
+      "immatriculations_autobus_e_com.geocode_region": "76",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": 1.408450704225352,
+      "immatriculations_autobus_e_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "immatriculations_autobus_e_com.geocode_region": "84",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": 15.483870967741936,
+      "immatriculations_autobus_e_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "Guyane",
+      "immatriculations_autobus_e_com.geocode_region": "03",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": null,
+      "immatriculations_autobus_e_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "Corse",
+      "immatriculations_autobus_e_com.geocode_region": "94",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": 0,
+      "immatriculations_autobus_e_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "Centre-Val de Loire",
+      "immatriculations_autobus_e_com.geocode_region": "24",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": 4.761904761904762,
+      "immatriculations_autobus_e_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "Guadeloupe",
+      "immatriculations_autobus_e_com.geocode_region": "01",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": null,
+      "immatriculations_autobus_e_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "Mayotte",
+      "immatriculations_autobus_e_com.geocode_region": "06",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": null,
+      "immatriculations_autobus_e_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "Normandie",
+      "immatriculations_autobus_e_com.geocode_region": "28",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": 9.090909090909092,
+      "immatriculations_autobus_e_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "Bourgogne-Franche-Comté",
+      "immatriculations_autobus_e_com.geocode_region": "27",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": 0,
+      "immatriculations_autobus_e_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "Grand Est",
+      "immatriculations_autobus_e_com.geocode_region": "44",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": 30.48780487804878,
+      "immatriculations_autobus_e_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "Pays de la Loire",
+      "immatriculations_autobus_e_com.geocode_region": "52",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": 3.409090909090909,
+      "immatriculations_autobus_e_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "Corse",
+      "immatriculations_autobus_e_com.geocode_region": "94",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": 33.333333333333336,
+      "immatriculations_autobus_e_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "Bretagne",
+      "immatriculations_autobus_e_com.geocode_region": "53",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": 12.32876712328767,
+      "immatriculations_autobus_e_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "La Réunion",
+      "immatriculations_autobus_e_com.geocode_region": "04",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": 0,
+      "immatriculations_autobus_e_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "Guadeloupe",
+      "immatriculations_autobus_e_com.geocode_region": "01",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": 0,
+      "immatriculations_autobus_e_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "Mayotte",
+      "immatriculations_autobus_e_com.geocode_region": "06",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": null,
+      "immatriculations_autobus_e_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "Hauts-de-France",
+      "immatriculations_autobus_e_com.geocode_region": "32",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": 0,
+      "immatriculations_autobus_e_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "Bourgogne-Franche-Comté",
+      "immatriculations_autobus_e_com.geocode_region": "27",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": 57.142857142857146,
+      "immatriculations_autobus_e_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "Normandie",
+      "immatriculations_autobus_e_com.geocode_region": "28",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": 27.419354838709676,
+      "immatriculations_autobus_e_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "Île-de-France",
+      "immatriculations_autobus_e_com.geocode_region": "11",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": 36.37362637362637,
+      "immatriculations_autobus_e_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "immatriculations_autobus_e_com.geocode_region": "84",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": 28.571428571428573,
+      "immatriculations_autobus_e_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "Occitanie",
+      "immatriculations_autobus_e_com.geocode_region": "76",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": 3.3057851239669422,
+      "immatriculations_autobus_e_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "Nouvelle-Aquitaine",
+      "immatriculations_autobus_e_com.geocode_region": "75",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": 20.754716981132077,
+      "immatriculations_autobus_e_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "immatriculations_autobus_e_com.geocode_region": "93",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": 22.093023255813954,
+      "immatriculations_autobus_e_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "Martinique",
+      "immatriculations_autobus_e_com.geocode_region": "02",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": 0,
+      "immatriculations_autobus_e_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "Pays de la Loire",
+      "immatriculations_autobus_e_com.geocode_region": "52",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": 12.345679012345679,
+      "immatriculations_autobus_e_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "Centre-Val de Loire",
+      "immatriculations_autobus_e_com.geocode_region": "24",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": 44.705882352941174,
+      "immatriculations_autobus_e_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "Guyane",
+      "immatriculations_autobus_e_com.geocode_region": "03",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": null,
+      "immatriculations_autobus_e_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "Grand Est",
+      "immatriculations_autobus_e_com.geocode_region": "44",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": 35.09933774834437,
+      "immatriculations_autobus_e_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "Centre-Val de Loire",
+      "immatriculations_autobus_e_com.geocode_region": "24",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": 20.512820512820515,
+      "immatriculations_autobus_e_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "Grand Est",
+      "immatriculations_autobus_e_com.geocode_region": "44",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": 8.433734939759036,
+      "immatriculations_autobus_e_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "Bourgogne-Franche-Comté",
+      "immatriculations_autobus_e_com.geocode_region": "27",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": 28.571428571428573,
+      "immatriculations_autobus_e_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "La Réunion",
+      "immatriculations_autobus_e_com.geocode_region": "04",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": 42.857142857142854,
+      "immatriculations_autobus_e_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "Guadeloupe",
+      "immatriculations_autobus_e_com.geocode_region": "01",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": 0,
+      "immatriculations_autobus_e_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "immatriculations_autobus_e_com.geocode_region": "93",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": 60.68111455108359,
+      "immatriculations_autobus_e_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "Nouvelle-Aquitaine",
+      "immatriculations_autobus_e_com.geocode_region": "75",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": 22.727272727272727,
+      "immatriculations_autobus_e_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "Guyane",
+      "immatriculations_autobus_e_com.geocode_region": "03",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": null,
+      "immatriculations_autobus_e_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "Pays de la Loire",
+      "immatriculations_autobus_e_com.geocode_region": "52",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": 3.8461538461538463,
+      "immatriculations_autobus_e_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "Occitanie",
+      "immatriculations_autobus_e_com.geocode_region": "76",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": 8.333333333333334,
+      "immatriculations_autobus_e_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "Martinique",
+      "immatriculations_autobus_e_com.geocode_region": "02",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": 0,
+      "immatriculations_autobus_e_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "Mayotte",
+      "immatriculations_autobus_e_com.geocode_region": "06",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": null,
+      "immatriculations_autobus_e_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "Normandie",
+      "immatriculations_autobus_e_com.geocode_region": "28",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": 47.88732394366197,
+      "immatriculations_autobus_e_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "Hauts-de-France",
+      "immatriculations_autobus_e_com.geocode_region": "32",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": 1.075268817204301,
+      "immatriculations_autobus_e_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "immatriculations_autobus_e_com.geocode_region": "84",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": 21.05263157894737,
+      "immatriculations_autobus_e_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "Île-de-France",
+      "immatriculations_autobus_e_com.geocode_region": "11",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": 37.876106194690266,
+      "immatriculations_autobus_e_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "Bretagne",
+      "immatriculations_autobus_e_com.geocode_region": "53",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": 29.508196721311474,
+      "immatriculations_autobus_e_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "Corse",
+      "immatriculations_autobus_e_com.geocode_region": "94",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": 0,
+      "immatriculations_autobus_e_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "Grand Est",
+      "immatriculations_autobus_e_com.geocode_region": "44",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": 18.26923076923077,
+      "immatriculations_autobus_e_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "Bretagne",
+      "immatriculations_autobus_e_com.geocode_region": "53",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": 32.94117647058823,
+      "immatriculations_autobus_e_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "Mayotte",
+      "immatriculations_autobus_e_com.geocode_region": "06",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": null,
+      "immatriculations_autobus_e_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "Martinique",
+      "immatriculations_autobus_e_com.geocode_region": "02",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": 0,
+      "immatriculations_autobus_e_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "immatriculations_autobus_e_com.geocode_region": "93",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": 58.26086956521739,
+      "immatriculations_autobus_e_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "Guyane",
+      "immatriculations_autobus_e_com.geocode_region": "03",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": 0,
+      "immatriculations_autobus_e_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "Île-de-France",
+      "immatriculations_autobus_e_com.geocode_region": "11",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": 36.156351791530945,
+      "immatriculations_autobus_e_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "La Réunion",
+      "immatriculations_autobus_e_com.geocode_region": "04",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": 0,
+      "immatriculations_autobus_e_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "immatriculations_autobus_e_com.geocode_region": "84",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": 23.958333333333332,
+      "immatriculations_autobus_e_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "Guadeloupe",
+      "immatriculations_autobus_e_com.geocode_region": "01",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": null,
+      "immatriculations_autobus_e_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "Pays de la Loire",
+      "immatriculations_autobus_e_com.geocode_region": "52",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": 20.238095238095237,
+      "immatriculations_autobus_e_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "Occitanie",
+      "immatriculations_autobus_e_com.geocode_region": "76",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": 22.033898305084747,
+      "immatriculations_autobus_e_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "Hauts-de-France",
+      "immatriculations_autobus_e_com.geocode_region": "32",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": 12.32876712328767,
+      "immatriculations_autobus_e_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "Normandie",
+      "immatriculations_autobus_e_com.geocode_region": "28",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": 36.04651162790697,
+      "immatriculations_autobus_e_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "Bourgogne-Franche-Comté",
+      "immatriculations_autobus_e_com.geocode_region": "27",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": 68.75,
+      "immatriculations_autobus_e_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "Nouvelle-Aquitaine",
+      "immatriculations_autobus_e_com.geocode_region": "75",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": 19.27710843373494,
+      "immatriculations_autobus_e_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "Centre-Val de Loire",
+      "immatriculations_autobus_e_com.geocode_region": "24",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": 6.976744186046512,
+      "immatriculations_autobus_e_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "Corse",
+      "immatriculations_autobus_e_com.geocode_region": "94",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": null,
+      "immatriculations_autobus_e_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "Bourgogne-Franche-Comté",
+      "immatriculations_autobus_e_com.geocode_region": "27",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": 43.47826086956522,
+      "immatriculations_autobus_e_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "Mayotte",
+      "immatriculations_autobus_e_com.geocode_region": "06",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": null,
+      "immatriculations_autobus_e_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "Hauts-de-France",
+      "immatriculations_autobus_e_com.geocode_region": "32",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": 15.116279069767442,
+      "immatriculations_autobus_e_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "Grand Est",
+      "immatriculations_autobus_e_com.geocode_region": "44",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": 24.742268041237114,
+      "immatriculations_autobus_e_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "immatriculations_autobus_e_com.geocode_region": "84",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": 28.571428571428573,
+      "immatriculations_autobus_e_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "Guadeloupe",
+      "immatriculations_autobus_e_com.geocode_region": "01",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": null,
+      "immatriculations_autobus_e_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "Occitanie",
+      "immatriculations_autobus_e_com.geocode_region": "76",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": 17.94871794871795,
+      "immatriculations_autobus_e_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "Île-de-France",
+      "immatriculations_autobus_e_com.geocode_region": "11",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": 39.03225806451613,
+      "immatriculations_autobus_e_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "La Réunion",
+      "immatriculations_autobus_e_com.geocode_region": "04",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": 0,
+      "immatriculations_autobus_e_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "Centre-Val de Loire",
+      "immatriculations_autobus_e_com.geocode_region": "24",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": 22.22222222222222,
+      "immatriculations_autobus_e_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "Nouvelle-Aquitaine",
+      "immatriculations_autobus_e_com.geocode_region": "75",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": 36.8421052631579,
+      "immatriculations_autobus_e_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "Bretagne",
+      "immatriculations_autobus_e_com.geocode_region": "53",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": 64.0625,
+      "immatriculations_autobus_e_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "Martinique",
+      "immatriculations_autobus_e_com.geocode_region": "02",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": 0,
+      "immatriculations_autobus_e_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "Pays de la Loire",
+      "immatriculations_autobus_e_com.geocode_region": "52",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": 35.8974358974359,
+      "immatriculations_autobus_e_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "Normandie",
+      "immatriculations_autobus_e_com.geocode_region": "28",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": 10.526315789473685,
+      "immatriculations_autobus_e_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "Guyane",
+      "immatriculations_autobus_e_com.geocode_region": "03",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": 0,
+      "immatriculations_autobus_e_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "immatriculations_autobus_e_com.geocode_region": "93",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": 29.26829268292683,
+      "immatriculations_autobus_e_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "Corse",
+      "immatriculations_autobus_e_com.geocode_region": "94",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": 0,
+      "immatriculations_autobus_e_com.date_mesure": "2024-01-01T00:00:00.000"
+    }
+  ],
+  "measureMeta": {
+    "libelle_indicateur": "Part des véhicules électriques et hydrogène dans les immatriculations d'autobus",
+    "statut_commun": "Mesure",
+    "unite": "%",
+    "id_parents": "815",
+    "methode_calcul": "Indicateur filtré sur type_vehicule = 'TCP_BUS' et carburant = 'Electrique et hydrogène'",
+    "numerator": "tot_immatriculations_autobus_e",
+    "denominator": "tot_immatriculations_autobus"
+  }
+}
