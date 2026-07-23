@@ -509,17 +509,17 @@
       "conso_enaf_com.date_mesure": "2013-01-01T00:00:00.000"
     },
     {
-      "conso_enaf_com.libelle_region": "Auvergne-Rhône-Alpes",
-      "conso_enaf_com.geocode_region": "84",
-      "conso_enaf_com.date_mesure.year": "2013-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "3042.1344",
-      "conso_enaf_com.date_mesure": "2013-01-01T00:00:00.000"
-    },
-    {
       "conso_enaf_com.libelle_region": "La Réunion",
       "conso_enaf_com.geocode_region": "04",
       "conso_enaf_com.date_mesure.year": "2013-01-01T00:00:00.000",
       "conso_enaf_com.id_611": "258.0256",
+      "conso_enaf_com.date_mesure": "2013-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "conso_enaf_com.geocode_region": "84",
+      "conso_enaf_com.date_mesure.year": "2013-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "3042.1344",
       "conso_enaf_com.date_mesure": "2013-01-01T00:00:00.000"
     },
     {
