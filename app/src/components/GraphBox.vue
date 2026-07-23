@@ -748,7 +748,9 @@ export default {
           extraDimension,
           extraOptions,
           defaultExtraValue,
-        } = extractRegionsAndExtra(this.primaryRegionData);
+        } = extractRegionsAndExtra(
+          this.regionAllDataList.map(({ data }) => data)
+        );
 
         this.regionsList = regionsList;
         this.regionExtraDimension = extraDimension;
