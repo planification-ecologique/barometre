@@ -3,11 +3,25 @@
  * Pure functions so that Vue components (e.g. GraphBox) stay lean.
  */
 
+/** True when measure can plot (keeps 0; drops null / empty / NaN). */
+export function isValidMeasureValue(v) {
+  if (v == null) return false;
+  if (typeof v === 'number') return !Number.isNaN(v);
+  if (typeof v === 'string' && String(v).trim() !== '') {
+    const num = parseFloat(String(v).replace(/\s/g, '').replace(',', '.'));
+    return !Number.isNaN(num);
+  }
+  return false;
+}
+
 /**
  * Extract the list of regions and an optional extra dimension (e.g. énergie)
- * from a full indicator load result.
+ * from one or more indicator load results.
+ * Regions with only null/empty measures are omitted (e.g. Italie on IRPE 685).
+ * Pass an array for multi-IRPE: region kept if any source has valid data;
+ * extra dimension taken from first result that has one.
  *
- * @param {{ cubeName: string, extraDimension: string | null, data: Array }} result
+ * @param {object | object[] | null | undefined} resultOrResults
  * @returns {{
  *   regionsList: Array<{ geocode_region: string, libelle_region: string }>,
  *   extraDimension: string | null,
@@ -15,8 +29,55 @@
  *   defaultExtraValue: string
  * }}
  */
-export function extractRegionsAndExtra(result) {
-  const { cubeName, extraDimension, data } = result || {};
+export function extractRegionsAndExtra(resultOrResults) {
+  const empty = {
+    regionsList: [],
+    extraDimension: null,
+    extraOptions: [],
+    defaultExtraValue: ''
+  };
+
+  const list = Array.isArray(resultOrResults)
+    ? resultOrResults.filter(Boolean)
+    : resultOrResults
+      ? [resultOrResults]
+      : [];
+  if (!list.length) return empty;
+
+  const byGeocode = new Map();
+  let extras = null;
+
+  list.forEach((result) => {
+    const extracted = extractRegionsAndExtraFromOne(result);
+    extracted.regionsList.forEach((region) => {
+      if (!byGeocode.has(region.geocode_region)) {
+        byGeocode.set(region.geocode_region, region);
+      }
+    });
+    if (!extras && (extracted.extraDimension || extracted.extraOptions.length)) {
+      extras = extracted;
+    }
+  });
+
+  const regionsList = Array.from(byGeocode.values()).sort((a, b) =>
+    a.libelle_region.localeCompare(b.libelle_region, 'fr')
+  );
+
+  if (!extras) {
+    return { ...empty, regionsList };
+  }
+
+  return {
+    regionsList,
+    extraDimension: extras.extraDimension,
+    extraOptions: extras.extraOptions,
+    defaultExtraValue: extras.defaultExtraValue
+  };
+}
+
+/** @param {{ cubeName: string, measureName?: string | null, extraDimension: string | null, data: Array }} result */
+function extractRegionsAndExtraFromOne(result) {
+  const { cubeName, measureName, extraDimension, data } = result || {};
   if (!cubeName || !Array.isArray(data)) {
     return {
       regionsList: [],
@@ -28,17 +89,28 @@ export function extractRegionsAndExtra(result) {
 
   const keyLabel = `${cubeName}.libelle_region`;
   const keyGeocode = `${cubeName}.geocode_region`;
+  const measureKey = measureName || null;
+
+  const geocodesWithData = new Set();
+  if (measureKey) {
+    data.forEach((row) => {
+      if (!isValidMeasureValue(row[measureKey])) return;
+      const geocode = row[keyGeocode] ?? row['geocode_region'];
+      if (geocode) geocodesWithData.add(String(geocode));
+    });
+  }
+
   const byGeocode = new Map();
 
   data.forEach((row) => {
     const geocode = row[keyGeocode] ?? row['geocode_region'];
     const label = row[keyLabel] ?? row['libelle_region'];
-    if (geocode && label && !byGeocode.has(geocode)) {
-      byGeocode.set(geocode, {
-        geocode_region: String(geocode),
-        libelle_region: String(label)
-      });
-    }
+    if (!geocode || !label || byGeocode.has(geocode)) return;
+    if (measureKey && !geocodesWithData.has(String(geocode))) return;
+    byGeocode.set(geocode, {
+      geocode_region: String(geocode),
+      libelle_region: String(label)
+    });
   });
 
   const regionsList = Array.from(byGeocode.values()).sort((a, b) =>
@@ -135,17 +207,12 @@ export function buildRegionalSeries(regionAllData, selectedRegionCode, selectedE
     const t = rawTime != null ? yearFromTimeValue(rawTime) : 'Valeur';
     const v = row[measureKey];
 
-    if (
-      v != null &&
-      (typeof v === 'number' || (typeof v === 'string' && String(v).trim() !== ''))
-    ) {
+    if (isValidMeasureValue(v)) {
       const num =
         typeof v === 'number'
           ? v
           : parseFloat(String(v).replace(/\s/g, '').replace(',', '.'));
-      if (!Number.isNaN(num)) {
-        byTime.set(t, num);
-      }
+      byTime.set(t, num);
     }
   });
 
