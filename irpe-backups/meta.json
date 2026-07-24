@@ -12,29 +12,6 @@
       },
       "measures": [
         {
-          "name": "access_transport_bois_dpt.id_1236",
-          "title": "Access Transport Bois Dpt Id1236",
-          "shortTitle": "Id1236",
-          "cumulativeTotal": false,
-          "cumulative": false,
-          "type": "number",
-          "aggType": "sum",
-          "drillMembers": [],
-          "drillMembersGrouped": {
-            "measures": [],
-            "dimensions": []
-          },
-          "meta": {
-            "libelle_indicateur": "Volume de bois par niveau d'accessibilité physique pour le transport du bois",
-            "statut_commun": "Mesure",
-            "unite": "m3",
-            "methode_calcul": "Les données brutes ont été filtrées en utilisant la colonne label = Accessphy (conformément à documentation ign disponible en ligne). \n Afin de récupérer l'indicateur, nous avons utilisé la colonne tot_stand. \n Les autres informations statistiques (colonnes moy_ha_stand, ic_moy_ha_stand, ic_stand, pourc_stand) n'ont pas été prises en compte.",
-            "summable": false
-          },
-          "isVisible": true,
-          "public": true
-        },
-        {
           "name": "access_transport_bois_dpt.intervalle_confiance",
           "title": "Access Transport Bois Dpt Intervalle Confiance",
           "shortTitle": "Intervalle Confiance",
@@ -126,29 +103,6 @@
         "responsable_calcul": "Institut national de l’information géographique et forestière - IGN"
       },
       "measures": [
-        {
-          "name": "access_transport_bois_region.id_1236",
-          "title": "Access Transport Bois Region Id1236",
-          "shortTitle": "Id1236",
-          "cumulativeTotal": false,
-          "cumulative": false,
-          "type": "number",
-          "aggType": "sum",
-          "drillMembers": [],
-          "drillMembersGrouped": {
-            "measures": [],
-            "dimensions": []
-          },
-          "meta": {
-            "libelle_indicateur": "Volume de bois par niveau d'accessibilité physique pour le transport du bois",
-            "statut_commun": "Mesure",
-            "unite": "m3",
-            "methode_calcul": "Les données brutes ont été filtrées en utilisant la colonne label = Accessphy (conformément à documentation ign disponible en ligne). \n Afin de récupérer l'indicateur, nous avons utilisé la colonne tot_stand. \n Les autres informations statistiques (colonnes moy_ha_stand, ic_moy_ha_stand, ic_stand, pourc_stand) n'ont pas été prises en compte.",
-            "summable": false
-          },
-          "isVisible": true,
-          "public": true
-        },
         {
           "name": "access_transport_bois_region.intervalle_confiance",
           "title": "Access Transport Bois Region Intervalle Confiance",
@@ -4507,29 +4461,6 @@
       },
       "measures": [
         {
-          "name": "flux_carbone_dpt.id_1224",
-          "title": "Flux Carbone Dpt Id1224",
-          "shortTitle": "Id1224",
-          "cumulativeTotal": false,
-          "cumulative": false,
-          "type": "number",
-          "aggType": "sum",
-          "drillMembers": [],
-          "drillMembersGrouped": {
-            "measures": [],
-            "dimensions": []
-          },
-          "meta": {
-            "libelle_indicateur": "Flux annuel de carbone lié aux forêts",
-            "statut_commun": "Mesure",
-            "unite": "tC/an",
-            "methode_calcul": "Les données brutes ont été filtrées en utilisant la colonne label = FluxCarbone (conformément à documentation ign disponible en ligne). \n Afin de récupérer l'indicateur, nous avons utilisé la colonne tot_stand. \n Les autres informations statistiques (colonnes moy_ha_stand, ic_moy_ha_stand, ic_stand, pourc_stand) n'ont pas été prises en compte. \n\nLes chiffres de l’IFN sont arrondis avant publication. Le bilan carbone publié est calculé avant cet arrondi : peut ne pas correspondre exactement à la somme : Production biologique – Prélèvements – Mortalité (en raison des arrondis successifs). \n\n Pour éviter un double comptage du bilan, il n’est pas possible d’agréger les données sur l’axe type_flux.",
-            "summable": false
-          },
-          "isVisible": true,
-          "public": true
-        },
-        {
           "name": "flux_carbone_dpt.intervalle_confiance",
           "title": "Flux Carbone Dpt Intervalle Confiance",
           "shortTitle": "Intervalle Confiance",
@@ -4621,29 +4552,6 @@
         "responsable_calcul": "Institut national de l’information géographique et forestière - IGN"
       },
       "measures": [
-        {
-          "name": "flux_carbone_region.id_1224",
-          "title": "Flux Carbone Region Id1224",
-          "shortTitle": "Id1224",
-          "cumulativeTotal": false,
-          "cumulative": false,
-          "type": "number",
-          "aggType": "sum",
-          "drillMembers": [],
-          "drillMembersGrouped": {
-            "measures": [],
-            "dimensions": []
-          },
-          "meta": {
-            "libelle_indicateur": "Flux annuel de carbone lié aux forêts",
-            "statut_commun": "Mesure",
-            "unite": "tC/an",
-            "methode_calcul": "Les données brutes ont été filtrées en utilisant la colonne label = FluxCarbone (conformément à documentation ign disponible en ligne). \n Afin de récupérer l'indicateur, nous avons utilisé la colonne tot_stand. \n Les autres informations statistiques (colonnes moy_ha_stand, ic_moy_ha_stand, ic_stand, pourc_stand) n'ont pas été prises en compte. \n\nLes chiffres de l’IFN sont arrondis avant publication. Le bilan carbone publié est calculé avant cet arrondi : peut ne pas correspondre exactement à la somme : Production biologique – Prélèvements – Mortalité (en raison des arrondis successifs). \n\n Pour éviter un double comptage du bilan, il n’est pas possible d’agréger les données sur l’axe type_flux.",
-            "summable": false
-          },
-          "isVisible": true,
-          "public": true
-        },
         {
           "name": "flux_carbone_region.intervalle_confiance",
           "title": "Flux Carbone Region Intervalle Confiance",
@@ -5600,29 +5508,6 @@
       },
       "measures": [
         {
-          "name": "flux_volume_bois_dpt.id_1217",
-          "title": "Flux Volume Bois Dpt Id1217",
-          "shortTitle": "Id1217",
-          "cumulativeTotal": false,
-          "cumulative": false,
-          "type": "number",
-          "aggType": "sum",
-          "drillMembers": [],
-          "drillMembersGrouped": {
-            "measures": [],
-            "dimensions": []
-          },
-          "meta": {
-            "libelle_indicateur": "Flux de volume de bois vivant, par essence et type de flux",
-            "statut_commun": "Mesure",
-            "unite": "m3/an",
-            "methode_calcul": "Les données brutes ont été filtrées en utilisant la colonne label = Flux_ess (conformément à documentation ign disponible en ligne). \n Afin de récupérer l'indicateur, nous avons utilisé la colonne tot_stand. \n Les autres informations statistiques (colonnes moy_ha_stand, ic_moy_ha_stand, ic_stand, pourc_stand) n'ont pas été prises en compte. \n\n Les chiffres de l’IGN sont arrondis avant publication. Le bilan des flux publié est calculé avant cet arrondi : peut ne pas correspondre exactement à la somme : Production biologique – Prélèvements – Mortalité (en raison des arrondis successifs). \n\n Pour éviter un double comptage du bilan, il n’est pas possible d’agréger les données sur l’axe type_flux. ",
-            "summable": false
-          },
-          "isVisible": true,
-          "public": true
-        },
-        {
           "name": "flux_volume_bois_dpt.intervalle_confiance",
           "title": "Flux Volume Bois Dpt Intervalle Confiance",
           "shortTitle": "Intervalle Confiance",
@@ -5724,29 +5609,6 @@
         "responsable_calcul": "Institut national de l’information géographique et forestière - IGN"
       },
       "measures": [
-        {
-          "name": "flux_volume_bois_region.id_1217",
-          "title": "Flux Volume Bois Region Id1217",
-          "shortTitle": "Id1217",
-          "cumulativeTotal": false,
-          "cumulative": false,
-          "type": "number",
-          "aggType": "sum",
-          "drillMembers": [],
-          "drillMembersGrouped": {
-            "measures": [],
-            "dimensions": []
-          },
-          "meta": {
-            "libelle_indicateur": "Flux de volume de bois vivant, par essence et type de flux",
-            "statut_commun": "Mesure",
-            "unite": "m3/an",
-            "methode_calcul": "Les données brutes ont été filtrées en utilisant la colonne label = Flux_ess (conformément à documentation ign disponible en ligne). \n Afin de récupérer l'indicateur, nous avons utilisé la colonne tot_stand. \n Les autres informations statistiques (colonnes moy_ha_stand, ic_moy_ha_stand, ic_stand, pourc_stand) n'ont pas été prises en compte. \n\n Les chiffres de l’IGN sont arrondis avant publication. Le bilan des flux publié est calculé avant cet arrondi : peut ne pas correspondre exactement à la somme : Production biologique – Prélèvements – Mortalité (en raison des arrondis successifs). \n\n Pour éviter un double comptage du bilan, il n’est pas possible d’agréger les données sur l’axe type_flux. ",
-            "summable": false
-          },
-          "isVisible": true,
-          "public": true
-        },
         {
           "name": "flux_volume_bois_region.intervalle_confiance",
           "title": "Flux Volume Bois Region Intervalle Confiance",
@@ -16711,29 +16573,6 @@
       },
       "measures": [
         {
-          "name": "richesse_especes_dpt.id_1227",
-          "title": "Richesse Especes Dpt Id1227",
-          "shortTitle": "Id1227",
-          "cumulativeTotal": false,
-          "cumulative": false,
-          "type": "number",
-          "aggType": "sum",
-          "drillMembers": [],
-          "drillMembersGrouped": {
-            "measures": [],
-            "dimensions": []
-          },
-          "meta": {
-            "libelle_indicateur": "Richesse locale moyenne en essences forestières",
-            "statut_commun": "Mesure",
-            "unite": "ha",
-            "methode_calcul": "Les données brutes ont été filtrées en utilisant la colonne label = STNBMOYESP (conformément à documentation ign disponible en ligne). \n Afin de récupérer l'indicateur, nous avons utilisé les colonnes tot_stand (pour la superficie) et modalité1 (pour le nombre d'espèces d'arbres). \n Les autres informations statistiques (colonnes moy_ha_stand, ic_moy_ha_stand, ic_stand, pourc_stand) n'ont pas été prises en compte.",
-            "summable": false
-          },
-          "isVisible": true,
-          "public": true
-        },
-        {
           "name": "richesse_especes_dpt.intervalle_confiance",
           "title": "Richesse Especes Dpt Intervalle Confiance",
           "shortTitle": "Intervalle Confiance",
@@ -16825,29 +16664,6 @@
         "responsable_calcul": "Institut national de l’information géographique et forestière - IGN"
       },
       "measures": [
-        {
-          "name": "richesse_especes_region.id_1227",
-          "title": "Richesse Especes Region Id1227",
-          "shortTitle": "Id1227",
-          "cumulativeTotal": false,
-          "cumulative": false,
-          "type": "number",
-          "aggType": "sum",
-          "drillMembers": [],
-          "drillMembersGrouped": {
-            "measures": [],
-            "dimensions": []
-          },
-          "meta": {
-            "libelle_indicateur": "Richesse locale moyenne en essences forestières",
-            "statut_commun": "Mesure",
-            "unite": "ha",
-            "methode_calcul": "Les données brutes ont été filtrées en utilisant la colonne label = STNBMOYESP (conformément à documentation ign disponible en ligne). \n Afin de récupérer l'indicateur, nous avons utilisé les colonnes tot_stand (pour la superficie) et modalité1 (pour le nombre d'espèces d'arbres). \n Les autres informations statistiques (colonnes moy_ha_stand, ic_moy_ha_stand, ic_stand, pourc_stand) n'ont pas été prises en compte.",
-            "summable": false
-          },
-          "isVisible": true,
-          "public": true
-        },
         {
           "name": "richesse_especes_region.intervalle_confiance",
           "title": "Richesse Especes Region Intervalle Confiance",
@@ -17936,29 +17752,6 @@
       },
       "measures": [
         {
-          "name": "superficie_foret_plantee_age_dpt.id_1239",
-          "title": "Superficie Foret Plantee Age Dpt Id1239",
-          "shortTitle": "Id1239",
-          "cumulativeTotal": false,
-          "cumulative": false,
-          "type": "number",
-          "aggType": "sum",
-          "drillMembers": [],
-          "drillMembersGrouped": {
-            "measures": [],
-            "dimensions": []
-          },
-          "meta": {
-            "libelle_indicateur": "Superficie de forêt plantée par classe d'âge",
-            "statut_commun": "Mesure",
-            "unite": "ha",
-            "methode_calcul": "Les données brutes ont été filtrées en utilisant la colonne label = ST_plant_age et modalite2 = 'Forêt plantée' (conformément à la documentation IGN disponible en ligne). \n Afin de récupérer l'indicateur, nous avons utilisé la colonne tot_stand. \n La classe d'âge est issue de la colonne modalite1.",
-            "summable": false
-          },
-          "isVisible": true,
-          "public": true
-        },
-        {
           "name": "superficie_foret_plantee_age_dpt.intervalle_confiance",
           "title": "Superficie Foret Plantee Age Dpt Intervalle Confiance",
           "shortTitle": "Intervalle Confiance",
@@ -18050,29 +17843,6 @@
         "responsable_calcul": "Institut national de l’information géographique et forestière - IGN"
       },
       "measures": [
-        {
-          "name": "superficie_foret_plantee_age_region.id_1239",
-          "title": "Superficie Foret Plantee Age Region Id1239",
-          "shortTitle": "Id1239",
-          "cumulativeTotal": false,
-          "cumulative": false,
-          "type": "number",
-          "aggType": "sum",
-          "drillMembers": [],
-          "drillMembersGrouped": {
-            "measures": [],
-            "dimensions": []
-          },
-          "meta": {
-            "libelle_indicateur": "Superficie de forêt plantée par classe d'âge",
-            "statut_commun": "Mesure",
-            "unite": "ha",
-            "methode_calcul": "Les données brutes ont été filtrées en utilisant la colonne label = ST_plant_age et modalite2 = 'Forêt plantée' (conformément à la documentation IGN disponible en ligne). \n Afin de récupérer l'indicateur, nous avons utilisé la colonne tot_stand. \n La classe d'âge est issue de la colonne modalite1.",
-            "summable": false
-          },
-          "isVisible": true,
-          "public": true
-        },
         {
           "name": "superficie_foret_plantee_age_region.intervalle_confiance",
           "title": "Superficie Foret Plantee Age Region Intervalle Confiance",
@@ -18166,29 +17936,6 @@
       },
       "measures": [
         {
-          "name": "superficie_forets_essence_dpt.id_1213",
-          "title": "Superficie Forets Essence Dpt Id1213",
-          "shortTitle": "Id1213",
-          "cumulativeTotal": false,
-          "cumulative": false,
-          "type": "number",
-          "aggType": "sum",
-          "drillMembers": [],
-          "drillMembersGrouped": {
-            "measures": [],
-            "dimensions": []
-          },
-          "meta": {
-            "libelle_indicateur": "Superficie en forêts par essence",
-            "statut_commun": "Mesure",
-            "unite": "ha",
-            "methode_calcul": "Les données brutes ont été filtrées en utilisant la colonne label = STEsspre (conformément à la documentation IGN disponible en ligne). \n Afin de récupérer l'indicateur, nous avons utilisé la colonne tot_stand. \n L'essence est issue de la colonne modalite1.",
-            "summable": false
-          },
-          "isVisible": true,
-          "public": true
-        },
-        {
           "name": "superficie_forets_essence_dpt.intervalle_confiance",
           "title": "Superficie Forets Essence Dpt Intervalle Confiance",
           "shortTitle": "Intervalle Confiance",
@@ -18280,29 +18027,6 @@
         "responsable_calcul": "Institut national de l’information géographique et forestière - IGN"
       },
       "measures": [
-        {
-          "name": "superficie_forets_essence_region.id_1213",
-          "title": "Superficie Forets Essence Region Id1213",
-          "shortTitle": "Id1213",
-          "cumulativeTotal": false,
-          "cumulative": false,
-          "type": "number",
-          "aggType": "sum",
-          "drillMembers": [],
-          "drillMembersGrouped": {
-            "measures": [],
-            "dimensions": []
-          },
-          "meta": {
-            "libelle_indicateur": "Superficie en forêts par essence",
-            "statut_commun": "Mesure",
-            "unite": "ha",
-            "methode_calcul": "Les données brutes ont été filtrées en utilisant la colonne label = STEsspre (conformément à la documentation IGN disponible en ligne). \n Afin de récupérer l'indicateur, nous avons utilisé la colonne tot_stand. \n L'essence est issue de la colonne modalite1.",
-            "summable": false
-          },
-          "isVisible": true,
-          "public": true
-        },
         {
           "name": "superficie_forets_essence_region.intervalle_confiance",
           "title": "Superficie Forets Essence Region Intervalle Confiance",
@@ -18396,29 +18120,6 @@
       },
       "measures": [
         {
-          "name": "superficie_forets_type_propriete_dpt.id_1215",
-          "title": "Superficie Forets Type Propriete Dpt Id1215",
-          "shortTitle": "Id1215",
-          "cumulativeTotal": false,
-          "cumulative": false,
-          "type": "number",
-          "aggType": "sum",
-          "drillMembers": [],
-          "drillMembersGrouped": {
-            "measures": [],
-            "dimensions": []
-          },
-          "meta": {
-            "libelle_indicateur": "Surface de forêt par type de propriété",
-            "statut_commun": "Mesure",
-            "unite": "ha",
-            "methode_calcul": "Les données brutes ont été filtrées en utilisant la colonne label = SFPro (conformément à documentation ign disponible en ligne). \n Afin de récupérer l'indicateur, nous avons utilisé la colonne tot_stand. \n Les autres informations statistiques (colonnes moy_ha_stand, ic_moy_ha_stand, ic_stand, pourc_stand) n'ont pas été prises en compte.",
-            "summable": false
-          },
-          "isVisible": true,
-          "public": true
-        },
-        {
           "name": "superficie_forets_type_propriete_dpt.intervalle_confiance",
           "title": "Superficie Forets Type Propriete Dpt Intervalle Confiance",
           "shortTitle": "Intervalle Confiance",
@@ -18510,29 +18211,6 @@
         "responsable_calcul": "Institut national de l’information géographique et forestière - IGN"
       },
       "measures": [
-        {
-          "name": "superficie_forets_type_propriete_region.id_1215",
-          "title": "Superficie Forets Type Propriete Region Id1215",
-          "shortTitle": "Id1215",
-          "cumulativeTotal": false,
-          "cumulative": false,
-          "type": "number",
-          "aggType": "sum",
-          "drillMembers": [],
-          "drillMembersGrouped": {
-            "measures": [],
-            "dimensions": []
-          },
-          "meta": {
-            "libelle_indicateur": "Surface de forêt par type de propriété",
-            "statut_commun": "Mesure",
-            "unite": "ha",
-            "methode_calcul": "Les données brutes ont été filtrées en utilisant la colonne label = SFPro (conformément à documentation ign disponible en ligne). \n Afin de récupérer l'indicateur, nous avons utilisé la colonne tot_stand. \n Les autres informations statistiques (colonnes moy_ha_stand, ic_moy_ha_stand, ic_stand, pourc_stand) n'ont pas été prises en compte.",
-            "summable": false
-          },
-          "isVisible": true,
-          "public": true
-        },
         {
           "name": "superficie_forets_type_propriete_region.intervalle_confiance",
           "title": "Superficie Forets Type Propriete Region Intervalle Confiance",
@@ -19635,31 +19313,7 @@
       "meta": {
         "responsable_calcul": "Institut national de l’information géographique et forestière - IGN"
       },
-      "measures": [
-        {
-          "name": "taux_boisement_dpt.id_1214",
-          "title": "Taux Boisement Dpt Id1214",
-          "shortTitle": "Id1214",
-          "cumulativeTotal": false,
-          "cumulative": false,
-          "type": "number",
-          "aggType": "sum",
-          "drillMembers": [],
-          "drillMembersGrouped": {
-            "measures": [],
-            "dimensions": []
-          },
-          "meta": {
-            "libelle_indicateur": "Taux de boisement",
-            "statut_commun": "Mesure",
-            "unite": "%",
-            "methode_calcul": "Les données brutes ont été filtrées en utilisant la colonne label = tx_bois (conformément à documentation ign disponible en ligne). \n Afin de récupérer l'indicateur, nous avons utilisé la colonne tot_stand. \n Les autres informations statistiques (colonnes moy_ha_stand, ic_moy_ha_stand, ic_stand, pourc_stand) n'ont pas été prises en compte.",
-            "summable": false
-          },
-          "isVisible": true,
-          "public": true
-        }
-      ],
+      "measures": [],
       "dimensions": [
         {
           "name": "taux_boisement_dpt.date_mesure",
@@ -19717,31 +19371,7 @@
       "meta": {
         "responsable_calcul": "Institut national de l’information géographique et forestière - IGN"
       },
-      "measures": [
-        {
-          "name": "taux_boisement_region.id_1214",
-          "title": "Taux Boisement Region Id1214",
-          "shortTitle": "Id1214",
-          "cumulativeTotal": false,
-          "cumulative": false,
-          "type": "number",
-          "aggType": "sum",
-          "drillMembers": [],
-          "drillMembersGrouped": {
-            "measures": [],
-            "dimensions": []
-          },
-          "meta": {
-            "libelle_indicateur": "Taux de boisement",
-            "statut_commun": "Mesure",
-            "unite": "%",
-            "methode_calcul": "Les données brutes ont été filtrées en utilisant la colonne label = tx_bois (conformément à documentation ign disponible en ligne). \n Afin de récupérer l'indicateur, nous avons utilisé la colonne tot_stand. \n Les autres informations statistiques (colonnes moy_ha_stand, ic_moy_ha_stand, ic_stand, pourc_stand) n'ont pas été prises en compte.",
-            "summable": false
-          },
-          "isVisible": true,
-          "public": true
-        }
-      ],
+      "measures": [],
       "dimensions": [
         {
           "name": "taux_boisement_region.date_mesure",
@@ -19800,29 +19430,6 @@
         "responsable_calcul": "Institut national de l’information géographique et forestière - IGN"
       },
       "measures": [
-        {
-          "name": "tiges_alt_essence_dpt.id_1240",
-          "title": "Tiges Alt Essence Dpt Id1240",
-          "shortTitle": "Id1240",
-          "cumulativeTotal": false,
-          "cumulative": false,
-          "type": "number",
-          "aggType": "sum",
-          "drillMembers": [],
-          "drillMembersGrouped": {
-            "measures": [],
-            "dimensions": []
-          },
-          "meta": {
-            "libelle_indicateur": "Nombre de tiges altérées par essence",
-            "statut_commun": "Mesure",
-            "unite": "tiges",
-            "methode_calcul": "Les données brutes ont été filtrées en utilisant la colonne label = DEPERIS_ESS (conformément à documentation ign disponible en ligne). \n Afin de récupérer l'indicateur, nous avons utilisé la colonne tot_stand. \n Les autres informations statistiques (colonnes moy_ha_stand, ic_moy_ha_stand, ic_stand, pourc_stand) n'ont pas été prises en compte. \n\nLe nombre de tiges correspond au nombre d’arbres ou au nombre de tiges en cas de cépées dont le diamètre à 1,30 m est supérieur à 7,5 cm.",
-            "summable": false
-          },
-          "isVisible": true,
-          "public": true
-        },
         {
           "name": "tiges_alt_essence_dpt.intervalle_confiance",
           "title": "Tiges Alt Essence Dpt Intervalle Confiance",
@@ -19915,29 +19522,6 @@
         "responsable_calcul": "Institut national de l’information géographique et forestière - IGN"
       },
       "measures": [
-        {
-          "name": "tiges_alt_essence_region.id_1240",
-          "title": "Tiges Alt Essence Region Id1240",
-          "shortTitle": "Id1240",
-          "cumulativeTotal": false,
-          "cumulative": false,
-          "type": "number",
-          "aggType": "sum",
-          "drillMembers": [],
-          "drillMembersGrouped": {
-            "measures": [],
-            "dimensions": []
-          },
-          "meta": {
-            "libelle_indicateur": "Nombre de tiges altérées par essence",
-            "statut_commun": "Mesure",
-            "unite": "tiges",
-            "methode_calcul": "Les données brutes ont été filtrées en utilisant la colonne label = DEPERIS_ESS (conformément à documentation ign disponible en ligne). \n Afin de récupérer l'indicateur, nous avons utilisé la colonne tot_stand. \n Les autres informations statistiques (colonnes moy_ha_stand, ic_moy_ha_stand, ic_stand, pourc_stand) n'ont pas été prises en compte. \n\nLe nombre de tiges correspond au nombre d’arbres ou au nombre de tiges en cas de cépées dont le diamètre à 1,30 m est supérieur à 7,5 cm.",
-            "summable": false
-          },
-          "isVisible": true,
-          "public": true
-        },
         {
           "name": "tiges_alt_essence_region.intervalle_confiance",
           "title": "Tiges Alt Essence Region Intervalle Confiance",
@@ -20878,29 +20462,6 @@
       },
       "measures": [
         {
-          "name": "volu_bois_ess_diametre_dpt.id_1216",
-          "title": "Volu Bois Ess Diametre Dpt Id1216",
-          "shortTitle": "Id1216",
-          "cumulativeTotal": false,
-          "cumulative": false,
-          "type": "number",
-          "aggType": "sum",
-          "drillMembers": [],
-          "drillMembersGrouped": {
-            "measures": [],
-            "dimensions": []
-          },
-          "meta": {
-            "libelle_indicateur": "Volume de bois vivant par essence et par catégorie de diamètre",
-            "statut_commun": "Mesure",
-            "unite": "m3",
-            "methode_calcul": "Les données brutes ont été filtrées en utilisant la colonne label = Vclad_ess (conformément à documentation ign disponible en ligne). \n Afin de récupérer l'indicateur, nous avons utilisé la colonne tot_stand. \n Les autres informations statistiques (colonnes moy_ha_stand, ic_moy_ha_stand, ic_stand, pourc_stand) n'ont pas été prises en compte.",
-            "summable": false
-          },
-          "isVisible": true,
-          "public": true
-        },
-        {
           "name": "volu_bois_ess_diametre_dpt.intervalle_confiance",
           "title": "Volu Bois Ess Diametre Dpt Intervalle Confiance",
           "shortTitle": "Intervalle Confiance",
@@ -21002,29 +20563,6 @@
         "responsable_calcul": "Institut national de l’information géographique et forestière - IGN"
       },
       "measures": [
-        {
-          "name": "volu_bois_ess_diametre_region.id_1216",
-          "title": "Volu Bois Ess Diametre Region Id1216",
-          "shortTitle": "Id1216",
-          "cumulativeTotal": false,
-          "cumulative": false,
-          "type": "number",
-          "aggType": "sum",
-          "drillMembers": [],
-          "drillMembersGrouped": {
-            "measures": [],
-            "dimensions": []
-          },
-          "meta": {
-            "libelle_indicateur": "Volume de bois vivant par essence et par catégorie de diamètre",
-            "statut_commun": "Mesure",
-            "unite": "m3",
-            "methode_calcul": "Les données brutes ont été filtrées en utilisant la colonne label = Vclad_ess (conformément à documentation ign disponible en ligne). \n Afin de récupérer l'indicateur, nous avons utilisé la colonne tot_stand. \n Les autres informations statistiques (colonnes moy_ha_stand, ic_moy_ha_stand, ic_stand, pourc_stand) n'ont pas été prises en compte.",
-            "summable": false
-          },
-          "isVisible": true,
-          "public": true
-        },
         {
           "name": "volu_bois_ess_diametre_region.intervalle_confiance",
           "title": "Volu Bois Ess Diametre Region Intervalle Confiance",
