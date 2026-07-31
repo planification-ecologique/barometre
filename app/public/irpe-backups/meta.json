@@ -33,6 +33,27 @@
           },
           "isVisible": true,
           "public": true
+        },
+        {
+          "name": "access_transport_bois_dpt.significativite",
+          "title": "Access Transport Bois Dpt Significativite",
+          "shortTitle": "Significativite",
+          "cumulativeTotal": false,
+          "cumulative": false,
+          "type": "number",
+          "aggType": "max",
+          "drillMembers": [],
+          "drillMembersGrouped": {
+            "measures": [],
+            "dimensions": []
+          },
+          "meta": {
+            "libelle_indicateur": "Significativité",
+            "statut_commun": "Extra",
+            "summable": false
+          },
+          "isVisible": true,
+          "public": true
         }
       ],
       "dimensions": [
@@ -71,16 +92,6 @@
           "title": "Access Transport Bois Dpt Niveau Access Foret",
           "type": "string",
           "shortTitle": "Niveau Access Foret",
-          "suggestFilterValues": true,
-          "isVisible": true,
-          "public": true,
-          "primaryKey": false
-        },
-        {
-          "name": "access_transport_bois_dpt.significativite",
-          "title": "Access Transport Bois Dpt Significativite",
-          "type": "string",
-          "shortTitle": "Significativite",
           "suggestFilterValues": true,
           "isVisible": true,
           "public": true,
@@ -125,6 +136,27 @@
           },
           "isVisible": true,
           "public": true
+        },
+        {
+          "name": "access_transport_bois_region.significativite",
+          "title": "Access Transport Bois Region Significativite",
+          "shortTitle": "Significativite",
+          "cumulativeTotal": false,
+          "cumulative": false,
+          "type": "number",
+          "aggType": "max",
+          "drillMembers": [],
+          "drillMembersGrouped": {
+            "measures": [],
+            "dimensions": []
+          },
+          "meta": {
+            "libelle_indicateur": "Significativité",
+            "statut_commun": "Extra",
+            "summable": false
+          },
+          "isVisible": true,
+          "public": true
         }
       ],
       "dimensions": [
@@ -163,16 +195,6 @@
           "title": "Access Transport Bois Region Niveau Access Foret",
           "type": "string",
           "shortTitle": "Niveau Access Foret",
-          "suggestFilterValues": true,
-          "isVisible": true,
-          "public": true,
-          "primaryKey": false
-        },
-        {
-          "name": "access_transport_bois_region.significativite",
-          "title": "Access Transport Bois Region Significativite",
-          "type": "string",
-          "shortTitle": "Significativite",
           "suggestFilterValues": true,
           "isVisible": true,
           "public": true,
@@ -4482,6 +4504,27 @@
           },
           "isVisible": true,
           "public": true
+        },
+        {
+          "name": "flux_carbone_dpt.significativite",
+          "title": "Flux Carbone Dpt Significativite",
+          "shortTitle": "Significativite",
+          "cumulativeTotal": false,
+          "cumulative": false,
+          "type": "number",
+          "aggType": "max",
+          "drillMembers": [],
+          "drillMembersGrouped": {
+            "measures": [],
+            "dimensions": []
+          },
+          "meta": {
+            "libelle_indicateur": "Significativité",
+            "statut_commun": "Extra",
+            "summable": false
+          },
+          "isVisible": true,
+          "public": true
         }
       ],
       "dimensions": [
@@ -4520,16 +4563,6 @@
           "title": "Flux Carbone Dpt Type Flux",
           "type": "string",
           "shortTitle": "Type Flux",
-          "suggestFilterValues": true,
-          "isVisible": true,
-          "public": true,
-          "primaryKey": false
-        },
-        {
-          "name": "flux_carbone_dpt.significativite",
-          "title": "Flux Carbone Dpt Significativite",
-          "type": "string",
-          "shortTitle": "Significativite",
           "suggestFilterValues": true,
           "isVisible": true,
           "public": true,
@@ -4574,6 +4607,27 @@
           },
           "isVisible": true,
           "public": true
+        },
+        {
+          "name": "flux_carbone_region.significativite",
+          "title": "Flux Carbone Region Significativite",
+          "shortTitle": "Significativite",
+          "cumulativeTotal": false,
+          "cumulative": false,
+          "type": "number",
+          "aggType": "max",
+          "drillMembers": [],
+          "drillMembersGrouped": {
+            "measures": [],
+            "dimensions": []
+          },
+          "meta": {
+            "libelle_indicateur": "Significativité",
+            "statut_commun": "Extra",
+            "summable": false
+          },
+          "isVisible": true,
+          "public": true
         }
       ],
       "dimensions": [
@@ -4612,16 +4666,6 @@
           "title": "Flux Carbone Region Type Flux",
           "type": "string",
           "shortTitle": "Type Flux",
-          "suggestFilterValues": true,
-          "isVisible": true,
-          "public": true,
-          "primaryKey": false
-        },
-        {
-          "name": "flux_carbone_region.significativite",
-          "title": "Flux Carbone Region Significativite",
-          "type": "string",
-          "shortTitle": "Significativite",
           "suggestFilterValues": true,
           "isVisible": true,
           "public": true,
@@ -5529,6 +5573,27 @@
           },
           "isVisible": true,
           "public": true
+        },
+        {
+          "name": "flux_volume_bois_dpt.significativite",
+          "title": "Flux Volume Bois Dpt Significativite",
+          "shortTitle": "Significativite",
+          "cumulativeTotal": false,
+          "cumulative": false,
+          "type": "number",
+          "aggType": "max",
+          "drillMembers": [],
+          "drillMembersGrouped": {
+            "measures": [],
+            "dimensions": []
+          },
+          "meta": {
+            "libelle_indicateur": "Significativité",
+            "statut_commun": "Extra",
+            "summable": false
+          },
+          "isVisible": true,
+          "public": true
         }
       ],
       "dimensions": [
@@ -5581,16 +5646,6 @@
           "isVisible": true,
           "public": true,
           "primaryKey": false
-        },
-        {
-          "name": "flux_volume_bois_dpt.significativite",
-          "title": "Flux Volume Bois Dpt Significativite",
-          "type": "string",
-          "shortTitle": "Significativite",
-          "suggestFilterValues": true,
-          "isVisible": true,
-          "public": true,
-          "primaryKey": false
         }
       ],
       "segments": [],
@@ -5627,6 +5682,27 @@
             "statut_commun": "Extra",
             "unite": "ha",
             "methode_calcul": "L'intervalle de confiance a été récupéré en utilisant la colonne ic_stand",
+            "summable": false
+          },
+          "isVisible": true,
+          "public": true
+        },
+        {
+          "name": "flux_volume_bois_region.significativite",
+          "title": "Flux Volume Bois Region Significativite",
+          "shortTitle": "Significativite",
+          "cumulativeTotal": false,
+          "cumulative": false,
+          "type": "number",
+          "aggType": "max",
+          "drillMembers": [],
+          "drillMembersGrouped": {
+            "measures": [],
+            "dimensions": []
+          },
+          "meta": {
+            "libelle_indicateur": "Significativité",
+            "statut_commun": "Extra",
             "summable": false
           },
           "isVisible": true,
@@ -5679,16 +5755,6 @@
           "title": "Flux Volume Bois Region Type Flux",
           "type": "string",
           "shortTitle": "Type Flux",
-          "suggestFilterValues": true,
-          "isVisible": true,
-          "public": true,
-          "primaryKey": false
-        },
-        {
-          "name": "flux_volume_bois_region.significativite",
-          "title": "Flux Volume Bois Region Significativite",
-          "type": "string",
-          "shortTitle": "Significativite",
           "suggestFilterValues": true,
           "isVisible": true,
           "public": true,
@@ -16594,6 +16660,27 @@
           },
           "isVisible": true,
           "public": true
+        },
+        {
+          "name": "richesse_especes_dpt.significativite",
+          "title": "Richesse Especes Dpt Significativite",
+          "shortTitle": "Significativite",
+          "cumulativeTotal": false,
+          "cumulative": false,
+          "type": "number",
+          "aggType": "max",
+          "drillMembers": [],
+          "drillMembersGrouped": {
+            "measures": [],
+            "dimensions": []
+          },
+          "meta": {
+            "libelle_indicateur": "Significativité",
+            "statut_commun": "Extra",
+            "summable": false
+          },
+          "isVisible": true,
+          "public": true
         }
       ],
       "dimensions": [
@@ -16632,16 +16719,6 @@
           "title": "Richesse Especes Dpt Nb Especes Arbres",
           "type": "string",
           "shortTitle": "Nb Especes Arbres",
-          "suggestFilterValues": true,
-          "isVisible": true,
-          "public": true,
-          "primaryKey": false
-        },
-        {
-          "name": "richesse_especes_dpt.significativite",
-          "title": "Richesse Especes Dpt Significativite",
-          "type": "string",
-          "shortTitle": "Significativite",
           "suggestFilterValues": true,
           "isVisible": true,
           "public": true,
@@ -16686,6 +16763,27 @@
           },
           "isVisible": true,
           "public": true
+        },
+        {
+          "name": "richesse_especes_region.significativite",
+          "title": "Richesse Especes Region Significativite",
+          "shortTitle": "Significativite",
+          "cumulativeTotal": false,
+          "cumulative": false,
+          "type": "number",
+          "aggType": "max",
+          "drillMembers": [],
+          "drillMembersGrouped": {
+            "measures": [],
+            "dimensions": []
+          },
+          "meta": {
+            "libelle_indicateur": "Significativité",
+            "statut_commun": "Extra",
+            "summable": false
+          },
+          "isVisible": true,
+          "public": true
         }
       ],
       "dimensions": [
@@ -16724,16 +16822,6 @@
           "title": "Richesse Especes Region Nb Especes Arbres",
           "type": "string",
           "shortTitle": "Nb Especes Arbres",
-          "suggestFilterValues": true,
-          "isVisible": true,
-          "public": true,
-          "primaryKey": false
-        },
-        {
-          "name": "richesse_especes_region.significativite",
-          "title": "Richesse Especes Region Significativite",
-          "type": "string",
-          "shortTitle": "Significativite",
           "suggestFilterValues": true,
           "isVisible": true,
           "public": true,
@@ -17773,6 +17861,27 @@
           },
           "isVisible": true,
           "public": true
+        },
+        {
+          "name": "superficie_foret_plantee_age_dpt.significativite",
+          "title": "Superficie Foret Plantee Age Dpt Significativite",
+          "shortTitle": "Significativite",
+          "cumulativeTotal": false,
+          "cumulative": false,
+          "type": "number",
+          "aggType": "max",
+          "drillMembers": [],
+          "drillMembersGrouped": {
+            "measures": [],
+            "dimensions": []
+          },
+          "meta": {
+            "libelle_indicateur": "Significativité",
+            "statut_commun": "Extra",
+            "summable": false
+          },
+          "isVisible": true,
+          "public": true
         }
       ],
       "dimensions": [
@@ -17815,16 +17924,6 @@
           "isVisible": true,
           "public": true,
           "primaryKey": false
-        },
-        {
-          "name": "superficie_foret_plantee_age_dpt.significativite",
-          "title": "Superficie Foret Plantee Age Dpt Significativite",
-          "type": "string",
-          "shortTitle": "Significativite",
-          "suggestFilterValues": true,
-          "isVisible": true,
-          "public": true,
-          "primaryKey": false
         }
       ],
       "segments": [],
@@ -17861,6 +17960,27 @@
             "statut_commun": "Extra",
             "unite": "ha",
             "methode_calcul": "L'intervalle de confiance a été récupéré en utilisant la colonne ic_stand",
+            "summable": false
+          },
+          "isVisible": true,
+          "public": true
+        },
+        {
+          "name": "superficie_foret_plantee_age_region.significativite",
+          "title": "Superficie Foret Plantee Age Region Significativite",
+          "shortTitle": "Significativite",
+          "cumulativeTotal": false,
+          "cumulative": false,
+          "type": "number",
+          "aggType": "max",
+          "drillMembers": [],
+          "drillMembersGrouped": {
+            "measures": [],
+            "dimensions": []
+          },
+          "meta": {
+            "libelle_indicateur": "Significativité",
+            "statut_commun": "Extra",
             "summable": false
           },
           "isVisible": true,
@@ -17907,16 +18027,6 @@
           "isVisible": true,
           "public": true,
           "primaryKey": false
-        },
-        {
-          "name": "superficie_foret_plantee_age_region.significativite",
-          "title": "Superficie Foret Plantee Age Region Significativite",
-          "type": "string",
-          "shortTitle": "Significativite",
-          "suggestFilterValues": true,
-          "isVisible": true,
-          "public": true,
-          "primaryKey": false
         }
       ],
       "segments": [],
@@ -17953,6 +18063,27 @@
             "statut_commun": "Extra",
             "unite": "ha",
             "methode_calcul": "L'intervalle de confiance a été récupéré en utilisant la colonne ic_stand",
+            "summable": false
+          },
+          "isVisible": true,
+          "public": true
+        },
+        {
+          "name": "superficie_forets_essence_dpt.significativite",
+          "title": "Superficie Forets Essence Dpt Significativite",
+          "shortTitle": "Significativite",
+          "cumulativeTotal": false,
+          "cumulative": false,
+          "type": "number",
+          "aggType": "max",
+          "drillMembers": [],
+          "drillMembersGrouped": {
+            "measures": [],
+            "dimensions": []
+          },
+          "meta": {
+            "libelle_indicateur": "Significativité",
+            "statut_commun": "Extra",
             "summable": false
           },
           "isVisible": true,
@@ -17999,16 +18130,6 @@
           "isVisible": true,
           "public": true,
           "primaryKey": false
-        },
-        {
-          "name": "superficie_forets_essence_dpt.significativite",
-          "title": "Superficie Forets Essence Dpt Significativite",
-          "type": "string",
-          "shortTitle": "Significativite",
-          "suggestFilterValues": true,
-          "isVisible": true,
-          "public": true,
-          "primaryKey": false
         }
       ],
       "segments": [],
@@ -18045,6 +18166,27 @@
             "statut_commun": "Extra",
             "unite": "ha",
             "methode_calcul": null,
+            "summable": false
+          },
+          "isVisible": true,
+          "public": true
+        },
+        {
+          "name": "superficie_forets_essence_region.significativite",
+          "title": "Superficie Forets Essence Region Significativite",
+          "shortTitle": "Significativite",
+          "cumulativeTotal": false,
+          "cumulative": false,
+          "type": "number",
+          "aggType": "max",
+          "drillMembers": [],
+          "drillMembersGrouped": {
+            "measures": [],
+            "dimensions": []
+          },
+          "meta": {
+            "libelle_indicateur": "Significativité",
+            "statut_commun": "Extra",
             "summable": false
           },
           "isVisible": true,
@@ -18091,16 +18233,6 @@
           "isVisible": true,
           "public": true,
           "primaryKey": false
-        },
-        {
-          "name": "superficie_forets_essence_region.significativite",
-          "title": "Superficie Forets Essence Region Significativite",
-          "type": "string",
-          "shortTitle": "Significativite",
-          "suggestFilterValues": true,
-          "isVisible": true,
-          "public": true,
-          "primaryKey": false
         }
       ],
       "segments": [],
@@ -18137,6 +18269,27 @@
             "statut_commun": "Extra",
             "unite": "ha",
             "methode_calcul": "L'intervalle de confiance a été récupéré en utilisant la colonne ic_stand",
+            "summable": false
+          },
+          "isVisible": true,
+          "public": true
+        },
+        {
+          "name": "superficie_forets_type_propriete_dpt.significativite",
+          "title": "Superficie Forets Type Propriete Dpt Significativite",
+          "shortTitle": "Significativite",
+          "cumulativeTotal": false,
+          "cumulative": false,
+          "type": "number",
+          "aggType": "max",
+          "drillMembers": [],
+          "drillMembersGrouped": {
+            "measures": [],
+            "dimensions": []
+          },
+          "meta": {
+            "libelle_indicateur": "Significativité",
+            "statut_commun": "Extra",
             "summable": false
           },
           "isVisible": true,
@@ -18183,16 +18336,6 @@
           "isVisible": true,
           "public": true,
           "primaryKey": false
-        },
-        {
-          "name": "superficie_forets_type_propriete_dpt.significativite",
-          "title": "Superficie Forets Type Propriete Dpt Significativite",
-          "type": "string",
-          "shortTitle": "Significativite",
-          "suggestFilterValues": true,
-          "isVisible": true,
-          "public": true,
-          "primaryKey": false
         }
       ],
       "segments": [],
@@ -18229,6 +18372,27 @@
             "statut_commun": "Extra",
             "unite": "ha",
             "methode_calcul": "L'intervalle de confiance a été récupéré en utilisant la colonne ic_stand",
+            "summable": false
+          },
+          "isVisible": true,
+          "public": true
+        },
+        {
+          "name": "superficie_forets_type_propriete_region.significativite",
+          "title": "Superficie Forets Type Propriete Region Significativite",
+          "shortTitle": "Significativite",
+          "cumulativeTotal": false,
+          "cumulative": false,
+          "type": "number",
+          "aggType": "max",
+          "drillMembers": [],
+          "drillMembersGrouped": {
+            "measures": [],
+            "dimensions": []
+          },
+          "meta": {
+            "libelle_indicateur": "Significativité",
+            "statut_commun": "Extra",
             "summable": false
           },
           "isVisible": true,
@@ -18271,16 +18435,6 @@
           "title": "Superficie Forets Type Propriete Region Type Propriete",
           "type": "string",
           "shortTitle": "Type Propriete",
-          "suggestFilterValues": true,
-          "isVisible": true,
-          "public": true,
-          "primaryKey": false
-        },
-        {
-          "name": "superficie_forets_type_propriete_region.significativite",
-          "title": "Superficie Forets Type Propriete Region Significativite",
-          "type": "string",
-          "shortTitle": "Significativite",
           "suggestFilterValues": true,
           "isVisible": true,
           "public": true,
@@ -19313,7 +19467,29 @@
       "meta": {
         "responsable_calcul": "Institut national de l’information géographique et forestière - IGN"
       },
-      "measures": [],
+      "measures": [
+        {
+          "name": "taux_boisement_dpt.significativite",
+          "title": "Taux Boisement Dpt Significativite",
+          "shortTitle": "Significativite",
+          "cumulativeTotal": false,
+          "cumulative": false,
+          "type": "number",
+          "aggType": "max",
+          "drillMembers": [],
+          "drillMembersGrouped": {
+            "measures": [],
+            "dimensions": []
+          },
+          "meta": {
+            "libelle_indicateur": "Significativité",
+            "statut_commun": "Extra",
+            "summable": false
+          },
+          "isVisible": true,
+          "public": true
+        }
+      ],
       "dimensions": [
         {
           "name": "taux_boisement_dpt.date_mesure",
@@ -19344,16 +19520,6 @@
           "isVisible": true,
           "public": true,
           "primaryKey": false
-        },
-        {
-          "name": "taux_boisement_dpt.significativite",
-          "title": "Taux Boisement Dpt Significativite",
-          "type": "string",
-          "shortTitle": "Significativite",
-          "suggestFilterValues": true,
-          "isVisible": true,
-          "public": true,
-          "primaryKey": false
         }
       ],
       "segments": [],
@@ -19371,7 +19537,29 @@
       "meta": {
         "responsable_calcul": "Institut national de l’information géographique et forestière - IGN"
       },
-      "measures": [],
+      "measures": [
+        {
+          "name": "taux_boisement_region.significativite",
+          "title": "Taux Boisement Region Significativite",
+          "shortTitle": "Significativite",
+          "cumulativeTotal": false,
+          "cumulative": false,
+          "type": "number",
+          "aggType": "max",
+          "drillMembers": [],
+          "drillMembersGrouped": {
+            "measures": [],
+            "dimensions": []
+          },
+          "meta": {
+            "libelle_indicateur": "Significativité",
+            "statut_commun": "Extra",
+            "summable": false
+          },
+          "isVisible": true,
+          "public": true
+        }
+      ],
       "dimensions": [
         {
           "name": "taux_boisement_region.date_mesure",
@@ -19398,16 +19586,6 @@
           "title": "Taux Boisement Region Libelle Region",
           "type": "string",
           "shortTitle": "Libelle Region",
-          "suggestFilterValues": true,
-          "isVisible": true,
-          "public": true,
-          "primaryKey": false
-        },
-        {
-          "name": "taux_boisement_region.significativite",
-          "title": "Taux Boisement Region Significativite",
-          "type": "string",
-          "shortTitle": "Significativite",
           "suggestFilterValues": true,
           "isVisible": true,
           "public": true,
@@ -19448,6 +19626,27 @@
             "statut_commun": "Extra",
             "unite": "ha",
             "methode_calcul": "L'intervalle de confiance a été récupéré en utilisant la colonne ic_stand",
+            "summable": false
+          },
+          "isVisible": true,
+          "public": true
+        },
+        {
+          "name": "tiges_alt_essence_dpt.significativite",
+          "title": "Tiges Alt Essence Dpt Significativite",
+          "shortTitle": "Significativite",
+          "cumulativeTotal": false,
+          "cumulative": false,
+          "type": "number",
+          "aggType": "max",
+          "drillMembers": [],
+          "drillMembersGrouped": {
+            "measures": [],
+            "dimensions": []
+          },
+          "meta": {
+            "libelle_indicateur": "Significativité",
+            "statut_commun": "Extra",
             "summable": false
           },
           "isVisible": true,
@@ -19494,16 +19693,6 @@
           "isVisible": true,
           "public": true,
           "primaryKey": false
-        },
-        {
-          "name": "tiges_alt_essence_dpt.significativite",
-          "title": "Tiges Alt Essence Dpt Significativite",
-          "type": "string",
-          "shortTitle": "Significativite",
-          "suggestFilterValues": true,
-          "isVisible": true,
-          "public": true,
-          "primaryKey": false
         }
       ],
       "segments": [],
@@ -19540,6 +19729,27 @@
             "statut_commun": "Extra",
             "unite": "ha",
             "methode_calcul": "L'intervalle de confiance a été récupéré en utilisant la colonne ic_stand",
+            "summable": false
+          },
+          "isVisible": true,
+          "public": true
+        },
+        {
+          "name": "tiges_alt_essence_region.significativite",
+          "title": "Tiges Alt Essence Region Significativite",
+          "shortTitle": "Significativite",
+          "cumulativeTotal": false,
+          "cumulative": false,
+          "type": "number",
+          "aggType": "max",
+          "drillMembers": [],
+          "drillMembersGrouped": {
+            "measures": [],
+            "dimensions": []
+          },
+          "meta": {
+            "libelle_indicateur": "Significativité",
+            "statut_commun": "Extra",
             "summable": false
           },
           "isVisible": true,
@@ -19582,16 +19792,6 @@
           "title": "Tiges Alt Essence Region Essence",
           "type": "string",
           "shortTitle": "Essence",
-          "suggestFilterValues": true,
-          "isVisible": true,
-          "public": true,
-          "primaryKey": false
-        },
-        {
-          "name": "tiges_alt_essence_region.significativite",
-          "title": "Tiges Alt Essence Region Significativite",
-          "type": "string",
-          "shortTitle": "Significativite",
           "suggestFilterValues": true,
           "isVisible": true,
           "public": true,
@@ -20483,6 +20683,27 @@
           },
           "isVisible": true,
           "public": true
+        },
+        {
+          "name": "volu_bois_ess_diametre_dpt.significativite",
+          "title": "Volu Bois Ess Diametre Dpt Significativite",
+          "shortTitle": "Significativite",
+          "cumulativeTotal": false,
+          "cumulative": false,
+          "type": "number",
+          "aggType": "max",
+          "drillMembers": [],
+          "drillMembersGrouped": {
+            "measures": [],
+            "dimensions": []
+          },
+          "meta": {
+            "libelle_indicateur": "Significativité",
+            "statut_commun": "Extra",
+            "summable": false
+          },
+          "isVisible": true,
+          "public": true
         }
       ],
       "dimensions": [
@@ -20535,16 +20756,6 @@
           "isVisible": true,
           "public": true,
           "primaryKey": false
-        },
-        {
-          "name": "volu_bois_ess_diametre_dpt.significativite",
-          "title": "Volu Bois Ess Diametre Dpt Significativite",
-          "type": "string",
-          "shortTitle": "Significativite",
-          "suggestFilterValues": true,
-          "isVisible": true,
-          "public": true,
-          "primaryKey": false
         }
       ],
       "segments": [],
@@ -20581,6 +20792,27 @@
             "statut_commun": "Extra",
             "unite": "ha",
             "methode_calcul": "L'intervalle de confiance a été récupéré en utilisant la colonne ic_stand",
+            "summable": false
+          },
+          "isVisible": true,
+          "public": true
+        },
+        {
+          "name": "volu_bois_ess_diametre_region.significativite",
+          "title": "Volu Bois Ess Diametre Region Significativite",
+          "shortTitle": "Significativite",
+          "cumulativeTotal": false,
+          "cumulative": false,
+          "type": "number",
+          "aggType": "max",
+          "drillMembers": [],
+          "drillMembersGrouped": {
+            "measures": [],
+            "dimensions": []
+          },
+          "meta": {
+            "libelle_indicateur": "Significativité",
+            "statut_commun": "Extra",
             "summable": false
           },
           "isVisible": true,
@@ -20633,16 +20865,6 @@
           "title": "Volu Bois Ess Diametre Region Categorie Diametre",
           "type": "string",
           "shortTitle": "Categorie Diametre",
-          "suggestFilterValues": true,
-          "isVisible": true,
-          "public": true,
-          "primaryKey": false
-        },
-        {
-          "name": "volu_bois_ess_diametre_region.significativite",
-          "title": "Volu Bois Ess Diametre Region Significativite",
-          "type": "string",
-          "shortTitle": "Significativite",
           "suggestFilterValues": true,
           "isVisible": true,
           "public": true,
