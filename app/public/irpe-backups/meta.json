@@ -3708,6 +3708,236 @@
       "nestedFolders": []
     },
     {
+      "name": "densite_population_com",
+      "type": "cube",
+      "title": "Densite Population Com",
+      "isVisible": true,
+      "public": true,
+      "description": "Cet indicateur représente la densité de population des territoires (nombre d'habitants par km²) par année.",
+      "meta": {
+        "responsable_calcul": "Hub Indicateurs Territoriaux - CGDD",
+        "publish": false
+      },
+      "measures": [
+        {
+          "name": "densite_population_com.pop",
+          "title": "Densite Population Com Pop",
+          "shortTitle": "Pop",
+          "cumulativeTotal": false,
+          "cumulative": false,
+          "type": "number",
+          "aggType": "sum",
+          "drillMembers": [],
+          "drillMembersGrouped": {
+            "measures": [],
+            "dimensions": []
+          },
+          "meta": {
+            "libelle_indicateur": "Population du territoire",
+            "statut_commun": "Extra",
+            "unite": "nb",
+            "methode_calcul": "Population communale INSEE (base historique des populations), numérateur de la densité. Mesure de référence : id_579 (population_com)."
+          },
+          "isVisible": true,
+          "public": true
+        },
+        {
+          "name": "densite_population_com.superficie",
+          "title": "Densite Population Com Superficie",
+          "shortTitle": "Superficie",
+          "cumulativeTotal": false,
+          "cumulative": false,
+          "type": "number",
+          "aggType": "sum",
+          "drillMembers": [],
+          "drillMembersGrouped": {
+            "measures": [],
+            "dimensions": []
+          },
+          "meta": {
+            "libelle_indicateur": "Superficie du territoire",
+            "statut_commun": "Extra",
+            "unite": "ha",
+            "methode_calcul": "Superficie communale en hectares (data.gouv découpage communal, millésime 2022), dénominateur de la densité. Mesure de référence : id_610 (surface_com)."
+          },
+          "isVisible": true,
+          "public": true
+        },
+        {
+          "name": "densite_population_com.id_542",
+          "title": "Densite Population Com Id542",
+          "shortTitle": "Id542",
+          "cumulativeTotal": false,
+          "cumulative": false,
+          "type": "number",
+          "aggType": "number",
+          "drillMembers": [],
+          "drillMembersGrouped": {
+            "measures": [],
+            "dimensions": []
+          },
+          "meta": {
+            "libelle_indicateur": "Densité de population",
+            "statut_commun": "Mesure",
+            "publish": false,
+            "unite": "hab/km²",
+            "fonction_calcul": "nombre d'habitants / superficie (km²)",
+            "methode_calcul": "La densité est calculée comme la population divisée par la superficie. La superficie communale (source data.gouv, millésime 2022, en hectares) est convertie en km² (division par 100) et appliquée à toutes les années de population. La mesure étant un ratio, elle est recalculée à chaque échelon géographique (somme des populations / somme des superficies) et n'est pas sommable. Les communes sans superficie connue (notamment les communes récemment scindées) sont exclues du calcul, numérateur comme dénominateur, pour ne pas biaiser la densité des échelons agrégés.",
+            "numerator": "pop",
+            "denominator": "superficie"
+          },
+          "isVisible": true,
+          "public": true
+        }
+      ],
+      "dimensions": [
+        {
+          "name": "densite_population_com.geocode_commune",
+          "title": "Densite Population Com Geocode Commune",
+          "type": "string",
+          "shortTitle": "Geocode Commune",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "densite_population_com.libelle_commune",
+          "title": "Densite Population Com Libelle Commune",
+          "type": "string",
+          "shortTitle": "Libelle Commune",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "densite_population_com.geocode_epci",
+          "title": "Densite Population Com Geocode Epci",
+          "type": "string",
+          "shortTitle": "Geocode Epci",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "densite_population_com.libelle_epci",
+          "title": "Densite Population Com Libelle Epci",
+          "type": "string",
+          "shortTitle": "Libelle Epci",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "densite_population_com.geocode_departement",
+          "title": "Densite Population Com Geocode Departement",
+          "type": "string",
+          "shortTitle": "Geocode Departement",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "densite_population_com.libelle_departement",
+          "title": "Densite Population Com Libelle Departement",
+          "type": "string",
+          "shortTitle": "Libelle Departement",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "densite_population_com.geocode_region",
+          "title": "Densite Population Com Geocode Region",
+          "type": "string",
+          "shortTitle": "Geocode Region",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "densite_population_com.libelle_region",
+          "title": "Densite Population Com Libelle Region",
+          "type": "string",
+          "shortTitle": "Libelle Region",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "densite_population_com.geocode_crte",
+          "title": "Densite Population Com Geocode Crte",
+          "type": "string",
+          "shortTitle": "Geocode Crte",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "densite_population_com.libelle_crte",
+          "title": "Densite Population Com Libelle Crte",
+          "type": "string",
+          "shortTitle": "Libelle Crte",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "densite_population_com.geocode_ept",
+          "title": "Densite Population Com Geocode Ept",
+          "type": "string",
+          "shortTitle": "Geocode Ept",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "densite_population_com.libelle_ept",
+          "title": "Densite Population Com Libelle Ept",
+          "type": "string",
+          "shortTitle": "Libelle Ept",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "densite_population_com.date_mesure",
+          "title": "Densite Population Com Date Mesure",
+          "type": "time",
+          "shortTitle": "Date Mesure",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "densite_population_com.annee",
+          "title": "Densite Population Com Annee",
+          "type": "number",
+          "shortTitle": "Annee",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        }
+      ],
+      "segments": [],
+      "hierarchies": [],
+      "folders": [],
+      "nestedFolders": []
+    },
+    {
       "name": "distance_moyenne_domicile_travail_com",
       "type": "cube",
       "title": "Distance Moyenne Domicile Travail Com",
@@ -4460,6 +4690,108 @@
           "title": "Emissions Polluants Epci Polluant",
           "type": "string",
           "shortTitle": "Polluant",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        }
+      ],
+      "segments": [],
+      "hierarchies": [],
+      "folders": [],
+      "nestedFolders": []
+    },
+    {
+      "name": "espaces_proteges_cdl_dpt",
+      "type": "cube",
+      "title": "Espaces Proteges Cdl Dpt",
+      "isVisible": true,
+      "public": true,
+      "description": "Surface cumulée des parcelles cadastrales protégées par le Conservatoire du littoral (CELRL), par département et par année.",
+      "meta": {
+        "responsable_calcul": "Hub Indicateurs Territoriaux - CGDD",
+        "publish": false
+      },
+      "measures": [
+        {
+          "name": "espaces_proteges_cdl_dpt.id_381",
+          "title": "Espaces Proteges Cdl Dpt Id381",
+          "shortTitle": "Id381",
+          "cumulativeTotal": false,
+          "cumulative": false,
+          "type": "number",
+          "aggType": "sum",
+          "drillMembers": [],
+          "drillMembersGrouped": {
+            "measures": [],
+            "dimensions": []
+          },
+          "meta": {
+            "libelle_indicateur": "Surface cumulée protégée par le Conservatoire du littoral",
+            "statut_commun": "Mesure",
+            "unite": "ha",
+            "methode_calcul": "Somme cumulée, par département, de la surface cadastrale des parcelles acquises par le Conservatoire du littoral depuis la première prise en charge dans le département jusqu'à l'année considérée."
+          },
+          "isVisible": true,
+          "public": true
+        }
+      ],
+      "dimensions": [
+        {
+          "name": "espaces_proteges_cdl_dpt.geocode_departement",
+          "title": "Espaces Proteges Cdl Dpt Geocode Departement",
+          "type": "string",
+          "shortTitle": "Geocode Departement",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "espaces_proteges_cdl_dpt.libelle_departement",
+          "title": "Espaces Proteges Cdl Dpt Libelle Departement",
+          "type": "string",
+          "shortTitle": "Libelle Departement",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "espaces_proteges_cdl_dpt.geocode_region",
+          "title": "Espaces Proteges Cdl Dpt Geocode Region",
+          "type": "string",
+          "shortTitle": "Geocode Region",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "espaces_proteges_cdl_dpt.libelle_region",
+          "title": "Espaces Proteges Cdl Dpt Libelle Region",
+          "type": "string",
+          "shortTitle": "Libelle Region",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "espaces_proteges_cdl_dpt.date_mesure",
+          "title": "Espaces Proteges Cdl Dpt Date Mesure",
+          "type": "time",
+          "shortTitle": "Date Mesure",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "espaces_proteges_cdl_dpt.annee",
+          "title": "Espaces Proteges Cdl Dpt Annee",
+          "type": "number",
+          "shortTitle": "Annee",
           "suggestFilterValues": true,
           "isVisible": true,
           "public": true,
@@ -19811,7 +20143,8 @@
       "public": true,
       "description": "Tonnage total de déchets ménagers et assimiles (DMA) par habitant",
       "meta": {
-        "responsable_calcul": "ADEME - INSEE"
+        "responsable_calcul": "ADEME - INSEE",
+        "publish": false
       },
       "measures": [
         {
@@ -20017,6 +20350,50 @@
             "type spatial": "quantitatif",
             "methode_calcul": "Indicateur calculé d'après les données de l'ADEME. Sont considérés comme valorisations de déchets les valorisations matières et les valorisations organiques",
             "numerator": "qte_dechets_valorises",
+            "denominator": "quantite_dechets_tot"
+          },
+          "isVisible": true,
+          "public": true
+        },
+        {
+          "name": "valorisation_dechets_dpt.qte_dechets_stockes",
+          "title": "Valorisation Dechets Dpt Qte Dechets Stockes",
+          "shortTitle": "Qte Dechets Stockes",
+          "cumulativeTotal": false,
+          "cumulative": false,
+          "type": "number",
+          "aggType": "sum",
+          "drillMembers": [],
+          "drillMembersGrouped": {
+            "measures": [],
+            "dimensions": []
+          },
+          "meta": {
+            "libelle_indicateur": "Quantité de déchets admis en installation de stockage",
+            "unite": "t"
+          },
+          "isVisible": true,
+          "public": true
+        },
+        {
+          "name": "valorisation_dechets_dpt.id_1251",
+          "title": "Valorisation Dechets Dpt Id1251",
+          "shortTitle": "Id1251",
+          "cumulativeTotal": false,
+          "cumulative": false,
+          "type": "number",
+          "aggType": "number",
+          "drillMembers": [],
+          "drillMembersGrouped": {
+            "measures": [],
+            "dimensions": []
+          },
+          "meta": {
+            "libelle_indicateur": "Part des déchets ménagers et assimilés admis en installation de stockage",
+            "statut_commun": "Mesure",
+            "unite": "%",
+            "methode_calcul": "Ratio entre le tonnage de DMA admis en installation de stockage (ISDND, code SINOE 02D, et Stockage pour inertes, code SINOE 02F) et le tonnage total de DMA collectés, d'après les données SINOE de l'ADEME.",
+            "numerator": "qte_dechets_stockes",
             "denominator": "quantite_dechets_tot"
           },
           "isVisible": true,
@@ -20639,6 +21016,137 @@
           "title": "Tri Biodechets Dpt Annee",
           "type": "number",
           "shortTitle": "Annee",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        }
+      ],
+      "segments": [],
+      "hierarchies": [],
+      "folders": [],
+      "nestedFolders": []
+    },
+    {
+      "name": "vivant_seules_com",
+      "type": "cube",
+      "title": "Vivant Seules Com",
+      "isVisible": true,
+      "public": true,
+      "description": "Cet indicateur représente le nombre de personnes vivant seules dans la population totale et le nombre de personnes agées vivant seules par commune",
+      "meta": {
+        "responsable_calcul": "INSEE - INSTITUT NATIONAL DE LA STATISTIQUE ET DES ETUDES ECONOMIQUES"
+      },
+      "measures": [
+        {
+          "name": "vivant_seules_com.id_1255",
+          "title": "Vivant Seules Com Id1255",
+          "shortTitle": "Id1255",
+          "cumulativeTotal": false,
+          "cumulative": false,
+          "type": "number",
+          "aggType": "sum",
+          "drillMembers": [],
+          "drillMembersGrouped": {
+            "measures": [],
+            "dimensions": []
+          },
+          "meta": {
+            "libelle_indicateur": "Nombre de personnes vivant seules dans la population totale et le nombre de personnes agées vivant seules par commune",
+            "statut_commun": "Mesure",
+            "unite": "nb",
+            "methode_calcul": "Somme sur toutes les tranches d'âge lorsque uniquement_agee=toute_population, et seulement sur les >=65 ans dans le cas uniquement_agee=personnes_agees"
+          },
+          "isVisible": true,
+          "public": true
+        }
+      ],
+      "dimensions": [
+        {
+          "name": "vivant_seules_com.date_mesure",
+          "title": "Vivant Seules Com Date Mesure",
+          "type": "time",
+          "shortTitle": "Date Mesure",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "vivant_seules_com.annee",
+          "title": "Vivant Seules Com Annee",
+          "type": "number",
+          "shortTitle": "Annee",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "vivant_seules_com.geocode_commune",
+          "title": "Vivant Seules Com Geocode Commune",
+          "type": "string",
+          "shortTitle": "Geocode Commune",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "vivant_seules_com.libelle_commune",
+          "title": "Vivant Seules Com Libelle Commune",
+          "type": "string",
+          "shortTitle": "Libelle Commune",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "vivant_seules_com.geocode_departement",
+          "title": "Vivant Seules Com Geocode Departement",
+          "type": "string",
+          "shortTitle": "Geocode Departement",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "vivant_seules_com.libelle_departement",
+          "title": "Vivant Seules Com Libelle Departement",
+          "type": "string",
+          "shortTitle": "Libelle Departement",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "vivant_seules_com.geocode_region",
+          "title": "Vivant Seules Com Geocode Region",
+          "type": "string",
+          "shortTitle": "Geocode Region",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "vivant_seules_com.libelle_region",
+          "title": "Vivant Seules Com Libelle Region",
+          "type": "string",
+          "shortTitle": "Libelle Region",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "vivant_seules_com.uniquement_agee",
+          "title": "Vivant Seules Com Uniquement Agee",
+          "type": "string",
+          "shortTitle": "Uniquement Agee",
           "suggestFilterValues": true,
           "isVisible": true,
           "public": true,
