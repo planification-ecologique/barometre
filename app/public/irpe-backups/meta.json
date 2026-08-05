@@ -21103,6 +21103,26 @@
           "primaryKey": false
         },
         {
+          "name": "vivant_seules_com.geocode_epci",
+          "title": "Vivant Seules Com Geocode Epci",
+          "type": "string",
+          "shortTitle": "Geocode Epci",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "vivant_seules_com.libelle_epci",
+          "title": "Vivant Seules Com Libelle Epci",
+          "type": "string",
+          "shortTitle": "Libelle Epci",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
           "name": "vivant_seules_com.geocode_departement",
           "title": "Vivant Seules Com Geocode Departement",
           "type": "string",
