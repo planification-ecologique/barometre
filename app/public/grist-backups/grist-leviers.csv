@@ -3,54 +3,54 @@ Indicateur de chantier,,,false,,,,,,,,,false,false,false,false,false,false
 Indicateur d'impact,,,false,,,,,,,,,false,false,false,false,false,false
 Indicateur d'impact - autres,,,false,,,,,,,,,false,false,false,false,false,false
 Autres indicateurs,,,false,,,,,,,,,false,false,false,false,false,false
-Réduction des besoins de mobilité terrestre,Sobr. mob. terrestre,Se déplacer / Réduire la dépendance à la voiture,true,,"Stabilisation (ou légère croissance) du nombre de kilomètres parcourus par an par personne tous modes confondus (hors transports internationaux), alors que celui-ci augmente en tendanciel",,3e stratégie nationale bas-carbone (provisoire),,,,"Atténuation, Pollution",true,false,false,false,true,false
-Développement des mobilités actives (vélo et marche),Mobilités actives,Se déplacer / Réduire la dépendance à la voiture,true,,"Triplement de l’usage du vélo entre 2019 et 2030 (de 5,5 à 19 Mds voy-km) multiplication par 8 d’ici à 2050",,3e stratégie nationale bas-carbone (provisoire),,,,"Atténuation, Pollution",true,false,false,false,true,false
-Développement des transports en commun,Transp. en commun,Se déplacer / Réduire la dépendance à la voiture,true,,"Augmentation de l’usage des transports en commun (bus, car, train) de 25 % entre 2019 et 2030, et de 55% d’ici 2050. ",,3e stratégie nationale bas-carbone (provisoire),,,,"Atténuation, Pollution",true,false,false,false,true,false
-Développement du covoiturage,Covoiturage,Se déplacer / Réduire la dépendance à la voiture,true,,"Augmentation du nombre de personnes par voiture de 1,65 en 2019 à 1,72 en 2030 puis à 1,82 en 2050",,3e stratégie nationale bas-carbone (provisoire),,,,"Atténuation, Pollution",true,false,false,false,true,false
-Electrification des véhicules particuliers,Electrification VP,Se déplacer / Verdir les véhicules individuels,true,,"15% du parc de véhicules particuliers électrique, 100 % en 2050",,3e stratégie nationale bas-carbone (provisoire),,,,"Atténuation, Pollution",true,false,false,false,true,false
-"Amélioration de l'efficacité environnementale (énergie, matières premières, polluants) des véhicules individuels neufs",Efficacité VP,Se déplacer / Verdir les véhicules individuels,true,,Baisse de 9 % de la consommation des véhicules particuliers thermiques neuf entre 2023 et 2030,,3e stratégie nationale bas-carbone (provisoire),,,,"Atténuation, Pollution",true,false,false,false,true,false
+Réduction des besoins de mobilité terrestre,Sobr. mob. terrestre,Se déplacer / Réduire la dépendance à la voiture,true,,"Stabilisation (ou légère croissance) du nombre de kilomètres parcourus par an par personne tous modes confondus (hors transports internationaux), alors que celui-ci augmente en tendanciel",,3e stratégie nationale bas-carbone,,,,"Atténuation, Pollution",true,false,false,false,true,false
+Développement des mobilités actives (vélo et marche),Mobilités actives,Se déplacer / Réduire la dépendance à la voiture,true,,"Triplement de l’usage du vélo entre 2019 et 2030 (de 5,5 à 19 Mds voy-km) multiplication par 8 d’ici à 2050",,3e stratégie nationale bas-carbone,,,,"Atténuation, Pollution",true,false,false,false,true,false
+Développement des transports en commun,Transp. en commun,Se déplacer / Réduire la dépendance à la voiture,true,,"Augmentation de l’usage des transports en commun (bus, car, train) de 25 % entre 2019 et 2030, et de 55% d’ici 2050. ",,3e stratégie nationale bas-carbone,,,,"Atténuation, Pollution",true,false,false,false,true,false
+Développement du covoiturage,Covoiturage,Se déplacer / Réduire la dépendance à la voiture,true,,"Augmentation du nombre de personnes par voiture de 1,65 en 2019 à 1,72 en 2030 puis à 1,82 en 2050",,3e stratégie nationale bas-carbone,,,,"Atténuation, Pollution",true,false,false,false,true,false
+Electrification des véhicules particuliers,Electrification VP,Se déplacer / Verdir les véhicules individuels,true,,"15% du parc de véhicules particuliers électrique, 100 % en 2050",,3e stratégie nationale bas-carbone,,,,"Atténuation, Pollution",true,false,false,false,true,false
+"Amélioration de l'efficacité environnementale (énergie, matières premières, polluants) des véhicules individuels neufs",Efficacité VP,Se déplacer / Verdir les véhicules individuels,true,,Baisse de 9 % de la consommation des véhicules particuliers thermiques neuf entre 2023 et 2030,,3e stratégie nationale bas-carbone,,,,"Atténuation, Pollution",true,false,false,false,true,false
 Réduction de l'utilisation des véhicules particuliers les plus polluants,VP polluants,Se déplacer / Verdir les véhicules individuels,true,un seul levier pour celui-ci + les deux suivants : efficacité des véhicules et carburants décarbonés,,'A préciser courant 2026 dans le cadre des travaux sur le plan PREPA ,,,,,"Atténuation, Pollution",true,false,false,false,true,false
-Incorporation de carburants routiers durables,Carburants durables,Se déplacer / Verdir les véhicules individuels,true,,"Passer de 10 % de carburants durables en 2023 à 13 % en 2030, 30 % en 2040 et 100 % en 2050",,3e stratégie nationale bas-carbone (provisoire),,,,Atténuation,true,false,false,false,false,false
+Incorporation de carburants routiers durables,Carburants durables,Se déplacer / Verdir les véhicules individuels,true,,"Passer de 10 % de carburants durables en 2023 à 13 % en 2030, 30 % en 2040 et 100 % en 2050",,3e stratégie nationale bas-carbone,,,,Atténuation,true,false,false,false,false,false
 Maîtrise du trafic aérien,Sobriété aérien,Se déplacer / Verdir le secteur aérien,false,,"D'ici 2030, par rapport à 2019, une baisse de 24 % sur les vols intérieurs à l’hexagone contre une croissance de 16 % vers les outre mers et de 17 % pour le trafic international. 
-A horizon 2050, baisse de 38 % par rapport à 2019 sur les liaisons intérieures à l’hexagone dans une logique de report modal vers le train ; croissance de 22% sur les vols vers les DROM et de 20 % sur les vols à l’international. ",,3e stratégie nationale bas-carbone (provisoire),,,,"Atténuation, Pollution",true,false,false,false,true,false
-"Amélioration de l'efficacité des aéronefs (énergie, polluants)",Efficacité aéronefs,Se déplacer / Verdir le secteur aérien,false,,Baisse de la consommation unitaire (par passager-km) de 14 % d’ici 2030 et de 33% d’ici à 2050 par rapport à 2019,,3e stratégie nationale bas-carbone (provisoire),,,,"Atténuation, Pollution",true,false,false,false,true,false
-Incorporation de carburants durables (aviation),Carburants durables,Se déplacer / Verdir le secteur aérien,false,,"6% de carburants durables en 2030, 20% en 2035, en cohérence avec le règlement européen RefuelEU, 85% à horizon 2050 contre 70% dans Refuel",,3e stratégie nationale bas-carbone (provisoire),,,,Atténuation,true,false,false,false,false,false
-Maîtrise de la demande de transport de marchandises,Sobr. fret terrestre,Se déplacer / Réduire le trafic de poids lourds pour les marchandises,true,"Un seul levier plus large : ""efficacité et sobriété logistique"" qui englobe l'optimisation du chargement des PL, l'efficacité des VUL et des PL neufs","Hausse de la demande totale de transport de marchandises de 3,5% en 2030 par rapport à 2019, moins forte que dans un scénario tendanciel (7,5 %). En 2050, la hausse est de 11,5% par rapport à 2019.",,3e stratégie nationale bas-carbone (provisoire),,,,"Atténuation, Pollution",true,false,false,false,true,false
+A horizon 2050, baisse de 38 % par rapport à 2019 sur les liaisons intérieures à l’hexagone dans une logique de report modal vers le train ; croissance de 22% sur les vols vers les DROM et de 20 % sur les vols à l’international. ",,3e stratégie nationale bas-carbone,,,,"Atténuation, Pollution",true,false,false,false,true,false
+"Amélioration de l'efficacité des aéronefs (énergie, polluants)",Efficacité aéronefs,Se déplacer / Verdir le secteur aérien,false,,Baisse de la consommation unitaire (par passager-km) de 14 % d’ici 2030 et de 33% d’ici à 2050 par rapport à 2019,,3e stratégie nationale bas-carbone,,,,"Atténuation, Pollution",true,false,false,false,true,false
+Incorporation de carburants durables (aviation),Carburants durables,Se déplacer / Verdir le secteur aérien,false,,"6% de carburants durables en 2030, 20% en 2035, en cohérence avec le règlement européen RefuelEU, 85% à horizon 2050 contre 70% dans Refuel",,3e stratégie nationale bas-carbone,,,,Atténuation,true,false,false,false,false,false
+Maîtrise de la demande de transport de marchandises,Sobr. fret terrestre,Se déplacer / Réduire le trafic de poids lourds pour les marchandises,true,"Un seul levier plus large : ""efficacité et sobriété logistique"" qui englobe l'optimisation du chargement des PL, l'efficacité des VUL et des PL neufs","Hausse de la demande totale de transport de marchandises de 3,5% en 2030 par rapport à 2019, moins forte que dans un scénario tendanciel (7,5 %). En 2050, la hausse est de 11,5% par rapport à 2019.",,3e stratégie nationale bas-carbone,,,,"Atténuation, Pollution",true,false,false,false,true,false
 Développement du fret ferroviaire,Fret ferroviaire,Se déplacer / Réduire le trafic de poids lourds pour les marchandises,true,Un seul levier pour le fret ferroviaire te fluvial,"Doublement de la part modale du fret ferroviaire entre 2019 et 2030 pour atteindre 18 %, puis 25% à horizon 2050, en accord avec la stratégie nationale pour le fret ferroviaire.
-",,3e stratégie nationale bas-carbone (provisoire),,,,"Atténuation, Pollution",true,false,false,false,true,false
-Développement du fret fluvial,Fret fluvial,Se déplacer / Réduire le trafic de poids lourds pour les marchandises,true,,Augmentation de la part modale du fluvial de 2 % actuellement à 3 % en 2030 et 4% en 2050,,3e stratégie nationale bas-carbone (provisoire),,,,"Atténuation, Pollution, Biodiversité",true,false,false,false,true,true
-Optimisation du chargements des poids lourds,Optim. chargement,Se déplacer / Réduire le trafic de poids lourds pour les marchandises,true,,"Augmentation du chargement moyen de 8,0 tonnes en 2019 à 8,3 d’ici 2030, 8,6 en 2040 et à 8,9 d’ici 2050",,3e stratégie nationale bas-carbone (provisoire),,,,"Atténuation, Pollution",true,false,false,false,true,false
-Electrification des véhicules utilitaires légers,Electrification VUL,Se déplacer / Verdir les utilitaires et poids lourds,true,"réintégré sous un unique levier ""fret routier électrique"" avec l'électrification des PL","12% de la flotte de véhicules utilitaires légers électrifiée en 2030, 68 % en 2040, 99 % en 2050",,3e stratégie nationale bas-carbone (provisoire),,,,"Atténuation, Pollution",true,false,false,false,true,false
-Electrification des poids lourds,Electrification PL,Se déplacer / Verdir les utilitaires et poids lourds,true,,10 % de la flotte de poids lourds électrifiée en 2030,,3e stratégie nationale bas-carbone (provisoire),,,,"Atténuation, Pollution",true,false,false,false,true,false
-Amélioration de l'efficacité des véhicules utilitaires légers et des poids lourds neufs,Efficacité VUL & PL,Se déplacer / Verdir les utilitaires et poids lourds,true,"réintégré sous le levier 'efficacité et sobriété logistique""",Baisse de la consommation de 9 % pour les poids lourds thermiques neufs et de 10 % pour les VUL thermiques neufs entre 2023 et 2030,,3e stratégie nationale bas-carbone (provisoire),,,,"Atténuation, Pollution",true,false,false,false,true,false
+",,3e stratégie nationale bas-carbone,,,,"Atténuation, Pollution",true,false,false,false,true,false
+Développement du fret fluvial,Fret fluvial,Se déplacer / Réduire le trafic de poids lourds pour les marchandises,true,,Augmentation de la part modale du fluvial de 2 % actuellement à 3 % en 2030 et 4% en 2050,,3e stratégie nationale bas-carbone,,,,"Atténuation, Pollution, Biodiversité",true,false,false,false,true,true
+Optimisation du chargements des poids lourds,Optim. chargement,Se déplacer / Réduire le trafic de poids lourds pour les marchandises,true,,"Augmentation du chargement moyen de 8,0 tonnes en 2019 à 8,3 d’ici 2030, 8,6 en 2040 et à 8,9 d’ici 2050",,3e stratégie nationale bas-carbone,,,,"Atténuation, Pollution",true,false,false,false,true,false
+Electrification des véhicules utilitaires légers,Electrification VUL,Se déplacer / Verdir les utilitaires et poids lourds,true,"réintégré sous un unique levier ""fret routier électrique"" avec l'électrification des PL","12% de la flotte de véhicules utilitaires légers électrifiée en 2030, 68 % en 2040, 99 % en 2050",,3e stratégie nationale bas-carbone,,,,"Atténuation, Pollution",true,false,false,false,true,false
+Electrification des poids lourds,Electrification PL,Se déplacer / Verdir les utilitaires et poids lourds,true,,10 % de la flotte de poids lourds électrifiée en 2030,,3e stratégie nationale bas-carbone,,,,"Atténuation, Pollution",true,false,false,false,true,false
+Amélioration de l'efficacité des véhicules utilitaires légers et des poids lourds neufs,Efficacité VUL & PL,Se déplacer / Verdir les utilitaires et poids lourds,true,"réintégré sous le levier 'efficacité et sobriété logistique""",Baisse de la consommation de 9 % pour les poids lourds thermiques neufs et de 10 % pour les VUL thermiques neufs entre 2023 et 2030,,3e stratégie nationale bas-carbone,,,,"Atténuation, Pollution",true,false,false,false,true,false
 Electrification des transports en commun,Electrification TC,Se déplacer / Verdir les utilitaires et poids lourds,false,,"Respectivement 33 % d'autobus électriques dans le parc roulant en 2030, 86 % en 2040 et 99 % en 2050
-Respectivement 5 % d'autocars électriques dans le parc roulant en 2030, 38 % en 2040 et 78 % en 2050",,3e stratégie nationale bas-carbone (provisoire),,,,"Atténuation, Pollution",true,false,false,false,true,false
+Respectivement 5 % d'autocars électriques dans le parc roulant en 2030, 38 % en 2040 et 78 % en 2050",,3e stratégie nationale bas-carbone,,,,"Atténuation, Pollution",true,false,false,false,true,false
 Réduction de l'utilisation des poids lourds les plus polluants,PL polluants,Se déplacer / Verdir les utilitaires et poids lourds,true,"réintégré sous le levier 'efficacité et sobriété logistique""",,'A préciser courant 2026 dans le cadre des travaux sur le plan PREPA ,,,,,"Atténuation, Pollution",true,false,false,false,true,false
-Incorporation de carburants routiers durables,Carburants durables,Se déplacer / Verdir les utilitaires et poids lourds,false,,"Passer de 10 % de carburants durables en 2023 à 13 % en 2030, 30 % en 2040 et 100 % en 2050",,3e stratégie nationale bas-carbone (provisoire),,,,Atténuation,true,false,false,false,false,false
-Maîtrise de la demande de fret international,Sobr. fret maritime,Se déplacer / Verdir le secteur maritime et fluvial,false,,"Augmentation du trafic maritime limitée à 1,5 % par an entre 2023 et 2035 puis stabilisation",,3e stratégie nationale bas-carbone (provisoire),,,,"Atténuation, Pollution",true,false,false,false,true,false
-"Amélioration de l'efficacité environnementale des navires (énergie, pollution)",Efficacité navires,Se déplacer / Verdir le secteur maritime et fluvial,false,,"Réduction de 20 % de la consommation par t.km (technologies, vitesse) entre 2023 et 2030, de 24 % à horizon 2040 et de 27 % à horizon 2050",,3e stratégie nationale bas-carbone (provisoire),,,,"Atténuation, Pollution",true,false,false,false,true,false
+Incorporation de carburants routiers durables,Carburants durables,Se déplacer / Verdir les utilitaires et poids lourds,false,,"Passer de 10 % de carburants durables en 2023 à 13 % en 2030, 30 % en 2040 et 100 % en 2050",,3e stratégie nationale bas-carbone,,,,Atténuation,true,false,false,false,false,false
+Maîtrise de la demande de fret international,Sobr. fret maritime,Se déplacer / Verdir le secteur maritime et fluvial,false,,"Augmentation du trafic maritime limitée à 1,5 % par an entre 2023 et 2035 puis stabilisation",,3e stratégie nationale bas-carbone,,,,"Atténuation, Pollution",true,false,false,false,true,false
+"Amélioration de l'efficacité environnementale des navires (énergie, pollution)",Efficacité navires,Se déplacer / Verdir le secteur maritime et fluvial,false,,"Réduction de 20 % de la consommation par t.km (technologies, vitesse) entre 2023 et 2030, de 24 % à horizon 2040 et de 27 % à horizon 2050",,3e stratégie nationale bas-carbone,,,,"Atténuation, Pollution",true,false,false,false,true,false
 Electrification des quais et des navires,Electrification à quai,Se déplacer / Verdir le secteur maritime et fluvial,false,,,'A préciser courant 2026 dans le cadre des travaux sur le plan PREPA ,,,,,"Atténuation, Pollution",true,false,false,false,true,false
-"Evolution des carburants maritimes (intensité carbone, polluants)",Carburants durables,Se déplacer / Verdir le secteur maritime et fluvial,false,,5 % de e-fuel et 11 % de biocarburant dans les soutes en 2030 et respectivement 74 % et 26 % en 2050,,3e stratégie nationale bas-carbone (provisoire),,,,"Atténuation, Pollution",true,false,false,false,true,false
+"Evolution des carburants maritimes (intensité carbone, polluants)",Carburants durables,Se déplacer / Verdir le secteur maritime et fluvial,false,,5 % de e-fuel et 11 % de biocarburant dans les soutes en 2030 et respectivement 74 % et 26 % en 2050,,3e stratégie nationale bas-carbone,,,,"Atténuation, Pollution",true,false,false,false,true,false
 Sobriété énergétique du résidentiel,Sobriété résidentiel,Se loger / Accélérer la rénovation énergétique de l'habitat particulier et collectif,true,réintégré sous un seul levier : rénovation (résidentiel) ,Baisse des consommations de 7 % entre 2020 et 2030 et 10 % entre 2020 et 2050 liée aux efforts de sobriété des ménages,"SNBC
   3
     baisse des consommations de 7 % entre 2020 et 2030 et 10 % entre 2020 et
-  2050 liée aux efforts de sobriété des ménages",3e stratégie nationale bas-carbone (provisoire),,,,"Atténuation, Pollution",true,false,false,false,true,false
+  2050 liée aux efforts de sobriété des ménages",3e stratégie nationale bas-carbone,,,,"Atténuation, Pollution",true,false,false,false,true,false
 Sortie des chaudières au fioul (résidentiel),Fioul résidentiel,Se loger / Accélérer la rénovation énergétique de l'habitat particulier et collectif,true,réintégré sous un seul levier : rénovation (résidentiel) ,Diminution de 60 % du parc de chaudières fioul entre 2023 et 2030 (environ 250 000 foyers par an en moyenne) puis disparition des chaudières fioul,"SNBC 3 
     remplacement par un système de chauffage décarboné de 60 % des chaudières
   au fioul d’ici 2030, soit environ 250 000 foyers par an. Un peu plus d’un
   million de foyers (1,3 M) sont encore chauffés au fioul en 2030 et presque
   plus aucun foyer n’est chauffé au fioul en 2035. 
-    ",3e stratégie nationale bas-carbone (provisoire),,,,"Atténuation, Pollution",true,false,false,false,true,false
+    ",3e stratégie nationale bas-carbone,,,,"Atténuation, Pollution",true,false,false,false,true,false
 Réduction de la part de chaudières au gaz (résidentiel),Gaz résidentiel,Se loger / Accélérer la rénovation énergétique de l'habitat particulier et collectif,true,réintégré sous un seul levier : rénovation (résidentiel) ,"Diminution de 20 % du parc de chaudières gaz entre 2023 et 2030 (environ 350 000 foyers par an en moyenne), et remplacement d’une majorité des chaudières à gaz d’ici 2050 par des solutions décarbonées","SNBC 
     Remplacement par un système de chauffage décarboné de 20 % des chaudières
   au gaz de 2023 d’ici 2030, qui concerne environ 350 000 foyers par an, et
   remplacer la majorité des chaudières à gaz d’ici 2050 par des solutions
   décarbonées.
-    ",3e stratégie nationale bas-carbone (provisoire),,,,"Atténuation, Pollution",true,false,false,false,true,false
+    ",3e stratégie nationale bas-carbone,,,,"Atténuation, Pollution",true,false,false,false,true,false
 "Amélioration de la performance (consommation d'énergie, polluants) des systèmes de chauffage (notamment au bois)",Efficacité chaudières,Se loger / Accélérer la rénovation énergétique de l'habitat particulier et collectif,false,,"8,8 millions de PAC dans le parc en 2030","SNBC3 
     Installer massivement des pompes à chaleur dans les logements (au moins 8,8
   millions de PAC dans le parc en 2030 - 850 000 installations par an en
-  moyenne entre 2023 et 2030 ; poursuite de la dynamique jusqu’en 2050). ",3e stratégie nationale bas-carbone (provisoire),,,,"Atténuation, Pollution, Adaptation",true,true,false,false,true,false
+  moyenne entre 2023 et 2030 ; poursuite de la dynamique jusqu’en 2050). ",3e stratégie nationale bas-carbone,,,,"Atténuation, Pollution, Adaptation",true,true,false,false,true,false
 Eradication des passoires thermiques,Passoires therm.,Se loger / Accélérer la rénovation énergétique de l'habitat particulier et collectif,false,,"Diminution de 70 % du nombre de passoires énergétiques entre 2023 et 2030, avec 250 000 rénovations d’ampleur annuelles
 Parc composé majoritairement de DPE A, B voire C en 2050.","SNBC 3
     Diminution de 70 % du nombre de passoires énergétiques entre 2023 et 2030,
@@ -62,22 +62,22 @@ Parc composé majoritairement de DPE A, B voire C en 2050.","SNBC 3
   de classe de DPE en moyenne par an entre 2025 et 2030 (y compris parc
   social), via l’installation de systèmes de chauffage décarbonés (en
   particulier des PAC). Parmi ces rénovations, 250 000 rénovations sont des
-  rénovations d’ampleur.  ",3e stratégie nationale bas-carbone (provisoire),,,,"Atténuation, Adaptation",true,true,false,false,false,false
+  rénovations d’ampleur.  ",3e stratégie nationale bas-carbone,,,,"Atténuation, Adaptation",true,true,false,false,false,false
 Sobriété et efficacité énergétique dans le tertiaire,Efficacité tertiaire,Se loger / Rénover le parc tertiaire et verdir son exploitation,true,réintégré sous un seul levier : rénovation (tertiaire) ,"Consommation d'énergie du secteur tertiaire (hors chaleur de l'environnement et data centers) de 207 TWh en 2030, 178 TWh en 2040 et 156 TWh en 2050 contre 206 TWh en 2030","SNBC 3
   - hypothèses AMS - Evolution des consommations d'énergie totales du secteur
-  tertiaire (hors data centers, hors chaleur environnement) (TWh Ef/an)",3e stratégie nationale bas-carbone (provisoire),,,,"Atténuation, Adaptation, Pollution",true,true,false,false,true,false
+  tertiaire (hors data centers, hors chaleur environnement) (TWh Ef/an)",3e stratégie nationale bas-carbone,,,,"Atténuation, Adaptation, Pollution",true,true,false,false,true,false
 Sortie des chaudières au fioul (tertiaire),Fioul tertiaire,Se loger / Rénover le parc tertiaire et verdir son exploitation,true,réintégré sous un seul levier : rénovation (tertiaire) ,Diminution de 85 % des surfaces chauffées au fioul entre 2020 et 2030,"SNBC 3
     Diminuer de 85 % des surfaces tertiaires chauffées au fioul entre 2020 et
-  2030. ",3e stratégie nationale bas-carbone (provisoire),,,,"Atténuation, Pollution",true,false,false,false,true,false
+  2030. ",3e stratégie nationale bas-carbone,,,,"Atténuation, Pollution",true,false,false,false,true,false
 Sortie progressive des chaudières au gaz (tertiaire),Gaz tertiaire,Se loger / Rénover le parc tertiaire et verdir son exploitation,true,réintégré sous un seul levier : rénovation (tertiaire) ,"Diminution de 17 % des surfaces chauffées au gaz entre 2020 et 2030 et de 85 % entre 2020 et 2050. (46 % du parc chauffé au gaz en 202, 38 % en 2030, 7 % en 2050)","SNBC 3
     remplacement par un système de chauffage décarboné de 17 % des surfaces
   chauffées au gaz d’ici 2030, conduisant à environ 38 % du parc chauffé au gaz
   en 2030 versus 46 % en 2020. Les surfaces chauffées au gaz baissent de 85 %
-  entre 2020 et 2050 et ne représentent plus que 7 % du parc en 2050.050. ",3e stratégie nationale bas-carbone (provisoire),,,,"Atténuation, Pollution",true,false,false,false,true,false
-Développement de l'usage de matériaux biosourcés dans la construction et rénovation,Constr. biosourcée,Se loger / Généraliser les pratiques durables de construction et rénovation,true,réintégré sous un seul levier : rénovation (tertiaire) ,"25 % de construction bois ou mixte béton-bois dans le tertiaire et les maisons individuelles en 2030, 33 % en 2040 et 40 % en 2050, et respectivement 25 %, 43 % et 61 % pour le logement collectif",,3e stratégie nationale bas-carbone (provisoire),,,,"Atténuation, Economie circulaire",true,false,false,true,false,false
+  entre 2020 et 2050 et ne représentent plus que 7 % du parc en 2050.050. ",3e stratégie nationale bas-carbone,,,,"Atténuation, Pollution",true,false,false,false,true,false
+Développement de l'usage de matériaux biosourcés dans la construction et rénovation,Constr. biosourcée,Se loger / Généraliser les pratiques durables de construction et rénovation,true,réintégré sous un seul levier : rénovation (tertiaire) ,"25 % de construction bois ou mixte béton-bois dans le tertiaire et les maisons individuelles en 2030, 33 % en 2040 et 40 % en 2050, et respectivement 25 %, 43 % et 61 % pour le logement collectif",,3e stratégie nationale bas-carbone,,,,"Atténuation, Economie circulaire",true,false,false,true,false,false
 Végétalisation et accueil des espèces dans le bâti,Végétalisation bâti,Se loger / Généraliser les pratiques durables de construction et rénovation,false,,,'A  définir (potentiel biodiversité du bâti selon l'indicateur coefficient biotope surface harmonisé ?),,,,,"Adaptation, Biodiversité",false,true,false,false,false,true
 Eradication des bouilloires thermiques,Bouilloires therm.,Se loger / Généraliser les pratiques durables de construction et rénovation,false,,,"'Amélioration de l'indicateur d'évaluation du confort d'été en cours dans le DPE dans l'Hexagone, intégration à venir d'un indicateur d'évaluation du confort thermique dans le DPE en Outre-mer",,,,,Adaptation,false,true,false,false,false,false
-Réduction des volumes et valorisation des déchets de la construction,Déchets construc.,Consommer / Développer la consommation responsable,false,,"Augmentation du taux d’incorporation de matières premières recyclées dans les panneaux : 45 % en 2030 et 65 % en 2050, contre 40 % en 2021.",,3e stratégie nationale bas-carbone (provisoire),,,,"Atténuation, Economie circulaire",true,false,false,true,false,false
+Réduction des volumes et valorisation des déchets de la construction,Déchets construc.,Consommer / Développer la consommation responsable,false,,"Augmentation du taux d’incorporation de matières premières recyclées dans les panneaux : 45 % en 2030 et 65 % en 2050, contre 40 % en 2021.",,3e stratégie nationale bas-carbone,,,,"Atténuation, Economie circulaire",true,false,false,true,false,false
 Restauration des capacités de production nucléaire,Elec. nucléaire,Produire / Accroitre notre production d'électricité décarbonée,false,,380 TWh de production d'électricité nucléaire en 2030,"PPE3 :
   380 TWh retenus dans les modèles (ambition d'EDF 400 TWh)",Programmation pluriannuelle de l'énergie 2026-2035,,,,"Atténuation, Eau, Adaptation",true,true,true,false,false,false
 Développement de la production d'électricité renouvelable,Elec. renouvelable,Produire / Accroitre notre production d'électricité décarbonée,true,"levier ""électricité renouvelable""",217 TWh de production d'électricité renouvelable en 2030,"PPE3
@@ -102,14 +102,14 @@ Développement des réseaux de chaleur urbains,Réseaux de chaleur,Produire / D�
   3
     Raccordement à un réseau de chaleur de 360 000 logements en moyenne par an
   d’ici 2035 permet d’atteindre 5,8 millions de logements raccordés en 2035 et
-  6,7 millions en 2050",3e stratégie nationale bas-carbone (provisoire),,,,"Atténuation, Pollution",true,false,false,false,true,false
+  6,7 millions en 2050",3e stratégie nationale bas-carbone,,,,"Atténuation, Pollution",true,false,false,false,true,false
 Décarbonation de la production de chaleur,Décarb. chaleur,Produire / Développer les réseaux de chaleur et de froid renouvelables,false,,"75 % de la chaleur livrée est décarbonée en 2030, 80 % en 2035 et 100 % en 2050","PPE
   3
     75 % de la chaleur livrée est décarbonée en 2030, 80 en 2035
     
     SNBC3 :
     En 2050, 100 % de la chaleur produite provient de sources de chaleur
-  décarbonées.","3e stratégie nationale bas-carbone (provisoire), Programmation pluriannuelle de l'énergie 2026-2035",,,,"Atténuation, Pollution",true,false,false,false,true,false
+  décarbonées.","3e stratégie nationale bas-carbone, Programmation pluriannuelle de l'énergie 2026-2035",,,,"Atténuation, Pollution",true,false,false,false,true,false
 Développement des réseaux de froid,Réseaux de froid,Produire / Développer les réseaux de chaleur et de froid renouvelables,false,,"Déploiement du froid livré par les réseaux, avec 2 TWh en 2030 (contre une production de 0,99 TWh en 2022).",,Programmation pluriannuelle de l'énergie 2026-2035,,,,Adaptation,false,true,false,false,false,false
 Développement des puits technologiques dans l'énergie,Puits technologiques,Produire / Mobiliser la biomasse pour décarboner les besoins énergétiques non électrifiables,false,,"Entre 8,5 et 16 Mt CO2e de capacités de captage de CO2 (principalement biogénique, via la production de chaleur à partir de biomasse) en 2050 dans l’énergie","SNBC
   3
@@ -117,7 +117,7 @@ Développement des puits technologiques dans l'énergie,Puits technologiques,Pro
   biogénique, via la production de chaleur à partir de biomasse) en 2050 dans
   l’énergie, en cohérence avec l’état des lieux et les perspectives pour le
   déploiement du CCUS en France, publié en juillet 2024 (périmètre : déchets,
-  bioraffinage, raffinage et production de chaleur)",3e stratégie nationale bas-carbone (provisoire),,,,Atténuation,true,false,false,false,false,false
+  bioraffinage, raffinage et production de chaleur)",3e stratégie nationale bas-carbone,,,,Atténuation,true,false,false,false,false,false
 Développement de la production de biogaz et orientation vers les usages prioritaires,Prod. biogaz,Produire / Mobiliser la biomasse pour décarboner les besoins énergétiques non électrifiables,true,"levier général ""biogaz""","15% de biogaz dans la consommation nationale de gaz via le réseau en 2030 (soit 44 TWh), 100 % en 2050","PPE3
   "" Développement du biométhane, avec 44 TWh injectés à l’horizon 2030,
   correspondant à une production injectée multipliée par quatre par rapport à
@@ -146,7 +146,7 @@ Réduction de l'utilisation matière des produits pétroliers,Matériaux pétrol
     SNBC 3
     *produits moins consommateurs d’énergie et de ressources naturelles, en
   particulier fossiles. Il s’agit par exemple en matière d’emballages, de
-  tendre vers une sortie des plastiques à usage unique.",3e stratégie nationale bas-carbone (provisoire),,,,"Atténuation, Economie circulaire",true,false,false,true,false,false
+  tendre vers une sortie des plastiques à usage unique.",3e stratégie nationale bas-carbone,,,,"Atténuation, Economie circulaire",true,false,false,true,false,false
 Incorporation de matières recyclées,Matériaux recyclés,Produire / Réduire la consommation de matière de l'industrie,false,,"Taux d'utilisation des matériaux circulaires de 24 % en 2030 en Europe, contre de 15,4 % en 2020 et de 17,8 % en 2024 en France","SNBC 3
     *les taux d'incorporation de matières premières recyclées dans les secteurs
   de l’acier, de l’aluminium, de la pétrochimie, du verre et du papier
@@ -155,25 +155,25 @@ Incorporation de matières recyclées,Matériaux recyclés,Produire / Réduire l
   ciment produit est réduit de 5 % de 2019 à 2030 et de 9 % à horizon
   2050.
     
-    Pacte industriel de l'UE (non décliné par pays)",3e stratégie nationale bas-carbone (provisoire),,,,"Atténuation, Economie circulaire",true,false,false,true,false,false
+    Pacte industriel de l'UE (non décliné par pays)",3e stratégie nationale bas-carbone,,,,"Atténuation, Economie circulaire",true,false,false,true,false,false
 Amélioration de l'efficacité énergétique industrielle (dont récupération de chaleur),Efficacité industrielle,Produire / Réduire l'usage d'énergie fossile de l'industrie,false,seulement deux leviers généraux : décarbonation des grands sites (top50) et industrie diffuse,8 % de gain d'efficacité entre 2023 et 2030,"SNBC 3
   
-    en moyenne 8 % de gain en 2030 par rapport à 2023, et 18 % en 2050",3e stratégie nationale bas-carbone (provisoire),,,,"Atténuation, Pollution",true,false,false,false,true,false
+    en moyenne 8 % de gain en 2030 par rapport à 2023, et 18 % en 2050",3e stratégie nationale bas-carbone,,,,"Atténuation, Pollution",true,false,false,false,true,false
 "Développement de la chaleur renouvelable (solaire, géothermie)",Chaleur industrielle,Produire / Réduire l'usage d'énergie fossile de l'industrie,false,,,"SNBC 3
     La part de l’électricité dans le mix énergétique de l’industrie augmente
   ainsi de 36 % en 2023 à 47 % en 2030 et 57 % en 2050.",,,,,"Atténuation, Pollution",true,false,false,false,true,false
 Electrification des sources d'énergie,Electrification indus.,Produire / Réduire l'usage d'énergie fossile de l'industrie,false,seulement deux leviers généraux : décarbonation des grands sites (top50) et industrie diffuse,Augmentation de la part de l’électricité dans le mix énergétique de l’industrie de 36 % en 2023 à 47 % en 2030 et 57 % en 2050,"SNBC 3 :
     20 TWh supplémentaires de biomasse solide est mobilisé à l’horizon 2030
   dans le scénario de référence (par rapport à 2023)
-    10 TWh de CSR mobilisés dans l’industrie en 2030",3e stratégie nationale bas-carbone (provisoire),,,,"Atténuation, Pollution",true,false,false,false,true,false
-Utilisation de la biomasse et des combustibles solides de récupération comme source d'énergie industrielle,Biomasse industrie,Produire / Réduire l'usage d'énergie fossile de l'industrie,false,seulement deux leviers généraux : décarbonation des grands sites (top50) et industrie diffuse,Doubler l'utilisation énergétique de biomasse dans l'industrie entre 2021 et 2030,,3e stratégie nationale bas-carbone (provisoire),,,,"Atténuation, Pollution",true,false,false,false,true,false
+    10 TWh de CSR mobilisés dans l’industrie en 2030",3e stratégie nationale bas-carbone,,,,"Atténuation, Pollution",true,false,false,false,true,false
+Utilisation de la biomasse et des combustibles solides de récupération comme source d'énergie industrielle,Biomasse industrie,Produire / Réduire l'usage d'énergie fossile de l'industrie,false,seulement deux leviers généraux : décarbonation des grands sites (top50) et industrie diffuse,Doubler l'utilisation énergétique de biomasse dans l'industrie entre 2021 et 2030,,3e stratégie nationale bas-carbone,,,,"Atténuation, Pollution",true,false,false,false,true,false
 Captage de CO₂ à la sortie des procédés industriels émetteurs,Captage industrie,Produire / Décarboner les procédés industriels les plus émissifs,false,seulement deux leviers généraux : décarbonation des grands sites (top50) et industrie diffuse,"Capter 4 à 8 Mt CO2e par an dans l’industrie à horizon 2030
-Capter entre 20 et 30 Mt CO2e par an dans l’industrie à horizon 2050, dont environ 50 % d’origine biogénique",,3e stratégie nationale bas-carbone (provisoire),,,,Atténuation,true,false,false,false,false,false
-Réduction des émissions du raffinage,Raffinage,Produire / Décarboner les procédés industriels les plus émissifs,false,seulement deux leviers généraux : décarbonation des grands sites (top50) et industrie diffuse,Baisse de 27 % des émissions du raffinage entre 2019 et 2030 (dont une partie via levier H2),,3e stratégie nationale bas-carbone (provisoire),,,,Atténuation,true,false,false,false,false,false
+Capter entre 20 et 30 Mt CO2e par an dans l’industrie à horizon 2050, dont environ 50 % d’origine biogénique",,3e stratégie nationale bas-carbone,,,,Atténuation,true,false,false,false,false,false
+Réduction des émissions du raffinage,Raffinage,Produire / Décarboner les procédés industriels les plus émissifs,false,seulement deux leviers généraux : décarbonation des grands sites (top50) et industrie diffuse,Baisse de 27 % des émissions du raffinage entre 2019 et 2030 (dont une partie via levier H2),,3e stratégie nationale bas-carbone,,,,Atténuation,true,false,false,false,false,false
 Modification des procédés de fabrication,Procédés industriels,Produire / Décarboner les procédés industriels les plus émissifs,false,seulement deux leviers généraux : décarbonation des grands sites (top50) et industrie diffuse,"Atteindre environ 5 TWh de consommation (énergétique et non énergétique) d’H2 électrolytique à horizon 2030 dans l’industrie, et environ 20 TWh à horizon 2050 (par rapport à un volume < 1 TWh en 2023)
 Atteindre 6 Mt d'acier produit par réduction directe du minerai de fer (DRI) en 2050. 
-Décarboner les autres procédés : réduire le taux de clinker du ciment, réduire les émissions des gaz fluorés et de protoxyde d'azote, etc.",,3e stratégie nationale bas-carbone (provisoire),,,,Atténuation,true,false,false,false,false,false
-Abattement des gaz fluorés (tous secteurs),Gaz fluorés,Produire / Réduire les fuites de gaz à effet de serre et polluants,false,seulement deux leviers généraux : décarbonation des grands sites (top50) et industrie diffuse,"Baisse des émissions de gaz fluorés de 9 Mt CO2e en 2023 à respectivement 4,8 Mt, 1,8 Mt et 1 Mt en 2030, 2040 et 2050",,3e stratégie nationale bas-carbone (provisoire),,,,Atténuation,true,false,false,false,false,false
+Décarboner les autres procédés : réduire le taux de clinker du ciment, réduire les émissions des gaz fluorés et de protoxyde d'azote, etc.",,3e stratégie nationale bas-carbone,,,,Atténuation,true,false,false,false,false,false
+Abattement des gaz fluorés (tous secteurs),Gaz fluorés,Produire / Réduire les fuites de gaz à effet de serre et polluants,false,seulement deux leviers généraux : décarbonation des grands sites (top50) et industrie diffuse,"Baisse des émissions de gaz fluorés de 9 Mt CO2e en 2023 à respectivement 4,8 Mt, 1,8 Mt et 1 Mt en 2030, 2040 et 2050",,3e stratégie nationale bas-carbone,,,,Atténuation,true,false,false,false,false,false
 Contrôle des émissions industrielles de polluants atmosphériques,Polluants industrie,Produire / Réduire les fuites de gaz à effet de serre et polluants,false,seulement deux leviers généraux : décarbonation des grands sites (top50) et industrie diffuse,,'A préciser courant 2026 dans le cadre des travaux sur le plan PREPA (polluants atmosphériques),,,,,"Pollution, Biodiversité",false,false,false,false,true,true
 Sortie du plastique jetable,Plastique jetable,Consommer / Développer la consommation responsable,false,,"2030 : réduction de 50 % du nombre de bouteilles plastiques à usage unique par rapport à 2018
 2040 : zéro emballage plastique à usage unique",,Loi anti-gaspillage pour une économie circulaire,,,,"Atténuation, Eau, Economie circulaire, Biodiversité",true,false,true,true,false,true
@@ -192,20 +192,20 @@ Le tonnage de déchets recyclés passe de 39 Mt en 2020 à 42 Mt en 2030 puis 48
 
 Règlement sur les emballages (PPWR) : '90% des bouteilles en plastiques et canettes collectées et recyclées à partir de 2029 
 80% de collecte séparées canettes et bouteille en 2026""
-",3e stratégie nationale bas-carbone (provisoire),,,,"Atténuation, Economie circulaire, Biodiversité",true,false,false,true,false,true
+",3e stratégie nationale bas-carbone,,,,"Atténuation, Economie circulaire, Biodiversité",true,false,false,true,false,true
 Captage du méthane dans les installations de stockage de déchets non dangereux (ISDND),Captage décharges,Consommer / Réduire l'impact environnemental des déchets produits,true,pi : laissé de coté dans le bilan des COP 25 pour raisons méthodo,"Taux de captage du biométhane dans les ISDND en 2030, en cours de recalibrage","SNBC
   3
     le taux de captage du biométhane dans les installations de stockage des
   déchets non-dangereux (ISDND) en exploitation passe de 66 % en 2020 à 83 % en
   2030 (à noter que cela correspond à des taux de captage apparent  de 52 % et 63 % respectivement, lorsque
   l’on prend également en compte les émissions provenant des ISDND qui ne sont
-  plus exploitées). ",3e stratégie nationale bas-carbone (provisoire),,,,Atténuation,true,false,false,false,false,false
+  plus exploitées). ",3e stratégie nationale bas-carbone,,,,Atténuation,true,false,false,false,false,false
 Développement de la valorisation énergétique des déchets,Valorisation énergie,Consommer / Réduire l'impact environnemental des déchets produits,false,,"13 Mt de déchets méthanisés (hors agriculture) ou compostés en 2030, 16 Mt en 2050 (contre 10 Mt en 2020)","Le tonnage de déchets méthanisés (hors agriculture) [passe] de 1
   Mt en 2020 à 3 Mt en 2030 puis 5 Mt en 2050, compostés de 9 Mt en 2020 à 10
-  Mt en 2030 puis 11 Mt en 2050. ",3e stratégie nationale bas-carbone (provisoire),,,,Atténuation,true,false,false,false,false,false
+  Mt en 2030 puis 11 Mt en 2050. ",3e stratégie nationale bas-carbone,,,,Atténuation,true,false,false,false,false,false
 Développement des combustibles solides de récupération,CSR,Consommer / Réduire l'impact environnemental des déchets produits,false,,"4 Mt traités via la filière CSR en 2030, 5Mt en 2050","SNBC 3
     La production de combustibles solides de récupération atteint 4 Mt en 2030
-  et 5 Mt en 2050",3e stratégie nationale bas-carbone (provisoire),,,,"Atténuation, Economie circulaire",true,false,false,true,false,false
+  et 5 Mt en 2050",3e stratégie nationale bas-carbone,,,,"Atténuation, Economie circulaire",true,false,false,true,false,false
 Maîtrise des risques de relargage de plastique,Relargage plastique,Consommer / Réduire l'impact environnemental des déchets produits,false,,"100 % d’anciennes décharges municipales littorales à risque de relargage en mer réhabilitées
 100 % des communes littorales engagées dans la démarche plages sans plastiques (50 % dès 2025)",,Stratégie nationale biodiversité 2030,,,,"Eau, Biodiversité",false,false,true,false,false,true
 Développement des légumineuses,Légumineuses,Se nourrir / Réduire la dépendance aux intrants des cultures,true,"sous le levier ""pratiques stockantes"" qui englobe toutes les pratiques stockantes hors haies et prairies","2,8 Mha de légumineuses en 2030 contre 1 Mha en 2020","SNBC
@@ -219,8 +219,8 @@ Développement des légumineuses,Légumineuses,Se nourrir / Réduire la dépenda
 Développement des cultures intermédiaires,Cultures interméd.,Se nourrir / Réduire la dépendance aux intrants des cultures,true,"sous le levier ""pratiques stockantes"" qui englobe toutes les pratiques stockantes hors haies et prairies","Développement des cultures intermédiaires, dont les engrais verts (1,8 Mha d’engrais verts en 2030 et 4,3 Mha en 2050 contre 1 Mha en 2020)","SNBC 3 
     -	développer les cultures intermédiaires , dont les engrais verts (1,8 Mha
   d’engrais verts en 2030 et 4,3 Mha en 2050 contre 1 Mha en 2020, cf. partie «
-  Stockage de carbone dans les sols ») ;",3e stratégie nationale bas-carbone (provisoire),,,,"Atténuation, Adaptation, Eau, Economie circulaire, Biodiversité",true,true,true,true,false,true
-Optimisation de la gestion de l'azote,Optimisation azote,Se nourrir / Réduire la dépendance aux intrants des cultures,false,,Réduction du surplus azoté de 46 kgN/ha en 2020 à 36 kgN/ha en 2030 et 22 kgN/ha en 2050,SNBC 3 - Hypothèses AMS - Surplus azoté (kgN/ha),3e stratégie nationale bas-carbone (provisoire),,,,"Atténuation, Eau, Economie circulaire, Pollution, Biodiversité",true,false,true,true,true,true
+  Stockage de carbone dans les sols ») ;",3e stratégie nationale bas-carbone,,,,"Atténuation, Adaptation, Eau, Economie circulaire, Biodiversité",true,true,true,true,false,true
+Optimisation de la gestion de l'azote,Optimisation azote,Se nourrir / Réduire la dépendance aux intrants des cultures,false,,Réduction du surplus azoté de 46 kgN/ha en 2020 à 36 kgN/ha en 2030 et 22 kgN/ha en 2050,SNBC 3 - Hypothèses AMS - Surplus azoté (kgN/ha),3e stratégie nationale bas-carbone,,,,"Atténuation, Eau, Economie circulaire, Pollution, Biodiversité",true,false,true,true,true,true
 Réduction de l'usage et des risques des produits phytopharmaceutiques,Réduction phyto.,Se nourrir / Réduire la dépendance aux intrants des cultures,true,,Baisse de 50% de l'usage des produits phytosanitaires par rapport à 2011-2013 (selon l'indicateur HRI-1),"SNB 2030
     réduction des usages de produits phytosanitaires d’ici 2030",Stratégie nationale biodiversité 2030,,,,"Atténuation, Eau, Economie circulaire, Pollution, Biodiversité",true,false,true,true,true,true
 Développement de l'agriculture biologique et à haute valeur environnementale,Systèmes agroécolo.,Se nourrir / Réduire la dépendance aux intrants des cultures,true,"Pas un levier en tant que tel mais englobé par le levier ""agriculture bio et de HVE"" / ou ""pratiques stockantes"" selon les cas","21% de la surface en agriculture biologique (10 % en 2023) en 2030, 25 % en 2050","SNBC 3 :
@@ -233,9 +233,9 @@ Amélioration de l'autonomie protéique des élevages,Autonomie protéique,Se no
   
     Réduire de 50 % les importations de soja à horizon 2030 par rapport à
   2020.
-    Atteinte de l'autonomie protéique nationale en 2050.",3e stratégie nationale bas-carbone (provisoire),,,,Atténuation,true,false,false,false,false,false
+    Atteinte de l'autonomie protéique nationale en 2050.",3e stratégie nationale bas-carbone,,,,Atténuation,true,false,false,false,false,false
 Valorisation des effluents d'élevage,Effluents élevage,Se nourrir / Développer des pratiques d'élevage durable,true,"Sous ""élevage durable""",Part des déjections animales mobilisables méthanisées de 22 % en 2030 et 80 % en 2050 ,"SNBC 3
-Maintien de la valeur fertilisante des effluents en limitant les fuites d’azote (généralisation des couvertures de fosses à lisiers, amélioration des pratiques d’épandage (voir partie « cultures »)) et méthanisation des effluents (part croissante des déjections animales mobilisables méthanisées pour atteindre 22 % en 2030 et 80 % en 2050 ",3e stratégie nationale bas-carbone (provisoire),,,,"Atténuation, Economie circulaire, Pollution",true,false,false,true,true,false
+Maintien de la valeur fertilisante des effluents en limitant les fuites d’azote (généralisation des couvertures de fosses à lisiers, amélioration des pratiques d’épandage (voir partie « cultures »)) et méthanisation des effluents (part croissante des déjections animales mobilisables méthanisées pour atteindre 22 % en 2030 et 80 % en 2050 ",3e stratégie nationale bas-carbone,,,,"Atténuation, Economie circulaire, Pollution",true,false,false,true,true,false
 Réduction complémentaire des émissions liées à la fermentation entérique,Autre élevage,Se nourrir / Développer des pratiques d'élevage durable,true,"Sous ""élevage durable""","25 % des bovins bénéficient d’ajustements de leurs rations en 2030 lors des périodes en bâtiment (contre une proportion proche de 0 % en 2020), environ 80 % du cheptel en 2050","SNBC
   3 
     25 % des bovins bénéficient d’ajustements de leurs rations en 2030 lors des
@@ -247,18 +247,18 @@ Réduction complémentaire des émissions liées à la fermentation entérique,A
   annuelle additionnelle de 5 % de la fermentation entérique par tête.
     -	Orienter la sélection génétique pour réduire les émissions de méthane, de
   manière à réduire de 5% supplémentaires les émissions de la fermentation
-  entérique par tête en 2050.",3e stratégie nationale bas-carbone (provisoire),,,,Atténuation,true,false,false,false,false,false
+  entérique par tête en 2050.",3e stratégie nationale bas-carbone,,,,Atténuation,true,false,false,false,false,false
 Optimisation de la gestion des élevages,Optim. troupeaux,Se nourrir / Développer des pratiques d'élevage durable,true,"Sous ""élevage durable""",Réduction des émissions par tête de 5 % par l'optimisation des troupeaux,"SNBC 3 
     Adaptation de la conduite du troupeau , ce qui permet de gagner en
-  productivité et donc de réduire les émissions par tête de 5 %.",3e stratégie nationale bas-carbone (provisoire),,,,Atténuation,true,false,false,false,false,false
+  productivité et donc de réduire les émissions par tête de 5 %.",3e stratégie nationale bas-carbone,,,,Atténuation,true,false,false,false,false,false
 Décarbonation des engins agricoles,Décarb. énergie,Se nourrir / Décarboner les bâtiments et machines agricoles,true,"Sous un seul levier ""batiment et machines agricoles""","Augmentation de la part d’engins agricoles fonctionnant avec des énergies non-fossiles (HVO100, électricité, H2, BioGNV) d’environ 0 % à 10 % du parc entre 2020 et 2030, avant d’atteindre progressivement 100 % en 2050. ","SNBC
   3
     Décarbonation des engins agricoles : la part d’engins agricoles
   fonctionnant avec des énergies non-fossiles (HVO100, électricité, H2, BioGNV)
   passe d’environ 0 % à 10 % du parc entre 2020 et 2030, avant d’atteindre
   progressivement 100 % en 2050. 
-    ",3e stratégie nationale bas-carbone (provisoire),,,,"Atténuation, Pollution",true,false,false,false,true,false
-Efficacité énergétique des bâtiments et machines agricoles,Efficacité agricole,Se nourrir / Décarboner les bâtiments et machines agricoles,true,"Sous un seul levier ""batiment et machines agricoles""","Baisse de la consommation d'énergie de 54 TWh en 2023 à 50 TWh en 2030, 40 TWh en 2040 et 31 TWh en 2050",,3e stratégie nationale bas-carbone (provisoire),,,,"Atténuation, Pollution, Adaptation",true,true,false,false,true,false
+    ",3e stratégie nationale bas-carbone,,,,"Atténuation, Pollution",true,false,false,false,true,false
+Efficacité énergétique des bâtiments et machines agricoles,Efficacité agricole,Se nourrir / Décarboner les bâtiments et machines agricoles,true,"Sous un seul levier ""batiment et machines agricoles""","Baisse de la consommation d'énergie de 54 TWh en 2023 à 50 TWh en 2030, 40 TWh en 2040 et 31 TWh en 2050",,3e stratégie nationale bas-carbone,,,,"Atténuation, Pollution, Adaptation",true,true,false,false,true,false
 "Développement des pratiques stockantes (cultures intermédiaires, agriculture de conservation des sols)",Pratiques stockantes,Se nourrir / Développer les services environnementaux rendus par le secteur agricole,true,,"Hausse de 60 % de la surface de cultures intermédiaires par rapport à 2020; avec une part des cultures intermédiaires à vocation énergétique (CIVE) au sein des cultures intermédiaires qui progresse, d’environ 4 % en 2020 à 19 % en 2030, avant d’atteindre 30 % en 2050","SNBC
   3
     Développement des cultures intermédiaires à vocation énergétique, pièges à
@@ -271,7 +271,7 @@ Efficacité énergétique des bâtiments et machines agricoles,Efficacité agric
   environ 49 TWh PCS en 2050. 
     Développer les pratiques visant à préserver la structure du sol, comme le
   semis direct : atteinte de 1,9 Mha en 2030 et 4,3 Mha en 2050 contre 0,4 Mha
-  en 2020.","3e stratégie nationale bas-carbone (provisoire), Stratégie nationale biodiversité 2030",,,,"Atténuation, Adaptation, Eau",true,true,true,false,false,false
+  en 2020.","3e stratégie nationale bas-carbone, Stratégie nationale biodiversité 2030",,,,"Atténuation, Adaptation, Eau",true,true,true,false,false,false
 Augmentation du pâturage,Paturage,Se nourrir / Développer des pratiques d'élevage durable,true,"Sous le levier ""prairies""","La part des élevages bovins lait en système de pâturage dominant passe de 28 % en 2020 à 45 % en 2030, puis 64 % en 2050 ; les poulets label rouge et agriculture biologique (AB) évoluent de 32 % en 2020 à 39% en 2030, puis 60 % en 2050 ; les porcs label rouge et AB évoluent de 4 % en 2020 à 7 % en 2030 et 16 % en 2050.
 
 Maintenir les prairies permanentes productives à hauteur d'environ 7150 kha de 2020 à 2050","SNBC 3 
@@ -282,22 +282,22 @@ Maintenir les prairies permanentes productives à hauteur d'environ 7150 kha de 
   et 16 % en 2050.
     SNBC 3 run2 :
     Passage de 9,6 Mha (2020) de prairies permanentes à 9,3 Mha en 2030 et 8,6
-  Mha en 2050, contre 50 kha retournés annuellement actuellement",3e stratégie nationale bas-carbone (provisoire),,,,"Atténuation, Pollution, Biodiversité",true,false,false,false,true,true
+  Mha en 2050, contre 50 kha retournés annuellement actuellement",3e stratégie nationale bas-carbone,,,,"Atténuation, Pollution, Biodiversité",true,false,false,false,true,true
 Développement de l'agroforesterie intraparcellaire,Agroforesterie,Se nourrir / Développer les services environnementaux rendus par le secteur agricole,true,"Sous 'pratiques stockantes""","Atteindre 100 kha en 2030 et 300 kha en 2050, également répartis entre prairies et terres arables","SNBC 3
     développer l’agroforesterie intraparcellaire, en augmentant
   significativement les surfaces d’ici 2030 pour atteindre 100 kha en 2030 et
-  300 kha en 2050",3e stratégie nationale bas-carbone (provisoire),,,,"Atténuation, Adaptation, Biodiversité",true,true,false,false,false,true
+  300 kha en 2050",3e stratégie nationale bas-carbone,,,,"Atténuation, Adaptation, Biodiversité",true,true,false,false,false,true
 Développement des haies,Haies,Se nourrir / Développer les services environnementaux rendus par le secteur agricole,true,,+50 000 kml nets de haies plantées entre 2020 et 2030 (soit 800 000 km de haies) avant de poursuivre le rythme pour atteindre +100 000 kml nets de haies plantées entre 2030 et 2050,"SNBC 3
     +50 000 kml nets de haies plantées entre 2020 et 2030, avant de poursuivre
   le rythme pour atteindre +100 000 kml nets de haies plantées entre 2030 et
   2050 ;
     
     SNB 2030
-    gain net d’au moins 50 000 km de haies d’ici 2030","3e stratégie nationale bas-carbone (provisoire), Stratégie nationale biodiversité 2030",,,,"Atténuation, Adaptation, Pollution, Biodiversité",true,true,false,false,true,true
+    gain net d’au moins 50 000 km de haies d’ici 2030","3e stratégie nationale bas-carbone, Stratégie nationale biodiversité 2030",,,,"Atténuation, Adaptation, Pollution, Biodiversité",true,true,false,false,true,true
 Gestion des écoulements dans les sols agricoles,Ecoulements agri.,Se loger / Généraliser la prévention des risques naturels dus au changement climatique,true,,,,,,,,Adaptation,false,true,false,false,false,false
 Développement de la pêche durable,Pêche durable,Se nourrir / Développer des filières aquacole et halieutique durables,true,,Etat des stocks de ressources halieutiques  : 100% en bon état d'ici 2030,,Stratégie nationale biodiversité 2030,,,,"Adaptation, Biodiversité",false,true,false,false,false,true
 Développement de l'aquaculture durable,Aquaculture durable,Se nourrir / Développer des filières aquacole et halieutique durables,true,,Production de 1000 tonnes par an d'ici 2030,,Stratégie nationale biodiversité 2030,,,,"Adaptation, Biodiversité",false,true,false,false,false,true
-Restauration collective,Restau. collective,Se nourrir / Développer des pratiques alimentaires saines et durables,true,"un seul levier ""Egalim""","50 % de produits de qualité, durables dont 20% de bio, dans la restauration collective",,"""Stratégie nationale pour l’alimentation, la nutrition et le climat 2025/2030"", 3e stratégie nationale bas-carbone (provisoire)",,,,"Atténuation, Economie circulaire, Biodiversité",true,false,false,true,false,true
+Restauration collective,Restau. collective,Se nourrir / Développer des pratiques alimentaires saines et durables,true,"un seul levier ""Egalim""","50 % de produits de qualité, durables dont 20% de bio, dans la restauration collective",,"""Stratégie nationale pour l’alimentation, la nutrition et le climat 2025/2030"", 3e stratégie nationale bas-carbone",,,,"Atténuation, Economie circulaire, Biodiversité",true,false,false,true,false,true
 "Évolution du régime alimentaire (viande, saisonnalité, etc.)",Régime alim.,Se nourrir / Développer des pratiques alimentaires saines et durables,false,,"Augmenter la consommation par personne de fruits et légumes : +10 % à horizon 2030 et +23 % à horizon 2050, par rapport à 2020.
 Multiplication par 2 de la consommation de légumineuses à horizon 2030 et par 3,7 à horizon 2050 (par rapport à 2020).","SNBC 3 :
   
@@ -307,7 +307,7 @@ Multiplication par 2 de la consommation de légumineuses à horizon 2030 et par 
   que de céréales complètes. Limitation de la consommation de viandes et de
   charcuterie en particulier importées, par une évolution progressive vers des
   régimes alimentaires conformes aux repères nutritionnels du Programme
-  national nutrition santé (PNNS). ","""Stratégie nationale pour l’alimentation, la nutrition et le climat 2025/2030"", 3e stratégie nationale bas-carbone (provisoire)",,,,"Atténuation, Eau, Pollution, Biodiversité",true,false,true,false,true,true
+  national nutrition santé (PNNS). ","""Stratégie nationale pour l’alimentation, la nutrition et le climat 2025/2030"", 3e stratégie nationale bas-carbone",,,,"Atténuation, Eau, Pollution, Biodiversité",true,false,true,false,true,true
 Consommation de produits issus de l'agriculture biologique,Conso. produits bio.,Se nourrir / Développer des pratiques alimentaires saines et durables,true,"un seul levier ""Egalim""",Viser une cible de 12 % de consommation de produits bio en valeur et en moyenne pour l’ensemble de la population sur l’ensemble des circuits de consommation ,,"""Stratégie nationale pour l’alimentation, la nutrition et le climat 2025/2030""",,,,"Eau, Pollution, Biodiversité",false,false,true,false,true,true
 Réduction du gaspillage alimentaire,Gaspillage alim.,Se nourrir / Développer des pratiques alimentaires saines et durables,true,"un seul levier ""Egalim""","Réduire les déchets alimentaires de 30% (distribution, restauration et ménages) et de 10% (industrie agroalimentaire) d’ici 2030, par rapport à la moyenne 2021-2023","Loi
   AGEC - article 11
@@ -319,7 +319,7 @@ Réduction du gaspillage alimentaire,Gaspillage alim.,Se nourrir / Développer d
     SNBC3
     Réduire les déchets alimentaires de 30% (distribution, restauration et
   ménages) et de 10% (industrie agroalimentaire) d’ici 2030, par rapport à la
-  moyenne 2021-2023""","Loi anti-gaspillage pour une économie circulaire, 3e stratégie nationale bas-carbone (provisoire)",,,,"Atténuation, Economie circulaire",true,false,false,true,false,false
+  moyenne 2021-2023""","Loi anti-gaspillage pour une économie circulaire, 3e stratégie nationale bas-carbone",,,,"Atténuation, Economie circulaire",true,false,false,true,false,false
 Amélioration du suivi de l'état et de la gestion des forêts,Gestion forêts,Préserver / Redonner à la forêt sa capacité de stockage de carbone,true,"un seul levier ""gestion des forêts""",60 % des forêts dotées d'un DGD,"Stratégie
   nationale biodiversité 2030 :
     60 % des forêts dotées d'un DGD d'ici 2030
@@ -328,15 +328,15 @@ Amélioration du suivi de l'état et de la gestion des forêts,Gestion forêts,P
     Arbres plantés avec des essences adaptées au climat futur [Nb] : 1 milliard
   d’arbres d’ici 2030",Stratégie nationale biodiversité 2030,,,,"Atténuation, Adaptation, Biodiversité",true,true,false,false,false,true
 Renouvellement forestier,Adaptation forêts,Préserver / Redonner à la forêt sa capacité de stockage de carbone,true,,,"SNB2030 : planter un milliard d'arbre d'ici 2032
-SNBC3 : x kha renouvelés par des financements publics","Stratégie nationale biodiversité 2030, 3e stratégie nationale bas-carbone (provisoire)",,,,"Atténuation, Adaptation, Biodiversité",true,true,false,false,false,true
+SNBC3 : x kha renouvelés par des financements publics","Stratégie nationale biodiversité 2030, 3e stratégie nationale bas-carbone",,,,"Atténuation, Adaptation, Biodiversité",true,true,false,false,false,true
 Accroissement des surfaces forestières,Surface forêts,Préserver / Redonner à la forêt sa capacité de stockage de carbone,true,"un seul levier ""gestion des forêts""","Augmenter le rythme annuel de boisement hors forêt de 100 ha/an en 2021 à 20 000 ha/an en 2030, et ce jusqu’en 2039. Celui-ci baisse ensuite jusqu’à 15 000 ha/an en 2050.","SNBC
   3
     le rythme annuel de boisement hors forêt augmente de 100 ha/an en 2021 à 20
   000 ha/an en 2030, et ce jusqu’en 2039. Celui-ci baisse ensuite jusqu’à 15
   000 ha/an en 2050. 
     Les émissions liées au déboisement passent de 16 Mt CO2e/an aujourd’hui à 7
-  Mt CO2e/an en 2030 et 3 Mt CO2e/an en 2050. ",3e stratégie nationale bas-carbone (provisoire),,,,"Atténuation, Biodiversité",true,false,false,false,false,true
-Développement des produits bois,Produits bois,Préserver / Redonner à la forêt sa capacité de stockage de carbone,true,,"Augmentation de la récolte de bois à vocation énergétique, de 21,7 Mm3 en 2020 à 26,2 Mm3 en 2030 (+19 %), puis baisse à 22,1 Mm3 en 2040 (+37 %) et 18 Mm3 en 2050 (+ 54 %)","SNBC 3 - hypothèses AMS, Evolution de la récolte (Mm3)",3e stratégie nationale bas-carbone (provisoire),,,,Atténuation,true,false,false,false,false,false
+  Mt CO2e/an en 2030 et 3 Mt CO2e/an en 2050. ",3e stratégie nationale bas-carbone,,,,"Atténuation, Biodiversité",true,false,false,false,false,true
+Développement des produits bois,Produits bois,Préserver / Redonner à la forêt sa capacité de stockage de carbone,true,,"Augmentation de la récolte de bois à vocation énergétique, de 21,7 Mm3 en 2020 à 26,2 Mm3 en 2030 (+19 %), puis baisse à 22,1 Mm3 en 2040 (+37 %) et 18 Mm3 en 2050 (+ 54 %)","SNBC 3 - hypothèses AMS, Evolution de la récolte (Mm3)",3e stratégie nationale bas-carbone,,,,Atténuation,true,false,false,false,false,false
 Réduction des prélèvements d'eau de l'industrie de l'énergie,Eau énergie,Préserver / Réduire les prélèvements d'eau douce,false,,"Baisse de 12,6 % des prélèvements des 55 sites les plus consommateurs à horizon 2030",Plan Eau : 55 sites industriels engagés pour une sobriété hydrique,Plan d’action pour une gestion résiliente et concertée de l’eau,,,,"Adaptation, Eau, Biodiversité",false,true,true,false,false,true
 Maîtrise des besoins d'irrigation,Eau agriculture,Préserver / Réduire les prélèvements d'eau douce,true,,,Hypothèses techniques du plan eau 2023 : Stabilité des prélèvements pour l'irrigation entre la moyenne 2018-2020 et 2030,Plan d’action pour une gestion résiliente et concertée de l’eau,,,,"Adaptation, Eau",false,true,true,false,false,false
 Déploiement des solutions d'économie d'eau dans le résidentiel et le tertiaire,Eau résident. et tert.,Préserver / Réduire les prélèvements d'eau douce,false,"""sobriété eau""",,,,,,,"Adaptation, Eau",false,true,true,false,false,false
