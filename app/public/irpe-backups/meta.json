@@ -4702,6 +4702,98 @@
       "nestedFolders": []
     },
     {
+      "name": "emplois_filiere_bois_dpt",
+      "type": "cube",
+      "title": "Emplois Filiere Bois Dpt",
+      "isVisible": true,
+      "public": true,
+      "description": "nombre d’emplois (en équivalent temps plein) de la filière bois par département, provenant de l’Insee Première n°2035 « En 2021, un tiers des salariés de la filière bois travaillent dans les industries du papier et du carton »",
+      "meta": {
+        "responsable_calcul": "INSEE - INSTITUT NATIONAL DE LA STATISTIQUE ET DES ETUDES ECONOMIQUES"
+      },
+      "measures": [
+        {
+          "name": "emplois_filiere_bois_dpt.id_369",
+          "title": "Emplois Filiere Bois Dpt Id369",
+          "shortTitle": "Id369",
+          "cumulativeTotal": false,
+          "cumulative": false,
+          "type": "number",
+          "aggType": "sum",
+          "drillMembers": [],
+          "drillMembersGrouped": {
+            "measures": [],
+            "dimensions": []
+          },
+          "meta": {
+            "libelle_indicateur": "Emplois de la filière bois",
+            "statut_commun": "Mesure",
+            "unite": "nb",
+            "methode_calcul": "Nombre de salariés en équivalent temps plein (ETP) de la filière bois par département, source Insee Flores 2021 (Insee Première n°2035, janvier 2025). Champ : établissements marchands, actifs et hors particuliers employeurs, France hors Mayotte. Agrégeable au niveau région en sommant les départements qui la composent.",
+            "publish": false
+          },
+          "isVisible": true,
+          "public": true
+        }
+      ],
+      "dimensions": [
+        {
+          "name": "emplois_filiere_bois_dpt.date_mesure",
+          "title": "Emplois Filiere Bois Dpt Date Mesure",
+          "type": "time",
+          "shortTitle": "Date Mesure",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "emplois_filiere_bois_dpt.geocode_departement",
+          "title": "Emplois Filiere Bois Dpt Geocode Departement",
+          "type": "string",
+          "shortTitle": "Geocode Departement",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "emplois_filiere_bois_dpt.libelle_departement",
+          "title": "Emplois Filiere Bois Dpt Libelle Departement",
+          "type": "string",
+          "shortTitle": "Libelle Departement",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "emplois_filiere_bois_dpt.geocode_region",
+          "title": "Emplois Filiere Bois Dpt Geocode Region",
+          "type": "string",
+          "shortTitle": "Geocode Region",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "emplois_filiere_bois_dpt.libelle_region",
+          "title": "Emplois Filiere Bois Dpt Libelle Region",
+          "type": "string",
+          "shortTitle": "Libelle Region",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        }
+      ],
+      "segments": [],
+      "hierarchies": [],
+      "folders": [],
+      "nestedFolders": []
+    },
+    {
       "name": "espaces_proteges_cdl_dpt",
       "type": "cube",
       "title": "Espaces Proteges Cdl Dpt",
@@ -4792,6 +4884,113 @@
           "title": "Espaces Proteges Cdl Dpt Annee",
           "type": "number",
           "shortTitle": "Annee",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        }
+      ],
+      "segments": [],
+      "hierarchies": [],
+      "folders": [],
+      "nestedFolders": []
+    },
+    {
+      "name": "especes_envahissantes_dpt",
+      "type": "cube",
+      "title": "Especes Envahissantes Dpt",
+      "isVisible": true,
+      "public": true,
+      "description": "Part de la superficie forestière avec observation d'au moins une espèce envahissante par département, provenant des données de l'inventaire forestier de l'IGN fournies dans le service InventIF de l'Observatoire des Forêts Françaises",
+      "meta": {
+        "responsable_calcul": "Institut national de l’information géographique et forestière - IGN"
+      },
+      "measures": [
+        {
+          "name": "especes_envahissantes_dpt.id_1229",
+          "title": "Especes Envahissantes Dpt Id1229",
+          "shortTitle": "Id1229",
+          "cumulativeTotal": false,
+          "cumulative": false,
+          "type": "number",
+          "aggType": "sum",
+          "drillMembers": [],
+          "drillMembersGrouped": {
+            "measures": [],
+            "dimensions": []
+          },
+          "meta": {
+            "libelle_indicateur": "Part de superficie forestière avec observation d'une espèce envahissante",
+            "statut_commun": "Mesure",
+            "unite": "%",
+            "methode_calcul": "Les données brutes proviennent d'une enquête IGN qui s'effectue sur une période de 10 ans, la période 2005-2014 s'est vue attributer la date de 2014 et la période 2015-2024 la date de 2024.",
+            "summable": false,
+            "publish": false
+          },
+          "isVisible": true,
+          "public": true
+        },
+        {
+          "name": "especes_envahissantes_dpt.intervalle_confiance",
+          "title": "Especes Envahissantes Dpt Intervalle Confiance",
+          "shortTitle": "Intervalle Confiance",
+          "cumulativeTotal": false,
+          "cumulative": false,
+          "type": "number",
+          "aggType": "max",
+          "drillMembers": [],
+          "drillMembersGrouped": {
+            "measures": [],
+            "dimensions": []
+          },
+          "meta": {
+            "libelle_indicateur": "Intervalle de confiance",
+            "statut_commun": "Extra",
+            "unite": "ha",
+            "methode_calcul": "L'intervalle de confiance a été récupéré en utilisant la colonne ic_[milliers_d_ha], converti en ha.",
+            "summable": false,
+            "publish": false
+          },
+          "isVisible": true,
+          "public": true
+        }
+      ],
+      "dimensions": [
+        {
+          "name": "especes_envahissantes_dpt.date_mesure",
+          "title": "Especes Envahissantes Dpt Date Mesure",
+          "type": "time",
+          "shortTitle": "Date Mesure",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "especes_envahissantes_dpt.annee",
+          "title": "Especes Envahissantes Dpt Annee",
+          "type": "number",
+          "shortTitle": "Annee",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "especes_envahissantes_dpt.geocode_departement",
+          "title": "Especes Envahissantes Dpt Geocode Departement",
+          "type": "string",
+          "shortTitle": "Geocode Departement",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "especes_envahissantes_dpt.libelle_departement",
+          "title": "Especes Envahissantes Dpt Libelle Departement",
+          "type": "string",
+          "shortTitle": "Libelle Departement",
           "suggestFilterValues": true,
           "isVisible": true,
           "public": true,
@@ -10751,6 +10950,188 @@
         {
           "name": "macantine_region.annee",
           "title": "Macantine Region Annee",
+          "type": "number",
+          "shortTitle": "Annee",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        }
+      ],
+      "segments": [],
+      "hierarchies": [],
+      "folders": [],
+      "nestedFolders": []
+    },
+    {
+      "name": "menages_en_precarite_energetique_com",
+      "type": "cube",
+      "title": "Menages En Precarite Energetique Com",
+      "isVisible": true,
+      "public": true,
+      "description": "Nombre de ménages en précarité énergétique logement par niveau de vie",
+      "meta": {
+        "responsable_calcul": "INSEE - INSTITUT NATIONAL DE LA STATISTIQUE ET DES ETUDES ECONOMIQUES"
+      },
+      "measures": [
+        {
+          "name": "menages_en_precarite_energetique_com.id_263",
+          "title": "Menages En Precarite Energetique Com Id263",
+          "shortTitle": "Id263",
+          "cumulativeTotal": false,
+          "cumulative": false,
+          "type": "number",
+          "aggType": "sum",
+          "drillMembers": [],
+          "drillMembersGrouped": {
+            "measures": [],
+            "dimensions": []
+          },
+          "meta": {
+            "libelle_indicateur": "Nombre de ménages en précarité énergétique logement par niveau de vie",
+            "statut_commun": "Mesure",
+            "unite": "nb",
+            "methode_calcul": "Par définition un ménage en précarité énergétique est un ménage faisant partie\n des trois premier décile de revenus par unité de consommation et consacrant \n au moins 8% de ses revenus aux dépenses d'énergie de son logement. \n Le calcul de l'indicateur se fait en filtrant les données de l'enquête \n logement (INSEE). La notion de 'par niveau de vie fait référence à la méthode de \n calcul via les UC et non à un axe de projection.\n",
+            "publish": false
+          },
+          "isVisible": true,
+          "public": true
+        }
+      ],
+      "dimensions": [
+        {
+          "name": "menages_en_precarite_energetique_com.geocode_commune",
+          "title": "Menages En Precarite Energetique Com Geocode Commune",
+          "type": "string",
+          "shortTitle": "Geocode Commune",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "menages_en_precarite_energetique_com.libelle_commune",
+          "title": "Menages En Precarite Energetique Com Libelle Commune",
+          "type": "string",
+          "shortTitle": "Libelle Commune",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "menages_en_precarite_energetique_com.geocode_epci",
+          "title": "Menages En Precarite Energetique Com Geocode Epci",
+          "type": "string",
+          "shortTitle": "Geocode Epci",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "menages_en_precarite_energetique_com.libelle_epci",
+          "title": "Menages En Precarite Energetique Com Libelle Epci",
+          "type": "string",
+          "shortTitle": "Libelle Epci",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "menages_en_precarite_energetique_com.geocode_departement",
+          "title": "Menages En Precarite Energetique Com Geocode Departement",
+          "type": "string",
+          "shortTitle": "Geocode Departement",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "menages_en_precarite_energetique_com.libelle_departement",
+          "title": "Menages En Precarite Energetique Com Libelle Departement",
+          "type": "string",
+          "shortTitle": "Libelle Departement",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "menages_en_precarite_energetique_com.geocode_region",
+          "title": "Menages En Precarite Energetique Com Geocode Region",
+          "type": "string",
+          "shortTitle": "Geocode Region",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "menages_en_precarite_energetique_com.libelle_region",
+          "title": "Menages En Precarite Energetique Com Libelle Region",
+          "type": "string",
+          "shortTitle": "Libelle Region",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "menages_en_precarite_energetique_com.geocode_crte",
+          "title": "Menages En Precarite Energetique Com Geocode Crte",
+          "type": "string",
+          "shortTitle": "Geocode Crte",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "menages_en_precarite_energetique_com.libelle_crte",
+          "title": "Menages En Precarite Energetique Com Libelle Crte",
+          "type": "string",
+          "shortTitle": "Libelle Crte",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "menages_en_precarite_energetique_com.geocode_ept",
+          "title": "Menages En Precarite Energetique Com Geocode Ept",
+          "type": "string",
+          "shortTitle": "Geocode Ept",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "menages_en_precarite_energetique_com.libelle_ept",
+          "title": "Menages En Precarite Energetique Com Libelle Ept",
+          "type": "string",
+          "shortTitle": "Libelle Ept",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "menages_en_precarite_energetique_com.date_mesure",
+          "title": "Menages En Precarite Energetique Com Date Mesure",
+          "type": "time",
+          "shortTitle": "Date Mesure",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "menages_en_precarite_energetique_com.annee",
+          "title": "Menages En Precarite Energetique Com Annee",
           "type": "number",
           "shortTitle": "Annee",
           "suggestFilterValues": true,
