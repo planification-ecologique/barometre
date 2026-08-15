@@ -4794,6 +4794,78 @@
       "nestedFolders": []
     },
     {
+      "name": "emplois_filiere_bois_region",
+      "type": "cube",
+      "title": "Emplois Filiere Bois Region",
+      "isVisible": true,
+      "public": true,
+      "description": "nombre d’emplois (en équivalent temps plein) de la filière bois par région, provenant de l’Insee Première n°2035 « En 2021, un tiers des salariés de la filière bois travaillent dans les industries du papier et du carton »",
+      "meta": {
+        "responsable_calcul": "INSEE - INSTITUT NATIONAL DE LA STATISTIQUE ET DES ETUDES ECONOMIQUES"
+      },
+      "measures": [
+        {
+          "name": "emplois_filiere_bois_region.id_369",
+          "title": "Emplois Filiere Bois Region Id369",
+          "shortTitle": "Id369",
+          "cumulativeTotal": false,
+          "cumulative": false,
+          "type": "number",
+          "aggType": "sum",
+          "drillMembers": [],
+          "drillMembersGrouped": {
+            "measures": [],
+            "dimensions": []
+          },
+          "meta": {
+            "libelle_indicateur": "Emplois de la filière bois",
+            "statut_commun": "Mesure",
+            "unite": "nb",
+            "methode_calcul": "Nombre de salariés en équivalent temps plein (ETP) de la filière bois par région, agrégée par somme des départements qui la composent, source Insee Flores 2021 (Insee Première n°2035, janvier 2025). Champ : établissements marchands, actifs et hors particuliers employeurs, France hors Mayotte.",
+            "publish": false
+          },
+          "isVisible": true,
+          "public": true
+        }
+      ],
+      "dimensions": [
+        {
+          "name": "emplois_filiere_bois_region.date_mesure",
+          "title": "Emplois Filiere Bois Region Date Mesure",
+          "type": "time",
+          "shortTitle": "Date Mesure",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "emplois_filiere_bois_region.geocode_region",
+          "title": "Emplois Filiere Bois Region Geocode Region",
+          "type": "string",
+          "shortTitle": "Geocode Region",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "emplois_filiere_bois_region.libelle_region",
+          "title": "Emplois Filiere Bois Region Libelle Region",
+          "type": "string",
+          "shortTitle": "Libelle Region",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        }
+      ],
+      "segments": [],
+      "hierarchies": [],
+      "folders": [],
+      "nestedFolders": []
+    },
+    {
       "name": "espaces_proteges_cdl_dpt",
       "type": "cube",
       "title": "Espaces Proteges Cdl Dpt",
@@ -4822,7 +4894,8 @@
             "libelle_indicateur": "Surface cumulée protégée par le Conservatoire du littoral",
             "statut_commun": "Mesure",
             "unite": "ha",
-            "methode_calcul": "Somme cumulée, par département, de la surface cadastrale des parcelles acquises par le Conservatoire du littoral depuis la première prise en charge dans le département jusqu'à l'année considérée."
+            "methode_calcul": "Somme cumulée, par département, de la surface cadastrale des parcelles acquises par le Conservatoire du littoral depuis la première prise en charge dans le département jusqu'à l'année considérée.",
+            "publish": false
           },
           "isVisible": true,
           "public": true
@@ -10991,7 +11064,7 @@
             "libelle_indicateur": "Nombre de ménages en précarité énergétique logement par niveau de vie",
             "statut_commun": "Mesure",
             "unite": "nb",
-            "methode_calcul": "Par définition un ménage en précarité énergétique est un ménage faisant partie\n des trois premier décile de revenus par unité de consommation et consacrant \n au moins 8% de ses revenus aux dépenses d'énergie de son logement. \n Le calcul de l'indicateur se fait en filtrant les données de l'enquête \n logement (INSEE). La notion de 'par niveau de vie fait référence à la méthode de \n calcul via les UC et non à un axe de projection.\n",
+            "methode_calcul": "Par définition un ménage en précarité énergétique est un ménage faisant partie des trois premier décile de revenus par unité de consommation et consacrant au moins 8% de ses revenus aux dépenses d'énergie de son logement.  Le calcul de l'indicateur se fait en filtrant les données de l'enquête logement (INSEE). La notion de 'par niveau de vie fait référence à la méthode de calcul via les UC et non à un axe de projection.\n",
             "publish": false
           },
           "isVisible": true,
@@ -21416,7 +21489,8 @@
       "public": true,
       "description": "Cet indicateur représente le nombre de personnes vivant seules dans la population totale et le nombre de personnes agées vivant seules par commune",
       "meta": {
-        "responsable_calcul": "INSEE - INSTITUT NATIONAL DE LA STATISTIQUE ET DES ETUDES ECONOMIQUES"
+        "responsable_calcul": "INSEE - INSTITUT NATIONAL DE LA STATISTIQUE ET DES ETUDES ECONOMIQUES",
+        "publish": false
       },
       "measures": [
         {
@@ -21436,7 +21510,8 @@
             "libelle_indicateur": "Nombre de personnes vivant seules dans la population totale et le nombre de personnes agées vivant seules par commune",
             "statut_commun": "Mesure",
             "unite": "nb",
-            "methode_calcul": "Somme sur toutes les tranches d'âge lorsque uniquement_agee=toute_population, et seulement sur les >=65 ans dans le cas uniquement_agee=personnes_agees"
+            "methode_calcul": "Somme sur toutes les tranches d'âge lorsque uniquement_agee=toute_population, et seulement sur les >=65 ans dans le cas uniquement_agee=personnes_agees",
+            "publish": false
           },
           "isVisible": true,
           "public": true
