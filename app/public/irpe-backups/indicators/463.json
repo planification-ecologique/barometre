@@ -761,10 +761,10 @@
       "parc_poids_lourd_e_com.date_mesure": "2024-01-01T00:00:00.000"
     },
     {
-      "parc_poids_lourd_e_com.libelle_region": "Hauts-de-France",
-      "parc_poids_lourd_e_com.geocode_region": "32",
+      "parc_poids_lourd_e_com.libelle_region": "Mayotte",
+      "parc_poids_lourd_e_com.geocode_region": "06",
       "parc_poids_lourd_e_com.date_mesure.year": "2025-01-01T00:00:00.000",
-      "parc_poids_lourd_e_com.id_463": 0.39363674810501315,
+      "parc_poids_lourd_e_com.id_463": 0,
       "parc_poids_lourd_e_com.date_mesure": "2025-01-01T00:00:00.000"
     },
     {
@@ -880,10 +880,10 @@
       "parc_poids_lourd_e_com.date_mesure": "2025-01-01T00:00:00.000"
     },
     {
-      "parc_poids_lourd_e_com.libelle_region": "Mayotte",
-      "parc_poids_lourd_e_com.geocode_region": "06",
+      "parc_poids_lourd_e_com.libelle_region": "Hauts-de-France",
+      "parc_poids_lourd_e_com.geocode_region": "32",
       "parc_poids_lourd_e_com.date_mesure.year": "2025-01-01T00:00:00.000",
-      "parc_poids_lourd_e_com.id_463": 0,
+      "parc_poids_lourd_e_com.id_463": 0.39363674810501315,
       "parc_poids_lourd_e_com.date_mesure": "2025-01-01T00:00:00.000"
     }
   ],

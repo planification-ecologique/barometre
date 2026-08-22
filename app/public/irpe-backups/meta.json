@@ -40,8 +40,8 @@
           "shortTitle": "Significativite",
           "cumulativeTotal": false,
           "cumulative": false,
-          "type": "number",
-          "aggType": "max",
+          "type": "boolean",
+          "aggType": "boolean",
           "drillMembers": [],
           "drillMembersGrouped": {
             "measures": [],
@@ -143,8 +143,8 @@
           "shortTitle": "Significativite",
           "cumulativeTotal": false,
           "cumulative": false,
-          "type": "number",
-          "aggType": "max",
+          "type": "boolean",
+          "aggType": "boolean",
           "drillMembers": [],
           "drillMembersGrouped": {
             "measures": [],
@@ -5115,8 +5115,8 @@
           "shortTitle": "Significativite",
           "cumulativeTotal": false,
           "cumulative": false,
-          "type": "number",
-          "aggType": "max",
+          "type": "boolean",
+          "aggType": "boolean",
           "drillMembers": [],
           "drillMembersGrouped": {
             "measures": [],
@@ -5218,8 +5218,8 @@
           "shortTitle": "Significativite",
           "cumulativeTotal": false,
           "cumulative": false,
-          "type": "number",
-          "aggType": "max",
+          "type": "boolean",
+          "aggType": "boolean",
           "drillMembers": [],
           "drillMembersGrouped": {
             "measures": [],
@@ -6184,8 +6184,8 @@
           "shortTitle": "Significativite",
           "cumulativeTotal": false,
           "cumulative": false,
-          "type": "number",
-          "aggType": "max",
+          "type": "boolean",
+          "aggType": "boolean",
           "drillMembers": [],
           "drillMembersGrouped": {
             "measures": [],
@@ -6297,8 +6297,8 @@
           "shortTitle": "Significativite",
           "cumulativeTotal": false,
           "cumulative": false,
-          "type": "number",
-          "aggType": "max",
+          "type": "boolean",
+          "aggType": "boolean",
           "drillMembers": [],
           "drillMembersGrouped": {
             "measures": [],
@@ -15733,6 +15733,199 @@
       "nestedFolders": []
     },
     {
+      "name": "qualite_sites_baignade_com",
+      "type": "cube",
+      "title": "Qualite Sites Baignade Com",
+      "isVisible": true,
+      "public": true,
+      "description": "Qualité des eaux des sites de baignade, 5 niveaux de qualité, nombre de sites par maille géographique.",
+      "meta": {
+        "responsable_calcul": "Hub Indicateurs Territoriaux - CGDD",
+        "publish": false
+      },
+      "measures": [
+        {
+          "name": "qualite_sites_baignade_com.id_1254",
+          "title": "Qualite Sites Baignade Com Id1254",
+          "shortTitle": "Id1254",
+          "cumulativeTotal": false,
+          "cumulative": false,
+          "type": "number",
+          "aggType": "sum",
+          "drillMembers": [],
+          "drillMembersGrouped": {
+            "measures": [],
+            "dimensions": []
+          },
+          "meta": {
+            "libelle_indicateur": "Nombre de sites de baignade par qualité",
+            "statut_commun": "Mesure",
+            "unite": "nb",
+            "methode_calcul": "Pour chaque commune, les sites de baignade issus de la source data.gouv.fr sont regroupés par niveau de qualité des eaux de baignade (code_geographique, qualite), et l'indicateur correspond au nombre de sites comptabilisés dans chaque groupe (COUNT(*)).\n \n Le jeu de données étant un instantané (snapshot) sans historique, une date de mesure fixe (01/01/2026) est appliquée à l'ensemble des lignes.\n \n Les libellés et codes des mailles géographiques supra-communales (EPCI, département, région, CRTE, EPT) sont ajoutés par jointure avec le référentiel géographique à partir du code commune.",
+            "publish": false
+          },
+          "isVisible": true,
+          "public": true
+        }
+      ],
+      "dimensions": [
+        {
+          "name": "qualite_sites_baignade_com.geocode_commune",
+          "title": "Qualite Sites Baignade Com Geocode Commune",
+          "type": "string",
+          "shortTitle": "Geocode Commune",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "qualite_sites_baignade_com.libelle_commune",
+          "title": "Qualite Sites Baignade Com Libelle Commune",
+          "type": "string",
+          "shortTitle": "Libelle Commune",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "qualite_sites_baignade_com.geocode_epci",
+          "title": "Qualite Sites Baignade Com Geocode Epci",
+          "type": "string",
+          "shortTitle": "Geocode Epci",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "qualite_sites_baignade_com.libelle_epci",
+          "title": "Qualite Sites Baignade Com Libelle Epci",
+          "type": "string",
+          "shortTitle": "Libelle Epci",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "qualite_sites_baignade_com.geocode_departement",
+          "title": "Qualite Sites Baignade Com Geocode Departement",
+          "type": "string",
+          "shortTitle": "Geocode Departement",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "qualite_sites_baignade_com.libelle_departement",
+          "title": "Qualite Sites Baignade Com Libelle Departement",
+          "type": "string",
+          "shortTitle": "Libelle Departement",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "qualite_sites_baignade_com.geocode_region",
+          "title": "Qualite Sites Baignade Com Geocode Region",
+          "type": "string",
+          "shortTitle": "Geocode Region",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "qualite_sites_baignade_com.libelle_region",
+          "title": "Qualite Sites Baignade Com Libelle Region",
+          "type": "string",
+          "shortTitle": "Libelle Region",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "qualite_sites_baignade_com.geocode_crte",
+          "title": "Qualite Sites Baignade Com Geocode Crte",
+          "type": "string",
+          "shortTitle": "Geocode Crte",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "qualite_sites_baignade_com.libelle_crte",
+          "title": "Qualite Sites Baignade Com Libelle Crte",
+          "type": "string",
+          "shortTitle": "Libelle Crte",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "qualite_sites_baignade_com.geocode_ept",
+          "title": "Qualite Sites Baignade Com Geocode Ept",
+          "type": "string",
+          "shortTitle": "Geocode Ept",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "qualite_sites_baignade_com.libelle_ept",
+          "title": "Qualite Sites Baignade Com Libelle Ept",
+          "type": "string",
+          "shortTitle": "Libelle Ept",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "qualite_sites_baignade_com.date_mesure",
+          "title": "Qualite Sites Baignade Com Date Mesure",
+          "type": "time",
+          "shortTitle": "Date Mesure",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "qualite_sites_baignade_com.annee",
+          "title": "Qualite Sites Baignade Com Annee",
+          "type": "number",
+          "shortTitle": "Annee",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "qualite_sites_baignade_com.niveau_qualite_eau_baignade",
+          "title": "Qualite Sites Baignade Com Niveau Qualite Eau Baignade",
+          "type": "string",
+          "shortTitle": "Niveau Qualite Eau Baignade",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        }
+      ],
+      "segments": [],
+      "hierarchies": [],
+      "folders": [],
+      "nestedFolders": []
+    },
+    {
       "name": "recensement_agricole_com",
       "type": "cube",
       "title": "Recensement Agricole Com",
@@ -15902,6 +16095,118 @@
           "title": "Recensement Agricole Com Annee",
           "type": "number",
           "shortTitle": "Annee",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        }
+      ],
+      "segments": [],
+      "hierarchies": [],
+      "folders": [],
+      "nestedFolders": []
+    },
+    {
+      "name": "recolte_bois_dpt",
+      "type": "cube",
+      "title": "Recolte Bois Dpt",
+      "isVisible": true,
+      "public": true,
+      "description": "Volume de bois récolté en France. Provient des données de l'enquête scierie de l'Agreste (EXSFRI). La modalité de débouché 'grumes' a été renommée 'bois_oeuvre'.",
+      "meta": {
+        "responsable_calcul": "Hub Indicateurs Territoriaux - CGDD"
+      },
+      "measures": [
+        {
+          "name": "recolte_bois_dpt.id_1218",
+          "title": "Recolte Bois Dpt Id1218",
+          "shortTitle": "Id1218",
+          "cumulativeTotal": false,
+          "cumulative": false,
+          "type": "number",
+          "aggType": "sum",
+          "drillMembers": [],
+          "drillMembersGrouped": {
+            "measures": [],
+            "dimensions": []
+          },
+          "meta": {
+            "libelle_indicateur": "Volume de la récolte de bois par débouché et par mode de gestion de la forêt",
+            "statut_commun": "Mesure",
+            "unite": "millier de m3",
+            "methode_calcul": "Reprise des données sur l'enquête sur l'activité des scieries (EXSFRI), seules les modalités 'Tout mode de gestion' et 'Certifié gestion durable' sont conservé ainsi que les trois débouchés principaux. La modalité de débouché 'grumes' a été renommée 'bois_oeuvre'.",
+            "publish": false
+          },
+          "isVisible": true,
+          "public": true
+        }
+      ],
+      "dimensions": [
+        {
+          "name": "recolte_bois_dpt.date_mesure",
+          "title": "Recolte Bois Dpt Date Mesure",
+          "type": "time",
+          "shortTitle": "Date Mesure",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "recolte_bois_dpt.geocode_departement",
+          "title": "Recolte Bois Dpt Geocode Departement",
+          "type": "string",
+          "shortTitle": "Geocode Departement",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "recolte_bois_dpt.libelle_departement",
+          "title": "Recolte Bois Dpt Libelle Departement",
+          "type": "string",
+          "shortTitle": "Libelle Departement",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "recolte_bois_dpt.geocode_region",
+          "title": "Recolte Bois Dpt Geocode Region",
+          "type": "string",
+          "shortTitle": "Geocode Region",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "recolte_bois_dpt.libelle_region",
+          "title": "Recolte Bois Dpt Libelle Region",
+          "type": "string",
+          "shortTitle": "Libelle Region",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "recolte_bois_dpt.mode_gestion_foret",
+          "title": "Recolte Bois Dpt Mode Gestion Foret",
+          "type": "string",
+          "shortTitle": "Mode Gestion Foret",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "recolte_bois_dpt.debouche_bois",
+          "title": "Recolte Bois Dpt Debouche Bois",
+          "type": "string",
+          "shortTitle": "Debouche Bois",
           "suggestFilterValues": true,
           "isVisible": true,
           "public": true,
@@ -17453,8 +17758,8 @@
           "shortTitle": "Significativite",
           "cumulativeTotal": false,
           "cumulative": false,
-          "type": "number",
-          "aggType": "max",
+          "type": "boolean",
+          "aggType": "boolean",
           "drillMembers": [],
           "drillMembersGrouped": {
             "measures": [],
@@ -17556,8 +17861,8 @@
           "shortTitle": "Significativite",
           "cumulativeTotal": false,
           "cumulative": false,
-          "type": "number",
-          "aggType": "max",
+          "type": "boolean",
+          "aggType": "boolean",
           "drillMembers": [],
           "drillMembersGrouped": {
             "measures": [],
@@ -17608,6 +17913,208 @@
           "title": "Richesse Especes Region Nb Especes Arbres",
           "type": "string",
           "shortTitle": "Nb Especes Arbres",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        }
+      ],
+      "segments": [],
+      "hierarchies": [],
+      "folders": [],
+      "nestedFolders": []
+    },
+    {
+      "name": "saturnime_incidents_dpt",
+      "type": "cube",
+      "title": "Saturnime Incidents Dpt",
+      "isVisible": true,
+      "public": true,
+      "meta": {
+        "responsable_calcul": "SANTE PUBLIQUE FRANCE"
+      },
+      "measures": [
+        {
+          "name": "saturnime_incidents_dpt.id_1257",
+          "title": "Saturnime Incidents Dpt Id1257",
+          "shortTitle": "Id1257",
+          "cumulativeTotal": false,
+          "cumulative": false,
+          "type": "number",
+          "aggType": "sum",
+          "drillMembers": [],
+          "drillMembersGrouped": {
+            "measures": [],
+            "dimensions": []
+          },
+          "meta": {
+            "libelle_indicateur": "Nombre de cas incidents de saturnisme ches les 0-17 ans",
+            "statut_commun": "Mesure",
+            "unite": "nb",
+            "methode_calcul": "L'indicateur est calculé par Santé Publique France, un cas incidents correspond à un nouveau cas de saturnisme dans l'année. Un cas de saturnisme correspond à une plombémie dans le sang supérieur à un certain seuil : 100ug jusqu'au 17 juin 2015 et 50up depuis cette date.",
+            "publish": false
+          },
+          "isVisible": true,
+          "public": true
+        }
+      ],
+      "dimensions": [
+        {
+          "name": "saturnime_incidents_dpt.date_mesure",
+          "title": "Saturnime Incidents Dpt Date Mesure",
+          "type": "time",
+          "shortTitle": "Date Mesure",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "saturnime_incidents_dpt.annee",
+          "title": "Saturnime Incidents Dpt Annee",
+          "type": "number",
+          "shortTitle": "Annee",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "saturnime_incidents_dpt.geocode_departement",
+          "title": "Saturnime Incidents Dpt Geocode Departement",
+          "type": "string",
+          "shortTitle": "Geocode Departement",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "saturnime_incidents_dpt.libelle_departement",
+          "title": "Saturnime Incidents Dpt Libelle Departement",
+          "type": "string",
+          "shortTitle": "Libelle Departement",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "saturnime_incidents_dpt.geocode_region",
+          "title": "Saturnime Incidents Dpt Geocode Region",
+          "type": "string",
+          "shortTitle": "Geocode Region",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "saturnime_incidents_dpt.libelle_region",
+          "title": "Saturnime Incidents Dpt Libelle Region",
+          "type": "string",
+          "shortTitle": "Libelle Region",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        }
+      ],
+      "segments": [],
+      "hierarchies": [],
+      "folders": [],
+      "nestedFolders": []
+    },
+    {
+      "name": "saturnime_prevalents_dpt",
+      "type": "cube",
+      "title": "Saturnime Prevalents Dpt",
+      "isVisible": true,
+      "public": true,
+      "meta": {
+        "responsable_calcul": "SANTE PUBLIQUE FRANCE"
+      },
+      "measures": [
+        {
+          "name": "saturnime_prevalents_dpt.id_1280",
+          "title": "Saturnime Prevalents Dpt Id1280",
+          "shortTitle": "Id1280",
+          "cumulativeTotal": false,
+          "cumulative": false,
+          "type": "number",
+          "aggType": "sum",
+          "drillMembers": [],
+          "drillMembersGrouped": {
+            "measures": [],
+            "dimensions": []
+          },
+          "meta": {
+            "libelle_indicateur": "Nombre de cas prevalents de saturnisme ches les 0-17 ans",
+            "statut_commun": "Mesure",
+            "unite": "nb",
+            "methode_calcul": "L'indicateur est calculé par Santé Publique France, un cas prevalents correspond à tous les enfants ayant une plombémie supérieur au seuil de diagnostic du saturnisme au cours d'une année, il comprend les cas incidents de l'année et les enfants encore positifs. Un cas de saturnisme correspond à une plombémie dans le sang supérieur à un certain seuil : 100ug jusqu'au 17 juin 2015 et 50up depuis cette date.",
+            "publish": false
+          },
+          "isVisible": true,
+          "public": true
+        }
+      ],
+      "dimensions": [
+        {
+          "name": "saturnime_prevalents_dpt.date_mesure",
+          "title": "Saturnime Prevalents Dpt Date Mesure",
+          "type": "time",
+          "shortTitle": "Date Mesure",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "saturnime_prevalents_dpt.annee",
+          "title": "Saturnime Prevalents Dpt Annee",
+          "type": "number",
+          "shortTitle": "Annee",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "saturnime_prevalents_dpt.geocode_departement",
+          "title": "Saturnime Prevalents Dpt Geocode Departement",
+          "type": "string",
+          "shortTitle": "Geocode Departement",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "saturnime_prevalents_dpt.libelle_departement",
+          "title": "Saturnime Prevalents Dpt Libelle Departement",
+          "type": "string",
+          "shortTitle": "Libelle Departement",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "saturnime_prevalents_dpt.geocode_region",
+          "title": "Saturnime Prevalents Dpt Geocode Region",
+          "type": "string",
+          "shortTitle": "Geocode Region",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "saturnime_prevalents_dpt.libelle_region",
+          "title": "Saturnime Prevalents Dpt Libelle Region",
+          "type": "string",
+          "shortTitle": "Libelle Region",
           "suggestFilterValues": true,
           "isVisible": true,
           "public": true,
@@ -18654,8 +19161,8 @@
           "shortTitle": "Significativite",
           "cumulativeTotal": false,
           "cumulative": false,
-          "type": "number",
-          "aggType": "max",
+          "type": "boolean",
+          "aggType": "boolean",
           "drillMembers": [],
           "drillMembersGrouped": {
             "measures": [],
@@ -18757,8 +19264,8 @@
           "shortTitle": "Significativite",
           "cumulativeTotal": false,
           "cumulative": false,
-          "type": "number",
-          "aggType": "max",
+          "type": "boolean",
+          "aggType": "boolean",
           "drillMembers": [],
           "drillMembersGrouped": {
             "measures": [],
@@ -18860,8 +19367,8 @@
           "shortTitle": "Significativite",
           "cumulativeTotal": false,
           "cumulative": false,
-          "type": "number",
-          "aggType": "max",
+          "type": "boolean",
+          "aggType": "boolean",
           "drillMembers": [],
           "drillMembersGrouped": {
             "measures": [],
@@ -18963,8 +19470,8 @@
           "shortTitle": "Significativite",
           "cumulativeTotal": false,
           "cumulative": false,
-          "type": "number",
-          "aggType": "max",
+          "type": "boolean",
+          "aggType": "boolean",
           "drillMembers": [],
           "drillMembersGrouped": {
             "measures": [],
@@ -19066,8 +19573,8 @@
           "shortTitle": "Significativite",
           "cumulativeTotal": false,
           "cumulative": false,
-          "type": "number",
-          "aggType": "max",
+          "type": "boolean",
+          "aggType": "boolean",
           "drillMembers": [],
           "drillMembersGrouped": {
             "measures": [],
@@ -19169,8 +19676,8 @@
           "shortTitle": "Significativite",
           "cumulativeTotal": false,
           "cumulative": false,
-          "type": "number",
-          "aggType": "max",
+          "type": "boolean",
+          "aggType": "boolean",
           "drillMembers": [],
           "drillMembersGrouped": {
             "measures": [],
@@ -20260,8 +20767,8 @@
           "shortTitle": "Significativite",
           "cumulativeTotal": false,
           "cumulative": false,
-          "type": "number",
-          "aggType": "max",
+          "type": "boolean",
+          "aggType": "boolean",
           "drillMembers": [],
           "drillMembersGrouped": {
             "measures": [],
@@ -20330,8 +20837,8 @@
           "shortTitle": "Significativite",
           "cumulativeTotal": false,
           "cumulative": false,
-          "type": "number",
-          "aggType": "max",
+          "type": "boolean",
+          "aggType": "boolean",
           "drillMembers": [],
           "drillMembersGrouped": {
             "measures": [],
@@ -20423,8 +20930,8 @@
           "shortTitle": "Significativite",
           "cumulativeTotal": false,
           "cumulative": false,
-          "type": "number",
-          "aggType": "max",
+          "type": "boolean",
+          "aggType": "boolean",
           "drillMembers": [],
           "drillMembersGrouped": {
             "measures": [],
@@ -20526,8 +21033,8 @@
           "shortTitle": "Significativite",
           "cumulativeTotal": false,
           "cumulative": false,
-          "type": "number",
-          "aggType": "max",
+          "type": "boolean",
+          "aggType": "boolean",
           "drillMembers": [],
           "drillMembersGrouped": {
             "measures": [],
@@ -21674,8 +22181,8 @@
           "shortTitle": "Significativite",
           "cumulativeTotal": false,
           "cumulative": false,
-          "type": "number",
-          "aggType": "max",
+          "type": "boolean",
+          "aggType": "boolean",
           "drillMembers": [],
           "drillMembersGrouped": {
             "measures": [],
@@ -21787,8 +22294,8 @@
           "shortTitle": "Significativite",
           "cumulativeTotal": false,
           "cumulative": false,
-          "type": "number",
-          "aggType": "max",
+          "type": "boolean",
+          "aggType": "boolean",
           "drillMembers": [],
           "drillMembersGrouped": {
             "measures": [],
