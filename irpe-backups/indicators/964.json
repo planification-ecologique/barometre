@@ -15,7 +15,7 @@
       "aires_protegees_dpt.libelle_region": "Grand Est",
       "aires_protegees_dpt.geocode_region": "44",
       "aires_protegees_dpt.date_mesure.year": "2024-01-01T00:00:00.000",
-      "aires_protegees_dpt.id_964": 1.1435132708280433,
+      "aires_protegees_dpt.id_964": 1.1435132708280435,
       "aires_protegees_dpt.date_mesure": "2024-01-01T00:00:00.000"
     },
     {
@@ -64,7 +64,7 @@
       "aires_protegees_dpt.libelle_region": "Nouvelle-Aquitaine",
       "aires_protegees_dpt.geocode_region": "75",
       "aires_protegees_dpt.date_mesure.year": "2024-01-01T00:00:00.000",
-      "aires_protegees_dpt.id_964": 0.5257526409463462,
+      "aires_protegees_dpt.id_964": 0.5257526409463461,
       "aires_protegees_dpt.date_mesure": "2024-01-01T00:00:00.000"
     },
     {
@@ -85,7 +85,7 @@
       "aires_protegees_dpt.libelle_region": "Bourgogne-Franche-Comté",
       "aires_protegees_dpt.geocode_region": "27",
       "aires_protegees_dpt.date_mesure.year": "2024-01-01T00:00:00.000",
-      "aires_protegees_dpt.id_964": 1.440397167397172,
+      "aires_protegees_dpt.id_964": 1.4403971673971725,
       "aires_protegees_dpt.date_mesure": "2024-01-01T00:00:00.000"
     },
     {
@@ -127,14 +127,14 @@
       "aires_protegees_dpt.libelle_region": "Auvergne-Rhône-Alpes",
       "aires_protegees_dpt.geocode_region": "84",
       "aires_protegees_dpt.date_mesure.year": "2024-01-01T00:00:00.000",
-      "aires_protegees_dpt.id_964": 3.087021529460696,
+      "aires_protegees_dpt.id_964": 3.0870215294606953,
       "aires_protegees_dpt.date_mesure": "2024-01-01T00:00:00.000"
     },
     {
       "aires_protegees_dpt.libelle_region": "Pays de la Loire",
       "aires_protegees_dpt.geocode_region": "52",
       "aires_protegees_dpt.date_mesure.year": "2024-01-01T00:00:00.000",
-      "aires_protegees_dpt.id_964": 0.28240611681740635,
+      "aires_protegees_dpt.id_964": 0.2824061168174064,
       "aires_protegees_dpt.date_mesure": "2024-01-01T00:00:00.000"
     }
   ],

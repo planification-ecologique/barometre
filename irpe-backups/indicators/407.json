@@ -61,17 +61,17 @@
       "recyclage_bouteilles_plastique_region.date_mesure": "2023-01-01T00:00:00.000"
     },
     {
-      "recyclage_bouteilles_plastique_region.libelle_region": "Martinique",
-      "recyclage_bouteilles_plastique_region.geocode_region": "02",
-      "recyclage_bouteilles_plastique_region.date_mesure.year": "2023-01-01T00:00:00.000",
-      "recyclage_bouteilles_plastique_region.id_407": 35.1,
-      "recyclage_bouteilles_plastique_region.date_mesure": "2023-01-01T00:00:00.000"
-    },
-    {
       "recyclage_bouteilles_plastique_region.libelle_region": "Occitanie",
       "recyclage_bouteilles_plastique_region.geocode_region": "76",
       "recyclage_bouteilles_plastique_region.date_mesure.year": "2023-01-01T00:00:00.000",
       "recyclage_bouteilles_plastique_region.id_407": 53.8,
+      "recyclage_bouteilles_plastique_region.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "recyclage_bouteilles_plastique_region.libelle_region": "Martinique",
+      "recyclage_bouteilles_plastique_region.geocode_region": "02",
+      "recyclage_bouteilles_plastique_region.date_mesure.year": "2023-01-01T00:00:00.000",
+      "recyclage_bouteilles_plastique_region.id_407": 35.1,
       "recyclage_bouteilles_plastique_region.date_mesure": "2023-01-01T00:00:00.000"
     },
     {
@@ -173,17 +173,17 @@
       "recyclage_bouteilles_plastique_region.date_mesure": "2024-01-01T00:00:00.000"
     },
     {
-      "recyclage_bouteilles_plastique_region.libelle_region": "Corse",
-      "recyclage_bouteilles_plastique_region.geocode_region": "94",
-      "recyclage_bouteilles_plastique_region.date_mesure.year": "2024-01-01T00:00:00.000",
-      "recyclage_bouteilles_plastique_region.id_407": 52,
-      "recyclage_bouteilles_plastique_region.date_mesure": "2024-01-01T00:00:00.000"
-    },
-    {
       "recyclage_bouteilles_plastique_region.libelle_region": "Grand Est",
       "recyclage_bouteilles_plastique_region.geocode_region": "44",
       "recyclage_bouteilles_plastique_region.date_mesure.year": "2024-01-01T00:00:00.000",
       "recyclage_bouteilles_plastique_region.id_407": 65.1,
+      "recyclage_bouteilles_plastique_region.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "recyclage_bouteilles_plastique_region.libelle_region": "Corse",
+      "recyclage_bouteilles_plastique_region.geocode_region": "94",
+      "recyclage_bouteilles_plastique_region.date_mesure.year": "2024-01-01T00:00:00.000",
+      "recyclage_bouteilles_plastique_region.id_407": 52,
       "recyclage_bouteilles_plastique_region.date_mesure": "2024-01-01T00:00:00.000"
     },
     {

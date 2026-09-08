@@ -12,6 +12,30 @@
       },
       "measures": [
         {
+          "name": "access_transport_bois_dpt.id_1236",
+          "title": "Access Transport Bois Dpt Id1236",
+          "shortTitle": "Id1236",
+          "cumulativeTotal": false,
+          "cumulative": false,
+          "type": "number",
+          "aggType": "sum",
+          "drillMembers": [],
+          "drillMembersGrouped": {
+            "measures": [],
+            "dimensions": []
+          },
+          "meta": {
+            "libelle_indicateur": "Volume de bois par niveau d'accessibilité physique pour le transport du bois",
+            "statut_commun": "Mesure",
+            "unite": "m3",
+            "methode_calcul": "Les données brutes ont été filtrées en utilisant la colonne label = Accessphy (conformément à documentation ign disponible en ligne). \n Afin de récupérer l'indicateur, nous avons utilisé la colonne tot_stand. \n Les autres informations statistiques (colonnes moy_ha_stand, ic_moy_ha_stand, ic_stand, pourc_stand) n'ont pas été prises en compte.",
+            "summable": false,
+            "is_beta": true
+          },
+          "isVisible": true,
+          "public": true
+        },
+        {
           "name": "access_transport_bois_dpt.intervalle_confiance",
           "title": "Access Transport Bois Dpt Intervalle Confiance",
           "shortTitle": "Intervalle Confiance",
@@ -29,6 +53,27 @@
             "statut_commun": "Extra",
             "unite": "ha",
             "methode_calcul": "L'intervalle de confiance a été récupéré en utilisant la colonne ic_stand",
+            "summable": false
+          },
+          "isVisible": true,
+          "public": true
+        },
+        {
+          "name": "access_transport_bois_dpt.significativite",
+          "title": "Access Transport Bois Dpt Significativite",
+          "shortTitle": "Significativite",
+          "cumulativeTotal": false,
+          "cumulative": false,
+          "type": "boolean",
+          "aggType": "boolean",
+          "drillMembers": [],
+          "drillMembersGrouped": {
+            "measures": [],
+            "dimensions": []
+          },
+          "meta": {
+            "libelle_indicateur": "Significativité",
+            "statut_commun": "Extra",
             "summable": false
           },
           "isVisible": true,
@@ -75,16 +120,6 @@
           "isVisible": true,
           "public": true,
           "primaryKey": false
-        },
-        {
-          "name": "access_transport_bois_dpt.significativite",
-          "title": "Access Transport Bois Dpt Significativite",
-          "type": "string",
-          "shortTitle": "Significativite",
-          "suggestFilterValues": true,
-          "isVisible": true,
-          "public": true,
-          "primaryKey": false
         }
       ],
       "segments": [],
@@ -104,6 +139,30 @@
       },
       "measures": [
         {
+          "name": "access_transport_bois_region.id_1236",
+          "title": "Access Transport Bois Region Id1236",
+          "shortTitle": "Id1236",
+          "cumulativeTotal": false,
+          "cumulative": false,
+          "type": "number",
+          "aggType": "sum",
+          "drillMembers": [],
+          "drillMembersGrouped": {
+            "measures": [],
+            "dimensions": []
+          },
+          "meta": {
+            "libelle_indicateur": "Volume de bois par niveau d'accessibilité physique pour le transport du bois",
+            "statut_commun": "Mesure",
+            "unite": "m3",
+            "methode_calcul": "Les données brutes ont été filtrées en utilisant la colonne label = Accessphy (conformément à documentation ign disponible en ligne). \n Afin de récupérer l'indicateur, nous avons utilisé la colonne tot_stand. \n Les autres informations statistiques (colonnes moy_ha_stand, ic_moy_ha_stand, ic_stand, pourc_stand) n'ont pas été prises en compte.",
+            "summable": false,
+            "is_beta": true
+          },
+          "isVisible": true,
+          "public": true
+        },
+        {
           "name": "access_transport_bois_region.intervalle_confiance",
           "title": "Access Transport Bois Region Intervalle Confiance",
           "shortTitle": "Intervalle Confiance",
@@ -121,6 +180,27 @@
             "statut_commun": "Extra",
             "unite": "ha",
             "methode_calcul": "L'intervalle de confiance a été récupéré en utilisant la colonne ic_stand",
+            "summable": false
+          },
+          "isVisible": true,
+          "public": true
+        },
+        {
+          "name": "access_transport_bois_region.significativite",
+          "title": "Access Transport Bois Region Significativite",
+          "shortTitle": "Significativite",
+          "cumulativeTotal": false,
+          "cumulative": false,
+          "type": "boolean",
+          "aggType": "boolean",
+          "drillMembers": [],
+          "drillMembersGrouped": {
+            "measures": [],
+            "dimensions": []
+          },
+          "meta": {
+            "libelle_indicateur": "Significativité",
+            "statut_commun": "Extra",
             "summable": false
           },
           "isVisible": true,
@@ -163,16 +243,6 @@
           "title": "Access Transport Bois Region Niveau Access Foret",
           "type": "string",
           "shortTitle": "Niveau Access Foret",
-          "suggestFilterValues": true,
-          "isVisible": true,
-          "public": true,
-          "primaryKey": false
-        },
-        {
-          "name": "access_transport_bois_region.significativite",
-          "title": "Access Transport Bois Region Significativite",
-          "type": "string",
-          "shortTitle": "Significativite",
           "suggestFilterValues": true,
           "isVisible": true,
           "public": true,
@@ -3686,6 +3756,236 @@
       "nestedFolders": []
     },
     {
+      "name": "densite_population_com",
+      "type": "cube",
+      "title": "Densite Population Com",
+      "isVisible": true,
+      "public": true,
+      "description": "Cet indicateur représente la densité de population des territoires (nombre d'habitants par km²) par année.",
+      "meta": {
+        "responsable_calcul": "Hub Indicateurs Territoriaux - CGDD",
+        "publish": false
+      },
+      "measures": [
+        {
+          "name": "densite_population_com.pop",
+          "title": "Densite Population Com Pop",
+          "shortTitle": "Pop",
+          "cumulativeTotal": false,
+          "cumulative": false,
+          "type": "number",
+          "aggType": "sum",
+          "drillMembers": [],
+          "drillMembersGrouped": {
+            "measures": [],
+            "dimensions": []
+          },
+          "meta": {
+            "libelle_indicateur": "Population du territoire",
+            "statut_commun": "Extra",
+            "unite": "nb",
+            "methode_calcul": "Population communale INSEE (base historique des populations), numérateur de la densité. Mesure de référence : id_579 (population_com)."
+          },
+          "isVisible": true,
+          "public": true
+        },
+        {
+          "name": "densite_population_com.superficie",
+          "title": "Densite Population Com Superficie",
+          "shortTitle": "Superficie",
+          "cumulativeTotal": false,
+          "cumulative": false,
+          "type": "number",
+          "aggType": "sum",
+          "drillMembers": [],
+          "drillMembersGrouped": {
+            "measures": [],
+            "dimensions": []
+          },
+          "meta": {
+            "libelle_indicateur": "Superficie du territoire",
+            "statut_commun": "Extra",
+            "unite": "ha",
+            "methode_calcul": "Superficie communale en hectares (data.gouv découpage communal, millésime 2022), dénominateur de la densité. Mesure de référence : id_610 (surface_com)."
+          },
+          "isVisible": true,
+          "public": true
+        },
+        {
+          "name": "densite_population_com.id_542",
+          "title": "Densite Population Com Id542",
+          "shortTitle": "Id542",
+          "cumulativeTotal": false,
+          "cumulative": false,
+          "type": "number",
+          "aggType": "number",
+          "drillMembers": [],
+          "drillMembersGrouped": {
+            "measures": [],
+            "dimensions": []
+          },
+          "meta": {
+            "libelle_indicateur": "Densité de population",
+            "statut_commun": "Mesure",
+            "publish": false,
+            "unite": "hab/km²",
+            "fonction_calcul": "nombre d'habitants / superficie (km²)",
+            "methode_calcul": "La densité est calculée comme la population divisée par la superficie. La superficie communale (source data.gouv, millésime 2022, en hectares) est convertie en km² (division par 100) et appliquée à toutes les années de population. La mesure étant un ratio, elle est recalculée à chaque échelon géographique (somme des populations / somme des superficies) et n'est pas sommable. Les communes sans superficie connue (notamment les communes récemment scindées) sont exclues du calcul, numérateur comme dénominateur, pour ne pas biaiser la densité des échelons agrégés.",
+            "numerator": "pop",
+            "denominator": "superficie"
+          },
+          "isVisible": true,
+          "public": true
+        }
+      ],
+      "dimensions": [
+        {
+          "name": "densite_population_com.geocode_commune",
+          "title": "Densite Population Com Geocode Commune",
+          "type": "string",
+          "shortTitle": "Geocode Commune",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "densite_population_com.libelle_commune",
+          "title": "Densite Population Com Libelle Commune",
+          "type": "string",
+          "shortTitle": "Libelle Commune",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "densite_population_com.geocode_epci",
+          "title": "Densite Population Com Geocode Epci",
+          "type": "string",
+          "shortTitle": "Geocode Epci",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "densite_population_com.libelle_epci",
+          "title": "Densite Population Com Libelle Epci",
+          "type": "string",
+          "shortTitle": "Libelle Epci",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "densite_population_com.geocode_departement",
+          "title": "Densite Population Com Geocode Departement",
+          "type": "string",
+          "shortTitle": "Geocode Departement",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "densite_population_com.libelle_departement",
+          "title": "Densite Population Com Libelle Departement",
+          "type": "string",
+          "shortTitle": "Libelle Departement",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "densite_population_com.geocode_region",
+          "title": "Densite Population Com Geocode Region",
+          "type": "string",
+          "shortTitle": "Geocode Region",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "densite_population_com.libelle_region",
+          "title": "Densite Population Com Libelle Region",
+          "type": "string",
+          "shortTitle": "Libelle Region",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "densite_population_com.geocode_crte",
+          "title": "Densite Population Com Geocode Crte",
+          "type": "string",
+          "shortTitle": "Geocode Crte",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "densite_population_com.libelle_crte",
+          "title": "Densite Population Com Libelle Crte",
+          "type": "string",
+          "shortTitle": "Libelle Crte",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "densite_population_com.geocode_ept",
+          "title": "Densite Population Com Geocode Ept",
+          "type": "string",
+          "shortTitle": "Geocode Ept",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "densite_population_com.libelle_ept",
+          "title": "Densite Population Com Libelle Ept",
+          "type": "string",
+          "shortTitle": "Libelle Ept",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "densite_population_com.date_mesure",
+          "title": "Densite Population Com Date Mesure",
+          "type": "time",
+          "shortTitle": "Date Mesure",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "densite_population_com.annee",
+          "title": "Densite Population Com Annee",
+          "type": "number",
+          "shortTitle": "Annee",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        }
+      ],
+      "segments": [],
+      "hierarchies": [],
+      "folders": [],
+      "nestedFolders": []
+    },
+    {
       "name": "distance_moyenne_domicile_travail_com",
       "type": "cube",
       "title": "Distance Moyenne Domicile Travail Com",
@@ -4450,6 +4750,379 @@
       "nestedFolders": []
     },
     {
+      "name": "emplois_filiere_bois_dpt",
+      "type": "cube",
+      "title": "Emplois Filiere Bois Dpt",
+      "isVisible": true,
+      "public": true,
+      "description": "nombre d’emplois (en équivalent temps plein) de la filière bois par département, provenant de l’Insee Première n°2035 « En 2021, un tiers des salariés de la filière bois travaillent dans les industries du papier et du carton »",
+      "meta": {
+        "responsable_calcul": "INSEE - INSTITUT NATIONAL DE LA STATISTIQUE ET DES ETUDES ECONOMIQUES"
+      },
+      "measures": [
+        {
+          "name": "emplois_filiere_bois_dpt.id_369",
+          "title": "Emplois Filiere Bois Dpt Id369",
+          "shortTitle": "Id369",
+          "cumulativeTotal": false,
+          "cumulative": false,
+          "type": "number",
+          "aggType": "sum",
+          "drillMembers": [],
+          "drillMembersGrouped": {
+            "measures": [],
+            "dimensions": []
+          },
+          "meta": {
+            "libelle_indicateur": "Emplois de la filière bois",
+            "statut_commun": "Mesure",
+            "unite": "nb",
+            "methode_calcul": "Nombre de salariés en équivalent temps plein (ETP) de la filière bois par département, source Insee Flores 2021 (Insee Première n°2035, janvier 2025). Champ : établissements marchands, actifs et hors particuliers employeurs, France hors Mayotte. Agrégeable au niveau région en sommant les départements qui la composent.",
+            "is_beta": true
+          },
+          "isVisible": true,
+          "public": true
+        }
+      ],
+      "dimensions": [
+        {
+          "name": "emplois_filiere_bois_dpt.date_mesure",
+          "title": "Emplois Filiere Bois Dpt Date Mesure",
+          "type": "time",
+          "shortTitle": "Date Mesure",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "emplois_filiere_bois_dpt.geocode_departement",
+          "title": "Emplois Filiere Bois Dpt Geocode Departement",
+          "type": "string",
+          "shortTitle": "Geocode Departement",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "emplois_filiere_bois_dpt.libelle_departement",
+          "title": "Emplois Filiere Bois Dpt Libelle Departement",
+          "type": "string",
+          "shortTitle": "Libelle Departement",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "emplois_filiere_bois_dpt.geocode_region",
+          "title": "Emplois Filiere Bois Dpt Geocode Region",
+          "type": "string",
+          "shortTitle": "Geocode Region",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "emplois_filiere_bois_dpt.libelle_region",
+          "title": "Emplois Filiere Bois Dpt Libelle Region",
+          "type": "string",
+          "shortTitle": "Libelle Region",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        }
+      ],
+      "segments": [],
+      "hierarchies": [],
+      "folders": [],
+      "nestedFolders": []
+    },
+    {
+      "name": "emplois_filiere_bois_region",
+      "type": "cube",
+      "title": "Emplois Filiere Bois Region",
+      "isVisible": true,
+      "public": true,
+      "description": "nombre d’emplois (en équivalent temps plein) de la filière bois par région, provenant de l’Insee Première n°2035 « En 2021, un tiers des salariés de la filière bois travaillent dans les industries du papier et du carton »",
+      "meta": {
+        "responsable_calcul": "INSEE - INSTITUT NATIONAL DE LA STATISTIQUE ET DES ETUDES ECONOMIQUES"
+      },
+      "measures": [
+        {
+          "name": "emplois_filiere_bois_region.id_369",
+          "title": "Emplois Filiere Bois Region Id369",
+          "shortTitle": "Id369",
+          "cumulativeTotal": false,
+          "cumulative": false,
+          "type": "number",
+          "aggType": "sum",
+          "drillMembers": [],
+          "drillMembersGrouped": {
+            "measures": [],
+            "dimensions": []
+          },
+          "meta": {
+            "libelle_indicateur": "Emplois de la filière bois",
+            "statut_commun": "Mesure",
+            "unite": "nb",
+            "methode_calcul": "Nombre de salariés en équivalent temps plein (ETP) de la filière bois par région, agrégée par somme des départements qui la composent, source Insee Flores 2021 (Insee Première n°2035, janvier 2025). Champ : établissements marchands, actifs et hors particuliers employeurs, France hors Mayotte.",
+            "is_beta": true
+          },
+          "isVisible": true,
+          "public": true
+        }
+      ],
+      "dimensions": [
+        {
+          "name": "emplois_filiere_bois_region.date_mesure",
+          "title": "Emplois Filiere Bois Region Date Mesure",
+          "type": "time",
+          "shortTitle": "Date Mesure",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "emplois_filiere_bois_region.geocode_region",
+          "title": "Emplois Filiere Bois Region Geocode Region",
+          "type": "string",
+          "shortTitle": "Geocode Region",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "emplois_filiere_bois_region.libelle_region",
+          "title": "Emplois Filiere Bois Region Libelle Region",
+          "type": "string",
+          "shortTitle": "Libelle Region",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        }
+      ],
+      "segments": [],
+      "hierarchies": [],
+      "folders": [],
+      "nestedFolders": []
+    },
+    {
+      "name": "espaces_proteges_cdl_dpt",
+      "type": "cube",
+      "title": "Espaces Proteges Cdl Dpt",
+      "isVisible": true,
+      "public": true,
+      "description": "Surface cumulée des parcelles cadastrales protégées par le Conservatoire du littoral (CELRL), par département et par année.",
+      "meta": {
+        "responsable_calcul": "Hub Indicateurs Territoriaux - CGDD"
+      },
+      "measures": [
+        {
+          "name": "espaces_proteges_cdl_dpt.id_381",
+          "title": "Espaces Proteges Cdl Dpt Id381",
+          "shortTitle": "Id381",
+          "cumulativeTotal": false,
+          "cumulative": false,
+          "type": "number",
+          "aggType": "sum",
+          "drillMembers": [],
+          "drillMembersGrouped": {
+            "measures": [],
+            "dimensions": []
+          },
+          "meta": {
+            "libelle_indicateur": "Surface cumulée protégée par le Conservatoire du littoral",
+            "statut_commun": "Mesure",
+            "unite": "ha",
+            "methode_calcul": "Somme cumulée, par département, de la surface cadastrale des parcelles acquises par le Conservatoire du littoral depuis la première prise en charge dans le département jusqu'à l'année considérée.",
+            "is_beta": true
+          },
+          "isVisible": true,
+          "public": true
+        }
+      ],
+      "dimensions": [
+        {
+          "name": "espaces_proteges_cdl_dpt.geocode_departement",
+          "title": "Espaces Proteges Cdl Dpt Geocode Departement",
+          "type": "string",
+          "shortTitle": "Geocode Departement",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "espaces_proteges_cdl_dpt.libelle_departement",
+          "title": "Espaces Proteges Cdl Dpt Libelle Departement",
+          "type": "string",
+          "shortTitle": "Libelle Departement",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "espaces_proteges_cdl_dpt.geocode_region",
+          "title": "Espaces Proteges Cdl Dpt Geocode Region",
+          "type": "string",
+          "shortTitle": "Geocode Region",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "espaces_proteges_cdl_dpt.libelle_region",
+          "title": "Espaces Proteges Cdl Dpt Libelle Region",
+          "type": "string",
+          "shortTitle": "Libelle Region",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "espaces_proteges_cdl_dpt.date_mesure",
+          "title": "Espaces Proteges Cdl Dpt Date Mesure",
+          "type": "time",
+          "shortTitle": "Date Mesure",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "espaces_proteges_cdl_dpt.annee",
+          "title": "Espaces Proteges Cdl Dpt Annee",
+          "type": "number",
+          "shortTitle": "Annee",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        }
+      ],
+      "segments": [],
+      "hierarchies": [],
+      "folders": [],
+      "nestedFolders": []
+    },
+    {
+      "name": "especes_envahissantes_dpt",
+      "type": "cube",
+      "title": "Especes Envahissantes Dpt",
+      "isVisible": true,
+      "public": true,
+      "description": "Part de la superficie forestière avec observation d'au moins une espèce envahissante par département, provenant des données de l'inventaire forestier de l'IGN fournies dans le service InventIF de l'Observatoire des Forêts Françaises",
+      "meta": {
+        "responsable_calcul": "Institut national de l’information géographique et forestière - IGN"
+      },
+      "measures": [
+        {
+          "name": "especes_envahissantes_dpt.id_1229",
+          "title": "Especes Envahissantes Dpt Id1229",
+          "shortTitle": "Id1229",
+          "cumulativeTotal": false,
+          "cumulative": false,
+          "type": "number",
+          "aggType": "sum",
+          "drillMembers": [],
+          "drillMembersGrouped": {
+            "measures": [],
+            "dimensions": []
+          },
+          "meta": {
+            "libelle_indicateur": "Part de superficie forestière avec observation d'une espèce envahissante",
+            "statut_commun": "Mesure",
+            "unite": "%",
+            "methode_calcul": "Les données brutes proviennent d'une enquête IGN qui s'effectue sur une période de 10 ans, la période 2005-2014 s'est vue attributer la date de 2014 et la période 2015-2024 la date de 2024.",
+            "summable": false,
+            "publish": false
+          },
+          "isVisible": true,
+          "public": true
+        },
+        {
+          "name": "especes_envahissantes_dpt.intervalle_confiance",
+          "title": "Especes Envahissantes Dpt Intervalle Confiance",
+          "shortTitle": "Intervalle Confiance",
+          "cumulativeTotal": false,
+          "cumulative": false,
+          "type": "number",
+          "aggType": "max",
+          "drillMembers": [],
+          "drillMembersGrouped": {
+            "measures": [],
+            "dimensions": []
+          },
+          "meta": {
+            "libelle_indicateur": "Intervalle de confiance",
+            "statut_commun": "Extra",
+            "unite": "ha",
+            "methode_calcul": "L'intervalle de confiance a été récupéré en utilisant la colonne ic_[milliers_d_ha], converti en ha.",
+            "summable": false,
+            "publish": false
+          },
+          "isVisible": true,
+          "public": true
+        }
+      ],
+      "dimensions": [
+        {
+          "name": "especes_envahissantes_dpt.date_mesure",
+          "title": "Especes Envahissantes Dpt Date Mesure",
+          "type": "time",
+          "shortTitle": "Date Mesure",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "especes_envahissantes_dpt.annee",
+          "title": "Especes Envahissantes Dpt Annee",
+          "type": "number",
+          "shortTitle": "Annee",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "especes_envahissantes_dpt.geocode_departement",
+          "title": "Especes Envahissantes Dpt Geocode Departement",
+          "type": "string",
+          "shortTitle": "Geocode Departement",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "especes_envahissantes_dpt.libelle_departement",
+          "title": "Especes Envahissantes Dpt Libelle Departement",
+          "type": "string",
+          "shortTitle": "Libelle Departement",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        }
+      ],
+      "segments": [],
+      "hierarchies": [],
+      "folders": [],
+      "nestedFolders": []
+    },
+    {
       "name": "flux_carbone_dpt",
       "type": "cube",
       "title": "Flux Carbone Dpt",
@@ -4460,6 +5133,30 @@
         "responsable_calcul": "Institut national de l’information géographique et forestière - IGN"
       },
       "measures": [
+        {
+          "name": "flux_carbone_dpt.id_1224",
+          "title": "Flux Carbone Dpt Id1224",
+          "shortTitle": "Id1224",
+          "cumulativeTotal": false,
+          "cumulative": false,
+          "type": "number",
+          "aggType": "sum",
+          "drillMembers": [],
+          "drillMembersGrouped": {
+            "measures": [],
+            "dimensions": []
+          },
+          "meta": {
+            "libelle_indicateur": "Flux annuel de carbone lié aux forêts",
+            "statut_commun": "Mesure",
+            "unite": "tC/an",
+            "methode_calcul": "Les données brutes ont été filtrées en utilisant la colonne label = FluxCarbone (conformément à documentation ign disponible en ligne). \n Afin de récupérer l'indicateur, nous avons utilisé la colonne tot_stand. \n Les autres informations statistiques (colonnes moy_ha_stand, ic_moy_ha_stand, ic_stand, pourc_stand) n'ont pas été prises en compte. \n\nLes chiffres de l’IFN sont arrondis avant publication. Le bilan carbone publié est calculé avant cet arrondi : peut ne pas correspondre exactement à la somme : Production biologique – Prélèvements – Mortalité (en raison des arrondis successifs). \n\n Pour éviter un double comptage du bilan, il n’est pas possible d’agréger les données sur l’axe type_flux.",
+            "summable": false,
+            "is_beta": true
+          },
+          "isVisible": true,
+          "public": true
+        },
         {
           "name": "flux_carbone_dpt.intervalle_confiance",
           "title": "Flux Carbone Dpt Intervalle Confiance",
@@ -4478,6 +5175,27 @@
             "statut_commun": "Extra",
             "unite": "ha",
             "methode_calcul": "L'intervalle de confiance a été récupéré en utilisant la colonne ic_stand",
+            "summable": false
+          },
+          "isVisible": true,
+          "public": true
+        },
+        {
+          "name": "flux_carbone_dpt.significativite",
+          "title": "Flux Carbone Dpt Significativite",
+          "shortTitle": "Significativite",
+          "cumulativeTotal": false,
+          "cumulative": false,
+          "type": "boolean",
+          "aggType": "boolean",
+          "drillMembers": [],
+          "drillMembersGrouped": {
+            "measures": [],
+            "dimensions": []
+          },
+          "meta": {
+            "libelle_indicateur": "Significativité",
+            "statut_commun": "Extra",
             "summable": false
           },
           "isVisible": true,
@@ -4524,16 +5242,6 @@
           "isVisible": true,
           "public": true,
           "primaryKey": false
-        },
-        {
-          "name": "flux_carbone_dpt.significativite",
-          "title": "Flux Carbone Dpt Significativite",
-          "type": "string",
-          "shortTitle": "Significativite",
-          "suggestFilterValues": true,
-          "isVisible": true,
-          "public": true,
-          "primaryKey": false
         }
       ],
       "segments": [],
@@ -4553,6 +5261,30 @@
       },
       "measures": [
         {
+          "name": "flux_carbone_region.id_1224",
+          "title": "Flux Carbone Region Id1224",
+          "shortTitle": "Id1224",
+          "cumulativeTotal": false,
+          "cumulative": false,
+          "type": "number",
+          "aggType": "sum",
+          "drillMembers": [],
+          "drillMembersGrouped": {
+            "measures": [],
+            "dimensions": []
+          },
+          "meta": {
+            "libelle_indicateur": "Flux annuel de carbone lié aux forêts",
+            "statut_commun": "Mesure",
+            "unite": "tC/an",
+            "methode_calcul": "Les données brutes ont été filtrées en utilisant la colonne label = FluxCarbone (conformément à documentation ign disponible en ligne). \n Afin de récupérer l'indicateur, nous avons utilisé la colonne tot_stand. \n Les autres informations statistiques (colonnes moy_ha_stand, ic_moy_ha_stand, ic_stand, pourc_stand) n'ont pas été prises en compte. \n\nLes chiffres de l’IFN sont arrondis avant publication. Le bilan carbone publié est calculé avant cet arrondi : peut ne pas correspondre exactement à la somme : Production biologique – Prélèvements – Mortalité (en raison des arrondis successifs). \n\n Pour éviter un double comptage du bilan, il n’est pas possible d’agréger les données sur l’axe type_flux.",
+            "summable": false,
+            "is_beta": true
+          },
+          "isVisible": true,
+          "public": true
+        },
+        {
           "name": "flux_carbone_region.intervalle_confiance",
           "title": "Flux Carbone Region Intervalle Confiance",
           "shortTitle": "Intervalle Confiance",
@@ -4570,6 +5302,27 @@
             "statut_commun": "Extra",
             "unite": "ha",
             "methode_calcul": "L'intervalle de confiance a été récupéré en utilisant la colonne ic_stand",
+            "summable": false
+          },
+          "isVisible": true,
+          "public": true
+        },
+        {
+          "name": "flux_carbone_region.significativite",
+          "title": "Flux Carbone Region Significativite",
+          "shortTitle": "Significativite",
+          "cumulativeTotal": false,
+          "cumulative": false,
+          "type": "boolean",
+          "aggType": "boolean",
+          "drillMembers": [],
+          "drillMembersGrouped": {
+            "measures": [],
+            "dimensions": []
+          },
+          "meta": {
+            "libelle_indicateur": "Significativité",
+            "statut_commun": "Extra",
             "summable": false
           },
           "isVisible": true,
@@ -4612,16 +5365,6 @@
           "title": "Flux Carbone Region Type Flux",
           "type": "string",
           "shortTitle": "Type Flux",
-          "suggestFilterValues": true,
-          "isVisible": true,
-          "public": true,
-          "primaryKey": false
-        },
-        {
-          "name": "flux_carbone_region.significativite",
-          "title": "Flux Carbone Region Significativite",
-          "type": "string",
-          "shortTitle": "Significativite",
           "suggestFilterValues": true,
           "isVisible": true,
           "public": true,
@@ -5508,6 +6251,30 @@
       },
       "measures": [
         {
+          "name": "flux_volume_bois_dpt.id_1217",
+          "title": "Flux Volume Bois Dpt Id1217",
+          "shortTitle": "Id1217",
+          "cumulativeTotal": false,
+          "cumulative": false,
+          "type": "number",
+          "aggType": "sum",
+          "drillMembers": [],
+          "drillMembersGrouped": {
+            "measures": [],
+            "dimensions": []
+          },
+          "meta": {
+            "libelle_indicateur": "Flux de volume de bois vivant, par essence et type de flux",
+            "statut_commun": "Mesure",
+            "unite": "m3/an",
+            "methode_calcul": "Les données brutes ont été filtrées en utilisant la colonne label = Flux_ess (conformément à documentation ign disponible en ligne). \n Afin de récupérer l'indicateur, nous avons utilisé la colonne tot_stand. \n Les autres informations statistiques (colonnes moy_ha_stand, ic_moy_ha_stand, ic_stand, pourc_stand) n'ont pas été prises en compte. \n\n Les chiffres de l’IGN sont arrondis avant publication. Le bilan des flux publié est calculé avant cet arrondi : peut ne pas correspondre exactement à la somme : Production biologique – Prélèvements – Mortalité (en raison des arrondis successifs). \n\n Pour éviter un double comptage du bilan, il n’est pas possible d’agréger les données sur l’axe type_flux. ",
+            "summable": false,
+            "is_beta": true
+          },
+          "isVisible": true,
+          "public": true
+        },
+        {
           "name": "flux_volume_bois_dpt.intervalle_confiance",
           "title": "Flux Volume Bois Dpt Intervalle Confiance",
           "shortTitle": "Intervalle Confiance",
@@ -5525,6 +6292,27 @@
             "statut_commun": "Extra",
             "unite": "ha",
             "methode_calcul": "L'intervalle de confiance a été récupéré en utilisant la colonne ic_stand",
+            "summable": false
+          },
+          "isVisible": true,
+          "public": true
+        },
+        {
+          "name": "flux_volume_bois_dpt.significativite",
+          "title": "Flux Volume Bois Dpt Significativite",
+          "shortTitle": "Significativite",
+          "cumulativeTotal": false,
+          "cumulative": false,
+          "type": "boolean",
+          "aggType": "boolean",
+          "drillMembers": [],
+          "drillMembersGrouped": {
+            "measures": [],
+            "dimensions": []
+          },
+          "meta": {
+            "libelle_indicateur": "Significativité",
+            "statut_commun": "Extra",
             "summable": false
           },
           "isVisible": true,
@@ -5581,16 +6369,6 @@
           "isVisible": true,
           "public": true,
           "primaryKey": false
-        },
-        {
-          "name": "flux_volume_bois_dpt.significativite",
-          "title": "Flux Volume Bois Dpt Significativite",
-          "type": "string",
-          "shortTitle": "Significativite",
-          "suggestFilterValues": true,
-          "isVisible": true,
-          "public": true,
-          "primaryKey": false
         }
       ],
       "segments": [],
@@ -5610,6 +6388,30 @@
       },
       "measures": [
         {
+          "name": "flux_volume_bois_region.id_1217",
+          "title": "Flux Volume Bois Region Id1217",
+          "shortTitle": "Id1217",
+          "cumulativeTotal": false,
+          "cumulative": false,
+          "type": "number",
+          "aggType": "sum",
+          "drillMembers": [],
+          "drillMembersGrouped": {
+            "measures": [],
+            "dimensions": []
+          },
+          "meta": {
+            "libelle_indicateur": "Flux de volume de bois vivant, par essence et type de flux",
+            "statut_commun": "Mesure",
+            "unite": "m3/an",
+            "methode_calcul": "Les données brutes ont été filtrées en utilisant la colonne label = Flux_ess (conformément à documentation ign disponible en ligne). \n Afin de récupérer l'indicateur, nous avons utilisé la colonne tot_stand. \n Les autres informations statistiques (colonnes moy_ha_stand, ic_moy_ha_stand, ic_stand, pourc_stand) n'ont pas été prises en compte. \n\n Les chiffres de l’IGN sont arrondis avant publication. Le bilan des flux publié est calculé avant cet arrondi : peut ne pas correspondre exactement à la somme : Production biologique – Prélèvements – Mortalité (en raison des arrondis successifs). \n\n Pour éviter un double comptage du bilan, il n’est pas possible d’agréger les données sur l’axe type_flux. ",
+            "summable": false,
+            "is_beta": true
+          },
+          "isVisible": true,
+          "public": true
+        },
+        {
           "name": "flux_volume_bois_region.intervalle_confiance",
           "title": "Flux Volume Bois Region Intervalle Confiance",
           "shortTitle": "Intervalle Confiance",
@@ -5627,6 +6429,27 @@
             "statut_commun": "Extra",
             "unite": "ha",
             "methode_calcul": "L'intervalle de confiance a été récupéré en utilisant la colonne ic_stand",
+            "summable": false
+          },
+          "isVisible": true,
+          "public": true
+        },
+        {
+          "name": "flux_volume_bois_region.significativite",
+          "title": "Flux Volume Bois Region Significativite",
+          "shortTitle": "Significativite",
+          "cumulativeTotal": false,
+          "cumulative": false,
+          "type": "boolean",
+          "aggType": "boolean",
+          "drillMembers": [],
+          "drillMembersGrouped": {
+            "measures": [],
+            "dimensions": []
+          },
+          "meta": {
+            "libelle_indicateur": "Significativité",
+            "statut_commun": "Extra",
             "summable": false
           },
           "isVisible": true,
@@ -5679,16 +6502,6 @@
           "title": "Flux Volume Bois Region Type Flux",
           "type": "string",
           "shortTitle": "Type Flux",
-          "suggestFilterValues": true,
-          "isVisible": true,
-          "public": true,
-          "primaryKey": false
-        },
-        {
-          "name": "flux_volume_bois_region.significativite",
-          "title": "Flux Volume Bois Region Significativite",
-          "type": "string",
-          "shortTitle": "Significativite",
           "suggestFilterValues": true,
           "isVisible": true,
           "public": true,
@@ -8058,10 +8871,10 @@
           "primaryKey": false
         },
         {
-          "name": "indicateur_metadata.is_public",
-          "title": "Indicateur Metadata Is Public",
+          "name": "indicateur_metadata.is_beta",
+          "title": "Indicateur Metadata Is Beta",
           "type": "boolean",
-          "shortTitle": "Is Public",
+          "shortTitle": "Is Beta",
           "suggestFilterValues": true,
           "isVisible": true,
           "public": true,
@@ -10353,6 +11166,189 @@
         {
           "name": "macantine_region.annee",
           "title": "Macantine Region Annee",
+          "type": "number",
+          "shortTitle": "Annee",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        }
+      ],
+      "segments": [],
+      "hierarchies": [],
+      "folders": [],
+      "nestedFolders": []
+    },
+    {
+      "name": "menages_en_precarite_energetique_com",
+      "type": "cube",
+      "title": "Menages En Precarite Energetique Com",
+      "isVisible": true,
+      "public": true,
+      "description": "Nombre de ménages en précarité énergétique logement par niveau de vie",
+      "meta": {
+        "responsable_calcul": "INSEE - INSTITUT NATIONAL DE LA STATISTIQUE ET DES ETUDES ECONOMIQUES"
+      },
+      "measures": [
+        {
+          "name": "menages_en_precarite_energetique_com.id_263",
+          "title": "Menages En Precarite Energetique Com Id263",
+          "shortTitle": "Id263",
+          "cumulativeTotal": false,
+          "cumulative": false,
+          "type": "number",
+          "aggType": "sum",
+          "drillMembers": [],
+          "drillMembersGrouped": {
+            "measures": [],
+            "dimensions": []
+          },
+          "meta": {
+            "libelle_indicateur": "Nombre de ménages en précarité énergétique logement par niveau de vie",
+            "statut_commun": "Mesure",
+            "unite": "nb",
+            "methode_calcul": "Par définition, un ménage en précarité énergétique est un ménage faisant partie des trois premiers déciles de revenus par unité de consommation (UC) et consacrant au moins 8% de ses revenus aux dépenses d'énergie de son logement. Le calcul de l'indicateur se fait en filtrant les données de l'enquête logement (INSEE). La notion de \"par niveau de vie\" fait référence à la méthode de calcul via les UC et non à un axe de projection.  \n\nL'indicateur calculé par Ecolab exclut les communes qui ont connu une scission car il n'est pas possible d'attribuer aux communes résultantes les données. La valeur de l'indicateur peut légèrement varier si l'agrégation est faite à une maille supérieure à la maille communale.\n",
+            "publish": false,
+            "is_beta": true
+          },
+          "isVisible": true,
+          "public": true
+        }
+      ],
+      "dimensions": [
+        {
+          "name": "menages_en_precarite_energetique_com.geocode_commune",
+          "title": "Menages En Precarite Energetique Com Geocode Commune",
+          "type": "string",
+          "shortTitle": "Geocode Commune",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "menages_en_precarite_energetique_com.libelle_commune",
+          "title": "Menages En Precarite Energetique Com Libelle Commune",
+          "type": "string",
+          "shortTitle": "Libelle Commune",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "menages_en_precarite_energetique_com.geocode_epci",
+          "title": "Menages En Precarite Energetique Com Geocode Epci",
+          "type": "string",
+          "shortTitle": "Geocode Epci",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "menages_en_precarite_energetique_com.libelle_epci",
+          "title": "Menages En Precarite Energetique Com Libelle Epci",
+          "type": "string",
+          "shortTitle": "Libelle Epci",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "menages_en_precarite_energetique_com.geocode_departement",
+          "title": "Menages En Precarite Energetique Com Geocode Departement",
+          "type": "string",
+          "shortTitle": "Geocode Departement",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "menages_en_precarite_energetique_com.libelle_departement",
+          "title": "Menages En Precarite Energetique Com Libelle Departement",
+          "type": "string",
+          "shortTitle": "Libelle Departement",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "menages_en_precarite_energetique_com.geocode_region",
+          "title": "Menages En Precarite Energetique Com Geocode Region",
+          "type": "string",
+          "shortTitle": "Geocode Region",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "menages_en_precarite_energetique_com.libelle_region",
+          "title": "Menages En Precarite Energetique Com Libelle Region",
+          "type": "string",
+          "shortTitle": "Libelle Region",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "menages_en_precarite_energetique_com.geocode_crte",
+          "title": "Menages En Precarite Energetique Com Geocode Crte",
+          "type": "string",
+          "shortTitle": "Geocode Crte",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "menages_en_precarite_energetique_com.libelle_crte",
+          "title": "Menages En Precarite Energetique Com Libelle Crte",
+          "type": "string",
+          "shortTitle": "Libelle Crte",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "menages_en_precarite_energetique_com.geocode_ept",
+          "title": "Menages En Precarite Energetique Com Geocode Ept",
+          "type": "string",
+          "shortTitle": "Geocode Ept",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "menages_en_precarite_energetique_com.libelle_ept",
+          "title": "Menages En Precarite Energetique Com Libelle Ept",
+          "type": "string",
+          "shortTitle": "Libelle Ept",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "menages_en_precarite_energetique_com.date_mesure",
+          "title": "Menages En Precarite Energetique Com Date Mesure",
+          "type": "time",
+          "shortTitle": "Date Mesure",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "menages_en_precarite_energetique_com.annee",
+          "title": "Menages En Precarite Energetique Com Annee",
           "type": "number",
           "shortTitle": "Annee",
           "suggestFilterValues": true,
@@ -14881,6 +15877,199 @@
       "nestedFolders": []
     },
     {
+      "name": "qualite_sites_baignade_com",
+      "type": "cube",
+      "title": "Qualite Sites Baignade Com",
+      "isVisible": true,
+      "public": true,
+      "description": "Qualité des eaux des sites de baignade, 5 niveaux de qualité, nombre de sites par maille géographique.",
+      "meta": {
+        "responsable_calcul": "Hub Indicateurs Territoriaux - CGDD",
+        "publish": false
+      },
+      "measures": [
+        {
+          "name": "qualite_sites_baignade_com.id_1254",
+          "title": "Qualite Sites Baignade Com Id1254",
+          "shortTitle": "Id1254",
+          "cumulativeTotal": false,
+          "cumulative": false,
+          "type": "number",
+          "aggType": "sum",
+          "drillMembers": [],
+          "drillMembersGrouped": {
+            "measures": [],
+            "dimensions": []
+          },
+          "meta": {
+            "libelle_indicateur": "Nombre de sites de baignade par qualité",
+            "statut_commun": "Mesure",
+            "unite": "nb",
+            "methode_calcul": "Pour chaque commune, les sites de baignade issus de la source data.gouv.fr sont regroupés par niveau de qualité des eaux de baignade (code_geographique, qualite), et l'indicateur correspond au nombre de sites comptabilisés dans chaque groupe (COUNT(*)).\n \n Le jeu de données étant un instantané (snapshot) sans historique, une date de mesure fixe (01/01/2026) est appliquée à l'ensemble des lignes.\n \n Les libellés et codes des mailles géographiques supra-communales (EPCI, département, région, CRTE, EPT) sont ajoutés par jointure avec le référentiel géographique à partir du code commune.",
+            "publish": false
+          },
+          "isVisible": true,
+          "public": true
+        }
+      ],
+      "dimensions": [
+        {
+          "name": "qualite_sites_baignade_com.geocode_commune",
+          "title": "Qualite Sites Baignade Com Geocode Commune",
+          "type": "string",
+          "shortTitle": "Geocode Commune",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "qualite_sites_baignade_com.libelle_commune",
+          "title": "Qualite Sites Baignade Com Libelle Commune",
+          "type": "string",
+          "shortTitle": "Libelle Commune",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "qualite_sites_baignade_com.geocode_epci",
+          "title": "Qualite Sites Baignade Com Geocode Epci",
+          "type": "string",
+          "shortTitle": "Geocode Epci",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "qualite_sites_baignade_com.libelle_epci",
+          "title": "Qualite Sites Baignade Com Libelle Epci",
+          "type": "string",
+          "shortTitle": "Libelle Epci",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "qualite_sites_baignade_com.geocode_departement",
+          "title": "Qualite Sites Baignade Com Geocode Departement",
+          "type": "string",
+          "shortTitle": "Geocode Departement",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "qualite_sites_baignade_com.libelle_departement",
+          "title": "Qualite Sites Baignade Com Libelle Departement",
+          "type": "string",
+          "shortTitle": "Libelle Departement",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "qualite_sites_baignade_com.geocode_region",
+          "title": "Qualite Sites Baignade Com Geocode Region",
+          "type": "string",
+          "shortTitle": "Geocode Region",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "qualite_sites_baignade_com.libelle_region",
+          "title": "Qualite Sites Baignade Com Libelle Region",
+          "type": "string",
+          "shortTitle": "Libelle Region",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "qualite_sites_baignade_com.geocode_crte",
+          "title": "Qualite Sites Baignade Com Geocode Crte",
+          "type": "string",
+          "shortTitle": "Geocode Crte",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "qualite_sites_baignade_com.libelle_crte",
+          "title": "Qualite Sites Baignade Com Libelle Crte",
+          "type": "string",
+          "shortTitle": "Libelle Crte",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "qualite_sites_baignade_com.geocode_ept",
+          "title": "Qualite Sites Baignade Com Geocode Ept",
+          "type": "string",
+          "shortTitle": "Geocode Ept",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "qualite_sites_baignade_com.libelle_ept",
+          "title": "Qualite Sites Baignade Com Libelle Ept",
+          "type": "string",
+          "shortTitle": "Libelle Ept",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "qualite_sites_baignade_com.date_mesure",
+          "title": "Qualite Sites Baignade Com Date Mesure",
+          "type": "time",
+          "shortTitle": "Date Mesure",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "qualite_sites_baignade_com.annee",
+          "title": "Qualite Sites Baignade Com Annee",
+          "type": "number",
+          "shortTitle": "Annee",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "qualite_sites_baignade_com.niveau_qualite_eau_baignade",
+          "title": "Qualite Sites Baignade Com Niveau Qualite Eau Baignade",
+          "type": "string",
+          "shortTitle": "Niveau Qualite Eau Baignade",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        }
+      ],
+      "segments": [],
+      "hierarchies": [],
+      "folders": [],
+      "nestedFolders": []
+    },
+    {
       "name": "recensement_agricole_com",
       "type": "cube",
       "title": "Recensement Agricole Com",
@@ -15050,6 +16239,117 @@
           "title": "Recensement Agricole Com Annee",
           "type": "number",
           "shortTitle": "Annee",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        }
+      ],
+      "segments": [],
+      "hierarchies": [],
+      "folders": [],
+      "nestedFolders": []
+    },
+    {
+      "name": "recolte_bois_dpt",
+      "type": "cube",
+      "title": "Recolte Bois Dpt",
+      "isVisible": true,
+      "public": true,
+      "description": "Volume de bois récolté en France. Provient des données de l'enquête scierie de l'Agreste (EXSFRI). La modalité de débouché 'grumes' a été renommée 'bois_oeuvre'.",
+      "meta": {
+        "responsable_calcul": "Hub Indicateurs Territoriaux - CGDD"
+      },
+      "measures": [
+        {
+          "name": "recolte_bois_dpt.id_1218",
+          "title": "Recolte Bois Dpt Id1218",
+          "shortTitle": "Id1218",
+          "cumulativeTotal": false,
+          "cumulative": false,
+          "type": "number",
+          "aggType": "sum",
+          "drillMembers": [],
+          "drillMembersGrouped": {
+            "measures": [],
+            "dimensions": []
+          },
+          "meta": {
+            "libelle_indicateur": "Volume de la récolte de bois par débouché et par mode de gestion de la forêt",
+            "statut_commun": "Mesure",
+            "unite": "milliers de m3",
+            "methode_calcul": "Reprise des données sur l'enquête sur l'activité des scieries (EXSFRI), seules les modalités 'Tous modes de gestion' et 'Certifié gestion durable' sont conservées ainsi que les trois débouchés principaux. La modalité de débouché 'grumes' a été renommée 'bois_oeuvre'."
+          },
+          "isVisible": true,
+          "public": true
+        }
+      ],
+      "dimensions": [
+        {
+          "name": "recolte_bois_dpt.date_mesure",
+          "title": "Recolte Bois Dpt Date Mesure",
+          "type": "time",
+          "shortTitle": "Date Mesure",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "recolte_bois_dpt.geocode_departement",
+          "title": "Recolte Bois Dpt Geocode Departement",
+          "type": "string",
+          "shortTitle": "Geocode Departement",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "recolte_bois_dpt.libelle_departement",
+          "title": "Recolte Bois Dpt Libelle Departement",
+          "type": "string",
+          "shortTitle": "Libelle Departement",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "recolte_bois_dpt.geocode_region",
+          "title": "Recolte Bois Dpt Geocode Region",
+          "type": "string",
+          "shortTitle": "Geocode Region",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "recolte_bois_dpt.libelle_region",
+          "title": "Recolte Bois Dpt Libelle Region",
+          "type": "string",
+          "shortTitle": "Libelle Region",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "recolte_bois_dpt.mode_gestion_foret",
+          "title": "Recolte Bois Dpt Mode Gestion Foret",
+          "type": "string",
+          "shortTitle": "Mode Gestion Foret",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "recolte_bois_dpt.debouche_bois",
+          "title": "Recolte Bois Dpt Debouche Bois",
+          "type": "string",
+          "shortTitle": "Debouche Bois",
           "suggestFilterValues": true,
           "isVisible": true,
           "public": true,
@@ -16573,6 +17873,30 @@
       },
       "measures": [
         {
+          "name": "richesse_especes_dpt.id_1227",
+          "title": "Richesse Especes Dpt Id1227",
+          "shortTitle": "Id1227",
+          "cumulativeTotal": false,
+          "cumulative": false,
+          "type": "number",
+          "aggType": "sum",
+          "drillMembers": [],
+          "drillMembersGrouped": {
+            "measures": [],
+            "dimensions": []
+          },
+          "meta": {
+            "libelle_indicateur": "Richesse locale moyenne en essences forestières",
+            "statut_commun": "Mesure",
+            "unite": "ha",
+            "methode_calcul": "Les données brutes ont été filtrées en utilisant la colonne label = STNBMOYESP (conformément à documentation ign disponible en ligne). \n Afin de récupérer l'indicateur, nous avons utilisé les colonnes tot_stand (pour la superficie) et modalité1 (pour le nombre d'espèces d'arbres). \n Les autres informations statistiques (colonnes moy_ha_stand, ic_moy_ha_stand, ic_stand, pourc_stand) n'ont pas été prises en compte.",
+            "summable": false,
+            "is_beta": true
+          },
+          "isVisible": true,
+          "public": true
+        },
+        {
           "name": "richesse_especes_dpt.intervalle_confiance",
           "title": "Richesse Especes Dpt Intervalle Confiance",
           "shortTitle": "Intervalle Confiance",
@@ -16590,6 +17914,27 @@
             "statut_commun": "Extra",
             "unite": "ha",
             "methode_calcul": "L'intervalle de confiance a été récupéré en utilisant la colonne ic_stand",
+            "summable": false
+          },
+          "isVisible": true,
+          "public": true
+        },
+        {
+          "name": "richesse_especes_dpt.significativite",
+          "title": "Richesse Especes Dpt Significativite",
+          "shortTitle": "Significativite",
+          "cumulativeTotal": false,
+          "cumulative": false,
+          "type": "boolean",
+          "aggType": "boolean",
+          "drillMembers": [],
+          "drillMembersGrouped": {
+            "measures": [],
+            "dimensions": []
+          },
+          "meta": {
+            "libelle_indicateur": "Significativité",
+            "statut_commun": "Extra",
             "summable": false
           },
           "isVisible": true,
@@ -16636,16 +17981,6 @@
           "isVisible": true,
           "public": true,
           "primaryKey": false
-        },
-        {
-          "name": "richesse_especes_dpt.significativite",
-          "title": "Richesse Especes Dpt Significativite",
-          "type": "string",
-          "shortTitle": "Significativite",
-          "suggestFilterValues": true,
-          "isVisible": true,
-          "public": true,
-          "primaryKey": false
         }
       ],
       "segments": [],
@@ -16665,6 +18000,30 @@
       },
       "measures": [
         {
+          "name": "richesse_especes_region.id_1227",
+          "title": "Richesse Especes Region Id1227",
+          "shortTitle": "Id1227",
+          "cumulativeTotal": false,
+          "cumulative": false,
+          "type": "number",
+          "aggType": "sum",
+          "drillMembers": [],
+          "drillMembersGrouped": {
+            "measures": [],
+            "dimensions": []
+          },
+          "meta": {
+            "libelle_indicateur": "Richesse locale moyenne en essences forestières",
+            "statut_commun": "Mesure",
+            "unite": "ha",
+            "methode_calcul": "Les données brutes ont été filtrées en utilisant la colonne label = STNBMOYESP (conformément à documentation ign disponible en ligne). \n Afin de récupérer l'indicateur, nous avons utilisé les colonnes tot_stand (pour la superficie) et modalité1 (pour le nombre d'espèces d'arbres). \n Les autres informations statistiques (colonnes moy_ha_stand, ic_moy_ha_stand, ic_stand, pourc_stand) n'ont pas été prises en compte.",
+            "summable": false,
+            "is_beta": true
+          },
+          "isVisible": true,
+          "public": true
+        },
+        {
           "name": "richesse_especes_region.intervalle_confiance",
           "title": "Richesse Especes Region Intervalle Confiance",
           "shortTitle": "Intervalle Confiance",
@@ -16682,6 +18041,27 @@
             "statut_commun": "Extra",
             "unite": "ha",
             "methode_calcul": "L'intervalle de confiance a été récupéré en utilisant la colonne ic_stand",
+            "summable": false
+          },
+          "isVisible": true,
+          "public": true
+        },
+        {
+          "name": "richesse_especes_region.significativite",
+          "title": "Richesse Especes Region Significativite",
+          "shortTitle": "Significativite",
+          "cumulativeTotal": false,
+          "cumulative": false,
+          "type": "boolean",
+          "aggType": "boolean",
+          "drillMembers": [],
+          "drillMembersGrouped": {
+            "measures": [],
+            "dimensions": []
+          },
+          "meta": {
+            "libelle_indicateur": "Significativité",
+            "statut_commun": "Extra",
             "summable": false
           },
           "isVisible": true,
@@ -16728,12 +18108,204 @@
           "isVisible": true,
           "public": true,
           "primaryKey": false
+        }
+      ],
+      "segments": [],
+      "hierarchies": [],
+      "folders": [],
+      "nestedFolders": []
+    },
+    {
+      "name": "saturnime_incidents_dpt",
+      "type": "cube",
+      "title": "Saturnime Incidents Dpt",
+      "isVisible": true,
+      "public": true,
+      "meta": {
+        "responsable_calcul": "SANTE PUBLIQUE FRANCE"
+      },
+      "measures": [
+        {
+          "name": "saturnime_incidents_dpt.id_1257",
+          "title": "Saturnime Incidents Dpt Id1257",
+          "shortTitle": "Id1257",
+          "cumulativeTotal": false,
+          "cumulative": false,
+          "type": "number",
+          "aggType": "sum",
+          "drillMembers": [],
+          "drillMembersGrouped": {
+            "measures": [],
+            "dimensions": []
+          },
+          "meta": {
+            "libelle_indicateur": "Nombre de cas incidents de saturnisme ches les 0-17 ans",
+            "statut_commun": "Mesure",
+            "unite": "nb",
+            "methode_calcul": "L'indicateur est calculé par Santé Publique France, un cas incidents correspond à un nouveau cas de saturnisme dans l'année. Un cas de saturnisme correspond à une plombémie dans le sang supérieur à un certain seuil : 100ug jusqu'au 17 juin 2015 et 50up depuis cette date.",
+            "publish": false
+          },
+          "isVisible": true,
+          "public": true
+        }
+      ],
+      "dimensions": [
+        {
+          "name": "saturnime_incidents_dpt.date_mesure",
+          "title": "Saturnime Incidents Dpt Date Mesure",
+          "type": "time",
+          "shortTitle": "Date Mesure",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
         },
         {
-          "name": "richesse_especes_region.significativite",
-          "title": "Richesse Especes Region Significativite",
+          "name": "saturnime_incidents_dpt.annee",
+          "title": "Saturnime Incidents Dpt Annee",
+          "type": "number",
+          "shortTitle": "Annee",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "saturnime_incidents_dpt.geocode_departement",
+          "title": "Saturnime Incidents Dpt Geocode Departement",
           "type": "string",
-          "shortTitle": "Significativite",
+          "shortTitle": "Geocode Departement",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "saturnime_incidents_dpt.libelle_departement",
+          "title": "Saturnime Incidents Dpt Libelle Departement",
+          "type": "string",
+          "shortTitle": "Libelle Departement",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "saturnime_incidents_dpt.geocode_region",
+          "title": "Saturnime Incidents Dpt Geocode Region",
+          "type": "string",
+          "shortTitle": "Geocode Region",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "saturnime_incidents_dpt.libelle_region",
+          "title": "Saturnime Incidents Dpt Libelle Region",
+          "type": "string",
+          "shortTitle": "Libelle Region",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        }
+      ],
+      "segments": [],
+      "hierarchies": [],
+      "folders": [],
+      "nestedFolders": []
+    },
+    {
+      "name": "saturnime_prevalents_dpt",
+      "type": "cube",
+      "title": "Saturnime Prevalents Dpt",
+      "isVisible": true,
+      "public": true,
+      "meta": {
+        "responsable_calcul": "SANTE PUBLIQUE FRANCE"
+      },
+      "measures": [
+        {
+          "name": "saturnime_prevalents_dpt.id_1280",
+          "title": "Saturnime Prevalents Dpt Id1280",
+          "shortTitle": "Id1280",
+          "cumulativeTotal": false,
+          "cumulative": false,
+          "type": "number",
+          "aggType": "sum",
+          "drillMembers": [],
+          "drillMembersGrouped": {
+            "measures": [],
+            "dimensions": []
+          },
+          "meta": {
+            "libelle_indicateur": "Nombre de cas prevalents de saturnisme ches les 0-17 ans",
+            "statut_commun": "Mesure",
+            "unite": "nb",
+            "methode_calcul": "L'indicateur est calculé par Santé Publique France, un cas prevalents correspond à tous les enfants ayant une plombémie supérieur au seuil de diagnostic du saturnisme au cours d'une année, il comprend les cas incidents de l'année et les enfants encore positifs. Un cas de saturnisme correspond à une plombémie dans le sang supérieur à un certain seuil : 100ug jusqu'au 17 juin 2015 et 50up depuis cette date.",
+            "is_beta": true
+          },
+          "isVisible": true,
+          "public": true
+        }
+      ],
+      "dimensions": [
+        {
+          "name": "saturnime_prevalents_dpt.date_mesure",
+          "title": "Saturnime Prevalents Dpt Date Mesure",
+          "type": "time",
+          "shortTitle": "Date Mesure",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "saturnime_prevalents_dpt.annee",
+          "title": "Saturnime Prevalents Dpt Annee",
+          "type": "number",
+          "shortTitle": "Annee",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "saturnime_prevalents_dpt.geocode_departement",
+          "title": "Saturnime Prevalents Dpt Geocode Departement",
+          "type": "string",
+          "shortTitle": "Geocode Departement",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "saturnime_prevalents_dpt.libelle_departement",
+          "title": "Saturnime Prevalents Dpt Libelle Departement",
+          "type": "string",
+          "shortTitle": "Libelle Departement",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "saturnime_prevalents_dpt.geocode_region",
+          "title": "Saturnime Prevalents Dpt Geocode Region",
+          "type": "string",
+          "shortTitle": "Geocode Region",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "saturnime_prevalents_dpt.libelle_region",
+          "title": "Saturnime Prevalents Dpt Libelle Region",
+          "type": "string",
+          "shortTitle": "Libelle Region",
           "suggestFilterValues": true,
           "isVisible": true,
           "public": true,
@@ -17752,6 +19324,30 @@
       },
       "measures": [
         {
+          "name": "superficie_foret_plantee_age_dpt.id_1239",
+          "title": "Superficie Foret Plantee Age Dpt Id1239",
+          "shortTitle": "Id1239",
+          "cumulativeTotal": false,
+          "cumulative": false,
+          "type": "number",
+          "aggType": "sum",
+          "drillMembers": [],
+          "drillMembersGrouped": {
+            "measures": [],
+            "dimensions": []
+          },
+          "meta": {
+            "libelle_indicateur": "Superficie de forêt plantée par classe d'âge",
+            "statut_commun": "Mesure",
+            "unite": "ha",
+            "methode_calcul": "Les données brutes ont été filtrées en utilisant la colonne label = ST_plant_age et modalite2 = 'Forêt plantée' (conformément à la documentation IGN disponible en ligne). \n Afin de récupérer l'indicateur, nous avons utilisé la colonne tot_stand. \n La classe d'âge est issue de la colonne modalite1.",
+            "summable": false,
+            "is_beta": true
+          },
+          "isVisible": true,
+          "public": true
+        },
+        {
           "name": "superficie_foret_plantee_age_dpt.intervalle_confiance",
           "title": "Superficie Foret Plantee Age Dpt Intervalle Confiance",
           "shortTitle": "Intervalle Confiance",
@@ -17769,6 +19365,27 @@
             "statut_commun": "Extra",
             "unite": "ha",
             "methode_calcul": "L'intervalle de confiance a été récupéré en utilisant la colonne ic_stand",
+            "summable": false
+          },
+          "isVisible": true,
+          "public": true
+        },
+        {
+          "name": "superficie_foret_plantee_age_dpt.significativite",
+          "title": "Superficie Foret Plantee Age Dpt Significativite",
+          "shortTitle": "Significativite",
+          "cumulativeTotal": false,
+          "cumulative": false,
+          "type": "boolean",
+          "aggType": "boolean",
+          "drillMembers": [],
+          "drillMembersGrouped": {
+            "measures": [],
+            "dimensions": []
+          },
+          "meta": {
+            "libelle_indicateur": "Significativité",
+            "statut_commun": "Extra",
             "summable": false
           },
           "isVisible": true,
@@ -17815,16 +19432,6 @@
           "isVisible": true,
           "public": true,
           "primaryKey": false
-        },
-        {
-          "name": "superficie_foret_plantee_age_dpt.significativite",
-          "title": "Superficie Foret Plantee Age Dpt Significativite",
-          "type": "string",
-          "shortTitle": "Significativite",
-          "suggestFilterValues": true,
-          "isVisible": true,
-          "public": true,
-          "primaryKey": false
         }
       ],
       "segments": [],
@@ -17844,6 +19451,30 @@
       },
       "measures": [
         {
+          "name": "superficie_foret_plantee_age_region.id_1239",
+          "title": "Superficie Foret Plantee Age Region Id1239",
+          "shortTitle": "Id1239",
+          "cumulativeTotal": false,
+          "cumulative": false,
+          "type": "number",
+          "aggType": "sum",
+          "drillMembers": [],
+          "drillMembersGrouped": {
+            "measures": [],
+            "dimensions": []
+          },
+          "meta": {
+            "libelle_indicateur": "Superficie de forêt plantée par classe d'âge",
+            "statut_commun": "Mesure",
+            "unite": "ha",
+            "methode_calcul": "Les données brutes ont été filtrées en utilisant la colonne label = ST_plant_age et modalite2 = 'Forêt plantée' (conformément à la documentation IGN disponible en ligne). \n Afin de récupérer l'indicateur, nous avons utilisé la colonne tot_stand. \n La classe d'âge est issue de la colonne modalite1.",
+            "summable": false,
+            "is_beta": true
+          },
+          "isVisible": true,
+          "public": true
+        },
+        {
           "name": "superficie_foret_plantee_age_region.intervalle_confiance",
           "title": "Superficie Foret Plantee Age Region Intervalle Confiance",
           "shortTitle": "Intervalle Confiance",
@@ -17861,6 +19492,27 @@
             "statut_commun": "Extra",
             "unite": "ha",
             "methode_calcul": "L'intervalle de confiance a été récupéré en utilisant la colonne ic_stand",
+            "summable": false
+          },
+          "isVisible": true,
+          "public": true
+        },
+        {
+          "name": "superficie_foret_plantee_age_region.significativite",
+          "title": "Superficie Foret Plantee Age Region Significativite",
+          "shortTitle": "Significativite",
+          "cumulativeTotal": false,
+          "cumulative": false,
+          "type": "boolean",
+          "aggType": "boolean",
+          "drillMembers": [],
+          "drillMembersGrouped": {
+            "measures": [],
+            "dimensions": []
+          },
+          "meta": {
+            "libelle_indicateur": "Significativité",
+            "statut_commun": "Extra",
             "summable": false
           },
           "isVisible": true,
@@ -17907,16 +19559,6 @@
           "isVisible": true,
           "public": true,
           "primaryKey": false
-        },
-        {
-          "name": "superficie_foret_plantee_age_region.significativite",
-          "title": "Superficie Foret Plantee Age Region Significativite",
-          "type": "string",
-          "shortTitle": "Significativite",
-          "suggestFilterValues": true,
-          "isVisible": true,
-          "public": true,
-          "primaryKey": false
         }
       ],
       "segments": [],
@@ -17936,6 +19578,30 @@
       },
       "measures": [
         {
+          "name": "superficie_forets_essence_dpt.id_1213",
+          "title": "Superficie Forets Essence Dpt Id1213",
+          "shortTitle": "Id1213",
+          "cumulativeTotal": false,
+          "cumulative": false,
+          "type": "number",
+          "aggType": "sum",
+          "drillMembers": [],
+          "drillMembersGrouped": {
+            "measures": [],
+            "dimensions": []
+          },
+          "meta": {
+            "libelle_indicateur": "Superficie en forêts par essence",
+            "statut_commun": "Mesure",
+            "unite": "ha",
+            "methode_calcul": "Les données brutes ont été filtrées en utilisant la colonne label = STEsspre (conformément à la documentation IGN disponible en ligne). \n Afin de récupérer l'indicateur, nous avons utilisé la colonne tot_stand. \n L'essence est issue de la colonne modalite1.",
+            "summable": false,
+            "is_beta": true
+          },
+          "isVisible": true,
+          "public": true
+        },
+        {
           "name": "superficie_forets_essence_dpt.intervalle_confiance",
           "title": "Superficie Forets Essence Dpt Intervalle Confiance",
           "shortTitle": "Intervalle Confiance",
@@ -17953,6 +19619,27 @@
             "statut_commun": "Extra",
             "unite": "ha",
             "methode_calcul": "L'intervalle de confiance a été récupéré en utilisant la colonne ic_stand",
+            "summable": false
+          },
+          "isVisible": true,
+          "public": true
+        },
+        {
+          "name": "superficie_forets_essence_dpt.significativite",
+          "title": "Superficie Forets Essence Dpt Significativite",
+          "shortTitle": "Significativite",
+          "cumulativeTotal": false,
+          "cumulative": false,
+          "type": "boolean",
+          "aggType": "boolean",
+          "drillMembers": [],
+          "drillMembersGrouped": {
+            "measures": [],
+            "dimensions": []
+          },
+          "meta": {
+            "libelle_indicateur": "Significativité",
+            "statut_commun": "Extra",
             "summable": false
           },
           "isVisible": true,
@@ -17999,16 +19686,6 @@
           "isVisible": true,
           "public": true,
           "primaryKey": false
-        },
-        {
-          "name": "superficie_forets_essence_dpt.significativite",
-          "title": "Superficie Forets Essence Dpt Significativite",
-          "type": "string",
-          "shortTitle": "Significativite",
-          "suggestFilterValues": true,
-          "isVisible": true,
-          "public": true,
-          "primaryKey": false
         }
       ],
       "segments": [],
@@ -18028,6 +19705,30 @@
       },
       "measures": [
         {
+          "name": "superficie_forets_essence_region.id_1213",
+          "title": "Superficie Forets Essence Region Id1213",
+          "shortTitle": "Id1213",
+          "cumulativeTotal": false,
+          "cumulative": false,
+          "type": "number",
+          "aggType": "sum",
+          "drillMembers": [],
+          "drillMembersGrouped": {
+            "measures": [],
+            "dimensions": []
+          },
+          "meta": {
+            "libelle_indicateur": "Superficie en forêts par essence",
+            "statut_commun": "Mesure",
+            "unite": "ha",
+            "methode_calcul": "Les données brutes ont été filtrées en utilisant la colonne label = STEsspre (conformément à la documentation IGN disponible en ligne). \n Afin de récupérer l'indicateur, nous avons utilisé la colonne tot_stand. \n L'essence est issue de la colonne modalite1.",
+            "summable": false,
+            "is_beta": true
+          },
+          "isVisible": true,
+          "public": true
+        },
+        {
           "name": "superficie_forets_essence_region.intervalle_confiance",
           "title": "Superficie Forets Essence Region Intervalle Confiance",
           "shortTitle": "Intervalle Confiance",
@@ -18045,6 +19746,27 @@
             "statut_commun": "Extra",
             "unite": "ha",
             "methode_calcul": null,
+            "summable": false
+          },
+          "isVisible": true,
+          "public": true
+        },
+        {
+          "name": "superficie_forets_essence_region.significativite",
+          "title": "Superficie Forets Essence Region Significativite",
+          "shortTitle": "Significativite",
+          "cumulativeTotal": false,
+          "cumulative": false,
+          "type": "boolean",
+          "aggType": "boolean",
+          "drillMembers": [],
+          "drillMembersGrouped": {
+            "measures": [],
+            "dimensions": []
+          },
+          "meta": {
+            "libelle_indicateur": "Significativité",
+            "statut_commun": "Extra",
             "summable": false
           },
           "isVisible": true,
@@ -18091,16 +19813,6 @@
           "isVisible": true,
           "public": true,
           "primaryKey": false
-        },
-        {
-          "name": "superficie_forets_essence_region.significativite",
-          "title": "Superficie Forets Essence Region Significativite",
-          "type": "string",
-          "shortTitle": "Significativite",
-          "suggestFilterValues": true,
-          "isVisible": true,
-          "public": true,
-          "primaryKey": false
         }
       ],
       "segments": [],
@@ -18120,6 +19832,30 @@
       },
       "measures": [
         {
+          "name": "superficie_forets_type_propriete_dpt.id_1215",
+          "title": "Superficie Forets Type Propriete Dpt Id1215",
+          "shortTitle": "Id1215",
+          "cumulativeTotal": false,
+          "cumulative": false,
+          "type": "number",
+          "aggType": "sum",
+          "drillMembers": [],
+          "drillMembersGrouped": {
+            "measures": [],
+            "dimensions": []
+          },
+          "meta": {
+            "libelle_indicateur": "Surface de forêt par type de propriété",
+            "statut_commun": "Mesure",
+            "unite": "ha",
+            "methode_calcul": "Les données brutes ont été filtrées en utilisant la colonne label = SFPro (conformément à documentation ign disponible en ligne). \n Afin de récupérer l'indicateur, nous avons utilisé la colonne tot_stand. \n Les autres informations statistiques (colonnes moy_ha_stand, ic_moy_ha_stand, ic_stand, pourc_stand) n'ont pas été prises en compte.",
+            "summable": false,
+            "is_beta": true
+          },
+          "isVisible": true,
+          "public": true
+        },
+        {
           "name": "superficie_forets_type_propriete_dpt.intervalle_confiance",
           "title": "Superficie Forets Type Propriete Dpt Intervalle Confiance",
           "shortTitle": "Intervalle Confiance",
@@ -18137,6 +19873,27 @@
             "statut_commun": "Extra",
             "unite": "ha",
             "methode_calcul": "L'intervalle de confiance a été récupéré en utilisant la colonne ic_stand",
+            "summable": false
+          },
+          "isVisible": true,
+          "public": true
+        },
+        {
+          "name": "superficie_forets_type_propriete_dpt.significativite",
+          "title": "Superficie Forets Type Propriete Dpt Significativite",
+          "shortTitle": "Significativite",
+          "cumulativeTotal": false,
+          "cumulative": false,
+          "type": "boolean",
+          "aggType": "boolean",
+          "drillMembers": [],
+          "drillMembersGrouped": {
+            "measures": [],
+            "dimensions": []
+          },
+          "meta": {
+            "libelle_indicateur": "Significativité",
+            "statut_commun": "Extra",
             "summable": false
           },
           "isVisible": true,
@@ -18183,16 +19940,6 @@
           "isVisible": true,
           "public": true,
           "primaryKey": false
-        },
-        {
-          "name": "superficie_forets_type_propriete_dpt.significativite",
-          "title": "Superficie Forets Type Propriete Dpt Significativite",
-          "type": "string",
-          "shortTitle": "Significativite",
-          "suggestFilterValues": true,
-          "isVisible": true,
-          "public": true,
-          "primaryKey": false
         }
       ],
       "segments": [],
@@ -18212,6 +19959,30 @@
       },
       "measures": [
         {
+          "name": "superficie_forets_type_propriete_region.id_1215",
+          "title": "Superficie Forets Type Propriete Region Id1215",
+          "shortTitle": "Id1215",
+          "cumulativeTotal": false,
+          "cumulative": false,
+          "type": "number",
+          "aggType": "sum",
+          "drillMembers": [],
+          "drillMembersGrouped": {
+            "measures": [],
+            "dimensions": []
+          },
+          "meta": {
+            "libelle_indicateur": "Surface de forêt par type de propriété",
+            "statut_commun": "Mesure",
+            "unite": "ha",
+            "methode_calcul": "Les données brutes ont été filtrées en utilisant la colonne label = SFPro (conformément à documentation ign disponible en ligne). \n Afin de récupérer l'indicateur, nous avons utilisé la colonne tot_stand. \n Les autres informations statistiques (colonnes moy_ha_stand, ic_moy_ha_stand, ic_stand, pourc_stand) n'ont pas été prises en compte.",
+            "summable": false,
+            "is_beta": true
+          },
+          "isVisible": true,
+          "public": true
+        },
+        {
           "name": "superficie_forets_type_propriete_region.intervalle_confiance",
           "title": "Superficie Forets Type Propriete Region Intervalle Confiance",
           "shortTitle": "Intervalle Confiance",
@@ -18229,6 +20000,27 @@
             "statut_commun": "Extra",
             "unite": "ha",
             "methode_calcul": "L'intervalle de confiance a été récupéré en utilisant la colonne ic_stand",
+            "summable": false
+          },
+          "isVisible": true,
+          "public": true
+        },
+        {
+          "name": "superficie_forets_type_propriete_region.significativite",
+          "title": "Superficie Forets Type Propriete Region Significativite",
+          "shortTitle": "Significativite",
+          "cumulativeTotal": false,
+          "cumulative": false,
+          "type": "boolean",
+          "aggType": "boolean",
+          "drillMembers": [],
+          "drillMembersGrouped": {
+            "measures": [],
+            "dimensions": []
+          },
+          "meta": {
+            "libelle_indicateur": "Significativité",
+            "statut_commun": "Extra",
             "summable": false
           },
           "isVisible": true,
@@ -18271,16 +20063,6 @@
           "title": "Superficie Forets Type Propriete Region Type Propriete",
           "type": "string",
           "shortTitle": "Type Propriete",
-          "suggestFilterValues": true,
-          "isVisible": true,
-          "public": true,
-          "primaryKey": false
-        },
-        {
-          "name": "superficie_forets_type_propriete_region.significativite",
-          "title": "Superficie Forets Type Propriete Region Significativite",
-          "type": "string",
-          "shortTitle": "Significativite",
           "suggestFilterValues": true,
           "isVisible": true,
           "public": true,
@@ -19313,7 +21095,53 @@
       "meta": {
         "responsable_calcul": "Institut national de l’information géographique et forestière - IGN"
       },
-      "measures": [],
+      "measures": [
+        {
+          "name": "taux_boisement_dpt.id_1214",
+          "title": "Taux Boisement Dpt Id1214",
+          "shortTitle": "Id1214",
+          "cumulativeTotal": false,
+          "cumulative": false,
+          "type": "number",
+          "aggType": "sum",
+          "drillMembers": [],
+          "drillMembersGrouped": {
+            "measures": [],
+            "dimensions": []
+          },
+          "meta": {
+            "libelle_indicateur": "Taux de boisement",
+            "statut_commun": "Mesure",
+            "unite": "%",
+            "methode_calcul": "Les données brutes ont été filtrées en utilisant la colonne label = tx_bois (conformément à documentation ign disponible en ligne). \n Afin de récupérer l'indicateur, nous avons utilisé la colonne tot_stand. \n Les autres informations statistiques (colonnes moy_ha_stand, ic_moy_ha_stand, ic_stand, pourc_stand) n'ont pas été prises en compte.",
+            "summable": false,
+            "is_beta": true
+          },
+          "isVisible": true,
+          "public": true
+        },
+        {
+          "name": "taux_boisement_dpt.significativite",
+          "title": "Taux Boisement Dpt Significativite",
+          "shortTitle": "Significativite",
+          "cumulativeTotal": false,
+          "cumulative": false,
+          "type": "boolean",
+          "aggType": "boolean",
+          "drillMembers": [],
+          "drillMembersGrouped": {
+            "measures": [],
+            "dimensions": []
+          },
+          "meta": {
+            "libelle_indicateur": "Significativité",
+            "statut_commun": "Extra",
+            "summable": false
+          },
+          "isVisible": true,
+          "public": true
+        }
+      ],
       "dimensions": [
         {
           "name": "taux_boisement_dpt.date_mesure",
@@ -19344,16 +21172,6 @@
           "isVisible": true,
           "public": true,
           "primaryKey": false
-        },
-        {
-          "name": "taux_boisement_dpt.significativite",
-          "title": "Taux Boisement Dpt Significativite",
-          "type": "string",
-          "shortTitle": "Significativite",
-          "suggestFilterValues": true,
-          "isVisible": true,
-          "public": true,
-          "primaryKey": false
         }
       ],
       "segments": [],
@@ -19371,7 +21189,53 @@
       "meta": {
         "responsable_calcul": "Institut national de l’information géographique et forestière - IGN"
       },
-      "measures": [],
+      "measures": [
+        {
+          "name": "taux_boisement_region.id_1214",
+          "title": "Taux Boisement Region Id1214",
+          "shortTitle": "Id1214",
+          "cumulativeTotal": false,
+          "cumulative": false,
+          "type": "number",
+          "aggType": "sum",
+          "drillMembers": [],
+          "drillMembersGrouped": {
+            "measures": [],
+            "dimensions": []
+          },
+          "meta": {
+            "libelle_indicateur": "Taux de boisement",
+            "statut_commun": "Mesure",
+            "unite": "%",
+            "methode_calcul": "Les données brutes ont été filtrées en utilisant la colonne label = tx_bois (conformément à documentation ign disponible en ligne). \n Afin de récupérer l'indicateur, nous avons utilisé la colonne tot_stand. \n Les autres informations statistiques (colonnes moy_ha_stand, ic_moy_ha_stand, ic_stand, pourc_stand) n'ont pas été prises en compte.",
+            "summable": false,
+            "is_beta": true
+          },
+          "isVisible": true,
+          "public": true
+        },
+        {
+          "name": "taux_boisement_region.significativite",
+          "title": "Taux Boisement Region Significativite",
+          "shortTitle": "Significativite",
+          "cumulativeTotal": false,
+          "cumulative": false,
+          "type": "boolean",
+          "aggType": "boolean",
+          "drillMembers": [],
+          "drillMembersGrouped": {
+            "measures": [],
+            "dimensions": []
+          },
+          "meta": {
+            "libelle_indicateur": "Significativité",
+            "statut_commun": "Extra",
+            "summable": false
+          },
+          "isVisible": true,
+          "public": true
+        }
+      ],
       "dimensions": [
         {
           "name": "taux_boisement_region.date_mesure",
@@ -19402,16 +21266,6 @@
           "isVisible": true,
           "public": true,
           "primaryKey": false
-        },
-        {
-          "name": "taux_boisement_region.significativite",
-          "title": "Taux Boisement Region Significativite",
-          "type": "string",
-          "shortTitle": "Significativite",
-          "suggestFilterValues": true,
-          "isVisible": true,
-          "public": true,
-          "primaryKey": false
         }
       ],
       "segments": [],
@@ -19431,6 +21285,30 @@
       },
       "measures": [
         {
+          "name": "tiges_alt_essence_dpt.id_1240",
+          "title": "Tiges Alt Essence Dpt Id1240",
+          "shortTitle": "Id1240",
+          "cumulativeTotal": false,
+          "cumulative": false,
+          "type": "number",
+          "aggType": "sum",
+          "drillMembers": [],
+          "drillMembersGrouped": {
+            "measures": [],
+            "dimensions": []
+          },
+          "meta": {
+            "libelle_indicateur": "Nombre de tiges altérées par essence",
+            "statut_commun": "Mesure",
+            "unite": "tiges",
+            "methode_calcul": "Les données brutes ont été filtrées en utilisant la colonne label = DEPERIS_ESS (conformément à documentation ign disponible en ligne). \n Afin de récupérer l'indicateur, nous avons utilisé la colonne tot_stand. \n Les autres informations statistiques (colonnes moy_ha_stand, ic_moy_ha_stand, ic_stand, pourc_stand) n'ont pas été prises en compte. \n\nLe nombre de tiges correspond au nombre d’arbres ou au nombre de tiges en cas de cépées dont le diamètre à 1,30 m est supérieur à 7,5 cm.",
+            "summable": false,
+            "is_beta": true
+          },
+          "isVisible": true,
+          "public": true
+        },
+        {
           "name": "tiges_alt_essence_dpt.intervalle_confiance",
           "title": "Tiges Alt Essence Dpt Intervalle Confiance",
           "shortTitle": "Intervalle Confiance",
@@ -19448,6 +21326,27 @@
             "statut_commun": "Extra",
             "unite": "ha",
             "methode_calcul": "L'intervalle de confiance a été récupéré en utilisant la colonne ic_stand",
+            "summable": false
+          },
+          "isVisible": true,
+          "public": true
+        },
+        {
+          "name": "tiges_alt_essence_dpt.significativite",
+          "title": "Tiges Alt Essence Dpt Significativite",
+          "shortTitle": "Significativite",
+          "cumulativeTotal": false,
+          "cumulative": false,
+          "type": "boolean",
+          "aggType": "boolean",
+          "drillMembers": [],
+          "drillMembersGrouped": {
+            "measures": [],
+            "dimensions": []
+          },
+          "meta": {
+            "libelle_indicateur": "Significativité",
+            "statut_commun": "Extra",
             "summable": false
           },
           "isVisible": true,
@@ -19494,16 +21393,6 @@
           "isVisible": true,
           "public": true,
           "primaryKey": false
-        },
-        {
-          "name": "tiges_alt_essence_dpt.significativite",
-          "title": "Tiges Alt Essence Dpt Significativite",
-          "type": "string",
-          "shortTitle": "Significativite",
-          "suggestFilterValues": true,
-          "isVisible": true,
-          "public": true,
-          "primaryKey": false
         }
       ],
       "segments": [],
@@ -19523,6 +21412,30 @@
       },
       "measures": [
         {
+          "name": "tiges_alt_essence_region.id_1240",
+          "title": "Tiges Alt Essence Region Id1240",
+          "shortTitle": "Id1240",
+          "cumulativeTotal": false,
+          "cumulative": false,
+          "type": "number",
+          "aggType": "sum",
+          "drillMembers": [],
+          "drillMembersGrouped": {
+            "measures": [],
+            "dimensions": []
+          },
+          "meta": {
+            "libelle_indicateur": "Nombre de tiges altérées par essence",
+            "statut_commun": "Mesure",
+            "unite": "tiges",
+            "methode_calcul": "Les données brutes ont été filtrées en utilisant la colonne label = DEPERIS_ESS (conformément à documentation ign disponible en ligne). \n Afin de récupérer l'indicateur, nous avons utilisé la colonne tot_stand. \n Les autres informations statistiques (colonnes moy_ha_stand, ic_moy_ha_stand, ic_stand, pourc_stand) n'ont pas été prises en compte. \n\nLe nombre de tiges correspond au nombre d’arbres ou au nombre de tiges en cas de cépées dont le diamètre à 1,30 m est supérieur à 7,5 cm.",
+            "summable": false,
+            "is_beta": true
+          },
+          "isVisible": true,
+          "public": true
+        },
+        {
           "name": "tiges_alt_essence_region.intervalle_confiance",
           "title": "Tiges Alt Essence Region Intervalle Confiance",
           "shortTitle": "Intervalle Confiance",
@@ -19540,6 +21453,27 @@
             "statut_commun": "Extra",
             "unite": "ha",
             "methode_calcul": "L'intervalle de confiance a été récupéré en utilisant la colonne ic_stand",
+            "summable": false
+          },
+          "isVisible": true,
+          "public": true
+        },
+        {
+          "name": "tiges_alt_essence_region.significativite",
+          "title": "Tiges Alt Essence Region Significativite",
+          "shortTitle": "Significativite",
+          "cumulativeTotal": false,
+          "cumulative": false,
+          "type": "boolean",
+          "aggType": "boolean",
+          "drillMembers": [],
+          "drillMembersGrouped": {
+            "measures": [],
+            "dimensions": []
+          },
+          "meta": {
+            "libelle_indicateur": "Significativité",
+            "statut_commun": "Extra",
             "summable": false
           },
           "isVisible": true,
@@ -19586,16 +21520,6 @@
           "isVisible": true,
           "public": true,
           "primaryKey": false
-        },
-        {
-          "name": "tiges_alt_essence_region.significativite",
-          "title": "Tiges Alt Essence Region Significativite",
-          "type": "string",
-          "shortTitle": "Significativite",
-          "suggestFilterValues": true,
-          "isVisible": true,
-          "public": true,
-          "primaryKey": false
         }
       ],
       "segments": [],
@@ -19611,7 +21535,8 @@
       "public": true,
       "description": "Tonnage total de déchets ménagers et assimiles (DMA) par habitant",
       "meta": {
-        "responsable_calcul": "ADEME - INSEE"
+        "responsable_calcul": "ADEME - INSEE",
+        "publish": false
       },
       "measures": [
         {
@@ -19818,6 +21743,51 @@
             "methode_calcul": "Indicateur calculé d'après les données de l'ADEME. Sont considérés comme valorisations de déchets les valorisations matières et les valorisations organiques",
             "numerator": "qte_dechets_valorises",
             "denominator": "quantite_dechets_tot"
+          },
+          "isVisible": true,
+          "public": true
+        },
+        {
+          "name": "valorisation_dechets_dpt.qte_dechets_stockes",
+          "title": "Valorisation Dechets Dpt Qte Dechets Stockes",
+          "shortTitle": "Qte Dechets Stockes",
+          "cumulativeTotal": false,
+          "cumulative": false,
+          "type": "number",
+          "aggType": "sum",
+          "drillMembers": [],
+          "drillMembersGrouped": {
+            "measures": [],
+            "dimensions": []
+          },
+          "meta": {
+            "libelle_indicateur": "Quantité de déchets admis en installation de stockage",
+            "unite": "t"
+          },
+          "isVisible": true,
+          "public": true
+        },
+        {
+          "name": "valorisation_dechets_dpt.id_1251",
+          "title": "Valorisation Dechets Dpt Id1251",
+          "shortTitle": "Id1251",
+          "cumulativeTotal": false,
+          "cumulative": false,
+          "type": "number",
+          "aggType": "number",
+          "drillMembers": [],
+          "drillMembersGrouped": {
+            "measures": [],
+            "dimensions": []
+          },
+          "meta": {
+            "libelle_indicateur": "Part des déchets ménagers et assimilés admis en installation de stockage",
+            "statut_commun": "Mesure",
+            "unite": "%",
+            "methode_calcul": "Ratio entre le tonnage de DMA admis en installation de stockage (ISDND, code SINOE 02D, et Stockage pour inertes, code SINOE 02F) et le tonnage total de DMA collectés, d'après les données SINOE de l'ADEME.",
+            "numerator": "qte_dechets_stockes",
+            "denominator": "quantite_dechets_tot",
+            "is_beta": true
           },
           "isVisible": true,
           "public": true
@@ -20451,6 +22421,159 @@
       "nestedFolders": []
     },
     {
+      "name": "vivant_seules_com",
+      "type": "cube",
+      "title": "Vivant Seules Com",
+      "isVisible": true,
+      "public": true,
+      "description": "Cet indicateur représente le nombre de personnes vivant seules dans la population totale et le nombre de personnes agées vivant seules par commune",
+      "meta": {
+        "responsable_calcul": "INSEE - INSTITUT NATIONAL DE LA STATISTIQUE ET DES ETUDES ECONOMIQUES",
+        "publish": false
+      },
+      "measures": [
+        {
+          "name": "vivant_seules_com.id_1255",
+          "title": "Vivant Seules Com Id1255",
+          "shortTitle": "Id1255",
+          "cumulativeTotal": false,
+          "cumulative": false,
+          "type": "number",
+          "aggType": "sum",
+          "drillMembers": [],
+          "drillMembersGrouped": {
+            "measures": [],
+            "dimensions": []
+          },
+          "meta": {
+            "libelle_indicateur": "Nombre de personnes vivant seules dans la population totale et le nombre de personnes agées vivant seules par commune",
+            "statut_commun": "Mesure",
+            "unite": "nb",
+            "methode_calcul": "Somme sur toutes les tranches d'âge lorsque uniquement_agee=toute_population, et seulement sur les >=65 ans dans le cas uniquement_agee=personnes_agees",
+            "publish": false
+          },
+          "isVisible": true,
+          "public": true
+        }
+      ],
+      "dimensions": [
+        {
+          "name": "vivant_seules_com.date_mesure",
+          "title": "Vivant Seules Com Date Mesure",
+          "type": "time",
+          "shortTitle": "Date Mesure",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "vivant_seules_com.annee",
+          "title": "Vivant Seules Com Annee",
+          "type": "number",
+          "shortTitle": "Annee",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "vivant_seules_com.geocode_commune",
+          "title": "Vivant Seules Com Geocode Commune",
+          "type": "string",
+          "shortTitle": "Geocode Commune",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "vivant_seules_com.libelle_commune",
+          "title": "Vivant Seules Com Libelle Commune",
+          "type": "string",
+          "shortTitle": "Libelle Commune",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "vivant_seules_com.geocode_epci",
+          "title": "Vivant Seules Com Geocode Epci",
+          "type": "string",
+          "shortTitle": "Geocode Epci",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "vivant_seules_com.libelle_epci",
+          "title": "Vivant Seules Com Libelle Epci",
+          "type": "string",
+          "shortTitle": "Libelle Epci",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "vivant_seules_com.geocode_departement",
+          "title": "Vivant Seules Com Geocode Departement",
+          "type": "string",
+          "shortTitle": "Geocode Departement",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "vivant_seules_com.libelle_departement",
+          "title": "Vivant Seules Com Libelle Departement",
+          "type": "string",
+          "shortTitle": "Libelle Departement",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "vivant_seules_com.geocode_region",
+          "title": "Vivant Seules Com Geocode Region",
+          "type": "string",
+          "shortTitle": "Geocode Region",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "vivant_seules_com.libelle_region",
+          "title": "Vivant Seules Com Libelle Region",
+          "type": "string",
+          "shortTitle": "Libelle Region",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "vivant_seules_com.uniquement_agee",
+          "title": "Vivant Seules Com Uniquement Agee",
+          "type": "string",
+          "shortTitle": "Uniquement Agee",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        }
+      ],
+      "segments": [],
+      "hierarchies": [],
+      "folders": [],
+      "nestedFolders": []
+    },
+    {
       "name": "volu_bois_ess_diametre_dpt",
       "type": "cube",
       "title": "Volu Bois Ess Diametre Dpt",
@@ -20461,6 +22584,30 @@
         "responsable_calcul": "Institut national de l’information géographique et forestière - IGN"
       },
       "measures": [
+        {
+          "name": "volu_bois_ess_diametre_dpt.id_1216",
+          "title": "Volu Bois Ess Diametre Dpt Id1216",
+          "shortTitle": "Id1216",
+          "cumulativeTotal": false,
+          "cumulative": false,
+          "type": "number",
+          "aggType": "sum",
+          "drillMembers": [],
+          "drillMembersGrouped": {
+            "measures": [],
+            "dimensions": []
+          },
+          "meta": {
+            "libelle_indicateur": "Volume de bois vivant par essence et par catégorie de diamètre",
+            "statut_commun": "Mesure",
+            "unite": "m3",
+            "methode_calcul": "Les données brutes ont été filtrées en utilisant la colonne label = Vclad_ess (conformément à documentation ign disponible en ligne). \n Afin de récupérer l'indicateur, nous avons utilisé la colonne tot_stand. \n Les autres informations statistiques (colonnes moy_ha_stand, ic_moy_ha_stand, ic_stand, pourc_stand) n'ont pas été prises en compte.",
+            "summable": false,
+            "is_beta": true
+          },
+          "isVisible": true,
+          "public": true
+        },
         {
           "name": "volu_bois_ess_diametre_dpt.intervalle_confiance",
           "title": "Volu Bois Ess Diametre Dpt Intervalle Confiance",
@@ -20479,6 +22626,27 @@
             "statut_commun": "Extra",
             "unite": "ha",
             "methode_calcul": "L'intervalle de confiance a été récupéré en utilisant la colonne ic_stand",
+            "summable": false
+          },
+          "isVisible": true,
+          "public": true
+        },
+        {
+          "name": "volu_bois_ess_diametre_dpt.significativite",
+          "title": "Volu Bois Ess Diametre Dpt Significativite",
+          "shortTitle": "Significativite",
+          "cumulativeTotal": false,
+          "cumulative": false,
+          "type": "boolean",
+          "aggType": "boolean",
+          "drillMembers": [],
+          "drillMembersGrouped": {
+            "measures": [],
+            "dimensions": []
+          },
+          "meta": {
+            "libelle_indicateur": "Significativité",
+            "statut_commun": "Extra",
             "summable": false
           },
           "isVisible": true,
@@ -20535,16 +22703,6 @@
           "isVisible": true,
           "public": true,
           "primaryKey": false
-        },
-        {
-          "name": "volu_bois_ess_diametre_dpt.significativite",
-          "title": "Volu Bois Ess Diametre Dpt Significativite",
-          "type": "string",
-          "shortTitle": "Significativite",
-          "suggestFilterValues": true,
-          "isVisible": true,
-          "public": true,
-          "primaryKey": false
         }
       ],
       "segments": [],
@@ -20564,6 +22722,30 @@
       },
       "measures": [
         {
+          "name": "volu_bois_ess_diametre_region.id_1216",
+          "title": "Volu Bois Ess Diametre Region Id1216",
+          "shortTitle": "Id1216",
+          "cumulativeTotal": false,
+          "cumulative": false,
+          "type": "number",
+          "aggType": "sum",
+          "drillMembers": [],
+          "drillMembersGrouped": {
+            "measures": [],
+            "dimensions": []
+          },
+          "meta": {
+            "libelle_indicateur": "Volume de bois vivant par essence et par catégorie de diamètre",
+            "statut_commun": "Mesure",
+            "unite": "m3",
+            "methode_calcul": "Les données brutes ont été filtrées en utilisant la colonne label = Vclad_ess (conformément à documentation ign disponible en ligne). \n Afin de récupérer l'indicateur, nous avons utilisé la colonne tot_stand. \n Les autres informations statistiques (colonnes moy_ha_stand, ic_moy_ha_stand, ic_stand, pourc_stand) n'ont pas été prises en compte.",
+            "summable": false,
+            "is_beta": true
+          },
+          "isVisible": true,
+          "public": true
+        },
+        {
           "name": "volu_bois_ess_diametre_region.intervalle_confiance",
           "title": "Volu Bois Ess Diametre Region Intervalle Confiance",
           "shortTitle": "Intervalle Confiance",
@@ -20581,6 +22763,27 @@
             "statut_commun": "Extra",
             "unite": "ha",
             "methode_calcul": "L'intervalle de confiance a été récupéré en utilisant la colonne ic_stand",
+            "summable": false
+          },
+          "isVisible": true,
+          "public": true
+        },
+        {
+          "name": "volu_bois_ess_diametre_region.significativite",
+          "title": "Volu Bois Ess Diametre Region Significativite",
+          "shortTitle": "Significativite",
+          "cumulativeTotal": false,
+          "cumulative": false,
+          "type": "boolean",
+          "aggType": "boolean",
+          "drillMembers": [],
+          "drillMembersGrouped": {
+            "measures": [],
+            "dimensions": []
+          },
+          "meta": {
+            "libelle_indicateur": "Significativité",
+            "statut_commun": "Extra",
             "summable": false
           },
           "isVisible": true,
@@ -20633,16 +22836,6 @@
           "title": "Volu Bois Ess Diametre Region Categorie Diametre",
           "type": "string",
           "shortTitle": "Categorie Diametre",
-          "suggestFilterValues": true,
-          "isVisible": true,
-          "public": true,
-          "primaryKey": false
-        },
-        {
-          "name": "volu_bois_ess_diametre_region.significativite",
-          "title": "Volu Bois Ess Diametre Region Significativite",
-          "type": "string",
-          "shortTitle": "Significativite",
           "suggestFilterValues": true,
           "isVisible": true,
           "public": true,

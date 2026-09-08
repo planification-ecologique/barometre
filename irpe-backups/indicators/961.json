@@ -36,14 +36,14 @@
       "aires_protegees_dpt.libelle_region": "Normandie",
       "aires_protegees_dpt.geocode_region": "28",
       "aires_protegees_dpt.date_mesure.year": "2024-01-01T00:00:00.000",
-      "aires_protegees_dpt.id_961": 21.10122422430232,
+      "aires_protegees_dpt.id_961": 21.101224224302324,
       "aires_protegees_dpt.date_mesure": "2024-01-01T00:00:00.000"
     },
     {
       "aires_protegees_dpt.libelle_region": "Île-de-France",
       "aires_protegees_dpt.geocode_region": "11",
       "aires_protegees_dpt.date_mesure.year": "2024-01-01T00:00:00.000",
-      "aires_protegees_dpt.id_961": 25.053078876006246,
+      "aires_protegees_dpt.id_961": 25.05307887600625,
       "aires_protegees_dpt.date_mesure": "2024-01-01T00:00:00.000"
     },
     {
@@ -85,7 +85,7 @@
       "aires_protegees_dpt.libelle_region": "Bourgogne-Franche-Comté",
       "aires_protegees_dpt.geocode_region": "27",
       "aires_protegees_dpt.date_mesure.year": "2024-01-01T00:00:00.000",
-      "aires_protegees_dpt.id_961": 25.73396250788935,
+      "aires_protegees_dpt.id_961": 25.733962507889352,
       "aires_protegees_dpt.date_mesure": "2024-01-01T00:00:00.000"
     },
     {
@@ -120,14 +120,14 @@
       "aires_protegees_dpt.libelle_region": "Occitanie",
       "aires_protegees_dpt.geocode_region": "76",
       "aires_protegees_dpt.date_mesure.year": "2024-01-01T00:00:00.000",
-      "aires_protegees_dpt.id_961": 37.76879896404821,
+      "aires_protegees_dpt.id_961": 37.7687989640482,
       "aires_protegees_dpt.date_mesure": "2024-01-01T00:00:00.000"
     },
     {
       "aires_protegees_dpt.libelle_region": "Auvergne-Rhône-Alpes",
       "aires_protegees_dpt.geocode_region": "84",
       "aires_protegees_dpt.date_mesure.year": "2024-01-01T00:00:00.000",
-      "aires_protegees_dpt.id_961": 34.315843786353014,
+      "aires_protegees_dpt.id_961": 34.31584378635299,
       "aires_protegees_dpt.date_mesure": "2024-01-01T00:00:00.000"
     },
     {
