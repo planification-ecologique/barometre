@@ -277,11 +277,23 @@ export default {
       return this.getSectionId("Autres indicateurs");
     },
     otherLevierGroups() {
-      return this.displayLeviers.filter(
-        (levierGroup) =>
-          levierGroup !== this.primaryIndicatorGroup &&
-          levierGroup.name !== "Indicateur de chantier"
-      );
+      return this.displayLeviers.filter((levierGroup) => {
+        if (
+          levierGroup === this.primaryIndicatorGroup ||
+          levierGroup.name === "Indicateur de chantier"
+        ) {
+          return false;
+        }
+        // Pas de section "Autres indicateurs" vide (ni message d'absence)
+        if (
+          levierGroup.name === "Autres indicateurs" &&
+          (!Array.isArray(levierGroup.chartData) ||
+            levierGroup.chartData.length === 0)
+        ) {
+          return false;
+        }
+        return true;
+      });
     },
     hasChantierIndicators() {
       return (

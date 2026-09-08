@@ -266,8 +266,10 @@ function validateIndicatorPayload(payload, existing) {
     throw new Error('Réponse API vide.');
   }
 
-  if (existingRows > 0 && rowCount < existingRows) {
-    throw new Error(`Moins de lignes qu'en cache (${rowCount} < ${existingRows}).`);
+  if (existingRows > 0 && rowCount < existingRows * 0.8) {
+    throw new Error(
+      `Baisse de lignes > 20% vs cache (${rowCount} < ${existingRows}).`
+    );
   }
 }
 
