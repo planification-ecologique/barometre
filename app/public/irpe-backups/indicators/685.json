@@ -341,15 +341,15 @@
       "transport_marchandise_origine_region.date_mesure": "2014-01-01T00:00:00.000"
     },
     {
-      "transport_marchandise_origine_region.libelle_region": "Occitanie",
-      "transport_marchandise_origine_region.geocode_region": "76",
+      "transport_marchandise_origine_region.libelle_region": "Centre-Val de Loire",
+      "transport_marchandise_origine_region.geocode_region": "24",
       "transport_marchandise_origine_region.date_mesure.year": "2014-01-01T00:00:00.000",
       "transport_marchandise_origine_region.id_685": null,
       "transport_marchandise_origine_region.date_mesure": "2014-01-01T00:00:00.000"
     },
     {
-      "transport_marchandise_origine_region.libelle_region": "Centre-Val de Loire",
-      "transport_marchandise_origine_region.geocode_region": "24",
+      "transport_marchandise_origine_region.libelle_region": "Occitanie",
+      "transport_marchandise_origine_region.geocode_region": "76",
       "transport_marchandise_origine_region.date_mesure.year": "2014-01-01T00:00:00.000",
       "transport_marchandise_origine_region.id_685": null,
       "transport_marchandise_origine_region.date_mesure": "2014-01-01T00:00:00.000"

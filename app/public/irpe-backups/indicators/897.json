@@ -5,17 +5,17 @@
   "extraDimension": "tri_biodechets_dpt.geocode_departement",
   "data": [
     {
-      "tri_biodechets_dpt.libelle_region": "Centre-Val de Loire",
-      "tri_biodechets_dpt.geocode_region": "24",
-      "tri_biodechets_dpt.date_mesure.year": "2026-01-01T00:00:00.000",
-      "tri_biodechets_dpt.id_897": "1056656",
-      "tri_biodechets_dpt.date_mesure": "2026-01-01T00:00:00.000"
-    },
-    {
       "tri_biodechets_dpt.libelle_region": "Provence-Alpes-Côte d'Azur",
       "tri_biodechets_dpt.geocode_region": "93",
       "tri_biodechets_dpt.date_mesure.year": "2026-01-01T00:00:00.000",
       "tri_biodechets_dpt.id_897": "3172852",
+      "tri_biodechets_dpt.date_mesure": "2026-01-01T00:00:00.000"
+    },
+    {
+      "tri_biodechets_dpt.libelle_region": "Centre-Val de Loire",
+      "tri_biodechets_dpt.geocode_region": "24",
+      "tri_biodechets_dpt.date_mesure.year": "2026-01-01T00:00:00.000",
+      "tri_biodechets_dpt.id_897": "1056656",
       "tri_biodechets_dpt.date_mesure": "2026-01-01T00:00:00.000"
     },
     {
@@ -47,17 +47,17 @@
       "tri_biodechets_dpt.date_mesure": "2026-01-01T00:00:00.000"
     },
     {
-      "tri_biodechets_dpt.libelle_region": "Pays de la Loire",
-      "tri_biodechets_dpt.geocode_region": "52",
-      "tri_biodechets_dpt.date_mesure.year": "2026-01-01T00:00:00.000",
-      "tri_biodechets_dpt.id_897": "1901716",
-      "tri_biodechets_dpt.date_mesure": "2026-01-01T00:00:00.000"
-    },
-    {
       "tri_biodechets_dpt.libelle_region": "Auvergne-Rhône-Alpes",
       "tri_biodechets_dpt.geocode_region": "84",
       "tri_biodechets_dpt.date_mesure.year": "2026-01-01T00:00:00.000",
       "tri_biodechets_dpt.id_897": "4690927",
+      "tri_biodechets_dpt.date_mesure": "2026-01-01T00:00:00.000"
+    },
+    {
+      "tri_biodechets_dpt.libelle_region": "Pays de la Loire",
+      "tri_biodechets_dpt.geocode_region": "52",
+      "tri_biodechets_dpt.date_mesure.year": "2026-01-01T00:00:00.000",
+      "tri_biodechets_dpt.id_897": "1901716",
       "tri_biodechets_dpt.date_mesure": "2026-01-01T00:00:00.000"
     },
     {
