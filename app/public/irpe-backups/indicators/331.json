@@ -68,10 +68,10 @@
       "surface_legumineuses_dpt.date_mesure": "2010-01-01T00:00:00.000"
     },
     {
-      "surface_legumineuses_dpt.libelle_region": "Grand Est",
-      "surface_legumineuses_dpt.geocode_region": "44",
+      "surface_legumineuses_dpt.libelle_region": "Normandie",
+      "surface_legumineuses_dpt.geocode_region": "28",
       "surface_legumineuses_dpt.date_mesure.year": "2010-01-01T00:00:00.000",
-      "surface_legumineuses_dpt.id_331": 118703,
+      "surface_legumineuses_dpt.id_331": 57113,
       "surface_legumineuses_dpt.date_mesure": "2010-01-01T00:00:00.000"
     },
     {
@@ -110,17 +110,17 @@
       "surface_legumineuses_dpt.date_mesure": "2010-01-01T00:00:00.000"
     },
     {
+      "surface_legumineuses_dpt.libelle_region": "Grand Est",
+      "surface_legumineuses_dpt.geocode_region": "44",
+      "surface_legumineuses_dpt.date_mesure.year": "2010-01-01T00:00:00.000",
+      "surface_legumineuses_dpt.id_331": 118703,
+      "surface_legumineuses_dpt.date_mesure": "2010-01-01T00:00:00.000"
+    },
+    {
       "surface_legumineuses_dpt.libelle_region": "La Réunion",
       "surface_legumineuses_dpt.geocode_region": "04",
       "surface_legumineuses_dpt.date_mesure.year": "2010-01-01T00:00:00.000",
       "surface_legumineuses_dpt.id_331": 295,
-      "surface_legumineuses_dpt.date_mesure": "2010-01-01T00:00:00.000"
-    },
-    {
-      "surface_legumineuses_dpt.libelle_region": "Normandie",
-      "surface_legumineuses_dpt.geocode_region": "28",
-      "surface_legumineuses_dpt.date_mesure.year": "2010-01-01T00:00:00.000",
-      "surface_legumineuses_dpt.id_331": 57113,
       "surface_legumineuses_dpt.date_mesure": "2010-01-01T00:00:00.000"
     },
     {
@@ -145,17 +145,17 @@
       "surface_legumineuses_dpt.date_mesure": "2011-01-01T00:00:00.000"
     },
     {
-      "surface_legumineuses_dpt.libelle_region": "Nouvelle-Aquitaine",
-      "surface_legumineuses_dpt.geocode_region": "75",
-      "surface_legumineuses_dpt.date_mesure.year": "2011-01-01T00:00:00.000",
-      "surface_legumineuses_dpt.id_331": 68657,
-      "surface_legumineuses_dpt.date_mesure": "2011-01-01T00:00:00.000"
-    },
-    {
       "surface_legumineuses_dpt.libelle_region": "Mayotte",
       "surface_legumineuses_dpt.geocode_region": "06",
       "surface_legumineuses_dpt.date_mesure.year": "2011-01-01T00:00:00.000",
       "surface_legumineuses_dpt.id_331": 0,
+      "surface_legumineuses_dpt.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "surface_legumineuses_dpt.libelle_region": "Nouvelle-Aquitaine",
+      "surface_legumineuses_dpt.geocode_region": "75",
+      "surface_legumineuses_dpt.date_mesure.year": "2011-01-01T00:00:00.000",
+      "surface_legumineuses_dpt.id_331": 68657,
       "surface_legumineuses_dpt.date_mesure": "2011-01-01T00:00:00.000"
     },
     {
@@ -166,17 +166,17 @@
       "surface_legumineuses_dpt.date_mesure": "2011-01-01T00:00:00.000"
     },
     {
-      "surface_legumineuses_dpt.libelle_region": "Centre-Val de Loire",
-      "surface_legumineuses_dpt.geocode_region": "24",
-      "surface_legumineuses_dpt.date_mesure.year": "2011-01-01T00:00:00.000",
-      "surface_legumineuses_dpt.id_331": 55923,
-      "surface_legumineuses_dpt.date_mesure": "2011-01-01T00:00:00.000"
-    },
-    {
       "surface_legumineuses_dpt.libelle_region": "Provence-Alpes-Côte d'Azur",
       "surface_legumineuses_dpt.geocode_region": "93",
       "surface_legumineuses_dpt.date_mesure.year": "2011-01-01T00:00:00.000",
       "surface_legumineuses_dpt.id_331": 24029,
+      "surface_legumineuses_dpt.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "surface_legumineuses_dpt.libelle_region": "Hauts-de-France",
+      "surface_legumineuses_dpt.geocode_region": "32",
+      "surface_legumineuses_dpt.date_mesure.year": "2011-01-01T00:00:00.000",
+      "surface_legumineuses_dpt.id_331": 64323,
       "surface_legumineuses_dpt.date_mesure": "2011-01-01T00:00:00.000"
     },
     {
@@ -187,10 +187,10 @@
       "surface_legumineuses_dpt.date_mesure": "2011-01-01T00:00:00.000"
     },
     {
-      "surface_legumineuses_dpt.libelle_region": "Hauts-de-France",
-      "surface_legumineuses_dpt.geocode_region": "32",
+      "surface_legumineuses_dpt.libelle_region": "Centre-Val de Loire",
+      "surface_legumineuses_dpt.geocode_region": "24",
       "surface_legumineuses_dpt.date_mesure.year": "2011-01-01T00:00:00.000",
-      "surface_legumineuses_dpt.id_331": 64323,
+      "surface_legumineuses_dpt.id_331": 55923,
       "surface_legumineuses_dpt.date_mesure": "2011-01-01T00:00:00.000"
     },
     {
@@ -383,13 +383,6 @@
       "surface_legumineuses_dpt.date_mesure": "2012-01-01T00:00:00.000"
     },
     {
-      "surface_legumineuses_dpt.libelle_region": "Centre-Val de Loire",
-      "surface_legumineuses_dpt.geocode_region": "24",
-      "surface_legumineuses_dpt.date_mesure.year": "2013-01-01T00:00:00.000",
-      "surface_legumineuses_dpt.id_331": 42519,
-      "surface_legumineuses_dpt.date_mesure": "2013-01-01T00:00:00.000"
-    },
-    {
       "surface_legumineuses_dpt.libelle_region": "Occitanie",
       "surface_legumineuses_dpt.geocode_region": "76",
       "surface_legumineuses_dpt.date_mesure.year": "2013-01-01T00:00:00.000",
@@ -397,10 +390,17 @@
       "surface_legumineuses_dpt.date_mesure": "2013-01-01T00:00:00.000"
     },
     {
-      "surface_legumineuses_dpt.libelle_region": "Martinique",
-      "surface_legumineuses_dpt.geocode_region": "02",
+      "surface_legumineuses_dpt.libelle_region": "Centre-Val de Loire",
+      "surface_legumineuses_dpt.geocode_region": "24",
       "surface_legumineuses_dpt.date_mesure.year": "2013-01-01T00:00:00.000",
-      "surface_legumineuses_dpt.id_331": 2,
+      "surface_legumineuses_dpt.id_331": 42519,
+      "surface_legumineuses_dpt.date_mesure": "2013-01-01T00:00:00.000"
+    },
+    {
+      "surface_legumineuses_dpt.libelle_region": "Mayotte",
+      "surface_legumineuses_dpt.geocode_region": "06",
+      "surface_legumineuses_dpt.date_mesure.year": "2013-01-01T00:00:00.000",
+      "surface_legumineuses_dpt.id_331": 0,
       "surface_legumineuses_dpt.date_mesure": "2013-01-01T00:00:00.000"
     },
     {
@@ -495,10 +495,10 @@
       "surface_legumineuses_dpt.date_mesure": "2013-01-01T00:00:00.000"
     },
     {
-      "surface_legumineuses_dpt.libelle_region": "Mayotte",
-      "surface_legumineuses_dpt.geocode_region": "06",
+      "surface_legumineuses_dpt.libelle_region": "Martinique",
+      "surface_legumineuses_dpt.geocode_region": "02",
       "surface_legumineuses_dpt.date_mesure.year": "2013-01-01T00:00:00.000",
-      "surface_legumineuses_dpt.id_331": 0,
+      "surface_legumineuses_dpt.id_331": 2,
       "surface_legumineuses_dpt.date_mesure": "2013-01-01T00:00:00.000"
     },
     {
@@ -635,17 +635,17 @@
       "surface_legumineuses_dpt.date_mesure": "2014-01-01T00:00:00.000"
     },
     {
-      "surface_legumineuses_dpt.libelle_region": "Bourgogne-Franche-Comté",
-      "surface_legumineuses_dpt.geocode_region": "27",
-      "surface_legumineuses_dpt.date_mesure.year": "2015-01-01T00:00:00.000",
-      "surface_legumineuses_dpt.id_331": 66968,
-      "surface_legumineuses_dpt.date_mesure": "2015-01-01T00:00:00.000"
-    },
-    {
       "surface_legumineuses_dpt.libelle_region": "Bretagne",
       "surface_legumineuses_dpt.geocode_region": "53",
       "surface_legumineuses_dpt.date_mesure.year": "2015-01-01T00:00:00.000",
       "surface_legumineuses_dpt.id_331": 13492,
+      "surface_legumineuses_dpt.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "surface_legumineuses_dpt.libelle_region": "Auvergne-Rhône-Alpes",
+      "surface_legumineuses_dpt.geocode_region": "84",
+      "surface_legumineuses_dpt.date_mesure.year": "2015-01-01T00:00:00.000",
+      "surface_legumineuses_dpt.id_331": 55814,
       "surface_legumineuses_dpt.date_mesure": "2015-01-01T00:00:00.000"
     },
     {
@@ -684,6 +684,13 @@
       "surface_legumineuses_dpt.date_mesure": "2015-01-01T00:00:00.000"
     },
     {
+      "surface_legumineuses_dpt.libelle_region": "Grand Est",
+      "surface_legumineuses_dpt.geocode_region": "44",
+      "surface_legumineuses_dpt.date_mesure.year": "2015-01-01T00:00:00.000",
+      "surface_legumineuses_dpt.id_331": 119056,
+      "surface_legumineuses_dpt.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
       "surface_legumineuses_dpt.libelle_region": "Provence-Alpes-Côte d'Azur",
       "surface_legumineuses_dpt.geocode_region": "93",
       "surface_legumineuses_dpt.date_mesure.year": "2015-01-01T00:00:00.000",
@@ -695,13 +702,6 @@
       "surface_legumineuses_dpt.geocode_region": "04",
       "surface_legumineuses_dpt.date_mesure.year": "2015-01-01T00:00:00.000",
       "surface_legumineuses_dpt.id_331": 222,
-      "surface_legumineuses_dpt.date_mesure": "2015-01-01T00:00:00.000"
-    },
-    {
-      "surface_legumineuses_dpt.libelle_region": "Grand Est",
-      "surface_legumineuses_dpt.geocode_region": "44",
-      "surface_legumineuses_dpt.date_mesure.year": "2015-01-01T00:00:00.000",
-      "surface_legumineuses_dpt.id_331": 119056,
       "surface_legumineuses_dpt.date_mesure": "2015-01-01T00:00:00.000"
     },
     {
@@ -733,10 +733,10 @@
       "surface_legumineuses_dpt.date_mesure": "2015-01-01T00:00:00.000"
     },
     {
-      "surface_legumineuses_dpt.libelle_region": "Centre-Val de Loire",
-      "surface_legumineuses_dpt.geocode_region": "24",
+      "surface_legumineuses_dpt.libelle_region": "Bourgogne-Franche-Comté",
+      "surface_legumineuses_dpt.geocode_region": "27",
       "surface_legumineuses_dpt.date_mesure.year": "2015-01-01T00:00:00.000",
-      "surface_legumineuses_dpt.id_331": 59015,
+      "surface_legumineuses_dpt.id_331": 66968,
       "surface_legumineuses_dpt.date_mesure": "2015-01-01T00:00:00.000"
     },
     {
@@ -754,10 +754,10 @@
       "surface_legumineuses_dpt.date_mesure": "2015-01-01T00:00:00.000"
     },
     {
-      "surface_legumineuses_dpt.libelle_region": "Auvergne-Rhône-Alpes",
-      "surface_legumineuses_dpt.geocode_region": "84",
+      "surface_legumineuses_dpt.libelle_region": "Centre-Val de Loire",
+      "surface_legumineuses_dpt.geocode_region": "24",
       "surface_legumineuses_dpt.date_mesure.year": "2015-01-01T00:00:00.000",
-      "surface_legumineuses_dpt.id_331": 55814,
+      "surface_legumineuses_dpt.id_331": 59015,
       "surface_legumineuses_dpt.date_mesure": "2015-01-01T00:00:00.000"
     },
     {
@@ -789,17 +789,17 @@
       "surface_legumineuses_dpt.date_mesure": "2016-01-01T00:00:00.000"
     },
     {
-      "surface_legumineuses_dpt.libelle_region": "Centre-Val de Loire",
-      "surface_legumineuses_dpt.geocode_region": "24",
-      "surface_legumineuses_dpt.date_mesure.year": "2016-01-01T00:00:00.000",
-      "surface_legumineuses_dpt.id_331": 67368,
-      "surface_legumineuses_dpt.date_mesure": "2016-01-01T00:00:00.000"
-    },
-    {
       "surface_legumineuses_dpt.libelle_region": "Provence-Alpes-Côte d'Azur",
       "surface_legumineuses_dpt.geocode_region": "93",
       "surface_legumineuses_dpt.date_mesure.year": "2016-01-01T00:00:00.000",
       "surface_legumineuses_dpt.id_331": 23496,
+      "surface_legumineuses_dpt.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "surface_legumineuses_dpt.libelle_region": "Centre-Val de Loire",
+      "surface_legumineuses_dpt.geocode_region": "24",
+      "surface_legumineuses_dpt.date_mesure.year": "2016-01-01T00:00:00.000",
+      "surface_legumineuses_dpt.id_331": 67368,
       "surface_legumineuses_dpt.date_mesure": "2016-01-01T00:00:00.000"
     },
     {
@@ -852,17 +852,17 @@
       "surface_legumineuses_dpt.date_mesure": "2016-01-01T00:00:00.000"
     },
     {
-      "surface_legumineuses_dpt.libelle_region": "Île-de-France",
-      "surface_legumineuses_dpt.geocode_region": "11",
-      "surface_legumineuses_dpt.date_mesure.year": "2016-01-01T00:00:00.000",
-      "surface_legumineuses_dpt.id_331": 23459,
-      "surface_legumineuses_dpt.date_mesure": "2016-01-01T00:00:00.000"
-    },
-    {
       "surface_legumineuses_dpt.libelle_region": "Martinique",
       "surface_legumineuses_dpt.geocode_region": "02",
       "surface_legumineuses_dpt.date_mesure.year": "2016-01-01T00:00:00.000",
       "surface_legumineuses_dpt.id_331": 9,
+      "surface_legumineuses_dpt.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "surface_legumineuses_dpt.libelle_region": "Île-de-France",
+      "surface_legumineuses_dpt.geocode_region": "11",
+      "surface_legumineuses_dpt.date_mesure.year": "2016-01-01T00:00:00.000",
+      "surface_legumineuses_dpt.id_331": 23459,
       "surface_legumineuses_dpt.date_mesure": "2016-01-01T00:00:00.000"
     },
     {
@@ -1055,17 +1055,17 @@
       "surface_legumineuses_dpt.date_mesure": "2018-01-01T00:00:00.000"
     },
     {
-      "surface_legumineuses_dpt.libelle_region": "Normandie",
-      "surface_legumineuses_dpt.geocode_region": "28",
-      "surface_legumineuses_dpt.date_mesure.year": "2018-01-01T00:00:00.000",
-      "surface_legumineuses_dpt.id_331": 35501,
-      "surface_legumineuses_dpt.date_mesure": "2018-01-01T00:00:00.000"
-    },
-    {
       "surface_legumineuses_dpt.libelle_region": "Centre-Val de Loire",
       "surface_legumineuses_dpt.geocode_region": "24",
       "surface_legumineuses_dpt.date_mesure.year": "2018-01-01T00:00:00.000",
       "surface_legumineuses_dpt.id_331": 72092,
+      "surface_legumineuses_dpt.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "surface_legumineuses_dpt.libelle_region": "Normandie",
+      "surface_legumineuses_dpt.geocode_region": "28",
+      "surface_legumineuses_dpt.date_mesure.year": "2018-01-01T00:00:00.000",
+      "surface_legumineuses_dpt.id_331": 35501,
       "surface_legumineuses_dpt.date_mesure": "2018-01-01T00:00:00.000"
     },
     {
@@ -1139,10 +1139,10 @@
       "surface_legumineuses_dpt.date_mesure": "2018-01-01T00:00:00.000"
     },
     {
-      "surface_legumineuses_dpt.libelle_region": "Île-de-France",
-      "surface_legumineuses_dpt.geocode_region": "11",
+      "surface_legumineuses_dpt.libelle_region": "Pays de la Loire",
+      "surface_legumineuses_dpt.geocode_region": "52",
       "surface_legumineuses_dpt.date_mesure.year": "2019-01-01T00:00:00.000",
-      "surface_legumineuses_dpt.id_331": 21660,
+      "surface_legumineuses_dpt.id_331": 43902,
       "surface_legumineuses_dpt.date_mesure": "2019-01-01T00:00:00.000"
     },
     {
@@ -1174,10 +1174,10 @@
       "surface_legumineuses_dpt.date_mesure": "2019-01-01T00:00:00.000"
     },
     {
-      "surface_legumineuses_dpt.libelle_region": "Pays de la Loire",
-      "surface_legumineuses_dpt.geocode_region": "52",
+      "surface_legumineuses_dpt.libelle_region": "Guadeloupe",
+      "surface_legumineuses_dpt.geocode_region": "01",
       "surface_legumineuses_dpt.date_mesure.year": "2019-01-01T00:00:00.000",
-      "surface_legumineuses_dpt.id_331": 43902,
+      "surface_legumineuses_dpt.id_331": 13,
       "surface_legumineuses_dpt.date_mesure": "2019-01-01T00:00:00.000"
     },
     {
@@ -1202,10 +1202,10 @@
       "surface_legumineuses_dpt.date_mesure": "2019-01-01T00:00:00.000"
     },
     {
-      "surface_legumineuses_dpt.libelle_region": "Bretagne",
-      "surface_legumineuses_dpt.geocode_region": "53",
+      "surface_legumineuses_dpt.libelle_region": "Centre-Val de Loire",
+      "surface_legumineuses_dpt.geocode_region": "24",
       "surface_legumineuses_dpt.date_mesure.year": "2019-01-01T00:00:00.000",
-      "surface_legumineuses_dpt.id_331": 19761,
+      "surface_legumineuses_dpt.id_331": 88766,
       "surface_legumineuses_dpt.date_mesure": "2019-01-01T00:00:00.000"
     },
     {
@@ -1223,10 +1223,10 @@
       "surface_legumineuses_dpt.date_mesure": "2019-01-01T00:00:00.000"
     },
     {
-      "surface_legumineuses_dpt.libelle_region": "Centre-Val de Loire",
-      "surface_legumineuses_dpt.geocode_region": "24",
+      "surface_legumineuses_dpt.libelle_region": "Bretagne",
+      "surface_legumineuses_dpt.geocode_region": "53",
       "surface_legumineuses_dpt.date_mesure.year": "2019-01-01T00:00:00.000",
-      "surface_legumineuses_dpt.id_331": 88766,
+      "surface_legumineuses_dpt.id_331": 19761,
       "surface_legumineuses_dpt.date_mesure": "2019-01-01T00:00:00.000"
     },
     {
@@ -1244,13 +1244,6 @@
       "surface_legumineuses_dpt.date_mesure": "2019-01-01T00:00:00.000"
     },
     {
-      "surface_legumineuses_dpt.libelle_region": "Normandie",
-      "surface_legumineuses_dpt.geocode_region": "28",
-      "surface_legumineuses_dpt.date_mesure.year": "2019-01-01T00:00:00.000",
-      "surface_legumineuses_dpt.id_331": 33125,
-      "surface_legumineuses_dpt.date_mesure": "2019-01-01T00:00:00.000"
-    },
-    {
       "surface_legumineuses_dpt.libelle_region": "La Réunion",
       "surface_legumineuses_dpt.geocode_region": "04",
       "surface_legumineuses_dpt.date_mesure.year": "2019-01-01T00:00:00.000",
@@ -1258,10 +1251,17 @@
       "surface_legumineuses_dpt.date_mesure": "2019-01-01T00:00:00.000"
     },
     {
-      "surface_legumineuses_dpt.libelle_region": "Guadeloupe",
-      "surface_legumineuses_dpt.geocode_region": "01",
+      "surface_legumineuses_dpt.libelle_region": "Normandie",
+      "surface_legumineuses_dpt.geocode_region": "28",
       "surface_legumineuses_dpt.date_mesure.year": "2019-01-01T00:00:00.000",
-      "surface_legumineuses_dpt.id_331": 13,
+      "surface_legumineuses_dpt.id_331": 33125,
+      "surface_legumineuses_dpt.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "surface_legumineuses_dpt.libelle_region": "Île-de-France",
+      "surface_legumineuses_dpt.geocode_region": "11",
+      "surface_legumineuses_dpt.date_mesure.year": "2019-01-01T00:00:00.000",
+      "surface_legumineuses_dpt.id_331": 21660,
       "surface_legumineuses_dpt.date_mesure": "2019-01-01T00:00:00.000"
     },
     {
@@ -1391,10 +1391,10 @@
       "surface_legumineuses_dpt.date_mesure": "2020-01-01T00:00:00.000"
     },
     {
-      "surface_legumineuses_dpt.libelle_region": "Centre-Val de Loire",
-      "surface_legumineuses_dpt.geocode_region": "24",
+      "surface_legumineuses_dpt.libelle_region": "Normandie",
+      "surface_legumineuses_dpt.geocode_region": "28",
       "surface_legumineuses_dpt.date_mesure.year": "2021-01-01T00:00:00.000",
-      "surface_legumineuses_dpt.id_331": 100928,
+      "surface_legumineuses_dpt.id_331": 42983,
       "surface_legumineuses_dpt.date_mesure": "2021-01-01T00:00:00.000"
     },
     {
@@ -1447,10 +1447,10 @@
       "surface_legumineuses_dpt.date_mesure": "2021-01-01T00:00:00.000"
     },
     {
-      "surface_legumineuses_dpt.libelle_region": "Normandie",
-      "surface_legumineuses_dpt.geocode_region": "28",
+      "surface_legumineuses_dpt.libelle_region": "Centre-Val de Loire",
+      "surface_legumineuses_dpt.geocode_region": "24",
       "surface_legumineuses_dpt.date_mesure.year": "2021-01-01T00:00:00.000",
-      "surface_legumineuses_dpt.id_331": 42983,
+      "surface_legumineuses_dpt.id_331": 100928,
       "surface_legumineuses_dpt.date_mesure": "2021-01-01T00:00:00.000"
     },
     {
@@ -1671,10 +1671,10 @@
       "surface_legumineuses_dpt.date_mesure": "2023-01-01T00:00:00.000"
     },
     {
-      "surface_legumineuses_dpt.libelle_region": "Grand Est",
-      "surface_legumineuses_dpt.geocode_region": "44",
+      "surface_legumineuses_dpt.libelle_region": "La Réunion",
+      "surface_legumineuses_dpt.geocode_region": "04",
       "surface_legumineuses_dpt.date_mesure.year": "2023-01-01T00:00:00.000",
-      "surface_legumineuses_dpt.id_331": 171788,
+      "surface_legumineuses_dpt.id_331": 87,
       "surface_legumineuses_dpt.date_mesure": "2023-01-01T00:00:00.000"
     },
     {
@@ -1692,10 +1692,10 @@
       "surface_legumineuses_dpt.date_mesure": "2023-01-01T00:00:00.000"
     },
     {
-      "surface_legumineuses_dpt.libelle_region": "La Réunion",
-      "surface_legumineuses_dpt.geocode_region": "04",
+      "surface_legumineuses_dpt.libelle_region": "Grand Est",
+      "surface_legumineuses_dpt.geocode_region": "44",
       "surface_legumineuses_dpt.date_mesure.year": "2023-01-01T00:00:00.000",
-      "surface_legumineuses_dpt.id_331": 87,
+      "surface_legumineuses_dpt.id_331": 171788,
       "surface_legumineuses_dpt.date_mesure": "2023-01-01T00:00:00.000"
     },
     {
@@ -1769,10 +1769,10 @@
       "surface_legumineuses_dpt.date_mesure": "2023-01-01T00:00:00.000"
     },
     {
-      "surface_legumineuses_dpt.libelle_region": "Centre-Val de Loire",
-      "surface_legumineuses_dpt.geocode_region": "24",
+      "surface_legumineuses_dpt.libelle_region": "Normandie",
+      "surface_legumineuses_dpt.geocode_region": "28",
       "surface_legumineuses_dpt.date_mesure.year": "2024-01-01T00:00:00.000",
-      "surface_legumineuses_dpt.id_331": 92391,
+      "surface_legumineuses_dpt.id_331": 46053,
       "surface_legumineuses_dpt.date_mesure": "2024-01-01T00:00:00.000"
     },
     {
@@ -1888,10 +1888,10 @@
       "surface_legumineuses_dpt.date_mesure": "2024-01-01T00:00:00.000"
     },
     {
-      "surface_legumineuses_dpt.libelle_region": "Normandie",
-      "surface_legumineuses_dpt.geocode_region": "28",
+      "surface_legumineuses_dpt.libelle_region": "Centre-Val de Loire",
+      "surface_legumineuses_dpt.geocode_region": "24",
       "surface_legumineuses_dpt.date_mesure.year": "2024-01-01T00:00:00.000",
-      "surface_legumineuses_dpt.id_331": 46053,
+      "surface_legumineuses_dpt.id_331": 92391,
       "surface_legumineuses_dpt.date_mesure": "2024-01-01T00:00:00.000"
     }
   ],
