@@ -1,0 +1,199 @@
+{
+  "cubeName": "residences_principales_energie_region",
+  "measureName": "residences_principales_energie_region.id_259",
+  "timeDimension": "residences_principales_energie_region.date_mesure",
+  "extraDimension": "residences_principales_energie_region.annee",
+  "data": [
+    {
+      "residences_principales_energie_region.libelle_region": "Bourgogne-Franche-Comté",
+      "residences_principales_energie_region.geocode_region": "27",
+      "residences_principales_energie_region.date_mesure.year": "2023-01-01T00:00:00.000",
+      "residences_principales_energie_region.id_259": 15.119309324155417,
+      "residences_principales_energie_region.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "residences_principales_energie_region.libelle_region": "Normandie",
+      "residences_principales_energie_region.geocode_region": "28",
+      "residences_principales_energie_region.date_mesure.year": "2023-01-01T00:00:00.000",
+      "residences_principales_energie_region.id_259": 13.141140067064937,
+      "residences_principales_energie_region.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "residences_principales_energie_region.libelle_region": "Centre-Val de Loire",
+      "residences_principales_energie_region.geocode_region": "24",
+      "residences_principales_energie_region.date_mesure.year": "2023-01-01T00:00:00.000",
+      "residences_principales_energie_region.id_259": 11.739955597541167,
+      "residences_principales_energie_region.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "residences_principales_energie_region.libelle_region": "Bretagne",
+      "residences_principales_energie_region.geocode_region": "53",
+      "residences_principales_energie_region.date_mesure.year": "2023-01-01T00:00:00.000",
+      "residences_principales_energie_region.id_259": 13.574675412301517,
+      "residences_principales_energie_region.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "residences_principales_energie_region.libelle_region": "Île-de-France",
+      "residences_principales_energie_region.geocode_region": "11",
+      "residences_principales_energie_region.date_mesure.year": "2023-01-01T00:00:00.000",
+      "residences_principales_energie_region.id_259": 5.438245014666391,
+      "residences_principales_energie_region.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "residences_principales_energie_region.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "residences_principales_energie_region.geocode_region": "93",
+      "residences_principales_energie_region.date_mesure.year": "2023-01-01T00:00:00.000",
+      "residences_principales_energie_region.id_259": 9.1124172653947,
+      "residences_principales_energie_region.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "residences_principales_energie_region.libelle_region": "Hauts-de-France",
+      "residences_principales_energie_region.geocode_region": "32",
+      "residences_principales_energie_region.date_mesure.year": "2023-01-01T00:00:00.000",
+      "residences_principales_energie_region.id_259": 8.896197902088083,
+      "residences_principales_energie_region.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "residences_principales_energie_region.libelle_region": "Grand Est",
+      "residences_principales_energie_region.geocode_region": "44",
+      "residences_principales_energie_region.date_mesure.year": "2023-01-01T00:00:00.000",
+      "residences_principales_energie_region.id_259": 13.402746399597929,
+      "residences_principales_energie_region.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "residences_principales_energie_region.libelle_region": "Corse",
+      "residences_principales_energie_region.geocode_region": "94",
+      "residences_principales_energie_region.date_mesure.year": "2023-01-01T00:00:00.000",
+      "residences_principales_energie_region.id_259": 4.369400481487773,
+      "residences_principales_energie_region.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "residences_principales_energie_region.libelle_region": "Pays de la Loire",
+      "residences_principales_energie_region.geocode_region": "52",
+      "residences_principales_energie_region.date_mesure.year": "2023-01-01T00:00:00.000",
+      "residences_principales_energie_region.id_259": 10.329160535123991,
+      "residences_principales_energie_region.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "residences_principales_energie_region.libelle_region": "Nouvelle-Aquitaine",
+      "residences_principales_energie_region.geocode_region": "75",
+      "residences_principales_energie_region.date_mesure.year": "2023-01-01T00:00:00.000",
+      "residences_principales_energie_region.id_259": 10.56733547301427,
+      "residences_principales_energie_region.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "residences_principales_energie_region.libelle_region": "Occitanie",
+      "residences_principales_energie_region.geocode_region": "76",
+      "residences_principales_energie_region.date_mesure.year": "2023-01-01T00:00:00.000",
+      "residences_principales_energie_region.id_259": 8.986092644649933,
+      "residences_principales_energie_region.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "residences_principales_energie_region.libelle_region": "Auvergne-Rhône-Alpes",
+      "residences_principales_energie_region.geocode_region": "84",
+      "residences_principales_energie_region.date_mesure.year": "2023-01-01T00:00:00.000",
+      "residences_principales_energie_region.id_259": 12.397062803963427,
+      "residences_principales_energie_region.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "residences_principales_energie_region.libelle_region": "Occitanie",
+      "residences_principales_energie_region.geocode_region": "76",
+      "residences_principales_energie_region.date_mesure.year": "2024-01-01T00:00:00.000",
+      "residences_principales_energie_region.id_259": 8.858981043306073,
+      "residences_principales_energie_region.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "residences_principales_energie_region.libelle_region": "Pays de la Loire",
+      "residences_principales_energie_region.geocode_region": "52",
+      "residences_principales_energie_region.date_mesure.year": "2024-01-01T00:00:00.000",
+      "residences_principales_energie_region.id_259": 10.168795885925409,
+      "residences_principales_energie_region.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "residences_principales_energie_region.libelle_region": "Corse",
+      "residences_principales_energie_region.geocode_region": "94",
+      "residences_principales_energie_region.date_mesure.year": "2024-01-01T00:00:00.000",
+      "residences_principales_energie_region.id_259": 4.131550673105667,
+      "residences_principales_energie_region.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "residences_principales_energie_region.libelle_region": "Grand Est",
+      "residences_principales_energie_region.geocode_region": "44",
+      "residences_principales_energie_region.date_mesure.year": "2024-01-01T00:00:00.000",
+      "residences_principales_energie_region.id_259": 13.460576301617207,
+      "residences_principales_energie_region.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "residences_principales_energie_region.libelle_region": "Bretagne",
+      "residences_principales_energie_region.geocode_region": "53",
+      "residences_principales_energie_region.date_mesure.year": "2024-01-01T00:00:00.000",
+      "residences_principales_energie_region.id_259": 13.36628448355045,
+      "residences_principales_energie_region.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "residences_principales_energie_region.libelle_region": "Normandie",
+      "residences_principales_energie_region.geocode_region": "28",
+      "residences_principales_energie_region.date_mesure.year": "2024-01-01T00:00:00.000",
+      "residences_principales_energie_region.id_259": 13.022320367114576,
+      "residences_principales_energie_region.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "residences_principales_energie_region.libelle_region": "Île-de-France",
+      "residences_principales_energie_region.geocode_region": "11",
+      "residences_principales_energie_region.date_mesure.year": "2024-01-01T00:00:00.000",
+      "residences_principales_energie_region.id_259": 5.354503765125194,
+      "residences_principales_energie_region.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "residences_principales_energie_region.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "residences_principales_energie_region.geocode_region": "93",
+      "residences_principales_energie_region.date_mesure.year": "2024-01-01T00:00:00.000",
+      "residences_principales_energie_region.id_259": 9.031452610707024,
+      "residences_principales_energie_region.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "residences_principales_energie_region.libelle_region": "Nouvelle-Aquitaine",
+      "residences_principales_energie_region.geocode_region": "75",
+      "residences_principales_energie_region.date_mesure.year": "2024-01-01T00:00:00.000",
+      "residences_principales_energie_region.id_259": 10.46801576262175,
+      "residences_principales_energie_region.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "residences_principales_energie_region.libelle_region": "Centre-Val de Loire",
+      "residences_principales_energie_region.geocode_region": "24",
+      "residences_principales_energie_region.date_mesure.year": "2024-01-01T00:00:00.000",
+      "residences_principales_energie_region.id_259": 11.845735049091541,
+      "residences_principales_energie_region.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "residences_principales_energie_region.libelle_region": "Bourgogne-Franche-Comté",
+      "residences_principales_energie_region.geocode_region": "27",
+      "residences_principales_energie_region.date_mesure.year": "2024-01-01T00:00:00.000",
+      "residences_principales_energie_region.id_259": 15.418651298600034,
+      "residences_principales_energie_region.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "residences_principales_energie_region.libelle_region": "Hauts-de-France",
+      "residences_principales_energie_region.geocode_region": "32",
+      "residences_principales_energie_region.date_mesure.year": "2024-01-01T00:00:00.000",
+      "residences_principales_energie_region.id_259": 8.843641550460616,
+      "residences_principales_energie_region.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "residences_principales_energie_region.libelle_region": "Auvergne-Rhône-Alpes",
+      "residences_principales_energie_region.geocode_region": "84",
+      "residences_principales_energie_region.date_mesure.year": "2024-01-01T00:00:00.000",
+      "residences_principales_energie_region.id_259": 12.342740214044023,
+      "residences_principales_energie_region.date_mesure": "2024-01-01T00:00:00.000"
+    }
+  ],
+  "measureMeta": {
+    "libelle_indicateur": "Part des résidences principales chauffées au fioul",
+    "statut_commun": "Métrique",
+    "unite": "%",
+    "id_parents": "938, 948, 949",
+    "methode_calcul": "\n    \n    L'indicateur calculé par Ecolab exclue les communes qui ont connu une\n  scission car nous ne pouvons pas attribuer aux communes résultantes les\n  données. La valeur de l'indicateur peut légèrement varier si l'agrégation est\n  faite à une maille supérieure à la maille communale. ",
+    "numerator": "nbr_resid_princ_fioul",
+    "denominator": "id_948"
+  }
+}
