@@ -4914,6 +4914,139 @@
       "nestedFolders": []
     },
     {
+      "name": "enquete_logement_com",
+      "type": "cube",
+      "title": "Enquete Logement Com",
+      "isVisible": true,
+      "public": true,
+      "description": "Logements et résidences principales par territoire.",
+      "meta": {
+        "responsable_calcul": "INSEE - INSTITUT NATIONAL DE LA STATISTIQUE ET DES ETUDES ECONOMIQUES"
+      },
+      "measures": [
+        {
+          "name": "enquete_logement_com.id_1284",
+          "title": "Enquete Logement Com Id1284",
+          "shortTitle": "Id1284",
+          "cumulativeTotal": false,
+          "cumulative": false,
+          "type": "number",
+          "aggType": "sum",
+          "drillMembers": [],
+          "drillMembersGrouped": {
+            "measures": [],
+            "dimensions": []
+          },
+          "meta": {
+            "libelle_indicateur": "Nombre de résidences principales",
+            "statut_commun": "Mesure",
+            "unite": "nb",
+            "methode_calcul": "Reprises des chiffres publiés par l'INSEE dans le cadre de son enquête logement.",
+            "publish": false,
+            "is_beta": true
+          },
+          "isVisible": true,
+          "public": true
+        }
+      ],
+      "dimensions": [
+        {
+          "name": "enquete_logement_com.geocode_commune",
+          "title": "Enquete Logement Com Geocode Commune",
+          "type": "string",
+          "shortTitle": "Geocode Commune",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "enquete_logement_com.libelle_commune",
+          "title": "Enquete Logement Com Libelle Commune",
+          "type": "string",
+          "shortTitle": "Libelle Commune",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "enquete_logement_com.geocode_epci",
+          "title": "Enquete Logement Com Geocode Epci",
+          "type": "string",
+          "shortTitle": "Geocode Epci",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "enquete_logement_com.libelle_epci",
+          "title": "Enquete Logement Com Libelle Epci",
+          "type": "string",
+          "shortTitle": "Libelle Epci",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "enquete_logement_com.geocode_departement",
+          "title": "Enquete Logement Com Geocode Departement",
+          "type": "string",
+          "shortTitle": "Geocode Departement",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "enquete_logement_com.libelle_departement",
+          "title": "Enquete Logement Com Libelle Departement",
+          "type": "string",
+          "shortTitle": "Libelle Departement",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "enquete_logement_com.geocode_region",
+          "title": "Enquete Logement Com Geocode Region",
+          "type": "string",
+          "shortTitle": "Geocode Region",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "enquete_logement_com.libelle_region",
+          "title": "Enquete Logement Com Libelle Region",
+          "type": "string",
+          "shortTitle": "Libelle Region",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "enquete_logement_com.date_mesure",
+          "title": "Enquete Logement Com Date Mesure",
+          "type": "time",
+          "shortTitle": "Date Mesure",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        }
+      ],
+      "segments": [],
+      "hierarchies": [],
+      "folders": [],
+      "nestedFolders": []
+    },
+    {
       "name": "espaces_proteges_cdl_dpt",
       "type": "cube",
       "title": "Espaces Proteges Cdl Dpt",
