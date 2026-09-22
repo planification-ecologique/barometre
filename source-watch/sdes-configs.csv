@@ -1,0 +1,54 @@
+# SDES value-extraction configs (CSV, one row per Grist indicator).
+#
+# Tells verify-grist-values.js how to read "the most recent measured value" from
+# a heterogeneous SDES workbook the way a human would: which sheet, which row
+# holds the year headers, and which row / label holds the value series.
+#
+# Columns:
+#   indic     : Grist "Indicateur" (exact, incl. curved apostrophes).
+#   url       : SDES download URL (any of the indicator's URLs is fine).
+#   sheet     : worksheet path / name (e.g. xl/worksheets/sheet4.xml).
+#   yearRow   : 1-based row whose cells hold the year headers (e.g. "2023").
+#   valueRow  : 1-based row holding the numeric values. Empty when using the
+#               label mode below.
+#   labelCol  : 1-based column holding the series label (label mode).
+#   labelValue: substring to match in labelCol (label mode). Preferred over a
+#               fixed valueRow because the row number drifts across revisions.
+#   extraCol  : (optional) 1-based column whose cell must also contain extraVal
+#               (e.g. col 5 = NIVGEO "France", col 6 = TYPDONNEE "CVC").
+#   extraVal  : substring required in extraCol.
+#   extraCol2 : (optional) second disambiguation column.
+#   extraVal2 : substring required in extraCol2.
+#   exact     : 1 => labelValue must equal the label cell (not "contains").
+#               Use when several rows share a label prefix (e.g. aggregate
+#               "Production nette d'électricité" vs "...nucléaire vendue").
+#   tolerance : min absolute |source - Grist| considered a copy error
+#               (default 0.05); a year must exceed BOTH this and relTol below
+#               to be flagged COPY.
+#   relTol    : relative floor (fraction of |Grist|) for a copy error
+#               (default 0.03). Absorbs normal SDES annual revisions that are
+#               NOT copy errors while still catching gross transcription
+#               mistakes.
+#   verified  : yes => coordinates manually/LLM verified against Grist.
+#     A row WITHOUT verified=yes and/or without coordinates is treated as
+#     DRAFT: extraction runs but every result is flagged "à confirmer".
+#
+# NB: only indicators extractable as a SINGLE value row are listed. Computed
+# aggregates (parts, net balances, "décarbonée"…) are not stored as a single
+# row in the workbook and are deliberately NOT configured (see tasks/docs).
+# Fields containing a comma (indicator names, labelValue) are double-quoted per
+# RFC-4180; a quote is doubled ("").
+# See tasks/lessons.md for the reliability notes (auto-detection unreliable).
+indic,url,sheet,yearRow,valueRow,labelCol,labelValue,extraCol,extraVal,extraCol2,extraVal2,exact,tolerance,relTol,verified,note
+Consommations d'eau douce par usage,https://www.statistiques.developpement-durable.gouv.fr/media/6302/download?inline,xl/worksheets/sheet4.xml,3,4,,,,,,,,0.05,0.03,yes,Feuille Evolution des consommations d'eau douce (Md m3) ligne Eau potable
+"Consommation finale d'énergie à usage énergétique, toutes énergies confondues",https://www.statistiques.developpement-durable.gouv.fr/media/8408/download?inline,xl/worksheets/sheet1.xml,1,,2,"Consommation finale à usage énergétique, toutes énergies",5,France,,,,0.05,0.03,yes,Bilan énergétique France Réelles
+"Consommation finale d'énergie par l'industrie",https://www.statistiques.developpement-durable.gouv.fr/media/8408/download?inline,xl/worksheets/sheet1.xml,1,,2,"Consommation finale dans l'industrie, toutes énergies",5,France,6,CVC,,0.05,0.03,yes,Bilan énergétique France CVC
+Production primaire d’électricité d’origine renouvelable,https://www.statistiques.developpement-durable.gouv.fr/media/8408/download?inline,xl/worksheets/sheet1.xml,1,,2,Production brute d'énergies renouvelables électriques,5,France,,,,0.05,0.03,yes,Bilan énergétique France
+Production primaire d'énergie thermique à partir de sources renouvelables,https://www.statistiques.developpement-durable.gouv.fr/media/8408/download?inline,xl/worksheets/sheet1.xml,1,,2,Production primaire d'énergies renouvelables thermiques,5,France,,,,0.05,0.03,yes,Bilan énergétique France
+Consommation d'énergie issue de déchets renouvelables pour la production d'électricité et de chaleur commercialisée,https://www.statistiques.developpement-durable.gouv.fr/media/8408/download?inline,xl/worksheets/sheet1.xml,1,,2,déchets renouvelables pour la production,5,France,,,,0.05,0.03,yes,Bilan énergétique France
+Electricité produite totale,https://www.statistiques.developpement-durable.gouv.fr/media/8408/download?inline,xl/worksheets/sheet1.xml,1,,2,Production nette d'électricité,5,France,,,1,0.05,0.03,yes,Bilan énergétique France (match exact)
+Balance commerciale du bois énergie,https://www.statistiques.developpement-durable.gouv.fr/media/8408/download?inline,xl/worksheets/sheet1.xml,1,,2,"bois énergie, en valeur",5,France,,,,0.05,0.03,yes,Bilan énergétique France (1 des 2 lignes Grist)
+"Consommation finale d’énergie du secteur résidentiel",https://www.statistiques.developpement-durable.gouv.fr/media/9283/download?inline,xl/worksheets/sheet1.xml,1,,3,"Consommation finale dans le résidentiel, toutes énergies",6,France,7,CVC,,0.05,0.03,yes,Bilan énergétique France CVC
+"Consommation d'électricité en France (finale, corrigée des variations climatiques)",https://www.statistiques.developpement-durable.gouv.fr/media/9283/download?inline,xl/worksheets/sheet1.xml,1,,3,"Consommation finale d'électricité, tous usages",6,France,,,,0.05,0.03,yes,Bilan énergétique France CVC
+Production primaire de biocarburants,https://www.statistiques.developpement-durable.gouv.fr/media/8958/download?inline,xl/worksheets/sheet1.xml,1,,3,Biocarburants et autres bioliquides,6,France,,,,0.05,0.03,yes,Bilan annuel de l'énergie
+

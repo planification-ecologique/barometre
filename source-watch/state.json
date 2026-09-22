@@ -1,0 +1,2142 @@
+{
+  "https://www.statistiques.developpement-durable.gouv.fr/etat-de-la-population-des-oiseaux-communs-en-france-en-2024": {
+    "url": "https://www.statistiques.developpement-durable.gouv.fr/etat-de-la-population-des-oiseaux-communs-en-france-en-2024",
+    "type": "html",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "dbdc3185f8868f335dd25a8399b5bc130302e44f7c37ac620f1c7bf4bd607088",
+    "year": "2040",
+    "etag": "W/\"1789585629-gzip\"",
+    "lastModified": "Wed, 16 Sep 2026 19:07:09 GMT",
+    "error": null,
+    "indicators": [
+      "f06b6e72-7d4d-4643-a6c3-e8976a37f9cb",
+      "928f9b35-ce46-4688-95ae-c9c5a5e2143e",
+      "2dc0e42f-8e16-415d-be02-4ebef606565d"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.574Z"
+  },
+  "https://www.citepa.org/donnees-air-climat/donnees-gaz-a-effet-de-serre/secten/": {
+    "url": "https://www.citepa.org/donnees-air-climat/donnees-gaz-a-effet-de-serre/secten/",
+    "type": "html",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "4af85d9d5ddde8ad4319605e875309362f55bca3f070a3d6da40a77fde95aea1",
+    "year": "2026",
+    "etag": null,
+    "lastModified": "Wed, 16 Sep 2026 09:48:32 GMT",
+    "error": null,
+    "indicators": [
+      "e1dfdf0a-2ca4-48c2-907a-67756e2c64ff",
+      "3de018c2-6e09-462d-a7aa-66b390ad3a81",
+      "a690da4f-01b5-4e4b-b7bb-dc71150bef3f",
+      "4c0e1b46-28ad-4e68-a036-dce86d5d4091",
+      "32042d6d-b7fa-42cc-8ddc-b94e412adde8",
+      "9f5c96d0-d904-4941-8a5b-fdf256c7b45e",
+      "7a5bc4b1-9e7c-47c9-83b7-38897e6cba28",
+      "ab3caeb7-7bdf-47ab-97c8-6ccf7852c524",
+      "wy5gaeb7-7bdf-47ab-97c8-6ccf7852c524",
+      "8b134039-39c8-486d-b15b-576067566328"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.574Z"
+  },
+  "https://www.statistiques.developpement-durable.gouv.fr/media/7791/download?inline": {
+    "url": "https://www.statistiques.developpement-durable.gouv.fr/media/7791/download?inline",
+    "type": "sdes-media",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "dcc2fd8c34688dc2aa4c48af9d17426c59b69835ea238e05361166396c3a4555",
+    "year": null,
+    "etag": null,
+    "lastModified": "Mon, 04 Nov 2024 11:30:23 GMT",
+    "error": null,
+    "indicators": [
+      "d089aef5-703e-4961-9c8f-6975957a96f6",
+      "",
+      "",
+      "ee4bd3a3-f71a-40d3-b819-fc93fea3ea1b"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.574Z"
+  },
+  "https://www.citepa.org/wp-content/uploads/2025/06/Citepa2025_gaz_a_effet_de_serre.zip": {
+    "url": "https://www.citepa.org/wp-content/uploads/2025/06/Citepa2025_gaz_a_effet_de_serre.zip",
+    "type": "zip",
+    "status": 404,
+    "statusText": "Not Found",
+    "hash": "bf84a289a4843718c0bc3b06aba4b64c95c859be63ae2e04bd5421c92c7feb58",
+    "year": null,
+    "etag": null,
+    "lastModified": null,
+    "error": null,
+    "indicators": [
+      "b411c553-b48f-42dc-a993-c7dc5775d684",
+      "c72f6cc5-e6c7-4ac0-b25f-3770a74dea76",
+      "fd018d5e-bcc3-4b1e-9076-3072eab6e55b",
+      "2a904484-b922-4c16-af20-b75662cd5aa1",
+      "b968cf87-5cb6-4bca-9216-5ed58ff260f6",
+      "cad5c26c-d210-4346-98be-b8e01e78f1fd",
+      "24975eb5-6fdb-4976-9637-95c55b962129",
+      "2e15a4c3-0c8f-4ca7-b5a8-51e70984b333",
+      "b1b9fa7b-f1d1-4b73-9685-45f468981970",
+      "c8f350d2-68d0-41b5-be5d-f2029c02e945",
+      "a2d3650e-4ed1-4182-b2c6-3e205a4a3282",
+      "fc2633dd-818b-4b3d-999d-91eb04a18264",
+      "",
+      "27223941-3bbb-4bba-8652-271512b4aa99",
+      "9c6bbf1a-aca6-452c-8e5a-c078f9c5dce0",
+      "6cf61ff3-af09-4c73-915f-9a4bf922896c"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.574Z"
+  },
+  "https://www.eaufrance.fr/lobservatoire-national-de-la-biodiversite-onb": {
+    "url": "https://www.eaufrance.fr/lobservatoire-national-de-la-biodiversite-onb",
+    "type": "html",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "0356d00a356d7fb77f0ff68507dc48eb03bf9aeeeec3cadb96e6a65afc3da7fa",
+    "year": "2026",
+    "etag": null,
+    "lastModified": null,
+    "error": null,
+    "indicators": [
+      "eb08e12d-59ee-41f3-991d-07cdcaf587e6"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.574Z"
+  },
+  "https://www.statistiques.developpement-durable.gouv.fr/media/8408/download?inline": {
+    "url": "https://www.statistiques.developpement-durable.gouv.fr/media/8408/download?inline",
+    "type": "sdes-media",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "e895a9d25aa9f6afb39ba1de74937cfff925a5408c11e66a6f8b9a2f3a8ee85e",
+    "year": null,
+    "etag": null,
+    "lastModified": "Mon, 28 Apr 2025 08:33:34 GMT",
+    "error": null,
+    "indicators": [
+      "16aa3f71-b128-4ed6-82d0-49bd6d3e0784",
+      "0b2f563a-bc5e-4fa9-943a-4a18bbced7c8",
+      "fc1dd5ed-b204-4bca-9ee6-8119e86ba690",
+      "6e731955-a124-4665-800d-a7e2f8fdb312",
+      "a8e6a34c-0efb-4b54-885e-df2c15aacf9a",
+      "2148391c-8964-4a87-a189-e9ce50cb3cbc",
+      "34e56881-dea8-44c8-859c-497458a766c6",
+      "910c4d3b-9b37-430b-a37b-86bb2c9046de",
+      "caac60a7-53a9-4966-a08d-3da519f0d9d1",
+      "b8b71801-cc34-4774-87e9-40ed0ca1fa36",
+      "34e56881-dea8-44c8-859c-497458a766c8"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.574Z"
+  },
+  "https://www.citepa.org/wp-content/uploads/2025/06/Citepa2025_polluants.zip": {
+    "url": "https://www.citepa.org/wp-content/uploads/2025/06/Citepa2025_polluants.zip",
+    "type": "zip",
+    "status": 404,
+    "statusText": "Not Found",
+    "hash": "bf84a289a4843718c0bc3b06aba4b64c95c859be63ae2e04bd5421c92c7feb58",
+    "year": null,
+    "etag": null,
+    "lastModified": null,
+    "error": null,
+    "indicators": [
+      "93843661-0511-4e40-a837-810ba4cc4be3",
+      "744be20b-efae-4383-b8ce-d8859ea94375",
+      "7b8606aa-b837-4c4f-b6de-3424647bfcfd",
+      "db7ccd05-9874-4ff9-934d-2f254f497b90",
+      "2bfac09d-ef00-4623-b3dc-6b11340abb5b",
+      "ae2f5f43-1f26-41d0-b2d7-ec1468177978",
+      "deb52b57-dbc3-472e-b7d8-f65e2d1b3575",
+      "28ca5db9-b812-40a9-b1e8-e5efb2a34539"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.575Z"
+  },
+  "https://nosgestesclimat.fr/stats": {
+    "url": "https://nosgestesclimat.fr/stats",
+    "type": "html",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "b3e389d7d532742f3b5a0afc90705892407684efb17c558fffcc640bd25c303d",
+    "year": "2034",
+    "etag": null,
+    "lastModified": null,
+    "error": null,
+    "indicators": [
+      "fd356ba0-19e4-4e7a-9cb5-2507d21cb41d"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.575Z"
+  },
+  "https://www.statistiques.developpement-durable.gouv.fr/media/9283/download?inline": {
+    "url": "https://www.statistiques.developpement-durable.gouv.fr/media/9283/download?inline",
+    "type": "sdes-media",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "3108c8056060091835f7beb8ae9270546ca77998a38630d0da9d60b376da71de",
+    "year": null,
+    "etag": null,
+    "lastModified": "Mon, 20 Apr 2026 07:57:17 GMT",
+    "error": null,
+    "indicators": [
+      "d70f4c43-1a9b-4d85-ace7-17768cf15286",
+      "7a049773-9a6f-4e2c-ba8f-db792ca3ea4b",
+      "41928161-1fc8-466e-8226-c9d16b353a54",
+      "3a6c7542-8030-40a4-bd14-da0b6f70a4c5"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.575Z"
+  },
+  "https://www.statistiques.developpement-durable.gouv.fr/media/6410/download?inline": {
+    "url": "https://www.statistiques.developpement-durable.gouv.fr/media/6410/download?inline",
+    "type": "sdes-media",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "ac766d1f06f1d51c3a2a666fe298d5e78f7d0927acd8e7d1597bda2a8923e7cc",
+    "year": null,
+    "etag": null,
+    "lastModified": "Thu, 09 Jul 2026 10:49:59 GMT",
+    "error": null,
+    "indicators": [
+      "5c5afb35-301c-454e-bf37-beb67f9327ef",
+      "f8b12113-9869-4cfe-b65d-7513ee3036f4",
+      "8a79107f-67e6-493e-b2c1-df095af5abc2"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.575Z"
+  },
+  "https://www.statistiques.developpement-durable.gouv.fr/media/7581/download?inline": {
+    "url": "https://www.statistiques.developpement-durable.gouv.fr/media/7581/download?inline",
+    "type": "sdes-media",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "15e5e454d7fc3e8054bcaf1e7dae2f7aba927720dcf60ea6e8c159db588e519f",
+    "year": null,
+    "etag": null,
+    "lastModified": "Thu, 29 Aug 2024 09:44:52 GMT",
+    "error": null,
+    "indicators": [
+      "a1b11fa8-f3bc-4c82-8504-61245b9b37db",
+      "7993c28e-802e-41c0-9b83-ef998e401e79",
+      "8e536b66-69a0-4924-9db5-b395d17672cf",
+      "b4fd4039-7333-4053-86ff-fe091a7bb3f4",
+      "bf0ee7f9-d4b1-4a79-98c1-e87e5576dfcf",
+      "a3b41ba9-a7b9-4af0-bf40-8c2441640564",
+      "d21e15eb-9618-4835-9546-98567e68e5fe",
+      "dee4a373-ee61-463e-831c-2a40ac8f472d",
+      "3a5c5542-8030-40a4-bd14-da0b6f70a4c5"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.575Z"
+  },
+  "https://pilote.modernisation.gouv.fr/chantier/CH-050": {
+    "url": "https://pilote.modernisation.gouv.fr/chantier/CH-050",
+    "type": "html",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "9fc4596376e7b59b62dae82b1014bb7c25b34c8bd96dedcf7768f04ab31d5225",
+    "year": "2000",
+    "etag": "\"e7icj01zndf1z\"",
+    "lastModified": null,
+    "error": null,
+    "indicators": [
+      "05b6a505-4a9b-478c-97da-e400a32abbf5"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.575Z"
+  },
+  "https://www.statistiques.developpement-durable.gouv.fr/media/8810/download?inline": {
+    "url": "https://www.statistiques.developpement-durable.gouv.fr/media/8810/download?inline",
+    "type": "sdes-media",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "bb34775a299c2bb87187b89d1c2982abf56a162d43489790220b2e64ad7c568d",
+    "year": null,
+    "etag": null,
+    "lastModified": "Mon, 10 Nov 2025 09:56:30 GMT",
+    "error": null,
+    "indicators": [
+      "f2774c99-3031-47c1-9c72-be321d7b0333"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.575Z"
+  },
+  "https://librairie.ademe.fr/ged/8934/ONPE-tableau-de-bord_-_V4.pdf": {
+    "url": "https://librairie.ademe.fr/ged/8934/ONPE-tableau-de-bord_-_V4.pdf",
+    "type": "pdf",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "4a7e93055e827173ce67cd25f42494f525502b63beb7e9648efb9464f17d6a58",
+    "year": "2028",
+    "etag": null,
+    "lastModified": null,
+    "error": null,
+    "indicators": [
+      "40d1957c-6e0e-462a-9456-e4f785a60978"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.575Z"
+  },
+  "https://www.insee.fr/fr/statistiques/fichier/2412780/cond-logt-parc-residence.xlsx": {
+    "url": "https://www.insee.fr/fr/statistiques/fichier/2412780/cond-logt-parc-residence.xlsx",
+    "type": "xlsx",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "4f587626dface262df5ce93c29bbb2714674e24a992fed7d9e368345c519cefe",
+    "year": "2042",
+    "etag": null,
+    "lastModified": null,
+    "error": null,
+    "indicators": [
+      "c69af914-ddf5-482c-86af-f9a0023eba77",
+      "c57bf461-b8ee-42c0-8be8-b5f90f21798e",
+      "e2bc20c0-8709-4fc1-8018-de97012768d1"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.575Z"
+  },
+  "https://www.anah.gouv.fr/sites/default/files/2025-01/202501-chiffresCles2024-WEB.pdf": {
+    "url": "https://www.anah.gouv.fr/sites/default/files/2025-01/202501-chiffresCles2024-WEB.pdf",
+    "type": "pdf",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "113bc3376347331382719ad5ad7fa6ca803e0accbcc1e80cfc43f1310d8595f5",
+    "year": "2024",
+    "etag": "\"47497b-62c62b4a89d20\"",
+    "lastModified": "Thu, 23 Jan 2025 17:11:49 GMT",
+    "error": null,
+    "indicators": [
+      "654d8617-8f55-4dbc-a622-fefcf868fa48"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.575Z"
+  },
+  "https://politiquedulogement.com/2022/10/lentree-de-la-climatisation-dans-les-foyers-francais-1-2-etat-des-lieux/": {
+    "url": "https://politiquedulogement.com/2022/10/lentree-de-la-climatisation-dans-les-foyers-francais-1-2-etat-des-lieux/",
+    "type": "html",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "fe84aba99cec6b618ae204036385a33a5b23f4883c60259b08b6e86b6bd2ac21",
+    "year": "2038",
+    "etag": null,
+    "lastModified": null,
+    "error": null,
+    "indicators": [
+      "09187559-cf89-4b14-a06c-86a58155f4ac"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.575Z"
+  },
+  "https://www.afpg.asso.fr/wp-content/uploads/2023/10/AFPG_Etude-filiere-2023.pdf": {
+    "url": "https://www.afpg.asso.fr/wp-content/uploads/2023/10/AFPG_Etude-filiere-2023.pdf",
+    "type": "pdf",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "9189469919bb654c8beb97be49386cab36f93d495631406e4cdb6fd43aae993c",
+    "year": "2046",
+    "etag": "\"58611c-6082593fe6980\"",
+    "lastModified": "Fri, 20 Oct 2023 13:09:10 GMT",
+    "error": null,
+    "indicators": [
+      "75e7f7ac-b008-4b17-a6c8-6eb0d73a7e2e"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.575Z"
+  },
+  "https://app.powerbi.com/view?r=eyJrIjoiNWYwZGVlMGEtY2E0ZC00YmRiLWJmNzgtMjdhOGUyMzM1ZTRkIiwidCI6ImNiNmMyNDkyLTRhODUtNGIxNS04NWExLWVkOTRkNDdlNTg0OSIsImMiOjl9": {
+    "url": "https://app.powerbi.com/view?r=eyJrIjoiNWYwZGVlMGEtY2E0ZC00YmRiLWJmNzgtMjdhOGUyMzM1ZTRkIiwidCI6ImNiNmMyNDkyLTRhODUtNGIxNS04NWExLWVkOTRkNDdlNTg0OSIsImMiOjl9",
+    "type": "dashboard",
+    "status": 200,
+    "statusText": "OK",
+    "hash": null,
+    "year": null,
+    "etag": null,
+    "lastModified": null,
+    "error": null,
+    "indicators": [
+      "5f0f22c4-9e88-45cc-a06e-3d222c28751e"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.575Z"
+  },
+  "https://pilote.modernisation.gouv.fr/chantier/CH-050/NAT-FR?maille=departementale&jalon=2025": {
+    "url": "https://pilote.modernisation.gouv.fr/chantier/CH-050/NAT-FR?maille=departementale&jalon=2025",
+    "type": "html",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "39956a8fb2a856ce9a03754b99b0c9fc1f31290a63fb1a1a801f40830d390fa3",
+    "year": "2025",
+    "etag": "\"fotb7em33lf38\"",
+    "lastModified": null,
+    "error": null,
+    "indicators": [
+      "5f0f22c4-9e88-45cc-a06e-3d222c28751e"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.575Z"
+  },
+  "https://www.ecologie.gouv.fr/politiques-publiques/plan-transformation-ecologique-letat-services-publics-ecoresponsables-spe": {
+    "url": "https://www.ecologie.gouv.fr/politiques-publiques/plan-transformation-ecologique-letat-services-publics-ecoresponsables-spe",
+    "type": "html",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "a82dc27add0f9a10ae1329f58c3ce58c4e860a37707dc50557b21c64274b2e61",
+    "year": "2030",
+    "etag": "W/\"1789571629\"",
+    "lastModified": "Wed, 16 Sep 2026 15:13:49 GMT",
+    "error": null,
+    "indicators": [
+      "9ae198a2-671b-4ab9-86a0-76ec4a7782c5",
+      "be4a6c1d-20d5-4673-9286-da390254cc9f"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.575Z"
+  },
+  "https://www.statistiques.developpement-durable.gouv.fr/bilan-annuel-des-transports-en-2024-0?rubrique=56&dossier=1337": {
+    "url": "https://www.statistiques.developpement-durable.gouv.fr/bilan-annuel-des-transports-en-2024-0?rubrique=56&dossier=1337",
+    "type": "html",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "cf00646dcd07374de5566f69ad9f0a2a9feb6bb825160a9f5cb0ee12727a3911",
+    "year": "2025",
+    "etag": "W/\"1789586969-gzip\"",
+    "lastModified": "Wed, 16 Sep 2026 19:29:29 GMT",
+    "error": null,
+    "indicators": [
+      "46238b76-7d37-42e8-8ec3-02326d481934",
+      "5fdd2eec-2a36-48a4-884c-e793a7423332",
+      "e4cf7ce1-8ef6-4c45-871f-75367b4ca7db",
+      "69f44e0c-ba85-4b55-90f6-3433f3d6b946",
+      "8af37c46-c593-4f37-863c-0ca7361102af"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.575Z"
+  },
+  "https://www.euro-petrole.com/la-consommation-francaise-de-produits-energetiques-en-decembre-2025-n-f-29540": {
+    "url": "https://www.euro-petrole.com/la-consommation-francaise-de-produits-energetiques-en-decembre-2025-n-f-29540",
+    "type": "html",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "31aa504c68a7726a08e8c27051f3faa25a12bc1237167ec73e504e806fd6abe8",
+    "year": "2046",
+    "etag": null,
+    "lastModified": null,
+    "error": null,
+    "indicators": [
+      "7316c2af-4c76-4629-9a95-cb7d4b69c008",
+      ""
+    ],
+    "checkedAt": "2026-09-16T19:32:16.575Z"
+  },
+  "https://pilote.modernisation.gouv.fr/chantier/CH-046": {
+    "url": "https://pilote.modernisation.gouv.fr/chantier/CH-046",
+    "type": "html",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "51c297fd83b312f588fc13f4c80df074e5d2615af7a3c554aa48573ffc819270",
+    "year": "2000",
+    "etag": "\"1173k1a8gl2f1z\"",
+    "lastModified": null,
+    "error": null,
+    "indicators": [
+      "fb0f0ebb-99d3-4621-b4b7-ef758ad8a0ae"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.575Z"
+  },
+  "https://www.geothermies.fr/sites/default/files/inline-files/Observ-ER-Marche-2023-PAC-20240627.pdf": {
+    "url": "https://www.geothermies.fr/sites/default/files/inline-files/Observ-ER-Marche-2023-PAC-20240627.pdf",
+    "type": "pdf",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "399f30cf3aae0e76e5bf0809a3d02c0dfe913c8033de153f0ada2f9cd9fd1528",
+    "year": null,
+    "etag": "\"6a5a9a-620e486f568f9\"",
+    "lastModified": "Fri, 30 Aug 2024 11:02:29 GMT",
+    "error": null,
+    "indicators": [
+      "6575621c-cd3f-4a32-8ed6-cd652da68f2a"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.575Z"
+  },
+  "https://www.geothermies.fr/sites/default/files/inline-files/AFPG_Synthese-Etude-de-filiere-geothermie-2024.pdf": {
+    "url": "https://www.geothermies.fr/sites/default/files/inline-files/AFPG_Synthese-Etude-de-filiere-geothermie-2024.pdf",
+    "type": "pdf",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "50e4cddcb560f49775974d6bda27aa0ce0e670021355fdd7223ffb28a92acf52",
+    "year": "2049",
+    "etag": "\"6c58d6-62c3a2ae25b62\"",
+    "lastModified": "Tue, 21 Jan 2025 16:49:59 GMT",
+    "error": null,
+    "indicators": [
+      "75e7f7ac-b008-4b17-a6c8-6eb0d73a7e2e"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.575Z"
+  },
+  "https://www.statistiques.developpement-durable.gouv.fr/enquete-sur-la-mobilite-des-personnes-2018-2019": {
+    "url": "https://www.statistiques.developpement-durable.gouv.fr/enquete-sur-la-mobilite-des-personnes-2018-2019",
+    "type": "html",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "f14c8f940e8b696c830f61a7aa3fab7efc1da2c3e38a4bd7a3fcfeb464f3e412",
+    "year": "2027",
+    "etag": "W/\"1789587074-gzip\"",
+    "lastModified": "Wed, 16 Sep 2026 19:31:14 GMT",
+    "error": null,
+    "indicators": [
+      "61c2f10a-da27-439e-8707-97f21203b33f"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.575Z"
+  },
+  "https://www.amenagements-cyclables.fr/fr/stats": {
+    "url": "https://www.amenagements-cyclables.fr/fr/stats",
+    "type": "html",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "086e53eb811297e0c1c8b27e794a9fb1d1613cd55cb3d5abb1c18ef791380c4b",
+    "year": null,
+    "etag": "\"6aa3f188-60b\"",
+    "lastModified": "Fri, 11 Sep 2026 12:18:16 GMT",
+    "error": null,
+    "indicators": [
+      "ffe270fe-a78c-44f0-883c-544494a4b43d"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.575Z"
+  },
+  "https://www.statistiques.developpement-durable.gouv.fr/donnees-sur-le-parc-automobile-francais-au-1er-janvier-2026": {
+    "url": "https://www.statistiques.developpement-durable.gouv.fr/donnees-sur-le-parc-automobile-francais-au-1er-janvier-2026",
+    "type": "html",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "114a96f52818673b436c70bb3a45a36001f763e85f8dbccf039b6198c27f10d8",
+    "year": "2026",
+    "etag": "W/\"1789585207-gzip\"",
+    "lastModified": "Wed, 16 Sep 2026 19:00:07 GMT",
+    "error": null,
+    "indicators": [
+      "23f8812e-1493-4822-a84d-94f4a74e8ba6",
+      "93d8c3d7-4d30-4c26-be0a-80a32d7a5ac4",
+      "5ba4402c-710d-40c7-93a5-046fedfefe0d",
+      "645675db-0d51-437c-859e-bb4e5ad736e0",
+      "f2dfae0b-49f4-41e5-8422-36434dc35084",
+      "3d09a623-1f74-44d0-91f1-1eec76509605",
+      "193b374e-2424-454b-89be-04b94a04c77b",
+      "bf75690d-a44e-4294-8f0e-55bd29e20ff7"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.575Z"
+  },
+  "https://www.avere-france.org/publication/barometre-157-348-points-de-recharge-ouverts-au-public-fin-janvier-2025/": {
+    "url": "https://www.avere-france.org/publication/barometre-157-348-points-de-recharge-ouverts-au-public-fin-janvier-2025/",
+    "type": "html",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "46f221cf3f213a5bc0d69cec9a0b575ef7d33693e1e19bb679a79cfe511fdf24",
+    "year": "2036",
+    "etag": null,
+    "lastModified": null,
+    "error": null,
+    "indicators": [
+      "50961d87-31a8-4bee-be6a-7b3995f573a3"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.575Z"
+  },
+  "https://www.statistiques.developpement-durable.gouv.fr/publicationweb/803": {
+    "url": "https://www.statistiques.developpement-durable.gouv.fr/publicationweb/803",
+    "type": "html",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "1b8e214ece27be3ac5f1b90625aed96c7025787ba50deebb25777746a9d69253",
+    "year": "2026",
+    "etag": null,
+    "lastModified": null,
+    "error": null,
+    "indicators": [
+      "768d67bf-9bec-43ed-8877-36d025fd0873"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.575Z"
+  },
+  "https://www.statistiques.developpement-durable.gouv.fr/donnees-2024-sur-les-immatriculations-des-vehicules": {
+    "url": "https://www.statistiques.developpement-durable.gouv.fr/donnees-2024-sur-les-immatriculations-des-vehicules",
+    "type": "html",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "62ac7c06394eee2c3d69df5264366647bfed43c93375f85d5fca2c12b0b72d4c",
+    "year": "2026",
+    "etag": "W/\"1789585333-gzip\"",
+    "lastModified": "Wed, 16 Sep 2026 19:02:13 GMT",
+    "error": null,
+    "indicators": [
+      "9d40bfde-ac58-40a6-9446-1f209de1ca9c"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.575Z"
+  },
+  "https://opendata.enedis.fr/datasets/nombre-total-de-points-de-charge": {
+    "url": "https://opendata.enedis.fr/datasets/nombre-total-de-points-de-charge",
+    "type": "html",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "dc74ac6738b1136da9d276b600b587625ed59e3ad4d3bf3ef61272694adda38c",
+    "year": "2026",
+    "etag": null,
+    "lastModified": null,
+    "error": null,
+    "indicators": [
+      "2fb4ddae-a057-46dd-b44e-8434c58f1f36"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.575Z"
+  },
+  "https://www.statistiques.developpement-durable.gouv.fr/media/7226/download?inline": {
+    "url": "https://www.statistiques.developpement-durable.gouv.fr/media/7226/download?inline",
+    "type": "sdes-media",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "71fdd0a64657e9566ba583ebf493558605a4eb000e4175e543a03b50f373fcf0",
+    "year": null,
+    "etag": null,
+    "lastModified": "Tue, 18 Aug 2026 08:38:58 GMT",
+    "error": null,
+    "indicators": [
+      "258a170e-7f65-4944-8ee8-1dcdee64ef24",
+      "da6351c4-bdc5-4d36-8cc8-7f73613a0ce5",
+      "3744a93e-ea6c-4811-b654-85dfe4ef48bd"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.575Z"
+  },
+  "https://www.statistiques.developpement-durable.gouv.fr/bilan-annuel-des-transports-en-2024?rubrique=56&dossier=1337": {
+    "url": "https://www.statistiques.developpement-durable.gouv.fr/bilan-annuel-des-transports-en-2024?rubrique=56&dossier=1337",
+    "type": "html",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "cf00646dcd07374de5566f69ad9f0a2a9feb6bb825160a9f5cb0ee12727a3911",
+    "year": "2025",
+    "etag": "W/\"1789586969-gzip\"",
+    "lastModified": "Wed, 16 Sep 2026 19:29:29 GMT",
+    "error": null,
+    "indicators": [
+      "49e727a9-2011-425b-a49e-0ad84378a1c3"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.575Z"
+  },
+  "https://www.statistiques.developpement-durable.gouv.fr/media/7843/download?inline": {
+    "url": "https://www.statistiques.developpement-durable.gouv.fr/media/7843/download?inline",
+    "type": "sdes-media",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "9d7ac216a24f42c5a2a67d6a58a6ff89f8685e247dd0f342122f266f8c450d2b",
+    "year": null,
+    "etag": null,
+    "lastModified": "Tue, 26 Nov 2024 07:49:59 GMT",
+    "error": null,
+    "indicators": [
+      "332f2a09-91a6-4674-a42d-debf59c03557",
+      "7e34337d-d323-4972-b13a-4cf7b57ac247"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.575Z"
+  },
+  "https://pfa-auto.fr/marche-automobile/": {
+    "url": "https://pfa-auto.fr/marche-automobile/",
+    "type": "html",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "b2f1a831398e219a89f387a0eb3b3e34aea53181ffbbef9c38446b0eee702969",
+    "year": "2026",
+    "etag": null,
+    "lastModified": null,
+    "error": null,
+    "indicators": [
+      "ecbedd80-83cf-4add-8361-9cc0fd36c10c",
+      "528a1a92-c331-4bc8-8eb4-1706dc8e2a7b"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.575Z"
+  },
+  "https://www.ecologie.gouv.fr/sites/default/files/publications/Bulletin_Statistiques_trafic_aerien_2023.pdf": {
+    "url": "https://www.ecologie.gouv.fr/sites/default/files/publications/Bulletin_Statistiques_trafic_aerien_2023.pdf",
+    "type": "pdf",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "6954b5d29a8fdbd1fc1f61d824b6c53fa85de990e510dc7102c587e853566a10",
+    "year": null,
+    "etag": "\"6660160a-3b2044\"",
+    "lastModified": "Wed, 05 Jun 2024 07:38:50 GMT",
+    "error": null,
+    "indicators": [
+      "ae8eeff9-2f68-45db-b3f8-853b1a284f63"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.575Z"
+  },
+  "https://carbure.beta.gouv.fr/": {
+    "url": "https://carbure.beta.gouv.fr/",
+    "type": "html",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "191cda3516361b13238502d107ced0b36b14be61524630f7e6b26a18526d2880",
+    "year": null,
+    "etag": "\"6aaa708f-4ef\"",
+    "lastModified": "Wed, 16 Sep 2026 12:33:51 GMT",
+    "error": null,
+    "indicators": [
+      "660dfc7c-1ce5-49b6-9138-bfb8cba0f31c",
+      "a3ca5b83-a4aa-484e-a030-0b342f9b8535",
+      "df165b90-5167-4923-b4fd-939da4f863bd",
+      "6dc3e0bc-3bf4-4d8a-997b-c296cbeccfe6"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.575Z"
+  },
+  "https://ressources.citepa.org/Comm_Divers/Secten/Citepa_Secten%202024.pdf": {
+    "url": "https://ressources.citepa.org/Comm_Divers/Secten/Citepa_Secten%202024.pdf",
+    "type": "pdf",
+    "status": 404,
+    "statusText": "Not Found",
+    "hash": "80c3fe2ae1062abf56456f52518bd670f9ec3917b7f85e152b347ac6b6faf880",
+    "year": null,
+    "etag": null,
+    "lastModified": null,
+    "error": null,
+    "indicators": [
+      "c5bc34ea-8933-4621-8ec0-0c525ea3819d",
+      "2ce38e12-1dd6-4224-9e81-f73d01addcbd"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.575Z"
+  },
+  "https://www.statistiques.developpement-durable.gouv.fr/media/6767/download?inline": {
+    "url": "https://www.statistiques.developpement-durable.gouv.fr/media/6767/download?inline",
+    "type": "sdes-media",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "7c8ded951ce3d9dc72b6fc775d96dc1b8ac31113a1415f151e851559de4852fd",
+    "year": null,
+    "etag": null,
+    "lastModified": "Tue, 17 Oct 2023 07:11:11 GMT",
+    "error": null,
+    "indicators": [
+      "d559afb3-f468-4655-b392-bef4f5a46259",
+      "e6fecc6f-c11a-4605-a185-4a0d76d82190"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.575Z"
+  },
+  "https://www.statistiques.developpement-durable.gouv.fr/media/8272/download?inline": {
+    "url": "https://www.statistiques.developpement-durable.gouv.fr/media/8272/download?inline",
+    "type": "sdes-media",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "4df68ff8c9003e743a47a0851af6c202deb3b1b7fce4c47ca3dcfd4f7efc8981",
+    "year": null,
+    "etag": null,
+    "lastModified": "Tue, 18 Mar 2025 09:08:34 GMT",
+    "error": null,
+    "indicators": [
+      "d559afb3-f468-4655-b392-bef4f5a46259",
+      "e6fecc6f-c11a-4605-a185-4a0d76d82190"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.575Z"
+  },
+  "https://label-bas-carbone.ecologie.gouv.fr/liste-projets-labellises?date_year_bis_entity_list_filter=2023&project_entity_list_sortable_filter=date&taxonomies_entity_list_filter_field_project_method_tref=15": {
+    "url": "https://label-bas-carbone.ecologie.gouv.fr/liste-projets-labellises?date_year_bis_entity_list_filter=2023&project_entity_list_sortable_filter=date&taxonomies_entity_list_filter_field_project_method_tref=15",
+    "type": "html",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "9283cb83b48f37f550b02eada91859c53d43dbb28831e96f1df93426e1840421",
+    "year": "2044",
+    "etag": "\"1789567706\"",
+    "lastModified": "Wed, 16 Sep 2026 14:08:26 GMT",
+    "error": null,
+    "indicators": [
+      "459f29ca-e10f-498d-ae7c-3866c0d282dc"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.575Z"
+  },
+  "https://www.statistiques.developpement-durable.gouv.fr/edition-numerique/chiffres-cles-du-climat/fr/partie6-quelles-politiques-climatiques-dans-le-monde-en-europe-et-en-france": {
+    "url": "https://www.statistiques.developpement-durable.gouv.fr/edition-numerique/chiffres-cles-du-climat/fr/partie6-quelles-politiques-climatiques-dans-le-monde-en-europe-et-en-france",
+    "type": "html",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "9df9c0f058979cae557c0acbcfd5462b27a6593b1e1c0af3134da33aa0909f05",
+    "year": "2030",
+    "etag": null,
+    "lastModified": null,
+    "error": null,
+    "indicators": [
+      "d559afb3-f468-4655-b392-bef4f5a46259",
+      "e6fecc6f-c11a-4605-a185-4a0d76d82190"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.575Z"
+  },
+  "https://agriculture.gouv.fr/ledition-2025-du-graphagri-est-disponible": {
+    "url": "https://agriculture.gouv.fr/ledition-2025-du-graphagri-est-disponible",
+    "type": "html",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "b76a7acce504ae107d3237fc4638a79b743806e0d22a0518e174d90d8f7ded6f",
+    "year": "2026",
+    "etag": "\"1789516643\"",
+    "lastModified": "Tue, 15 Sep 2026 23:57:23 GMT",
+    "error": null,
+    "indicators": [
+      "49b2802e-9462-4804-a84c-6ec768e923df"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.575Z"
+  },
+  "https://agreste.agriculture.gouv.fr/agreste-web/download/publication/publie/GraFra2024Chap10.2/GraphAgri2024_consommation-alim._viandes-produits-laitiers-oeufs_page119.xlsx": {
+    "url": "https://agreste.agriculture.gouv.fr/agreste-web/download/publication/publie/GraFra2024Chap10.2/GraphAgri2024_consommation-alim._viandes-produits-laitiers-oeufs_page119.xlsx",
+    "type": "xlsx",
+    "status": 0,
+    "statusText": "",
+    "hash": null,
+    "year": null,
+    "etag": null,
+    "lastModified": null,
+    "error": "unable to verify the first certificate; if the root CA is installed locally, try running Node.js with --use-system-ca",
+    "indicators": [
+      "c7d564f6-60ac-48f3-bb5d-9d2611a7ca75",
+      "475315de-3155-41b6-b83c-5f234e1b850b",
+      "697194a8-f382-4f2e-9790-30cd636ff059",
+      "b5a0b023-73d3-4cfe-90de-a2aeeae3be4a",
+      "0b43860a-ab98-48e5-af2f-c4beebe5d0f6"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.575Z"
+  },
+  "https://ma-cantine.agriculture.gouv.fr/v2/observatoire?year=2024": {
+    "url": "https://ma-cantine.agriculture.gouv.fr/v2/observatoire?year=2024",
+    "type": "html",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "888a844f2af2648e91bfa23f09607037fb013f6f0495aae9128f3a60bfb82d68",
+    "year": "2025",
+    "etag": null,
+    "lastModified": null,
+    "error": null,
+    "indicators": [
+      "cda4d7ec-914d-4d99-ab2e-c2f925f645fd",
+      "528d013f-8937-4b45-8e17-28a49be411c4"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.575Z"
+  },
+  "https://www.franceagrimer.fr/sites/default/files/rdd/documents/ETU-2023-SOUVERAINETE_ALIMENTAIRE_2.pdf": {
+    "url": "https://www.franceagrimer.fr/sites/default/files/rdd/documents/ETU-2023-SOUVERAINETE_ALIMENTAIRE_2.pdf",
+    "type": "pdf",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "2cab9ebccdc9c4c49b1e279932a53df8f008dc7fd994ac7f96b6ea5a354e6b1f",
+    "year": "2041",
+    "etag": "\"2da640-63606958c9fb0\"",
+    "lastModified": "Mon, 26 May 2025 09:29:26 GMT",
+    "error": null,
+    "indicators": [
+      ""
+    ],
+    "checkedAt": "2026-09-16T19:32:16.575Z"
+  },
+  "https://www.unifa.fr/sites/default/files/2025-01/rapport-campagne_2023-2024_france_metropolitaine-vf_0.pdf": {
+    "url": "https://www.unifa.fr/sites/default/files/2025-01/rapport-campagne_2023-2024_france_metropolitaine-vf_0.pdf",
+    "type": "pdf",
+    "status": 0,
+    "statusText": "",
+    "hash": null,
+    "year": null,
+    "etag": null,
+    "lastModified": null,
+    "error": "connect ECONNREFUSED 217.70.184.50:443",
+    "indicators": [
+      "6da23249-e96d-445d-9312-b54d1a105f11"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.575Z"
+  },
+  "https://agreste.agriculture.gouv.fr/agreste-web/disaron/GraFra2025Chap12.5/detail/": {
+    "url": "https://agreste.agriculture.gouv.fr/agreste-web/disaron/GraFra2025Chap12.5/detail/",
+    "type": "html",
+    "status": 0,
+    "statusText": "",
+    "hash": null,
+    "year": null,
+    "etag": null,
+    "lastModified": null,
+    "error": "unable to verify the first certificate; if the root CA is installed locally, try running Node.js with --use-system-ca",
+    "indicators": [
+      "f7ffefad-6d26-4a29-bf37-aac04f7c6aef"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.575Z"
+  },
+  "https://www.agencebio.org/observatoire-de-la-production-bio-nationale/": {
+    "url": "https://www.agencebio.org/observatoire-de-la-production-bio-nationale/",
+    "type": "html",
+    "status": 403,
+    "statusText": "Forbidden",
+    "hash": "a9901167238a9ea4c82ac8406d2d48bbd3195bcb67de89e60574e57d7e02aa88",
+    "year": null,
+    "etag": null,
+    "lastModified": null,
+    "error": null,
+    "indicators": [
+      "18d65d5b-5f9b-44a4-90fa-63ba85edcfd7"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.575Z"
+  },
+  "https://agreste.agriculture.gouv.fr/agreste-web/download/publication/publie/SAA-SeriesLongues/SAA_2010-2024_provisoires_donnees_departementalesetregionales.zip": {
+    "url": "https://agreste.agriculture.gouv.fr/agreste-web/download/publication/publie/SAA-SeriesLongues/SAA_2010-2024_provisoires_donnees_departementalesetregionales.zip",
+    "type": "zip",
+    "status": 0,
+    "statusText": "",
+    "hash": null,
+    "year": null,
+    "etag": null,
+    "lastModified": null,
+    "error": "unable to verify the first certificate; if the root CA is installed locally, try running Node.js with --use-system-ca",
+    "indicators": [
+      "a1b81ad6-b994-4191-92aa-4c2334501145"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.575Z"
+  },
+  "https://www.statistiques.developpement-durable.gouv.fr/bilan-energetique-de-la-france-pour-2024": {
+    "url": "https://www.statistiques.developpement-durable.gouv.fr/bilan-energetique-de-la-france-pour-2024",
+    "type": "html",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "c0884ad54c8a60d425a07721b6156ff8a38470aa69eb073c06fc8a767bbdfcef",
+    "year": "2026",
+    "etag": "W/\"1789586026-gzip\"",
+    "lastModified": "Wed, 16 Sep 2026 19:13:46 GMT",
+    "error": null,
+    "indicators": [
+      "3aa86bd2-ec66-42a7-873b-49080be367ef"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.575Z"
+  },
+  "https://www.ecologie.gouv.fr/sites/default/files/documents/PubliInternet_VentesPPP-2023_02-Source-Ind01_QSA-PPPhorsBbiocontroleEtPPPAB-2023.xlsx": {
+    "url": "https://www.ecologie.gouv.fr/sites/default/files/documents/PubliInternet_VentesPPP-2023_02-Source-Ind01_QSA-PPPhorsBbiocontroleEtPPPAB-2023.xlsx",
+    "type": "xlsx",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "7a43099b6e863022bab95b8483cb7bbe550d56a513f75181e31b3db22a64a18a",
+    "year": "2025",
+    "etag": "\"681a1350-4d79\"",
+    "lastModified": "Tue, 06 May 2025 13:49:04 GMT",
+    "error": null,
+    "indicators": [
+      "d4e968d8-6565-490d-afcf-239417790596",
+      "4c3d8eab-018a-4c1c-9018-e5ec9b34921d"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.575Z"
+  },
+  "https://www.ecologie.gouv.fr/sites/default/files/documents/PubliInternet_VentesPPP-2023_03-Source-Ind02_QSA-CMR1-CMR2-2023.xlsx": {
+    "url": "https://www.ecologie.gouv.fr/sites/default/files/documents/PubliInternet_VentesPPP-2023_03-Source-Ind02_QSA-CMR1-CMR2-2023.xlsx",
+    "type": "xlsx",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "9f8897c606f3c416b9a3041e361e09c47d368af37d8fcb6b06def35b5960d49f",
+    "year": "2044",
+    "etag": "\"681a1429-64f0\"",
+    "lastModified": "Tue, 06 May 2025 13:52:41 GMT",
+    "error": null,
+    "indicators": [
+      "b213a7a5-aeab-4a6d-820c-1b08bffe7374",
+      "bbe1adac-748e-4f44-a17b-0dd05ddc8243"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.575Z"
+  },
+  "https://agriculture.gouv.fr/les-chiffres-cles-de-la-haute-valeur-environnementale-hve": {
+    "url": "https://agriculture.gouv.fr/les-chiffres-cles-de-la-haute-valeur-environnementale-hve",
+    "type": "html",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "7ea99b462b6186c444d776611ac4dba76633117182c94a2d02131c2a3545ad8b",
+    "year": "2026",
+    "etag": "\"1789509468\"",
+    "lastModified": "Tue, 15 Sep 2026 21:57:48 GMT",
+    "error": null,
+    "indicators": [
+      "b55477b8-6a7b-4fb2-b987-82058077f28a"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.575Z"
+  },
+  "https://www.ecologie.gouv.fr/sites/default/files/documents/PubliInternet_VentesPPP-2023_04-Source-Ind03_QSA-Glyphosate-2023.xlsx": {
+    "url": "https://www.ecologie.gouv.fr/sites/default/files/documents/PubliInternet_VentesPPP-2023_04-Source-Ind03_QSA-Glyphosate-2023.xlsx",
+    "type": "xlsx",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "51ed72e0cbd125c5736cf7627dd67ff0f9a8e8eeac91adcd65d9b0b118ae7210",
+    "year": "2025",
+    "etag": "\"681a14e1-481a\"",
+    "lastModified": "Tue, 06 May 2025 13:55:45 GMT",
+    "error": null,
+    "indicators": [
+      "cadc64ba-b3f5-4ce0-b254-925065040e28"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.575Z"
+  },
+  "https://www.citepa.org/explorateur-de-donnees/": {
+    "url": "https://www.citepa.org/explorateur-de-donnees/",
+    "type": "html",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "d768ec294b75018e8c40aecd29a515bc008d2b5bb6e566ef486172879c8d9342",
+    "year": "2026",
+    "etag": null,
+    "lastModified": "Wed, 16 Sep 2026 13:14:33 GMT",
+    "error": null,
+    "indicators": [
+      "771b69e6-a9b5-4dc2-b945-6079e4bef30f",
+      " 0d434e56-e827-4866-9ccd-18388d10cec2"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.575Z"
+  },
+  "https://biodiversite.gouv.fr/suivi-des-engagements-de-la-strategie-nationale-biodiversite-2030": {
+    "url": "https://biodiversite.gouv.fr/suivi-des-engagements-de-la-strategie-nationale-biodiversite-2030",
+    "type": "html",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "0470429964d28d4fbe403184ff12ab8b2ec7bcd925b8eb8e96a2a261b8d4c557",
+    "year": "2030",
+    "etag": "\"1789554102\"",
+    "lastModified": "Wed, 16 Sep 2026 10:21:42 GMT",
+    "error": null,
+    "indicators": [
+      "5dac69a5-1411-4933-9be5-fe10ccc8559f"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.575Z"
+  },
+  "https://www.agreste.agriculture.gouv.fr/agreste-web/download/publication/publie/Chd2506/cd2025-6_Aqua2023.xlsx": {
+    "url": "https://www.agreste.agriculture.gouv.fr/agreste-web/download/publication/publie/Chd2506/cd2025-6_Aqua2023.xlsx",
+    "type": "xlsx",
+    "status": 0,
+    "statusText": "",
+    "hash": null,
+    "year": null,
+    "etag": null,
+    "lastModified": null,
+    "error": "unable to verify the first certificate; if the root CA is installed locally, try running Node.js with --use-system-ca",
+    "indicators": [
+      "856005b4-957d-48c5-95f3-53b6fa792af4",
+      "00e5f370-8a24-4811-a99e-51ef3294ca12",
+      "d2f0117c-28ec-4418-92e9-7cdb982d2439",
+      "d85abea7-8366-4abe-9033-5fe1937c72fc"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.575Z"
+  },
+  "https://cartagene.cerema.fr/portal/apps/dashboards/75ca3baa0632492dba4d0899f1f18b95": {
+    "url": "https://cartagene.cerema.fr/portal/apps/dashboards/75ca3baa0632492dba4d0899f1f18b95",
+    "type": "html",
+    "status": 200,
+    "statusText": "",
+    "hash": "4cdc6109d7dffcddc7e6bf2d871b946667d001a6f8833d6815b672080b556980",
+    "year": null,
+    "etag": "W/\"1560-1713582722536\"",
+    "lastModified": "Sat, 20 Apr 2024 03:12:02 GMT",
+    "error": null,
+    "indicators": [
+      "57c1b234-be1c-46bb-9b9a-a24432b72ded",
+      "0a895f75-7902-46ca-ae39-64d2b21cb016",
+      "468e9a8d-7a8f-4149-a020-30e2ed64f3a2",
+      "6dbce144-6e4b-4491-b765-d35c75a221df"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.575Z"
+  },
+  "https://agreste.agriculture.gouv.fr/agreste-web/disaron/SAA-SeriesLongues/detail/": {
+    "url": "https://agreste.agriculture.gouv.fr/agreste-web/disaron/SAA-SeriesLongues/detail/",
+    "type": "html",
+    "status": 0,
+    "statusText": "",
+    "hash": null,
+    "year": null,
+    "etag": null,
+    "lastModified": null,
+    "error": "unable to verify the first certificate; if the root CA is installed locally, try running Node.js with --use-system-ca",
+    "indicators": [
+      "7c35be67-bd8a-49ae-b4ab-6977590ef649",
+      "902b4654-c815-4bbe-aa9c-a7e66b46e2f5"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.575Z"
+  },
+  "https://foret.ign.fr/IGD/fr/indicateurs/": {
+    "url": "https://foret.ign.fr/IGD/fr/indicateurs/",
+    "type": "html",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "9bd983690f84c63d7df3349c33b2fe010d4d06959f149727512e02e248fea831",
+    "year": null,
+    "etag": null,
+    "lastModified": null,
+    "error": null,
+    "indicators": [
+      ""
+    ],
+    "checkedAt": "2026-09-16T19:32:16.575Z"
+  },
+  "https://foret.ign.fr/IGD/fr/indicateurs/3.5": {
+    "url": "https://foret.ign.fr/IGD/fr/indicateurs/3.5",
+    "type": "html",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "9bd983690f84c63d7df3349c33b2fe010d4d06959f149727512e02e248fea831",
+    "year": null,
+    "etag": null,
+    "lastModified": null,
+    "error": null,
+    "indicators": [
+      "04ac89c5-4b3e-4da2-8293-eadca6d612b3"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.575Z"
+  },
+  "https://franceboisforet.fr/wp-content/uploads/2025/06/ENQUETE_CONSTRUCTIONBOIS_2025_ACTIVITES2024_Page.pdf": {
+    "url": "https://franceboisforet.fr/wp-content/uploads/2025/06/ENQUETE_CONSTRUCTIONBOIS_2025_ACTIVITES2024_Page.pdf",
+    "type": "pdf",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "89f529c663726c3b1fe4334511d12102b5a4461b2edf9055fdceeabd073cdd37",
+    "year": "2030",
+    "etag": "\"1d862d-636ab605ce637\"",
+    "lastModified": "Tue, 03 Jun 2025 14:05:44 GMT",
+    "error": null,
+    "indicators": [
+      "77eff1c4-9f5e-4848-bf6c-3c05e03ffc72",
+      "5d15e4f4-aab1-4ae8-8a63-34be8bd8e5f6"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.575Z"
+  },
+  "https://agreste.agriculture.gouv.fr/agreste-web/disaron/COMEXTBOIS/detail/": {
+    "url": "https://agreste.agriculture.gouv.fr/agreste-web/disaron/COMEXTBOIS/detail/",
+    "type": "html",
+    "status": 0,
+    "statusText": "",
+    "hash": null,
+    "year": null,
+    "etag": null,
+    "lastModified": null,
+    "error": "unable to verify the first certificate; if the root CA is installed locally, try running Node.js with --use-system-ca",
+    "indicators": [
+      "02d004c2-376f-4a3c-be22-57c592e95b70"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.575Z"
+  },
+  "https://www.copacel.fr/wp-content/uploads/2023/07/Rapport-Statistique-2022.pdf": {
+    "url": "https://www.copacel.fr/wp-content/uploads/2023/07/Rapport-Statistique-2022.pdf",
+    "type": "pdf",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "cf40c34f758cae1be3ce370b154ce94c9f1f2a2e88e5545d48f85e7f1f6b6632",
+    "year": "2015",
+    "etag": null,
+    "lastModified": "Mon, 11 May 2026 07:33:04 GMT",
+    "error": null,
+    "indicators": [
+      "438913d6-7aec-44de-9bfb-36915ae44ea2"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.575Z"
+  },
+  "https://observatoire.foret.gouv.fr/catalogue/connaitre-les-prelevements-et-la-recolte-de-bois-en-france": {
+    "url": "https://observatoire.foret.gouv.fr/catalogue/connaitre-les-prelevements-et-la-recolte-de-bois-en-france",
+    "type": "html",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "9e5854d6f5835e0be815b9255adc65d2fb35b29f1e628cc2498e69821b65412d",
+    "year": null,
+    "etag": "\"6a42389f-ea69\"",
+    "lastModified": "Mon, 29 Jun 2026 09:19:27 GMT",
+    "error": null,
+    "indicators": [
+      "8c5f4f24-c4e0-4f42-8fd6-bddf942ccfef"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.575Z"
+  },
+  "https://inventaire-forestier.ign.fr/IMG/pdf/memento_2023.pdf": {
+    "url": "https://inventaire-forestier.ign.fr/IMG/pdf/memento_2023.pdf",
+    "type": "pdf",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "38fd449228c520e5764b55ad317050540ba318fa80f27849cd57287e324e09c6",
+    "year": "2035",
+    "etag": "\"114348d-6263b1aa1c800\"",
+    "lastModified": "Wed, 06 Nov 2024 09:25:52 GMT",
+    "error": null,
+    "indicators": [
+      "1474ffbc-e18c-4ce4-a1fa-8d45d0b8a482",
+      "e7230c3c-3064-4a5a-b3cc-23cfce3eb745",
+      "9eaa1ffe-81ce-4cc0-ad89-c7b473853f85"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.575Z"
+  },
+  "https://www.conservatoire-du-littoral.fr/publications_liste/269/ip/2/op/PUB_DATE+desc/cp/3b772b451c2864fbe5eb/mp/9/10-publication.htm": {
+    "url": "https://www.conservatoire-du-littoral.fr/publications_liste/269/ip/2/op/PUB_DATE+desc/cp/3b772b451c2864fbe5eb/mp/9/10-publication.htm",
+    "type": "htm",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "9338e1e165d0c19baa223bb4306a7c5bc12891d6fe026cb54aae34a671ea019d",
+    "year": "2026",
+    "etag": null,
+    "lastModified": null,
+    "error": null,
+    "indicators": [
+      "20d84404-7f42-4d26-b04d-ff16837ff99c"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.575Z"
+  },
+  "https://www.eaufrance.fr/chiffres-cles": {
+    "url": "https://www.eaufrance.fr/chiffres-cles",
+    "type": "html",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "98f7362d70168fc3eb3b79614aa8ba96702a1697f216ddfe3013bd0678226aba",
+    "year": "2026",
+    "etag": null,
+    "lastModified": null,
+    "error": null,
+    "indicators": [
+      "4a5cd2ee-96cb-4594-9013-4d8e5cc5b1f5"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.575Z"
+  },
+  "http://pelagis.in2p3.fr/public/histo-carto/index.php": {
+    "url": "http://pelagis.in2p3.fr/public/histo-carto/index.php",
+    "type": "html",
+    "status": 0,
+    "statusText": "",
+    "hash": null,
+    "year": null,
+    "etag": null,
+    "lastModified": null,
+    "error": "certificate has expired",
+    "indicators": [
+      "a88edcee-f1be-4e96-9b8e-564820dd49fc"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.575Z"
+  },
+  "https://www.citepa.org/fr/secten/": {
+    "url": "https://www.citepa.org/fr/secten/",
+    "type": "html",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "4af85d9d5ddde8ad4319605e875309362f55bca3f070a3d6da40a77fde95aea1",
+    "year": "2026",
+    "etag": null,
+    "lastModified": "Wed, 16 Sep 2026 09:48:32 GMT",
+    "error": null,
+    "indicators": [
+      "5e7b4e0c-032d-4fc5-9785-14c688218a2c",
+      "b7b82478-981a-413b-9b89-37f1e23edc35"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.575Z"
+  },
+  "https://archimer.ifremer.fr/doc/01012/112398/": {
+    "url": "https://archimer.ifremer.fr/doc/01012/112398/",
+    "type": "html",
+    "status": 200,
+    "statusText": "",
+    "hash": "49a4aaed55d9bbf2d123cc032553b6775fa58520b6e70ea04fd75990238e3008",
+    "year": "2026",
+    "etag": null,
+    "lastModified": null,
+    "error": null,
+    "indicators": [
+      "d60610d4-c30e-4880-981f-8c28534ef30e"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.575Z"
+  },
+  "https://vigieau.gouv.fr/donnees": {
+    "url": "https://vigieau.gouv.fr/donnees",
+    "type": "html",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "a5a38d8a892db475fd81a22e2492bdb6ab791666d18ec60aeff7bbd34ef86c35",
+    "year": null,
+    "etag": "\"6aa7adde-f0b\"",
+    "lastModified": "Mon, 14 Sep 2026 08:18:38 GMT",
+    "error": null,
+    "indicators": [
+      "5a3fe6af-67c5-4221-a67e-59eb028c9ab3",
+      "7018ca32-827e-49b6-8c83-2f806f0b6d59"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.575Z"
+  },
+  "https://www.statistiques.developpement-durable.gouv.fr/media/6302/download?inline": {
+    "url": "https://www.statistiques.developpement-durable.gouv.fr/media/6302/download?inline",
+    "type": "sdes-media",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "1bb509144143b48253943594a5f8eb0116a1565907e85a49e7bce2c853156092",
+    "year": null,
+    "etag": null,
+    "lastModified": "Wed, 29 Mar 2023 08:55:40 GMT",
+    "error": null,
+    "indicators": [
+      "3fb7cd2e-3e72-4c59-93bf-0a9e01e9852b",
+      "4092ac12-609c-4639-83ea-a862b3e65b75",
+      "9051b367-78fc-4b8f-acd6-e21e0f88707d",
+      "2cfe51a2-ce0a-463e-a9b8-05529d7974a3"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.575Z"
+  },
+  "https://www.statistiques.developpement-durable.gouv.fr/les-prelevements-deau-douce-par-usage-en-france-en-2022": {
+    "url": "https://www.statistiques.developpement-durable.gouv.fr/les-prelevements-deau-douce-par-usage-en-france-en-2022",
+    "type": "html",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "f3874739e06a02a556f7529db1b92cba8d69dd1ef20b1fa645a803434fa7538e",
+    "year": "2025",
+    "etag": "W/\"1789587081-gzip\"",
+    "lastModified": "Wed, 16 Sep 2026 19:31:21 GMT",
+    "error": null,
+    "indicators": [
+      "ca90d0d9-e8f2-4c67-a652-9f2c81c18f81",
+      "c11fcb3d-c282-4749-8163-5eab006c6c4c",
+      "f4563a8f-c10d-423b-8d91-0ca2228fd759",
+      "35e9a7b6-3d43-44ac-9dac-330dcd50edc1",
+      "8b82df90-19a7-46c4-96d6-44894e692ecf",
+      "c38be073-d24a-4e7f-822c-109d4e811766"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.575Z"
+  },
+  "https://ofb.gouv.fr/sites/ofb-gouv-fr/files/2025-07/cp_sispea_2025_vf.pdf": {
+    "url": "https://ofb.gouv.fr/sites/ofb-gouv-fr/files/2025-07/cp_sispea_2025_vf.pdf",
+    "type": "pdf",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "5a48911ceee205450ee3ddea373bb8eaf4bf97eaa2dd18df54baa21d45e04bf6",
+    "year": "2025",
+    "etag": "\"f1b34-63a313b105ac0\"",
+    "lastModified": "Fri, 18 Jul 2025 10:02:59 GMT",
+    "error": null,
+    "indicators": [
+      "3f00d81c-ea49-4cfb-8ca4-f19322c678f4",
+      "2350377b-c3cf-43e7-8d7b-a3735e09da5d",
+      "5fa0f42a-cced-46bd-8e88-c9e3930e00ab"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.576Z"
+  },
+  "https://ec.europa.eu/eurostat/databrowser/view/env_ac_aeint_r2__custom_18033852/default/table": {
+    "url": "https://ec.europa.eu/eurostat/databrowser/view/env_ac_aeint_r2__custom_18033852/default/table",
+    "type": "html",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "04236170d349f8bde797870b79dc015eb70e59b820a31a336e5a009ea0e786f9",
+    "year": null,
+    "etag": "\"5.18.6:dtagent10335260518104739KpXw\"",
+    "lastModified": null,
+    "error": null,
+    "indicators": [
+      "5dc0d0ec-4379-4363-8a66-f6bd0c160d49"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.576Z"
+  },
+  "https://pilote.modernisation.gouv.fr/chantier/CH-062": {
+    "url": "https://pilote.modernisation.gouv.fr/chantier/CH-062",
+    "type": "html",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "7d1bbceacdafe83d3095cfde1dfe270cbeb39d6d36fc8f313267fb3905cd5b26",
+    "year": "2000",
+    "etag": "\"7ghta0u4w3f1z\"",
+    "lastModified": null,
+    "error": null,
+    "indicators": [
+      "611fd42e-52e8-4518-a963-41a3a18967a6",
+      "2a25ba1b-bd27-42fd-ba30-29edb30c377c"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.576Z"
+  },
+  "https://www.statistiques.developpement-durable.gouv.fr/lempreinte-matieres-de-la-france-en-2022-un-indicateur-de-notre-consommation-effective-de-matieres?rubrique=395&dossier=1028249": {
+    "url": "https://www.statistiques.developpement-durable.gouv.fr/lempreinte-matieres-de-la-france-en-2022-un-indicateur-de-notre-consommation-effective-de-matieres?rubrique=395&dossier=1028249",
+    "type": "html",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "7e5715b192702e025cfb3f80d0f2938155a149ac90f22e1e83562768b0bec4a9",
+    "year": "2025",
+    "etag": "W/\"1789587081-gzip\"",
+    "lastModified": "Wed, 16 Sep 2026 19:31:21 GMT",
+    "error": null,
+    "indicators": [
+      "d02a5b5d-33ff-484e-abbd-a85e8cf2f353"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.576Z"
+  },
+  "https://www.statistiques.developpement-durable.gouv.fr/dechets?rubrique=395": {
+    "url": "https://www.statistiques.developpement-durable.gouv.fr/dechets?rubrique=395",
+    "type": "html",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "2828c96d25f54c9628d27e9ff34153b198b6e680ae74b6622359f44ff0a1ff11",
+    "year": "2026",
+    "etag": "W/\"1789585793-gzip\"",
+    "lastModified": "Wed, 16 Sep 2026 19:09:53 GMT",
+    "error": null,
+    "indicators": [
+      "5ed623e3-c8bc-4139-8996-8b83b09fdf21"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.576Z"
+  },
+  "https://librairie.ademe.fr/ged/8019/ADEME-collecte-dechets-service-public-2021-donnees.xlsx": {
+    "url": "https://librairie.ademe.fr/ged/8019/ADEME-collecte-dechets-service-public-2021-donnees.xlsx",
+    "type": "xlsx",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "4a6a967a1ba730f0f5c89cdf1ce59cf114c8eec458c996edc64e89c075437325",
+    "year": "2048",
+    "etag": null,
+    "lastModified": null,
+    "error": null,
+    "indicators": [
+      "79b62b4c-330d-4979-ba95-29a312f9627c",
+      "d66e632b-fd1f-4e0a-a445-bbbf6aa3e54d"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.576Z"
+  },
+  "https://filieres-rep.ademe.fr/sites/default/files/2024-05/Tableau-indicateurs-suivi-Edition2023-EMBM.xlsx": {
+    "url": "https://filieres-rep.ademe.fr/sites/default/files/2024-05/Tableau-indicateurs-suivi-Edition2023-EMBM.xlsx",
+    "type": "xlsx",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "cd025eb5263d7610351cdcf0ce007d65236291721f6218e32c1e1c6518f4b6d9",
+    "year": "2038",
+    "etag": "\"c0c11-630c91c24b4c7\"",
+    "lastModified": "Thu, 20 Mar 2025 17:02:58 GMT",
+    "error": null,
+    "indicators": [
+      "30a2c280-5b65-4449-8be8-2aa89b1e165b",
+      "e018c4ef-a48c-4f1f-a2f2-4b2262f82d06",
+      "4639a730-a4f6-4a4e-b214-5d17177c30ff",
+      "77ec67ca-0319-47d0-9cbb-5a61e9ab8901",
+      "32bfd3ac-dc3d-4c62-9429-3709c2ec302a"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.576Z"
+  },
+  "https://librairie.ademe.fr/economie-circulaire-et-dechets/7638-dechets-chiffres-cles-l-essentiel-edition-2024-9791029723186.html#": {
+    "url": "https://librairie.ademe.fr/economie-circulaire-et-dechets/7638-dechets-chiffres-cles-l-essentiel-edition-2024-9791029723186.html#",
+    "type": "html",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "795080f8cef8d284bc35ba666f680f36ae688777cc520b437d3f95fe0bc89b34",
+    "year": "2026",
+    "etag": null,
+    "lastModified": null,
+    "error": null,
+    "indicators": [
+      "e2728a8e-a5fc-4dab-8a33-d65997138eab",
+      "06ea0c37-b78e-4804-b4ef-39cb13482794",
+      "4fafeadf-80a5-49db-87fb-5a8185ca2ff1",
+      "84147662-64e4-44bc-8195-89b6206d899f",
+      "f9b16130-b628-45ee-8f5e-d05978655371",
+      "aa153138-f201-4932-993d-f573613671fc"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.576Z"
+  },
+  "https://files.georisques.fr/irep/2024.zip": {
+    "url": "https://files.georisques.fr/irep/2024.zip",
+    "type": "zip",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "ef74d4b71f7b71626dad46243aa73a508cf029bb5a13734ef3fedc041aa03883",
+    "year": "2048",
+    "etag": "\"73a559-6437b8ba902a0\"",
+    "lastModified": "Thu, 13 Nov 2025 15:29:23 GMT",
+    "error": null,
+    "indicators": [
+      "d34e0496-129b-461a-8771-49c5b4e3d57c",
+      "b80cad6b-3908-4110-9890-273cae638962",
+      "69a5c0f8-2185-479f-89b0-396397566ec2",
+      "d69ade41-1351-45f1-8fc4-d3e4b381f442",
+      "fb2f9a78-4d24-478b-8975-1ff21ce4623b"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.576Z"
+  },
+  "https://www.statistiques.developpement-durable.gouv.fr/tableau-de-bord-eolien-troisieme-trimestre-2025-0": {
+    "url": "https://www.statistiques.developpement-durable.gouv.fr/tableau-de-bord-eolien-troisieme-trimestre-2025-0",
+    "type": "html",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "ab3afa5cfd77be8ff4088c7ba10d52699da7e770a4d7c6da07e78f5b82de1c18",
+    "year": "2025",
+    "etag": "W/\"1789587083-gzip\"",
+    "lastModified": "Wed, 16 Sep 2026 19:31:23 GMT",
+    "error": null,
+    "indicators": [
+      "92353e5d-c5f6-47bf-9dfe-dc4f7b19b76c",
+      "25c0f7c2-7c34-4b4b-94ac-c3a9d64807d1"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.576Z"
+  },
+  "https://www.economie.gouv.fr/daj/commande-publique/observatoire-economique-de-la-commande-publique/le-recensement-economique-de-la-commande-publique": {
+    "url": "https://www.economie.gouv.fr/daj/commande-publique/observatoire-economique-de-la-commande-publique/le-recensement-economique-de-la-commande-publique",
+    "type": "html",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "1c64836819c9134d719dd944252b46de6cf5d5eae84322813ce003f0dafcef9e",
+    "year": "2026",
+    "etag": null,
+    "lastModified": "Wed, 16 Sep 2026 19:06:43 GMT",
+    "error": null,
+    "indicators": [
+      "8de641a8-eda7-499a-91d4-6dce071bd356"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.576Z"
+  },
+  "https://librairie.ademe.fr/economie-circulaire-et-dechets/8896-evaluation-du-taux-de-collecte-des-bouteilles-en-plastique-de-boisson-pour-2023-et-2024.html": {
+    "url": "https://librairie.ademe.fr/economie-circulaire-et-dechets/8896-evaluation-du-taux-de-collecte-des-bouteilles-en-plastique-de-boisson-pour-2023-et-2024.html",
+    "type": "html",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "6bc3a337d5a425e72090e2ee606b4f0ea580ffdf21814c698acf4c06705a6fb0",
+    "year": "2029",
+    "etag": null,
+    "lastModified": null,
+    "error": null,
+    "indicators": [
+      "0ff125dc-9df8-4806-aa33-6dfab02eb4cb"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.576Z"
+  },
+  "https://www.statistiques.developpement-durable.gouv.fr/chiffres-cles-des-energies-renouvelables-edition-2025?rubrique=&dossier=1381": {
+    "url": "https://www.statistiques.developpement-durable.gouv.fr/chiffres-cles-des-energies-renouvelables-edition-2025?rubrique=&dossier=1381",
+    "type": "html",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "8c88689e8ab7e6480680fc5042e6ab222a568ca2977edfb034f19ac5cd76ab68",
+    "year": "2030",
+    "etag": "W/\"1789587083-gzip\"",
+    "lastModified": "Wed, 16 Sep 2026 19:31:23 GMT",
+    "error": null,
+    "indicators": [
+      "90249118-0b79-474b-8e0d-4f0f19d770bd",
+      "9c662070-7a13-4c1f-b896-06e1a9f22ed0"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.576Z"
+  },
+  "https://www.statistiques.developpement-durable.gouv.fr/tableau-de-bord-solaire-photovoltaique-troisieme-trimestre-2025-0": {
+    "url": "https://www.statistiques.developpement-durable.gouv.fr/tableau-de-bord-solaire-photovoltaique-troisieme-trimestre-2025-0",
+    "type": "html",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "6d2d23cf1af44097ff1453d3fbb589d30276b6c3134f2708f7fa30222fbc237c",
+    "year": "2025",
+    "etag": "W/\"1789586851-gzip\"",
+    "lastModified": "Wed, 16 Sep 2026 19:27:31 GMT",
+    "error": null,
+    "indicators": [
+      "3b69cea7-b154-4f9d-89c2-3769851c759b"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.576Z"
+  },
+  "https://www.statistiques.developpement-durable.gouv.fr/publicationweb/735": {
+    "url": "https://www.statistiques.developpement-durable.gouv.fr/publicationweb/735",
+    "type": "html",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "d0fb2370f6d4fbcc9fe15b4c4139ff06a79c2086019e1ab844e6f891aec8244f",
+    "year": "2028",
+    "etag": null,
+    "lastModified": null,
+    "error": null,
+    "indicators": [
+      "d0b5b788-853d-4a54-ab1d-dc4d6614b64b",
+      "4933a06f-80fc-4d50-840a-c06be488cacd"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.576Z"
+  },
+  "https://analysesetdonnees.rte-france.com/sites/default/files/graphDownloads/%25C3%2589volution_de_la_production_nucl%25C3%25A9aire_2025-08-04_16-23.csv": {
+    "url": "https://analysesetdonnees.rte-france.com/sites/default/files/graphDownloads/%25C3%2589volution_de_la_production_nucl%25C3%25A9aire_2025-08-04_16-23.csv",
+    "type": "csv",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "51f6127d82b1aa68ee08a1868990dbc03461d76db7ef0b7fcc151a6728d4bbe0",
+    "year": "2025",
+    "etag": "\"6a15f9e5-5d4f\"",
+    "lastModified": "Tue, 26 May 2026 19:52:05 GMT",
+    "error": null,
+    "indicators": [
+      "277da56b-c34e-4368-9366-a76c69ca5617"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.576Z"
+  },
+  "https://pilote.modernisation.gouv.fr/chantier/CH-059": {
+    "url": "https://pilote.modernisation.gouv.fr/chantier/CH-059",
+    "type": "html",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "f656058daec1c89f342f46c3effb9cfe7a75eb6ed738b3219b15a4810ffd9f48",
+    "year": "2000",
+    "etag": "\"wo9ftxjz5xf1z\"",
+    "lastModified": null,
+    "error": null,
+    "indicators": [
+      ""
+    ],
+    "checkedAt": "2026-09-16T19:32:16.576Z"
+  },
+  "https://fedene.fr/ressource/rapport-annuel-enquete-reseaux-chaleur-et-de-froid-2025/": {
+    "url": "https://fedene.fr/ressource/rapport-annuel-enquete-reseaux-chaleur-et-de-froid-2025/",
+    "type": "html",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "42c554642e9b4ce4e756fa33f91d193168120263bf8a4c5b2bb35087742d5f49",
+    "year": "2026",
+    "etag": null,
+    "lastModified": null,
+    "error": null,
+    "indicators": [
+      "cfcdeae8-59aa-4e3d-9c64-fb1032d8ae49",
+      "12452ab2-7e86-4c6d-a610-e4e87d83a715",
+      "94b7af4e-6fa3-4a2e-91d6-233f8e3369d1",
+      "7cb1dd68-92d2-487e-b88b-6363acd711cd"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.576Z"
+  },
+  "https://www.statistiques.developpement-durable.gouv.fr/media/6368/download?inline": {
+    "url": "https://www.statistiques.developpement-durable.gouv.fr/media/6368/download?inline",
+    "type": "sdes-media",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "6d2db4cc9849bbe05359f8565ac773f519e40f577168b9cb1b9898fbda46003f",
+    "year": null,
+    "etag": null,
+    "lastModified": "Tue, 25 Apr 2023 11:51:35 GMT",
+    "error": null,
+    "indicators": [
+      "20ba5d89-f5f0-4733-8ec6-0bdd8a84dde9",
+      "85625551-41ba-441f-bdef-2afc8187728c",
+      "d39a69b1-1445-4f2a-b684-440baa352412",
+      "e6c240b0-abac-4f46-a56b-3e7eb67abb07",
+      "124692c8-b892-4c7b-817e-05e78ff12e3c",
+      "be1a8878-4e2f-4ff8-9756-7b99343b75f3",
+      "37b62019-2d08-4d15-b306-e83142cb3650",
+      "674049dc-4aa5-4a58-9f51-904618ce3e8a"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.576Z"
+  },
+  "https://www.statistiques.developpement-durable.gouv.fr/media/8958/download?inline": {
+    "url": "https://www.statistiques.developpement-durable.gouv.fr/media/8958/download?inline",
+    "type": "sdes-media",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "10f6c43b574c28726a542831419ff484c0321cf86fdb2ce5fdf73816ef7ebdb9",
+    "year": null,
+    "etag": null,
+    "lastModified": "Thu, 29 Jan 2026 09:28:07 GMT",
+    "error": null,
+    "indicators": [
+      "e3e66ddc-b62a-41c5-9d65-7d4d70a5df80",
+      "0b82d404-528e-40a2-bb02-0d2677b561d2",
+      "35364232-ebdc-4872-8640-59b1f8a38280"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.576Z"
+  },
+  "https://www.eaufrance.fr/actualites/parution-de-ledition-2022-du-bulletin-rapportage": {
+    "url": "https://www.eaufrance.fr/actualites/parution-de-ledition-2022-du-bulletin-rapportage",
+    "type": "html",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "4abeae2f3aa69bef3a5ce748bd05e276e18138bd1a837f23563b9ebadfaae447",
+    "year": "2026",
+    "etag": null,
+    "lastModified": null,
+    "error": null,
+    "indicators": [
+      "72bedb7a-ad09-4ed9-bbb5-b2640caeb3a7",
+      "736e965c-2f96-472d-85b1-495c3863de56",
+      "d94c85f5-9a7d-4f4c-a8c4-7132fbded1fe"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.576Z"
+  },
+  "https://www.statistiques.developpement-durable.gouv.fr/indicateurs-cles-pour-le-suivi-de-leconomie-circulaire?rubrique=&dossier=1028251": {
+    "url": "https://www.statistiques.developpement-durable.gouv.fr/indicateurs-cles-pour-le-suivi-de-leconomie-circulaire?rubrique=&dossier=1028251",
+    "type": "html",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "5315fa35a0b4ae23d84302730cb19b364176d44b0dcc8bc1b5cf134ff6987205",
+    "year": "2040",
+    "etag": "W/\"1789587084-gzip\"",
+    "lastModified": "Wed, 16 Sep 2026 19:31:24 GMT",
+    "error": null,
+    "indicators": [
+      "b05480e5-5d18-4bc7-a526-e53e82baffb4"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.576Z"
+  },
+  "https://www.patrinat.fr/fr/page-temporaire-de-telechargement-des-referentiels-de-donnees-lies-linpn-7353": {
+    "url": "https://www.patrinat.fr/fr/page-temporaire-de-telechargement-des-referentiels-de-donnees-lies-linpn-7353",
+    "type": "html",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "01e6177d85bc518327956f4115cf5691451971e20c9c5fe83b385ac607edb89a",
+    "year": "2031",
+    "etag": "W/\"1789463906\"",
+    "lastModified": "Tue, 15 Sep 2026 09:18:26 GMT",
+    "error": null,
+    "indicators": [
+      "71eeca7a-65bd-496f-965d-eb58f19e85ab"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.576Z"
+  },
+  "https://www.statistiques.developpement-durable.gouv.fr/le-transport-maritime-de-marchandises-au-premier-trimestre-2026": {
+    "url": "https://www.statistiques.developpement-durable.gouv.fr/le-transport-maritime-de-marchandises-au-premier-trimestre-2026",
+    "type": "html",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "5cbee1be418d780db05993389ddee44a8a0afbdbdef05914854b42160a55b32b",
+    "year": "2026",
+    "etag": "W/\"1789587084-gzip\"",
+    "lastModified": "Wed, 16 Sep 2026 19:31:24 GMT",
+    "error": null,
+    "indicators": [
+      "8723e155-841a-4639-8d1d-18d4e45d5764"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.576Z"
+  },
+  "https://www.statistiques.developpement-durable.gouv.fr/indicateurs-cles-pour-le-suivi-de-leconomie-circulaire?rubrique=395&dossier=1028251": {
+    "url": "https://www.statistiques.developpement-durable.gouv.fr/indicateurs-cles-pour-le-suivi-de-leconomie-circulaire?rubrique=395&dossier=1028251",
+    "type": "html",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "fea77abe235d21041f9ba7897f6bb6d6f4d72e45830fda56f0dbef6761041ab2",
+    "year": "2040",
+    "etag": "W/\"1789587085-gzip\"",
+    "lastModified": "Wed, 16 Sep 2026 19:31:25 GMT",
+    "error": null,
+    "indicators": [
+      "229f0948-72ff-4548-a2e7-073ae57e427e",
+      "4a79b171-5ad4-4fe9-8eb2-acdf330f615e"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.576Z"
+  },
+  "https://www.patrinat.fr/fr/actualites/aires-protegees-en-france-ou-en-est-la-snap-mi-parcours-7390": {
+    "url": "https://www.patrinat.fr/fr/actualites/aires-protegees-en-france-ou-en-est-la-snap-mi-parcours-7390",
+    "type": "html",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "3ee97f68a8ab98fa7b6603564882c8394b5a84835015035225d9189a0afd92bd",
+    "year": "2031",
+    "etag": "W/\"1789465001\"",
+    "lastModified": "Tue, 15 Sep 2026 09:36:41 GMT",
+    "error": null,
+    "indicators": [
+      "9dada869-94a9-4e65-9095-9c9f0de935d5",
+      "80bdeeac-6bf2-43ce-8ab7-85d4d4c18a5d",
+      "c5d82e70-0af5-4d39-8ac4-afd6a47cfa2d",
+      "ab00ccd8-347d-4f1e-ae72-ddadeee7f9ec",
+      "9a85f2e5-9101-4788-a54b-7051ec87d9bb",
+      "7e7828e1-a1e2-4b24-9c82-365b0e81ed0f",
+      "cdbddae0-e6de-43d5-ad67-9c36901ad063",
+      "6d0798c6-e37a-4179-899b-c89487d93148",
+      "8429309b-a71e-4c1e-9ef9-5ff1a5403866",
+      "8096aaa7-3c62-4e71-9581-d742daf8e2a1"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.576Z"
+  },
+  "https://www.statistiques.developpement-durable.gouv.fr/media/8846/download?inline": {
+    "url": "https://www.statistiques.developpement-durable.gouv.fr/media/8846/download?inline",
+    "type": "sdes-media",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "0a0bfcb9cfe268142922350125d45a0f5d159878c194379890370cd2602bdfe7",
+    "year": null,
+    "etag": null,
+    "lastModified": "Thu, 20 Nov 2025 12:14:10 GMT",
+    "error": null,
+    "indicators": [
+      "20bbb13a-bc76-4121-bc34-b656848c0666"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.576Z"
+  },
+  "https://www.statistiques.developpement-durable.gouv.fr/lhydrogene-pur-evaluation-des-ressources-et-des-usages-en-france-en-2024": {
+    "url": "https://www.statistiques.developpement-durable.gouv.fr/lhydrogene-pur-evaluation-des-ressources-et-des-usages-en-france-en-2024",
+    "type": "html",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "bb3f62ffac1a35197d5c748bba737e4d793740cf126a6b5f54cd2c54318167eb",
+    "year": "2025",
+    "etag": "W/\"1789585908-gzip\"",
+    "lastModified": "Wed, 16 Sep 2026 19:11:48 GMT",
+    "error": null,
+    "indicators": [
+      "f029608b-dba7-4577-b6d9-404aa5641f52"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.576Z"
+  },
+  "https://geoservices.ign.fr/bdhaie": {
+    "url": "https://geoservices.ign.fr/bdhaie",
+    "type": "html",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "20a43565e176f1f9be3b4553808ee50f68317e0f6ffe6cf0056a0d5d0c82e6a3",
+    "year": null,
+    "etag": "\"1c0b9-65b21aa365600;65b21aa365600",
+    "lastModified": "Thu, 10 Sep 2026 14:20:08 GMT",
+    "error": null,
+    "indicators": [
+      "c14c05d5-d1da-45fe-b581-8afdf2b9bb30"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.576Z"
+  },
+  "https://ec.europa.eu/eurostat/databrowser/view/aei_hri/default/table?lang=en": {
+    "url": "https://ec.europa.eu/eurostat/databrowser/view/aei_hri/default/table?lang=en",
+    "type": "html",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "5e81cf9d0ed28e478617eb49c535331a38e70e2ec7f071ca941c10f7dd40d82f",
+    "year": null,
+    "etag": "\"5.18.6:dtagent10335260518104739KpXw\"",
+    "lastModified": null,
+    "error": null,
+    "indicators": [
+      "ef5f0a3f-8f8d-468a-bea7-aa297e47f705"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.576Z"
+  },
+  "https://www.statistiques.developpement-durable.gouv.fr/bilan-energetique-de-la-france-en-2024-donnees-provisoires": {
+    "url": "https://www.statistiques.developpement-durable.gouv.fr/bilan-energetique-de-la-france-en-2024-donnees-provisoires",
+    "type": "html",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "31a4e5a31bbb211c59ef07dced96f78a0ac145ce123665243f55410db3cd6bac",
+    "year": "2025",
+    "etag": "W/\"1789587085-gzip\"",
+    "lastModified": "Wed, 16 Sep 2026 19:31:25 GMT",
+    "error": null,
+    "indicators": [
+      "7a016c68-f322-43bb-8f27-2026d2124b9f"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.576Z"
+  },
+  "https://www.statistiques.developpement-durable.gouv.fr/76-plans-nationaux-dactions-en-faveur-des-especes-menacees-en-vigueur-en-2025": {
+    "url": "https://www.statistiques.developpement-durable.gouv.fr/76-plans-nationaux-dactions-en-faveur-des-especes-menacees-en-vigueur-en-2025",
+    "type": "html",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "f9449dfb9cab11b7770928815394d029cc65e638b17b7863c41f73b6a51fd201",
+    "year": "2030",
+    "etag": "W/\"1789586255-gzip\"",
+    "lastModified": "Wed, 16 Sep 2026 19:17:35 GMT",
+    "error": null,
+    "indicators": [
+      "197452e3-ec57-41e8-82e8-4bd058fef7b7"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.576Z"
+  },
+  "https://www.statistiques.developpement-durable.gouv.fr/la-pollution-des-eaux-superficielles-et-souterraines-en-france-extrait-du-bilan-environnemental": {
+    "url": "https://www.statistiques.developpement-durable.gouv.fr/la-pollution-des-eaux-superficielles-et-souterraines-en-france-extrait-du-bilan-environnemental",
+    "type": "html",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "2994810d07e165ddbb798b4b2b28605350b3ee0c6ab9ff5bc0b63ee3ffa45941",
+    "year": "2026",
+    "etag": "W/\"1789587085-gzip\"",
+    "lastModified": "Wed, 16 Sep 2026 19:31:25 GMT",
+    "error": null,
+    "indicators": [
+      "85b42194-c725-4fbd-915c-1b585c872dfc",
+      "190e73bf-efd3-4c72-a020-3da9139b5550",
+      "f2029df5-d280-46e5-990c-5694cba28c08",
+      "06ec03b8-71da-409e-ba7b-09b03fd5d69b",
+      "eabbd2ff-4dea-4ea1-acbd-c1dacc313495",
+      "8eaf43cc-bd00-4231-9644-886ccbf9c82b"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.576Z"
+  },
+  "https://biodiversite.gouv.fr/sites/default/files/2026-04/Rapport": {
+    "url": "https://biodiversite.gouv.fr/sites/default/files/2026-04/Rapport",
+    "type": "html",
+    "status": 404,
+    "statusText": "Not Found",
+    "hash": "522c46db069a08460a91a4968dbbaaa3347c97b6206240ca52a407adf18ff1d1",
+    "year": "2030",
+    "etag": "\"1789587085\"",
+    "lastModified": "Wed, 16 Sep 2026 19:31:25 GMT",
+    "error": null,
+    "indicators": [
+      "6edc86b6-2309-4e23-bd8e-091e6f31ecc0"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.576Z"
+  },
+  "https://www.statistiques.developpement-durable.gouv.fr/emissions-de-gaz-effet-de-serre-et-empreinte-carbone-de-la-france-en-2024-une-baisse-plus-faible?rubrique=&dossier=1286": {
+    "url": "https://www.statistiques.developpement-durable.gouv.fr/emissions-de-gaz-effet-de-serre-et-empreinte-carbone-de-la-france-en-2024-une-baisse-plus-faible?rubrique=&dossier=1286",
+    "type": "html",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "c65d3b5ce0038b83d453b3cbc6a2580180c13fa91b1b5031562bf9447f9134b7",
+    "year": "2025",
+    "etag": "W/\"1789587086-gzip\"",
+    "lastModified": "Wed, 16 Sep 2026 19:31:26 GMT",
+    "error": null,
+    "indicators": [
+      "9cac5f08-7f76-4a2c-b8e7-6369d5196da2"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.576Z"
+  },
+  "https://www.statistiques.developpement-durable.gouv.fr/lempreinte-carbone-de-la-france-de-1990-2024?rubrique=&dossier=1286": {
+    "url": "https://www.statistiques.developpement-durable.gouv.fr/lempreinte-carbone-de-la-france-de-1990-2024?rubrique=&dossier=1286",
+    "type": "html",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "a6a7e841b75a972549cc3676bc1ad3ec0a46c4f1e2768298ba269de224e1005d",
+    "year": "2025",
+    "etag": "W/\"1789587086-gzip\"",
+    "lastModified": "Wed, 16 Sep 2026 19:31:26 GMT",
+    "error": null,
+    "indicators": [
+      "e89a856a-3abb-453f-901b-650f977c6b57",
+      "b29b7542-ff91-4269-8538-e862d631a41a",
+      "9c680c6b-a8fc-4b9e-876c-68bf5be4cfa6"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.576Z"
+  },
+  "https://www.statistiques.developpement-durable.gouv.fr/dechets-alimentaires-en-france-et-dans-lunion-europeenne-en-2023": {
+    "url": "https://www.statistiques.developpement-durable.gouv.fr/dechets-alimentaires-en-france-et-dans-lunion-europeenne-en-2023",
+    "type": "html",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "765d24c5971262d89ee6f56a54f828a6761227f66acfbc8ee7d9a2dfb0c0895f",
+    "year": "2030",
+    "etag": "W/\"1789587086-gzip\"",
+    "lastModified": "Wed, 16 Sep 2026 19:31:26 GMT",
+    "error": null,
+    "indicators": [
+      "ec88295e-7489-4b18-bce4-6a59bee9f89f",
+      "ef4e1d75-4105-4224-b58d-136f945a2dd7",
+      "ac6db3f2-8993-4fa7-a3a9-910fe88fedeb"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.576Z"
+  },
+  "https://www.statistiques.developpement-durable.gouv.fr/media/8039/download?inline": {
+    "url": "https://www.statistiques.developpement-durable.gouv.fr/media/8039/download?inline",
+    "type": "sdes-media",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "a21984d707fc4f61bfd4dfcb43868897f576bec32b91205778ec5cedf972f9c3",
+    "year": null,
+    "etag": null,
+    "lastModified": "Mon, 13 Jan 2025 12:37:50 GMT",
+    "error": null,
+    "indicators": [
+      "5fa065f3-e334-471a-8284-5bdc2eb51418",
+      "12fdb493-e72a-41ab-b2a3-91ec44797449"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.576Z"
+  },
+  "https://www.statistiques.developpement-durable.gouv.fr/bilan-de-la-qualite-de-lair-exterieur-en-france-en-2024?rubrique=32&dossier=204": {
+    "url": "https://www.statistiques.developpement-durable.gouv.fr/bilan-de-la-qualite-de-lair-exterieur-en-france-en-2024?rubrique=32&dossier=204",
+    "type": "html",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "73b7c61a69b6d1dba78518098eebc7671d14d5651cf90dac7a72b5362e6cfa4e",
+    "year": "2025",
+    "etag": "W/\"1789587086-gzip\"",
+    "lastModified": "Wed, 16 Sep 2026 19:31:26 GMT",
+    "error": null,
+    "indicators": [
+      "7440f4e1-8698-469b-94ff-a6a951c473fd",
+      "891a03ab-9fdf-41f7-85c8-5f6f7ab89c34",
+      "33230541-c4b3-40ea-9240-20704e9153ea",
+      ""
+    ],
+    "checkedAt": "2026-09-16T19:32:16.576Z"
+  },
+  "https://agreste.agriculture.gouv.fr/agreste-web/disaron/APPROVISIONNEMENT-SeriesLongues/detail/": {
+    "url": "https://agreste.agriculture.gouv.fr/agreste-web/disaron/APPROVISIONNEMENT-SeriesLongues/detail/",
+    "type": "html",
+    "status": 0,
+    "statusText": "",
+    "hash": null,
+    "year": null,
+    "etag": null,
+    "lastModified": null,
+    "error": "unable to verify the first certificate; if the root CA is installed locally, try running Node.js with --use-system-ca",
+    "indicators": [
+      "3e94527c-b250-4352-ba09-d1de00d6cbca"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.576Z"
+  },
+  "https://www.statistiques.developpement-durable.gouv.fr/bilan-annuel-des-transports-en-2024": {
+    "url": "https://www.statistiques.developpement-durable.gouv.fr/bilan-annuel-des-transports-en-2024",
+    "type": "html",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "5c70450bc5ebe6141163af6bf2655594f80d7e86bdbbd5d651b0823815684de2",
+    "year": "2025",
+    "etag": "W/\"1789585628-gzip\"",
+    "lastModified": "Wed, 16 Sep 2026 19:07:08 GMT",
+    "error": null,
+    "indicators": [
+      "1f9baf8d-c40b-42d9-bbdb-c246289b35a5"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.576Z"
+  },
+  "https://www.statistiques.developpement-durable.gouv.fr/donnees-sur-le-parc-automobile-francais-au-1er-janvier-2025": {
+    "url": "https://www.statistiques.developpement-durable.gouv.fr/donnees-sur-le-parc-automobile-francais-au-1er-janvier-2025",
+    "type": "html",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "b64be310e1d476ec3764f6772fc28beae4706569b3e56be97ccbcfeb9cc1dbfa",
+    "year": "2025",
+    "etag": "W/\"1789586585-gzip\"",
+    "lastModified": "Wed, 16 Sep 2026 19:23:05 GMT",
+    "error": null,
+    "indicators": [
+      "58cf8260-100a-4bf8-9321-f5e3daf4b1e5"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.576Z"
+  },
+  "https://www.ecologie.gouv.fr/politiques-publiques/statistiques-du-trafic-aerien": {
+    "url": "https://www.ecologie.gouv.fr/politiques-publiques/statistiques-du-trafic-aerien",
+    "type": "html",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "d481e8e7794d6d063fc1fc55f1d5d0e75a7c87552bec9c227a44723a33f9e10e",
+    "year": "2030",
+    "etag": "W/\"1789571457\"",
+    "lastModified": "Wed, 16 Sep 2026 15:10:57 GMT",
+    "error": null,
+    "indicators": [
+      "77aa9117-326d-4187-bb8b-da1cfb6ed152"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.576Z"
+  },
+  "https://www.avere-france.org/publications/": {
+    "url": "https://www.avere-france.org/publications/",
+    "type": "html",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "4de9d0838f77e0ef259529a601a00911716fc9c77a22fbf55f5bf34393ba25ce",
+    "year": "2036",
+    "etag": null,
+    "lastModified": null,
+    "error": null,
+    "indicators": [
+      "c5fc3741-f0c7-4158-91c2-e658fb0e628c"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.576Z"
+  },
+  "https://filieres-rep.ademe.fr/filieres-REP/filiere-EMBM/tableau-de-bord": {
+    "url": "https://filieres-rep.ademe.fr/filieres-REP/filiere-EMBM/tableau-de-bord",
+    "type": "html",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "dd736c1cc88dc85e5a43a1f7b9f76f873bbca722d2b1dc814e87f551726c2460",
+    "year": "2024",
+    "etag": null,
+    "lastModified": null,
+    "error": null,
+    "indicators": [
+      "af207b0b-7b8f-42fd-9198-f0f1cea3b2d5"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.576Z"
+  },
+  "https://artificialisation.developpement-durable.gouv.fr/sites/artificialisation/files/fichiers/2025/12/Determinants_consoENAF_M2024_final.pdf": {
+    "url": "https://artificialisation.developpement-durable.gouv.fr/sites/artificialisation/files/fichiers/2025/12/Determinants_consoENAF_M2024_final.pdf",
+    "type": "pdf",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "5cf39021b61966f5eff7131fe0131249984fc0b033942bf33c86b60e3cae7e4f",
+    "year": "2000",
+    "etag": "\"53b958-64613d3b24a1b\"",
+    "lastModified": "Tue, 16 Dec 2025 16:00:30 GMT",
+    "error": null,
+    "indicators": [
+      "3c989b29-a145-471f-a056-0434a1882147",
+      "2d4652f4-3fa0-4a02-be6a-aa5d9bc7cb72",
+      "2a92c457-04e3-4097-9e4d-c5210ceceed6"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.576Z"
+  },
+  "https://www.union-habitat.org/sites/default/files/articles/pdf/2025-11/ush_brochure_alliance_energies_renouvelables_2025-12-04.pdf": {
+    "url": "https://www.union-habitat.org/sites/default/files/articles/pdf/2025-11/ush_brochure_alliance_energies_renouvelables_2025-12-04.pdf",
+    "type": "pdf",
+    "status": 403,
+    "statusText": "Forbidden",
+    "hash": "2fef4f5b70286e2ae21a50e3ad01051472730e38657b8e2ed674d4cb23598eae",
+    "year": "2025",
+    "etag": null,
+    "lastModified": null,
+    "error": null,
+    "indicators": [
+      "55d974f7-81ab-4b93-854f-6913c7999db8"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.576Z"
+  },
+  "https://www.statistiques.developpement-durable.gouv.fr/bilan-2022-de-la-production-de-dechets-en-france-0?rubrique=&dossier=1028250": {
+    "url": "https://www.statistiques.developpement-durable.gouv.fr/bilan-2022-de-la-production-de-dechets-en-france-0?rubrique=&dossier=1028250",
+    "type": "html",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "e75e7b7736fdbb974c24e450da053f31304994fec6f8145a3c4a148b40b5e413",
+    "year": "2030",
+    "etag": "W/\"1789587088-gzip\"",
+    "lastModified": "Wed, 16 Sep 2026 19:31:28 GMT",
+    "error": null,
+    "indicators": [
+      "a19484a9-7add-459c-bb6e-e09edc82217f"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.576Z"
+  },
+  "https://www.statistiques.developpement-durable.gouv.fr/donnees-2025-sur-les-immatriculations-des-vehicules?rubrique=58&dossier=1347": {
+    "url": "https://www.statistiques.developpement-durable.gouv.fr/donnees-2025-sur-les-immatriculations-des-vehicules?rubrique=58&dossier=1347",
+    "type": "html",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "c8c7aa05330e2f3d324b1557757d1fe6cb91b2eb90c2d2283d79d2deb40d598e",
+    "year": "2026",
+    "etag": "W/\"1789587088-gzip\"",
+    "lastModified": "Wed, 16 Sep 2026 19:31:28 GMT",
+    "error": null,
+    "indicators": [
+      "8c64844d-09df-4828-8038-0400efa57c9e"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.576Z"
+  },
+  "https://www.unionsportcycle.com/observatoire-du-cycle/les-actualites/2026-04-24/observatoire-du-cycle-les-chiffres": {
+    "url": "https://www.unionsportcycle.com/observatoire-du-cycle/les-actualites/2026-04-24/observatoire-du-cycle-les-chiffres",
+    "type": "html",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "2501c26408ef628cdc2a5857368d0366079483f21fa3782a4598130a4b1fd3fe",
+    "year": "2026",
+    "etag": null,
+    "lastModified": null,
+    "error": null,
+    "indicators": [
+      "e97cff39-07b7-44fb-ae1e-e9358bcaf11c"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.576Z"
+  },
+  "https://www.entsoe.eu/data/power-stats/": {
+    "url": "https://www.entsoe.eu/data/power-stats/",
+    "type": "html",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "7e345ee2e96ded21096ddce6e5668b1c1654cf00b19090fd60c151c829553182",
+    "year": "2040",
+    "etag": "\"d6ecfe75348f4065c565fdd1efa9dcf3-ssl\"",
+    "lastModified": null,
+    "error": null,
+    "indicators": [
+      "f17613d4-ea72-4402-bbec-f3887bd704b3"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.576Z"
+  },
+  "https://www.agencebio.org/vos-outils/les-chiffres-cles/": {
+    "url": "https://www.agencebio.org/vos-outils/les-chiffres-cles/",
+    "type": "html",
+    "status": 403,
+    "statusText": "Forbidden",
+    "hash": "6dc3f1143e1726cff5a59525d7b89aee1b5adc9057bdbb39126928052bcf7542",
+    "year": null,
+    "etag": null,
+    "lastModified": null,
+    "error": null,
+    "indicators": [
+      "0d8486b1-001d-4887-9a07-aeccd434f99e"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.576Z"
+  },
+  "https://sante.gouv.fr/IMG/pdf/synthese_bilan_qualite_2024.pdf": {
+    "url": "https://sante.gouv.fr/IMG/pdf/synthese_bilan_qualite_2024.pdf",
+    "type": "pdf",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "acd663cd8919ba4b52409e8d98f249e993255e65d78484f99a273090e239814d",
+    "year": null,
+    "etag": null,
+    "lastModified": null,
+    "error": null,
+    "indicators": [
+      "2b50aa02-a1cf-4156-b2ad-bd92b0ff28ca",
+      "712c52b0-8867-4174-b52c-1111859a18d3",
+      "763a0b95-c84f-46db-b35c-a5fc8de2c1f4",
+      "18a3a209-a162-4833-b3af-10901a1979da"
+    ],
+    "checkedAt": "2026-09-16T19:32:16.576Z"
+  },
+  "https://www.statistiques.developpement-durable.gouv.fr/le-parc-de-logements-par-classe-de-performance-energetique-au-1er-janvier-2024": {
+    "url": "https://www.statistiques.developpement-durable.gouv.fr/le-parc-de-logements-par-classe-de-performance-energetique-au-1er-janvier-2024",
+    "type": "html",
+    "status": 200,
+    "statusText": "OK",
+    "hash": "24335408da26a4e16c12704814bb0b0cc256560166dea3672cbd569fd10cb3a5",
+    "year": "2025",
+    "etag": "W/\"1789587088-gzip\"",
+    "lastModified": "Wed, 16 Sep 2026 19:31:28 GMT",
+    "error": null,
+    "indicators": [
+      ""
+    ],
+    "checkedAt": "2026-09-16T19:32:16.576Z"
+  }
+}

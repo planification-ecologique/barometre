@@ -1,0 +1,72 @@
+name: Watch indicator sources
+
+on:
+  schedule:
+    # Daily at 05:00 UTC (06:00/07:00 Paris), after the IRPE/Grist cache job.
+    # A "new edition/vintage" check runs every day; deep scan active from the first run.
+    - cron: '0 5 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: watch-sources
+  cancel-in-progress: false
+
+jobs:
+  watch-sources:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '21'
+          cache: npm
+          cache-dependency-path: source-watch/package-lock.json
+
+      - name: Install dependencies
+        working-directory: source-watch
+        run: npm ci
+
+      - name: Lint watch scripts
+        working-directory: source-watch
+        run: npm run lint
+
+      - name: Run watch tests
+        working-directory: source-watch
+        run: npm test
+
+      - name: Run source watcher
+        working-directory: source-watch
+        env:
+          MATRIX_HOMESERVER_URL: ${{ secrets.MATRIX_HOMESERVER_URL }}
+          MATRIX_ACCESS_TOKEN: ${{ secrets.MATRIX_ACCESS_TOKEN }}
+          MATRIX_ROOM_ID: ${{ secrets.MATRIX_ROOM_ID }}
+        run: npm run watch-sources
+
+      - name: Verify SDES values against Grist
+        working-directory: source-watch
+        # The verifier exits 2 when it detects copy errors / new values to propose.
+        # That is the expected (informative) outcome, so never fail the job.
+        continue-on-error: true
+        run: npm run verify-grist-values -- --quiet
+
+      - name: Commit and push updated state / report to main
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          if git diff --quiet -- source-watch/state.json source-watch/report-latest.md source-watch/verify-grist-values.csv; then
+            echo "No source-watch changes to commit."
+            exit 0
+          fi
+
+          git add source-watch/state.json source-watch/report-latest.md source-watch/verify-grist-values.csv
+          git commit \
+            -m "chore: update source-watch state, report and SDES value checks" \
+            -m "Scheduled daily scan of the Baromètre indicator sources (new editions/vintages detection) and SDES value verification against Grist."
+          git pull --rebase origin main
+          git push origin HEAD:main

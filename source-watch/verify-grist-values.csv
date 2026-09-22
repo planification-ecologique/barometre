@@ -1,0 +1,2 @@
+statut,action,indic,annee,valeur_source,valeur_grist,ecart,detail,url
+COPY,verifier_valeur_grist,Consommation d'énergie issue de déchets renouvelables pour la production d'électricité et de chaleur commercialisée,2024,13.138594722222223,13.65,0.5114,"1 année(s) divergente(s) — ex. 2024: source=13.138594722222223, Grist=13.65 (écart 0.5114)",https://www.statistiques.developpement-durable.gouv.fr/media/8408/download?inline
