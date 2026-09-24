@@ -608,21 +608,21 @@
       "immatriculations_autobus_e_com.date_mesure": "2022-01-01T00:00:00.000"
     },
     {
-      "immatriculations_autobus_e_com.libelle_region": "Auvergne-Rhône-Alpes",
-      "immatriculations_autobus_e_com.geocode_region": "84",
-      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
-      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
-      "immatriculations_autobus_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
-      "immatriculations_autobus_e_com.id_451": 21.05263157894737,
-      "immatriculations_autobus_e_com.date_mesure": "2022-01-01T00:00:00.000"
-    },
-    {
       "immatriculations_autobus_e_com.libelle_region": "Hauts-de-France",
       "immatriculations_autobus_e_com.geocode_region": "32",
       "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
       "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
       "immatriculations_autobus_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
       "immatriculations_autobus_e_com.id_451": 1.075268817204301,
+      "immatriculations_autobus_e_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_autobus_e_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "immatriculations_autobus_e_com.geocode_region": "84",
+      "immatriculations_autobus_e_com.type_vehicule": "TCP_BUS",
+      "immatriculations_autobus_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autobus_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "immatriculations_autobus_e_com.id_451": 21.05263157894737,
       "immatriculations_autobus_e_com.date_mesure": "2022-01-01T00:00:00.000"
     },
     {

@@ -11339,8 +11339,8 @@
           "meta": {
             "libelle_indicateur": "Nombre de ménages en précarité énergétique logement par niveau de vie",
             "statut_commun": "Mesure",
-            "unite": "nb",
-            "methode_calcul": "Par définition, un ménage en précarité énergétique est un ménage faisant partie des trois premiers déciles de revenus par unité de consommation (UC) et consacrant au moins 8% de ses revenus aux dépenses d'énergie de son logement. Le calcul de l'indicateur se fait en filtrant les données de l'enquête logement (INSEE). La notion de \"par niveau de vie\" fait référence à la méthode de calcul via les UC et non à un axe de projection.  \n\nL'indicateur calculé par Ecolab exclut les communes qui ont connu une scission car il n'est pas possible d'attribuer aux communes résultantes les données. La valeur de l'indicateur peut légèrement varier si l'agrégation est faite à une maille supérieure à la maille communale.\n",
+            "unite": "ménages",
+            "methode_calcul": "Par définition, un ménage en précarité énergétique est un ménage faisant partie des trois premiers déciles de revenus par unité de consommation (UC) et consacrant au moins 8% de ses revenus aux dépenses d'énergie de son logement. Le calcul de l'indicateur se fait en filtrant les données de l'enquête logement (INSEE). La notion de \"par niveau de vie\" fait référence à la méthode de calcul via les UC et non à un axe de projection. \nL'indicateur calculé par Ecolab exclut les communes qui ont connu une scission car il n'est pas possible d'attribuer aux communes résultantes les données. La valeur de l'indicateur peut légèrement varier si l'agrégation est faite à une maille supérieure à la maille communale.\n",
             "publish": false,
             "is_beta": true
           },
@@ -16015,9 +16015,9 @@
       "title": "Qualite Sites Baignade Com",
       "isVisible": true,
       "public": true,
-      "description": "Qualité des eaux des sites de baignade, 5 niveaux de qualité, nombre de sites par maille géographique.",
+      "description": "Qualité des eaux des sites de baignade, 4 niveaux de qualité, nombre de sites par maille géographique.",
       "meta": {
-        "responsable_calcul": "Hub Indicateurs Territoriaux - CGDD",
+        "responsable_calcul": "DIRECTION GENERALE DE LA SANTE (DGS), SERVICE DES DONNÉES ET ÉTUDES STATISTIQUES (SDES)",
         "publish": false
       },
       "measures": [
@@ -16035,11 +16035,12 @@
             "dimensions": []
           },
           "meta": {
-            "libelle_indicateur": "Nombre de sites de baignade par qualité",
+            "libelle_indicateur": "Nombre de sites de baignade par qualité des eaux",
             "statut_commun": "Mesure",
-            "unite": "nb",
-            "methode_calcul": "Pour chaque commune, les sites de baignade issus de la source data.gouv.fr sont regroupés par niveau de qualité des eaux de baignade (code_geographique, qualite), et l'indicateur correspond au nombre de sites comptabilisés dans chaque groupe (COUNT(*)).\n \n Le jeu de données étant un instantané (snapshot) sans historique, une date de mesure fixe (01/01/2026) est appliquée à l'ensemble des lignes.\n \n Les libellés et codes des mailles géographiques supra-communales (EPCI, département, région, CRTE, EPT) sont ajoutés par jointure avec le référentiel géographique à partir du code commune.",
-            "publish": false
+            "unite": "sites de baignade",
+            "methode_calcul": "Pour chaque commune, les sites de baignade issus de la source ITDD sont regroupés par niveau de qualité des eaux de baignade (code_geographique, qualite), et l'indicateur correspond au nombre de sites comptabilisés dans chaque groupe (SUM(*)).",
+            "publish": false,
+            "is_beta": true
           },
           "isVisible": true,
           "public": true
@@ -16121,46 +16122,6 @@
           "title": "Qualite Sites Baignade Com Libelle Region",
           "type": "string",
           "shortTitle": "Libelle Region",
-          "suggestFilterValues": true,
-          "isVisible": true,
-          "public": true,
-          "primaryKey": false
-        },
-        {
-          "name": "qualite_sites_baignade_com.geocode_crte",
-          "title": "Qualite Sites Baignade Com Geocode Crte",
-          "type": "string",
-          "shortTitle": "Geocode Crte",
-          "suggestFilterValues": true,
-          "isVisible": true,
-          "public": true,
-          "primaryKey": false
-        },
-        {
-          "name": "qualite_sites_baignade_com.libelle_crte",
-          "title": "Qualite Sites Baignade Com Libelle Crte",
-          "type": "string",
-          "shortTitle": "Libelle Crte",
-          "suggestFilterValues": true,
-          "isVisible": true,
-          "public": true,
-          "primaryKey": false
-        },
-        {
-          "name": "qualite_sites_baignade_com.geocode_ept",
-          "title": "Qualite Sites Baignade Com Geocode Ept",
-          "type": "string",
-          "shortTitle": "Geocode Ept",
-          "suggestFilterValues": true,
-          "isVisible": true,
-          "public": true,
-          "primaryKey": false
-        },
-        {
-          "name": "qualite_sites_baignade_com.libelle_ept",
-          "title": "Qualite Sites Baignade Com Libelle Ept",
-          "type": "string",
-          "shortTitle": "Libelle Ept",
           "suggestFilterValues": true,
           "isVisible": true,
           "public": true,
@@ -18276,7 +18237,8 @@
             "statut_commun": "Mesure",
             "unite": "nb",
             "methode_calcul": "L'indicateur est calculé par Santé Publique France, un cas incidents correspond à un nouveau cas de saturnisme dans l'année. Un cas de saturnisme correspond à une plombémie dans le sang supérieur à un certain seuil : 100ug jusqu'au 17 juin 2015 et 50up depuis cette date.",
-            "publish": false
+            "publish": true,
+            "is_beta": true
           },
           "isVisible": true,
           "public": true
@@ -18377,7 +18339,8 @@
             "statut_commun": "Mesure",
             "unite": "nb",
             "methode_calcul": "L'indicateur est calculé par Santé Publique France, un cas prevalents correspond à tous les enfants ayant une plombémie supérieur au seuil de diagnostic du saturnisme au cours d'une année, il comprend les cas incidents de l'année et les enfants encore positifs. Un cas de saturnisme correspond à une plombémie dans le sang supérieur à un certain seuil : 100ug jusqu'au 17 juin 2015 et 50up depuis cette date.",
-            "is_beta": true
+            "is_beta": true,
+            "publish": true
           },
           "isVisible": true,
           "public": true
