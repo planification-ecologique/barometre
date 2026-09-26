@@ -131,17 +131,17 @@
       "conso_enaf_com.date_mesure": "2010-01-01T00:00:00.000"
     },
     {
-      "conso_enaf_com.libelle_region": "Auvergne-Rhône-Alpes",
-      "conso_enaf_com.geocode_region": "84",
-      "conso_enaf_com.date_mesure.year": "2010-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "3590.9034",
-      "conso_enaf_com.date_mesure": "2010-01-01T00:00:00.000"
-    },
-    {
       "conso_enaf_com.libelle_region": "Centre-Val de Loire",
       "conso_enaf_com.geocode_region": "24",
       "conso_enaf_com.date_mesure.year": "2010-01-01T00:00:00.000",
       "conso_enaf_com.id_611": "1672.0513",
+      "conso_enaf_com.date_mesure": "2010-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "conso_enaf_com.geocode_region": "84",
+      "conso_enaf_com.date_mesure.year": "2010-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "3590.9034",
       "conso_enaf_com.date_mesure": "2010-01-01T00:00:00.000"
     },
     {
