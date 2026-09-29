@@ -11340,7 +11340,7 @@
             "libelle_indicateur": "Nombre de ménages en précarité énergétique logement par niveau de vie",
             "statut_commun": "Mesure",
             "unite": "ménages",
-            "methode_calcul": "Par définition, un ménage en précarité énergétique est un ménage faisant partie des trois premiers déciles de revenus par unité de consommation (UC) et consacrant au moins 8% de ses revenus aux dépenses d'énergie de son logement. Le calcul de l'indicateur se fait en filtrant les données de l'enquête logement (INSEE). La notion de \"par niveau de vie\" fait référence à la méthode de calcul via les UC et non à un axe de projection. \nL'indicateur calculé par Ecolab exclut les communes qui ont connu une scission car il n'est pas possible d'attribuer aux communes résultantes les données. La valeur de l'indicateur peut légèrement varier si l'agrégation est faite à une maille supérieure à la maille communale.\n",
+            "methode_calcul": "Par définition, un ménage en précarité énergétique est un ménage faisant partie des trois premiers déciles de revenus par unité de consommation (UC) et consacrant au moins 8% de ses revenus aux dépenses d'énergie de son logement. Le calcul de l'indicateur se fait en filtrant les données de l'enquête logement (INSEE). La notion de \"par niveau de vie\" fait référence à la méthode de calcul via les UC et non à un axe de projection. L'indicateur calculé par Ecolab exclut les communes qui ont connu une scission car il n'est pas possible d'attribuer aux communes résultantes les données. La valeur de l'indicateur peut légèrement varier si l'agrégation est faite à une maille supérieure à la maille communale.\n",
             "publish": false,
             "is_beta": true
           },
@@ -16039,7 +16039,7 @@
             "statut_commun": "Mesure",
             "unite": "sites de baignade",
             "methode_calcul": "Pour chaque commune, les sites de baignade issus de la source ITDD sont regroupés par niveau de qualité des eaux de baignade (code_geographique, qualite), et l'indicateur correspond au nombre de sites comptabilisés dans chaque groupe (SUM(*)).",
-            "publish": false,
+            "publish": true,
             "is_beta": true
           },
           "isVisible": true,

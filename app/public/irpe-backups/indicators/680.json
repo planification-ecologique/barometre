@@ -5,24 +5,24 @@
   "extraDimension": "residences_principales_energie_region.annee",
   "data": [
     {
-      "residences_principales_energie_region.libelle_region": "Bourgogne-Franche-Comté",
-      "residences_principales_energie_region.geocode_region": "27",
+      "residences_principales_energie_region.libelle_region": "Centre-Val de Loire",
+      "residences_principales_energie_region.geocode_region": "24",
       "residences_principales_energie_region.date_mesure.year": "2023-01-01T00:00:00.000",
-      "residences_principales_energie_region.id_680": 36.61616734971861,
+      "residences_principales_energie_region.id_680": 33.168855505722185,
       "residences_principales_energie_region.date_mesure": "2023-01-01T00:00:00.000"
     },
     {
       "residences_principales_energie_region.libelle_region": "Normandie",
       "residences_principales_energie_region.geocode_region": "28",
       "residences_principales_energie_region.date_mesure.year": "2023-01-01T00:00:00.000",
-      "residences_principales_energie_region.id_680": 30.656921683468806,
+      "residences_principales_energie_region.id_680": 30.6569216834688,
       "residences_principales_energie_region.date_mesure": "2023-01-01T00:00:00.000"
     },
     {
-      "residences_principales_energie_region.libelle_region": "Centre-Val de Loire",
-      "residences_principales_energie_region.geocode_region": "24",
+      "residences_principales_energie_region.libelle_region": "Bourgogne-Franche-Comté",
+      "residences_principales_energie_region.geocode_region": "27",
       "residences_principales_energie_region.date_mesure.year": "2023-01-01T00:00:00.000",
-      "residences_principales_energie_region.id_680": 33.168855505722185,
+      "residences_principales_energie_region.id_680": 36.61616734971861,
       "residences_principales_energie_region.date_mesure": "2023-01-01T00:00:00.000"
     },
     {
@@ -68,17 +68,17 @@
       "residences_principales_energie_region.date_mesure": "2023-01-01T00:00:00.000"
     },
     {
-      "residences_principales_energie_region.libelle_region": "Pays de la Loire",
-      "residences_principales_energie_region.geocode_region": "52",
-      "residences_principales_energie_region.date_mesure.year": "2023-01-01T00:00:00.000",
-      "residences_principales_energie_region.id_680": 30.18297694810656,
-      "residences_principales_energie_region.date_mesure": "2023-01-01T00:00:00.000"
-    },
-    {
       "residences_principales_energie_region.libelle_region": "Nouvelle-Aquitaine",
       "residences_principales_energie_region.geocode_region": "75",
       "residences_principales_energie_region.date_mesure.year": "2023-01-01T00:00:00.000",
       "residences_principales_energie_region.id_680": 29.91508823193612,
+      "residences_principales_energie_region.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "residences_principales_energie_region.libelle_region": "Pays de la Loire",
+      "residences_principales_energie_region.geocode_region": "52",
+      "residences_principales_energie_region.date_mesure.year": "2023-01-01T00:00:00.000",
+      "residences_principales_energie_region.id_680": 30.18297694810656,
       "residences_principales_energie_region.date_mesure": "2023-01-01T00:00:00.000"
     },
     {
@@ -110,17 +110,17 @@
       "residences_principales_energie_region.date_mesure": "2024-01-01T00:00:00.000"
     },
     {
-      "residences_principales_energie_region.libelle_region": "Corse",
-      "residences_principales_energie_region.geocode_region": "94",
-      "residences_principales_energie_region.date_mesure.year": "2024-01-01T00:00:00.000",
-      "residences_principales_energie_region.id_680": 12.218158228641776,
-      "residences_principales_energie_region.date_mesure": "2024-01-01T00:00:00.000"
-    },
-    {
       "residences_principales_energie_region.libelle_region": "Grand Est",
       "residences_principales_energie_region.geocode_region": "44",
       "residences_principales_energie_region.date_mesure.year": "2024-01-01T00:00:00.000",
       "residences_principales_energie_region.id_680": 45.999933463793,
+      "residences_principales_energie_region.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "residences_principales_energie_region.libelle_region": "Corse",
+      "residences_principales_energie_region.geocode_region": "94",
+      "residences_principales_energie_region.date_mesure.year": "2024-01-01T00:00:00.000",
+      "residences_principales_energie_region.id_680": 12.218158228641776,
       "residences_principales_energie_region.date_mesure": "2024-01-01T00:00:00.000"
     },
     {
@@ -162,7 +162,7 @@
       "residences_principales_energie_region.libelle_region": "Centre-Val de Loire",
       "residences_principales_energie_region.geocode_region": "24",
       "residences_principales_energie_region.date_mesure.year": "2024-01-01T00:00:00.000",
-      "residences_principales_energie_region.id_680": 33.32766858229811,
+      "residences_principales_energie_region.id_680": 33.32766858229812,
       "residences_principales_energie_region.date_mesure": "2024-01-01T00:00:00.000"
     },
     {
