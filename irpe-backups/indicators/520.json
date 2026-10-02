@@ -61,17 +61,17 @@
       "sites_indus_soumis_ets_region.date_mesure": "2015-01-01T00:00:00.000"
     },
     {
-      "sites_indus_soumis_ets_region.libelle_region": "Pays de la Loire",
-      "sites_indus_soumis_ets_region.geocode_region": "52",
-      "sites_indus_soumis_ets_region.date_mesure.year": "2015-01-01T00:00:00.000",
-      "sites_indus_soumis_ets_region.id_520": 1089720,
-      "sites_indus_soumis_ets_region.date_mesure": "2015-01-01T00:00:00.000"
-    },
-    {
       "sites_indus_soumis_ets_region.libelle_region": "Bretagne",
       "sites_indus_soumis_ets_region.geocode_region": "53",
       "sites_indus_soumis_ets_region.date_mesure.year": "2015-01-01T00:00:00.000",
       "sites_indus_soumis_ets_region.id_520": null,
+      "sites_indus_soumis_ets_region.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "sites_indus_soumis_ets_region.libelle_region": "Pays de la Loire",
+      "sites_indus_soumis_ets_region.geocode_region": "52",
+      "sites_indus_soumis_ets_region.date_mesure.year": "2015-01-01T00:00:00.000",
+      "sites_indus_soumis_ets_region.id_520": 1089720,
       "sites_indus_soumis_ets_region.date_mesure": "2015-01-01T00:00:00.000"
     },
     {
@@ -166,10 +166,10 @@
       "sites_indus_soumis_ets_region.date_mesure": "2018-01-01T00:00:00.000"
     },
     {
-      "sites_indus_soumis_ets_region.libelle_region": "Occitanie",
-      "sites_indus_soumis_ets_region.geocode_region": "76",
+      "sites_indus_soumis_ets_region.libelle_region": "Centre-Val de Loire",
+      "sites_indus_soumis_ets_region.geocode_region": "24",
       "sites_indus_soumis_ets_region.date_mesure.year": "2018-01-01T00:00:00.000",
-      "sites_indus_soumis_ets_region.id_520": 1442171,
+      "sites_indus_soumis_ets_region.id_520": 619621,
       "sites_indus_soumis_ets_region.date_mesure": "2018-01-01T00:00:00.000"
     },
     {
@@ -180,10 +180,10 @@
       "sites_indus_soumis_ets_region.date_mesure": "2018-01-01T00:00:00.000"
     },
     {
-      "sites_indus_soumis_ets_region.libelle_region": "Centre-Val de Loire",
-      "sites_indus_soumis_ets_region.geocode_region": "24",
+      "sites_indus_soumis_ets_region.libelle_region": "Occitanie",
+      "sites_indus_soumis_ets_region.geocode_region": "76",
       "sites_indus_soumis_ets_region.date_mesure.year": "2018-01-01T00:00:00.000",
-      "sites_indus_soumis_ets_region.id_520": 619621,
+      "sites_indus_soumis_ets_region.id_520": 1442171,
       "sites_indus_soumis_ets_region.date_mesure": "2018-01-01T00:00:00.000"
     },
     {
@@ -292,10 +292,10 @@
       "sites_indus_soumis_ets_region.date_mesure": "2021-01-01T00:00:00.000"
     },
     {
-      "sites_indus_soumis_ets_region.libelle_region": "Occitanie",
-      "sites_indus_soumis_ets_region.geocode_region": "76",
+      "sites_indus_soumis_ets_region.libelle_region": "Île-de-France",
+      "sites_indus_soumis_ets_region.geocode_region": "11",
       "sites_indus_soumis_ets_region.date_mesure.year": "2021-01-01T00:00:00.000",
-      "sites_indus_soumis_ets_region.id_520": 1326549,
+      "sites_indus_soumis_ets_region.id_520": 618415,
       "sites_indus_soumis_ets_region.date_mesure": "2021-01-01T00:00:00.000"
     },
     {
@@ -306,10 +306,10 @@
       "sites_indus_soumis_ets_region.date_mesure": "2021-01-01T00:00:00.000"
     },
     {
-      "sites_indus_soumis_ets_region.libelle_region": "Île-de-France",
-      "sites_indus_soumis_ets_region.geocode_region": "11",
+      "sites_indus_soumis_ets_region.libelle_region": "Occitanie",
+      "sites_indus_soumis_ets_region.geocode_region": "76",
       "sites_indus_soumis_ets_region.date_mesure.year": "2021-01-01T00:00:00.000",
-      "sites_indus_soumis_ets_region.id_520": 618415,
+      "sites_indus_soumis_ets_region.id_520": 1326549,
       "sites_indus_soumis_ets_region.date_mesure": "2021-01-01T00:00:00.000"
     },
     {
@@ -397,17 +397,17 @@
       "sites_indus_soumis_ets_region.date_mesure": "2022-01-01T00:00:00.000"
     },
     {
-      "sites_indus_soumis_ets_region.libelle_region": "Normandie",
-      "sites_indus_soumis_ets_region.geocode_region": "28",
-      "sites_indus_soumis_ets_region.date_mesure.year": "2022-01-01T00:00:00.000",
-      "sites_indus_soumis_ets_region.id_520": 3374406,
-      "sites_indus_soumis_ets_region.date_mesure": "2022-01-01T00:00:00.000"
-    },
-    {
       "sites_indus_soumis_ets_region.libelle_region": "Bretagne",
       "sites_indus_soumis_ets_region.geocode_region": "53",
       "sites_indus_soumis_ets_region.date_mesure.year": "2022-01-01T00:00:00.000",
       "sites_indus_soumis_ets_region.id_520": null,
+      "sites_indus_soumis_ets_region.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "sites_indus_soumis_ets_region.libelle_region": "Normandie",
+      "sites_indus_soumis_ets_region.geocode_region": "28",
+      "sites_indus_soumis_ets_region.date_mesure.year": "2022-01-01T00:00:00.000",
+      "sites_indus_soumis_ets_region.id_520": 3374406,
       "sites_indus_soumis_ets_region.date_mesure": "2022-01-01T00:00:00.000"
     },
     {
@@ -425,17 +425,17 @@
       "sites_indus_soumis_ets_region.date_mesure": "2022-01-01T00:00:00.000"
     },
     {
-      "sites_indus_soumis_ets_region.libelle_region": "Provence-Alpes-Côte d'Azur",
-      "sites_indus_soumis_ets_region.geocode_region": "93",
-      "sites_indus_soumis_ets_region.date_mesure.year": "2022-01-01T00:00:00.000",
-      "sites_indus_soumis_ets_region.id_520": 9564131,
-      "sites_indus_soumis_ets_region.date_mesure": "2022-01-01T00:00:00.000"
-    },
-    {
       "sites_indus_soumis_ets_region.libelle_region": "Bourgogne-Franche-Comté",
       "sites_indus_soumis_ets_region.geocode_region": "27",
       "sites_indus_soumis_ets_region.date_mesure.year": "2022-01-01T00:00:00.000",
       "sites_indus_soumis_ets_region.id_520": 582799,
+      "sites_indus_soumis_ets_region.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "sites_indus_soumis_ets_region.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "sites_indus_soumis_ets_region.geocode_region": "93",
+      "sites_indus_soumis_ets_region.date_mesure.year": "2022-01-01T00:00:00.000",
+      "sites_indus_soumis_ets_region.id_520": 9564131,
       "sites_indus_soumis_ets_region.date_mesure": "2022-01-01T00:00:00.000"
     },
     {

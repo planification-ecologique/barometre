@@ -145,17 +145,17 @@
       "surface_legumineuses_dpt.date_mesure": "2011-01-01T00:00:00.000"
     },
     {
-      "surface_legumineuses_dpt.libelle_region": "Nouvelle-Aquitaine",
-      "surface_legumineuses_dpt.geocode_region": "75",
-      "surface_legumineuses_dpt.date_mesure.year": "2011-01-01T00:00:00.000",
-      "surface_legumineuses_dpt.id_331": 68657,
-      "surface_legumineuses_dpt.date_mesure": "2011-01-01T00:00:00.000"
-    },
-    {
       "surface_legumineuses_dpt.libelle_region": "Mayotte",
       "surface_legumineuses_dpt.geocode_region": "06",
       "surface_legumineuses_dpt.date_mesure.year": "2011-01-01T00:00:00.000",
       "surface_legumineuses_dpt.id_331": 0,
+      "surface_legumineuses_dpt.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "surface_legumineuses_dpt.libelle_region": "Nouvelle-Aquitaine",
+      "surface_legumineuses_dpt.geocode_region": "75",
+      "surface_legumineuses_dpt.date_mesure.year": "2011-01-01T00:00:00.000",
+      "surface_legumineuses_dpt.id_331": 68657,
       "surface_legumineuses_dpt.date_mesure": "2011-01-01T00:00:00.000"
     },
     {
