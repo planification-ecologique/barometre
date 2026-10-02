@@ -13,11 +13,12 @@ const MultiLineChartStub = {
   template: '<div class="multi-line-chart-stub"></div>',
 };
 
-function mountGraphBox(dataObj) {
+function mountGraphBox(dataObj, extraProps = {}) {
   return shallowMount(GraphBox, {
     propsData: {
       idAccordion: "graph-box-test",
       dataObj,
+      ...extraProps,
     },
     data() {
       return {
@@ -303,5 +304,92 @@ describe("GraphBox", () => {
       [1, 1, 1, 0.6],
       [1, 1, 1, 0.6],
     ]);
+  });
+});
+
+describe("GraphBox shared region", () => {
+  const regionalIndicator = {
+    label_indic: "Test indicator",
+    label_unit: "%",
+    label_sous_groupe: "",
+    irpe_ids: ["949"],
+    values: {
+      legend: ["Historique"],
+      x: [["2020"]],
+      y: [[1]],
+      ytab: [1],
+    },
+  };
+
+  const regionsList = [
+    { geocode_region: "84", libelle_region: "Auvergne-Rhône-Alpes" },
+    { geocode_region: "11", libelle_region: "Île-de-France" },
+  ];
+
+  let loadRegionsSpy;
+
+  beforeEach(() => {
+    loadRegionsSpy = jest.spyOn(GraphBox.methods, "loadRegions").mockResolvedValue();
+  });
+
+  afterEach(() => {
+    loadRegionsSpy.mockRestore();
+  });
+
+  it("applies a shared region when the indicator lists it", async () => {
+    const wrapper = mountGraphBox(regionalIndicator, {
+      syncRegion: true,
+      sharedRegionCode: "11",
+    });
+
+    await wrapper.setData({
+      regionsReady: true,
+      regionsList,
+    });
+
+    expect(wrapper.vm.selectedRegionCode).toBe("11");
+  });
+
+  it("falls back to National when the shared region is unavailable", async () => {
+    const wrapper = mountGraphBox(regionalIndicator, {
+      syncRegion: true,
+      sharedRegionCode: "99",
+    });
+
+    await wrapper.setData({
+      regionsReady: true,
+      selectedRegionCode: "84",
+      regionsList,
+    });
+
+    expect(wrapper.vm.selectedRegionCode).toBe("");
+  });
+
+  it("resets every synced chart to National when the shared region is cleared", async () => {
+    const wrapper = mountGraphBox(regionalIndicator, {
+      syncRegion: true,
+      sharedRegionCode: "84",
+    });
+
+    await wrapper.setData({
+      regionsReady: true,
+      regionsList,
+    });
+    expect(wrapper.vm.selectedRegionCode).toBe("84");
+
+    await wrapper.setProps({ sharedRegionCode: "" });
+    expect(wrapper.vm.selectedRegionCode).toBe("");
+  });
+
+  it("emits the picked region only while sync is enabled", async () => {
+    const synced = mountGraphBox(regionalIndicator, { syncRegion: true });
+    await synced.setData({ regionsReady: true, regionsList });
+    await synced.find("select").setValue("84");
+    expect(synced.emitted("region-selected")).toEqual([["84"]]);
+
+    const local = mountGraphBox(regionalIndicator, { syncRegion: false });
+    await local.setData({ regionsReady: true, regionsList });
+    await local.find("select").setValue("84");
+    expect(local.emitted("region-selected")).toBeUndefined();
   });
 });

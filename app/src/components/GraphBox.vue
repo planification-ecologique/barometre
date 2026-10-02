@@ -33,7 +33,7 @@
           class="fr-select fr-select--sm"
           :disabled="regionsList.length === 0 && !regionsError"
           v-model="selectedRegionCode"
-          @change="onRegionChange"
+          @change="onUserRegionChange"
         >
           <option value="">National</option>
           <option
@@ -318,13 +318,24 @@ export default {
     hideDescription: {
       type: Boolean,
       default: false
-    }
+    },
+    /** When true, region picks are shared with sibling charts (search, regional mode). */
+    syncRegion: {
+      type: Boolean,
+      default: false,
+    },
+    /** Region code to mirror. Empty string means National. */
+    sharedRegionCode: {
+      type: String,
+      default: "",
+    },
   },
   data() {
     return {
       displayChart: false,
       isCommentaireExpanded: false,
       regionsList: [],
+      regionsReady: false,
       selectedRegionCode: "",
       regionalChartData: null,
       regionalLoading: false,
@@ -342,12 +353,22 @@ export default {
       this.selectedRegionCode = "";
       this.regionalChartData = null;
       this.regionalError = null;
+      this.regionsReady = false;
       this.clearRegionalState();
       if (this.hasRegionalData) this.loadRegions();
       // Mettre à jour l'état favori
       if (this.dataObj && this.dataObj.label_indic) {
         this.estFavori = isFavori(this.dataObj.label_indic);
       }
+    },
+    sharedRegionCode() {
+      this.applySharedRegion();
+    },
+    syncRegion(enabled) {
+      if (enabled) this.applySharedRegion();
+    },
+    regionsReady(ready) {
+      if (ready) this.applySharedRegion();
     },
   },
   computed: {
@@ -718,6 +739,7 @@ export default {
     async loadRegions() {
       const indicatorIds = this.regionalIndicatorIds;
       if (!this.hasRegionalData || indicatorIds.length === 0) return;
+      this.regionsReady = false;
       this.regionsError = null;
       this.clearRegionalState();
       try {
@@ -760,7 +782,44 @@ export default {
         this.regionsError = e.message || "Impossible de charger la liste des régions.";
         this.regionsList = [];
         this.clearRegionalState();
+      } finally {
+        this.regionsReady = true;
       }
+    },
+    /**
+     * Mirror the search-page region when this indicator can plot it.
+     * Unknown codes fall back to National once the region list is loaded.
+     */
+    applySharedRegion() {
+      if (!this.syncRegion || !this.hasRegionalData || !this.regionsReady) return;
+      const code = this.sharedRegionCode == null ? "" : String(this.sharedRegionCode);
+      if (code === String(this.selectedRegionCode || "")) return;
+
+      if (!code) {
+        this.selectedRegionCode = "";
+        this.onRegionChange();
+        return;
+      }
+
+      const match = this.regionsList.find(
+        (region) => String(region.geocode_region) === code
+      );
+      if (!match) {
+        if (this.selectedRegionCode) {
+          this.selectedRegionCode = "";
+          this.onRegionChange();
+        }
+        return;
+      }
+
+      this.selectedRegionCode = match.geocode_region;
+      this.onRegionChange();
+    },
+    onUserRegionChange() {
+      this.onRegionChange();
+      if (!this.syncRegion) return;
+      const code = this.selectedRegionCode == null ? "" : String(this.selectedRegionCode);
+      this.$emit("region-selected", code);
     },
     onRegionChange() {
       this.regionalError = null;

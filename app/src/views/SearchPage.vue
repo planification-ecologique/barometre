@@ -72,6 +72,9 @@
                 :dashboardPage="false"
                 :inputData="results_page"
                 :params="{ sector: 'Recherche', label_theme: 'Non disponible' }"
+                :sync-region="filterRegionalOnly"
+                :shared-region-code="sharedRegionCode"
+                @region-selected="onSharedRegionSelected"
               />
             </div>
             <div v-else>
@@ -131,6 +134,7 @@ export default {
       appliedSearchQuery: '',
       filterRegionalOnly: false,
       regionalIrpeLinkStats: null,
+      sharedRegionCode: "",
     };
   },
   computed: {
@@ -161,6 +165,9 @@ export default {
       this.filterRegionalOnly = !this.filterRegionalOnly;
       this.isapiloading = true;
       this.fetchData();
+    },
+    onSharedRegionSelected(code) {
+      this.sharedRegionCode = code == null ? "" : String(code);
     },
     updateTaxonomySelection({ sectors, axes }) {
       this.isapiloading = true;
