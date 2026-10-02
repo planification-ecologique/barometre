@@ -244,8 +244,44 @@ async function loadAllRegionsDataForIndicator(meta, indicatorId) {
   };
 }
 
+function compareSortValues(a, b) {
+  if (a == null && b == null) return 0;
+  if (a == null) return -1;
+  if (b == null) return 1;
+  return String(a).localeCompare(String(b), 'en', { numeric: true });
+}
+
+/**
+ * Cube.js orders by time only. Rows that share a year come back in unstable
+ * order, which rewrites cache files without changing values.
+ * Sort on every key except the measure so a value change stays on the same row.
+ */
+function sortIndicatorRows(rows, measureName) {
+  if (!Array.isArray(rows)) return rows;
+  const keys = new Set();
+  for (const row of rows) {
+    if (!row || typeof row !== 'object') continue;
+    for (const key of Object.keys(row)) {
+      if (key !== measureName) keys.add(key);
+    }
+  }
+  const sortKeys = Array.from(keys).sort();
+  return rows.slice().sort((a, b) => {
+    for (const key of sortKeys) {
+      const cmp = compareSortValues(a?.[key], b?.[key]);
+      if (cmp !== 0) return cmp;
+    }
+    return compareSortValues(a?.[measureName], b?.[measureName]);
+  });
+}
+
 function writeJson(filePath, data) {
-  fs.writeFileSync(filePath, `${JSON.stringify(data, null, 2)}\n`, 'utf8');
+  const text = `${JSON.stringify(data, null, 2)}\n`;
+  if (fs.existsSync(filePath) && fs.readFileSync(filePath, 'utf8') === text) {
+    return false;
+  }
+  fs.writeFileSync(filePath, text, 'utf8');
+  return true;
 }
 
 function readExistingIndicatorPayload(indicatorId) {
@@ -337,12 +373,17 @@ async function main() {
     console.log(`IRPE cache is older than 1 day (generated ${manifest.generatedAt}), refreshing.\n`);
   }
 
+  let contentChanged = false;
   let meta;
   if (needsMeta) {
     console.log('Fetching Écolab meta...');
     meta = await fetchEcolabJson(`${ECOLAB_BASE}/meta`, { headers: getAuthHeader() }, 'meta');
-    writeJson(META_PATH, meta);
-    console.log('✓ Saved meta.json\n');
+    if (writeJson(META_PATH, meta)) {
+      contentChanged = true;
+      console.log('✓ Saved meta.json\n');
+    } else {
+      console.log('✓ meta.json unchanged\n');
+    }
   } else {
     meta = JSON.parse(fs.readFileSync(META_PATH, 'utf8'));
     console.log('Using cached meta.json\n');
@@ -354,21 +395,39 @@ async function main() {
       console.log(`Fetching indicator ${indicatorId}...`);
       const existing = readExistingIndicatorPayload(indicatorId);
       const payload = await loadAllRegionsDataForIndicator(meta, indicatorId);
+      payload.data = sortIndicatorRows(payload.data, payload.measureName);
       validateIndicatorPayload(payload, existing);
-      writeJson(indicatorCachePath(indicatorId), payload);
-      console.log(`✓ Saved indicators/${indicatorId}.json (${payload.data.length} rows)`);
+      if (writeJson(indicatorCachePath(indicatorId), payload)) {
+        contentChanged = true;
+        console.log(`✓ Saved indicators/${indicatorId}.json (${payload.data.length} rows)`);
+      } else {
+        console.log(`✓ indicators/${indicatorId}.json unchanged (${payload.data.length} rows)`);
+      }
     } catch (error) {
       console.error(`✗ Error caching indicator ${indicatorId}:`, error.message);
       errors.push({ indicatorId, error: error.message });
     }
   }
 
-  writeJson(MANIFEST_PATH, {
-    generatedAt: new Date().toISOString(),
-    indicatorIds,
-    cachedCount: indicatorIds.filter((id) => fs.existsSync(indicatorCachePath(id))).length,
-    failed: errors,
-  });
+  const cachedCount = indicatorIds.filter((id) => fs.existsSync(indicatorCachePath(id))).length;
+  const previousManifest = readManifest();
+  const manifestUnchanged =
+    !contentChanged &&
+    previousManifest &&
+    JSON.stringify(previousManifest.indicatorIds) === JSON.stringify(indicatorIds) &&
+    previousManifest.cachedCount === cachedCount &&
+    JSON.stringify(previousManifest.failed || []) === JSON.stringify(errors);
+
+  if (!manifestUnchanged) {
+    writeJson(MANIFEST_PATH, {
+      generatedAt: new Date().toISOString(),
+      indicatorIds,
+      cachedCount,
+      failed: errors,
+    });
+  } else {
+    console.log('IRPE payloads unchanged; keeping existing manifest timestamp.');
+  }
 
   console.log('\n--- Download Summary ---');
   if (errors.length === 0) {
@@ -388,7 +447,11 @@ async function main() {
   process.exit(1);
 }
 
-main().catch((error) => {
-  console.error('Fatal error:', error.message || error);
-  process.exit(1);
-});
+if (require.main === module) {
+  main().catch((error) => {
+    console.error('Fatal error:', error.message || error);
+    process.exit(1);
+  });
+}
+
+module.exports = { sortIndicatorRows };

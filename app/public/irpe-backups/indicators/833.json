@@ -22,7 +22,7 @@
       "conso_energie_finale_region.libelle_region": "Guadeloupe",
       "conso_energie_finale_region.geocode_region": "01",
       "conso_energie_finale_region.date_mesure.year": "2013-01-01T00:00:00.000",
-      "conso_energie_finale_region.id_833": 41.201200620084826,
+      "conso_energie_finale_region.id_833": 41.20120062008483,
       "conso_energie_finale_region.date_mesure": "2013-01-01T00:00:00.000"
     },
     {
@@ -57,7 +57,7 @@
       "conso_energie_finale_region.libelle_region": "Guadeloupe",
       "conso_energie_finale_region.geocode_region": "01",
       "conso_energie_finale_region.date_mesure.year": "2014-01-01T00:00:00.000",
-      "conso_energie_finale_region.id_833": 43.18938384932203,
+      "conso_energie_finale_region.id_833": 43.18938384932202,
       "conso_energie_finale_region.date_mesure": "2014-01-01T00:00:00.000"
     },
     {
@@ -106,7 +106,7 @@
       "conso_energie_finale_region.libelle_region": "Guyane",
       "conso_energie_finale_region.geocode_region": "03",
       "conso_energie_finale_region.date_mesure.year": "2014-01-01T00:00:00.000",
-      "conso_energie_finale_region.id_833": 87.68090039972374,
+      "conso_energie_finale_region.id_833": 87.68090039972373,
       "conso_energie_finale_region.date_mesure": "2014-01-01T00:00:00.000"
     },
     {
@@ -610,7 +610,7 @@
       "conso_energie_finale_region.libelle_region": "La Réunion",
       "conso_energie_finale_region.geocode_region": "04",
       "conso_energie_finale_region.date_mesure.year": "2018-01-01T00:00:00.000",
-      "conso_energie_finale_region.id_833": 21.607203045420505,
+      "conso_energie_finale_region.id_833": 21.60720304542051,
       "conso_energie_finale_region.date_mesure": "2018-01-01T00:00:00.000"
     },
     {
@@ -764,7 +764,7 @@
       "conso_energie_finale_region.libelle_region": "Guadeloupe",
       "conso_energie_finale_region.geocode_region": "01",
       "conso_energie_finale_region.date_mesure.year": "2019-01-01T00:00:00.000",
-      "conso_energie_finale_region.id_833": 17.865120786067106,
+      "conso_energie_finale_region.id_833": 17.86512078606711,
       "conso_energie_finale_region.date_mesure": "2019-01-01T00:00:00.000"
     },
     {
@@ -1002,7 +1002,7 @@
       "conso_energie_finale_region.libelle_region": "Guadeloupe",
       "conso_energie_finale_region.geocode_region": "01",
       "conso_energie_finale_region.date_mesure.year": "2021-01-01T00:00:00.000",
-      "conso_energie_finale_region.id_833": 48.584288586289915,
+      "conso_energie_finale_region.id_833": 48.58428858628992,
       "conso_energie_finale_region.date_mesure": "2021-01-01T00:00:00.000"
     },
     {
@@ -1044,7 +1044,7 @@
       "conso_energie_finale_region.libelle_region": "La Réunion",
       "conso_energie_finale_region.geocode_region": "04",
       "conso_energie_finale_region.date_mesure.year": "2021-01-01T00:00:00.000",
-      "conso_energie_finale_region.id_833": 42.8534371305662,
+      "conso_energie_finale_region.id_833": 42.85343713056619,
       "conso_energie_finale_region.date_mesure": "2021-01-01T00:00:00.000"
     },
     {
