@@ -5,75 +5,12 @@
   "extraDimension": "immatriculations_poid_lourd_e_com.geocode_commune",
   "data": [
     {
-      "immatriculations_poid_lourd_e_com.libelle_region": "Nouvelle-Aquitaine",
-      "immatriculations_poid_lourd_e_com.geocode_region": "75",
+      "immatriculations_poid_lourd_e_com.libelle_region": "Guadeloupe",
+      "immatriculations_poid_lourd_e_com.geocode_region": "01",
       "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
       "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
       "immatriculations_poid_lourd_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
       "immatriculations_poid_lourd_e_com.id_462": 0,
-      "immatriculations_poid_lourd_e_com.date_mesure": "2019-01-01T00:00:00.000"
-    },
-    {
-      "immatriculations_poid_lourd_e_com.libelle_region": "Pays de la Loire",
-      "immatriculations_poid_lourd_e_com.geocode_region": "52",
-      "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
-      "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
-      "immatriculations_poid_lourd_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
-      "immatriculations_poid_lourd_e_com.id_462": 0.10838933448948623,
-      "immatriculations_poid_lourd_e_com.date_mesure": "2019-01-01T00:00:00.000"
-    },
-    {
-      "immatriculations_poid_lourd_e_com.libelle_region": "Bretagne",
-      "immatriculations_poid_lourd_e_com.geocode_region": "53",
-      "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
-      "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
-      "immatriculations_poid_lourd_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
-      "immatriculations_poid_lourd_e_com.id_462": 0,
-      "immatriculations_poid_lourd_e_com.date_mesure": "2019-01-01T00:00:00.000"
-    },
-    {
-      "immatriculations_poid_lourd_e_com.libelle_region": "Normandie",
-      "immatriculations_poid_lourd_e_com.geocode_region": "28",
-      "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
-      "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
-      "immatriculations_poid_lourd_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
-      "immatriculations_poid_lourd_e_com.id_462": 0.024307243558580455,
-      "immatriculations_poid_lourd_e_com.date_mesure": "2019-01-01T00:00:00.000"
-    },
-    {
-      "immatriculations_poid_lourd_e_com.libelle_region": "Hauts-de-France",
-      "immatriculations_poid_lourd_e_com.geocode_region": "32",
-      "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
-      "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
-      "immatriculations_poid_lourd_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
-      "immatriculations_poid_lourd_e_com.id_462": 0,
-      "immatriculations_poid_lourd_e_com.date_mesure": "2019-01-01T00:00:00.000"
-    },
-    {
-      "immatriculations_poid_lourd_e_com.libelle_region": "Guyane",
-      "immatriculations_poid_lourd_e_com.geocode_region": "03",
-      "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
-      "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
-      "immatriculations_poid_lourd_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
-      "immatriculations_poid_lourd_e_com.id_462": 0,
-      "immatriculations_poid_lourd_e_com.date_mesure": "2019-01-01T00:00:00.000"
-    },
-    {
-      "immatriculations_poid_lourd_e_com.libelle_region": "Auvergne-Rhône-Alpes",
-      "immatriculations_poid_lourd_e_com.geocode_region": "84",
-      "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
-      "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
-      "immatriculations_poid_lourd_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
-      "immatriculations_poid_lourd_e_com.id_462": 0.13097576948264572,
-      "immatriculations_poid_lourd_e_com.date_mesure": "2019-01-01T00:00:00.000"
-    },
-    {
-      "immatriculations_poid_lourd_e_com.libelle_region": "Grand Est",
-      "immatriculations_poid_lourd_e_com.geocode_region": "44",
-      "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
-      "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
-      "immatriculations_poid_lourd_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
-      "immatriculations_poid_lourd_e_com.id_462": 0.12778386272362177,
       "immatriculations_poid_lourd_e_com.date_mesure": "2019-01-01T00:00:00.000"
     },
     {
@@ -86,17 +23,8 @@
       "immatriculations_poid_lourd_e_com.date_mesure": "2019-01-01T00:00:00.000"
     },
     {
-      "immatriculations_poid_lourd_e_com.libelle_region": "Corse",
-      "immatriculations_poid_lourd_e_com.geocode_region": "94",
-      "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
-      "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
-      "immatriculations_poid_lourd_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
-      "immatriculations_poid_lourd_e_com.id_462": 0,
-      "immatriculations_poid_lourd_e_com.date_mesure": "2019-01-01T00:00:00.000"
-    },
-    {
-      "immatriculations_poid_lourd_e_com.libelle_region": "Bourgogne-Franche-Comté",
-      "immatriculations_poid_lourd_e_com.geocode_region": "27",
+      "immatriculations_poid_lourd_e_com.libelle_region": "Guyane",
+      "immatriculations_poid_lourd_e_com.geocode_region": "03",
       "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
       "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
       "immatriculations_poid_lourd_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
@@ -131,33 +59,6 @@
       "immatriculations_poid_lourd_e_com.date_mesure": "2019-01-01T00:00:00.000"
     },
     {
-      "immatriculations_poid_lourd_e_com.libelle_region": "Provence-Alpes-Côte d'Azur",
-      "immatriculations_poid_lourd_e_com.geocode_region": "93",
-      "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
-      "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
-      "immatriculations_poid_lourd_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
-      "immatriculations_poid_lourd_e_com.id_462": 0.09383797309978105,
-      "immatriculations_poid_lourd_e_com.date_mesure": "2019-01-01T00:00:00.000"
-    },
-    {
-      "immatriculations_poid_lourd_e_com.libelle_region": "Occitanie",
-      "immatriculations_poid_lourd_e_com.geocode_region": "76",
-      "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
-      "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
-      "immatriculations_poid_lourd_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
-      "immatriculations_poid_lourd_e_com.id_462": 0.045693397304089556,
-      "immatriculations_poid_lourd_e_com.date_mesure": "2019-01-01T00:00:00.000"
-    },
-    {
-      "immatriculations_poid_lourd_e_com.libelle_region": "Guadeloupe",
-      "immatriculations_poid_lourd_e_com.geocode_region": "01",
-      "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
-      "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
-      "immatriculations_poid_lourd_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
-      "immatriculations_poid_lourd_e_com.id_462": 0,
-      "immatriculations_poid_lourd_e_com.date_mesure": "2019-01-01T00:00:00.000"
-    },
-    {
       "immatriculations_poid_lourd_e_com.libelle_region": "Centre-Val de Loire",
       "immatriculations_poid_lourd_e_com.geocode_region": "24",
       "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
@@ -171,17 +72,107 @@
       "immatriculations_poid_lourd_e_com.geocode_region": "27",
       "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
       "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
-      "immatriculations_poid_lourd_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "immatriculations_poid_lourd_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
       "immatriculations_poid_lourd_e_com.id_462": 0,
-      "immatriculations_poid_lourd_e_com.date_mesure": "2020-01-01T00:00:00.000"
+      "immatriculations_poid_lourd_e_com.date_mesure": "2019-01-01T00:00:00.000"
     },
     {
       "immatriculations_poid_lourd_e_com.libelle_region": "Normandie",
       "immatriculations_poid_lourd_e_com.geocode_region": "28",
       "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
       "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
-      "immatriculations_poid_lourd_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "immatriculations_poid_lourd_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "immatriculations_poid_lourd_e_com.id_462": 0.024307243558580455,
+      "immatriculations_poid_lourd_e_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_poid_lourd_e_com.libelle_region": "Hauts-de-France",
+      "immatriculations_poid_lourd_e_com.geocode_region": "32",
+      "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
+      "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_poid_lourd_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
       "immatriculations_poid_lourd_e_com.id_462": 0,
+      "immatriculations_poid_lourd_e_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_poid_lourd_e_com.libelle_region": "Grand Est",
+      "immatriculations_poid_lourd_e_com.geocode_region": "44",
+      "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
+      "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_poid_lourd_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "immatriculations_poid_lourd_e_com.id_462": 0.12778386272362177,
+      "immatriculations_poid_lourd_e_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_poid_lourd_e_com.libelle_region": "Pays de la Loire",
+      "immatriculations_poid_lourd_e_com.geocode_region": "52",
+      "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
+      "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_poid_lourd_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "immatriculations_poid_lourd_e_com.id_462": 0.10838933448948623,
+      "immatriculations_poid_lourd_e_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_poid_lourd_e_com.libelle_region": "Bretagne",
+      "immatriculations_poid_lourd_e_com.geocode_region": "53",
+      "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
+      "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_poid_lourd_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "immatriculations_poid_lourd_e_com.id_462": 0,
+      "immatriculations_poid_lourd_e_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_poid_lourd_e_com.libelle_region": "Nouvelle-Aquitaine",
+      "immatriculations_poid_lourd_e_com.geocode_region": "75",
+      "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
+      "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_poid_lourd_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "immatriculations_poid_lourd_e_com.id_462": 0,
+      "immatriculations_poid_lourd_e_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_poid_lourd_e_com.libelle_region": "Occitanie",
+      "immatriculations_poid_lourd_e_com.geocode_region": "76",
+      "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
+      "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_poid_lourd_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "immatriculations_poid_lourd_e_com.id_462": 0.045693397304089556,
+      "immatriculations_poid_lourd_e_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_poid_lourd_e_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "immatriculations_poid_lourd_e_com.geocode_region": "84",
+      "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
+      "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_poid_lourd_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "immatriculations_poid_lourd_e_com.id_462": 0.13097576948264572,
+      "immatriculations_poid_lourd_e_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_poid_lourd_e_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "immatriculations_poid_lourd_e_com.geocode_region": "93",
+      "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
+      "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_poid_lourd_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "immatriculations_poid_lourd_e_com.id_462": 0.09383797309978105,
+      "immatriculations_poid_lourd_e_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_poid_lourd_e_com.libelle_region": "Corse",
+      "immatriculations_poid_lourd_e_com.geocode_region": "94",
+      "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
+      "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_poid_lourd_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "immatriculations_poid_lourd_e_com.id_462": 0,
+      "immatriculations_poid_lourd_e_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_poid_lourd_e_com.libelle_region": "Guadeloupe",
+      "immatriculations_poid_lourd_e_com.geocode_region": "01",
+      "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
+      "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_poid_lourd_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "immatriculations_poid_lourd_e_com.id_462": 0.7936507936507936,
       "immatriculations_poid_lourd_e_com.date_mesure": "2020-01-01T00:00:00.000"
     },
     {
@@ -203,8 +194,17 @@
       "immatriculations_poid_lourd_e_com.date_mesure": "2020-01-01T00:00:00.000"
     },
     {
-      "immatriculations_poid_lourd_e_com.libelle_region": "Corse",
-      "immatriculations_poid_lourd_e_com.geocode_region": "94",
+      "immatriculations_poid_lourd_e_com.libelle_region": "La Réunion",
+      "immatriculations_poid_lourd_e_com.geocode_region": "04",
+      "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
+      "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_poid_lourd_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "immatriculations_poid_lourd_e_com.id_462": 0,
+      "immatriculations_poid_lourd_e_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_poid_lourd_e_com.libelle_region": "Mayotte",
+      "immatriculations_poid_lourd_e_com.geocode_region": "06",
       "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
       "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
       "immatriculations_poid_lourd_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
@@ -218,6 +218,78 @@
       "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
       "immatriculations_poid_lourd_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
       "immatriculations_poid_lourd_e_com.id_462": 0.11990407673860912,
+      "immatriculations_poid_lourd_e_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_poid_lourd_e_com.libelle_region": "Centre-Val de Loire",
+      "immatriculations_poid_lourd_e_com.geocode_region": "24",
+      "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
+      "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_poid_lourd_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "immatriculations_poid_lourd_e_com.id_462": 0.8184523809523809,
+      "immatriculations_poid_lourd_e_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_poid_lourd_e_com.libelle_region": "Bourgogne-Franche-Comté",
+      "immatriculations_poid_lourd_e_com.geocode_region": "27",
+      "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
+      "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_poid_lourd_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "immatriculations_poid_lourd_e_com.id_462": 0,
+      "immatriculations_poid_lourd_e_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_poid_lourd_e_com.libelle_region": "Normandie",
+      "immatriculations_poid_lourd_e_com.geocode_region": "28",
+      "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
+      "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_poid_lourd_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "immatriculations_poid_lourd_e_com.id_462": 0,
+      "immatriculations_poid_lourd_e_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_poid_lourd_e_com.libelle_region": "Hauts-de-France",
+      "immatriculations_poid_lourd_e_com.geocode_region": "32",
+      "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
+      "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_poid_lourd_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "immatriculations_poid_lourd_e_com.id_462": 0.021621621621621623,
+      "immatriculations_poid_lourd_e_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_poid_lourd_e_com.libelle_region": "Grand Est",
+      "immatriculations_poid_lourd_e_com.geocode_region": "44",
+      "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
+      "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_poid_lourd_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "immatriculations_poid_lourd_e_com.id_462": 0.07301046483329277,
+      "immatriculations_poid_lourd_e_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_poid_lourd_e_com.libelle_region": "Pays de la Loire",
+      "immatriculations_poid_lourd_e_com.geocode_region": "52",
+      "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
+      "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_poid_lourd_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "immatriculations_poid_lourd_e_com.id_462": 0.2054593484003522,
+      "immatriculations_poid_lourd_e_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_poid_lourd_e_com.libelle_region": "Bretagne",
+      "immatriculations_poid_lourd_e_com.geocode_region": "53",
+      "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
+      "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_poid_lourd_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "immatriculations_poid_lourd_e_com.id_462": 0,
+      "immatriculations_poid_lourd_e_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_poid_lourd_e_com.libelle_region": "Nouvelle-Aquitaine",
+      "immatriculations_poid_lourd_e_com.geocode_region": "75",
+      "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
+      "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_poid_lourd_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "immatriculations_poid_lourd_e_com.id_462": 0,
       "immatriculations_poid_lourd_e_com.date_mesure": "2020-01-01T00:00:00.000"
     },
     {
@@ -239,60 +311,6 @@
       "immatriculations_poid_lourd_e_com.date_mesure": "2020-01-01T00:00:00.000"
     },
     {
-      "immatriculations_poid_lourd_e_com.libelle_region": "Centre-Val de Loire",
-      "immatriculations_poid_lourd_e_com.geocode_region": "24",
-      "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
-      "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
-      "immatriculations_poid_lourd_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
-      "immatriculations_poid_lourd_e_com.id_462": 0.8184523809523809,
-      "immatriculations_poid_lourd_e_com.date_mesure": "2020-01-01T00:00:00.000"
-    },
-    {
-      "immatriculations_poid_lourd_e_com.libelle_region": "Guadeloupe",
-      "immatriculations_poid_lourd_e_com.geocode_region": "01",
-      "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
-      "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
-      "immatriculations_poid_lourd_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
-      "immatriculations_poid_lourd_e_com.id_462": 0.7936507936507936,
-      "immatriculations_poid_lourd_e_com.date_mesure": "2020-01-01T00:00:00.000"
-    },
-    {
-      "immatriculations_poid_lourd_e_com.libelle_region": "Grand Est",
-      "immatriculations_poid_lourd_e_com.geocode_region": "44",
-      "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
-      "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
-      "immatriculations_poid_lourd_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
-      "immatriculations_poid_lourd_e_com.id_462": 0.07301046483329277,
-      "immatriculations_poid_lourd_e_com.date_mesure": "2020-01-01T00:00:00.000"
-    },
-    {
-      "immatriculations_poid_lourd_e_com.libelle_region": "La Réunion",
-      "immatriculations_poid_lourd_e_com.geocode_region": "04",
-      "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
-      "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
-      "immatriculations_poid_lourd_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
-      "immatriculations_poid_lourd_e_com.id_462": 0,
-      "immatriculations_poid_lourd_e_com.date_mesure": "2020-01-01T00:00:00.000"
-    },
-    {
-      "immatriculations_poid_lourd_e_com.libelle_region": "Pays de la Loire",
-      "immatriculations_poid_lourd_e_com.geocode_region": "52",
-      "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
-      "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
-      "immatriculations_poid_lourd_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
-      "immatriculations_poid_lourd_e_com.id_462": 0.2054593484003522,
-      "immatriculations_poid_lourd_e_com.date_mesure": "2020-01-01T00:00:00.000"
-    },
-    {
-      "immatriculations_poid_lourd_e_com.libelle_region": "Nouvelle-Aquitaine",
-      "immatriculations_poid_lourd_e_com.geocode_region": "75",
-      "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
-      "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
-      "immatriculations_poid_lourd_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
-      "immatriculations_poid_lourd_e_com.id_462": 0,
-      "immatriculations_poid_lourd_e_com.date_mesure": "2020-01-01T00:00:00.000"
-    },
-    {
       "immatriculations_poid_lourd_e_com.libelle_region": "Provence-Alpes-Côte d'Azur",
       "immatriculations_poid_lourd_e_com.geocode_region": "93",
       "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
@@ -302,31 +320,121 @@
       "immatriculations_poid_lourd_e_com.date_mesure": "2020-01-01T00:00:00.000"
     },
     {
-      "immatriculations_poid_lourd_e_com.libelle_region": "Bretagne",
-      "immatriculations_poid_lourd_e_com.geocode_region": "53",
+      "immatriculations_poid_lourd_e_com.libelle_region": "Corse",
+      "immatriculations_poid_lourd_e_com.geocode_region": "94",
       "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
       "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
       "immatriculations_poid_lourd_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
       "immatriculations_poid_lourd_e_com.id_462": 0,
       "immatriculations_poid_lourd_e_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_poid_lourd_e_com.libelle_region": "Guadeloupe",
+      "immatriculations_poid_lourd_e_com.geocode_region": "01",
+      "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
+      "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_poid_lourd_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "immatriculations_poid_lourd_e_com.id_462": 0,
+      "immatriculations_poid_lourd_e_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_poid_lourd_e_com.libelle_region": "Martinique",
+      "immatriculations_poid_lourd_e_com.geocode_region": "02",
+      "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
+      "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_poid_lourd_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "immatriculations_poid_lourd_e_com.id_462": 0,
+      "immatriculations_poid_lourd_e_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_poid_lourd_e_com.libelle_region": "Guyane",
+      "immatriculations_poid_lourd_e_com.geocode_region": "03",
+      "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
+      "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_poid_lourd_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "immatriculations_poid_lourd_e_com.id_462": 0,
+      "immatriculations_poid_lourd_e_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_poid_lourd_e_com.libelle_region": "La Réunion",
+      "immatriculations_poid_lourd_e_com.geocode_region": "04",
+      "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
+      "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_poid_lourd_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "immatriculations_poid_lourd_e_com.id_462": 0,
+      "immatriculations_poid_lourd_e_com.date_mesure": "2021-01-01T00:00:00.000"
     },
     {
       "immatriculations_poid_lourd_e_com.libelle_region": "Mayotte",
       "immatriculations_poid_lourd_e_com.geocode_region": "06",
       "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
       "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
-      "immatriculations_poid_lourd_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "immatriculations_poid_lourd_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
       "immatriculations_poid_lourd_e_com.id_462": 0,
-      "immatriculations_poid_lourd_e_com.date_mesure": "2020-01-01T00:00:00.000"
+      "immatriculations_poid_lourd_e_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_poid_lourd_e_com.libelle_region": "Île-de-France",
+      "immatriculations_poid_lourd_e_com.geocode_region": "11",
+      "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
+      "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_poid_lourd_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "immatriculations_poid_lourd_e_com.id_462": 0.582968977722257,
+      "immatriculations_poid_lourd_e_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_poid_lourd_e_com.libelle_region": "Centre-Val de Loire",
+      "immatriculations_poid_lourd_e_com.geocode_region": "24",
+      "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
+      "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_poid_lourd_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "immatriculations_poid_lourd_e_com.id_462": 0.0757002271006813,
+      "immatriculations_poid_lourd_e_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_poid_lourd_e_com.libelle_region": "Bourgogne-Franche-Comté",
+      "immatriculations_poid_lourd_e_com.geocode_region": "27",
+      "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
+      "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_poid_lourd_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "immatriculations_poid_lourd_e_com.id_462": 0,
+      "immatriculations_poid_lourd_e_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_poid_lourd_e_com.libelle_region": "Normandie",
+      "immatriculations_poid_lourd_e_com.geocode_region": "28",
+      "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
+      "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_poid_lourd_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "immatriculations_poid_lourd_e_com.id_462": 0,
+      "immatriculations_poid_lourd_e_com.date_mesure": "2021-01-01T00:00:00.000"
     },
     {
       "immatriculations_poid_lourd_e_com.libelle_region": "Hauts-de-France",
       "immatriculations_poid_lourd_e_com.geocode_region": "32",
       "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
       "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
-      "immatriculations_poid_lourd_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
-      "immatriculations_poid_lourd_e_com.id_462": 0.021621621621621623,
-      "immatriculations_poid_lourd_e_com.date_mesure": "2020-01-01T00:00:00.000"
+      "immatriculations_poid_lourd_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "immatriculations_poid_lourd_e_com.id_462": 0.07204610951008646,
+      "immatriculations_poid_lourd_e_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_poid_lourd_e_com.libelle_region": "Grand Est",
+      "immatriculations_poid_lourd_e_com.geocode_region": "44",
+      "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
+      "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_poid_lourd_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "immatriculations_poid_lourd_e_com.id_462": 0.045599635202918376,
+      "immatriculations_poid_lourd_e_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_poid_lourd_e_com.libelle_region": "Pays de la Loire",
+      "immatriculations_poid_lourd_e_com.geocode_region": "52",
+      "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
+      "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_poid_lourd_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "immatriculations_poid_lourd_e_com.id_462": 0.055248618784530384,
+      "immatriculations_poid_lourd_e_com.date_mesure": "2021-01-01T00:00:00.000"
     },
     {
       "immatriculations_poid_lourd_e_com.libelle_region": "Bretagne",
@@ -347,93 +455,12 @@
       "immatriculations_poid_lourd_e_com.date_mesure": "2021-01-01T00:00:00.000"
     },
     {
-      "immatriculations_poid_lourd_e_com.libelle_region": "Bourgogne-Franche-Comté",
-      "immatriculations_poid_lourd_e_com.geocode_region": "27",
-      "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
-      "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
-      "immatriculations_poid_lourd_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
-      "immatriculations_poid_lourd_e_com.id_462": 0,
-      "immatriculations_poid_lourd_e_com.date_mesure": "2021-01-01T00:00:00.000"
-    },
-    {
-      "immatriculations_poid_lourd_e_com.libelle_region": "Corse",
-      "immatriculations_poid_lourd_e_com.geocode_region": "94",
-      "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
-      "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
-      "immatriculations_poid_lourd_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
-      "immatriculations_poid_lourd_e_com.id_462": 2.366863905325444,
-      "immatriculations_poid_lourd_e_com.date_mesure": "2021-01-01T00:00:00.000"
-    },
-    {
-      "immatriculations_poid_lourd_e_com.libelle_region": "Centre-Val de Loire",
-      "immatriculations_poid_lourd_e_com.geocode_region": "24",
-      "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
-      "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
-      "immatriculations_poid_lourd_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
-      "immatriculations_poid_lourd_e_com.id_462": 0.0757002271006813,
-      "immatriculations_poid_lourd_e_com.date_mesure": "2021-01-01T00:00:00.000"
-    },
-    {
       "immatriculations_poid_lourd_e_com.libelle_region": "Occitanie",
       "immatriculations_poid_lourd_e_com.geocode_region": "76",
       "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
       "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
       "immatriculations_poid_lourd_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
       "immatriculations_poid_lourd_e_com.id_462": 0.15527950310559005,
-      "immatriculations_poid_lourd_e_com.date_mesure": "2021-01-01T00:00:00.000"
-    },
-    {
-      "immatriculations_poid_lourd_e_com.libelle_region": "Mayotte",
-      "immatriculations_poid_lourd_e_com.geocode_region": "06",
-      "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
-      "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
-      "immatriculations_poid_lourd_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
-      "immatriculations_poid_lourd_e_com.id_462": 0,
-      "immatriculations_poid_lourd_e_com.date_mesure": "2021-01-01T00:00:00.000"
-    },
-    {
-      "immatriculations_poid_lourd_e_com.libelle_region": "Martinique",
-      "immatriculations_poid_lourd_e_com.geocode_region": "02",
-      "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
-      "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
-      "immatriculations_poid_lourd_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
-      "immatriculations_poid_lourd_e_com.id_462": 0,
-      "immatriculations_poid_lourd_e_com.date_mesure": "2021-01-01T00:00:00.000"
-    },
-    {
-      "immatriculations_poid_lourd_e_com.libelle_region": "Hauts-de-France",
-      "immatriculations_poid_lourd_e_com.geocode_region": "32",
-      "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
-      "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
-      "immatriculations_poid_lourd_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
-      "immatriculations_poid_lourd_e_com.id_462": 0.07204610951008646,
-      "immatriculations_poid_lourd_e_com.date_mesure": "2021-01-01T00:00:00.000"
-    },
-    {
-      "immatriculations_poid_lourd_e_com.libelle_region": "Pays de la Loire",
-      "immatriculations_poid_lourd_e_com.geocode_region": "52",
-      "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
-      "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
-      "immatriculations_poid_lourd_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
-      "immatriculations_poid_lourd_e_com.id_462": 0.055248618784530384,
-      "immatriculations_poid_lourd_e_com.date_mesure": "2021-01-01T00:00:00.000"
-    },
-    {
-      "immatriculations_poid_lourd_e_com.libelle_region": "Normandie",
-      "immatriculations_poid_lourd_e_com.geocode_region": "28",
-      "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
-      "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
-      "immatriculations_poid_lourd_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
-      "immatriculations_poid_lourd_e_com.id_462": 0,
-      "immatriculations_poid_lourd_e_com.date_mesure": "2021-01-01T00:00:00.000"
-    },
-    {
-      "immatriculations_poid_lourd_e_com.libelle_region": "La Réunion",
-      "immatriculations_poid_lourd_e_com.geocode_region": "04",
-      "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
-      "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
-      "immatriculations_poid_lourd_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
-      "immatriculations_poid_lourd_e_com.id_462": 0,
       "immatriculations_poid_lourd_e_com.date_mesure": "2021-01-01T00:00:00.000"
     },
     {
@@ -446,24 +473,6 @@
       "immatriculations_poid_lourd_e_com.date_mesure": "2021-01-01T00:00:00.000"
     },
     {
-      "immatriculations_poid_lourd_e_com.libelle_region": "Grand Est",
-      "immatriculations_poid_lourd_e_com.geocode_region": "44",
-      "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
-      "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
-      "immatriculations_poid_lourd_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
-      "immatriculations_poid_lourd_e_com.id_462": 0.045599635202918376,
-      "immatriculations_poid_lourd_e_com.date_mesure": "2021-01-01T00:00:00.000"
-    },
-    {
-      "immatriculations_poid_lourd_e_com.libelle_region": "Guadeloupe",
-      "immatriculations_poid_lourd_e_com.geocode_region": "01",
-      "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
-      "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
-      "immatriculations_poid_lourd_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
-      "immatriculations_poid_lourd_e_com.id_462": 0,
-      "immatriculations_poid_lourd_e_com.date_mesure": "2021-01-01T00:00:00.000"
-    },
-    {
       "immatriculations_poid_lourd_e_com.libelle_region": "Provence-Alpes-Côte d'Azur",
       "immatriculations_poid_lourd_e_com.geocode_region": "93",
       "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
@@ -473,48 +482,21 @@
       "immatriculations_poid_lourd_e_com.date_mesure": "2021-01-01T00:00:00.000"
     },
     {
-      "immatriculations_poid_lourd_e_com.libelle_region": "Guyane",
-      "immatriculations_poid_lourd_e_com.geocode_region": "03",
+      "immatriculations_poid_lourd_e_com.libelle_region": "Corse",
+      "immatriculations_poid_lourd_e_com.geocode_region": "94",
       "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
       "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
       "immatriculations_poid_lourd_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
-      "immatriculations_poid_lourd_e_com.id_462": 0,
+      "immatriculations_poid_lourd_e_com.id_462": 2.366863905325444,
       "immatriculations_poid_lourd_e_com.date_mesure": "2021-01-01T00:00:00.000"
     },
     {
-      "immatriculations_poid_lourd_e_com.libelle_region": "Île-de-France",
-      "immatriculations_poid_lourd_e_com.geocode_region": "11",
-      "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
-      "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
-      "immatriculations_poid_lourd_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
-      "immatriculations_poid_lourd_e_com.id_462": 0.582968977722257,
-      "immatriculations_poid_lourd_e_com.date_mesure": "2021-01-01T00:00:00.000"
-    },
-    {
-      "immatriculations_poid_lourd_e_com.libelle_region": "Guyane",
-      "immatriculations_poid_lourd_e_com.geocode_region": "03",
+      "immatriculations_poid_lourd_e_com.libelle_region": "Guadeloupe",
+      "immatriculations_poid_lourd_e_com.geocode_region": "01",
       "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
       "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
       "immatriculations_poid_lourd_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
       "immatriculations_poid_lourd_e_com.id_462": 0,
-      "immatriculations_poid_lourd_e_com.date_mesure": "2022-01-01T00:00:00.000"
-    },
-    {
-      "immatriculations_poid_lourd_e_com.libelle_region": "Mayotte",
-      "immatriculations_poid_lourd_e_com.geocode_region": "06",
-      "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
-      "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
-      "immatriculations_poid_lourd_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
-      "immatriculations_poid_lourd_e_com.id_462": 0,
-      "immatriculations_poid_lourd_e_com.date_mesure": "2022-01-01T00:00:00.000"
-    },
-    {
-      "immatriculations_poid_lourd_e_com.libelle_region": "Normandie",
-      "immatriculations_poid_lourd_e_com.geocode_region": "28",
-      "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
-      "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
-      "immatriculations_poid_lourd_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
-      "immatriculations_poid_lourd_e_com.id_462": 0.1592356687898089,
       "immatriculations_poid_lourd_e_com.date_mesure": "2022-01-01T00:00:00.000"
     },
     {
@@ -527,35 +509,8 @@
       "immatriculations_poid_lourd_e_com.date_mesure": "2022-01-01T00:00:00.000"
     },
     {
-      "immatriculations_poid_lourd_e_com.libelle_region": "Pays de la Loire",
-      "immatriculations_poid_lourd_e_com.geocode_region": "52",
-      "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
-      "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
-      "immatriculations_poid_lourd_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
-      "immatriculations_poid_lourd_e_com.id_462": 0.3990877993158495,
-      "immatriculations_poid_lourd_e_com.date_mesure": "2022-01-01T00:00:00.000"
-    },
-    {
-      "immatriculations_poid_lourd_e_com.libelle_region": "Occitanie",
-      "immatriculations_poid_lourd_e_com.geocode_region": "76",
-      "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
-      "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
-      "immatriculations_poid_lourd_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
-      "immatriculations_poid_lourd_e_com.id_462": 0.1794411689310433,
-      "immatriculations_poid_lourd_e_com.date_mesure": "2022-01-01T00:00:00.000"
-    },
-    {
-      "immatriculations_poid_lourd_e_com.libelle_region": "Auvergne-Rhône-Alpes",
-      "immatriculations_poid_lourd_e_com.geocode_region": "84",
-      "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
-      "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
-      "immatriculations_poid_lourd_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
-      "immatriculations_poid_lourd_e_com.id_462": 0.3611738148984199,
-      "immatriculations_poid_lourd_e_com.date_mesure": "2022-01-01T00:00:00.000"
-    },
-    {
-      "immatriculations_poid_lourd_e_com.libelle_region": "Guadeloupe",
-      "immatriculations_poid_lourd_e_com.geocode_region": "01",
+      "immatriculations_poid_lourd_e_com.libelle_region": "Guyane",
+      "immatriculations_poid_lourd_e_com.geocode_region": "03",
       "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
       "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
       "immatriculations_poid_lourd_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
@@ -563,8 +518,17 @@
       "immatriculations_poid_lourd_e_com.date_mesure": "2022-01-01T00:00:00.000"
     },
     {
-      "immatriculations_poid_lourd_e_com.libelle_region": "Corse",
-      "immatriculations_poid_lourd_e_com.geocode_region": "94",
+      "immatriculations_poid_lourd_e_com.libelle_region": "La Réunion",
+      "immatriculations_poid_lourd_e_com.geocode_region": "04",
+      "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
+      "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_poid_lourd_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "immatriculations_poid_lourd_e_com.id_462": 0,
+      "immatriculations_poid_lourd_e_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_poid_lourd_e_com.libelle_region": "Mayotte",
+      "immatriculations_poid_lourd_e_com.geocode_region": "06",
       "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
       "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
       "immatriculations_poid_lourd_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
@@ -578,60 +542,6 @@
       "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
       "immatriculations_poid_lourd_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
       "immatriculations_poid_lourd_e_com.id_462": 1.645650780081214,
-      "immatriculations_poid_lourd_e_com.date_mesure": "2022-01-01T00:00:00.000"
-    },
-    {
-      "immatriculations_poid_lourd_e_com.libelle_region": "Hauts-de-France",
-      "immatriculations_poid_lourd_e_com.geocode_region": "32",
-      "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
-      "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
-      "immatriculations_poid_lourd_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
-      "immatriculations_poid_lourd_e_com.id_462": 0.22826707247479552,
-      "immatriculations_poid_lourd_e_com.date_mesure": "2022-01-01T00:00:00.000"
-    },
-    {
-      "immatriculations_poid_lourd_e_com.libelle_region": "Provence-Alpes-Côte d'Azur",
-      "immatriculations_poid_lourd_e_com.geocode_region": "93",
-      "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
-      "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
-      "immatriculations_poid_lourd_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
-      "immatriculations_poid_lourd_e_com.id_462": 0.1759014951627089,
-      "immatriculations_poid_lourd_e_com.date_mesure": "2022-01-01T00:00:00.000"
-    },
-    {
-      "immatriculations_poid_lourd_e_com.libelle_region": "La Réunion",
-      "immatriculations_poid_lourd_e_com.geocode_region": "04",
-      "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
-      "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
-      "immatriculations_poid_lourd_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
-      "immatriculations_poid_lourd_e_com.id_462": 0,
-      "immatriculations_poid_lourd_e_com.date_mesure": "2022-01-01T00:00:00.000"
-    },
-    {
-      "immatriculations_poid_lourd_e_com.libelle_region": "Bretagne",
-      "immatriculations_poid_lourd_e_com.geocode_region": "53",
-      "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
-      "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
-      "immatriculations_poid_lourd_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
-      "immatriculations_poid_lourd_e_com.id_462": 0.15718327569946558,
-      "immatriculations_poid_lourd_e_com.date_mesure": "2022-01-01T00:00:00.000"
-    },
-    {
-      "immatriculations_poid_lourd_e_com.libelle_region": "Grand Est",
-      "immatriculations_poid_lourd_e_com.geocode_region": "44",
-      "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
-      "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
-      "immatriculations_poid_lourd_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
-      "immatriculations_poid_lourd_e_com.id_462": 0.2074688796680498,
-      "immatriculations_poid_lourd_e_com.date_mesure": "2022-01-01T00:00:00.000"
-    },
-    {
-      "immatriculations_poid_lourd_e_com.libelle_region": "Nouvelle-Aquitaine",
-      "immatriculations_poid_lourd_e_com.geocode_region": "75",
-      "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
-      "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
-      "immatriculations_poid_lourd_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
-      "immatriculations_poid_lourd_e_com.id_462": 0.11436413540713632,
       "immatriculations_poid_lourd_e_com.date_mesure": "2022-01-01T00:00:00.000"
     },
     {
@@ -653,44 +563,125 @@
       "immatriculations_poid_lourd_e_com.date_mesure": "2022-01-01T00:00:00.000"
     },
     {
-      "immatriculations_poid_lourd_e_com.libelle_region": "Île-de-France",
-      "immatriculations_poid_lourd_e_com.geocode_region": "11",
-      "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
-      "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
-      "immatriculations_poid_lourd_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
-      "immatriculations_poid_lourd_e_com.id_462": 4.012691302724897,
-      "immatriculations_poid_lourd_e_com.date_mesure": "2023-01-01T00:00:00.000"
-    },
-    {
       "immatriculations_poid_lourd_e_com.libelle_region": "Normandie",
       "immatriculations_poid_lourd_e_com.geocode_region": "28",
       "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
       "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
-      "immatriculations_poid_lourd_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
-      "immatriculations_poid_lourd_e_com.id_462": 0.3579647149066735,
-      "immatriculations_poid_lourd_e_com.date_mesure": "2023-01-01T00:00:00.000"
+      "immatriculations_poid_lourd_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "immatriculations_poid_lourd_e_com.id_462": 0.1592356687898089,
+      "immatriculations_poid_lourd_e_com.date_mesure": "2022-01-01T00:00:00.000"
     },
     {
-      "immatriculations_poid_lourd_e_com.libelle_region": "Corse",
-      "immatriculations_poid_lourd_e_com.geocode_region": "94",
+      "immatriculations_poid_lourd_e_com.libelle_region": "Hauts-de-France",
+      "immatriculations_poid_lourd_e_com.geocode_region": "32",
       "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
       "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
-      "immatriculations_poid_lourd_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
-      "immatriculations_poid_lourd_e_com.id_462": 1.4492753623188406,
-      "immatriculations_poid_lourd_e_com.date_mesure": "2023-01-01T00:00:00.000"
+      "immatriculations_poid_lourd_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "immatriculations_poid_lourd_e_com.id_462": 0.22826707247479552,
+      "immatriculations_poid_lourd_e_com.date_mesure": "2022-01-01T00:00:00.000"
     },
     {
       "immatriculations_poid_lourd_e_com.libelle_region": "Grand Est",
       "immatriculations_poid_lourd_e_com.geocode_region": "44",
       "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
       "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_poid_lourd_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "immatriculations_poid_lourd_e_com.id_462": 0.2074688796680498,
+      "immatriculations_poid_lourd_e_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_poid_lourd_e_com.libelle_region": "Pays de la Loire",
+      "immatriculations_poid_lourd_e_com.geocode_region": "52",
+      "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
+      "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_poid_lourd_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "immatriculations_poid_lourd_e_com.id_462": 0.3990877993158495,
+      "immatriculations_poid_lourd_e_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_poid_lourd_e_com.libelle_region": "Bretagne",
+      "immatriculations_poid_lourd_e_com.geocode_region": "53",
+      "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
+      "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_poid_lourd_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "immatriculations_poid_lourd_e_com.id_462": 0.15718327569946558,
+      "immatriculations_poid_lourd_e_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_poid_lourd_e_com.libelle_region": "Nouvelle-Aquitaine",
+      "immatriculations_poid_lourd_e_com.geocode_region": "75",
+      "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
+      "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_poid_lourd_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "immatriculations_poid_lourd_e_com.id_462": 0.11436413540713632,
+      "immatriculations_poid_lourd_e_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_poid_lourd_e_com.libelle_region": "Occitanie",
+      "immatriculations_poid_lourd_e_com.geocode_region": "76",
+      "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
+      "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_poid_lourd_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "immatriculations_poid_lourd_e_com.id_462": 0.1794411689310433,
+      "immatriculations_poid_lourd_e_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_poid_lourd_e_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "immatriculations_poid_lourd_e_com.geocode_region": "84",
+      "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
+      "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_poid_lourd_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "immatriculations_poid_lourd_e_com.id_462": 0.3611738148984199,
+      "immatriculations_poid_lourd_e_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_poid_lourd_e_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "immatriculations_poid_lourd_e_com.geocode_region": "93",
+      "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
+      "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_poid_lourd_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "immatriculations_poid_lourd_e_com.id_462": 0.1759014951627089,
+      "immatriculations_poid_lourd_e_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_poid_lourd_e_com.libelle_region": "Corse",
+      "immatriculations_poid_lourd_e_com.geocode_region": "94",
+      "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
+      "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_poid_lourd_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "immatriculations_poid_lourd_e_com.id_462": 0,
+      "immatriculations_poid_lourd_e_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_poid_lourd_e_com.libelle_region": "Guadeloupe",
+      "immatriculations_poid_lourd_e_com.geocode_region": "01",
+      "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
+      "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
       "immatriculations_poid_lourd_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
-      "immatriculations_poid_lourd_e_com.id_462": 0.8171842166705581,
+      "immatriculations_poid_lourd_e_com.id_462": 0,
+      "immatriculations_poid_lourd_e_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_poid_lourd_e_com.libelle_region": "Martinique",
+      "immatriculations_poid_lourd_e_com.geocode_region": "02",
+      "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
+      "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_poid_lourd_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "immatriculations_poid_lourd_e_com.id_462": 0,
       "immatriculations_poid_lourd_e_com.date_mesure": "2023-01-01T00:00:00.000"
     },
     {
       "immatriculations_poid_lourd_e_com.libelle_region": "Guyane",
       "immatriculations_poid_lourd_e_com.geocode_region": "03",
+      "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
+      "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_poid_lourd_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "immatriculations_poid_lourd_e_com.id_462": 0,
+      "immatriculations_poid_lourd_e_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_poid_lourd_e_com.libelle_region": "La Réunion",
+      "immatriculations_poid_lourd_e_com.geocode_region": "04",
       "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
       "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
       "immatriculations_poid_lourd_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
@@ -707,12 +698,39 @@
       "immatriculations_poid_lourd_e_com.date_mesure": "2023-01-01T00:00:00.000"
     },
     {
-      "immatriculations_poid_lourd_e_com.libelle_region": "Auvergne-Rhône-Alpes",
-      "immatriculations_poid_lourd_e_com.geocode_region": "84",
+      "immatriculations_poid_lourd_e_com.libelle_region": "Île-de-France",
+      "immatriculations_poid_lourd_e_com.geocode_region": "11",
       "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
       "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
       "immatriculations_poid_lourd_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
-      "immatriculations_poid_lourd_e_com.id_462": 1.321079839172889,
+      "immatriculations_poid_lourd_e_com.id_462": 4.012691302724897,
+      "immatriculations_poid_lourd_e_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_poid_lourd_e_com.libelle_region": "Centre-Val de Loire",
+      "immatriculations_poid_lourd_e_com.geocode_region": "24",
+      "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
+      "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_poid_lourd_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "immatriculations_poid_lourd_e_com.id_462": 0.9120521172638436,
+      "immatriculations_poid_lourd_e_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_poid_lourd_e_com.libelle_region": "Bourgogne-Franche-Comté",
+      "immatriculations_poid_lourd_e_com.geocode_region": "27",
+      "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
+      "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_poid_lourd_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "immatriculations_poid_lourd_e_com.id_462": 0.19646365422396855,
+      "immatriculations_poid_lourd_e_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_poid_lourd_e_com.libelle_region": "Normandie",
+      "immatriculations_poid_lourd_e_com.geocode_region": "28",
+      "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
+      "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_poid_lourd_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "immatriculations_poid_lourd_e_com.id_462": 0.3579647149066735,
       "immatriculations_poid_lourd_e_com.date_mesure": "2023-01-01T00:00:00.000"
     },
     {
@@ -722,6 +740,24 @@
       "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
       "immatriculations_poid_lourd_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
       "immatriculations_poid_lourd_e_com.id_462": 1.9604666234607906,
+      "immatriculations_poid_lourd_e_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_poid_lourd_e_com.libelle_region": "Grand Est",
+      "immatriculations_poid_lourd_e_com.geocode_region": "44",
+      "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
+      "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_poid_lourd_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "immatriculations_poid_lourd_e_com.id_462": 0.8171842166705581,
+      "immatriculations_poid_lourd_e_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_poid_lourd_e_com.libelle_region": "Pays de la Loire",
+      "immatriculations_poid_lourd_e_com.geocode_region": "52",
+      "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
+      "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_poid_lourd_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "immatriculations_poid_lourd_e_com.id_462": 1.22040517451794,
       "immatriculations_poid_lourd_e_com.date_mesure": "2023-01-01T00:00:00.000"
     },
     {
@@ -743,15 +779,6 @@
       "immatriculations_poid_lourd_e_com.date_mesure": "2023-01-01T00:00:00.000"
     },
     {
-      "immatriculations_poid_lourd_e_com.libelle_region": "Martinique",
-      "immatriculations_poid_lourd_e_com.geocode_region": "02",
-      "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
-      "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
-      "immatriculations_poid_lourd_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
-      "immatriculations_poid_lourd_e_com.id_462": 0,
-      "immatriculations_poid_lourd_e_com.date_mesure": "2023-01-01T00:00:00.000"
-    },
-    {
       "immatriculations_poid_lourd_e_com.libelle_region": "Occitanie",
       "immatriculations_poid_lourd_e_com.geocode_region": "76",
       "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
@@ -761,12 +788,12 @@
       "immatriculations_poid_lourd_e_com.date_mesure": "2023-01-01T00:00:00.000"
     },
     {
-      "immatriculations_poid_lourd_e_com.libelle_region": "Centre-Val de Loire",
-      "immatriculations_poid_lourd_e_com.geocode_region": "24",
+      "immatriculations_poid_lourd_e_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "immatriculations_poid_lourd_e_com.geocode_region": "84",
       "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
       "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
       "immatriculations_poid_lourd_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
-      "immatriculations_poid_lourd_e_com.id_462": 0.9120521172638436,
+      "immatriculations_poid_lourd_e_com.id_462": 1.321079839172889,
       "immatriculations_poid_lourd_e_com.date_mesure": "2023-01-01T00:00:00.000"
     },
     {
@@ -779,30 +806,12 @@
       "immatriculations_poid_lourd_e_com.date_mesure": "2023-01-01T00:00:00.000"
     },
     {
-      "immatriculations_poid_lourd_e_com.libelle_region": "La Réunion",
-      "immatriculations_poid_lourd_e_com.geocode_region": "04",
+      "immatriculations_poid_lourd_e_com.libelle_region": "Corse",
+      "immatriculations_poid_lourd_e_com.geocode_region": "94",
       "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
       "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
       "immatriculations_poid_lourd_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
-      "immatriculations_poid_lourd_e_com.id_462": 0,
-      "immatriculations_poid_lourd_e_com.date_mesure": "2023-01-01T00:00:00.000"
-    },
-    {
-      "immatriculations_poid_lourd_e_com.libelle_region": "Pays de la Loire",
-      "immatriculations_poid_lourd_e_com.geocode_region": "52",
-      "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
-      "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
-      "immatriculations_poid_lourd_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
-      "immatriculations_poid_lourd_e_com.id_462": 1.22040517451794,
-      "immatriculations_poid_lourd_e_com.date_mesure": "2023-01-01T00:00:00.000"
-    },
-    {
-      "immatriculations_poid_lourd_e_com.libelle_region": "Bourgogne-Franche-Comté",
-      "immatriculations_poid_lourd_e_com.geocode_region": "27",
-      "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
-      "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
-      "immatriculations_poid_lourd_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
-      "immatriculations_poid_lourd_e_com.id_462": 0.19646365422396855,
+      "immatriculations_poid_lourd_e_com.id_462": 1.4492753623188406,
       "immatriculations_poid_lourd_e_com.date_mesure": "2023-01-01T00:00:00.000"
     },
     {
@@ -810,35 +819,17 @@
       "immatriculations_poid_lourd_e_com.geocode_region": "01",
       "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
       "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
-      "immatriculations_poid_lourd_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
-      "immatriculations_poid_lourd_e_com.id_462": 0,
-      "immatriculations_poid_lourd_e_com.date_mesure": "2023-01-01T00:00:00.000"
-    },
-    {
-      "immatriculations_poid_lourd_e_com.libelle_region": "Mayotte",
-      "immatriculations_poid_lourd_e_com.geocode_region": "06",
-      "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
-      "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
       "immatriculations_poid_lourd_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
       "immatriculations_poid_lourd_e_com.id_462": 0,
       "immatriculations_poid_lourd_e_com.date_mesure": "2024-01-01T00:00:00.000"
     },
     {
-      "immatriculations_poid_lourd_e_com.libelle_region": "Corse",
-      "immatriculations_poid_lourd_e_com.geocode_region": "94",
+      "immatriculations_poid_lourd_e_com.libelle_region": "Martinique",
+      "immatriculations_poid_lourd_e_com.geocode_region": "02",
       "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
       "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
       "immatriculations_poid_lourd_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
       "immatriculations_poid_lourd_e_com.id_462": 0,
-      "immatriculations_poid_lourd_e_com.date_mesure": "2024-01-01T00:00:00.000"
-    },
-    {
-      "immatriculations_poid_lourd_e_com.libelle_region": "Pays de la Loire",
-      "immatriculations_poid_lourd_e_com.geocode_region": "52",
-      "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
-      "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
-      "immatriculations_poid_lourd_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
-      "immatriculations_poid_lourd_e_com.id_462": 1.2018027040560841,
       "immatriculations_poid_lourd_e_com.date_mesure": "2024-01-01T00:00:00.000"
     },
     {
@@ -851,35 +842,17 @@
       "immatriculations_poid_lourd_e_com.date_mesure": "2024-01-01T00:00:00.000"
     },
     {
-      "immatriculations_poid_lourd_e_com.libelle_region": "Bretagne",
-      "immatriculations_poid_lourd_e_com.geocode_region": "53",
+      "immatriculations_poid_lourd_e_com.libelle_region": "La Réunion",
+      "immatriculations_poid_lourd_e_com.geocode_region": "04",
       "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
       "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
       "immatriculations_poid_lourd_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
-      "immatriculations_poid_lourd_e_com.id_462": 0.4046062869592281,
+      "immatriculations_poid_lourd_e_com.id_462": 0.31347962382445144,
       "immatriculations_poid_lourd_e_com.date_mesure": "2024-01-01T00:00:00.000"
     },
     {
-      "immatriculations_poid_lourd_e_com.libelle_region": "Grand Est",
-      "immatriculations_poid_lourd_e_com.geocode_region": "44",
-      "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
-      "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
-      "immatriculations_poid_lourd_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
-      "immatriculations_poid_lourd_e_com.id_462": 0.3346456692913386,
-      "immatriculations_poid_lourd_e_com.date_mesure": "2024-01-01T00:00:00.000"
-    },
-    {
-      "immatriculations_poid_lourd_e_com.libelle_region": "Hauts-de-France",
-      "immatriculations_poid_lourd_e_com.geocode_region": "32",
-      "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
-      "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
-      "immatriculations_poid_lourd_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
-      "immatriculations_poid_lourd_e_com.id_462": 1.6632986165086274,
-      "immatriculations_poid_lourd_e_com.date_mesure": "2024-01-01T00:00:00.000"
-    },
-    {
-      "immatriculations_poid_lourd_e_com.libelle_region": "Martinique",
-      "immatriculations_poid_lourd_e_com.geocode_region": "02",
+      "immatriculations_poid_lourd_e_com.libelle_region": "Mayotte",
+      "immatriculations_poid_lourd_e_com.geocode_region": "06",
       "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
       "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
       "immatriculations_poid_lourd_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
@@ -893,6 +866,15 @@
       "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
       "immatriculations_poid_lourd_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
       "immatriculations_poid_lourd_e_com.id_462": 4.937278867803152,
+      "immatriculations_poid_lourd_e_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_poid_lourd_e_com.libelle_region": "Centre-Val de Loire",
+      "immatriculations_poid_lourd_e_com.geocode_region": "24",
+      "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
+      "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_poid_lourd_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "immatriculations_poid_lourd_e_com.id_462": 1.5111695137976346,
       "immatriculations_poid_lourd_e_com.date_mesure": "2024-01-01T00:00:00.000"
     },
     {
@@ -914,12 +896,39 @@
       "immatriculations_poid_lourd_e_com.date_mesure": "2024-01-01T00:00:00.000"
     },
     {
-      "immatriculations_poid_lourd_e_com.libelle_region": "Centre-Val de Loire",
-      "immatriculations_poid_lourd_e_com.geocode_region": "24",
+      "immatriculations_poid_lourd_e_com.libelle_region": "Hauts-de-France",
+      "immatriculations_poid_lourd_e_com.geocode_region": "32",
       "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
       "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
       "immatriculations_poid_lourd_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
-      "immatriculations_poid_lourd_e_com.id_462": 1.5111695137976346,
+      "immatriculations_poid_lourd_e_com.id_462": 1.6632986165086274,
+      "immatriculations_poid_lourd_e_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_poid_lourd_e_com.libelle_region": "Grand Est",
+      "immatriculations_poid_lourd_e_com.geocode_region": "44",
+      "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
+      "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_poid_lourd_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "immatriculations_poid_lourd_e_com.id_462": 0.3346456692913386,
+      "immatriculations_poid_lourd_e_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_poid_lourd_e_com.libelle_region": "Pays de la Loire",
+      "immatriculations_poid_lourd_e_com.geocode_region": "52",
+      "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
+      "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_poid_lourd_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "immatriculations_poid_lourd_e_com.id_462": 1.2018027040560841,
+      "immatriculations_poid_lourd_e_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_poid_lourd_e_com.libelle_region": "Bretagne",
+      "immatriculations_poid_lourd_e_com.geocode_region": "53",
+      "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
+      "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_poid_lourd_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "immatriculations_poid_lourd_e_com.id_462": 0.4046062869592281,
       "immatriculations_poid_lourd_e_com.date_mesure": "2024-01-01T00:00:00.000"
     },
     {
@@ -932,15 +941,6 @@
       "immatriculations_poid_lourd_e_com.date_mesure": "2024-01-01T00:00:00.000"
     },
     {
-      "immatriculations_poid_lourd_e_com.libelle_region": "Provence-Alpes-Côte d'Azur",
-      "immatriculations_poid_lourd_e_com.geocode_region": "93",
-      "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
-      "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
-      "immatriculations_poid_lourd_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
-      "immatriculations_poid_lourd_e_com.id_462": 1.1817865832464372,
-      "immatriculations_poid_lourd_e_com.date_mesure": "2024-01-01T00:00:00.000"
-    },
-    {
       "immatriculations_poid_lourd_e_com.libelle_region": "Occitanie",
       "immatriculations_poid_lourd_e_com.geocode_region": "76",
       "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
@@ -950,30 +950,30 @@
       "immatriculations_poid_lourd_e_com.date_mesure": "2024-01-01T00:00:00.000"
     },
     {
-      "immatriculations_poid_lourd_e_com.libelle_region": "La Réunion",
-      "immatriculations_poid_lourd_e_com.geocode_region": "04",
-      "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
-      "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
-      "immatriculations_poid_lourd_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
-      "immatriculations_poid_lourd_e_com.id_462": 0.31347962382445144,
-      "immatriculations_poid_lourd_e_com.date_mesure": "2024-01-01T00:00:00.000"
-    },
-    {
-      "immatriculations_poid_lourd_e_com.libelle_region": "Guadeloupe",
-      "immatriculations_poid_lourd_e_com.geocode_region": "01",
-      "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
-      "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
-      "immatriculations_poid_lourd_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
-      "immatriculations_poid_lourd_e_com.id_462": 0,
-      "immatriculations_poid_lourd_e_com.date_mesure": "2024-01-01T00:00:00.000"
-    },
-    {
       "immatriculations_poid_lourd_e_com.libelle_region": "Auvergne-Rhône-Alpes",
       "immatriculations_poid_lourd_e_com.geocode_region": "84",
       "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
       "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
       "immatriculations_poid_lourd_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
       "immatriculations_poid_lourd_e_com.id_462": 1.6810473073490033,
+      "immatriculations_poid_lourd_e_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_poid_lourd_e_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "immatriculations_poid_lourd_e_com.geocode_region": "93",
+      "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
+      "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_poid_lourd_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "immatriculations_poid_lourd_e_com.id_462": 1.1817865832464372,
+      "immatriculations_poid_lourd_e_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "immatriculations_poid_lourd_e_com.libelle_region": "Corse",
+      "immatriculations_poid_lourd_e_com.geocode_region": "94",
+      "immatriculations_poid_lourd_e_com.type_vehicule": "PL",
+      "immatriculations_poid_lourd_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_poid_lourd_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "immatriculations_poid_lourd_e_com.id_462": 0,
       "immatriculations_poid_lourd_e_com.date_mesure": "2024-01-01T00:00:00.000"
     }
   ],

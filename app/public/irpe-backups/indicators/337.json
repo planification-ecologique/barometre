@@ -5,62 +5,6 @@
   "extraDimension": "produits_phytosanitaires_dpt.geocode_departement",
   "data": [
     {
-      "produits_phytosanitaires_dpt.libelle_region": "Mayotte",
-      "produits_phytosanitaires_dpt.geocode_region": "06",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2013-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 69.94,
-      "produits_phytosanitaires_dpt.date_mesure": "2013-01-01T00:00:00.000"
-    },
-    {
-      "produits_phytosanitaires_dpt.libelle_region": "Guyane",
-      "produits_phytosanitaires_dpt.geocode_region": "03",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2013-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 17.71,
-      "produits_phytosanitaires_dpt.date_mesure": "2013-01-01T00:00:00.000"
-    },
-    {
-      "produits_phytosanitaires_dpt.libelle_region": "Hauts-de-France",
-      "produits_phytosanitaires_dpt.geocode_region": "32",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2013-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 1631035.3740000005,
-      "produits_phytosanitaires_dpt.date_mesure": "2013-01-01T00:00:00.000"
-    },
-    {
-      "produits_phytosanitaires_dpt.libelle_region": "Auvergne-Rhône-Alpes",
-      "produits_phytosanitaires_dpt.geocode_region": "84",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2013-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 1106816.0129999996,
-      "produits_phytosanitaires_dpt.date_mesure": "2013-01-01T00:00:00.000"
-    },
-    {
-      "produits_phytosanitaires_dpt.libelle_region": "Occitanie",
-      "produits_phytosanitaires_dpt.geocode_region": "76",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2013-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 1698348.8999999992,
-      "produits_phytosanitaires_dpt.date_mesure": "2013-01-01T00:00:00.000"
-    },
-    {
-      "produits_phytosanitaires_dpt.libelle_region": "Grand Est",
-      "produits_phytosanitaires_dpt.geocode_region": "44",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2013-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 2683166.4639999974,
-      "produits_phytosanitaires_dpt.date_mesure": "2013-01-01T00:00:00.000"
-    },
-    {
-      "produits_phytosanitaires_dpt.libelle_region": "La Réunion",
-      "produits_phytosanitaires_dpt.geocode_region": "04",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2013-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 27.5,
-      "produits_phytosanitaires_dpt.date_mesure": "2013-01-01T00:00:00.000"
-    },
-    {
-      "produits_phytosanitaires_dpt.libelle_region": "Île-de-France",
-      "produits_phytosanitaires_dpt.geocode_region": "11",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2013-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 737684.262,
-      "produits_phytosanitaires_dpt.date_mesure": "2013-01-01T00:00:00.000"
-    },
-    {
       "produits_phytosanitaires_dpt.libelle_region": "Guadeloupe",
       "produits_phytosanitaires_dpt.geocode_region": "01",
       "produits_phytosanitaires_dpt.date_mesure.year": "2013-01-01T00:00:00.000",
@@ -75,17 +19,31 @@
       "produits_phytosanitaires_dpt.date_mesure": "2013-01-01T00:00:00.000"
     },
     {
-      "produits_phytosanitaires_dpt.libelle_region": "Provence-Alpes-Côte d'Azur",
-      "produits_phytosanitaires_dpt.geocode_region": "93",
+      "produits_phytosanitaires_dpt.libelle_region": "Guyane",
+      "produits_phytosanitaires_dpt.geocode_region": "03",
       "produits_phytosanitaires_dpt.date_mesure.year": "2013-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 341791.955,
+      "produits_phytosanitaires_dpt.id_337": 17.71,
       "produits_phytosanitaires_dpt.date_mesure": "2013-01-01T00:00:00.000"
     },
     {
-      "produits_phytosanitaires_dpt.libelle_region": "Corse",
-      "produits_phytosanitaires_dpt.geocode_region": "94",
+      "produits_phytosanitaires_dpt.libelle_region": "La Réunion",
+      "produits_phytosanitaires_dpt.geocode_region": "04",
       "produits_phytosanitaires_dpt.date_mesure.year": "2013-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 8401.484,
+      "produits_phytosanitaires_dpt.id_337": 27.5,
+      "produits_phytosanitaires_dpt.date_mesure": "2013-01-01T00:00:00.000"
+    },
+    {
+      "produits_phytosanitaires_dpt.libelle_region": "Mayotte",
+      "produits_phytosanitaires_dpt.geocode_region": "06",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2013-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 69.94,
+      "produits_phytosanitaires_dpt.date_mesure": "2013-01-01T00:00:00.000"
+    },
+    {
+      "produits_phytosanitaires_dpt.libelle_region": "Île-de-France",
+      "produits_phytosanitaires_dpt.geocode_region": "11",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2013-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 737684.262,
       "produits_phytosanitaires_dpt.date_mesure": "2013-01-01T00:00:00.000"
     },
     {
@@ -103,10 +61,24 @@
       "produits_phytosanitaires_dpt.date_mesure": "2013-01-01T00:00:00.000"
     },
     {
-      "produits_phytosanitaires_dpt.libelle_region": "Bretagne",
-      "produits_phytosanitaires_dpt.geocode_region": "53",
+      "produits_phytosanitaires_dpt.libelle_region": "Normandie",
+      "produits_phytosanitaires_dpt.geocode_region": "28",
       "produits_phytosanitaires_dpt.date_mesure.year": "2013-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 426810.0030000002,
+      "produits_phytosanitaires_dpt.id_337": 1980317.479,
+      "produits_phytosanitaires_dpt.date_mesure": "2013-01-01T00:00:00.000"
+    },
+    {
+      "produits_phytosanitaires_dpt.libelle_region": "Hauts-de-France",
+      "produits_phytosanitaires_dpt.geocode_region": "32",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2013-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 1631035.3740000005,
+      "produits_phytosanitaires_dpt.date_mesure": "2013-01-01T00:00:00.000"
+    },
+    {
+      "produits_phytosanitaires_dpt.libelle_region": "Grand Est",
+      "produits_phytosanitaires_dpt.geocode_region": "44",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2013-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 2683166.4639999974,
       "produits_phytosanitaires_dpt.date_mesure": "2013-01-01T00:00:00.000"
     },
     {
@@ -117,6 +89,13 @@
       "produits_phytosanitaires_dpt.date_mesure": "2013-01-01T00:00:00.000"
     },
     {
+      "produits_phytosanitaires_dpt.libelle_region": "Bretagne",
+      "produits_phytosanitaires_dpt.geocode_region": "53",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2013-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 426810.0030000002,
+      "produits_phytosanitaires_dpt.date_mesure": "2013-01-01T00:00:00.000"
+    },
+    {
       "produits_phytosanitaires_dpt.libelle_region": "Nouvelle-Aquitaine",
       "produits_phytosanitaires_dpt.geocode_region": "75",
       "produits_phytosanitaires_dpt.date_mesure.year": "2013-01-01T00:00:00.000",
@@ -124,52 +103,38 @@
       "produits_phytosanitaires_dpt.date_mesure": "2013-01-01T00:00:00.000"
     },
     {
-      "produits_phytosanitaires_dpt.libelle_region": "Normandie",
-      "produits_phytosanitaires_dpt.geocode_region": "28",
+      "produits_phytosanitaires_dpt.libelle_region": "Occitanie",
+      "produits_phytosanitaires_dpt.geocode_region": "76",
       "produits_phytosanitaires_dpt.date_mesure.year": "2013-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 1980317.479,
+      "produits_phytosanitaires_dpt.id_337": 1698348.8999999992,
       "produits_phytosanitaires_dpt.date_mesure": "2013-01-01T00:00:00.000"
     },
     {
-      "produits_phytosanitaires_dpt.libelle_region": "Bretagne",
-      "produits_phytosanitaires_dpt.geocode_region": "53",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2014-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 2167665.269,
-      "produits_phytosanitaires_dpt.date_mesure": "2014-01-01T00:00:00.000"
+      "produits_phytosanitaires_dpt.libelle_region": "Auvergne-Rhône-Alpes",
+      "produits_phytosanitaires_dpt.geocode_region": "84",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2013-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 1106816.0129999996,
+      "produits_phytosanitaires_dpt.date_mesure": "2013-01-01T00:00:00.000"
     },
     {
-      "produits_phytosanitaires_dpt.libelle_region": "Normandie",
-      "produits_phytosanitaires_dpt.geocode_region": "28",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2014-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 4041583.3770000082,
-      "produits_phytosanitaires_dpt.date_mesure": "2014-01-01T00:00:00.000"
+      "produits_phytosanitaires_dpt.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "produits_phytosanitaires_dpt.geocode_region": "93",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2013-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 341791.955,
+      "produits_phytosanitaires_dpt.date_mesure": "2013-01-01T00:00:00.000"
     },
     {
-      "produits_phytosanitaires_dpt.libelle_region": "La Réunion",
-      "produits_phytosanitaires_dpt.geocode_region": "04",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2014-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 2902.2729999999997,
-      "produits_phytosanitaires_dpt.date_mesure": "2014-01-01T00:00:00.000"
+      "produits_phytosanitaires_dpt.libelle_region": "Corse",
+      "produits_phytosanitaires_dpt.geocode_region": "94",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2013-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 8401.484,
+      "produits_phytosanitaires_dpt.date_mesure": "2013-01-01T00:00:00.000"
     },
     {
       "produits_phytosanitaires_dpt.libelle_region": "Guadeloupe",
       "produits_phytosanitaires_dpt.geocode_region": "01",
       "produits_phytosanitaires_dpt.date_mesure.year": "2014-01-01T00:00:00.000",
       "produits_phytosanitaires_dpt.id_337": 26.753999999999998,
-      "produits_phytosanitaires_dpt.date_mesure": "2014-01-01T00:00:00.000"
-    },
-    {
-      "produits_phytosanitaires_dpt.libelle_region": "Corse",
-      "produits_phytosanitaires_dpt.geocode_region": "94",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2014-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 118532.6669999999,
-      "produits_phytosanitaires_dpt.date_mesure": "2014-01-01T00:00:00.000"
-    },
-    {
-      "produits_phytosanitaires_dpt.libelle_region": "Auvergne-Rhône-Alpes",
-      "produits_phytosanitaires_dpt.geocode_region": "84",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2014-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 2615885.38,
       "produits_phytosanitaires_dpt.date_mesure": "2014-01-01T00:00:00.000"
     },
     {
@@ -180,24 +145,17 @@
       "produits_phytosanitaires_dpt.date_mesure": "2014-01-01T00:00:00.000"
     },
     {
-      "produits_phytosanitaires_dpt.libelle_region": "Grand Est",
-      "produits_phytosanitaires_dpt.geocode_region": "44",
+      "produits_phytosanitaires_dpt.libelle_region": "Guyane",
+      "produits_phytosanitaires_dpt.geocode_region": "03",
       "produits_phytosanitaires_dpt.date_mesure.year": "2014-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 6399329.773000004,
+      "produits_phytosanitaires_dpt.id_337": 160.769,
       "produits_phytosanitaires_dpt.date_mesure": "2014-01-01T00:00:00.000"
     },
     {
-      "produits_phytosanitaires_dpt.libelle_region": "Nouvelle-Aquitaine",
-      "produits_phytosanitaires_dpt.geocode_region": "75",
+      "produits_phytosanitaires_dpt.libelle_region": "La Réunion",
+      "produits_phytosanitaires_dpt.geocode_region": "04",
       "produits_phytosanitaires_dpt.date_mesure.year": "2014-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 10153440.62100003,
-      "produits_phytosanitaires_dpt.date_mesure": "2014-01-01T00:00:00.000"
-    },
-    {
-      "produits_phytosanitaires_dpt.libelle_region": "Île-de-France",
-      "produits_phytosanitaires_dpt.geocode_region": "11",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2014-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 1933334.4120000005,
+      "produits_phytosanitaires_dpt.id_337": 2902.2729999999997,
       "produits_phytosanitaires_dpt.date_mesure": "2014-01-01T00:00:00.000"
     },
     {
@@ -208,45 +166,10 @@
       "produits_phytosanitaires_dpt.date_mesure": "2014-01-01T00:00:00.000"
     },
     {
-      "produits_phytosanitaires_dpt.libelle_region": "Pays de la Loire",
-      "produits_phytosanitaires_dpt.geocode_region": "52",
+      "produits_phytosanitaires_dpt.libelle_region": "Île-de-France",
+      "produits_phytosanitaires_dpt.geocode_region": "11",
       "produits_phytosanitaires_dpt.date_mesure.year": "2014-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 4326506.882000005,
-      "produits_phytosanitaires_dpt.date_mesure": "2014-01-01T00:00:00.000"
-    },
-    {
-      "produits_phytosanitaires_dpt.libelle_region": "Bourgogne-Franche-Comté",
-      "produits_phytosanitaires_dpt.geocode_region": "27",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2014-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 3146547.8269999987,
-      "produits_phytosanitaires_dpt.date_mesure": "2014-01-01T00:00:00.000"
-    },
-    {
-      "produits_phytosanitaires_dpt.libelle_region": "Occitanie",
-      "produits_phytosanitaires_dpt.geocode_region": "76",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2014-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 5617909.763000007,
-      "produits_phytosanitaires_dpt.date_mesure": "2014-01-01T00:00:00.000"
-    },
-    {
-      "produits_phytosanitaires_dpt.libelle_region": "Guyane",
-      "produits_phytosanitaires_dpt.geocode_region": "03",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2014-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 160.769,
-      "produits_phytosanitaires_dpt.date_mesure": "2014-01-01T00:00:00.000"
-    },
-    {
-      "produits_phytosanitaires_dpt.libelle_region": "Hauts-de-France",
-      "produits_phytosanitaires_dpt.geocode_region": "32",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2014-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 8627000.611999992,
-      "produits_phytosanitaires_dpt.date_mesure": "2014-01-01T00:00:00.000"
-    },
-    {
-      "produits_phytosanitaires_dpt.libelle_region": "Provence-Alpes-Côte d'Azur",
-      "produits_phytosanitaires_dpt.geocode_region": "93",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2014-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 1517514.480999999,
+      "produits_phytosanitaires_dpt.id_337": 1933334.4120000005,
       "produits_phytosanitaires_dpt.date_mesure": "2014-01-01T00:00:00.000"
     },
     {
@@ -257,66 +180,87 @@
       "produits_phytosanitaires_dpt.date_mesure": "2014-01-01T00:00:00.000"
     },
     {
-      "produits_phytosanitaires_dpt.libelle_region": "Occitanie",
-      "produits_phytosanitaires_dpt.geocode_region": "76",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2015-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 5046274.882000001,
-      "produits_phytosanitaires_dpt.date_mesure": "2015-01-01T00:00:00.000"
+      "produits_phytosanitaires_dpt.libelle_region": "Bourgogne-Franche-Comté",
+      "produits_phytosanitaires_dpt.geocode_region": "27",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2014-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 3146547.8269999987,
+      "produits_phytosanitaires_dpt.date_mesure": "2014-01-01T00:00:00.000"
     },
     {
-      "produits_phytosanitaires_dpt.libelle_region": "Centre-Val de Loire",
-      "produits_phytosanitaires_dpt.geocode_region": "24",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2015-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 5664684.949000004,
-      "produits_phytosanitaires_dpt.date_mesure": "2015-01-01T00:00:00.000"
+      "produits_phytosanitaires_dpt.libelle_region": "Normandie",
+      "produits_phytosanitaires_dpt.geocode_region": "28",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2014-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 4041583.3770000082,
+      "produits_phytosanitaires_dpt.date_mesure": "2014-01-01T00:00:00.000"
+    },
+    {
+      "produits_phytosanitaires_dpt.libelle_region": "Hauts-de-France",
+      "produits_phytosanitaires_dpt.geocode_region": "32",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2014-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 8627000.611999992,
+      "produits_phytosanitaires_dpt.date_mesure": "2014-01-01T00:00:00.000"
     },
     {
       "produits_phytosanitaires_dpt.libelle_region": "Grand Est",
       "produits_phytosanitaires_dpt.geocode_region": "44",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2015-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 5863466.895000002,
-      "produits_phytosanitaires_dpt.date_mesure": "2015-01-01T00:00:00.000"
+      "produits_phytosanitaires_dpt.date_mesure.year": "2014-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 6399329.773000004,
+      "produits_phytosanitaires_dpt.date_mesure": "2014-01-01T00:00:00.000"
+    },
+    {
+      "produits_phytosanitaires_dpt.libelle_region": "Pays de la Loire",
+      "produits_phytosanitaires_dpt.geocode_region": "52",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2014-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 4326506.882000005,
+      "produits_phytosanitaires_dpt.date_mesure": "2014-01-01T00:00:00.000"
+    },
+    {
+      "produits_phytosanitaires_dpt.libelle_region": "Bretagne",
+      "produits_phytosanitaires_dpt.geocode_region": "53",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2014-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 2167665.269,
+      "produits_phytosanitaires_dpt.date_mesure": "2014-01-01T00:00:00.000"
+    },
+    {
+      "produits_phytosanitaires_dpt.libelle_region": "Nouvelle-Aquitaine",
+      "produits_phytosanitaires_dpt.geocode_region": "75",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2014-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 10153440.62100003,
+      "produits_phytosanitaires_dpt.date_mesure": "2014-01-01T00:00:00.000"
+    },
+    {
+      "produits_phytosanitaires_dpt.libelle_region": "Occitanie",
+      "produits_phytosanitaires_dpt.geocode_region": "76",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2014-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 5617909.763000007,
+      "produits_phytosanitaires_dpt.date_mesure": "2014-01-01T00:00:00.000"
+    },
+    {
+      "produits_phytosanitaires_dpt.libelle_region": "Auvergne-Rhône-Alpes",
+      "produits_phytosanitaires_dpt.geocode_region": "84",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2014-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 2615885.38,
+      "produits_phytosanitaires_dpt.date_mesure": "2014-01-01T00:00:00.000"
+    },
+    {
+      "produits_phytosanitaires_dpt.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "produits_phytosanitaires_dpt.geocode_region": "93",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2014-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 1517514.480999999,
+      "produits_phytosanitaires_dpt.date_mesure": "2014-01-01T00:00:00.000"
+    },
+    {
+      "produits_phytosanitaires_dpt.libelle_region": "Corse",
+      "produits_phytosanitaires_dpt.geocode_region": "94",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2014-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 118532.6669999999,
+      "produits_phytosanitaires_dpt.date_mesure": "2014-01-01T00:00:00.000"
     },
     {
       "produits_phytosanitaires_dpt.libelle_region": "Guadeloupe",
       "produits_phytosanitaires_dpt.geocode_region": "01",
       "produits_phytosanitaires_dpt.date_mesure.year": "2015-01-01T00:00:00.000",
       "produits_phytosanitaires_dpt.id_337": 203.82100000000003,
-      "produits_phytosanitaires_dpt.date_mesure": "2015-01-01T00:00:00.000"
-    },
-    {
-      "produits_phytosanitaires_dpt.libelle_region": "Nouvelle-Aquitaine",
-      "produits_phytosanitaires_dpt.geocode_region": "75",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2015-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 8286126.975000008,
-      "produits_phytosanitaires_dpt.date_mesure": "2015-01-01T00:00:00.000"
-    },
-    {
-      "produits_phytosanitaires_dpt.libelle_region": "Corse",
-      "produits_phytosanitaires_dpt.geocode_region": "94",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2015-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 75241.091,
-      "produits_phytosanitaires_dpt.date_mesure": "2015-01-01T00:00:00.000"
-    },
-    {
-      "produits_phytosanitaires_dpt.libelle_region": "Île-de-France",
-      "produits_phytosanitaires_dpt.geocode_region": "11",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2015-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 1946431.1170000015,
-      "produits_phytosanitaires_dpt.date_mesure": "2015-01-01T00:00:00.000"
-    },
-    {
-      "produits_phytosanitaires_dpt.libelle_region": "La Réunion",
-      "produits_phytosanitaires_dpt.geocode_region": "04",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2015-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 141019.93300000002,
-      "produits_phytosanitaires_dpt.date_mesure": "2015-01-01T00:00:00.000"
-    },
-    {
-      "produits_phytosanitaires_dpt.libelle_region": "Guyane",
-      "produits_phytosanitaires_dpt.geocode_region": "03",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2015-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 1309.8919999999998,
       "produits_phytosanitaires_dpt.date_mesure": "2015-01-01T00:00:00.000"
     },
     {
@@ -327,17 +271,17 @@
       "produits_phytosanitaires_dpt.date_mesure": "2015-01-01T00:00:00.000"
     },
     {
-      "produits_phytosanitaires_dpt.libelle_region": "Provence-Alpes-Côte d'Azur",
-      "produits_phytosanitaires_dpt.geocode_region": "93",
+      "produits_phytosanitaires_dpt.libelle_region": "Guyane",
+      "produits_phytosanitaires_dpt.geocode_region": "03",
       "produits_phytosanitaires_dpt.date_mesure.year": "2015-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 1400448.7280000008,
+      "produits_phytosanitaires_dpt.id_337": 1309.8919999999998,
       "produits_phytosanitaires_dpt.date_mesure": "2015-01-01T00:00:00.000"
     },
     {
-      "produits_phytosanitaires_dpt.libelle_region": "Auvergne-Rhône-Alpes",
-      "produits_phytosanitaires_dpt.geocode_region": "84",
+      "produits_phytosanitaires_dpt.libelle_region": "La Réunion",
+      "produits_phytosanitaires_dpt.geocode_region": "04",
       "produits_phytosanitaires_dpt.date_mesure.year": "2015-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 2410928.254000003,
+      "produits_phytosanitaires_dpt.id_337": 141019.93300000002,
       "produits_phytosanitaires_dpt.date_mesure": "2015-01-01T00:00:00.000"
     },
     {
@@ -345,6 +289,20 @@
       "produits_phytosanitaires_dpt.geocode_region": "06",
       "produits_phytosanitaires_dpt.date_mesure.year": "2015-01-01T00:00:00.000",
       "produits_phytosanitaires_dpt.id_337": 272.407,
+      "produits_phytosanitaires_dpt.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "produits_phytosanitaires_dpt.libelle_region": "Île-de-France",
+      "produits_phytosanitaires_dpt.geocode_region": "11",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2015-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 1946431.1170000015,
+      "produits_phytosanitaires_dpt.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "produits_phytosanitaires_dpt.libelle_region": "Centre-Val de Loire",
+      "produits_phytosanitaires_dpt.geocode_region": "24",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2015-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 5664684.949000004,
       "produits_phytosanitaires_dpt.date_mesure": "2015-01-01T00:00:00.000"
     },
     {
@@ -369,6 +327,13 @@
       "produits_phytosanitaires_dpt.date_mesure": "2015-01-01T00:00:00.000"
     },
     {
+      "produits_phytosanitaires_dpt.libelle_region": "Grand Est",
+      "produits_phytosanitaires_dpt.geocode_region": "44",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2015-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 5863466.895000002,
+      "produits_phytosanitaires_dpt.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
       "produits_phytosanitaires_dpt.libelle_region": "Pays de la Loire",
       "produits_phytosanitaires_dpt.geocode_region": "52",
       "produits_phytosanitaires_dpt.date_mesure.year": "2015-01-01T00:00:00.000",
@@ -383,11 +348,39 @@
       "produits_phytosanitaires_dpt.date_mesure": "2015-01-01T00:00:00.000"
     },
     {
-      "produits_phytosanitaires_dpt.libelle_region": "Martinique",
-      "produits_phytosanitaires_dpt.geocode_region": "02",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2016-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 541.5040000000001,
-      "produits_phytosanitaires_dpt.date_mesure": "2016-01-01T00:00:00.000"
+      "produits_phytosanitaires_dpt.libelle_region": "Nouvelle-Aquitaine",
+      "produits_phytosanitaires_dpt.geocode_region": "75",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2015-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 8286126.975000008,
+      "produits_phytosanitaires_dpt.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "produits_phytosanitaires_dpt.libelle_region": "Occitanie",
+      "produits_phytosanitaires_dpt.geocode_region": "76",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2015-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 5046274.882000001,
+      "produits_phytosanitaires_dpt.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "produits_phytosanitaires_dpt.libelle_region": "Auvergne-Rhône-Alpes",
+      "produits_phytosanitaires_dpt.geocode_region": "84",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2015-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 2410928.254000003,
+      "produits_phytosanitaires_dpt.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "produits_phytosanitaires_dpt.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "produits_phytosanitaires_dpt.geocode_region": "93",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2015-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 1400448.7280000008,
+      "produits_phytosanitaires_dpt.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "produits_phytosanitaires_dpt.libelle_region": "Corse",
+      "produits_phytosanitaires_dpt.geocode_region": "94",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2015-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 75241.091,
+      "produits_phytosanitaires_dpt.date_mesure": "2015-01-01T00:00:00.000"
     },
     {
       "produits_phytosanitaires_dpt.libelle_region": "Guadeloupe",
@@ -397,45 +390,10 @@
       "produits_phytosanitaires_dpt.date_mesure": "2016-01-01T00:00:00.000"
     },
     {
-      "produits_phytosanitaires_dpt.libelle_region": "La Réunion",
-      "produits_phytosanitaires_dpt.geocode_region": "04",
+      "produits_phytosanitaires_dpt.libelle_region": "Martinique",
+      "produits_phytosanitaires_dpt.geocode_region": "02",
       "produits_phytosanitaires_dpt.date_mesure.year": "2016-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 1664.035,
-      "produits_phytosanitaires_dpt.date_mesure": "2016-01-01T00:00:00.000"
-    },
-    {
-      "produits_phytosanitaires_dpt.libelle_region": "Hauts-de-France",
-      "produits_phytosanitaires_dpt.geocode_region": "32",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2016-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 7719991.081000005,
-      "produits_phytosanitaires_dpt.date_mesure": "2016-01-01T00:00:00.000"
-    },
-    {
-      "produits_phytosanitaires_dpt.libelle_region": "Île-de-France",
-      "produits_phytosanitaires_dpt.geocode_region": "11",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2016-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 1991703.704,
-      "produits_phytosanitaires_dpt.date_mesure": "2016-01-01T00:00:00.000"
-    },
-    {
-      "produits_phytosanitaires_dpt.libelle_region": "Normandie",
-      "produits_phytosanitaires_dpt.geocode_region": "28",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2016-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 4139459.1660000044,
-      "produits_phytosanitaires_dpt.date_mesure": "2016-01-01T00:00:00.000"
-    },
-    {
-      "produits_phytosanitaires_dpt.libelle_region": "Grand Est",
-      "produits_phytosanitaires_dpt.geocode_region": "44",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2016-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 6311800.055999997,
-      "produits_phytosanitaires_dpt.date_mesure": "2016-01-01T00:00:00.000"
-    },
-    {
-      "produits_phytosanitaires_dpt.libelle_region": "Mayotte",
-      "produits_phytosanitaires_dpt.geocode_region": "06",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2016-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 163.968,
+      "produits_phytosanitaires_dpt.id_337": 541.5040000000001,
       "produits_phytosanitaires_dpt.date_mesure": "2016-01-01T00:00:00.000"
     },
     {
@@ -446,10 +404,94 @@
       "produits_phytosanitaires_dpt.date_mesure": "2016-01-01T00:00:00.000"
     },
     {
+      "produits_phytosanitaires_dpt.libelle_region": "La Réunion",
+      "produits_phytosanitaires_dpt.geocode_region": "04",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2016-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 1664.035,
+      "produits_phytosanitaires_dpt.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "produits_phytosanitaires_dpt.libelle_region": "Mayotte",
+      "produits_phytosanitaires_dpt.geocode_region": "06",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2016-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 163.968,
+      "produits_phytosanitaires_dpt.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "produits_phytosanitaires_dpt.libelle_region": "Île-de-France",
+      "produits_phytosanitaires_dpt.geocode_region": "11",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2016-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 1991703.704,
+      "produits_phytosanitaires_dpt.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "produits_phytosanitaires_dpt.libelle_region": "Centre-Val de Loire",
+      "produits_phytosanitaires_dpt.geocode_region": "24",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2016-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 5661434.134,
+      "produits_phytosanitaires_dpt.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
       "produits_phytosanitaires_dpt.libelle_region": "Bourgogne-Franche-Comté",
       "produits_phytosanitaires_dpt.geocode_region": "27",
       "produits_phytosanitaires_dpt.date_mesure.year": "2016-01-01T00:00:00.000",
       "produits_phytosanitaires_dpt.id_337": 3221838.751000004,
+      "produits_phytosanitaires_dpt.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "produits_phytosanitaires_dpt.libelle_region": "Normandie",
+      "produits_phytosanitaires_dpt.geocode_region": "28",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2016-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 4139459.1660000044,
+      "produits_phytosanitaires_dpt.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "produits_phytosanitaires_dpt.libelle_region": "Hauts-de-France",
+      "produits_phytosanitaires_dpt.geocode_region": "32",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2016-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 7719991.081000005,
+      "produits_phytosanitaires_dpt.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "produits_phytosanitaires_dpt.libelle_region": "Grand Est",
+      "produits_phytosanitaires_dpt.geocode_region": "44",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2016-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 6311800.055999997,
+      "produits_phytosanitaires_dpt.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "produits_phytosanitaires_dpt.libelle_region": "Pays de la Loire",
+      "produits_phytosanitaires_dpt.geocode_region": "52",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2016-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 3563235.9680000017,
+      "produits_phytosanitaires_dpt.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "produits_phytosanitaires_dpt.libelle_region": "Bretagne",
+      "produits_phytosanitaires_dpt.geocode_region": "53",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2016-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 2176775.552000001,
+      "produits_phytosanitaires_dpt.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "produits_phytosanitaires_dpt.libelle_region": "Nouvelle-Aquitaine",
+      "produits_phytosanitaires_dpt.geocode_region": "75",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2016-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 8640976.759999992,
+      "produits_phytosanitaires_dpt.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "produits_phytosanitaires_dpt.libelle_region": "Occitanie",
+      "produits_phytosanitaires_dpt.geocode_region": "76",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2016-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 5610993.534999993,
+      "produits_phytosanitaires_dpt.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "produits_phytosanitaires_dpt.libelle_region": "Auvergne-Rhône-Alpes",
+      "produits_phytosanitaires_dpt.geocode_region": "84",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2016-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 2377433.552000002,
       "produits_phytosanitaires_dpt.date_mesure": "2016-01-01T00:00:00.000"
     },
     {
@@ -467,136 +509,10 @@
       "produits_phytosanitaires_dpt.date_mesure": "2016-01-01T00:00:00.000"
     },
     {
-      "produits_phytosanitaires_dpt.libelle_region": "Nouvelle-Aquitaine",
-      "produits_phytosanitaires_dpt.geocode_region": "75",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2016-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 8640976.759999992,
-      "produits_phytosanitaires_dpt.date_mesure": "2016-01-01T00:00:00.000"
-    },
-    {
-      "produits_phytosanitaires_dpt.libelle_region": "Bretagne",
-      "produits_phytosanitaires_dpt.geocode_region": "53",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2016-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 2176775.552000001,
-      "produits_phytosanitaires_dpt.date_mesure": "2016-01-01T00:00:00.000"
-    },
-    {
-      "produits_phytosanitaires_dpt.libelle_region": "Centre-Val de Loire",
-      "produits_phytosanitaires_dpt.geocode_region": "24",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2016-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 5661434.134,
-      "produits_phytosanitaires_dpt.date_mesure": "2016-01-01T00:00:00.000"
-    },
-    {
-      "produits_phytosanitaires_dpt.libelle_region": "Auvergne-Rhône-Alpes",
-      "produits_phytosanitaires_dpt.geocode_region": "84",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2016-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 2377433.552000002,
-      "produits_phytosanitaires_dpt.date_mesure": "2016-01-01T00:00:00.000"
-    },
-    {
-      "produits_phytosanitaires_dpt.libelle_region": "Pays de la Loire",
-      "produits_phytosanitaires_dpt.geocode_region": "52",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2016-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 3563235.9680000017,
-      "produits_phytosanitaires_dpt.date_mesure": "2016-01-01T00:00:00.000"
-    },
-    {
-      "produits_phytosanitaires_dpt.libelle_region": "Occitanie",
-      "produits_phytosanitaires_dpt.geocode_region": "76",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2016-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 5610993.534999993,
-      "produits_phytosanitaires_dpt.date_mesure": "2016-01-01T00:00:00.000"
-    },
-    {
-      "produits_phytosanitaires_dpt.libelle_region": "Centre-Val de Loire",
-      "produits_phytosanitaires_dpt.geocode_region": "24",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2017-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 5632805.709000008,
-      "produits_phytosanitaires_dpt.date_mesure": "2017-01-01T00:00:00.000"
-    },
-    {
-      "produits_phytosanitaires_dpt.libelle_region": "Auvergne-Rhône-Alpes",
-      "produits_phytosanitaires_dpt.geocode_region": "84",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2017-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 2317968.1400000015,
-      "produits_phytosanitaires_dpt.date_mesure": "2017-01-01T00:00:00.000"
-    },
-    {
-      "produits_phytosanitaires_dpt.libelle_region": "Hauts-de-France",
-      "produits_phytosanitaires_dpt.geocode_region": "32",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2017-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 7448104.614000006,
-      "produits_phytosanitaires_dpt.date_mesure": "2017-01-01T00:00:00.000"
-    },
-    {
-      "produits_phytosanitaires_dpt.libelle_region": "Corse",
-      "produits_phytosanitaires_dpt.geocode_region": "94",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2017-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 86533.83799999992,
-      "produits_phytosanitaires_dpt.date_mesure": "2017-01-01T00:00:00.000"
-    },
-    {
-      "produits_phytosanitaires_dpt.libelle_region": "Bretagne",
-      "produits_phytosanitaires_dpt.geocode_region": "53",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2017-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 2078102.1820000005,
-      "produits_phytosanitaires_dpt.date_mesure": "2017-01-01T00:00:00.000"
-    },
-    {
-      "produits_phytosanitaires_dpt.libelle_region": "Guyane",
-      "produits_phytosanitaires_dpt.geocode_region": "03",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2017-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 1186.965,
-      "produits_phytosanitaires_dpt.date_mesure": "2017-01-01T00:00:00.000"
-    },
-    {
-      "produits_phytosanitaires_dpt.libelle_region": "Île-de-France",
-      "produits_phytosanitaires_dpt.geocode_region": "11",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2017-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 1949233.3089999987,
-      "produits_phytosanitaires_dpt.date_mesure": "2017-01-01T00:00:00.000"
-    },
-    {
       "produits_phytosanitaires_dpt.libelle_region": "Guadeloupe",
       "produits_phytosanitaires_dpt.geocode_region": "01",
       "produits_phytosanitaires_dpt.date_mesure.year": "2017-01-01T00:00:00.000",
       "produits_phytosanitaires_dpt.id_337": 2228.017,
-      "produits_phytosanitaires_dpt.date_mesure": "2017-01-01T00:00:00.000"
-    },
-    {
-      "produits_phytosanitaires_dpt.libelle_region": "Occitanie",
-      "produits_phytosanitaires_dpt.geocode_region": "76",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2017-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 5197204.121999998,
-      "produits_phytosanitaires_dpt.date_mesure": "2017-01-01T00:00:00.000"
-    },
-    {
-      "produits_phytosanitaires_dpt.libelle_region": "Grand Est",
-      "produits_phytosanitaires_dpt.geocode_region": "44",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2017-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 6412770.226000006,
-      "produits_phytosanitaires_dpt.date_mesure": "2017-01-01T00:00:00.000"
-    },
-    {
-      "produits_phytosanitaires_dpt.libelle_region": "Normandie",
-      "produits_phytosanitaires_dpt.geocode_region": "28",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2017-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 3911501.073000001,
-      "produits_phytosanitaires_dpt.date_mesure": "2017-01-01T00:00:00.000"
-    },
-    {
-      "produits_phytosanitaires_dpt.libelle_region": "Pays de la Loire",
-      "produits_phytosanitaires_dpt.geocode_region": "52",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2017-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 3525991.838,
-      "produits_phytosanitaires_dpt.date_mesure": "2017-01-01T00:00:00.000"
-    },
-    {
-      "produits_phytosanitaires_dpt.libelle_region": "Mayotte",
-      "produits_phytosanitaires_dpt.geocode_region": "06",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2017-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 84.04499999999999,
       "produits_phytosanitaires_dpt.date_mesure": "2017-01-01T00:00:00.000"
     },
     {
@@ -607,10 +523,10 @@
       "produits_phytosanitaires_dpt.date_mesure": "2017-01-01T00:00:00.000"
     },
     {
-      "produits_phytosanitaires_dpt.libelle_region": "Provence-Alpes-Côte d'Azur",
-      "produits_phytosanitaires_dpt.geocode_region": "93",
+      "produits_phytosanitaires_dpt.libelle_region": "Guyane",
+      "produits_phytosanitaires_dpt.geocode_region": "03",
       "produits_phytosanitaires_dpt.date_mesure.year": "2017-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 1253639.8880000007,
+      "produits_phytosanitaires_dpt.id_337": 1186.965,
       "produits_phytosanitaires_dpt.date_mesure": "2017-01-01T00:00:00.000"
     },
     {
@@ -621,10 +537,24 @@
       "produits_phytosanitaires_dpt.date_mesure": "2017-01-01T00:00:00.000"
     },
     {
-      "produits_phytosanitaires_dpt.libelle_region": "Nouvelle-Aquitaine",
-      "produits_phytosanitaires_dpt.geocode_region": "75",
+      "produits_phytosanitaires_dpt.libelle_region": "Mayotte",
+      "produits_phytosanitaires_dpt.geocode_region": "06",
       "produits_phytosanitaires_dpt.date_mesure.year": "2017-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 8185140.456000001,
+      "produits_phytosanitaires_dpt.id_337": 84.04499999999999,
+      "produits_phytosanitaires_dpt.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "produits_phytosanitaires_dpt.libelle_region": "Île-de-France",
+      "produits_phytosanitaires_dpt.geocode_region": "11",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2017-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 1949233.3089999987,
+      "produits_phytosanitaires_dpt.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "produits_phytosanitaires_dpt.libelle_region": "Centre-Val de Loire",
+      "produits_phytosanitaires_dpt.geocode_region": "24",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2017-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 5632805.709000008,
       "produits_phytosanitaires_dpt.date_mesure": "2017-01-01T00:00:00.000"
     },
     {
@@ -635,10 +565,150 @@
       "produits_phytosanitaires_dpt.date_mesure": "2017-01-01T00:00:00.000"
     },
     {
+      "produits_phytosanitaires_dpt.libelle_region": "Normandie",
+      "produits_phytosanitaires_dpt.geocode_region": "28",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2017-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 3911501.073000001,
+      "produits_phytosanitaires_dpt.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "produits_phytosanitaires_dpt.libelle_region": "Hauts-de-France",
+      "produits_phytosanitaires_dpt.geocode_region": "32",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2017-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 7448104.614000006,
+      "produits_phytosanitaires_dpt.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "produits_phytosanitaires_dpt.libelle_region": "Grand Est",
+      "produits_phytosanitaires_dpt.geocode_region": "44",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2017-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 6412770.226000006,
+      "produits_phytosanitaires_dpt.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "produits_phytosanitaires_dpt.libelle_region": "Pays de la Loire",
+      "produits_phytosanitaires_dpt.geocode_region": "52",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2017-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 3525991.838,
+      "produits_phytosanitaires_dpt.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "produits_phytosanitaires_dpt.libelle_region": "Bretagne",
+      "produits_phytosanitaires_dpt.geocode_region": "53",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2017-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 2078102.1820000005,
+      "produits_phytosanitaires_dpt.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "produits_phytosanitaires_dpt.libelle_region": "Nouvelle-Aquitaine",
+      "produits_phytosanitaires_dpt.geocode_region": "75",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2017-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 8185140.456000001,
+      "produits_phytosanitaires_dpt.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "produits_phytosanitaires_dpt.libelle_region": "Occitanie",
+      "produits_phytosanitaires_dpt.geocode_region": "76",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2017-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 5197204.121999998,
+      "produits_phytosanitaires_dpt.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "produits_phytosanitaires_dpt.libelle_region": "Auvergne-Rhône-Alpes",
+      "produits_phytosanitaires_dpt.geocode_region": "84",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2017-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 2317968.1400000015,
+      "produits_phytosanitaires_dpt.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "produits_phytosanitaires_dpt.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "produits_phytosanitaires_dpt.geocode_region": "93",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2017-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 1253639.8880000007,
+      "produits_phytosanitaires_dpt.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "produits_phytosanitaires_dpt.libelle_region": "Corse",
+      "produits_phytosanitaires_dpt.geocode_region": "94",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2017-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 86533.83799999992,
+      "produits_phytosanitaires_dpt.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "produits_phytosanitaires_dpt.libelle_region": "Guadeloupe",
+      "produits_phytosanitaires_dpt.geocode_region": "01",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2018-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 10234.637,
+      "produits_phytosanitaires_dpt.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "produits_phytosanitaires_dpt.libelle_region": "Martinique",
+      "produits_phytosanitaires_dpt.geocode_region": "02",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2018-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 23359.361999999997,
+      "produits_phytosanitaires_dpt.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "produits_phytosanitaires_dpt.libelle_region": "Guyane",
+      "produits_phytosanitaires_dpt.geocode_region": "03",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2018-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 1532.3300000000002,
+      "produits_phytosanitaires_dpt.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "produits_phytosanitaires_dpt.libelle_region": "La Réunion",
+      "produits_phytosanitaires_dpt.geocode_region": "04",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2018-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 26.708000000000002,
+      "produits_phytosanitaires_dpt.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
       "produits_phytosanitaires_dpt.libelle_region": "Mayotte",
       "produits_phytosanitaires_dpt.geocode_region": "06",
       "produits_phytosanitaires_dpt.date_mesure.year": "2018-01-01T00:00:00.000",
       "produits_phytosanitaires_dpt.id_337": 82.081,
+      "produits_phytosanitaires_dpt.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "produits_phytosanitaires_dpt.libelle_region": "Île-de-France",
+      "produits_phytosanitaires_dpt.geocode_region": "11",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2018-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 2221690.1980000013,
+      "produits_phytosanitaires_dpt.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "produits_phytosanitaires_dpt.libelle_region": "Centre-Val de Loire",
+      "produits_phytosanitaires_dpt.geocode_region": "24",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2018-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 6338667.785999992,
+      "produits_phytosanitaires_dpt.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "produits_phytosanitaires_dpt.libelle_region": "Bourgogne-Franche-Comté",
+      "produits_phytosanitaires_dpt.geocode_region": "27",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2018-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 3549478.7769999965,
+      "produits_phytosanitaires_dpt.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "produits_phytosanitaires_dpt.libelle_region": "Normandie",
+      "produits_phytosanitaires_dpt.geocode_region": "28",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2018-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 4715065.1360000055,
+      "produits_phytosanitaires_dpt.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "produits_phytosanitaires_dpt.libelle_region": "Hauts-de-France",
+      "produits_phytosanitaires_dpt.geocode_region": "32",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2018-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 11503084.323,
+      "produits_phytosanitaires_dpt.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "produits_phytosanitaires_dpt.libelle_region": "Grand Est",
+      "produits_phytosanitaires_dpt.geocode_region": "44",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2018-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 7193238.302999984,
       "produits_phytosanitaires_dpt.date_mesure": "2018-01-01T00:00:00.000"
     },
     {
@@ -649,17 +719,38 @@
       "produits_phytosanitaires_dpt.date_mesure": "2018-01-01T00:00:00.000"
     },
     {
-      "produits_phytosanitaires_dpt.libelle_region": "Provence-Alpes-Côte d'Azur",
-      "produits_phytosanitaires_dpt.geocode_region": "93",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2018-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 1884157.314999999,
-      "produits_phytosanitaires_dpt.date_mesure": "2018-01-01T00:00:00.000"
-    },
-    {
       "produits_phytosanitaires_dpt.libelle_region": "Bretagne",
       "produits_phytosanitaires_dpt.geocode_region": "53",
       "produits_phytosanitaires_dpt.date_mesure.year": "2018-01-01T00:00:00.000",
       "produits_phytosanitaires_dpt.id_337": 2222824.4510000045,
+      "produits_phytosanitaires_dpt.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "produits_phytosanitaires_dpt.libelle_region": "Nouvelle-Aquitaine",
+      "produits_phytosanitaires_dpt.geocode_region": "75",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2018-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 9958328.440000003,
+      "produits_phytosanitaires_dpt.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "produits_phytosanitaires_dpt.libelle_region": "Occitanie",
+      "produits_phytosanitaires_dpt.geocode_region": "76",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2018-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 7021851.898000009,
+      "produits_phytosanitaires_dpt.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "produits_phytosanitaires_dpt.libelle_region": "Auvergne-Rhône-Alpes",
+      "produits_phytosanitaires_dpt.geocode_region": "84",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2018-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 2721325.725,
+      "produits_phytosanitaires_dpt.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "produits_phytosanitaires_dpt.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "produits_phytosanitaires_dpt.geocode_region": "93",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2018-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 1884157.314999999,
       "produits_phytosanitaires_dpt.date_mesure": "2018-01-01T00:00:00.000"
     },
     {
@@ -672,197 +763,8 @@
     {
       "produits_phytosanitaires_dpt.libelle_region": "Guadeloupe",
       "produits_phytosanitaires_dpt.geocode_region": "01",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2018-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 10234.637,
-      "produits_phytosanitaires_dpt.date_mesure": "2018-01-01T00:00:00.000"
-    },
-    {
-      "produits_phytosanitaires_dpt.libelle_region": "Auvergne-Rhône-Alpes",
-      "produits_phytosanitaires_dpt.geocode_region": "84",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2018-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 2721325.725,
-      "produits_phytosanitaires_dpt.date_mesure": "2018-01-01T00:00:00.000"
-    },
-    {
-      "produits_phytosanitaires_dpt.libelle_region": "Guyane",
-      "produits_phytosanitaires_dpt.geocode_region": "03",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2018-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 1532.3300000000002,
-      "produits_phytosanitaires_dpt.date_mesure": "2018-01-01T00:00:00.000"
-    },
-    {
-      "produits_phytosanitaires_dpt.libelle_region": "Île-de-France",
-      "produits_phytosanitaires_dpt.geocode_region": "11",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2018-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 2221690.1980000013,
-      "produits_phytosanitaires_dpt.date_mesure": "2018-01-01T00:00:00.000"
-    },
-    {
-      "produits_phytosanitaires_dpt.libelle_region": "Martinique",
-      "produits_phytosanitaires_dpt.geocode_region": "02",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2018-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 23359.361999999997,
-      "produits_phytosanitaires_dpt.date_mesure": "2018-01-01T00:00:00.000"
-    },
-    {
-      "produits_phytosanitaires_dpt.libelle_region": "Centre-Val de Loire",
-      "produits_phytosanitaires_dpt.geocode_region": "24",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2018-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 6338667.785999992,
-      "produits_phytosanitaires_dpt.date_mesure": "2018-01-01T00:00:00.000"
-    },
-    {
-      "produits_phytosanitaires_dpt.libelle_region": "Hauts-de-France",
-      "produits_phytosanitaires_dpt.geocode_region": "32",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2018-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 11503084.323,
-      "produits_phytosanitaires_dpt.date_mesure": "2018-01-01T00:00:00.000"
-    },
-    {
-      "produits_phytosanitaires_dpt.libelle_region": "La Réunion",
-      "produits_phytosanitaires_dpt.geocode_region": "04",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2018-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 26.708000000000002,
-      "produits_phytosanitaires_dpt.date_mesure": "2018-01-01T00:00:00.000"
-    },
-    {
-      "produits_phytosanitaires_dpt.libelle_region": "Normandie",
-      "produits_phytosanitaires_dpt.geocode_region": "28",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2018-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 4715065.1360000055,
-      "produits_phytosanitaires_dpt.date_mesure": "2018-01-01T00:00:00.000"
-    },
-    {
-      "produits_phytosanitaires_dpt.libelle_region": "Occitanie",
-      "produits_phytosanitaires_dpt.geocode_region": "76",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2018-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 7021851.898000009,
-      "produits_phytosanitaires_dpt.date_mesure": "2018-01-01T00:00:00.000"
-    },
-    {
-      "produits_phytosanitaires_dpt.libelle_region": "Grand Est",
-      "produits_phytosanitaires_dpt.geocode_region": "44",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2018-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 7193238.302999984,
-      "produits_phytosanitaires_dpt.date_mesure": "2018-01-01T00:00:00.000"
-    },
-    {
-      "produits_phytosanitaires_dpt.libelle_region": "Bourgogne-Franche-Comté",
-      "produits_phytosanitaires_dpt.geocode_region": "27",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2018-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 3549478.7769999965,
-      "produits_phytosanitaires_dpt.date_mesure": "2018-01-01T00:00:00.000"
-    },
-    {
-      "produits_phytosanitaires_dpt.libelle_region": "Nouvelle-Aquitaine",
-      "produits_phytosanitaires_dpt.geocode_region": "75",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2018-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 9958328.440000003,
-      "produits_phytosanitaires_dpt.date_mesure": "2018-01-01T00:00:00.000"
-    },
-    {
-      "produits_phytosanitaires_dpt.libelle_region": "Grand Est",
-      "produits_phytosanitaires_dpt.geocode_region": "44",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2019-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 4777980.832000001,
-      "produits_phytosanitaires_dpt.date_mesure": "2019-01-01T00:00:00.000"
-    },
-    {
-      "produits_phytosanitaires_dpt.libelle_region": "Auvergne-Rhône-Alpes",
-      "produits_phytosanitaires_dpt.geocode_region": "84",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2019-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 1519114.2090000038,
-      "produits_phytosanitaires_dpt.date_mesure": "2019-01-01T00:00:00.000"
-    },
-    {
-      "produits_phytosanitaires_dpt.libelle_region": "Occitanie",
-      "produits_phytosanitaires_dpt.geocode_region": "76",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2019-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 3794244.191000001,
-      "produits_phytosanitaires_dpt.date_mesure": "2019-01-01T00:00:00.000"
-    },
-    {
-      "produits_phytosanitaires_dpt.libelle_region": "Centre-Val de Loire",
-      "produits_phytosanitaires_dpt.geocode_region": "24",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2019-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 4089218.171999995,
-      "produits_phytosanitaires_dpt.date_mesure": "2019-01-01T00:00:00.000"
-    },
-    {
-      "produits_phytosanitaires_dpt.libelle_region": "Normandie",
-      "produits_phytosanitaires_dpt.geocode_region": "28",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2019-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 2693561.4740000023,
-      "produits_phytosanitaires_dpt.date_mesure": "2019-01-01T00:00:00.000"
-    },
-    {
-      "produits_phytosanitaires_dpt.libelle_region": "Bretagne",
-      "produits_phytosanitaires_dpt.geocode_region": "53",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2019-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 1507662.5059999987,
-      "produits_phytosanitaires_dpt.date_mesure": "2019-01-01T00:00:00.000"
-    },
-    {
-      "produits_phytosanitaires_dpt.libelle_region": "Île-de-France",
-      "produits_phytosanitaires_dpt.geocode_region": "11",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2019-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 1377280.8190000043,
-      "produits_phytosanitaires_dpt.date_mesure": "2019-01-01T00:00:00.000"
-    },
-    {
-      "produits_phytosanitaires_dpt.libelle_region": "Bourgogne-Franche-Comté",
-      "produits_phytosanitaires_dpt.geocode_region": "27",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2019-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 2047244.126,
-      "produits_phytosanitaires_dpt.date_mesure": "2019-01-01T00:00:00.000"
-    },
-    {
-      "produits_phytosanitaires_dpt.libelle_region": "Mayotte",
-      "produits_phytosanitaires_dpt.geocode_region": "06",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2019-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 59.055,
-      "produits_phytosanitaires_dpt.date_mesure": "2019-01-01T00:00:00.000"
-    },
-    {
-      "produits_phytosanitaires_dpt.libelle_region": "Guyane",
-      "produits_phytosanitaires_dpt.geocode_region": "03",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2019-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 1236.28,
-      "produits_phytosanitaires_dpt.date_mesure": "2019-01-01T00:00:00.000"
-    },
-    {
-      "produits_phytosanitaires_dpt.libelle_region": "Provence-Alpes-Côte d'Azur",
-      "produits_phytosanitaires_dpt.geocode_region": "93",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2019-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 971899.7900000006,
-      "produits_phytosanitaires_dpt.date_mesure": "2019-01-01T00:00:00.000"
-    },
-    {
-      "produits_phytosanitaires_dpt.libelle_region": "Guadeloupe",
-      "produits_phytosanitaires_dpt.geocode_region": "01",
       "produits_phytosanitaires_dpt.date_mesure.year": "2019-01-01T00:00:00.000",
       "produits_phytosanitaires_dpt.id_337": 2581.772,
-      "produits_phytosanitaires_dpt.date_mesure": "2019-01-01T00:00:00.000"
-    },
-    {
-      "produits_phytosanitaires_dpt.libelle_region": "Corse",
-      "produits_phytosanitaires_dpt.geocode_region": "94",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2019-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 68801.66500000005,
-      "produits_phytosanitaires_dpt.date_mesure": "2019-01-01T00:00:00.000"
-    },
-    {
-      "produits_phytosanitaires_dpt.libelle_region": "Hauts-de-France",
-      "produits_phytosanitaires_dpt.geocode_region": "32",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2019-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 4969113.864999999,
-      "produits_phytosanitaires_dpt.date_mesure": "2019-01-01T00:00:00.000"
-    },
-    {
-      "produits_phytosanitaires_dpt.libelle_region": "Nouvelle-Aquitaine",
-      "produits_phytosanitaires_dpt.geocode_region": "75",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2019-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 5828691.8119999925,
       "produits_phytosanitaires_dpt.date_mesure": "2019-01-01T00:00:00.000"
     },
     {
@@ -873,10 +775,10 @@
       "produits_phytosanitaires_dpt.date_mesure": "2019-01-01T00:00:00.000"
     },
     {
-      "produits_phytosanitaires_dpt.libelle_region": "Pays de la Loire",
-      "produits_phytosanitaires_dpt.geocode_region": "52",
+      "produits_phytosanitaires_dpt.libelle_region": "Guyane",
+      "produits_phytosanitaires_dpt.geocode_region": "03",
       "produits_phytosanitaires_dpt.date_mesure.year": "2019-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 2161184.629,
+      "produits_phytosanitaires_dpt.id_337": 1236.28,
       "produits_phytosanitaires_dpt.date_mesure": "2019-01-01T00:00:00.000"
     },
     {
@@ -887,31 +789,115 @@
       "produits_phytosanitaires_dpt.date_mesure": "2019-01-01T00:00:00.000"
     },
     {
-      "produits_phytosanitaires_dpt.libelle_region": "Martinique",
-      "produits_phytosanitaires_dpt.geocode_region": "02",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2020-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 276.35900000000004,
-      "produits_phytosanitaires_dpt.date_mesure": "2020-01-01T00:00:00.000"
+      "produits_phytosanitaires_dpt.libelle_region": "Mayotte",
+      "produits_phytosanitaires_dpt.geocode_region": "06",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2019-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 59.055,
+      "produits_phytosanitaires_dpt.date_mesure": "2019-01-01T00:00:00.000"
     },
     {
-      "produits_phytosanitaires_dpt.libelle_region": "Pays de la Loire",
-      "produits_phytosanitaires_dpt.geocode_region": "52",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2020-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 2557765.4519999987,
-      "produits_phytosanitaires_dpt.date_mesure": "2020-01-01T00:00:00.000"
-    },
-    {
-      "produits_phytosanitaires_dpt.libelle_region": "Auvergne-Rhône-Alpes",
-      "produits_phytosanitaires_dpt.geocode_region": "84",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2020-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 1901633.7629999954,
-      "produits_phytosanitaires_dpt.date_mesure": "2020-01-01T00:00:00.000"
+      "produits_phytosanitaires_dpt.libelle_region": "Île-de-France",
+      "produits_phytosanitaires_dpt.geocode_region": "11",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2019-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 1377280.8190000043,
+      "produits_phytosanitaires_dpt.date_mesure": "2019-01-01T00:00:00.000"
     },
     {
       "produits_phytosanitaires_dpt.libelle_region": "Centre-Val de Loire",
       "produits_phytosanitaires_dpt.geocode_region": "24",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2019-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 4089218.171999995,
+      "produits_phytosanitaires_dpt.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "produits_phytosanitaires_dpt.libelle_region": "Bourgogne-Franche-Comté",
+      "produits_phytosanitaires_dpt.geocode_region": "27",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2019-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 2047244.126,
+      "produits_phytosanitaires_dpt.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "produits_phytosanitaires_dpt.libelle_region": "Normandie",
+      "produits_phytosanitaires_dpt.geocode_region": "28",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2019-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 2693561.4740000023,
+      "produits_phytosanitaires_dpt.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "produits_phytosanitaires_dpt.libelle_region": "Hauts-de-France",
+      "produits_phytosanitaires_dpt.geocode_region": "32",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2019-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 4969113.864999999,
+      "produits_phytosanitaires_dpt.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "produits_phytosanitaires_dpt.libelle_region": "Grand Est",
+      "produits_phytosanitaires_dpt.geocode_region": "44",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2019-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 4777980.832000001,
+      "produits_phytosanitaires_dpt.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "produits_phytosanitaires_dpt.libelle_region": "Pays de la Loire",
+      "produits_phytosanitaires_dpt.geocode_region": "52",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2019-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 2161184.629,
+      "produits_phytosanitaires_dpt.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "produits_phytosanitaires_dpt.libelle_region": "Bretagne",
+      "produits_phytosanitaires_dpt.geocode_region": "53",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2019-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 1507662.5059999987,
+      "produits_phytosanitaires_dpt.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "produits_phytosanitaires_dpt.libelle_region": "Nouvelle-Aquitaine",
+      "produits_phytosanitaires_dpt.geocode_region": "75",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2019-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 5828691.8119999925,
+      "produits_phytosanitaires_dpt.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "produits_phytosanitaires_dpt.libelle_region": "Occitanie",
+      "produits_phytosanitaires_dpt.geocode_region": "76",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2019-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 3794244.191000001,
+      "produits_phytosanitaires_dpt.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "produits_phytosanitaires_dpt.libelle_region": "Auvergne-Rhône-Alpes",
+      "produits_phytosanitaires_dpt.geocode_region": "84",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2019-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 1519114.2090000038,
+      "produits_phytosanitaires_dpt.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "produits_phytosanitaires_dpt.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "produits_phytosanitaires_dpt.geocode_region": "93",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2019-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 971899.7900000006,
+      "produits_phytosanitaires_dpt.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "produits_phytosanitaires_dpt.libelle_region": "Corse",
+      "produits_phytosanitaires_dpt.geocode_region": "94",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2019-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 68801.66500000005,
+      "produits_phytosanitaires_dpt.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "produits_phytosanitaires_dpt.libelle_region": "Guadeloupe",
+      "produits_phytosanitaires_dpt.geocode_region": "01",
       "produits_phytosanitaires_dpt.date_mesure.year": "2020-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 5233744.097000018,
+      "produits_phytosanitaires_dpt.id_337": 854.3229999999999,
+      "produits_phytosanitaires_dpt.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "produits_phytosanitaires_dpt.libelle_region": "Martinique",
+      "produits_phytosanitaires_dpt.geocode_region": "02",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2020-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 276.35900000000004,
       "produits_phytosanitaires_dpt.date_mesure": "2020-01-01T00:00:00.000"
     },
     {
@@ -922,38 +908,10 @@
       "produits_phytosanitaires_dpt.date_mesure": "2020-01-01T00:00:00.000"
     },
     {
-      "produits_phytosanitaires_dpt.libelle_region": "Nouvelle-Aquitaine",
-      "produits_phytosanitaires_dpt.geocode_region": "75",
+      "produits_phytosanitaires_dpt.libelle_region": "La Réunion",
+      "produits_phytosanitaires_dpt.geocode_region": "04",
       "produits_phytosanitaires_dpt.date_mesure.year": "2020-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 7207460.550000012,
-      "produits_phytosanitaires_dpt.date_mesure": "2020-01-01T00:00:00.000"
-    },
-    {
-      "produits_phytosanitaires_dpt.libelle_region": "Normandie",
-      "produits_phytosanitaires_dpt.geocode_region": "28",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2020-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 3312641.5979999993,
-      "produits_phytosanitaires_dpt.date_mesure": "2020-01-01T00:00:00.000"
-    },
-    {
-      "produits_phytosanitaires_dpt.libelle_region": "Corse",
-      "produits_phytosanitaires_dpt.geocode_region": "94",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2020-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 86598.29999999999,
-      "produits_phytosanitaires_dpt.date_mesure": "2020-01-01T00:00:00.000"
-    },
-    {
-      "produits_phytosanitaires_dpt.libelle_region": "Guadeloupe",
-      "produits_phytosanitaires_dpt.geocode_region": "01",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2020-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 854.3229999999999,
-      "produits_phytosanitaires_dpt.date_mesure": "2020-01-01T00:00:00.000"
-    },
-    {
-      "produits_phytosanitaires_dpt.libelle_region": "Bourgogne-Franche-Comté",
-      "produits_phytosanitaires_dpt.geocode_region": "27",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2020-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 2635338.0020000036,
+      "produits_phytosanitaires_dpt.id_337": 0.188,
       "produits_phytosanitaires_dpt.date_mesure": "2020-01-01T00:00:00.000"
     },
     {
@@ -971,10 +929,24 @@
       "produits_phytosanitaires_dpt.date_mesure": "2020-01-01T00:00:00.000"
     },
     {
-      "produits_phytosanitaires_dpt.libelle_region": "La Réunion",
-      "produits_phytosanitaires_dpt.geocode_region": "04",
+      "produits_phytosanitaires_dpt.libelle_region": "Centre-Val de Loire",
+      "produits_phytosanitaires_dpt.geocode_region": "24",
       "produits_phytosanitaires_dpt.date_mesure.year": "2020-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 0.188,
+      "produits_phytosanitaires_dpt.id_337": 5233744.097000018,
+      "produits_phytosanitaires_dpt.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "produits_phytosanitaires_dpt.libelle_region": "Bourgogne-Franche-Comté",
+      "produits_phytosanitaires_dpt.geocode_region": "27",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2020-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 2635338.0020000036,
+      "produits_phytosanitaires_dpt.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "produits_phytosanitaires_dpt.libelle_region": "Normandie",
+      "produits_phytosanitaires_dpt.geocode_region": "28",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2020-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 3312641.5979999993,
       "produits_phytosanitaires_dpt.date_mesure": "2020-01-01T00:00:00.000"
     },
     {
@@ -985,13 +957,6 @@
       "produits_phytosanitaires_dpt.date_mesure": "2020-01-01T00:00:00.000"
     },
     {
-      "produits_phytosanitaires_dpt.libelle_region": "Provence-Alpes-Côte d'Azur",
-      "produits_phytosanitaires_dpt.geocode_region": "93",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2020-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 1148176.753,
-      "produits_phytosanitaires_dpt.date_mesure": "2020-01-01T00:00:00.000"
-    },
-    {
       "produits_phytosanitaires_dpt.libelle_region": "Grand Est",
       "produits_phytosanitaires_dpt.geocode_region": "44",
       "produits_phytosanitaires_dpt.date_mesure.year": "2020-01-01T00:00:00.000",
@@ -999,10 +964,10 @@
       "produits_phytosanitaires_dpt.date_mesure": "2020-01-01T00:00:00.000"
     },
     {
-      "produits_phytosanitaires_dpt.libelle_region": "Occitanie",
-      "produits_phytosanitaires_dpt.geocode_region": "76",
+      "produits_phytosanitaires_dpt.libelle_region": "Pays de la Loire",
+      "produits_phytosanitaires_dpt.geocode_region": "52",
       "produits_phytosanitaires_dpt.date_mesure.year": "2020-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 4803683.918000001,
+      "produits_phytosanitaires_dpt.id_337": 2557765.4519999987,
       "produits_phytosanitaires_dpt.date_mesure": "2020-01-01T00:00:00.000"
     },
     {
@@ -1013,10 +978,94 @@
       "produits_phytosanitaires_dpt.date_mesure": "2020-01-01T00:00:00.000"
     },
     {
+      "produits_phytosanitaires_dpt.libelle_region": "Nouvelle-Aquitaine",
+      "produits_phytosanitaires_dpt.geocode_region": "75",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2020-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 7207460.550000012,
+      "produits_phytosanitaires_dpt.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "produits_phytosanitaires_dpt.libelle_region": "Occitanie",
+      "produits_phytosanitaires_dpt.geocode_region": "76",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2020-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 4803683.918000001,
+      "produits_phytosanitaires_dpt.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "produits_phytosanitaires_dpt.libelle_region": "Auvergne-Rhône-Alpes",
+      "produits_phytosanitaires_dpt.geocode_region": "84",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2020-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 1901633.7629999954,
+      "produits_phytosanitaires_dpt.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "produits_phytosanitaires_dpt.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "produits_phytosanitaires_dpt.geocode_region": "93",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2020-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 1148176.753,
+      "produits_phytosanitaires_dpt.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "produits_phytosanitaires_dpt.libelle_region": "Corse",
+      "produits_phytosanitaires_dpt.geocode_region": "94",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2020-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 86598.29999999999,
+      "produits_phytosanitaires_dpt.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "produits_phytosanitaires_dpt.libelle_region": "Guadeloupe",
+      "produits_phytosanitaires_dpt.geocode_region": "01",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2021-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 785.6990000000001,
+      "produits_phytosanitaires_dpt.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "produits_phytosanitaires_dpt.libelle_region": "Martinique",
+      "produits_phytosanitaires_dpt.geocode_region": "02",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2021-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 301.8130000000001,
+      "produits_phytosanitaires_dpt.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "produits_phytosanitaires_dpt.libelle_region": "Guyane",
+      "produits_phytosanitaires_dpt.geocode_region": "03",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2021-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 17.357,
+      "produits_phytosanitaires_dpt.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "produits_phytosanitaires_dpt.libelle_region": "La Réunion",
+      "produits_phytosanitaires_dpt.geocode_region": "04",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2021-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 12981.109999999999,
+      "produits_phytosanitaires_dpt.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "produits_phytosanitaires_dpt.libelle_region": "Mayotte",
+      "produits_phytosanitaires_dpt.geocode_region": "06",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2021-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 19.448,
+      "produits_phytosanitaires_dpt.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "produits_phytosanitaires_dpt.libelle_region": "Île-de-France",
+      "produits_phytosanitaires_dpt.geocode_region": "11",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2021-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 1830797.975999999,
+      "produits_phytosanitaires_dpt.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
       "produits_phytosanitaires_dpt.libelle_region": "Centre-Val de Loire",
       "produits_phytosanitaires_dpt.geocode_region": "24",
       "produits_phytosanitaires_dpt.date_mesure.year": "2021-01-01T00:00:00.000",
       "produits_phytosanitaires_dpt.id_337": 5648556.546999993,
+      "produits_phytosanitaires_dpt.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "produits_phytosanitaires_dpt.libelle_region": "Bourgogne-Franche-Comté",
+      "produits_phytosanitaires_dpt.geocode_region": "27",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2021-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 2733647.6469999994,
       "produits_phytosanitaires_dpt.date_mesure": "2021-01-01T00:00:00.000"
     },
     {
@@ -1034,24 +1083,10 @@
       "produits_phytosanitaires_dpt.date_mesure": "2021-01-01T00:00:00.000"
     },
     {
-      "produits_phytosanitaires_dpt.libelle_region": "Bretagne",
-      "produits_phytosanitaires_dpt.geocode_region": "53",
+      "produits_phytosanitaires_dpt.libelle_region": "Grand Est",
+      "produits_phytosanitaires_dpt.geocode_region": "44",
       "produits_phytosanitaires_dpt.date_mesure.year": "2021-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 1744192.4149999977,
-      "produits_phytosanitaires_dpt.date_mesure": "2021-01-01T00:00:00.000"
-    },
-    {
-      "produits_phytosanitaires_dpt.libelle_region": "Occitanie",
-      "produits_phytosanitaires_dpt.geocode_region": "76",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2021-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 4017967.611000008,
-      "produits_phytosanitaires_dpt.date_mesure": "2021-01-01T00:00:00.000"
-    },
-    {
-      "produits_phytosanitaires_dpt.libelle_region": "Corse",
-      "produits_phytosanitaires_dpt.geocode_region": "94",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2021-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 88598.589,
+      "produits_phytosanitaires_dpt.id_337": 5719758.753999996,
       "produits_phytosanitaires_dpt.date_mesure": "2021-01-01T00:00:00.000"
     },
     {
@@ -1062,6 +1097,13 @@
       "produits_phytosanitaires_dpt.date_mesure": "2021-01-01T00:00:00.000"
     },
     {
+      "produits_phytosanitaires_dpt.libelle_region": "Bretagne",
+      "produits_phytosanitaires_dpt.geocode_region": "53",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2021-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 1744192.4149999977,
+      "produits_phytosanitaires_dpt.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
       "produits_phytosanitaires_dpt.libelle_region": "Nouvelle-Aquitaine",
       "produits_phytosanitaires_dpt.geocode_region": "75",
       "produits_phytosanitaires_dpt.date_mesure.year": "2021-01-01T00:00:00.000",
@@ -1069,52 +1111,10 @@
       "produits_phytosanitaires_dpt.date_mesure": "2021-01-01T00:00:00.000"
     },
     {
-      "produits_phytosanitaires_dpt.libelle_region": "Guyane",
-      "produits_phytosanitaires_dpt.geocode_region": "03",
+      "produits_phytosanitaires_dpt.libelle_region": "Occitanie",
+      "produits_phytosanitaires_dpt.geocode_region": "76",
       "produits_phytosanitaires_dpt.date_mesure.year": "2021-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 17.357,
-      "produits_phytosanitaires_dpt.date_mesure": "2021-01-01T00:00:00.000"
-    },
-    {
-      "produits_phytosanitaires_dpt.libelle_region": "Provence-Alpes-Côte d'Azur",
-      "produits_phytosanitaires_dpt.geocode_region": "93",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2021-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 960747.2799999979,
-      "produits_phytosanitaires_dpt.date_mesure": "2021-01-01T00:00:00.000"
-    },
-    {
-      "produits_phytosanitaires_dpt.libelle_region": "Mayotte",
-      "produits_phytosanitaires_dpt.geocode_region": "06",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2021-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 19.448,
-      "produits_phytosanitaires_dpt.date_mesure": "2021-01-01T00:00:00.000"
-    },
-    {
-      "produits_phytosanitaires_dpt.libelle_region": "Grand Est",
-      "produits_phytosanitaires_dpt.geocode_region": "44",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2021-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 5719758.753999996,
-      "produits_phytosanitaires_dpt.date_mesure": "2021-01-01T00:00:00.000"
-    },
-    {
-      "produits_phytosanitaires_dpt.libelle_region": "Guadeloupe",
-      "produits_phytosanitaires_dpt.geocode_region": "01",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2021-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 785.6990000000001,
-      "produits_phytosanitaires_dpt.date_mesure": "2021-01-01T00:00:00.000"
-    },
-    {
-      "produits_phytosanitaires_dpt.libelle_region": "Île-de-France",
-      "produits_phytosanitaires_dpt.geocode_region": "11",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2021-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 1830797.975999999,
-      "produits_phytosanitaires_dpt.date_mesure": "2021-01-01T00:00:00.000"
-    },
-    {
-      "produits_phytosanitaires_dpt.libelle_region": "La Réunion",
-      "produits_phytosanitaires_dpt.geocode_region": "04",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2021-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 12981.109999999999,
+      "produits_phytosanitaires_dpt.id_337": 4017967.611000008,
       "produits_phytosanitaires_dpt.date_mesure": "2021-01-01T00:00:00.000"
     },
     {
@@ -1125,18 +1125,116 @@
       "produits_phytosanitaires_dpt.date_mesure": "2021-01-01T00:00:00.000"
     },
     {
+      "produits_phytosanitaires_dpt.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "produits_phytosanitaires_dpt.geocode_region": "93",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2021-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 960747.2799999979,
+      "produits_phytosanitaires_dpt.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "produits_phytosanitaires_dpt.libelle_region": "Corse",
+      "produits_phytosanitaires_dpt.geocode_region": "94",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2021-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 88598.589,
+      "produits_phytosanitaires_dpt.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "produits_phytosanitaires_dpt.libelle_region": "Guadeloupe",
+      "produits_phytosanitaires_dpt.geocode_region": "01",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2022-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 825.6160000000001,
+      "produits_phytosanitaires_dpt.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
       "produits_phytosanitaires_dpt.libelle_region": "Martinique",
       "produits_phytosanitaires_dpt.geocode_region": "02",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2021-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 301.8130000000001,
-      "produits_phytosanitaires_dpt.date_mesure": "2021-01-01T00:00:00.000"
+      "produits_phytosanitaires_dpt.date_mesure.year": "2022-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 736.3719999999998,
+      "produits_phytosanitaires_dpt.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "produits_phytosanitaires_dpt.libelle_region": "Guyane",
+      "produits_phytosanitaires_dpt.geocode_region": "03",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2022-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 5.851,
+      "produits_phytosanitaires_dpt.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "produits_phytosanitaires_dpt.libelle_region": "La Réunion",
+      "produits_phytosanitaires_dpt.geocode_region": "04",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2022-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 66600.304,
+      "produits_phytosanitaires_dpt.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "produits_phytosanitaires_dpt.libelle_region": "Mayotte",
+      "produits_phytosanitaires_dpt.geocode_region": "06",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2022-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 72.838,
+      "produits_phytosanitaires_dpt.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "produits_phytosanitaires_dpt.libelle_region": "Île-de-France",
+      "produits_phytosanitaires_dpt.geocode_region": "11",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2022-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 1916817.6930000007,
+      "produits_phytosanitaires_dpt.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "produits_phytosanitaires_dpt.libelle_region": "Centre-Val de Loire",
+      "produits_phytosanitaires_dpt.geocode_region": "24",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2022-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 5549245.589999996,
+      "produits_phytosanitaires_dpt.date_mesure": "2022-01-01T00:00:00.000"
     },
     {
       "produits_phytosanitaires_dpt.libelle_region": "Bourgogne-Franche-Comté",
       "produits_phytosanitaires_dpt.geocode_region": "27",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2021-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 2733647.6469999994,
-      "produits_phytosanitaires_dpt.date_mesure": "2021-01-01T00:00:00.000"
+      "produits_phytosanitaires_dpt.date_mesure.year": "2022-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 2807830.310999994,
+      "produits_phytosanitaires_dpt.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "produits_phytosanitaires_dpt.libelle_region": "Normandie",
+      "produits_phytosanitaires_dpt.geocode_region": "28",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2022-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 3634827.2020000033,
+      "produits_phytosanitaires_dpt.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "produits_phytosanitaires_dpt.libelle_region": "Hauts-de-France",
+      "produits_phytosanitaires_dpt.geocode_region": "32",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2022-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 6974053.123000009,
+      "produits_phytosanitaires_dpt.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "produits_phytosanitaires_dpt.libelle_region": "Grand Est",
+      "produits_phytosanitaires_dpt.geocode_region": "44",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2022-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 5656305.100000004,
+      "produits_phytosanitaires_dpt.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "produits_phytosanitaires_dpt.libelle_region": "Pays de la Loire",
+      "produits_phytosanitaires_dpt.geocode_region": "52",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2022-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 2534332.3410000014,
+      "produits_phytosanitaires_dpt.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "produits_phytosanitaires_dpt.libelle_region": "Bretagne",
+      "produits_phytosanitaires_dpt.geocode_region": "53",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2022-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 1631840.2049999994,
+      "produits_phytosanitaires_dpt.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "produits_phytosanitaires_dpt.libelle_region": "Nouvelle-Aquitaine",
+      "produits_phytosanitaires_dpt.geocode_region": "75",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2022-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 6462289.76199998,
+      "produits_phytosanitaires_dpt.date_mesure": "2022-01-01T00:00:00.000"
     },
     {
       "produits_phytosanitaires_dpt.libelle_region": "Occitanie",
@@ -1153,94 +1251,10 @@
       "produits_phytosanitaires_dpt.date_mesure": "2022-01-01T00:00:00.000"
     },
     {
-      "produits_phytosanitaires_dpt.libelle_region": "Centre-Val de Loire",
-      "produits_phytosanitaires_dpt.geocode_region": "24",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2022-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 5549245.589999996,
-      "produits_phytosanitaires_dpt.date_mesure": "2022-01-01T00:00:00.000"
-    },
-    {
-      "produits_phytosanitaires_dpt.libelle_region": "Bretagne",
-      "produits_phytosanitaires_dpt.geocode_region": "53",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2022-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 1631840.2049999994,
-      "produits_phytosanitaires_dpt.date_mesure": "2022-01-01T00:00:00.000"
-    },
-    {
-      "produits_phytosanitaires_dpt.libelle_region": "Normandie",
-      "produits_phytosanitaires_dpt.geocode_region": "28",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2022-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 3634827.2020000033,
-      "produits_phytosanitaires_dpt.date_mesure": "2022-01-01T00:00:00.000"
-    },
-    {
-      "produits_phytosanitaires_dpt.libelle_region": "La Réunion",
-      "produits_phytosanitaires_dpt.geocode_region": "04",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2022-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 66600.304,
-      "produits_phytosanitaires_dpt.date_mesure": "2022-01-01T00:00:00.000"
-    },
-    {
-      "produits_phytosanitaires_dpt.libelle_region": "Guadeloupe",
-      "produits_phytosanitaires_dpt.geocode_region": "01",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2022-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 825.6160000000001,
-      "produits_phytosanitaires_dpt.date_mesure": "2022-01-01T00:00:00.000"
-    },
-    {
       "produits_phytosanitaires_dpt.libelle_region": "Provence-Alpes-Côte d'Azur",
       "produits_phytosanitaires_dpt.geocode_region": "93",
       "produits_phytosanitaires_dpt.date_mesure.year": "2022-01-01T00:00:00.000",
       "produits_phytosanitaires_dpt.id_337": 797542.5830000009,
-      "produits_phytosanitaires_dpt.date_mesure": "2022-01-01T00:00:00.000"
-    },
-    {
-      "produits_phytosanitaires_dpt.libelle_region": "Guyane",
-      "produits_phytosanitaires_dpt.geocode_region": "03",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2022-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 5.851,
-      "produits_phytosanitaires_dpt.date_mesure": "2022-01-01T00:00:00.000"
-    },
-    {
-      "produits_phytosanitaires_dpt.libelle_region": "Île-de-France",
-      "produits_phytosanitaires_dpt.geocode_region": "11",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2022-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 1916817.6930000007,
-      "produits_phytosanitaires_dpt.date_mesure": "2022-01-01T00:00:00.000"
-    },
-    {
-      "produits_phytosanitaires_dpt.libelle_region": "Grand Est",
-      "produits_phytosanitaires_dpt.geocode_region": "44",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2022-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 5656305.100000004,
-      "produits_phytosanitaires_dpt.date_mesure": "2022-01-01T00:00:00.000"
-    },
-    {
-      "produits_phytosanitaires_dpt.libelle_region": "Hauts-de-France",
-      "produits_phytosanitaires_dpt.geocode_region": "32",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2022-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 6974053.123000009,
-      "produits_phytosanitaires_dpt.date_mesure": "2022-01-01T00:00:00.000"
-    },
-    {
-      "produits_phytosanitaires_dpt.libelle_region": "Nouvelle-Aquitaine",
-      "produits_phytosanitaires_dpt.geocode_region": "75",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2022-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 6462289.76199998,
-      "produits_phytosanitaires_dpt.date_mesure": "2022-01-01T00:00:00.000"
-    },
-    {
-      "produits_phytosanitaires_dpt.libelle_region": "Martinique",
-      "produits_phytosanitaires_dpt.geocode_region": "02",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2022-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 736.3719999999998,
-      "produits_phytosanitaires_dpt.date_mesure": "2022-01-01T00:00:00.000"
-    },
-    {
-      "produits_phytosanitaires_dpt.libelle_region": "Mayotte",
-      "produits_phytosanitaires_dpt.geocode_region": "06",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2022-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 72.838,
       "produits_phytosanitaires_dpt.date_mesure": "2022-01-01T00:00:00.000"
     },
     {
@@ -1251,20 +1265,6 @@
       "produits_phytosanitaires_dpt.date_mesure": "2022-01-01T00:00:00.000"
     },
     {
-      "produits_phytosanitaires_dpt.libelle_region": "Pays de la Loire",
-      "produits_phytosanitaires_dpt.geocode_region": "52",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2022-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 2534332.3410000014,
-      "produits_phytosanitaires_dpt.date_mesure": "2022-01-01T00:00:00.000"
-    },
-    {
-      "produits_phytosanitaires_dpt.libelle_region": "Bourgogne-Franche-Comté",
-      "produits_phytosanitaires_dpt.geocode_region": "27",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2022-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 2807830.310999994,
-      "produits_phytosanitaires_dpt.date_mesure": "2022-01-01T00:00:00.000"
-    },
-    {
       "produits_phytosanitaires_dpt.libelle_region": "Guadeloupe",
       "produits_phytosanitaires_dpt.geocode_region": "01",
       "produits_phytosanitaires_dpt.date_mesure.year": "2023-01-01T00:00:00.000",
@@ -1272,10 +1272,24 @@
       "produits_phytosanitaires_dpt.date_mesure": "2023-01-01T00:00:00.000"
     },
     {
-      "produits_phytosanitaires_dpt.libelle_region": "Occitanie",
-      "produits_phytosanitaires_dpt.geocode_region": "76",
+      "produits_phytosanitaires_dpt.libelle_region": "Martinique",
+      "produits_phytosanitaires_dpt.geocode_region": "02",
       "produits_phytosanitaires_dpt.date_mesure.year": "2023-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 3728452.7929999977,
+      "produits_phytosanitaires_dpt.id_337": 184.894,
+      "produits_phytosanitaires_dpt.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "produits_phytosanitaires_dpt.libelle_region": "Guyane",
+      "produits_phytosanitaires_dpt.geocode_region": "03",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2023-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 2.414,
+      "produits_phytosanitaires_dpt.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "produits_phytosanitaires_dpt.libelle_region": "La Réunion",
+      "produits_phytosanitaires_dpt.geocode_region": "04",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2023-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 21176.293,
       "produits_phytosanitaires_dpt.date_mesure": "2023-01-01T00:00:00.000"
     },
     {
@@ -1286,17 +1300,17 @@
       "produits_phytosanitaires_dpt.date_mesure": "2023-01-01T00:00:00.000"
     },
     {
-      "produits_phytosanitaires_dpt.libelle_region": "Nouvelle-Aquitaine",
-      "produits_phytosanitaires_dpt.geocode_region": "75",
+      "produits_phytosanitaires_dpt.libelle_region": "Île-de-France",
+      "produits_phytosanitaires_dpt.geocode_region": "11",
       "produits_phytosanitaires_dpt.date_mesure.year": "2023-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 6400207.791999989,
+      "produits_phytosanitaires_dpt.id_337": 1861953.8579999981,
       "produits_phytosanitaires_dpt.date_mesure": "2023-01-01T00:00:00.000"
     },
     {
-      "produits_phytosanitaires_dpt.libelle_region": "La Réunion",
-      "produits_phytosanitaires_dpt.geocode_region": "04",
+      "produits_phytosanitaires_dpt.libelle_region": "Centre-Val de Loire",
+      "produits_phytosanitaires_dpt.geocode_region": "24",
       "produits_phytosanitaires_dpt.date_mesure.year": "2023-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 21176.293,
+      "produits_phytosanitaires_dpt.id_337": 5396499.597999999,
       "produits_phytosanitaires_dpt.date_mesure": "2023-01-01T00:00:00.000"
     },
     {
@@ -1314,52 +1328,10 @@
       "produits_phytosanitaires_dpt.date_mesure": "2023-01-01T00:00:00.000"
     },
     {
-      "produits_phytosanitaires_dpt.libelle_region": "Corse",
-      "produits_phytosanitaires_dpt.geocode_region": "94",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2023-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 95750.74099999994,
-      "produits_phytosanitaires_dpt.date_mesure": "2023-01-01T00:00:00.000"
-    },
-    {
-      "produits_phytosanitaires_dpt.libelle_region": "Martinique",
-      "produits_phytosanitaires_dpt.geocode_region": "02",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2023-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 184.894,
-      "produits_phytosanitaires_dpt.date_mesure": "2023-01-01T00:00:00.000"
-    },
-    {
       "produits_phytosanitaires_dpt.libelle_region": "Hauts-de-France",
       "produits_phytosanitaires_dpt.geocode_region": "32",
       "produits_phytosanitaires_dpt.date_mesure.year": "2023-01-01T00:00:00.000",
       "produits_phytosanitaires_dpt.id_337": 6781446.903000002,
-      "produits_phytosanitaires_dpt.date_mesure": "2023-01-01T00:00:00.000"
-    },
-    {
-      "produits_phytosanitaires_dpt.libelle_region": "Île-de-France",
-      "produits_phytosanitaires_dpt.geocode_region": "11",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2023-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 1861953.8579999981,
-      "produits_phytosanitaires_dpt.date_mesure": "2023-01-01T00:00:00.000"
-    },
-    {
-      "produits_phytosanitaires_dpt.libelle_region": "Guyane",
-      "produits_phytosanitaires_dpt.geocode_region": "03",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2023-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 2.414,
-      "produits_phytosanitaires_dpt.date_mesure": "2023-01-01T00:00:00.000"
-    },
-    {
-      "produits_phytosanitaires_dpt.libelle_region": "Bretagne",
-      "produits_phytosanitaires_dpt.geocode_region": "53",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2023-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 1687089.7600000002,
-      "produits_phytosanitaires_dpt.date_mesure": "2023-01-01T00:00:00.000"
-    },
-    {
-      "produits_phytosanitaires_dpt.libelle_region": "Provence-Alpes-Côte d'Azur",
-      "produits_phytosanitaires_dpt.geocode_region": "93",
-      "produits_phytosanitaires_dpt.date_mesure.year": "2023-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 807498.7269999994,
       "produits_phytosanitaires_dpt.date_mesure": "2023-01-01T00:00:00.000"
     },
     {
@@ -1377,6 +1349,27 @@
       "produits_phytosanitaires_dpt.date_mesure": "2023-01-01T00:00:00.000"
     },
     {
+      "produits_phytosanitaires_dpt.libelle_region": "Bretagne",
+      "produits_phytosanitaires_dpt.geocode_region": "53",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2023-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 1687089.7600000002,
+      "produits_phytosanitaires_dpt.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "produits_phytosanitaires_dpt.libelle_region": "Nouvelle-Aquitaine",
+      "produits_phytosanitaires_dpt.geocode_region": "75",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2023-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 6400207.791999989,
+      "produits_phytosanitaires_dpt.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "produits_phytosanitaires_dpt.libelle_region": "Occitanie",
+      "produits_phytosanitaires_dpt.geocode_region": "76",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2023-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 3728452.7929999977,
+      "produits_phytosanitaires_dpt.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
       "produits_phytosanitaires_dpt.libelle_region": "Auvergne-Rhône-Alpes",
       "produits_phytosanitaires_dpt.geocode_region": "84",
       "produits_phytosanitaires_dpt.date_mesure.year": "2023-01-01T00:00:00.000",
@@ -1384,10 +1377,17 @@
       "produits_phytosanitaires_dpt.date_mesure": "2023-01-01T00:00:00.000"
     },
     {
-      "produits_phytosanitaires_dpt.libelle_region": "Centre-Val de Loire",
-      "produits_phytosanitaires_dpt.geocode_region": "24",
+      "produits_phytosanitaires_dpt.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "produits_phytosanitaires_dpt.geocode_region": "93",
       "produits_phytosanitaires_dpt.date_mesure.year": "2023-01-01T00:00:00.000",
-      "produits_phytosanitaires_dpt.id_337": 5396499.597999999,
+      "produits_phytosanitaires_dpt.id_337": 807498.7269999994,
+      "produits_phytosanitaires_dpt.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "produits_phytosanitaires_dpt.libelle_region": "Corse",
+      "produits_phytosanitaires_dpt.geocode_region": "94",
+      "produits_phytosanitaires_dpt.date_mesure.year": "2023-01-01T00:00:00.000",
+      "produits_phytosanitaires_dpt.id_337": 95750.74099999994,
       "produits_phytosanitaires_dpt.date_mesure": "2023-01-01T00:00:00.000"
     }
   ],

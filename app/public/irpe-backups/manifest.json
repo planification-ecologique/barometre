@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-02T14:32:51.309Z",
+  "generatedAt": "2026-10-04T08:01:25.951Z",
   "indicatorIds": [
     "23",
     "42",
@@ -48,10 +48,5 @@
     "1082"
   ],
   "cachedCount": 45,
-  "failed": [
-    {
-      "indicatorId": "42",
-      "error": "Baisse de lignes > 20% vs cache (120 < 342)."
-    }
-  ]
+  "failed": []
 }

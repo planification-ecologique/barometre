@@ -5,66 +5,10 @@
   "extraDimension": "tri_biodechets_dpt.geocode_departement",
   "data": [
     {
-      "tri_biodechets_dpt.libelle_region": "Provence-Alpes-Côte d'Azur",
-      "tri_biodechets_dpt.geocode_region": "93",
-      "tri_biodechets_dpt.date_mesure.year": "2026-01-01T00:00:00.000",
-      "tri_biodechets_dpt.id_897": "3172852",
-      "tri_biodechets_dpt.date_mesure": "2026-01-01T00:00:00.000"
-    },
-    {
-      "tri_biodechets_dpt.libelle_region": "Centre-Val de Loire",
-      "tri_biodechets_dpt.geocode_region": "24",
-      "tri_biodechets_dpt.date_mesure.year": "2026-01-01T00:00:00.000",
-      "tri_biodechets_dpt.id_897": "1056656",
-      "tri_biodechets_dpt.date_mesure": "2026-01-01T00:00:00.000"
-    },
-    {
       "tri_biodechets_dpt.libelle_region": "Guadeloupe",
       "tri_biodechets_dpt.geocode_region": "01",
       "tri_biodechets_dpt.date_mesure.year": "2026-01-01T00:00:00.000",
       "tri_biodechets_dpt.id_897": "15980",
-      "tri_biodechets_dpt.date_mesure": "2026-01-01T00:00:00.000"
-    },
-    {
-      "tri_biodechets_dpt.libelle_region": "Corse",
-      "tri_biodechets_dpt.geocode_region": "94",
-      "tri_biodechets_dpt.date_mesure.year": "2026-01-01T00:00:00.000",
-      "tri_biodechets_dpt.id_897": "227644",
-      "tri_biodechets_dpt.date_mesure": "2026-01-01T00:00:00.000"
-    },
-    {
-      "tri_biodechets_dpt.libelle_region": "Bretagne",
-      "tri_biodechets_dpt.geocode_region": "53",
-      "tri_biodechets_dpt.date_mesure.year": "2026-01-01T00:00:00.000",
-      "tri_biodechets_dpt.id_897": "2294119",
-      "tri_biodechets_dpt.date_mesure": "2026-01-01T00:00:00.000"
-    },
-    {
-      "tri_biodechets_dpt.libelle_region": "Guyane",
-      "tri_biodechets_dpt.geocode_region": "03",
-      "tri_biodechets_dpt.date_mesure.year": "2026-01-01T00:00:00.000",
-      "tri_biodechets_dpt.id_897": "9495",
-      "tri_biodechets_dpt.date_mesure": "2026-01-01T00:00:00.000"
-    },
-    {
-      "tri_biodechets_dpt.libelle_region": "Pays de la Loire",
-      "tri_biodechets_dpt.geocode_region": "52",
-      "tri_biodechets_dpt.date_mesure.year": "2026-01-01T00:00:00.000",
-      "tri_biodechets_dpt.id_897": "1901716",
-      "tri_biodechets_dpt.date_mesure": "2026-01-01T00:00:00.000"
-    },
-    {
-      "tri_biodechets_dpt.libelle_region": "Auvergne-Rhône-Alpes",
-      "tri_biodechets_dpt.geocode_region": "84",
-      "tri_biodechets_dpt.date_mesure.year": "2026-01-01T00:00:00.000",
-      "tri_biodechets_dpt.id_897": "4690927",
-      "tri_biodechets_dpt.date_mesure": "2026-01-01T00:00:00.000"
-    },
-    {
-      "tri_biodechets_dpt.libelle_region": "Normandie",
-      "tri_biodechets_dpt.geocode_region": "28",
-      "tri_biodechets_dpt.date_mesure.year": "2026-01-01T00:00:00.000",
-      "tri_biodechets_dpt.id_897": "1850347",
       "tri_biodechets_dpt.date_mesure": "2026-01-01T00:00:00.000"
     },
     {
@@ -75,38 +19,10 @@
       "tri_biodechets_dpt.date_mesure": "2026-01-01T00:00:00.000"
     },
     {
-      "tri_biodechets_dpt.libelle_region": "Bourgogne-Franche-Comté",
-      "tri_biodechets_dpt.geocode_region": "27",
+      "tri_biodechets_dpt.libelle_region": "Guyane",
+      "tri_biodechets_dpt.geocode_region": "03",
       "tri_biodechets_dpt.date_mesure.year": "2026-01-01T00:00:00.000",
-      "tri_biodechets_dpt.id_897": "1736074",
-      "tri_biodechets_dpt.date_mesure": "2026-01-01T00:00:00.000"
-    },
-    {
-      "tri_biodechets_dpt.libelle_region": "Occitanie",
-      "tri_biodechets_dpt.geocode_region": "76",
-      "tri_biodechets_dpt.date_mesure.year": "2026-01-01T00:00:00.000",
-      "tri_biodechets_dpt.id_897": "3825396",
-      "tri_biodechets_dpt.date_mesure": "2026-01-01T00:00:00.000"
-    },
-    {
-      "tri_biodechets_dpt.libelle_region": "Nouvelle-Aquitaine",
-      "tri_biodechets_dpt.geocode_region": "75",
-      "tri_biodechets_dpt.date_mesure.year": "2026-01-01T00:00:00.000",
-      "tri_biodechets_dpt.id_897": "4353127",
-      "tri_biodechets_dpt.date_mesure": "2026-01-01T00:00:00.000"
-    },
-    {
-      "tri_biodechets_dpt.libelle_region": "Hauts-de-France",
-      "tri_biodechets_dpt.geocode_region": "32",
-      "tri_biodechets_dpt.date_mesure.year": "2026-01-01T00:00:00.000",
-      "tri_biodechets_dpt.id_897": "2779976",
-      "tri_biodechets_dpt.date_mesure": "2026-01-01T00:00:00.000"
-    },
-    {
-      "tri_biodechets_dpt.libelle_region": "Île-de-France",
-      "tri_biodechets_dpt.geocode_region": "11",
-      "tri_biodechets_dpt.date_mesure.year": "2026-01-01T00:00:00.000",
-      "tri_biodechets_dpt.id_897": "5412498",
+      "tri_biodechets_dpt.id_897": "9495",
       "tri_biodechets_dpt.date_mesure": "2026-01-01T00:00:00.000"
     },
     {
@@ -124,10 +40,94 @@
       "tri_biodechets_dpt.date_mesure": "2026-01-01T00:00:00.000"
     },
     {
+      "tri_biodechets_dpt.libelle_region": "Île-de-France",
+      "tri_biodechets_dpt.geocode_region": "11",
+      "tri_biodechets_dpt.date_mesure.year": "2026-01-01T00:00:00.000",
+      "tri_biodechets_dpt.id_897": "5412498",
+      "tri_biodechets_dpt.date_mesure": "2026-01-01T00:00:00.000"
+    },
+    {
+      "tri_biodechets_dpt.libelle_region": "Centre-Val de Loire",
+      "tri_biodechets_dpt.geocode_region": "24",
+      "tri_biodechets_dpt.date_mesure.year": "2026-01-01T00:00:00.000",
+      "tri_biodechets_dpt.id_897": "1056656",
+      "tri_biodechets_dpt.date_mesure": "2026-01-01T00:00:00.000"
+    },
+    {
+      "tri_biodechets_dpt.libelle_region": "Bourgogne-Franche-Comté",
+      "tri_biodechets_dpt.geocode_region": "27",
+      "tri_biodechets_dpt.date_mesure.year": "2026-01-01T00:00:00.000",
+      "tri_biodechets_dpt.id_897": "1736074",
+      "tri_biodechets_dpt.date_mesure": "2026-01-01T00:00:00.000"
+    },
+    {
+      "tri_biodechets_dpt.libelle_region": "Normandie",
+      "tri_biodechets_dpt.geocode_region": "28",
+      "tri_biodechets_dpt.date_mesure.year": "2026-01-01T00:00:00.000",
+      "tri_biodechets_dpt.id_897": "1850347",
+      "tri_biodechets_dpt.date_mesure": "2026-01-01T00:00:00.000"
+    },
+    {
+      "tri_biodechets_dpt.libelle_region": "Hauts-de-France",
+      "tri_biodechets_dpt.geocode_region": "32",
+      "tri_biodechets_dpt.date_mesure.year": "2026-01-01T00:00:00.000",
+      "tri_biodechets_dpt.id_897": "2779976",
+      "tri_biodechets_dpt.date_mesure": "2026-01-01T00:00:00.000"
+    },
+    {
       "tri_biodechets_dpt.libelle_region": "Grand Est",
       "tri_biodechets_dpt.geocode_region": "44",
       "tri_biodechets_dpt.date_mesure.year": "2026-01-01T00:00:00.000",
       "tri_biodechets_dpt.id_897": "4110734",
+      "tri_biodechets_dpt.date_mesure": "2026-01-01T00:00:00.000"
+    },
+    {
+      "tri_biodechets_dpt.libelle_region": "Pays de la Loire",
+      "tri_biodechets_dpt.geocode_region": "52",
+      "tri_biodechets_dpt.date_mesure.year": "2026-01-01T00:00:00.000",
+      "tri_biodechets_dpt.id_897": "1901716",
+      "tri_biodechets_dpt.date_mesure": "2026-01-01T00:00:00.000"
+    },
+    {
+      "tri_biodechets_dpt.libelle_region": "Bretagne",
+      "tri_biodechets_dpt.geocode_region": "53",
+      "tri_biodechets_dpt.date_mesure.year": "2026-01-01T00:00:00.000",
+      "tri_biodechets_dpt.id_897": "2294119",
+      "tri_biodechets_dpt.date_mesure": "2026-01-01T00:00:00.000"
+    },
+    {
+      "tri_biodechets_dpt.libelle_region": "Nouvelle-Aquitaine",
+      "tri_biodechets_dpt.geocode_region": "75",
+      "tri_biodechets_dpt.date_mesure.year": "2026-01-01T00:00:00.000",
+      "tri_biodechets_dpt.id_897": "4353127",
+      "tri_biodechets_dpt.date_mesure": "2026-01-01T00:00:00.000"
+    },
+    {
+      "tri_biodechets_dpt.libelle_region": "Occitanie",
+      "tri_biodechets_dpt.geocode_region": "76",
+      "tri_biodechets_dpt.date_mesure.year": "2026-01-01T00:00:00.000",
+      "tri_biodechets_dpt.id_897": "3825396",
+      "tri_biodechets_dpt.date_mesure": "2026-01-01T00:00:00.000"
+    },
+    {
+      "tri_biodechets_dpt.libelle_region": "Auvergne-Rhône-Alpes",
+      "tri_biodechets_dpt.geocode_region": "84",
+      "tri_biodechets_dpt.date_mesure.year": "2026-01-01T00:00:00.000",
+      "tri_biodechets_dpt.id_897": "4690927",
+      "tri_biodechets_dpt.date_mesure": "2026-01-01T00:00:00.000"
+    },
+    {
+      "tri_biodechets_dpt.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "tri_biodechets_dpt.geocode_region": "93",
+      "tri_biodechets_dpt.date_mesure.year": "2026-01-01T00:00:00.000",
+      "tri_biodechets_dpt.id_897": "3172852",
+      "tri_biodechets_dpt.date_mesure": "2026-01-01T00:00:00.000"
+    },
+    {
+      "tri_biodechets_dpt.libelle_region": "Corse",
+      "tri_biodechets_dpt.geocode_region": "94",
+      "tri_biodechets_dpt.date_mesure.year": "2026-01-01T00:00:00.000",
+      "tri_biodechets_dpt.id_897": "227644",
       "tri_biodechets_dpt.date_mesure": "2026-01-01T00:00:00.000"
     }
   ],

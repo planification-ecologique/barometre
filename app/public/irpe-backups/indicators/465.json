@@ -5,38 +5,31 @@
   "extraDimension": "parc_vul_e_com.geocode_commune",
   "data": [
     {
-      "parc_vul_e_com.libelle_region": "Provence-Alpes-Côte d'Azur",
-      "parc_vul_e_com.geocode_region": "93",
+      "parc_vul_e_com.libelle_region": "Guadeloupe",
+      "parc_vul_e_com.geocode_region": "01",
       "parc_vul_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
-      "parc_vul_e_com.id_465": 0.6338174273858921,
+      "parc_vul_e_com.id_465": 0.12334638749267632,
       "parc_vul_e_com.date_mesure": "2019-01-01T00:00:00.000"
     },
     {
-      "parc_vul_e_com.libelle_region": "Hauts-de-France",
-      "parc_vul_e_com.geocode_region": "32",
+      "parc_vul_e_com.libelle_region": "Martinique",
+      "parc_vul_e_com.geocode_region": "02",
       "parc_vul_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
-      "parc_vul_e_com.id_465": 0.47169415594221376,
+      "parc_vul_e_com.id_465": 0.1325424964379204,
       "parc_vul_e_com.date_mesure": "2019-01-01T00:00:00.000"
     },
     {
-      "parc_vul_e_com.libelle_region": "Nouvelle-Aquitaine",
-      "parc_vul_e_com.geocode_region": "75",
+      "parc_vul_e_com.libelle_region": "Guyane",
+      "parc_vul_e_com.geocode_region": "03",
       "parc_vul_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
-      "parc_vul_e_com.id_465": 0.5628910560014477,
+      "parc_vul_e_com.id_465": 0.11812981845312112,
       "parc_vul_e_com.date_mesure": "2019-01-01T00:00:00.000"
     },
     {
-      "parc_vul_e_com.libelle_region": "Corse",
-      "parc_vul_e_com.geocode_region": "94",
+      "parc_vul_e_com.libelle_region": "La Réunion",
+      "parc_vul_e_com.geocode_region": "04",
       "parc_vul_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
-      "parc_vul_e_com.id_465": 0.32916666666666666,
-      "parc_vul_e_com.date_mesure": "2019-01-01T00:00:00.000"
-    },
-    {
-      "parc_vul_e_com.libelle_region": "Auvergne-Rhône-Alpes",
-      "parc_vul_e_com.geocode_region": "84",
-      "parc_vul_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
-      "parc_vul_e_com.id_465": 0.5359415167291891,
+      "parc_vul_e_com.id_465": 0.07610832751950275,
       "parc_vul_e_com.date_mesure": "2019-01-01T00:00:00.000"
     },
     {
@@ -47,17 +40,10 @@
       "parc_vul_e_com.date_mesure": "2019-01-01T00:00:00.000"
     },
     {
-      "parc_vul_e_com.libelle_region": "Grand Est",
-      "parc_vul_e_com.geocode_region": "44",
+      "parc_vul_e_com.libelle_region": "Île-de-France",
+      "parc_vul_e_com.geocode_region": "11",
       "parc_vul_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
-      "parc_vul_e_com.id_465": 0.5446379246255615,
-      "parc_vul_e_com.date_mesure": "2019-01-01T00:00:00.000"
-    },
-    {
-      "parc_vul_e_com.libelle_region": "Guyane",
-      "parc_vul_e_com.geocode_region": "03",
-      "parc_vul_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
-      "parc_vul_e_com.id_465": 0.11812981845312112,
+      "parc_vul_e_com.id_465": 1.202549544258087,
       "parc_vul_e_com.date_mesure": "2019-01-01T00:00:00.000"
     },
     {
@@ -82,31 +68,17 @@
       "parc_vul_e_com.date_mesure": "2019-01-01T00:00:00.000"
     },
     {
-      "parc_vul_e_com.libelle_region": "Île-de-France",
-      "parc_vul_e_com.geocode_region": "11",
+      "parc_vul_e_com.libelle_region": "Hauts-de-France",
+      "parc_vul_e_com.geocode_region": "32",
       "parc_vul_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
-      "parc_vul_e_com.id_465": 1.202549544258087,
+      "parc_vul_e_com.id_465": 0.47169415594221376,
       "parc_vul_e_com.date_mesure": "2019-01-01T00:00:00.000"
     },
     {
-      "parc_vul_e_com.libelle_region": "Bretagne",
-      "parc_vul_e_com.geocode_region": "53",
+      "parc_vul_e_com.libelle_region": "Grand Est",
+      "parc_vul_e_com.geocode_region": "44",
       "parc_vul_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
-      "parc_vul_e_com.id_465": 0.3917790451586732,
-      "parc_vul_e_com.date_mesure": "2019-01-01T00:00:00.000"
-    },
-    {
-      "parc_vul_e_com.libelle_region": "Martinique",
-      "parc_vul_e_com.geocode_region": "02",
-      "parc_vul_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
-      "parc_vul_e_com.id_465": 0.1325424964379204,
-      "parc_vul_e_com.date_mesure": "2019-01-01T00:00:00.000"
-    },
-    {
-      "parc_vul_e_com.libelle_region": "Guadeloupe",
-      "parc_vul_e_com.geocode_region": "01",
-      "parc_vul_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
-      "parc_vul_e_com.id_465": 0.12334638749267632,
+      "parc_vul_e_com.id_465": 0.5446379246255615,
       "parc_vul_e_com.date_mesure": "2019-01-01T00:00:00.000"
     },
     {
@@ -117,6 +89,20 @@
       "parc_vul_e_com.date_mesure": "2019-01-01T00:00:00.000"
     },
     {
+      "parc_vul_e_com.libelle_region": "Bretagne",
+      "parc_vul_e_com.geocode_region": "53",
+      "parc_vul_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "parc_vul_e_com.id_465": 0.3917790451586732,
+      "parc_vul_e_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "parc_vul_e_com.libelle_region": "Nouvelle-Aquitaine",
+      "parc_vul_e_com.geocode_region": "75",
+      "parc_vul_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "parc_vul_e_com.id_465": 0.5628910560014477,
+      "parc_vul_e_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
       "parc_vul_e_com.libelle_region": "Occitanie",
       "parc_vul_e_com.geocode_region": "76",
       "parc_vul_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
@@ -124,45 +110,31 @@
       "parc_vul_e_com.date_mesure": "2019-01-01T00:00:00.000"
     },
     {
-      "parc_vul_e_com.libelle_region": "La Réunion",
-      "parc_vul_e_com.geocode_region": "04",
+      "parc_vul_e_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "parc_vul_e_com.geocode_region": "84",
       "parc_vul_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
-      "parc_vul_e_com.id_465": 0.07610832751950275,
+      "parc_vul_e_com.id_465": 0.5359415167291891,
       "parc_vul_e_com.date_mesure": "2019-01-01T00:00:00.000"
     },
     {
-      "parc_vul_e_com.libelle_region": "Nouvelle-Aquitaine",
-      "parc_vul_e_com.geocode_region": "75",
-      "parc_vul_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
-      "parc_vul_e_com.id_465": 0.6192477508518572,
-      "parc_vul_e_com.date_mesure": "2020-01-01T00:00:00.000"
-    },
-    {
-      "parc_vul_e_com.libelle_region": "Normandie",
-      "parc_vul_e_com.geocode_region": "28",
-      "parc_vul_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
-      "parc_vul_e_com.id_465": 0.5616905475030906,
-      "parc_vul_e_com.date_mesure": "2020-01-01T00:00:00.000"
-    },
-    {
-      "parc_vul_e_com.libelle_region": "La Réunion",
-      "parc_vul_e_com.geocode_region": "04",
-      "parc_vul_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
-      "parc_vul_e_com.id_465": 0.09502572029495983,
-      "parc_vul_e_com.date_mesure": "2020-01-01T00:00:00.000"
+      "parc_vul_e_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "parc_vul_e_com.geocode_region": "93",
+      "parc_vul_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "parc_vul_e_com.id_465": 0.6338174273858921,
+      "parc_vul_e_com.date_mesure": "2019-01-01T00:00:00.000"
     },
     {
       "parc_vul_e_com.libelle_region": "Corse",
       "parc_vul_e_com.geocode_region": "94",
-      "parc_vul_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
-      "parc_vul_e_com.id_465": 0.39310489804498633,
-      "parc_vul_e_com.date_mesure": "2020-01-01T00:00:00.000"
+      "parc_vul_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "parc_vul_e_com.id_465": 0.32916666666666666,
+      "parc_vul_e_com.date_mesure": "2019-01-01T00:00:00.000"
     },
     {
-      "parc_vul_e_com.libelle_region": "Bourgogne-Franche-Comté",
-      "parc_vul_e_com.geocode_region": "27",
+      "parc_vul_e_com.libelle_region": "Guadeloupe",
+      "parc_vul_e_com.geocode_region": "01",
       "parc_vul_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
-      "parc_vul_e_com.id_465": 0.5433327612836795,
+      "parc_vul_e_com.id_465": 0.19821917377214232,
       "parc_vul_e_com.date_mesure": "2020-01-01T00:00:00.000"
     },
     {
@@ -173,24 +145,17 @@
       "parc_vul_e_com.date_mesure": "2020-01-01T00:00:00.000"
     },
     {
-      "parc_vul_e_com.libelle_region": "Provence-Alpes-Côte d'Azur",
-      "parc_vul_e_com.geocode_region": "93",
+      "parc_vul_e_com.libelle_region": "Guyane",
+      "parc_vul_e_com.geocode_region": "03",
       "parc_vul_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
-      "parc_vul_e_com.id_465": 0.7479046316904696,
+      "parc_vul_e_com.id_465": 0.16620852777600204,
       "parc_vul_e_com.date_mesure": "2020-01-01T00:00:00.000"
     },
     {
-      "parc_vul_e_com.libelle_region": "Guadeloupe",
-      "parc_vul_e_com.geocode_region": "01",
+      "parc_vul_e_com.libelle_region": "La Réunion",
+      "parc_vul_e_com.geocode_region": "04",
       "parc_vul_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
-      "parc_vul_e_com.id_465": 0.19821917377214232,
-      "parc_vul_e_com.date_mesure": "2020-01-01T00:00:00.000"
-    },
-    {
-      "parc_vul_e_com.libelle_region": "Bretagne",
-      "parc_vul_e_com.geocode_region": "53",
-      "parc_vul_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
-      "parc_vul_e_com.id_465": 0.4764653380151464,
+      "parc_vul_e_com.id_465": 0.09502572029495983,
       "parc_vul_e_com.date_mesure": "2020-01-01T00:00:00.000"
     },
     {
@@ -201,31 +166,10 @@
       "parc_vul_e_com.date_mesure": "2020-01-01T00:00:00.000"
     },
     {
-      "parc_vul_e_com.libelle_region": "Auvergne-Rhône-Alpes",
-      "parc_vul_e_com.geocode_region": "84",
+      "parc_vul_e_com.libelle_region": "Île-de-France",
+      "parc_vul_e_com.geocode_region": "11",
       "parc_vul_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
-      "parc_vul_e_com.id_465": 0.6399668421188972,
-      "parc_vul_e_com.date_mesure": "2020-01-01T00:00:00.000"
-    },
-    {
-      "parc_vul_e_com.libelle_region": "Pays de la Loire",
-      "parc_vul_e_com.geocode_region": "52",
-      "parc_vul_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
-      "parc_vul_e_com.id_465": 0.5368072904169784,
-      "parc_vul_e_com.date_mesure": "2020-01-01T00:00:00.000"
-    },
-    {
-      "parc_vul_e_com.libelle_region": "Occitanie",
-      "parc_vul_e_com.geocode_region": "76",
-      "parc_vul_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
-      "parc_vul_e_com.id_465": 0.4552665319338505,
-      "parc_vul_e_com.date_mesure": "2020-01-01T00:00:00.000"
-    },
-    {
-      "parc_vul_e_com.libelle_region": "Grand Est",
-      "parc_vul_e_com.geocode_region": "44",
-      "parc_vul_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
-      "parc_vul_e_com.id_465": 0.6216341929815494,
+      "parc_vul_e_com.id_465": 1.4432063212235886,
       "parc_vul_e_com.date_mesure": "2020-01-01T00:00:00.000"
     },
     {
@@ -236,6 +180,20 @@
       "parc_vul_e_com.date_mesure": "2020-01-01T00:00:00.000"
     },
     {
+      "parc_vul_e_com.libelle_region": "Bourgogne-Franche-Comté",
+      "parc_vul_e_com.geocode_region": "27",
+      "parc_vul_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "parc_vul_e_com.id_465": 0.5433327612836795,
+      "parc_vul_e_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "parc_vul_e_com.libelle_region": "Normandie",
+      "parc_vul_e_com.geocode_region": "28",
+      "parc_vul_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "parc_vul_e_com.id_465": 0.5616905475030906,
+      "parc_vul_e_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
       "parc_vul_e_com.libelle_region": "Hauts-de-France",
       "parc_vul_e_com.geocode_region": "32",
       "parc_vul_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
@@ -243,31 +201,66 @@
       "parc_vul_e_com.date_mesure": "2020-01-01T00:00:00.000"
     },
     {
-      "parc_vul_e_com.libelle_region": "Guyane",
-      "parc_vul_e_com.geocode_region": "03",
-      "parc_vul_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
-      "parc_vul_e_com.id_465": 0.16620852777600204,
-      "parc_vul_e_com.date_mesure": "2020-01-01T00:00:00.000"
-    },
-    {
-      "parc_vul_e_com.libelle_region": "Île-de-France",
-      "parc_vul_e_com.geocode_region": "11",
-      "parc_vul_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
-      "parc_vul_e_com.id_465": 1.4432063212235886,
-      "parc_vul_e_com.date_mesure": "2020-01-01T00:00:00.000"
-    },
-    {
-      "parc_vul_e_com.libelle_region": "Bourgogne-Franche-Comté",
-      "parc_vul_e_com.geocode_region": "27",
-      "parc_vul_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
-      "parc_vul_e_com.id_465": 0.6359080698116468,
-      "parc_vul_e_com.date_mesure": "2021-01-01T00:00:00.000"
-    },
-    {
       "parc_vul_e_com.libelle_region": "Grand Est",
       "parc_vul_e_com.geocode_region": "44",
+      "parc_vul_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "parc_vul_e_com.id_465": 0.6216341929815494,
+      "parc_vul_e_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "parc_vul_e_com.libelle_region": "Pays de la Loire",
+      "parc_vul_e_com.geocode_region": "52",
+      "parc_vul_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "parc_vul_e_com.id_465": 0.5368072904169784,
+      "parc_vul_e_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "parc_vul_e_com.libelle_region": "Bretagne",
+      "parc_vul_e_com.geocode_region": "53",
+      "parc_vul_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "parc_vul_e_com.id_465": 0.4764653380151464,
+      "parc_vul_e_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "parc_vul_e_com.libelle_region": "Nouvelle-Aquitaine",
+      "parc_vul_e_com.geocode_region": "75",
+      "parc_vul_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "parc_vul_e_com.id_465": 0.6192477508518572,
+      "parc_vul_e_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "parc_vul_e_com.libelle_region": "Occitanie",
+      "parc_vul_e_com.geocode_region": "76",
+      "parc_vul_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "parc_vul_e_com.id_465": 0.4552665319338505,
+      "parc_vul_e_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "parc_vul_e_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "parc_vul_e_com.geocode_region": "84",
+      "parc_vul_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "parc_vul_e_com.id_465": 0.6399668421188972,
+      "parc_vul_e_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "parc_vul_e_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "parc_vul_e_com.geocode_region": "93",
+      "parc_vul_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "parc_vul_e_com.id_465": 0.7479046316904696,
+      "parc_vul_e_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "parc_vul_e_com.libelle_region": "Corse",
+      "parc_vul_e_com.geocode_region": "94",
+      "parc_vul_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "parc_vul_e_com.id_465": 0.39310489804498633,
+      "parc_vul_e_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "parc_vul_e_com.libelle_region": "Guadeloupe",
+      "parc_vul_e_com.geocode_region": "01",
       "parc_vul_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
-      "parc_vul_e_com.id_465": 0.7333764893478409,
+      "parc_vul_e_com.id_465": 0.311140743562879,
       "parc_vul_e_com.date_mesure": "2021-01-01T00:00:00.000"
     },
     {
@@ -278,10 +271,10 @@
       "parc_vul_e_com.date_mesure": "2021-01-01T00:00:00.000"
     },
     {
-      "parc_vul_e_com.libelle_region": "Île-de-France",
-      "parc_vul_e_com.geocode_region": "11",
+      "parc_vul_e_com.libelle_region": "Guyane",
+      "parc_vul_e_com.geocode_region": "03",
       "parc_vul_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
-      "parc_vul_e_com.id_465": 1.6973820864520288,
+      "parc_vul_e_com.id_465": 0.2192254035740384,
       "parc_vul_e_com.date_mesure": "2021-01-01T00:00:00.000"
     },
     {
@@ -292,27 +285,6 @@
       "parc_vul_e_com.date_mesure": "2021-01-01T00:00:00.000"
     },
     {
-      "parc_vul_e_com.libelle_region": "Nouvelle-Aquitaine",
-      "parc_vul_e_com.geocode_region": "75",
-      "parc_vul_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
-      "parc_vul_e_com.id_465": 0.6974592071419823,
-      "parc_vul_e_com.date_mesure": "2021-01-01T00:00:00.000"
-    },
-    {
-      "parc_vul_e_com.libelle_region": "Guyane",
-      "parc_vul_e_com.geocode_region": "03",
-      "parc_vul_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
-      "parc_vul_e_com.id_465": 0.2192254035740384,
-      "parc_vul_e_com.date_mesure": "2021-01-01T00:00:00.000"
-    },
-    {
-      "parc_vul_e_com.libelle_region": "Provence-Alpes-Côte d'Azur",
-      "parc_vul_e_com.geocode_region": "93",
-      "parc_vul_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
-      "parc_vul_e_com.id_465": 0.8677355552750075,
-      "parc_vul_e_com.date_mesure": "2021-01-01T00:00:00.000"
-    },
-    {
       "parc_vul_e_com.libelle_region": "Mayotte",
       "parc_vul_e_com.geocode_region": "06",
       "parc_vul_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
@@ -320,10 +292,10 @@
       "parc_vul_e_com.date_mesure": "2021-01-01T00:00:00.000"
     },
     {
-      "parc_vul_e_com.libelle_region": "Corse",
-      "parc_vul_e_com.geocode_region": "94",
+      "parc_vul_e_com.libelle_region": "Île-de-France",
+      "parc_vul_e_com.geocode_region": "11",
       "parc_vul_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
-      "parc_vul_e_com.id_465": 0.4285534221251208,
+      "parc_vul_e_com.id_465": 1.6973820864520288,
       "parc_vul_e_com.date_mesure": "2021-01-01T00:00:00.000"
     },
     {
@@ -334,31 +306,17 @@
       "parc_vul_e_com.date_mesure": "2021-01-01T00:00:00.000"
     },
     {
+      "parc_vul_e_com.libelle_region": "Bourgogne-Franche-Comté",
+      "parc_vul_e_com.geocode_region": "27",
+      "parc_vul_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "parc_vul_e_com.id_465": 0.6359080698116468,
+      "parc_vul_e_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
       "parc_vul_e_com.libelle_region": "Normandie",
       "parc_vul_e_com.geocode_region": "28",
       "parc_vul_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
       "parc_vul_e_com.id_465": 0.6382174386799795,
-      "parc_vul_e_com.date_mesure": "2021-01-01T00:00:00.000"
-    },
-    {
-      "parc_vul_e_com.libelle_region": "Pays de la Loire",
-      "parc_vul_e_com.geocode_region": "52",
-      "parc_vul_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
-      "parc_vul_e_com.id_465": 0.64318716723101,
-      "parc_vul_e_com.date_mesure": "2021-01-01T00:00:00.000"
-    },
-    {
-      "parc_vul_e_com.libelle_region": "Auvergne-Rhône-Alpes",
-      "parc_vul_e_com.geocode_region": "84",
-      "parc_vul_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
-      "parc_vul_e_com.id_465": 0.7649564642888839,
-      "parc_vul_e_com.date_mesure": "2021-01-01T00:00:00.000"
-    },
-    {
-      "parc_vul_e_com.libelle_region": "Bretagne",
-      "parc_vul_e_com.geocode_region": "53",
-      "parc_vul_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
-      "parc_vul_e_com.id_465": 0.5692750278550427,
       "parc_vul_e_com.date_mesure": "2021-01-01T00:00:00.000"
     },
     {
@@ -369,10 +327,31 @@
       "parc_vul_e_com.date_mesure": "2021-01-01T00:00:00.000"
     },
     {
-      "parc_vul_e_com.libelle_region": "Guadeloupe",
-      "parc_vul_e_com.geocode_region": "01",
+      "parc_vul_e_com.libelle_region": "Grand Est",
+      "parc_vul_e_com.geocode_region": "44",
       "parc_vul_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
-      "parc_vul_e_com.id_465": 0.311140743562879,
+      "parc_vul_e_com.id_465": 0.7333764893478409,
+      "parc_vul_e_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "parc_vul_e_com.libelle_region": "Pays de la Loire",
+      "parc_vul_e_com.geocode_region": "52",
+      "parc_vul_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "parc_vul_e_com.id_465": 0.64318716723101,
+      "parc_vul_e_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "parc_vul_e_com.libelle_region": "Bretagne",
+      "parc_vul_e_com.geocode_region": "53",
+      "parc_vul_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "parc_vul_e_com.id_465": 0.5692750278550427,
+      "parc_vul_e_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "parc_vul_e_com.libelle_region": "Nouvelle-Aquitaine",
+      "parc_vul_e_com.geocode_region": "75",
+      "parc_vul_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "parc_vul_e_com.id_465": 0.6974592071419823,
       "parc_vul_e_com.date_mesure": "2021-01-01T00:00:00.000"
     },
     {
@@ -383,10 +362,31 @@
       "parc_vul_e_com.date_mesure": "2021-01-01T00:00:00.000"
     },
     {
-      "parc_vul_e_com.libelle_region": "Centre-Val de Loire",
-      "parc_vul_e_com.geocode_region": "24",
+      "parc_vul_e_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "parc_vul_e_com.geocode_region": "84",
+      "parc_vul_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "parc_vul_e_com.id_465": 0.7649564642888839,
+      "parc_vul_e_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "parc_vul_e_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "parc_vul_e_com.geocode_region": "93",
+      "parc_vul_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "parc_vul_e_com.id_465": 0.8677355552750075,
+      "parc_vul_e_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "parc_vul_e_com.libelle_region": "Corse",
+      "parc_vul_e_com.geocode_region": "94",
+      "parc_vul_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "parc_vul_e_com.id_465": 0.4285534221251208,
+      "parc_vul_e_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "parc_vul_e_com.libelle_region": "Guadeloupe",
+      "parc_vul_e_com.geocode_region": "01",
       "parc_vul_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
-      "parc_vul_e_com.id_465": 0.7576730448182869,
+      "parc_vul_e_com.id_465": 0.446966334876054,
       "parc_vul_e_com.date_mesure": "2022-01-01T00:00:00.000"
     },
     {
@@ -394,6 +394,104 @@
       "parc_vul_e_com.geocode_region": "02",
       "parc_vul_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
       "parc_vul_e_com.id_465": 0.3809040121889284,
+      "parc_vul_e_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parc_vul_e_com.libelle_region": "Guyane",
+      "parc_vul_e_com.geocode_region": "03",
+      "parc_vul_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parc_vul_e_com.id_465": 0.29802397149335924,
+      "parc_vul_e_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parc_vul_e_com.libelle_region": "La Réunion",
+      "parc_vul_e_com.geocode_region": "04",
+      "parc_vul_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parc_vul_e_com.id_465": 0.20246435136880808,
+      "parc_vul_e_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parc_vul_e_com.libelle_region": "Mayotte",
+      "parc_vul_e_com.geocode_region": "06",
+      "parc_vul_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parc_vul_e_com.id_465": 0.055632823365785816,
+      "parc_vul_e_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parc_vul_e_com.libelle_region": "Île-de-France",
+      "parc_vul_e_com.geocode_region": "11",
+      "parc_vul_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parc_vul_e_com.id_465": 2.0835405553645168,
+      "parc_vul_e_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parc_vul_e_com.libelle_region": "Centre-Val de Loire",
+      "parc_vul_e_com.geocode_region": "24",
+      "parc_vul_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parc_vul_e_com.id_465": 0.7576730448182869,
+      "parc_vul_e_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parc_vul_e_com.libelle_region": "Bourgogne-Franche-Comté",
+      "parc_vul_e_com.geocode_region": "27",
+      "parc_vul_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parc_vul_e_com.id_465": 0.7394235003217831,
+      "parc_vul_e_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parc_vul_e_com.libelle_region": "Normandie",
+      "parc_vul_e_com.geocode_region": "28",
+      "parc_vul_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parc_vul_e_com.id_465": 0.7443796472584244,
+      "parc_vul_e_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parc_vul_e_com.libelle_region": "Hauts-de-France",
+      "parc_vul_e_com.geocode_region": "32",
+      "parc_vul_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parc_vul_e_com.id_465": 0.722730080943256,
+      "parc_vul_e_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parc_vul_e_com.libelle_region": "Grand Est",
+      "parc_vul_e_com.geocode_region": "44",
+      "parc_vul_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parc_vul_e_com.id_465": 0.8278975908139504,
+      "parc_vul_e_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parc_vul_e_com.libelle_region": "Pays de la Loire",
+      "parc_vul_e_com.geocode_region": "52",
+      "parc_vul_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parc_vul_e_com.id_465": 0.7621178565720679,
+      "parc_vul_e_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parc_vul_e_com.libelle_region": "Bretagne",
+      "parc_vul_e_com.geocode_region": "53",
+      "parc_vul_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parc_vul_e_com.id_465": 0.656342126323487,
+      "parc_vul_e_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parc_vul_e_com.libelle_region": "Nouvelle-Aquitaine",
+      "parc_vul_e_com.geocode_region": "75",
+      "parc_vul_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parc_vul_e_com.id_465": 0.766329385978912,
+      "parc_vul_e_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parc_vul_e_com.libelle_region": "Occitanie",
+      "parc_vul_e_com.geocode_region": "76",
+      "parc_vul_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parc_vul_e_com.id_465": 0.7640651559153309,
+      "parc_vul_e_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "parc_vul_e_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "parc_vul_e_com.geocode_region": "84",
+      "parc_vul_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "parc_vul_e_com.id_465": 0.9399513689390496,
       "parc_vul_e_com.date_mesure": "2022-01-01T00:00:00.000"
     },
     {
@@ -411,171 +509,10 @@
       "parc_vul_e_com.date_mesure": "2022-01-01T00:00:00.000"
     },
     {
-      "parc_vul_e_com.libelle_region": "Normandie",
-      "parc_vul_e_com.geocode_region": "28",
-      "parc_vul_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
-      "parc_vul_e_com.id_465": 0.7443796472584244,
-      "parc_vul_e_com.date_mesure": "2022-01-01T00:00:00.000"
-    },
-    {
-      "parc_vul_e_com.libelle_region": "Île-de-France",
-      "parc_vul_e_com.geocode_region": "11",
-      "parc_vul_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
-      "parc_vul_e_com.id_465": 2.0835405553645168,
-      "parc_vul_e_com.date_mesure": "2022-01-01T00:00:00.000"
-    },
-    {
-      "parc_vul_e_com.libelle_region": "Grand Est",
-      "parc_vul_e_com.geocode_region": "44",
-      "parc_vul_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
-      "parc_vul_e_com.id_465": 0.8278975908139504,
-      "parc_vul_e_com.date_mesure": "2022-01-01T00:00:00.000"
-    },
-    {
-      "parc_vul_e_com.libelle_region": "Auvergne-Rhône-Alpes",
-      "parc_vul_e_com.geocode_region": "84",
-      "parc_vul_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
-      "parc_vul_e_com.id_465": 0.9399513689390496,
-      "parc_vul_e_com.date_mesure": "2022-01-01T00:00:00.000"
-    },
-    {
-      "parc_vul_e_com.libelle_region": "Mayotte",
-      "parc_vul_e_com.geocode_region": "06",
-      "parc_vul_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
-      "parc_vul_e_com.id_465": 0.055632823365785816,
-      "parc_vul_e_com.date_mesure": "2022-01-01T00:00:00.000"
-    },
-    {
-      "parc_vul_e_com.libelle_region": "Bourgogne-Franche-Comté",
-      "parc_vul_e_com.geocode_region": "27",
-      "parc_vul_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
-      "parc_vul_e_com.id_465": 0.7394235003217831,
-      "parc_vul_e_com.date_mesure": "2022-01-01T00:00:00.000"
-    },
-    {
-      "parc_vul_e_com.libelle_region": "Occitanie",
-      "parc_vul_e_com.geocode_region": "76",
-      "parc_vul_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
-      "parc_vul_e_com.id_465": 0.7640651559153309,
-      "parc_vul_e_com.date_mesure": "2022-01-01T00:00:00.000"
-    },
-    {
-      "parc_vul_e_com.libelle_region": "Guyane",
-      "parc_vul_e_com.geocode_region": "03",
-      "parc_vul_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
-      "parc_vul_e_com.id_465": 0.29802397149335924,
-      "parc_vul_e_com.date_mesure": "2022-01-01T00:00:00.000"
-    },
-    {
-      "parc_vul_e_com.libelle_region": "Pays de la Loire",
-      "parc_vul_e_com.geocode_region": "52",
-      "parc_vul_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
-      "parc_vul_e_com.id_465": 0.7621178565720679,
-      "parc_vul_e_com.date_mesure": "2022-01-01T00:00:00.000"
-    },
-    {
-      "parc_vul_e_com.libelle_region": "La Réunion",
-      "parc_vul_e_com.geocode_region": "04",
-      "parc_vul_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
-      "parc_vul_e_com.id_465": 0.20246435136880808,
-      "parc_vul_e_com.date_mesure": "2022-01-01T00:00:00.000"
-    },
-    {
-      "parc_vul_e_com.libelle_region": "Hauts-de-France",
-      "parc_vul_e_com.geocode_region": "32",
-      "parc_vul_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
-      "parc_vul_e_com.id_465": 0.722730080943256,
-      "parc_vul_e_com.date_mesure": "2022-01-01T00:00:00.000"
-    },
-    {
-      "parc_vul_e_com.libelle_region": "Nouvelle-Aquitaine",
-      "parc_vul_e_com.geocode_region": "75",
-      "parc_vul_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
-      "parc_vul_e_com.id_465": 0.766329385978912,
-      "parc_vul_e_com.date_mesure": "2022-01-01T00:00:00.000"
-    },
-    {
-      "parc_vul_e_com.libelle_region": "Guadeloupe",
-      "parc_vul_e_com.geocode_region": "01",
-      "parc_vul_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
-      "parc_vul_e_com.id_465": 0.446966334876054,
-      "parc_vul_e_com.date_mesure": "2022-01-01T00:00:00.000"
-    },
-    {
-      "parc_vul_e_com.libelle_region": "Bretagne",
-      "parc_vul_e_com.geocode_region": "53",
-      "parc_vul_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
-      "parc_vul_e_com.id_465": 0.656342126323487,
-      "parc_vul_e_com.date_mesure": "2022-01-01T00:00:00.000"
-    },
-    {
-      "parc_vul_e_com.libelle_region": "Pays de la Loire",
-      "parc_vul_e_com.geocode_region": "52",
-      "parc_vul_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
-      "parc_vul_e_com.id_465": 0.9341962491703458,
-      "parc_vul_e_com.date_mesure": "2023-01-01T00:00:00.000"
-    },
-    {
-      "parc_vul_e_com.libelle_region": "Nouvelle-Aquitaine",
-      "parc_vul_e_com.geocode_region": "75",
-      "parc_vul_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
-      "parc_vul_e_com.id_465": 0.9412013396661404,
-      "parc_vul_e_com.date_mesure": "2023-01-01T00:00:00.000"
-    },
-    {
-      "parc_vul_e_com.libelle_region": "Corse",
-      "parc_vul_e_com.geocode_region": "94",
-      "parc_vul_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
-      "parc_vul_e_com.id_465": 0.6049814863525079,
-      "parc_vul_e_com.date_mesure": "2023-01-01T00:00:00.000"
-    },
-    {
-      "parc_vul_e_com.libelle_region": "La Réunion",
-      "parc_vul_e_com.geocode_region": "04",
-      "parc_vul_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
-      "parc_vul_e_com.id_465": 0.3203208098492536,
-      "parc_vul_e_com.date_mesure": "2023-01-01T00:00:00.000"
-    },
-    {
       "parc_vul_e_com.libelle_region": "Guadeloupe",
       "parc_vul_e_com.geocode_region": "01",
       "parc_vul_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
       "parc_vul_e_com.id_465": 0.6415873810716074,
-      "parc_vul_e_com.date_mesure": "2023-01-01T00:00:00.000"
-    },
-    {
-      "parc_vul_e_com.libelle_region": "Bretagne",
-      "parc_vul_e_com.geocode_region": "53",
-      "parc_vul_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
-      "parc_vul_e_com.id_465": 0.8301007175531663,
-      "parc_vul_e_com.date_mesure": "2023-01-01T00:00:00.000"
-    },
-    {
-      "parc_vul_e_com.libelle_region": "Hauts-de-France",
-      "parc_vul_e_com.geocode_region": "32",
-      "parc_vul_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
-      "parc_vul_e_com.id_465": 0.896980277240892,
-      "parc_vul_e_com.date_mesure": "2023-01-01T00:00:00.000"
-    },
-    {
-      "parc_vul_e_com.libelle_region": "Guyane",
-      "parc_vul_e_com.geocode_region": "03",
-      "parc_vul_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
-      "parc_vul_e_com.id_465": 0.30723932663380915,
-      "parc_vul_e_com.date_mesure": "2023-01-01T00:00:00.000"
-    },
-    {
-      "parc_vul_e_com.libelle_region": "Mayotte",
-      "parc_vul_e_com.geocode_region": "06",
-      "parc_vul_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
-      "parc_vul_e_com.id_465": 0.025967281225655673,
-      "parc_vul_e_com.date_mesure": "2023-01-01T00:00:00.000"
-    },
-    {
-      "parc_vul_e_com.libelle_region": "Centre-Val de Loire",
-      "parc_vul_e_com.geocode_region": "24",
-      "parc_vul_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
-      "parc_vul_e_com.id_465": 0.9115508143672327,
       "parc_vul_e_com.date_mesure": "2023-01-01T00:00:00.000"
     },
     {
@@ -586,10 +523,59 @@
       "parc_vul_e_com.date_mesure": "2023-01-01T00:00:00.000"
     },
     {
+      "parc_vul_e_com.libelle_region": "Guyane",
+      "parc_vul_e_com.geocode_region": "03",
+      "parc_vul_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "parc_vul_e_com.id_465": 0.30723932663380915,
+      "parc_vul_e_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "parc_vul_e_com.libelle_region": "La Réunion",
+      "parc_vul_e_com.geocode_region": "04",
+      "parc_vul_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "parc_vul_e_com.id_465": 0.3203208098492536,
+      "parc_vul_e_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "parc_vul_e_com.libelle_region": "Mayotte",
+      "parc_vul_e_com.geocode_region": "06",
+      "parc_vul_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "parc_vul_e_com.id_465": 0.025967281225655673,
+      "parc_vul_e_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "parc_vul_e_com.libelle_region": "Île-de-France",
+      "parc_vul_e_com.geocode_region": "11",
+      "parc_vul_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "parc_vul_e_com.id_465": 2.6403319274423067,
+      "parc_vul_e_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "parc_vul_e_com.libelle_region": "Centre-Val de Loire",
+      "parc_vul_e_com.geocode_region": "24",
+      "parc_vul_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "parc_vul_e_com.id_465": 0.9115508143672327,
+      "parc_vul_e_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "parc_vul_e_com.libelle_region": "Bourgogne-Franche-Comté",
+      "parc_vul_e_com.geocode_region": "27",
+      "parc_vul_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "parc_vul_e_com.id_465": 0.8818751450452541,
+      "parc_vul_e_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
       "parc_vul_e_com.libelle_region": "Normandie",
       "parc_vul_e_com.geocode_region": "28",
       "parc_vul_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
       "parc_vul_e_com.id_465": 0.9184124315703263,
+      "parc_vul_e_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "parc_vul_e_com.libelle_region": "Hauts-de-France",
+      "parc_vul_e_com.geocode_region": "32",
+      "parc_vul_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "parc_vul_e_com.id_465": 0.896980277240892,
       "parc_vul_e_com.date_mesure": "2023-01-01T00:00:00.000"
     },
     {
@@ -600,10 +586,24 @@
       "parc_vul_e_com.date_mesure": "2023-01-01T00:00:00.000"
     },
     {
-      "parc_vul_e_com.libelle_region": "Bourgogne-Franche-Comté",
-      "parc_vul_e_com.geocode_region": "27",
+      "parc_vul_e_com.libelle_region": "Pays de la Loire",
+      "parc_vul_e_com.geocode_region": "52",
       "parc_vul_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
-      "parc_vul_e_com.id_465": 0.8818751450452541,
+      "parc_vul_e_com.id_465": 0.9341962491703458,
+      "parc_vul_e_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "parc_vul_e_com.libelle_region": "Bretagne",
+      "parc_vul_e_com.geocode_region": "53",
+      "parc_vul_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "parc_vul_e_com.id_465": 0.8301007175531663,
+      "parc_vul_e_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "parc_vul_e_com.libelle_region": "Nouvelle-Aquitaine",
+      "parc_vul_e_com.geocode_region": "75",
+      "parc_vul_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "parc_vul_e_com.id_465": 0.9412013396661404,
       "parc_vul_e_com.date_mesure": "2023-01-01T00:00:00.000"
     },
     {
@@ -628,11 +628,25 @@
       "parc_vul_e_com.date_mesure": "2023-01-01T00:00:00.000"
     },
     {
-      "parc_vul_e_com.libelle_region": "Île-de-France",
-      "parc_vul_e_com.geocode_region": "11",
+      "parc_vul_e_com.libelle_region": "Corse",
+      "parc_vul_e_com.geocode_region": "94",
       "parc_vul_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
-      "parc_vul_e_com.id_465": 2.6403319274423067,
+      "parc_vul_e_com.id_465": 0.6049814863525079,
       "parc_vul_e_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "parc_vul_e_com.libelle_region": "Guadeloupe",
+      "parc_vul_e_com.geocode_region": "01",
+      "parc_vul_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "parc_vul_e_com.id_465": 0.8861472945891784,
+      "parc_vul_e_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "parc_vul_e_com.libelle_region": "Martinique",
+      "parc_vul_e_com.geocode_region": "02",
+      "parc_vul_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "parc_vul_e_com.id_465": 0.7811359322528837,
+      "parc_vul_e_com.date_mesure": "2024-01-01T00:00:00.000"
     },
     {
       "parc_vul_e_com.libelle_region": "Guyane",
@@ -642,24 +656,10 @@
       "parc_vul_e_com.date_mesure": "2024-01-01T00:00:00.000"
     },
     {
-      "parc_vul_e_com.libelle_region": "Centre-Val de Loire",
-      "parc_vul_e_com.geocode_region": "24",
+      "parc_vul_e_com.libelle_region": "La Réunion",
+      "parc_vul_e_com.geocode_region": "04",
       "parc_vul_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
-      "parc_vul_e_com.id_465": 1.1913147758080977,
-      "parc_vul_e_com.date_mesure": "2024-01-01T00:00:00.000"
-    },
-    {
-      "parc_vul_e_com.libelle_region": "Bretagne",
-      "parc_vul_e_com.geocode_region": "53",
-      "parc_vul_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
-      "parc_vul_e_com.id_465": 1.0921131141607896,
-      "parc_vul_e_com.date_mesure": "2024-01-01T00:00:00.000"
-    },
-    {
-      "parc_vul_e_com.libelle_region": "Grand Est",
-      "parc_vul_e_com.geocode_region": "44",
-      "parc_vul_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
-      "parc_vul_e_com.id_465": 1.2353278668929741,
+      "parc_vul_e_com.id_465": 0.5071018289312408,
       "parc_vul_e_com.date_mesure": "2024-01-01T00:00:00.000"
     },
     {
@@ -677,17 +677,24 @@
       "parc_vul_e_com.date_mesure": "2024-01-01T00:00:00.000"
     },
     {
-      "parc_vul_e_com.libelle_region": "Pays de la Loire",
-      "parc_vul_e_com.geocode_region": "52",
+      "parc_vul_e_com.libelle_region": "Centre-Val de Loire",
+      "parc_vul_e_com.geocode_region": "24",
       "parc_vul_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
-      "parc_vul_e_com.id_465": 1.2188059621706862,
+      "parc_vul_e_com.id_465": 1.1913147758080977,
       "parc_vul_e_com.date_mesure": "2024-01-01T00:00:00.000"
     },
     {
-      "parc_vul_e_com.libelle_region": "Auvergne-Rhône-Alpes",
-      "parc_vul_e_com.geocode_region": "84",
+      "parc_vul_e_com.libelle_region": "Bourgogne-Franche-Comté",
+      "parc_vul_e_com.geocode_region": "27",
       "parc_vul_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
-      "parc_vul_e_com.id_465": 1.6862033103594156,
+      "parc_vul_e_com.id_465": 1.0659900158672846,
+      "parc_vul_e_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "parc_vul_e_com.libelle_region": "Normandie",
+      "parc_vul_e_com.geocode_region": "28",
+      "parc_vul_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "parc_vul_e_com.id_465": 1.232306812044469,
       "parc_vul_e_com.date_mesure": "2024-01-01T00:00:00.000"
     },
     {
@@ -695,6 +702,48 @@
       "parc_vul_e_com.geocode_region": "32",
       "parc_vul_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
       "parc_vul_e_com.id_465": 1.2423739126144941,
+      "parc_vul_e_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "parc_vul_e_com.libelle_region": "Grand Est",
+      "parc_vul_e_com.geocode_region": "44",
+      "parc_vul_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "parc_vul_e_com.id_465": 1.2353278668929741,
+      "parc_vul_e_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "parc_vul_e_com.libelle_region": "Pays de la Loire",
+      "parc_vul_e_com.geocode_region": "52",
+      "parc_vul_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "parc_vul_e_com.id_465": 1.2188059621706862,
+      "parc_vul_e_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "parc_vul_e_com.libelle_region": "Bretagne",
+      "parc_vul_e_com.geocode_region": "53",
+      "parc_vul_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "parc_vul_e_com.id_465": 1.0921131141607896,
+      "parc_vul_e_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "parc_vul_e_com.libelle_region": "Nouvelle-Aquitaine",
+      "parc_vul_e_com.geocode_region": "75",
+      "parc_vul_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "parc_vul_e_com.id_465": 1.1712708046960383,
+      "parc_vul_e_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "parc_vul_e_com.libelle_region": "Occitanie",
+      "parc_vul_e_com.geocode_region": "76",
+      "parc_vul_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "parc_vul_e_com.id_465": 1.2974386783832126,
+      "parc_vul_e_com.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "parc_vul_e_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "parc_vul_e_com.geocode_region": "84",
+      "parc_vul_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
+      "parc_vul_e_com.id_465": 1.6862033103594156,
       "parc_vul_e_com.date_mesure": "2024-01-01T00:00:00.000"
     },
     {
@@ -712,136 +761,10 @@
       "parc_vul_e_com.date_mesure": "2024-01-01T00:00:00.000"
     },
     {
-      "parc_vul_e_com.libelle_region": "La Réunion",
-      "parc_vul_e_com.geocode_region": "04",
-      "parc_vul_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
-      "parc_vul_e_com.id_465": 0.5071018289312408,
-      "parc_vul_e_com.date_mesure": "2024-01-01T00:00:00.000"
-    },
-    {
-      "parc_vul_e_com.libelle_region": "Normandie",
-      "parc_vul_e_com.geocode_region": "28",
-      "parc_vul_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
-      "parc_vul_e_com.id_465": 1.232306812044469,
-      "parc_vul_e_com.date_mesure": "2024-01-01T00:00:00.000"
-    },
-    {
       "parc_vul_e_com.libelle_region": "Guadeloupe",
       "parc_vul_e_com.geocode_region": "01",
-      "parc_vul_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
-      "parc_vul_e_com.id_465": 0.8861472945891784,
-      "parc_vul_e_com.date_mesure": "2024-01-01T00:00:00.000"
-    },
-    {
-      "parc_vul_e_com.libelle_region": "Occitanie",
-      "parc_vul_e_com.geocode_region": "76",
-      "parc_vul_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
-      "parc_vul_e_com.id_465": 1.2974386783832126,
-      "parc_vul_e_com.date_mesure": "2024-01-01T00:00:00.000"
-    },
-    {
-      "parc_vul_e_com.libelle_region": "Bourgogne-Franche-Comté",
-      "parc_vul_e_com.geocode_region": "27",
-      "parc_vul_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
-      "parc_vul_e_com.id_465": 1.0659900158672846,
-      "parc_vul_e_com.date_mesure": "2024-01-01T00:00:00.000"
-    },
-    {
-      "parc_vul_e_com.libelle_region": "Nouvelle-Aquitaine",
-      "parc_vul_e_com.geocode_region": "75",
-      "parc_vul_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
-      "parc_vul_e_com.id_465": 1.1712708046960383,
-      "parc_vul_e_com.date_mesure": "2024-01-01T00:00:00.000"
-    },
-    {
-      "parc_vul_e_com.libelle_region": "Martinique",
-      "parc_vul_e_com.geocode_region": "02",
-      "parc_vul_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
-      "parc_vul_e_com.id_465": 0.7811359322528837,
-      "parc_vul_e_com.date_mesure": "2024-01-01T00:00:00.000"
-    },
-    {
-      "parc_vul_e_com.libelle_region": "Mayotte",
-      "parc_vul_e_com.geocode_region": "06",
       "parc_vul_e_com.date_mesure.year": "2025-01-01T00:00:00.000",
-      "parc_vul_e_com.id_465": 0.340522133938706,
-      "parc_vul_e_com.date_mesure": "2025-01-01T00:00:00.000"
-    },
-    {
-      "parc_vul_e_com.libelle_region": "Bourgogne-Franche-Comté",
-      "parc_vul_e_com.geocode_region": "27",
-      "parc_vul_e_com.date_mesure.year": "2025-01-01T00:00:00.000",
-      "parc_vul_e_com.id_465": 1.2082206384616903,
-      "parc_vul_e_com.date_mesure": "2025-01-01T00:00:00.000"
-    },
-    {
-      "parc_vul_e_com.libelle_region": "Guyane",
-      "parc_vul_e_com.geocode_region": "03",
-      "parc_vul_e_com.date_mesure.year": "2025-01-01T00:00:00.000",
-      "parc_vul_e_com.id_465": 0.49706551682836264,
-      "parc_vul_e_com.date_mesure": "2025-01-01T00:00:00.000"
-    },
-    {
-      "parc_vul_e_com.libelle_region": "Grand Est",
-      "parc_vul_e_com.geocode_region": "44",
-      "parc_vul_e_com.date_mesure.year": "2025-01-01T00:00:00.000",
-      "parc_vul_e_com.id_465": 1.4873439581585828,
-      "parc_vul_e_com.date_mesure": "2025-01-01T00:00:00.000"
-    },
-    {
-      "parc_vul_e_com.libelle_region": "Corse",
-      "parc_vul_e_com.geocode_region": "94",
-      "parc_vul_e_com.date_mesure.year": "2025-01-01T00:00:00.000",
-      "parc_vul_e_com.id_465": 1.049245615378724,
-      "parc_vul_e_com.date_mesure": "2025-01-01T00:00:00.000"
-    },
-    {
-      "parc_vul_e_com.libelle_region": "Auvergne-Rhône-Alpes",
-      "parc_vul_e_com.geocode_region": "84",
-      "parc_vul_e_com.date_mesure.year": "2025-01-01T00:00:00.000",
-      "parc_vul_e_com.id_465": 2.0246174948767197,
-      "parc_vul_e_com.date_mesure": "2025-01-01T00:00:00.000"
-    },
-    {
-      "parc_vul_e_com.libelle_region": "La Réunion",
-      "parc_vul_e_com.geocode_region": "04",
-      "parc_vul_e_com.date_mesure.year": "2025-01-01T00:00:00.000",
-      "parc_vul_e_com.id_465": 0.6441802267801765,
-      "parc_vul_e_com.date_mesure": "2025-01-01T00:00:00.000"
-    },
-    {
-      "parc_vul_e_com.libelle_region": "Nouvelle-Aquitaine",
-      "parc_vul_e_com.geocode_region": "75",
-      "parc_vul_e_com.date_mesure.year": "2025-01-01T00:00:00.000",
-      "parc_vul_e_com.id_465": 1.4050012388294553,
-      "parc_vul_e_com.date_mesure": "2025-01-01T00:00:00.000"
-    },
-    {
-      "parc_vul_e_com.libelle_region": "Normandie",
-      "parc_vul_e_com.geocode_region": "28",
-      "parc_vul_e_com.date_mesure.year": "2025-01-01T00:00:00.000",
-      "parc_vul_e_com.id_465": 1.4152793602424973,
-      "parc_vul_e_com.date_mesure": "2025-01-01T00:00:00.000"
-    },
-    {
-      "parc_vul_e_com.libelle_region": "Occitanie",
-      "parc_vul_e_com.geocode_region": "76",
-      "parc_vul_e_com.date_mesure.year": "2025-01-01T00:00:00.000",
-      "parc_vul_e_com.id_465": 1.5890745162016704,
-      "parc_vul_e_com.date_mesure": "2025-01-01T00:00:00.000"
-    },
-    {
-      "parc_vul_e_com.libelle_region": "Bretagne",
-      "parc_vul_e_com.geocode_region": "53",
-      "parc_vul_e_com.date_mesure.year": "2025-01-01T00:00:00.000",
-      "parc_vul_e_com.id_465": 1.2919066910674708,
-      "parc_vul_e_com.date_mesure": "2025-01-01T00:00:00.000"
-    },
-    {
-      "parc_vul_e_com.libelle_region": "Centre-Val de Loire",
-      "parc_vul_e_com.geocode_region": "24",
-      "parc_vul_e_com.date_mesure.year": "2025-01-01T00:00:00.000",
-      "parc_vul_e_com.id_465": 1.4230183057348835,
+      "parc_vul_e_com.id_465": 1.291553303937205,
       "parc_vul_e_com.date_mesure": "2025-01-01T00:00:00.000"
     },
     {
@@ -852,10 +775,66 @@
       "parc_vul_e_com.date_mesure": "2025-01-01T00:00:00.000"
     },
     {
+      "parc_vul_e_com.libelle_region": "Guyane",
+      "parc_vul_e_com.geocode_region": "03",
+      "parc_vul_e_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "parc_vul_e_com.id_465": 0.49706551682836264,
+      "parc_vul_e_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "parc_vul_e_com.libelle_region": "La Réunion",
+      "parc_vul_e_com.geocode_region": "04",
+      "parc_vul_e_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "parc_vul_e_com.id_465": 0.6441802267801765,
+      "parc_vul_e_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "parc_vul_e_com.libelle_region": "Mayotte",
+      "parc_vul_e_com.geocode_region": "06",
+      "parc_vul_e_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "parc_vul_e_com.id_465": 0.340522133938706,
+      "parc_vul_e_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
       "parc_vul_e_com.libelle_region": "Île-de-France",
       "parc_vul_e_com.geocode_region": "11",
       "parc_vul_e_com.date_mesure.year": "2025-01-01T00:00:00.000",
       "parc_vul_e_com.id_465": 4.442234609094249,
+      "parc_vul_e_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "parc_vul_e_com.libelle_region": "Centre-Val de Loire",
+      "parc_vul_e_com.geocode_region": "24",
+      "parc_vul_e_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "parc_vul_e_com.id_465": 1.4230183057348835,
+      "parc_vul_e_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "parc_vul_e_com.libelle_region": "Bourgogne-Franche-Comté",
+      "parc_vul_e_com.geocode_region": "27",
+      "parc_vul_e_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "parc_vul_e_com.id_465": 1.2082206384616903,
+      "parc_vul_e_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "parc_vul_e_com.libelle_region": "Normandie",
+      "parc_vul_e_com.geocode_region": "28",
+      "parc_vul_e_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "parc_vul_e_com.id_465": 1.4152793602424973,
+      "parc_vul_e_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "parc_vul_e_com.libelle_region": "Hauts-de-France",
+      "parc_vul_e_com.geocode_region": "32",
+      "parc_vul_e_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "parc_vul_e_com.id_465": 1.6317769472661718,
+      "parc_vul_e_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "parc_vul_e_com.libelle_region": "Grand Est",
+      "parc_vul_e_com.geocode_region": "44",
+      "parc_vul_e_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "parc_vul_e_com.id_465": 1.4873439581585828,
       "parc_vul_e_com.date_mesure": "2025-01-01T00:00:00.000"
     },
     {
@@ -866,6 +845,34 @@
       "parc_vul_e_com.date_mesure": "2025-01-01T00:00:00.000"
     },
     {
+      "parc_vul_e_com.libelle_region": "Bretagne",
+      "parc_vul_e_com.geocode_region": "53",
+      "parc_vul_e_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "parc_vul_e_com.id_465": 1.2919066910674708,
+      "parc_vul_e_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "parc_vul_e_com.libelle_region": "Nouvelle-Aquitaine",
+      "parc_vul_e_com.geocode_region": "75",
+      "parc_vul_e_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "parc_vul_e_com.id_465": 1.4050012388294553,
+      "parc_vul_e_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "parc_vul_e_com.libelle_region": "Occitanie",
+      "parc_vul_e_com.geocode_region": "76",
+      "parc_vul_e_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "parc_vul_e_com.id_465": 1.5890745162016704,
+      "parc_vul_e_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "parc_vul_e_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "parc_vul_e_com.geocode_region": "84",
+      "parc_vul_e_com.date_mesure.year": "2025-01-01T00:00:00.000",
+      "parc_vul_e_com.id_465": 2.0246174948767197,
+      "parc_vul_e_com.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
       "parc_vul_e_com.libelle_region": "Provence-Alpes-Côte d'Azur",
       "parc_vul_e_com.geocode_region": "93",
       "parc_vul_e_com.date_mesure.year": "2025-01-01T00:00:00.000",
@@ -873,17 +880,10 @@
       "parc_vul_e_com.date_mesure": "2025-01-01T00:00:00.000"
     },
     {
-      "parc_vul_e_com.libelle_region": "Guadeloupe",
-      "parc_vul_e_com.geocode_region": "01",
+      "parc_vul_e_com.libelle_region": "Corse",
+      "parc_vul_e_com.geocode_region": "94",
       "parc_vul_e_com.date_mesure.year": "2025-01-01T00:00:00.000",
-      "parc_vul_e_com.id_465": 1.291553303937205,
-      "parc_vul_e_com.date_mesure": "2025-01-01T00:00:00.000"
-    },
-    {
-      "parc_vul_e_com.libelle_region": "Hauts-de-France",
-      "parc_vul_e_com.geocode_region": "32",
-      "parc_vul_e_com.date_mesure.year": "2025-01-01T00:00:00.000",
-      "parc_vul_e_com.id_465": 1.6317769472661718,
+      "parc_vul_e_com.id_465": 1.049245615378724,
       "parc_vul_e_com.date_mesure": "2025-01-01T00:00:00.000"
     }
   ],

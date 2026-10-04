@@ -5,24 +5,17 @@
   "extraDimension": "conso_enaf_com.geocode_commune",
   "data": [
     {
-      "conso_enaf_com.libelle_region": "Bretagne",
-      "conso_enaf_com.geocode_region": "53",
-      "conso_enaf_com.date_mesure.year": "2009-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "2407.9555",
-      "conso_enaf_com.date_mesure": "2009-01-01T00:00:00.000"
-    },
-    {
-      "conso_enaf_com.libelle_region": "Auvergne-Rhône-Alpes",
-      "conso_enaf_com.geocode_region": "84",
-      "conso_enaf_com.date_mesure.year": "2009-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "3590.7250",
-      "conso_enaf_com.date_mesure": "2009-01-01T00:00:00.000"
-    },
-    {
       "conso_enaf_com.libelle_region": "Guadeloupe",
       "conso_enaf_com.geocode_region": "01",
       "conso_enaf_com.date_mesure.year": "2009-01-01T00:00:00.000",
       "conso_enaf_com.id_611": "252.0704",
+      "conso_enaf_com.date_mesure": "2009-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Martinique",
+      "conso_enaf_com.geocode_region": "02",
+      "conso_enaf_com.date_mesure.year": "2009-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "210.1180",
       "conso_enaf_com.date_mesure": "2009-01-01T00:00:00.000"
     },
     {
@@ -33,24 +26,10 @@
       "conso_enaf_com.date_mesure": "2009-01-01T00:00:00.000"
     },
     {
-      "conso_enaf_com.libelle_region": "Hauts-de-France",
-      "conso_enaf_com.geocode_region": "32",
+      "conso_enaf_com.libelle_region": "La Réunion",
+      "conso_enaf_com.geocode_region": "04",
       "conso_enaf_com.date_mesure.year": "2009-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "2051.0168",
-      "conso_enaf_com.date_mesure": "2009-01-01T00:00:00.000"
-    },
-    {
-      "conso_enaf_com.libelle_region": "Centre-Val de Loire",
-      "conso_enaf_com.geocode_region": "24",
-      "conso_enaf_com.date_mesure.year": "2009-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "1671.9783",
-      "conso_enaf_com.date_mesure": "2009-01-01T00:00:00.000"
-    },
-    {
-      "conso_enaf_com.libelle_region": "Normandie",
-      "conso_enaf_com.geocode_region": "28",
-      "conso_enaf_com.date_mesure.year": "2009-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "2454.2567",
+      "conso_enaf_com.id_611": "233.2810",
       "conso_enaf_com.date_mesure": "2009-01-01T00:00:00.000"
     },
     {
@@ -61,38 +40,31 @@
       "conso_enaf_com.date_mesure": "2009-01-01T00:00:00.000"
     },
     {
-      "conso_enaf_com.libelle_region": "Occitanie",
-      "conso_enaf_com.geocode_region": "76",
+      "conso_enaf_com.libelle_region": "Centre-Val de Loire",
+      "conso_enaf_com.geocode_region": "24",
       "conso_enaf_com.date_mesure.year": "2009-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "3346.4741",
+      "conso_enaf_com.id_611": "1671.9783",
       "conso_enaf_com.date_mesure": "2009-01-01T00:00:00.000"
     },
     {
-      "conso_enaf_com.libelle_region": "La Réunion",
-      "conso_enaf_com.geocode_region": "04",
+      "conso_enaf_com.libelle_region": "Bourgogne-Franche-Comté",
+      "conso_enaf_com.geocode_region": "27",
       "conso_enaf_com.date_mesure.year": "2009-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "233.2810",
+      "conso_enaf_com.id_611": "1460.0227",
       "conso_enaf_com.date_mesure": "2009-01-01T00:00:00.000"
     },
     {
-      "conso_enaf_com.libelle_region": "Nouvelle-Aquitaine",
-      "conso_enaf_com.geocode_region": "75",
+      "conso_enaf_com.libelle_region": "Normandie",
+      "conso_enaf_com.geocode_region": "28",
       "conso_enaf_com.date_mesure.year": "2009-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "4798.7913",
+      "conso_enaf_com.id_611": "2454.2567",
       "conso_enaf_com.date_mesure": "2009-01-01T00:00:00.000"
     },
     {
-      "conso_enaf_com.libelle_region": "Provence-Alpes-Côte d'Azur",
-      "conso_enaf_com.geocode_region": "93",
+      "conso_enaf_com.libelle_region": "Hauts-de-France",
+      "conso_enaf_com.geocode_region": "32",
       "conso_enaf_com.date_mesure.year": "2009-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "1737.2545",
-      "conso_enaf_com.date_mesure": "2009-01-01T00:00:00.000"
-    },
-    {
-      "conso_enaf_com.libelle_region": "Corse",
-      "conso_enaf_com.geocode_region": "94",
-      "conso_enaf_com.date_mesure.year": "2009-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "379.6000",
+      "conso_enaf_com.id_611": "2051.0168",
       "conso_enaf_com.date_mesure": "2009-01-01T00:00:00.000"
     },
     {
@@ -110,52 +82,59 @@
       "conso_enaf_com.date_mesure": "2009-01-01T00:00:00.000"
     },
     {
-      "conso_enaf_com.libelle_region": "Bourgogne-Franche-Comté",
-      "conso_enaf_com.geocode_region": "27",
+      "conso_enaf_com.libelle_region": "Bretagne",
+      "conso_enaf_com.geocode_region": "53",
       "conso_enaf_com.date_mesure.year": "2009-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "1460.0227",
-      "conso_enaf_com.date_mesure": "2009-01-01T00:00:00.000"
-    },
-    {
-      "conso_enaf_com.libelle_region": "Martinique",
-      "conso_enaf_com.geocode_region": "02",
-      "conso_enaf_com.date_mesure.year": "2009-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "210.1180",
+      "conso_enaf_com.id_611": "2407.9555",
       "conso_enaf_com.date_mesure": "2009-01-01T00:00:00.000"
     },
     {
       "conso_enaf_com.libelle_region": "Nouvelle-Aquitaine",
       "conso_enaf_com.geocode_region": "75",
-      "conso_enaf_com.date_mesure.year": "2010-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "4798.9768",
-      "conso_enaf_com.date_mesure": "2010-01-01T00:00:00.000"
+      "conso_enaf_com.date_mesure.year": "2009-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "4798.7913",
+      "conso_enaf_com.date_mesure": "2009-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Occitanie",
+      "conso_enaf_com.geocode_region": "76",
+      "conso_enaf_com.date_mesure.year": "2009-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "3346.4741",
+      "conso_enaf_com.date_mesure": "2009-01-01T00:00:00.000"
     },
     {
       "conso_enaf_com.libelle_region": "Auvergne-Rhône-Alpes",
       "conso_enaf_com.geocode_region": "84",
-      "conso_enaf_com.date_mesure.year": "2010-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "3590.9034",
-      "conso_enaf_com.date_mesure": "2010-01-01T00:00:00.000"
+      "conso_enaf_com.date_mesure.year": "2009-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "3590.7250",
+      "conso_enaf_com.date_mesure": "2009-01-01T00:00:00.000"
     },
     {
-      "conso_enaf_com.libelle_region": "Centre-Val de Loire",
-      "conso_enaf_com.geocode_region": "24",
-      "conso_enaf_com.date_mesure.year": "2010-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "1672.0513",
-      "conso_enaf_com.date_mesure": "2010-01-01T00:00:00.000"
+      "conso_enaf_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "conso_enaf_com.geocode_region": "93",
+      "conso_enaf_com.date_mesure.year": "2009-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "1737.2545",
+      "conso_enaf_com.date_mesure": "2009-01-01T00:00:00.000"
     },
     {
       "conso_enaf_com.libelle_region": "Corse",
       "conso_enaf_com.geocode_region": "94",
-      "conso_enaf_com.date_mesure.year": "2010-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "379.6092",
-      "conso_enaf_com.date_mesure": "2010-01-01T00:00:00.000"
+      "conso_enaf_com.date_mesure.year": "2009-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "379.6000",
+      "conso_enaf_com.date_mesure": "2009-01-01T00:00:00.000"
     },
     {
       "conso_enaf_com.libelle_region": "Guadeloupe",
       "conso_enaf_com.geocode_region": "01",
       "conso_enaf_com.date_mesure.year": "2010-01-01T00:00:00.000",
       "conso_enaf_com.id_611": "252.0712",
+      "conso_enaf_com.date_mesure": "2010-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Martinique",
+      "conso_enaf_com.geocode_region": "02",
+      "conso_enaf_com.date_mesure.year": "2010-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "210.1193",
       "conso_enaf_com.date_mesure": "2010-01-01T00:00:00.000"
     },
     {
@@ -166,6 +145,13 @@
       "conso_enaf_com.date_mesure": "2010-01-01T00:00:00.000"
     },
     {
+      "conso_enaf_com.libelle_region": "La Réunion",
+      "conso_enaf_com.geocode_region": "04",
+      "conso_enaf_com.date_mesure.year": "2010-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "233.2821",
+      "conso_enaf_com.date_mesure": "2010-01-01T00:00:00.000"
+    },
+    {
       "conso_enaf_com.libelle_region": "Île-de-France",
       "conso_enaf_com.geocode_region": "11",
       "conso_enaf_com.date_mesure.year": "2010-01-01T00:00:00.000",
@@ -173,10 +159,38 @@
       "conso_enaf_com.date_mesure": "2010-01-01T00:00:00.000"
     },
     {
-      "conso_enaf_com.libelle_region": "Occitanie",
-      "conso_enaf_com.geocode_region": "76",
+      "conso_enaf_com.libelle_region": "Centre-Val de Loire",
+      "conso_enaf_com.geocode_region": "24",
       "conso_enaf_com.date_mesure.year": "2010-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "3346.6448",
+      "conso_enaf_com.id_611": "1672.0513",
+      "conso_enaf_com.date_mesure": "2010-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Bourgogne-Franche-Comté",
+      "conso_enaf_com.geocode_region": "27",
+      "conso_enaf_com.date_mesure.year": "2010-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "1460.1546",
+      "conso_enaf_com.date_mesure": "2010-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Normandie",
+      "conso_enaf_com.geocode_region": "28",
+      "conso_enaf_com.date_mesure.year": "2010-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "2454.3697",
+      "conso_enaf_com.date_mesure": "2010-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Hauts-de-France",
+      "conso_enaf_com.geocode_region": "32",
+      "conso_enaf_com.date_mesure.year": "2010-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "2051.1608",
+      "conso_enaf_com.date_mesure": "2010-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Grand Est",
+      "conso_enaf_com.geocode_region": "44",
+      "conso_enaf_com.date_mesure.year": "2010-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "2092.6254",
       "conso_enaf_com.date_mesure": "2010-01-01T00:00:00.000"
     },
     {
@@ -194,38 +208,24 @@
       "conso_enaf_com.date_mesure": "2010-01-01T00:00:00.000"
     },
     {
-      "conso_enaf_com.libelle_region": "Bourgogne-Franche-Comté",
-      "conso_enaf_com.geocode_region": "27",
+      "conso_enaf_com.libelle_region": "Nouvelle-Aquitaine",
+      "conso_enaf_com.geocode_region": "75",
       "conso_enaf_com.date_mesure.year": "2010-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "1460.1546",
+      "conso_enaf_com.id_611": "4798.9768",
       "conso_enaf_com.date_mesure": "2010-01-01T00:00:00.000"
     },
     {
-      "conso_enaf_com.libelle_region": "Martinique",
-      "conso_enaf_com.geocode_region": "02",
+      "conso_enaf_com.libelle_region": "Occitanie",
+      "conso_enaf_com.geocode_region": "76",
       "conso_enaf_com.date_mesure.year": "2010-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "210.1193",
+      "conso_enaf_com.id_611": "3346.6448",
       "conso_enaf_com.date_mesure": "2010-01-01T00:00:00.000"
     },
     {
-      "conso_enaf_com.libelle_region": "Grand Est",
-      "conso_enaf_com.geocode_region": "44",
+      "conso_enaf_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "conso_enaf_com.geocode_region": "84",
       "conso_enaf_com.date_mesure.year": "2010-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "2092.6254",
-      "conso_enaf_com.date_mesure": "2010-01-01T00:00:00.000"
-    },
-    {
-      "conso_enaf_com.libelle_region": "La Réunion",
-      "conso_enaf_com.geocode_region": "04",
-      "conso_enaf_com.date_mesure.year": "2010-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "233.2821",
-      "conso_enaf_com.date_mesure": "2010-01-01T00:00:00.000"
-    },
-    {
-      "conso_enaf_com.libelle_region": "Normandie",
-      "conso_enaf_com.geocode_region": "28",
-      "conso_enaf_com.date_mesure.year": "2010-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "2454.3697",
+      "conso_enaf_com.id_611": "3590.9034",
       "conso_enaf_com.date_mesure": "2010-01-01T00:00:00.000"
     },
     {
@@ -236,59 +236,17 @@
       "conso_enaf_com.date_mesure": "2010-01-01T00:00:00.000"
     },
     {
-      "conso_enaf_com.libelle_region": "Hauts-de-France",
-      "conso_enaf_com.geocode_region": "32",
+      "conso_enaf_com.libelle_region": "Corse",
+      "conso_enaf_com.geocode_region": "94",
       "conso_enaf_com.date_mesure.year": "2010-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "2051.1608",
+      "conso_enaf_com.id_611": "379.6092",
       "conso_enaf_com.date_mesure": "2010-01-01T00:00:00.000"
     },
     {
-      "conso_enaf_com.libelle_region": "Grand Est",
-      "conso_enaf_com.geocode_region": "44",
+      "conso_enaf_com.libelle_region": "Guadeloupe",
+      "conso_enaf_com.geocode_region": "01",
       "conso_enaf_com.date_mesure.year": "2011-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "2250.7758",
-      "conso_enaf_com.date_mesure": "2011-01-01T00:00:00.000"
-    },
-    {
-      "conso_enaf_com.libelle_region": "Occitanie",
-      "conso_enaf_com.geocode_region": "76",
-      "conso_enaf_com.date_mesure.year": "2011-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "3632.4502",
-      "conso_enaf_com.date_mesure": "2011-01-01T00:00:00.000"
-    },
-    {
-      "conso_enaf_com.libelle_region": "Bourgogne-Franche-Comté",
-      "conso_enaf_com.geocode_region": "27",
-      "conso_enaf_com.date_mesure.year": "2011-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "1561.9493",
-      "conso_enaf_com.date_mesure": "2011-01-01T00:00:00.000"
-    },
-    {
-      "conso_enaf_com.libelle_region": "Hauts-de-France",
-      "conso_enaf_com.geocode_region": "32",
-      "conso_enaf_com.date_mesure.year": "2011-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "2005.0494",
-      "conso_enaf_com.date_mesure": "2011-01-01T00:00:00.000"
-    },
-    {
-      "conso_enaf_com.libelle_region": "Guyane",
-      "conso_enaf_com.geocode_region": "03",
-      "conso_enaf_com.date_mesure.year": "2011-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "358.2892",
-      "conso_enaf_com.date_mesure": "2011-01-01T00:00:00.000"
-    },
-    {
-      "conso_enaf_com.libelle_region": "Île-de-France",
-      "conso_enaf_com.geocode_region": "11",
-      "conso_enaf_com.date_mesure.year": "2011-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "1069.0678",
-      "conso_enaf_com.date_mesure": "2011-01-01T00:00:00.000"
-    },
-    {
-      "conso_enaf_com.libelle_region": "Pays de la Loire",
-      "conso_enaf_com.geocode_region": "52",
-      "conso_enaf_com.date_mesure.year": "2011-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "2953.2947",
+      "conso_enaf_com.id_611": "220.8653",
       "conso_enaf_com.date_mesure": "2011-01-01T00:00:00.000"
     },
     {
@@ -299,38 +257,10 @@
       "conso_enaf_com.date_mesure": "2011-01-01T00:00:00.000"
     },
     {
-      "conso_enaf_com.libelle_region": "Auvergne-Rhône-Alpes",
-      "conso_enaf_com.geocode_region": "84",
+      "conso_enaf_com.libelle_region": "Guyane",
+      "conso_enaf_com.geocode_region": "03",
       "conso_enaf_com.date_mesure.year": "2011-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "3716.4181",
-      "conso_enaf_com.date_mesure": "2011-01-01T00:00:00.000"
-    },
-    {
-      "conso_enaf_com.libelle_region": "Normandie",
-      "conso_enaf_com.geocode_region": "28",
-      "conso_enaf_com.date_mesure.year": "2011-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "2412.2808",
-      "conso_enaf_com.date_mesure": "2011-01-01T00:00:00.000"
-    },
-    {
-      "conso_enaf_com.libelle_region": "Corse",
-      "conso_enaf_com.geocode_region": "94",
-      "conso_enaf_com.date_mesure.year": "2011-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "244.5227",
-      "conso_enaf_com.date_mesure": "2011-01-01T00:00:00.000"
-    },
-    {
-      "conso_enaf_com.libelle_region": "Bretagne",
-      "conso_enaf_com.geocode_region": "53",
-      "conso_enaf_com.date_mesure.year": "2011-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "2196.9294",
-      "conso_enaf_com.date_mesure": "2011-01-01T00:00:00.000"
-    },
-    {
-      "conso_enaf_com.libelle_region": "Centre-Val de Loire",
-      "conso_enaf_com.geocode_region": "24",
-      "conso_enaf_com.date_mesure.year": "2011-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "1392.1828",
+      "conso_enaf_com.id_611": "358.2892",
       "conso_enaf_com.date_mesure": "2011-01-01T00:00:00.000"
     },
     {
@@ -341,10 +271,80 @@
       "conso_enaf_com.date_mesure": "2011-01-01T00:00:00.000"
     },
     {
+      "conso_enaf_com.libelle_region": "Île-de-France",
+      "conso_enaf_com.geocode_region": "11",
+      "conso_enaf_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "1069.0678",
+      "conso_enaf_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Centre-Val de Loire",
+      "conso_enaf_com.geocode_region": "24",
+      "conso_enaf_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "1392.1828",
+      "conso_enaf_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Bourgogne-Franche-Comté",
+      "conso_enaf_com.geocode_region": "27",
+      "conso_enaf_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "1561.9493",
+      "conso_enaf_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Normandie",
+      "conso_enaf_com.geocode_region": "28",
+      "conso_enaf_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "2412.2808",
+      "conso_enaf_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Hauts-de-France",
+      "conso_enaf_com.geocode_region": "32",
+      "conso_enaf_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "2005.0494",
+      "conso_enaf_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Grand Est",
+      "conso_enaf_com.geocode_region": "44",
+      "conso_enaf_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "2250.7758",
+      "conso_enaf_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Pays de la Loire",
+      "conso_enaf_com.geocode_region": "52",
+      "conso_enaf_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "2953.2947",
+      "conso_enaf_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Bretagne",
+      "conso_enaf_com.geocode_region": "53",
+      "conso_enaf_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "2196.9294",
+      "conso_enaf_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
       "conso_enaf_com.libelle_region": "Nouvelle-Aquitaine",
       "conso_enaf_com.geocode_region": "75",
       "conso_enaf_com.date_mesure.year": "2011-01-01T00:00:00.000",
       "conso_enaf_com.id_611": "4569.0366",
+      "conso_enaf_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Occitanie",
+      "conso_enaf_com.geocode_region": "76",
+      "conso_enaf_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "3632.4502",
+      "conso_enaf_com.date_mesure": "2011-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "conso_enaf_com.geocode_region": "84",
+      "conso_enaf_com.date_mesure.year": "2011-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "3716.4181",
       "conso_enaf_com.date_mesure": "2011-01-01T00:00:00.000"
     },
     {
@@ -355,66 +355,17 @@
       "conso_enaf_com.date_mesure": "2011-01-01T00:00:00.000"
     },
     {
-      "conso_enaf_com.libelle_region": "Guadeloupe",
-      "conso_enaf_com.geocode_region": "01",
+      "conso_enaf_com.libelle_region": "Corse",
+      "conso_enaf_com.geocode_region": "94",
       "conso_enaf_com.date_mesure.year": "2011-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "220.8653",
+      "conso_enaf_com.id_611": "244.5227",
       "conso_enaf_com.date_mesure": "2011-01-01T00:00:00.000"
-    },
-    {
-      "conso_enaf_com.libelle_region": "Occitanie",
-      "conso_enaf_com.geocode_region": "76",
-      "conso_enaf_com.date_mesure.year": "2012-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "3327.2141",
-      "conso_enaf_com.date_mesure": "2012-01-01T00:00:00.000"
-    },
-    {
-      "conso_enaf_com.libelle_region": "Hauts-de-France",
-      "conso_enaf_com.geocode_region": "32",
-      "conso_enaf_com.date_mesure.year": "2012-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "1741.4342",
-      "conso_enaf_com.date_mesure": "2012-01-01T00:00:00.000"
-    },
-    {
-      "conso_enaf_com.libelle_region": "Pays de la Loire",
-      "conso_enaf_com.geocode_region": "52",
-      "conso_enaf_com.date_mesure.year": "2012-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "2508.2937",
-      "conso_enaf_com.date_mesure": "2012-01-01T00:00:00.000"
-    },
-    {
-      "conso_enaf_com.libelle_region": "La Réunion",
-      "conso_enaf_com.geocode_region": "04",
-      "conso_enaf_com.date_mesure.year": "2012-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "298.9886",
-      "conso_enaf_com.date_mesure": "2012-01-01T00:00:00.000"
     },
     {
       "conso_enaf_com.libelle_region": "Guadeloupe",
       "conso_enaf_com.geocode_region": "01",
       "conso_enaf_com.date_mesure.year": "2012-01-01T00:00:00.000",
       "conso_enaf_com.id_611": "303.4599",
-      "conso_enaf_com.date_mesure": "2012-01-01T00:00:00.000"
-    },
-    {
-      "conso_enaf_com.libelle_region": "Corse",
-      "conso_enaf_com.geocode_region": "94",
-      "conso_enaf_com.date_mesure.year": "2012-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "278.8796",
-      "conso_enaf_com.date_mesure": "2012-01-01T00:00:00.000"
-    },
-    {
-      "conso_enaf_com.libelle_region": "Guyane",
-      "conso_enaf_com.geocode_region": "03",
-      "conso_enaf_com.date_mesure.year": "2012-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "139.2914",
-      "conso_enaf_com.date_mesure": "2012-01-01T00:00:00.000"
-    },
-    {
-      "conso_enaf_com.libelle_region": "Bourgogne-Franche-Comté",
-      "conso_enaf_com.geocode_region": "27",
-      "conso_enaf_com.date_mesure.year": "2012-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "1328.9126",
       "conso_enaf_com.date_mesure": "2012-01-01T00:00:00.000"
     },
     {
@@ -425,38 +376,17 @@
       "conso_enaf_com.date_mesure": "2012-01-01T00:00:00.000"
     },
     {
-      "conso_enaf_com.libelle_region": "Grand Est",
-      "conso_enaf_com.geocode_region": "44",
+      "conso_enaf_com.libelle_region": "Guyane",
+      "conso_enaf_com.geocode_region": "03",
       "conso_enaf_com.date_mesure.year": "2012-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "1738.9063",
+      "conso_enaf_com.id_611": "139.2914",
       "conso_enaf_com.date_mesure": "2012-01-01T00:00:00.000"
     },
     {
-      "conso_enaf_com.libelle_region": "Auvergne-Rhône-Alpes",
-      "conso_enaf_com.geocode_region": "84",
+      "conso_enaf_com.libelle_region": "La Réunion",
+      "conso_enaf_com.geocode_region": "04",
       "conso_enaf_com.date_mesure.year": "2012-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "3433.0901",
-      "conso_enaf_com.date_mesure": "2012-01-01T00:00:00.000"
-    },
-    {
-      "conso_enaf_com.libelle_region": "Bretagne",
-      "conso_enaf_com.geocode_region": "53",
-      "conso_enaf_com.date_mesure.year": "2012-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "2114.5748",
-      "conso_enaf_com.date_mesure": "2012-01-01T00:00:00.000"
-    },
-    {
-      "conso_enaf_com.libelle_region": "Provence-Alpes-Côte d'Azur",
-      "conso_enaf_com.geocode_region": "93",
-      "conso_enaf_com.date_mesure.year": "2012-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "1405.9942",
-      "conso_enaf_com.date_mesure": "2012-01-01T00:00:00.000"
-    },
-    {
-      "conso_enaf_com.libelle_region": "Nouvelle-Aquitaine",
-      "conso_enaf_com.geocode_region": "75",
-      "conso_enaf_com.date_mesure.year": "2012-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "4796.9532",
+      "conso_enaf_com.id_611": "298.9886",
       "conso_enaf_com.date_mesure": "2012-01-01T00:00:00.000"
     },
     {
@@ -474,6 +404,13 @@
       "conso_enaf_com.date_mesure": "2012-01-01T00:00:00.000"
     },
     {
+      "conso_enaf_com.libelle_region": "Bourgogne-Franche-Comté",
+      "conso_enaf_com.geocode_region": "27",
+      "conso_enaf_com.date_mesure.year": "2012-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "1328.9126",
+      "conso_enaf_com.date_mesure": "2012-01-01T00:00:00.000"
+    },
+    {
       "conso_enaf_com.libelle_region": "Normandie",
       "conso_enaf_com.geocode_region": "28",
       "conso_enaf_com.date_mesure.year": "2012-01-01T00:00:00.000",
@@ -481,52 +418,80 @@
       "conso_enaf_com.date_mesure": "2012-01-01T00:00:00.000"
     },
     {
-      "conso_enaf_com.libelle_region": "Île-de-France",
-      "conso_enaf_com.geocode_region": "11",
-      "conso_enaf_com.date_mesure.year": "2013-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "854.1469",
-      "conso_enaf_com.date_mesure": "2013-01-01T00:00:00.000"
+      "conso_enaf_com.libelle_region": "Hauts-de-France",
+      "conso_enaf_com.geocode_region": "32",
+      "conso_enaf_com.date_mesure.year": "2012-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "1741.4342",
+      "conso_enaf_com.date_mesure": "2012-01-01T00:00:00.000"
     },
     {
-      "conso_enaf_com.libelle_region": "Bourgogne-Franche-Comté",
-      "conso_enaf_com.geocode_region": "27",
-      "conso_enaf_com.date_mesure.year": "2013-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "1112.1021",
-      "conso_enaf_com.date_mesure": "2013-01-01T00:00:00.000"
+      "conso_enaf_com.libelle_region": "Grand Est",
+      "conso_enaf_com.geocode_region": "44",
+      "conso_enaf_com.date_mesure.year": "2012-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "1738.9063",
+      "conso_enaf_com.date_mesure": "2012-01-01T00:00:00.000"
     },
     {
-      "conso_enaf_com.libelle_region": "Provence-Alpes-Côte d'Azur",
-      "conso_enaf_com.geocode_region": "93",
-      "conso_enaf_com.date_mesure.year": "2013-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "1447.9747",
-      "conso_enaf_com.date_mesure": "2013-01-01T00:00:00.000"
+      "conso_enaf_com.libelle_region": "Pays de la Loire",
+      "conso_enaf_com.geocode_region": "52",
+      "conso_enaf_com.date_mesure.year": "2012-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "2508.2937",
+      "conso_enaf_com.date_mesure": "2012-01-01T00:00:00.000"
     },
     {
       "conso_enaf_com.libelle_region": "Bretagne",
       "conso_enaf_com.geocode_region": "53",
-      "conso_enaf_com.date_mesure.year": "2013-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "1903.3660",
-      "conso_enaf_com.date_mesure": "2013-01-01T00:00:00.000"
+      "conso_enaf_com.date_mesure.year": "2012-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "2114.5748",
+      "conso_enaf_com.date_mesure": "2012-01-01T00:00:00.000"
     },
     {
-      "conso_enaf_com.libelle_region": "La Réunion",
-      "conso_enaf_com.geocode_region": "04",
-      "conso_enaf_com.date_mesure.year": "2013-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "258.0256",
-      "conso_enaf_com.date_mesure": "2013-01-01T00:00:00.000"
+      "conso_enaf_com.libelle_region": "Nouvelle-Aquitaine",
+      "conso_enaf_com.geocode_region": "75",
+      "conso_enaf_com.date_mesure.year": "2012-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "4796.9532",
+      "conso_enaf_com.date_mesure": "2012-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Occitanie",
+      "conso_enaf_com.geocode_region": "76",
+      "conso_enaf_com.date_mesure.year": "2012-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "3327.2141",
+      "conso_enaf_com.date_mesure": "2012-01-01T00:00:00.000"
     },
     {
       "conso_enaf_com.libelle_region": "Auvergne-Rhône-Alpes",
       "conso_enaf_com.geocode_region": "84",
+      "conso_enaf_com.date_mesure.year": "2012-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "3433.0901",
+      "conso_enaf_com.date_mesure": "2012-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "conso_enaf_com.geocode_region": "93",
+      "conso_enaf_com.date_mesure.year": "2012-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "1405.9942",
+      "conso_enaf_com.date_mesure": "2012-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Corse",
+      "conso_enaf_com.geocode_region": "94",
+      "conso_enaf_com.date_mesure.year": "2012-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "278.8796",
+      "conso_enaf_com.date_mesure": "2012-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Guadeloupe",
+      "conso_enaf_com.geocode_region": "01",
       "conso_enaf_com.date_mesure.year": "2013-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "3042.1344",
+      "conso_enaf_com.id_611": "319.6630",
       "conso_enaf_com.date_mesure": "2013-01-01T00:00:00.000"
     },
     {
-      "conso_enaf_com.libelle_region": "Centre-Val de Loire",
-      "conso_enaf_com.geocode_region": "24",
+      "conso_enaf_com.libelle_region": "Martinique",
+      "conso_enaf_com.geocode_region": "02",
       "conso_enaf_com.date_mesure.year": "2013-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "1498.5051",
+      "conso_enaf_com.id_611": "158.4072",
       "conso_enaf_com.date_mesure": "2013-01-01T00:00:00.000"
     },
     {
@@ -537,10 +502,31 @@
       "conso_enaf_com.date_mesure": "2013-01-01T00:00:00.000"
     },
     {
-      "conso_enaf_com.libelle_region": "Nouvelle-Aquitaine",
-      "conso_enaf_com.geocode_region": "75",
+      "conso_enaf_com.libelle_region": "La Réunion",
+      "conso_enaf_com.geocode_region": "04",
       "conso_enaf_com.date_mesure.year": "2013-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "4435.4819",
+      "conso_enaf_com.id_611": "258.0256",
+      "conso_enaf_com.date_mesure": "2013-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Île-de-France",
+      "conso_enaf_com.geocode_region": "11",
+      "conso_enaf_com.date_mesure.year": "2013-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "854.1469",
+      "conso_enaf_com.date_mesure": "2013-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Centre-Val de Loire",
+      "conso_enaf_com.geocode_region": "24",
+      "conso_enaf_com.date_mesure.year": "2013-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "1498.5051",
+      "conso_enaf_com.date_mesure": "2013-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Bourgogne-Franche-Comté",
+      "conso_enaf_com.geocode_region": "27",
+      "conso_enaf_com.date_mesure.year": "2013-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "1112.1021",
       "conso_enaf_com.date_mesure": "2013-01-01T00:00:00.000"
     },
     {
@@ -558,20 +544,6 @@
       "conso_enaf_com.date_mesure": "2013-01-01T00:00:00.000"
     },
     {
-      "conso_enaf_com.libelle_region": "Pays de la Loire",
-      "conso_enaf_com.geocode_region": "52",
-      "conso_enaf_com.date_mesure.year": "2013-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "2332.6016",
-      "conso_enaf_com.date_mesure": "2013-01-01T00:00:00.000"
-    },
-    {
-      "conso_enaf_com.libelle_region": "Corse",
-      "conso_enaf_com.geocode_region": "94",
-      "conso_enaf_com.date_mesure.year": "2013-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "228.6054",
-      "conso_enaf_com.date_mesure": "2013-01-01T00:00:00.000"
-    },
-    {
       "conso_enaf_com.libelle_region": "Grand Est",
       "conso_enaf_com.geocode_region": "44",
       "conso_enaf_com.date_mesure.year": "2013-01-01T00:00:00.000",
@@ -579,10 +551,24 @@
       "conso_enaf_com.date_mesure": "2013-01-01T00:00:00.000"
     },
     {
-      "conso_enaf_com.libelle_region": "Martinique",
-      "conso_enaf_com.geocode_region": "02",
+      "conso_enaf_com.libelle_region": "Pays de la Loire",
+      "conso_enaf_com.geocode_region": "52",
       "conso_enaf_com.date_mesure.year": "2013-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "158.4072",
+      "conso_enaf_com.id_611": "2332.6016",
+      "conso_enaf_com.date_mesure": "2013-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Bretagne",
+      "conso_enaf_com.geocode_region": "53",
+      "conso_enaf_com.date_mesure.year": "2013-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "1903.3660",
+      "conso_enaf_com.date_mesure": "2013-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Nouvelle-Aquitaine",
+      "conso_enaf_com.geocode_region": "75",
+      "conso_enaf_com.date_mesure.year": "2013-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "4435.4819",
       "conso_enaf_com.date_mesure": "2013-01-01T00:00:00.000"
     },
     {
@@ -593,17 +579,73 @@
       "conso_enaf_com.date_mesure": "2013-01-01T00:00:00.000"
     },
     {
-      "conso_enaf_com.libelle_region": "Guadeloupe",
-      "conso_enaf_com.geocode_region": "01",
+      "conso_enaf_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "conso_enaf_com.geocode_region": "84",
       "conso_enaf_com.date_mesure.year": "2013-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "319.6630",
+      "conso_enaf_com.id_611": "3042.1344",
+      "conso_enaf_com.date_mesure": "2013-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "conso_enaf_com.geocode_region": "93",
+      "conso_enaf_com.date_mesure.year": "2013-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "1447.9747",
       "conso_enaf_com.date_mesure": "2013-01-01T00:00:00.000"
     },
     {
       "conso_enaf_com.libelle_region": "Corse",
       "conso_enaf_com.geocode_region": "94",
+      "conso_enaf_com.date_mesure.year": "2013-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "228.6054",
+      "conso_enaf_com.date_mesure": "2013-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Guadeloupe",
+      "conso_enaf_com.geocode_region": "01",
       "conso_enaf_com.date_mesure.year": "2014-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "285.2659",
+      "conso_enaf_com.id_611": "203.5270",
+      "conso_enaf_com.date_mesure": "2014-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Martinique",
+      "conso_enaf_com.geocode_region": "02",
+      "conso_enaf_com.date_mesure.year": "2014-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "109.1253",
+      "conso_enaf_com.date_mesure": "2014-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Guyane",
+      "conso_enaf_com.geocode_region": "03",
+      "conso_enaf_com.date_mesure.year": "2014-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "77.2845",
+      "conso_enaf_com.date_mesure": "2014-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "La Réunion",
+      "conso_enaf_com.geocode_region": "04",
+      "conso_enaf_com.date_mesure.year": "2014-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "248.3957",
+      "conso_enaf_com.date_mesure": "2014-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Île-de-France",
+      "conso_enaf_com.geocode_region": "11",
+      "conso_enaf_com.date_mesure.year": "2014-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "938.1356",
+      "conso_enaf_com.date_mesure": "2014-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Centre-Val de Loire",
+      "conso_enaf_com.geocode_region": "24",
+      "conso_enaf_com.date_mesure.year": "2014-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "1266.6925",
+      "conso_enaf_com.date_mesure": "2014-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Bourgogne-Franche-Comté",
+      "conso_enaf_com.geocode_region": "27",
+      "conso_enaf_com.date_mesure.year": "2014-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "1261.4733",
       "conso_enaf_com.date_mesure": "2014-01-01T00:00:00.000"
     },
     {
@@ -614,17 +656,10 @@
       "conso_enaf_com.date_mesure": "2014-01-01T00:00:00.000"
     },
     {
-      "conso_enaf_com.libelle_region": "Provence-Alpes-Côte d'Azur",
-      "conso_enaf_com.geocode_region": "93",
+      "conso_enaf_com.libelle_region": "Hauts-de-France",
+      "conso_enaf_com.geocode_region": "32",
       "conso_enaf_com.date_mesure.year": "2014-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "1311.9858",
-      "conso_enaf_com.date_mesure": "2014-01-01T00:00:00.000"
-    },
-    {
-      "conso_enaf_com.libelle_region": "Occitanie",
-      "conso_enaf_com.geocode_region": "76",
-      "conso_enaf_com.date_mesure.year": "2014-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "2652.0383",
+      "conso_enaf_com.id_611": "1658.3971",
       "conso_enaf_com.date_mesure": "2014-01-01T00:00:00.000"
     },
     {
@@ -642,52 +677,10 @@
       "conso_enaf_com.date_mesure": "2014-01-01T00:00:00.000"
     },
     {
-      "conso_enaf_com.libelle_region": "Auvergne-Rhône-Alpes",
-      "conso_enaf_com.geocode_region": "84",
-      "conso_enaf_com.date_mesure.year": "2014-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "2889.2274",
-      "conso_enaf_com.date_mesure": "2014-01-01T00:00:00.000"
-    },
-    {
-      "conso_enaf_com.libelle_region": "Martinique",
-      "conso_enaf_com.geocode_region": "02",
-      "conso_enaf_com.date_mesure.year": "2014-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "109.1253",
-      "conso_enaf_com.date_mesure": "2014-01-01T00:00:00.000"
-    },
-    {
-      "conso_enaf_com.libelle_region": "Hauts-de-France",
-      "conso_enaf_com.geocode_region": "32",
-      "conso_enaf_com.date_mesure.year": "2014-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "1658.3971",
-      "conso_enaf_com.date_mesure": "2014-01-01T00:00:00.000"
-    },
-    {
       "conso_enaf_com.libelle_region": "Bretagne",
       "conso_enaf_com.geocode_region": "53",
       "conso_enaf_com.date_mesure.year": "2014-01-01T00:00:00.000",
       "conso_enaf_com.id_611": "1784.9641",
-      "conso_enaf_com.date_mesure": "2014-01-01T00:00:00.000"
-    },
-    {
-      "conso_enaf_com.libelle_region": "Bourgogne-Franche-Comté",
-      "conso_enaf_com.geocode_region": "27",
-      "conso_enaf_com.date_mesure.year": "2014-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "1261.4733",
-      "conso_enaf_com.date_mesure": "2014-01-01T00:00:00.000"
-    },
-    {
-      "conso_enaf_com.libelle_region": "Île-de-France",
-      "conso_enaf_com.geocode_region": "11",
-      "conso_enaf_com.date_mesure.year": "2014-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "938.1356",
-      "conso_enaf_com.date_mesure": "2014-01-01T00:00:00.000"
-    },
-    {
-      "conso_enaf_com.libelle_region": "Guadeloupe",
-      "conso_enaf_com.geocode_region": "01",
-      "conso_enaf_com.date_mesure.year": "2014-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "203.5270",
       "conso_enaf_com.date_mesure": "2014-01-01T00:00:00.000"
     },
     {
@@ -698,87 +691,59 @@
       "conso_enaf_com.date_mesure": "2014-01-01T00:00:00.000"
     },
     {
-      "conso_enaf_com.libelle_region": "Guyane",
-      "conso_enaf_com.geocode_region": "03",
-      "conso_enaf_com.date_mesure.year": "2014-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "77.2845",
-      "conso_enaf_com.date_mesure": "2014-01-01T00:00:00.000"
-    },
-    {
-      "conso_enaf_com.libelle_region": "Centre-Val de Loire",
-      "conso_enaf_com.geocode_region": "24",
-      "conso_enaf_com.date_mesure.year": "2014-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "1266.6925",
-      "conso_enaf_com.date_mesure": "2014-01-01T00:00:00.000"
-    },
-    {
-      "conso_enaf_com.libelle_region": "La Réunion",
-      "conso_enaf_com.geocode_region": "04",
-      "conso_enaf_com.date_mesure.year": "2014-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "248.3957",
-      "conso_enaf_com.date_mesure": "2014-01-01T00:00:00.000"
-    },
-    {
       "conso_enaf_com.libelle_region": "Occitanie",
       "conso_enaf_com.geocode_region": "76",
-      "conso_enaf_com.date_mesure.year": "2015-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "2441.2923",
-      "conso_enaf_com.date_mesure": "2015-01-01T00:00:00.000"
-    },
-    {
-      "conso_enaf_com.libelle_region": "Corse",
-      "conso_enaf_com.geocode_region": "94",
-      "conso_enaf_com.date_mesure.year": "2015-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "186.9623",
-      "conso_enaf_com.date_mesure": "2015-01-01T00:00:00.000"
-    },
-    {
-      "conso_enaf_com.libelle_region": "Hauts-de-France",
-      "conso_enaf_com.geocode_region": "32",
-      "conso_enaf_com.date_mesure.year": "2015-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "1336.6089",
-      "conso_enaf_com.date_mesure": "2015-01-01T00:00:00.000"
+      "conso_enaf_com.date_mesure.year": "2014-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "2652.0383",
+      "conso_enaf_com.date_mesure": "2014-01-01T00:00:00.000"
     },
     {
       "conso_enaf_com.libelle_region": "Auvergne-Rhône-Alpes",
       "conso_enaf_com.geocode_region": "84",
-      "conso_enaf_com.date_mesure.year": "2015-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "2618.3275",
-      "conso_enaf_com.date_mesure": "2015-01-01T00:00:00.000"
-    },
-    {
-      "conso_enaf_com.libelle_region": "Bourgogne-Franche-Comté",
-      "conso_enaf_com.geocode_region": "27",
-      "conso_enaf_com.date_mesure.year": "2015-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "933.3091",
-      "conso_enaf_com.date_mesure": "2015-01-01T00:00:00.000"
-    },
-    {
-      "conso_enaf_com.libelle_region": "Grand Est",
-      "conso_enaf_com.geocode_region": "44",
-      "conso_enaf_com.date_mesure.year": "2015-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "1331.9615",
-      "conso_enaf_com.date_mesure": "2015-01-01T00:00:00.000"
-    },
-    {
-      "conso_enaf_com.libelle_region": "Normandie",
-      "conso_enaf_com.geocode_region": "28",
-      "conso_enaf_com.date_mesure.year": "2015-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "1526.0257",
-      "conso_enaf_com.date_mesure": "2015-01-01T00:00:00.000"
+      "conso_enaf_com.date_mesure.year": "2014-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "2889.2274",
+      "conso_enaf_com.date_mesure": "2014-01-01T00:00:00.000"
     },
     {
       "conso_enaf_com.libelle_region": "Provence-Alpes-Côte d'Azur",
       "conso_enaf_com.geocode_region": "93",
-      "conso_enaf_com.date_mesure.year": "2015-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "1459.2386",
-      "conso_enaf_com.date_mesure": "2015-01-01T00:00:00.000"
+      "conso_enaf_com.date_mesure.year": "2014-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "1311.9858",
+      "conso_enaf_com.date_mesure": "2014-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Corse",
+      "conso_enaf_com.geocode_region": "94",
+      "conso_enaf_com.date_mesure.year": "2014-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "285.2659",
+      "conso_enaf_com.date_mesure": "2014-01-01T00:00:00.000"
     },
     {
       "conso_enaf_com.libelle_region": "Guadeloupe",
       "conso_enaf_com.geocode_region": "01",
       "conso_enaf_com.date_mesure.year": "2015-01-01T00:00:00.000",
       "conso_enaf_com.id_611": "135.4222",
+      "conso_enaf_com.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Martinique",
+      "conso_enaf_com.geocode_region": "02",
+      "conso_enaf_com.date_mesure.year": "2015-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "139.0188",
+      "conso_enaf_com.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Guyane",
+      "conso_enaf_com.geocode_region": "03",
+      "conso_enaf_com.date_mesure.year": "2015-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "73.7094",
+      "conso_enaf_com.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "La Réunion",
+      "conso_enaf_com.geocode_region": "04",
+      "conso_enaf_com.date_mesure.year": "2015-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "265.4845",
       "conso_enaf_com.date_mesure": "2015-01-01T00:00:00.000"
     },
     {
@@ -796,24 +761,38 @@
       "conso_enaf_com.date_mesure": "2015-01-01T00:00:00.000"
     },
     {
+      "conso_enaf_com.libelle_region": "Bourgogne-Franche-Comté",
+      "conso_enaf_com.geocode_region": "27",
+      "conso_enaf_com.date_mesure.year": "2015-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "933.3091",
+      "conso_enaf_com.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Normandie",
+      "conso_enaf_com.geocode_region": "28",
+      "conso_enaf_com.date_mesure.year": "2015-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "1526.0257",
+      "conso_enaf_com.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Hauts-de-France",
+      "conso_enaf_com.geocode_region": "32",
+      "conso_enaf_com.date_mesure.year": "2015-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "1336.6089",
+      "conso_enaf_com.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Grand Est",
+      "conso_enaf_com.geocode_region": "44",
+      "conso_enaf_com.date_mesure.year": "2015-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "1331.9615",
+      "conso_enaf_com.date_mesure": "2015-01-01T00:00:00.000"
+    },
+    {
       "conso_enaf_com.libelle_region": "Pays de la Loire",
       "conso_enaf_com.geocode_region": "52",
       "conso_enaf_com.date_mesure.year": "2015-01-01T00:00:00.000",
       "conso_enaf_com.id_611": "1627.9417",
-      "conso_enaf_com.date_mesure": "2015-01-01T00:00:00.000"
-    },
-    {
-      "conso_enaf_com.libelle_region": "La Réunion",
-      "conso_enaf_com.geocode_region": "04",
-      "conso_enaf_com.date_mesure.year": "2015-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "265.4845",
-      "conso_enaf_com.date_mesure": "2015-01-01T00:00:00.000"
-    },
-    {
-      "conso_enaf_com.libelle_region": "Martinique",
-      "conso_enaf_com.geocode_region": "02",
-      "conso_enaf_com.date_mesure.year": "2015-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "139.0188",
       "conso_enaf_com.date_mesure": "2015-01-01T00:00:00.000"
     },
     {
@@ -831,59 +810,38 @@
       "conso_enaf_com.date_mesure": "2015-01-01T00:00:00.000"
     },
     {
-      "conso_enaf_com.libelle_region": "Guyane",
-      "conso_enaf_com.geocode_region": "03",
+      "conso_enaf_com.libelle_region": "Occitanie",
+      "conso_enaf_com.geocode_region": "76",
       "conso_enaf_com.date_mesure.year": "2015-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "73.7094",
+      "conso_enaf_com.id_611": "2441.2923",
       "conso_enaf_com.date_mesure": "2015-01-01T00:00:00.000"
     },
     {
-      "conso_enaf_com.libelle_region": "Grand Est",
-      "conso_enaf_com.geocode_region": "44",
-      "conso_enaf_com.date_mesure.year": "2016-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "1467.3765",
-      "conso_enaf_com.date_mesure": "2016-01-01T00:00:00.000"
-    },
-    {
-      "conso_enaf_com.libelle_region": "Guyane",
-      "conso_enaf_com.geocode_region": "03",
-      "conso_enaf_com.date_mesure.year": "2016-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "134.8191",
-      "conso_enaf_com.date_mesure": "2016-01-01T00:00:00.000"
-    },
-    {
-      "conso_enaf_com.libelle_region": "Pays de la Loire",
-      "conso_enaf_com.geocode_region": "52",
-      "conso_enaf_com.date_mesure.year": "2016-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "1763.0809",
-      "conso_enaf_com.date_mesure": "2016-01-01T00:00:00.000"
-    },
-    {
-      "conso_enaf_com.libelle_region": "Île-de-France",
-      "conso_enaf_com.geocode_region": "11",
-      "conso_enaf_com.date_mesure.year": "2016-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "897.1383",
-      "conso_enaf_com.date_mesure": "2016-01-01T00:00:00.000"
+      "conso_enaf_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "conso_enaf_com.geocode_region": "84",
+      "conso_enaf_com.date_mesure.year": "2015-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "2618.3275",
+      "conso_enaf_com.date_mesure": "2015-01-01T00:00:00.000"
     },
     {
       "conso_enaf_com.libelle_region": "Provence-Alpes-Côte d'Azur",
       "conso_enaf_com.geocode_region": "93",
-      "conso_enaf_com.date_mesure.year": "2016-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "1334.5325",
-      "conso_enaf_com.date_mesure": "2016-01-01T00:00:00.000"
+      "conso_enaf_com.date_mesure.year": "2015-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "1459.2386",
+      "conso_enaf_com.date_mesure": "2015-01-01T00:00:00.000"
     },
     {
-      "conso_enaf_com.libelle_region": "Normandie",
-      "conso_enaf_com.geocode_region": "28",
-      "conso_enaf_com.date_mesure.year": "2016-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "1518.3246",
-      "conso_enaf_com.date_mesure": "2016-01-01T00:00:00.000"
+      "conso_enaf_com.libelle_region": "Corse",
+      "conso_enaf_com.geocode_region": "94",
+      "conso_enaf_com.date_mesure.year": "2015-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "186.9623",
+      "conso_enaf_com.date_mesure": "2015-01-01T00:00:00.000"
     },
     {
-      "conso_enaf_com.libelle_region": "Nouvelle-Aquitaine",
-      "conso_enaf_com.geocode_region": "75",
+      "conso_enaf_com.libelle_region": "Guadeloupe",
+      "conso_enaf_com.geocode_region": "01",
       "conso_enaf_com.date_mesure.year": "2016-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "3302.6993",
+      "conso_enaf_com.id_611": "319.1372",
       "conso_enaf_com.date_mesure": "2016-01-01T00:00:00.000"
     },
     {
@@ -894,45 +852,10 @@
       "conso_enaf_com.date_mesure": "2016-01-01T00:00:00.000"
     },
     {
-      "conso_enaf_com.libelle_region": "Bourgogne-Franche-Comté",
-      "conso_enaf_com.geocode_region": "27",
+      "conso_enaf_com.libelle_region": "Guyane",
+      "conso_enaf_com.geocode_region": "03",
       "conso_enaf_com.date_mesure.year": "2016-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "1032.5658",
-      "conso_enaf_com.date_mesure": "2016-01-01T00:00:00.000"
-    },
-    {
-      "conso_enaf_com.libelle_region": "Hauts-de-France",
-      "conso_enaf_com.geocode_region": "32",
-      "conso_enaf_com.date_mesure.year": "2016-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "1348.8557",
-      "conso_enaf_com.date_mesure": "2016-01-01T00:00:00.000"
-    },
-    {
-      "conso_enaf_com.libelle_region": "Guadeloupe",
-      "conso_enaf_com.geocode_region": "01",
-      "conso_enaf_com.date_mesure.year": "2016-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "319.1372",
-      "conso_enaf_com.date_mesure": "2016-01-01T00:00:00.000"
-    },
-    {
-      "conso_enaf_com.libelle_region": "Corse",
-      "conso_enaf_com.geocode_region": "94",
-      "conso_enaf_com.date_mesure.year": "2016-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "188.9074",
-      "conso_enaf_com.date_mesure": "2016-01-01T00:00:00.000"
-    },
-    {
-      "conso_enaf_com.libelle_region": "Bretagne",
-      "conso_enaf_com.geocode_region": "53",
-      "conso_enaf_com.date_mesure.year": "2016-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "1709.2312",
-      "conso_enaf_com.date_mesure": "2016-01-01T00:00:00.000"
-    },
-    {
-      "conso_enaf_com.libelle_region": "Occitanie",
-      "conso_enaf_com.geocode_region": "76",
-      "conso_enaf_com.date_mesure.year": "2016-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "2751.4143",
+      "conso_enaf_com.id_611": "134.8191",
       "conso_enaf_com.date_mesure": "2016-01-01T00:00:00.000"
     },
     {
@@ -943,10 +866,10 @@
       "conso_enaf_com.date_mesure": "2016-01-01T00:00:00.000"
     },
     {
-      "conso_enaf_com.libelle_region": "Auvergne-Rhône-Alpes",
-      "conso_enaf_com.geocode_region": "84",
+      "conso_enaf_com.libelle_region": "Île-de-France",
+      "conso_enaf_com.geocode_region": "11",
       "conso_enaf_com.date_mesure.year": "2016-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "2691.5690",
+      "conso_enaf_com.id_611": "897.1383",
       "conso_enaf_com.date_mesure": "2016-01-01T00:00:00.000"
     },
     {
@@ -954,6 +877,83 @@
       "conso_enaf_com.geocode_region": "24",
       "conso_enaf_com.date_mesure.year": "2016-01-01T00:00:00.000",
       "conso_enaf_com.id_611": "1366.5291",
+      "conso_enaf_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Bourgogne-Franche-Comté",
+      "conso_enaf_com.geocode_region": "27",
+      "conso_enaf_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "1032.5658",
+      "conso_enaf_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Normandie",
+      "conso_enaf_com.geocode_region": "28",
+      "conso_enaf_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "1518.3246",
+      "conso_enaf_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Hauts-de-France",
+      "conso_enaf_com.geocode_region": "32",
+      "conso_enaf_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "1348.8557",
+      "conso_enaf_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Grand Est",
+      "conso_enaf_com.geocode_region": "44",
+      "conso_enaf_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "1467.3765",
+      "conso_enaf_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Pays de la Loire",
+      "conso_enaf_com.geocode_region": "52",
+      "conso_enaf_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "1763.0809",
+      "conso_enaf_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Bretagne",
+      "conso_enaf_com.geocode_region": "53",
+      "conso_enaf_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "1709.2312",
+      "conso_enaf_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Nouvelle-Aquitaine",
+      "conso_enaf_com.geocode_region": "75",
+      "conso_enaf_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "3302.6993",
+      "conso_enaf_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Occitanie",
+      "conso_enaf_com.geocode_region": "76",
+      "conso_enaf_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "2751.4143",
+      "conso_enaf_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "conso_enaf_com.geocode_region": "84",
+      "conso_enaf_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "2691.5690",
+      "conso_enaf_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "conso_enaf_com.geocode_region": "93",
+      "conso_enaf_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "1334.5325",
+      "conso_enaf_com.date_mesure": "2016-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Corse",
+      "conso_enaf_com.geocode_region": "94",
+      "conso_enaf_com.date_mesure.year": "2016-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "188.9074",
       "conso_enaf_com.date_mesure": "2016-01-01T00:00:00.000"
     },
     {
@@ -971,38 +971,10 @@
       "conso_enaf_com.date_mesure": "2017-01-01T00:00:00.000"
     },
     {
-      "conso_enaf_com.libelle_region": "Normandie",
-      "conso_enaf_com.geocode_region": "28",
+      "conso_enaf_com.libelle_region": "Guyane",
+      "conso_enaf_com.geocode_region": "03",
       "conso_enaf_com.date_mesure.year": "2017-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "1530.3346",
-      "conso_enaf_com.date_mesure": "2017-01-01T00:00:00.000"
-    },
-    {
-      "conso_enaf_com.libelle_region": "Occitanie",
-      "conso_enaf_com.geocode_region": "76",
-      "conso_enaf_com.date_mesure.year": "2017-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "2757.8765",
-      "conso_enaf_com.date_mesure": "2017-01-01T00:00:00.000"
-    },
-    {
-      "conso_enaf_com.libelle_region": "Corse",
-      "conso_enaf_com.geocode_region": "94",
-      "conso_enaf_com.date_mesure.year": "2017-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "169.0062",
-      "conso_enaf_com.date_mesure": "2017-01-01T00:00:00.000"
-    },
-    {
-      "conso_enaf_com.libelle_region": "Auvergne-Rhône-Alpes",
-      "conso_enaf_com.geocode_region": "84",
-      "conso_enaf_com.date_mesure.year": "2017-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "2451.9649",
-      "conso_enaf_com.date_mesure": "2017-01-01T00:00:00.000"
-    },
-    {
-      "conso_enaf_com.libelle_region": "Provence-Alpes-Côte d'Azur",
-      "conso_enaf_com.geocode_region": "93",
-      "conso_enaf_com.date_mesure.year": "2017-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "1377.6777",
+      "conso_enaf_com.id_611": "203.8390",
       "conso_enaf_com.date_mesure": "2017-01-01T00:00:00.000"
     },
     {
@@ -1013,20 +985,6 @@
       "conso_enaf_com.date_mesure": "2017-01-01T00:00:00.000"
     },
     {
-      "conso_enaf_com.libelle_region": "Bourgogne-Franche-Comté",
-      "conso_enaf_com.geocode_region": "27",
-      "conso_enaf_com.date_mesure.year": "2017-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "1004.9606",
-      "conso_enaf_com.date_mesure": "2017-01-01T00:00:00.000"
-    },
-    {
-      "conso_enaf_com.libelle_region": "Guyane",
-      "conso_enaf_com.geocode_region": "03",
-      "conso_enaf_com.date_mesure.year": "2017-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "203.8390",
-      "conso_enaf_com.date_mesure": "2017-01-01T00:00:00.000"
-    },
-    {
       "conso_enaf_com.libelle_region": "Île-de-France",
       "conso_enaf_com.geocode_region": "11",
       "conso_enaf_com.date_mesure.year": "2017-01-01T00:00:00.000",
@@ -1034,24 +992,38 @@
       "conso_enaf_com.date_mesure": "2017-01-01T00:00:00.000"
     },
     {
-      "conso_enaf_com.libelle_region": "Grand Est",
-      "conso_enaf_com.geocode_region": "44",
-      "conso_enaf_com.date_mesure.year": "2017-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "1322.3771",
-      "conso_enaf_com.date_mesure": "2017-01-01T00:00:00.000"
-    },
-    {
-      "conso_enaf_com.libelle_region": "Nouvelle-Aquitaine",
-      "conso_enaf_com.geocode_region": "75",
-      "conso_enaf_com.date_mesure.year": "2017-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "3349.2913",
-      "conso_enaf_com.date_mesure": "2017-01-01T00:00:00.000"
-    },
-    {
       "conso_enaf_com.libelle_region": "Centre-Val de Loire",
       "conso_enaf_com.geocode_region": "24",
       "conso_enaf_com.date_mesure.year": "2017-01-01T00:00:00.000",
       "conso_enaf_com.id_611": "1623.6228",
+      "conso_enaf_com.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Bourgogne-Franche-Comté",
+      "conso_enaf_com.geocode_region": "27",
+      "conso_enaf_com.date_mesure.year": "2017-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "1004.9606",
+      "conso_enaf_com.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Normandie",
+      "conso_enaf_com.geocode_region": "28",
+      "conso_enaf_com.date_mesure.year": "2017-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "1530.3346",
+      "conso_enaf_com.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Hauts-de-France",
+      "conso_enaf_com.geocode_region": "32",
+      "conso_enaf_com.date_mesure.year": "2017-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "1537.9958",
+      "conso_enaf_com.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Grand Est",
+      "conso_enaf_com.geocode_region": "44",
+      "conso_enaf_com.date_mesure.year": "2017-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "1322.3771",
       "conso_enaf_com.date_mesure": "2017-01-01T00:00:00.000"
     },
     {
@@ -1069,59 +1041,45 @@
       "conso_enaf_com.date_mesure": "2017-01-01T00:00:00.000"
     },
     {
-      "conso_enaf_com.libelle_region": "Hauts-de-France",
-      "conso_enaf_com.geocode_region": "32",
+      "conso_enaf_com.libelle_region": "Nouvelle-Aquitaine",
+      "conso_enaf_com.geocode_region": "75",
       "conso_enaf_com.date_mesure.year": "2017-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "1537.9958",
+      "conso_enaf_com.id_611": "3349.2913",
       "conso_enaf_com.date_mesure": "2017-01-01T00:00:00.000"
     },
     {
-      "conso_enaf_com.libelle_region": "Normandie",
-      "conso_enaf_com.geocode_region": "28",
-      "conso_enaf_com.date_mesure.year": "2018-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "1642.1181",
-      "conso_enaf_com.date_mesure": "2018-01-01T00:00:00.000"
+      "conso_enaf_com.libelle_region": "Occitanie",
+      "conso_enaf_com.geocode_region": "76",
+      "conso_enaf_com.date_mesure.year": "2017-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "2757.8765",
+      "conso_enaf_com.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "conso_enaf_com.geocode_region": "84",
+      "conso_enaf_com.date_mesure.year": "2017-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "2451.9649",
+      "conso_enaf_com.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "conso_enaf_com.geocode_region": "93",
+      "conso_enaf_com.date_mesure.year": "2017-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "1377.6777",
+      "conso_enaf_com.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Corse",
+      "conso_enaf_com.geocode_region": "94",
+      "conso_enaf_com.date_mesure.year": "2017-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "169.0062",
+      "conso_enaf_com.date_mesure": "2017-01-01T00:00:00.000"
     },
     {
       "conso_enaf_com.libelle_region": "Guadeloupe",
       "conso_enaf_com.geocode_region": "01",
       "conso_enaf_com.date_mesure.year": "2018-01-01T00:00:00.000",
       "conso_enaf_com.id_611": "73.6228",
-      "conso_enaf_com.date_mesure": "2018-01-01T00:00:00.000"
-    },
-    {
-      "conso_enaf_com.libelle_region": "Guyane",
-      "conso_enaf_com.geocode_region": "03",
-      "conso_enaf_com.date_mesure.year": "2018-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "136.6695",
-      "conso_enaf_com.date_mesure": "2018-01-01T00:00:00.000"
-    },
-    {
-      "conso_enaf_com.libelle_region": "Occitanie",
-      "conso_enaf_com.geocode_region": "76",
-      "conso_enaf_com.date_mesure.year": "2018-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "2436.6524",
-      "conso_enaf_com.date_mesure": "2018-01-01T00:00:00.000"
-    },
-    {
-      "conso_enaf_com.libelle_region": "Provence-Alpes-Côte d'Azur",
-      "conso_enaf_com.geocode_region": "93",
-      "conso_enaf_com.date_mesure.year": "2018-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "1200.2515",
-      "conso_enaf_com.date_mesure": "2018-01-01T00:00:00.000"
-    },
-    {
-      "conso_enaf_com.libelle_region": "Île-de-France",
-      "conso_enaf_com.geocode_region": "11",
-      "conso_enaf_com.date_mesure.year": "2018-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "1088.3801",
-      "conso_enaf_com.date_mesure": "2018-01-01T00:00:00.000"
-    },
-    {
-      "conso_enaf_com.libelle_region": "Nouvelle-Aquitaine",
-      "conso_enaf_com.geocode_region": "75",
-      "conso_enaf_com.date_mesure.year": "2018-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "3228.4589",
       "conso_enaf_com.date_mesure": "2018-01-01T00:00:00.000"
     },
     {
@@ -1132,59 +1090,10 @@
       "conso_enaf_com.date_mesure": "2018-01-01T00:00:00.000"
     },
     {
-      "conso_enaf_com.libelle_region": "Bretagne",
-      "conso_enaf_com.geocode_region": "53",
+      "conso_enaf_com.libelle_region": "Guyane",
+      "conso_enaf_com.geocode_region": "03",
       "conso_enaf_com.date_mesure.year": "2018-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "1659.8258",
-      "conso_enaf_com.date_mesure": "2018-01-01T00:00:00.000"
-    },
-    {
-      "conso_enaf_com.libelle_region": "Auvergne-Rhône-Alpes",
-      "conso_enaf_com.geocode_region": "84",
-      "conso_enaf_com.date_mesure.year": "2018-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "2833.1727",
-      "conso_enaf_com.date_mesure": "2018-01-01T00:00:00.000"
-    },
-    {
-      "conso_enaf_com.libelle_region": "Hauts-de-France",
-      "conso_enaf_com.geocode_region": "32",
-      "conso_enaf_com.date_mesure.year": "2018-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "1472.2366",
-      "conso_enaf_com.date_mesure": "2018-01-01T00:00:00.000"
-    },
-    {
-      "conso_enaf_com.libelle_region": "Centre-Val de Loire",
-      "conso_enaf_com.geocode_region": "24",
-      "conso_enaf_com.date_mesure.year": "2018-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "1516.4479",
-      "conso_enaf_com.date_mesure": "2018-01-01T00:00:00.000"
-    },
-    {
-      "conso_enaf_com.libelle_region": "Pays de la Loire",
-      "conso_enaf_com.geocode_region": "52",
-      "conso_enaf_com.date_mesure.year": "2018-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "1728.5522",
-      "conso_enaf_com.date_mesure": "2018-01-01T00:00:00.000"
-    },
-    {
-      "conso_enaf_com.libelle_region": "Grand Est",
-      "conso_enaf_com.geocode_region": "44",
-      "conso_enaf_com.date_mesure.year": "2018-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "1361.3829",
-      "conso_enaf_com.date_mesure": "2018-01-01T00:00:00.000"
-    },
-    {
-      "conso_enaf_com.libelle_region": "Bourgogne-Franche-Comté",
-      "conso_enaf_com.geocode_region": "27",
-      "conso_enaf_com.date_mesure.year": "2018-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "990.9769",
-      "conso_enaf_com.date_mesure": "2018-01-01T00:00:00.000"
-    },
-    {
-      "conso_enaf_com.libelle_region": "Corse",
-      "conso_enaf_com.geocode_region": "94",
-      "conso_enaf_com.date_mesure.year": "2018-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "159.8084",
+      "conso_enaf_com.id_611": "136.6695",
       "conso_enaf_com.date_mesure": "2018-01-01T00:00:00.000"
     },
     {
@@ -1195,60 +1104,95 @@
       "conso_enaf_com.date_mesure": "2018-01-01T00:00:00.000"
     },
     {
-      "conso_enaf_com.libelle_region": "Martinique",
-      "conso_enaf_com.geocode_region": "02",
-      "conso_enaf_com.date_mesure.year": "2019-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "108.6971",
-      "conso_enaf_com.date_mesure": "2019-01-01T00:00:00.000"
-    },
-    {
-      "conso_enaf_com.libelle_region": "Normandie",
-      "conso_enaf_com.geocode_region": "28",
-      "conso_enaf_com.date_mesure.year": "2019-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "1401.1101",
-      "conso_enaf_com.date_mesure": "2019-01-01T00:00:00.000"
-    },
-    {
-      "conso_enaf_com.libelle_region": "Guyane",
-      "conso_enaf_com.geocode_region": "03",
-      "conso_enaf_com.date_mesure.year": "2019-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "157.3156",
-      "conso_enaf_com.date_mesure": "2019-01-01T00:00:00.000"
-    },
-    {
-      "conso_enaf_com.libelle_region": "Grand Est",
-      "conso_enaf_com.geocode_region": "44",
-      "conso_enaf_com.date_mesure.year": "2019-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "1423.5377",
-      "conso_enaf_com.date_mesure": "2019-01-01T00:00:00.000"
+      "conso_enaf_com.libelle_region": "Île-de-France",
+      "conso_enaf_com.geocode_region": "11",
+      "conso_enaf_com.date_mesure.year": "2018-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "1088.3801",
+      "conso_enaf_com.date_mesure": "2018-01-01T00:00:00.000"
     },
     {
       "conso_enaf_com.libelle_region": "Centre-Val de Loire",
       "conso_enaf_com.geocode_region": "24",
-      "conso_enaf_com.date_mesure.year": "2019-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "1065.5729",
-      "conso_enaf_com.date_mesure": "2019-01-01T00:00:00.000"
+      "conso_enaf_com.date_mesure.year": "2018-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "1516.4479",
+      "conso_enaf_com.date_mesure": "2018-01-01T00:00:00.000"
     },
     {
-      "conso_enaf_com.libelle_region": "Corse",
-      "conso_enaf_com.geocode_region": "94",
-      "conso_enaf_com.date_mesure.year": "2019-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "229.7757",
-      "conso_enaf_com.date_mesure": "2019-01-01T00:00:00.000"
+      "conso_enaf_com.libelle_region": "Bourgogne-Franche-Comté",
+      "conso_enaf_com.geocode_region": "27",
+      "conso_enaf_com.date_mesure.year": "2018-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "990.9769",
+      "conso_enaf_com.date_mesure": "2018-01-01T00:00:00.000"
     },
     {
-      "conso_enaf_com.libelle_region": "Provence-Alpes-Côte d'Azur",
-      "conso_enaf_com.geocode_region": "93",
-      "conso_enaf_com.date_mesure.year": "2019-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "1064.8711",
-      "conso_enaf_com.date_mesure": "2019-01-01T00:00:00.000"
+      "conso_enaf_com.libelle_region": "Normandie",
+      "conso_enaf_com.geocode_region": "28",
+      "conso_enaf_com.date_mesure.year": "2018-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "1642.1181",
+      "conso_enaf_com.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Hauts-de-France",
+      "conso_enaf_com.geocode_region": "32",
+      "conso_enaf_com.date_mesure.year": "2018-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "1472.2366",
+      "conso_enaf_com.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Grand Est",
+      "conso_enaf_com.geocode_region": "44",
+      "conso_enaf_com.date_mesure.year": "2018-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "1361.3829",
+      "conso_enaf_com.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Pays de la Loire",
+      "conso_enaf_com.geocode_region": "52",
+      "conso_enaf_com.date_mesure.year": "2018-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "1728.5522",
+      "conso_enaf_com.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Bretagne",
+      "conso_enaf_com.geocode_region": "53",
+      "conso_enaf_com.date_mesure.year": "2018-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "1659.8258",
+      "conso_enaf_com.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Nouvelle-Aquitaine",
+      "conso_enaf_com.geocode_region": "75",
+      "conso_enaf_com.date_mesure.year": "2018-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "3228.4589",
+      "conso_enaf_com.date_mesure": "2018-01-01T00:00:00.000"
     },
     {
       "conso_enaf_com.libelle_region": "Occitanie",
       "conso_enaf_com.geocode_region": "76",
-      "conso_enaf_com.date_mesure.year": "2019-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "2139.2782",
-      "conso_enaf_com.date_mesure": "2019-01-01T00:00:00.000"
+      "conso_enaf_com.date_mesure.year": "2018-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "2436.6524",
+      "conso_enaf_com.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "conso_enaf_com.geocode_region": "84",
+      "conso_enaf_com.date_mesure.year": "2018-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "2833.1727",
+      "conso_enaf_com.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "conso_enaf_com.geocode_region": "93",
+      "conso_enaf_com.date_mesure.year": "2018-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "1200.2515",
+      "conso_enaf_com.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Corse",
+      "conso_enaf_com.geocode_region": "94",
+      "conso_enaf_com.date_mesure.year": "2018-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "159.8084",
+      "conso_enaf_com.date_mesure": "2018-01-01T00:00:00.000"
     },
     {
       "conso_enaf_com.libelle_region": "Guadeloupe",
@@ -1258,31 +1202,17 @@
       "conso_enaf_com.date_mesure": "2019-01-01T00:00:00.000"
     },
     {
-      "conso_enaf_com.libelle_region": "Nouvelle-Aquitaine",
-      "conso_enaf_com.geocode_region": "75",
+      "conso_enaf_com.libelle_region": "Martinique",
+      "conso_enaf_com.geocode_region": "02",
       "conso_enaf_com.date_mesure.year": "2019-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "3057.3184",
+      "conso_enaf_com.id_611": "108.6971",
       "conso_enaf_com.date_mesure": "2019-01-01T00:00:00.000"
     },
     {
-      "conso_enaf_com.libelle_region": "Bretagne",
-      "conso_enaf_com.geocode_region": "53",
+      "conso_enaf_com.libelle_region": "Guyane",
+      "conso_enaf_com.geocode_region": "03",
       "conso_enaf_com.date_mesure.year": "2019-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "1336.4064",
-      "conso_enaf_com.date_mesure": "2019-01-01T00:00:00.000"
-    },
-    {
-      "conso_enaf_com.libelle_region": "Bourgogne-Franche-Comté",
-      "conso_enaf_com.geocode_region": "27",
-      "conso_enaf_com.date_mesure.year": "2019-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "847.9262",
-      "conso_enaf_com.date_mesure": "2019-01-01T00:00:00.000"
-    },
-    {
-      "conso_enaf_com.libelle_region": "Hauts-de-France",
-      "conso_enaf_com.geocode_region": "32",
-      "conso_enaf_com.date_mesure.year": "2019-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "1457.8554",
+      "conso_enaf_com.id_611": "157.3156",
       "conso_enaf_com.date_mesure": "2019-01-01T00:00:00.000"
     },
     {
@@ -1300,10 +1230,38 @@
       "conso_enaf_com.date_mesure": "2019-01-01T00:00:00.000"
     },
     {
-      "conso_enaf_com.libelle_region": "Auvergne-Rhône-Alpes",
-      "conso_enaf_com.geocode_region": "84",
+      "conso_enaf_com.libelle_region": "Centre-Val de Loire",
+      "conso_enaf_com.geocode_region": "24",
       "conso_enaf_com.date_mesure.year": "2019-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "2582.9807",
+      "conso_enaf_com.id_611": "1065.5729",
+      "conso_enaf_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Bourgogne-Franche-Comté",
+      "conso_enaf_com.geocode_region": "27",
+      "conso_enaf_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "847.9262",
+      "conso_enaf_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Normandie",
+      "conso_enaf_com.geocode_region": "28",
+      "conso_enaf_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "1401.1101",
+      "conso_enaf_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Hauts-de-France",
+      "conso_enaf_com.geocode_region": "32",
+      "conso_enaf_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "1457.8554",
+      "conso_enaf_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Grand Est",
+      "conso_enaf_com.geocode_region": "44",
+      "conso_enaf_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "1423.5377",
       "conso_enaf_com.date_mesure": "2019-01-01T00:00:00.000"
     },
     {
@@ -1314,10 +1272,52 @@
       "conso_enaf_com.date_mesure": "2019-01-01T00:00:00.000"
     },
     {
+      "conso_enaf_com.libelle_region": "Bretagne",
+      "conso_enaf_com.geocode_region": "53",
+      "conso_enaf_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "1336.4064",
+      "conso_enaf_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
       "conso_enaf_com.libelle_region": "Nouvelle-Aquitaine",
       "conso_enaf_com.geocode_region": "75",
+      "conso_enaf_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "3057.3184",
+      "conso_enaf_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Occitanie",
+      "conso_enaf_com.geocode_region": "76",
+      "conso_enaf_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "2139.2782",
+      "conso_enaf_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "conso_enaf_com.geocode_region": "84",
+      "conso_enaf_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "2582.9807",
+      "conso_enaf_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "conso_enaf_com.geocode_region": "93",
+      "conso_enaf_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "1064.8711",
+      "conso_enaf_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Corse",
+      "conso_enaf_com.geocode_region": "94",
+      "conso_enaf_com.date_mesure.year": "2019-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "229.7757",
+      "conso_enaf_com.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Guadeloupe",
+      "conso_enaf_com.geocode_region": "01",
       "conso_enaf_com.date_mesure.year": "2020-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "3396.3574",
+      "conso_enaf_com.id_611": "122.2035",
       "conso_enaf_com.date_mesure": "2020-01-01T00:00:00.000"
     },
     {
@@ -1335,69 +1335,6 @@
       "conso_enaf_com.date_mesure": "2020-01-01T00:00:00.000"
     },
     {
-      "conso_enaf_com.libelle_region": "Normandie",
-      "conso_enaf_com.geocode_region": "28",
-      "conso_enaf_com.date_mesure.year": "2020-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "1564.1465",
-      "conso_enaf_com.date_mesure": "2020-01-01T00:00:00.000"
-    },
-    {
-      "conso_enaf_com.libelle_region": "Occitanie",
-      "conso_enaf_com.geocode_region": "76",
-      "conso_enaf_com.date_mesure.year": "2020-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "2308.2278",
-      "conso_enaf_com.date_mesure": "2020-01-01T00:00:00.000"
-    },
-    {
-      "conso_enaf_com.libelle_region": "Corse",
-      "conso_enaf_com.geocode_region": "94",
-      "conso_enaf_com.date_mesure.year": "2020-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "159.1702",
-      "conso_enaf_com.date_mesure": "2020-01-01T00:00:00.000"
-    },
-    {
-      "conso_enaf_com.libelle_region": "Hauts-de-France",
-      "conso_enaf_com.geocode_region": "32",
-      "conso_enaf_com.date_mesure.year": "2020-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "1331.1169",
-      "conso_enaf_com.date_mesure": "2020-01-01T00:00:00.000"
-    },
-    {
-      "conso_enaf_com.libelle_region": "Guadeloupe",
-      "conso_enaf_com.geocode_region": "01",
-      "conso_enaf_com.date_mesure.year": "2020-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "122.2035",
-      "conso_enaf_com.date_mesure": "2020-01-01T00:00:00.000"
-    },
-    {
-      "conso_enaf_com.libelle_region": "Bourgogne-Franche-Comté",
-      "conso_enaf_com.geocode_region": "27",
-      "conso_enaf_com.date_mesure.year": "2020-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "930.5880",
-      "conso_enaf_com.date_mesure": "2020-01-01T00:00:00.000"
-    },
-    {
-      "conso_enaf_com.libelle_region": "Auvergne-Rhône-Alpes",
-      "conso_enaf_com.geocode_region": "84",
-      "conso_enaf_com.date_mesure.year": "2020-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "3002.6217",
-      "conso_enaf_com.date_mesure": "2020-01-01T00:00:00.000"
-    },
-    {
-      "conso_enaf_com.libelle_region": "Grand Est",
-      "conso_enaf_com.geocode_region": "44",
-      "conso_enaf_com.date_mesure.year": "2020-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "1322.9368",
-      "conso_enaf_com.date_mesure": "2020-01-01T00:00:00.000"
-    },
-    {
-      "conso_enaf_com.libelle_region": "Centre-Val de Loire",
-      "conso_enaf_com.geocode_region": "24",
-      "conso_enaf_com.date_mesure.year": "2020-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "1042.4497",
-      "conso_enaf_com.date_mesure": "2020-01-01T00:00:00.000"
-    },
-    {
       "conso_enaf_com.libelle_region": "La Réunion",
       "conso_enaf_com.geocode_region": "04",
       "conso_enaf_com.date_mesure.year": "2020-01-01T00:00:00.000",
@@ -1412,10 +1349,38 @@
       "conso_enaf_com.date_mesure": "2020-01-01T00:00:00.000"
     },
     {
-      "conso_enaf_com.libelle_region": "Bretagne",
-      "conso_enaf_com.geocode_region": "53",
+      "conso_enaf_com.libelle_region": "Centre-Val de Loire",
+      "conso_enaf_com.geocode_region": "24",
       "conso_enaf_com.date_mesure.year": "2020-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "1646.6688",
+      "conso_enaf_com.id_611": "1042.4497",
+      "conso_enaf_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Bourgogne-Franche-Comté",
+      "conso_enaf_com.geocode_region": "27",
+      "conso_enaf_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "930.5880",
+      "conso_enaf_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Normandie",
+      "conso_enaf_com.geocode_region": "28",
+      "conso_enaf_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "1564.1465",
+      "conso_enaf_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Hauts-de-France",
+      "conso_enaf_com.geocode_region": "32",
+      "conso_enaf_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "1331.1169",
+      "conso_enaf_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Grand Est",
+      "conso_enaf_com.geocode_region": "44",
+      "conso_enaf_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "1322.9368",
       "conso_enaf_com.date_mesure": "2020-01-01T00:00:00.000"
     },
     {
@@ -1423,6 +1388,34 @@
       "conso_enaf_com.geocode_region": "52",
       "conso_enaf_com.date_mesure.year": "2020-01-01T00:00:00.000",
       "conso_enaf_com.id_611": "1301.7022",
+      "conso_enaf_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Bretagne",
+      "conso_enaf_com.geocode_region": "53",
+      "conso_enaf_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "1646.6688",
+      "conso_enaf_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Nouvelle-Aquitaine",
+      "conso_enaf_com.geocode_region": "75",
+      "conso_enaf_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "3396.3574",
+      "conso_enaf_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Occitanie",
+      "conso_enaf_com.geocode_region": "76",
+      "conso_enaf_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "2308.2278",
+      "conso_enaf_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "conso_enaf_com.geocode_region": "84",
+      "conso_enaf_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "3002.6217",
       "conso_enaf_com.date_mesure": "2020-01-01T00:00:00.000"
     },
     {
@@ -1435,15 +1428,29 @@
     {
       "conso_enaf_com.libelle_region": "Corse",
       "conso_enaf_com.geocode_region": "94",
+      "conso_enaf_com.date_mesure.year": "2020-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "159.1702",
+      "conso_enaf_com.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Guadeloupe",
+      "conso_enaf_com.geocode_region": "01",
       "conso_enaf_com.date_mesure.year": "2021-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "290.3973",
+      "conso_enaf_com.id_611": "134.3113",
       "conso_enaf_com.date_mesure": "2021-01-01T00:00:00.000"
     },
     {
-      "conso_enaf_com.libelle_region": "Occitanie",
-      "conso_enaf_com.geocode_region": "76",
+      "conso_enaf_com.libelle_region": "Martinique",
+      "conso_enaf_com.geocode_region": "02",
       "conso_enaf_com.date_mesure.year": "2021-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "2203.2715",
+      "conso_enaf_com.id_611": "168.5432",
+      "conso_enaf_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Guyane",
+      "conso_enaf_com.geocode_region": "03",
+      "conso_enaf_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "64.1379",
       "conso_enaf_com.date_mesure": "2021-01-01T00:00:00.000"
     },
     {
@@ -1461,87 +1468,10 @@
       "conso_enaf_com.date_mesure": "2021-01-01T00:00:00.000"
     },
     {
-      "conso_enaf_com.libelle_region": "Guadeloupe",
-      "conso_enaf_com.geocode_region": "01",
-      "conso_enaf_com.date_mesure.year": "2021-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "134.3113",
-      "conso_enaf_com.date_mesure": "2021-01-01T00:00:00.000"
-    },
-    {
-      "conso_enaf_com.libelle_region": "Auvergne-Rhône-Alpes",
-      "conso_enaf_com.geocode_region": "84",
-      "conso_enaf_com.date_mesure.year": "2021-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "2501.6973",
-      "conso_enaf_com.date_mesure": "2021-01-01T00:00:00.000"
-    },
-    {
-      "conso_enaf_com.libelle_region": "Hauts-de-France",
-      "conso_enaf_com.geocode_region": "32",
-      "conso_enaf_com.date_mesure.year": "2021-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "1268.1661",
-      "conso_enaf_com.date_mesure": "2021-01-01T00:00:00.000"
-    },
-    {
       "conso_enaf_com.libelle_region": "Centre-Val de Loire",
       "conso_enaf_com.geocode_region": "24",
       "conso_enaf_com.date_mesure.year": "2021-01-01T00:00:00.000",
       "conso_enaf_com.id_611": "1166.3060",
-      "conso_enaf_com.date_mesure": "2021-01-01T00:00:00.000"
-    },
-    {
-      "conso_enaf_com.libelle_region": "Guyane",
-      "conso_enaf_com.geocode_region": "03",
-      "conso_enaf_com.date_mesure.year": "2021-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "64.1379",
-      "conso_enaf_com.date_mesure": "2021-01-01T00:00:00.000"
-    },
-    {
-      "conso_enaf_com.libelle_region": "Pays de la Loire",
-      "conso_enaf_com.geocode_region": "52",
-      "conso_enaf_com.date_mesure.year": "2021-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "1950.2027",
-      "conso_enaf_com.date_mesure": "2021-01-01T00:00:00.000"
-    },
-    {
-      "conso_enaf_com.libelle_region": "Nouvelle-Aquitaine",
-      "conso_enaf_com.geocode_region": "75",
-      "conso_enaf_com.date_mesure.year": "2021-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "3413.0317",
-      "conso_enaf_com.date_mesure": "2021-01-01T00:00:00.000"
-    },
-    {
-      "conso_enaf_com.libelle_region": "Normandie",
-      "conso_enaf_com.geocode_region": "28",
-      "conso_enaf_com.date_mesure.year": "2021-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "1566.3560",
-      "conso_enaf_com.date_mesure": "2021-01-01T00:00:00.000"
-    },
-    {
-      "conso_enaf_com.libelle_region": "Martinique",
-      "conso_enaf_com.geocode_region": "02",
-      "conso_enaf_com.date_mesure.year": "2021-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "168.5432",
-      "conso_enaf_com.date_mesure": "2021-01-01T00:00:00.000"
-    },
-    {
-      "conso_enaf_com.libelle_region": "Grand Est",
-      "conso_enaf_com.geocode_region": "44",
-      "conso_enaf_com.date_mesure.year": "2021-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "1367.7002",
-      "conso_enaf_com.date_mesure": "2021-01-01T00:00:00.000"
-    },
-    {
-      "conso_enaf_com.libelle_region": "Bretagne",
-      "conso_enaf_com.geocode_region": "53",
-      "conso_enaf_com.date_mesure.year": "2021-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "1592.3097",
-      "conso_enaf_com.date_mesure": "2021-01-01T00:00:00.000"
-    },
-    {
-      "conso_enaf_com.libelle_region": "Provence-Alpes-Côte d'Azur",
-      "conso_enaf_com.geocode_region": "93",
-      "conso_enaf_com.date_mesure.year": "2021-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "1346.2308",
       "conso_enaf_com.date_mesure": "2021-01-01T00:00:00.000"
     },
     {
@@ -1552,17 +1482,87 @@
       "conso_enaf_com.date_mesure": "2021-01-01T00:00:00.000"
     },
     {
-      "conso_enaf_com.libelle_region": "Provence-Alpes-Côte d'Azur",
-      "conso_enaf_com.geocode_region": "93",
-      "conso_enaf_com.date_mesure.year": "2022-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "1310.6939",
-      "conso_enaf_com.date_mesure": "2022-01-01T00:00:00.000"
+      "conso_enaf_com.libelle_region": "Normandie",
+      "conso_enaf_com.geocode_region": "28",
+      "conso_enaf_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "1566.3560",
+      "conso_enaf_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Hauts-de-France",
+      "conso_enaf_com.geocode_region": "32",
+      "conso_enaf_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "1268.1661",
+      "conso_enaf_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Grand Est",
+      "conso_enaf_com.geocode_region": "44",
+      "conso_enaf_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "1367.7002",
+      "conso_enaf_com.date_mesure": "2021-01-01T00:00:00.000"
     },
     {
       "conso_enaf_com.libelle_region": "Pays de la Loire",
       "conso_enaf_com.geocode_region": "52",
+      "conso_enaf_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "1950.2027",
+      "conso_enaf_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Bretagne",
+      "conso_enaf_com.geocode_region": "53",
+      "conso_enaf_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "1592.3097",
+      "conso_enaf_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Nouvelle-Aquitaine",
+      "conso_enaf_com.geocode_region": "75",
+      "conso_enaf_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "3413.0317",
+      "conso_enaf_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Occitanie",
+      "conso_enaf_com.geocode_region": "76",
+      "conso_enaf_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "2203.2715",
+      "conso_enaf_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "conso_enaf_com.geocode_region": "84",
+      "conso_enaf_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "2501.6973",
+      "conso_enaf_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "conso_enaf_com.geocode_region": "93",
+      "conso_enaf_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "1346.2308",
+      "conso_enaf_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Corse",
+      "conso_enaf_com.geocode_region": "94",
+      "conso_enaf_com.date_mesure.year": "2021-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "290.3973",
+      "conso_enaf_com.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Guadeloupe",
+      "conso_enaf_com.geocode_region": "01",
       "conso_enaf_com.date_mesure.year": "2022-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "1416.9014",
+      "conso_enaf_com.id_611": "103.4570",
+      "conso_enaf_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Martinique",
+      "conso_enaf_com.geocode_region": "02",
+      "conso_enaf_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "74.7734",
       "conso_enaf_com.date_mesure": "2022-01-01T00:00:00.000"
     },
     {
@@ -1573,24 +1573,17 @@
       "conso_enaf_com.date_mesure": "2022-01-01T00:00:00.000"
     },
     {
-      "conso_enaf_com.libelle_region": "Corse",
-      "conso_enaf_com.geocode_region": "94",
+      "conso_enaf_com.libelle_region": "La Réunion",
+      "conso_enaf_com.geocode_region": "04",
       "conso_enaf_com.date_mesure.year": "2022-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "274.1496",
+      "conso_enaf_com.id_611": "180.3007",
       "conso_enaf_com.date_mesure": "2022-01-01T00:00:00.000"
     },
     {
-      "conso_enaf_com.libelle_region": "Guadeloupe",
-      "conso_enaf_com.geocode_region": "01",
+      "conso_enaf_com.libelle_region": "Île-de-France",
+      "conso_enaf_com.geocode_region": "11",
       "conso_enaf_com.date_mesure.year": "2022-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "103.4570",
-      "conso_enaf_com.date_mesure": "2022-01-01T00:00:00.000"
-    },
-    {
-      "conso_enaf_com.libelle_region": "Bretagne",
-      "conso_enaf_com.geocode_region": "53",
-      "conso_enaf_com.date_mesure.year": "2022-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "1690.9120",
+      "conso_enaf_com.id_611": "609.0708",
       "conso_enaf_com.date_mesure": "2022-01-01T00:00:00.000"
     },
     {
@@ -1601,20 +1594,6 @@
       "conso_enaf_com.date_mesure": "2022-01-01T00:00:00.000"
     },
     {
-      "conso_enaf_com.libelle_region": "Occitanie",
-      "conso_enaf_com.geocode_region": "76",
-      "conso_enaf_com.date_mesure.year": "2022-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "2255.1159",
-      "conso_enaf_com.date_mesure": "2022-01-01T00:00:00.000"
-    },
-    {
-      "conso_enaf_com.libelle_region": "Auvergne-Rhône-Alpes",
-      "conso_enaf_com.geocode_region": "84",
-      "conso_enaf_com.date_mesure.year": "2022-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "2634.4646",
-      "conso_enaf_com.date_mesure": "2022-01-01T00:00:00.000"
-    },
-    {
       "conso_enaf_com.libelle_region": "Bourgogne-Franche-Comté",
       "conso_enaf_com.geocode_region": "27",
       "conso_enaf_com.date_mesure.year": "2022-01-01T00:00:00.000",
@@ -1622,24 +1601,10 @@
       "conso_enaf_com.date_mesure": "2022-01-01T00:00:00.000"
     },
     {
-      "conso_enaf_com.libelle_region": "La Réunion",
-      "conso_enaf_com.geocode_region": "04",
-      "conso_enaf_com.date_mesure.year": "2022-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "180.3007",
-      "conso_enaf_com.date_mesure": "2022-01-01T00:00:00.000"
-    },
-    {
       "conso_enaf_com.libelle_region": "Normandie",
       "conso_enaf_com.geocode_region": "28",
       "conso_enaf_com.date_mesure.year": "2022-01-01T00:00:00.000",
       "conso_enaf_com.id_611": "1681.3371",
-      "conso_enaf_com.date_mesure": "2022-01-01T00:00:00.000"
-    },
-    {
-      "conso_enaf_com.libelle_region": "Île-de-France",
-      "conso_enaf_com.geocode_region": "11",
-      "conso_enaf_com.date_mesure.year": "2022-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "609.0708",
       "conso_enaf_com.date_mesure": "2022-01-01T00:00:00.000"
     },
     {
@@ -1657,10 +1622,17 @@
       "conso_enaf_com.date_mesure": "2022-01-01T00:00:00.000"
     },
     {
-      "conso_enaf_com.libelle_region": "Martinique",
-      "conso_enaf_com.geocode_region": "02",
+      "conso_enaf_com.libelle_region": "Pays de la Loire",
+      "conso_enaf_com.geocode_region": "52",
       "conso_enaf_com.date_mesure.year": "2022-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "74.7734",
+      "conso_enaf_com.id_611": "1416.9014",
+      "conso_enaf_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Bretagne",
+      "conso_enaf_com.geocode_region": "53",
+      "conso_enaf_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "1690.9120",
       "conso_enaf_com.date_mesure": "2022-01-01T00:00:00.000"
     },
     {
@@ -1673,8 +1645,99 @@
     {
       "conso_enaf_com.libelle_region": "Occitanie",
       "conso_enaf_com.geocode_region": "76",
+      "conso_enaf_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "2255.1159",
+      "conso_enaf_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "conso_enaf_com.geocode_region": "84",
+      "conso_enaf_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "2634.4646",
+      "conso_enaf_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "conso_enaf_com.geocode_region": "93",
+      "conso_enaf_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "1310.6939",
+      "conso_enaf_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Corse",
+      "conso_enaf_com.geocode_region": "94",
+      "conso_enaf_com.date_mesure.year": "2022-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "274.1496",
+      "conso_enaf_com.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Guadeloupe",
+      "conso_enaf_com.geocode_region": "01",
       "conso_enaf_com.date_mesure.year": "2023-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "2290.1746",
+      "conso_enaf_com.id_611": "152.1055",
+      "conso_enaf_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Martinique",
+      "conso_enaf_com.geocode_region": "02",
+      "conso_enaf_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "74.7867",
+      "conso_enaf_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Guyane",
+      "conso_enaf_com.geocode_region": "03",
+      "conso_enaf_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "193.5032",
+      "conso_enaf_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "La Réunion",
+      "conso_enaf_com.geocode_region": "04",
+      "conso_enaf_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "271.7828",
+      "conso_enaf_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Île-de-France",
+      "conso_enaf_com.geocode_region": "11",
+      "conso_enaf_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "755.7429",
+      "conso_enaf_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Centre-Val de Loire",
+      "conso_enaf_com.geocode_region": "24",
+      "conso_enaf_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "1144.0686",
+      "conso_enaf_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Bourgogne-Franche-Comté",
+      "conso_enaf_com.geocode_region": "27",
+      "conso_enaf_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "895.4306",
+      "conso_enaf_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Normandie",
+      "conso_enaf_com.geocode_region": "28",
+      "conso_enaf_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "1563.9532",
+      "conso_enaf_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Hauts-de-France",
+      "conso_enaf_com.geocode_region": "32",
+      "conso_enaf_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "1210.1687",
+      "conso_enaf_com.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "conso_enaf_com.libelle_region": "Grand Est",
+      "conso_enaf_com.geocode_region": "44",
+      "conso_enaf_com.date_mesure.year": "2023-01-01T00:00:00.000",
+      "conso_enaf_com.id_611": "1146.4790",
       "conso_enaf_com.date_mesure": "2023-01-01T00:00:00.000"
     },
     {
@@ -1692,34 +1755,6 @@
       "conso_enaf_com.date_mesure": "2023-01-01T00:00:00.000"
     },
     {
-      "conso_enaf_com.libelle_region": "Normandie",
-      "conso_enaf_com.geocode_region": "28",
-      "conso_enaf_com.date_mesure.year": "2023-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "1563.9532",
-      "conso_enaf_com.date_mesure": "2023-01-01T00:00:00.000"
-    },
-    {
-      "conso_enaf_com.libelle_region": "Corse",
-      "conso_enaf_com.geocode_region": "94",
-      "conso_enaf_com.date_mesure.year": "2023-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "267.5550",
-      "conso_enaf_com.date_mesure": "2023-01-01T00:00:00.000"
-    },
-    {
-      "conso_enaf_com.libelle_region": "Martinique",
-      "conso_enaf_com.geocode_region": "02",
-      "conso_enaf_com.date_mesure.year": "2023-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "74.7867",
-      "conso_enaf_com.date_mesure": "2023-01-01T00:00:00.000"
-    },
-    {
-      "conso_enaf_com.libelle_region": "Guadeloupe",
-      "conso_enaf_com.geocode_region": "01",
-      "conso_enaf_com.date_mesure.year": "2023-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "152.1055",
-      "conso_enaf_com.date_mesure": "2023-01-01T00:00:00.000"
-    },
-    {
       "conso_enaf_com.libelle_region": "Nouvelle-Aquitaine",
       "conso_enaf_com.geocode_region": "75",
       "conso_enaf_com.date_mesure.year": "2023-01-01T00:00:00.000",
@@ -1727,45 +1762,17 @@
       "conso_enaf_com.date_mesure": "2023-01-01T00:00:00.000"
     },
     {
-      "conso_enaf_com.libelle_region": "Grand Est",
-      "conso_enaf_com.geocode_region": "44",
+      "conso_enaf_com.libelle_region": "Occitanie",
+      "conso_enaf_com.geocode_region": "76",
       "conso_enaf_com.date_mesure.year": "2023-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "1146.4790",
+      "conso_enaf_com.id_611": "2290.1746",
       "conso_enaf_com.date_mesure": "2023-01-01T00:00:00.000"
     },
     {
-      "conso_enaf_com.libelle_region": "Centre-Val de Loire",
-      "conso_enaf_com.geocode_region": "24",
+      "conso_enaf_com.libelle_region": "Auvergne-Rhône-Alpes",
+      "conso_enaf_com.geocode_region": "84",
       "conso_enaf_com.date_mesure.year": "2023-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "1144.0686",
-      "conso_enaf_com.date_mesure": "2023-01-01T00:00:00.000"
-    },
-    {
-      "conso_enaf_com.libelle_region": "La Réunion",
-      "conso_enaf_com.geocode_region": "04",
-      "conso_enaf_com.date_mesure.year": "2023-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "271.7828",
-      "conso_enaf_com.date_mesure": "2023-01-01T00:00:00.000"
-    },
-    {
-      "conso_enaf_com.libelle_region": "Bourgogne-Franche-Comté",
-      "conso_enaf_com.geocode_region": "27",
-      "conso_enaf_com.date_mesure.year": "2023-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "895.4306",
-      "conso_enaf_com.date_mesure": "2023-01-01T00:00:00.000"
-    },
-    {
-      "conso_enaf_com.libelle_region": "Guyane",
-      "conso_enaf_com.geocode_region": "03",
-      "conso_enaf_com.date_mesure.year": "2023-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "193.5032",
-      "conso_enaf_com.date_mesure": "2023-01-01T00:00:00.000"
-    },
-    {
-      "conso_enaf_com.libelle_region": "Hauts-de-France",
-      "conso_enaf_com.geocode_region": "32",
-      "conso_enaf_com.date_mesure.year": "2023-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "1210.1687",
+      "conso_enaf_com.id_611": "2543.6630",
       "conso_enaf_com.date_mesure": "2023-01-01T00:00:00.000"
     },
     {
@@ -1776,17 +1783,10 @@
       "conso_enaf_com.date_mesure": "2023-01-01T00:00:00.000"
     },
     {
-      "conso_enaf_com.libelle_region": "Île-de-France",
-      "conso_enaf_com.geocode_region": "11",
+      "conso_enaf_com.libelle_region": "Corse",
+      "conso_enaf_com.geocode_region": "94",
       "conso_enaf_com.date_mesure.year": "2023-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "755.7429",
-      "conso_enaf_com.date_mesure": "2023-01-01T00:00:00.000"
-    },
-    {
-      "conso_enaf_com.libelle_region": "Auvergne-Rhône-Alpes",
-      "conso_enaf_com.geocode_region": "84",
-      "conso_enaf_com.date_mesure.year": "2023-01-01T00:00:00.000",
-      "conso_enaf_com.id_611": "2543.6630",
+      "conso_enaf_com.id_611": "267.5550",
       "conso_enaf_com.date_mesure": "2023-01-01T00:00:00.000"
     }
   ],
