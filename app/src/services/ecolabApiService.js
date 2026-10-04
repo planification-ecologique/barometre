@@ -4,6 +4,8 @@
  * Auth: Bearer token (VUE_APP_ECOLAB_API_TOKEN or VUE_ECOLAB_API_TOKEN).
  */
 
+import { filterFrenchTerritoryRows } from '@/services/frenchRegions';
+
 const ECOLAB_BASE = 'https://api.indicateurs.ecologie.gouv.fr/cubejs-api/v1';
 const ECOLAB_CONTINUE_WAIT_DELAY_MS = 10000;
 const ECOLAB_CONTINUE_WAIT_MAX_RETRIES = 6;
@@ -327,10 +329,15 @@ export async function getRegionChartData(indicatorId, regionCode) {
  * @param {string} indicatorId
  * @returns {Promise<{ cubeName: string, measureName: string, timeDimension: string | null, extraDimension: string | null, data: Array }>}
  */
+function withFrenchTerritoryRows(payload) {
+  if (!payload || !Array.isArray(payload.data)) return payload;
+  return { ...payload, data: filterFrenchTerritoryRows(payload.data) };
+}
+
 export async function loadAllRegionsDataForIndicator(indicatorId) {
   const id = String(indicatorId).trim();
   try {
-    return await loadLocalIrpeJson(`indicators/${id}.json`);
+    return withFrenchTerritoryRows(await loadLocalIrpeJson(`indicators/${id}.json`));
   } catch (localError) {
     console.warn(
       `[Écolab API] Local cache miss for indicator ${id}, fetching from API:`,
@@ -366,14 +373,14 @@ export async function loadAllRegionsDataForIndicator(indicatorId) {
   const measureAnnotation = result?.annotation?.measures?.[measureName] || null;
   const measureMeta = measureAnnotation && measureAnnotation.meta ? measureAnnotation.meta : null;
 
-  return {
+  return withFrenchTerritoryRows({
     cubeName,
     measureName,
     timeDimension: timeDim || null,
     extraDimension,
     data,
     measureMeta
-  };
+  });
 }
 
 // Default export for bundlers that expect it (avoids "Cannot read properties of undefined (reading 'default')")

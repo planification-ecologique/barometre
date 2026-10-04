@@ -1,18 +1,18 @@
 <template>
   <div class="mini-chart" :class="{ 'mini-chart--detailed': detailed }" :id="containerId">
     <template v-if="detailed">
-      <p class="mini-chart__title">{{ dataObj.label_indic }}</p>
-      <p v-if="dataObj.label_unit" class="mini-chart__unit fr-text--xs fr-text-mention--grey">
-        Unité : {{ dataObj.label_unit }}
+      <p class="mini-chart__title">{{ displayData.label_indic }}</p>
+      <p v-if="displayData.label_unit" class="mini-chart__unit fr-text--xs fr-text-mention--grey">
+        Unité : {{ displayData.label_unit }}
       </p>
     </template>
     <!-- Barres simple -->
     <bar-chart
       v-if="chartType === 'Barres simple' && hasBarSimpleData"
       :isSmall="true"
-      :x="JSON.stringify(dataObj.values.x)"
-      :y="JSON.stringify(dataObj.values.y)"
-      :name="JSON.stringify(dataObj.values.legend || [''])"
+      :x="JSON.stringify(displayData.values.x)"
+      :y="JSON.stringify(displayData.values.y)"
+      :name="JSON.stringify(displayData.values.legend || [''])"
       :horizontal="false"
       :stacked="true"
       :color="barSimpleColorsJson"
@@ -27,9 +27,9 @@
     <bar-chart
       v-else-if="chartType === 'Barres empilées' && hasStackedData"
       :isSmall="true"
-      :x="JSON.stringify(dataObj.date)"
+      :x="JSON.stringify(displayData.date)"
       :y="stackedBarYJson"
-      :name="JSON.stringify(dataObj.label_sous_groupe || [''])"
+      :name="JSON.stringify(displayData.label_sous_groupe || [''])"
       :color="stackedSeriesColorsJson"
       :horizontal="false"
       :stacked="true"
@@ -44,9 +44,9 @@
     <multi-line-chart
       v-else-if="chartType === 'Courbes indépendantes' && hasStackedData"
       :isSmall="true"
-      :x="JSON.stringify(dataObj.date)"
-      :y="JSON.stringify(dataObj.values)"
-      :name="JSON.stringify(dataObj.label_sous_groupe || [''])"
+      :x="JSON.stringify(displayData.date)"
+      :y="JSON.stringify(displayData.values)"
+      :name="JSON.stringify(displayData.label_sous_groupe || [''])"
       :color="lineSeriesColorsJson"
       :aspectratio="2.2"
       :axis-font-size="9"
@@ -59,9 +59,9 @@
     <bar-chart
       v-else-if="hasFallbackData"
       :isSmall="true"
-      :x="JSON.stringify(dataObj.date)"
+      :x="JSON.stringify(displayData.date)"
       :y="stackedBarYJson"
-      :name="JSON.stringify(dataObj.label_sous_groupe || [''])"
+      :name="JSON.stringify(displayData.label_sous_groupe || [''])"
       :color="stackedSeriesColorsJson"
       :horizontal="false"
       :stacked="true"
@@ -88,7 +88,10 @@ import {
   getFallbackExtrapolationBarToken
 } from '@/services/chartColorTestOverrides.js'
 import { getStackedYears, resolveIndicatorOverlays } from '@/utils/chartOverlays.js'
-import { getAllColors, stackedBarSeriesValuesWithoutCibleYears } from '@/utils.js'
+import { getAllColors, getHexaFromName, stackedBarSeriesValuesWithoutCibleYears } from '@/utils.js'
+import { regionSelection } from '@/services/regionSelection.js'
+import { loadAllRegionsDataForIndicator } from '@/services/ecolabApiService.js'
+import { buildStackedRegionalSeries, extractRegionsAndExtra } from '@/services/ecolabRegionHelpers.js'
 
 export default {
   name: 'MiniChart',
@@ -107,32 +110,118 @@ export default {
       default: false
     }
   },
+  data() {
+    return {
+      regionalChartData: null,
+      regionalMeasureMeta: null,
+      regionalLoadToken: 0,
+    }
+  },
+  watch: {
+    sharedRegionCode() {
+      this.loadSharedRegion()
+    },
+    dataObj() {
+      this.loadSharedRegion()
+    },
+    regionalPresentation: {
+      handler(value) {
+        this.$emit('regional-presentation', value)
+      },
+      immediate: true,
+    },
+  },
   computed: {
+    sharedRegionCode() {
+      return regionSelection.code
+    },
+    regionalIndicatorIds() {
+      const ids = this.dataObj?.irpe_ids
+      if (!Array.isArray(ids)) return []
+      return ids.map((id) => String(id).trim()).filter(Boolean)
+    },
+    /** Payload for the synthesis table: regional label, unit and source, or null. */
+    regionalPresentation() {
+      const regional = this.regionalChartData
+      if (!this.sharedRegionCode || !regional || !Array.isArray(regional.x) || !regional.x.length) {
+        return null
+      }
+      const meta = this.regionalMeasureMeta
+      const legend = Array.isArray(regional.legend) ? regional.legend : []
+      const palette = getAllColors()
+      return {
+        label: meta?.libelle_indicateur || this.dataObj.label_indic,
+        unit: meta?.unite || this.dataObj.label_unit || '',
+        source: 'Écolab',
+        legendItems: legend.length > 1
+          ? legend.map((label, index) => ({
+            label,
+            color: getHexaFromName(palette[index % palette.length]),
+          }))
+          : [],
+      }
+    },
+    /** National series, or the shared territory when this indicator can plot it. */
+    displayData() {
+      const regional = this.regionalChartData
+      if (!this.sharedRegionCode || !regional || !Array.isArray(regional.x) || !regional.x.length) {
+        return this.dataObj
+      }
+      const meta = this.regionalMeasureMeta
+      const label = meta?.libelle_indicateur || this.dataObj.label_indic
+      const unit = meta?.unite || this.dataObj.label_unit
+      const stacked = Array.isArray(regional.y) && regional.y.length > 1
+      const measured = regional.x.map(() => 'mesuré')
+      if (stacked) {
+        return {
+          ...this.dataObj,
+          type_de_graphique: 'Barres empilées',
+          label_indic: label,
+          label_unit: unit,
+          date: [regional.x],
+          values: regional.y,
+          label_sous_groupe: regional.legend,
+          label_value: measured,
+        }
+      }
+      return {
+        ...this.dataObj,
+        type_de_graphique: 'Barres simple',
+        label_indic: label,
+        label_unit: unit,
+        label_value: measured,
+        values: {
+          x: [regional.x],
+          y: regional.y,
+          legend: regional.legend || ['Historique'],
+        },
+      }
+    },
     containerId() {
       return 'mini-chart-' + (this.dataObj.id_indic || Math.random().toString(36).substr(2, 8))
     },
     chartType() {
-      return this.dataObj.type_de_graphique || 'Barres simple'
+      return this.displayData.type_de_graphique || 'Barres simple'
     },
     hasBarSimpleData() {
-      const v = this.dataObj.values
+      const v = this.displayData.values
       return v && v.x && Array.isArray(v.x) && v.y && Array.isArray(v.y)
     },
     hasStackedData() {
-      return Array.isArray(this.dataObj.date) && Array.isArray(this.dataObj.values)
+      return Array.isArray(this.displayData.date) && Array.isArray(this.displayData.values)
     },
     hasFallbackData() {
-      return (Array.isArray(this.dataObj.date) && Array.isArray(this.dataObj.values)) ||
-             (this.dataObj.values && this.dataObj.values.x)
+      return (Array.isArray(this.displayData.date) && Array.isArray(this.displayData.values)) ||
+             (this.displayData.values && this.displayData.values.x)
     },
     overlays() {
-      return resolveIndicatorOverlays(this.dataObj)
+      return resolveIndicatorOverlays(this.displayData)
     },
     /** Barres empilées : pas de segments sur les années « cible » (ligne objectif uniquement). */
     stackedBarYJson() {
-      const vals = this.dataObj?.values
-      const years = getStackedYears(this.dataObj)
-      const lv = this.dataObj?.label_value
+      const vals = this.displayData?.values
+      const years = getStackedYears(this.displayData)
+      const lv = this.displayData?.label_value
       const strip =
         Array.isArray(vals) &&
         years.length > 0 &&
@@ -145,7 +234,7 @@ export default {
       )
     },
     barColors() {
-      const legend = this.dataObj.values?.legend
+      const legend = this.displayData.values?.legend
       if (Array.isArray(legend)) {
         return legend.map(() => '#000091')
       }
@@ -155,7 +244,7 @@ export default {
       chartColorTestState.seriesByIndex
       chartColorTestState.activePresetId
       chartColorTestState.targetToken
-      const v = this.dataObj.values
+      const v = this.displayData.values
       const base = (v && v.colors && [...v.colors]) || [...this.barColors]
       if (base.length > 0) base[0] = resolvePrimaryBarToken(getFallbackPrimaryBarToken())
       if (base.length > 1) base[1] = resolveExtrapolationToken(getFallbackExtrapolationBarToken())
@@ -164,7 +253,7 @@ export default {
     stackedSeriesColorsJson() {
       chartColorTestState.seriesByIndex
       chartColorTestState.activePresetId
-      const vals = this.dataObj.values
+      const vals = this.displayData.values
       if (!Array.isArray(vals) || !vals.length) return undefined
       const palette = getAllColors()
       const arr = vals.map((_, i) =>
@@ -175,7 +264,7 @@ export default {
     lineSeriesColorsJson() {
       chartColorTestState.seriesByIndex
       chartColorTestState.activePresetId
-      const vals = this.dataObj.values
+      const vals = this.displayData.values
       if (!Array.isArray(vals) || !vals.length) return undefined
       const palette = getAllColors()
       const arr = vals.map((_, i) =>
@@ -220,7 +309,66 @@ export default {
       const trendLines = this.overlays.trendLines
       return Array.isArray(trendLines) ? JSON.stringify(trendLines) : undefined
     }
-  }
+  },
+  mounted() {
+    this.loadSharedRegion()
+  },
+  methods: {
+    async loadSharedRegion() {
+      const token = ++this.regionalLoadToken
+      const code = this.sharedRegionCode
+      const indicatorIds = this.regionalIndicatorIds
+      if (!code || !indicatorIds.length) {
+        this.clearRegionalSeries()
+        return
+      }
+
+      try {
+        const settled = await Promise.all(
+          indicatorIds.map((indicatorId) =>
+            loadAllRegionsDataForIndicator(indicatorId)
+              .then((data) => ({ indicatorId, data }))
+              .catch(() => null)
+          )
+        )
+        if (token !== this.regionalLoadToken) return
+        const loaded = settled.filter(Boolean)
+        if (!loaded.length) {
+          this.clearRegionalSeries()
+          return
+        }
+
+        const extracted = extractRegionsAndExtra(loaded.map(({ data }) => data))
+        const match = extracted.regionsList.find(
+          (region) => String(region.geocode_region) === String(code)
+        )
+        if (!match) {
+          this.clearRegionalSeries()
+          return
+        }
+
+        const sources = loaded.map(({ data }) => ({ regionAllData: data }))
+        const series = buildStackedRegionalSeries(
+          sources,
+          match.geocode_region,
+          extracted.defaultExtraValue
+        )
+        if (!series || !series.x || !series.x.length) {
+          this.clearRegionalSeries()
+          return
+        }
+        this.regionalMeasureMeta = loaded[0].data?.measureMeta || null
+        this.regionalChartData = series
+      } catch (_error) {
+        if (token !== this.regionalLoadToken) return
+        this.clearRegionalSeries()
+      }
+    },
+    clearRegionalSeries() {
+      this.regionalChartData = null
+      this.regionalMeasureMeta = null
+    },
+  },
 }
 </script>
 

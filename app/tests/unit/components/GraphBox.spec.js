@@ -1,5 +1,6 @@
 import { shallowMount } from "@vue/test-utils";
 import GraphBox from "@/components/GraphBox.vue";
+import { regionSelection } from "@/services/regionSelection";
 
 const BarChartStub = {
   name: "BarChart",
@@ -36,6 +37,16 @@ function mountGraphBox(dataObj, extraProps = {}) {
     },
   });
 }
+
+beforeEach(() => {
+  regionSelection.code = "";
+  jest.spyOn(GraphBox.methods, "loadRegions").mockResolvedValue();
+});
+
+afterEach(() => {
+  regionSelection.code = "";
+  jest.restoreAllMocks();
+});
 
 describe("GraphBox", () => {
   it("renders compact layout landmarks for chantier detail cards", () => {
@@ -326,21 +337,9 @@ describe("GraphBox shared region", () => {
     { geocode_region: "11", libelle_region: "Île-de-France" },
   ];
 
-  let loadRegionsSpy;
-
-  beforeEach(() => {
-    loadRegionsSpy = jest.spyOn(GraphBox.methods, "loadRegions").mockResolvedValue();
-  });
-
-  afterEach(() => {
-    loadRegionsSpy.mockRestore();
-  });
-
   it("applies a shared region when the indicator lists it", async () => {
-    const wrapper = mountGraphBox(regionalIndicator, {
-      syncRegion: true,
-      sharedRegionCode: "11",
-    });
+    regionSelection.code = "11";
+    const wrapper = mountGraphBox(regionalIndicator);
 
     await wrapper.setData({
       regionsReady: true,
@@ -351,10 +350,8 @@ describe("GraphBox shared region", () => {
   });
 
   it("falls back to National when the shared region is unavailable", async () => {
-    const wrapper = mountGraphBox(regionalIndicator, {
-      syncRegion: true,
-      sharedRegionCode: "99",
-    });
+    regionSelection.code = "99";
+    const wrapper = mountGraphBox(regionalIndicator);
 
     await wrapper.setData({
       regionsReady: true,
@@ -366,10 +363,8 @@ describe("GraphBox shared region", () => {
   });
 
   it("resets every synced chart to National when the shared region is cleared", async () => {
-    const wrapper = mountGraphBox(regionalIndicator, {
-      syncRegion: true,
-      sharedRegionCode: "84",
-    });
+    regionSelection.code = "84";
+    const wrapper = mountGraphBox(regionalIndicator);
 
     await wrapper.setData({
       regionsReady: true,
@@ -377,19 +372,15 @@ describe("GraphBox shared region", () => {
     });
     expect(wrapper.vm.selectedRegionCode).toBe("84");
 
-    await wrapper.setProps({ sharedRegionCode: "" });
+    regionSelection.code = "";
+    await wrapper.vm.$nextTick();
     expect(wrapper.vm.selectedRegionCode).toBe("");
   });
 
-  it("emits the picked region only while sync is enabled", async () => {
-    const synced = mountGraphBox(regionalIndicator, { syncRegion: true });
-    await synced.setData({ regionsReady: true, regionsList });
-    await synced.find("select").setValue("84");
-    expect(synced.emitted("region-selected")).toEqual([["84"]]);
-
-    const local = mountGraphBox(regionalIndicator, { syncRegion: false });
-    await local.setData({ regionsReady: true, regionsList });
-    await local.find("select").setValue("84");
-    expect(local.emitted("region-selected")).toBeUndefined();
+  it("publishes the picked region to the shared selection", async () => {
+    const wrapper = mountGraphBox(regionalIndicator);
+    await wrapper.setData({ regionsReady: true, regionsList });
+    await wrapper.find("select").setValue("84");
+    expect(regionSelection.code).toBe("84");
   });
 });

@@ -59,9 +59,6 @@
                 :idAccordion="'accordion-' + index + columnIndex"
                 :titre="item.label_indic"
                 :key="item.label_indic + '-' + index + columnIndex"
-                :sync-region="syncRegion"
-                :shared-region-code="sharedRegionCode"
-                @region-selected="$emit('region-selected', $event)"
               ></graph-box>
             </div>
           </article>
@@ -113,14 +110,6 @@ export default {
     dashboardPage: {
       type: Boolean,
       default: true,
-    },
-    syncRegion: {
-      type: Boolean,
-      default: false,
-    },
-    sharedRegionCode: {
-      type: String,
-      default: "",
     },
   },
   methods: {

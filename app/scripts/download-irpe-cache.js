@@ -389,12 +389,15 @@ async function main() {
     console.log('Using cached meta.json\n');
   }
 
+  const { filterFrenchTerritoryRows } = await import('../src/services/frenchRegions.js');
   const errors = [];
   for (const indicatorId of idsToFetch) {
     try {
       console.log(`Fetching indicator ${indicatorId}...`);
       const existing = readExistingIndicatorPayload(indicatorId);
+      if (existing?.data) existing.data = filterFrenchTerritoryRows(existing.data);
       const payload = await loadAllRegionsDataForIndicator(meta, indicatorId);
+      payload.data = filterFrenchTerritoryRows(payload.data);
       payload.data = sortIndicatorRows(payload.data, payload.measureName);
       validateIndicatorPayload(payload, existing);
       if (writeJson(indicatorCachePath(indicatorId), payload)) {

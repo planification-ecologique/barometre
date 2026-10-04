@@ -270,6 +270,7 @@ import {
   buildStackedRegionalSeries,
 } from "@/services/ecolabRegionHelpers.js";
 import { isFavori, toggleFavori } from "@/services/favorisService.js";
+import { regionSelection, setSharedRegion } from "@/services/regionSelection.js";
 import {
   chartColorTestState,
   resolvePrimaryBarToken,
@@ -319,16 +320,6 @@ export default {
       type: Boolean,
       default: false
     },
-    /** When true, region picks are shared with sibling charts (search, regional mode). */
-    syncRegion: {
-      type: Boolean,
-      default: false,
-    },
-    /** Region code to mirror. Empty string means National. */
-    sharedRegionCode: {
-      type: String,
-      default: "",
-    },
   },
   data() {
     return {
@@ -364,14 +355,15 @@ export default {
     sharedRegionCode() {
       this.applySharedRegion();
     },
-    syncRegion(enabled) {
-      if (enabled) this.applySharedRegion();
-    },
     regionsReady(ready) {
       if (ready) this.applySharedRegion();
     },
   },
   computed: {
+    /** Territory chosen in the app navigation. Empty string means National. */
+    sharedRegionCode() {
+      return regionSelection.code;
+    },
     isStaging() {
       return this.$route?.path?.includes('/staging') ?? false;
     },
@@ -787,11 +779,11 @@ export default {
       }
     },
     /**
-     * Mirror the search-page region when this indicator can plot it.
+     * Mirror the navigation territory when this indicator can plot it.
      * Unknown codes fall back to National once the region list is loaded.
      */
     applySharedRegion() {
-      if (!this.syncRegion || !this.hasRegionalData || !this.regionsReady) return;
+      if (!this.hasRegionalData || !this.regionsReady) return;
       const code = this.sharedRegionCode == null ? "" : String(this.sharedRegionCode);
       if (code === String(this.selectedRegionCode || "")) return;
 
@@ -817,9 +809,7 @@ export default {
     },
     onUserRegionChange() {
       this.onRegionChange();
-      if (!this.syncRegion) return;
-      const code = this.selectedRegionCode == null ? "" : String(this.selectedRegionCode);
-      this.$emit("region-selected", code);
+      setSharedRegion(this.$router, this.selectedRegionCode);
     },
     onRegionChange() {
       this.regionalError = null;

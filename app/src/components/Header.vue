@@ -135,6 +135,7 @@
 
 <script>
 import NavigationDsfr from "./Navigation.vue";
+import { regionSelection } from "@/services/regionSelection.js";
 
 export default {
   name: "HeaderDsfr",
@@ -184,7 +185,10 @@ export default {
     },
     submitSearch() {
       const routeName = window.location.pathname.includes('/staging') ? 'staging-recherche' : 'recherche';
-      const query = this.headerSearchQuery?.trim() ? { q: this.headerSearchQuery.trim() } : {};
+      const query = {};
+      const trimmed = this.headerSearchQuery?.trim();
+      if (trimmed) query.q = trimmed;
+      if (regionSelection.code) query.region = regionSelection.code;
       this.$router.push({ name: routeName, query }).catch(() => {});
       // Force re-search even if route/query unchanged (NavigationDuplicated)
       this.$root.$emit("header-search:submit", { q: query.q || "" });

@@ -91,7 +91,11 @@
               <tr
                 v-for="(indicator, idx) in chantier.indicators"
                 :key="chantier.name + '-' + idx"
-                :class="{ 'first-row-of-chantier': idx === 0 }"
+                :class="{
+                  'first-row-of-chantier': idx === 0,
+                  'synthese-row--regional': presentationFor(indicator),
+                  'synthese-row--national': sharedRegionCode && !presentationFor(indicator),
+                }"
                 class="clickable-row"
                 @click="handleRowClick($event, sector.name, chantier)"
               >
@@ -147,19 +151,26 @@
                   </td>
                   <!-- Indicator -->
                   <td class="td-indicateur">
-                    {{ indicator.label }}
-                    <template v-if="indicator.labelUnit">
+                    <p
+                      v-if="sharedRegionCode"
+                      class="synthese-scope"
+                      :class="presentationFor(indicator) ? 'synthese-scope--regional' : 'synthese-scope--national'"
+                    >
+                      {{ presentationFor(indicator) ? 'Données régionales' : 'Données nationales' }}
+                    </p>
+                    {{ indicatorTitle(indicator) }}
+                    <template v-if="indicatorUnit(indicator)">
                       <br><br>
-                      <em>Unité : {{ indicator.labelUnit }}</em>
+                      <em>Unité : {{ indicatorUnit(indicator) }}</em>
                     </template>
-                    <template v-if="indicator.rawData && indicator.rawData.label_sources">
+                    <template v-if="indicatorSource(indicator)">
                       <br><br>
                       <em>
-                        Source : {{ indicator.rawData.label_sources }}
+                        Source : {{ indicatorSource(indicator) }}
                         <a
-                          v-if="sourceUrl(indicator.rawData)"
+                          v-if="indicatorSourceUrl(indicator)"
                           class="source-link-icon"
-                          :href="sourceUrl(indicator.rawData)"
+                          :href="indicatorSourceUrl(indicator)"
                           target="_blank"
                           rel="noopener external"
                           aria-label="Ouvrir la source (nouvel onglet)"
@@ -169,10 +180,10 @@
                         </a>
                       </em>
                     </template>
-                    <template v-if="indicator.legendItems && indicator.legendItems.length > 0">
+                    <template v-if="indicatorLegend(indicator).length > 0">
                       <br><br>
                       <div class="td-indicateur-legend-wrap">
-                        <span v-for="(item, i) in indicator.legendItems" :key="i" class="td-indicateur-legend-item">
+                        <span v-for="(item, i) in indicatorLegend(indicator)" :key="i" class="td-indicateur-legend-item">
                           <span class="td-indicateur-legend-dot" :style="{ backgroundColor: item.color }"></span>
                           <span class="td-indicateur-legend-label">{{ item.label }}</span>
                         </span>
@@ -184,6 +195,7 @@
                     <mini-chart
                       v-if="indicator.rawData"
                       :dataObj="indicator.rawData"
+                      @regional-presentation="setRegionalPresentation(indicator, $event)"
                     />
                   </td>
                 </tr>
@@ -255,6 +267,7 @@
 <script>
 import MiniChart from './MiniChart.vue'
 import SynthesisValeursHeaderLegend from './SynthesisValeursHeaderLegend.vue'
+import synthesisRegionalRows from './synthesisRegionalRows.js'
 import { chantierSectorNomMieux as sectorNomMieux } from '@/config/sectorMieuxLabels.js';
 import {
   ensureShellViewData,
@@ -270,6 +283,7 @@ import {
 
 export default {
   name: 'SyntheseSectorielle',
+  mixins: [synthesisRegionalRows],
   components: {
     MiniChart,
     SynthesisValeursHeaderLegend
@@ -826,6 +840,25 @@ a.engagement-badge--link:focus {
 
 .td-indicateur-legend-label {
   flex: 0 1 auto;
+}
+
+.synthese-scope {
+  margin: 0 0 0.35rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.synthese-scope--regional {
+  color: var(--text-action-high-blue-france, #000091);
+}
+
+.synthese-scope--national {
+  color: var(--text-mention-grey, #666);
+}
+
+.synthese-row--regional .td-indicateur {
+  box-shadow: inset 3px 0 0 var(--text-action-high-blue-france, #000091);
 }
 
 .td-empty {

@@ -62,6 +62,23 @@
           </a>
         </li>
       </ul>
+      <div v-if="showRegionSelect" class="nav-region">
+        <select
+          id="nav-region-select"
+          class="fr-select fr-select--sm"
+          :value="regionCode"
+          @change="onRegionChange"
+        >
+          <option value="">National</option>
+          <option
+            v-for="region in frenchRegions"
+            :key="region.code"
+            :value="region.code"
+          >
+            {{ region.label }}
+          </option>
+        </select>
+      </div>
     </nav>
   </div>
 </template>
@@ -78,6 +95,8 @@ import {
   rechercheRouteName,
 } from '@/config/routeNames.js'
 import { SECTION_SYNTHESE_SLUG } from '@/utils/sectionUrl.js'
+import { FRENCH_REGIONS } from '@/services/frenchRegions.js'
+import { regionSelection, setSharedRegion } from '@/services/regionSelection.js'
 
 function buildMenuOptions() {
   const base = process.env.VUE_APP_PREFIX_PATH
@@ -132,6 +151,17 @@ export default {
       dropdownOpen: false,
     }
   },
+  computed: {
+    frenchRegions() {
+      return FRENCH_REGIONS
+    },
+    regionCode() {
+      return regionSelection.code
+    },
+    showRegionSelect() {
+      return !this.$route?.meta?.hideHeader
+    },
+  },
   methods: {
     async loadSectors() {
       try {
@@ -157,6 +187,9 @@ export default {
     },
     closeDropdown() {
       this.dropdownOpen = false
+    },
+    onRegionChange(event) {
+      setSharedRegion(this.$router || this.myrouter, event.target.value)
     },
     handleNavigation(option) {
       this.closeDropdown()
@@ -320,10 +353,16 @@ a:hover:not([href]) {
   cursor: pointer;
 }
 
+#header-navigation.fr-nav {
+  display: flex;
+  align-items: center;
+}
+
 .fr-nav__list {
   padding-left: 20px;
   display: flex;
   align-items: center;
+  flex: 1;
 }
 
 .nav-item {
@@ -332,7 +371,31 @@ a:hover:not([href]) {
   list-style: none;
 }
 
+.nav-region {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0 1rem 0 auto;
+  flex-shrink: 0;
+}
+
+.nav-region .fr-label {
+  margin-bottom: 0;
+  font-size: 0.875rem;
+  white-space: nowrap;
+}
+
+.nav-region .fr-select {
+  width: auto;
+  min-width: 14rem;
+}
+
 @media (max-width: 991px) {
+  #header-navigation.fr-nav {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
   .fr-nav__list {
     align-items: stretch;
     padding-left: 0;
@@ -341,6 +404,19 @@ a:hover:not([href]) {
   .nav-item {
     margin-left: 0;
     width: 100%;
+  }
+
+  .nav-region {
+    width: 100%;
+    margin: 0.5rem 0 0;
+    padding: 0 1rem 0.75rem;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .nav-region .fr-select {
+    width: 100%;
+    min-width: 0;
   }
 
   .fr-nav__link,

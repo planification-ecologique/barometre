@@ -14,6 +14,7 @@ import {
   impactAxeNomCourt,
   resolveImpactAxeSlugToNomComplet,
 } from "./services/csvDataService.js";
+import { ensureRegionQuery, regionQueryRedirect } from "./services/regionSelection.js";
 
 Vue.use(Router);
 
@@ -455,6 +456,12 @@ function isStagingRoute(route) {
 }
 
 router.beforeEach(async (to, from, next) => {
+  const regionRedirect = regionQueryRedirect(to);
+  if (regionRedirect) {
+    next(regionRedirect);
+    return;
+  }
+
   const chantiersTableCanon = canonicalChantiersTableQueryRedirect(to);
   if (chantiersTableCanon) {
     next(chantiersTableCanon);
@@ -491,6 +498,10 @@ router.beforeEach(async (to, from, next) => {
     body.classList.remove('hide-footer');
   }
   next();
+});
+
+router.afterEach((to) => {
+  ensureRegionQuery(router, to);
 });
 
 export default router;
