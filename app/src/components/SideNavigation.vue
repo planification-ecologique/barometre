@@ -132,6 +132,8 @@ import {
   impactAxeNomCourt as impactAxeNomCourtFromTaxonomy,
   resolveSyntheseImpactGroupingKey,
 } from "@/services/csvDataService.js";
+import { regionSelection } from "@/services/regionSelection.js";
+import { loadCopRegionalView } from "@/services/copLeviers.js";
 
 export default {
   name: "SideNavigation",
@@ -150,6 +152,8 @@ export default {
       allSectorChantiers: {},
       navigationData: null,  // Store the full navigation structure
       isLoading: true,
+      territoryMode: false,
+      territorySeq: 0,
     };
   },
   computed: {
@@ -169,6 +173,9 @@ export default {
     showChantiersAccordionSidebar() {
       if (this.isEtatEnvironnementContext) return false;
       return this.sector === "Synthèse" || this.isChantiersShellRoute;
+    },
+    sharedRegionCode() {
+      return regionSelection.code;
     },
   },
   props: {
@@ -230,6 +237,12 @@ export default {
         }
         
         this.isLoading = false;
+
+        if (regionSelection.code && this.isChantiersShellRoute) {
+          await this.syncTerritoryNavigation();
+          this.emitNextSectionMeta();
+          return;
+        }
 
         // Initialize with view from initParams, or default view based on sector
         if (!this.initParams || !this.initParams.view) {
@@ -513,6 +526,7 @@ export default {
         sortedLeviers: chantier.sortedLeviers || [],
         descriptionChantier: chantier.descriptionChantier || '',
         axeTaxonomie: chantier.axeTaxonomie || [],
+        copMode: Boolean(chantier.copMode),
       };
       this.$emit("params", params);
     },
@@ -887,6 +901,70 @@ export default {
       };
       this.$emit("params", params);
     },
+    async syncTerritoryNavigation() {
+      if (!this.isChantiersShellRoute) return;
+      const code = regionSelection.code;
+      if (!code) {
+        if (!this.territoryMode) return;
+        this.territoryMode = false;
+        this.territorySeq += 1;
+        this._territoryCode = "";
+        this.loadChantierSectors();
+        this.loadAllSectorChantiers();
+        if (this.currentView === "chantier") this.set_chantiers_sectoriels();
+        return;
+      }
+      if (!this.navigationData) return;
+
+      const seq = ++this.territorySeq;
+      const environment = this.useStaging ? "staging" : "production";
+      const view = await loadCopRegionalView(code, environment);
+      if (seq !== this.territorySeq || regionSelection.code !== code) return;
+
+      this.territoryMode = true;
+      const sectors = view.displaySectors || [];
+      this.chantierSectors = sectors.map((sector) => sector.name);
+      const byTheme = {};
+      sectors.forEach((sector) => {
+        byTheme[sector.name] = (sector.chantiers || []).map((chantier) => ({
+          id: chantier.id,
+          name: chantier.name,
+          grist_ids: chantier.gristIds || [],
+          sortedLeviers: [],
+          descriptionChantier: chantier.descriptionChantier || "",
+          axeTaxonomie: [],
+          copMode: true,
+        }));
+      });
+      this.allSectorChantiers = byTheme;
+
+      const wanted = (this.initParams && this.initParams.chantier_id) || this.currentChantierId;
+      let found = null;
+      let foundTheme = null;
+      for (const [theme, levers] of Object.entries(byTheme)) {
+        const match = levers.find((lever) => lever.id === wanted);
+        if (match) {
+          found = match;
+          foundTheme = theme;
+          break;
+        }
+      }
+      if (found) {
+        if (
+          this.currentChantierId !== found.id ||
+          this.currentView !== "chantier" ||
+          this._territoryCode !== code
+        ) {
+          this._territoryCode = code;
+          this.set_chantier_from_synthese(foundTheme, found);
+        }
+      } else if (this.currentView === "chantier" || !this.currentView) {
+        this._territoryCode = code;
+        this.set_chantiers_sectoriels();
+      } else {
+        this._territoryCode = code;
+      }
+    },
   },
   mounted() {
     // Ensure sector is set before loading
@@ -956,6 +1034,10 @@ export default {
     },
     isLoading() {
       this.emitNextSectionMeta();
+    },
+    sharedRegionCode() {
+      if (!this.isChantiersShellRoute || !this.navigationData) return;
+      this.syncTerritoryNavigation();
     },
     isEtatEnvironnementContext() {
       this.emitNextSectionMeta();

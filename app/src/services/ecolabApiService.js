@@ -5,6 +5,7 @@
  */
 
 import { filterFrenchTerritoryRows } from '@/services/frenchRegions';
+import { mapKeysStable, mapValuesStable } from '@/utils/mapIter';
 
 const ECOLAB_BASE = 'https://api.indicateurs.ecologie.gouv.fr/cubejs-api/v1';
 const ECOLAB_CONTINUE_WAIT_DELAY_MS = 10000;
@@ -220,7 +221,7 @@ export async function getRegionsList(cubeName, measureName, timeDimension) {
     const label = row[keyLabel] ?? row['libelle_region'];
     if (geocode && label && !byGeocode.has(geocode)) byGeocode.set(geocode, { geocode_region: geocode, libelle_region: label });
   });
-  return Array.from(byGeocode.values()).sort((a, b) => a.libelle_region.localeCompare(b.libelle_region, 'fr'));
+  return mapValuesStable(byGeocode).sort((a, b) => a.libelle_region.localeCompare(b.libelle_region, 'fr'));
 }
 
 /** Time-like dimension name patterns (cube-relative). */
@@ -311,7 +312,7 @@ export async function getRegionChartData(indicatorId, regionCode) {
       if (!Number.isNaN(num)) byTime.set(t, num);
     }
   });
-  const sortedTimes = Array.from(byTime.keys()).sort((a, b) => {
+  const sortedTimes = mapKeysStable(byTime).sort((a, b) => {
     const na = Number(a);
     const nb = Number(b);
     if (!Number.isNaN(na) && !Number.isNaN(nb)) return na - nb;

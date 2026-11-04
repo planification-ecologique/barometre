@@ -38,7 +38,7 @@
             <optgroup label="Accueil">
               <option value="view:about">À propos</option>
             </optgroup>
-            <optgroup label="État de l'environnement">
+            <optgroup :label="etatGroupLabel">
               <option value="view:etat-environnement">Synthèse</option>
               <option v-for="axe in displayedTaxonomyAxes" :key="'axe-' + axe" :value="'axe:' + axe">
                 {{ axe }}
@@ -91,6 +91,7 @@ import {
 import { impactAxeNameToSlug, impactAxeSlugToName, isImpactAxeSlug } from '@/utils/impactAxeUrl.js'
 import { getNavigationStructure, isImpactAxe, taxonomyAxesForDisplay } from '@/services/csvDataService.js'
 import { getSectorIcon } from '@/utils/sectorIcons.js'
+import { regionSelection } from '@/services/regionSelection.js'
 
 export default {
   name: 'SectorSelector',
@@ -114,6 +115,11 @@ export default {
   computed: {
     currentSectorIcon() {
       return getSectorIcon(this.activeSector)
+    },
+    etatGroupLabel() {
+      return regionSelection.code
+        ? "État de l'environnement (national)"
+        : "État de l'environnement"
     },
     // Use route-based sector to ensure consistency with currentValue
     activeSector() {

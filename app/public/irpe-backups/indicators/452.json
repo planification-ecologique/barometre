@@ -7,8 +7,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "Guadeloupe",
       "immatriculations_autocar_e_com.geocode_region": "01",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 0,
       "immatriculations_autocar_e_com.date_mesure": "2019-01-01T00:00:00.000"
@@ -16,8 +16,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "Martinique",
       "immatriculations_autocar_e_com.geocode_region": "02",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 0,
       "immatriculations_autocar_e_com.date_mesure": "2019-01-01T00:00:00.000"
@@ -25,8 +25,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "Guyane",
       "immatriculations_autocar_e_com.geocode_region": "03",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 0,
       "immatriculations_autocar_e_com.date_mesure": "2019-01-01T00:00:00.000"
@@ -34,8 +34,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "La Réunion",
       "immatriculations_autocar_e_com.geocode_region": "04",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 0,
       "immatriculations_autocar_e_com.date_mesure": "2019-01-01T00:00:00.000"
@@ -43,8 +43,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "Mayotte",
       "immatriculations_autocar_e_com.geocode_region": "06",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 0,
       "immatriculations_autocar_e_com.date_mesure": "2019-01-01T00:00:00.000"
@@ -52,8 +52,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "Île-de-France",
       "immatriculations_autocar_e_com.geocode_region": "11",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 0.9796533534287868,
       "immatriculations_autocar_e_com.date_mesure": "2019-01-01T00:00:00.000"
@@ -61,8 +61,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "Centre-Val de Loire",
       "immatriculations_autocar_e_com.geocode_region": "24",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 0,
       "immatriculations_autocar_e_com.date_mesure": "2019-01-01T00:00:00.000"
@@ -70,8 +70,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "Bourgogne-Franche-Comté",
       "immatriculations_autocar_e_com.geocode_region": "27",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 0,
       "immatriculations_autocar_e_com.date_mesure": "2019-01-01T00:00:00.000"
@@ -79,8 +79,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "Normandie",
       "immatriculations_autocar_e_com.geocode_region": "28",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 0,
       "immatriculations_autocar_e_com.date_mesure": "2019-01-01T00:00:00.000"
@@ -88,8 +88,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "Hauts-de-France",
       "immatriculations_autocar_e_com.geocode_region": "32",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 0.9615384615384616,
       "immatriculations_autocar_e_com.date_mesure": "2019-01-01T00:00:00.000"
@@ -97,8 +97,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "Grand Est",
       "immatriculations_autocar_e_com.geocode_region": "44",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 0,
       "immatriculations_autocar_e_com.date_mesure": "2019-01-01T00:00:00.000"
@@ -106,8 +106,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "Pays de la Loire",
       "immatriculations_autocar_e_com.geocode_region": "52",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 0,
       "immatriculations_autocar_e_com.date_mesure": "2019-01-01T00:00:00.000"
@@ -115,8 +115,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "Bretagne",
       "immatriculations_autocar_e_com.geocode_region": "53",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 0,
       "immatriculations_autocar_e_com.date_mesure": "2019-01-01T00:00:00.000"
@@ -124,8 +124,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "Nouvelle-Aquitaine",
       "immatriculations_autocar_e_com.geocode_region": "75",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 0,
       "immatriculations_autocar_e_com.date_mesure": "2019-01-01T00:00:00.000"
@@ -133,8 +133,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "Occitanie",
       "immatriculations_autocar_e_com.geocode_region": "76",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 0,
       "immatriculations_autocar_e_com.date_mesure": "2019-01-01T00:00:00.000"
@@ -142,8 +142,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "Auvergne-Rhône-Alpes",
       "immatriculations_autocar_e_com.geocode_region": "84",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 0.1278772378516624,
       "immatriculations_autocar_e_com.date_mesure": "2019-01-01T00:00:00.000"
@@ -151,8 +151,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "Provence-Alpes-Côte d'Azur",
       "immatriculations_autocar_e_com.geocode_region": "93",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 0,
       "immatriculations_autocar_e_com.date_mesure": "2019-01-01T00:00:00.000"
@@ -160,8 +160,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "Corse",
       "immatriculations_autocar_e_com.geocode_region": "94",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2019-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 0,
       "immatriculations_autocar_e_com.date_mesure": "2019-01-01T00:00:00.000"
@@ -169,8 +169,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "Guadeloupe",
       "immatriculations_autocar_e_com.geocode_region": "01",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 0,
       "immatriculations_autocar_e_com.date_mesure": "2020-01-01T00:00:00.000"
@@ -178,8 +178,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "Martinique",
       "immatriculations_autocar_e_com.geocode_region": "02",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 0,
       "immatriculations_autocar_e_com.date_mesure": "2020-01-01T00:00:00.000"
@@ -187,8 +187,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "Guyane",
       "immatriculations_autocar_e_com.geocode_region": "03",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 0,
       "immatriculations_autocar_e_com.date_mesure": "2020-01-01T00:00:00.000"
@@ -196,8 +196,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "La Réunion",
       "immatriculations_autocar_e_com.geocode_region": "04",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 0,
       "immatriculations_autocar_e_com.date_mesure": "2020-01-01T00:00:00.000"
@@ -205,8 +205,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "Mayotte",
       "immatriculations_autocar_e_com.geocode_region": "06",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 0,
       "immatriculations_autocar_e_com.date_mesure": "2020-01-01T00:00:00.000"
@@ -214,8 +214,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "Île-de-France",
       "immatriculations_autocar_e_com.geocode_region": "11",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 0.17513134851138354,
       "immatriculations_autocar_e_com.date_mesure": "2020-01-01T00:00:00.000"
@@ -223,8 +223,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "Centre-Val de Loire",
       "immatriculations_autocar_e_com.geocode_region": "24",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 0,
       "immatriculations_autocar_e_com.date_mesure": "2020-01-01T00:00:00.000"
@@ -232,8 +232,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "Bourgogne-Franche-Comté",
       "immatriculations_autocar_e_com.geocode_region": "27",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 1.8518518518518519,
       "immatriculations_autocar_e_com.date_mesure": "2020-01-01T00:00:00.000"
@@ -241,8 +241,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "Normandie",
       "immatriculations_autocar_e_com.geocode_region": "28",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 0,
       "immatriculations_autocar_e_com.date_mesure": "2020-01-01T00:00:00.000"
@@ -250,8 +250,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "Hauts-de-France",
       "immatriculations_autocar_e_com.geocode_region": "32",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 0,
       "immatriculations_autocar_e_com.date_mesure": "2020-01-01T00:00:00.000"
@@ -259,8 +259,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "Grand Est",
       "immatriculations_autocar_e_com.geocode_region": "44",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 0,
       "immatriculations_autocar_e_com.date_mesure": "2020-01-01T00:00:00.000"
@@ -268,8 +268,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "Pays de la Loire",
       "immatriculations_autocar_e_com.geocode_region": "52",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 0,
       "immatriculations_autocar_e_com.date_mesure": "2020-01-01T00:00:00.000"
@@ -277,8 +277,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "Bretagne",
       "immatriculations_autocar_e_com.geocode_region": "53",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 0,
       "immatriculations_autocar_e_com.date_mesure": "2020-01-01T00:00:00.000"
@@ -286,8 +286,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "Nouvelle-Aquitaine",
       "immatriculations_autocar_e_com.geocode_region": "75",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 0,
       "immatriculations_autocar_e_com.date_mesure": "2020-01-01T00:00:00.000"
@@ -295,8 +295,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "Occitanie",
       "immatriculations_autocar_e_com.geocode_region": "76",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 0,
       "immatriculations_autocar_e_com.date_mesure": "2020-01-01T00:00:00.000"
@@ -304,8 +304,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "Auvergne-Rhône-Alpes",
       "immatriculations_autocar_e_com.geocode_region": "84",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 0,
       "immatriculations_autocar_e_com.date_mesure": "2020-01-01T00:00:00.000"
@@ -313,8 +313,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "Provence-Alpes-Côte d'Azur",
       "immatriculations_autocar_e_com.geocode_region": "93",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 0,
       "immatriculations_autocar_e_com.date_mesure": "2020-01-01T00:00:00.000"
@@ -322,8 +322,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "Corse",
       "immatriculations_autocar_e_com.geocode_region": "94",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2020-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 0,
       "immatriculations_autocar_e_com.date_mesure": "2020-01-01T00:00:00.000"
@@ -331,8 +331,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "Guadeloupe",
       "immatriculations_autocar_e_com.geocode_region": "01",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 0,
       "immatriculations_autocar_e_com.date_mesure": "2021-01-01T00:00:00.000"
@@ -340,8 +340,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "Martinique",
       "immatriculations_autocar_e_com.geocode_region": "02",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 0,
       "immatriculations_autocar_e_com.date_mesure": "2021-01-01T00:00:00.000"
@@ -349,8 +349,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "Guyane",
       "immatriculations_autocar_e_com.geocode_region": "03",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 0,
       "immatriculations_autocar_e_com.date_mesure": "2021-01-01T00:00:00.000"
@@ -358,8 +358,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "La Réunion",
       "immatriculations_autocar_e_com.geocode_region": "04",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 0,
       "immatriculations_autocar_e_com.date_mesure": "2021-01-01T00:00:00.000"
@@ -367,8 +367,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "Mayotte",
       "immatriculations_autocar_e_com.geocode_region": "06",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 0,
       "immatriculations_autocar_e_com.date_mesure": "2021-01-01T00:00:00.000"
@@ -376,8 +376,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "Île-de-France",
       "immatriculations_autocar_e_com.geocode_region": "11",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 0.10660980810234541,
       "immatriculations_autocar_e_com.date_mesure": "2021-01-01T00:00:00.000"
@@ -385,8 +385,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "Centre-Val de Loire",
       "immatriculations_autocar_e_com.geocode_region": "24",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 0,
       "immatriculations_autocar_e_com.date_mesure": "2021-01-01T00:00:00.000"
@@ -394,8 +394,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "Bourgogne-Franche-Comté",
       "immatriculations_autocar_e_com.geocode_region": "27",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 0,
       "immatriculations_autocar_e_com.date_mesure": "2021-01-01T00:00:00.000"
@@ -403,8 +403,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "Normandie",
       "immatriculations_autocar_e_com.geocode_region": "28",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 0,
       "immatriculations_autocar_e_com.date_mesure": "2021-01-01T00:00:00.000"
@@ -412,8 +412,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "Hauts-de-France",
       "immatriculations_autocar_e_com.geocode_region": "32",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 0,
       "immatriculations_autocar_e_com.date_mesure": "2021-01-01T00:00:00.000"
@@ -421,8 +421,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "Grand Est",
       "immatriculations_autocar_e_com.geocode_region": "44",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 0.16750418760469013,
       "immatriculations_autocar_e_com.date_mesure": "2021-01-01T00:00:00.000"
@@ -430,8 +430,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "Pays de la Loire",
       "immatriculations_autocar_e_com.geocode_region": "52",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 0,
       "immatriculations_autocar_e_com.date_mesure": "2021-01-01T00:00:00.000"
@@ -439,8 +439,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "Bretagne",
       "immatriculations_autocar_e_com.geocode_region": "53",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 0,
       "immatriculations_autocar_e_com.date_mesure": "2021-01-01T00:00:00.000"
@@ -448,8 +448,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "Nouvelle-Aquitaine",
       "immatriculations_autocar_e_com.geocode_region": "75",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 1.5915119363395225,
       "immatriculations_autocar_e_com.date_mesure": "2021-01-01T00:00:00.000"
@@ -457,8 +457,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "Occitanie",
       "immatriculations_autocar_e_com.geocode_region": "76",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 0,
       "immatriculations_autocar_e_com.date_mesure": "2021-01-01T00:00:00.000"
@@ -466,8 +466,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "Auvergne-Rhône-Alpes",
       "immatriculations_autocar_e_com.geocode_region": "84",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 0,
       "immatriculations_autocar_e_com.date_mesure": "2021-01-01T00:00:00.000"
@@ -475,8 +475,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "Provence-Alpes-Côte d'Azur",
       "immatriculations_autocar_e_com.geocode_region": "93",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 0.23696682464454977,
       "immatriculations_autocar_e_com.date_mesure": "2021-01-01T00:00:00.000"
@@ -484,8 +484,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "Corse",
       "immatriculations_autocar_e_com.geocode_region": "94",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2021-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 0,
       "immatriculations_autocar_e_com.date_mesure": "2021-01-01T00:00:00.000"
@@ -493,8 +493,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "Guadeloupe",
       "immatriculations_autocar_e_com.geocode_region": "01",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 0,
       "immatriculations_autocar_e_com.date_mesure": "2022-01-01T00:00:00.000"
@@ -502,8 +502,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "Martinique",
       "immatriculations_autocar_e_com.geocode_region": "02",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 0,
       "immatriculations_autocar_e_com.date_mesure": "2022-01-01T00:00:00.000"
@@ -511,8 +511,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "Guyane",
       "immatriculations_autocar_e_com.geocode_region": "03",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 0,
       "immatriculations_autocar_e_com.date_mesure": "2022-01-01T00:00:00.000"
@@ -520,8 +520,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "La Réunion",
       "immatriculations_autocar_e_com.geocode_region": "04",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 0,
       "immatriculations_autocar_e_com.date_mesure": "2022-01-01T00:00:00.000"
@@ -529,8 +529,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "Mayotte",
       "immatriculations_autocar_e_com.geocode_region": "06",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 0,
       "immatriculations_autocar_e_com.date_mesure": "2022-01-01T00:00:00.000"
@@ -538,8 +538,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "Île-de-France",
       "immatriculations_autocar_e_com.geocode_region": "11",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 0.41379310344827586,
       "immatriculations_autocar_e_com.date_mesure": "2022-01-01T00:00:00.000"
@@ -547,8 +547,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "Centre-Val de Loire",
       "immatriculations_autocar_e_com.geocode_region": "24",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 0.8771929824561403,
       "immatriculations_autocar_e_com.date_mesure": "2022-01-01T00:00:00.000"
@@ -556,8 +556,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "Bourgogne-Franche-Comté",
       "immatriculations_autocar_e_com.geocode_region": "27",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 0,
       "immatriculations_autocar_e_com.date_mesure": "2022-01-01T00:00:00.000"
@@ -565,8 +565,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "Normandie",
       "immatriculations_autocar_e_com.geocode_region": "28",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 0,
       "immatriculations_autocar_e_com.date_mesure": "2022-01-01T00:00:00.000"
@@ -574,8 +574,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "Hauts-de-France",
       "immatriculations_autocar_e_com.geocode_region": "32",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 0,
       "immatriculations_autocar_e_com.date_mesure": "2022-01-01T00:00:00.000"
@@ -583,8 +583,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "Grand Est",
       "immatriculations_autocar_e_com.geocode_region": "44",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 0,
       "immatriculations_autocar_e_com.date_mesure": "2022-01-01T00:00:00.000"
@@ -592,8 +592,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "Pays de la Loire",
       "immatriculations_autocar_e_com.geocode_region": "52",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 0,
       "immatriculations_autocar_e_com.date_mesure": "2022-01-01T00:00:00.000"
@@ -601,8 +601,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "Bretagne",
       "immatriculations_autocar_e_com.geocode_region": "53",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 0,
       "immatriculations_autocar_e_com.date_mesure": "2022-01-01T00:00:00.000"
@@ -610,8 +610,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "Nouvelle-Aquitaine",
       "immatriculations_autocar_e_com.geocode_region": "75",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 0,
       "immatriculations_autocar_e_com.date_mesure": "2022-01-01T00:00:00.000"
@@ -619,8 +619,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "Occitanie",
       "immatriculations_autocar_e_com.geocode_region": "76",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 0,
       "immatriculations_autocar_e_com.date_mesure": "2022-01-01T00:00:00.000"
@@ -628,8 +628,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "Auvergne-Rhône-Alpes",
       "immatriculations_autocar_e_com.geocode_region": "84",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 0,
       "immatriculations_autocar_e_com.date_mesure": "2022-01-01T00:00:00.000"
@@ -637,8 +637,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "Provence-Alpes-Côte d'Azur",
       "immatriculations_autocar_e_com.geocode_region": "93",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 16.526610644257705,
       "immatriculations_autocar_e_com.date_mesure": "2022-01-01T00:00:00.000"
@@ -646,8 +646,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "Corse",
       "immatriculations_autocar_e_com.geocode_region": "94",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2022-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 0,
       "immatriculations_autocar_e_com.date_mesure": "2022-01-01T00:00:00.000"
@@ -655,8 +655,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "Guadeloupe",
       "immatriculations_autocar_e_com.geocode_region": "01",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 0,
       "immatriculations_autocar_e_com.date_mesure": "2023-01-01T00:00:00.000"
@@ -664,8 +664,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "Martinique",
       "immatriculations_autocar_e_com.geocode_region": "02",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 0,
       "immatriculations_autocar_e_com.date_mesure": "2023-01-01T00:00:00.000"
@@ -673,8 +673,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "Guyane",
       "immatriculations_autocar_e_com.geocode_region": "03",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 0,
       "immatriculations_autocar_e_com.date_mesure": "2023-01-01T00:00:00.000"
@@ -682,8 +682,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "La Réunion",
       "immatriculations_autocar_e_com.geocode_region": "04",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 0,
       "immatriculations_autocar_e_com.date_mesure": "2023-01-01T00:00:00.000"
@@ -691,8 +691,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "Mayotte",
       "immatriculations_autocar_e_com.geocode_region": "06",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 0,
       "immatriculations_autocar_e_com.date_mesure": "2023-01-01T00:00:00.000"
@@ -700,8 +700,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "Île-de-France",
       "immatriculations_autocar_e_com.geocode_region": "11",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 0.36809815950920244,
       "immatriculations_autocar_e_com.date_mesure": "2023-01-01T00:00:00.000"
@@ -709,8 +709,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "Centre-Val de Loire",
       "immatriculations_autocar_e_com.geocode_region": "24",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 0,
       "immatriculations_autocar_e_com.date_mesure": "2023-01-01T00:00:00.000"
@@ -718,8 +718,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "Bourgogne-Franche-Comté",
       "immatriculations_autocar_e_com.geocode_region": "27",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 0,
       "immatriculations_autocar_e_com.date_mesure": "2023-01-01T00:00:00.000"
@@ -727,8 +727,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "Normandie",
       "immatriculations_autocar_e_com.geocode_region": "28",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 0,
       "immatriculations_autocar_e_com.date_mesure": "2023-01-01T00:00:00.000"
@@ -736,8 +736,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "Hauts-de-France",
       "immatriculations_autocar_e_com.geocode_region": "32",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 0,
       "immatriculations_autocar_e_com.date_mesure": "2023-01-01T00:00:00.000"
@@ -745,8 +745,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "Grand Est",
       "immatriculations_autocar_e_com.geocode_region": "44",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 0,
       "immatriculations_autocar_e_com.date_mesure": "2023-01-01T00:00:00.000"
@@ -754,8 +754,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "Pays de la Loire",
       "immatriculations_autocar_e_com.geocode_region": "52",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 0,
       "immatriculations_autocar_e_com.date_mesure": "2023-01-01T00:00:00.000"
@@ -763,8 +763,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "Bretagne",
       "immatriculations_autocar_e_com.geocode_region": "53",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 0,
       "immatriculations_autocar_e_com.date_mesure": "2023-01-01T00:00:00.000"
@@ -772,8 +772,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "Nouvelle-Aquitaine",
       "immatriculations_autocar_e_com.geocode_region": "75",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 0,
       "immatriculations_autocar_e_com.date_mesure": "2023-01-01T00:00:00.000"
@@ -781,8 +781,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "Occitanie",
       "immatriculations_autocar_e_com.geocode_region": "76",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 0.49627791563275436,
       "immatriculations_autocar_e_com.date_mesure": "2023-01-01T00:00:00.000"
@@ -790,8 +790,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "Auvergne-Rhône-Alpes",
       "immatriculations_autocar_e_com.geocode_region": "84",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 2.0602218700475436,
       "immatriculations_autocar_e_com.date_mesure": "2023-01-01T00:00:00.000"
@@ -799,8 +799,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "Provence-Alpes-Côte d'Azur",
       "immatriculations_autocar_e_com.geocode_region": "93",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 1.639344262295082,
       "immatriculations_autocar_e_com.date_mesure": "2023-01-01T00:00:00.000"
@@ -808,8 +808,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "Corse",
       "immatriculations_autocar_e_com.geocode_region": "94",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2023-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 3.8461538461538463,
       "immatriculations_autocar_e_com.date_mesure": "2023-01-01T00:00:00.000"
@@ -817,8 +817,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "Guadeloupe",
       "immatriculations_autocar_e_com.geocode_region": "01",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 0,
       "immatriculations_autocar_e_com.date_mesure": "2024-01-01T00:00:00.000"
@@ -826,8 +826,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "Martinique",
       "immatriculations_autocar_e_com.geocode_region": "02",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 0,
       "immatriculations_autocar_e_com.date_mesure": "2024-01-01T00:00:00.000"
@@ -835,8 +835,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "Guyane",
       "immatriculations_autocar_e_com.geocode_region": "03",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 0,
       "immatriculations_autocar_e_com.date_mesure": "2024-01-01T00:00:00.000"
@@ -844,8 +844,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "La Réunion",
       "immatriculations_autocar_e_com.geocode_region": "04",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 0,
       "immatriculations_autocar_e_com.date_mesure": "2024-01-01T00:00:00.000"
@@ -853,8 +853,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "Mayotte",
       "immatriculations_autocar_e_com.geocode_region": "06",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 0,
       "immatriculations_autocar_e_com.date_mesure": "2024-01-01T00:00:00.000"
@@ -862,8 +862,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "Île-de-France",
       "immatriculations_autocar_e_com.geocode_region": "11",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 1.0262257696693273,
       "immatriculations_autocar_e_com.date_mesure": "2024-01-01T00:00:00.000"
@@ -871,8 +871,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "Centre-Val de Loire",
       "immatriculations_autocar_e_com.geocode_region": "24",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 3.658536585365854,
       "immatriculations_autocar_e_com.date_mesure": "2024-01-01T00:00:00.000"
@@ -880,8 +880,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "Bourgogne-Franche-Comté",
       "immatriculations_autocar_e_com.geocode_region": "27",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 0,
       "immatriculations_autocar_e_com.date_mesure": "2024-01-01T00:00:00.000"
@@ -889,8 +889,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "Normandie",
       "immatriculations_autocar_e_com.geocode_region": "28",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 0.43859649122807015,
       "immatriculations_autocar_e_com.date_mesure": "2024-01-01T00:00:00.000"
@@ -898,8 +898,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "Hauts-de-France",
       "immatriculations_autocar_e_com.geocode_region": "32",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 0,
       "immatriculations_autocar_e_com.date_mesure": "2024-01-01T00:00:00.000"
@@ -907,8 +907,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "Grand Est",
       "immatriculations_autocar_e_com.geocode_region": "44",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 1.0075566750629723,
       "immatriculations_autocar_e_com.date_mesure": "2024-01-01T00:00:00.000"
@@ -916,8 +916,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "Pays de la Loire",
       "immatriculations_autocar_e_com.geocode_region": "52",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 0.5934718100890207,
       "immatriculations_autocar_e_com.date_mesure": "2024-01-01T00:00:00.000"
@@ -925,8 +925,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "Bretagne",
       "immatriculations_autocar_e_com.geocode_region": "53",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 1.1235955056179776,
       "immatriculations_autocar_e_com.date_mesure": "2024-01-01T00:00:00.000"
@@ -934,8 +934,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "Nouvelle-Aquitaine",
       "immatriculations_autocar_e_com.geocode_region": "75",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 0,
       "immatriculations_autocar_e_com.date_mesure": "2024-01-01T00:00:00.000"
@@ -943,8 +943,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "Occitanie",
       "immatriculations_autocar_e_com.geocode_region": "76",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 0,
       "immatriculations_autocar_e_com.date_mesure": "2024-01-01T00:00:00.000"
@@ -952,8 +952,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "Auvergne-Rhône-Alpes",
       "immatriculations_autocar_e_com.geocode_region": "84",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 1.941747572815534,
       "immatriculations_autocar_e_com.date_mesure": "2024-01-01T00:00:00.000"
@@ -961,8 +961,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "Provence-Alpes-Côte d'Azur",
       "immatriculations_autocar_e_com.geocode_region": "93",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 5.775075987841945,
       "immatriculations_autocar_e_com.date_mesure": "2024-01-01T00:00:00.000"
@@ -970,8 +970,8 @@
     {
       "immatriculations_autocar_e_com.libelle_region": "Corse",
       "immatriculations_autocar_e_com.geocode_region": "94",
-      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.carburant": "Electrique et hydrogène",
+      "immatriculations_autocar_e_com.type_vehicule": "TCP_CAR",
       "immatriculations_autocar_e_com.date_mesure.year": "2024-01-01T00:00:00.000",
       "immatriculations_autocar_e_com.id_452": 0,
       "immatriculations_autocar_e_com.date_mesure": "2024-01-01T00:00:00.000"
@@ -984,6 +984,7 @@
     "id_parents": "815",
     "methode_calcul": "Indicateur filtré sur type_vehicule = 'TCP_CAR' et carburant = 'Electrique et hydrogène'",
     "numerator": "tot_immatriculations_autocar_e",
-    "denominator": "tot_immatriculations_autocar"
+    "denominator": "tot_immatriculations_autocar",
+    "summable_axes": false
   }
 }

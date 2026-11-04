@@ -1211,6 +1211,16 @@ var tarteaucitron = {
                 document.getElementById(id).classList.remove(className);
             }
         },
+        "syncEulerian": function (status) {
+            "use strict";
+            if (typeof window._EA_disabled !== "function" || typeof window._EA_toggle !== "function") {
+                return;
+            }
+            var disabled = window._EA_disabled() == 1;
+            if ((status === true && disabled) || (status !== true && !disabled)) {
+                window._EA_toggle();
+            }
+        },
         "respondAll": function (status, type, allowSafeAnalytics) {
             "use strict";
             var s = tarteaucitron.services,
@@ -1254,23 +1264,11 @@ var tarteaucitron = {
                     if (status == true) {
                         itemStatusElem.innerHTML = tarteaucitron.lang.allowed;
                         tarteaucitron.sendEvent(key + '_allowed');
-                        // window.dsfr.analytics.opt.enable();
-                        console.log("_EA_disabled() " +_EA_disabled())
-                        if (_EA_disabled() == 1) {
-                            _EA_toggle()
-                            console.log("_EA_disabled() " +_EA_disabled())
-                            console.log("Allowed All")
-                        }                                                
+                        tarteaucitron.userInterface.syncEulerian(true);
                     } else {
                         itemStatusElem.innerHTML = tarteaucitron.lang.disallowed;
                         tarteaucitron.sendEvent(key + '_disallowed');
-                        // window.dsfr.analytics.opt.disable();
-                        console.log("_EA_disabled() " +_EA_disabled())                        
-                        if (_EA_disabled() != 1) {
-                            _EA_toggle()
-                            console.log("_EA_disabled() " +_EA_disabled())
-                            console.log("Disable All")
-                        }
+                        tarteaucitron.userInterface.syncEulerian(false);
                     }
                 }
             }
@@ -1316,24 +1314,11 @@ var tarteaucitron = {
             if (status == true) {
                 itemStatusElem.innerHTML = tarteaucitron.lang.allowed;
                 tarteaucitron.sendEvent(key + '_allowed');
-
-                console.log("_EA_disabled() " +_EA_disabled())
-                if (_EA_disabled() == 1) {
-                    _EA_toggle()
-                    console.log("_EA_disabled() " +_EA_disabled())
-                    console.log("Allowed Eulerian")
-                }
-
+                tarteaucitron.userInterface.syncEulerian(true);
             } else {
                 itemStatusElem.innerHTML = tarteaucitron.lang.disallowed;
                 tarteaucitron.sendEvent(key + '_disallowed');
-                
-                console.log("_EA_disabled() " +_EA_disabled())                        
-                if (_EA_disabled() != 1) {
-                    _EA_toggle()
-                    console.log("_EA_disabled() " +_EA_disabled())
-                    console.log("Disable Eulerian")
-                }
+                tarteaucitron.userInterface.syncEulerian(false);
             }
         },
         "color": function (key, status) {

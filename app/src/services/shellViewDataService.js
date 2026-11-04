@@ -54,7 +54,7 @@ export function peekShellViewData(viewId, environment = 'production') {
   return cacheByEnv[envKey(environment)][viewId] ?? null;
 }
 
-function buildShellIndicatorRow(indicator, engagementLongMap = null) {
+export function buildShellIndicatorRow(indicator, engagementLongMap = null) {
   const values = [];
   let targetValue = null;
 

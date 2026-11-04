@@ -18,6 +18,9 @@
 
       <section class="axe-hero">
         <h1 class="fr-title axe-title" :aria-label="params.axe">{{ params.axe }}</h1>
+        <p v-if="sharedRegionCode" class="etat-national-note">
+          Ces indicateurs restent nationaux. Le territoire sélectionné s'applique aux leviers COP.
+        </p>
         <nav
           v-if="axeIndicateurHeaderTags.length > 0 || axeSectorTags.length > 0"
           class="chantier-metadata-tags"
@@ -238,6 +241,7 @@ import {
 import { homeRouteName, etatEnvironnementRouteName } from "@/config/routeNames.js";
 import { SECTION_SYNTHESE_SLUG } from "@/utils/sectionUrl.js";
 import { PNACC_ADAPTATION_RETENIR_HTML } from "@/config/pnaccAdaptationRetenir.js";
+import { regionSelection } from "@/services/regionSelection.js";
 
 export default {
   name: "GeneralEngagementsView",
@@ -273,6 +277,9 @@ export default {
     });
   },
   computed: {
+    sharedRegionCode() {
+      return regionSelection.code;
+    },
     filteredEngagementsByAxe() {
       const result = {};
       Object.entries(this.engagementsByAxe).forEach(([axe, engagements]) => {
@@ -663,6 +670,14 @@ export default {
 .axe-title {
   margin-bottom: 0.75rem;
   max-width: 54rem;
+}
+
+.etat-national-note {
+  margin: -0.25rem 0 0.75rem;
+  max-width: 54rem;
+  color: #3a3a3a;
+  font-size: 1rem;
+  line-height: 1.5;
 }
 
 /* Indicateurs / Leviers tags - même thème que ChantierDetail */

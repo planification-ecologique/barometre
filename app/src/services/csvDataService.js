@@ -26,6 +26,7 @@ import {
   ADAPTATION_AXE_NOM_COMPLET,
   PNACC_ADAPTATION_RETENIR_HTML,
 } from '@/config/pnaccAdaptationRetenir.js';
+import { mapKeysStable, mapValuesStable } from '@/utils/mapIter';
 
 export { resolveTaxonomyAxeTags, resolveIndicatorTaxonomyAxeTags };
 
@@ -223,27 +224,6 @@ function enrichGroupedRegionalLinks(groupedResults, sourceResults) {
     if (!merged.length) return item;
     return { ...item, irpe_link_ids: merged };
   });
-}
-
-/**
- * Clés d'une Map sans Map.prototype.keys() — évite erreurs prod/WebViews où .keys est absent
- * ou l’itérateur n’est pas reconnu par for…of / Array.from.
- */
-function mapKeysStable(map) {
-  const keys = [];
-  map.forEach((_value, key) => {
-    keys.push(key);
-  });
-  return keys;
-}
-
-/** Valeurs d'une Map sans Map.prototype.values() (même famille d’env cassés que keys). */
-function mapValuesStable(map) {
-  const values = [];
-  map.forEach((value) => {
-    values.push(value);
-  });
-  return values;
 }
 
 // Parsed CSV cache per environment (production vs staging may diverge in config)
@@ -929,6 +909,7 @@ export function transformCSVData(csvData, query) {
       levier_list: levierListParsed.length
         ? levierListParsed
         : (item['Levier'] ? [String(item['Levier']).trim()] : []),
+      levier_cop: String(item['Leviers COP'] || '').trim(),
       // Engagement from main CSV (for Etat environnement synthesis)
       engagement: String(item['Engagement'] || item['Ambition liée'] || '').trim(),
       // Primary sector / chantier (backward compatible with existing components)
@@ -1278,6 +1259,9 @@ function groupByIndicator(results) {
 
       groupedItem.irpe_ids = mergeIrpeIdArrays(groupedItem.irpe_ids, item.irpe_ids);
       groupedItem.irpe_link_ids = mergeIrpeIdArrays(groupedItem.irpe_link_ids, item.irpe_link_ids);
+      if (!groupedItem.levier_cop && item.levier_cop) {
+        groupedItem.levier_cop = item.levier_cop;
+      }
       
       // Note: `groupedItem.date` and `groupedItem.values` are already
       // kept aligned and sorted above.

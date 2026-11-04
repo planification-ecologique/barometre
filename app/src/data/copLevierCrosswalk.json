@@ -1,0 +1,538 @@
+{
+  "themes": [
+    "Mieux se déplacer",
+    "Mieux se loger",
+    "Mieux produire",
+    "Mieux consommer",
+    "Mieux se nourrir",
+    "Mieux préserver",
+    "Mieux s'adapter"
+  ],
+  "levers": [
+    {
+      "name": "Réduction des déplacements",
+      "theme": "Mieux se déplacer",
+      "sector": "Transports",
+      "referentiel": [
+        "Réduction des besoins de mobilité terrestre"
+      ]
+    },
+    {
+      "name": "Vélo",
+      "theme": "Mieux se déplacer",
+      "sector": "Transports",
+      "referentiel": [
+        "Développement des mobilités actives (vélo et marche)"
+      ]
+    },
+    {
+      "name": "Transport en commun",
+      "theme": "Mieux se déplacer",
+      "sector": "Transports",
+      "referentiel": [
+        "Développement des transports en commun"
+      ]
+    },
+    {
+      "name": "Covoiturage",
+      "theme": "Mieux se déplacer",
+      "sector": "Transports",
+      "referentiel": [
+        "Développement du covoiturage"
+      ]
+    },
+    {
+      "name": "Véhicules électriques",
+      "theme": "Mieux se déplacer",
+      "sector": "Transports",
+      "referentiel": [
+        "Electrification des véhicules particuliers"
+      ]
+    },
+    {
+      "name": "Efficacité et carburants décarbonés des véhicules",
+      "theme": "Mieux se déplacer",
+      "sector": "Transports",
+      "referentiel": [
+        "Amélioration de l'efficacité environnementale (énergie, matières premières, polluants) des véhicules individuels neufs",
+        "Réduction de l'utilisation des véhicules particuliers les plus polluants",
+        "Incorporation de carburants routiers durables"
+      ]
+    },
+    {
+      "name": "Efficacité et sobriété logistique",
+      "theme": "Mieux produire",
+      "sector": "Transports",
+      "referentiel": [
+        "Optimisation du chargement des poids lourds",
+        "Maîtrise de la demande de transport de marchandises",
+        "Réduction de l'utilisation des poids lourds les plus polluants",
+        "Incorporation de carburants routiers durables (poids lourds)",
+        "Amélioration de l'efficacité des véhicules utilitaires légers et des poids lourds neufs"
+      ]
+    },
+    {
+      "name": "Confort thermique des transports collectifs et des mobilités actives",
+      "theme": "Mieux s'adapter",
+      "sector": "Services publics",
+      "referentiel": [
+        "Confort thermique des transports collectifs et des mobilités actives"
+      ]
+    },
+    {
+      "name": "Fret ferroviaire et fluvial",
+      "theme": "Mieux produire",
+      "sector": "Transports",
+      "referentiel": [
+        "Développement du fret ferroviaire",
+        "Développement du fret fluvial"
+      ]
+    },
+    {
+      "name": "Fret routier électrique",
+      "theme": "Mieux produire",
+      "sector": "Transports",
+      "referentiel": [
+        "Electrification des véhicules utilitaires légers",
+        "Electrification des poids lourds"
+      ]
+    },
+    {
+      "name": "Bus et cars décarbonés",
+      "theme": "Mieux se déplacer",
+      "sector": "Transports",
+      "referentiel": [
+        "Electrification des transports en commun (bus et cars)"
+      ]
+    },
+    {
+      "name": "Rénovation (résidentiel)",
+      "theme": "Mieux se loger",
+      "sector": "Bâtiment",
+      "referentiel": [
+        "Sobriété énergétique du résidentiel",
+        "Sortie des chaudières au fioul (résidentiel)",
+        "Réduction de la part de chaudières au gaz (résidentiel)",
+        "Amélioration de la performance (consommation d'énergie, polluants) des systèmes de chauffage (notamment au bois)",
+        "Eradication des passoires thermiques"
+      ]
+    },
+    {
+      "name": "Rénovation (tertiaire)",
+      "theme": "Mieux se loger",
+      "sector": "Bâtiment",
+      "referentiel": [
+        "Sobriété et efficacité énergétique dans le tertiaire",
+        "Sortie des chaudières au fioul (tertiaire)",
+        "Sortie progressive des chaudières au gaz (tertiaire)"
+      ]
+    },
+    {
+      "name": "Intégration du confort d'été dans la rénovation et la construction des bâtiments",
+      "theme": "Mieux s'adapter",
+      "sector": "Chaleur",
+      "referentiel": [
+        "Végétalisation et accueil des espèces dans le bâti",
+        "Eradication des bouilloires thermiques",
+        "Réduction des volumes et valorisation des déchets de la construction"
+      ]
+    },
+    {
+      "name": "Electricité renouvelable",
+      "theme": "Mieux produire",
+      "sector": "Energie",
+      "referentiel": [
+        "Restauration des capacités de production nucléaire",
+        "Développement de la production d'électricité renouvelable"
+      ]
+    },
+    {
+      "name": "Réseaux de chaleur décarbonés",
+      "theme": "Mieux produire",
+      "sector": "Energie",
+      "referentiel": [
+        "Développement des réseaux de chaleur urbains",
+        "Décarbonation de la production de chaleur"
+      ]
+    },
+    {
+      "name": "Satisfaction durable du besoin de rafraîchissement",
+      "theme": "Mieux s'adapter",
+      "sector": "Chaleur",
+      "referentiel": [
+        "Développement des réseaux de froid"
+      ]
+    },
+    {
+      "name": "Biogaz",
+      "theme": "Mieux produire",
+      "sector": "Energie",
+      "referentiel": [
+        "Développement des puits technologiques dans l'énergie",
+        "Développement de la production de biogaz et orientation vers les usages prioritaires",
+        "Développement de la production de biocarburant et orientation vers les usages prioritaires",
+        "Développement de la production de biomasse solide à vocation énergétique de qualité et orientation vers les usages prioritaires"
+      ]
+    },
+    {
+      "name": "Prévention des déchets",
+      "theme": "Mieux consommer",
+      "sector": "Déchets",
+      "referentiel": [
+        "Sortie du plastique jetable",
+        "Développement de la mutualisation et de l'économie de la fonctionnalité",
+        "Développement de la consommation sans emballages primaires",
+        "Augmentation de la durée de vie des équipements (lutte contre l'obsolesence, développement de la réparation)",
+        "Développement du réemploi et de la réutilisation",
+        "Maîtrise des risques de relargage de plastique"
+      ]
+    },
+    {
+      "name": "Taux de collecte et mise en décharge",
+      "theme": "Mieux consommer",
+      "sector": "Déchets",
+      "referentiel": [
+        "Amélioration de la collecte et du tri des déchets"
+      ]
+    },
+    {
+      "name": "Valorisation matière des déchets",
+      "theme": "Mieux consommer",
+      "sector": "Déchets",
+      "referentiel": [
+        "Développement de la valorisation matière des déchets ménagers et assimilés (DMA)",
+        "Développement des combustibles solides de récupération"
+      ]
+    },
+    {
+      "name": "Captage de méthane dans les ISDND",
+      "theme": "Mieux consommer",
+      "sector": "Déchets",
+      "referentiel": [
+        "Captage du méthane dans les installations de stockage de déchets non dangereux (ISDND)"
+      ]
+    },
+    {
+      "name": "Fertilisation azotée",
+      "theme": "Mieux se nourrir",
+      "sector": "Agriculture et alimentation",
+      "referentiel": [
+        "Développement des légumineuses",
+        "Optimisation de la gestion de l'azote"
+      ]
+    },
+    {
+      "name": "Usage des phytos",
+      "theme": "Mieux se nourrir",
+      "sector": "Agriculture et alimentation",
+      "referentiel": [
+        "Réduction de l'usage et des risques des produits phytopharmaceutiques"
+      ]
+    },
+    {
+      "name": "Agriculture biologique et de HVE",
+      "theme": "Mieux se nourrir",
+      "sector": "Agriculture et alimentation",
+      "referentiel": [
+        "Développement de l'agriculture biologique et à haute valeur environnementale"
+      ]
+    },
+    {
+      "name": "Elevage durable",
+      "theme": "Mieux se nourrir",
+      "sector": "Agriculture et alimentation",
+      "referentiel": [
+        "Amélioration de l'autonomie protéique des élevages",
+        "Valorisation des effluents d'élevage",
+        "Réduction complémentaire des émissions liées à la fermentation entérique",
+        "Optimisation de la gestion des élevages"
+      ]
+    },
+    {
+      "name": "Bâtiments & Machines agricoles",
+      "theme": "Mieux se nourrir",
+      "sector": "Agriculture et alimentation",
+      "referentiel": [
+        "Décarbonation des engins agricoles",
+        "Efficacité énergétique des bâtiments et machines agricoles",
+        "Développement des cultures intermédiaires"
+      ]
+    },
+    {
+      "name": "Pratiques stockantes",
+      "theme": "Mieux se nourrir",
+      "sector": "Espaces naturels",
+      "referentiel": [
+        "Développement des pratiques stockantes (cultures intermédiaires, agriculture de conservation des sols)",
+        "Développement de l'agroforesterie intraparcellaire"
+      ]
+    },
+    {
+      "name": "Gestion des prairies",
+      "theme": "Mieux se nourrir",
+      "sector": "Agriculture et alimentation",
+      "referentiel": [
+        "Augmentation du pâturage"
+      ]
+    },
+    {
+      "name": "Gestion des haies",
+      "theme": "Mieux se nourrir",
+      "sector": "Agriculture et alimentation",
+      "referentiel": [
+        "Développement des haies"
+      ]
+    },
+    {
+      "name": "Ralentissement du ruissellement sur les sols agricoles et sur les sols artificialisés",
+      "theme": "Mieux s'adapter",
+      "sector": "Eau",
+      "referentiel": [
+        "Gestion des écoulements dans les sols agricoles"
+      ]
+    },
+    {
+      "name": "Accompagnement des filières de la pêche et de l'aquaculture",
+      "theme": "Mieux s'adapter",
+      "sector": "Economie",
+      "referentiel": [
+        "Développement de la pêche durable",
+        "Développement de l'aquaculture durable"
+      ]
+    },
+    {
+      "name": "Loi Egalim",
+      "theme": "Mieux se nourrir",
+      "sector": "Agriculture et alimentation",
+      "referentiel": [
+        "Restauration collective",
+        "Évolution du régime alimentaire (viande, saisonnalité, etc.)",
+        "Consommation de produits issus de l'agriculture biologique",
+        "Réduction du gaspillage alimentaire"
+      ]
+    },
+    {
+      "name": "Gestion des forêts (levier ABR et ACC)",
+      "theme": "Mieux préserver",
+      "sector": "Espaces naturels",
+      "referentiel": [
+        "Amélioration et développement de la gestion durable des forêts",
+        "Renouvellement forestier",
+        "Accroissement des surfaces forestières",
+        "Surveillance et prévention du risque incendie en forêt"
+      ]
+    },
+    {
+      "name": "Prévention des éboulements et glissements de terrain",
+      "theme": "Mieux s'adapter",
+      "sector": "Eau",
+      "referentiel": [
+        "Maintien des services écosystémiques rendus par les forêts et prévention des risques sanitaires, d'érosion et de tempêtes"
+      ]
+    },
+    {
+      "name": "Produits bois",
+      "theme": "Mieux préserver",
+      "sector": "Industrie",
+      "referentiel": [
+        "Développement des produits bois",
+        "Développement de l'usage de matériaux biosourcés dans la construction et rénovation"
+      ]
+    },
+    {
+      "name": "Sobriété dans l’eau (ABR) ou sobriété dans l'utilisation de la ressource en eau (ACC)",
+      "theme": "Mieux préserver",
+      "sector": "Eau",
+      "referentiel": [
+        "Réduction des prélèvements d'eau de l'industrie de l'énergie",
+        "Maîtrise des besoins d'irrigation",
+        "Déploiement des solutions d'économie d'eau dans le résidentiel et le tertiaire",
+        "Mobilisation des ressources en eau dans les ouvrages existants",
+        "Développement d'ouvrages de stockage dans le respect des équilibres des usages et des écosystèmes",
+        "Valorisation des eaux non conventionnelles"
+      ]
+    },
+    {
+      "name": "Renforcement des services publics de l'eau potable et de l'assainissement",
+      "theme": "Mieux s'adapter",
+      "sector": "Services publics",
+      "referentiel": [
+        "Réduction des pertes d'eau du réseau de distribution d'eau potable"
+      ]
+    },
+    {
+      "name": "Zones de captage d’eau",
+      "theme": "Mieux préserver",
+      "sector": "Eau",
+      "referentiel": [
+        "Protection des zones de captage d’eau"
+      ]
+    },
+    {
+      "name": "Sobriété foncière",
+      "theme": "Mieux préserver",
+      "sector": "Espaces naturels",
+      "referentiel": [
+        "Mobilisation des surfaces déjà urbanisées",
+        "Mobilisation des bâtiments vacants ou sous-utilisés",
+        "Densification de la construction neuve"
+      ]
+    },
+    {
+      "name": "Désimperméabilisation des sols",
+      "theme": "Mieux préserver",
+      "sector": "Eau",
+      "referentiel": [
+        "Désartificialisation, désimperméabilisation des sols artificialisés et amélioration de l'infiltration de l'eau dans les sols"
+      ]
+    },
+    {
+      "name": "Surface en aire protégée",
+      "theme": "Mieux préserver",
+      "sector": "Espaces naturels",
+      "referentiel": [
+        "Développement d'un réseau d'aires protégées cohérent et résilient aux changements globaux",
+        "Développement d'un réseau de zones de  protection forte qui intègre la diversité des milieux prioritaires et leurs fonctionnalités",
+        "Amélioration de l'efficacité de la gestion des aires protégées, accompagner des activités durables dans les aires protégées et faire des aires protégées intégrées dans les territoires"
+      ]
+    },
+    {
+      "name": "Continuités écologiques",
+      "theme": "Mieux préserver",
+      "sector": "Espaces naturels",
+      "referentiel": [
+        "Résorption des points noirs prioritaires de continuité écologique terrestre",
+        "Réduction des obstacles à l'écoulement"
+      ]
+    },
+    {
+      "name": "Restauration des habitats naturels",
+      "theme": "Mieux préserver",
+      "sector": "Espaces naturels",
+      "referentiel": [
+        "Restauration des zones humides (dont tourbières)",
+        "Restauration des habitats d'intérêt communautaire",
+        "Rétablissement de la surface des habitats d'intérêt communautaire pour atteindre la surface de référence favorable",
+        "Protection des espèces menacées",
+        "Lutte contre la pollution lumineuse"
+      ]
+    },
+    {
+      "name": "Régulation des espèces exotiques envahissantes",
+      "theme": "Mieux s'adapter",
+      "sector": "Patrimoine",
+      "referentiel": [
+        "Limitation de l'introduction et lutter contre les espèces exotiques envahissantes"
+      ]
+    },
+    {
+      "name": "Prévention des inondations, notamment via restauration des milieux aquatiques",
+      "theme": "Mieux s'adapter",
+      "sector": "Eau",
+      "referentiel": [
+        "Prévention des inondations"
+      ]
+    },
+    {
+      "name": "Renaturation des villes et réduction de l'effet d'îlot de chaleur urbain",
+      "theme": "Mieux s'adapter",
+      "sector": "Chaleur",
+      "referentiel": [
+        "Renaturation des villes et réduction de l'effet d'îlot de chaleur urbain"
+      ]
+    },
+    {
+      "name": "Protection et mise à l'abri des personnes vulnérables",
+      "theme": "Mieux s'adapter",
+      "sector": "Chaleur",
+      "referentiel": [
+        "Protection et mise à l'abri des personnes vulnérables"
+      ]
+    },
+    {
+      "name": "Prévention des dégâts causés par le retrait-gonflement des argiles (RGA)",
+      "theme": "Mieux s'adapter",
+      "sector": "Eau",
+      "referentiel": [
+        "Prévention des dégâts causés par le retrait-gonflement des argiles"
+      ]
+    },
+    {
+      "name": "Intégration de l'élévation du niveau des mers dans l'aménagement du littoral",
+      "theme": "Mieux s'adapter",
+      "sector": "Océans",
+      "referentiel": [
+        "Intégration de l’élévation du niveau des mers dans l’aménagement du littoral"
+      ]
+    },
+    {
+      "name": "Aménagement du territoire prenant en compte la ressource en eau",
+      "theme": "Mieux s'adapter",
+      "sector": "Eau",
+      "referentiel": [
+        "Conditionnement du développement urbain et économique à la ressource en eau"
+      ]
+    },
+    {
+      "name": "Renforcement de la résilience des services de santé",
+      "theme": "Mieux s'adapter",
+      "sector": "Services publics",
+      "referentiel": [
+        "Renforcement de la résilience des services de santé"
+      ]
+    },
+    {
+      "name": "Préapartion des services de secours",
+      "theme": "Mieux s'adapter",
+      "sector": "Services publics",
+      "referentiel": [
+        "Préparation des services de secours"
+      ]
+    },
+    {
+      "name": "Réduction de la vulnérabilité des infrastructures de transport",
+      "theme": "Mieux s'adapter",
+      "sector": "Services publics",
+      "referentiel": [
+        "Réduction de la vulnérabilité des infrastructures et services de transport"
+      ]
+    },
+    {
+      "name": "Evolution de l'offre touristique de montagne",
+      "theme": "Mieux s'adapter",
+      "sector": "Economie",
+      "referentiel": [
+        "Evolution de l’offre touristique de montagne",
+        "Evolution de l’offre touristique littorale"
+      ]
+    },
+    {
+      "name": "Continuité des activités économiques locales",
+      "theme": "Mieux s'adapter",
+      "sector": "Economie",
+      "referentiel": [
+        "Continuité des activités économiques"
+      ]
+    },
+    {
+      "name": "Préservation des sites culturels et patrimoniaux",
+      "theme": "Mieux s'adapter",
+      "sector": "Patrimoine",
+      "referentiel": [
+        "Préservation des sites culturels et patrimoniaux"
+      ]
+    },
+    {
+      "name": "Résilience face au risque cyclonique en particulier des catégories 4 et 5",
+      "theme": "Mieux s'adapter",
+      "sector": "Océans",
+      "referentiel": []
+    },
+    {
+      "name": "Adaptation des filières et des exploitations agricoles",
+      "theme": "Mieux s'adapter",
+      "sector": "Economie",
+      "referentiel": []
+    }
+  ]
+}

@@ -14,6 +14,10 @@
 
     <h1 class="fr-h2 etat-title">Etat de l'environnement</h1>
 
+    <p v-if="sharedRegionCode" class="etat-national-note">
+      Ces indicateurs restent nationaux. Le territoire sélectionné s'applique aux leviers COP.
+    </p>
+
     <!-- Ce qu'il faut retenir -->
     <div class="etat-callout">
       <h2 class="fr-h4 etat-callout-title">Ce qu'il faut retenir</h2>
@@ -97,7 +101,6 @@
                   :class="{
                     'first-row-of-engagement': idx === 0,
                     'synthese-row--regional': presentationFor(indicator),
-                    'synthese-row--national': sharedRegionCode && !presentationFor(indicator),
                   }"
                 >
                   <td
@@ -109,11 +112,10 @@
                   </td>
                   <td class="td-indicateur">
                     <p
-                      v-if="sharedRegionCode"
-                      class="synthese-scope"
-                      :class="presentationFor(indicator) ? 'synthese-scope--regional' : 'synthese-scope--national'"
+                      v-if="presentationFor(indicator)"
+                      class="synthese-scope synthese-scope--regional"
                     >
-                      {{ presentationFor(indicator) ? 'Données régionales' : 'Données nationales' }}
+                      Données régionales
                     </p>
                     {{ indicatorTitle(indicator) }}
                     <template v-if="indicatorUnit(indicator)">
@@ -187,6 +189,7 @@ import {
 } from '@/services/shellViewDataService.js'
 import { homeRouteName, etatEnvironnementRouteName } from '@/config/routeNames.js'
 import { impactAxeNameToSlug } from '@/utils/impactAxeUrl.js'
+import { mapEntriesStable } from '@/utils/mapIter'
 
 export default {
   name: 'EtatEnvironnement',
@@ -284,7 +287,7 @@ export default {
         if (!byEngagement.has(key)) byEngagement.set(key, [])
         byEngagement.get(key).push(ind)
       }
-      return Array.from(byEngagement.entries())
+      return mapEntriesStable(byEngagement)
         .map(([engagementName, indicators]) => ({ engagementName, indicators }))
         .sort((a, b) => (a.engagementName || '').localeCompare(b.engagementName || '', 'fr'))
     },
@@ -372,6 +375,13 @@ export default {
   margin-bottom: 0;
   max-width: 100%;
   overflow-wrap: break-word;
+}
+
+.etat-national-note {
+  margin: 0.75rem 0 0;
+  color: #3a3a3a;
+  font-size: 1rem;
+  line-height: 1.5;
 }
 
 /* Callout */

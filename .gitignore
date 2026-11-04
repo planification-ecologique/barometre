@@ -1,6 +1,12 @@
 .DS_Store
 node_modules
 commands
+
+# Sandbox / tooling runtime artifacts (never commit)
+.albert-code/
+.playwright-mcp/
+.agent-vm.runtime.sh
+app/.claude/
 /app/dist
 /public/data
 /public/dist

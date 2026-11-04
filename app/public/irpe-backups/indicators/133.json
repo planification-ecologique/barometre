@@ -2918,6 +2918,7 @@
     }
   ],
   "measureMeta": {
+    "summable_axes": false,
     "libelle_indicateur": "Linéaire d'aménagements cyclables pour 1000 hab",
     "statut_commun": "Mesure",
     "unite": "km / 1000 hab.",

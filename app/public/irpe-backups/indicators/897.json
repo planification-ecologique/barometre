@@ -134,7 +134,7 @@
   "measureMeta": {
     "libelle_indicateur": "Nombre d’habitants disposant d’une solution de tri à la source des biodéchets",
     "statut_commun": "Mesure",
-    "unite": "nb",
+    "unite": "Habitants",
     "methode_calcul": "Ce nombre est défini par l’ADEME selon le retour des « enquêtes collecte » de l’ADEME, de questionnaires spécifiques envoyés aux EPCI sur les biodéchets et des dossiers de demandes d’aides que l’ADEME instruit en matière de biodéchets. Il est produit dans le cadre des Politiques Prioritaires du Gouvernement (PPG) à la maille départemental (sous l'égide de la Direction Générale de la Prévention des Risques du Ministère de l'Ecologie) ."
   }
 }

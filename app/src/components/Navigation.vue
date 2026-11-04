@@ -49,10 +49,10 @@
             :href="option.link"
             :aria-current="option.selected ? 'page' : undefined"
             :id="'navigation' + option.value"
-            :title="option.label"
+            :title="navLabel(option)"
             @click.prevent="handleNavigation(option)"
           >
-            {{ option.label }}
+            {{ navLabel(option) }}
             <span
               v-if="option.icon"
               :class="option.icon"
@@ -187,6 +187,12 @@ export default {
     },
     closeDropdown() {
       this.dropdownOpen = false
+    },
+    navLabel(option) {
+      if (option.value === 'etat-environnement' && this.regionCode) {
+        return `${option.label} (national)`
+      }
+      return option.label
     },
     onRegionChange(event) {
       setSharedRegion(this.$router || this.myrouter, event.target.value)

@@ -386,7 +386,7 @@
   "measureMeta": {
     "libelle_indicateur": "Nombre de trajets effectués en covoiturage intermédié",
     "statut_commun": "Mesure",
-    "unite": "nb",
+    "unite": "Trajets",
     "methode_calcul": null
   }
 }

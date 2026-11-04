@@ -1,0 +1,770 @@
+{
+  "cubeName": "production_biogaz_region",
+  "measureName": "production_biogaz_region.id_1057",
+  "timeDimension": "production_biogaz_region.date_mesure",
+  "extraDimension": "production_biogaz_region.annee",
+  "data": [
+    {
+      "production_biogaz_region.libelle_region": "Île-de-France",
+      "production_biogaz_region.geocode_region": "11",
+      "production_biogaz_region.date_mesure.year": "2017-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "108",
+      "production_biogaz_region.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Centre-Val de Loire",
+      "production_biogaz_region.geocode_region": "24",
+      "production_biogaz_region.date_mesure.year": "2017-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "27",
+      "production_biogaz_region.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Bourgogne-Franche-Comté",
+      "production_biogaz_region.geocode_region": "27",
+      "production_biogaz_region.date_mesure.year": "2017-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "69",
+      "production_biogaz_region.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Normandie",
+      "production_biogaz_region.geocode_region": "28",
+      "production_biogaz_region.date_mesure.year": "2017-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "0",
+      "production_biogaz_region.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Hauts-de-France",
+      "production_biogaz_region.geocode_region": "32",
+      "production_biogaz_region.date_mesure.year": "2017-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "141",
+      "production_biogaz_region.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Grand Est",
+      "production_biogaz_region.geocode_region": "44",
+      "production_biogaz_region.date_mesure.year": "2017-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "100",
+      "production_biogaz_region.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Pays de la Loire",
+      "production_biogaz_region.geocode_region": "52",
+      "production_biogaz_region.date_mesure.year": "2017-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "93",
+      "production_biogaz_region.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Bretagne",
+      "production_biogaz_region.geocode_region": "53",
+      "production_biogaz_region.date_mesure.year": "2017-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "45",
+      "production_biogaz_region.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Nouvelle-Aquitaine",
+      "production_biogaz_region.geocode_region": "75",
+      "production_biogaz_region.date_mesure.year": "2017-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "47",
+      "production_biogaz_region.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Occitanie",
+      "production_biogaz_region.geocode_region": "76",
+      "production_biogaz_region.date_mesure.year": "2017-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "0",
+      "production_biogaz_region.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Auvergne-Rhône-Alpes",
+      "production_biogaz_region.geocode_region": "84",
+      "production_biogaz_region.date_mesure.year": "2017-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "66",
+      "production_biogaz_region.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "production_biogaz_region.geocode_region": "93",
+      "production_biogaz_region.date_mesure.year": "2017-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "0",
+      "production_biogaz_region.date_mesure": "2017-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Île-de-France",
+      "production_biogaz_region.geocode_region": "11",
+      "production_biogaz_region.date_mesure.year": "2018-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "159",
+      "production_biogaz_region.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Centre-Val de Loire",
+      "production_biogaz_region.geocode_region": "24",
+      "production_biogaz_region.date_mesure.year": "2018-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "98",
+      "production_biogaz_region.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Bourgogne-Franche-Comté",
+      "production_biogaz_region.geocode_region": "27",
+      "production_biogaz_region.date_mesure.year": "2018-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "69",
+      "production_biogaz_region.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Normandie",
+      "production_biogaz_region.geocode_region": "28",
+      "production_biogaz_region.date_mesure.year": "2018-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "31",
+      "production_biogaz_region.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Hauts-de-France",
+      "production_biogaz_region.geocode_region": "32",
+      "production_biogaz_region.date_mesure.year": "2018-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "180",
+      "production_biogaz_region.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Grand Est",
+      "production_biogaz_region.geocode_region": "44",
+      "production_biogaz_region.date_mesure.year": "2018-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "192",
+      "production_biogaz_region.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Pays de la Loire",
+      "production_biogaz_region.geocode_region": "52",
+      "production_biogaz_region.date_mesure.year": "2018-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "127",
+      "production_biogaz_region.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Bretagne",
+      "production_biogaz_region.geocode_region": "53",
+      "production_biogaz_region.date_mesure.year": "2018-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "139",
+      "production_biogaz_region.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Nouvelle-Aquitaine",
+      "production_biogaz_region.geocode_region": "75",
+      "production_biogaz_region.date_mesure.year": "2018-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "121",
+      "production_biogaz_region.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Occitanie",
+      "production_biogaz_region.geocode_region": "76",
+      "production_biogaz_region.date_mesure.year": "2018-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "30",
+      "production_biogaz_region.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Auvergne-Rhône-Alpes",
+      "production_biogaz_region.geocode_region": "84",
+      "production_biogaz_region.date_mesure.year": "2018-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "72",
+      "production_biogaz_region.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "production_biogaz_region.geocode_region": "93",
+      "production_biogaz_region.date_mesure.year": "2018-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "0",
+      "production_biogaz_region.date_mesure": "2018-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Île-de-France",
+      "production_biogaz_region.geocode_region": "11",
+      "production_biogaz_region.date_mesure.year": "2019-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "216",
+      "production_biogaz_region.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Centre-Val de Loire",
+      "production_biogaz_region.geocode_region": "24",
+      "production_biogaz_region.date_mesure.year": "2019-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "185",
+      "production_biogaz_region.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Bourgogne-Franche-Comté",
+      "production_biogaz_region.geocode_region": "27",
+      "production_biogaz_region.date_mesure.year": "2019-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "76",
+      "production_biogaz_region.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Normandie",
+      "production_biogaz_region.geocode_region": "28",
+      "production_biogaz_region.date_mesure.year": "2019-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "105",
+      "production_biogaz_region.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Hauts-de-France",
+      "production_biogaz_region.geocode_region": "32",
+      "production_biogaz_region.date_mesure.year": "2019-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "341",
+      "production_biogaz_region.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Grand Est",
+      "production_biogaz_region.geocode_region": "44",
+      "production_biogaz_region.date_mesure.year": "2019-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "331",
+      "production_biogaz_region.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Pays de la Loire",
+      "production_biogaz_region.geocode_region": "52",
+      "production_biogaz_region.date_mesure.year": "2019-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "225",
+      "production_biogaz_region.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Bretagne",
+      "production_biogaz_region.geocode_region": "53",
+      "production_biogaz_region.date_mesure.year": "2019-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "221",
+      "production_biogaz_region.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Nouvelle-Aquitaine",
+      "production_biogaz_region.geocode_region": "75",
+      "production_biogaz_region.date_mesure.year": "2019-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "273",
+      "production_biogaz_region.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Occitanie",
+      "production_biogaz_region.geocode_region": "76",
+      "production_biogaz_region.date_mesure.year": "2019-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "32",
+      "production_biogaz_region.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Auvergne-Rhône-Alpes",
+      "production_biogaz_region.geocode_region": "84",
+      "production_biogaz_region.date_mesure.year": "2019-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "119",
+      "production_biogaz_region.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "production_biogaz_region.geocode_region": "93",
+      "production_biogaz_region.date_mesure.year": "2019-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "35",
+      "production_biogaz_region.date_mesure": "2019-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Île-de-France",
+      "production_biogaz_region.geocode_region": "11",
+      "production_biogaz_region.date_mesure.year": "2020-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "276",
+      "production_biogaz_region.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Centre-Val de Loire",
+      "production_biogaz_region.geocode_region": "24",
+      "production_biogaz_region.date_mesure.year": "2020-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "252",
+      "production_biogaz_region.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Bourgogne-Franche-Comté",
+      "production_biogaz_region.geocode_region": "27",
+      "production_biogaz_region.date_mesure.year": "2020-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "132",
+      "production_biogaz_region.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Normandie",
+      "production_biogaz_region.geocode_region": "28",
+      "production_biogaz_region.date_mesure.year": "2020-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "243",
+      "production_biogaz_region.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Hauts-de-France",
+      "production_biogaz_region.geocode_region": "32",
+      "production_biogaz_region.date_mesure.year": "2020-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "607",
+      "production_biogaz_region.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Grand Est",
+      "production_biogaz_region.geocode_region": "44",
+      "production_biogaz_region.date_mesure.year": "2020-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "848",
+      "production_biogaz_region.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Pays de la Loire",
+      "production_biogaz_region.geocode_region": "52",
+      "production_biogaz_region.date_mesure.year": "2020-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "296",
+      "production_biogaz_region.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Bretagne",
+      "production_biogaz_region.geocode_region": "53",
+      "production_biogaz_region.date_mesure.year": "2020-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "407",
+      "production_biogaz_region.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Nouvelle-Aquitaine",
+      "production_biogaz_region.geocode_region": "75",
+      "production_biogaz_region.date_mesure.year": "2020-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "442",
+      "production_biogaz_region.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Occitanie",
+      "production_biogaz_region.geocode_region": "76",
+      "production_biogaz_region.date_mesure.year": "2020-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "219",
+      "production_biogaz_region.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Auvergne-Rhône-Alpes",
+      "production_biogaz_region.geocode_region": "84",
+      "production_biogaz_region.date_mesure.year": "2020-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "147",
+      "production_biogaz_region.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "production_biogaz_region.geocode_region": "93",
+      "production_biogaz_region.date_mesure.year": "2020-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "48",
+      "production_biogaz_region.date_mesure": "2020-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Île-de-France",
+      "production_biogaz_region.geocode_region": "11",
+      "production_biogaz_region.date_mesure.year": "2021-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "482",
+      "production_biogaz_region.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Centre-Val de Loire",
+      "production_biogaz_region.geocode_region": "24",
+      "production_biogaz_region.date_mesure.year": "2021-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "331",
+      "production_biogaz_region.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Bourgogne-Franche-Comté",
+      "production_biogaz_region.geocode_region": "27",
+      "production_biogaz_region.date_mesure.year": "2021-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "196",
+      "production_biogaz_region.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Normandie",
+      "production_biogaz_region.geocode_region": "28",
+      "production_biogaz_region.date_mesure.year": "2021-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "355",
+      "production_biogaz_region.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Hauts-de-France",
+      "production_biogaz_region.geocode_region": "32",
+      "production_biogaz_region.date_mesure.year": "2021-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "1245",
+      "production_biogaz_region.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Grand Est",
+      "production_biogaz_region.geocode_region": "44",
+      "production_biogaz_region.date_mesure.year": "2021-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "1460",
+      "production_biogaz_region.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Pays de la Loire",
+      "production_biogaz_region.geocode_region": "52",
+      "production_biogaz_region.date_mesure.year": "2021-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "484",
+      "production_biogaz_region.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Bretagne",
+      "production_biogaz_region.geocode_region": "53",
+      "production_biogaz_region.date_mesure.year": "2021-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "531",
+      "production_biogaz_region.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Nouvelle-Aquitaine",
+      "production_biogaz_region.geocode_region": "75",
+      "production_biogaz_region.date_mesure.year": "2021-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "723",
+      "production_biogaz_region.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Occitanie",
+      "production_biogaz_region.geocode_region": "76",
+      "production_biogaz_region.date_mesure.year": "2021-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "281",
+      "production_biogaz_region.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Auvergne-Rhône-Alpes",
+      "production_biogaz_region.geocode_region": "84",
+      "production_biogaz_region.date_mesure.year": "2021-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "266",
+      "production_biogaz_region.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "production_biogaz_region.geocode_region": "93",
+      "production_biogaz_region.date_mesure.year": "2021-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "62",
+      "production_biogaz_region.date_mesure": "2021-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Île-de-France",
+      "production_biogaz_region.geocode_region": "11",
+      "production_biogaz_region.date_mesure.year": "2022-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "897",
+      "production_biogaz_region.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Centre-Val de Loire",
+      "production_biogaz_region.geocode_region": "24",
+      "production_biogaz_region.date_mesure.year": "2022-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "461",
+      "production_biogaz_region.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Bourgogne-Franche-Comté",
+      "production_biogaz_region.geocode_region": "27",
+      "production_biogaz_region.date_mesure.year": "2022-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "242",
+      "production_biogaz_region.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Normandie",
+      "production_biogaz_region.geocode_region": "28",
+      "production_biogaz_region.date_mesure.year": "2022-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "472",
+      "production_biogaz_region.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Hauts-de-France",
+      "production_biogaz_region.geocode_region": "32",
+      "production_biogaz_region.date_mesure.year": "2022-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "1646",
+      "production_biogaz_region.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Grand Est",
+      "production_biogaz_region.geocode_region": "44",
+      "production_biogaz_region.date_mesure.year": "2022-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "1888",
+      "production_biogaz_region.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Pays de la Loire",
+      "production_biogaz_region.geocode_region": "52",
+      "production_biogaz_region.date_mesure.year": "2022-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "682",
+      "production_biogaz_region.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Bretagne",
+      "production_biogaz_region.geocode_region": "53",
+      "production_biogaz_region.date_mesure.year": "2022-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "701",
+      "production_biogaz_region.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Nouvelle-Aquitaine",
+      "production_biogaz_region.geocode_region": "75",
+      "production_biogaz_region.date_mesure.year": "2022-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "1134",
+      "production_biogaz_region.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Occitanie",
+      "production_biogaz_region.geocode_region": "76",
+      "production_biogaz_region.date_mesure.year": "2022-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "378",
+      "production_biogaz_region.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Auvergne-Rhône-Alpes",
+      "production_biogaz_region.geocode_region": "84",
+      "production_biogaz_region.date_mesure.year": "2022-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "458",
+      "production_biogaz_region.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "production_biogaz_region.geocode_region": "93",
+      "production_biogaz_region.date_mesure.year": "2022-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "76",
+      "production_biogaz_region.date_mesure": "2022-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Île-de-France",
+      "production_biogaz_region.geocode_region": "11",
+      "production_biogaz_region.date_mesure.year": "2023-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "1000",
+      "production_biogaz_region.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Centre-Val de Loire",
+      "production_biogaz_region.geocode_region": "24",
+      "production_biogaz_region.date_mesure.year": "2023-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "527",
+      "production_biogaz_region.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Bourgogne-Franche-Comté",
+      "production_biogaz_region.geocode_region": "27",
+      "production_biogaz_region.date_mesure.year": "2023-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "379",
+      "production_biogaz_region.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Normandie",
+      "production_biogaz_region.geocode_region": "28",
+      "production_biogaz_region.date_mesure.year": "2023-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "839",
+      "production_biogaz_region.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Hauts-de-France",
+      "production_biogaz_region.geocode_region": "32",
+      "production_biogaz_region.date_mesure.year": "2023-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "2052",
+      "production_biogaz_region.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Grand Est",
+      "production_biogaz_region.geocode_region": "44",
+      "production_biogaz_region.date_mesure.year": "2023-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "2568",
+      "production_biogaz_region.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Pays de la Loire",
+      "production_biogaz_region.geocode_region": "52",
+      "production_biogaz_region.date_mesure.year": "2023-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "914",
+      "production_biogaz_region.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Bretagne",
+      "production_biogaz_region.geocode_region": "53",
+      "production_biogaz_region.date_mesure.year": "2023-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "938",
+      "production_biogaz_region.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Nouvelle-Aquitaine",
+      "production_biogaz_region.geocode_region": "75",
+      "production_biogaz_region.date_mesure.year": "2023-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "1328",
+      "production_biogaz_region.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Occitanie",
+      "production_biogaz_region.geocode_region": "76",
+      "production_biogaz_region.date_mesure.year": "2023-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "539",
+      "production_biogaz_region.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Auvergne-Rhône-Alpes",
+      "production_biogaz_region.geocode_region": "84",
+      "production_biogaz_region.date_mesure.year": "2023-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "635",
+      "production_biogaz_region.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "production_biogaz_region.geocode_region": "93",
+      "production_biogaz_region.date_mesure.year": "2023-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "70",
+      "production_biogaz_region.date_mesure": "2023-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Île-de-France",
+      "production_biogaz_region.geocode_region": "11",
+      "production_biogaz_region.date_mesure.year": "2024-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "1215",
+      "production_biogaz_region.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Centre-Val de Loire",
+      "production_biogaz_region.geocode_region": "24",
+      "production_biogaz_region.date_mesure.year": "2024-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "683",
+      "production_biogaz_region.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Bourgogne-Franche-Comté",
+      "production_biogaz_region.geocode_region": "27",
+      "production_biogaz_region.date_mesure.year": "2024-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "723",
+      "production_biogaz_region.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Normandie",
+      "production_biogaz_region.geocode_region": "28",
+      "production_biogaz_region.date_mesure.year": "2024-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "1233",
+      "production_biogaz_region.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Hauts-de-France",
+      "production_biogaz_region.geocode_region": "32",
+      "production_biogaz_region.date_mesure.year": "2024-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "2284",
+      "production_biogaz_region.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Grand Est",
+      "production_biogaz_region.geocode_region": "44",
+      "production_biogaz_region.date_mesure.year": "2024-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "2712",
+      "production_biogaz_region.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Pays de la Loire",
+      "production_biogaz_region.geocode_region": "52",
+      "production_biogaz_region.date_mesure.year": "2024-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "1051",
+      "production_biogaz_region.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Bretagne",
+      "production_biogaz_region.geocode_region": "53",
+      "production_biogaz_region.date_mesure.year": "2024-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "1048",
+      "production_biogaz_region.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Nouvelle-Aquitaine",
+      "production_biogaz_region.geocode_region": "75",
+      "production_biogaz_region.date_mesure.year": "2024-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "1404",
+      "production_biogaz_region.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Occitanie",
+      "production_biogaz_region.geocode_region": "76",
+      "production_biogaz_region.date_mesure.year": "2024-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "581",
+      "production_biogaz_region.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Auvergne-Rhône-Alpes",
+      "production_biogaz_region.geocode_region": "84",
+      "production_biogaz_region.date_mesure.year": "2024-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "864",
+      "production_biogaz_region.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "production_biogaz_region.geocode_region": "93",
+      "production_biogaz_region.date_mesure.year": "2024-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "70",
+      "production_biogaz_region.date_mesure": "2024-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Île-de-France",
+      "production_biogaz_region.geocode_region": "11",
+      "production_biogaz_region.date_mesure.year": "2025-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "1335",
+      "production_biogaz_region.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Centre-Val de Loire",
+      "production_biogaz_region.geocode_region": "24",
+      "production_biogaz_region.date_mesure.year": "2025-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "810",
+      "production_biogaz_region.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Bourgogne-Franche-Comté",
+      "production_biogaz_region.geocode_region": "27",
+      "production_biogaz_region.date_mesure.year": "2025-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "748",
+      "production_biogaz_region.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Normandie",
+      "production_biogaz_region.geocode_region": "28",
+      "production_biogaz_region.date_mesure.year": "2025-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "1396",
+      "production_biogaz_region.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Hauts-de-France",
+      "production_biogaz_region.geocode_region": "32",
+      "production_biogaz_region.date_mesure.year": "2025-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "2501",
+      "production_biogaz_region.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Grand Est",
+      "production_biogaz_region.geocode_region": "44",
+      "production_biogaz_region.date_mesure.year": "2025-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "2965",
+      "production_biogaz_region.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Pays de la Loire",
+      "production_biogaz_region.geocode_region": "52",
+      "production_biogaz_region.date_mesure.year": "2025-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "1174",
+      "production_biogaz_region.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Bretagne",
+      "production_biogaz_region.geocode_region": "53",
+      "production_biogaz_region.date_mesure.year": "2025-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "1204",
+      "production_biogaz_region.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Nouvelle-Aquitaine",
+      "production_biogaz_region.geocode_region": "75",
+      "production_biogaz_region.date_mesure.year": "2025-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "1639",
+      "production_biogaz_region.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Occitanie",
+      "production_biogaz_region.geocode_region": "76",
+      "production_biogaz_region.date_mesure.year": "2025-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "663",
+      "production_biogaz_region.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Auvergne-Rhône-Alpes",
+      "production_biogaz_region.geocode_region": "84",
+      "production_biogaz_region.date_mesure.year": "2025-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "1010",
+      "production_biogaz_region.date_mesure": "2025-01-01T00:00:00.000"
+    },
+    {
+      "production_biogaz_region.libelle_region": "Provence-Alpes-Côte d'Azur",
+      "production_biogaz_region.geocode_region": "93",
+      "production_biogaz_region.date_mesure.year": "2025-01-01T00:00:00.000",
+      "production_biogaz_region.id_1057": "100",
+      "production_biogaz_region.date_mesure": "2025-01-01T00:00:00.000"
+    }
+  ],
+  "measureMeta": {
+    "libelle_indicateur": "Capacité maximale de production des installations de biométhane dans les réseaux",
+    "statut_commun": "Mesure",
+    "unite": "GWh / an",
+    "methode_calcul": "Cet indicateur est calculé en prenant le dernier trimestre de l'année de la publication SDES dont il est issu.\n"
+  }
+}

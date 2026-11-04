@@ -3,6 +3,8 @@
  * Pure functions so that Vue components (e.g. GraphBox) stay lean.
  */
 
+import { mapKeysStable, mapValuesStable } from '@/utils/mapIter';
+
 /** True when measure can plot (keeps 0; drops null / empty / NaN). */
 export function isValidMeasureValue(v) {
   if (v == null) return false;
@@ -59,7 +61,7 @@ export function extractRegionsAndExtra(resultOrResults) {
     }
   });
 
-  const regionsList = Array.from(byGeocode.values()).sort((a, b) =>
+  const regionsList = mapValuesStable(byGeocode).sort((a, b) =>
     a.libelle_region.localeCompare(b.libelle_region, 'fr')
   );
 
@@ -113,7 +115,7 @@ function extractRegionsAndExtraFromOne(result) {
     });
   });
 
-  const regionsList = Array.from(byGeocode.values()).sort((a, b) =>
+  const regionsList = mapValuesStable(byGeocode).sort((a, b) =>
     a.libelle_region.localeCompare(b.libelle_region, 'fr')
   );
 
@@ -216,7 +218,7 @@ export function buildRegionalSeries(regionAllData, selectedRegionCode, selectedE
     }
   });
 
-  const sortedTimes = Array.from(byTime.keys()).sort((a, b) => {
+  const sortedTimes = mapKeysStable(byTime).sort((a, b) => {
     const na = Number(a);
     const nb = Number(b);
     if (!Number.isNaN(na) && !Number.isNaN(nb)) return na - nb;

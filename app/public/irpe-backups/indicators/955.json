@@ -2340,6 +2340,7 @@
     "id_parents": 1053,
     "methode_calcul": null,
     "numerator": "nb_actifs_velo",
-    "denominator": "nb_actifs_total"
+    "denominator": "nb_actifs_total",
+    "summable_axes": false
   }
 }

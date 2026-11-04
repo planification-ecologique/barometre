@@ -11,7 +11,7 @@
             <router-link class="fr-breadcrumb__link" :to="breadcrumbAccueilTo">Accueil</router-link>
           </li>
           <li>
-            <router-link class="fr-breadcrumb__link" :to="breadcrumbChantiersSyntheseTo">Chantiers sectoriels</router-link>
+            <router-link class="fr-breadcrumb__link" :to="breadcrumbChantiersSyntheseTo">{{ syntheseCrumbLabel }}</router-link>
           </li>
           <li>
             <router-link class="fr-breadcrumb__link" :to="breadcrumbSectorSyntheseTo">{{ displaySectorLabel }}</router-link>
@@ -302,13 +302,13 @@ export default {
       );
     },
     primarySectionId() {
-      return this.getSectionId("Indicateur du chantier");
+      return this.getSectionId(this.primarySectionLabel);
     },
     sectionLinks() {
       return [
         {
           id: this.primarySectionId,
-          label: "Indicateur du chantier",
+          label: this.primarySectionLabel,
         },
         ...this.levierSectionLinks,
       ];
@@ -329,6 +329,15 @@ export default {
     },
     displaySectorLabel() {
       return sectorNomMieux(this.displaySector);
+    },
+    isCopMode() {
+      return Boolean(this.params.copMode);
+    },
+    syntheseCrumbLabel() {
+      return this.isCopMode ? "Leviers territoriaux" : "Chantiers sectoriels";
+    },
+    primarySectionLabel() {
+      return this.isCopMode ? "Indicateurs" : "Indicateur du chantier";
     },
     /** Liens réels (router-link) : évite href="#" + click, souvent cassé avec le DSFR */
     breadcrumbAccueilTo() {
