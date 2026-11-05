@@ -8396,8 +8396,7 @@
       "public": true,
       "description": "Cet indicateur représente la densité de population des territoires (nombre d'habitants par km²) par année.",
       "meta": {
-        "responsable_calcul": "Hub Indicateurs Territoriaux - CGDD",
-        "publish": false
+        "responsable_calcul": "Hub Indicateurs Territoriaux - CGDD"
       },
       "measures": [
         {
@@ -8439,7 +8438,7 @@
             "libelle_indicateur": "Superficie du territoire",
             "statut_commun": "Extra",
             "unite": "ha",
-            "methode_calcul": "Superficie communale en hectares (data.gouv découpage communal, millésime 2022), dénominateur de la densité. Mesure de référence : id_610 (surface_com)."
+            "methode_calcul": "Superficie cadastrale communale en hectares (IGN ADMIN EXPRESS, référence Insee), dénominateur de la densité. Mesure de référence : id_610 (surface_com)."
           },
           "isVisible": true,
           "public": true
@@ -26732,7 +26731,7 @@
       "title": "Surface Com",
       "isVisible": true,
       "public": true,
-      "description": "Cet indicateur représente la superficie des territoires exprimé en hectare pour l'année 2022.",
+      "description": "Cet indicateur représente la superficie cadastrale des territoires, exprimée en hectares (référence Insee, IGN ADMIN EXPRESS).",
       "meta": {
         "responsable_calcul": "Hub Indicateurs Territoriaux - CGDD"
       },
@@ -26754,7 +26753,7 @@
             "libelle_indicateur": "Surface",
             "statut_commun": "Mesure",
             "unite": "ha",
-            "methode_calcul": null
+            "methode_calcul": "Issue directement du champ 'surface cadastrale' de ADMIN_EXPRESS\n"
           },
           "isVisible": true,
           "public": true
@@ -26894,6 +26893,189 @@
         {
           "name": "surface_com.annee",
           "title": "Surface Com Annee",
+          "type": "number",
+          "shortTitle": "Annee",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        }
+      ],
+      "segments": [],
+      "hierarchies": [],
+      "folders": [],
+      "nestedFolders": []
+    },
+    {
+      "name": "surface_geometrique_com",
+      "type": "cube",
+      "title": "Surface Geometrique Com",
+      "isVisible": true,
+      "public": true,
+      "description": "Cet indicateur représente la superficie géométrique des territoires, exprimée en hectares (aire de la géométrie IGN ADMIN EXPRESS, lacs et estuaires inclus).",
+      "meta": {
+        "responsable_calcul": "Hub Indicateurs Territoriaux - CGDD"
+      },
+      "measures": [
+        {
+          "name": "surface_geometrique_com.id_1311",
+          "title": "Surface Geometrique Com Id1311",
+          "shortTitle": "Id1311",
+          "cumulativeTotal": false,
+          "cumulative": false,
+          "type": "number",
+          "aggType": "sum",
+          "drillMembers": [],
+          "drillMembersGrouped": {
+            "measures": [],
+            "dimensions": []
+          },
+          "meta": {
+            "libelle_indicateur": "Surface géométrique",
+            "statut_commun": "Mesure",
+            "unite": "ha",
+            "methode_calcul": "Aire de la géométrie IGN ADMIN EXPRESS COG, en hectares, lacs et estuaires inclus.\n",
+            "publish": false,
+            "is_beta": true
+          },
+          "isVisible": true,
+          "public": true
+        }
+      ],
+      "dimensions": [
+        {
+          "name": "surface_geometrique_com.geocode_commune",
+          "title": "Surface Geometrique Com Geocode Commune",
+          "type": "string",
+          "shortTitle": "Geocode Commune",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "surface_geometrique_com.libelle_commune",
+          "title": "Surface Geometrique Com Libelle Commune",
+          "type": "string",
+          "shortTitle": "Libelle Commune",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "surface_geometrique_com.geocode_epci",
+          "title": "Surface Geometrique Com Geocode Epci",
+          "type": "string",
+          "shortTitle": "Geocode Epci",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "surface_geometrique_com.libelle_epci",
+          "title": "Surface Geometrique Com Libelle Epci",
+          "type": "string",
+          "shortTitle": "Libelle Epci",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "surface_geometrique_com.geocode_departement",
+          "title": "Surface Geometrique Com Geocode Departement",
+          "type": "string",
+          "shortTitle": "Geocode Departement",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "surface_geometrique_com.libelle_departement",
+          "title": "Surface Geometrique Com Libelle Departement",
+          "type": "string",
+          "shortTitle": "Libelle Departement",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "surface_geometrique_com.geocode_region",
+          "title": "Surface Geometrique Com Geocode Region",
+          "type": "string",
+          "shortTitle": "Geocode Region",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "surface_geometrique_com.libelle_region",
+          "title": "Surface Geometrique Com Libelle Region",
+          "type": "string",
+          "shortTitle": "Libelle Region",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "surface_geometrique_com.geocode_crte",
+          "title": "Surface Geometrique Com Geocode Crte",
+          "type": "string",
+          "shortTitle": "Geocode Crte",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "surface_geometrique_com.libelle_crte",
+          "title": "Surface Geometrique Com Libelle Crte",
+          "type": "string",
+          "shortTitle": "Libelle Crte",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "surface_geometrique_com.geocode_ept",
+          "title": "Surface Geometrique Com Geocode Ept",
+          "type": "string",
+          "shortTitle": "Geocode Ept",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "surface_geometrique_com.libelle_ept",
+          "title": "Surface Geometrique Com Libelle Ept",
+          "type": "string",
+          "shortTitle": "Libelle Ept",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "surface_geometrique_com.date_mesure",
+          "title": "Surface Geometrique Com Date Mesure",
+          "type": "time",
+          "shortTitle": "Date Mesure",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "surface_geometrique_com.annee",
+          "title": "Surface Geometrique Com Annee",
           "type": "number",
           "shortTitle": "Annee",
           "suggestFilterValues": true,

@@ -16,7 +16,7 @@
       <div class="fr-grid-row graph-box-title-row">
         <h2 class="cardTitle graph-box-title fr-col">{{ displayData.label_indic }}</h2>
         <button
-          v-if="!isIframe"
+          v-if="!isIframe && !hideCaptureChrome"
           class="favori-btn"
           :class="{ 'favori-btn--active': estFavori }"
           :title="estFavori ? 'Retirer des favoris' : 'Ajouter aux favoris'"
@@ -69,6 +69,7 @@
 
     <div class="graph-box-toolbar">
       <segmented-controls
+        v-show="!hideCaptureChrome"
         class="graph-box-toolbar__segmented"
         @chart-selected="handleChartSelected"
         :idcontrol="idAccordion + '1'"
@@ -319,6 +320,11 @@ export default {
     hideDescription: {
       type: Boolean,
       default: false
+    },
+    /** Hide the chart/table switch and the favorite badge for screenshots. */
+    hideCaptureChrome: {
+      type: Boolean,
+      default: false,
     },
   },
   data() {
