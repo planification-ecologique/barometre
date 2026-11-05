@@ -1,11 +1,12 @@
 /**
- * Territorial COP levers shown instead of chantiers when a region is selected.
- * Indicator → lever comes from the Grist column "Leviers COP".
- * The crosswalk only places a known lever name into a theme and sector.
+ * Territorial tree: chantier hats become leviers COP, and the baromètre
+ * levers are filed under those hats. The route /territoires shows every
+ * baromètre series, not only the ones that have a regional IRPE measure.
+ * The crosswalk places a known lever or chantier name into a theme.
  */
 
 import crosswalk from "@/data/copLevierCrosswalk.json";
-import { getIndicators } from "@/services/csvDataService";
+import { getIndicators, getNavigationStructure, isImpactAxe } from "@/services/csvDataService";
 import { loadAllRegionsDataForIndicator } from "@/services/ecolabApiService";
 import { normalizeGeocode } from "@/services/frenchRegions";
 import { buildShellIndicatorRow } from "@/services/shellViewDataService";
@@ -13,19 +14,19 @@ import { mapKeysStable, mapValuesStable } from "@/utils/mapIter";
 
 const THEME_DESCRIPTIONS = {
   "Mieux se déplacer":
-    "Leviers de mobilité pour lesquels le territoire dispose d'une série IRPE.",
+    "Leviers COP de mobilité, avec les leviers du baromètre rangés dessous.",
   "Mieux se loger":
-    "Leviers du bâtiment pour lesquels le territoire dispose d'une série IRPE.",
+    "Leviers COP du bâtiment, avec les leviers du baromètre rangés dessous.",
   "Mieux produire":
-    "Leviers de production et d'énergie pour lesquels le territoire dispose d'une série IRPE.",
+    "Leviers COP de production et d'énergie, avec les leviers du baromètre rangés dessous.",
   "Mieux consommer":
-    "Leviers de consommation et de déchets pour lesquels le territoire dispose d'une série IRPE.",
+    "Leviers COP de consommation et de déchets, avec les leviers du baromètre rangés dessous.",
   "Mieux se nourrir":
-    "Leviers agricoles et alimentaires pour lesquels le territoire dispose d'une série IRPE.",
+    "Leviers COP agricoles et alimentaires, avec les leviers du baromètre rangés dessous.",
   "Mieux préserver":
-    "Leviers de préservation des milieux pour lesquels le territoire dispose d'une série IRPE.",
+    "Leviers COP de préservation des milieux, avec les leviers du baromètre rangés dessous.",
   "Mieux s'adapter":
-    "Leviers d'adaptation pour lesquels le territoire dispose d'une série IRPE.",
+    "Leviers COP d'adaptation, avec les leviers du baromètre rangés dessous.",
 };
 
 const OTHER_THEME = "Autres leviers";
@@ -81,6 +82,212 @@ const aliasToCatalogKey = new Map(
     normalizeLeverLabel(to),
   ])
 );
+
+const STRUCTURAL_LEVER_NAMES = new Set(
+  [
+    "Indicateur de chantier",
+    "Autres indicateurs",
+    "Indicateur d'impact",
+    "Indicateur d'impact - autres",
+  ].map(normalizeLeverLabel)
+);
+
+const referentielByLabel = new Map();
+for (const lever of crosswalk.levers) {
+  referentielByLabel.set(normalizeLeverLabel(lever.name), lever);
+  for (const label of lever.referentiel || []) {
+    referentielByLabel.set(normalizeLeverLabel(label), lever);
+  }
+}
+
+function catalogLever(label) {
+  const key = normalizeLeverLabel(label);
+  if (!key || STRUCTURAL_LEVER_NAMES.has(key)) return null;
+  return (
+    referentielByLabel.get(key) ||
+    catalog.get(key) ||
+    catalog.get(aliasToCatalogKey.get(key)) ||
+    null
+  );
+}
+
+/**
+ * COP hat for a baromètre lever. A Grist "Leviers COP" value wins, then the
+ * lever name, then the chantier it belongs to.
+ * @returns {{ name: string, theme: string, sector: string } | null}
+ */
+export function resolveCopLever({ levierCop, leverName, chantierName }) {
+  const direct = String(levierCop || "").trim();
+  if (direct) return copLeverMeta(direct);
+  const fromLever = catalogLever(leverName);
+  if (fromLever) {
+    return {
+      name: fromLever.name,
+      theme: fromLever.theme,
+      sector: fromLever.sector || "",
+    };
+  }
+  const fromChantier = catalogLever(chantierName);
+  if (fromChantier) {
+    return {
+      name: fromChantier.name,
+      theme: fromChantier.theme,
+      sector: fromChantier.sector || "",
+    };
+  }
+  return null;
+}
+
+function levierCopFromItems(items) {
+  for (const item of items || []) {
+    const raw = item?.indicator || {};
+    const value = String(raw["Leviers COP"] || raw.levier_cop || "").trim();
+    if (value) return value;
+  }
+  return "";
+}
+
+/**
+ * Full baromètre tree reorganized under leviers COP.
+ * Every chantier lever is kept, including series that have no IRPE id.
+ * @param {object[]} sectors - navigation sectors from getNavigationStructure
+ */
+export function assembleTerritoireSectors(sectors) {
+  const byTheme = {};
+
+  for (const sector of sectors || []) {
+    if (!sector || sector.name === "Synthèse") continue;
+    const chantiers = sector.chantiers || {};
+    for (const [chantierName, chantier] of Object.entries(chantiers)) {
+      if (isImpactAxe(chantierName)) continue;
+      for (const lever of chantier.sortedLeviers || []) {
+        const leverName = lever?.name || "";
+        const leverKey = normalizeLeverLabel(leverName);
+        if (
+          !leverName ||
+          leverKey === normalizeLeverLabel("Indicateur d'impact") ||
+          leverKey === normalizeLeverLabel("Indicateur d'impact - autres")
+        ) {
+          continue;
+        }
+        const known = resolveCopLever({
+          levierCop: levierCopFromItems(lever.indicators),
+          leverName,
+          chantierName,
+        });
+        const meta = known || {
+          name:
+            normalizeLeverLabel(leverName) === normalizeLeverLabel("Indicateur de chantier")
+              ? chantierName
+              : leverName,
+          theme: OTHER_THEME,
+          sector: "",
+        };
+        if (!byTheme[meta.theme]) byTheme[meta.theme] = {};
+        if (!byTheme[meta.theme][meta.name]) {
+          byTheme[meta.theme][meta.name] = { meta, levers: {} };
+        }
+        const hat = byTheme[meta.theme][meta.name];
+        if (!hat.levers[leverName]) {
+          hat.levers[leverName] = {
+            name: leverName,
+            indicators: [],
+            objectifLevier: lever.objectifLevier || "",
+            axeTaxonomie: lever.axeTaxonomie || [],
+            seen: {},
+          };
+        }
+        const dest = hat.levers[leverName];
+        if (!dest.objectifLevier && lever.objectifLevier) {
+          dest.objectifLevier = lever.objectifLevier;
+        }
+        for (const item of lever.indicators || []) {
+          const id = item?.gristId;
+          if (!id || dest.seen[id]) continue;
+          dest.seen[id] = true;
+          dest.indicators.push({
+            gristId: id,
+            levier: leverName,
+            indicator: item.indicator,
+          });
+        }
+      }
+    }
+  }
+
+  const themeOrder = [...(crosswalk.themes || []), OTHER_THEME];
+  const themeNames = Object.keys(byTheme).sort((a, b) => {
+    const ia = themeOrder.indexOf(a);
+    const ib = themeOrder.indexOf(b);
+    return (ia === -1 ? 99 : ia) - (ib === -1 ? 99 : ib);
+  });
+
+  return themeNames.map((theme) => {
+    const leverOrder = crosswalk.levers.filter((lever) => lever.theme === theme);
+    const hatNames = Object.keys(byTheme[theme]).sort((a, b) => {
+      const ia = leverOrder.findIndex((lever) => lever.name === a);
+      const ib = leverOrder.findIndex((lever) => lever.name === b);
+      return (ia === -1 ? 99 : ia) - (ib === -1 ? 99 : ib) || a.localeCompare(b, "fr");
+    });
+    const chantiers = hatNames.map((hatName) => {
+      const hat = byTheme[theme][hatName];
+      const sortedLeviers = Object.values(hat.levers)
+        .map((lever) => ({
+          name: lever.name,
+          indicators: lever.indicators,
+          objectifLevier: lever.objectifLevier || "",
+          axeTaxonomie: lever.axeTaxonomie || [],
+          sortOrder:
+            normalizeLeverLabel(lever.name) === normalizeLeverLabel("Indicateur de chantier")
+              ? 0
+              : 1,
+        }))
+        .sort((a, b) => {
+          if (a.sortOrder !== b.sortOrder) return a.sortOrder - b.sortOrder;
+          return a.name.localeCompare(b.name, "fr");
+        });
+      const gristIds = [];
+      const seen = {};
+      for (const lever of sortedLeviers) {
+        for (const item of lever.indicators) {
+          if (!item.gristId || seen[item.gristId]) continue;
+          seen[item.gristId] = true;
+          gristIds.push(item.gristId);
+        }
+      }
+      const barometreLevers = sortedLeviers.filter(
+        (lever) =>
+          normalizeLeverLabel(lever.name) !== normalizeLeverLabel("Indicateur de chantier")
+      );
+      return {
+        name: hat.meta.name,
+        id: `cop-${slugify(hat.meta.name)}`,
+        gristIds,
+        engagementBadges: hat.meta.sector ? [hat.meta.sector] : [],
+        remainingEngagements: 0,
+        remainingEngagementNames: "",
+        indicators: [],
+        sortedLeviers,
+        descriptionChantier:
+          "Indicateurs du baromètre rattachés à ce levier COP.",
+        axeTaxonomie: [],
+        copMode: true,
+        levierCount: barometreLevers.length,
+      };
+    });
+    return {
+      name: theme,
+      description:
+        THEME_DESCRIPTIONS[theme] ||
+        "Leviers COP et leviers du baromètre qui n'ont pas encore de correspondance.",
+      chantierCount: chantiers.length,
+      levierCount: chantiers.reduce((sum, chantier) => sum + chantier.levierCount, 0),
+      indicatorCount: chantiers.reduce((sum, chantier) => sum + chantier.gristIds.length, 0),
+      engagementLabel: "Secteur",
+      chantiers,
+    };
+  });
+}
 
 /**
  * Theme and territorial sector for a Grist "Leviers COP" label.
@@ -212,6 +419,53 @@ export function groupIndicatorsIntoSectors(indicators, toRow = (indicator) => in
       chantiers,
     };
   });
+}
+
+const TERRITOIRE_TIME_PERIOD = {
+  date_start: "2015-01-01",
+  date_end: "2031-01-01",
+};
+
+/**
+ * Every baromètre indicator, grouped as leviers COP → leviers du baromètre.
+ * A selected region does not remove rows: charts overlay the regional series
+ * when one exists.
+ */
+export async function loadCopTerritoireView(environment = "production") {
+  const cacheKey = `territoire:${environment}`;
+  if (viewCache.has(cacheKey)) return viewCache.get(cacheKey);
+
+  const navigation = await getNavigationStructure(environment);
+  const displaySectors = assembleTerritoireSectors(navigation?.data?.sectors || []);
+  const ids = [];
+  for (const sector of displaySectors) {
+    for (const chantier of sector.chantiers) {
+      ids.push(...chantier.gristIds);
+    }
+  }
+  if (ids.length) {
+    const response = await getIndicators(
+      {
+        filter_by: [{ field: "grist_ids", values: ids }],
+        time_period: TERRITOIRE_TIME_PERIOD,
+      },
+      environment
+    );
+    const byId = {};
+    for (const indicator of response.results || []) {
+      if (indicator?.id_indic) byId[indicator.id_indic] = buildShellIndicatorRow(indicator);
+    }
+    for (const sector of displaySectors) {
+      for (const chantier of sector.chantiers) {
+        chantier.indicators = chantier.gristIds
+          .map((id) => byId[id])
+          .filter(Boolean);
+      }
+    }
+  }
+  const view = { displaySectors };
+  viewCache.set(cacheKey, view);
+  return view;
 }
 
 export async function loadCopRegionalView(regionCode, environment = "production") {

@@ -106,6 +106,9 @@ import {
   dashboardRouteName,
   etatEnvironnementRouteName,
   chantiersRouteName,
+  territoiresRouteName,
+  isChantiersShellName,
+  isTerritoiresShellName,
 } from "@/config/routeNames.js"
 import {
   resolveSectorFromQuery,
@@ -234,9 +237,7 @@ export default {
             axeResolved = impactAxeSlugToName(slug)
           }
         }
-        const onChantiers =
-          this.$route.name === "chantiers" ||
-          this.$route.name === "staging-chantiers"
+        const onChantiers = isChantiersShellName(this.$route.name)
         if (
           onChantiers &&
           newQuery.chantier_id &&
@@ -272,8 +273,7 @@ export default {
         // initDashboardFromRoute ne repasse pas. Il faut aligner myobj (comme pour
         // etat-environnement → home où le nom de route change).
         if (
-          (this.$route.name === "chantiers" ||
-            this.$route.name === "staging-chantiers") &&
+          isChantiersShellName(this.$route.name) &&
           view === "chantiers-sectoriels"
         ) {
           this.myobj = {
@@ -310,6 +310,8 @@ export default {
         "staging-etat-environnement",
         "chantiers",
         "staging-chantiers",
+        "territoires",
+        "staging-territoires",
       ].includes(name)
     },
     /** Vue shell déduite d’une query précise (pour le watcher $route.query). */
@@ -324,7 +326,7 @@ export default {
         }
         return q.view || "etat-environnement"
       }
-      if (n === "chantiers" || n === "staging-chantiers") {
+      if (isChantiersShellName(n)) {
         const slug = String(q.section || "").toLowerCase()
         const qv = q.view
         if (
@@ -363,9 +365,7 @@ export default {
           axeResolved = impactAxeSlugToName(slug)
         }
       }
-      const onChantiers =
-        this.$route.name === "chantiers" ||
-        this.$route.name === "staging-chantiers"
+      const onChantiers = isChantiersShellName(this.$route.name)
       let chantierSectorInit = q.chantier_sector
       if (
         onChantiers &&
@@ -406,7 +406,7 @@ export default {
      */
     chantiersShellQueryForCompare(routeName, query) {
       const o = { ...(query || {}) }
-      if (routeName === "chantiers" || routeName === "staging-chantiers") {
+      if (isChantiersShellName(routeName)) {
         if (o.view === "chantiers-sectoriels" || o.view === "chantiers-table") delete o.view
         if (o.view === "chantier" && o.chantier_id) delete o.view
       }
@@ -467,6 +467,10 @@ export default {
         try {
           const querySector = selectedValue.sector || this.currentSector
           const st = this.useStaging
+          const territory = isTerritoiresShellName(this.$route.name)
+          const chantiersName = territory
+            ? territoiresRouteName(st)
+            : chantiersRouteName(st)
           const sec = toSectionSlug(querySector)
 
           if (selectedValue.view === "about" && querySector === SECTOR_SYNTHESE) {
@@ -500,10 +504,10 @@ export default {
               }
             }
           } else if (v === "chantiers-sectoriels" || v === "chantiers-table") {
-            target = { name: chantiersRouteName(st), query: withSection() }
+            target = { name: chantiersName, query: withSection() }
           } else if (v === "general-chantiers") {
             target = {
-              name: chantiersRouteName(st),
+              name: chantiersName,
               query: withSection({
                 view: "general-chantiers",
                 ...(selectedValue.sectorFilter ? { sectorFilter: selectedValue.sectorFilter } : {}),
@@ -514,7 +518,7 @@ export default {
               ? toSectionSlug(selectedValue.chantier_sector)
               : sec
             target = {
-              name: chantiersRouteName(st),
+              name: chantiersName,
               query: {
                 section: String(secSlug),
                 chantier_id: String(selectedValue.chantier_id),
@@ -563,6 +567,7 @@ export default {
     if (n === homeRouteName(st)) path = st ? "/staging" : "/"
     else if (n === etatEnvironnementRouteName(st)) path = st ? "/staging/etat-environnement" : "/etat-environnement"
     else if (n === chantiersRouteName(st)) path = st ? "/staging/chantiers" : "/chantiers"
+    else if (n === territoiresRouteName(st)) path = st ? "/staging/territoires" : "/territoires"
     else if (st) path = "/staging/dashboard"
     dsfrAnalytics({
       path,

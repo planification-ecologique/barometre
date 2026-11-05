@@ -1,7 +1,9 @@
 import {
+  assembleTerritoireSectors,
   copLeverMeta,
   geocodesWithMeasure,
   groupIndicatorsIntoSectors,
+  resolveCopLever,
 } from "@/services/copLeviers";
 
 describe("copLeviers", () => {
@@ -66,6 +68,47 @@ describe("copLeviers", () => {
       Map.prototype.keys = keys;
       Map.prototype.values = values;
     }
+  });
+
+  it("files a baromètre lever under the COP hat of its chantier", () => {
+    expect(
+      resolveCopLever({
+        leverName: "Pistes cyclables",
+        chantierName: "Développement des mobilités actives (vélo et marche)",
+      })
+    ).toMatchObject({ name: "Vélo", theme: "Mieux se déplacer" });
+  });
+
+  it("keeps every baromètre series under the COP tree", () => {
+    const sectors = assembleTerritoireSectors([
+      {
+        name: "Se déplacer",
+        chantiers: {
+          "Développement des mobilités actives (vélo et marche)": {
+            sortedLeviers: [
+              {
+                name: "Indicateur de chantier",
+                indicators: [{ gristId: "1", indicator: {} }],
+              },
+              {
+                name: "Pistes cyclables",
+                objectifLevier: "Plus de pistes",
+                indicators: [{ gristId: "2", indicator: { "IRPE ids": "" } }],
+              },
+            ],
+          },
+        },
+      },
+    ]);
+    expect(sectors.map((sector) => sector.name)).toEqual(["Mieux se déplacer"]);
+    const hat = sectors[0].chantiers[0];
+    expect(hat.name).toBe("Vélo");
+    expect(hat.gristIds).toEqual(["1", "2"]);
+    expect(hat.sortedLeviers.map((lever) => lever.name)).toEqual([
+      "Indicateur de chantier",
+      "Pistes cyclables",
+    ]);
+    expect(hat.levierCount).toBe(1);
   });
 
   it("keeps geocodes that have a measure", () => {

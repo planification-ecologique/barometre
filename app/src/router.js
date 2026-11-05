@@ -30,6 +30,8 @@ const DASHBOARD_SHELL_NAMES = [
   "staging-etat-environnement",
   "chantiers",
   "staging-chantiers",
+  "territoires",
+  "staging-territoires",
 ];
 
 async function resolveSectorNameForRoute(to) {
@@ -130,7 +132,12 @@ function legacyBrokenLinkHomeRedirect(to) {
     return home;
   }
 
-  if (name === "chantiers" || name === "staging-chantiers") {
+  if (
+    name === "chantiers" ||
+    name === "staging-chantiers" ||
+    name === "territoires" ||
+    name === "staging-territoires"
+  ) {
     if (!q.chantier_id) return null;
     if (q.view && q.view !== "chantier") return null;
     const slug =
@@ -157,7 +164,14 @@ function legacyBrokenLinkHomeRedirect(to) {
 
 /** ?view=chantiers-table supprimé → synthèse chantiers (même route, sans view). */
 function canonicalChantiersTableQueryRedirect(to) {
-  if (to.name !== "chantiers" && to.name !== "staging-chantiers") return null;
+  if (
+    to.name !== "chantiers" &&
+    to.name !== "staging-chantiers" &&
+    to.name !== "territoires" &&
+    to.name !== "staging-territoires"
+  ) {
+    return null;
+  }
   if (to.query?.view !== "chantiers-table") return null;
   const q = { ...to.query };
   delete q.view;
@@ -210,6 +224,16 @@ const routes = [
       import(/* webpackChunkName: "dashboard" */ "./views/DashboardPage.vue"),
     meta: {
       title: "Chantiers sectoriels",
+    }
+  },
+  {
+    path: "/territoires",
+    name: "territoires",
+    props: dashboardProps,
+    component: () =>
+      import(/* webpackChunkName: "dashboard" */ "./views/DashboardPage.vue"),
+    meta: {
+      title: "Leviers territoriaux",
     }
   },
   {
@@ -390,6 +414,19 @@ if (process.env.VUE_APP_ENV !== 'prod') {
         import(/* webpackChunkName: "dashboard" */ "./views/DashboardPage.vue"),
       meta: {
         title: "Chantiers sectoriels",
+        isStaging: true,
+        noindex: true,
+        excludeFromSitemap: true
+      }
+    },
+    {
+      path: "/staging/territoires",
+      name: "staging-territoires",
+      props: { useStaging: true },
+      component: () =>
+        import(/* webpackChunkName: "dashboard" */ "./views/DashboardPage.vue"),
+      meta: {
+        title: "Leviers territoriaux",
         isStaging: true,
         noindex: true,
         excludeFromSitemap: true

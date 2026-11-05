@@ -17,9 +17,10 @@
     <!-- Ce qu'il faut retenir -->
     <div class="synthese-callout">
       <h2 class="fr-h4 synthese-callout-title">Ce qu'il faut retenir</h2>
-      <p v-if="regionalMode" class="fr-text--md synthese-callout-text">
-        Pour le territoire sélectionné, les chantiers laissent place aux leviers COP.
-        Seuls les indicateurs qui ont une série IRPE pour cette région sont affichés.
+      <p v-if="territoryTree" class="fr-text--md synthese-callout-text">
+        Les chapeaux sont les leviers COP. Les leviers du baromètre sont rangés dessous,
+        avec toutes les séries du baromètre. Une région sélectionnée remplace la série
+        nationale lorsqu'elle existe, sans retirer les autres indicateurs.
       </p>
       <p v-else class="fr-text--md synthese-callout-text">
         Les "chantiers" structurent les transformations tangibles prévues par les stratégies environnementales 
@@ -32,7 +33,7 @@
 
     <!-- Quick access links -->
     <div class="synthese-quick-access">
-      <span class="synthese-quick-label">{{ regionalMode ? 'Accès rapide aux thématiques' : 'Accès rapide aux synthèses sectorielles' }}</span>
+      <span class="synthese-quick-label">{{ territoryTree ? 'Accès rapide aux thématiques' : 'Accès rapide aux synthèses sectorielles' }}</span>
       <div class="synthese-quick-links">
         <a
           v-for="sector in displaySectors"
@@ -51,8 +52,8 @@
       <p>Chargement des données...</p>
     </div>
 
-    <p v-else-if="regionalMode && displaySectors.length === 0" class="fr-text--md">
-      Aucun levier territorial avec des données IRPE pour ce territoire.
+    <p v-else-if="territoryTree && displaySectors.length === 0" class="fr-text--md">
+      Aucun levier à afficher.
     </p>
 
     <!-- Sector sections -->
@@ -81,7 +82,7 @@
               <tr>
                 <th class="col-chantier">
                   <div class="th-inner">
-                    {{ regionalMode ? 'Levier' : 'Chantier' }}
+                    {{ territoryTree ? 'Levier COP' : 'Chantier' }}
                     <span v-if="sector.engagementLabel" class="th-badge">{{ sector.engagementLabel }}</span>
                   </div>
                 </th>
@@ -282,8 +283,13 @@ import {
   peekShellViewData,
   SHELL_VIEW_CHANTIERS,
 } from '@/services/shellViewDataService.js'
-import { loadCopRegionalView } from '@/services/copLeviers.js'
-import { chantiersRouteName, etatEnvironnementRouteName } from '@/config/routeNames.js'
+import { loadCopTerritoireView } from '@/services/copLeviers.js'
+import {
+  chantiersRouteName,
+  etatEnvironnementRouteName,
+  isTerritoiresShellName,
+  territoiresRouteName,
+} from '@/config/routeNames.js'
 import { toSectionSlug } from '@/utils/sectionUrl.js'
 import {
   impactAxeNameToSlug,
@@ -312,19 +318,13 @@ export default {
       isLoading: true,
       navigationData: null,
       displaySectors: [],
-      regionalMode: false,
-      regionalSeq: 0,
     }
   },
   created() {
-    if (this.sharedRegionCode) return
+    if (this.territoryTree) return
     this.hydrateFromShellCache()
   },
   async mounted() {
-    if (this.sharedRegionCode) {
-      await this.applyRegionalDisplay()
-      return
-    }
     if (this.isLoading) {
       await this.loadData()
     } else {
@@ -335,16 +335,25 @@ export default {
     accueilTo() {
       return { path: this.useStaging ? '/staging' : '/' }
     },
+    territoryTree() {
+      return isTerritoiresShellName(this.$route?.name)
+    },
     pageTitle() {
-      return this.regionalMode ? 'Leviers territoriaux' : 'Synthèse des chantiers sectoriels'
+      return this.territoryTree ? 'Leviers territoriaux' : 'Synthèse des chantiers sectoriels'
+    },
+    shellRouteName() {
+      return this.territoryTree
+        ? territoiresRouteName(this.useStaging)
+        : chantiersRouteName(this.useStaging)
     },
   },
   watch: {
     '$route.hash'() {
       this.$nextTick(() => this.scrollToHash())
     },
-    sharedRegionCode() {
-      this.applyRegionalDisplay()
+    territoryTree() {
+      this.isLoading = true
+      this.loadData()
     },
   },
   methods: {
@@ -372,40 +381,26 @@ export default {
     sectorStats(sector) {
       const countLabel = (count, singular, plural) =>
         `${count} ${count > 1 ? plural : singular}`
-      if (this.regionalMode) {
-        return `${countLabel(sector.chantierCount || 0, 'levier', 'leviers')} – ${countLabel(sector.indicatorCount || 0, 'indicateur', 'indicateurs')}`
+      if (this.territoryTree) {
+        return `${countLabel(sector.chantierCount || 0, 'levier COP', 'leviers COP')} – ${countLabel(sector.levierCount || 0, 'levier', 'leviers')} – ${countLabel(sector.indicatorCount || 0, 'indicateur', 'indicateurs')}`
       }
       return `${countLabel(sector.chantierCount || 0, 'chantier', 'chantiers')} – ${countLabel(sector.levierCount || 0, 'levier', 'leviers')}`
     },
-    async applyRegionalDisplay() {
-      const code = this.sharedRegionCode
-      const seq = ++this.regionalSeq
-      if (!code) {
-        if (!this.regionalMode) return
-        this.regionalMode = false
-        await this.loadData()
-        return
-      }
-      this.regionalMode = true
-      this.isLoading = true
-      try {
-        const environment = this.useStaging ? 'staging' : 'production'
-        const data = await loadCopRegionalView(code, environment)
-        if (seq !== this.regionalSeq) return
-        this.displaySectors = data.displaySectors || []
-      } catch (error) {
-        console.error('Error loading territorial levers:', error)
-        if (seq === this.regionalSeq) this.displaySectors = []
-      } finally {
-        if (seq === this.regionalSeq) {
+    async loadData() {
+      if (this.territoryTree) {
+        this.isLoading = true
+        try {
+          const environment = this.useStaging ? 'staging' : 'production'
+          const data = await loadCopTerritoireView(environment)
+          this.displaySectors = data.displaySectors || []
+          this.navigationData = null
+        } catch (error) {
+          console.error('Error loading territorial levers:', error)
+          this.displaySectors = []
+        } finally {
           this.isLoading = false
           this.$nextTick(() => this.scrollToHash())
         }
-      }
-    },
-    async loadData() {
-      if (this.sharedRegionCode) {
-        await this.applyRegionalDisplay()
         return
       }
       if (this.hydrateFromShellCache()) {
@@ -484,9 +479,8 @@ export default {
       if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
     },
     chantierHref(sectorName, chantier) {
-      const isStaging = window.location.pathname.includes('/staging')
       const route = this.$router.resolve({
-        name: chantiersRouteName(isStaging),
+        name: this.shellRouteName,
         query: {
           section: toSectionSlug(sectorName),
           chantier_id: chantier.id
@@ -509,9 +503,8 @@ export default {
       this.goToChantier(sectorName, chantier)
     },
     goToChantier(sectorName, chantier) {
-      const isStaging = window.location.pathname.includes('/staging')
       this.$router.push({
-        name: chantiersRouteName(isStaging),
+        name: this.shellRouteName,
         query: {
           section: toSectionSlug(sectorName),
           chantier_id: chantier.id

@@ -199,6 +199,7 @@ import {
 } from "@/services/csvDataService.js";
 import {
   chantiersRouteName,
+  territoiresRouteName,
   etatEnvironnementRouteName,
 } from "@/config/routeNames.js";
 import { SECTION_SYNTHESE_SLUG, toSectionSlug } from "@/utils/sectionUrl.js";
@@ -343,9 +344,14 @@ export default {
     breadcrumbAccueilTo() {
       return { path: this.useStaging ? "/staging" : "/" };
     },
+    synthesisRouteName() {
+      return this.isCopMode
+        ? territoiresRouteName(this.useStaging)
+        : chantiersRouteName(this.useStaging);
+    },
     breadcrumbChantiersSyntheseTo() {
       return {
-        name: chantiersRouteName(this.useStaging),
+        name: this.synthesisRouteName,
         query: { section: SECTION_SYNTHESE_SLUG },
         hash: "",
       };
@@ -353,7 +359,7 @@ export default {
     breadcrumbSectorSyntheseTo() {
       const slug = toSectionSlug(this.displaySector);
       return {
-        name: chantiersRouteName(this.useStaging),
+        name: this.synthesisRouteName,
         query: { section: SECTION_SYNTHESE_SLUG },
         hash: `#sector-${slug}`,
       };

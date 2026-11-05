@@ -132,8 +132,7 @@ import {
   impactAxeNomCourt as impactAxeNomCourtFromTaxonomy,
   resolveSyntheseImpactGroupingKey,
 } from "@/services/csvDataService.js";
-import { regionSelection } from "@/services/regionSelection.js";
-import { loadCopRegionalView } from "@/services/copLeviers.js";
+import { loadCopTerritoireView } from "@/services/copLeviers.js";
 
 export default {
   name: "SideNavigation",
@@ -170,12 +169,13 @@ export default {
       const n = this.$route && this.$route.name;
       return n === "chantiers" || n === "staging-chantiers";
     },
+    isTerritoiresShellRoute() {
+      const n = this.$route && this.$route.name;
+      return n === "territoires" || n === "staging-territoires";
+    },
     showChantiersAccordionSidebar() {
       if (this.isEtatEnvironnementContext) return false;
-      return this.sector === "Synthèse" || this.isChantiersShellRoute;
-    },
-    sharedRegionCode() {
-      return regionSelection.code;
+      return this.sector === "Synthèse" || this.isChantiersShellRoute || this.isTerritoiresShellRoute;
     },
   },
   props: {
@@ -238,7 +238,7 @@ export default {
         
         this.isLoading = false;
 
-        if (regionSelection.code && this.isChantiersShellRoute) {
+        if (this.isTerritoiresShellRoute) {
           await this.syncTerritoryNavigation();
           this.emitNextSectionMeta();
           return;
@@ -902,24 +902,13 @@ export default {
       this.$emit("params", params);
     },
     async syncTerritoryNavigation() {
-      if (!this.isChantiersShellRoute) return;
-      const code = regionSelection.code;
-      if (!code) {
-        if (!this.territoryMode) return;
-        this.territoryMode = false;
-        this.territorySeq += 1;
-        this._territoryCode = "";
-        this.loadChantierSectors();
-        this.loadAllSectorChantiers();
-        if (this.currentView === "chantier") this.set_chantiers_sectoriels();
-        return;
-      }
+      if (!this.isTerritoiresShellRoute) return;
       if (!this.navigationData) return;
 
       const seq = ++this.territorySeq;
       const environment = this.useStaging ? "staging" : "production";
-      const view = await loadCopRegionalView(code, environment);
-      if (seq !== this.territorySeq || regionSelection.code !== code) return;
+      const view = await loadCopTerritoireView(environment);
+      if (seq !== this.territorySeq) return;
 
       this.territoryMode = true;
       const sectors = view.displaySectors || [];
@@ -930,9 +919,9 @@ export default {
           id: chantier.id,
           name: chantier.name,
           grist_ids: chantier.gristIds || [],
-          sortedLeviers: [],
+          sortedLeviers: chantier.sortedLeviers || [],
           descriptionChantier: chantier.descriptionChantier || "",
-          axeTaxonomie: [],
+          axeTaxonomie: chantier.axeTaxonomie || [],
           copMode: true,
         }));
       });
@@ -950,19 +939,11 @@ export default {
         }
       }
       if (found) {
-        if (
-          this.currentChantierId !== found.id ||
-          this.currentView !== "chantier" ||
-          this._territoryCode !== code
-        ) {
-          this._territoryCode = code;
+        if (this.currentChantierId !== found.id || this.currentView !== "chantier") {
           this.set_chantier_from_synthese(foundTheme, found);
         }
       } else if (this.currentView === "chantier" || !this.currentView) {
-        this._territoryCode = code;
         this.set_chantiers_sectoriels();
-      } else {
-        this._territoryCode = code;
       }
     },
   },
@@ -1035,9 +1016,12 @@ export default {
     isLoading() {
       this.emitNextSectionMeta();
     },
-    sharedRegionCode() {
-      if (!this.isChantiersShellRoute || !this.navigationData) return;
-      this.syncTerritoryNavigation();
+    "$route.name"(name, previous) {
+      const territory = (routeName) =>
+        routeName === "territoires" || routeName === "staging-territoires";
+      if (territory(name) !== territory(previous)) {
+        this.loadChantiers();
+      }
     },
     isEtatEnvironnementContext() {
       this.emitNextSectionMeta();
