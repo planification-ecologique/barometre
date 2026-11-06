@@ -152,7 +152,7 @@
               data-fr-checked-label="Activé"
               data-fr-unchecked-label="Désactivé"
             >
-              Masquer toggle et favori
+              Préparer l'export (lecture)
             </label>
           </div>
           <button

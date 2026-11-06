@@ -93,6 +93,7 @@ import {
   chantiersRouteName,
   dashboardRouteName,
   rechercheRouteName,
+  keepTerritoiresNavigation,
 } from '@/config/routeNames.js'
 import { SECTION_SYNTHESE_SLUG } from '@/utils/sectionUrl.js'
 import { FRENCH_REGIONS } from '@/services/frenchRegions.js'
@@ -197,57 +198,69 @@ export default {
     onRegionChange(event) {
       setSharedRegion(this.$router || this.myrouter, event.target.value)
     },
+    pushMenu(target) {
+      const stayed = keepTerritoiresNavigation(target, this.$route)
+      this.myrouter.push(stayed || target).catch(err => {
+        if (err.name !== 'NavigationDuplicated') console.error('Navigation error:', err)
+      })
+    },
     handleNavigation(option) {
       this.closeDropdown()
+      const isStaging = window.location.pathname.includes('/staging')
 
       if (option.value.startsWith('sector-')) {
         const sectorMatch = option.link.match(/section=([^&]+)/) || option.link.match(/sector=([^&]+)/)
         if (sectorMatch) {
           const raw = decodeURIComponent(sectorMatch[1])
-          const isStaging = window.location.pathname.includes('/staging')
-          this.myrouter.push({
+          this.pushMenu({
             name: dashboardRouteName(isStaging),
             query: { section: raw, view: 'sectorial-engagements' }
-          }).catch(err => {
-            if (err.name !== 'NavigationDuplicated') console.error('Navigation error:', err)
           })
         }
       } else if (option.value === 'accueil') {
-        const isStaging = window.location.pathname.includes('/staging')
         this.myrouter.push({ name: homeRouteName(isStaging) }).catch(err => {
           if (err.name !== 'NavigationDuplicated') console.error('Navigation error:', err)
         })
       } else if (option.value === 'etat-environnement') {
-        const isStaging = window.location.pathname.includes('/staging')
-        this.myrouter.push({
+        this.pushMenu({
           name: etatEnvironnementRouteName(isStaging),
           query: { section: SECTION_SYNTHESE_SLUG }
-        }).catch(err => {
-          if (err.name !== 'NavigationDuplicated') console.error('Navigation error:', err)
         })
       } else if (option.value === 'chantiers-sectoriels') {
-        const isStaging = window.location.pathname.includes('/staging')
-        this.myrouter.push({
+        this.pushMenu({
           name: chantiersRouteName(isStaging),
           query: { section: SECTION_SYNTHESE_SLUG }
-        }).catch(err => {
-          if (err.name !== 'NavigationDuplicated') console.error('Navigation error:', err)
         })
       } else if (option.value === 'recherche') {
-        const isStaging = window.location.pathname.includes('/staging')
-        this.myrouter.push({ name: rechercheRouteName(isStaging) }).catch(err => {
-          if (err.name !== 'NavigationDuplicated') console.error('Navigation error:', err)
-        })
+        this.pushMenu({ name: rechercheRouteName(isStaging) })
       } else {
-        this.myrouter.push({ name: option.value }).catch(err => {
-          if (err.name !== 'NavigationDuplicated') console.error('Navigation error:', err)
-        })
+        this.pushMenu({ name: option.value })
       }
 
       this.updateActiveFromRoute()
     },
+    syncMenuLinks() {
+      const base = process.env.VUE_APP_PREFIX_PATH
+      const isStaging = window.location.pathname.includes('/staging')
+      const p = String(base || '') + (isStaging ? '/staging' : '')
+      const inTerritory = String(this.$route?.path || '').includes('/territoires')
+      const byValue = {}
+      this.menuOptions.forEach((option) => { byValue[option.value] = option })
+      if (inTerritory) {
+        byValue['etat-environnement'].link = `${p}/territoires?section=${SECTION_SYNTHESE_SLUG}&view=etat-environnement`
+        byValue['chantiers-sectoriels'].link = `${p}/territoires?section=${SECTION_SYNTHESE_SLUG}`
+        byValue.recherche.link = `${p}/territoires/recherche`
+        byValue.favoris.link = `${p}/territoires/favoris`
+      } else {
+        byValue['etat-environnement'].link = `${p}/etat-environnement?section=${SECTION_SYNTHESE_SLUG}`
+        byValue['chantiers-sectoriels'].link = `${p}/chantiers?section=${SECTION_SYNTHESE_SLUG}`
+        byValue.recherche.link = `${p}/recherche`
+        byValue.favoris.link = `${p}/favoris`
+      }
+    },
     updateActiveFromRoute() {
       if (!this.$route) return
+      this.syncMenuLinks()
 
       const path = this.$route.path
       const query = this.$route.query
@@ -258,7 +271,14 @@ export default {
         if (opt.children) opt.children.forEach(c => { c.selected = false })
       })
 
-      if (this.$route.name === 'home' || this.$route.name === 'staging-home') {
+      if (path.includes('/territoires') && !path.includes('recherche') && !path.includes('favoris')) {
+        const view = query.view
+        if (view === 'etat-environnement' || view === 'general-engagements' || view === 'engagements-table') {
+          this.setSelected('etat-environnement')
+        } else {
+          this.setSelected('chantiers-sectoriels')
+        }
+      } else if (this.$route.name === 'home' || this.$route.name === 'staging-home') {
         this.setSelected('accueil')
       } else if (
         this.$route.name === 'etat-environnement' ||

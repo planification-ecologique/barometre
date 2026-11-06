@@ -109,6 +109,7 @@ import {
   territoiresRouteName,
   isChantiersShellName,
   isTerritoiresShellName,
+  isTerritoiresContext,
 } from "@/config/routeNames.js"
 import {
   resolveSectorFromQuery,
@@ -227,9 +228,7 @@ export default {
           : this.resolveShellViewFromQuery(newQuery)
         let axeResolved = newQuery.axe
         let chantierSectorResolved = newQuery.chantier_sector
-        const onEtat =
-          this.$route.name === "etat-environnement" ||
-          this.$route.name === "staging-etat-environnement"
+        const onEtat = this.isEtatShellRoute(newQuery)
         if (onEtat && newQuery.section) {
           const slug = String(newQuery.section).toLowerCase()
           if (slug !== SECTION_SYNTHESE_SLUG && isImpactAxeSlug(slug)) {
@@ -302,6 +301,13 @@ export default {
         sn.goToNextSection();
       }
     },
+    isEtatShellRoute(query) {
+      const n = this.$route.name
+      if (n === "etat-environnement" || n === "staging-etat-environnement") return true
+      if (!isTerritoiresShellName(n)) return false
+      const view = query?.view
+      return view === "etat-environnement" || view === "general-engagements" || view === "engagements-table"
+    },
     isDashboardShellRouteName(name) {
       return [
         "dashboard",
@@ -355,9 +361,7 @@ export default {
       this.currentSector = resolveSectorFromQuery(q, this.knownSectorNames)
       let view = q.view || this.impliedViewFromRouteName()
       let axeResolved = q.axe
-      const onEtat =
-        this.$route.name === "etat-environnement" ||
-        this.$route.name === "staging-etat-environnement"
+      const onEtat = this.isEtatShellRoute(q)
       if (onEtat && q.section) {
         const slug = String(q.section).toLowerCase()
         if (slug !== SECTION_SYNTHESE_SLUG && isImpactAxeSlug(slug)) {
@@ -453,6 +457,9 @@ export default {
     },
     // Mise à jour de la sélection dans le menu
     updateSelection(selectedValue) {
+      const pending = this.$router.history && this.$router.history.pending
+      const routeName = (pending && pending.name) || (this.$route && this.$route.name)
+      if (!this.isDashboardShellRouteName(routeName)) return
       if (selectedValue != undefined) {
         this.myobj = selectedValue;
         // Only fetch data if the view needs it (not about or chantiers-sectoriels which fetch their own)
@@ -467,10 +474,13 @@ export default {
         try {
           const querySector = selectedValue.sector || this.currentSector
           const st = this.useStaging
-          const territory = isTerritoiresShellName(this.$route.name)
+          const territory = isTerritoiresContext(this.$route)
           const chantiersName = territory
             ? territoiresRouteName(st)
             : chantiersRouteName(st)
+          const etatName = territory
+            ? territoiresRouteName(st)
+            : etatEnvironnementRouteName(st)
           const sec = toSectionSlug(querySector)
 
           if (selectedValue.view === "about" && querySector === SECTOR_SYNTHESE) {
@@ -487,16 +497,23 @@ export default {
           const v = selectedValue.view
 
           if (v === "etat-environnement" || v === "engagements-table") {
-            target = { name: etatEnvironnementRouteName(st), query: withSection() }
+            target = {
+              name: etatName,
+              query: territory
+                ? withSection({ view: v === "engagements-table" ? v : "etat-environnement" })
+                : withSection(),
+            }
           } else if (v === "general-engagements") {
             if (selectedValue.axe) {
               target = {
-                name: etatEnvironnementRouteName(st),
-                query: { section: impactAxeNameToSlug(selectedValue.axe) },
+                name: etatName,
+                query: territory
+                  ? { section: impactAxeNameToSlug(selectedValue.axe), view: "general-engagements" }
+                  : { section: impactAxeNameToSlug(selectedValue.axe) },
               }
             } else {
               target = {
-                name: etatEnvironnementRouteName(st),
+                name: etatName,
                 query: {
                   section: SECTION_SYNTHESE_SLUG,
                   view: "general-engagements",

@@ -2,6 +2,8 @@ import Vue from "vue";
 import Router from "vue-router";
 import {
   homeRouteName,
+  keepTerritoiresNavigation,
+  isTerritoiresContext,
 } from "./config/routeNames.js";
 import {
   toSectionSlug,
@@ -234,6 +236,27 @@ const routes = [
       import(/* webpackChunkName: "dashboard" */ "./views/DashboardPage.vue"),
     meta: {
       title: "Leviers territoriaux",
+      territoryShell: true,
+    }
+  },
+  {
+    path: "/territoires/recherche",
+    name: "territoires-recherche",
+    component: () =>
+      import(/* webpackChunkName: "search" */ "./views/SearchPage.vue"),
+    meta: {
+      title: "Recherche",
+      territoryShell: true,
+    }
+  },
+  {
+    path: "/territoires/favoris",
+    name: "territoires-favoris",
+    component: () =>
+      import(/* webpackChunkName: "favoris" */ "./views/FavorisPage.vue"),
+    meta: {
+      title: "Favoris",
+      territoryShell: true,
     }
   },
   {
@@ -428,6 +451,34 @@ if (process.env.VUE_APP_ENV !== 'prod') {
       meta: {
         title: "Leviers territoriaux",
         isStaging: true,
+        territoryShell: true,
+        noindex: true,
+        excludeFromSitemap: true
+      }
+    },
+    {
+      path: "/staging/territoires/recherche",
+      name: "staging-territoires-recherche",
+      props: { useStaging: true },
+      component: () =>
+        import(/* webpackChunkName: "search" */ "./views/SearchPage.vue"),
+      meta: {
+        title: "Recherche",
+        isStaging: true,
+        territoryShell: true,
+        noindex: true,
+        excludeFromSitemap: true
+      }
+    },
+    {
+      path: "/staging/territoires/favoris",
+      name: "staging-territoires-favoris",
+      component: () =>
+        import(/* webpackChunkName: "favoris" */ "./views/FavorisPage.vue"),
+      meta: {
+        title: "Favoris",
+        isStaging: true,
+        territoryShell: true,
         noindex: true,
         excludeFromSitemap: true
       }
@@ -493,6 +544,14 @@ function isStagingRoute(route) {
 }
 
 router.beforeEach(async (to, from, next) => {
+  if (isTerritoiresContext(from)) {
+    const stayed = keepTerritoiresNavigation(to, from);
+    if (stayed) {
+      next(stayed);
+      return;
+    }
+  }
+
   const regionRedirect = regionQueryRedirect(to);
   if (regionRedirect) {
     next(regionRedirect);

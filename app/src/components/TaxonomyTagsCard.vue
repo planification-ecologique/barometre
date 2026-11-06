@@ -58,6 +58,11 @@ export default {
     useStaging: {
       type: Boolean,
       default: false
+    },
+    /** Drop impact-axe chips (État de l'environnement) for a read-only export. */
+    hideAxeTags: {
+      type: Boolean,
+      default: false
     }
   },
   computed: {
@@ -89,7 +94,9 @@ export default {
         });
       });
 
-      const axeLabels = normalizeAxeTaxonomieList(this.dataObj.axe_taxonomie_list);
+      const axeLabels = this.hideAxeTags
+        ? []
+        : normalizeAxeTaxonomieList(this.dataObj.axe_taxonomie_list);
       const seenAxeSlugs = Object.create(null);
       const axeTags = [];
       axeLabels.forEach((raw) => {

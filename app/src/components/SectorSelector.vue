@@ -82,6 +82,7 @@ import {
   etatEnvironnementRouteName,
   chantiersRouteName,
   rechercheRouteName,
+  keepTerritoiresNavigation,
 } from '@/config/routeNames.js'
 import {
   resolveSectorFromQuery,
@@ -165,17 +166,32 @@ export default {
           if (axeName) return 'axe:' + axeName
         }
         if (!view) view = 'etat-environnement'
-      } else if (routeName === 'chantiers' || routeName === 'staging-chantiers') {
-        const chSlug = String(query.section || '').toLowerCase()
-        if (
-          query.chantier_id &&
-          chSlug &&
-          chSlug !== SECTION_SYNTHESE_SLUG &&
-          (!view || view === 'chantier')
-        ) {
-          view = 'chantier'
-        } else if (!view) {
-          view = 'chantiers-sectoriels'
+      } else if (
+        routeName === 'chantiers' ||
+        routeName === 'staging-chantiers' ||
+        routeName === 'territoires' ||
+        routeName === 'staging-territoires'
+      ) {
+        const etatView = view === 'etat-environnement' || view === 'general-engagements' || view === 'engagements-table'
+        if (etatView && view === 'general-engagements') {
+          const secSlug = String(query.section || '').toLowerCase()
+          if (secSlug && secSlug !== SECTION_SYNTHESE_SLUG && isImpactAxeSlug(secSlug)) {
+            const axeName = impactAxeSlugToName(secSlug)
+            if (axeName) return 'axe:' + axeName
+          }
+        }
+        if (!etatView) {
+          const chSlug = String(query.section || '').toLowerCase()
+          if (
+            query.chantier_id &&
+            chSlug &&
+            chSlug !== SECTION_SYNTHESE_SLUG &&
+            (!view || view === 'chantier')
+          ) {
+            view = 'chantier'
+          } else if (!view) {
+            view = 'chantiers-sectoriels'
+          }
         }
       }
 
@@ -278,6 +294,12 @@ export default {
         this.allSectorChantiers = {}
       }
     },
+    pushSelection(target) {
+      const stayed = keepTerritoiresNavigation(target, this.$route)
+      router.push(stayed || target).catch(err => {
+        if (err.name !== 'NavigationDuplicated') console.error('Navigation error:', err)
+      })
+    },
     handleChange(event) {
       const value = event.target.value
       const [type, ...rest] = value.split(':')
@@ -293,11 +315,9 @@ export default {
             if (err.name !== 'NavigationDuplicated') console.error('Navigation error:', err)
           })
         } else {
-          router.push({
+          this.pushSelection({
             name: dash,
             query: { section: toSectionSlug(param), view: 'sectorial-engagements' }
-          }).catch(err => {
-            if (err.name !== 'NavigationDuplicated') console.error('Navigation error:', err)
           })
         }
       } else if (type === 'view') {
@@ -306,61 +326,47 @@ export default {
             if (err.name !== 'NavigationDuplicated') console.error('Navigation error:', err)
           })
         } else if (param === 'etat-environnement') {
-          router.push({
+          this.pushSelection({
             name: etatEnvironnementRouteName(isStaging),
             query: { section: syn }
-          }).catch(err => {
-            if (err.name !== 'NavigationDuplicated') console.error('Navigation error:', err)
           })
         } else if (param === 'chantiers-sectoriels') {
-          router.push({
+          this.pushSelection({
             name: chantiersRouteName(isStaging),
             query: { section: syn }
-          }).catch(err => {
-            if (err.name !== 'NavigationDuplicated') console.error('Navigation error:', err)
           })
         } else {
-          router.push({
+          this.pushSelection({
             name: dash,
             query: { section: syn, view: param }
-          }).catch(err => {
-            if (err.name !== 'NavigationDuplicated') console.error('Navigation error:', err)
           })
         }
       } else if (type === 'axe') {
-        router.push({
+        this.pushSelection({
           name: etatEnvironnementRouteName(isStaging),
           query: { section: impactAxeNameToSlug(param) }
-        }).catch(err => {
-          if (err.name !== 'NavigationDuplicated') console.error('Navigation error:', err)
         })
       } else if (type === 'chantierSynthese') {
         const [chantierId, chantierSector] = param.split(':')
-        router.push({
+        this.pushSelection({
           name: chantiersRouteName(isStaging),
           query: {
             section: toSectionSlug(chantierSector),
             chantier_id: chantierId,
           }
-        }).catch(err => {
-          if (err.name !== 'NavigationDuplicated') console.error('Navigation error:', err)
         })
       } else if (type === 'chantier') {
-        router.push({
+        this.pushSelection({
           name: dash,
           query: {
             section: toSectionSlug(this.activeSector),
             view: 'chantier',
             chantier_id: param
           }
-        }).catch(err => {
-          if (err.name !== 'NavigationDuplicated') console.error('Navigation error:', err)
         })
       } else if (type === 'page') {
         if (param === 'search') {
-          router.push({ name: rechercheRouteName(isStaging) }).catch(err => {
-            if (err.name !== 'NavigationDuplicated') console.error('Navigation error:', err)
-          })
+          this.pushSelection({ name: rechercheRouteName(isStaging) })
         }
       }
     }

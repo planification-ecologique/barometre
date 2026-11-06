@@ -189,7 +189,7 @@
         Voir moins
       </button>
     </div>
-    <div class="graph-box-download-row">
+    <div v-if="!hideCaptureChrome" class="graph-box-download-row">
       <button
         type="button"
         class="graph-box-download-btn"
@@ -201,7 +201,7 @@
       </button>
     </div>
     <div class="graph-box-footer graph-box-resources">
-      <div v-if="dataObj.lien_donnees_source">
+      <div v-if="dataObj.lien_donnees_source && !hideCaptureChrome">
         <p class="fr-text--xs fr-text-mention--grey textReference">
           Source :
           <a
@@ -212,7 +212,7 @@
           >
         </p>
       </div>
-      <div v-else-if="dataObj.lien_site_source">
+      <div v-else-if="dataObj.lien_site_source && !hideCaptureChrome">
         <p class="fr-text--xs fr-text-mention--grey textReference">
           Source :
           <a
@@ -229,7 +229,7 @@
         </p>
       </div>
       <div v-if="dataObj.label_sources_cible">
-        <p class="fr-text--xs fr-text-mention--grey textReference" v-if="dataObj.lien_cible">
+        <p class="fr-text--xs fr-text-mention--grey textReference" v-if="dataObj.lien_cible && !hideCaptureChrome">
           Cible :
           <a
             :href="dataObj.lien_cible"
@@ -251,7 +251,11 @@
     </div>
     <!-- Métadonnées (tags secteur/axe) -->
     <div class="graph-box-metadata">
-      <TaxonomyTagsCard :dataObj="dataObj" :useStaging="isStaging" />
+      <TaxonomyTagsCard
+        :dataObj="dataObj"
+        :useStaging="isStaging"
+        :hideAxeTags="hideCaptureChrome"
+      />
     </div>
 
   </div>
@@ -321,7 +325,7 @@ export default {
       type: Boolean,
       default: false
     },
-    /** Hide the chart/table switch and the favorite badge for screenshots. */
+    /** Hide controls, underlined links, and État de l'environnement chips for document export. */
     hideCaptureChrome: {
       type: Boolean,
       default: false,
@@ -377,9 +381,13 @@ export default {
       return this.regionalIndicatorIds.length > 0;
     },
     shouldHideDescription() {
-      // Hide Grist description only when user is in "région" mode.
+      // Hide Grist description in région mode, and for chart-selector screenshots.
       // Back to "National" => show description again.
-      return Boolean(this.hideDescription || (this.hasRegionalData && this.selectedRegionCode));
+      return Boolean(
+        this.hideDescription ||
+        this.hideCaptureChrome ||
+        (this.hasRegionalData && this.selectedRegionCode)
+      );
     },
     regionalIndicatorIds() {
       const ids = this.dataObj?.irpe_ids;
@@ -993,6 +1001,9 @@ export default {
 }
 .graph-box-metadata {
   padding: 0 1rem 0.75rem;
+}
+.graph-box-metadata:not(:has(.taxonomy-tags-card)) {
+  display: none;
 }
 .graph-box-metadata :deep(.taxonomy-tags-card) {
   margin: 0;

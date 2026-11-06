@@ -136,6 +136,7 @@
 <script>
 import NavigationDsfr from "./Navigation.vue";
 import { regionSelection } from "@/services/regionSelection.js";
+import { keepTerritoiresNavigation, rechercheRouteName } from "@/config/routeNames.js";
 
 export default {
   name: "HeaderDsfr",
@@ -155,7 +156,12 @@ export default {
   },
   watch: {
     $route(to) {
-      if (to.name === "recherche" || to.name === "staging-recherche") {
+      if (
+        to.name === "recherche" ||
+        to.name === "staging-recherche" ||
+        to.name === "territoires-recherche" ||
+        to.name === "staging-territoires-recherche"
+      ) {
         this.headerSearchQuery = to.query.q || "";
       }
       // Fermer le panneau menu mobile après navigation (liens du header)
@@ -184,12 +190,14 @@ export default {
       this.$refs.headerSearchInput?.focus({ preventScroll: true, focusVisible: false });
     },
     submitSearch() {
-      const routeName = window.location.pathname.includes('/staging') ? 'staging-recherche' : 'recherche';
+      const isStaging = window.location.pathname.includes('/staging');
       const query = {};
       const trimmed = this.headerSearchQuery?.trim();
       if (trimmed) query.q = trimmed;
       if (regionSelection.code) query.region = regionSelection.code;
-      this.$router.push({ name: routeName, query }).catch(() => {});
+      const target = { name: rechercheRouteName(isStaging), query };
+      const stayed = keepTerritoiresNavigation(target, this.$route);
+      this.$router.push(stayed || target).catch(() => {});
       // Force re-search even if route/query unchanged (NavigationDuplicated)
       this.$root.$emit("header-search:submit", { q: query.q || "" });
       this.$nextTick(() => {

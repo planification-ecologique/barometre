@@ -192,12 +192,29 @@ export default {
     }
   },
   methods: {
+    stillOnDashboardShell() {
+      if (this._isBeingDestroyed || this._isDestroyed) return false;
+      const pending = this.$router && this.$router.history && this.$router.history.pending;
+      const routeName = (pending && pending.name) || (this.$route && this.$route.name);
+      return [
+        "dashboard",
+        "staging-dashboard",
+        "etat-environnement",
+        "staging-etat-environnement",
+        "chantiers",
+        "staging-chantiers",
+        "territoires",
+        "staging-territoires",
+      ].includes(routeName);
+    },
     async loadChantiers() {
+      if (!this.stillOnDashboardShell()) return
       // Load navigation structure from Grist data
       try {
         this.isLoading = true;
         const environment = this.useStaging ? 'staging' : 'production';
         const response = await getNavigationStructure(environment);
+        if (!this.stillOnDashboardShell()) return
         
         if (response.status === 'success') {
           this.navigationData = response.data;
@@ -238,11 +255,18 @@ export default {
         
         this.isLoading = false;
 
-        if (this.isTerritoiresShellRoute) {
+        const requestedView = this.initParams && this.initParams.view
+        const territoryEtat =
+          requestedView === "etat-environnement" ||
+          requestedView === "general-engagements" ||
+          requestedView === "engagements-table"
+        if (this.isTerritoiresShellRoute && !territoryEtat) {
           await this.syncTerritoryNavigation();
+          if (!this.stillOnDashboardShell()) return;
           this.emitNextSectionMeta();
           return;
         }
+        if (!this.stillOnDashboardShell()) return;
 
         // Initialize with view from initParams, or default view based on sector
         if (!this.initParams || !this.initParams.view) {
@@ -909,6 +933,8 @@ export default {
       const environment = this.useStaging ? "staging" : "production";
       const view = await loadCopTerritoireView(environment);
       if (seq !== this.territorySeq) return;
+      if (!this.stillOnDashboardShell()) return;
+      if (!this.isTerritoiresShellRoute) return;
 
       this.territoryMode = true;
       const sectors = view.displaySectors || [];
@@ -927,7 +953,10 @@ export default {
       });
       this.allSectorChantiers = byTheme;
 
-      const wanted = (this.initParams && this.initParams.chantier_id) || this.currentChantierId;
+      const requestedView = this.initParams && this.initParams.view;
+      const wanted = requestedView === "chantier"
+        ? ((this.initParams && this.initParams.chantier_id) || this.currentChantierId)
+        : null;
       let found = null;
       let foundTheme = null;
       for (const [theme, levers] of Object.entries(byTheme)) {
@@ -938,11 +967,17 @@ export default {
           break;
         }
       }
-      if (found) {
+      if (requestedView === "chantier" && found) {
         if (this.currentChantierId !== found.id || this.currentView !== "chantier") {
           this.set_chantier_from_synthese(foundTheme, found);
         }
-      } else if (this.currentView === "chantier" || !this.currentView) {
+      } else if (requestedView === "general-chantiers") {
+        const sectorFilter = (this.initParams && this.initParams.sectorFilter) || null;
+        if (this.currentView !== "general-chantiers" || this.currentSectorFilter !== sectorFilter) {
+          this.set_general_chantiers(sectorFilter);
+        }
+      } else if (this.currentView !== "chantiers-sectoriels") {
+        // Leaving État (Atténuation, Adaptation, …) must restore the COP lever menu.
         this.set_chantiers_sectoriels();
       }
     },
@@ -1016,10 +1051,28 @@ export default {
     isLoading() {
       this.emitNextSectionMeta();
     },
-    "$route.name"(name, previous) {
-      const territory = (routeName) =>
-        routeName === "territoires" || routeName === "staging-territoires";
-      if (territory(name) !== territory(previous)) {
+    $route(to, from) {
+      const dashboardNames = [
+        "dashboard",
+        "staging-dashboard",
+        "etat-environnement",
+        "staging-etat-environnement",
+        "chantiers",
+        "staging-chantiers",
+        "territoires",
+        "staging-territoires",
+      ];
+      if (!dashboardNames.includes(to.name)) return;
+      const wasTerritory =
+        from &&
+        (from.name === "territoires" ||
+          from.name === "staging-territoires" ||
+          String(from.path || "").includes("/territoires"));
+      const nowTerritory =
+        to.name === "territoires" ||
+        to.name === "staging-territoires" ||
+        String(to.path || "").includes("/territoires");
+      if (wasTerritory !== nowTerritory) {
         this.loadChantiers();
       }
     },
