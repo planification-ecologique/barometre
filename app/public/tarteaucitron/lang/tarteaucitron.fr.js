@@ -12,7 +12,7 @@ tarteaucitron.lang = {
     "alertBigClick": "En poursuivant votre navigation,",
     "alertBig": "vous acceptez l'utilisation de services tiers pouvant installer des cookies",
     
-    "alertBigPrivacy": "<h5>À propos des cookies sur Barometre-sgpe.fr</h5>" +
+    "alertBigPrivacy": "<h5>À propos des cookies sur barometre.planification-ecologique.gouv.fr</h5>" +
     "Bienvenue ! Nous utilisons des cookies pour améliorer votre expérience et les services disponibles sur ce site. Pour en savoir plus, visitez la page <a href="+link_privacy+"> Données personnelles et cookies</a>. Vous pouvez, à tout moment, avoir le contrôle sur les cookies que vous souhaitez activer.",
     "alertSmall": "Gestion des services",
     "acceptAll": "Tout accepter",

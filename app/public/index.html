@@ -40,6 +40,38 @@
       max-width: 200px;
       margin: 0 auto 50px;
     }
+
+    .boot-loader {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      margin: 0;
+      font-family: Marianne, Arial, sans-serif;
+      color: #161616;
+    }
+
+    .boot-loader__spin {
+      width: 2.5rem;
+      height: 2.5rem;
+      border: 3px solid #e5e5e5;
+      border-top-color: #000091;
+      border-radius: 50%;
+      animation: boot-loader-spin 0.8s linear infinite;
+    }
+
+    .boot-loader p {
+      margin: 0;
+      font-size: 1rem;
+    }
+
+    @keyframes boot-loader-spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
   </style>
 </head>
 
@@ -48,7 +80,12 @@
     <strong>We're sorry but Baromètre SGPE - Planification écologique doesn't work properly without JavaScript enabled.
         Please enable it to continue.</strong>
   </noscript>
-  <div id="app"></div>
+  <div id="app">
+    <div class="boot-loader" role="status">
+      <span class="boot-loader__spin" aria-hidden="true"></span>
+      <p>Chargement du baromètre…</p>
+    </div>
+  </div>
 </body>
 
 </html>
